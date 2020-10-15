@@ -1,0 +1,65 @@
+#+TITLE: UNIVERSITA'
+base per l'Universita'
+
+* UniTo
+:PROPERTIES:
+:ID:       3edefd8a-141d-4e9f-b7fd-06a649946a0c
+:END:
+** DONE y1
+:PROPERTIES:
+:ID:       c31d0723-93d6-4eb1-98fc-bfd6172c63cf
+:END:
+*** DONE [#A] [[file:20200527014615-ricerca_operativa.org][Ricerca Operativa]]
+:PROPERTIES:
+:ID:       18bca186-56a6-45ba-860f-a64a86861652
+:END:
+30
+*** DONE [#A] [[file:20200527012708-architettura_elaboratori.org][Architettura Elaboratori]]
+:PROPERTIES:
+:ID:       8481956c-1a64-4dc0-b200-9b5828a44274
+:END:
+27
+*** DONE [#B] [[file:20200527014837-analisi_i.org][Analisi I]]
+:PROPERTIES:
+:ID:       e4e91ab0-1e1f-4492-9c48-fde6b1a915ca
+:END:
+27
+*** DONE [#A] [[file:20200824211844-programmazione_ii.org][Programmazione II]]
+:PROPERTIES:
+:ID:       b0848be8-2074-4b06-bd12-78200523b866
+:END:
+
+** TODO y2
+:PROPERTIES:
+:ID:       c2c978ec-f0a3-413e-b7c9-8e334bf2fcd2
+:END:
+*** TODO {[Linguaggi Formali e Traduttori][LFT]}
+:PROPERTIES:
+:ID:       3f1be419-f48b-4a2b-b2d4-ce061c4d7413
+:END:
+*** TODO {[Sistemi Operativi][SO]}
+:PROPERTIES:
+:ID:       cd8bbb01-8849-4a3d-b070-ae7397abd552
+:END:
+*** TODO {[Elementi di Probabilita' e Statistica][EPS]}
+:PROPERTIES:
+:ID:       3ce965f4-56d7-41fe-bd52-b36c45b5091c
+:END:
+** y3
+:PROPERTIES:
+:ID:       420b524a-605b-43c6-851f-260d9b7558ca
+:END:
+*** TODO Erasmus++
+SCHEDULED: <2020-08-01 Sat>
+:PROPERTIES:
+:ID:       c9fabddc-f842-487a-b0a6-60a35d4ff9c8
+:END:
+
+** y4
+:PROPERTIES:
+:ID:       9295178d-22b7-42ac-a226-7adbe56771dd
+:END:
+** y5
+:PROPERTIES:
+:ID:       dcfb804b-b51e-4ce5-b758-10f2731e6137
+:END:

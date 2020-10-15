@@ -1,0 +1,313 @@
+#+TITLE: C
+Gerarchia Elaboratore
+1. {[Circuiti Combinatori][Digital Logic]}
+2. {[Mic-1][Microarchitecture]}
+3. {[ISA][Instruction Set Architecture]}
+4. {[Sistemi Operativi » Generalita'][Operating System]}
+5. Assembly
+6. High Level Language
+
+
+Processo da file sorgente a eseguibile: vedi {[Compilazione e Linking]}
+1. Pre-processing ~ .c
+2. Compilazione   ~ .s
+   da qui il linguaggio diventa =architecture specific=
+3. Assembler      ~ .o
+4. Linking        ~ .o
+
+Librerie: .so ~shared object~
+
+Gnu Compiler Collection - gcc
+- Front-end per il processo di compilazione-assemblaggio-linking
+  - -c ferma dopo l'assemblaggio
+  - -S ferma dopo la compilazione
+  - -E ferma dopo il pre-processore
+    - stampa in standard output
+
+Il C nasce come linguaggio per lo sviluppo del {[Sistemi Operativi » Generalita'][OS]}  Unix
+Il C e' un linguaggio tipato, ogni valore deve essere di un determinato =tipo=
+
+
+Un file sorgente C puo' essere composto da:
+- direttive al preprocessore
+- dichiarazione tipi
+- dichiarazioni variabili globali
+- definizioni di funzioni
+  come metodi Java ma non appartengono ad alcuna classe
+- funzione main()
+
+* #
+:PROPERTIES:
+:ID:       6b2ac43a-49d5-43b1-a009-12d6b40a68a5
+:END:
+=direttive al preprocessore=
+Le < > indicano al preprocessore che il file va cercato in percorsi predefiniti
+** include
+:PROPERTIES:
+:ID:       d74d605d-619f-4f1e-8cb7-56da86fcf05e
+:END:
+~es~
+#include <stdio.h>
+
+*** headers .h
+:PROPERTIES:
+:ID:       b127aa68-2f04-4e0c-b4df-0979d0f8f8e4
+:END:
+contengono le dichiarazioni delle funzioni fornite dalle librerie
+
+** define
+:PROPERTIES:
+:ID:       9e438850-1aa0-4de9-9981-725659ff181d
+:END:
+definisce nomi simbolici per valori costanti
+Associa ~due valori testuali~
+- il numero di caratteri del nome simbolico é limitato: era 8
+-  il pre-processore legge i moduli C in un passo
+
+** macro
+:PROPERTIES:
+:ID:       97682494-9c40-4231-b906-ce274c3a6366
+:END:
+una funzione ha un overhead -- le macro no
+
+Associa ad una signature una espressione
+
+*** ifndef
+:PROPERTIES:
+:ID:       63f651df-c85a-4ada-a08e-521ba14c31dd
+:END:
+se la costante simbolica non specificata non é stata ancora definita allora procede fino al endif
+- per evitare ~inclusioni multiple~
+
+*** ifdef
+:PROPERTIES:
+:ID:       a19f62d3-eb89-474b-91d5-fc933b9a813f
+:END:
+
+*** else
+:PROPERTIES:
+:ID:       66c74d8a-c6f0-4bcd-9735-811ed863a8f1
+:END:
+
+*** endif
+:PROPERTIES:
+:ID:       fb5210e4-f5fa-44a5-b66f-ac46417ee9d0
+:END:
+
+* Variabili
+:PROPERTIES:
+:ID:       73b8a7aa-025c-4ef7-a2a6-0e5f941fd896
+:END:
+caratterizzate da un quadrupla
+(nome, tipo, indirizzo, valore)
+
+L'indirizzo identifica la locazione di memoria alla quale il valore della variabile e' memorizzato
+e' assegnato dal OS a runtime o a compilazione
+
+#+BEGIN_SRC C
+#include <stdio.h>
+int i = 10;
+int *ptr = &i;
+int main(){
+    printf("Indirizzo di i: \t%p\n", ptr);
+    printf("Indirizzo di prt: \t%p\n", &prt); //il tipo di questa espressione e':
+                                              //puntatore di puntatore a int
+}
+#+END_SRC
+
+** variabili globali
+:PROPERTIES:
+:ID:       ed8a75ef-2160-4820-b521-fd61ddbb4a43
+:END:
+definite in un modulo possono essere usate da altri moduli previa dichiarazione
+- é buona regola definire le variabili globali in un intestazione
+:PROPERTIES:
+:ID:       a862cf55-89ce-4612-88e9-ee94fd4b7b50
+:END:
+- definire una variabile globale ~static~ significa renderla visibile solo nel modulo di definizione
+#+NAME: Modulo 1
+#+BEGIN_SRC C
+int error_code;
+#+END_SRC
+#+NAME: Modulo 2
+#+BEGIN_SRC C
+extern int error_code;
+#+END_SRC
+* Sequenze di escape
+:PROPERTIES:
+:ID:       34c2e6ea-c463-4ded-b0fa-781e0a9e68a7
+:END:
+
+\ ~sequenza~
+
+\n   =newline=
+\t   =tabulazione=
+
+* Specificatori Formato
+:PROPERTIES:
+:ID:       224d58f1-0a2d-4673-8e36-f8a009148fae
+:END:
+% ~specificatore~
+
+%d   =variabile=
+%p   =pointer=
+
+* entry point
+:PROPERTIES:
+:ID:       8e0cab62-054d-4d6b-86a2-7e670c490e49
+:END:
+
+** unico: int main()
+:PROPERTIES:
+:ID:       9aedf87b-bf4f-4c7e-9b3f-779f338e5a45
+:END:
+
+* tipi primitivi
+:PROPERTIES:
+:ID:       ca156780-f695-438a-9124-d79fec6fc80f
+:END:
+Nella definizione originaria di D.Ritchie il linguaggio non stabilisce alcuna dimensione per i dati in base al loro tipo
+- per portabilita' non si deve produrre un codice C dipendente dalla dimensione dei dati
+
+#+NAME: Esempio di tipi
+#+BEGIN_SRC C
+int i;
+short j = 2;
+int *ptr = NULL; //tipo: puntatore a interi
+#+END_SRC
+
+#+RESULTS: Esempio di tipi
+
+Non esistendo tipo Boolean:
+- 0 == false
+- valore diverso da 0 == true
+
+
+** int
+:PROPERTIES:
+:ID:       8fc8c680-1629-4559-b912-b2ff18f83f37
+:END:
+
+** short
+:PROPERTIES:
+:ID:       e8907b5a-fe36-4b5b-befb-a7c5e76ea44c
+:END:
+
+** long
+:PROPERTIES:
+:ID:       4e62c83a-c20a-460d-91cf-30468c93775d
+:END:
+
+** unsigned int
+:PROPERTIES:
+:ID:       fc9018d3-1c9a-4031-bad9-519071bb7b27
+:END:
+
+** float
+:PROPERTIES:
+:ID:       acb14e6c-b082-4ba1-91a4-17d93aed6732
+:END:
+
+** double
+:PROPERTIES:
+:ID:       df5936dc-9ea6-4622-ba2c-43ccf58e77d4
+:END:
+
+** char
+:PROPERTIES:
+:ID:       dd8f5c1c-791a-4ee4-ab59-22dbe738fcbb
+:END:
+
+** void
+:PROPERTIES:
+:ID:       c2ba430e-402e-468f-ade2-c69226ae0df4
+:END:
+~es~ funzione che non restituisce valore
+
+** *
+:PROPERTIES:
+:ID:       48d68da6-e12c-4b82-b0ee-2cc8c8336264
+:END:
+tipo puntatore
+
+*** SEGV
+:PROPERTIES:
+:ID:       a04507e5-69aa-4a28-a668-083dd6972d87
+:END:
+Segmentation Fault
+- Puntatore non inizializzato non e' definito correttamente e punta a un'area di memoria protetta
+
+* Funzioni
+:PROPERTIES:
+:ID:       a3d32f31-1967-4e28-b785-3831773ac32d
+:END:
+
+** printf(char *format,...)
+:PROPERTIES:
+:ID:       feefecb2-1ffb-46a1-a999-0229636f47a2
+:END:
+NB per fine linea
+- Windows:   \r\n
+- Unix:      \n
+- Macintosh: \r
+
+
+** scanf(char *format,...)
+:PROPERTIES:
+:ID:       39f3691c-f405-4e06-a4d7-ba8f5f9ac820
+:END:
+passo riferimenti a variabili dove memorizzare cio' che e' letto dallo stream di input, secondo il formato specificato dal programmatore
+- se lo stream e' vuoto la scaf si mette  in attesa, l'OS lo inserisce in uno stato di wait fino a che lo stream non sara' riempito
+
+- Restituisce il numero di conversioni avvenute con successo
+
+Utilizzando la ~scanf~ con il formato %s si leggono dallo stdin parole, ignorando spazi bianchi.
++ =NB= va passato come secondo argomento l'indirizzo di una variabile puntatore a char che contenga un numero di caratteri sufficientemente grande.
+
+** getchar()
+:PROPERTIES:
+:ID:       6bd602b7-b7e2-4323-bdb9-084af2ca97bc
+:END:
+restituisce un int(4 byte) per trattare altri casi oltre ai caratteri(1 byte)
+
+* Strutture Dati
+:PROPERTIES:
+:ID:       b4435c29-aa90-40f0-a79b-2d7fe6915926
+:END:
+
+** array []
+:PROPERTIES:
+:ID:       d1e1f45e-d250-4be5-acd4-04f7964c50cc
+:END:
++ un array in C é sempre un ~const~, un puntatore al primo elemento
++ le stringhe in realtá sono codificate con un array di ~char~
++ per modificare i valori sono usati i puntatori
++ es
+  array di char di stringhe
+  #+BEGIN_SRC C
+char *weekdays[] = {"Mon", "Tue", "Wen", "Tue", "Fri"}; // un puntatore ad un puntatore
+// al primo oggetto dell'array
+  #+END_SRC
+
++ NB sull'uso di ~sizeof()~
+  sizeof(a)/sizeof(int) per sapere quanti interi conta l'array a (sizeof restituisce dimensioni in byte)
+  MA
+  ció non funziona se l'array e' passato come argomento di una funzione, in quanto sizeof(a) restituirá la
+  dimensione del puntatore
+  - il problema si puó risolvere passando un altro argomento n numero di argomenti
+** struct
+:PROPERTIES:
+:ID:       39c10a32-9116-4732-9d13-8d0dff25d303
+:END:
+Raggruppa dati di natura diversa
+
+* 3 Linked References
+** [[file:SO.org][Sistemi Operativi ➦]]
+**** C
+** C
+
+** [[file:20200929150429-c.org][C ➦]]
+1. Digital Logic
+
+Processo da file sorgente a eseguibile: vedi Compilazione e Linking
+

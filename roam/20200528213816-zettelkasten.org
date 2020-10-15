@@ -1,0 +1,15 @@
+#+TITLE: Zettelkasten
+:NoteTaking:
+[[file:20200528214634-note_taking.org][Note Taking]]
+
+* nuova conoscenza si aggiunge a conoscenza pregressa
+    in questo modo si sviluppano nuove idee
+* bidirectional linking
+
+* notes on the go
+    includendo la ~fonte~
+* tagging
+    rivisitare le note della giornata/settimana e processarle
+** cercando di metterle in relazione con le altre idee nel zettelkasten
+** meglio se specifiche
+** cosa tenere e cosa rielaborare o eliminare

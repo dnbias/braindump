@@ -1,0 +1,97 @@
+#+TITLE: Metal Gear Solid 3
+~Snake Eater~
+Ambientato nella foresta russa fittizia nel 19--
+
+Un cadavere morto da tempo, sotto il ponte da cui The Boss ha buttato giu' Naked Snake, chi e'?
+
+* The Joy ~ [[file:20200624175553-the_boss.org][The Boss]]
+    Voyevoda in russia
+** diserta per Volgin
+    mhhhh non proprio: doppio gioco!
+** Eroina durante la 2a guerra mondiale
+
+"Non ho disertato" e' fedele al suo intento
+- sembra di livello inarrivabile rispetto a Naked Snake
+** Compagna di battaglia di The Sorrow
+    Lo Uccide per una missione
+** Fedele al suo paese fino alla fine
+*** in missione per conto dell'America
+*** doppio gioco rispetto a Volgin
+*** deve morire per non rovinare la facciata americana rispetto alla Russia, che chiede la morte di The Boss
+*** John la uccide, puo' esserci un solo boss, un solo snake
+** madre di [[file:20200627034213-ocelot.org][Ocelot]]
+*** partorito il D-Day
+* Naked Snake ~ [[file:20200624175455-big_boss.org][Big Boss]]
+
+** Jack/John Doe
+
+    Il nostro protagonista
+
+    - L'unico che puo' uccidere The Boss
+      - le e' molto legato emotivamente, e' la madre delle forze armate americane
+        + porta la sua bandana
+        + ha lavorato con lei per 10 anni
+      - la conosce, forse anche per questo non puo' batterla
+
+*** Appassionato di armi, gioca con la pistola che gli dona EVA
+- Metafora dell'artista Kogima che gioca con i suoi giocattoli
+- Alan Smithy (?)
+
+
+* Major Tom - Major [[file:20200624175530-zero.org][Zero]]
+- Tom muore nei tunnel (Great Escape)
+  - sfortuna! il maggiore decide di cambiare nome in codice
+* Volgin
+    Elettrificato, un po' Tekken 3
+** Kawabara Kawabara
+    protezione dai fulmini durante le tempeste
+    - superstizio
+      - infatti si interrompe durante la bossfight se viene lanciata una raganella
+** Con il lanciarazzi (Davy Crockett) e la testata nucleare procuratagli da The Boss fa saltare il centro di ricerca di Sokolov
+    - innesca la Metal Gear Saga (?)
+* Cobra
+    squadra formata da The Boss durante la guerra del Golfo
+    I nomi in codice sono derivati dalle emozioni che guidano i membri in battaglia
+
+    - Danno retta solo a The Boss, neanche Volgin sa quali sono i loro reali obiettivi
+
+** The Pain
+
+** The End
+
+** The Fury
+
+** The Fear
+
+* Operazione Snake Eater
+Operazione chiamata xosi' perche' l'obiettivi
+- uccidere The Boss
+  - per ripulire il nome della Fox Hound
+- recuverare Sokolov
+- distruggere Shacoloth
+
+Il presidente russo chiama il presidente Johnson per evitare la soluzione finale
+
+** Infiltrati russi
+
+*** ADAM
+- Per riconoscersi:
+    "Who are the patriots?" ~"La-Li-Lu-Le-Lo"~
+        Scott Dolph lo dice in MGS2 prima di morire
+    La-Li-Lu-Le-Lo --> censura neurale per proteggere l'identita' dei Patriots attraverso le nanomacchine
+   
+*** EVA
+    Una ex Codebreaker per NSA
+    - Femme Fatale
+
+** Team
+
+*** Para-Medic
+
+*** Sigint
+
+**** esperto di armi
+
+* Secret Theater
+    teatro per l'appassionato
+    Sono cut-scenes modificate in maniera comica

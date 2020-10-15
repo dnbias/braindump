@@ -1,0 +1,371 @@
+#+TITLE: Linguaggi Formali e Traduttori
+#+COURSE: LFT A
+#+TEACHER: Sproston Jeremy
+{[#Learning]}
+
+Informazioni varie del Corso:
+- Lunedi' lezione sincrona per domande: 11:00
+
+- Prova scritta + orale facoltativo (necassario per la lode)
+  2/3 del voto
+
+- Prova di laboratorio (progetto, interrogazione singola - anche in caso di progetto di gruppo con gruppi da 3) - Sostenibile dopo aver superato Teoria
+  1/3 del voto
+ 
+* Testi
+:PROPERTIES:
+:ID:       9949f901-e707-4a0f-8d5e-76b067b4ecc3
+:END:
+
+** Compilatori
+:PROPERTIES:
+:ID:       02f38e78-8a2f-42a5-ae0d-af66293a30d0
+:END:
+Principi tecniche e strumenti
+
+** Automi
+:PROPERTIES:
+:ID:       3cd79be3-7ec3-4f72-9bbf-e8c3e0144ce1
+:END:
+Automi, Linguaggi e Calcolabilita'
+
+* Fasi Compilatore
+:PROPERTIES:
+:ID:       524f94e0-7129-4f7a-ba10-3dcd5af8ec61
+:END:
+
+** Analisi Lessicale
+:PROPERTIES:
+:ID:       175c74e9-17e6-4ae6-8e89-ce0ae4774532
+:END:
+
+** Analisi Sintattica
+:PROPERTIES:
+:ID:       dcbbb40b-7b67-41a6-895f-ece183bf2e4b
+:END:
+
+** Analisi Semantica _Non affrontata nel corso_
+:PROPERTIES:
+:ID:       2abd8564-9e70-4db1-a2b3-0d6bf7d0fef0
+:END:
+
+* Analisi Lessicale
+:PROPERTIES:
+:ID:       7593fe38-6ac4-4b21-85a5-9a0a2142fb57
+:END:
+sequenze di caratteri | =token= o =lessemi=
+
+Si passa da
+1. Programma come sequenza di caratteri
+2. Programma come sequenza di token
+** Token
+:PROPERTIES:
+:ID:       fe81eb74-de77-4049-9900-9fe8f542a343
+:END:
+Costante numerica intera
+sequenza non vuota di cifre decimali, preceduta da + o -
+Costante numerica con virgola
+due sequenza (almeno 1 non vuota) di cifre decimali separate da .
+Identificatore
+sequenza on vuota di lettere numeri e _ e non inizia con un numero
+** Lexer
+:PROPERTIES:
+:ID:       e2cd4b2b-a5b6-466b-934f-a223773762d9
+:END:
+=Analizzatore lessicale=
+La visione del programma passa da "carattere per carattere" a "token per token"
+- spazi e commenti vengono scartati dal lexer
+
+* Automi
+:PROPERTIES:
+:ID:       dad02c9c-8d4b-4417-9837-b2882670ce48
+:END:
+
+** Automi a stati finiti deterministici =DFA=
+:PROPERTIES:
+:ID:       415788b8-f762-4228-be97-3a2769de5f28
+:END:
+Deterministico: lo stato in cui si sposta e' univocamente determinato dallo stato corrente e dal input
+
+Quintupla composta da:
+1. Q - insieme finito di stati
+2. Sigma - alfabeto riconosciuto
+3. Delta - funzione di transizione
+4. q0 - e' lo stato iniziale
+5. F - insieme di stati finali
+\(Q\)
+\(Sigma\)
+\(delta\)
+\(q_{0}\)
+\(F\)
+
+** Funzione di transizione estesa
+:PROPERTIES:
+:ID:       2d51c805-d4bf-4ea4-b84d-cc60d39e18c2
+:END:
+funzione definita su stringhe invece che singoli simboli
+definito per induzione
+** Linguaggio riconosciuto
+:PROPERTIES:
+:ID:       4c2430e4-d87f-44f6-ac7a-35dc83cfa560
+:END:
+Stringhe definite sull'alfabeto che per mezzo della F di transizione estesa portano ad uno =stato finale= dell'automa
+*** Linguaggio regolare
+:PROPERTIES:
+:ID:       c84e0b0b-06c0-405e-80d0-40d5739cb2ae
+:END:
+Esiste almeno un Automa A che lo riconosce
+** Esempio
+:PROPERTIES:
+:ID:       3c923fd9-21da-4863-81fa-104796f5dd79
+:END:
+automa: riconosce stringhe
+stati finiti: memoria finita
+input: stringa
+output: "si" se riconosciuta "no" altrimenti
+
+L'automa ha visione =locale e limitata= | legge un simbolo alla volta
+
+L'automa altera il suo stato in base al simbolo letto
+
+Se alla fine della stringa l'automa si trova in uno =stato finale= l'output sara' "si", altrimenti "no"
+
+** Automi a stati finiti non deterministici =NFA=
+:PROPERTIES:
+:ID:       d8ebe087-d5ac-4419-8b17-7b07671d3e88
+:END:
+Non deterministico: l'automa puo' scegliere di spostarsi in 0 o piu' stati possibili
+- Il codominio della funzione di transizione e' l'insieme delle parti degli stati Q
+Quintupla composta da:
+1. Q - insieme finito di stati
+2. Sigma - alfabeto riconosciuto
+3. Delta - funzione di transizione il cui codominio e' un'insieme delle parti di Q
+4. q0 - e' lo stato iniziale
+5. F - insieme di stati finali
+
+   Insiemi singoletto indicano transizioni deterministiche (da funzione di transizione estesa)ilon-transizioni
+   Automi che possono eseguire transizioni spontanee senza leggere alcun simbolo nella stringa da riconoscere
+   - passa di stato anche senza consumare alcun simbolo
+
+*** epsilon-chiusura
+:PROPERTIES:
+:ID:       cb17b417-06f0-4018-9890-83a3b0cf86d6
+:END:
+calcolare l'insieme di stati raggiungibili solo con transizioni-epsilon
+=ECLOSE=
+- la chiusura e' transitiva
+- la chiusura di q include q
+  ECLOSE(S) = Unione di ECLOSE(q_i)
+
+  Gli NFA sono un caso particolare di epsilon-NFA in cui non ci sono transizioni epsilon
+  + il potere riconoscitivo degli epsilon-NFA e' _almeno_ pari a quello dei DFA/NFA
+
+**** Teorema
+:PROPERTIES:
+:ID:       620e4246-6e0d-4be2-899e-b7d92678a0c0
+:END:
+Dato un eNFA E esiste un DFA D tale che L(D) = L(E)
+** Passaggio da =DFA= a =NFA= e viceversa
+:PROPERTIES:
+:ID:       8ab92266-bef4-42b1-a99e-24e08426cb0a
+:END:
+
+Da NFA a DFA sono possibili ~fino~ a 2^n stati
+
+Da un DFA con piu' stati finali e' possibile ricavare un e-NFA equivalente con un unico stato finale
+
+** Espressioni regolari =RE=
+:PROPERTIES:
+:ID:       64e03331-0d32-4039-a527-12fbabef78d0
+:END:
+Sono un approccio generativo alle classi di Linguaggi
+E' sempre possibile creare un e-NFA a partire da una RE
+
+Denotano un Linguaggio con
+L(E)
+Definito per induzione
+
+L(0) = 0
+L(epsilon) = {epsilon} // la stringa vuoto
+L(a) = {a}
+L(E+F) = L(E) U L(F)
+L(EF) = L(E)L(F)
+L(E*) = L(E)*   // chiusura di Kleene
+*** precedenza
+:PROPERTIES:
+:ID:       a8382a43-cfb2-46b2-843a-865487125c0e
+:END:
+1. *
+2. concatenazione
+3. +
+
+*** Proprieta'
+:PROPERTIES:
+:ID:       48689606-a9d3-48f0-8f7f-f1b4340870b7
+:END:
+
+
+**** Unione
+:PROPERTIES:
+:ID:       697fa17d-7fd5-431b-815b-7b501fff00db
+:END:
+- Commutativa
+- Associativa
+- Idempotenza
+- Identita
+
+**** Concatenazione
+:PROPERTIES:
+:ID:       2c54b33d-6c37-4dc9-bb80-086e225fc6ae
+:END:
+- Associativa
+- Identita'
+- Assorbimento
+- distributivita'
+**** Chiusura di Kleene
+:PROPERTIES:
+:ID:       ab2681f2-a680-40af-b984-ce0a7004b31e
+:END:
+- Idempotenza
+
+** Linguaggi Regolari
+:PROPERTIES:
+:ID:       5cedccca-f4bd-4f06-ac17-cb1092232d16
+:END:
+=def= Un Linguaggio riconoscibile da un =DFA=
+*** I linguaggi regolari sono chiusi rispetto all'operazione di unione
+:PROPERTIES:
+:ID:       839e1acc-5b69-4b52-b1e8-73f67933de96
+:END:
+'Collego' i due automi deterministici attraverso uno stato q0 che con epsilon-transizioni passa da uno o dall'altro
+
+*** I linguaggi regolari sono chiusi rispetto all'operazione di concatenazione
+:PROPERTIES:
+:ID:       344f362d-5904-48b3-8bb0-c501e7a2992e
+:END:
+'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
+
+*** Chiusura #dim
+:PROPERTIES:
+:ID:       58053abf-fc7b-4903-a95a-4bccb899ede9
+:END:
+*** \(L\cup L^{'}\)
+:PROPERTIES:
+:ID:       4d55b979-b3e5-4acf-ba14-4469fba186d3
+:END:
++ Dati \(E_{1}\) e \(E_{2}\)
+  - Si dimostra che \(E_{1}+E{_2}\) genera \(L\cupL^{'}\)
+  - Essendo quella ancora un'espressione regolare anche il linguaggio generato sará regolare
+*** \(LL^{'}\)
+:PROPERTIES:
+:ID:       e3f6f769-b320-47aa-925b-82cde24ce0e6
+:END:
++ Simile all'unione
+*** \(not{L}\)
+:PROPERTIES:
+:ID:       ba6c4445-0278-4dad-9c04-c1eb1f2473db
+:END:
++ \(not{L}= \Sigma^{*}-L\)
++ si crea un automa \(B = (Q,\Sigma,\delta,q_{0},Q-F)\)
+  - abbiamo complementato l'insieme degli stati finali
+*** i\(L\cap L^{'}\)
+:PROPERTIES:
+:ID:       d5219d99-74bd-4071-bb99-0fc6bc0d351a
+:END:
++ Si utilizzano le leggi di De Morgan
+  - ci si riconduce al caso dell'unione e della complementazione
++ O si construisce un automa \(B\) che riconosce una simulazione dei due automi iniziali \(A_1\) e \(A_2\)
+*** \(L -L^{'}\)
+:PROPERTIES:
+:ID:       d696355a-ddff-4899-8d78-3438d4ce24ac
+:END:
++ \(L_1 - L_2 = L_1 \cap notL_2\)
+*** \(L^{R}\)
+:PROPERTIES:
+:ID:       132bc461-4ac5-42d2-bf45-00cba91061a3
+:END:
++ L rovesciato
++ Si ricava un \(E^R\) per induzione
+  \(\o^R=\o\)
+  \(\epsilon^R=\epsilon\)
+  \(a^R=a\)
+  \((E_1+E_2)^R={E_1}^R+{E_2}^R\)
+  \((E_1 E_2)^R = {E_2}^R {E_1}^R\)
+  \((E^*)^R = (E^R)^*\)
+  Facile poi dimostrare che \(L(E^R) = L(E)^R\)
+  Tutti questi sono ancora regolari
+
+** Linguaggi non Regolari
+:PROPERTIES:
+:ID:       df9a8fd2-c484-42ff-bf26-924b8096ff36
+:END:
+*** Pumping Lemma
+:PROPERTIES:
+:ID:       5bbd62c4-3c7a-42cd-864e-6528f4460937
+:END:
+Per ogni linguaggio regolare \(L\) esiste \(n\) appartenente a \(N\) tale che per ogni \(w\) appartenente a \(L\) con \(|w|>= n\) esistono \(x,y,z\) tc \(w=xyz\) :
+1. \(y!=\epsilon\)
+2. \(|xy|<=n\)
+3. \(xy^kz\) appartiene \(L\) per ogni \(k>=0\)
+   Abbiamo una stringa media \(y\) non vuota che puó essere replicata un numero arbitrario di volte sempre ottenendo un Liguaggio Regolare.
+
+   * Esempio
+     + \(L=\{a^kb^k \mid k >= 0\}\) non é regolare
+**** dim
+:PROPERTIES:
+:ID:       0f22ae17-d35c-441a-b711-9cbc71bfcc98
+:END:
+*** \(L\) regolare
+:PROPERTIES:
+:ID:       c2f63bc3-0db5-4b38-8eab-151d4cacf160
+:END:
+*** \(A = (Q,\Sigma,\delta,q_0,F)\) tc \(L=L(A)\)
+:PROPERTIES:
+:ID:       db1f159a-a28b-4015-bf4c-8b665a917355
+:END:
+*** \(n=|Q|\)
+:PROPERTIES:
+:ID:       5bdf9608-1984-4dba-a79e-4a2fb17230b7
+:END:
+*** \(|w|>=n\) tc \(w=a_1a_2...a_m\) con \(m>=n\)
+:PROPERTIES:
+:ID:       e17b8433-c79b-4a43-9d3b-1d2c64868b91
+:END:
+*** Dopo \(m\) passaggi lo stato \(q_m\) deve essere finale per definizione
+:PROPERTIES:
+:ID:       bd78673f-c53b-4bbf-88cc-5521cca276f8
+:END:
+*** Il numero di stati attraversati sará \(m+1\)
+:PROPERTIES:
+:ID:       aa49df5c-4d1b-4ca7-af2c-49fba906b475
+:END:
+*** \(m>=n\) implica \(m+1>n\) quindi gli stati attraversati non possono essere tutti distinti
+:PROPERTIES:
+:ID:       aebff491-112a-4d2f-bb19-c36de928dc8d
+:END:
+*** \(q_i =q_j\) e \(i<j\) é il primo stato che si ripete nel cammino dell'automa
+:PROPERTIES:
+:ID:       f4002547-8229-4604-9600-72080bab0b2f
+:END:
+Allora concludiamo identificando \(x,y,z\)
+*** \(x=a_1a_2...a_i\)
+:PROPERTIES:
+:ID:       aab8c04f-2646-4e39-bf75-9ead2a15ce35
+:END:
+*** \(y=a_{i+1}a_{i+2}...a_j\)
+:PROPERTIES:
+:ID:       6322d520-aaeb-4470-a0a0-4638948ec55e
+:END:
+*** \(z=a_{j+1}a_{j+2}...a_m\)
+:PROPERTIES:
+:ID:       09de1aae-63df-45b5-9251-e849169f3b91
+:END:
+1. \(y!=\epsilon\) in quanto \(i<j\)
+2. \(|xy|<=n\) in quanto \(q_i=q_j\) é il primo stato che si ripete e sono al massimo \(n+1\)
+3. \(xy^kz\) appartiene a \(L\) per ogni \(k>=0\)
+
+* 1 Linked References
+** [[file:Universita.org][UNIVERSITA' ➦]]
+***** TODO LFT
+*** TODO LFT
+

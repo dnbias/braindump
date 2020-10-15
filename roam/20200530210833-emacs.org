@@ -1,0 +1,4 @@
+#+TITLE: Emacs
+:editor:
+
+* [[https://sachachua.com/blog/2008/08/why-browse-the-web-in-emacs/][Why browse the Web in Emacs?]]

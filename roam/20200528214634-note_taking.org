@@ -1,0 +1,5 @@
+#+TITLE: Note Taking
+:NoteTaking:
+* Tecniche
+** Gerarchy-based
+** [[file:20200528213816-zettelkasten.org][Zettelkasten]]

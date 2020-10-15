@@ -1,0 +1,66 @@
+#+title: Introduction to Automata Theory, Languages, and Computation
+#+STARTUP: latexpreview
+=def= Automata is the study of abstract computing devices - machine
+
+* A finite-state automaton
+    has a finite number of states to remember his history
+    - Inputs cause the automa to change its state
+
+*** automaton part of a lexer
+    [[file:/home/dan/Pictures/screenshots/lexerAutomaton.png]]
+
+* Basic Concepts
+
+** Alphabets
+    \(\Sigma\)
+    a finite, nonempty  set of symbols
+
+*** powers of alphabets
+    with \(\Sigma^k\) we express the set of strings in the \(\Sigma\) alphabet with length \(k\)
+
+** Strings
+    a finite sequence of symbols chosen from some alphabet
+    \(\epsilon\) - the empty string
+
+** Languages
+    a set of strings chosen from \(\Sigma^*\)
+
+* Regular Languages
+   A language \(L\) is regular if there is a =DFA= \(A\) so that
+        \(L(A)=\{w \mid \hat{\delta}(q_0,w) \textrm{ is in }F\}\)
+
+* Deterministic Finite Automata
+    An automata that is in a _single state_ after reading any sequence of inputs
+    The five-tuple describing a =DFA=:
+         \(A = (Q,\Sigma,\delta,q_0,F)\)
+
+    The transition function can be extended:
+         \(\hat{\delta}(q,w)=\delta(\hat{\delta}(q,x),a)\)
+
+    The language is defined as
+        \(L(A)=\{w \mid \hat{\delta}(q_0,w) \textrm{ is in }F\}\)
+
+* Nondeterministic Finite Automata
+    Can be in _several states at once_
+    they accept the exact same regular languages that dfa do
+    * they are easier to design
+    * always possible to convert an NFA to a DFA
+      + in the worst case a DFA can have \(2^n\) states with \(n\) being the number of states of the NFA
+      + proof through _subset construction_
+
+    The language is defined as
+        \(L(a) = \{w\mid\hat{\delta}(q_0,w)\cap F\neq 0\}\)
+
+* Regular Expressions
+    denote the structure of data
+    _they describe exactly the same patterns as what can be described by finite automata_
+
+* Complexity
+
+** Decidability
+    What can a computer do?
+
+** Intractability
+    What can a computer do efficiently?
+
+    =def= NPhard - intractable problems

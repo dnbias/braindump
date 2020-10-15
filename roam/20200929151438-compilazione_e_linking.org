@@ -1,0 +1,78 @@
+#+TITLE: Compilazione e Linking
+* Dal C al binario passando dall'assembler IJVM ~ Compilazione e Linking
+
+1) C
+
+   - Compiler
+     - avviene per passi successivi
+       - compila il main
+         - si ferma se ha bisogno di chiamate a cose non ancora compilate, in caso le compila prima di continuare
+       - compila le funzioni necessarie al main
+
+2) Linguaggio Assembler IJVM
+
+   - Assembler
+
+     * =Primo Passo=
+
+       - Contruisce due tabelle
+
+         + Delle ~Constanti~
+           - assegna ad ognuna un indirizzo (~offset~ rispetto alla base dello spazio della costanti)
+         + Dei ~Simboli~
+
+            riferimenti a variabili, procedure e indirizzi per salti condizionati e incondizionati
+
+           - assegna ad ognuna un indirizzo
+
+       - Tabella degli ~Opcode~
+
+         - usata dall'assemblatore per sapere quanti byte occupa ogni istruzione
+
+         - utile per individuare l'offset di ogni salto condizionato/incondizionato rispetto al PC chiamante
+
+     * =Secondo Passo=
+
+       + risolviamo tutti i simboli
+
+         - li convertiamo a riferimenti, offset
+
+         - descrittore di main
+
+           - # parametri + 1 (objref)
+
+           - # variabili
+
+         - opcode e simbolo risolto
+
+           - costanti non sappiamo ancora dove inizia il Costant Pool
+
+           - metodi non sappiamo ancora dove inizia lo spazio delle procedure
+
+         - descrittore del metodo
+
+         - opcode e simbolo risolto
+
+       + per i simboli non ancora risolvibili spetta il linker
+
+         - lascia un buco
+
+3) Codice Oggetto
+
+   - [[file:20200604021818-linker.org][Linker]]
+
+        Esegue il processo di collegamento
+
+     * fonde i moduli oggetto in un unico spazio di indirizzamento
+
+       + vede la lunghezza del codice compilato
+
+       + li consegue uno all'altro creando lo ~spazio di indirizzamento~
+
+     * determina l'inizio dello spazio delle costanti subito dopo allo spazio di indirizzamento dei metodi
+
+       + una volta che e' determinato l'indirizzo di inizio si risolvono le costanti
+
+         - si aggiunge l'offset
+
+4) Codice eseguibile

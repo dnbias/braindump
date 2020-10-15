@@ -1,0 +1,37 @@
+#+TITLE: C++
+:Programming:
+:Language:
+
+* Cherno
+    Crash Course
+    Engine Developer
+
+* Pointers
+    Integer che punta ad una locazione di memoria
+
+      type*
+
+* References
+    Simili ai puntatori, metodo sintattico per leggibilita'
+    - Non sono vere e proprie variabili
+    - Non possono essere cambiate una volta assegnate
+    - Devono essere inizializzate
+
+      type&
+
+* Classes
+    Objected Oriented Programming ~~~ Uno stile di programmazione
+    C++ non impone OOP a differenza di Java
+
+    - Privata di Default
+
+* Structs
+    Differenza (tecnica) con Classi: visibilita'
+
+    - Pubblica di Default
+
+    Esiste per compatibilita' con C
+
+    L'uso si differenzia:
+        si utilizza una struct quando si usa POD (plain old data)
+        - utilizzato per definire strutture matematiche

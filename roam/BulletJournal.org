@@ -1,0 +1,189 @@
+
+* 2020
+** 2020-05 May
+*** 2020-05-28 Thusday
+**** * Che hai fatto oggi :>
+
+***** guardato un po' di [[https://www.youtube.com/user/link4universe][Link4Universe]]
+
+****** 2 ore di discussione sulle prossime missioni previste per i prossimi 10 anni, l'uomo torna sulla Luna, e poi verso ~Marte~
+
+******* [[file:20200528174603-missioni_artemis.org][Artemis]]
+
+******* [[file:20200528183515-space_launch_system.org][Space Launch System]]
+
+******* interessante davvero gotta say
+
+**** cercando di comprendere al meglio lo [[file:20200528213816-zettelkasten.org][Zettelkasten]], anche guardando qui il [[https://forum.zettelkasten.de][sito omonimo]]
+
+**** sembra complicato ma lo sto capendo, lentamente ecco ma ci stiamo arrivando.z
+
+***** Organizzazione del ~org-roam~?
+
+****** ho intenzione di creare ~main-pages~ che poi si collegheranno ad altre e cosi' via
+
+****** non voglio imporre gia' al sistema una gerarchia troppo rigida che poi la dannegerebbe, il bello di questo sistema e' proprio la sua grande duttilita', imponendo alla fonte un tale peso - le categorie rigide classiche - sono sicuro massacrerei la potenzialita' dello zettel quindi andiamoci piano
+
+******* ho intenzione di creare ~backlinks~ man mano che si creano le note in modo che i collegamenti siano il piu' possibile organici al sistema
+
+******* devo solo decidere come impostere la struttura dei file sul computer, voglio cartelle divise?
+
+**** se si in che modo posso dividerle
+
+***** journal
+
+****** qui terrei questi log, cosi' sono divisi e non inquinano la ricerca in fase di linking
+
+****** ma manterrei la possibilita' di linkare VERSO la wiki
+
+***** wiki
+
+****** qui terrei la conoscenza vera e propria creando connessioni interne e sviluppando una rete nel tempo
+
+****** anche le note scolastiche adrebbero' qui in modo da poter contribuire alla rete, cosi' rimarranno integrate e saranno utili anche in futuro
+
+***** IDEA: Non posso forse evitarmi la divisione in cartelle utilizzando i ~tag~?
+
+****** _Daniel_
+
+***** per il bullet-journaling
+
+****** _brainD_
+
+***** per il cervello extra-corporeo
+*** 2020-05-29 Friday
+**** 18:32 Bene
+sono riuscito, finalmente a creare un template adatto a
++ journal
++ todo
++ roam (circa)
+  - il problema qui e' che non riesco a creare un file on the fly al momento della scelta del path
+    da parte di capture, quindi finisce per darmi
+     ~err~   path: nil
+Quindi a questo punto non so bene come comportarmi eheh
+vbb comunque tutto bene dai, tranne che ho perso l'intera notte cercando di fare funzionare il setq
+e poi oggi voulais ho cancellato tutto, riscritto e funzionava... k
+~D out~
+*** 2020-05-30 Saturday
+**** 05:57 Oof
+Finita la lezione di oggi di [[file:20200527012708-architettura_elaboratori.org][Architettura Elaboratori]], sono un po' stanchino ma
+soddisfatto devo dire, sono riuscito a mettere insieme un bel setup qua su DOOM
+**** 06:27 jeez
+cristo sono stanco af
+ho cercato di trovare uno snippet sul web per allineare al centro un buffer ma la mia ricerca si e' scontrata contro i soliti errori criptici di emacs
+per ora soluzione low tech: finestra volante su i3 lmao, carina col blur e i bordi arrotondati, gotta say, can u do that on notion/roam/evernote/onenote? take this fuckers ~ah~
+
+penso mi defilero' a nanna, per lo meno nel letto, probably gonna read something yikes: ASOIAF#1 mi aspetta, oramai sono all'ultimo terzo.
+
+poi pensavo di poter leggere o guardare The Expanse... libro uno pretty good, secondo mhh, Holden e' un po' un coglione niente da fare
+
+e anche Westworld cazzo, l'ho abbandonata senza un cazzo di buon motivo, la prima stagione e' spettacolare.
+**** 19:12 Prevista Partenza tra poche ore
+Lancio previsto alle 21:20~ ora italiana
+50% di lancio per il meteo, ora si e' messo a piovere, eheh
+in caso di scrap si ritenta in pochi giorni.
+*** 2020-05-31 Sunday
+**** 02:26 Oggi inizia una nuova era dell'esplorazione spaziale
+che emozione, il lancio e' andato perfettamente. Perfino il rientro dello Stage 1 e' atterrato correttamente sulla piattaforma in mezzo all'oceano "Of course I still love You".
+Devo ammettere che fino all'ultimo quasi non ci credevo, il tempo non sembrava buono fino all'ultimo, mezzora prima del lancio il GO to Lanch. Wow.
+Awestruck, davvero. Un'emozione grande, sono stato con un sorriso ebete stampato in faccia per una buona ora ahh
+Peccato per le nuvole qua a Pievetta, non ci hanno permesso di vedere il Dragon 2 volare in orbita verso la ISS. Comunque e' stato uno spettacolo niente male.
+Complimentoni a Musk e a tutti gli ingenieri alla SpaceX, un giorno niente male per loro, si saranno distrutti di lavoro conoscendo la mentalita'. Ora vado a mangiarmi qualcosa, solito orario lmao.
+Burro d'arachidi e yogurt. E fiocchi d'avena, tanti fiocchi d'avena. Ho ancora un pochetto di pancetta quassotto maaaa
+Fottesega, cioe'... dai continuo ad allenarmi e magari mentre mi preparo agli esami aumento anche intensita' e frequenza e vediamo come evolve la mia forma. Per ora 67 kili abbondanti non sono male.
+Conto di tornare ai 70 quest'estate. Tra l'altro devo decidermi a chiamere la palestra per bloccarmi quanto posso dell'abbonamente, senno' sta pandemia mi incula per davvero.
+
+CYA
+**** 06:29 Hello
+Continuato a prendere appunti anche oggi qua su org-mode-roam, pretty cool
+Credo che scrivere qua mi aiuti a migliorare la mia typing speed, credo di star gia' migliorando, il che mi rende assai felice
+
+Ho usanto un po' di linking oggi tra le mie pagine di org-roam, penso che il migliore approccio per questo roam sia lasciarsi un po' guidare dal sistema, piano piano implementandolo.
+Per ora ho qualche landing page da cui poi si diramano le note. Principali per ora sono ~Letture~ e ~Universita'~ perche' mi sembravano utili per tenere docchio e avere anche una visione d'insieme dei contenuti relativi. Non voglio pero' esagerare. Tenere questo sistema slegato da gerarchie rigide mi pare di vitale importanza, quindi continiamo cosi'.
+
+Credo di dovere iniziare a pensare a un metodo di ricerca interno alle note per poter trovare collegamenti utili anche durante la costruzione dei collegamenti stessi, cosa che RoamResearch fa, mentre qua e' un po' piu limitato, cercando e autocompletanto solamente i titoli. Questo e' comunque sopperibile usanda note ATOMICHE che quindi rispettino il principio dello [[file:20200528213816-zettelkasten.org][Zettelkasten]]: una nota == un idea.
+** 2020-06 June
+*** 2020-06-02 Tuesday
+**** 03:53 Ledger
+Iniziato ad implementare Ledger qua su Emacs D00M, cool beans, chissa' che sia la volta buona per cui comincero' davvero a fare budgeting. Una grewup skill che mi sara' comoda, senza dubbio.
+La volta buona per una sacco di cose sto periodo di quarantena :>
+Spero lo sia davvero. Ma che spero. Lo sara', nessun dubbio, basta guardare video su youtube e cazzeggiare facendo finta di essere produttivi. E' finito quel periodo della mia vita. Ho 20 anni, li sento, sento che non posso piu' aspettare. Cio' che ho inparato in quel tempo forse non speso al meglio ora deve dare frutto ad azione, a qualcosa di tangibile e che sara' la base per il mio futuro. Ne sono sicuro. Ora mi concentro questa settimana sugli Esami, RO e AE. Me li imprimo in memoria, vediamo i prossimi 30.  <:
+**** 04:43 w3m
+ho installato w3m, prossima tappa, emacs mi sa che mi catturato, tra poco implementero' anche un lavandino, cosi', per completezza.
+*** 2020-06-04 Thursday
+**** 21:21 Scacchi
+Mi si e' acceso un nuovo interesse, damn.
+
+Gli Scacchi, in questi giorni ho guardato un po' di partite si Twitch, mi sono tornate in mente le partite sul camper con mio padre...
+Mamma mia quanto mi faceva il culo ai tempi, sarebbe proprio figo riuscissi a batterlo, sarebbe proprio figo.
+Il bello di giocare con Mic e' che non si risparmia, lui vuole vincere e non fa sconti.
+
+Mentre mi preparo agli esami mi faccio un po' di partite qua e la, oggi ho fatto anche l'account su Lichess, piu' carino e totalmente free e open source. Apprezzo. Poi ci sono tantissime risorse online e stream interessanti. In questi giorni dovrebbero esserci le qualificazioni per il torneo pogchamps che fanno su twitch, giocano un sacco di streamer, favoriti VoyBoy, BoxBox e un ragazza che non conosco, tutti gamer o quasi comunque da quello che ho capito. qualche partita la volgio guardare, gia' ho iniziato a seguire una certa Alexandra e un paio di granmaestri americani. We'll see, tanti interessi rendono la vita interessante, o almeno spero ah!
+
+Mi sembra quasi di disperdermi in troppe direzioni a volte, ma chissenefrega tendenzialmente, se qualcosa mi interessa e mi diverte perche' non dovrei buttarmici a capofitto. E' bello. Allo stesso tempo devo mantenere una direzione, che nel mio caso sono Universita' e Coding/Development. Devo bilanciare tanto, ma il processo e' piacevole se tengo acceso l'interesse, hope so at least.
+*** 2020-06-05 Friday
+**** 02:20 Studiato
+Ho finito adesso di riprendere la parte di AE sui livelli, ho quasi finito il livello 0 adesso, mi manca solo piu' fare i Bus, le Memorie e i registri credo
+Sono un po' stanchino, prima ho fatto un programma lineare e un programma lineare in R^2 da risolvere graficamente e con l'algoritmo del simplesso,
+yikes.
+Dopo quello mi sono fatto 3 partite a scacchi, la prima l'ho persa per una svistae e l'abbiamo tirata per le lunghe tryhardando, le latre due le ho giocate contro lo stesso e le ho vinte entrambe, la prima mi sono fatto sfuggire uno scacco se non ricordo male, la seconda siamo arrivati davvero agli sgoccioli, mi erano rimasti solo piu' alfieri e Torre, l'ho scammato alla fine attirandolo con un alfiere scoperto mentre l'altro copriva le vie di fuga del Re, lui ha abboccato e io gli ho buttato il re in faccia: matto.
+*** 2020-06-08 Monday
+**** 02:28 Lichess
+Giocato ancora, eheh, ho imparato la Sicilian  Defense, sono tante variazioni, credo di giocare la Najdorf ma non sono certo, sicuramente fuckuppo a qualche punto. Oggi ho vinto un paio di partite per il rotto della cuffia, per gente che impiccava la regina yikes. Ho giocato anche con Andre, ho testato le acque in somma. Non era troppo entusiasta ma abbiamo giocato due partite, la prima e' andata male male, la seconda gli ho spiegato l'apertura e un po' come si gioca in generale, e' stata piu' divertente. :>
+
+Domani mattina esame di RO, credo di essere preparato, domani pomeriggio mi faccio ancora un bel ripasso e dovrei essere pronto. Aggiornero' in divenire.
+*** 2020-06-12 Friday
+**** 22:46 Fatto lo scritto online di RO, mi aspetta lo scritto di AE
+-2 esami: AE e ANALeasy, di RO mi hanno piazzato l'orale il 15 mattina, mi sono preso male perche' pensavo che il 15 avessi gia' l'esame di AE ma mi sbagliavo, e' il 16. Quindi apposto. Ieri ho nerdato come un maiale a RimWorld. Greve.
+Ma e' divertente, sto facendo una colonia basata dul paste dispencer, cosi' mi risparmio di dover avere per forza un cuoco. Per ora le cose non stanno andando male anche' se mi sono morti un po' di coloni di gia' ma qho knows, sembra andarmi tutto a gonfie vele se tralasciamo la loro tragica morte.
+Dopo un semplice combattimento con dei selvaggi sono dovuti essere curati d'emergenza 4 su 5 dei miei stronzi. 2 sono morti.
+Per' d'altra parte ce lo si deve aspettare, ho avuto sfiga (o era nabbaggine mhh) che non ero riuscito a fare contruire in tempo i circuiti per la alimentazione delle torrette di difesa. Unlucky.
+*** 2020-06-13 Saturday
+**** 23:10 Flexato
+Ho flaxato la mia config Emacs con Ivan e Mik, lmao
+
+Beh e' un bello strumento niente da dire.
+
+Oggi ho ripassato un po di reti sequenziali e combinatorie, un po' quello che avevo visto non mi era chiarissimo ieri quando ho fatto la prova di esame, comunque mi sento abbastanza sicuro dai
+non e' nulla di impossibile, il corso lo seguito bene quindi molto me lo ricordo gia' di base, o almeno mi pare kappa.
+*** 2020-06-23 Tuesday
+**** 18:58 Back again /cit
+Ok mi sono ritrasferito a Torino, qua c'e' calma e un po' di solitudine, ma e' il luogo perfetto per riflettere e produrre. Non devo lasciarmi andare alla pigrizia.
+In un luogo come questo se mi lasciassi andare sarebbe la fine, davvero.
+
+Ehi! c'e' una buona notizia pero'... 30 di Ricerca Operativa! eheh nice. L'orale e' andato divinamente e Grosso mi ha fatto i complimenti.
+Adesso mi immergo in Analisi per qualche ora. Devo fare un deep dive cosi' da prepararmi per bene. L'esame e' il 2/7. Gonna be ready.
+*** 2020-06-28 Sunday
+**** 20:13 The Last Of Us 2
+Che magone, la storia che ND ci ha portato sto giro e' pesantina.
+Sto seguendo la live di Sabaku sul gioco perche' non ho una Play Station mannaggia a me.
+Sono un dannato voyeur videoludico, grazie buon Jesoo per l'internet e Twitch.
+
+Ho appena vissuto la scena del museo. Stupenda. Che dolcezza, il diario di Ellie, il loro sorriso e il loro banter, la passione sconfinata di Ellie per lo spazio. Il suo sogno di diventare astronauta.
+Le piace il viaggio spaziale perche' "ai tempi di Joel", per lei e' un mondo che non e' mai esistito se non nella memoria di chi le e' accanto, gli umani sono andati sulla Luna, solo perche' potevano, solo perche' volevano. E' un atto di coraggio, di intelletto, di umanita'.
+Un po' quello che manca in un mondo dove per sopravvivere a volte devi fare cose che rendono difficile dormire la notte.
+
+Joel le regala un'esperienza che non dimentichera' facilmente. Una registrazione del lancio Apollo del 69 mentre a bordo di una navicella spaziale.
+Che scena bellissima. Che pelle d'oca. Cazzo.
+In quel momento, nel momento del lancio il cuore batte fortissimo e vedi la meraviglia nel viso di una ragazzina che, dopo tutto, e' ancora innocente, pura. Joel vuole restituirle l'infanzia che il mondo le ha portato via prima ancora che lei se ne potesse rendere conto.
+
+In quel momento ho pensato a Joel, a quello che ha passato, a quello che ha perso. A cio' che ora non lascera' mai andare. Il suo viso mentre osservava la reazione di Ellie e' stata la cosa piu' VERA, visceralmente vera, che io abbia visto su schermo per quanto riguarda perlomeno l'ambito videoludico. Perlomeno.
+
+E tutto questo Ellie se lo ricorda, con amarezza dopo aver visto lo stato in cui hanno ridotto Joel. Non riesce a vedere altro se ci pensa. Non disegna neppure piu' i suoi occhi. Penso non riesca a disegnargli occhi che non siano devastati dai colpi della mazza da golf di Abby oramai.
+Se lo ricorda con amarezza perche' la sua infanzia e' finita. In fretta. Lei non voleva piu' la vicinanza di Joel, forse  lo sentiva di troppo. Aveva bisogno di spazio per diventare donna a tutto tondo oramai, a 20 anni. E ora nessuno puo' piu' ridarle Joel, non potra' piu' fare pace con l'uomo che piu' la amata nella sua breve vita. Non potra' piu' vedere un film insieme a lui o suonargli una canzone.
+
+Questo gioco mi ha toccato. E non sono che all'inizio dell'esperienza.
+Oof
+** 2020-08 August
+*** 2020-08-25 Tuesday
+**** 20:48 Here we go again
+    Ok era un po' che non scrivevo piu' qui, l'estate mi ha rapito, ora sono nuovamente in sessione, 2 to go. Will crush it kappa.
+
+    Prog II e Ing I, non mi aspetto nulla di difficile, sto sistemando un po' Vs Code, ho trovato un buon setup. Ho pensato se usare Emacs con JDB ma la cosa era leggermente incomprensibile. Per ora rimarro' con Emacs, cio ripensero' quando avreo' il portatilino, magari li' tentero' di implementare un buon Emacs workflow.
+
+    signing off
+*** 2020-08-26 Wednesday
+**** 23:16 Eczema
+    maledetto eczema del cazzo, le braccia sono tutte infiammate, jeez.
+
+    Penso provero' a tagliare via i latticini. Spero la situazione migliori. Thx

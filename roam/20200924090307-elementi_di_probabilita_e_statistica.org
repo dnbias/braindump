@@ -1,0 +1,248 @@
+#+TITLE: Elementi di Probabilita' e Statistica
+#+PROF:Roberta Sirovich
+{[#Learning]}
+
++ r-project.org
++ Editor: r-studio
++ Esame:
+  - Quiz Moodle
+    - Esercizi Probabilita'
+    - Esercizi Statistica (r)
++ Libri:
+  - Bertsekasi - Tsitsiklis ~ Introduction to Probability
+    * ottimo testo di teoria (MIT)
+  - Ross ~ Introduction to Probability and Statistics for Engineers and Scientists
+    * fonte di esercizi
+  - Verzani ~ Using R for Introductory Statistics
+    * esercizi di statistica
++ Esercizi aggiuntivi Pearson
+  - secondo Moodle
+
+
+* Probabilita'
+:PROPERTIES:
+:ID:       63477289-e10b-4f30-8288-8e48d35c0f60
+:END:
+
+** descrive eventi soggetti a ~casualita'~
+:PROPERTIES:
+:ID:       dcd06104-bd89-4fab-8b86-d6b5009cafbe
+:END:
+- nasce nell'ambito del gioco d'azzardo ~ seconda meta' del 800
+
+*** esperimenti il cui esito non e' prevedibile a priori
+:PROPERTIES:
+:ID:       606d28b8-0692-4dcd-8d06-c0945759b898
+:END:
+
+*** casualita' legata alla complessita'
+:PROPERTIES:
+:ID:       a1c98c11-3a85-42a6-8adb-f6759afd09d3
+:END:
+
+- sarebbe descrivibile con strumenti classici ma cio' solo con sistemi _troppo_ complessi, che non sappiamo risolvere
+
+** Insieme
+:PROPERTIES:
+:ID:       1f515e3e-dba3-4f6d-8178-7f147e991c9e
+:END:
+
+*** collezione di oggetti (elementi)
+:PROPERTIES:
+:ID:       3e796c18-db88-4a2a-a95e-0a06aaffa0ea
+:END:
+
+*** Naturali - contiene un numero n di elementi (finito o infinito)
+:PROPERTIES:
+:ID:       f232351c-af5b-4599-abdd-d604206b7aea
+:END:
+
+**** sono tutti elencabili
+:PROPERTIES:
+:ID:       be51da31-746e-404f-ad19-206362e7240e
+:END:
+
+***** infinito numerabile
+:PROPERTIES:
+:ID:       6892fadf-de85-429c-902c-4025be0a66c4
+:END:
+
+*** Reali
+:PROPERTIES:
+:ID:       05a68f60-5d65-487f-ab9e-59a4008cfaef
+:END:
+
+**** infinito non numerabile | piu' che numerabile
+:PROPERTIES:
+:ID:       2d2c668e-6010-4864-8e0e-f2b851e7dc04
+:END:
+
+***** descritti con una proprieta'
+:PROPERTIES:
+:ID:       ac345f2c-cbf0-4cab-bc14-d8a28fe310fa
+:END:
+
+*** Uso in Probabilita'
+:PROPERTIES:
+:ID:       90c1fb9f-74f4-42f6-8b3b-ff71157e575a
+:END:
+gli insiemi sono usati per descrivere gli esiti possibili degli esperimenti probabilistici
+
+
+*** Se tutti gli elementi di A sono membri di B
+:PROPERTIES:
+:ID:       42e195d9-1118-46d3-bc5b-243905135e4b
+:END:
+
+**** A e' contenuto in B
+:PROPERTIES:
+:ID:       4435ce3b-0264-4a59-8ff0-cbbf39e1a4c5
+:END:
+
+*** Omega
+:PROPERTIES:
+:ID:       fbf7c0b1-ee70-4fbd-acb5-b78fa3aa632e
+:END:
+
+**** insieme di ~tutti~ i possibili esiti
+:PROPERTIES:
+:ID:       29dcc8dc-5bbf-4b40-a062-348d91ca2c3a
+:END:
+
+*** Partizioni Ai di S
+:PROPERTIES:
+:ID:       8669c4e8-346f-4fc5-a675-aa697718c457
+:END:
+
+**** insiemi che coprono S
+:PROPERTIES:
+:ID:       a5600d3c-6c61-4083-b0dc-03faddc87d3d
+:END:
+
+**** insiemi disgiunti a due a due
+:PROPERTIES:
+:ID:       c7517fcb-a38e-4382-a7db-f7976acae97b
+:END:
+
+*** Leggi di de Morgan
+:PROPERTIES:
+:ID:       87b96377-441d-4600-9df1-0523b5aea988
+:END:
+
+** Modello probabilistico
+:PROPERTIES:
+:ID:       3fe8e34d-fa7b-4756-8333-f8e03c246c3a
+:END:
+
+*** descrizione matematica del
+:PROPERTIES:
+:ID:       f298c3f5-70b9-40f5-b27c-6cb768315715
+:END:
+- esperimento probabilistico che stiamo analizzando
+  - spazio campionario
+  - ~legge di probabilita'~
+    - ad ogni esito (sottoinsieme di Omega) assegna un numero positivo detto ~probabilita'~ di tale evento
+
+*** =def= Legge di Probabilita' P
+:PROPERTIES:
+:ID:       e47539ea-a563-481e-a9b7-2bf109d28fd2
+:END:
+Insieme d'arrivo [0,1]
+**** Assiomi
+:PROPERTIES:
+:ID:       fa947de8-c4f3-4cec-9346-78e6468a52d4
+:END:
+
+***** Positivita'
+:PROPERTIES:
+:ID:       193090b1-71b1-49a3-aa42-48e01b11c21a
+:END:
+
+***** Misura Finita
+:PROPERTIES:
+:ID:       3a495031-71f4-49df-aac4-11ffc8f3c7cb
+:END:
+Probabilita' dello spazio campionario vale 1
+
+***** Additivita'
+:PROPERTIES:
+:ID:       a2cf72df-f081-4cf8-899b-83177133164e
+:END:
+
+**** Proprieta' della P dedotte dagli assiomi
+:PROPERTIES:
+:ID:       5f61b869-91a7-4336-a2b0-48142e406d32
+:END:
+
+***** Monotonia
+:PROPERTIES:
+:ID:       ce0553e8-1ed4-4b33-9de2-af971c4974fd
+:END:
+
+***** P di Unione di 2 ins
+:PROPERTIES:
+:ID:       b2fd294b-f010-4c63-8169-473d94f56146
+:END:
+
+***** P di unione <= P degli insiemi
+:PROPERTIES:
+:ID:       008400ea-2878-441d-bfc4-67be76fac753
+:END:
+
+***** P di Unione di 3 ins
+:PROPERTIES:
+:ID:       c9c254dc-13ba-4db9-b1c1-1f33c3527400
+:END:
+
+*** Modelli Continui
+:PROPERTIES:
+:ID:       47011bdd-1eba-40a2-ad8c-f9eaf3bb4051
+:END:
+- Probabilita' come Area
+
+
+*** Esempi di P - Legge Uniforme Discreta
+:PROPERTIES:
+:ID:       7c17b1ec-2e84-4081-a217-1df4f7907106
+:END:
+
+- Frequenza Relativa di occorrenza
+- P come area
+- moneta equa
+  - non truccata: le due facce sono =equipossibili=
+- moneta eequa lanciata 3 volte
+  - escano due teste
+- due volte dado a 4 facce equo
+
+
+*** Probabilita' Condizionata
+:PROPERTIES:
+:ID:       005635cb-e54d-4229-ba86-f19812b91a5b
+:END:
+Misura che permette di calcolare probabilita' in condizioni di informazione parziale
+- Prende in considerazione informazioni
+
+**** regola della moltiplicazione
+:PROPERTIES:
+:ID:       b9e6017b-4993-4b4c-8e6e-4ff0531cbe87
+:END:
+
+**** Formula delle probabilita' totali
+:PROPERTIES:
+:ID:       cdbce793-98d0-4d5b-9991-d1b092776fd8
+:END:
+
+**** Formula di Bayes
+:PROPERTIES:
+:ID:       0fc485d4-405d-4cfa-8982-d367b6960bf1
+:END:
+
+* Statistica
+:PROPERTIES:
+:ID:       47122446-b7b2-43d6-8286-3e88fb76cd42
+:END:
+
+* 1 Linked References
+** [[file:Universita.org][UNIVERSITA' ➦]]
+***** TODO EPS
+*** TODO EPS

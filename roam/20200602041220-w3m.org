@@ -1,0 +1,16 @@
+#+TITLE: w3m
+:tech:
+A [[file:20200530210833-emacs.org][Emacs]] package, pager for web browsing in-text-editor
+[[https://www.emacswiki.org/emacs/emacs-w3m][wiki]] | [[https://github.com/emacs-w3m/emacs-w3m][github]] | [[https://github.com/emacs-w3m/emacs-w3m][sourceforge]]
+
+
+* faster browsing
+
+* less distracting
+
+* integration with wiki and doc support for coding
+
+* customization
+
+* keybindings
+
