@@ -1,6 +1,7 @@
 #+TITLE: Linguaggi Formali e Traduttori
 #+COURSE: LFT A
 #+TEACHER: Sproston Jeremy
+#+STARTUP: latexpreview
 {[#Learning]}
 
 Informazioni varie del Corso:
@@ -88,16 +89,11 @@ La visione del programma passa da "carattere per carattere" a "token per token"
 Deterministico: lo stato in cui si sposta e' univocamente determinato dallo stato corrente e dal input
 
 Quintupla composta da:
-1. Q - insieme finito di stati
-2. Sigma - alfabeto riconosciuto
-3. Delta - funzione di transizione
-4. q0 - e' lo stato iniziale
-5. F - insieme di stati finali
-\(Q\)
-\(Sigma\)
-\(delta\)
-\(q_{0}\)
-\(F\)
+1. \(Q\) - insieme finito di stati
+2. \(Sigma\) - alfabeto riconosciuto
+3. \(delta\) - funzione di transizione
+4. \(q_{0}\) - e' lo stato iniziale
+5. \(F\) - insieme di stati finali
 
 ** Funzione di transizione estesa
 :PROPERTIES:
@@ -137,11 +133,11 @@ Se alla fine della stringa l'automa si trova in uno =stato finale= l'output sara
 Non deterministico: l'automa puo' scegliere di spostarsi in 0 o piu' stati possibili
 - Il codominio della funzione di transizione e' l'insieme delle parti degli stati Q
 Quintupla composta da:
-1. Q - insieme finito di stati
-2. Sigma - alfabeto riconosciuto
-3. Delta - funzione di transizione il cui codominio e' un'insieme delle parti di Q
-4. q0 - e' lo stato iniziale
-5. F - insieme di stati finali
+1. \(Q\) - insieme finito di stati
+2. \(\Sigma\) - alfabeto riconosciuto
+3. \(\delta\) - funzione di transizione il cui codominio e' un'insieme delle parti di Q
+4. \(q_0\) - e' lo stato iniziale
+5. \(F\) - insieme di stati finali
 
    Insiemi singoletto indicano transizioni deterministiche (da funzione di transizione estesa)ilon-transizioni
    Automi che possono eseguire transizioni spontanee senza leggere alcun simbolo nella stringa da riconoscere
@@ -170,7 +166,7 @@ Dato un eNFA E esiste un DFA D tale che L(D) = L(E)
 :ID:       8ab92266-bef4-42b1-a99e-24e08426cb0a
 :END:
 
-Da NFA a DFA sono possibili ~fino~ a 2^n stati
+Da NFA a DFA sono possibili ~fino~ a \(2^n\) stati
 
 Da un DFA con piu' stati finali e' possibile ricavare un e-NFA equivalente con un unico stato finale
 
@@ -186,7 +182,7 @@ L(E)
 Definito per induzione
 
 L(0) = 0
-L(epsilon) = {epsilon} // la stringa vuoto
+L(epsilon) = {epsilon} // la stringa vuota
 L(a) = {a}
 L(E+F) = L(E) U L(F)
 L(EF) = L(E)L(F)

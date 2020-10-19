@@ -378,7 +378,7 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
 :END:
 Componente del OS: =CPU Scheduler=
 - Sceglie processi in coda di ready
-- si attiva ogni 50/100 msecondi
+- si attiva ogni 50/100 secondi
   - crea ~overhead~
 
 ** Processi
@@ -941,16 +941,134 @@ Code multilivello con retroazione
         +
       - OS possono relegare un processo particolare ad un unico core per questo motivo
 
+
+
+*** Esempi di Scheduling
+
+*** Solaris
+    - Scheduling a code multiple con retroazioine
+      1. real time
+      2. sistema
+      3. interattiva
+        - 60 livelli di prioritá - 50-59
+      4. timesharing
+        - 60 livelli di prioritá - 0-40
+
+    Di norma i processi nascono nella classe _timesharing_
+    I processi seguono prioritá formattate cosí:
+    | Priority | Quantum[m/s] | New priority (exhausted quantum) | New priority (unexhausted) |
+    |        0 |          200 |                                0 |                         50 |
+    |      ... |          ... |                              ... |                        ... |
+    |       59 |           20 |                               49 |                         59 |
+
+    I processi possono essere promossi o meno in base al quanto che hanno sfruttato
+    - maggiore é la prioritá maggiore é la probabilitá che verrá scelto per l'esecuzione al prossimo ciclo ma minore sará il quanto a lui assegnato dal OS
+    Processi di sistema e real time hanno prioritá fissa, maggiore di interattiva e time sharing
+    - lo scheduler calcola la prioritá globale di un processo
+      + prioritá == si usa RR
+      + algoritmo preemptive
+
+*** Windows
+    Prioritá con retroazione e prelazione
+    - 32 livelli
+      + real time - 16-31
+      + altri - 1-15
+
+    Lo scheduler sceglie il processo a prioritá piú alta
+    - se il processo va in wait
+      + viene alzata la sua prioritá
+        - dipendentemente dalla tipologia del wait
+          + se é atteso un dato dal disco l'aumento é minore
+    - in caso di prioritá uguale é utilizzato il RR
+      + se il quanto viene esaurito la sua prioritá é abbassata
+        - limite 1
+    Favorisce i processi che interagiscono con mouse e tastiera
+    Inoltre W distingue tra background e foreground
+    - il processo foreground ottiene 3 volte l'aumento del quanto di tempo che gli altri processi
+
+*** Linux
+    Completely Fair Scheduler =CFS=
+    Cerca di distribuire a tutti i processi equamente il tempo di CPU
+
+    Ad ogni context switch lo scheduler calcola il quanto tempo che spetta ad un processo P in modo che tutti i processi abbiamno avuto la stessa quantitá di tempo di CPU
+    - P.vruntime = P.expected_run_time - P.due_cputime
+      - CPU data al processo con P.vruntime piú basso
+        - CPU-use minore
+    - i processi ready-to-run sono nodi di un albero di ricerca bilanciato: =red-black tree= o R-B tree
+      + permette operazioni molto efficienti
+        - O(logx)
+      + i nodi sono inseriti con la chiave del P.vruntime
+        - il nodo piú a sinistra sará quello scelto dallo scheduler
+
+
 ** Sincronizzazione
-:PROPERTIES:
-:ID:       cbb0046d-7bdd-485e-ba7b-2727311e923b
-:END:
+    I processi possono cooperare, perció dovranno condividere dei dati
+    - é necessario evitare la creazione di ~dati inconsistenti~
+
+    Devono sincronizzarsi
+    ~Problema~
+    - mentre P1 elabora dati che verranno usati da P2 viene rimosso dall'esecuzione
+      + P2 non dovrá lavorare sui dati incompleti lasciati da P1
+
+    - esempio
+      + produttore - consumatore
+        - utilizzata variabile condivisa buffer/counter (buffer circolare)
+          - se produttore esegue counter++ 'mentre' consumatore esegue counter--
+
+            + questo puó verificarsi perché quella eseguita non é una operazione ~atomica~, non utilizzano una sola istruzione ISA a livello di architettura
+
+    La sincronizzazione é un problema solamente se si effettuano scritture su memoria condivisa
+    - le operazioni da sincronizzare devo concludersi completamente e non essere interrotte dallo scheduler per passare al processo sincronizzato dati consistenti
+    Va sviluppato un protocollo usato dai processi che vanno ad usare variabili condivise
+    Il codice sará strutturato in questo modo:
+                    =entry section=
+      - richiesta di entrare nella sezione critica
+                   =sezione critica=
+                     =exit section=
+      + segnalazione di uscita dalla sezione critica
+
+    Una soluzione al problema avrá queste proprietá
+    - Mutua Esclusivitá
+      + mai ci saranno conflitti di accesso
+    - Progresso
+      + se la sezione critica non sta venendo eseguita allora un processo in futura ne avrá accesso
+      + questo garantisce l'assenza di =deadlock=
+    - Attesa Limitata
+      - qualsiasi processo che richiede di accedere alla sua sezione critica non soffrirá di =starvation=
+      - evitare attese infinite
+
+    Una soluzione corretta deve permettere ai processi di computare indipendentemente dalla loro velocitá
+    - non deve dipendere dallo scheduling del sistema
+
+
+*** Sezione Critica
+    Zona del codice di manipolazione delle variabili condivise, non deve ~intrecciarsi~ co altre sezioni critiche
+    - se un processo \(P_i\) sta eseguendo una sua sezione critica allora altri processi \(P_j\) non possono eseguire la propria
+    - L'esecuzione della sezione critica di un \(P_i\) é mutualmente esclusivo con l'esecuzione delle sezioni critiche di altri \(P_j\)
+      - anche se interrotto dalla scheduler nessun altro processo maniplante
+
+
+**** Nel Sistema Operativo
+    - accesso contemporaneo alla tabella dei file aperti
+    - uso contemporaneo della fork
+      + devono avere diversi PID
+    In un sistema operativo il problema é risolto con una scelta
+    - kernel con diritto di prelazione
+      - un processo in kernel-mode puó essere interrotto da un altro processo
+      - migliore per un sistema per applicazioni real-time
+        + minore tempo di risposta
+    - kernel senza diritto di prelazione
+      - in kernel-mode un processo non puó essere interrotto
+      - implementazione semplice: _disattivazione degli interrupt_
+      - un solo processo alla volta puó accedere alle strutture dati dei kernel
+        - accesso in modo esclusivo al codice della System Call
 
 ** Deadlock
 :PROPERTIES:
 :ID:       49b4593a-e6bb-4ee4-8767-e80927276eb0
 :END:
 Programma A aspetta informazione dal Programma B che aspetta...
+
 
 * Gestione Memoria
 :PROPERTIES:
@@ -997,27 +1115,7 @@ Programma A aspetta informazione dal Programma B che aspetta...
 :ID:       34e88cef-e568-4703-8000-25581d8accaa
 :END:
 * Laboratorio
-:PROPERTIES:
-:ID:       839f9ac8-0c35-42ed-8637-bacdc1c6097b
-:END:
 
 ** {[C]}
-:PROPERTIES:
-:ID:       699ed75e-a73e-4d3b-8352-18207b75b7c3
-:END:
 
 ** {[Unix]}
-:PROPERTIES:
-:ID:       4a615b73-5e08-4bf6-b59e-569979d165f5
-:END:
-
-* 3 Linked References
-** [[file:Universita.org][UNIVERSITA' ➦]]
-***** TODO SO
-*** TODO SO
-
-** [[file:20200929150429-c.org][C ➦]]
-4. Operating System
-
-Il C nasce come linguaggio per lo sviluppo del OS  Unix
-

@@ -134,8 +134,24 @@ A Brief History of Tomorrow
     The life-span of humans hasn't changed, we got better at preventing premature death
 
 *** On immortality
+:PROPERTIES:
+:NOTER_DOCUMENT: /home/dan/Dropbox/Books/EBooks/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.epub
+:NOTER_PAGE: (6 . 8757)
+:END:
 - [[file:20200531055420-quotes.org][cit]]
     I don't want to achieve immortality through my work. I want to achieve it by not dying. ~ Woody Allen
+
+Questa e' una nota.
+
+
+
+Ciao
+
+
+Un altra nota.
+
+
+
 * The Conquest
 
 * The Meaning

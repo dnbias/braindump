@@ -45,7 +45,7 @@ CLOSED: [2020-07-16 Thu 01:24]
 
 * Tasks
 ** NEXT Impostare e Rifinite org-agenda
-*** TODO Impostare keybindings per varie azioni
+*** DONE Impostare keybindings per varie azioni
 CLOSED: [2020-06-02 Tue 16:23] SCHEDULED: <2020-05-31 Sun 21:30>
 
 ** :CODING:

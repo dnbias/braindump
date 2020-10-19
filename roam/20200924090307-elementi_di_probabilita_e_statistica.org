@@ -1,6 +1,7 @@
 #+TITLE: Elementi di Probabilita' e Statistica
 #+PROF:Roberta Sirovich
-{[#Learning]}
+#+STARTUP: latexpreview
+#+OPTIONS: tex:dvipng
 
 + r-project.org
 + Editor: r-studio
@@ -216,33 +217,15 @@ Probabilita' dello spazio campionario vale 1
 
 
 *** Probabilita' Condizionata
-:PROPERTIES:
-:ID:       005635cb-e54d-4229-ba86-f19812b91a5b
-:END:
 Misura che permette di calcolare probabilita' in condizioni di informazione parziale
 - Prende in considerazione informazioni
 
 **** regola della moltiplicazione
-:PROPERTIES:
-:ID:       b9e6017b-4993-4b4c-8e6e-4ff0531cbe87
-:END:
 
 **** Formula delle probabilita' totali
-:PROPERTIES:
-:ID:       cdbce793-98d0-4d5b-9991-d1b092776fd8
-:END:
 
 **** Formula di Bayes
-:PROPERTIES:
-:ID:       0fc485d4-405d-4cfa-8982-d367b6960bf1
-:END:
+$P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
+
 
 * Statistica
-:PROPERTIES:
-:ID:       47122446-b7b2-43d6-8286-3e88fb76cd42
-:END:
-
-* 1 Linked References
-** [[file:Universita.org][UNIVERSITA' ➦]]
-***** TODO EPS
-*** TODO EPS
