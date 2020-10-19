@@ -1,13 +1,10 @@
 #+TITLE: Sistemi Operativi
-#+COURSE: Sistemi Operativi A
+#+COURSE: SO A
 #+PROF: Davide Gunetti ~ Daniele.Gunetti@unito.it
 #+STARTUP: latexpreview
-{[#Learning]}
+[[file:20201016001635-universita.org][#universitá]]
 
 * Generalita'
-:PROPERTIES:
-:ID:       393cc1a9-e7ae-4742-8405-1c681a9a8122
-:END:
 2 obiettivi di un OS:
 - utente: rendere il sistema semplice
 - macchina: rendere il sistema efficente e sicuro
@@ -56,7 +53,7 @@ gestisce
 :ID:       0889cadd-77a8-4b60-9817-8811456b9933
 :END:
 **** puo' essere chiamato in causa dai programmi
-:PROPERTIES:
+        :PROPERTIES:
 :ID:       98593566-3de2-4cb9-88c0-dafc002bed8a
 :END:
 *** puo' controllare che tutto sia in ordine
@@ -373,9 +370,6 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
 - OS di Rete e OS distribuiti
 
 * Gestione Processi, Sincronizzazione
-:PROPERTIES:
-:ID:       e493876a-4336-47a3-82dd-c448e4ed5abb
-:END:
 Componente del OS: =CPU Scheduler=
 - Sceglie processi in coda di ready
 - si attiva ogni 50/100 msecondi
@@ -953,9 +947,6 @@ Code multilivello con retroazione
 Programma A aspetta informazione dal Programma B che aspetta...
 
 * Gestione Memoria
-:PROPERTIES:
-:ID:       0a3682db-5e94-49f0-a527-41f2b302edf3
-:END:
 
 ** Centrale
 :PROPERTIES:
@@ -968,9 +959,6 @@ Programma A aspetta informazione dal Programma B che aspetta...
 :END:
 
 * Gestione Memoria di massa
-:PROPERTIES:
-:ID:       cff9834f-127c-47c4-8c85-c1f69b1195d3
-:END:
 
 ** Rigidi
 :PROPERTIES:
@@ -997,27 +985,7 @@ Programma A aspetta informazione dal Programma B che aspetta...
 :ID:       34e88cef-e568-4703-8000-25581d8accaa
 :END:
 * Laboratorio
-:PROPERTIES:
-:ID:       839f9ac8-0c35-42ed-8637-bacdc1c6097b
-:END:
 
-** {[C]}
-:PROPERTIES:
-:ID:       699ed75e-a73e-4d3b-8352-18207b75b7c3
-:END:
+** [[file:20200929150429-c.org][C]]
 
-** {[Unix]}
-:PROPERTIES:
-:ID:       4a615b73-5e08-4bf6-b59e-569979d165f5
-:END:
-
-* 3 Linked References
-** [[file:Universita.org][UNIVERSITA' ➦]]
-***** TODO SO
-*** TODO SO
-
-** [[file:20200929150429-c.org][C ➦]]
-4. Operating System
-
-Il C nasce come linguaggio per lo sviluppo del OS  Unix
-
+** [[file:20200929150510-unix.org][Unix]]

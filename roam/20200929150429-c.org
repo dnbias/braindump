@@ -1,14 +1,16 @@
 #+TITLE: C
+[[file:20201016001635-universita.org][#universitá]]
+
 Gerarchia Elaboratore
-1. {[Circuiti Combinatori][Digital Logic]}
-2. {[Mic-1][Microarchitecture]}
-3. {[ISA][Instruction Set Architecture]}
-4. {[Sistemi Operativi » Generalita'][Operating System]}
+1. Digital Logic
+2. Microarchitecture
+3. Instruction Set Architecture
+4. Operating System
 5. Assembly
 6. High Level Language
 
 
-Processo da file sorgente a eseguibile: vedi {[Compilazione e Linking]}
+Processo da file sorgente a eseguibile: vedi [[file:20200929151438-compilazione_e_linking.org][Compilazione e Linking]]
 1. Pre-processing ~ .c
 2. Compilazione   ~ .s
    da qui il linguaggio diventa =architecture specific=
@@ -24,7 +26,7 @@ Gnu Compiler Collection - gcc
   - -E ferma dopo il pre-processore
     - stampa in standard output
 
-Il C nasce come linguaggio per lo sviluppo del {[Sistemi Operativi » Generalita'][OS]}  Unix
+Il C nasce come linguaggio per lo sviluppo del [[file:20200923141318-so.org][OS]] Unix
 Il C e' un linguaggio tipato, ogni valore deve essere di un determinato =tipo=
 
 
