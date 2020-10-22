@@ -1,5 +1,5 @@
 #+TITLE: C
-[[file:20201016001635-universita.org][#universitá]]
+[[file:#universita.org][#universitá]]
 
 Gerarchia Elaboratore
 1. Digital Logic

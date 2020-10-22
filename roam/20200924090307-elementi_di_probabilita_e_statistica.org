@@ -2,7 +2,7 @@
 #+COURSE: EPS A
 #+PROF:Roberta Sirovich
 #+STARTUP: latexpreview
-[[file:20201016001635-universita.org][#universitá]]
+[[file:#universita.org][#universitá]]
 
 + r-project.org
 + Editor: r-studio
