@@ -227,22 +227,20 @@ Non esistendo tipo Boolean:
 ~es~ funzione che non restituisce valore
 
 ** *
-:PROPERTIES:
-:ID:       48d68da6-e12c-4b82-b0ee-2cc8c8336264
-:END:
 tipo puntatore
 
 *** SEGV
-:PROPERTIES:
-:ID:       a04507e5-69aa-4a28-a668-083dd6972d87
-:END:
 Segmentation Fault
 - Puntatore non inizializzato non e' definito correttamente e punta a un'area di memoria protetta
 
+** enum
+    tipo enumerativo
+    Permette di specificare valori opzionali
+    - enum nome { valore= =indicedipartenza= [, valore]* }
+    Assegna un indice ad ogni valore, si puó anche specificare l'indice di partenza
+    Possibile definire un enumerazione per false, true
+
 * Funzioni
-:PROPERTIES:
-:ID:       a3d32f31-1967-4e28-b785-3831773ac32d
-:END:
 
 ** printf(char *format,...)
 :PROPERTIES:
@@ -273,9 +271,6 @@ Utilizzando la ~scanf~ con il formato %s si leggono dallo stdin parole, ignorand
 restituisce un int(4 byte) per trattare altri casi oltre ai caratteri(1 byte)
 
 * Strutture Dati
-:PROPERTIES:
-:ID:       b4435c29-aa90-40f0-a79b-2d7fe6915926
-:END:
 
 ** array []
 :PROPERTIES:
@@ -298,10 +293,36 @@ char *weekdays[] = {"Mon", "Tue", "Wen", "Tue", "Fri"}; // un puntatore ad un pu
   dimensione del puntatore
   - il problema si puó risolvere passando un altro argomento n numero di argomenti
 ** struct
-:PROPERTIES:
-:ID:       39c10a32-9116-4732-9d13-8d0dff25d303
-:END:
-Raggruppa dati di natura diversa
+    Raggruppa dati di natura diversa
+    - etichetta
+      + non obbligatoria
+    - campi
+      + a cui si accede con =a.x=
+    A differenza dagli array posso assegnare tra loro le strutture definite utilizzando la stessa etichetta
+    Il _nome_ della struttura é interpretato come il _valore della struttura in memoria_. Questo tranne che nel caso sia lvalue in caso di assegnamento
+    Infatti gli struct sono passati per valore, sempre a differenza degli array che vengono passati per riferimento
+    - ogni volta che una struct sono passate o restituite vengono fatte _copie dei dati poste sullo stack_ che vengono poi perse alla fine delle funzioni
+      + spesso allora si passano per riferimento con =void funzione(struct point *a)=
+        - cambia la sintassi utilizzando =a->x= per indicare il campo da modificare
+          + concide con il deferenziamento: =(*a).x=
+    sizeof()
+        - accetta anche le struct
+        - spesso non coincide con le dimensioni dei suoi campi
+          + questo per i vincoli di allineamento
+** typedef
+    typedef =tipobase= =tipodefinito=
+
+    Su questi tipi _non viene attuato un controllo stretto_ da parte del compilatore
+
+    #+begin_src c
+    typedef enum { FALSE, TRUE } boolean;
+    #+end_src
+
+* Ridirigere lo standard input
+    programma < fileInput.txt
+    Per utilizzare un file come stream di dati per
+    - scanf
+    - getchar
 
 * 3 Linked References
 ** [[file:SO.org][Sistemi Operativi ➦]]

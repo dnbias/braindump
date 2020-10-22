@@ -1,6 +1,7 @@
 #+TITLE: Linguaggi Formali e Traduttori
 #+COURSE: LFT A
 #+TEACHER: Sproston Jeremy
+#+startup: latexpreview
 [[file:20201016001635-universita.org][#universitá]]
 
 
@@ -141,25 +142,25 @@ L(E*) = L(E)*   // chiusura di Kleene
 'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
 
 *** Chiusura #dim
-*** \(L\cup L^{'}\)
+- \(L\cup L^{'}\)
 + Dati \(E_{1}\) e \(E_{2}\)
   - Si dimostra che \(E_{1}+E{_2}\) genera \(L\cupL^{'}\)
   - Essendo quella ancora un'espressione regolare anche il linguaggio generato sará regolare
-*** \(LL^{'}\)
+- \(LL^{'}\)
 + Simile all'unione
-*** \(not{L}\)
+- \(not{L}\)
 + \(not{L}= \Sigma^{*}-L\)
 + si crea un automa \(B = (Q,\Sigma,\delta,q_{0},Q-F)\)
   - abbiamo complementato l'insieme degli stati finali
-*** i\(L\cap L^{'}\)
+- i\(L\cap L^{'}\)
 + Si utilizzano le leggi di De Morgan
   - ci si riconduce al caso dell'unione e della complementazione
 + O si construisce un automa \(B\) che riconosce una simulazione dei due automi iniziali \(A_1\) e \(A_2\)
-*** \(L -L^{'}\)
+- \(L -L^{'}\)
 + \(L_1 - L_2 = L_1 \cap notL_2\)
-*** \(L^{R}\)
-+ L rovesciato
-+ Si ricava un \(E^R\) per induzione
+- \(L^{R}
+  - L rovesciato
+- Si ricava un \(E^R\) per induzione
   \(\o^R=\o\)
   \(\epsilon^R=\epsilon\)
   \(a^R=a\)
@@ -180,18 +181,18 @@ Per ogni linguaggio regolare \(L\) esiste \(n\) appartenente a \(N\) tale che pe
    * Esempio
      + \(L=\{a^kb^k \mid k >= 0\}\) non é regolare
 **** dim
-*** \(L\) regolare
-*** \(A = (Q,\Sigma,\delta,q_0,F)\) tc \(L=L(A)\)
-*** \(n=|Q|\)
-*** \(|w|>=n\) tc \(w=a_1a_2...a_m\) con \(m>=n\)
-*** Dopo \(m\) passaggi lo stato \(q_m\) deve essere finale per definizione
-*** Il numero di stati attraversati sará \(m+1\)
-*** \(m>=n\) implica \(m+1>n\) quindi gli stati attraversati non possono essere tutti distinti
-*** \(q_i =q_j\) e \(i<j\) é il primo stato che si ripete nel cammino dell'automa
+- \(L\) regolare
+- \(A = (Q,\Sigma,\delta,q_0,F)\) tc \(L=L(A)\)
+- \(n=|Q|\)
+- \(|w|>=n\) tc \(w=a_1a_2...a_m\) con \(m>=n\)
+- Dopo \(m\) passaggi lo stato \(q_m\) deve essere finale per definizione
+- Il numero di stati attraversati sará \(m+1\)
+- \(m>=n\) implica \(m+1>n\) quindi gli stati attraversati non possono essere tutti distinti
+- \(q_i =q_j\) e \(i<j\) é il primo stato che si ripete nel cammino dell'automa
 Allora concludiamo identificando \(x,y,z\)
-*** \(x=a_1a_2...a_i\)
-*** \(y=a_{i+1}a_{i+2}...a_j\)
-*** \(z=a_{j+1}a_{j+2}...a_m\)
+- \(x=a_1a_2...a_i\)
+- \(y=a_{i+1}a_{i+2}...a_j\)
+- \(z=a_{j+1}a_{j+2}...a_m\)
 1. \(y!=\epsilon\) in quanto \(i<j\)
 2. \(|xy|<=n\) in quanto \(q_i=q_j\) é il primo stato che si ripete e sono al massimo \(n+1\)
 3. \(xy^kz\) appartiene a \(L\) per ogni \(k>=0\)
