@@ -1,13 +1,10 @@
 #+TITLE: Sistemi Operativi
-#+COURSE: Sistemi Operativi A
+#+COURSE: SO A
 #+PROF: Davide Gunetti ~ Daniele.Gunetti@unito.it
 #+STARTUP: latexpreview
-{[#Learning]}
+[[file:20201016001635-universita.org][#universitá]]
 
 * Generalita'
-:PROPERTIES:
-:ID:       393cc1a9-e7ae-4742-8405-1c681a9a8122
-:END:
 2 obiettivi di un OS:
 - utente: rendere il sistema semplice
 - macchina: rendere il sistema efficente e sicuro
@@ -56,7 +53,7 @@ gestisce
 :ID:       0889cadd-77a8-4b60-9817-8811456b9933
 :END:
 **** puo' essere chiamato in causa dai programmi
-:PROPERTIES:
+        :PROPERTIES:
 :ID:       98593566-3de2-4cb9-88c0-dafc002bed8a
 :END:
 *** puo' controllare che tutto sia in ordine
@@ -373,9 +370,6 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
 - OS di Rete e OS distribuiti
 
 * Gestione Processi, Sincronizzazione
-:PROPERTIES:
-:ID:       e493876a-4336-47a3-82dd-c448e4ed5abb
-:END:
 Componente del OS: =CPU Scheduler=
 - Sceglie processi in coda di ready
 - si attiva ogni 50/100 secondi
@@ -1063,6 +1057,135 @@ Code multilivello con retroazione
       - un solo processo alla volta puó accedere alle strutture dati dei kernel
         - accesso in modo esclusivo al codice della System Call
 
+    Soluzione:
+    - istruzioni macchina particolari
+      + TestAndSet(v)
+        #+begin_src C
+boolean TestAndSet(boolean *lockvar){
+    boolean tempvar = *lockvar;
+    *lockvar = true;
+    return tempvar;
+}
+        #+end_src
+        Poi usata cosí
+        #+begin_src C
+boolean lock = false; // shared var
+do{
+    while(TestAndSet(&lock)); // while senza corpo
+    //sezione critica            qui la variabile di lock == true
+    lock = false;             // quando l'altro processo eseguirá il ciclo passerá il test
+} while(true);
+        #+end_src
+        - In questo modo se un altro processo che testa lock resterá nel while in quanto _while(&lock) == while(true)_
+        - l'_Attesa Limitata_ non é garantita
+          - un processo potrebbe uscire dalla sezione critica e rientrarci nello stesso quanto di tempo
+          - un meccanismo di aging non serva in quanto i processi entrano in esecuzione solamente che non riescono ad eseguire
+          - puó essere implementata con una versione piú complessa
+        - _Busy Waiting_:
+          + il processo che tenta di accedere ad un lock fa busy-waiting
+            - in quanto cicla in base ad una variabile che é modificabile sola da un altro processo
+              + con un RR:
+                - con \(N\) processi lo spreco di tempo di CPU sará \(N-1\) quanti di tempo
+            - risolvibile con la disattivazione degli interrupt
+              + perdita di controllo per un tempo arbitrario del OS
+              + ci si deve fidare che il processo riabiliterá gli interrupt
+      + Swap(\(v1\),\(v2\))
+
+    Queste sono istruzioni macchina e quindi _atomiche_, non saranno mai interrotte a metá da un context switch
+    I passi sono:
+    - il processo tenta di accedere al lock
+    - esegue la sezione critica
+    - restituisce il lock
+
+    ~NB~ La mutua esclusione in sistemi multi-core é piú complessa
+
+
+***** Semafori
+    Dijkstra - 1965
+    Semaforo \(S\): variabile strutturata operabile tramite operazioni atomiche:
+    - wait(S) ALIAS: P, down
+      #+begin_src C
+while S <= 0 do no-op;
+S= S-1;
+      #+end_src
+    - signal(S) ALIAS: V, up
+      #+begin_src C
+S =S+1;
+      #+end_src
+
+      \(S\) é detta variabile semaforica, come se fosse un oggetto condiviso da tutti i processi per la sincronizzazione
+
+    La variabile la chiameremo _mutex_ (mutual exclusion)
+    #+begin_src C
+P {
+    do{
+        wait(mutex);
+        // sezione critica
+        signal(mutex);
+    } while(true);
+}
+    #+end_src
+
+=sync=
+    #+begin_src C
+sync = 0;
+P1{
+    S1;
+    signal(sync);
+}
+P2{
+    wait(sync);
+    S2;
+}
+    #+end_src
+
+Questo tipo di semafori soffre ancora di busywaiting, sono chiamati _spinlock_
+Soluzione implementata utilizzando System Call
+- lista di semafori memorizzata nelle aree dati del kernel
+- System Call
+  + sleep() ALIAS: block()
+    - toglie il processo dall'esecuzione
+      + non viene inserito nella Ready Queue
+  + wakeup()
+    - rimette il processo in Ready Queue
+- implementazione
+  #+begin_src C
+typedef struct{
+    int valore; // se > 0 indica sezione critica libera
+    struct process *waiting_list;
+}semaforo;
+
+wait(semaforo *S){
+    S->valore--;
+    if S->valore < 0 {
+            // aggiunto processo a S in waiting_list
+            sleep(); // il processo si é addormentato sul semaforo
+    }
+}
+
+signal(semaforo *S) {
+    S->valore++
+    if S -> valore <= 0 {
+            // togli un processo P da S -> waiting_list
+            wakeup(P); // risvegliato P, va in Ready Queue
+    }
+}
+  #+end_src
+
+- NB
+  - wait e signal sono _esse stesse sezioni critiche_ perché usano le stesse aree dati
+    - risolvibile con una interruzione di interrupt o con busywaiting perché queste sono System Call e molto brevi
+      + interruzione degli interrupt in multiprocessori non ovvio: sono disattivati solo su un particolare core
+
+  - \(|mutex|\) = numero di processi addormentati
+    - una S < 0 indica (in valore assoluto) il numero di processi addormentati su quel semaforo
+      + se mutex = 1 allora \(P_1\) entra e \(mutex = 0\), context switch
+      + un \(P_2\) testa mutex, \(mutex = -1\), \(P_2\) si addormenta
+
+  - Utilizzabile un valore di semafori > 1 allora una risorsa é utilizzabile da 3 P contemporaneamente
+
+  I semafori se utilizzati non correttamente possono provocare _deadlock_ e _starvation_
+
 ** Deadlock
 :PROPERTIES:
 :ID:       49b4593a-e6bb-4ee4-8767-e80927276eb0
@@ -1071,9 +1194,6 @@ Programma A aspetta informazione dal Programma B che aspetta...
 
 
 * Gestione Memoria
-:PROPERTIES:
-:ID:       0a3682db-5e94-49f0-a527-41f2b302edf3
-:END:
 
 ** Centrale
 :PROPERTIES:
@@ -1086,9 +1206,6 @@ Programma A aspetta informazione dal Programma B che aspetta...
 :END:
 
 * Gestione Memoria di massa
-:PROPERTIES:
-:ID:       cff9834f-127c-47c4-8c85-c1f69b1195d3
-:END:
 
 ** Rigidi
 :PROPERTIES:
@@ -1116,6 +1233,6 @@ Programma A aspetta informazione dal Programma B che aspetta...
 :END:
 * Laboratorio
 
-** {[C]}
+** [[file:20200929150429-c.org][C]]
 
-** {[Unix]}
+** [[file:20200929150510-unix.org][Unix]]
