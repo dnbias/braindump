@@ -2,7 +2,11 @@
 #+COURSE: EPS A
 #+PROF:Roberta Sirovich
 #+STARTUP: latexpreview
+<<<<<<< HEAD
 [[file:20201016001635-universita.org][#universitá]]
+=======
+[[file:#universita.org][#universitá]]
+>>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 + r-project.org
 + Editor: r-studio
@@ -121,7 +125,10 @@ Misura che permette di calcolare probabilita' in condizioni di informazione parz
 **** Formula delle probabilita' totali
 
 **** Formula di Bayes
+<<<<<<< HEAD
 $P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
+=======
+>>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 **** Eventi indipendenti
     ~NB~ l'indipendenza é una proprietá delle probabilitá, non degli eventi: dipende dalle misure

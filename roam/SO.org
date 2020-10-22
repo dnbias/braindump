@@ -2,7 +2,11 @@
 #+COURSE: SO A
 #+PROF: Davide Gunetti ~ Daniele.Gunetti@unito.it
 #+STARTUP: latexpreview
+<<<<<<< HEAD
 [[file:20201016001635-universita.org][#universitá]]
+=======
+[[file:#universita.org][#universitá]]
+>>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 * Generalita'
 2 obiettivi di un OS:
@@ -14,26 +18,14 @@
 - Controlla l'esecuzione dei processi per evitare pericoli
 
 ** Confine OS - Software
-:PROPERTIES:
-:ID:       73da72ee-b462-4455-b07c-d95e6d140d98
-:END:
 
 *** GUI all'inizio non parte del OS
-:PROPERTIES:
-:ID:       86321335-e07d-42be-8b4c-c75243db189b
-:END:
 Con Windows viene integrata
 
 *** Comandi Shell
-:PROPERTIES:
-:ID:       565de967-e6ea-43ea-bce1-2be8048332b7
-:END:
 La shell non e' parte OS in Unix
 
 ** Kernel
-:PROPERTIES:
-:ID:       ff74168f-8b04-4006-a012-9e1cba1694cf
-:END:
 E' il cuore del PC
 gestisce
 - programmi in esecuzione
@@ -41,59 +33,32 @@ gestisce
 - memoria secondaria
 
 ** Gestione Eventi
-:PROPERTIES:
-:ID:       03683e81-732e-496c-9116-406661a15753
-:END:
 *** L'OS generalmente non sta utilizzando le risorse
-:PROPERTIES:
-:ID:       162e2361-5223-4a0f-b98e-75743b8498af
-:END:
 **** le gestisce e le fa usare ai programmi
-:PROPERTIES:
-:ID:       0889cadd-77a8-4b60-9817-8811456b9933
-:END:
 **** puo' essere chiamato in causa dai programmi
+<<<<<<< HEAD
         :PROPERTIES:
 :ID:       98593566-3de2-4cb9-88c0-dafc002bed8a
 :END:
+=======
+>>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 *** puo' controllare che tutto sia in ordine
-:PROPERTIES:
-:ID:       cffd1124-7f7e-418c-a579-f4bc63a30683
-:END:
 *** Interruzioni
-:PROPERTIES:
-:ID:       e12a35cb-0838-40bd-a88b-3813d01bf2b3
-:END:
 Evento --> OS gestisce l'evento prendendo il controllo della macchina
 - una volta gestito e' restituito il controllo ad uno dei programmi che stavano girando prima dell'evento
 *** Interrupt
-:PROPERTIES:
-:ID:       e6049abb-132a-4613-8871-1b897f7050bc
-:END:
 natura hardware
 - segnali che richiedono intervento OS
 *** Eccezioni
-:PROPERTIES:
-:ID:       587c35a9-1d94-4e60-9711-dc1df42275ae
-:END:
 natura software
 - causate dal' programma in esecuzione
   divese in
 **** Trap
-:PROPERTIES:
-:ID:       a8374c25-f147-4d4e-bffb-c123b1aa463e
-:END:
 tentata divisione per 0
 tentato accesso ad area protetta
 **** System Call
-:PROPERTIES:
-:ID:       a385114c-502c-4443-983f-60ee68d3e005
-:END:
 richiesta di eseguire un operazione su un file
 *** CPU segue dei passi predefiniti a livello hardware
-:PROPERTIES:
-:ID:       d635e0b5-3feb-4642-9f3b-de131191e5f3
-:END:
 - Salva lo stato della computazione
   + PC e altri valori della CPU in appositi registri
   + permette il riavvio del programma al punto di gestione evento
@@ -108,18 +73,9 @@ richiesta di eseguire un operazione su un file
   + ultima istruzione di ogni procedura di gestione
   + riprende l'esecuzione del programma precedente
 ** Struttura della Memoria
-:PROPERTIES:
-:ID:       9d5d3c2c-8c82-48f2-a790-e309c589fdef
-:END:
 *** Principale - RAM
-:PROPERTIES:
-:ID:       8ee73d41-796f-4939-a6cb-b7b855e65dea
-:END:
 La memoria indirizzata alle istruzione eseguite
 *** Secondaria - di Massa
-:PROPERTIES:
-:ID:       efa9c2e1-0229-41d8-bfac-2c767101626d
-:END:
 Risiedono qui permanentemente dati e programmi
 La gerarchia di memoria
 - le memoria sono sempre piu' veloci ma di costo maggiore
@@ -133,9 +89,6 @@ La gerarchia di memorie e' una gerarchie di =Cache= di una rispetto alla precede
 - la Cache fa da cache per la RAM
 - I Registri fanno da cache per la RAM
 ** Struttura di I/O
-:PROPERTIES:
-:ID:       035d2936-bc49-4221-8825-c5f4cfa730d1
-:END:
 CPU connessa a dispositivi di I/O
 - connessi da BUS
   Ogni dispositivo e' controllato da un =controller= hardware
@@ -161,34 +114,19 @@ CPU connessa a dispositivi di I/O
         - OS tramite driver istruisce
           + prendi blocco numero n su HD e trasferisci in RAM a partire dalla locazione di indirizzo xxxx
 ** Multitasking & Time-sharing
-:PROPERTIES:
-:ID:       be6e8ead-cb9a-4125-9e5c-529351a1fe20
-:END:
 *** Multitasking
-:PROPERTIES:
-:ID:       95cfc2ec-a334-4374-90a2-40fdf453659b
-:END:
 Mantenere in memoria principale piu' programmi insieme ai dati di questi in modo da aumentare la ~produttivita'~
 - quando un programma si ferma temporaneamente (per eseguire operazioni di I/O) l'OS ha gia' in RAM un secondo programma a cui assegnare la CPU
   + =job=
 
 *** Timesharing
-:PROPERTIES:
-:ID:       e42a9929-6852-4fcd-8a66-d40461c8b613
-:END:
 - interattivita'
 - sistemi multi utente
   In caso la CPU non abbia tempo di idle durante l'esecuzione dei programmi
   - Il tempo di CPU sara' distribuito tra gli utenti e i loro programmi
     - da' l'impressione di simultaneita' (solamente apparente)
 ** Modalita' di Funzionamento
-:PROPERTIES:
-:ID:       a583c2f6-4bf9-4c2b-aa2c-3112353da64c
-:END:
 *** Doppia Modalita'
-:PROPERTIES:
-:ID:       9b6685d8-b30d-4cc9-ab4e-82de28c8a1e2
-:END:
 - Specificata da un bit di modalita'
 - Esistono istruzioni protette che sono eseguibili solo in modalita' di sistema (quindi dall'OS)
   - i programmi utente usano le =system call= per operazioni che richiedono l'esecuzione di istruzioni privilegiate
@@ -196,26 +134,14 @@ Mantenere in memoria principale piu' programmi insieme ai dati di questi in modo
   - realizzate attraverso eccezioni che cambiano il bit di modalita'
 
 **** Normale
-:PROPERTIES:
-:ID:       2d9091e1-5fed-49d2-b915-c7c4acc60cbf
-:END:
 **** Sistema | Kernel | Monitor | Supervisor
-:PROPERTIES:
-:ID:       0e1e1e06-db42-407f-9f57-fac91f908163
-:END:
 *** Timer
-:PROPERTIES:
-:ID:       ad5fbe36-f2de-451f-8102-cd7faea52d46
-:END:
 ~for(;;)i++;~  ciclo che non termina mai
 - Per questi casi e' disponibile in CPU un Timer, dopo un certo tempo inizializzato dal OS viene inviato un =interrupt=
   - utilizzato anche in caso di Time Sharing
   - il timer e' gestito con istruzioni provilegiate
     - per evitare usi impropri malevoli
 *** Protezione della Memoria
-:PROPERTIES:
-:ID:       8ed2dc94-7db6-4693-87b5-1190b084d559
-:END:
 Evita la sovrascrittura delle aree di memoria di programmi in RAM da parte di altri programmi in esecuzione
 - Soprattutto le aree dedicate all'OS
 - Due registri in CPU
@@ -225,15 +151,9 @@ Evita la sovrascrittura delle aree di memoria di programmi in RAM da parte di al
     - se non contenuto viene generata una =Trap=
 
 ** Strutture dei Sistemi Operativi
-:PROPERTIES:
-:ID:       505c9ce1-2ff4-412d-8b6d-f6e6a63046ca
-:END:
 Livelli di complessita' e di accesso
 - alcuni sono invisibili agli utenti
 *** interfaccia col sistema operativo
-:PROPERTIES:
-:ID:       6b5ef01b-256d-4dc8-b7cb-fddf68c2adad
-:END:
 non fa parte del kernel, ma e' fornito insieme all'OS
 - interpreti di comandi | shell Unix
   - comandi == eseguibili
@@ -241,9 +161,6 @@ non fa parte del kernel, ma e' fornito insieme all'OS
   - prima diffusione commerciale - ~1984~ Macintosh
 
 *** programmi/servizi di sistema
-:PROPERTIES:
-:ID:       36bbd115-2aa8-4a12-8cf6-c72c6e81efe4
-:END:
 non fanno parte del kernel, ma forniti insieme all'OS
 rendono piu' semplice l'uso del sistema
 - editor
@@ -256,9 +173,6 @@ rendono piu' semplice l'uso del sistema
 - gestori di email
 
 *** chiamate di sistema
-:PROPERTIES:
-:ID:       cc3eac2c-189a-4038-95e0-67d1958049f6
-:END:
 processo == programma in "esecuzione"
 - un processo deve compiere una operazione privilegiata
   + System Call
@@ -281,9 +195,6 @@ processo == programma in "esecuzione"
     - fclose()
 
 *** gestione dei processi/memoria primaria/memoria secondaria
-:PROPERTIES:
-:ID:       db45c90d-ec5f-429c-a165-cb3b6604863f
-:END:
 - =Processi concorrenti=
   + Competono per
     1. CPU
@@ -311,9 +222,6 @@ processo == programma in "esecuzione"
     - memorizzazione efficiente
 
 *** protezione e sicurezza
-:PROPERTIES:
-:ID:       de5376fb-845f-4de1-9337-8e16c1699e4d
-:END:
 Ogni processo deve essere protetto dalle attivita' improprie degli altri processi
 - non deve essere possibile impadronirsi di una risorsa in modo esclusivo
 - non devono essere accessibili aree di memoria assegnate ad altri processi
@@ -326,9 +234,6 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
     - nella realta' le risorse sono condivise
 
 ** Problemi
-:PROPERTIES:
-:ID:       e19415a8-7641-4076-8c59-13696bffce16
-:END:
 
 1) tener tracciatutti i programmi attivi nel sistema
    - stanno usando la CPU
@@ -348,9 +253,6 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
    * implementare il file system
 
 ** NB
-:PROPERTIES:
-:ID:       8dd1ed06-4ffb-4855-8f47-ed541da971dc
-:END:
 - Single/Multi-Core
   + '90 CPU == singolo
     - un unico programma poteva utilizzare piu' CPU
@@ -376,9 +278,6 @@ Componente del OS: =CPU Scheduler=
   - crea ~overhead~
 
 ** Processi
-:PROPERTIES:
-:ID:       b8519801-b5ce-4b6a-8046-5841da4bbd03
-:END:
 Unita' di lavoro del OS
 - il primo ruolo del OS e' amministrare i processi
   - creazione
@@ -401,9 +300,6 @@ Unita' di lavoro del OS
 
 
 *** =Stati= di un processo
-:PROPERTIES:
-:ID:       c37e0428-729e-4b2e-9a73-b21cc96891ea
-:END:
 L'OS sposta il processo tra vari stati attraverso cui esso evolve
 - ~New~
   - Va assegnato ~Process Control Block~ e ~spazio in memoria~ necessario per il codice e i dati
@@ -423,16 +319,10 @@ L'OS sposta il processo tra vari stati attraverso cui esso evolve
   - Il processo termina
   - L'OS riprende il controllo per ripulire la memoria dall'area occupata dal processo ora terminato
 **** =diagramma= di transizione degli stati di un processo
-:PROPERTIES:
-:ID:       9f1d3f65-24a9-4ba7-bd67-5ff6805a41fb
-:END:
 - Rimuovere l'arco interrupt
   - da' il diagramma di un OS multitasking ma non time-sharing
 
 *** Process Control Block - =PCB=
-:PROPERTIES:
-:ID:       59d6e16b-3438-473f-9093-29797fbaee43
-:END:
 - Process ID
 - Stato
 - Contenuto dei registri della CPU una volta sospeso il processo
@@ -473,13 +363,7 @@ Il codice e' copiato solo concettualmente, le aree dati sono realmente duplicate
     - restituisce il process Id del parent del processo chiamante
 
 *** Operazioni su processi
-:PROPERTIES:
-:ID:       e8935469-1979-4654-a4b0-b9111a4e1b5b
-:END:
 **** Creazione
-:PROPERTIES:
-:ID:       12892a08-f7ad-4d6c-9b03-74c6a65304ee
-:END:
 - ogni OS possiede almeno una ~System Call~ di creazione
   - tutti i processi nascono da altri processi ~con l'eccezione~ di quello all'accensione del Sistema
 - nel sistema si forma un =albero di processi=
@@ -492,65 +376,29 @@ Il codice e' copiato solo concettualmente, le aree dati sono realmente duplicate
 
 #+SOURCE-START
 ***** Scelte ingenieristiche
-:PROPERTIES:
-:ID:       07810137-56cf-4a19-8e55-160d65a965f9
-:END:
 Moderni OS implementato tutte queste combinazioni nelle loro System Call
 ****** Avvio
-:PROPERTIES:
-:ID:       05df311e-8c69-46a4-8391-7e044472a963
-:END:
 ******* Processo padre continua concorrentemente al figlio - ready queue
-:PROPERTIES:
-:ID:       8e4e2aeb-c972-4cae-910c-b54db1fa7255
-:END:
 ******* Processo padre di ferma attendendo l'esecuzione del figlio - waiting queue
-:PROPERTIES:
-:ID:       57f4c81c-6bc1-4170-a1d2-a5a2fd7bcf3b
-:END:
 ****** Esecuzione
-:PROPERTIES:
-:ID:       3ccfc4ea-1993-4d7a-aa01-c1c38b3db9c3
-:END:
 ******* Fornire al figlio copia del codice padre
-:PROPERTIES:
-:ID:       fb5b50c8-f0a7-47a3-8027-c76650e57152
-:END:
 ******* Nuovo programma al figlio
-:PROPERTIES:
-:ID:       0739bbf4-f53e-414b-9402-4724ed7ee85e
-:END:
 **** Uccisione
-:PROPERTIES:
-:ID:       4f3b3ba1-fa25-4819-9276-0ead1fbd15dc
-:END:
 - kill / TerminateProcess(Win)
   - secondo PID
   - puo' avvenire se =TRAP=
 
 *** Comunicazione tra processi
-:PROPERTIES:
-:ID:       1f671a35-1ac5-48ef-929f-976d132b4bba
-:END:
 
 **** indipendenti
-:PROPERTIES:
-:ID:       76e3d90e-1ae5-46a9-b99b-76323d267c42
-:END:
 
 **** cooperanti
-:PROPERTIES:
-:ID:       f6a5c9e8-ddcd-4a36-a9fc-fbd3d6af1bda
-:END:
 si influenzano l'un l'altro
 - si scambiano informazioni
 - portano aventi una elaborazione suddivisa
   Per permettere cio' l'OS deve mettere a disposizione meccanismi appositi
 
 ***** Inter-Process Communication =IPC=
-:PROPERTIES:
-:ID:       2fb55637-106f-4f5f-aaf5-ce38c3d760ea
-:END:
 L'OS mette a diusposizione System Call volte all'implementazione di:
 - memoria condivisa
   - sovrascritto il divieto della memoria dell'altro processo
@@ -573,29 +421,14 @@ L'OS mette a diusposizione System Call volte all'implementazione di:
     - receive(message, line, PID)
 
 ****** Pipe
-:PROPERTIES:
-:ID:       c7f48a51-71f1-4d0a-827a-b1142d1186bb
-:END:
 
 ****** Client-server
-:PROPERTIES:
-:ID:       69c0adc7-e904-46d3-b360-d895b6630803
-:END:
 
 ******* Socket
-:PROPERTIES:
-:ID:       5585a0fe-e647-4776-8469-31ea5948dc2f
-:END:
 
 ******* Remote Procedure Call =RPC=
-:PROPERTIES:
-:ID:       e473d01c-ac83-4275-9c7d-885319748eaa
-:END:
 
 ***** esempio
-:PROPERTIES:
-:ID:       be74baae-ee84-4021-89f1-efb4a97d69a8
-:END:
 processo =produttore=, produce informazioni utilizzate da un processo =consumatore=
 - informazioni poste in un =buffer=
 
@@ -638,14 +471,8 @@ until false;
 #+END_SRC
 
 ** Thread
-:PROPERTIES:
-:ID:       3c327743-9e39-4e83-9f55-8dfbc0363c6e
-:END:
 
 ** Scheduling
-:PROPERTIES:
-:ID:       d2b8dd3e-3c0b-4caa-b159-b76ed17f4865
-:END:
 Presupponendo un sistema Single-core
 L'OS fa credere ai processi di avere tutta la CPU per loro
 - Process Switch/Context Switch
@@ -654,9 +481,6 @@ L'OS fa credere ai processi di avere tutta la CPU per loro
     NB: Diagramma di Gantt
 
 *** Context Switch
-:PROPERTIES:
-:ID:       d3723435-60c1-42ec-9fe9-dfd2fad44bbe
-:END:
 Passaggio da un processo in esecuzione all'altro
 =Commutazione= della CPU tra i processi
 - OS prende il controllo CPU ~ questo e' tecnicamente pure un Context Switch
@@ -666,9 +490,6 @@ Passaggio da un processo in esecuzione all'altro
   Questa operazione richiede tempo: ~overhead~ di sistema (sovraccarico)
 
 *** Code di Scheduling
-:PROPERTIES:
-:ID:       361d90c1-3ce3-4596-88ce-9dce889f2267
-:END:
 OS gestisce varie code di processi
 - una lista di =PCB=
 
@@ -681,15 +502,9 @@ OS gestisce varie code di processi
   - Code di Eventi       ~Waiting Queues~
 
 **** Diagramma di accodamento
-:PROPERTIES:
-:ID:       d9542433-800a-485b-8207-38c161a2b8a2
-:END:
 riformulazioe del diagramma di transizione prendendo in considerazione le code
 
 *** Implementazione
-:PROPERTIES:
-:ID:       ff7c38c1-1d52-4ec8-8ea0-576a7865b8e7
-:END:
 Tecniche per massimizzare la produttivita' della CPU
 - [[Multitasking]]
 - [[Time Sharing]]
@@ -704,9 +519,6 @@ Tecniche per massimizzare la produttivita' della CPU
     - un editor
 
 **** Scheduler
-:PROPERTIES:
-:ID:       06509060-bc6f-495b-a3a5-4d6ee17121c3
-:END:
 decide quale processo in coda di ready sara' eseguito quando:
 1. il processo in esecuzione passa volontariamente in stato di waiting
 2. il processo in esecuzione termina
@@ -719,26 +531,17 @@ decide quale processo in coda di ready sara' eseguito quando:
       per 1. 2. e' sufficiente un OS multitasking
 
 **** Dispatcher
-:PROPERTIES:
-:ID:       7d27355a-f979-4de8-aebd-bd0209ddad0f
-:END:
 - implementa il [[Context Switch]]
 - passa in user mode
 - ripristina il PC della CPU alla corretta locazione
 
 **** senza diritto di prelazione
-:PROPERTIES:
-:ID:       852b2a12-d611-41fa-8541-1bea62cd08a8
-:END:
 =non-preempive scheduling=
 Casi 1. e 2.
 - I processi non posso interrompere l'esecuzione di altri processi
 
   Implementazione piu' snella utilizzata per OS specifici
 **** con diritto di prelazione
-:PROPERTIES:
-:ID:       24c43c4e-f6ae-493f-a7ac-3c480a91788a
-:END:
 =preemptive scheduling=
 Casi 1. 2. 3. e 4.
 - I processi non possono eseguire a tempo indeterminato
@@ -753,9 +556,6 @@ Casi 1. 2. 3. e 4.
     - ~riabilitazione degli interrupt~
 
 **** Criteri
-:PROPERTIES:
-:ID:       d81129fd-334a-4294-9f4f-7a436de9ffd0
-:END:
 Obiettivi:
 - massimizzare =uso CPU=
 - massimizzare il =Throughput=
@@ -772,42 +572,24 @@ Obiettivi:
 ~Turnaround Time~ = WaitingT + RunningT
 
 **** Algoritmi
-:PROPERTIES:
-:ID:       244b8be7-9d4d-42af-9036-2bb209984231
-:END:
 Considerando in questo corso processi con un =unico burst di CPU= e =nessun burst di I/O=
 
 Un Algoritmo tanto é migliore quanto le sue prestazioni di avvicinano da =SJF= allontanandosi da =FCFS=
 
 ~def~
 ***** Starvation
-:PROPERTIES:
-:ID:       57dcb54a-0897-4edd-a332-a954d8460233
-:END:
 + il processo non viene mai scelto in quanto mai di prioritá
   * Aging
     + il processo aumenta di prioritá con il tempo passato in RQ
 
 ***** First Come, First Served
-:PROPERTIES:
-:ID:       9dc597a4-095a-46c5-835d-34f739bc565d
-:END:
 =FCFS=
 ***** Normale coda FIFO
-:PROPERTIES:
-:ID:       492543fd-22b5-4a0b-9793-62a51da8a5f2
-:END:
 + PCB inserito in fondo alla coda
 + CPU libera assegnata al primo PCB alla testa
 ****** Non-preemptive
-:PROPERTIES:
-:ID:       efd887fa-d3f8-4484-b0b1-4ba21c7c7a64
-:END:
 + non implementa time-sharing
 ******* Tempo di attesa elevato
-:PROPERTIES:
-:ID:       59d55a89-5111-4855-a341-8b81ef89b25c
-:END:
 + Effetto convoglio ~ accodamento job piu' corti
 
   Osservazioni
@@ -817,14 +599,8 @@ Un Algoritmo tanto é migliore quanto le sue prestazioni di avvicinano da =SJF= 
   Peggiore degli Algoritmi ragionevoli
 
 ***** Shortest Job First
-:PROPERTIES:
-:ID:       40e18ba4-80fe-47d8-9df9-f747bf759777
-:END:
 =SJF= ~ Shortest Next CPU Burst
 - Esamina la durata del prossimo burst di CPU dei processi in RQ
-:PROPERTIES:
-:ID:       0be92f22-09c8-4348-ae60-ef45d4818e51
-:END:
 - assegna la CPU al processo con burst minimo
 - Puó essere ~preemptive~ o ~non-preemptive~
   1) Preemptive - =Shortest Remaining Time First= =SRTF=
@@ -841,9 +617,6 @@ Un Algoritmo tanto é migliore quanto le sue prestazioni di avvicinano da =SJF= 
      + SJF non é implementabile
 
 ***** Priority scheduling
-:PROPERTIES:
-:ID:       5678e294-d0a9-47cf-9ab5-34c121c3c5e7
-:END:
 =PS=
 calcolo della prioritá:
 - interna al sistema
@@ -855,9 +628,6 @@ calcolo della prioritá:
 
 
 ***** Round Robin
-:PROPERTIES:
-:ID:       8ec39f51-6567-425e-80b3-eb26fd51ed0e
-:END:
 =RR=
 L'algoritmo di implementazione del time-sharing, la RQ e' utilizzata come una coda circolare
 - ogni processo ha un ~quanto di tempo~ implementato da un timer hardware che invia un interrupt allo scadere del tempo
@@ -883,9 +653,6 @@ Prestazioni dipendenti da \(q\):
 
 
 ***** Multilevel Queue
-:PROPERTIES:
-:ID:       84397559-e495-40cd-bb02-756649fe119f
-:END:
 =MQ=
 Code multiple
 - foreground -- RR
@@ -904,9 +671,6 @@ Si puó suddividere la RQ in piú code
       - quanti di tempo maggiori per foreground, minori per background  e batch
 
 ***** Multilevel Feedback Queue
-:PROPERTIES:
-:ID:       9c5104f6-3bb5-49cd-bcba-5ed5110332c6
-:END:
 =MFQS=
 Code multilivello con retroazione
 - I processi possono essere promossi a code a piu' alta prioritá o retrocessi
@@ -920,9 +684,6 @@ Code multilivello con retroazione
   - se il processo esaurisce i quanti delle code RR sará spostato in una coda FCFS
 
 **** Multielaborazione Simmetrica
-:PROPERTIES:
-:ID:       10649944-2de0-4244-a5d5-ec87969281b9
-:END:
 =SME=
 - scheduler per ogni core
   + code condivise
@@ -996,6 +757,7 @@ Code multilivello con retroazione
 
 
 ** Sincronizzazione
+<<<<<<< HEAD
     I processi possono cooperare, perció dovranno condividere dei dati
     - é necessario evitare la creazione di ~dati inconsistenti~
 
@@ -1185,52 +947,30 @@ signal(semaforo *S) {
   - Utilizzabile un valore di semafori > 1 allora una risorsa é utilizzabile da 3 P contemporaneamente
 
   I semafori se utilizzati non correttamente possono provocare _deadlock_ e _starvation_
+=======
+>>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 ** Deadlock
-:PROPERTIES:
-:ID:       49b4593a-e6bb-4ee4-8767-e80927276eb0
-:END:
 Programma A aspetta informazione dal Programma B che aspetta...
 
 
 * Gestione Memoria
 
 ** Centrale
-:PROPERTIES:
-:ID:       79a0cef0-200a-40d6-b8bb-e0140b5ec606
-:END:
 
 ** Virtuale
-:PROPERTIES:
-:ID:       8abef832-1331-4c7c-a0be-945f884e443e
-:END:
 
 * Gestione Memoria di massa
 
 ** Rigidi
-:PROPERTIES:
-:ID:       2fe1757b-4506-4027-9bfd-d6417aa8f78d
-:END:
 
 ** RAID
-:PROPERTIES:
-:ID:       ef48e601-0bbd-49a5-bfd7-f7d636606755
-:END:
 
 ** File System
-:PROPERTIES:
-:ID:       0a955bd8-ee60-437a-9717-65aec61736bb
-:END:
 
 *** Interfaccia
-:PROPERTIES:
-:ID:       4e7b4b71-06e5-4b91-88af-7ec7b98e9da9
-:END:
 
 *** Realizzazione
-:PROPERTIES:
-:ID:       34e88cef-e568-4703-8000-25581d8accaa
-:END:
 * Laboratorio
 
 ** [[file:20200929150429-c.org][C]]

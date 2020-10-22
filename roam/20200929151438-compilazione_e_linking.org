@@ -1,5 +1,9 @@
 #+TITLE: Compilazione e Linking
+<<<<<<< HEAD
 [[file:20201016001635-universita.org][#universitá]]
+=======
+[[file:#universita.org][#universitá]]
+>>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 * Dal C al binario passando dall'assembler IJVM ~ Compilazione e Linking
 
