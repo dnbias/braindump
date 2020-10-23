@@ -2,11 +2,7 @@
 #+COURSE: EPS A
 #+PROF:Roberta Sirovich
 #+STARTUP: latexpreview
-<<<<<<< HEAD
-[[file:20201016001635-universita.org][#universitá]]
-=======
 [[file:#universita.org][#universitá]]
->>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 + r-project.org
 + Editor: r-studio
@@ -37,7 +33,6 @@
 - sarebbe descrivibile con strumenti classici ma cio' solo con sistemi _troppo_ complessi, che non sappiamo risolvere
 
 ** Insieme
-
 *** collezione di oggetti (elementi)
 
 *** Naturali - contiene un numero n di elementi (finito o infinito)
@@ -72,15 +67,16 @@ gli insiemi sono usati per descrivere gli esiti possibili degli esperimenti prob
 
 *** Leggi di de Morgan
 
-** Modello probabilistico
+** Probabilitá di Eventi
 
-*** descrizione matematica del
+*** Modello probabilistico
+**** descrizione matematica del
 - esperimento probabilistico che stiamo analizzando
   - spazio campionario
   - ~legge di probabilita'~
     - ad ogni esito (sottoinsieme di Omega) assegna un numero positivo detto ~probabilita'~ di tale evento
 
-*** =def= Legge di Probabilita' P
+**** =def= Legge di Probabilita' P
 Insieme d'arrivo [0,1]
 **** Assiomi
 
@@ -101,11 +97,10 @@ Probabilita' dello spazio campionario vale 1
 
 ***** P di Unione di 3 ins
 
-*** Modelli Continui
+**** Modelli Continui
 - Probabilita' come Area
 
-
-*** Esempi di P - Legge Uniforme Discreta
+**** Esempi di P - Legge Uniforme Discreta
 
 - Frequenza Relativa di occorrenza
 - P come area
@@ -115,8 +110,7 @@ Probabilita' dello spazio campionario vale 1
   - escano due teste
 - due volte dado a 4 facce equo
 
-
-*** Probabilita' Condizionata
+**** Probabilita' Condizionata
 Misura che permette di calcolare probabilita' in condizioni di informazione parziale
 - Prende in considerazione informazioni
 
@@ -156,8 +150,26 @@ $P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
     - Quindi A e A complementare sono sempre dipendenti
       - quindi dati A e B indipendenti questi sono indipendenti dai complementari altrui
 
+***** Indipendenza a due a due
+
+***** Indipendenza Condizionata
+
 ***** Moltiplicazione Cartesiana
     La \(P\) di duple o n-uple é
     \(P=P^1*P^2*...*P^n\)
+
+   
+** Variabili Aleatorie
+    In casi in cui l'esperimento é numerico servono altri strumenti rispetto a quelli usati fino ad ora
+    Una Variabile Aleatoria é una funzione da \(\Omega\) a \(\mathbb{R}\)
+    - \(X,Y,Z\) variabili aleatorie
+    - \(x,y,z\) punti di \(\mathbb{R}\)
+    Dipendentemente dall'immagine della variabile aleatoria questa sará discreta o continua
+
+*** Variabili Aleatorie Discrete
+
+**** Funzione della massa di Probabilitá
+
+*** Variabili Aleatorie Continue
 
 * Statistica

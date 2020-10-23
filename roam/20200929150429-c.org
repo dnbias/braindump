@@ -43,67 +43,37 @@ Un file sorgente C puo' essere composto da:
 - funzione main()
 
 * #
-:PROPERTIES:
-:ID:       6b2ac43a-49d5-43b1-a009-12d6b40a68a5
-:END:
 =direttive al preprocessore=
 Le < > indicano al preprocessore che il file va cercato in percorsi predefiniti
 ** include
-:PROPERTIES:
-:ID:       d74d605d-619f-4f1e-8cb7-56da86fcf05e
-:END:
 ~es~
 #include <stdio.h>
 
 *** headers .h
-:PROPERTIES:
-:ID:       b127aa68-2f04-4e0c-b4df-0979d0f8f8e4
-:END:
 contengono le dichiarazioni delle funzioni fornite dalle librerie
 
 ** define
-:PROPERTIES:
-:ID:       9e438850-1aa0-4de9-9981-725659ff181d
-:END:
 definisce nomi simbolici per valori costanti
 Associa ~due valori testuali~
 - il numero di caratteri del nome simbolico é limitato: era 8
 -  il pre-processore legge i moduli C in un passo
 
 ** macro
-:PROPERTIES:
-:ID:       97682494-9c40-4231-b906-ce274c3a6366
-:END:
 una funzione ha un overhead -- le macro no
 
 Associa ad una signature una espressione
 
 *** ifndef
-:PROPERTIES:
-:ID:       63f651df-c85a-4ada-a08e-521ba14c31dd
-:END:
 se la costante simbolica non specificata non é stata ancora definita allora procede fino al endif
 - per evitare ~inclusioni multiple~
 
 *** ifdef
-:PROPERTIES:
-:ID:       a19f62d3-eb89-474b-91d5-fc933b9a813f
-:END:
 
 *** else
-:PROPERTIES:
-:ID:       66c74d8a-c6f0-4bcd-9735-811ed863a8f1
-:END:
 
 *** endif
-:PROPERTIES:
-:ID:       fb5210e4-f5fa-44a5-b66f-ac46417ee9d0
-:END:
 
 * Variabili
-:PROPERTIES:
-:ID:       73b8a7aa-025c-4ef7-a2a6-0e5f941fd896
-:END:
 caratterizzate da un quadrupla
 (nome, tipo, indirizzo, valore)
 
@@ -122,9 +92,6 @@ int main(){
 #+END_SRC
 
 ** variabili globali
-:PROPERTIES:
-:ID:       ed8a75ef-2160-4820-b521-fd61ddbb4a43
-:END:
 definite in un modulo possono essere usate da altri moduli previa dichiarazione
 - é buona regola definire le variabili globali in un intestazione
 :PROPERTIES:
@@ -140,9 +107,6 @@ int error_code;
 extern int error_code;
 #+END_SRC
 * Sequenze di escape
-:PROPERTIES:
-:ID:       34c2e6ea-c463-4ded-b0fa-781e0a9e68a7
-:END:
 
 \ ~sequenza~
 
@@ -150,28 +114,16 @@ extern int error_code;
 \t   =tabulazione=
 
 * Specificatori Formato
-:PROPERTIES:
-:ID:       224d58f1-0a2d-4673-8e36-f8a009148fae
-:END:
 % ~specificatore~
 
 %d   =variabile=
 %p   =pointer=
 
 * entry point
-:PROPERTIES:
-:ID:       8e0cab62-054d-4d6b-86a2-7e670c490e49
-:END:
 
 ** unico: int main()
-:PROPERTIES:
-:ID:       9aedf87b-bf4f-4c7e-9b3f-779f338e5a45
-:END:
 
 * tipi primitivi
-:PROPERTIES:
-:ID:       ca156780-f695-438a-9124-d79fec6fc80f
-:END:
 Nella definizione originaria di D.Ritchie il linguaggio non stabilisce alcuna dimensione per i dati in base al loro tipo
 - per portabilita' non si deve produrre un codice C dipendente dalla dimensione dei dati
 
@@ -190,44 +142,20 @@ Non esistendo tipo Boolean:
 
 
 ** int
-:PROPERTIES:
-:ID:       8fc8c680-1629-4559-b912-b2ff18f83f37
-:END:
 
 ** short
-:PROPERTIES:
-:ID:       e8907b5a-fe36-4b5b-befb-a7c5e76ea44c
-:END:
 
 ** long
-:PROPERTIES:
-:ID:       4e62c83a-c20a-460d-91cf-30468c93775d
-:END:
 
 ** unsigned int
-:PROPERTIES:
-:ID:       fc9018d3-1c9a-4031-bad9-519071bb7b27
-:END:
 
 ** float
-:PROPERTIES:
-:ID:       acb14e6c-b082-4ba1-91a4-17d93aed6732
-:END:
 
 ** double
-:PROPERTIES:
-:ID:       df5936dc-9ea6-4622-ba2c-43ccf58e77d4
-:END:
 
 ** char
-:PROPERTIES:
-:ID:       dd8f5c1c-791a-4ee4-ab59-22dbe738fcbb
-:END:
 
 ** void
-:PROPERTIES:
-:ID:       c2ba430e-402e-468f-ade2-c69226ae0df4
-:END:
 ~es~ funzione che non restituisce valore
 
 ** *
@@ -244,12 +172,16 @@ Segmentation Fault
     Assegna un indice ad ogni valore, si puó anche specificare l'indice di partenza
     Possibile definire un enumerazione per false, true
 
+** * a funzione
+    La sintassi é ~tipo ritorno (* nomefunzione)([tipo argomenti])~
+    puntatore in memoria instruzioni: la prima istruzione della funzione in particolare
+    - il punto é che si crea una variabile, quindi durante l'esecuzione potrá cambiare.
+      + uno stesso codice che utilizza un puntatore a funzione chiamerá funzioni diverse in momenti ed esecuzioni diverse
+      + punterá sempre a funzioni con un simile prototipo
+
 * Funzioni
 
 ** printf(char *format,...)
-:PROPERTIES:
-:ID:       feefecb2-1ffb-46a1-a999-0229636f47a2
-:END:
 NB per fine linea
 - Windows:   \r\n
 - Unix:      \n
@@ -257,9 +189,6 @@ NB per fine linea
 
 
 ** scanf(char *format,...)
-:PROPERTIES:
-:ID:       39f3691c-f405-4e06-a4d7-ba8f5f9ac820
-:END:
 passo riferimenti a variabili dove memorizzare cio' che e' letto dallo stream di input, secondo il formato specificato dal programmatore
 - se lo stream e' vuoto la scaf si mette  in attesa, l'OS lo inserisce in uno stato di wait fino a che lo stream non sara' riempito
 
@@ -269,17 +198,11 @@ Utilizzando la ~scanf~ con il formato %s si leggono dallo stdin parole, ignorand
 + =NB= va passato come secondo argomento l'indirizzo di una variabile puntatore a char che contenga un numero di caratteri sufficientemente grande.
 
 ** getchar()
-:PROPERTIES:
-:ID:       6bd602b7-b7e2-4323-bdb9-084af2ca97bc
-:END:
 restituisce un int(4 byte) per trattare altri casi oltre ai caratteri(1 byte)
 
 * Strutture Dati
 
 ** array []
-:PROPERTIES:
-:ID:       d1e1f45e-d250-4be5-acd4-04f7964c50cc
-:END:
 + un array in C é sempre un ~const~, un puntatore al primo elemento
 + le stringhe in realtá sono codificate con un array di ~char~
 + per modificare i valori sono usati i puntatori
@@ -314,13 +237,16 @@ char *weekdays[] = {"Mon", "Tue", "Wen", "Tue", "Fri"}; // un puntatore ad un pu
         - spesso non coincide con le dimensioni dei suoi campi
           + questo per i vincoli di allineamento
 ** typedef
-    typedef =tipobase= =tipodefinito=
+- typedef =tipobase= =tipodefinito=
 
     Su questi tipi _non viene attuato un controllo stretto_ da parte del compilatore
 
     #+begin_src c
     typedef enum { FALSE, TRUE } boolean;
     #+end_src
+** union
+    Zona di _memoria condivisa_ di diverse variabili, di tipi diversi. La sintassi é simile a una struct.
+    - appunto memorizza in unione
 
 * Ridirigere lo standard input
     programma < fileInput.txt
@@ -328,13 +254,23 @@ char *weekdays[] = {"Mon", "Tue", "Wen", "Tue", "Fri"}; // un puntatore ad un pu
     - scanf
     - getchar
 
-* 3 Linked References
-** [[file:SO.org][Sistemi Operativi ➦]]
-**** C
-** C
+* Traps al Sistema Operativo
+Il Sistema Operativo gestisce una tabella di tutti i file aperti
+- ogni record memorizza le informazioni di quella particolare istanza
+  + modalitá
+  + offset
+  + ...
+Funzioni di piú alto livello che interfacciano sui =descrittori dei file=
+** open
 
-** [[file:20200929150429-c.org][C ➦]]
-1. Digital Logic
+** read
+- viene passato:
+  - un _fd_
+  - un void * ad un _buffer_ di dimensione necessaria (per poter contenere count byte)
+  - una size_t _count_
 
-Processo da file sorgente a eseguibile: vedi Compilazione e Linking
+** write
 
+** lseek
+
+** close

@@ -950,9 +950,119 @@ signal(semaforo *S) {
 =======
 >>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
-** Deadlock
-Programma A aspetta informazione dal Programma B che aspetta...
+**** Esempi
+    Problemi di sincronizzazione risolti utilizzando semafori
 
+***** Produttori e Consumatori
+    - buffer circolare[SIZE]
+      + memoria condivisa da tutti i produttori e tutti i consumatori
+    - semafori
+      + full
+      + empty
+      + mutex
+    - in
+    - out
+
+    #+name: Produttore
+    #+begin_src C
+while(true){
+    produciItemInNextp();
+    wait(empty);
+    wait(mutex);
+        buffer[in] = nextp;
+        in = in++ mod SIZE;
+    signal(mutex);
+    signal(full);
+}
+    #+end_src
+    #+name: Consumatore
+    #+begin_src C
+while(true){
+    wait(full);
+    wait(mutex); // in caso di piú consumatori e piú item nel buffer
+        nextc = buffer[out];
+        out = out++ mod SIZE;
+    signal(mutex);
+    signal(empty);
+    consumaItemInNextc();
+}
+    #+end_src
+***** Lettori e Scrittori
+    Condivisione di un file tra molti processi
+    - alcuni processi richiedono la sola lettura
+      + possono essere paralleli
+    - alcuni richiedono la scrittura
+      + richiede la mutua esclusione di tutti i processi
+****** Readers First
+    Variabili:
+    - condivise
+      + semaforo mutex = 1
+      + semaforo scrivi = 1
+      + int numlettori = 0
+    #+name: scrittore
+    #+begin_src C
+wait(scrivi);
+scriviFile();
+signal(scrivi);
+    #+end_src
+    #+name: lettore
+    #+begin_src C
+wait(mutex);
+numlettori++;
+if numlettori == 1
+    wait(scrivi);
+signal(mutex);
+leggiFile();
+wait(mutex);
+numlettori--;
+if numlettori == 0
+    signal(scrivi);
+signal(mutex);
+    #+end_src
+
+    E' garantita l'assenza di Deadlock e Starvation?
+    - no
+      - uno scrittore addormentato su scrivi dovra aspettare la terminazione di tutti i lettori, se continuano ad aggiungersi lettori ci sara' un Deadlock
+
+****** Writers First
+
+****** Fair
+
+***** Cinque Filosofi
+    - 1 tavolo circolare
+      + 5 posti
+      + 5 piatti
+      + 5 bacchette condivise
+        - 2 necessarie per mangiare
+    Ogni risorsa e' associata ad un semafori in un array
+    #+begin_src C
+do{
+    wait(bacchetta[i]) // context switch qui causa Deadlock
+                       // Attesa Circolare
+    wait(bacchetta[i+1 mod 5]);
+        mangia();
+    signal(bacchetta[i]);
+    signal(bacchetta[i+1 mod 5]);
+        pensa();
+}while(true);
+    #+end_src
+
+** Deadlock
+    Programma A aspetta informazione dal Programma B che aspetta...
+    Il deadlock non é affrontato dagli OS, deve essere gestito dall'OS
+    - se uno dei dui processi cede il passo risolviamo la deadlock ma non la =starvation=
+
+    _Modello del Sistema_
+    - Tipi di risorse R
+      + ognuna formata da istanze indistinguibili tra loro
+    - Processi P
+      + hanno bisogno di alcune istanze di R
+    In una situazione di attesa circolare le risorse possono rimanere bloccate, quindi questo é un problema di tutto il sistema
+    L'OS potrebbe implementare delle soluzioni con adeguate rappresentazione del _grafo di assegnazione delle risorse_
+    - se si verifica un ciclo in questo grafo é chiara la situazione di deadlock e allora viene risolta
+      - causa un sottoutilizzo delle risorse (poiché non evita i deadlock di per se)
+    - oppure si potrebbe evitare i deadlock verificando prima di concedere una risorsa che questa non porti ad una attesa circolare
+      - troppo dispendioso dal punto di vista della computazione per l'OS
 
 * Gestione Memoria
 
