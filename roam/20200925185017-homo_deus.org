@@ -135,25 +135,114 @@ A Brief History of Tomorrow
 
 *** On immortality
 :PROPERTIES:
-:NOTER_DOCUMENT: /home/dan/Dropbox/Books/EBooks/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.epub
-:NOTER_PAGE: (6 . 8757)
+:NOTER_PAGE: (9 . 10303)
 :END:
 - [[file:20200531055420-quotes.org][cit]]
     I don't want to achieve immortality through my work. I want to achieve it by not dying. ~ Woody Allen
 
-Questa e' una nota.
 
+- Immortality is the ultimate objective of humanism (the worship of humankind)
+  - this is the agenda of humankind in the end as the humanism has conquered the world
 
-
-Ciao
-
-
-Un altra nota.
-
+hy did this happen? Why has humanism become the dominant world religion and why attempting to fulfil the idead this religion proposes is likely to cause our disentegration
+- to humanism:
+  + humans are at the center of the universe
+  + humans are the source of meaning and authority
 
 
 * The Conquest
+:PROPERTIES:
+:NOTER_DOCUMENT: ../../../Dropbox/Books/EBooks/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.epub
+:NOTER_PAGE: (9 . 40784)
+:END:
 
+*** Humans and Animals
+Animals are disappearing in reality, they survive in our delusion
+    - there are much more domestic animals then their wild counterpart
+      + testifying the humans influence on nature
+
+    Epochs: =Pleistocene, Pliocene, Miocene, Holocene=
+    But really =Anthropocene= never a single species managed to change the global
+    economy at this extent
+    - our impact is already on par with
+      - ice age
+      - tectonic movement
+    Soon our impact will be superior to the asteroid that extinted dinosaurs
+
+
+
+
+
+**** Anthropocene
+:PROPERTIES:
+:NOTER_PAGE: (9 . 7486)
+:END:
+    The epoch of the Sapiens -- Holocene
+    Sapiens broke the barrier between the biomes
+    - they united the globe into one ecological unit for the first time
+      - they shuffled species all around the world
+
+**** Animism
+:PROPERTIES:
+:NOTER_PAGE: (9 . 8741)
+:END:
+It is believe the first humans considered animals and plants and spirits to be inihabitants of the same land as themselves
+- all beings were considered at the same level
+
+This view is now alien to nearly everyone
+
+
+***** Serpent
+:PROPERTIES:
+:NOTER_PAGE: (9 . 10373)
+:END:
+- even the Bible were created much later than that time:
+  - the sole occurrence when an animal initiates conversation is the serpent in the garden of Eden
+    - a _condamnation of Animism_
+Adam and Eve lived as forangers
+- expulsion from Eden == Agricultural Revolution
+- Eve means snake in most Semitic Languages
+
+An archaic animistic mith believed humans descended from priomordial snakes or lizards
+- this is believed by modern Westeners
+  + the human brain is built around a reptillian core
+
+_In the Genesis_
+- everything is initiated by God in the first part
+- then the serpent initiates conversation
+  + this is followed by the first act initiated by Eva that responds
+This is the series of events that lead to the fall from grace
+
+
+
+***** Ancestral Needs
+:PROPERTIES:
+:NOTER_PAGE: (9 . 14517)
+:END:
+
+_Agricultural Revolution_
+- by-products
+  + Bible
+  + Domesticated animals
+    - they suffer greatly although still living on and multiplying
+      + the humans needs shape their life and their emotional needs are ignored
+        - as these needs were formed milions of years ago these animals suffer greatly as a resoult of not meeting them, even if from a evolutional standpoint they don't need to anymore
+
+_Algorithms_
+- these algorithms take in sensual input and output sensations and feelings
+- all animals live guided by algorithms that work on probabilities
+  + to get eaten
+  + to feed
+  + to reproduce
+  + Humans are complex algorithms
+    - they produce copies of themselves
+  + All animals are
+    - these algorithms are always undergoing a quality control in the form o natural selection
+
+_Theist Religions_
+- catered to peasants and shepards
+  + their holydays revolved around farming
 * The Meaning
+
 
 * The Control
