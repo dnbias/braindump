@@ -1,12 +1,8 @@
 #+TITLE: Linguaggi Formali e Traduttori
 #+COURSE: LFT A
 #+TEACHER: Sproston Jeremy
-<<<<<<< HEAD
 #+startup: latexpreview
-[[file:20201016001635-universita.org][#universitá]]
-=======
 [[file:#universita.org][#universitá]]
->>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 
 
