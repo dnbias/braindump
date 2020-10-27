@@ -153,7 +153,7 @@ hy did this happen? Why has humanism become the dominant world religion and why 
 * The Conquest
 :PROPERTIES:
 :NOTER_DOCUMENT: ../../../Dropbox/Books/EBooks/Homo Deus_ A Brief History of Tomorrow - Yuval Noah Harari.epub
-:NOTER_PAGE: (9 . 40784)
+:NOTER_PAGE: (10 . 676)
 :END:
 
 *** Humans and Animals
@@ -168,11 +168,6 @@ Animals are disappearing in reality, they survive in our delusion
       - ice age
       - tectonic movement
     Soon our impact will be superior to the asteroid that extinted dinosaurs
-
-
-
-
-
 **** Anthropocene
 :PROPERTIES:
 :NOTER_PAGE: (9 . 7486)
@@ -242,6 +237,83 @@ _Algorithms_
 _Theist Religions_
 - catered to peasants and shepards
   + their holydays revolved around farming
+
+***** Agricultural deal
+:PROPERTIES:
+:NOTER_PAGE: (9 . 42346)
+:END:
+
+- in the animistic cosmos everybody interacted directily with one another
+- in the theist cosmos the Gods mediate
+  + non-human entities are silenced
+    - this serves the two main parties at the expense of the ecosystem
+
+Jainism, Buddhism and Hinduism demonstrate more empathy toward animals
+- ~Ahimsa~ - non-violence
+  + this extends to all living being, not only humans as in the Bible
+
+Still, in all religions humans are placed higher on some sort of hierarchy
+- The Deal
+  + cosmic forces grant humankid command over other animals on some condition toward the Gods, Nature, the animals themselves
+
+
+****** Hunters vs Farmers
+:PROPERTIES:
+:NOTER_PAGE: (9 . 48882)
+:END:
+- hunters
+  + were in smaller number than the animals they hunted
+  + were in contact with the animals and their behavior and thinking
+- farmers
+  + lived in a world controlled by human dreams and ideas
+  + lived with domestic, subjogated animals
+
+***** One Man Show
+:PROPERTIES:
+:NOTER_PAGE: (9 . 51824)
+:END:
+If with the Agricultural Revolution humans sileced Nature;
+With the scientific revolution they silenced God
+- Humankind stood on an empty stage
+
+****** Newton's Tree of Knowledge
+:PROPERTIES:
+:NOTER_PAGE: (9 . 53019)
+:END:
+The story turns the Genesis on its head
+- man is now the sole agent
+  + not at the mercy of the Serpent or God anymore
+
+****** Humanist Religions
+:PROPERTIES:
+:NOTER_PAGE: (9 . 55283)
+:END:
+Risen with the scientific revolution, worship of humans
+- Founding ideas
+  - good or bad in the cosmos is judged according to its impact on Homo sapiens
+  - Homo sapiens has sacred essence of meaning and authority on the universe
+- Example of humanist religions
+  - liberalism
+  - communism
+  - Nazism
+
+****** Rethinking of lower life-forms
+:PROPERTIES:
+:NOTER_PAGE: (9 . 57271)
+:END:
+In the recent years this is a trend
+Maybe because we are about to become a lower life-form ourselves with AI super-intelligence
+- if AI should not be allowed to exploit humans for its ends why should humans be allowed to do so with nature?
+
+
+*** Spark
+:PROPERTIES:
+:NOTER_PAGE: (10 . 646)
+:END:
+
+
+
+
 * The Meaning
 
 
