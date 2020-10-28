@@ -73,7 +73,7 @@ funzione definita su stringhe invece che singoli simboli
 definito per induzione
 ** Linguaggio riconosciuto
 Stringhe definite sull'alfabeto che per mezzo della F di transizione estesa portano ad uno =stato finale= dell'automa
-*** Linguaggio regolare
+** Linguaggio regolare
 Esiste almeno un Automa A che lo riconosce
 ** Esempio
 automa: riconosce stringhe
@@ -279,22 +279,20 @@ Allora concludiamo identificando \(x,y,z\)
         La riscrittura della \(A\) in \(\alpha\)(sequenza arbitraria di simboli terminali o non) e' libera dal contesto
      - $S$ simbolo iniziale
 
-    =Derivazioni=:
+     =Derivazioni=:
    - derivazione in un solo passo
-
    - derivazione in zero o piu' passi
-        ne
 
     Il potere riconoscitivo delle grammatiche libere e' almeno tanto quanto quello dei linguaggi regolari
 
     =Derivazioni canoniche=
      - leftmost
-       + $\to_{lm}$
+       + $\Rightarrow_{lm}$
 
      - rightmost
-       + $\to_{rm}$
+       + $\Rightarrow_{rm}$
 
-    Se esistono due derivazioni canoniche distinte (entrambe lm o rm) per la stessa stringa allora $G$ e' ambigua
+     Se esistono due derivazioni canoniche distinte (entrambe lm o rm) per la stessa stringa allora $G$ e' ambigua
 
 *** Alberi Sintattici
     Derivazioni differenti possono generare lo stesso programma
@@ -334,6 +332,44 @@ Nuova grammatica:
     - $E\to T\midE+T$
     - $T\to\midT*F$
     - $F\to0\mid1\mid...\mid9\mid(E)$
+
+**** Linguaggi inerentemente ambigui
+
+** Automi a Pila =PDA=
+=Approccio Riconoscitivo=
+    Utilizza operazioni push e pop su una pila di dimensione illimitata
+
+    - Simbolo sentinella $Z_{0}$ che indica la fine della stringa, é il simbolo della pila con cui quest'ultima viene inizializzata
+    - Ad ogni lettura di un simbolo l'automa fa push(x) o push(b) dipendentemente dal Linguaggio
+    - La $\epsilon$ transizione finale puó eseguire solo se peek restituisce $Z_{0}$
+
+    $P=(Q,\Sigma,\Gamma,\delta,q_{0},Z_{0},F)$
+    - \(\Sigma\) = alfabeto di input
+    - \(\Gamma\) = alfabeto della pila
+    - \(\delta:Q\times(\Sigma\cup\{\epsilon\})\times\Gamma \to p(Q\times\Gamma^{*})\) = funzione di transizione
+
+*** Descrizioni istantanee
+    Fissato un automa a pila $P$
+    $D.I.=(q,w,\alpha)$
+    - stato in cui si trova l'automa
+    - ció che rimane dariconoscere nella stringa di input
+    - contenuto della pila dalla cima al fondo (sx a dx)
+
+**** Mosse
+    relazioni da $D.I.$ a $D.I.$
+    $I\vdash_{P}J$
+    chiusura riflessiva e transitiva
+    $I\vdash^{*}_{P}J$
+
+*** Linguaggio Accettato
+Per stato finale:
+    $L(P) = \{w\in\Sigma^{*}\mid(q_{0},w,Z_{0})\vdash_{P}^{*}(q,\epsilon,\alpha), q\in F\}$
+Per pila vuota:
+    $N(P)=\{w\in\Sigma^{*}\mid(q_{0},w,Z_{0})\vdash^{*}_{P}(q,\epsilon,\epsilon)\}$
+- Per stato finale il contenuto della pila nella \(D.I.\) finale é irrilevante
+- Per pila vuoto lo stato nela \(D.I.\) finale puó non essere finale
+
+In ogni caso la stringa di input deve essere consumata completamente
 
 * Analisi Lessicale
 sequenze di caratteri | =token= o =lessemi=
