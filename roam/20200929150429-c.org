@@ -130,7 +130,7 @@ Nella definizione originaria di D.Ritchie il linguaggio non stabilisce alcuna di
 #+NAME: Esempio di tipi
 #+BEGIN_SRC C
 int i;
-short j = 2;
+short j = ;
 int *ptr = NULL; //tipo: puntatore a interi
 #+END_SRC
 
@@ -261,16 +261,34 @@ Il Sistema Operativo gestisce una tabella di tutti i file aperti
   + offset
   + ...
 Funzioni di piú alto livello che interfacciano sui =descrittori dei file=
-** open
+- open()
 
-** read
-- viene passato:
-  - un _fd_
-  - un void * ad un _buffer_ di dimensione necessaria (per poter contenere count byte)
-  - una size_t _count_
+- read()
+  + viene passato:
+    + un _fd_
+    + un void * ad un _buffer_ di dimensione necessaria (per poter contenere count byte)
+    + una size_t _count_
+- write()
 
-** write
+- lseek()
 
-** lseek
+- close()
 
-** close
+Funzioni che utilizzano gli stream
+- fopen()
+  + restituisce un FILE *
+  + prende come parametri directory e flag r,w
+- fread()
+- fgets()
+- fseek()
+- fclose()
+
+* Allocazione dinamica della memoria dati
+- malloc(size_t size)
+  + non inizializza a 0
+- calloc(size_t nmemb, size_t size)
+  + inizializza a 0
+  + alloca pe n-membri di size dimensione
+- realloc()
+- free()
+Queste funzioni lavorano su void * ad aree dello heap

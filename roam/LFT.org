@@ -176,7 +176,7 @@ L(E*) = L(E)*   // chiusura di Kleene
 - O si construisce un automa \(B\) che riconosce una simulazione dei due automi iniziali \(A_1\) e \(A_2\)
 - \(L -L^{'}\)
 - \(L_1 - L_2 = L_1 \cap notL_2\)
-- \(L^{R}
+- \(L^{R}\)
   - L rovesciato
 - Si ricava un \(E^R\) per induzione
 
@@ -357,5 +357,6 @@ Identificatore
 sequenza on vuota di lettere numeri e _ e non inizia con un numero
 ** Lexer
 =Analizzatore lessicale=
+----> [[file:/home/dan/Code/Java/LFT/Lexer.java][Codice]] <----
 La visione del programma passa da "carattere per carattere" a "token per token"
 - spazi e commenti vengono scartati dal lexer
