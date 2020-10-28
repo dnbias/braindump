@@ -279,13 +279,61 @@ Allora concludiamo identificando \(x,y,z\)
         La riscrittura della \(A\) in \(\alpha\)(sequenza arbitraria di simboli terminali o non) e' libera dal contesto
      - $S$ simbolo iniziale
 
-     Derivazioni:
+    =Derivazioni=:
    - derivazione in un solo passo
 
    - derivazione in zero o piu' passi
         ne
 
     Il potere riconoscitivo delle grammatiche libere e' almeno tanto quanto quello dei linguaggi regolari
+
+    =Derivazioni canoniche=
+     - leftmost
+       + $\to_{lm}$
+
+     - rightmost
+       + $\to_{rm}$
+
+    Se esistono due derivazioni canoniche distinte (entrambe lm o rm) per la stessa stringa allora $G$ e' ambigua
+
+*** Alberi Sintattici
+    Derivazioni differenti possono generare lo stesso programma
+    - anche imponendo regole all'ordine delle riscritture
+
+    Gli alberi sintattici (alternativa alle generazioni) astraggono dall'ordine delle riscritture e permettono di ragionare sulla =struttura= delle stringhe
+    - grammatiche ambigue
+      + piu' alberi con lo stesso prodotto
+      + non e' avere derivazioni distente che mi porta ad alberi diversi e quindi ambiguita'
+    Data una grammatica $G = (V,T,P,S)$ gli alberi sintattici di $G$:
+    - ogni nodo etichettato con una var in $V$
+    - ogni foglia etichettata da $V$ o $T$ o $\epsilon$
+    - $\epsilon$ significa unico figlio del genitore
+    - se un nodo $A$ i suoi figli sono etichettati (sx a dx)
+      + $X_{1},X_{2},...,X_{n}$
+      + $A\to X_{1},X_{2},...,X_{n}$ e' una produzione in $P$
+    Il =prodotto= e' la stringa ottenuta cocatenando(sx verso dx) le etichette di tutte le foglie
+
+**** Teorema
+    $A\to G* \alpha$ se e solo se esiste un albero sintattico di $G$ con radice $A$ e prodotto $\alpha$
+
+**** Risoluzione delle ambiguitá (grammatiche in forma infissa)
+   - Precedenza degli operatori
+   - Associativitá degli operatori
+     + per operatori associativi questo non é un problema
+     + lo é per altri operatori
+
+Soluzione ad hoc
+    Utilizziamo associativitá a sinistra, sbilanciamo le espressioni e le stratifichiamo
+   - Espressione = somma di termini
+   - Termine = prodotto di fattori
+   - Fattore = costante o espressione tra parentesi
+
+Nuova grammatica:
+    $(\{E,T,F\},\{0,1,...,9,+,*,(,)\},P,E)$
+    Produzioni:
+    - $E\to T\midE+T$
+    - $T\to\midT*F$
+    - $F\to0\mid1\mid...\mid9\mid(E)$
 
 * Analisi Lessicale
 sequenze di caratteri | =token= o =lessemi=
