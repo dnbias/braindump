@@ -2,11 +2,7 @@
 #+COURSE: SO A
 #+PROF: Davide Gunetti ~ Daniele.Gunetti@unito.it
 #+STARTUP: latexpreview
-<<<<<<< HEAD
-[[file:20201016001635-universita.org][#universitá]]
-=======
 [[file:#universita.org][#universitá]]
->>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 * Generalita'
 2 obiettivi di un OS:

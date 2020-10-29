@@ -84,6 +84,10 @@ Lancio previsto alle 21:20~ ora italiana
 in caso di scrap si ritenta in pochi giorni.
 *** 2020-05-31 Sunday
 **** 02:26 Oggi inizia una nuova era dell'esplorazione spaziale
+:PROPERTIES:
+:ID:       87935557-3d05-4dea-ba62-b63398d8a62d
+:END:
+[[file:20201029012435-space.org][#space]]
 che emozione, il lancio e' andato perfettamente. Perfino il rientro dello Stage 1 e' atterrato correttamente sulla piattaforma in mezzo all'oceano "Of course I still love You".
 Devo ammettere che fino all'ultimo quasi non ci credevo, il tempo non sembrava buono fino all'ultimo, mezzora prima del lancio il GO to Lanch. Wow.
 Awestruck, davvero. Un'emozione grande, sono stato con un sorriso ebete stampato in faccia per una buona ora ahh
@@ -99,9 +103,9 @@ Continuato a prendere appunti anche oggi qua su org-mode-roam, pretty cool
 Credo che scrivere qua mi aiuti a migliorare la mia typing speed, credo di star gia' migliorando, il che mi rende assai felice
 
 Ho usanto un po' di linking oggi tra le mie pagine di org-roam, penso che il migliore approccio per questo roam sia lasciarsi un po' guidare dal sistema, piano piano implementandolo.
-Per ora ho qualche landing page da cui poi si diramano le note. Principali per ora sono ~Letture~ e ~Universita'~ perche' mi sembravano utili per tenere docchio e avere anche una visione d'insieme dei contenuti relativi. Non voglio pero' esagerare. Tenere questo sistema slegato da gerarchie rigide mi pare di vitale importanza, quindi continiamo cosi'.
+Per ora ho qualche landing page da cui poi si diramano le note. Principali per ora sono ~Letture~ e ~Universita'~ perche' mi sembravano utili per tenere d'occhio e avere anche una visione d'insieme dei contenuti relativi. Non voglio pero' esagerare. Tenere questo sistema slegato da gerarchie rigide mi pare di vitale importanza, quindi continiamo cosi'.
 
-Credo di dovere iniziare a pensare a un metodo di ricerca interno alle note per poter trovare collegamenti utili anche durante la costruzione dei collegamenti stessi, cosa che RoamResearch fa, mentre qua e' un po' piu limitato, cercando e autocompletanto solamente i titoli. Questo e' comunque sopperibile usanda note ATOMICHE che quindi rispettino il principio dello [[file:20200528213816-zettelkasten.org][Zettelkasten]]: una nota == un idea.
+Credo di dovere iniziare a pensare a un metodo di ricerca interno alle note per poter trovare collegamenti utili anche durante la costruzione dei collegamenti stessi, cosa che RoamResearch fa, mentre qua e' un po' piu limitato, cercando e autocompletanto solamente i titoli. Questo e' comunque sopperibile usanda note ATOMICHE che quindi rispettino il principio dello [[file:20200528213816-zettelkasten.org][Zettelkasten]]: una nota == un'idea.
 ** 2020-06 June
 *** 2020-06-02 Tuesday
 **** 03:53 Ledger
@@ -187,3 +191,12 @@ Oof
     maledetto eczema del cazzo, le braccia sono tutte infiammate, jeez.
 
     Penso provero' a tagliare via i latticini. Spero la situazione migliori. Thx
+** 2020-10 October
+*** 2020-10-29 Thursday
+**** 01:09 The Platform
+:PROPERTIES:
+:ID:       f1813899-c7ca-4c03-a700-e7092b896479
+:END:
+[[file:20201029011228-movies.org][#movies]]
+Carino, ma all'inizio non ho apprezzato lo spiegone, poi non ho capito il senso. Un buco di 333 piani che poi va nel vuoto cosmico e per cambiare le cose salvare una ragazzina, che non ho capito come e' sopravvissuta. Non capisco il perche'.
+Perche' nessuno sa nulla, perche' creare tutto cio': solo per una metafora? Ok le risorse sono finite e bisogna spartirle. Si puo' solo con le maniere forti. Quindi cosa.
