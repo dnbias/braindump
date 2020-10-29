@@ -25,15 +25,9 @@
 
 ** Hopcroft - Motwani - Ullman
 *** [[file:20200929235308-introduction_to_automata_theory_languages_and_computation.org][Introduction to Automata Theory, Languages, and Computation]]
-:PROPERTIES:
-:ID:       ea1a1953-59e7-4b64-a185-bbf77479610c
-:END:
 
 ** Maurensig
 *** [[file:20201002180949-la_variante_di_luneburg.org][La variante di Luneburg]]
-:PROPERTIES:
-:ID:       e12320f7-d201-4eb9-b4ee-c0dde5886b06
-:END:
 
 * Articoli
 ** Sacha Chua

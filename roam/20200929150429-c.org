@@ -215,6 +215,19 @@ char *weekdays[] = {"Mon", "Tue", "Wen", "Tue", "Fri"}; // un puntatore ad un pu
   ció non funziona se l'array e' passato come argomento di una funzione, in quanto sizeof(a) restituirá la
   dimensione del puntatore
   - il problema si puó risolvere passando un altro argomento n numero di argomenti
+
+Per =matrici= la memoria é allocata linermente, indirizzo:
+a+i*LRighe+j
+Perció il compilatore ha bisogno di sapere la dimensione della seconda grandezza dell'array a[r][c]
+#+begin_src C
+void f(int a[][4]);
+// dimensioni diverse per ogni riga:
+int r1[1] = {1};
+int r2[2] = {2, 2};
+int r3[3] = {3, 3, 3};
+int *a[] = {r1, r2, r3};
+#+end_src
+
 ** struct
     Raggruppa dati di natura diversa
     - etichetta

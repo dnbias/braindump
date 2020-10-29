@@ -119,10 +119,7 @@ Misura che permette di calcolare probabilita' in condizioni di informazione parz
 **** Formula delle probabilita' totali
 
 **** Formula di Bayes
-<<<<<<< HEAD
 $P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
-=======
->>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 **** Eventi indipendenti
     ~NB~ l'indipendenza é una proprietá delle probabilitá, non degli eventi: dipende dalle misure
@@ -161,14 +158,21 @@ $P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
    
 ** Variabili Aleatorie
     In casi in cui l'esperimento é numerico servono altri strumenti rispetto a quelli usati fino ad ora
-    Una Variabile Aleatoria é una funzione da \(\Omega\) a \(\mathbb{R}\)
+    Una Variabile Aleatoria é una funzione da \(\Omega\) in \(\mathbb{R}\)
     - \(X,Y,Z\) variabili aleatorie
     - \(x,y,z\) punti di \(\mathbb{R}\)
     Dipendentemente dall'immagine della variabile aleatoria questa sará discreta o continua
 
+*** Funzione della massa di Probabilitá =PMF=
+    aka =Probability Mass Function=
+    Probabilitá che una variabili aleatoria $X$ valga esattamente $x$, valore arbitrario
+    $p_X(x_i)=P(X = x_i)$
+    - il grafico della funzione mostra la natura discreta o il continua della variabile $X$
+    Dato che le variabili aleatorie sono funzioni:
+    Le intersezioni delle controimmagini $X_{-1}$ sono a due a due disgiunte e comprono tutto $\Omega$
+    $\Rightarrow \sum_{x\in Im(X)} p_X(x)=1$
 *** Variabili Aleatorie Discrete
 
-**** Funzione della massa di Probabilitá
 
 *** Variabili Aleatorie Continue
 
