@@ -1063,6 +1063,46 @@ do{
 * Gestione Memoria
 
 ** Centrale
+Bisogna decidere come spartire lo spazio di memorizzazione tra i processi attivi
+- _l'immagine_ di un processo inattivo nei prossimi cicli di CPU puo essere spostato su hard disk
+- quando un processo rientra in RAM occupera' spazio prima occupato
+Questo e' lo ~swap~
+*** Binding
+Associazione degli indirizzi
+- ad ogni variabile di un programma va associato un indirizzo che ne contiene il valore
+- alle istruzioni di salto va associato l'indirizzo di salto in caso questo avvenga
+
+_In fase di Compilazione_
+- generato codice assoluto o _statico_
+- il compilatore deve conoscere l'idirizzo della cella a partire dalla quale verra' cariato il programma per poter portare a termine il binding
+- se il processo e' spostato in memoria secondaria
+  + dovra essere messo allo stesso indirizzo
+  + o ricompilato ad un nuovo indirizzo
+
+_In fase di caricamento in RAM_
+- generato codice _staticamente rilocabile_
+- il compilatore associa indirizzi relativi all'inizio del programma (indirizzo 0)
+- indirizzi assoluti generati in fase di caricamento
+- se il processo e' spostato in memoria secondaria
+  + piu' efficiente in quanto e' in fase di caricamento che vengono risolti i riferimenti
+
+_In fase di esecuzione_ aka ~binding dinamico degli indirizzi~
+- generato codice diamicamente rilocabile
+- il codice utilizza sempre e solo indirizzi relativi
+  + questi sono risolti solo al momento dell'esecuzione dell'istruzione in particolare
+- necessita un supporto hardware per non perdere efficienza
+  + registro di rilocazione
+    - indirizzo di partenza in cui e' caricato il programma in esecuzione
+  + MMU
+    - risolve gli indirizzi in assoluti
+- cosi non ci son
+
+
+*** Spazi degli indirizzi
+
+*** Allocazione contigua
+
+*** Paginazione
 
 ** Virtuale
 
