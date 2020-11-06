@@ -1096,13 +1096,139 @@ _In fase di esecuzione_ aka ~binding dinamico degli indirizzi~
   + MMU
     - risolve gli indirizzi in assoluti
 - cosi non ci son
-
+ 
+**** Librerie
+2 tipi:
+- Statiche
+  + Associata dal compilatore o dal loader e collegata al programma in memoria
+    - anche se la subroutine non e' utilizzata viene memorizzata in memoria principale
+  + Ogni programma dovra' avere una copia del codice della libreria in quanto direttamente associati
+  + provoca dublicazione del codice in memoria
+- Dinamiche
+  + caricate a runtime
+    - solo dopo una specifica invocazione in corso di esecuzione il Sistema Operativo interrompe e carica in RAM il necessario prima di ridare il controllo al programma
+  + diversi programmi condividono la stessa porzione di codice in RAM se chiamano la stessa libreria
+    - viene carica un sola volta eliminando la dublicazione di codice
+  + una nuova versione della libreria e' automaticamente caricata dal programma, non ci sara' bisogno di ricompilare i moduli per compilare la nuova libreria
 
 *** Spazi degli indirizzi
+:PROPERTIES:
+:ID:       e20e286c-f8ae-48a6-9447-a94f3588f4cd
+:END:
+tag: [[file:20201102165014-ram.org][Memorie]]
 
-*** Allocazione contigua
+Ogni indirizzo di un programma in un sistema allocato dinamicamente sará sempre compreso tra $0$ e un $max$
+- Questo spazio e' chiamato spazio degli indirizzi o _spazio di indirizzamento logico_
+- Gli indirizzi sono definiti =logici= o =virtuali=
+  + questi sono convertiti in indirizzi =fisici= dal registro di rilocazione
+    - somma del registro e del registro logico a livello hardware
+    - indicano una determinata cella in RAM
+- Analogamente c'e' uno _spazio di indirizzamento fisico_
+  - da $r+0$ a $r+max$
 
-*** Paginazione
+=NB=: il numero di bit per la memorizzazione degli indirizzi logici puo essere diverso da quello per la memorizzazione degli indirizzi fisici
+- allora lo spazio degli indirizzi logici sara' piu' piccolo in quella architettura
+  + un programma avra' un limite di grandezza e memorizzazione
+Questo e' il caso piu' frequente, infatti in caso di indirizzi fisici a 64 bit, questi sono troppi in casi normali:
+- sono indirizzabili $2^{40} B$ ovvero $1 TB$ con un indirizzamento di 40 bit
+Solitamente vale questa relazione:
+\(|RAM|_{effettiva}<|RAM|_{max}<<|PhisSpace|<|VirtSpace|\)
+- Questo e' possibile grazie la memoria virtuale
+
+*** Tecniche di Gestione della memoria
+**** Swapping
+Salvataggio in memoria secondaria di un =immagine= del processo non in esecuzione (~swap out~) e ricaricarla successivamente (~swap in~)
+- =area di swap=
+  + area di harddisk ad uso esclusivo del OS
+- l'operazione di =swap in= posiziona il processo in una diversa area di MP
+  + viene aggiornato il =registro di rilocazione=
+- grande ~overhead~ causato dallo spostamento su disco
+  + tecnica abbandonata
+    - ora sostituita dalla memoria virtuale
+      + e' spostato solo una parte del programma
+**** Allocazione contigua a partizioni multiple fisse
+NB: tecnica utilizzata dal IBM OS/360
+Memoria Principale suddivisa in 2 _partizioni_
+- OS
+- Processi Utente
+  + occupata solo un processo nei casi piu' semplici
+  + =registro limite= protegge la memoria primaria riservata al OS
+  + un registro di rilocazione permettera' la risoluzione del indirizzo fisico
+  + Le partizioni sono di dimensione fissa
+    - non necessariamente uguali
+    - ogni processo puo' accedere solo alla sua porzione
+      + registri di rilocazione a ggiornati ad ogni context switch
+      + registro limite aggiornato con la dimensione della partizione
+_Limiti_
+- Questa tecnica limita il grado di ~multiprogrammazione~ al numero di partizioni previste
+- Inoltre si verifica ~frammentazione~
+  + interna perche' nessun processo occupera' esattamente la partizione assegnata
+  + esterna perche' le frammentazioni interne si sommano per uno spreco globale
+**** Allocazione contigua a partizioni multiple variabile
+_Partizioni_ misurate sulla grandezza dei processi
+- Questo crea buchi di RAM sempre piu' piccoli e numerosi tra i processi durante l'evoluzione dell'esecuzione
+  + sara' sempre piu' difficile utilizzare lo spazio in quanto troppo frammentato
+_Scelta della partizione_
+- First Fit
+  + utilizzata prima partizione abbastanza grande
+- Best Fit
+  + utilizza piu' piccola partizione abbastanza grande
+- Worst Fit
+  + utilizza la partizione piu' grande
+_Limiti_
+- Frammentazione esterna aumenta con il tempo
+- Frammentazione interna in quanto costa troppo tenere traccia dei buchi tra i processi e questi rimarranno nascosti
+_Soluzione_
+- Rilocazione dei processi in maniera contigua
+  + quindi sara' necessaria una implementazione dinamicamente rilocabile
+  + verso il basso o l'alto
+- Compattamento
+  + creazione di un unica area libera di memoria
+**** Paginazione
+Area di memoria allocata da un processo suddivisa in pezzi _non contigui_
+- ~Frame~ o ~Pagine Fisiche~
+  + pezzi di dimensione fissa in cui e' divisa la Memoria Principale aka spazio di indirizzamento fisico (potenze di 2)
+    - a differenza dalla =segmentazione=
+- ~Pagine~
+  + pezzi di dimensione identica ai frame in cui e' suddiviso lo spazio di indirizzamento logico
+
+L'OS carica $x$ pagine cercando $x$ frame liberi, il cui ordine e posizione non e' importante
+
+_Architettura di Paginazione_
+- =Page-Table=
+  + array con cui tiene traccia degli indici di pagine e frame
+- Traduzione Indirizzi Logici
+  + questo implementa la =traduzione= tra indirizzi paginati logici a indirizzi paginati fisici
+    - pagina $p$ indice della tabella per ottenere il frame $f$ che lo contiene
+      + nella entry $p$ si trova l'indirizzo di partenza del frame puntato
+    - offset $d$ (displacement) utilizzato a partire dall'indirizzo fisico del frame $f$
+      + questo e' sommato all'indirizzo puntato da $p$ nella tabella delle pagine per ricavare l'indirizzo fisico
+- Elenco dei frame liberi
+  + aggiornato ogni volta che e' necessario
+   
+_Indirizzi Logici_ reimplementati
+- non piu' lineari
+- nuova implementazione
+  + coppia di valori =(page, offset)=
+    - numero della pagina da indirizzare
+    - offset rispetto all'inizio della pagina
+
+
+L'hardware impone alcune dimensioni
+- bit indirizzo logico - $m$
+- dimensione del frame - $2^{n}$
+  + $n$ bit di offset
+  + $m-n$ bit per indirizzare le pagine
+- Spazio di Indirizzamento Logico
+  + $2^{m-n}\times 2^{n}$
+In questo caso l'OS deve adeguarsi al hardware cui e' posto, cosi' facendo la sequenza lineare di valori degli indirizzi fisici e' interpretata come coppia di valori
+- bit piu' significativi come numero del frame
+- bit meno significativi come offset $d$
+Questo e' implementato in modo piu' semplice utilizzando come grandezze di indirizzamento potenze di 2
+- in questo modo:
+  + non sara' necessario memorizzare l'indirizzo di partenza del _frame_ ma solo il suo _numero_
+  + non sara' necessario operare una somma tra indirizzo e offset ma solamente una _concatenazione_ (piu' veloce)
+**** Paginazione a piu' livelli
 
 ** Virtuale
 
