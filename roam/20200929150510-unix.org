@@ -1,1 +1,221 @@
 #+TITLE: Unix
+
+* C
+
+** Bitwise Operators
+
+** Puntatori
+*** Array di Puntatori
+- Si utilizzano per efficienza
+  + per ordinare strutture dati é piú conveniente spostare puntatori che dati
+- Si trovano per esempio anche nel
+    main(int argc, char *argv[])
+                           ^
+*** Indirezione Multipla
+#+begin_src C
+int i =1;
+int *ip1 = &i;
+int **ipp = &ip1; // puntatore doppio
+#+end_src
+
+Il primo $\star$ indica un livello di indirezione, un numero maggiore di $\star$ aumentano i livelli di indirezione
+
+*** Puntatori a funzioni
+#+begin_src C
+int (*func)(int a, int b){...}
+(*func)(a,b);
+#+end_src
+
+** Preprocessore
+#...
+- Hanno effetto da un certo punto in poi
+- Sono interpretate e riscritte prima che il codice arrivi al compilatore
+Il suo output puó essere visualizzato con il flag -E di gcc
+*** include
+*** define
+La macro non comporta una allocazione di record di attivazione e non prevede context switch, ha meno overhead ed é piú efficiente
+- macro predefinite
+  + __TIME__
+  + __DATE__
+  + __FILE__
+  + __LINE__
+
+** make
+Constringe a considerare le dipendenze
+- si avvale della marcatura temporale dei file
+  + in questo modo decide se ricompilare
+Il _makefile_ é costituito da
+- riga di dipendenza
+- riga d'azione
+Esiste un target speciale:
+clean:
+- utilizzato per rimuovere tutti i file oggetto
+- rm -f *.o
+
+** Environment List
+Le variabili sono passate da processo padre a processo figlio
+Le variabili d'ambiente sono impostate in un array di stringhe
+- accoppiate per nome|valore
+
+In C ci si puó accedere utilizzando la variabile globale
+#+begin_src c
+extern char **environ;
+#+end_src
+
+** PID
+
+*** System Call
+- pid_t getpid(void)
+  + non fallisce mai
+- pid_t getppid(void)
+  + restituisce parent pid
+
+** Memory Layout
+- segmenti
+  + text  segments
+    - read-only
+    - sharable
+  + initialized data segment
+    - globali
+    - statiche
+      + variabili inizializzate esplicitamente dal programma
+  + uninitialized data segmemt
+    - prima di eseguire il programma il Sistema inizializza a 0
+  + stack
+    - cresce e diminuisce dinamicamente
+    - variabili locali (o automatiche)
+    - argomenti
+    - return value
+  + heap
+    - area di memoria allocata a runtime
+      + malloc
+      + calloc
+
+** Process Control
+syscall di Crezione, Esecuzione, Terminazione di processi
+- =fork=
+  + crea una copia quasi identica del genitore
+    - almeno PID diverso
+    - copia di
+      + stack
+      + heap
+      + dati
+      + text segment
+    #+begin_src C
+    pid_t fork(void);
+    #+end_src
+    Il figlio riprende l'esecuzione a partire dalla prima istruzione successiva alla fork che lo ha creato
+    - la fork restituisce
+      - 0 al figlio
+      - PID del figlio al genitore se avviene con successo
+    #+begin_src C
+    pid_t procID;
+    procID = fork();
+    if(procID == -1) exit(1);
+    if(procID){
+        // padre
+    }else{ // if(procID == 0)
+        // figlio
+    }
+    #+end_src
+    #+begin_src C
+    switch (procID = fork()){
+    case -1:
+        exit(1);
+    case 0:
+        // figlio
+    case default:
+        // padre
+    }
+    // qua eseguono entrambi
+    #+end_src
+    Il figlio riceva una copia dei riferimenti ai descrittori dei file
+    - se il genitore apre un file prima della fork le modifiche saranno condivise tra i due
+- =exit=
+  + libera le risorse utilizzate dal processo
+    - in modo che il kernel possa allocarle
+    - status
+      + intero che descrive lo stato di terminazione del processo
+    I Processi possono terminare in due modi
+    - in maniera anomala
+      - segfault per esempio
+      - con una _exit()
+        - incapsulato all'interno della syscall exit
+          + effettua
+            - exit handlers
+            - stdio stream buffer flushed
+            - _exit() viene invocata utilizzando lo status
+- =wait=
+  + sospende il chiamante di sospendere l'esecuzione fino alla terminazione di un figlio
+  + status
+    - alla terminazione del figlio qui sara' riportato l'exit status del figlio
+  + error handling
+    - ritorna -1
+    - errno = ECHILD /*se diverso da questo é un errore inatteso*/
+      + in caso chiamante non abbia figli
+
+  + =waitpid=
+    - permette di scegliere il figlio da aspettare
+    - permette una nonblocking wait
+      + non si blocca in caso di nessuna terminazione
+    - parametri
+      + pid
+        - >0 aspetta specifico figlio
+        - == 0 attende un processo dello stesso gruppo del chiamante
+        - == -1 attende un figlio qualsiasi
+      + status
+        - figlio ha terminato
+          + con una exit
+          + con un segnale non gestito
+          + e' stato bloccato da un segnale e  waitpid era chiamata con WUNTRACED
+        - <sys/wait.h>
+          + WIFEXITED(status)
+          + WIFSIGNALED(status)
+          + WIFSTOPPED(status)
+          + WIFCONTINUED(status)
+      + options
+        - maschera di bit
+        - WUNTRACED
+        - WCONTINUED
+        - WNOHANG
+          + se nessun figlio specificato ha cambiato stato restituisci immediatamente
+- =execve=
+  + carica un nuovo programma nella memoria del processo chiamante, sovrascrivendolo
+    - i descrittori di file aperti rimangono aperti nel nuovo programma
+  + e' cancellato il text segment del precedente processo
+    - sono poi ricreati heap e dati
+  + esistono funzioni di libreria
+    - interfaccie alla execve
+  + parametri
+    - pathname
+    - argv[]
+      + lista di puntatori a stringa
+      + termina con puntatore a NULL
+    - envp[]
+      + environment pointer
+      + coppie nome-valore
+
+  + ritorno
+    - non ne ha se ha successo
+    - -1 per errore
+      + EACCES
+      + ENOENT
+      + ENOEXEC
+      + TXTBSY
+      + E2BIG
+- =system=
+  + crea un processo figlio per eseguire
+  + restituisce lo stato di terminazione dell'ultimo comando eseguito
+  + é inefficente
+
+*** orphans and zombies
+in generale un padre sopravvive al figlio
+- in caso di orfano il padre diventa il processo _init_
+- per garantire una wait dalla parte del padre per conoscere lo status delfiglio
+  + il kernel permette di trasformare il figlio in zombie
+
+**** zombies
+Non possono essere uccisi da un segnale
+- rimangono nella tabella dei processi
+  + se si verificano zombie potrebbe riempirsi la tabella
+Idealmente si devono evitare processi zombie

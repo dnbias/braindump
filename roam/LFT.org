@@ -323,7 +323,7 @@ Nuova grammatica:
     Fissato un automa a pila $P$
     $D.I.=(q,w,\alpha)$
     - stato in cui si trova l'automa
-    - ció che rimane dariconoscere nella stringa di input
+    - ció che rimane da riconoscere nella stringa di input
     - contenuto della pila dalla cima al fondo (sx a dx)
 
 **** Mosse
@@ -341,6 +341,74 @@ Per pila vuota:
 - Per pila vuoto lo stato nela \(D.I.\) finale puó non essere finale
 
 In ogni caso la stringa di input deve essere consumata completamente
+
+*** Automi a Pila Deterministici
+=DPDA=
+Strettamente meno espressivi dei =PDA=
+- riconoscono comunque ogni Linguaggio Regolare
+- riconoscono i linguaggi liberi non inerementemente ambigui
+Dimostrabile:
+1. Per ogni CFG G esiste un PDA tale che N(P) = L(G)
+2. Per ogni PDA P esiste una CFG G tale che L(G) = N(P)
+I DPDA a paritá di stato simbolo letto e simbolo sulla pila possono fare al massimo una mossa.
++ \(\delta(q,a,X) \cup \delta(q,\epsilon,X)\) deve contenere al massimo un elemento
+Mentre il linguaggio $ww^R$ non é riconoscibile in quanto fa uso chiave del non determinismo mentre $wcw^R$ é riconoscibile grazie al simbolo sentinella $c$
+- Dim - Ogni linguagio regolare é riconosciuto da un DPDA
+  - $A = (Q,\Sigma,\delta_A,q_0,F)$
+  - $P = (Q,\Sigma,\{Z_0\}, \delta_P,q_0,Z_0,F)$
+  dove
+  - $\delta_P(q,a,Z_0) = \{(\delta_A(q,a,Z_0))\}$ per ogni $q \in Q, a \in \Sigma$
+  - $\delta_P(q,\epsilon,Z_0) = \emptyset$
+Dimostrabile
+1. Per ogni DPDA P esiste una grammatica libera non ambigua G tale che L(G)=N(P)
+2. Il viceversa non vale
+La famiglia dei linguaggi riconoscibili da DPDA é inclusa in - ma non concide con - quella dei linguaggi generabili da grammatiche libere non ambigue
+
+** Parser Top-Down
+Lavorano su grammatiche libere dal contesto che non fanno uso del =backtracking=
+Un parser data una grammatica $G$ e una stringa $w\in T^*$ cerca di ottenere una derivazione a sinistra $S\Rightarrow^{*}_{lm} w$ in cui, al passo $i$, il parser sa che
+- $S\Rightarrow^{*}_{lm}u\beta$
+deve stabilire se
+- $uA\beta \Rightarrow^{*}_{lm} w$
+Ci sono due casi da considerare
+1. $u$ non é prefisso di $w$ $\rightarrow$ il parser rifiuta $w$
+2. $w=uav$ $\rightarrow$ il parser deve scegliere una produzione per riscrivere $A$
+   - $A \rightarrow \alpha_1 |...| \alpha_m$
+   - usa $a$ come guida scegliendo la produzione $\alpha_i$ tale che $\alpha_i\beta\Rightarrow^{*}_{lm} av$
+
+*** Stringhe Annullabili
+Puó essere riscritta nella stringa vuota
+Data $G$ e $\alpha\in(V\cupT)$
+NULL$(\alpha)$ se e solo se $\alpha \Rightarrow^{*}_{G} \epsilon$
+- se i simboli della stringa possono essere riscritti in $\epsilon$ allora la stringa puó essere riscritta in $\epsilon$
+- se $A \rightarrow \alpha$ e $\alpha$ é annullabile $\rightarrow$ $A$ é annullabile
+
+*** Inizi di una stringa
+FIRST$(\alpha)=\{\alpha \in T \mid \alpha \Rightarrow^{*}_{G} a\beta\}$
+Calcolabile per induzione
+- FIRST$(\epsilon)  = \emptyset$
+- FIRST$(a)  =\{a\}$
+- FIRST$(A) = \cup_{\rightarrow \alpha}$ FIRST$(\alpha)$
+- FIRST$(X\alpha)$
+
+*** Seguiti di una variabile
+Data $A \in V$
+FOLLOW$(A)$ sono i sguiti di $A$, l'insieme di simboli terminali che possobo seguire $A$ in una forma sentenziale
+FOLLOW$(A)=\{a \in T \mid S \Rightarrow^{*}_{G} \alpha Aa\beta\}$
+Convenzione:
+- sentinella \(\$\) ai seguiti
+Calcolo:
+1. si annotano relazioni di appartenenza ed inclusione insiemistica
+   a. \(\$ \in\) FOLLOW$(S)$
+   b. $A\rightarrow aB\beta$ allora FIRST$(\beta)$ inclusa FOLLOW$(B)$
+   c. $A\rightarrow aB\beta$ e NULL$(\beta)$ allora FOLLOW(A) inclusa FOLLOW$(B)$
+2. si determinano i seguiti propagandi i  simboli terminali e \(\$\) rispettando l'ordine delle inclusioni insiemistiche che sono state annotate
+
+*** Insiemi Guida
+GUIDA$(A\rightarrow\alpha)$
+
+*** Grammatiche LL(1)
+GUIDA$(A\rightarrow\alpha)\cap$GUIDA$(A\rightarrow\beta)=\emptyset$
 
 * Analisi Lessicale
 sequenze di caratteri | =token= o =lessemi=
@@ -360,3 +428,11 @@ sequenza on vuota di lettere numeri e _ e non inizia con un numero
 ----> [[file:/home/dan/Code/Java/LFT/Lexer.java][Codice]] <----
 La visione del programma passa da "carattere per carattere" a "token per token"
 - spazi e commenti vengono scartati dal lexer
+  + /* */
+  + //
+    - finiscono con _a capo_ o _EOF_
+- identificatori
+  + non comincia con un numero
+  + non é composto solamente dal simbolo _
+  + Ovvero corrisponde all'espressione regolare
+    - ([a-zA-Z] | (_(_)*[a-zA-Z0-9])) ([a-zA-Z0-9] | _)*

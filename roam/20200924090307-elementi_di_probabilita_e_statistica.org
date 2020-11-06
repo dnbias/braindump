@@ -106,20 +106,40 @@ Probabilita' dello spazio campionario vale 1
 - P come area
 - moneta equa
   - non truccata: le due facce sono =equipossibili=
-- moneta eequa lanciata 3 volte
+- moneta equa lanciata 3 volte
   - escano due teste
 - due volte dado a 4 facce equo
 
 **** Probabilita' Condizionata
 Misura che permette di calcolare probabilita' in condizioni di informazione parziale
 - Prende in considerazione informazioni
+\(P(A|B)=\frac{P(A\cap B)}{P(B)}\) o equivalentemente \(P(A\cap B) = P(A|B)\cdot P(B)\)
+\(P(A_1\cup A_2 | B) = P(A_1|B)+P(A_2|B)-P(A_1\cap A_2 |B)\)
 
-**** regola della moltiplicazione
+***** regola della moltiplicazione
+Per eventi indipendenti
+\begin{equation*}
+\begin{split}
+P(A_1\cap A_2 \cap ... \cap A_n) = & P(A_n | A_1 \cap A_2 \cap ... \cap A_{n-1}) \cdot \\
+                               & P(A_{n-1}|A_1 \cap A_2 \cap ... \cap A_{n-2}) \cdot \\
+                               & ... \\
+                               & P(A_2|A_1) \cdot P(A_1)
+\end{split}
+\end{equation*}
+***** Formula delle probabilita' totali
+In caso di $n$ partizioni di \(\Omega\) dette \(A_i\)
+\begin{equation*}
+\begin{align}
+P(B) = & P(B|A_1)\cdot P(A_1) + \\
+       & P(B|A_2)\cdot P(A_2) + \\
+       & ... \\
+       & P(B|A_n)\cdot P(A_n)
+\end{align}
+\end{equation*}
 
-**** Formula delle probabilita' totali
-
-**** Formula di Bayes
-$P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
+***** Formula di Bayes
+In caso di $n$ partizioni di \(\Omega\) dette \(A_i\)
+$P(A_i|B)=\frac{P(B|A_i)P(A_i)}{P(B)}$
 
 **** Eventi indipendenti
     ~NB~ l'indipendenza é una proprietá delle probabilitá, non degli eventi: dipende dalle misure
@@ -127,12 +147,12 @@ $P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
         \(P(A|B)=P(A)\)
 
     Allora:
-        \(P(A\capB / P(B) = P(A))\)
-        \(P(A\capB) = P(A)P(B)\)
+        \(\frac{P(A\cap B)}{P(B)} = P(A)\)
+        \(P(A\cap B) = P(A)P(B)\)
 
     =def equivalente=
     Due eventi sono indipendenti se
-        \(P(A\capB) = P(A)P(B)\)
+        \(P(A\cap B) = P(A)P(B)\)
 
         \(P(B|A)P(A) / P(B)= P(A)\) per Bayes
         \(P(B|A)=P(B)\)
@@ -143,14 +163,25 @@ $P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
     - concetto intuitivo di indipendenza
       - due dadi lanciati sono indipendenti dal punto di vista meccanicistico
 
-    Eventi senza intersezione non nulli non somo mai indipendenti
+    Eventi senza intersezione non nulli non sono mai indipendenti
     - Quindi A e A complementare sono sempre dipendenti
       - quindi dati A e B indipendenti questi sono indipendenti dai complementari altrui
 
 ***** Indipendenza a due a due
-
+\begin{equation*}
+\begin{align}
+P(\{(i,j)\}) & = P(A_i \cap B_j) \\
+             & = P(A_i) \cdot P(B_j) \\
+             & = P^1(\{i\}) \cdot P^2(\{j\})
+\end{align}
+\end{equation*}
 ***** Indipendenza Condizionata
-
+$A$ e $B$ sono indipendenti condizionatamente a $C$ se:
+\begin{equation*}
+\begin{align}
+P(A \cap B | C) = P(A|C) \cdot P(B|C)
+\end{align}
+\end{equation*}
 ***** Moltiplicazione Cartesiana
     La \(P\) di duple o n-uple é
     \(P=P^1*P^2*...*P^n\)
@@ -171,8 +202,12 @@ $P(A|B)=\frac{P(A|B)P(A)}{P(B)}$
     Dato che le variabili aleatorie sono funzioni:
     Le intersezioni delle controimmagini $X_{-1}$ sono a due a due disgiunte e comprono tutto $\Omega$
     $\Rightarrow \sum_{x\in Im(X)} p_X(x)=1$
+   
 *** Variabili Aleatorie Discrete
-
+**** Variabile Aleatoria Binomiale
+$p_X(k)=\binom{n}{k}p^k(1-p)^{n-k}$ con $k \in Im(X)=\{1,2,...\}$
+**** Variabile Aleatoria Geometrica
+$p_X(k)=(1-p)^{1-p}p$ con $k\in Im(X)=\{1,2,...\}$
 
 *** Variabili Aleatorie Continue
 
