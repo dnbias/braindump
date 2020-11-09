@@ -1185,6 +1185,7 @@ _Soluzione_
 - Compattamento
   + creazione di un unica area libera di memoria
 **** Paginazione
+- Vedi [[file:20201109165742-microarchitettura_ia_32.org][IA-32]]
 Area di memoria allocata da un processo suddivisa in pezzi _non contigui_
 - ~Frame~ o ~Pagine Fisiche~
   + pezzi di dimensione fissa in cui e' divisa la Memoria Principale aka spazio di indirizzamento fisico (potenze di 2)
@@ -1323,10 +1324,6 @@ Paginazione Gerarchica
                 - in quanto si dovrebbe seguire la catena delle tabelle delle pagine per ricostruire l'indirizzo fisico
 
 ***** Tabella delle Pagine Invertita =IPT=
-:PROPERTIES:
-:ID:       6bdc79c1-1d6f-4399-bbfd-a09e9e75490b
-:END:
-- Vedi [[file:20201109165742-microarchitettura_ia_32.org][Microarchitettura IA-32]]
 Adottata in alcune architetture a 64 bit
 - 1 tabella per tutto il sistema
   + indice di ogni entry corrisponde al numero di un frame nella memoria principale
