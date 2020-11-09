@@ -227,6 +227,7 @@ Ordinamento:
 
        
 ** 1 - Microarchitettura
+[[file:20201109165841-microarchitecture.org][Microarchitecture]]
      - ALU
      - Microprogramma
 

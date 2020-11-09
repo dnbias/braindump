@@ -1,4 +1,5 @@
 #+TITLE: Mic-1
+[[file:20201109165841-microarchitecture.org][Microarchitecture]]
 Dal
 [[file:20200530053538-andrew_s_tanenbaum.org][Tanenbaum]]
 

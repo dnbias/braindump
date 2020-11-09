@@ -1214,21 +1214,135 @@ _Indirizzi Logici_ reimplementati
     - offset rispetto all'inizio della pagina
 
 
-L'hardware impone alcune dimensioni
+L'hardware =impone= alcune dimensioni
 - bit indirizzo logico - $m$
 - dimensione del frame - $2^{n}$
   + $n$ bit di offset
   + $m-n$ bit per indirizzare le pagine
 - Spazio di Indirizzamento Logico
   + $2^{m-n}\times 2^{n}$
-In questo caso l'OS deve adeguarsi al hardware cui e' posto, cosi' facendo la sequenza lineare di valori degli indirizzi fisici e' interpretata come coppia di valori
+In questo caso l'OS deve adeguarsi al hardware cui e' posto, cosi' facendo la sequenza lineare i valori degli indirizzi fisici e' interpretata come coppia di valori
 - bit piu' significativi come numero del frame
 - bit meno significativi come offset $d$
 Questo e' implementato in modo piu' semplice utilizzando come grandezze di indirizzamento potenze di 2
 - in questo modo:
   + non sara' necessario memorizzare l'indirizzo di partenza del _frame_ ma solo il suo _numero_
-  + non sara' necessario operare una somma tra indirizzo e offset ma solamente una _concatenazione_ (piu' veloce)
+  + non sara' necessario operare una somma tra indirizzo e offset ma solamente una _concatenazione_ (piu' veloce e semplice a livello hardware)
+
+_Vantaggi_
+- Protezione dello spazio di indirizzamento
+  + Un processo puó solo indirizzare i frame contenuti nella sua tabella delle pagine
+    - quei frame contengono le pagine che appartengono al processo stesso perché é l'OS a costruire la tabella
+- evita frammentazione esterna
+  + quella interna rimane tipicamente nell'ultima pagina di un processo
+    - mediamente mezzo frame é sprecato per ogni processo
+- é una forma di rilocazione dinamica
+  + ad ogni pagina corrisponde un diverso valore del registro di rilocazione
+    - ogni frame indirizzato dalla pagina (indirizzo logico) é di fatto/agisce come un registro di rilocazione
+      + ma in questo caso non c'é piú un controllo sulla validitá del offset
+        - ovvero che l'indirizzamento non esca dai limiti del processo
+
+_Dimensioni_
+Le pagine storicamente sono aumentate di dimensioni col tempo
+- > la dimensione
+  + > la frammentazione interna
+  + < la lunghezza della tabella delle pagine
+
+_Svantaggi_
+- page-table
+  + per ogni processo attivo
+- frame table
+  + frame liberi
+  + frame occupati
+    - da che pagina
+    - da quale processo
+- ad ogni context switch
+  + OS
+    - attiva table del processo assegnato
+    - disattiva il processo uscito
+- ogni accesso alla Memoria Principale passa attraverso la paginazione
+  + la traduzione da indirizzi logici a fisici deve essere efficiente
+    - se la tabella delle pagine é piccola puó essere contenuta in registri della CPU
+      + soluzione utilizzata dal PDP-11 ma ora le dimensioni non lo permettono
+        - 8 registri per la PT
+        - indirizzi da 16 bit
+  + essendo la tabella contenuta in MP (in una zona riservata dal OS)
+    - in questo modo per ogni indirizzo logico richiesto dal processore il numero di accessi alla MP raddoppia
+
+***** TLB
+Una tecnica di =caching= della PT mediante memoria associativa messa a disposizione della CPU
+- Memoria Associativa
+  + =translation look-aside buffer= =TLB=
+    - una tabella di entry
+      + ogni entry ha
+        - chiave - pagina
+        - valore - frame
+    - per ogni chiave questa é cercata in parallelo
+      + questo permette una grande efficienza
+    - Solo parte della PT é caricata in TLB
+      + la ricerca puó fallire =miss= o meno =hit=
+        - in caso di miss si va ad utilizzare la PT e fare un doppio accesso alla memoria principale
+          + questa é fatta partire insieme alla ricerca in TLB, se quest'ultima ha successo viene semplicemente annullata
+  + =page-table base register= =PTBR=
+    - al context switch basta modificare questo registro per attivare la PT del processo mandato in esecuzione
+
+****** i7
+Due livelli di cache di indirizzi TLB
+- L1 - a sua volta divisa in due cache
+  + instruction-address
+    - 128 entry
+  + data-address
+    - 64 entry
+  + costo virtualmente nullo
+- L2
+  + 512 entry
+  + costo di 6 cicli
+In caso di miss il costo sará piú di 100 cicli giá solo per la ricostruzione dell'indirizzo
+
+***** Pagine condivise
+La paginazione facilita la condivisione di codice in quanto questo non cambia durante l'esecuzione e tutti i processi possono leggerlo in maniera sicura
+- la pagina condivisa puó essere usata per contenere una libreria dinamica
+
+
 **** Paginazione a piu' livelli
+Paginazione Gerarchica
+- le page-tables possono raggiungere grandi dimensioni
+  + la soluzione puó essere paginare anche le tabelle delle pagine
+    - PT interna richiede una PT esterna
+      + quest'ultima indica dove si trovano le pagine in cui é divisa la PT interna
+      + La PT esterna richiede a sua volta di essere paginata per le grandi dimensioni nel caso reale
+        - Questo perfino in architetture da 32 bit (di indirizzamento logico)
+          + SPARC
+            - 3 livelli
+          + Motorola 68030
+            - 4 livelli
+        - Uno schema a 4 livelli non basta per architetture a 64 bit
+          + UltraSPARC
+            - sarebbero richiesti 7 livelli
+              + overhead altissimo in caso di miss nel =TLB=
+                - in quanto si dovrebbe seguire la catena delle tabelle delle pagine per ricostruire l'indirizzo fisico
+
+***** Tabella delle Pagine Invertita =IPT=
+:PROPERTIES:
+:ID:       6bdc79c1-1d6f-4399-bbfd-a09e9e75490b
+:END:
+- Vedi [[file:20201109165742-microarchitettura_ia_32.org][Microarchitettura IA-32]]
+Adottata in alcune architetture a 64 bit
+- 1 tabella per tutto il sistema
+  + indice di ogni entry corrisponde al numero di un frame nella memoria principale
+    - il corrispettivo di una normale PT
+  + Ogni entry é una coppia
+    - <process-id, page-number>
+  + Ogni indirizzo logico generato dalla CPU é una tripla
+    - <process-id, page-number, offset>
+  + Per generare l'indirizzo fisico
+    - si =ricerca= nella IPT <PID, page-number>
+      + questo in linea di principio impone un enorme overhead
+        - vorrebbe dire centinaia o migliaia di accessi a MP
+      + risolvibile con una =memoria associativa=
+        - il controllo é fatto in parallelo
+    - l'indice $i$ a cui si é trovata la coppia e offset $d$ generano
+      + <$i$, $d$>
 
 ** Virtuale
 
