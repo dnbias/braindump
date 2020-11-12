@@ -22,7 +22,6 @@
 
 
 * Probabilita'
-
 ** descrive eventi soggetti a ~casualita'~
 - nasce nell'ambito del gioco d'azzardo ~ seconda meta' del 800
 
@@ -186,7 +185,6 @@ P(A \cap B | C) = P(A|C) \cdot P(B|C)
     La \(P\) di duple o n-uple é
     \(P=P^1*P^2*...*P^n\)
 
-   
 ** Variabili Aleatorie
     In casi in cui l'esperimento é numerico servono altri strumenti rispetto a quelli usati fino ad ora
     Una Variabile Aleatoria é una funzione da \(\Omega\) in \(\mathbb{R}\)
@@ -204,10 +202,16 @@ P(A \cap B | C) = P(A|C) \cdot P(B|C)
     $\Rightarrow \sum_{x\in Im(X)} p_X(x)=1$
    
 *** Variabili Aleatorie Discrete
-**** Variabile Aleatoria Binomiale
+**** Binomiale
 $p_X(k)=\binom{n}{k}p^k(1-p)^{n-k}$ con $k \in Im(X)=\{1,2,...\}$
-**** Variabile Aleatoria Geometrica
+**** Geometrica
 $p_X(k)=(1-p)^{1-p}p$ con $k\in Im(X)=\{1,2,...\}$
+**** Bernulliana
+**** Poisson
+\(X \sim \text{Poisson}(\lambda)\) con $\lambda$ intensitá
+\(p_X(k) = \frac{\lambda^k e^{-\lambda}}{k!}\)
+**** Ipergeometrica
+\(p_X(k) = \frac{\binom{C}{k}\binom{N-C}{n-k}}{\binom{N}{n}}\)
 
 *** Variabili Aleatorie Continue
 
