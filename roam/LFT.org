@@ -24,31 +24,48 @@ Principi tecniche e strumenti
 Automi, Linguaggi e Calcolabilita'
 
 * Fasi Compilatore
-
 ** Analisi Lessicale
-
-** Analisi Sintattica
-
-** Analisi Semantica _Non affrontata nel corso_
-
-* Analisi Lessicale
 sequenze di caratteri | =token= o =lessemi=
 
 Si passa da
 1. Programma come sequenza di caratteri
 2. Programma come sequenza di token
-** Token
+*** Token
 Costante numerica intera
 sequenza non vuota di cifre decimali, preceduta da + o -
 Costante numerica con virgola
 due sequenza (almeno 1 non vuota) di cifre decimali separate da .
 Identificatore
 sequenza on vuota di lettere numeri e _ e non inizia con un numero
-** Lexer
+*** Lexer
 =Analizzatore lessicale=
+----> [[file:/home/dan/Code/Java/LFT/Lexer.java][Codice]] <----
 La visione del programma passa da "carattere per carattere" a "token per token"
 - spazi e commenti vengono scartati dal lexer
+  + /* */
+  + //
+    - finiscono con _a capo_ o _EOF_
+- identificatori
+  + non comincia con un numero
+  + non é composto solamente dal simbolo _
+  + Ovvero corrisponde all'espressione regolare
+    - ([a-zA-Z] | (_(_)*[a-zA-Z0-9])) ([a-zA-Z0-9] | _)*
 
+** Analisi Sintattica
+Vedi: [[id:6b12c8b8-4c7b-4630-8ceb-e0a14b6c897b][Parser Top-Down]] e [[file:/mnt/archive/DanyB/Code/Java/LFT/Parser.java][Codice Parser a Discesa Ricorsiva]]
+- Prende input dall'analizzatore lessicale
+- Crea un Albero Sintatico
+  + che sará utilizzato poi dal Analizzatore Semantico
+    - vedi [[id:a4d4b2ed-071d-4b89-a917-eac641502f45][Analisi Semantica _Non affrontata nel corso_]]
+- In caso l'input non corrisponda ad un albero lessicale
+  + deve restituire un errore
+
+** Analisi Semantica _Non affrontata nel corso_
+:PROPERTIES:
+:ID:       a4d4b2ed-071d-4b89-a917-eac641502f45
+:END:
+
+- Si occupa della valutazione delle espressioni
 * Automi
 
 ** Automi a stati finiti deterministici =DFA=
@@ -365,74 +382,32 @@ Dimostrabile
 La famiglia dei linguaggi riconoscibili da DPDA é inclusa in - ma non concide con - quella dei linguaggi generabili da grammatiche libere non ambigue
 
 ** Parser Top-Down
-Lavorano su grammatiche libere dal contesto che non fanno uso del =backtracking=
-Un parser data una grammatica $G$ e una stringa $w\in T^*$ cerca di ottenere una derivazione a sinistra $S\Rightarrow^{*}_{lm} w$ in cui, al passo $i$, il parser sa che
-- $S\Rightarrow^{*}_{lm}u\beta$
-deve stabilire se
-- $uA\beta \Rightarrow^{*}_{lm} w$
-Ci sono due casi da considerare
-1. $u$ non é prefisso di $w$ $\rightarrow$ il parser rifiuta $w$
-2. $w=uav$ $\rightarrow$ il parser deve scegliere una produzione per riscrivere $A$
-   - $A \rightarrow \alpha_1 |...| \alpha_m$
-   - usa $a$ come guida scegliendo la produzione $\alpha_i$ tale che $\alpha_i\beta\Rightarrow^{*}_{lm} av$
+:PROPERTIES:
+:ID:       6b12c8b8-4c7b-4630-8ceb-e0a14b6c897b
+:END:
+Vedi:[[file:20201110134001-parser_top_down.org][File dedicato]]
+* Grammatiche
+** LL(1)
+** Non LL(1)
+*** Fattorizzazione
+\(A \to \alpha \beta_1 | \alpha \beta_2 \)
+quindi
+GUIDA$(A \to \alpha\beta_1) \cap$ GUIDA$(A \to \alpha\beta_2) =/= \emptyset$
 
-*** Stringhe Annullabili
-Puó essere riscritta nella stringa vuota
-Data $G$ e $\alpha\in(V\cupT)$
-NULL$(\alpha)$ se e solo se $\alpha \Rightarrow^{*}_{G} \epsilon$
-- se i simboli della stringa possono essere riscritti in $\epsilon$ allora la stringa puó essere riscritta in $\epsilon$
-- se $A \rightarrow \alpha$ e $\alpha$ é annullabile $\rightarrow$ $A$ é annullabile
+_Soluzione_
+Fattorizzare il previsso comune in una variabile a parte $A'$
+*** Ricorsione immediata a sinistra
+$A \to A\alpha | \beta$
 
-*** Inizi di una stringa
-FIRST$(\alpha)=\{\alpha \in T \mid \alpha \Rightarrow^{*}_{G} a\beta\}$
-Calcolabile per induzione
-- FIRST$(\epsilon)  = \emptyset$
-- FIRST$(a)  =\{a\}$
-- FIRST$(A) = \cup_{\rightarrow \alpha}$ FIRST$(\alpha)$
-- FIRST$(X\alpha)$
+_Soluzione_
+Nuova variabile $A'$ per spostare la ricorsione da sinistra a destra
+$A \to \beta A'$   $A' \to \epsilon | \alpha A'$
 
-*** Seguiti di una variabile
-Data $A \in V$
-FOLLOW$(A)$ sono i sguiti di $A$, l'insieme di simboli terminali che possobo seguire $A$ in una forma sentenziale
-FOLLOW$(A)=\{a \in T \mid S \Rightarrow^{*}_{G} \alpha Aa\beta\}$
-Convenzione:
-- sentinella \(\$\) ai seguiti
-Calcolo:
-1. si annotano relazioni di appartenenza ed inclusione insiemistica
-   a. \(\$ \in\) FOLLOW$(S)$
-   b. $A\rightarrow aB\beta$ allora FIRST$(\beta)$ inclusa FOLLOW$(B)$
-   c. $A\rightarrow aB\beta$ e NULL$(\beta)$ allora FOLLOW(A) inclusa FOLLOW$(B)$
-2. si determinano i seguiti propagandi i  simboli terminali e \(\$\) rispettando l'ordine delle inclusioni insiemistiche che sono state annotate
+In generale l'eliminazione della ricorsione a sinistra non garantisce che la grammatica risultante sia LL(1)
+*** Ricorsione indiretta a sinistra
+\(S \to Aa | b\)
+\(A \to Ac | Sd | \epsilon\)
 
-*** Insiemi Guida
-GUIDA$(A\rightarrow\alpha)$
-
-*** Grammatiche LL(1)
-GUIDA$(A\rightarrow\alpha)\cap$GUIDA$(A\rightarrow\beta)=\emptyset$
-
-* Analisi Lessicale
-sequenze di caratteri | =token= o =lessemi=
-
-Si passa da
-1. Programma come sequenza di caratteri
-2. Programma come sequenza di token
-** Token
-Costante numerica intera
-sequenza non vuota di cifre decimali, preceduta da + o -
-Costante numerica con virgola
-due sequenza (almeno 1 non vuota) di cifre decimali separate da .
-Identificatore
-sequenza on vuota di lettere numeri e _ e non inizia con un numero
-** Lexer
-=Analizzatore lessicale=
-----> [[file:/home/dan/Code/Java/LFT/Lexer.java][Codice]] <----
-La visione del programma passa da "carattere per carattere" a "token per token"
-- spazi e commenti vengono scartati dal lexer
-  + /* */
-  + //
-    - finiscono con _a capo_ o _EOF_
-- identificatori
-  + non comincia con un numero
-  + non é composto solamente dal simbolo _
-  + Ovvero corrisponde all'espressione regolare
-    - ([a-zA-Z] | (_(_)*[a-zA-Z0-9])) ([a-zA-Z0-9] | _)*
+_Soluzione_
+1. si impone un ordine arbitrario alle variabili
+2. considerando ogni variabile nell'ordine imposto si elimina laricorsione immediata per quella variabile e si riscrivono le occorrenze di quella variabile che compaiono nei corpi delle produzione delle variabili seguenti

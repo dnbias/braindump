@@ -1,0 +1,48 @@
+#+title: Parser Top-Down
+#+startup: latexpreview
+
+* Parser Top-Down
+Lavorano su grammatiche libere dal contesto che non fanno uso del =backtracking=
+Un parser data una grammatica $G$ e una stringa $w\in T^*$ cerca di ottenere una derivazione a sinistra $S\Rightarrow^{*}_{lm} w$ in cui, al passo $i$, il parser sa che
+- $S\Rightarrow^{*}_{lm}u\beta$
+deve stabilire se
+- $uA\beta \Rightarrow^{*}_{lm} w$
+Ci sono due casi da considerare
+1. $u$ non é prefisso di $w$ $\rightarrow$ il parser rifiuta $w$
+2. $w=uav$ $\rightarrow$ il parser deve scegliere una produzione per riscrivere $A$
+   - $A \rightarrow \alpha_1 |...| \alpha_m$
+   - usa $a$ come guida scegliendo la produzione $\alpha_i$ tale che $\alpha_i\beta\Rightarrow^{*}_{lm} av$
+
+*** Stringhe Annullabili
+Puó essere riscritta nella stringa vuota
+Data $G$ e $\alpha\in(V\cupT)$
+NULL$(\alpha)$ se e solo se $\alpha \Rightarrow^{*}_{G} \epsilon$
+- se i simboli della stringa possono essere riscritti in $\epsilon$ allora la stringa puó essere riscritta in $\epsilon$
+- se $A \rightarrow \alpha$ e $\alpha$ é annullabile $\rightarrow$ $A$ é annullabile
+
+*** Inizi di una stringa
+FIRST$(\alpha)=\{\alpha \in T \mid \alpha \Rightarrow^{*}_{G} a\beta\}$
+Calcolabile per induzione
+- FIRST$(\epsilon)  = \emptyset$
+- FIRST$(a)  =\{a\}$
+- FIRST$(A) = \cup_{\rightarrow \alpha}$ FIRST$(\alpha)$
+- FIRST$(X\alpha)$
+
+*** Seguiti di una variabile
+Data $A \in V$
+FOLLOW$(A)$ sono i sguiti di $A$, l'insieme di simboli terminali che possobo seguire $A$ in una forma sentenziale
+FOLLOW$(A)=\{a \in T \mid S \Rightarrow^{*}_{G} \alpha Aa\beta\}$
+Convenzione:
+- sentinella \(\$\) ai seguiti
+Calcolo:
+1. si annotano relazioni di appartenenza ed inclusione insiemistica
+   a. \(\$ \in\) FOLLOW$(S)$
+   b. $A\rightarrow aB\beta$ allora FIRST$(\beta)$ inclusa FOLLOW$(B)$
+   c. $A\rightarrow aB\beta$ e NULL$(\beta)$ allora FOLLOW(A) inclusa FOLLOW$(B)$
+2. si determinano i seguiti propagandi i  simboli terminali e \(\$\) rispettando l'ordine delle inclusioni insiemistiche che sono state annotate
+
+*** Insiemi Guida
+GUIDA$(A\rightarrow\alpha)$
+**** Grammatiche LL(1)
+Deriva da sinistra dando prioritá alla variabile piú a sinistra e restituisce solo simboli terminali
+GUIDA$(A\rightarrow\alpha)\cap$ GUIDA$(A\rightarrow\beta)=\emptyset$
