@@ -67,24 +67,6 @@ Vedi: [[id:6b12c8b8-4c7b-4630-8ceb-e0a14b6c897b][Parser Top-Down]] e [[file:/mnt
 
 - Si occupa della valutazione delle espressioni
 * Automi
-
-** Automi a stati finiti deterministici =DFA=
-Deterministico: lo stato in cui si sposta e' univocamente determinato dallo stato corrente e dal input
-
-Quintupla composta da:
-1. \(Q\) - insieme finito di stati
-2. \(Sigma\) - alfabeto riconosciuto
-3. \(delta\) - funzione di transizione
-4. \(q_{0}\) - e' lo stato iniziale
-5. \(F\) - insieme di stati finali
-
-** Funzione di transizione estesa
-funzione definita su stringhe invece che singoli simboli
-definito per induzione
-** Linguaggio riconosciuto
-Stringhe definite sull'alfabeto che per mezzo della F di transizione estesa portano ad uno =stato finale= dell'automa
-** Linguaggio regolare
-Esiste almeno un Automa A che lo riconosce
 ** Esempio
 automa: riconosce stringhe
 stati finiti: memoria finita
@@ -97,6 +79,21 @@ L'automa altera il suo stato in base al simbolo letto
 
 Se alla fine della stringa l'automa si trova in uno =stato finale= l'output sara' "si", altrimenti "no"
 
+** Automi a stati finiti deterministici =DFA=
+Deterministico: lo stato in cui si sposta e' univocamente determinato dallo stato corrente e dal input
+
+Quintupla composta da:
+1. \(Q\) - insieme finito di stati
+2. \(Sigma\) - alfabeto riconosciuto
+3. \(delta\) - funzione di transizione
+4. \(q_{0}\) - e' lo stato iniziale
+5. \(F\) - insieme di stati finali
+
+*** Funzione di transizione estesa
+funzione definita su stringhe invece che singoli simboli
+definito per induzione
+*** Linguaggio riconosciuto
+Stringhe definite sull'alfabeto che per mezzo della F di transizione estesa portano ad uno =stato finale= dell'automa
 ** Automi a stati finiti non deterministici =NFA=
 Non deterministico: l'automa puo' scegliere di spostarsi in 0 o piu' stati possibili
 - Il codominio della funzione di transizione e' l'insieme delle parti degli stati Q
@@ -168,71 +165,6 @@ L(E*) = L(E)*   // chiusura di Kleene
 **** Chiusura di Kleene
 - Idempotenza
 
-** Linguaggi Regolari
-=def= Un Linguaggio riconoscibile da un =DFA=
-*** I linguaggi regolari sono chiusi rispetto all'operazione di unione
-'Collego' i due automi deterministici attraverso uno stato q0 che con epsilon-transizioni passa da uno o dall'altro
-
-*** I linguaggi regolari sono chiusi rispetto all'operazione di concatenazione
-'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
-
-*** Chiusura #dim
-- \(L\cup L^{'}\)
-- Dati \(E_{1}\) e \(E_{2}\)
-  - Si dimostra che \(E_{1}+E{_2}\) genera \(L\cupL^{'}\)
-  - Essendo quella ancora un'espressione regolare anche il linguaggio generato sará regolare
-- \(LL^{'}\)
-- Simile all'unione
-- \(not{L}\)
-- \(not{L}= \Sigma^{*}-L\)
-- si crea un automa \(B = (Q,\Sigma,\delta,q_{0},Q-F)\)
-  - abbiamo complementato l'insieme degli stati finali
-- i\(L\cap L^{'}\)
-- Si utilizzano le leggi di De Morgan
-  - ci si riconduce al caso dell'unione e della complementazione
-- O si construisce un automa \(B\) che riconosce una simulazione dei due automi iniziali \(A_1\) e \(A_2\)
-- \(L -L^{'}\)
-- \(L_1 - L_2 = L_1 \cap notL_2\)
-- \(L^{R}\)
-  - L rovesciato
-- Si ricava un \(E^R\) per induzione
-
-  \(\o^R=\o\)
-  \(\epsilon^R=\epsilon\)
-  \(a^R=a\)
-  \((E_1+E_2)^R={E_1}^R+{E_2}^R\)
-  \((E_1 E_2)^R = {E_2}^R {E_1}^R\)
-  \((E^*)^R = (E^R)^*\)
-  Facile poi dimostrare che \(L(E^R) = L(E)^R\)
-  Tutti questi sono ancora regolari
-
-** Linguaggi non Regolari
-*** Pumping Lemma
-Per ogni linguaggio regolare \(L\) esiste \(n\) appartenente a \(N\) tale che per ogni \(w\) appartenente a \(L\) con \(|w|>= n\) esistono \(x,y,z\) tc \(w=xyz\) :
-1. \(y!=\epsilon\)
-2. \(|xy|<=n\)
-3. \(xy^kz\) appartiene \(L\) per ogni \(k>=0\)
-   Abbiamo una stringa media \(y\) non vuota che puó essere replicata un numero arbitrario di volte sempre ottenendo un Liguaggio Regolare.
-
-   * Esempio
-     + \(L=\{a^kb^k \mid k >= 0\}\) non é regolare
-**** dim
-- \(L\) regolare
-- \(A = (Q,\Sigma,\delta,q_0,F)\) tc \(L=L(A)\)
-- \(n=|Q|\)
-- \(|w|>=n\) tc \(w=a_1a_2...a_m\) con \(m>=n\)
-- Dopo \(m\) passaggi lo stato \(q_m\) deve essere finale per definizione
-- Il numero di stati attraversati sará \(m+1\)
-- \(m>=n\) implica \(m+1>n\) quindi gli stati attraversati non possono essere tutti distinti
-- \(q_i =q_j\) e \(i<j\) é il primo stato che si ripete nel cammino dell'automa
-Allora concludiamo identificando \(x,y,z\)
-- \(x=a_1a_2...a_i\)
-- \(y=a_{i+1}a_{i+2}...a_j\)
-- \(z=a_{j+1}a_{j+2}...a_m\)
-1. \(y!=\epsilon\) in quanto \(i<j\)
-2. \(|xy|<=n\) in quanto \(q_i=q_j\) é il primo stato che si ripete e sono al massimo \(n+1\)
-3. \(xy^kz\) appartiene a \(L\) per ogni \(k>=0\)
-
 ** Indistinguibilitá tra stati
     =Equivalenza= (relazione riflessiva, simmetrica e transitiva)
     Due stati hanno lo stesso protere discriminante se presa una qualunque stringa del linguaggio si arriva ad uno stato finale in entrambi i casi o meno in entrambi i casi, la indichiamo con la tilde
@@ -252,76 +184,6 @@ Allora concludiamo identificando \(x,y,z\)
     \(A = (Q_1 \cup Q_2, \Sigma, \delta, q_1, F_1 \cup F_2)\)
     \(\delta(q,a) = \delta_1 \cup \delta_2
     Se $q_1$ e $q_2$ risultano indistinguibili in $A$ allora $A_1$ e $A_2$ sono _equivalenti_
-
-** Linguaggi Liberi dal Contesto
-   Le grammatiche libere sono un approccio generativo alle stringhe
-   \(L = {a^nb^n \mid n \in \N}\) non e' regolare:
-   - e' il inguaggio delle parentesi bilanciate
-
-    \(G=(V,T,P,S)\) e' una =grammatica= libera
-     - \(V\) variabili o simboli non terminali
-     - $T$ terminali
-     - $P$ produzioni \(A\to \alpha\)
-       + testa
-       + corpo
-        La riscrittura della \(A\) in \(\alpha\)(sequenza arbitraria di simboli terminali o non) e' libera dal contesto
-     - $S$ simbolo iniziale
-
-     =Derivazioni=:
-   - derivazione in un solo passo
-   - derivazione in zero o piu' passi
-
-    Il potere riconoscitivo delle grammatiche libere e' almeno tanto quanto quello dei linguaggi regolari
-
-    =Derivazioni canoniche=
-     - leftmost
-       + $\Rightarrow_{lm}$
-
-     - rightmost
-       + $\Rightarrow_{rm}$
-
-     Se esistono due derivazioni canoniche distinte (entrambe lm o rm) per la stessa stringa allora $G$ e' ambigua
-
-*** Alberi Sintattici
-    Derivazioni differenti possono generare lo stesso programma
-    - anche imponendo regole all'ordine delle riscritture
-
-    Gli alberi sintattici (alternativa alle generazioni) astraggono dall'ordine delle riscritture e permettono di ragionare sulla =struttura= delle stringhe
-    - grammatiche ambigue
-      + piu' alberi con lo stesso prodotto
-      + non e' avere derivazioni distente che mi porta ad alberi diversi e quindi ambiguita'
-    Data una grammatica $G = (V,T,P,S)$ gli alberi sintattici di $G$:
-    - ogni nodo etichettato con una var in $V$
-    - ogni foglia etichettata da $V$ o $T$ o $\epsilon$
-    - $\epsilon$ significa unico figlio del genitore
-    - se un nodo $A$ i suoi figli sono etichettati (sx a dx)
-      + $X_{1},X_{2},...,X_{n}$
-      + $A\to X_{1},X_{2},...,X_{n}$ e' una produzione in $P$
-    Il =prodotto= e' la stringa ottenuta cocatenando(sx verso dx) le etichette di tutte le foglie
-
-**** Teorema
-    $A\to G* \alpha$ se e solo se esiste un albero sintattico di $G$ con radice $A$ e prodotto $\alpha$
-
-**** Risoluzione delle ambiguitá (grammatiche in forma infissa)
-   - Precedenza degli operatori
-   - Associativitá degli operatori
-     + per operatori associativi questo non é un problema
-     + lo é per altri operatori
-
-Soluzione ad hoc
-    Utilizziamo associativitá a sinistra, sbilanciamo le espressioni e le stratifichiamo
-   - Espressione = somma di termini
-   - Termine = prodotto di fattori
-   - Fattore = costante o espressione tra parentesi
-
-Nuova grammatica:
-    $(\{E,T,F\},\{0,1,...,9,+,*,(,)\},P,E)$
-    Produzioni:
-    - $E\to T\midE+T$
-    - $T\to\midT*F$
-    - $F\to0\mid1\mid...\mid9\mid(E)$
-
-**** Linguaggi inerentemente ambigui
 
 ** Automi a Pila =PDA=
 =Approccio Riconoscitivo=
@@ -411,3 +273,174 @@ In generale l'eliminazione della ricorsione a sinistra non garantisce che la gra
 _Soluzione_
 1. si impone un ordine arbitrario alle variabili
 2. considerando ogni variabile nell'ordine imposto si elimina laricorsione immediata per quella variabile e si riscrivono le occorrenze di quella variabile che compaiono nei corpi delle produzione delle variabili seguenti
+* Linguaggi
+** Linguaggio regolare
+Esiste almeno un Automa A che lo riconosce
+*** Linguaggi Regolari
+=def= Un Linguaggio riconoscibile da un =DFA=
+**** I linguaggi regolari sono chiusi rispetto all'operazione di unione
+'Collego' i due automi deterministici attraverso uno stato q0 che con epsilon-transizioni passa da uno o dall'altro
+
+**** I linguaggi regolari sono chiusi rispetto all'operazione di concatenazione
+'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
+
+**** Chiusura #dim
+- \(L\cup L^{'}\)
+- Dati \(E_{1}\) e \(E_{2}\)
+  - Si dimostra che \(E_{1}+E{_2}\) genera \(L\cupL^{'}\)
+  - Essendo quella ancora un'espressione regolare anche il linguaggio generato sará regolare
+- \(LL^{'}\)
+- Simile all'unione
+- \(not{L}\)
+- \(not{L}= \Sigma^{*}-L\)
+- si crea un automa \(B = (Q,\Sigma,\delta,q_{0},Q-F)\)
+  - abbiamo complementato l'insieme degli stati finali
+- i\(L\cap L^{'}\)
+- Si utilizzano le leggi di De Morgan
+  - ci si riconduce al caso dell'unione e della complementazione
+- O si construisce un automa \(B\) che riconosce una simulazione dei due automi iniziali \(A_1\) e \(A_2\)
+- \(L -L^{'}\)
+- \(L_1 - L_2 = L_1 \cap notL_2\)
+- \(L^{R}\)
+  - L rovesciato
+- Si ricava un \(E^R\) per induzione
+
+  \(\o^R=\o\)
+  \(\epsilon^R=\epsilon\)
+  \(a^R=a\)
+  \((E_1+E_2)^R={E_1}^R+{E_2}^R\)
+  \((E_1 E_2)^R = {E_2}^R {E_1}^R\)
+  \((E^*)^R = (E^R)^*\)
+  Facile poi dimostrare che \(L(E^R) = L(E)^R\)
+  Tutti questi sono ancora regolari
+
+** Linguaggi non Regolari
+*** Pumping Lemma
+Per ogni linguaggio regolare \(L\) esiste \(n\) appartenente a \(N\) tale che per ogni \(w\) appartenente a \(L\) con \(|w|>= n\) esistono \(x,y,z\) tc \(w=xyz\) :
+1. \(y!=\epsilon\)
+2. \(|xy|<=n\)
+3. \(xy^kz\) appartiene \(L\) per ogni \(k>=0\)
+   Abbiamo una stringa media \(y\) non vuota che puó essere replicata un numero arbitrario di volte sempre ottenendo un Liguaggio Regolare.
+
+   * Esempio
+     + \(L=\{a^kb^k \mid k >= 0\}\) non é regolare
+**** dim
+- \(L\) regolare
+- \(A = (Q,\Sigma,\delta,q_0,F)\) tc \(L=L(A)\)
+- \(n=|Q|\)
+- \(|w|>=n\) tc \(w=a_1a_2...a_m\) con \(m>=n\)
+- Dopo \(m\) passaggi lo stato \(q_m\) deve essere finale per definizione
+- Il numero di stati attraversati sará \(m+1\)
+- \(m>=n\) implica \(m+1>n\) quindi gli stati attraversati non possono essere tutti distinti
+- \(q_i =q_j\) e \(i<j\) é il primo stato che si ripete nel cammino dell'automa
+Allora concludiamo identificando \(x,y,z\)
+- \(x=a_1a_2...a_i\)
+- \(y=a_{i+1}a_{i+2}...a_j\)
+- \(z=a_{j+1}a_{j+2}...a_m\)
+1. \(y!=\epsilon\) in quanto \(i<j\)
+2. \(|xy|<=n\) in quanto \(q_i=q_j\) é il primo stato che si ripete e sono al massimo \(n+1\)
+3. \(xy^kz\) appartiene a \(L\) per ogni \(k>=0\)
+** Linguaggi Liberi dal Contesto
+   Le grammatiche libere sono un approccio generativo alle stringhe
+   \(L = {a^nb^n \mid n \in \N}\) non e' regolare:
+   - e' il inguaggio delle parentesi bilanciate
+
+    \(G=(V,T,P,S)\) e' una =grammatica= libera
+     - \(V\) variabili o simboli non terminali
+     - $T$ terminali
+     - $P$ produzioni \(A\to \alpha\)
+       + testa
+       + corpo
+        La riscrittura della \(A\) in \(\alpha\)(sequenza arbitraria di simboli terminali o non) e' libera dal contesto
+     - $S$ simbolo iniziale
+
+     =Derivazioni=:
+   - derivazione in un solo passo
+   - derivazione in zero o piu' passi
+
+    Il potere riconoscitivo delle grammatiche libere e' almeno tanto quanto quello dei linguaggi regolari
+
+    =Derivazioni canoniche=
+     - leftmost
+       + $\Rightarrow_{lm}$
+
+     - rightmost
+       + $\Rightarrow_{rm}$
+
+     Se esistono due derivazioni canoniche distinte (entrambe lm o rm) per la stessa stringa allora $G$ e' ambigua
+
+*** Alberi Sintattici
+    Derivazioni differenti possono generare lo stesso programma
+    - anche imponendo regole all'ordine delle riscritture
+
+    Gli alberi sintattici (alternativa alle generazioni) astraggono dall'ordine delle riscritture e permettono di ragionare sulla =struttura= delle stringhe
+    - grammatiche ambigue
+      + piu' alberi con lo stesso prodotto
+      + non e' avere derivazioni distente che mi porta ad alberi diversi e quindi ambiguita'
+    Data una grammatica $G = (V,T,P,S)$ gli alberi sintattici di $G$:
+    - ogni nodo etichettato con una var in $V$
+    - ogni foglia etichettata da $V$ o $T$ o $\epsilon$
+    - $\epsilon$ significa unico figlio del genitore
+    - se un nodo $A$ i suoi figli sono etichettati (sx a dx)
+      + $X_{1},X_{2},...,X_{n}$
+      + $A\to X_{1},X_{2},...,X_{n}$ e' una produzione in $P$
+    Il =prodotto= e' la stringa ottenuta cocatenando(sx verso dx) le etichette di tutte le foglie
+
+**** Teorema
+    $A\to G* \alpha$ se e solo se esiste un albero sintattico di $G$ con radice $A$ e prodotto $\alpha$
+
+**** Risoluzione delle ambiguitá (grammatiche in forma infissa)
+   - Precedenza degli operatori
+   - Associativitá degli operatori
+     + per operatori associativi questo non é un problema
+     + lo é per altri operatori
+
+Soluzione ad hoc
+    Utilizziamo associativitá a sinistra, sbilanciamo le espressioni e le stratifichiamo
+   - Espressione = somma di termini
+   - Termine = prodotto di fattori
+   - Fattore = costante o espressione tra parentesi
+
+Nuova grammatica:
+    $(\{E,T,F\},\{0,1,...,9,+,*,(,)\},P,E)$
+    Produzioni:
+    - $E\to T\midE+T$
+    - $T\to\midT*F$
+    - $F\to0\mid1\mid...\mid9\mid(E)$
+
+**** Linguaggi inerentemente ambigui
+
+*** Pumping Lemma
+*** Chiusura
+**** Unione & Concatenazione
+_SI_
+dati \(L_1 = L(G_1)\) e \(L_2 = L(G_2)\)
+dove \(V_1 \cap V_2 = \emptyset\)
+costruiamo la grammatica
+\((V_1 \cup V_2, T_1\cup T_2, P_1 \cup P_2 \cup \{S\to S_1 \mid S_2\},S)\)
+che genera \(L_1 \cup L_2\)
+e la grammatica
+\((V_1 \cup V_2, T_1\cap T_2, P_1 \cap P_2 \cap \{S\to S_1 S_2\},S)\)
+che genera \(L_1 L_2\)
+**** Intersezione
+_NO tra 2 Linguaggi Liberi_
+\(L_1 = \{a^n b^n c^m \mid \ge 0\}\)
+\(L_1 = \{a^m b^n c^n \mid \ge 0\}\)
+Sono liberi ma
+\(L_1 \cap L_2 = \{a^n b^n c^n \mid n \ge 0\}\)
+Non é libero, dimostrabile con il pumping lemma
+_SI tra linguaggio Libero e linguaggio Regolare_
+NB: L'intersezione non é piú un linguaggio regolare
+es.
+\(L = \{a^n b^n \mid n \ge 0\}\) e \(R = L(a^* b^*)\)
+\(L\cap R = L\) il quale non é regolare
+**** Complemento & Differenza
+_NO_
+Se fossere chiusi per complemento allora
+\(L_1 \cap L_2 = \overline{\overline{L_1 \cap L_2}} = \overline{\overline{L_1} \cup \overline{L_2}}\)
+Contrario a ció dimostrato
+Il complemento é esprimibile per differenze e quindi nemmeno la differenza é chiusa
+**** Inversione
+_SI_
+\(G^R = (V,T,P^RS)\) dove \(P^R= \{A \to \alpha^R\mid A \to \alpha \in P\}\)
+Si dimostra che \(L(G^R) = L(G)^R\)
