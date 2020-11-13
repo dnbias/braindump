@@ -1063,10 +1063,13 @@ do{
 * Gestione Memoria
 
 ** Centrale
+
 Bisogna decidere come spartire lo spazio di memorizzazione tra i processi attivi
 - _l'immagine_ di un processo inattivo nei prossimi cicli di CPU puo essere spostato su hard disk
 - quando un processo rientra in RAM occupera' spazio prima occupato
-Questo e' lo ~swap~
+  + Questo e' lo ~swap~
+
+_Obiettivo_ massimizzare il numero di processi in Memoria Principale per aumentare la multiprogrammazione
 *** Binding
 Associazione degli indirizzi
 - ad ogni variabile di un programma va associato un indirizzo che ne contiene il valore
@@ -1342,6 +1345,70 @@ Adottata in alcune architetture a 64 bit
       + <$i$, $d$>
 
 ** Virtuale
+Tecniche he permettono di eseguire processi in cui codice e/o dati non sono completamente caricati in Memoria Primaria
+- esempi
+  + codice per trattazione di errore potrebbe non essere mai utilizzata in una data esecuzione
+  + array liste e tabelle spesso dichiarate di dimensioni maggiori di quelle effettivamente utilizzata
+  + librerie dinamiche caricate in RAM solo se e solo quando sono effettivamente usate
+
+
+*** Vantaggi
+- possibile eseguire programmi piú grandi in memoria principale
+- possibile l'esecuzione contemporanea di processi che occupano piú spazio della MP disponibile
+- maggiore multiprogrammazione e throughput della CPU
+- velocitá maggiore di prima esecuzione
+  + non é necessario caricare completamente i processi in memoria principale
+
+*** Svantaggi
+- aumento traffico tra RAM e HD
+- esecuzione rallentat
+- prestazioni coomplessive possono degradare
+  + =thrashing=
+
+*** Tecniche
+
+**** Paginazione su Richiesta
+=Demand Paging=
+Portare una pagina in Memoria solo al momento del primo indirizzamento di una locazione della pagina stessa
+- un'indirizzazione su una pagina che non si trova in Memoria
+  + si ha =Page Fault=
+    - l'OS interviene con il =Pager= per recuperare la pagina su Memoria Secondaria
+      1) il processo é messo in uno stato =waiting for page=
+      2) intanto lo scheduler sostituisce il processo con qualcun'altro
+      3) una volta fatto aggiorna il bit di validitá
+- bit di validitá
+  + ad ogni entry della page table indica se si trova in Memoria Principale
+    - un bit di validitá 0 scatta la trap =page fault=
+
+***** Pure Demand Paging
+Un processo é eseguito senza nessuna delle sua pagine in Memoria Principale
+- la prima istruzione indirizzata da PC (inizializzato da OS)
+  + =page fault=
+
+***** Demand Paging
+Almeno qualche pagina é caricata in Memoria Principale
+
+****** Supporto Hardware
+Mentre la paginazione puó essere aggiunta in qualsiasi paginazione la memoria virtuale necessita un hardware specifico
+- le istruzioni devono essere rieseguibili dopo page fault
+Oppure
+- CPU deve controllare bit di validitá di tutti gli operandi prima di eseguire l'istruzione
+
+****** Prestazioni
+\(\text{ma}\)   Tempo di accesso MP se dato é presente
+\(p\)     probabilitá di page-fault
+\(\text{eat}\)   Effective Time Access
+\(t\)     Tempo gestione del page-fault
+
+\(\text{eat} = [(1-p) \times \text{ma}] + [p \times t]\)
+
+\(t\) consiste grossolanamente al tempo di recupero della pagina dalla Memoria di Massa
+- in quanto nell'ordine dei \(ms\) invece che \(\mu s\)
+Perció per non degradare troppo le prestazioni il numero di page-fault deve essere molto basso
+- questo puó anche essere fatto aumentando di dimensioni le pagine
+  + pagine grandi danno meno page-fault in media
+
+**** Area di Swap
 
 * Gestione Memoria di massa
 
