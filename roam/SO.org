@@ -467,6 +467,104 @@ until false;
 #+END_SRC
 
 ** Thread
+_syscall_: UNIX: clone(); Windows: CreateThread()
+
+Se due processi (con spazi di indirizzamendo separati) devono lavorare sugli stessi dati sará necessario:
+- area di memoria condivisa
+- utilizzo di messaggi per lo scambio dei dati
+- dati in un file acceduto a turno
+  + comunque passaggio attraverso memoria secondaria piú lenta
+
+Inoltre al context switch é introdotto un overhead
+- disattivazione aree codice e dati dell'uscente
+- attivazione aree codice e dati dell'entrante
+Cache CPU
+- contengono dati dell'uscente
+- entrante generá subito molti miss di cache
+
+Per questo nascono i thread
+- =peer thread=
+  + "processi" che condividono lo spazio di indirizzamento
+    - codice e dati
+Un processo semplice é contraddistindo da un unico thread di computazione
+
+*** Peer Thread
+Un processo Multi-Thread o Multi-Threaded é composto da piú thread di computazione detti =peer thread=
+- un processo di questo tipo é anche detto =task=
+- ad ogni =peer thread=
+  + corrisponde un suo thread computazionale
+    - registri CPU
+    - stack privato
+    - Program Counter
+  + informazioni condivise, _spazio di indirizzamento_
+    + codice
+    + dati
+      - unica copia delle strutture dati del codice
+    + file
+
+*** Context Switch
+Avviene normalmente in modo che ciascun thread possa eseguire
+- vengono cambiate solo
+  + PC
+  + Registri CPU
+  + Stack
+- Molto piú veloce
+  + non vanno attivate diverse Page-Table
+  + miss cache minori
+    - i dati utilizzati dai peer thread é probabile siano gli stessi
+
+*** Scheduling Thread
+
+**** livello User
+
+**** livello Kernel
+OS mantiene strutture dati per gestire sia i normali processi che tutti i peer thread  di un task
+Quando un thread si blocca volontariamente o meno, il OS assegna la CPU:
+- a un altro peer-thread dello stesso task
+- a uno dei peer-thread di un altro task
+- ad un altro processo
+
+*** Vantaggi
+- efficienza (Solaris)
+  + un LWP richiede 30 volte meno tempo per essere creato rispetto un HWP
+  + context switch 5 volte piú veloce
+- condivisione di dati e risorse
+- architettura multi-core
+  + ancora emeglio architetture multi-threaded
+
+*** Architetture Multi-Core
+Molto adatte a gestire multiplici thread
+- con due core
+  + core1 puó gestire solo peer-thread di un task
+  + core2 puó gestire solo peer-thread di un altro task
+I context switch saranno solamente tra peer-thread con massima efficienza
+I core sono sempre in costante tentativo di bilanciamento in un sistema reale
+- dipendentemente da
+  + numero di core
+  + numero di task
+    - numero di peer-thread
+  + numero di processi
+
+**** CPU/CORE Multithreaded
+Attraverso una pipe-line é possibile eseguire fino a 4 o 5 istruzione del programma in esecuzione =multiple issue=
+- Pipeline
+  + IF
+  + ID
+  + EX
+  + MEM
+  + WB
+- Architettura Superscalare
+  + ogni core deve essere dotati di piú ALU e Unitá Floating Point
+
+Questo non é sempre possibile
+- le istruzioni devono essere indipendenti tra di loro
+  + non devono avere bisogno del risultato di un'istruzione precedente
+Invece le istruzioni di due peer-thread distinti saranno probabilmente indipendenti
+- esecuzione in parallelo di istruzioni appartenendi a thread diversi
+  + =Simultaneous Multi-Threading=
+    - aumento di produttivitá della CPU
+
+
 
 ** Scheduling
 Presupponendo un sistema Single-core
@@ -751,9 +849,7 @@ Code multilivello con retroazione
       + i nodi sono inseriti con la chiave del P.vruntime
         - il nodo piú a sinistra sará quello scelto dallo scheduler
 
-
 ** Sincronizzazione
-<<<<<<< HEAD
     I processi possono cooperare, perció dovranno condividere dei dati
     - é necessario evitare la creazione di ~dati inconsistenti~
 
@@ -1408,7 +1504,183 @@ Perció per non degradare troppo le prestazioni il numero di page-fault deve ess
 - questo puó anche essere fatto aumentando di dimensioni le pagine
   + pagine grandi danno meno page-fault in media
 
+***** Considerazioni sulle pagine
+Pagine piccole implicano
+- PT piú grandi
+- meno frammentazione interna
+- peggiori prestazioni nell'uso dell'HD perché seek e latenza del disco sono costanti
+- maggiori page-fault in media
+
 **** Area di Swap
+:PROPERTIES:
+:NOTER_DOCUMENT: /home/dan/DL/capitolo10-1.pdf
+:NOTER_PAGE: 1
+:END:
+
+***** Memorizzazione Pagine
+
+Utilizzo di meccanismi piú semplici ed efficienti di quelli utilizzati per il filesystem
+- non vengono utilizzati file
+  + questo per evitare l'uso dei =file descriptor=
+- sono utilizzati blocchi piú grandi rispetto i normali file
+- copia dell'eseguibile di qualsiasi processo nell'area di swap alla sua esecuzione
+  - tempo di avvio aumenta
+  - swap piú grandi
+  - migliora tempo di gestione page-fault
+    + il recupero delle pagine in swap é piú efficiente che non la normale Memoria Secondaria
+      - questo a causa del file system
+
+***** Liberare Spazio
+L'idea della memoria virtuale é proprio di
+- eseguire un processo piú grande della memoria primaria
+- esecuzione contemporanea di processi che assieme occupano pú spazio di quello disponibile in RAM
+
+All'avvenire di page-fault se tutti i frame sono occupati
+- OS libera un frame rimuovendo la =pagina vittima=
+  + se contiene dati modificati e/o fa parte dello stack o della heap di un processo
+    - va salvata nello swap, in modo da essere recuperabile dal processo
+    - in questo caso il tempo di gestione raddoppia
+    - =dirty bit=
+      + utilizzato per individuare le entry della PT la cui pagina relativa é stata modificata da quando é entrata in Memoria Principale
+  + se contiene codice
+    - non deve essere salvata, c'é nel file system
+      + se erano giá copiate nello swap potranno essere recuperate piú velocemente
+    - in questo caso il tempo di gestione migliora
+
+***** Problemi
+****** Scelta delle pagine vittima
+******* Algoritmo di sostituzione delle pagine
+Ottimalmente scelta una pagina che non provocherá page-fault nel futuro
+- altrimenti sará uno spreco di tempo e lavoro
+
+Per test si utilizzano le sequenze di riferimenti durante l'esecuzione
+- si ignorano le ripetizioni
+
+Un maggior numero di frame causerá meno page-fault
+
+La sostituzione delle pagine sará locale
+******* FIFO
+Pagina vittima quella che é da piú tempo in memoria principale
+- inizializzazione del processo
+  + buon candidato vittima
+- inizializzazione di una variabile utilizzata per tutto il processo
+  + pessima candidata vittima
+Soffre della =Anomalia di Belady=
+- piú frame possono aumentare i page-fault
+******* OPT - MIN
+Optimal / Minimal
+Pagina vittima quella che sará usata piú in lá nel tempo
+- ovviamente non implementabile
+- utilizzato come confronto per altri algoritmi
+******* LRU
+Least Recently Used
+Pagina vittima quella che non é stata usata per piú tempo
+- si avvicina piú a OPT che FIFO
+- difficilmente implementabile in modo efficiente
+  + dovrebbe avere un supporto hardware non disponibile normalmente
+    - sarebbe necessario un timer per tener traccia
+_Approssimazione_
+=Reference Bit=
+- bit associato ad ogni entry della PT
+  + quando una pagina é indirizzata il bit é settato ad 1
+******* Algoritmo della Seconda Chance
+Utilizza i reference bit per approssimare LRU
+- Utilizza una coda FIFO circolare
+  + la pagina in coda:
+    - se ha reference bit 1 gli viene data una seconda chance
+      + azzera il bit e prosegue la coda
+  + nel caso peggiore equivale a FIFO
+******* Algoritmo della Seconda Chance Migliorato
+Utilizza sia
+- dirty bit
+- reference bit
+4 classi (r,d)
+- (0,0) ottima per essere sostituita
+- (1,0)
+- (0,1) va salvata in memoria secondaria
+- (1,1) peggiore candidata
+******* Tecniche aggiuntive
+Uso del pool di frame liberi, non assegnati normalmente a nuovi processi
+- pagine con dirty bit spostate qui prima di essere salvate
+  + a tempo perso, quando l'OS é abbastanza libero
+****** Allocazione dei frame
+I frame vanno distribuiti tra i processi
+- Uniforme
+- Proporzionale
+- Prioritá
+
+Da quale gruppo di pagine scegliere la vittima?
+- Allocazione Globale - Unix
+  + escluse le pagine dell'OS
+  + turnaround di un processo fortemente influenzato dai processi con cui convive
+    - molto dipedente dall'esecuzione
+- Allocazione Locale - Windows
+  + troppe pagine ad un processo possono peggiorare il throughput
+    - in quanto gli altri processi causeranno page-fault causando l'intervento dell'OS
+
+L'allocazione globale porta un throughput maggiore sperimentalmente in sistemi time-sharing
+****** Thrashing
+Questo avviene quando il grado di multiprogrammazione diventa troppo alto
+Un page fault porta alla rimozione di una pagina di un altro processo
+- questo causerá successivi page-fault da altri processi
+
+Si innesca un circolo vizioso
+- processi passano il loro tempo in waiting
+- OS passa il suo tempo a gestire page-fault
+L'utilizzo della CPU crolla
+- questo puó ingannare gli utenti che vedendo un basso utilizzo di CPU
+  + questo puó causare ancora piú problemi di thrashing
+
+- Prevenzione del fenomeno
+  + Gestione della frequenza dei page fault
+    - Si stabilisce una soglia da non eccedere con i page-fault
+    - si puó anche stabilire che se la frequenza sia troppo bassa é possibile aumentare il grado di multiprogrammazione
+  + Sostituzione Locale puó mitigare il problema
+    - in questo modo i processi non andranno a prendersi frame a vicenda
+  + Quantitá sufficiente di memoria principale
+
+*** Struttura dei Programmi
+Queste possono aumentare il numero di page fault
+Per esempio:
+- array, allocati per righe
+  + se acceduti per colonne si rischia di aumentare i page-fault
+    - le hash-table forniscono per questo prestazioni pessime con la memoria virtuale
+
+*** Windows 10
+=Demand aging with Clustering=
+alla creazione di un processo
+- insieme di lavoro minimo
+  + min di pag (50)
+- insieme di lavoro massimo
+  + max di pagine che SO allocherá in RAM a quel processo (345)
+Inoltre
+- lista frame liberi
+  + associato il numero minimo di frame presenti nella lista
+
+- sostituzione locale delle pagine
+
+Se si raggiunge il limite minimo di frame liberi in RAM
+- si libera spazio
+  + vengono rimosse le pagine in eccesso dei processi che hanno ecceduto l'insieme di lavoro massimo
+    - algoritmo delle seconda chance (reference bit) per Intel
+
+*** Solaris
+=Demand paging=
+parametro =lostfree= associato alla lista dei frame liberi
+- 1/64 del numero di frame del sistema
+- ogni 1/4 di secondo OS controlla che lostfree non sia maggiore del numero di frame liberi
+  + se si: processo _pageout_
+    - variante dell'algoritmo della seconda chance
+      1. candisce le pagine in RAM azzerandone bit di riferimento
+      2. riscandisce e le pagine con il bit di riferimento a 0 vengono considerate riutilizzabili
+         a. dirty bit a 1 vengono prima salvate prima di essere riutilizzate
+         b. se un processo fa riferimento ad una pagina riutilizzabile in attesa di essere salvata questa viene riassegnata a quel processo
+    - il tempo tra due pageout puó variare in base a parametri dell'OS
+      + ma sempre nell'ordine d i qualche secondo
+    - se il pageout non riesce a mantenere la quantitá di frame ad un livello accettabile é possibile si stia verificando il thrashing
+      + OS puó rimuovere tutte le pagine di un processo
+        - scegliendo tra i processi inattivi da piú tempo
+
 
 * Gestione Memoria di massa
 

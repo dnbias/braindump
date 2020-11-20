@@ -213,6 +213,20 @@ $p_X(k)=(1-p)^{1-p}p$ con $k\in Im(X)=\{1,2,...\}$
 **** Ipergeometrica
 \(p_X(k) = \frac{\binom{C}{k}\binom{N-C}{n-k}}{\binom{N}{n}}\)
 
+**** Media
+Informazioni riassuntive, piú semplici anche se parziali
+\(E(X) = \sum_{x\in Im(X)}x p_X(x)\)
+- media pesata sulle $p_X$ delle singole $x$
+Questa ha il significato di $\lambda$ nella Poisson
+
+**** Momento
+di ordine $k$
+\(m_k = E(X^k)\)
+
+**** Varianza
+Anche detto scarto quadratico medio
+\(Var(X) = E([X-E(X)]^2)\)
+
 *** Variabili Aleatorie Continue
 
 * Statistica

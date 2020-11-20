@@ -358,6 +358,20 @@ Spesso a causa di un puntatore che contiene un _bad address_
 
 ** Facilities
 
+
+*** System V IPC
+**** syscall
+- msgget()
+- semget()
+- shmget()
+
+**** message queues
+I messaggi possono essere pescati per tipo oltre che ordine
+**** shared memory
+Uno degli strumenti di IPC piú veloci
+
+**** semaphores
+set di semafori
 *** Sincronizzazione
 :PROPERTIES:
 :NOTER_DOCUMENT: ../../../Documents/UNI/II/SO/05_pipes_FIFOs_1X.pdf
@@ -370,7 +384,60 @@ Spesso a causa di un puntatore che contiene un _bad address_
 :END:
 - blocking
 - non-blocking
+Aumento del semaforo    :: reso disponibile
+Decremento del semaforo :: accesso all'area critica
+***** Syscall
+#+begin_src C
+#include <sys/types.h>
+#include <sys/sem.h>
+int semget(key_t key, int nsems, int semflg);
+    // returns semaphore set identifier on success , -1 on error
+    // semflg: IPC_CREAT, IPC_EXCL
+int semclt(int semid, int semnum, int cmd, ... /* union semun arg */);
+    // semun utilizzabile per l'argomento
+    // IPC_RMID
+    // IPC_STAT
+    // IPC_SET
+    // GETVAL
+    // SETVAL
+    // GETALL
+    // SETALL
+    // GETPID
+    // GETNCNT
+    // GETZCNT
+int semop(int semid, struct sembuf *sops, unsigned int nsops);
+    // sembuf codifies the operations to do
+    // nops is the dimension of sops
+struct semid_ds {
+    struct ipc_perm sem_perm;
+    time_t sem_otime; // timestamp of last semop (0 when created)
+    time_t sem_ctime;
+    unsigned short
+}
 
+struct sembuf {
+    unsigned short sem_num;
+    short sem_op;
+    // group of operations are atomic and executed in their order
+    // either they are all executed at once or not
+    short sem_flg;
+    // IPC_NOWAIT == non-blocking
+}
+#+end_src
+Una semop bloccata fino a che:
+- un processo sblocca il semaforo
+- viene interrotto da in segnale di Interrupt
+  + EINTR
+
+***** binary semaphores
+1: Free, 0: Reserved
+- Reserve
+- Wait
+#+begin_src C
+int initSem();
+int reserveSem(int semID, int semNum);
+int releaseSem(int semId, int semNum);
+#+end_src
 
 *** Communication Facilities
 :PROPERTIES:
@@ -477,6 +544,8 @@ Possibile creare una fork nella pipeline utilizzando il comando =tee=
 Si scrivono/leggono messaggi interi
 - ogni read legge 1 solo messaggio
 
+****** message queue
+
 
 *** Shared Memory
 :PROPERTIES:
@@ -486,3 +555,4 @@ Meccanismo estremamente veloce
 - va sicronizzato, tipicamente con i semafori
 
 A differenza del data transfer =non é distruttiva=
+
