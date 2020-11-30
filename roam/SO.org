@@ -1686,14 +1686,259 @@ parametro =lostfree= associato alla lista dei frame liberi
 * Gestione Memoria di massa
 
 ** Rigidi
+Contrapposto al floppy-disk
+- dischi
+  + traccie circolari
+    - settori
+      + unitá minima di memorizzazione di informazione
+      + solitamente 4096 Byte
+    - cilindri
+      + insieme delle traccie su diversi piatti
+- bracci
+  + testine rd/wr
+    - sfiorano i dischi in rotazione
+  + un braccio per ogni piatto
+- Seek time
+  + tempo impiegato dalla testina per spostarsi nella zona del settore
+- Latenza posizionale
+  + tempo che impiega un settore a trovarsi sotto la testina
+
+*** Mappatura degli indirizzi
+Array di Blocchi logici (settori) da 4096 Byte
+- settore 0 il primo della traccia piú esterna del primo disco della pila
+Mappatura complicata dalla diversa lunghezza delle tracce e dai difetti di fabbricazione
+OS deve ottimizzare le prestazioni
+- latenza rotazionale non influenzabile dal OS
+  + mediamente 1/2 del tempo di una rotazione completa
+- seek time minimizzabile riordinando le richieste
+  + minimizzando il movimento delle testine
+
+*** Scheduling dei dischi rigidi
+Interessa sola la traccia su cui si trova il settore da leggere
+- si puó semplificare in quanto tutte le testine e tutti i dischi si muovono assieme
+
+**** FCFS
+
+**** C-SCAN
+La testine si muove da un estremo all'altro del piatto
+- raggiunta l'estremitá del piatto torna all'inizio senza servire nessuna richiesta
+
+La sequenza delle tracce viene trattata come una lista circolare
+
+*** Formattazione
+- Basso livello
+  + formattazione fisica
+  + associa indice ad ogni settore
+  + prevede lo spazio per il codice di errore
+  + scelta la dimensione dei blocchi fisici
+    - 512 / 4096 Byte
+- Alto livello
+  + formattazione logica
+  + sottoposta dal OS
+  + crea lista dei blocchi liberi
+    - e una directory iniziale
+  + riservate le aree utilizzate dal OS
+    - boot block
+      + codice per fare partire il sistema operativo
+        - codice eseguito dal codice in ROM
+    - area contenente attribuiti dei file
+      + index-node in Unix
+      + Master File Table in Windows
+    - area di swap
+      + puó essere un file molto grande
+        - in windows
+          + pagefile.sys
+      + puó essere una partizione specifica
+        - non viene trattata allo stesso modo dal File System
+          + viene ottimizzata per una maggiore velocitá
 
 ** RAID
+=Redundant Array of Inexpensive Disks=
+Reduntant Array of Independent Disks vs Single Large Expensive Disk
+- RAID/SLED
+- simile alla contrapposizione =RISC/CISC=
+  + Reduced Instructions Set Computer vs Complex Instruction Set Computer
+Aumenta la velocitá e la affidabilitá di un sistema con diversi piú harddisk
+- il sistema vede l'array come un normale SLED
+  + parallelizzando parte delle operazioni migliora le prestazioni
+  + duplicando l'informazione su piú dischi per poterli recuperare in caso di guasto
+  + non sono necessari cambiamenti a livello di Sistema Operativo
 
+*** Livello 0
+Non c'é duplicazione dei dati, non é davvero un RAID
+- il RAID mappa diverse strips (=striping=)
+  - ogni k blocchi consecutivi
+  - suddivide gli strip tra i dischi seconda la formula
+    + numero di strip MOD numero di dischi
+  - una lettura di strip consecutivi puó essere eseguita dal controller in parallelo sui vari dischi
+  - l'affidabilitá in un RAID di livello 0 é minore di quella di un semplice SLED
+
+*** Livello 1
+Ogni disco é usato come disco di =mirroring=
+- migliora la affidabilitá
+  + in caso di guasto il Sistema puó continuare a funzionare
+    - non sono persi dati
+
+*** Livello 01
+Utilizza =stripping= e =mirroring=
+- piú affidabile ed efficiente
+  + piú costosa
+
+*** Livello 10
+Prima fatto il =mirroring= e poi lo =stripping=
+
+*** Livello 4
+Permette di gestire il recovery con meno dischi
+Striping a livello di blocchi
+- calcola strip di paritá per permettere il recovery
+  + strip di paritá piazzati nello stesso strip di un'altro disco
+    - detto disco di paritá
+      + aggiornato ad ogni modifica con il ricalcolo dello strip di paritá
+        - utilizzato in media 4 volte di piú degli altri dischi
+
+*** Livello 5
+Strip di paritá distrubioti in tutti i dischi
+- per distribuire il lavoro su tutti i dischi
+
+*** Livello 6
+Multipla paritá
+- ma é molto raro che si rompano due dischi contemporaneamente
+
+*** Stringa di Paritá
+s1 XOR s2 XOR s3 = paritá
+s1 = s2 XOR s3 XOR paritá
+
+** SSD
+=Flash Memories= o =Solid State Disk=
+Anche se non sono dischi
+Piú veloci di un disco rigido
+- blocchi o pagine
+  + 2/16KB
+- riscrivibili fino a ad un limite di circa 100000 volte
+  + ogni volta che una pagina viene riscritta va prima cancellata
+    - flashing
+    - questo rende la scrittura molto piú lenta che la lettura
+- non necessita scheduling in quanto di =accesso diretto=
+  + al contrario dell'hard disk
 ** File System
+/Nasce nella seconda parte degli anni sessanta/
+Fornisce meccanismi di memorizzazione e accesso ai dati e applicativi
+Consiste in
+*** File
+  + unitá logica di informazione permanentemente memorizzata su un supporto di memoria secondaria, dotata di:
+    - nome
+    - tipo
+    - posizione fisica
+    - posizione logica nel File System
+      + pathname  /non é esplicitamente memorizzato da nessuna parte/
+        - tranne che in casi particolari
+    - attributi
+      + dimensioni
+      + diritti di accesso
+      + tempo di crezione
+      + proprietario
+  + informazioni contenute:
+    - dati
+      + numerici
+      + testuali
+    - programmi
+      + sorgenti
+      + linkabili
+      + eseguibili
+    - documenti
+      + multimediali
+
+
+Operazioni su File
+- creazione
+- scrittura / lettura
+- riposizionamento all'interno di un file
+- rimozione
+- troncamento di un file
+  + cancella i dati memorizzati tranne che i sui attributi
+- rinominare
+- spostare
+
+Metodi di accesso /questo quando non esistevano mezzi di memorizzazione ad accesso diretto/
+- sequenziale
+- diretto
+
+*** Directory
+Un File System puó essere molto grande
+- fondamentale che i tempi di accesso ai singoli file non crescano linermente
+  - con il numero di file
+  - con lo spazio occupato
+Una directory permette di risalire a tutti gli attributi di un file che contienie
+Permette operazioni di
+- ricerca
+- creazione e cancellazione
+- visualizzazione
+- cambiamento
+- spostamento
+La perdita dei dati della directory comporta la perdita dell'accesso ai file contenuti
+
+Una directory é un file particolare
+- non modificabile a piacimento
+  + OS garantisce l'integritá della struttura del FS
+
+- in =ms-dos=
+  + una lista
+    + nome / attributi
+    + entry da 32 byte
+      - 8: file name
+      - 3: estensione
+      - ...
+- Unix
+  + lista
+    - nome / puntatore agli attributi
+      + puntata una struttura interna
+- NTFS - New Technology File
+  - albero di ricerca bilanciato
+    + ogni foglia corrisponde ad un file
+      - e una file reference ad una struttura interna
+      - alcuni attributi sono immediatamente accessibili
+    + il tempo di ricerca é lo stesso indipendentemente dalla posizione nell'albero
+
+**** Struttura
+- directory unica
+- directory a due livelli /nasce il concetto di pathname/
+  - una directory per ogni utente
+    + contenuta in un'unica directory
+- directory con struttura ad albero
+  + una Root: / in Unix e C:\ in Windows
+    - home directory dell'utente /nasce il concetto di pathname relativo e assoluto/
+      + ogni utente puó navigare nella working directory
+- directory con struttura a grafo aciclico
+  + permette di condividere file o directory con nomi diversi
+    - link
+      + diversi OS hanno diverse implementazioni dei link
+- directory con struttura a grafo generale
+  + una directory puó contenere il nome di una directory padre o antenata
+    - pericoloso in quanto puó creare cicli all'interno del FS
+
+***** Accesso rapido ai file
+L'accesso utilizzando il pathname é estremamente inefficiente
+- richiede piú accessi alla memoria secondaria
+L'OS mette a disposizione l'operazione /open/ che restituisce un descrittore
+- open file table
+  + in RAM, contiene le informazioni relative al file aperto
+  + le modifiche sono prima fatte sulla copia del file in MP
+
+***** Protezione dei file
+Implementazioni perfette ma non realizzabili con
+- lista d'accesso
+- capability list
+Implementazione in Unix
+- classi di utenti
+- protezioni
+  + in lettura
+  + in scrittura
+  + in esecuzione
 
 *** Interfaccia
 
 *** Realizzazione
+
 * Laboratorio
 
 ** [[file:20200929150429-c.org][C]]
