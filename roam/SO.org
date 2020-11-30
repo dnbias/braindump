@@ -1222,17 +1222,17 @@ Ogni indirizzo di un programma in un sistema allocato dinamicamente sará sempre
   + questi sono convertiti in indirizzi =fisici= dal registro di rilocazione
     - somma del registro e del registro logico a livello hardware
     - indicano una determinata cella in RAM
-- Analogamente c'e' uno _spazio di indirizzamento fisico_
+- Analogamente c'é uno _spazio di indirizzamento fisico_
   - da $r+0$ a $r+max$
 
 =NB=: il numero di bit per la memorizzazione degli indirizzi logici puo essere diverso da quello per la memorizzazione degli indirizzi fisici
 - allora lo spazio degli indirizzi logici sara' piu' piccolo in quella architettura
   + un programma avra' un limite di grandezza e memorizzazione
-Questo e' il caso piu' frequente, infatti in caso di indirizzi fisici a 64 bit, questi sono troppi in casi normali:
+Questo é il caso piú frequente, infatti in caso di indirizzi fisici a 64 bit, questi sono troppi in casi normali:
 - sono indirizzabili $2^{40} B$ ovvero $1 TB$ con un indirizzamento di 40 bit
 Solitamente vale questa relazione:
 \(|RAM|_{effettiva}<|RAM|_{max}<<|PhisSpace|<|VirtSpace|\)
-- Questo e' possibile grazie la memoria virtuale
+- Questo é possibile grazie la memoria virtuale
 
 *** Tecniche di Gestione della memoria
 **** Swapping
@@ -1584,6 +1584,7 @@ _Approssimazione_
 - bit associato ad ogni entry della PT
   + quando una pagina é indirizzata il bit é settato ad 1
 ******* Algoritmo della Seconda Chance
+Soffre dell'=Anomalia di Belady=
 Utilizza i reference bit per approssimare LRU
 - Utilizza una coda FIFO circolare
   + la pagina in coda:

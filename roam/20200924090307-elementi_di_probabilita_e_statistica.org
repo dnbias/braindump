@@ -200,7 +200,10 @@ P(A \cap B | C) = P(A|C) \cdot P(B|C)
     Dato che le variabili aleatorie sono funzioni:
     Le intersezioni delle controimmagini $X_{-1}$ sono a due a due disgiunte e comprono tutto $\Omega$
     $\Rightarrow \sum_{x\in Im(X)} p_X(x)=1$
-   
+
+*** Funzioni di Variabili Aleatorie
+dove \(Y=g\comp X\)
+\(P_Y(y)= \sum_{x\in g^-1(\{y\})}P_X(x)\)
 *** Variabili Aleatorie Discrete
 **** Binomiale
 $p_X(k)=\binom{n}{k}p^k(1-p)^{n-k}$ con $k \in Im(X)=\{1,2,...\}$

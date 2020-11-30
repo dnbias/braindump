@@ -161,6 +161,7 @@ Attributi sintetizzati =principali=
 - la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
   Es, trasformazione da forma infissa a postfissa
 \(E \to E_1 + T \{ E.post = E_1.post || T.post || "+" \}\)
+
 Questo viene tradotto on the fly in _{ print("+") }_
 
 

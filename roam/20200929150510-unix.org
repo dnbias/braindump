@@ -551,8 +551,44 @@ Si scrivono/leggono messaggi interi
 :PROPERTIES:
 :NOTER_PAGE: 14
 :END:
-Meccanismo estremamente veloce
+- meccanismo estremamente veloce
+  + non é mediato dal kernel
 - va sicronizzato, tipicamente con i semafori
+  + evitare accessi simultanei
+  + evitare letture concorrenti a scritture
 
 A differenza del data transfer =non é distruttiva=
 
+Di norma ogni processo ha uno spazio di indirizzamento logico indipendente/separato dagli altri processi
+- la memoria condivisa é fisicamente condivisa tra i processi
+I figli ereditano i segmenti di SM a disposizione del genitore
+- durante una exec() i segmenti sono staccati _detached_
+  + NB: non distrutti
+  + sono staccati anche al momento della terminazione dei processi
+
+**** lifecycle
++ shmget()
+  - creazione
+  - ottenere l'id di un segmento giá esistente
++ shmat()
+  - attach
++ shmdt()
+  - detach
+    + avviene automaticamente alla terminazione del processo
++ shmctl()
+  - cancellare (IPC_RMID)
+    + solo un processo la esegue
+  - un segmento sará effettivamente distrutto solo dope che tutti i processi correntemente attaccati lo avranno staccato
+
+**** syscalls
+#+begin_src C
+int shmget(key_t key, size_t size, int shmflg);
+// funzionamento analogo alla malloc ma accessibile
+// a piú processi
+int shmat(int shmid, const void *shmaddr, int shmflg);
+// se il secondo parametro é NULL il kernel si
+// occupa di trovare una zona di memoria adatta
+// RETURN VALUE: indirizzo base del segmento
+int shmdt(const void *shmaddr);
+int shmctl(int shmid, int cmd, struct shmid_ds *buf);
+#+end_src
