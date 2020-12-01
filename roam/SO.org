@@ -32,12 +32,6 @@ gestisce
 *** L'OS generalmente non sta utilizzando le risorse
 **** le gestisce e le fa usare ai programmi
 **** puo' essere chiamato in causa dai programmi
-<<<<<<< HEAD
-        :PROPERTIES:
-:ID:       98593566-3de2-4cb9-88c0-dafc002bed8a
-:END:
-=======
->>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 *** puo' controllare che tutto sia in ordine
 *** Interruzioni
 Evento --> OS gestisce l'evento prendendo il controllo della macchina

@@ -157,13 +157,11 @@ data \(A\to X_1 X_2 ... X_n\)
 
 *** Traduzione on the fly
 Attributi sintetizzati =principali=
-- il loro valore include sempre la concatenzazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre cheevetuali variabili ausiliarie
+- il loro valore include sempre la concatenazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre che evetuali variabili ausiliarie
 - la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
   Es, trasformazione da forma infissa a postfissa
-\(E \to E_1 + T \{ E.post = E_1.post || T.post || "+" \}\)
-
-Questo viene tradotto on the fly in _{ print("+") }_
-
+\(E \to E_1 + T \{ E.post = E_1.post || T.post || "..." \}\)
+Questo viene tradotto on the fly in _{ print("...") }_
 
 * Automi
 ** Esempio
@@ -543,3 +541,48 @@ Il complemento é esprimibile per differenze e quindi nemmeno la differenza é c
 _SI_
 \(G^R = (V,T,P^RS)\) dove \(P^R= \{A \to \alpha^R\mid A \to \alpha \in P\}\)
 Si dimostra che \(L(G^R) = L(G)^R\)
+* JVM
+Vedi: [[file:20200531062306-ijvm.org][IJVM]]
+[[https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings][Bytecode Instruction Listing]]
+- Interprete bytecode
+- macchina virtuale basata su pila
+- basso e alto livello (gestione della pila / oggetti)
+- Garbage Collector
+  Pipeline del corso:
+  .lft --> .j --> .class --> output
+** Pila
+Composta da Frames
+- uno per ogni metodo in esecuzione
+  + NB
+    I metodi non statici hanno come primo argomento il riferimento all'oggetto ricevente
+- argomenti e variabili riferite con il loro indirizzo nella pila
+- Instruction Set
+  /Gestione della Pila/
+  - istore
+  - iload
+  - swap
+  /Aritmetica/
+  - ineg
+  - iadd
+  - isub
+  - imul
+  /Gestione Array/
+  - newarray
+  - arraylength
+  - iaload
+  - iastore
+  /Controllo del Flusso/
+  - goto
+  - if_icmpeq
+  - if_icmpne
+  - if_icmple
+  - if_icmpge
+  - if_icmplt
+  - if_cmpgt
+  - invokestatic
+  - return
+  - ireturn
+** Espressioni
+*** Aritmetiche
+*** Logiche
+Implementazione di Valutazione Corto-Circuitata
