@@ -226,11 +226,14 @@ Questa ha il significato di $\lambda$ nella Poisson
 
 **** Momento
 di ordine $k$
-\(m_k = E(X^k)\)
+\(m_k = E(X^k) = \sum_{x \in Im(X)} x^2  p_X(x)\)
 
 **** Varianza
 Anche detto scarto quadratico medio
 \(Var(X) = E([X-E(X)]^2)\)
+\(Var(aX+b) = a^2 Var(X)\)
+- quadratica nelle costante moltiplicative
+- invariante per traslazioni
 
 **** Deviazione Standard
 Radice della Varianza

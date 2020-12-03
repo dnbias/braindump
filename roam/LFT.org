@@ -157,11 +157,20 @@ data \(A\to X_1 X_2 ... X_n\)
 
 *** Traduzione on the fly
 Attributi sintetizzati =principali=
+<<<<<<< HEAD
 - il loro valore include sempre la concatenazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre che evetuali variabili ausiliarie
 - la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
   Es, trasformazione da forma infissa a postfissa
 \(E \to E_1 + T \{ E.post = E_1.post || T.post || "..." \}\)
 Questo viene tradotto on the fly in _{ print("...") }_
+=======
+- il loro valore include sempre la concatenzazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre che evetuali variabili ausiliarie
+- la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
+  Es, trasformazione da forma infissa a postfissa
+\(E \to E_1 + T \{ E.post = E_1.post || T.post || "+" \}\)
+
+Questo viene tradotto on the fly in _{ print("+") }_
+>>>>>>> 0820ee9 (Appunti)
 
 * Automi
 ** Esempio
@@ -586,3 +595,53 @@ Composta da Frames
 *** Aritmetiche
 *** Logiche
 Implementazione di Valutazione Corto-Circuitata
+
+** Problemi
+la compilazione di un metodo comporta il calcolo della dimensione del suo frame
+- variabili locali
+- pila degli operandi
+inoltre deve assicurarsi che se il tipo di ritorno é diverso da void ci sia un valore restituito
+Questo senza eseguire il codice, utilizzando l'_analisi statica del codice_
+Nello sviluppo ci occupiamo di
+- metodi statici
+- con tipo di ritorno int o void
+** Verifica del Return
+Analisi di ogni cammino per verificare che alla fine di ogni metodo ci sia una istruzione return
+- l'analisi é statica in quanto non tiene conto dell'effettivo flusso di esecuzione del metodo
+  + non garantisce che il return sia eseguito
+    - in caso di ciclo infinito
+    - in caso di eccezione
+  Vengono fatte delle approssimazioni:
+- non sono valutate espresioni booleane anche se banali: il problema é indecidibile
+- non viene controllato se il tipo di ritorno é giusto o meno
+  + necessita un'altra analisi dei  tipi
+
+Questo é implementato con un attributo
+- S.ret
+  + true se l'espressione di S termina é perché esegue una return
+  + in caso di liste di Comandi
+    - l'attributo é determinato dall'OR tra i Comandi che compongono la lista:
+      + questa informazione puó essere utile per individuare la presenza di codice morto
+        - warning o errore
+** Allocazione delle variabili locali
+Il piú piccolo numero di slot necesari all'interno di un frame per la memorizzazione di argomenti e variabili locali
+- determinare il numero massimio di variabili che sono /contemporaneamente/ attive
+  + tener conto della localitá delle variabili
+
+Questo é implementato con un attributo
+- S.locals
+  + max{ S1.locals, S2.locals }
+    - nel caso di /if else/ o /liste di comandi/
+** Calcolo dimensione massima della pila
+Numero massimo di slot occupati sulla pila degli operandi durante l'esecuzione di un metodo
+- tenendo conto del codice prodotto
+  + approssimare per eccesso la dimensione massima della pila
+
+Implementato con l'attributo /stack/ per E, B, S
+- E.stack
+  + >= 1
+- E_list.stack
+  + >= 0
+
+/NB/
+L'=associativitá a sinistra= mantiene la =pila piccola= perché le sottoespressioni vengono valutate man mano che si incontrano da sinistra verso destra
