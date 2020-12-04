@@ -1910,6 +1910,10 @@ Una directory é un file particolare
   + una directory puó contenere il nome di una directory padre o antenata
     - pericoloso in quanto puó creare cicli all'interno del FS
 
+La struttura procede in questo modo:
+Programmi Applicativi --> Fyle System Logico --> Modulo organizzazione dei file -->
+--> File System di base --> Controllo I/O --> Dispositivi
+Passaggio dalla rappresentazione =esterna= alla rappresentazione =interna=
 ***** Accesso rapido ai file
 L'accesso utilizzando il pathname é estremamente inefficiente
 - richiede piú accessi alla memoria secondaria
@@ -1929,10 +1933,157 @@ Implementazione in Unix
   + in scrittura
   + in esecuzione
 
+
+
 *** Interfaccia
 
 *** Realizzazione
+L'OS vede l'HD come un array di entry (sequenza di 256 / 4096 byte)
+- l'accesso avviene comunicando al controller il numero del blocco e le operazioni
+  + lettura e scrittura avvengono sempre in unitá di blocchi
+Per ogni FIle il SIstema mantiene una struttura interna che memorizza tutti gli attributi del file
+- per gestire le operazioni compiute sul file
+**** Allocazione
+I File che superano la dimensione di un blocco vengono allocati con 3 metodi
+***** allocazione contigua - buono per l'area di swap
+  + necessario memorizzare solamente
+    - blocco di partenza
+    - numero di blocchi utilizzati
+    - grandezza del file
+  + possibile accesso diretto
+    - piú efficiente di un accesso sequenziale
+      + sapendo il numero di byte da leggere
+        - semplice calcolare in che blocco lo si puó trovare
+  + _Problemi_
+    - necessari blocchi liberi adiacenti
+    - necessaria una strategia di scelta del buco libero (first/best/worst fit)
+    - disco soggetto a frammentazione esterna
+      + sará necessaria ricompattazione periodica del disco
+    - se un file aumenta di dimensioni
+      + riallocarlo
+        - molto costoso
+      + sovraddimensionarlo
+        - forte frammentazione interna
+          + comunque presente nell'ultimo blocco che non sará mai completamente occupato
+        - il problema si ripresenterá
+***** allocazione concatenata
+  + ogni blocco contiene un puntatore al successivo
+  + info aggiuntive
+    - numero di blocchi
+    - grandezza del file
+  + numero negativo all'ultimo blocco per segnalare la fine del file
+  + _Vantaggi_
+    - non c'é frammentazione esterna
+    - non c'é necessitá di ricompattazione
+  + _Svantaggi_
+    - ogni blocco byte utilizzati per memorizzazione dei puntatori
+    - accesso diretto non possibile
+      + sempre necessario seguire la catena di puntatori
+        - estremamente inefficiente
+    - inaffidabile
+      + la perdita di un blocco impica la rottura della catena
+        - risolvibile
+          - con una doppia catena
+          - con la memorizzazione del file di riferimento e del numero del blocco in ogni blocco
+    - necessario tenere un elenco dei blocchi liberi
+  + _Soluzioni_
+    - utilizzo di cluster e non singoli blocchi
+      + tempi di accesso minori
+        - meno riposizionamenti della testina di lettura
+        - meno spazio sprecato per i puntatori
+        - maggiore frammentazione interna
+          + mediamente sará sprecata una maggiore quantitá dell'ultima parte del cluster
+****** FAT
+Variante di allocazione concatenata molto efficiente
+=FIle Allocation Table=
+Area (array) all'inizio della Memoria Principale in cui l'indice di ogni entry corrisponde ad un blocco e ne contiene il numero
+- l'ultimo blocco J di un file é segnalato:
+  + alla J-esima entry contiene un marker di fine file
+- entry 0 corrispondono a blocchi liberi
 
+_Svantaggi_
+- Occupa spazio in MP
+- se la FAT é persa non c'é modo di accedere i dati
+  + va periodicamente salvata il Memoria Secondaria
+   
+***** alllocazione indicizzata
+Utilizzato un blocco indice poi portato in memoria principale per indicare la posizione dei blocchi dati del file
+- _Vantaggi_
+  + non sono necessari blocchi contigui
+  + non si crea frammentazione esterna
+    - l'acceso diretto é efficiente una volta portato in RAM il blocco indice
+      + facile calcolare quala blocco dell'elenco contiene il byte desiderato
+- _Svantaggi_
+  + anche in caso di file piccoli
+    - sempre utilizzato un intero blocco indice
+      + molto andrá sprecato
+  + Necessario mantenere un =elenco dei blocchi liberi=
+
+- _Problemi_
+  + Blocco indice non sufficiente per contenere i numeri di tutti blocchi dati
+****** Schema Concatenato
+Ultima entry del precedente blocco indice punta al successivo blocco indice
+******* NTFS
+=New Technology File System=
+- ogni file descritto da un elemento
+  + simile all'i-node
+  + sempre di dimensione fissa e numerati consecutabimante
+  + contiene tutti gli attributi del file
+  + se il file é molto piccolo é possibile contenerne i dati direttamente nel elemento
+    - molto efficiente
+  + o puntatori a cluster del disco che contengono dati del file
+    - variante di schema concatenato
+- Master File Table all'inizio del disco gestito da OS
+  + numero di elemento associato al nome del file nella directory corrispondente
+
+Necessario tenere traccia di tutti i blocchi liberi
+- =MFT=
+
+****** Schema a piú livelli
+Blocco indice esterno che punta a blocchi indice interni
+******* I-Node
+Struttura interna Unix gestita dall'OS memorizzata in Memoria Secondaria (zona riservata)
+- ad ogni file ne viene associato uno
+  + index-node contiene
+    - attributi
+    - elenco dei blocchi
+  + scritto affianco al nome simbolico di un file nella tabella di una directory che lo contiene
+
+Ogni i-Node memorizza
+ - 10 puntatori =diretti= a blocchi dati
+ - 1 puntatore =single indirect=
+   + punta a un blocco indice che punta a blocchi dati
+ - 1 puntatore =double indirect=
+   + punta a un blocco indice contenente puntatori a blocchi indice che contengono puntatori a blocchi dati
+ - 1 puntatore =triple indirect=
+   + punta a un blocco indice contenente puntatori a blocchi indice che contengono puntatori a blocchi indice che contengono puntatori a blocchi dati
+
+Necessario tenere traccia di tutti i blocchi liberi
+- =superblocco=
+  + a partire dal blocco 1
+
+***** Elenco dei Blocchi Liberi
+- MFT / Superblocco
+- Vettori di bit in Mac/OS
+  + ogni bit indica se il blocco corrispondente é occupato o libero
+    - necessario un numero di bit uguali al numero di blocchi del disco
+    - necessario questa sia sempre presente in MP
+- Lista Concatenata
+  + lenta ma senza sprechi di spazio
+  + possibile utilizzare la FAT per una maggiore efficienza
+- Raggruppamento
+  + in un blocco piú puntatori a blocchi liberi
+    - ultimo puntatore punta ad un altro blocco di blocchi liberi
+- Conteggio
+  + mantenere il numero di un blocco e quanti blocchi consecutivi liberi lo seguono
+    - simile alla lista concatenata con meno entry
+
+**** Efficienza | Prestazioni
+Necessari degli accorgimenti da parte del Sistema Operativo
+- caching in Memoria Principale dei file (e attributi) utilizzati frequentemente / recentemente
+  + soprattutto file aperti
+  + modifiche solo in MP
+    - OS deve assicurarsi di mantenere la consistenza dei file
 * Laboratorio
 
 ** [[file:20200929150429-c.org][C]]
