@@ -237,7 +237,44 @@ Anche detto scarto quadratico medio
 
 **** Deviazione Standard
 Radice della Varianza
+*** Variabili Aleatorie Composte
+=Indipendenza=
+\( p_{X,Y}(x,y) = p_X(x)p_Y(y) \) per generici $x$ e $y$
 
 *** Variabili Aleatorie Continue
+[[ﬁle:/home/dan/Documents/UNI/II/EPS A/epsA-04dic20.pdf][Appunti Prof]]
+\(Im(X)\) di natura continua
+- non possiamo usare la $PMF$
+  + in quanto l'immagine non é numerabile, non possiamo associare ad ogni punto un valore
+Dato l'intervallo $A$ abbiamo quindi una funzione \(f_x: \mathbb{R} \to \mathbb{R} \) non negativa t.c
+\(\forall A \subset \mathbb{R}\):
+- \(\mathbb{P}(X \in A) = \int_A f_{X}(t)dt\)
+  + includendo o meno gli estremi la $P$ non cambia
+    - \(\mathbb{P}(X \in A) = \mathbb{P}(X = a) = \int_a^a f_X(t)dt = 0\)
+Questa é detta $PDF$ =Probability Density Function=
 
+**** Proprietá
+- i\(\int_\mathbb{R} f_X(t)dt = P(\Omega) = 1\)
+- \(\forall x \in \mathbb{R}, f_X(x) \ge 0\)
+- \(f_X(x)\) non é una probabilitá
+  + puó essere un valore qualunque, anche maggiore di 1
+- \(\int_x^{x+\delta}f_X(t)dt = f_X(x)\cdot\delta\)
+  + se $\delta$ sufficientemente piccolo
+
+**** Uniforme
+$X$ ha densitá costante nell'intervallo
+$f_X(x) = \frac{1}{b-a}$ nell'intervallo
+       $=0$   altrove
+
+**** Esponenziale
+$\mathbb{P}(X\in A), A \subset (-\inf, 0)$ é nulla
+La sua Densitá decade
+\( f_X(x) = \lambda\cdot e^{-\lambda x} \) se \(x \ge 0\)
+      \( = 0\) altrove
+- $X$ prende solo valori positivi
+Vale Proprietá di Assenza della Memoria
+- \( \mathbb{P}(X > m \mid X>n) = \mathbb{P}(X> m-n) \)
+  + cambia l'origine dei tempi nel calcolo della probabilitá di sopravvivenza
+- =NB= $PDF$ simile alla $PMF$ della Geometrica
+  + anche in quella Variabile Aleatoria vale la Proprietá di Assenza della Memoria
 * Statistica

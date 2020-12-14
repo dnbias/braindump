@@ -42,7 +42,7 @@ natura hardware
 *** Eccezioni
 natura software
 - causate dal' programma in esecuzione
-  divese in
+  divise in
 **** Trap
 tentata divisione per 0
 tentato accesso ad area protetta
@@ -69,7 +69,7 @@ La memoria indirizzata alle istruzione eseguite
 Risiedono qui permanentemente dati e programmi
 La gerarchia di memoria
 - le memoria sono sempre piu' veloci ma di costo maggiore
-- da fissse diventano volatili
+- da fisse diventano volatili
 - la componentistica per bit occupa piu' spazio
   + da condensatori passiamo ai Flip-Flop nei registri
 
@@ -87,7 +87,7 @@ CPU connessa a dispositivi di I/O
       - registri
       - memoria interna
         + =buffer=
-          - dove il controller tradferisce i dati del dispositivo
+          - dove il controller trasferisce i dati del dispositivo
   - OS interagisce con il controller
     + attraverso software:
       - =driver=
@@ -225,7 +225,7 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
 
 ** Problemi
 
-1) tener tracciatutti i programmi attivi nel sistema
+1) tener traccia di tutti i programmi attivi nel sistema
    - stanno usando la CPU
    - richiedono l'uso della CPU
      - =processi= =thread=
@@ -293,7 +293,7 @@ Unita' di lavoro del OS
 L'OS sposta il processo tra vari stati attraverso cui esso evolve
 - ~New~
   - Va assegnato ~Process Control Block~ e ~spazio in memoria~ necessario per il codice e i dati
-  - questo e' gestito con interrupt, l'OS deve controllare subito perche' non conosce la naturea dell'interrupt e non puo' lasciare finire un processo in Running
+  - questo e' gestito con interrupt, l'OS deve controllare subito perche' non conosce la natura dell'interrupt e non puo' lasciare finire un processo in Running
 - ~Ready~ (to run)
   - Scheduler Dispatch - componente del OS che sceglie e lancia il processo
   - Ci sono livelli di priorita' per i processi
@@ -389,7 +389,7 @@ si influenzano l'un l'altro
   Per permettere cio' l'OS deve mettere a disposizione meccanismi appositi
 
 ***** Inter-Process Communication =IPC=
-L'OS mette a diusposizione System Call volte all'implementazione di:
+L'OS mette a disposizione System Call volte all'implementazione di:
 - memoria condivisa
   - sovrascritto il divieto della memoria dell'altro processo
   - Scelte  implementative
@@ -2089,3 +2089,8 @@ Necessari degli accorgimenti da parte del Sistema Operativo
 ** [[file:20200929150429-c.org][C]]
 
 ** [[file:20200929150510-unix.org][Unix]]
+
+** [[file:20201205215343-taxicab.org][Progetto]]
+:PROPERTIES:
+:ID:       2096a4b8-7439-45f6-a9c9-e9946f11849a
+:END:
