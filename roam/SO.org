@@ -612,7 +612,7 @@ decide quale processo in coda di ready sara' eseguito quando:
 2. il processo in esecuzione termina
 3. il processo in esecuzione viene ~obbligato~ a passare allo stato di ready
    - questo con un timer hardware - =vettore delle interruzioni=
-4. un processo \(P_x\) entra in coda di ready arrivando da un coda di wait oppure e' sato appena lanciato
+4. un processo \(P_x\) entra in coda di ready arrivando da un coda di wait oppure e' stato appena lanciato
    1) l'OS interviene per gestire il =PCB= di \(P_x\) spostandolo in coda di ready
    2) se \(P_x\) e' piu' importante del processo in esecuzione
 
@@ -830,10 +830,10 @@ Code multilivello con retroazione
     - il processo foreground ottiene 3 volte l'aumento del quanto di tempo che gli altri processi
 
 *** Linux
-    Completely Fair Scheduler =CFS=
+    Completly Fair Scheduler =CFS=
     Cerca di distribuire a tutti i processi equamente il tempo di CPU
 
-    Ad ogni context switch lo scheduler calcola il quanto tempo che spetta ad un processo P in modo che tutti i processi abbiamno avuto la stessa quantitá di tempo di CPU
+    Ad ogni context switch lo scheduler calcola il quanto tempo che spetta ad un processo P in modo che tutti i processi abbiano avuto la stessa quantitá di tempo di CPU
     - P.vruntime = P.expected_run_time - P.due_cputime
       - CPU data al processo con P.vruntime piú basso
         - CPU-use minore
@@ -1033,8 +1033,6 @@ signal(semaforo *S) {
   - Utilizzabile un valore di semafori > 1 allora una risorsa é utilizzabile da 3 P contemporaneamente
 
   I semafori se utilizzati non correttamente possono provocare _deadlock_ e _starvation_
-=======
->>>>>>> 74e75ebd8fe4cc2f57b733ba168b84613c120970
 
 **** Esempi
     Problemi di sincronizzazione risolti utilizzando semafori
@@ -1167,9 +1165,9 @@ Associazione degli indirizzi
 
 _In fase di Compilazione_
 - generato codice assoluto o _statico_
-- il compilatore deve conoscere l'idirizzo della cella a partire dalla quale verra' cariato il programma per poter portare a termine il binding
+- il compilatore deve conoscere l'idirizzo della cella a partire dalla quale verra' caricato il programma per poter portare a termine il binding
 - se il processo e' spostato in memoria secondaria
-  + dovra essere messo allo stesso indirizzo
+  + dovrá essere messo allo stesso indirizzo
   + o ricompilato ad un nuovo indirizzo
 
 _In fase di caricamento in RAM_
@@ -1177,10 +1175,10 @@ _In fase di caricamento in RAM_
 - il compilatore associa indirizzi relativi all'inizio del programma (indirizzo 0)
 - indirizzi assoluti generati in fase di caricamento
 - se il processo e' spostato in memoria secondaria
-  + piu' efficiente in quanto e' in fase di caricamento che vengono risolti i riferimenti
+  + piu' efficiente in quanto é in fase di caricamento che vengono risolti i riferimenti
 
 _In fase di esecuzione_ aka ~binding dinamico degli indirizzi~
-- generato codice diamicamente rilocabile
+- generato codice dinamicamente rilocabile
 - il codice utilizza sempre e solo indirizzi relativi
   + questi sono risolti solo al momento dell'esecuzione dell'istruzione in particolare
 - necessita un supporto hardware per non perdere efficienza
@@ -1244,7 +1242,7 @@ NB: tecnica utilizzata dal IBM OS/360
 Memoria Principale suddivisa in 2 _partizioni_
 - OS
 - Processi Utente
-  + occupata solo un processo nei casi piu' semplici
+  + occupata solo da un processo nei casi piu' semplici
   + =registro limite= protegge la memoria primaria riservata al OS
   + un registro di rilocazione permettera' la risoluzione del indirizzo fisico
   + Le partizioni sono di dimensione fissa
@@ -1306,7 +1304,6 @@ _Indirizzi Logici_ reimplementati
   + coppia di valori =(page, offset)=
     - numero della pagina da indirizzare
     - offset rispetto all'inizio della pagina
-
 
 L'hardware =impone= alcune dimensioni
 - bit indirizzo logico - $m$
@@ -2012,7 +2009,7 @@ Utilizzato un blocco indice poi portato in memoria principale per indicare la po
   + non sono necessari blocchi contigui
   + non si crea frammentazione esterna
     - l'acceso diretto é efficiente una volta portato in RAM il blocco indice
-      + facile calcolare quala blocco dell'elenco contiene il byte desiderato
+      + facile calcolare quale blocco dell'elenco contiene il byte desiderato
 - _Svantaggi_
   + anche in caso di file piccoli
     - sempre utilizzato un intero blocco indice
@@ -2084,6 +2081,7 @@ Necessari degli accorgimenti da parte del Sistema Operativo
   + soprattutto file aperti
   + modifiche solo in MP
     - OS deve assicurarsi di mantenere la consistenza dei file
+
 * Laboratorio
 
 ** [[file:20200929150429-c.org][C]]

@@ -123,7 +123,7 @@ Con cui si definisce un =albero sintattico annotato=
 **** Attributi
 - Sintetizzati
   Il suo valore dipende da quello di attributi dei figli ed eventualmente da altri atributi di se stesso
-- Eredditati
+- Ereditati
   Il suo valore dipende da quello dal padre e dai fratelli del nodo
 **** Grafo delle dipendenze
 Alcuni attributi dipendono da altri, questo impone un'ordine tra questi
@@ -143,7 +143,7 @@ Schema di traduzione, variante SDD che rende esplicito l'ordine di valutazione d
   - azioni semantiche
     + eseguite nel momento che i simboli alla loro sinistra sono stati riconosciuti
     + simili alle regole semantiche degli SDD
-      - specificano il calcolo degli attributi ma anche codivce arbitrario
+      - specificano il calcolo degli attributi ma anche codice arbitrario
       - l'ordine di esecuzione é esplicito a differenza delle regole semantiche
       - essendo eseguite da sinistra verso destra non richiedono la costruzione dell'albero sintattico annotato
 
@@ -157,20 +157,12 @@ data \(A\to X_1 X_2 ... X_n\)
 
 *** Traduzione on the fly
 Attributi sintetizzati =principali=
-<<<<<<< HEAD
-- il loro valore include sempre la concatenazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre che evetuali variabili ausiliarie
+- il loro valore include sempre la concatenazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre che eventuali variabili ausiliarie
 - la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
   Es, trasformazione da forma infissa a postfissa
 \(E \to E_1 + T \{ E.post = E_1.post || T.post || "..." \}\)
 Questo viene tradotto on the fly in _{ print("...") }_
-=======
-- il loro valore include sempre la concatenzazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre che evetuali variabili ausiliarie
-- la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
-  Es, trasformazione da forma infissa a postfissa
-\(E \to E_1 + T \{ E.post = E_1.post || T.post || "+" \}\)
 
-Questo viene tradotto on the fly in _{ print("+") }_
->>>>>>> 0820ee9 (Appunti)
 
 * Automi
 ** Esempio
@@ -183,10 +175,10 @@ L'automa ha visione =locale e limitata= , legge un simbolo alla volta
 
 L'automa altera il suo stato in base al simbolo letto
 
-Se alla fine della stringa l'automa si trova in uno =stato finale= l'output sara' "si", altrimenti "no"
+Se alla fine della stringa l'automa si trova in uno =stato finale= l'output sará "si", altrimenti "no"
 
 ** Automi a stati finiti deterministici =DFA=
-Deterministico: lo stato in cui si sposta e' univocamente determinato dallo stato corrente e dal input
+Deterministico: lo stato in cui si sposta é univocamente determinato dallo stato corrente e dal input
 
 Quintupla composta da:
 1. \(Q\) - insieme finito di stati
