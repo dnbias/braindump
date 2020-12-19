@@ -84,20 +84,34 @@ CLOSED: [2020-06-23 Tue 18:37] SCHEDULED: <2020-06-22 Mon 09:00>
 
 30/30
 
-*** DONE Inglese I :esame:
-CLOSED: [2020-09-11 Fri 09:06] SCHEDULED: <2020-09-11 Fri>
-
 *** DONE Prog II :esame:
 CLOSED: [2020-09-28 Mon 18:34] SCHEDULED: <2020-09-14 Mon>
+
+*** TODO Linguaggi e Traduttori :esame:
+SCHEDULED: <2021-01-21 Thu 10:00>
+
+**** TODO Progetto
+
+*** TODO Inglese I :esame:
+SCHEDULED: <2021-01-25 Mon 09:00>
+
+*** TODO Elementi di Probabilitá e Statistica :esame:
+SCHEDULED: <2021-01-28 Thu 10:30>
+
+*** TODO Sistemi Operativi :esame:
+SCHEDULED: <2021-02-23 Tue 09:00>
+
+**** TODO Progetto
 
 ** FILM
 *** DONE Tenet :movie:
 CLOSED: [2020-09-08 Tue 00:19] DEADLINE: <2020-08-27 Thu 03:30> SCHEDULED: <2020-08-27 Thu 03:20>
 
-Reposi
-
 *** DONE Interstellar
 CLOSED: [2020-09-10 Thu 21:38] SCHEDULED: <2020-09-10 Thu 21:10>
+
+*** DONE Snowpiercer
+CLOSED: [2020-12-16]
 
 ** Scadenza FitActive
 DEADLINE: <2021-04-04 Sun> SCHEDULED: <2021-04-01 Thu>
@@ -106,7 +120,7 @@ DEADLINE: <2021-04-04 Sun> SCHEDULED: <2021-04-01 Thu>
 CLOSED: [2020-09-28 Mon 18:34] SCHEDULED: <2020-10-01 Thu>
 
 * :idee:
-** TODO [#C] Spreadsheet Palestra su orgmode :fitness:
+
 * Routine
 ** :fitness:
 *** Palestra
@@ -116,12 +130,6 @@ SCHEDULED: <2020-10-19 Mon 08:00-09:30 +1w>
 SCHEDULED: <2020-10-21 Wed 08:00-09:30 +1w>
 *** Run
 SCHEDULED: <2020-10-16 Fri ++1d>
-:PROPERTIES:
-:LAST_REPEAT: [2020-10-15 Thu 13:43]
-:END:
-
-- State "DONE"       from ""           [2020-10-15 Thu 13:43]
-- State "DONE"       from ""           [2020-10-15 Thu 13:43]
 ** :lectures:
 *** EPS A
 SCHEDULED: <2020-10-15 Thu 09:00-11:00 +1w>
