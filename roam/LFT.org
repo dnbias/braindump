@@ -9,7 +9,7 @@
 Informazioni varie del Corso:
 - Lunedi' lezione sincrona per domande: 11:00
 
-- Prova scritta + orale facoltativo (necassario per la lode)
+- Prova scritta + orale facoltativo (necessario per la lode)
   2/3 del voto
 
 - Prova di laboratorio (progetto, interrogazione singola - anche in caso di progetto di gruppo con gruppi da 3) - Sostenibile dopo aver superato Teoria
@@ -101,6 +101,7 @@ Vedi: [[id:6b12c8b8-4c7b-4630-8ceb-e0a14b6c897b][Parser Top-Down]] e [[file:/mnt
 
 - Si occupa della valutazione delle espressioni
 *** SDD
+=Syntax Directed Definition=
 Definizioni dirette dalla sintassi strumento che permette la =traduzione=
 - consistono in
   + grammatica libera
@@ -122,7 +123,7 @@ Con cui si definisce un =albero sintattico annotato=
 -  i cui nodi possono essere annotati con 0 o piú attributi
 **** Attributi
 - Sintetizzati
-  Il suo valore dipende da quello di attributi dei figli ed eventualmente da altri atributi di se stesso
+  Il suo valore dipende da quello di attributi dei figli ed eventualmente da altri attributi di se stesso
 - Ereditati
   Il suo valore dipende da quello dal padre e dai fratelli del nodo
 **** Grafo delle dipendenze
@@ -175,7 +176,7 @@ L'automa ha visione =locale e limitata= , legge un simbolo alla volta
 
 L'automa altera il suo stato in base al simbolo letto
 
-Se alla fine della stringa l'automa si trova in uno =stato finale= l'output sará "si", altrimenti "no"
+Se alla fine della stringa l'automa si trova in uno =stato finale= la stringa é accettata, altrimenti rifiutata
 
 ** Automi a stati finiti deterministici =DFA=
 Deterministico: lo stato in cui si sposta é univocamente determinato dallo stato corrente e dal input
@@ -194,7 +195,7 @@ definito per induzione
 Stringhe definite sull'alfabeto che per mezzo della F di transizione estesa portano ad uno =stato finale= dell'automa
 ** Automi a stati finiti non deterministici =NFA=
 Non deterministico: l'automa puo' scegliere di spostarsi in 0 o piu' stati possibili
-- Il codominio della funzione di transizione e' l'insieme delle parti degli stati Q
+- Il codominio della funzione di transizione e' l'insieme delle parti degli stati $Q$
 Quintupla composta da:
 1. \(Q\) - insieme finito di stati
 2. \(\Sigma\) - alfabeto riconosciuto
@@ -202,7 +203,7 @@ Quintupla composta da:
 4. \(q_0\) - e' lo stato iniziale
 5. \(F\) - insieme di stati finali
 
-   Insiemi singoletto indicano transizioni deterministiche (da funzione di transizione estesa)ilon-transizioni
+   Insiemi singoletto indicano transizioni deterministiche (da funzione di transizione estesa)
    Automi che possono eseguire transizioni spontanee senza leggere alcun simbolo nella stringa da riconoscere
    - passa di stato anche senza consumare alcun simbolo
 
@@ -232,40 +233,41 @@ Sono un approccio generativo alle classi di Linguaggi
 E' sempre possibile creare un e-NFA a partire da una RE
 
 Denotano un Linguaggio con
-L(E)
+$L(E)$
 Definito per induzione
 
-L(0) = 0
-L(epsilon) = {epsilon} // la stringa vuota
-L(a) = {a}
-L(E+F) = L(E) U L(F)
-L(EF) = L(E)L(F)
-L(E*) = L(E)*   // chiusura di Kleene
+$L(0) = 0$
+$L(\epsilon) = \{\epsilon\}$ // la stringa vuota
+$L(a) = {a}$
+$L(E+F) = L(E) \cup L(F)$
+$L(EF) = L(E)L(F)$
+$L(E*) = L(E)^*$   // chiusura di Kleene
 *** precedenza
 1. *
 2. concatenazione
 3. +
 
-*** Proprieta'
+*** Proprietá
 
 
 **** Unione
 - Commutativa
 - Associativa
 - Idempotenza
-- Identita
+- Identitá
 
 **** Concatenazione
 - Associativa
-- Identita'
+- Identitá
 - Assorbimento
-- distributivita'
+- distributivitá
 **** Chiusura di Kleene
 - Idempotenza
 
 ** Indistinguibilitá tra stati
-    =Equivalenza= (relazione riflessiva, simmetrica e transitiva)
-    Due stati hanno lo stesso protere discriminante se presa una qualunque stringa del linguaggio si arriva ad uno stato finale in entrambi i casi o meno in entrambi i casi, la indichiamo con la tilde
+    =Equivalenza=
+        (relazione riflessiva, simmetrica e transitiva)
+    Due stati hanno lo stesso potere discriminante se presa una qualunque stringa del linguaggio si arriva ad uno stato finale in entrambi i casi o no in entrambi i casi, la indichiamo con ~
     - Puó esserci una stringa che =distingue= i due stati
     - Uno stato finale é distinto da altri stati non finali dalla stringa vuota
 
@@ -277,10 +279,10 @@ L(E*) = L(E)*   // chiusura di Kleene
     Non esiste un automa corrispondente con meno stati dell'automa minimo
 
 *** Equivalenza di Automi
-    Puó essere usato l'algoritmo riempi tabella per decidere se due automi sono equivalente
+    Puó essere usato l'algoritmo riempi tabella per decidere se due automi sono equivalenti
     Si crea l'unione dei due DFA:
     \(A = (Q_1 \cup Q_2, \Sigma, \delta, q_1, F_1 \cup F_2)\)
-    \(\delta(q,a) = \delta_1 \cup \delta_2
+    \(\delta(q,a) = \delta_1 \cup \delta_2\)
     Se $q_1$ e $q_2$ risultano indistinguibili in $A$ allora $A_1$ e $A_2$ sono _equivalenti_
 
 ** Automi a Pila =PDA=
@@ -304,7 +306,7 @@ L(E*) = L(E)*   // chiusura di Kleene
     - contenuto della pila dalla cima al fondo (sx a dx)
 
 **** Mosse
-    relazioni da $D.I.$ a $D.I.$
+    relazioni da \(D.I.\) a \(D.I.\)
     $I\vdash_{P}J$
     chiusura riflessiva e transitiva
     $I\vdash^{*}_{P}J$
