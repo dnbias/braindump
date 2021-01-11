@@ -13,7 +13,7 @@
                            ^
 *** Indirezione Multipla
 #+begin_src C
-int i =1;
+int i = 1;
 int *ip1 = &i;
 int **ipp = &ip1; // puntatore doppio
 #+end_src
