@@ -12,9 +12,12 @@ Informazioni varie del Corso:
 - Prova scritta + orale facoltativo (necessario per la lode)
   2/3 del voto
 
-- Prova di laboratorio (progetto, interrogazione singola - anche in caso di progetto di gruppo con gruppi da 3) - Sostenibile dopo aver superato Teoria
+- Prova di laboratorio (progetto, interrogazione singola
+  anche in caso di progetto di gruppo con gruppi da 3)
+  - Sostenibile dopo aver superato Teoria
   1/3 del voto
- 
+  -[[file:20210107003338-lftcompiler.org][ LFTCompiler]]
+
 * Testi
 
 ** Compilatori
@@ -76,7 +79,7 @@ Vedi: [[id:6b12c8b8-4c7b-4630-8ceb-e0a14b6c897b][Parser Top-Down]] e [[file:/mnt
   [[file:/home/dan/Pictures/shots/1605619407.png]]
 
   + In caso di rami annullabili attenzione ai FOLLOW
- 
+
 
 - Sintassi scheme-like
   + espressioni aritmetiche
@@ -123,18 +126,21 @@ Con cui si definisce un =albero sintattico annotato=
 -  i cui nodi possono essere annotati con 0 o piú attributi
 **** Attributi
 - Sintetizzati
-  Il suo valore dipende da quello di attributi dei figli ed eventualmente da altri attributi di se stesso
+  Il suo valore dipende da quello di attributi dei figli ed eventualmente
+  da altri attributi di se stesso
 - Ereditati
   Il suo valore dipende da quello dal padre e dai fratelli del nodo
 **** Grafo delle dipendenze
 Alcuni attributi dipendono da altri, questo impone un'ordine tra questi
-- se il grado contiene dei cicli non é possibile trovare un'ordine di  valutazione degli attributi
+- se il grado contiene dei cicli non é possibile trovare un'ordine di
+  valutazione degli attributi
 **** S-attribuite
 Contiene solo attributi sintetizzati
 - ogni S-attribuita é a sua volta L-attribuita
 **** L-attribuite
 Per ogni produzione \(A\to X_1 X_2 ... X_n\)
-e ogni attributo ereditato \(X_i.e\) la regola semantica che definisce il valore di \(X_i.e\) dipende solo da
+e ogni attributo ereditato \(X_i.e\) la regola semantica che definisce il valore di \(X_i.e\)
+dipende solo da
 - attributi ereditati da $A$
 - attributi sintetizzati ed ereditati dai simboli \(X_1, X_2, ... , X_{i-1}\) alla sinistra di $X$
 *** SDT
@@ -146,24 +152,26 @@ Schema di traduzione, variante SDD che rende esplicito l'ordine di valutazione d
     + simili alle regole semantiche degli SDD
       - specificano il calcolo degli attributi ma anche codice arbitrario
       - l'ordine di esecuzione é esplicito a differenza delle regole semantiche
-      - essendo eseguite da sinistra verso destra non richiedono la costruzione dell'albero sintattico annotato
+      - essendo eseguite da sinistra verso destra non richiedono la costruzione
+        dell'albero sintattico annotato
 
 **** da SDD L-attribute a SDT
 data \(A\to X_1 X_2 ... X_n\)
 1. subito prima di \(X_i\)
    - azione semantica che calcola il valore degli attributi ereditati
-     + che possono solo dipendere da attributi ereditati di $A$ e attributi dei nodi fratelli alla sua sinistra
+     + che possono solo dipendere da attributi ereditati di $A$ e attributi dei nodi
+       fratelli alla sua sinistra
 2. in fondo alla produzione
    a. azione semantica che calcola il valore degli attributi sintetizzati di $A$
 
 *** Traduzione on the fly
 Attributi sintetizzati =principali=
-- il loro valore include sempre la concatenazione dei valori dello stesso attributo per tutte le variabili nel corpi di ogni produzione oltre che eventuali variabili ausiliarie
+- il loro valore include sempre la concatenazione dei valori dello stesso attributo
+  per tutte le variabili nel corpi di ogni produzione oltre che eventuali variabili ausiliarie
 - la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
   Es, trasformazione da forma infissa a postfissa
 \(E \to E_1 + T \{ E.post = E_1.post || T.post || "..." \}\)
 Questo viene tradotto on the fly in _{ print("...") }_
-
 
 * Automi
 ** Esempio
@@ -372,7 +380,7 @@ In generale l'eliminazione della ricorsione a sinistra non garantisce che la gra
 
 _Soluzione_
 1. si impone un ordine arbitrario alle variabili
-2. considerando ogni variabile nell'ordine imposto si elimina laricorsione immediata per quella variabile e si riscrivono le occorrenze di quella variabile che compaiono nei corpi delle produzione delle variabili seguenti
+2. considerando ogni variabile nell'ordine imposto si elimina la ricorsione immediata per quella variabile e si riscrivono le occorrenze di quella variabile che compaiono nei corpi delle produzione delle variabili seguenti
 * Linguaggi
 ** Linguaggio regolare
 Esiste almeno un Automa A che lo riconosce
@@ -384,7 +392,7 @@ Esiste almeno un Automa A che lo riconosce
 **** I linguaggi regolari sono chiusi rispetto all'operazione di concatenazione
 'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
 
-**** Chiusura #dim
+**** Chiusura =dim=
 - \(L\cup L^{'}\)
 - Dati \(E_{1}\) e \(E_{2}\)
   - Si dimostra che \(E_{1}+E{_2}\) genera \(L\cupL^{'}\)
@@ -405,7 +413,7 @@ Esiste almeno un Automa A che lo riconosce
   - L rovesciato
 - Si ricava un \(E^R\) per induzione
 
-  \(\o^R=\o\)
+  \(\emptyset^R=\emptyset\)
   \(\epsilon^R=\epsilon\)
   \(a^R=a\)
   \((E_1+E_2)^R={E_1}^R+{E_2}^R\)
@@ -417,9 +425,9 @@ Esiste almeno un Automa A che lo riconosce
 ** Linguaggi non Regolari
 *** Pumping Lemma
 Per ogni linguaggio regolare \(L\) esiste \(n\) appartenente a \(N\) tale che per ogni \(w\) appartenente a \(L\) con \(|w|>= n\) esistono \(x,y,z\) tc \(w=xyz\) :
-1. \(y!=\epsilon\)
-2. \(|xy|<=n\)
-3. \(xy^kz\) appartiene \(L\) per ogni \(k>=0\)
+1. \(y \ne\epsilon\)
+2. \(|xy|\le n\)
+3. \(xy^kz\) appartiene \(L\) per ogni \(k\ge 0\)
    Abbiamo una stringa media \(y\) non vuota che puó essere replicata un numero arbitrario di volte sempre ottenendo un Liguaggio Regolare.
 
    * Esempio
@@ -429,10 +437,10 @@ Per ogni linguaggio regolare \(L\) esiste \(n\) appartenente a \(N\) tale che pe
 - \(A = (Q,\Sigma,\delta,q_0,F)\) tc \(L=L(A)\)
 - \(n=|Q|\)
 - \(|w|>=n\) tc \(w=a_1a_2...a_m\) con \(m>=n\)
-- Dopo \(m\) passaggi lo stato \(q_m\) deve essere finale per definizione
+- Dopo \(m\) passaggi lo stato \(q_m\) deve essere ~finale~ per definizione
 - Il numero di stati attraversati sará \(m+1\)
 - \(m>=n\) implica \(m+1>n\) quindi gli stati attraversati non possono essere tutti distinti
-- \(q_i =q_j\) e \(i<j\) é il primo stato che si ripete nel cammino dell'automa
+- \(q_i =q_j\) ( \(i<j\) ) é il primo ~stato che si ripete~ nel cammino dell'automa
 Allora concludiamo identificando \(x,y,z\)
 - \(x=a_1a_2...a_i\)
 - \(y=a_{i+1}a_{i+2}...a_j\)
@@ -445,38 +453,39 @@ Allora concludiamo identificando \(x,y,z\)
    \(L = {a^nb^n \mid n \in \N}\) non e' regolare:
    - e' il inguaggio delle parentesi bilanciate
 
-    \(G=(V,T,P,S)\) e' una =grammatica= libera
-     - \(V\) variabili o simboli non terminali
-     - $T$ terminali
-     - $P$ produzioni \(A\to \alpha\)
-       + testa
-       + corpo
-        La riscrittura della \(A\) in \(\alpha\)(sequenza arbitraria di simboli terminali o non) e' libera dal contesto
-     - $S$ simbolo iniziale
+   \(G=(V,T,P,S)\) e' una =grammatica libera=
+   - \(V\) variabili o simboli non terminali
+   - $T$ terminali
+   - $P$ produzioni \(A\to \alpha\)
+     + testa
+     + corpo
+       * La riscrittura della \(A\) in \(\alpha\) (sequenza arbitraria di simboli terminali o non) é libera dal contesto
+   - $S$ simbolo iniziale
 
-     =Derivazioni=:
+   =Derivazioni=:
    - derivazione in un solo passo
    - derivazione in zero o piu' passi
 
-    Il potere riconoscitivo delle grammatiche libere e' almeno tanto quanto quello dei linguaggi regolari
+   Il potere riconoscitivo delle grammatiche libere e' almeno tanto quanto quello dei linguaggi regolari
 
-    =Derivazioni canoniche=
-     - leftmost
-       + $\Rightarrow_{lm}$
+   =Derivazioni canoniche=
+   - leftmost
+     + $\Rightarrow_{lm}$
 
-     - rightmost
-       + $\Rightarrow_{rm}$
+   - rightmost
+     + $\Rightarrow_{rm}$
 
-     Se esistono due derivazioni canoniche distinte (entrambe lm o rm) per la stessa stringa allora $G$ e' ambigua
+     Se esistono due derivazioni canoniche distinte (entrambe ~lm~ o ~rm~) per la stessa stringa allora $G$ e' ~ambigua~
 
 *** Alberi Sintattici
     Derivazioni differenti possono generare lo stesso programma
     - anche imponendo regole all'ordine delle riscritture
 
-    Gli alberi sintattici (alternativa alle generazioni) astraggono dall'ordine delle riscritture e permettono di ragionare sulla =struttura= delle stringhe
+    Gli alberi sintattici (alternativa alle generazioni) astraggono dall'ordine delle riscritture e
+    permettono di ragionare sulla =struttura= delle stringhe
     - grammatiche ambigue
-      + piu' alberi con lo stesso prodotto
-      + non e' avere derivazioni distente che mi porta ad alberi diversi e quindi ambiguita'
+      + piú alberi con lo stesso prodotto
+      + non é avere derivazioni distinte che mi porta ad alberi diversi e quindi ambiguitá
     Data una grammatica $G = (V,T,P,S)$ gli alberi sintattici di $G$:
     - ogni nodo etichettato con una var in $V$
     - ogni foglia etichettata da $V$ o $T$ o $\epsilon$
@@ -484,19 +493,19 @@ Allora concludiamo identificando \(x,y,z\)
     - se un nodo $A$ i suoi figli sono etichettati (sx a dx)
       + $X_{1},X_{2},...,X_{n}$
       + $A\to X_{1},X_{2},...,X_{n}$ e' una produzione in $P$
-    Il =prodotto= e' la stringa ottenuta cocatenando(sx verso dx) le etichette di tutte le foglie
+    Il =prodotto= é la stringa ottenuta concatenando(sx verso dx) le etichette di tutte le foglie
 
 **** Teorema
     $A\to G* \alpha$ se e solo se esiste un albero sintattico di $G$ con radice $A$ e prodotto $\alpha$
 
 **** Risoluzione delle ambiguitá (grammatiche in forma infissa)
-   - Precedenza degli operatori
-   - Associativitá degli operatori
+   - ~Precedenza~ degli operatori
+   - ~Associativitá~ degli operatori
      + per operatori associativi questo non é un problema
      + lo é per altri operatori
 
-Soluzione ad hoc
-    Utilizziamo associativitá a sinistra, sbilanciamo le espressioni e le stratifichiamo
+   =Soluzione ad hoc=
+   Utilizziamo associativitá a sinistra, sbilanciamo le espressioni e le stratifichiamo
    - Espressione = somma di termini
    - Termine = prodotto di fattori
    - Fattore = costante o espressione tra parentesi
@@ -545,21 +554,21 @@ _SI_
 \(G^R = (V,T,P^RS)\) dove \(P^R= \{A \to \alpha^R\mid A \to \alpha \in P\}\)
 Si dimostra che \(L(G^R) = L(G)^R\)
 * JVM
-Vedi: [[file:20200531062306-ijvm.org][IJVM]]
-[[https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings][Bytecode Instruction Listing]]
-- Interprete bytecode
-- macchina virtuale basata su pila
+Vedi: [[file:20200531062306-ijvm.org][IJVM]], [[https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings][Bytecode Instruction Listing]]
+Progetto: [[~/Code/Java/LFTCompiler/Translator.java][Translator.java]]
+- Interprete =bytecode=
+- macchina virtuale basata su =pila=
 - basso e alto livello (gestione della pila / oggetti)
-- Garbage Collector
-  Pipeline del corso:
-  .lft --> .j --> .class --> output
+- =Garbage Collector=
+Pipeline del corso:
+  .lft $\to$ .j $\to$ .class $\to$ output
 ** Pila
 Composta da Frames
 - uno per ogni metodo in esecuzione
-  + NB
+  + ~NB~
     I metodi non statici hanno come primo argomento il riferimento all'oggetto ricevente
 - argomenti e variabili riferite con il loro indirizzo nella pila
-- Instruction Set
+- =Instruction Set=
   /Gestione della Pila/
   - istore
   - iload
@@ -588,53 +597,53 @@ Composta da Frames
 ** Espressioni
 *** Aritmetiche
 *** Logiche
-Implementazione di Valutazione Corto-Circuitata
+Implementazione di =Valutazione Corto-Circuitata=
 
 ** Problemi
-la compilazione di un metodo comporta il calcolo della dimensione del suo frame
+la compilazione di un metodo comporta il calcolo della =dimensione del suo frame=
 - variabili locali
 - pila degli operandi
-inoltre deve assicurarsi che se il tipo di ritorno é diverso da void ci sia un valore restituito
+inoltre deve assicurarsi che se il =tipo di ritorno= é diverso da void ci sia un valore restituito
 Questo senza eseguire il codice, utilizzando l'_analisi statica del codice_
 Nello sviluppo ci occupiamo di
 - metodi statici
 - con tipo di ritorno int o void
-** Verifica del Return
+*** Verifica del Return
 Analisi di ogni cammino per verificare che alla fine di ogni metodo ci sia una istruzione return
 - l'analisi é statica in quanto non tiene conto dell'effettivo flusso di esecuzione del metodo
   + non garantisce che il return sia eseguito
     - in caso di ciclo infinito
     - in caso di eccezione
-  Vengono fatte delle approssimazioni:
-- non sono valutate espresioni booleane anche se banali: il problema é indecidibile
+Vengono fatte delle =approssimazioni=:
+- non sono valutate ~espressioni booleane~ anche se banali: il problema é ~indecidibile~
 - non viene controllato se il tipo di ritorno é giusto o meno
   + necessita un'altra analisi dei  tipi
 
 Questo é implementato con un attributo
-- S.ret
+- =S.ret=
   + true se l'espressione di S termina é perché esegue una return
   + in caso di liste di Comandi
     - l'attributo é determinato dall'OR tra i Comandi che compongono la lista:
       + questa informazione puó essere utile per individuare la presenza di codice morto
         - warning o errore
-** Allocazione delle variabili locali
-Il piú piccolo numero di slot necesari all'interno di un frame per la memorizzazione di argomenti e variabili locali
+*** Allocazione delle variabili locali
+Il piú piccolo numero di slot necessari all'interno di un frame per la memorizzazione di argomenti e variabili locali
 - determinare il numero massimio di variabili che sono /contemporaneamente/ attive
   + tener conto della localitá delle variabili
 
 Questo é implementato con un attributo
-- S.locals
+- =S.locals=
   + max{ S1.locals, S2.locals }
     - nel caso di /if else/ o /liste di comandi/
-** Calcolo dimensione massima della pila
+*** Calcolo dimensione massima della pila
 Numero massimo di slot occupati sulla pila degli operandi durante l'esecuzione di un metodo
 - tenendo conto del codice prodotto
   + approssimare per eccesso la dimensione massima della pila
 
-Implementato con l'attributo /stack/ per E, B, S
-- E.stack
+Implementato con l'attributo /stack/ per =E=, =B=, =S=
+- =E.stack=
   + >= 1
-- E_list.stack
+- =E_list.stack=
   + >= 0
 
 /NB/

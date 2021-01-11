@@ -15,7 +15,7 @@
 
 
 ** Master
-[[file:/home/dan/Code/C/Taxicab/master.c][File]]
+   [[file:/home/dan/Code/C/Taxicab/master.c][File]]
 - raccoglie stats
 - ogni secondo stampa lo stato di occupazione delle celle
 - alla fine stampa

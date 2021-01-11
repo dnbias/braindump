@@ -1,6 +1,3 @@
-~hi~
- u
-
 * DONE =Qui andranno tutte le idee sparse e risorse che poi andranno riordinate successivamente=
 CLOSED: [2020-05-30 Sat 17:22] SCHEDULED: <2020-05-30 Sat>
 
@@ -11,4 +8,3 @@ SCHEDULED: <2020-10-16 Fri>
 * TBR R/running wiki
 
 https://www.reddit.com/r/running/wiki/faq
-
