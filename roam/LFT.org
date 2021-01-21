@@ -393,7 +393,7 @@ Esiste almeno un Automa A che lo riconosce
 'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
 
 **** Chiusura =dim=
-- \(L\cup L^{'}\)
+p- \(L\cup L^{'}\)
 - Dati \(E_{1}\) e \(E_{2}\)
   - Si dimostra che \(E_{1}+E{_2}\) genera \(L\cupL^{'}\)
   - Essendo quella ancora un'espressione regolare anche il linguaggio generato sará regolare
