@@ -29,10 +29,11 @@ gestisce
 - memoria secondaria
 
 ** Gestione Eventi
+Il Sistema Operativo e' =Event Driven=
 *** L'OS generalmente non sta utilizzando le risorse
-**** le gestisce e le fa usare ai programmi
-**** puo' essere chiamato in causa dai programmi
-*** puo' controllare che tutto sia in ordine
+- le gestisce e le fa usare ai programmi
+- puo' essere chiamato in causa dai programmi
+- puo' controllare che tutto sia in ordine
 *** Interruzioni
 Evento --> OS gestisce l'evento prendendo il controllo della macchina
 - una volta gestito e' restituito il controllo ad uno dei programmi che stavano girando prima dell'evento
@@ -44,30 +45,35 @@ natura software
 - causate dal' programma in esecuzione
   divise in
 **** Trap
-tentata divisione per 0
-tentato accesso ad area protetta
+- Malfunzionamenti del programma in esecuzione
+  - tentata divisione per 0
+  - tentato accesso ad area protetta
 **** System Call
-richiesta di eseguire un operazione su un file
+- Richiesta di un servizio da parte del OS
+  + richiesta di eseguire un operazione su un file
 *** CPU segue dei passi predefiniti a livello hardware
 - Salva lo stato della computazione
-  + PC e altri valori della CPU in appositi registri
+  + =PC= e altri valori della CPU in appositi registri
   + permette il riavvio del programma al punto di gestione evento
-- in PC si scrive l'indirizzo in RAM della porzione di codice del OS che gestisce l'evento verificatosi
+- in PC si scrive _l'indirizzo in RAM_ della porzione di _codice del OS_ che gestisce l'evento verificatosi
   + in =BootStrap=
     - OS carica in RAM
-      + vettore delle interruzioni
-        - ~n~ puntatori che indicano l'inizio dei codice di gestione eventi
+      + =vettore delle interruzioni=
+        - ~n~ puntatori che indicano l'inizio del codice di gestione eventi
 
       + Codice gestione evento ~n~
-- return from event
+- _return from event_
   + ultima istruzione di ogni procedura di gestione
   + riprende l'esecuzione del programma precedente
 ** Struttura della Memoria
+*** Uniform Memory Access - UMA
+Sistema multi-processore in cui questi si affacciano su un'unica memoria principale, con eguale tempo di accesso.
 *** Principale - RAM
 La memoria indirizzata alle istruzione eseguite
+- qui risiedono dati e codice dei programmi
 *** Secondaria - di Massa
 Risiedono qui permanentemente dati e programmi
-La gerarchia di memoria
+*** La gerarchia di memoria
 - le memoria sono sempre piu' veloci ma di costo maggiore
 - da fisse diventano volatili
 - la componentistica per bit occupa piu' spazio
@@ -93,15 +99,17 @@ CPU connessa a dispositivi di I/O
       - =driver=
     + specifica nei registri del controller le operazioni da compiere
       - il controller eseguira' quello che gli e' specificato
+        - utilizzando il suo buffer
       - una volta completato invia ~interrupt~ al driver
         + OS riprende il controllo
+          - preleva dal buffer
 
     Questa gestione e' adeguata solo per piccole quantita' di dati
     - inefficiente per moli maggiori
     - per inviare interi blocchi di dati dal controller al RAM
       + =DMA= Direct Memory Access
         - canale diretto tra dispositivo e RAM
-        - OS tramite driver istruisce
+        - OS tramite driver istruisce il controller, poi non viene coinvolto
           + prendi blocco numero n su HD e trasferisci in RAM a partire dalla locazione di indirizzo xxxx
 ** Multitasking & Time-sharing
 *** Multitasking
@@ -117,18 +125,19 @@ Mantenere in memoria principale piu' programmi insieme ai dati di questi in modo
     - da' l'impressione di simultaneita' (solamente apparente)
 ** Modalita' di Funzionamento
 *** Doppia Modalita'
-- Specificata da un bit di modalita'
+- Specificata da un =bit di modalita'=
 - Esistono istruzioni protette che sono eseguibili solo in modalita' di sistema (quindi dall'OS)
   - i programmi utente usano le =system call= per operazioni che richiedono l'esecuzione di istruzioni privilegiate
-    - l'OS gestisce e poi restituisce il controllo all'utente
-  - realizzate attraverso eccezioni che cambiano il bit di modalita'
+    - in realta' provocano eccezioni
+    - l'OS gestisce (kernel mode) e poi restituisce il controllo all'utente
+  - realizzate attraverso _eccezioni_ che cambiano il bit di modalita'
 
 **** Normale
 **** Sistema | Kernel | Monitor | Supervisor
 *** Timer
 ~for(;;)i++;~  ciclo che non termina mai
 - Per questi casi e' disponibile in CPU un Timer, dopo un certo tempo inizializzato dal OS viene inviato un =interrupt=
-  - utilizzato anche in caso di Time Sharing
+  - utilizzato anche in caso di Time Sharing (quanto di tempo concesso ai processi)
   - il timer e' gestito con istruzioni provilegiate
     - per evitare usi impropri malevoli
 *** Protezione della Memoria
@@ -231,7 +240,7 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
      - =processi= =thread=
 2) CPU libera: a quale programma in RAM assegnare la CPU
 3) interazione tra programmi senza danneggiarsi
-   * evitare stallo
+   * evitare stallo =deadlock=
    * problemi di =sincronizzazione=
 4) gestione della RAM
    * traccia delle aree di memoria occupate e da che programma
@@ -239,6 +248,7 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
      * =memoria virtuale=
 5) gestione del File System
    * memoria di massa
+     - gestire in modo efficiente e
    * fornire un'interfaccia
    * implementare il file system
 
@@ -263,7 +273,7 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
 
 * Gestione Processi, Sincronizzazione
 Componente del OS: =CPU Scheduler=
-- Sceglie processi in coda di ready
+- Sceglie processi (concorrenti) in coda di ready
 - si attiva ogni 50/100 secondi
   - crea ~overhead~
 

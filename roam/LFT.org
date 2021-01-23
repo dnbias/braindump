@@ -27,6 +27,11 @@ Principi tecniche e strumenti
 Automi, Linguaggi e Calcolabilita'
 
 * Fasi Compilatore
+- NB
+  - \[DFA = NFA = \epsilon\text{-}NFA = RE\]
+  - \[DFA \subset DPDA \subset CFG \text{ non ambigue} \subset CFG = PDA\]
+
+
 ** Analisi Lessicale
 sequenze di caratteri | =token= o =lessemi=
 
@@ -119,7 +124,7 @@ Definizioni dirette dalla sintassi strumento che permette la =traduzione=
     - come calcolare gli attributi
     - specificano regole di calcolo e assegnamento tra attributi per ogni produzione
       + gli operatori qui sono semantici/matematici
-    - sono valutate in ordine arbitratio
+    - sono valutate in ordine arbitrario
       + richiedono la costruzione di un albero sintattico annotato
 
 Con cui si definisce un =albero sintattico annotato=
@@ -167,7 +172,7 @@ data \(A\to X_1 X_2 ... X_n\)
 *** Traduzione on the fly
 Attributi sintetizzati =principali=
 - il loro valore include sempre la concatenazione dei valori dello stesso attributo
-  per tutte le variabili nel corpi di ogni produzione oltre che eventuali variabili ausiliarie
+  per tutte le variabili nel corpo di ogni produzione oltre che eventuali variabili ausiliarie
 - la concatenzazione rispetta l'ordine delle variabili nel corpo delle produzioni
   Es, trasformazione da forma infissa a postfissa
 \(E \to E_1 + T \{ E.post = E_1.post || T.post || "..." \}\)
@@ -191,8 +196,8 @@ Deterministico: lo stato in cui si sposta é univocamente determinato dallo stat
 
 Quintupla composta da:
 1. \(Q\) - insieme finito di stati
-2. \(Sigma\) - alfabeto riconosciuto
-3. \(delta\) - funzione di transizione
+2. \(\Sigma\) - alfabeto riconosciuto
+3. \(\delta\) - funzione di transizione
 4. \(q_{0}\) - e' lo stato iniziale
 5. \(F\) - insieme di stati finali
 
@@ -332,11 +337,11 @@ In ogni caso la stringa di input deve essere consumata completamente
 *** Automi a Pila Deterministici
 =DPDA=
 Strettamente meno espressivi dei =PDA=
-- riconoscono comunque ogni Linguaggio Regolare
-- riconoscono i linguaggi liberi non inerementemente ambigui
+- riconoscono comunque _ogni_ Linguaggio Regolare
+- riconoscono i linguaggi liberi _non inerementemente ambigui_
 Dimostrabile:
-1. Per ogni CFG G esiste un PDA tale che N(P) = L(G)
-2. Per ogni PDA P esiste una CFG G tale che L(G) = N(P)
+1. Per ogni CFG $G$ esiste un PDA $P$ tale che $N(P) = L(G)$
+2. Per ogni PDA $P$ esiste una CFG $G$ tale che $L(G) = N(P)$
 I DPDA a paritá di stato simbolo letto e simbolo sulla pila possono fare al massimo una mossa.
 + \(\delta(q,a,X) \cup \delta(q,\epsilon,X)\) deve contenere al massimo un elemento
 Mentre il linguaggio $ww^R$ non é riconoscibile in quanto fa uso chiave del non determinismo mentre $wcw^R$ é riconoscibile grazie al simbolo sentinella $c$
@@ -347,16 +352,27 @@ Mentre il linguaggio $ww^R$ non é riconoscibile in quanto fa uso chiave del non
   - $\delta_P(q,a,Z_0) = \{(\delta_A(q,a,Z_0))\}$ per ogni $q \in Q, a \in \Sigma$
   - $\delta_P(q,\epsilon,Z_0) = \emptyset$
 Dimostrabile
-1. Per ogni DPDA P esiste una grammatica libera non ambigua G tale che L(G)=N(P)
+1. Per ogni DPDA $P$ esiste una grammatica libera _non ambigua_ $G$ tale che $L(G)=N(P)$
 2. Il viceversa non vale
-La famiglia dei linguaggi riconoscibili da DPDA é inclusa in - ma non concide con - quella dei linguaggi generabili da grammatiche libere non ambigue
+  
+/La famiglia dei linguaggi riconoscibili da DPDA é inclusa in - ma non concide con - quella dei linguaggi generabili da grammatiche libere non ambigue/
 
 ** Parser Top-Down
 :PROPERTIES:
 :ID:       6b12c8b8-4c7b-4630-8ceb-e0a14b6c897b
 :END:
 Vedi:[[file:20201110134001-parser_top_down.org][File dedicato]]
-* Grammatiche
+* Grammatiche Libere
+=Teorema=
+
+Per ogni linguaggio regolare $L$ esiste una grammatica $G$ tale che $L(G) = L$
+    - dove $L(G)$ é il linguaggio generato da $G$
+- le grammatiche possono generare tutti i linguaggi regolari
+- possono anche generare linguaggi non regolari
+  + stringhe palindrome
+  + parentesi bilanciate
+/I linguaggi liberi includono propriamente i linguaggi regolari/
+
 ** LL(1)
 ** Non LL(1)
 *** Fattorizzazione
@@ -496,7 +512,7 @@ Allora concludiamo identificando \(x,y,z\)
     Il =prodotto= é la stringa ottenuta concatenando(sx verso dx) le etichette di tutte le foglie
 
 **** Teorema
-    $A\to G* \alpha$ se e solo se esiste un albero sintattico di $G$ con radice $A$ e prodotto $\alpha$
+    $A\to_{G}^{*} \alpha$ se e solo se esiste un albero sintattico di $G$ con radice $A$ e prodotto $\alpha$
 
 **** Risoluzione delle ambiguitá (grammatiche in forma infissa)
    - ~Precedenza~ degli operatori
@@ -513,11 +529,13 @@ Allora concludiamo identificando \(x,y,z\)
 Nuova grammatica:
     $(\{E,T,F\},\{0,1,...,9,+,*,(,)\},P,E)$
     Produzioni:
-    - $E\to T\midE+T$
-    - $T\to\midT*F$
+    - $E\to T \mid E+T$
+    - $T\to F \mid T \times F$
     - $F\to0\mid1\mid...\mid9\mid(E)$
 
 **** Linguaggi inerentemente ambigui
+\[L = \{a^n b^n c^m d^m \mid n \ge 1, m \ge 1\} \cup \{a^n b^m c^m d^n \mid n\ge 1, m \ge 1\}\]
+Qualunque Grammatica che genera $L$ ha sempre almeno due derivazioni canoniche distinte che generano una stringa della forma \[ a^n b^n c^n d^n \]
 
 *** Pumping Lemma
 *** Chiusura
