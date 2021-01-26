@@ -271,7 +271,7 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
   + in questo corso si presume che esiste un'unica unita' di calcolo
 - OS di Rete e OS distribuiti
 
-* Gestione Processi, Sincronizzazione
+* Gestione Processi
 Componente del OS: =CPU Scheduler=
 - Sceglie processi (concorrenti) in coda di ready
 - si attiva ogni 50/100 secondi
@@ -568,8 +568,6 @@ Invece le istruzioni di due peer-thread distinti saranno probabilmente indipende
   + =Simultaneous Multi-Threading=
     - aumento di produttivitá della CPU
 
-
-
 ** Scheduling
 Presupponendo un sistema Single-core
 L'OS fa credere ai processi di avere tutta la CPU per loro
@@ -791,14 +789,12 @@ Code multilivello con retroazione
     + difficoltá dovute a cache a piú livelli
       - dati e istruzioni di un processo sono man mano indirizzati e copiati nei vari livelli di cache
       - se spostato su un'altro core le informazioni vanno recuperate in quanto contenute in cache private di un altro core
-        +
       - OS possono relegare un processo particolare ad un unico core per questo motivo
-
 
 
 *** Esempi di Scheduling
 
-*** Solaris
+**** Solaris
     - Scheduling a code multiple con retroazioine
       1. real time
       2. sistema
@@ -821,7 +817,7 @@ Code multilivello con retroazione
       + prioritá == si usa RR
       + algoritmo preemptive
 
-*** Windows
+**** Windows
     Prioritá con retroazione e prelazione
     - 32 livelli
       + real time - 16-31
@@ -839,7 +835,7 @@ Code multilivello con retroazione
     Inoltre W distingue tra background e foreground
     - il processo foreground ottiene 3 volte l'aumento del quanto di tempo che gli altri processi
 
-*** Linux
+**** Linux
     Completly Fair Scheduler =CFS=
     Cerca di distribuire a tutti i processi equamente il tempo di CPU
 
@@ -875,17 +871,17 @@ Code multilivello con retroazione
     Il codice sará strutturato in questo modo:
                     =entry section=
       - richiesta di entrare nella sezione critica
-                   =sezione critica=
+                    =sezione critica=
                      =exit section=
       + segnalazione di uscita dalla sezione critica
 
     Una soluzione al problema avrá queste proprietá
-    - Mutua Esclusivitá
+    - =Mutua Esclusivitá=
       + mai ci saranno conflitti di accesso
-    - Progresso
+    - =Progresso=
       + se la sezione critica non sta venendo eseguita allora un processo in futura ne avrá accesso
       + questo garantisce l'assenza di =deadlock=
-    - Attesa Limitata
+    - =Attesa Limitata=
       - qualsiasi processo che richiede di accedere alla sua sezione critica non soffrirá di =starvation=
       - evitare attese infinite
 
@@ -894,10 +890,10 @@ Code multilivello con retroazione
 
 
 *** Sezione Critica
-    Zona del codice di manipolazione delle variabili condivise, non deve ~intrecciarsi~ co altre sezioni critiche
+    Zona del codice di manipolazione delle variabili condivise, non deve ~intrecciarsi~ con altre sezioni critiche
     - se un processo \(P_i\) sta eseguendo una sua sezione critica allora altri processi \(P_j\) non possono eseguire la propria
-    - L'esecuzione della sezione critica di un \(P_i\) é mutualmente esclusivo con l'esecuzione delle sezioni critiche di altri \(P_j\)
-      - anche se interrotto dalla scheduler nessun altro processo maniplante
+    - L'esecuzione della sezione critica di un \(P_i\) é mutualmente esclusiva con l'esecuzione delle sezioni critiche di altri \(P_j\)
+      - anche se interrotto dalla scheduler nessun altro processo manipolante
 
 
 **** Nel Sistema Operativo
@@ -905,35 +901,36 @@ Code multilivello con retroazione
     - uso contemporaneo della fork
       + devono avere diversi PID
     In un sistema operativo il problema é risolto con una scelta
-    - kernel con diritto di prelazione
+    - =kernel con diritto di prelazione=
       - un processo in kernel-mode puó essere interrotto da un altro processo
       - migliore per un sistema per applicazioni real-time
         + minore tempo di risposta
-    - kernel senza diritto di prelazione
+    - =kernel senza diritto di prelazione=
       - in kernel-mode un processo non puó essere interrotto
+        - inaccettabile in sistemi real-time
       - implementazione semplice: _disattivazione degli interrupt_
       - un solo processo alla volta puó accedere alle strutture dati dei kernel
         - accesso in modo esclusivo al codice della System Call
 
-    Soluzione:
-    - istruzioni macchina particolari
-      + TestAndSet(v)
-        #+begin_src C
+Soluzione:
+- istruzioni macchina particolari
+  + TestAndSet(v)
+#+begin_src C
 boolean TestAndSet(boolean *lockvar){
     boolean tempvar = *lockvar;
     *lockvar = true;
     return tempvar;
 }
-        #+end_src
-        Poi usata cosí
-        #+begin_src C
+#+end_src
+Poi usata cosí
+#+begin_src C
 boolean lock = false; // shared var
 do{
     while(TestAndSet(&lock)); // while senza corpo
     //sezione critica            qui la variabile di lock == true
     lock = false;             // quando l'altro processo eseguirá il ciclo passerá il test
 } while(true);
-        #+end_src
+#+end_src
         - In questo modo se un altro processo che testa lock resterá nel while in quanto _while(&lock) == while(true)_
         - l'_Attesa Limitata_ non é garantita
           - un processo potrebbe uscire dalla sezione critica e rientrarci nello stesso quanto di tempo
@@ -1682,7 +1679,6 @@ parametro =lostfree= associato alla lista dei frame liberi
     - se il pageout non riesce a mantenere la quantitá di frame ad un livello accettabile é possibile si stia verificando il thrashing
       + OS puó rimuovere tutte le pagine di un processo
         - scegliendo tra i processi inattivi da piú tempo
-
 
 * Gestione Memoria di massa
 
