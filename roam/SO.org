@@ -1197,7 +1197,7 @@ _In fase di esecuzione_ aka ~binding dinamico degli indirizzi~
   + MMU
     - risolve gli indirizzi in assoluti
 - cosi non ci son
- 
+
 **** Librerie
 2 tipi:
 - Statiche
@@ -1307,7 +1307,7 @@ _Architettura di Paginazione_
       + questo e' sommato all'indirizzo puntato da $p$ nella tabella delle pagine per ricavare l'indirizzo fisico
 - Elenco dei frame liberi
   + aggiornato ogni volta che e' necessario
-   
+
 _Indirizzi Logici_ reimplementati
 - non piu' lineari
 - nuova implementazione
@@ -2012,7 +2012,7 @@ _Svantaggi_
 - Occupa spazio in MP
 - se la FAT é persa non c'é modo di accedere i dati
   + va periodicamente salvata il Memoria Secondaria
-   
+
 ***** alllocazione indicizzata
 Utilizzato un blocco indice poi portato in memoria principale per indicare la posizione dei blocchi dati del file
 - _Vantaggi_
