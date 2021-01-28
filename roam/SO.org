@@ -897,20 +897,20 @@ Code multilivello con retroazione
 
 
 **** Nel Sistema Operativo
-    - accesso contemporaneo alla tabella dei file aperti
-    - uso contemporaneo della fork
-      + devono avere diversi PID
-    In un sistema operativo il problema é risolto con una scelta
-    - =kernel con diritto di prelazione=
-      - un processo in kernel-mode puó essere interrotto da un altro processo
-      - migliore per un sistema per applicazioni real-time
-        + minore tempo di risposta
-    - =kernel senza diritto di prelazione=
-      - in kernel-mode un processo non puó essere interrotto
-        - inaccettabile in sistemi real-time
-      - implementazione semplice: _disattivazione degli interrupt_
-      - un solo processo alla volta puó accedere alle strutture dati dei kernel
-        - accesso in modo esclusivo al codice della System Call
+- accesso contemporaneo alla tabella dei file aperti
+- uso contemporaneo della fork
+  + devono avere diversi PID
+In un sistema operativo il problema é risolto con una scelta
+- =kernel con diritto di prelazione=
+  - un processo in kernel-mode puó essere interrotto da un altro processo
+  - migliore per un sistema per applicazioni real-time
+    + minore tempo di risposta
+- =kernel senza diritto di prelazione=
+  - in kernel-mode un processo non puó essere interrotto
+    - inaccettabile in sistemi real-time
+  - implementazione semplice: _disattivazione degli interrupt_
+  - un solo processo alla volta puó accedere alle strutture dati dei kernel
+    - accesso in modo esclusivo al codice della System Call
 
 Soluzione:
 - istruzioni macchina particolari
@@ -931,47 +931,47 @@ do{
     lock = false;             // quando l'altro processo eseguirá il ciclo passerá il test
 } while(true);
 #+end_src
-        - In questo modo se un altro processo che testa lock resterá nel while in quanto _while(&lock) == while(true)_
-        - l'_Attesa Limitata_ non é garantita
-          - un processo potrebbe uscire dalla sezione critica e rientrarci nello stesso quanto di tempo
-          - un meccanismo di aging non serva in quanto i processi entrano in esecuzione solamente che non riescono ad eseguire
-          - puó essere implementata con una versione piú complessa
-        - _Busy Waiting_:
-          + il processo che tenta di accedere ad un lock fa busy-waiting
-            - in quanto cicla in base ad una variabile che é modificabile sola da un altro processo
-              + con un RR:
-                - con \(N\) processi lo spreco di tempo di CPU sará \(N-1\) quanti di tempo
-            - risolvibile con la disattivazione degli interrupt
-              + perdita di controllo per un tempo arbitrario del OS
-              + ci si deve fidare che il processo riabiliterá gli interrupt
-      + Swap(\(v1\),\(v2\))
+- In questo modo se un altro processo che testa lock resterá nel while in quanto _while(&lock) == while(true)_
+- l'_Attesa Limitata_ non é garantita
+  - un processo potrebbe uscire dalla sezione critica e rientrarci nello stesso quanto di tempo
+  - un meccanismo di aging non serva in quanto i processi entrano in esecuzione solamente che non riescono ad eseguire
+  - puó essere implementata con una versione piú complessa
+- _Busy Waiting_:
+  + il processo che tenta di accedere ad un lock fa busy-waiting
+    - in quanto cicla in base ad una variabile che é modificabile solo da un altro processo
+      + con un RR:
+        - con \(N\) processi lo spreco di tempo di CPU sará \(N-1\) quanti di tempo
+    - risolvibile con la disattivazione degli interrupt
+      + perdita di controllo per un tempo arbitrario del OS
+      + ci si deve fidare che il processo riabiliterá gli interrupt
+- Swap(\(v1\),\(v2\))
 
-    Queste sono istruzioni macchina e quindi _atomiche_, non saranno mai interrotte a metá da un context switch
-    I passi sono:
-    - il processo tenta di accedere al lock
-    - esegue la sezione critica
-    - restituisce il lock
+Queste sono istruzioni macchina e quindi _atomiche_, non saranno mai interrotte a metá da un context switch
+I passi sono:
+- il processo tenta di accedere al lock
+- esegue la sezione critica
+- restituisce il lock
 
-    ~NB~ La mutua esclusione in sistemi multi-core é piú complessa
+~NB~ La mutua esclusione in sistemi multi-core é piú complessa
 
 
 ***** Semafori
-    Dijkstra - 1965
-    Semaforo \(S\): variabile strutturata operabile tramite operazioni atomiche:
-    - wait(S) ALIAS: P, down
-      #+begin_src C
+Dijkstra - 1965
+Semaforo \(S\): variabile strutturata operabile tramite operazioni atomiche:
+- wait(S) ALIAS: P, down
+#+begin_src C
 while S <= 0 do no-op;
-S= S-1;
-      #+end_src
-    - signal(S) ALIAS: V, up
-      #+begin_src C
-S =S+1;
-      #+end_src
+S = S-1;
+#+end_src
+- signal(S) ALIAS: V, up
+#+begin_src C
+S = S+1;
+#+end_src
 
-      \(S\) é detta variabile semaforica, come se fosse un oggetto condiviso da tutti i processi per la sincronizzazione
+\(S\) é detta variabile semaforica, come se fosse un oggetto condiviso da tutti i processi per la sincronizzazione
 
-    La variabile la chiameremo _mutex_ (mutual exclusion)
-    #+begin_src C
+La variabile la chiameremo _mutex_ (mutual exclusion)
+#+begin_src C
 P {
     do{
         wait(mutex);
@@ -979,10 +979,10 @@ P {
         signal(mutex);
     } while(true);
 }
-    #+end_src
+#+end_src
 
 =sync=
-    #+begin_src C
+#+begin_src C
 sync = 0;
 P1{
     S1;
@@ -992,19 +992,19 @@ P2{
     wait(sync);
     S2;
 }
-    #+end_src
+#+end_src
 
 Questo tipo di semafori soffre ancora di busywaiting, sono chiamati _spinlock_
 Soluzione implementata utilizzando System Call
 - lista di semafori memorizzata nelle aree dati del kernel
 - System Call
-  + sleep() ALIAS: block()
+  + ~sleep()~ ALIAS: block()
     - toglie il processo dall'esecuzione
       + non viene inserito nella Ready Queue
-  + wakeup()
+  + ~wakeup()~
     - rimette il processo in Ready Queue
 - implementazione
-  #+begin_src C
+#+begin_src C
 typedef struct{
     int valore; // se > 0 indica sezione critica libera
     struct process *waiting_list;
@@ -1025,7 +1025,7 @@ signal(semaforo *S) {
             wakeup(P); // risvegliato P, va in Ready Queue
     }
 }
-  #+end_src
+#+end_src
 
 - NB
   - wait e signal sono _esse stesse sezioni critiche_ perché usano le stesse aree dati
@@ -1045,17 +1045,17 @@ signal(semaforo *S) {
     Problemi di sincronizzazione risolti utilizzando semafori
 
 ***** Produttori e Consumatori
-    - buffer circolare[SIZE]
-      + memoria condivisa da tutti i produttori e tutti i consumatori
-    - semafori
-      + full
-      + empty
-      + mutex
-    - in
-    - out
+- buffer circolare[SIZE]
+ + memoria condivisa da tutti i produttori e tutti i consumatori
+- semafori
+  + full
+  + empty
+  + mutex
+- in
+- out
 
-    #+name: Produttore
-    #+begin_src C
+#+name: Produttore
+#+begin_src C
 while(true){
     produciItemInNextp();
     wait(empty);
@@ -1065,9 +1065,9 @@ while(true){
     signal(mutex);
     signal(full);
 }
-    #+end_src
-    #+name: Consumatore
-    #+begin_src C
+#+end_src
+#+name: Consumatore
+#+begin_src C
 while(true){
     wait(full);
     wait(mutex); // in caso di piú consumatori e piú item nel buffer
@@ -1077,7 +1077,7 @@ while(true){
     signal(empty);
     consumaItemInNextc();
 }
-    #+end_src
+#+end_src
 ***** Lettori e Scrittori
     Condivisione di un file tra molti processi
     - alcuni processi richiedono la sola lettura
@@ -1085,19 +1085,19 @@ while(true){
     - alcuni richiedono la scrittura
       + richiede la mutua esclusione di tutti i processi
 ****** Readers First
-    Variabili:
-    - condivise
-      + semaforo mutex = 1
-      + semaforo scrivi = 1
-      + int numlettori = 0
-    #+name: scrittore
-    #+begin_src C
+Variabili:
+- condivise
+  + semaforo mutex = 1
+  + semaforo scrivi = 1
+  + int numlettori = 0
+#+name: scrittore
+#+begin_src C
 wait(scrivi);
 scriviFile();
 signal(scrivi);
-    #+end_src
-    #+name: lettore
-    #+begin_src C
+#+end_src
+#+name: lettore
+#+begin_src C
 wait(mutex);
 numlettori++;
 if numlettori == 1
@@ -1109,11 +1109,11 @@ numlettori--;
 if numlettori == 0
     signal(scrivi);
 signal(mutex);
-    #+end_src
+#+end_src
 
-    E' garantita l'assenza di Deadlock e Starvation?
-    - no
-      - uno scrittore addormentato su scrivi dovra aspettare la terminazione di tutti i lettori, se continuano ad aggiungersi lettori ci sara' un Deadlock
+E' garantita l'assenza di Deadlock e Starvation?
+- no
+  - uno scrittore addormentato su scrivi dovra aspettare la terminazione di tutti i lettori, se continuano ad aggiungersi lettori ci sara' un Deadlock
 
 ****** Writers First
 
@@ -1139,21 +1139,24 @@ do{
     #+end_src
 
 ** Deadlock
-    Programma A aspetta informazione dal Programma B che aspetta...
-    Il deadlock non é affrontato dagli OS, deve essere gestito dall'OS
-    - se uno dei dui processi cede il passo risolviamo la deadlock ma non la =starvation=
+Programma A aspetta informazione dal Programma B che aspetta...
+Il deadlock non é affrontato dagli OS, deve essere gestito dagli utenti
+- se uno dei due processi cede il passo risolviamo la deadlock ma non la =starvation=
 
-    _Modello del Sistema_
-    - Tipi di risorse R
-      + ognuna formata da istanze indistinguibili tra loro
-    - Processi P
-      + hanno bisogno di alcune istanze di R
-    In una situazione di attesa circolare le risorse possono rimanere bloccate, quindi questo é un problema di tutto il sistema
-    L'OS potrebbe implementare delle soluzioni con adeguate rappresentazione del _grafo di assegnazione delle risorse_
-    - se si verifica un ciclo in questo grafo é chiara la situazione di deadlock e allora viene risolta
-      - causa un sottoutilizzo delle risorse (poiché non evita i deadlock di per se)
-    - oppure si potrebbe evitare i deadlock verificando prima di concedere una risorsa che questa non porti ad una attesa circolare
-      - troppo dispendioso dal punto di vista della computazione per l'OS
+_Modello del Sistema_
+- Tipi di risorse R (per esempio cicli di CPU)
+  + ognuna formata da istanze indistinguibili tra loro
+- Processi P
+  + hanno bisogno di alcune istanze di R
+In una situazione di =attesa circolare= le risorse possono rimanere bloccate, quindi questo é un problema di tutto il sistema
+L'OS potrebbe implementare delle soluzioni con adeguate rappresentazione del _grafo di assegnazione delle risorse_
+- rappresentazione di ogni istante di
+  - risorse assegnate ad ogni processo
+  - risorse attese da ogni processo
+- se si verifica un ciclo in questo grafo é chiara la situazione di deadlock e allora viene risolta
+  - causa un sottoutilizzo delle risorse (poiché non evita i deadlock di per se)
+- oppure si potrebbe evitare i deadlock verificando prima di concedere una risorsa che questa non porti ad una attesa circolare
+  - troppo dispendioso dal punto di vista della computazione per l'OS
 
 * Gestione Memoria
 
@@ -1163,7 +1166,7 @@ Bisogna decidere come spartire lo spazio di memorizzazione tra i processi attivi
 - _l'immagine_ di un processo inattivo nei prossimi cicli di CPU puo essere spostato su hard disk
 - quando un processo rientra in RAM occupera' spazio prima occupato
   + Questo e' lo ~swap~
-
+    - o avvicendamento dei processi
 _Obiettivo_ massimizzare il numero di processi in Memoria Principale per aumentare la multiprogrammazione
 *** Binding
 Associazione degli indirizzi
@@ -1172,7 +1175,7 @@ Associazione degli indirizzi
 
 _In fase di Compilazione_
 - generato codice assoluto o _statico_
-- il compilatore deve conoscere l'idirizzo della cella a partire dalla quale verra' caricato il programma per poter portare a termine il binding
+- il compilatore deve conoscere l'indirizzo della cella a partire dalla quale verra' caricato il programma per poter portare a termine il binding
 - se il processo e' spostato in memoria secondaria
   + dovrá essere messo allo stesso indirizzo
   + o ricompilato ad un nuovo indirizzo
@@ -1191,18 +1194,18 @@ _In fase di esecuzione_ aka ~binding dinamico degli indirizzi~
 - necessita un supporto hardware per non perdere efficienza
   + registro di rilocazione
     - indirizzo di partenza in cui e' caricato il programma in esecuzione
-  + MMU
-    - risolve gli indirizzi in assoluti
-- cosi non ci son
+  + MMU - Memory Management Unit
+    - risolve gli indirizzi relativi in assoluti
+- cosi non ci sono complicazioni nel spostare un processo da un'area all'altra
 
 **** Librerie
 2 tipi:
-- Statiche
+- =Statiche=
   + Associata dal compilatore o dal loader e collegata al programma in memoria
     - anche se la subroutine non e' utilizzata viene memorizzata in memoria principale
   + Ogni programma dovra' avere una copia del codice della libreria in quanto direttamente associati
   + provoca dublicazione del codice in memoria
-- Dinamiche
+- =Dinamiche=
   + caricate a runtime
     - solo dopo una specifica invocazione in corso di esecuzione il Sistema Operativo interrompe e carica in RAM il necessario prima di ridare il controllo al programma
   + diversi programmi condividono la stessa porzione di codice in RAM se chiamano la stessa libreria
@@ -1235,7 +1238,7 @@ Solitamente vale questa relazione:
 
 *** Tecniche di Gestione della memoria
 **** Swapping
-Salvataggio in memoria secondaria di un =immagine= del processo non in esecuzione (~swap out~) e ricaricarla successivamente (~swap in~)
+Salvataggio in memoria secondaria di un =immagine= del processo non in esecuzione (~swap out~) e ricaricarla successivamente (~swap in~) prima di dargli la cpu
 - =area di swap=
   + area di harddisk ad uso esclusivo del OS
 - l'operazione di =swap in= posiziona il processo in una diversa area di MP
@@ -1248,6 +1251,7 @@ Salvataggio in memoria secondaria di un =immagine= del processo non in esecuzion
 NB: tecnica utilizzata dal IBM OS/360
 Memoria Principale suddivisa in 2 _partizioni_
 - OS
+  - stessa area del vettore delle interruzioni
 - Processi Utente
   + occupata solo da un processo nei casi piu' semplici
   + =registro limite= protegge la memoria primaria riservata al OS
@@ -1255,7 +1259,7 @@ Memoria Principale suddivisa in 2 _partizioni_
   + Le partizioni sono di dimensione fissa
     - non necessariamente uguali
     - ogni processo puo' accedere solo alla sua porzione
-      + registri di rilocazione a ggiornati ad ogni context switch
+      + registri di rilocazione aggiornati ad ogni context switch
       + registro limite aggiornato con la dimensione della partizione
 _Limiti_
 - Questa tecnica limita il grado di ~multiprogrammazione~ al numero di partizioni previste
@@ -1275,13 +1279,14 @@ _Scelta della partizione_
   + utilizza la partizione piu' grande
 _Limiti_
 - Frammentazione esterna aumenta con il tempo
-- Frammentazione interna in quanto costa troppo tenere traccia dei buchi tra i processi e questi rimarranno nascosti
+- Frammentazione interna in quanto costa troppo tenere traccia dei buchi piccoli tra i processi e questi rimarranno nascosti
 _Soluzione_
 - Rilocazione dei processi in maniera contigua
   + quindi sara' necessaria una implementazione dinamicamente rilocabile
   + verso il basso o l'alto
 - Compattamento
   + creazione di un unica area libera di memoria
+  + la compattazione puo' richiedere molto tempo e rende il sistema inutilizzabile
 **** Paginazione
 - Vedi [[file:20201109165742-microarchitettura_ia_32.org][IA-32]]
 Area di memoria allocata da un processo suddivisa in pezzi _non contigui_
@@ -1307,7 +1312,7 @@ _Architettura di Paginazione_
 
 _Indirizzi Logici_ reimplementati
 - non piu' lineari
-- nuova implementazione
+- nuova implementazione - pero' sotto alcune condizioni coincide con l'implementazione lineare
   + coppia di valori =(page, offset)=
     - numero della pagina da indirizzare
     - offset rispetto all'inizio della pagina
@@ -1328,13 +1333,13 @@ Questo e' implementato in modo piu' semplice utilizzando come grandezze di indir
   + non sara' necessario operare una somma tra indirizzo e offset ma solamente una _concatenazione_ (piu' veloce e semplice a livello hardware)
 
 _Vantaggi_
-- Protezione dello spazio di indirizzamento
+- =Protezione= dello spazio di indirizzamento
   + Un processo puó solo indirizzare i frame contenuti nella sua tabella delle pagine
     - quei frame contengono le pagine che appartengono al processo stesso perché é l'OS a costruire la tabella
-- evita frammentazione esterna
-  + quella interna rimane tipicamente nell'ultima pagina di un processo
-    - mediamente mezzo frame é sprecato per ogni processo
-- é una forma di rilocazione dinamica
+- evita =frammentazione esterna=
+  + quella =interna= rimane tipicamente nell'ultima pagina di un processo
+    - mediamente _mezzo frame_ é sprecato per ogni processo
+- é una forma di =rilocazione dinamica=
   + ad ogni pagina corrisponde un diverso valore del registro di rilocazione
     - ogni frame indirizzato dalla pagina (indirizzo logico) é di fatto/agisce come un registro di rilocazione
       + ma in questo caso non c'é piú un controllo sulla validitá del offset
@@ -1349,7 +1354,7 @@ Le pagine storicamente sono aumentate di dimensioni col tempo
 _Svantaggi_
 - page-table
   + per ogni processo attivo
-- frame table
+- frame-table
   + frame liberi
   + frame occupati
     - da che pagina
@@ -1365,7 +1370,7 @@ _Svantaggi_
         - 8 registri per la PT
         - indirizzi da 16 bit
   + essendo la tabella contenuta in MP (in una zona riservata dal OS)
-    - in questo modo per ogni indirizzo logico richiesto dal processore il numero di accessi alla MP raddoppia
+    - in questo modo per ogni indirizzo logico richiesto dal processore il =numero di accessi alla MP raddoppia=
 
 ***** TLB
 Una tecnica di =caching= della PT mediante memoria associativa messa a disposizione della CPU
@@ -1381,6 +1386,9 @@ Una tecnica di =caching= della PT mediante memoria associativa messa a disposizi
       + la ricerca puó fallire =miss= o meno =hit=
         - in caso di miss si va ad utilizzare la PT e fare un doppio accesso alla memoria principale
           + questa é fatta partire insieme alla ricerca in TLB, se quest'ultima ha successo viene semplicemente annullata
+          + la coppia mancante viene caricata in TLB
+            + se piena si sovrascrive least recently used
+    - al context switch viene svuotato
   + =page-table base register= =PTBR=
     - al context switch basta modificare questo registro per attivare la PT del processo mandato in esecuzione
 
@@ -1400,7 +1408,6 @@ In caso di miss il costo sará piú di 100 cicli giá solo per la ricostruzione 
 ***** Pagine condivise
 La paginazione facilita la condivisione di codice in quanto questo non cambia durante l'esecuzione e tutti i processi possono leggerlo in maniera sicura
 - la pagina condivisa puó essere usata per contenere una libreria dinamica
-
 
 **** Paginazione a piu' livelli
 Paginazione Gerarchica
@@ -1426,20 +1433,20 @@ Adottata in alcune architetture a 64 bit
   + indice di ogni entry corrisponde al numero di un frame nella memoria principale
     - il corrispettivo di una normale PT
   + Ogni entry é una coppia
-    - <process-id, page-number>
+    - ~<process-id, page-number>~
   + Ogni indirizzo logico generato dalla CPU é una tripla
-    - <process-id, page-number, offset>
+    - ~<process-id, page-number, offset>~
   + Per generare l'indirizzo fisico
-    - si =ricerca= nella IPT <PID, page-number>
+    - si =ricerca= nella IPT ~<PID, page-number>~
       + questo in linea di principio impone un enorme overhead
         - vorrebbe dire centinaia o migliaia di accessi a MP
       + risolvibile con una =memoria associativa=
         - il controllo é fatto in parallelo
     - l'indice $i$ a cui si é trovata la coppia e offset $d$ generano
       + <$i$, $d$>
-
+- si riduce lo spazio occupato a discapito del tempo di traduzione
 ** Virtuale
-Tecniche he permettono di eseguire processi in cui codice e/o dati non sono completamente caricati in Memoria Primaria
+Tecniche che permettono di eseguire processi in cui codice e/o dati non sono completamente caricati in Memoria Primaria
 - esempi
   + codice per trattazione di errore potrebbe non essere mai utilizzata in una data esecuzione
   + array liste e tabelle spesso dichiarate di dimensioni maggiori di quelle effettivamente utilizzata
@@ -1455,8 +1462,8 @@ Tecniche he permettono di eseguire processi in cui codice e/o dati non sono comp
 
 *** Svantaggi
 - aumento traffico tra RAM e HD
-- esecuzione rallentat
-- prestazioni coomplessive possono degradare
+- esecuzione rallentata
+- prestazioni complessive possono degradare
   + =thrashing=
 
 *** Tecniche
@@ -1482,13 +1489,13 @@ Un processo é eseguito senza nessuna delle sua pagine in Memoria Principale
 ***** Demand Paging
 Almeno qualche pagina é caricata in Memoria Principale
 
-****** Supporto Hardware
-Mentre la paginazione puó essere aggiunta in qualsiasi paginazione la memoria virtuale necessita un hardware specifico
+***** Supporto Hardware
+Mentre la paginazione puó essere aggiunta in qualsiasi sistema la memoria virtuale necessita un hardware specifico
 - le istruzioni devono essere rieseguibili dopo page fault
 Oppure
 - CPU deve controllare bit di validitá di tutti gli operandi prima di eseguire l'istruzione
 
-****** Prestazioni
+***** Prestazioni
 \(\text{ma}\)   Tempo di accesso MP se dato é presente
 \(p\)     probabilitá di page-fault
 \(\text{eat}\)   Effective Time Access
@@ -1556,8 +1563,8 @@ Per test si utilizzano le sequenze di riferimenti durante l'esecuzione
 
 Un maggior numero di frame causerá meno page-fault
 
-La sostituzione delle pagine sará locale
-******* FIFO
+La sostituzione delle pagine sará =locale=
+******** FIFO
 Pagina vittima quella che é da piú tempo in memoria principale
 - inizializzazione del processo
   + buon candidato vittima
@@ -1565,12 +1572,12 @@ Pagina vittima quella che é da piú tempo in memoria principale
   + pessima candidata vittima
 Soffre della =Anomalia di Belady=
 - piú frame possono aumentare i page-fault
-******* OPT - MIN
+******** OPT - MIN
 Optimal / Minimal
 Pagina vittima quella che sará usata piú in lá nel tempo
-- ovviamente non implementabile
+- ovviamente =non implementabile=
 - utilizzato come confronto per altri algoritmi
-******* LRU
+******** LRU
 Least Recently Used
 Pagina vittima quella che non é stata usata per piú tempo
 - si avvicina piú a OPT che FIFO
@@ -1581,7 +1588,7 @@ _Approssimazione_
 =Reference Bit=
 - bit associato ad ogni entry della PT
   + quando una pagina é indirizzata il bit é settato ad 1
-******* Algoritmo della Seconda Chance
+******** Algoritmo della Seconda Chance
 Soffre dell'=Anomalia di Belady=
 Utilizza i reference bit per approssimare LRU
 - Utilizza una coda FIFO circolare
@@ -1589,7 +1596,7 @@ Utilizza i reference bit per approssimare LRU
     - se ha reference bit 1 gli viene data una seconda chance
       + azzera il bit e prosegue la coda
   + nel caso peggiore equivale a FIFO
-******* Algoritmo della Seconda Chance Migliorato
+******** Algoritmo della Seconda Chance Migliorato
 Utilizza sia
 - dirty bit
 - reference bit
@@ -1598,45 +1605,47 @@ Utilizza sia
 - (1,0)
 - (0,1) va salvata in memoria secondaria
 - (1,1) peggiore candidata
-******* Tecniche aggiuntive
+******** Tecniche aggiuntive
 Uso del pool di frame liberi, non assegnati normalmente a nuovi processi
 - pagine con dirty bit spostate qui prima di essere salvate
   + a tempo perso, quando l'OS é abbastanza libero
 ****** Allocazione dei frame
-I frame vanno distribuiti tra i processi
-- Uniforme
-- Proporzionale
-- Prioritá
+I =frame= vanno =distribuiti= tra i processi in modo
+- =Uniforme=
+  - stesso numero per tutti
+- =Proporzionale=
+  - in base alla loro dimensione
+- =Prioritá=
 
 Da quale gruppo di pagine scegliere la vittima?
-- Allocazione Globale - Unix
+- =Allocazione Globale= - Unix
   + escluse le pagine dell'OS
   + turnaround di un processo fortemente influenzato dai processi con cui convive
     - molto dipedente dall'esecuzione
-- Allocazione Locale - Windows
+- =Allocazione Locale= - Windows
   + troppe pagine ad un processo possono peggiorare il throughput
     - in quanto gli altri processi causeranno page-fault causando l'intervento dell'OS
 
-L'allocazione globale porta un throughput maggiore sperimentalmente in sistemi time-sharing
+L'allocazione =globale= porta un =throughput maggiore= sperimentalmente in sistemi time-sharing
 ****** Thrashing
-Questo avviene quando il grado di multiprogrammazione diventa troppo alto
-Un page fault porta alla rimozione di una pagina di un altro processo
+Questo avviene quando il _grado di multiprogrammazione diventa troppo alto_
+Un =page-fault= porta alla _rimozione di una pagina di un altro processo_
 - questo causerá successivi page-fault da altri processi
 
-Si innesca un circolo vizioso
+Si innesca un =circolo vizioso=
 - processi passano il loro tempo in waiting
 - OS passa il suo tempo a gestire page-fault
-L'utilizzo della CPU crolla
+L'=utilizzo della CPU crolla=
 - questo puó ingannare gli utenti che vedendo un basso utilizzo di CPU
   + questo puó causare ancora piú problemi di thrashing
 
-- Prevenzione del fenomeno
-  + Gestione della frequenza dei page fault
+- =Prevenzione del fenomeno=
+  + ~Gestione della frequenza dei page fault~
     - Si stabilisce una soglia da non eccedere con i page-fault
     - si puó anche stabilire che se la frequenza sia troppo bassa é possibile aumentare il grado di multiprogrammazione
-  + Sostituzione Locale puó mitigare il problema
+  + ~Sostituzione Locale~ puó mitigare il problema
     - in questo modo i processi non andranno a prendersi frame a vicenda
-  + Quantitá sufficiente di memoria principale
+  + ~Quantitá sufficiente di memoria principale~
 
 *** Struttura dei Programmi
 Queste possono aumentare il numero di page fault
@@ -1646,7 +1655,7 @@ Per esempio:
     - le hash-table forniscono per questo prestazioni pessime con la memoria virtuale
 
 *** Windows 10
-=Demand aging with Clustering=
+=Demand paging with Clustering=
 alla creazione di un processo
 - insieme di lavoro minimo
   + min di pag (50)
@@ -1668,15 +1677,15 @@ Se si raggiunge il limite minimo di frame liberi in RAM
 parametro =lostfree= associato alla lista dei frame liberi
 - 1/64 del numero di frame del sistema
 - ogni 1/4 di secondo OS controlla che lostfree non sia maggiore del numero di frame liberi
-  + se si: processo _pageout_
+  + se si: processo =pageout=
     - variante dell'algoritmo della seconda chance
-      1. candisce le pagine in RAM azzerandone bit di riferimento
+      1. scandisce le pagine in RAM azzerandone bit di riferimento
       2. riscandisce e le pagine con il bit di riferimento a 0 vengono considerate riutilizzabili
          a. dirty bit a 1 vengono prima salvate prima di essere riutilizzate
          b. se un processo fa riferimento ad una pagina riutilizzabile in attesa di essere salvata questa viene riassegnata a quel processo
     - il tempo tra due pageout puó variare in base a parametri dell'OS
-      + ma sempre nell'ordine d i qualche secondo
-    - se il pageout non riesce a mantenere la quantitá di frame ad un livello accettabile é possibile si stia verificando il thrashing
+      + ma sempre nell'ordine di qualche secondo
+    - se il pageout non riesce a mantenere la quantitá di frame ad un livello accettabile é possibile si stia verificando il =thrashing=
       + OS puó rimuovere tutte le pagine di un processo
         - scegliendo tra i processi inattivi da piú tempo
 
