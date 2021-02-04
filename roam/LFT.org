@@ -4,8 +4,6 @@
 #+startup: latexpreview
 [[file:#universita.org][#universitá]]
 
-
-
 Informazioni varie del Corso:
 - Lunedi' lezione sincrona per domande: 11:00
 
@@ -354,7 +352,7 @@ Mentre il linguaggio $ww^R$ non é riconoscibile in quanto fa uso chiave del non
 Dimostrabile
 1. Per ogni DPDA $P$ esiste una grammatica libera _non ambigua_ $G$ tale che $L(G)=N(P)$
 2. Il viceversa non vale
-  
+
 /La famiglia dei linguaggi riconoscibili da DPDA é inclusa in - ma non concide con - quella dei linguaggi generabili da grammatiche libere non ambigue/
 
 ** Parser Top-Down

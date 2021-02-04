@@ -1,7 +1,111 @@
 #+title: LFTCompiler
+#+startup: latexpreview
 [[file:#universita.org][#universita]]
 [[file:20201205215419-project.org][#project]]
 
 Progetto per il Corso di [[file:LFT.org][Linguaggi Formali e Traduttori]]
 - [[file:~/Documents/Uni/II/LFT/Lab/LFT_Lab2021_L8v2.pdf][Doc del Progetto]]
 - [[file:~/Documents/Uni/II/LFT/RegoleSemantiche.png][Regole Semantiche]]
+* Translator
+** SDT
+-      =<prog>= ::== ~prog.lnext=newLabel()~
+                   ~statlist.lnext=prog.lnext~
+                   =<statlist>=
+                   ~emitLabel(prog.lnext)~
+                   EOF
+-  =<statlist>= ::== ~stat.lnext=newLabel()~
+                   =<stat>=
+                   ~emitLabel(stat.lnext)~
+                   ~statlistp.lnext=statlist.lnext~
+                   =<statlistp>=
+- =<statlistp>= ::== ;
+                   ~stat.lnext=newLabel()~
+                   =<stat>=
+                   ~emitLabel(lnext_stat)~
+                   =<statlistp>=
+              ::== \(\epsilon\) ~goto statlistp.lnext~
+-      =<stat>= ::== = ID
+                   ~stat.id_addr=st.lookupAddress(ID.lexeme)~
+                   ~if(stat.id_addr==-1)
+                     { stat.id_addr=count; st.insert(ID.lexeme,count++) }~
+                   =<expr>=
+                   ~istore stat.id_addr || goto lnext~
+              ::== print ( =<exprlist>= )
+                   ~for(n=exprlist.n; n>0; n--)~
+                     ~{ invokestatic 1 }~
+              ::== read ( ID )
+                   ~stat.id_addr = &ID.lexeme~
+                   ~if(stat.id_addr==-1)
+                     { stat.id_addr=count; st.insert(ID.lexeme,count++) }~
+                   ~invokestatic 0 || istore stat.id_addr || goto lnext~
+              ::== cond
+                   ~whenlist.else=newLabel() || whenlist.exit=newLabel()~
+                   =<whenlist>=
+                   ~emitLabel(whenlist.else)~
+                   else
+                   ~stat1.lnext=whenlist.exit~
+                   =<stat1>=
+                   ~emitLabel(whenlist.exit)~
+                   ~goto stat.lnext~
+              ::== while (
+                   ~bexpr.true=newLabel() || bexpr.false=stat.lnext~
+                   ~emitLabel(bexpr.true)~
+                   =<bexpr>= )
+                   ~stat1.lnext=stat.lnext~
+                   =<stat1>=
+              ::== { ~|| statlist.lnext=stat.lnext ||~ =<statlist>= }
+-  =<whenlist>= ::== ~whenitem.false = newLabel()~
+                   =<whenitem>=
+                   ~goto whenitem.false~
+                   ~emitLabel(whenitem.false)
+                   ~whenlistp.exit = whenlist.exit~
+                   =<whenlistp>=
+                   ~goto whenlist.else~
+- =<whenlistp>= ::== ~whenitem.false = newLabel()~
+                   =<whenitem>=
+                   ~goto whenlistp_exit~
+                   ~emitLabel(whenitem.false)~
+                   =<whenlistp>=
+              ::== \(\epsilon\)
+-  =<whenitem>= ::== when (
+                   ~bexpr.true=newLabel()~
+                   ~bexpr.false=whenitem.false~
+                   =<bexpr>= ) do
+                   ~emitLabel(bexpr.true)~
+                   ~stat.lnext=newLabel()~
+                   =<stat>=
+                   ~emitLabel(stat.lnext)~
+-     =<bexpr>= ::== RELOP =<expr>= =<expr>= ~if_icmpRELOP bexpr.false~
+              ::== true ~goto bexpr.true~
+              ::== false ~goto bexpr.false~
+              ::== ! =<bexpr1>= ~goto bexpr1.false~
+              ::== && (
+                   ~bexpr1.true=newLabel() || bexpr1.false=bexpr.false~
+                   =<bexpr1>=
+                   ~goto bexpr1.true~
+                   ~emitLabel(bexpr1.true)~
+                   ~bexpr2.true=bexpr.true || bexpr2.false=bexpr.false~
+                   =<bexpr2>= )
+              ::== || (
+                   ~bexpr1.false=newLabel() || bexpr1.true=bexpr.true~
+                   =<bexpr1>=
+                   ~goto bexpr.true~
+                   ~emitLabel(bexpr1.false)~
+                   ~bexpr2.true=bexpr.true || bexpr2.false=bexpr.false~
+                   =<bexpr2>= )
+-  =<exprlist>= ::== =<expr>= =<exprlistp>=  ~exprlist.n=1+exprlistp.n~
+- =<exprlistp>= ::== =<expr>= =<exprlistp1>= ~exprlistp.n=1+exprlistp1.n~
+              ::== \(\epsilon\) ~exprlistp.n=0~
+-      =<expr>= ::== + ( =<exprlist>= )
+                   ~for(n=exprlist.n-1; n>0; n--)
+                     { iadd }~
+              ::== - =<expr>= =<expr>= ~isub~
+              ::== * ( =<exprlist>= )
+                   ~for(n=exprlist.n-1; n>0; n--)
+                     { imul }~
+              ::== / =<expr>= =<expr>= ~idiv~
+              ::== ID
+                   ~expr.addr=st.lookupAddress(ID.lexeme)~
+                   ~iload expr.addr~
+              ::== NUM
+                   ~ldc NUM.value~
