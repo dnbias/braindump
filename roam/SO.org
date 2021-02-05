@@ -722,7 +722,6 @@ calcolo della prioritá:
     Puó essere ~preemptive~ o ~non-preemptive~
 
 
-
 ***** Round Robin
 =RR=
 L'algoritmo di implementazione del time-sharing, la RQ e' utilizzata come una coda circolare
@@ -746,7 +745,6 @@ Prestazioni dipendenti da \(q\):
 
 - regola empirica
   + \(80\% \text{ dei CPU burst} < q\)
-
 
 ***** Multilevel Queue
 =MQ=
@@ -790,7 +788,6 @@ Code multilivello con retroazione
       - dati e istruzioni di un processo sono man mano indirizzati e copiati nei vari livelli di cache
       - se spostato su un'altro core le informazioni vanno recuperate in quanto contenute in cache private di un altro core
       - OS possono relegare un processo particolare ad un unico core per questo motivo
-
 
 *** Esempi di Scheduling
 
@@ -888,13 +885,11 @@ Code multilivello con retroazione
     Una soluzione corretta deve permettere ai processi di computare indipendentemente dalla loro velocitá
     - non deve dipendere dallo scheduling del sistema
 
-
 *** Sezione Critica
     Zona del codice di manipolazione delle variabili condivise, non deve ~intrecciarsi~ con altre sezioni critiche
     - se un processo \(P_i\) sta eseguendo una sua sezione critica allora altri processi \(P_j\) non possono eseguire la propria
     - L'esecuzione della sezione critica di un \(P_i\) é mutualmente esclusiva con l'esecuzione delle sezioni critiche di altri \(P_j\)
       - anche se interrotto dalla scheduler nessun altro processo manipolante
-
 
 **** Nel Sistema Operativo
 - accesso contemporaneo alla tabella dei file aperti
@@ -953,7 +948,6 @@ I passi sono:
 - restituisce il lock
 
 ~NB~ La mutua esclusione in sistemi multi-core é piú complessa
-
 
 ***** Semafori
 Dijkstra - 1965
@@ -1452,7 +1446,6 @@ Tecniche che permettono di eseguire processi in cui codice e/o dati non sono com
   + array liste e tabelle spesso dichiarate di dimensioni maggiori di quelle effettivamente utilizzata
   + librerie dinamiche caricate in RAM solo se e solo quando sono effettivamente usate
 
-
 *** Vantaggi
 - possibile eseguire programmi piú grandi in memoria principale
 - possibile l'esecuzione contemporanea di processi che occupano piú spazio della MP disponibile
@@ -1704,23 +1697,23 @@ Contrapposto al floppy-disk
   + testine rd/wr
     - sfiorano i dischi in rotazione
   + un braccio per ogni piatto
-- Seek time
+- =Seek time=
   + tempo impiegato dalla testina per spostarsi nella zona del settore
-- Latenza posizionale
+- =Latenza posizionale=
   + tempo che impiega un settore a trovarsi sotto la testina
 
 *** Mappatura degli indirizzi
 Array di Blocchi logici (settori) da 4096 Byte
-- settore 0 il primo della traccia piú esterna del primo disco della pila
+- settore 0 il =primo della traccia piú esterna del primo disco= della pila
 Mappatura complicata dalla diversa lunghezza delle tracce e dai difetti di fabbricazione
 OS deve ottimizzare le prestazioni
 - latenza rotazionale non influenzabile dal OS
   + mediamente 1/2 del tempo di una rotazione completa
-- seek time minimizzabile riordinando le richieste
+- =seek time minimizzabile= riordinando le richieste
   + minimizzando il movimento delle testine
 
 *** Scheduling dei dischi rigidi
-Interessa sola la traccia su cui si trova il settore da leggere
+Interessa solo la traccia su cui si trova il settore da leggere
 - si puó semplificare in quanto tutte le testine e tutti i dischi si muovono assieme
 
 **** FCFS
@@ -1729,28 +1722,28 @@ Interessa sola la traccia su cui si trova il settore da leggere
 La testine si muove da un estremo all'altro del piatto
 - raggiunta l'estremitá del piatto torna all'inizio senza servire nessuna richiesta
 
-La sequenza delle tracce viene trattata come una lista circolare
+La sequenza delle tracce viene trattata come una =lista circolare=
 
 *** Formattazione
-- Basso livello
-  + formattazione fisica
+- =Basso livello=
+  + formattazione _fisica_
   + associa indice ad ogni settore
   + prevede lo spazio per il codice di errore
   + scelta la dimensione dei blocchi fisici
     - 512 / 4096 Byte
-- Alto livello
-  + formattazione logica
+- =Alto livello=
+  + formattazione _logica_
   + sottoposta dal OS
   + crea lista dei blocchi liberi
     - e una directory iniziale
-  + riservate le aree utilizzate dal OS
-    - boot block
+  + riservate le _aree utilizzate dal OS_
+    - =boot block=
       + codice per fare partire il sistema operativo
         - codice eseguito dal codice in ROM
-    - area contenente attribuiti dei file
-      + index-node in Unix
-      + Master File Table in Windows
-    - area di swap
+    - area contenente =attribuiti= dei file
+      + *index-node* in Unix
+      + *Master File Table* in Windows
+    - area di =swap=
       + puó essere un file molto grande
         - in windows
           + pagefile.sys
@@ -1760,34 +1753,34 @@ La sequenza delle tracce viene trattata come una lista circolare
 
 ** RAID
 =Redundant Array of Inexpensive Disks=
-Reduntant Array of Independent Disks vs Single Large Expensive Disk
-- RAID/SLED
+*Reduntant Array of Independent Disks* vs *Single Large Expensive Disk*
+- =RAID/SLED=
 - simile alla contrapposizione =RISC/CISC=
-  + Reduced Instructions Set Computer vs Complex Instruction Set Computer
-Aumenta la velocitá e la affidabilitá di un sistema con diversi piú harddisk
+  + *Reduced Instructions Set Computer* vs *Complex Instruction Set Computer*
+Aumenta la =velocitá= e la =affidabilitá= di un sistema con diversi piú harddisk
 - il sistema vede l'array come un normale SLED
-  + parallelizzando parte delle operazioni migliora le prestazioni
-  + duplicando l'informazione su piú dischi per poterli recuperare in caso di guasto
+  + _parallelizzando_ parte delle operazioni migliora le prestazioni
+  + _duplicando_ l'informazione su piú dischi per poterli recuperare in caso di guasto
   + non sono necessari cambiamenti a livello di Sistema Operativo
 
 *** Livello 0
-Non c'é duplicazione dei dati, non é davvero un RAID
+Non c'é duplicazione dei dati, _non é davvero un RAID_
 - il RAID mappa diverse strips (=striping=)
   - ogni k blocchi consecutivi
-  - suddivide gli strip tra i dischi seconda la formula
+  - suddivide gli =strip tra i dischi= seconda la formula
     + numero di strip MOD numero di dischi
   - una lettura di strip consecutivi puó essere eseguita dal controller in parallelo sui vari dischi
   - l'affidabilitá in un RAID di livello 0 é minore di quella di un semplice SLED
 
 *** Livello 1
 Ogni disco é usato come disco di =mirroring=
-- migliora la affidabilitá
+- migliora la _affidabilitá_
   + in caso di guasto il Sistema puó continuare a funzionare
     - non sono persi dati
 
 *** Livello 01
 Utilizza =stripping= e =mirroring=
-- piú affidabile ed efficiente
+- piú _affidabile ed efficiente_
   + piú costosa
 
 *** Livello 10
@@ -1795,24 +1788,24 @@ Prima fatto il =mirroring= e poi lo =stripping=
 
 *** Livello 4
 Permette di gestire il recovery con meno dischi
-Striping a livello di blocchi
-- calcola strip di paritá per permettere il recovery
-  + strip di paritá piazzati nello stesso strip di un'altro disco
-    - detto disco di paritá
+=Striping a livello di blocchi=
+- calcola _strip di paritá_ per permettere il recovery
+  + strip di paritá piazzati nello _stesso strip di un'altro disco_
+    - detto _disco di paritá_
       + aggiornato ad ogni modifica con il ricalcolo dello strip di paritá
         - utilizzato in media 4 volte di piú degli altri dischi
 
 *** Livello 5
-Strip di paritá distrubioti in tutti i dischi
+Strip di =paritá distribuiti= in tutti i dischi
 - per distribuire il lavoro su tutti i dischi
 
 *** Livello 6
-Multipla paritá
+=Multipla paritá=
 - ma é molto raro che si rompano due dischi contemporaneamente
 
 *** Stringa di Paritá
-s1 XOR s2 XOR s3 = paritá
-s1 = s2 XOR s3 XOR paritá
+\(s_1 \underline{\vee} s_2 \underline{\vee} s_3 = \text{paritá}\)
+\(s_1 = s_2 \underline{\vee} s_3 \underline{\vee} \text{paritá}\)
 
 ** SSD
 =Flash Memories= o =Solid State Disk=
@@ -1821,8 +1814,8 @@ Piú veloci di un disco rigido
 - blocchi o pagine
   + 2/16KB
 - riscrivibili fino a ad un limite di circa 100000 volte
-  + ogni volta che una pagina viene riscritta va prima cancellata
-    - flashing
+  + _ogni volta che una pagina viene riscritta va prima cancellata_
+    - *flashing*
     - questo rende la scrittura molto piú lenta che la lettura
 - non necessita scheduling in quanto di =accesso diretto=
   + al contrario dell'hard disk
@@ -1832,26 +1825,26 @@ Fornisce meccanismi di memorizzazione e accesso ai dati e applicativi
 Consiste in
 *** File
   + unitá logica di informazione permanentemente memorizzata su un supporto di memoria secondaria, dotata di:
-    - nome
-    - tipo
-    - posizione fisica
-    - posizione logica nel File System
+    - *nome*
+    - *tipo*
+    - posizione *fisica*
+    - posizione *logica* nel File System
       + pathname  /non é esplicitamente memorizzato da nessuna parte/
         - tranne che in casi particolari
-    - attributi
+    - *attributi*
       + dimensioni
       + diritti di accesso
       + tempo di crezione
       + proprietario
   + informazioni contenute:
-    - dati
+    - *dati*
       + numerici
       + testuali
-    - programmi
+    - *programmi*
       + sorgenti
       + linkabili
       + eseguibili
-    - documenti
+    - *documenti*
       + multimediali
 
 
@@ -1866,15 +1859,15 @@ Operazioni su File
 - spostare
 
 Metodi di accesso /questo quando non esistevano mezzi di memorizzazione ad accesso diretto/
-- sequenziale
-- diretto
+- =sequenziale=
+- =diretto=
 
 *** Directory
 Un File System puó essere molto grande
-- fondamentale che i tempi di accesso ai singoli file non crescano linermente
+- fondamentale che i =tempi di accesso= ai singoli file =non= crescano =linearmente=
   - con il numero di file
   - con lo spazio occupato
-Una directory permette di risalire a tutti gli attributi di un file che contienie
+Una _directory permette di risalire a tutti gli attributi di un file_ che contiene
 Permette operazioni di
 - ricerca
 - creazione e cancellazione
@@ -1883,9 +1876,9 @@ Permette operazioni di
 - spostamento
 La perdita dei dati della directory comporta la perdita dell'accesso ai file contenuti
 
-Una directory é un file particolare
-- non modificabile a piacimento
-  + OS garantisce l'integritá della struttura del FS
+Una directory é un *file particolare*
+- _non modificabile_ a piacimento
+  + =OS garantisce l'integritá= della struttura del FS
 
 - in =ms-dos=
   + una lista
@@ -1894,51 +1887,51 @@ Una directory é un file particolare
       - 8: file name
       - 3: estensione
       - ...
-- Unix
+- =Unix=
   + lista
     - nome / puntatore agli attributi
       + puntata una struttura interna
-- NTFS - New Technology File
-  - albero di ricerca bilanciato
-    + ogni foglia corrisponde ad un file
+- =NTFS= - New Technology File System
+  - _albero di ricerca bilanciato_
+    + ogni *foglia* corrisponde ad un *file*
       - e una file reference ad una struttura interna
-      - alcuni attributi sono immediatamente accessibili
+      - =alcuni attributi= sono immediatamente accessibili
     + il tempo di ricerca é lo stesso indipendentemente dalla posizione nell'albero
 
 **** Struttura
-- directory unica
-- directory a due livelli /nasce il concetto di pathname/
+- directory =unica=
+- directory a =due livelli= /nasce il concetto di pathname/
   - una directory per ogni utente
     + contenuta in un'unica directory
-- directory con struttura ad albero
-  + una Root: / in Unix e C:\ in Windows
+- directory con =struttura ad albero=
+  + una ~Root:~ */* in Unix e *C:\* in Windows
     - home directory dell'utente /nasce il concetto di pathname relativo e assoluto/
       + ogni utente puó navigare nella working directory
-- directory con struttura a grafo aciclico
+- directory con struttura a =grafo aciclico=
   + permette di condividere file o directory con nomi diversi
-    - link
+    - _link_
       + diversi OS hanno diverse implementazioni dei link
-- directory con struttura a grafo generale
+- directory con struttura a =grafo generale=
   + una directory puó contenere il nome di una directory padre o antenata
-    - pericoloso in quanto puó creare cicli all'interno del FS
+    - pericoloso in quanto _puó creare cicli all'interno del FS_
 
 La struttura procede in questo modo:
 Programmi Applicativi --> Fyle System Logico --> Modulo organizzazione dei file -->
 --> File System di base --> Controllo I/O --> Dispositivi
 Passaggio dalla rappresentazione =esterna= alla rappresentazione =interna=
 ***** Accesso rapido ai file
-L'accesso utilizzando il pathname é estremamente inefficiente
+L'accesso utilizzando il =pathname= é estremamente =inefficiente=
 - richiede piú accessi alla memoria secondaria
-L'OS mette a disposizione l'operazione /open/ che restituisce un descrittore
+L'OS mette a disposizione l'operazione /open/ che restituisce un *descrittore*
 - open file table
-  + in RAM, contiene le informazioni relative al file aperto
-  + le modifiche sono prima fatte sulla copia del file in MP
+  + in *RAM*, contiene le _informazioni relative al file aperto_
+  + le _modifiche sono prima fatte sulla copia_ del file in MP
 
 ***** Protezione dei file
-Implementazioni perfette ma non realizzabili con
-- lista d'accesso
-- capability list
-Implementazione in Unix
+_Implementazioni perfette_ ma =non realizzabili= con
+- =lista d'accesso=
+- =capability list=
+_Implementazione in Unix_
 - classi di utenti
 - protezioni
   + in lettura
@@ -1951,55 +1944,55 @@ Implementazione in Unix
 
 *** Realizzazione
 L'OS vede l'HD come un array di entry (sequenza di 256 / 4096 byte)
-- l'accesso avviene comunicando al controller il numero del blocco e le operazioni
+- l'=accesso= avviene comunicando al =controller= il numero del blocco e le operazioni
   + lettura e scrittura avvengono sempre in unitá di blocchi
-Per ogni FIle il SIstema mantiene una struttura interna che memorizza tutti gli attributi del file
+Per ogni File il Sistema mantiene una struttura interna che memorizza tutti gli attributi del file
 - per gestire le operazioni compiute sul file
 **** Allocazione
 I File che superano la dimensione di un blocco vengono allocati con 3 metodi
 ***** allocazione contigua - buono per l'area di swap
   + necessario memorizzare solamente
-    - blocco di partenza
-    - numero di blocchi utilizzati
-    - grandezza del file
-  + possibile accesso diretto
+    - blocco di =partenza=
+    - =numero di blocchi= utilizzati
+    - =grandezza= del file
+  + *possibile accesso diretto*
     - piú efficiente di un accesso sequenziale
       + sapendo il numero di byte da leggere
         - semplice calcolare in che blocco lo si puó trovare
   + _Problemi_
-    - necessari blocchi liberi adiacenti
-    - necessaria una strategia di scelta del buco libero (first/best/worst fit)
-    - disco soggetto a frammentazione esterna
-      + sará necessaria ricompattazione periodica del disco
+    - necessari *blocchi liberi adiacenti*
+    - necessaria una *strategia di scelta del buco libero* (first/best/worst fit)
+    - disco soggetto a *frammentazione esterna*
+      + sará necessaria *ricompattazione* periodica del disco
     - se un file aumenta di dimensioni
-      + riallocarlo
+      + *riallocarlo*
         - molto costoso
-      + sovraddimensionarlo
+      + *sovraddimensionarlo*
         - forte frammentazione interna
           + comunque presente nell'ultimo blocco che non sará mai completamente occupato
         - il problema si ripresenterá
 ***** allocazione concatenata
-  + ogni blocco contiene un puntatore al successivo
+  + ogni =blocco contiene un puntatore al successivo=
   + info aggiuntive
-    - numero di blocchi
-    - grandezza del file
-  + numero negativo all'ultimo blocco per segnalare la fine del file
+    - =numero di blocchi=
+    - =grandezza= del file
+  + numero negativo all'=ultimo blocco per segnalare la fine= del file
   + _Vantaggi_
-    - non c'é frammentazione esterna
-    - non c'é necessitá di ricompattazione
+    - non c'é *frammentazione esterna*
+    - non c'é *necessitá di ricompattazione*
   + _Svantaggi_
-    - ogni blocco byte utilizzati per memorizzazione dei puntatori
-    - accesso diretto non possibile
+    - ogni blocco byte utilizzati per *memorizzazione dei puntatori*
+    - *accesso diretto non possibile*
       + sempre necessario seguire la catena di puntatori
-        - estremamente inefficiente
+        - estremamente =inefficiente=
     - inaffidabile
-      + la perdita di un blocco impica la rottura della catena
+      + la perdita di un blocco impica la =rottura della catena=
         - risolvibile
           - con una doppia catena
           - con la memorizzazione del file di riferimento e del numero del blocco in ogni blocco
     - necessario tenere un elenco dei blocchi liberi
   + _Soluzioni_
-    - utilizzo di cluster e non singoli blocchi
+    - =utilizzo di cluster= e non singoli blocchi
       + tempi di accesso minori
         - meno riposizionamenti della testina di lettura
         - meno spazio sprecato per i puntatori
@@ -2007,61 +2000,61 @@ I File che superano la dimensione di un blocco vengono allocati con 3 metodi
           + mediamente sará sprecata una maggiore quantitá dell'ultima parte del cluster
 ****** FAT
 Variante di allocazione concatenata molto efficiente
-=FIle Allocation Table=
-Area (array) all'inizio della Memoria Principale in cui l'indice di ogni entry corrisponde ad un blocco e ne contiene il numero
+=File Allocation Table=
+Area (array) all'_inizio della Memoria Principale_ in cui l'indice di ogni entry corrisponde ad un blocco e ne contiene il numero
 - l'ultimo blocco J di un file é segnalato:
-  + alla J-esima entry contiene un marker di fine file
+  + alla J-esima entry contiene un _marker di fine file_
 - entry 0 corrispondono a blocchi liberi
 
 _Svantaggi_
-- Occupa spazio in MP
+- Occupa *spazio in MP*
 - se la FAT é persa non c'é modo di accedere i dati
-  + va periodicamente salvata il Memoria Secondaria
+  + *va periodicamente salvata* il Memoria Secondaria
 
 ***** alllocazione indicizzata
-Utilizzato un blocco indice poi portato in memoria principale per indicare la posizione dei blocchi dati del file
+Utilizzato un =blocco indice poi portato in memoria principale= per indicare la posizione dei blocchi dati del file
 - _Vantaggi_
   + non sono necessari blocchi contigui
   + non si crea frammentazione esterna
     - l'acceso diretto é efficiente una volta portato in RAM il blocco indice
       + facile calcolare quale blocco dell'elenco contiene il byte desiderato
 - _Svantaggi_
-  + anche in caso di file piccoli
-    - sempre utilizzato un intero blocco indice
+  + anche in caso di *file piccoli*
+    - sempre utilizzato un *intero blocco indice*
       + molto andrá sprecato
   + Necessario mantenere un =elenco dei blocchi liberi=
 
 - _Problemi_
   + Blocco indice non sufficiente per contenere i numeri di tutti blocchi dati
 ****** Schema Concatenato
-Ultima entry del precedente blocco indice punta al successivo blocco indice
+=Ultima entry del precedente blocco indice= punta al successivo blocco indice
 ******* NTFS
 =New Technology File System=
 - ogni file descritto da un elemento
   + simile all'i-node
-  + sempre di dimensione fissa e numerati consecutabimante
+  + sempre di =dimensione fissa e numerati consecutivamente=
   + contiene tutti gli attributi del file
-  + se il file é molto piccolo é possibile contenerne i dati direttamente nel elemento
+  + se il _file é molto piccolo é possibile contenerne i dati direttamente nel elemento_
     - molto efficiente
-  + o puntatori a cluster del disco che contengono dati del file
+  + _o puntatori a cluster_ del disco che contengono dati del file
     - variante di schema concatenato
-- Master File Table all'inizio del disco gestito da OS
-  + numero di elemento associato al nome del file nella directory corrispondente
+- =Master File Table all'inizio del disco= gestito da OS
+  + *numero di elemento* associato al *nome del file* nella directory corrispondente
 
 Necessario tenere traccia di tutti i blocchi liberi
 - =MFT=
 
 ****** Schema a piú livelli
-Blocco indice esterno che punta a blocchi indice interni
+Blocco =indice esterno= che punta a blocchi =indice interni=
 ******* I-Node
-Struttura interna Unix gestita dall'OS memorizzata in Memoria Secondaria (zona riservata)
+Struttura interna Unix gestita dall'OS memorizzata _in Memoria Secondaria_ (zona riservata)
 - ad ogni file ne viene associato uno
-  + index-node contiene
-    - attributi
-    - elenco dei blocchi
+  + =index-node= contiene
+    - *attributi*
+    - *elenco dei blocchi*
   + scritto affianco al nome simbolico di un file nella tabella di una directory che lo contiene
 
-Ogni i-Node memorizza
+_Ogni i-Node memorizza_
  - 10 puntatori =diretti= a blocchi dati
  - 1 puntatore =single indirect=
    + punta a un blocco indice che punta a blocchi dati
@@ -2070,32 +2063,32 @@ Ogni i-Node memorizza
  - 1 puntatore =triple indirect=
    + punta a un blocco indice contenente puntatori a blocchi indice che contengono puntatori a blocchi indice che contengono puntatori a blocchi dati
 
-Necessario tenere traccia di tutti i blocchi liberi
+Necessario _tenere traccia di tutti i blocchi liberi_
 - =superblocco=
   + a partire dal blocco 1
 
 ***** Elenco dei Blocchi Liberi
-- MFT / Superblocco
-- Vettori di bit in Mac/OS
+- =MFT / Superblocco=
+- =Vettori di bit= in Mac/OS
   + ogni bit indica se il blocco corrispondente é occupato o libero
-    - necessario un numero di bit uguali al numero di blocchi del disco
-    - necessario questa sia sempre presente in MP
-- Lista Concatenata
+    - _necessario un numero di bit uguali al numero di blocchi del disco_
+    - necessario questa sia _sempre presente in MP_
+- =Lista Concatenata=
   + lenta ma senza sprechi di spazio
-  + possibile utilizzare la FAT per una maggiore efficienza
-- Raggruppamento
-  + in un blocco piú puntatori a blocchi liberi
+  + possibile utilizzare la _FAT per una maggiore efficienza_
+- =Raggruppamento=
+  + in un _blocco piú puntatori_ a blocchi liberi
     - ultimo puntatore punta ad un altro blocco di blocchi liberi
-- Conteggio
-  + mantenere il numero di un blocco e quanti blocchi consecutivi liberi lo seguono
+- =Conteggio=
+  + mantenere il _numero di un blocco e quanti blocchi consecutivi liberi lo seguono_
     - simile alla lista concatenata con meno entry
 
 **** Efficienza | Prestazioni
 Necessari degli accorgimenti da parte del Sistema Operativo
-- caching in Memoria Principale dei file (e attributi) utilizzati frequentemente / recentemente
-  + soprattutto file aperti
-  + modifiche solo in MP
-    - OS deve assicurarsi di mantenere la consistenza dei file
+- =caching= in Memoria Principale dei =file= (e =attributi=) utilizzati frequentemente / recentemente
+  + soprattutto *file aperti*
+  + *modifiche solo in MP*
+    - OS deve assicurarsi di _mantenere la consistenza dei file_
 
 * Laboratorio
 
