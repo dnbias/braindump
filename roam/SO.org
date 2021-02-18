@@ -675,7 +675,7 @@ Un Algoritmo tanto é migliore quanto le sue prestazioni di avvicinano da =SJF= 
 ~def~
 ***** Starvation
 + il processo non viene mai scelto in quanto mai di prioritá
-  * Aging
+  * =Aging=
     + il processo aumenta di prioritá con il tempo passato in RQ
 
 ***** First Come, First Served
@@ -1031,7 +1031,7 @@ signal(semaforo *S) {
       + se mutex = 1 allora \(P_1\) entra e \(mutex = 0\), context switch
       + un \(P_2\) testa mutex, \(mutex = -1\), \(P_2\) si addormenta
 
-  - Utilizzabile un valore di semafori > 1 allora una risorsa é utilizzabile da 3 P contemporaneamente
+  - Utilizzabile un valore di semafori > 1 allora una risorsa é utilizzabile da piu' P contemporaneamente
 
   I semafori se utilizzati non correttamente possono provocare _deadlock_ e _starvation_
 
@@ -1088,7 +1088,8 @@ Variabili:
 #+begin_src C
 wait(scrivi);
 scriviFile();
-signal(scrivi);
+signal(scrivi);ti
+
 #+end_src
 #+name: lettore
 #+begin_src C
@@ -1157,7 +1158,7 @@ L'OS potrebbe implementare delle soluzioni con adeguate rappresentazione del _gr
 ** Centrale
 
 Bisogna decidere come spartire lo spazio di memorizzazione tra i processi attivi
-- _l'immagine_ di un processo inattivo nei prossimi cicli di CPU puo essere spostato su hard disk
+- _l'immagine_ di un processo inattivo nei prossimi cicli di CPU puo' essere spostato su hard disk
 - quando un processo rientra in RAM occupera' spazio prima occupato
   + Questo e' lo ~swap~
     - o avvicendamento dei processi
@@ -1198,12 +1199,12 @@ _In fase di esecuzione_ aka ~binding dinamico degli indirizzi~
   + Associata dal compilatore o dal loader e collegata al programma in memoria
     - anche se la subroutine non e' utilizzata viene memorizzata in memoria principale
   + Ogni programma dovra' avere una copia del codice della libreria in quanto direttamente associati
-  + provoca dublicazione del codice in memoria
+  + provoca duplicazione del codice in memoria
 - =Dinamiche=
   + caricate a runtime
     - solo dopo una specifica invocazione in corso di esecuzione il Sistema Operativo interrompe e carica in RAM il necessario prima di ridare il controllo al programma
   + diversi programmi condividono la stessa porzione di codice in RAM se chiamano la stessa libreria
-    - viene carica un sola volta eliminando la dublicazione di codice
+    - viene caricata una sola volta eliminando la duplicazione di codice
   + una nuova versione della libreria e' automaticamente caricata dal programma, non ci sara' bisogno di ricompilare i moduli per compilare la nuova libreria
 
 *** Spazi degli indirizzi
@@ -1215,13 +1216,13 @@ tag: [[file:20201102165014-ram.org][Memorie]]
 Ogni indirizzo di un programma in un sistema allocato dinamicamente sará sempre compreso tra $0$ e un $max$
 - Questo spazio e' chiamato spazio degli indirizzi o _spazio di indirizzamento logico_
 - Gli indirizzi sono definiti =logici= o =virtuali=
-  + questi sono convertiti in indirizzi =fisici= dal registro di rilocazione
+  + questi sono convertiti in indirizzi =fisici= dal *registro di rilocazione*
     - somma del registro e del registro logico a livello hardware
     - indicano una determinata cella in RAM
 - Analogamente c'é uno _spazio di indirizzamento fisico_
   - da $r+0$ a $r+max$
 
-=NB=: il numero di bit per la memorizzazione degli indirizzi logici puo essere diverso da quello per la memorizzazione degli indirizzi fisici
+=NB=: il numero di bit per la memorizzazione degli indirizzi logici puo' essere diverso da quello per la memorizzazione degli indirizzi fisici
 - allora lo spazio degli indirizzi logici sara' piu' piccolo in quella architettura
   + un programma avra' un limite di grandezza e memorizzazione
 Questo é il caso piú frequente, infatti in caso di indirizzi fisici a 64 bit, questi sono troppi in casi normali:
@@ -1290,7 +1291,7 @@ Area di memoria allocata da un processo suddivisa in pezzi _non contigui_
 - ~Pagine~
   + pezzi di dimensione identica ai frame in cui e' suddiviso lo spazio di indirizzamento logico
 
-L'OS carica $x$ pagine cercando $x$ frame liberi, il cui ordine e posizione non e' importante
+L'OS carica $x$ pagine cercando $x$ frame liberi, il cui ordine e p&&osizione non e' importante
 
 _Architettura di Paginazione_
 - =Page-Table=
@@ -1939,7 +1940,6 @@ _Implementazione in Unix_
   + in esecuzione
 
 
-
 *** Interfaccia
 
 *** Realizzazione
@@ -2001,7 +2001,7 @@ I File che superano la dimensione di un blocco vengono allocati con 3 metodi
 ****** FAT
 Variante di allocazione concatenata molto efficiente
 =File Allocation Table=
-Area (array) all'_inizio della Memoria Principale_ in cui l'indice di ogni entry corrisponde ad un blocco e ne contiene il numero
+Area (array) all'_inizio della Memoria Principale_ in cui l'indice di ogni entry corrisponde ad un blocco e ne contiene il numero del successivo
 - l'ultimo blocco J di un file é segnalato:
   + alla J-esima entry contiene un _marker di fine file_
 - entry 0 corrispondono a blocchi liberi

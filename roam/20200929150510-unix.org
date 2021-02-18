@@ -211,7 +211,7 @@ extern char **environ;
 *** orphans and zombies
 in generale un padre sopravvive al figlio
 - in caso di orfano il padre diventa il processo _init_
-- per garantire una wait dalla parte del padre per conoscere lo status delfiglio
+- per garantire una wait dalla parte del padre per conoscere lo status del figlio
   + il kernel permette di trasformare il figlio in zombie
 
 **** zombies
@@ -578,7 +578,7 @@ I figli ereditano i segmenti di SM a disposizione del genitore
 + shmctl()
   - cancellare (IPC_RMID)
     + solo un processo la esegue
-  - un segmento sará effettivamente distrutto solo dope che tutti i processi correntemente attaccati lo avranno staccato
+  - un segmento sará effettivamente distrutto solo dopo che tutti i processi correntemente attaccati lo avranno staccato
 
 **** syscalls
 #+begin_src C
@@ -588,7 +588,7 @@ int shmget(key_t key, size_t size, int shmflg);
 int shmat(int shmid, const void *shmaddr, int shmflg);
 // se il secondo parametro é NULL il kernel si
 // occupa di trovare una zona di memoria adatta
-// RETURN VALUE: indirizzo base del segmento
+// RETURN VALUE: indirizzo base del segmentop
 int shmdt(const void *shmaddr);
 int shmctl(int shmid, int cmd, struct shmid_ds *buf);
 #+end_src
