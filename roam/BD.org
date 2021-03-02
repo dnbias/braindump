@@ -1,0 +1,133 @@
+#+TITLE: Basi di Dati
+#+TEACHER: Luca Anselma (anselmaATdi.unito.it)
+[[file:#universita.org][#universita]]
+- Esame:
+  - Scritto 70
+    + Teoria
+    + Lab - SQL
+  - Laboratorio 30
+    - Progettazione
+
+
+* Basi di Dati Relazionali
+** Modello Relazionale
+Distinzione tra
+- *schema* della base di dati
+  - componente intenzionale
+- *istanza* della base di dati
+  - componente estenzionale
+Costruttore: Relazione
+** Algebra Relazionale
+** Calcolo Relazionale
+** SQL (LAB)
+* Programmazione di Basi di Dati
+** Metodologie e modello Entity-Relationship (LAB)
+** Progettazione Concettuale e Logica (LAB)
+** Narmalizzazione
+* Sistemi per la gestione dei dati
+** Metodi di accesso e indici
+** Ottimizzatore logico e fisico
+** Cenni
+*** Gestione della concorrenza
+*** Gestione del ripristino
+* Definizioni
+** Base di Dati
+- accezione generica - ~metodologica~
+  + insieme organizzato di dati utizizzati per il supporto allo svolgimento delle attivita di un ente
+- accezione specifica - ~metodologica e tecnologica~
+  + insieme di dati gestito da un =DBMS=
+** DBMS
+Data Base Management System
+Componente Software specificamente dedicata alla gestione delle basi di dati
+- Oracle DB
+- PostreSQL
+- MySQL
+- Microsoft SQL Server
+- Microsoft Access
+- SQLite
+  - contenuto in una libreria C (embedded)
+
+Sistema che gestisce collezioni di dati
+- grandi
+  + non stanno in RAM
+  + il limite deve essere solo quello fisico
+- persistenti
+  + tempo di vita non limitato alla singola esecuzione
+- condivise
+  + tra sistemi informativi
+  + il DBMS fa da _mediatore_ tra database e applicativi
+  + vantaggi
+    - no ridondanza
+    - no incoerenza
+  + svantaggi
+    - gestione della concorrenza
+      + accessi contemporanei (gestiti dai DBMS)
+- privatezza
+  + meccanismi autorizzazione
+- affidabilita'
+  + resistenti a malfunzionamenti hardware e software
+  + tecniche
+    - gestione delle transazioni
+- efficienza
+  + i tempi devono essere accettabili
+- efficacia
+
+*** Architettura
+utente - Schema Logico - Schema Interno - Base Dati
+- Schema Logico
+  + secondo un modello logico
+- Schema Interno
+  + specifico del DBMS utilizzato
+
+Indipendenza tra livello Logico e Fisico
+**** ANSI-SPARC
+Architettura a tre livelli
+utente - schema esterno - schema logico - schema interno - BD
+- Schema Esterno
+  - a partire dallo schema logico forma nuove =Viste=
+
+** Indipendenza
+*** Fisica
+Livello logico e esterno sono indipendenti da quello fisico
+- una relazione e' utilizzata allo stesso modo qualunque sia la realizzazione fisica
+- la realizzazione fisica puo' cambiare senza problemi
+*** Logica
+Lo schema esterno e' indipendente da quello logico
+
+** Transazione
+Sequenza di operazioni considerate in modo atomico anche in presenza di concorrenza
+La conclusione definitiva di una transazione corrisponde ad un impegno aka ~commit~
+
+** Modello dei dati
+Insieme dei costrutti utilizzati per organizzare i dati di interesse e descriverne la dinamica
+- meccanismi di strutturazione
+  + costruttori di tipo
+
+*Modelli Concettuali*
+- non disponibili nei DBMS
+- modello utilizzato per la progettazione
+- rappresentazione astratta
+- =Entity Relationship=
+*Modelli Logici*
+- utilizzati da DBMS
+  + =Relazionale=
+  + Gerarchico
+  + a oggetti
+  + NoSQL
+** Linguaggi
+*** DML
+Manipolazione, interrogazione e aggiornamento di istanze di basi di dati
+*** DDL
+Definizione di schemi (logici, esterni, fisici) e operazioni generali
+** Sistema Informativo
+NON necessariamente un Sistema Informatico (Questo ne e' una parte)
+Componente che gestisce le informazioni di una Base Dati
+- Raccolta
+- Archiviazione
+- Elaborazione
+- Distribuzione
+** Dato - Informazione
+- dati: vanno elaborati
+  + vanno interpretati
+- informazioni
+  + utilizzati nella interpretazioni di dati

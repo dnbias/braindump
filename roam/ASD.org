@@ -1,0 +1,65 @@
+#+TITLE: Algoritmi e Strutture Dati
+#+TEACHER: Andras Horvath(horvathATdi.unito.it)
+[[file:#universita.org][#universita]]
+Esame
+- scritto
+- discussione laboratorio
+
+Libro
+- Introduzione agli algoritmi e strutture dati
+
+* Problemi e Algoritmi
+
+** Problemi Computazionali
+Collezione di domande (istanze-ingressi) per cui sia stabilito un criterio astratto per riconoscere le risposte (uscite) corrette
+- Es
+  - Massimo comune divisore
+  - moltiplicazione fra due interi
+  - fattorizzazione
+  - ordinamento
+  - percorso ottimo in un grafo
+
+Un Problema e' una _Relazione Binaria_
+$R = {(istanza,risposta) : istanza, risposta soddisfano...}$
+Il _dominio_ della relazione e' l'insieme delle domande possibili
+R e' _univoca_ se ogni istanza ammette una sola risposta
+
+** Algoritmi
+Metodo meccanico per risolvere un Problema Computazionale
+- Procedura
+  + produce un output da qualsiasi input
+- Algoritmo
+  + procedura che termina per ogni ingressa ammissibile
+
+Un algoritmo e' detto deterministico se sulla stesso input fornisce sempre lo stesso output
+- ad ogni algoritmo deterministico possiamo associare una finzione input-output
+
+Un algoritmo risolve R, ossia e' corretto rispetto ad R, se la sua funzione A associa una risposta ad ogni istanza di R
+
+Un programma imlementa piu' algoritmi, inoltre implementa opportune strutture dati
+
+** Peak Finding
+Input: vettore A[0...n-1] interi positivi
+Output: un intero 0<= p <n t.c. A[p-1]<=A[p]>=A[p+1] dove A[-1]=A[n]=-inf
+
+Peak(A)
+for(i=0;i<length(A);i++)
+    if(A[i]>=A[i-1] && A[i]>=A[i+1])
+        return i
+end for
+
+*** Left Peak Finding
+Nel caso migliore p=0 e' un picco
+Nel caso peggiore p=n-1
+*** Max Peak Finding
+MAX-PEAK(A)
+r = 0
+i = 1
+while(i<n-1)
+    if A[i] > A[r]
+        r <- i
+    i <- i+1
+end while
+return r
+
+** Insolubilita' e Intrattabilita'
