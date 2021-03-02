@@ -284,6 +284,7 @@ Unita' di lavoro del OS
   - cancellazione
   - scheduling dei processi
   - sincronizzazione e comunicazione
+
     Un processo non e' solamente un programma in esecuzione
     - Struttura in Memoria =immagine del processo=
       - Codice
@@ -880,7 +881,7 @@ Code multilivello con retroazione
       - richiesta di entrare nella sezione critica
                     =sezione critica=
                      =exit section=
-      + segnalazione di uscita dalla sezione critica
+      - segnalazione di uscita dalla sezione critica
 
     Una soluzione al problema avrá queste proprietá
     - =Mutua Esclusivitá=
@@ -1098,7 +1099,7 @@ Variabili:
 #+begin_src C
 wait(scrivi);
 scriviFile();
-signal(scrivi);ti
+signal(scrivi);
 
 #+end_src
 #+name: lettore
