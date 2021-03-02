@@ -273,7 +273,7 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
 
 * Gestione Processi
 Componente del OS: =CPU Scheduler=
-- Sceglie processi (concorrenti) in coda di ready
+- Sceglie processi in coda di ready
 - si attiva ogni 50/100 secondi
   - crea ~overhead~
 
@@ -297,6 +297,7 @@ Unita' di lavoro del OS
     - processo: entita' =attiva=
     - programma: entita' =statica=
     Un processo nasce sempre a partire da un'altro processo attraverso una opportuna =System Call=
+    - tranne il primo: all'accensione #systemd#
 
 
 *** =Stati= di un processo
@@ -387,16 +388,19 @@ Moderni OS implementato tutte queste combinazioni nelle loro System Call
 - kill / TerminateProcess(Win)
   - secondo PID
   - puo' avvenire se =TRAP=
+  - se il processo utilizza troppe risorse
+  - se il processo padre muore (non in Windows o Unix)
 
 *** Comunicazione tra processi
 
 **** indipendenti
+Non si influenzano l'uno con l'altro
 
 **** cooperanti
 si influenzano l'un l'altro
 - si scambiano informazioni
-- portano aventi una elaborazione suddivisa
-  Per permettere cio' l'OS deve mettere a disposizione meccanismi appositi
+- portano avanti una elaborazione suddivisa tra i processi
+Per permettere cio' l'OS deve mettere a disposizione meccanismi appositi
 
 ***** Inter-Process Communication =IPC=
 L'OS mette a disposizione System Call volte all'implementazione di:
@@ -428,7 +432,7 @@ L'OS mette a disposizione System Call volte all'implementazione di:
 
 ******* Remote Procedure Call =RPC=
 
-***** esempio
+****** Produttore - Consumatore
 processo =produttore=, produce informazioni utilizzate da un processo =consumatore=
 - informazioni poste in un =buffer=
 
@@ -484,13 +488,13 @@ Inoltre al context switch é introdotto un overhead
 - attivazione aree codice e dati dell'entrante
 Cache CPU
 - contengono dati dell'uscente
-- entrante generá subito molti miss di cache
+- entrante genererá subito molti miss di cache
 
 Per questo nascono i thread
 - =peer thread=
   + "processi" che condividono lo spazio di indirizzamento
     - codice e dati
-Un processo semplice é contraddistindo da un unico thread di computazione
+Un processo semplice =HWP= é contraddistindo da un unico thread di computazione
 
 *** Peer Thread
 Un processo Multi-Thread o Multi-Threaded é composto da piú thread di computazione detti =peer thread=
@@ -564,7 +568,7 @@ Questo non é sempre possibile
 - le istruzioni devono essere indipendenti tra di loro
   + non devono avere bisogno del risultato di un'istruzione precedente
 Invece le istruzioni di due peer-thread distinti saranno probabilmente indipendenti
-- esecuzione in parallelo di istruzioni appartenendi a thread diversi
+- esecuzione in parallelo di istruzioni appartenenti a thread diversi
   + =Simultaneous Multi-Threading=
     - aumento di produttivitá della CPU
 
@@ -580,7 +584,7 @@ L'OS fa credere ai processi di avere tutta la CPU per loro
 Passaggio da un processo in esecuzione all'altro
 =Commutazione= della CPU tra i processi
 - OS prende il controllo CPU ~ questo e' tecnicamente pure un Context Switch
-- Salva lo stato della computazione del processo uscente in PCB
+- Salva lo stato della computazione del processo uscente in [[PCB]]
 - Scrive in PC e nei registri CPU i valori PCB del processo entrante
 
   Questa operazione richiede tempo: ~overhead~ di sistema (sovraccarico)
@@ -588,6 +592,7 @@ Passaggio da un processo in esecuzione all'altro
 *** Code di Scheduling
 OS gestisce varie code di processi
 - una lista di =PCB=
+  - mantenuta in una delle aree di memoria riservate al OS
 
 - Coda di Ready ~ Ready Queue ~ =RQ=
   - coicide con lo stato Ready nel ~diagramma~
@@ -595,6 +600,7 @@ OS gestisce varie code di processi
 - n Code di Waiting
   - Code dei dispositivi ~Device Queues~
     - piu' processi possono essere in coda per l'accesso ad un dispositivo
+    - ogni dispositivo ne ha una
   - Code di Eventi       ~Waiting Queues~
 
 **** Diagramma di accodamento
@@ -615,6 +621,7 @@ Tecniche per massimizzare la produttivita' della CPU
     - un editor
 
 **** Scheduler
+anche Short Term Scheduler
 decide quale processo in coda di ready sara' eseguito quando:
 1. il processo in esecuzione passa volontariamente in stato di waiting
 2. il processo in esecuzione termina
@@ -624,40 +631,43 @@ decide quale processo in coda di ready sara' eseguito quando:
    1) l'OS interviene per gestire il =PCB= di \(P_x\) spostandolo in coda di ready
    2) se \(P_x\) e' piu' importante del processo in esecuzione
 
-      per 1. 2. e' sufficiente un OS multitasking
+per 1. 2. e' sufficiente un OS multitasking
 
 **** Dispatcher
 - implementa il [[Context Switch]]
 - passa in user mode
 - ripristina il PC della CPU alla corretta locazione
 
+Tempo impiegato per queste operazioni detto =Dispatch Latency=
+
 **** senza diritto di prelazione
 =non-preempive scheduling=
 Casi 1. e 2.
 - I processi non posso interrompere l'esecuzione di altri processi
 
-  Implementazione piu' snella utilizzata per OS specifici
+Implementazione piu' snella utilizzata per OS specifici
+
 **** con diritto di prelazione
 =preemptive scheduling=
 Casi 1. 2. 3. e 4.
 - I processi non possono eseguire a tempo indeterminato
 - I processi possono avere priorita' diverse
 
-  Implementazione utilizzata per OS general purpuse
+Implementazione utilizzata per OS general purpuse
 
-  Se una =System Call= chiamata dal processore in esecuzione viene ~interrotta dal vettore di interrupt~?
-  - la prima istruzione della System Call puo' essere un'istruzione che
-    - ~disattiva gli interrupt~
-  - ultima istruzione
-    - ~riabilitazione degli interrupt~
+Se una =System Call= chiamata dal processore in esecuzione viene ~interrotta dal vettore di interrupt~?
+- la prima istruzione della System Call puo' essere un'istruzione che
+  - ~disattiva gli interrupt~
+- ultima istruzione
+  - ~riabilitazione degli interrupt~
 
-**** Criteri
+***** Criteri
 Obiettivi:
 - massimizzare =uso CPU=
 - massimizzare il =Throughput=
   - ovvero la produttivita'
-  - minimizzare il =tempo di risposta=
-    - importante per i processi interattivi
+- minimizzare il =tempo di risposta=
+  - importante per i processi interattivi
 - minimizzare il =Turnaround time=
   + tempo medio di completamento di un processo
     + da quando entra per la prima volta in coda di ready fino a quando non termina l'esecuzione in stato running
@@ -667,34 +677,32 @@ Obiettivi:
 
 ~Turnaround Time~ = WaitingT + RunningT
 
-**** Algoritmi
+***** Algoritmi
 Considerando in questo corso processi con un =unico burst di CPU= e =nessun burst di I/O=
 
 Un Algoritmo tanto é migliore quanto le sue prestazioni di avvicinano da =SJF= allontanandosi da =FCFS=
 
-~def~
-***** Starvation
-+ il processo non viene mai scelto in quanto mai di prioritá
-  * =Aging=
-    + il processo aumenta di prioritá con il tempo passato in RQ
+- Starvation #def#
+  - il processo non viene mai scelto in quanto mai di prioritá
+    + Aging
+      - il processo aumenta di prioritá con il tempo passato in RQ
 
-***** First Come, First Served
+****** First Come, First Served
 =FCFS=
-***** Normale coda FIFO
-+ PCB inserito in fondo alla coda
-+ CPU libera assegnata al primo PCB alla testa
-****** Non-preemptive
-+ non implementa time-sharing
-******* Tempo di attesa elevato
-+ Effetto convoglio ~ accodamento job piu' corti
+- Normale coda FIFO
+  * PCB inserito in fondo alla coda
+  * CPU libera assegnata al primo PCB alla testa
+  * Non-preemptive - non adatto a sistemi real-time
+  * Tempo di attesa elevato
+    - non implementa time-sharing
+  * Effetto convoglio ~ accodamento job piu' corti
 
-  Osservazioni
-  - sfavorisce i processi brevi
-  - non implementa sistemi time-sharing
+- Osservazioni
+  * sfavorisce i processi brevi
+  * non implementa sistemi time-sharing
+  * Peggiore degli Algoritmi ragionevoli
 
-  Peggiore degli Algoritmi ragionevoli
-
-***** Shortest Job First
+****** Shortest Job First
 =SJF= ~ Shortest Next CPU Burst
 - Esamina la durata del prossimo burst di CPU dei processi in RQ
 - assegna la CPU al processo con burst minimo
@@ -703,16 +711,16 @@ Un Algoritmo tanto é migliore quanto le sue prestazioni di avvicinano da =SJF= 
      + se in RQ é presente un processo il cui ~CPU-burst é minore del tempo di esecuzione rimanente~ al processo Running, ha la priorita' il nuovo processo e viene interrotto quello in stato Running
        + Ipotesi solamente teorica
 
-     É dimostrabile che SJF é ~ottimale~
-     + spostando un processo breve prima di uno lungo
-       - si migliora l'attesa del processo 1 piú di quanto di peggiori l'attesa del processo lungo
-         + quindi diminuisce alche il Turnaroud-time medio
+- É dimostrabile che SJF é ~ottimale~
+  + spostando un processo breve prima di uno lungo
+    - si migliora l'attesa del processo breve piú di quanto di peggiori l'attesa del processo lungo
+      - quindi diminuisce anche il Turnaroud-time medio
 
-     ~MA~
-     la durata del prossimo burst di CPU non é nota
-     + SJF non é implementabile
+- ~MA~
+  + la durata del prossimo burst di CPU non é nota
+    - SJF non é implementabile
 
-***** Priority scheduling
+****** Priority scheduling
 =PS=
 calcolo della prioritá:
 - interna al sistema
@@ -742,42 +750,44 @@ Prestazioni dipendenti da \(q\):
 - \(q\to 0\)
   + aumenta l'illusione di ~parallelismo~
   + aumenta il numero di ~context switch~
+    - e quindi l'overhead
 
-- regola empirica
+- regola empirica per max turnaround
   + \(80\% \text{ dei CPU burst} < q\)
+
 
 ***** Multilevel Queue
 =MQ=
 Code multiple
 - foreground -- RR
-  + interagiscono con l'utente
+  * interagiscono con l'utente
 - background -- FCFS
-  + non interagiscono
+  * non interagiscono
 - batch
-  + la loro esecuzione puó essere differita
+  * la loro esecuzione puó essere differita
 
 Si puó suddividere la RQ in piú code
-+ gestire ogni coda con un algoritmo ottimale
-+ Scelta:
-  - prioritá fissa
-    - possibile starvation
-    - time slice
-      - quanti di tempo maggiori per foreground, minori per background  e batch
+- gestire ogni coda con un algoritmo ottimale
+- Scelta:
+  * prioritá fissa
+    * possibile starvation
+    * time slice
+      * quanti di tempo maggiori per foreground, minori per background  e batch
 
-***** Multilevel Feedback Queue
+****** Multilevel Feedback Queue
 =MFQS=
 Code multilivello con retroazione
 - I processi possono essere promossi a code a piu' alta prioritá o retrocessi
 - assegnamento a coda dinamico
-  - i processi sono spostati dal OS per
-    + adattarsi alla lunghezza del CPU burst
-    + gestire ogni coda con lo scheduling adatto rispetto al comportamento mostrato
+  * i processi sono spostati dal OS per
+    * adattarsi alla lunghezza del CPU burst
+    * gestire ogni coda con lo scheduling adatto rispetto al comportamento mostrato
 
 - Es
-  - se il processo esaurisce il quanto assegnato dalla prima coda RR, sara' spostato alla coda RR successiva con un quanto maggiore
-  - se il processo esaurisce i quanti delle code RR sará spostato in una coda FCFS
+  * se il processo esaurisce il quanto assegnato dalla prima coda RR, sara' spostato alla coda RR successiva con un quanto maggiore
+  * se il processo esaurisce i quanti delle code RR sará spostato in una coda FCFS
 
-**** Multielaborazione Simmetrica
+***** Multielaborazione Simmetrica
 =SME=
 - scheduler per ogni core
   + code condivise
