@@ -50,7 +50,7 @@ end for
 
 *** Left Peak Finding
 Nel caso migliore p=0 e' un picco
-Nel caso peggiore p=n-1
+Nel caso peggiore p=n-1 confronti
 *** Max Peak Finding
 MAX-PEAK(A)
 r = 0
@@ -62,4 +62,64 @@ while(i<n-1)
 end while
 return r
 
+Fa sempre lo stesso numero di confronti, sempre n-1
+
+*** Analisi
+Teorema picco
+Si trovano segmenti sempre piu' corti su cui vale il teorema a partire da un q centrale.
+
+*** Divide et Impera
+PEAK-DI
+p<-(i+j)/2
+if A[p-1]<=A[p]>=A[p+1] then
+    return p
+else
+    if A[p-1]>A[p] then
+        return PEAK-DI(A,i,p-1)
+    else
+        return PEAK-DI(A,p+1,j)
+    endif
+endif
+
+PEAK-FIND-DI(A,n)
+return PEAK-DI(A,0,n-1)
+
+- T(n)=
+  - 1;        n=1
+  - T(n/2)+1; n>1
+$T(n)=T(\frac{n}{2^k})+k$ per $1\le k \le \log_{2}n$
+$T(n)=1+\log_{2}n$
 ** Insolubilita' e Intrattabilita'
+non tutti i problemi hanno una soluzione algoritmica (problema della terminazione)
+
+intrattabile e' un problema che ha una soluzione algoritmica ma lo sforzo computazionale e' troppo grande
+
+** Correttezza
+Totale e Parziale
+
+Specifica
+- Precondizioni
+- Postcondizioni
+  - criterio che stabilisce come deve essere fatto l'output
+**** Ricorsione
+Un problema si presta alla ricorsione quando la ricorsione con un certo input ha una relazione semplice con la soluzione del problema con uno o piu' input diminuiti
+
+HANOI(n,solgente,destinazione,appoggio)
+PRE:
+- n>0
+- base degli n dischi in alto ha diametro piu' piccolo del disco piu' in alto sia di destinazione che di appoggio
+POST:
+- torre di n dischi piu' in alto su sorgente e' spostata su destinazione
+
+if n-1 then
+    sposta un disco da sorgente a destinazione
+else
+    HANOI(n-1, sorgente, appoggio, destinazione)
+    sposta un disco da solgente a destinazione
+    HANOI(n-1, appoggio, destinazione, sorgente)
+endif
+
+***** Schema dell'induzione
+1. Caso base P(1)
+2. Passo induttivo P(m+1), P(m) e' l'ipotesi induttiva
+3. 1. e 2. implicano che $\forall n \ge 1, P(n)$
