@@ -8,6 +8,9 @@
   - Laboratorio 30
     - Progettazione
 
+- Testi di riferimento
+  + Basi di Dati: Modelli e Linguaggi di Interrogazione (Atzeni, Ceri, Paraboschi, Torlone)
+  + Sistemi di basi di dati: Fondamenti (Elmasri, Navathe)
 
 * Basi di Dati Relazionali
 ** Modello Relazionale
@@ -17,13 +20,138 @@ Distinzione tra
 - *istanza* della base di dati
   - componente estenzionale
 Costruttore: Relazione
+
+_Anni 70 - Codd_
+- inventa il modello relazionale a seguito dei modelli gerarchico e reticolare
+  + basati su riferimenti espliciti con puntatori
+- modello relazionale: basato sui valori stessi
+  - per favorire l'indipendenza dei dati
+- implementato poi in DBMS reali nel 1981
+- Le relazioni hanno una naturale rappresentazione con le tabella
+
+_3 Accezioni_
+- Relazione matematica
+- Relazione secondo il modello relazionale dei dati
+- Relazione (Relationship) che rappresenta una classe di fatti in un modello Entity Relationship; traduzione alternativa *associazione*
+
+- Relazione
+  + sottoinsiemi di prodotti cartesiani
+    - n-uple (basate su posizione)
+    - tuple (non importa la posizione ma il nome (attributo) nella tebella)
+      + un diverso concetto di relazione che quello matematico
+- Tabelle
+  + ordinamento tra righe irrilevante
+  + ordinamento tra colonne irrilevante
+  + le righe sono diverse fra loro
+  + le intestazioni delle colonne sono diverse tra loro
+  + ogni colonna ha valori omogenei
+  + le tabelle sono in relazione tra loro attraverso i valori stessi degli attributi
+    - indipendente dalle strutture fisiche, che possono cambiare dinamicamente
+    - Si rappresenta solo cio' che e' rilevante dal punto di vista dell'applicazione
+    - Portabilita' tra un DBMS ad un altro
+
+- Schema di base di dati:
+  + insieme di schemi di relazione
+- (Istanza di) Relazione
+  + su uno schema di relazione R(X) dave X sono attributi: insieme r di tuple su X
+- (Istanza di) Base di dati
+  + su uno schema di base di dati: insieme di relazioni $\{r_1, ... , r_h\}$
+
+_Non sono permesse tabelle nidificate_ *prima forma normale*
+- Informazione Incompleta
+  + no valori tampone
+  + valore extra: *NULL*
+    - devono essere imposte restrizioni sulla presenza di valori nulli
+  + casi - non distinti dai DBMS
+    - valore sconosciuto
+    - valore inesistente
+    - senza informazione
+*** Vincoli di integrita'
+- si garantisce la correttezza della base di dati
+- si garantisce coerenza tra i valori
+- sono predicati logici che associano a ogni istanza un valore di verita'
+- ad ogni cambiamento il DBMS verifica tutti i vincoli
+- tipologie
+  + intrarelazionali
+    - vincoli di tupla
+      + booleani di atomi che confrontano valori di attributo o espressioni aritmetiche su di essi
+  + interrelazionali
+
+**** Vincoli di chiave_
+- Superchiave
+  + insieme di attributi usato per identificare univocamente le tuple di una relazione
+  + un insieme di attributi $K$ e' detto superchiave di una relazione $r$ se $r$ non puo' contenere due tuple che hanno valori uguali su $K$
+  + tutti i sottoinsiemi di una superchiave sono superchiavi
+- Una chiave (candidata) di $r$ e' una superchiave minimale di $r$
+  + non contiene una superchiave: se si toglie un attributo da $K$ allora $K$ non sara' piu' una superchiave
+  + tutte le chiavi sono suporchiavi
+  + l'insieme di tutti gli attributi di una relazione, pur essendo superchiave, non e' detto sia una chiave
+- Una chiave primaria e' una particolare chiave di $r$ scelta dal progettista, e' una sola anche se le chiavi possono esse piu' di una
+  + non puo' assumero valori nulli
+  + e' rappresentata mediante sottolineatura
+  + usata per stabilire corrispondanza tra relazioni
+- Le chiavi sono utilizzate per fare riferimento a tuple in altre relazioni
+
+**** Vincoli di integrita' referenziale
+Vincoli foreign key
+- tra relazioni diverse non possiamo utilizzare vincoli chiave con valori qualsiasi
+  + questi vincoli hanno un verso
+  + devono indicare valori gia' inseriti nella relazione referenziata
+
+***** Azioni compensative
+- Standard
+  + rifiuto dell'operazione
+- Eliminazione in cascata
+- Introduzione di valori nulli
+
+
 ** Algebra Relazionale
 ** Calcolo Relazionale
 ** SQL (LAB)
 * Programmazione di Basi di Dati
+- Ciclo di vita di un sistema informativo:
+  + Studio di fattibilita'
+  + Raccolta e analisi dei requisiti
+  + Progettazione
+  + Implementazione
+  + Validazione e collaudo
+  + Funzionamento
+- Modello 3-tier (ogni strato offre API)
+  + User Interface
+  + Business
+  + Data
+    - DBMS
+- Fasi Progettazione
+  + Raccolta e Analisi dei requisiti (informali)
+  + Progettazione concettuale (indipendente dal DBMS)
+    - separazione netta tra schema concettuale e logico
+  + Progettazione logica
+  + Progettazione fisica (Basi di dati II)
+
+Il processo di riproduzione di uno schema concettuale a partire da una schema logico e' chiamato Reverse Engineering
 ** Metodologie e modello Entity-Relationship (LAB)
+~ER~
+Non modella il comportamento del sistema, come UML, ma _modella i dati_
+*** Costrutti
+**** Entita'
+Rappresentano aspetti del mondo reale con esistenza "autonoma" ai fini della'applicazione
+Sono rappresentate da rettangoli, hanno nomi propri e unici.
+L'occorrenza di un'entita e' un oggetto della classe che l'entita rappresenta. Le entita' possono essere pensati come l'=insieme= delle loro occorrenze
+Un'occorrenza di entita' non si riduce ai valori che la identificano: questo a differenza del modello relazionale
+**** Associazione
+Rappresentano legami logici tra due e piu' entita'
+Sono rappresentate da rombi. Sono linee semplici che collegano le associazioni, non c'e' un verso di lettura.
+Le Associazioni possono essere ricorsive.
+- Simmetriche
+- Non simmetriche
+  + occorre specificare i versi che specificano la associazione
+Le occorrenze di un'associazione fra due entita' sone le coppie delle occorrenze delle entita'.
+Un'associazione puo' essere pensata come l'=insieme= delle sue occorrenze (essendo un'insieme non possono esserci duplicati)
+**** Identificatori
+**** Generalizzazioni e Sottoinsiemi
+
 ** Progettazione Concettuale e Logica (LAB)
-** Narmalizzazione
+** Normalizzazione
 * Sistemi per la gestione dei dati
 ** Metodi di accesso e indici
 ** Ottimizzatore logico e fisico
