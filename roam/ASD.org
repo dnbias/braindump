@@ -103,7 +103,7 @@ Specifica
   - criterio che stabilisce come deve essere fatto l'output
 **** Ricorsione
 Un problema si presta alla ricorsione quando la ricorsione con un certo input ha una relazione semplice con la soluzione del problema con uno o piu' input diminuiti
-
+#+begin_example
 HANOI(n,solgente,destinazione,appoggio)
 PRE:
 - n>0
@@ -118,8 +118,24 @@ else
     sposta un disco da solgente a destinazione
     HANOI(n-1, appoggio, destinazione, sorgente)
 endif
-
-***** Schema dell'induzione
+#+end_example
+#+begin_example
+DIV-REC(a,b)
+- Pre: a ge 0, b > 0
+- Post: q, r t.c. a eq bq + r AND 0 le r < b
+if a < b then
+    q,r <- 0,a
+else
+    q',r <- DIV-REC(a-b,b)
+    q <- q'+1
+end if
+return q,r
+#+end_example
+***** Schema dell'induzione semplice
 1. Caso base P(1)
 2. Passo induttivo P(m+1), P(m) e' l'ipotesi induttiva
 3. 1. e 2. implicano che $\forall n \ge 1, P(n)$
+***** Schema dell'induzione completa
+1. Caso base $$
+2. Passo induttivo
+3. Conclusione
