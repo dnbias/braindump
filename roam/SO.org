@@ -87,30 +87,30 @@ La gerarchia di memorie e' una gerarchie di =Cache= di una rispetto alla precede
 ** Struttura di I/O
 CPU connessa a dispositivi di I/O
 - connessi da BUS
-  Ogni dispositivo e' controllato da un =controller= hardware
-  - ogni controller e' un piccolo processore
-    + con
-      - registri
-      - memoria interna
-        + =buffer=
-          - dove il controller trasferisce i dati del dispositivo
-  - OS interagisce con il controller
-    + attraverso software:
-      - =driver=
-    + specifica nei registri del controller le operazioni da compiere
-      - il controller eseguira' quello che gli e' specificato
-        - utilizzando il suo buffer
-      - una volta completato invia ~interrupt~ al driver
-        + OS riprende il controllo
-          - preleva dal buffer
+Ogni dispositivo e' controllato da un =controller= hardware
+- ogni controller e' un piccolo processore
+  + con
+    - registri
+    - memoria interna
+      + =buffer=
+        - dove il controller trasferisce i dati del dispositivo
+- OS interagisce con il controller
+  + attraverso software:
+    - =driver=
+  + specifica nei registri del controller le operazioni da compiere
+    - il controller eseguira' quello che gli e' specificato
+      - utilizzando il suo buffer
+    - una volta completato invia ~interrupt~ al driver
+      + OS riprende il controllo
+        - preleva dal buffer
 
-    Questa gestione e' adeguata solo per piccole quantita' di dati
-    - inefficiente per moli maggiori
-    - per inviare interi blocchi di dati dal controller al RAM
-      + =DMA= Direct Memory Access
-        - canale diretto tra dispositivo e RAM
-        - OS tramite driver istruisce il controller, poi non viene coinvolto
-          + prendi blocco numero n su HD e trasferisci in RAM a partire dalla locazione di indirizzo xxxx
+Questa gestione e' adeguata solo per piccole quantita' di dati
+- inefficiente per moli maggiori
+- per inviare interi blocchi di dati dal controller al RAM
+  + =DMA= Direct Memory Access
+    - canale diretto tra dispositivo e RAM
+    - OS tramite driver istruisce il controller, poi non viene coinvolto
+      + prendi blocco numero n su HD e trasferisci in RAM a partire dalla locazione di indirizzo xxxx
 ** Multitasking & Time-sharing
 *** Multitasking
 Mantenere in memoria principale piu' programmi insieme ai dati di questi in modo da aumentare la ~produttivita'~
@@ -225,12 +225,12 @@ Ogni processo deve essere protetto dalle attivita' improprie degli altri process
 - non deve essere possibile impadronirsi di una risorsa in modo esclusivo
 - non devono essere accessibili aree di memoria assegnate ad altri processi
 
-  Nessun utente puo' accedere a file di altri utenti
+Nessun utente puo' accedere a file di altri utenti
 
-  =Macchine Virtuali=
-  - ogni utente usa la VM indipendentemente dell'hardware
-  - l'utente ha l'illusione di avere una CPU, un File System
-    - nella realta' le risorse sono condivise
+=Macchine Virtuali=
+- ogni utente usa la VM indipendentemente dell'hardware
+- l'utente ha l'illusione di avere una CPU, un File System
+  - nella realta' le risorse sono condivise
 
 ** Problemi
 
@@ -332,7 +332,7 @@ L'OS sposta il processo tra vari stati attraverso cui esso evolve
 - File in uso
 - Informazioni Scheduling
 
-  E' il PCB del processo che viene inserito in coda di ready dopo che l'OS ha recuperato il codice e caricato in RAM
+E' il PCB del processo che viene inserito in coda di ready dopo che l'OS ha recuperato il codice e caricato in RAM
 
 #+NAME: Crezione di un processo in Unix
 #+BEGIN_SRC C
@@ -897,10 +897,10 @@ Code multilivello con retroazione
     - non deve dipendere dallo scheduling del sistema
 
 *** Sezione Critica
-    Zona del codice di manipolazione delle variabili condivise, non deve ~intrecciarsi~ con altre sezioni critiche
-    - se un processo \(P_i\) sta eseguendo una sua sezione critica allora altri processi \(P_j\) non possono eseguire la propria
-    - L'esecuzione della sezione critica di un \(P_i\) é mutualmente esclusiva con l'esecuzione delle sezioni critiche di altri \(P_j\)
-      - anche se interrotto dalla scheduler nessun altro processo manipolante
+Zona del codice di manipolazione delle variabili condivise, non deve ~intrecciarsi~ con altre sezioni critiche
+- se un processo \(P_i\) sta eseguendo una sua sezione critica allora altri processi \(P_j\) non possono eseguire la propria
+- L'esecuzione della sezione critica di un \(P_i\) é mutualmente esclusiva con l'esecuzione delle sezioni critiche di altri \(P_j\)
+  - anche se interrotto dalla scheduler nessun altro processo manipolante
 
 **** Nel Sistema Operativo
 - accesso contemporaneo alla tabella dei file aperti
@@ -1044,10 +1044,10 @@ signal(semaforo *S) {
 
   - Utilizzabile un valore di semafori > 1 allora una risorsa é utilizzabile da piu' P contemporaneamente
 
-  I semafori se utilizzati non correttamente possono provocare _deadlock_ e _starvation_
+I semafori se utilizzati non correttamente possono provocare _deadlock_ e _starvation_
 
 **** Esempi
-    Problemi di sincronizzazione risolti utilizzando semafori
+Problemi di sincronizzazione risolti utilizzando semafori
 
 ***** Produttori e Consumatori
 - buffer circolare[SIZE]
@@ -1084,11 +1084,11 @@ while(true){
 }
 #+end_src
 ***** Lettori e Scrittori
-    Condivisione di un file tra molti processi
-    - alcuni processi richiedono la sola lettura
-      + possono essere paralleli
-    - alcuni richiedono la scrittura
-      + richiede la mutua esclusione di tutti i processi
+Condivisione di un file tra molti processi
+- alcuni processi richiedono la sola lettura
+  + possono essere paralleli
+- alcuni richiedono la scrittura
+  + richiede la mutua esclusione di tutti i processi
 ****** Readers First
 Variabili:
 - condivise
@@ -1126,13 +1126,13 @@ E' garantita l'assenza di Deadlock e Starvation?
 ****** Fair
 
 ***** Cinque Filosofi
-    - 1 tavolo circolare
-      + 5 posti
-      + 5 piatti
-      + 5 bacchette condivise
-        - 2 necessarie per mangiare
-    Ogni risorsa e' associata ad un semafori in un array
-    #+begin_src C
+- 1 tavolo circolare
+  + 5 posti
+  + 5 piatti
+  + 5 bacchette condivise
+    - 2 necessarie per mangiare
+Ogni risorsa e' associata ad un semafori in un array
+#+begin_src C
 do{
     wait(bacchetta[i]) // context switch qui causa Deadlock
                        // Attesa Circolare
@@ -1142,7 +1142,7 @@ do{
     signal(bacchetta[i+1 mod 5]);
         pensa();
 }while(true);
-    #+end_src
+#+end_src
 
 ** Deadlock
 Programma A aspetta informazione dal Programma B che aspetta...
@@ -1302,7 +1302,7 @@ Area di memoria allocata da un processo suddivisa in pezzi _non contigui_
 - ~Pagine~
   + pezzi di dimensione identica ai frame in cui e' suddiviso lo spazio di indirizzamento logico
 
-L'OS carica $x$ pagine cercando $x$ frame liberi, il cui ordine e p&&osizione non e' importante
+L'OS carica $x$ pagine cercando $x$ frame liberi, il cui ordine e posizione non e' importante
 
 _Architettura di Paginazione_
 - =Page-Table=
@@ -1836,29 +1836,28 @@ Piú veloci di un disco rigido
 Fornisce meccanismi di memorizzazione e accesso ai dati e applicativi
 Consiste in
 *** File
-  + unitá logica di informazione permanentemente memorizzata su un supporto di memoria secondaria, dotata di:
-    - *nome*
-    - *tipo*
-    - posizione *fisica*
-    - posizione *logica* nel File System
-      + pathname  /non é esplicitamente memorizzato da nessuna parte/
-        - tranne che in casi particolari
-    - *attributi*
-      + dimensioni
-      + diritti di accesso
-      + tempo di crezione
-      + proprietario
-  + informazioni contenute:
-    - *dati*
-      + numerici
-      + testuali
-    - *programmi*
-      + sorgenti
-      + linkabili
-      + eseguibili
-    - *documenti*
-      + multimediali
-
++ unitá logica di informazione permanentemente memorizzata su un supporto di memoria secondaria, dotata di:
+  - *nome*
+  - *tipo*
+  - posizione *fisica*
+  - posizione *logica* nel File System
+    + pathname  /non é esplicitamente memorizzato da nessuna parte/
+      - tranne che in casi particolari
+  - *attributi*
+    + dimensioni
+    + diritti di accesso
+    + tempo di crezione
+    + proprietario
++ informazioni contenute:
+  - *dati*
+    + numerici
+    + testuali
+  - *programmi*
+    + sorgenti
+    + linkabili
+    + eseguibili
+  - *documenti*
+    + multimediali
 
 Operazioni su File
 - creazione
@@ -2022,7 +2021,7 @@ _Svantaggi_
 - se la FAT é persa non c'é modo di accedere i dati
   + *va periodicamente salvata* il Memoria Secondaria
 
-***** alllocazione indicizzata
+***** allocazione indicizzata
 Utilizzato un =blocco indice poi portato in memoria principale= per indicare la posizione dei blocchi dati del file
 - _Vantaggi_
   + non sono necessari blocchi contigui

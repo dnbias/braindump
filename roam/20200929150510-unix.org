@@ -154,11 +154,11 @@ extern char **environ;
     - errno = ECHILD /*se diverso da questo é un errore inatteso*/
       + in caso chiamante non abbia figli
 
-  + =waitpid=
-    - permette di scegliere il figlio da aspettare
-    - permette una nonblocking wait
++ =waitpid=
+   - permette di scegliere il figlio da aspettare
+   - permette una nonblocking wait
       + non si blocca in caso di nessuna terminazione
-    - parametri
+   - parametri
       + pid
         - >0 aspetta specifico figlio
         - == 0 attende un processo dello stesso gruppo del chiamante
