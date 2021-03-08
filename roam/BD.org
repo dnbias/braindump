@@ -138,6 +138,17 @@ Rappresentano aspetti del mondo reale con esistenza "autonoma" ai fini della'app
 Sono rappresentate da rettangoli, hanno nomi propri e unici.
 L'occorrenza di un'entita e' un oggetto della classe che l'entita rappresenta. Le entita' possono essere pensati come l'=insieme= delle loro occorrenze
 Un'occorrenza di entita' non si riduce ai valori che la identificano: questo a differenza del modello relazionale
+***** Attributi
+Proprieta' delle entita' o associazioni che sono di interesse ai fini dell'applicazione
+- dominio, insieme dei valori ammissibili per l'attributo
+- linea con pallino vuoto
+- possono essere composti se sono a loro volta divisi in sottoattributi
+  - *questo non ha una corrispondenza nel modello relazionale*
+- possono avere una cardinalita'
+  + se non specificata si sottointende 1:1
+  + attributi multivalore
+    - costrutto non ammesso dal modello relazionale
+      + ogni tupla ha un singolo valore
 **** Associazione
 Rappresentano legami logici tra due e piu' entita'
 Sono rappresentate da rombi. Sono linee semplici che collegano le associazioni, non c'e' un verso di lettura.
@@ -147,9 +158,59 @@ Le Associazioni possono essere ricorsive.
   + occorre specificare i versi che specificano la associazione
 Le occorrenze di un'associazione fra due entita' sone le coppie delle occorrenze delle entita'.
 Un'associazione puo' essere pensata come l'=insieme= delle sue occorrenze (essendo un'insieme non possono esserci duplicati)
+- *cardinalita'* , numero di occorrenze dell'associazione a cui l'occorrenza di entita' puo' partecipare
+  - nella pratica si usano
+    - 0, 1 , n (minimo)
+      + si usa piu' spesso una c.minima 0
+        - perche' alla prima occorrevza di entita' spesso non esistono ancora le corrispondenti occorrenze delle entita' a essa collegate
+    - 1, n     (massimo)
+  - classificazioni (si considerano le cardinalita' massime a sx e dx)
+    + molti a molti
+    + uno a molti
+    + uno a uno
 **** Identificatori
-**** Generalizzazioni e Sottoinsiemi
+Simile al concetto di chiave primaria ma *diverso*
+- che e' un concetto del modello relazionale
+  - *differenza* possiamo avere piu' identificatori allo stesso tempo, nel modello relazionale abbiamo una sola chiave primaria
 
+Identificano univocamente le occorrenze di una entita', rappresentati da pallini pieni
+Distinti in
+- identificatore interno
+  - attributi dell'entita'
+- idintificatore esterno
+  - attributi dell'entita' e entita' esterne attraverso associazioni
+
+Ogni entita' deve avere almeno un identificatore, questo per facilitare il passaggio al modello relazionale.
+
+NB
+- ogni attributo che fa parte di un identificatore deve avere cardinalita' (1,1)
+- in id. esterna e' pollibile solo attraverso associazioni a cui l'entita' da identificare partecipa con cardinalita' (1,1)
+- una id. esterna puo' convolgere entita' a loro volta identificate esternamene purche' non vengano generati cicli
+
+**** Generalizzazioni
+Mette in relazione una o piu' entita'
+- E generalizzazione dei figli
+- figli sono specializzazioni di E
+
+- Proprieta'
+  + ogni occorrenza di una specializzazione e' una occorrenza di E
+  + ogni proprieta' di E e' una proprieta' dei figli, per ereditarieta'
+- Classificazioni (combianabili)
+  + Totale/Parziale
+    - ogni occorrenza padre e' occorrenza di almeno una dei figli; altrimenti e' parziale
+  + Esclusiva/Sovrapposta
+    - ogni occorrenza padre e' occorrenza al piu' di una delle entita' figlie; altrimenti e' sovrapposta
+
+- Sottoinsieme
+  + generalizzazione con una sola entita' figlia
+
+*** Documentazione
+- Descrizione dei concetti
+  + dizionario dei dati per le entita'
+  + dizionario dei dati per le associazioni
+- Vincoli non esprimibili in E-R (business rules)
+  + Vincoli di integrita'
+  + Vincoli di derivazione
 ** Progettazione Concettuale e Logica (LAB)
 ** Normalizzazione
 * Sistemi per la gestione dei dati
