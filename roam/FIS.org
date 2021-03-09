@@ -12,4 +12,4 @@ Momento del Dipolo p
 **** piano mediano
 
 **** lungo asse
-*** Lineare e Uniforme Infinita
+*** Distribuzione Lineare e Uniforme Infinita
