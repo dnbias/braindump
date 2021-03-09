@@ -139,3 +139,79 @@ return q,r
 1. Caso base $$
 2. Passo induttivo
 3. Conclusione
+**** Iterazione
+Divisione Intera
+#+begin_example
+DIV_IT(a,b)
+while r ge b do
+    r <- r-b
+    q <- q+1
+end while
+return r,q
+#+end_example
+
+Si utilizzano le _invarianti_ per la dimostrazione di correttezza
+- sempre vera:
+  + inizializzazione
+  + mantenimento
+    - vale prima del ciclo --> vale anche dopo il corpo del ciclo
+Va scelto in modo che sia utile per la dimostrazione di correttezza
+
+** Terminazione
+T2 temporal prover
+- la non terminazione puo' essere semplicemente causata da un errore logico
+- non terminazione implicita nel problema
+  + problema $3n+1$
+    - _Congettura di Collatz_
+E' difficile dimostrare la terminazione se i parametri non decrescono in tutti i casi
+Spesso gli algoritmi diminuiscono la dimensione dei parametri, l'ampiezza dell'intervallo
+
+** Problema del Ordinamento - Sorting
+*** Ricerca dicotomica o binaria
+- dimezza la dimensione del problema ad ogni passo
+#+begin_example
+BinSearch-Ric(x,A,i,j)
+- Pre: A[i...j] ordinato
+- Post: true se x appartiene A[i...j]
+if i>j then
+    return false
+else
+    m <- floor((i+j)/2)
+    if x eq A[m] then
+        return true
+    else
+        if x<A[m] then
+            return BinSearch-Ric(x,A,i,m-1)
+        else
+            return BinSearch-Ric(x,A,m+1,j)
+        end if
+    end if
+end if
+#+end_example
+Casi
+- best: $1$
+- worst: $log_2 n$
+*** Insertion Sort
+per ordinare A[1...n]
+- la parte A[1...i-1] gia' ordinato
+- si puo' inserire l'elemento A[i] nella parte ordinata tramite scambi
+  - se A[i] > A[i-1] -> A[1...i] e' ordinato e ci si ferma; altrimenti si scambia A[i] con A[i-1]
+  - se A[i-1] > A[i-2] -> A[1...i] e' ordinato; altrimenti si scambia A[i-1] e A[i-2]
+  - ...
+Si parte inserendo A[2] poi si prosegue fino a n
+#+begin_example
+Insertion-Sort(A)
+for i<-2 to length(A) do
+    j<-i
+    while j>1 and A[j-1]>A[j] do
+        scambia A[j-1] con A[j]
+        j<-j-1
+    end while
+end for
+return A
+#+end_example
+**** Terminazione
+assicurota dalla limitatezza dei cicli *for* e *while*
+**** Correttezza
+**** Complessita'
+*** Selection Sort
