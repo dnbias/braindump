@@ -1,0 +1,15 @@
+#+TITLE: Fisica
+#+TEACHER: Gagliardi Martino
+
+* Elettrostatica
+
+** Legge di Coulomb
+
+** Campi elettrici
+
+*** Dipolo elettrico
+Momento del Dipolo p
+**** piano mediano
+
+**** lungo asse
+*** Lineare e Uniforme Infinita
