@@ -77,7 +77,7 @@ _Non sono permesse tabelle nidificate_ *prima forma normale*
       + booleani di atomi che confrontano valori di attributo o espressioni aritmetiche su di essi
   + interrelazionali
 
-**** Vincoli di chiave_
+**** Vincoli di chiave
 - Superchiave
   + insieme di attributi usato per identificare univocamente le tuple di una relazione
   + un insieme di attributi $K$ e' detto superchiave di una relazione $r$ se $r$ non puo' contenere due tuple che hanno valori uguali su $K$
@@ -97,15 +97,48 @@ Vincoli foreign key
 - tra relazioni diverse non possiamo utilizzare vincoli chiave con valori qualsiasi
   + questi vincoli hanno un verso
   + devono indicare valori gia' inseriti nella relazione referenziata
-
+  + fatto riferimento a chiavi, non per forza primarie
 ***** Azioni compensative
 - Standard
   + rifiuto dell'operazione
 - Eliminazione in cascata
 - Introduzione di valori nulli
 
-
 ** Algebra Relazionale
+Formalizzata da Codd, per l'interrogazione di basi di dati
+- e' una costruzione procedurale, un elenco di passi per eseguire l'interrogazione
+- la risposta e' sempre un modello relazionale
+- input: relazioni del modello relazionale
+- output: relazione del modello relazionale
+  + *relazione virtuale*
+*** Operatori
+_Di base_
+- selezione - sigma
+  + 0 le || le |r|
+- proiezione - pi
+  + 0 le || le |r|
+  + non devono esserci ripetizioni nel risultato, viene compattato, altrimenti non sarebbe un insieme
+  + se gli attrimuti proiettati formano una suporchiave allora la || eq |r|
+- prodotto cartesiano
+- unione
+  - max(|r_1|,|r_2|) le || le |r_1|+|r_2|
+- differenza
+  - 0 le || le |r_1|
+- ridenominazione - ro
+_Derivati_
+- intersezione
+  + 0 le || le min(|r_1|,|r_2|)
+- join
+- quoziente
+*** Predicati
+Un'espressione booleana formata componendo predicati atomici
+- attributo - costante
+- attributo - attributo
+  - '-' operatore di confronto
+
+La cardinalita' di una predicato e' compresa tra 0 (relazione vuota) e la cardinalita' di r, se il predicato e' vero per ogni tupla
+
+Per semplificare la lettura delle query si puo' scriverne gli alberi sintattici
 ** Calcolo Relazionale
 ** SQL (LAB)
 * Programmazione di Basi di Dati
