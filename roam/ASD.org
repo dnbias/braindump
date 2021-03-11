@@ -240,15 +240,34 @@ Assumiamo che la parte sx del vettore sia gia' ordinata e che contenga elementi 
 #+begin_example
 Selection-Sort(A)
 for i <- 1 to length(A)-1 do
-    j <- i
-    n <- j
-    while j < length(A) do
-        if A[j] < A[n] do
-            n <- j
+    j <- i+1
+    k <- i
+    while j < length(A)+1 do
+        if A[j] < A[k] do
+            k <- j
         end if
         j <- j+1
     end while
-    scambia A[i] e A[n]
+    scambia A[i] e A[k]
 end for
 return A
 #+end_example
+**** Terminazione
+Implicata dalla terminazione dei cicli
+**** Correttezza
+2 Invarianti
+1. A[1...i-1] ordinato e A[i...n] > uguale a A[1...i-1]
+2. A[k] < uguale a A[i...j-1]
+
+**** Complessita'
+Sia nel caso migliore che nel caso poggiore,
+Complessita' temporale quadratica
+
+*** Alberi di Decisione
+le foglie dell'albero devono essere tutte le possibili pormutazioni degli elementi del vettore
+- $n!$
+- per costruire un albero con un numero tale di foglie sono necessari almeno $log_2 n!$ livelli
+- Usando la formula di Stirling per approssimare $n!$
+  + $n log_2 n$
+Che cresce molto piu' lentamente di una funzione quadratica
+- cio' implica che esistano algoritmi molto piu' efficienti di quelli quadratici visti
