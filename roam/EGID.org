@@ -1,0 +1,137 @@
+#+TITLE:  Economia e Diritto
+#+ROAM-ALIAS: EGID
+#+Teacher: Camillo Sacchetto, Fabio Montalcino
+[[file:#universita.org][#universita]]
+
+* Economia
+
+* Diritto
+Esistono diverse fonti di Diritto
+- nazionali
+  + sentenze
+  + DPCM
+  + DPC
+- internazionali
+
+Esistono conflitti di fonti
+- nazionali | comunitarie
+- gerarchia delle fonti
+
+Definizione dei soggetti
+- giuridica
+  + aggiunge sfumature
+- tecnica
+
+Quando si regolamenta - tecnica linguistica:
+1. tecnica analitica
+   - disciplinare soggetti utilizzando un elenco analitico ricade nella regolamentazione
+     + cio' che non e' citato rimane non disciplinato, allora va estesa eventualmente per analogia
+   - vietata nel diritto penale italiano
+2. tecnica per principi
+   - si mantiene una generalita'
+   - va sempre fatto un passaggio logico quando questa e' applicata
+   - e' facilmente ambigua
+
+3. Settori
+   - civile
+   - penale
+   - amministrativo
+   - del lavoro
+
+** Responsabilita' ISP
+Tematica sorta nei primi anni 2000
+Scelta della *fonte*
+- Direttiva Comunitaria 2000/31 (!Regolamento Comunitario)
+  + commissione europea
+    - da' dei parametri a tutti i paesi membri
+    - che dovranno essere applicati dai singoli paesi
+      + se non in linea potranno essere disapplicati
+  + considerando che... n.42
+    - il processo tecnico di attivare e fornire accesso ad una rete
+    - l'attivita' e' meramente tecnica automatica e passivo
+    - non conosce ne' controlla le informazioni
+- Decreto Legislativo n.70 2003
+*** Art. 17
+1. assenza dell'obbligo generale di sorveglianza da parte del prestatore e di ricerca attiva
+2. tenuto ad
+  a. informare l'autorita' qualora sia a conoscenza di attivita' o informazioni illecite riguardanti un suo destinatario
+  b. fornire a richiesta delle autorita' competenti le informazioni in suo possesso
+3. prestatore civilmente responsabile del contenuto di tali servizi in caso non ha agito prontamente per impedire l'accesso a detto contenuto
+  a. elemento integrativo da parte dell'Italia
+
+*** Art. 14
+Responsabilita' di Mere Conduit (semplice trasporto, Telecom)
+1. colui che trasmette su una rete informazioni fornite da un destinatario o fronisce accesso alla rete, non e' responsabile delle informazioni trasmesse a condizione che
+   a. non dia origine alla trasmissione
+   b. non selezioni il destinatario della trasmissione
+   c. non selezioni ne' modifichi le informazioni trasmesse
+2. la memorizzazione automatica, intermedia e transitoria delle informazioni trasmesse deve servire solo alla trasmissione e la sua durata non deve eccedere il tempo ragionevolmente necessario a tale scopo
+3. L'autorita' puo' esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazioni commesse
+
+*** Art. 15
+Responsabilita' nell'attivita' di memorizzazione temporanea (caching, Google)
+1. il prestatore non e' responsabile della memorizzazione temporanea delle informazioni effettuata al solo scopo di rendere piu' efficace il successivo inoltro ad altri destinatari a loro richiesta
+   a condizione che
+   a. non modifiche tali info
+   e. agisca prontamente per rimuovere le informazioni e senza indugio
+2. L'autorita' puo' esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
+*** Art. 16
+Responsabilita' nell'attivita' di memorizzazione di informazioni (hosting)
+1. Memorizzazione di info fornite da un destinatario
+   1) non sia a conoscenza del fatto che l'attivita' o l'informazione e' illecita
+   2) *non appena* sia a conoscenza di tali fatti, *su comunicazione delle autorita'*, agisca immediatamente per rimuovere le informazioni o per disabilitarne l'accesso
+      - aggiunta italiana, ha generato una ambiguita'
+2. 1 non si applicano se il destinatario del servizio agisce sotto l'autorita' o il controllo del prestatore
+3. L'autorita' puo' esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
+
+*** Sentenze
+**** Case history RTI
+Gruppo Mediaset
+- Febbraio 2010 - RTI | Youtube
+  - diritto d'autore delle reti Mediaset
+  - pone a carico del host provider l'obbligo di rimuovere immediatamente non appena avuto conoscenza di tale illiceita'
+    + anche su comunicazione dal titolare dei diritti
+  - Youtube non ha agito immediatamente
+- Settembre 2011 - RTI | Yahoo!
+  - l'inattivita' del prestatore di servizio, nonostante le segnalazioni delle presenza di numerosi contenuti in violazione dei diritti d'autore, lo renda colposamente responsabile
+- Ottobre 2011 - RTI | Choopa , VVB
+  + la non responsabilita' dell'hosting provider si ha purche' il prestatore del servizio non sia effettivamente a conoscenza dell'illiceita' o di fatti e circostanze che rendono manifesta detta illiceita'
+  + ricorso respinto perche' RTI aveva inviato un'unica diffida senza una dettagilata e specifica indicazione dei video da rimuovere
+  + non conta il paese in cui e' basato il provider, conta il luogo dove viene commesso l'illecito
+    - RTI aveva visto lesi i suoi diritti nell'area del mercato italiana, quindi
+**** Case history Google
+Gia' la commissione europea specificava gli stati potessero specificare leggi in tema di motore ricerche
+- Maggio 2012 - Meneghetti | Google (utente anonimo)
+  - in mancanza di un *ruolo "attivo" sulla conoscenza e controllo dei dati memorizzati* il motore di ricerca non e' responsabile dei contenuti immessi da terzi in rete, anche laddove gli stessi siano raggiungibili in quanto risultanti delle ricerche effettuate sullo stesso motore.
+    + il mettere a disposizione non e' un ruolo attivo, in quanto inconoscibile
+  - e' necessario che un organo giurisdizionale competente ne dichiari la effettiva illiceita' dei dati
+- Febbraio 2013 - caso Vividown
+  + video di violenze e insulti sulla piattaforma Google Video
+  + Milano perche' sede Vividown
+  + Google non responsabile del reato di diffamazione, in quanto rimosso appena segnalato
+  + (primo grado) ma c'e' un trattamento illecito dei dati del ragazza disabile (dati sensibili) che non ha informato gli utenti della loro possibile responsabilita'
+    - (secondo grado) ribaltata la responsabilita'
+      + (cassazione) il decreto legislativo non si applica nel campo del diritto e alla riservatezza, Google ha fatto anche indicizzazione (azione attiva?) oltre che il mero upload
+        - non c'e' trattamento illecito perche' *mancava della conoscenza dell'illecito,* anche avendo rimosso il contenuto collaborando con le autorita'
+- Marzo 2009 - AVIS | SIXT, Google ADWords
+  + concorrenza sleale, in quanto digitando AVIS si era reindirizzati
+  + Comportamento abusivo del soggette che utilizzi come keyword segno distintivo altrui
+    - la tecnica di marketing telematico ADWords, di per se, e' lecita
+    - richieste di condanna respinte per carenza di legittimazione processuale (sarebbe dovuto essere Google Ireland)
+- Marzo 2011 - | Google Autocomplete
+  + ruolo attivo, evidente valenza diffamatoria
+  + intervento sul software in modo da rimuovere l'associazione diffamatoria
+- Maggio 2012 - | Google Autocomplete
+  + Effetto del funzionamento del servizio completamente automatico, del tutto privo di valenza diffamatoria
+  + non c'e' l'elemento del dolo, inoltre una azienda non ha una chiara componente psicologica
+- Marzo 2013 - | Google Autocomplete
+  + Secondo l'attore, Google e' un content provider, in quanto le funzioni di completamento automatico e di generazione di ricerche sono messe a punto dal provider
+  + il Tribunale esclude la qualificazione di content provider
+    - in quanto un sistema di attivazione del servizio e non certo di una funzione, ne' un contenuto
+    - riproduce statisticamente il risultato delle ricerche piu' popolari
+    - i risultati non costituiscono un archivio, ne' sono strutturati, organizzati o influenzati da Google
+    - trattando di un Algoritmo non e' applicabile un Diritto prettamente umano
+- Maggio 2013 - Reclamo al Collegio | Google Autocomplete
+  + l'automatismo non e' sinonimo di neutralita' dell'ISP
+  + nel suo ruolo svolge ulteriori attivita' non meramente automatiche e necessarie per la sola trasmissione o raccolta dei contenuti
+  + inoltre l'elemento di lucro pone un ulteriore aspetto attivo da parte dell'azienda
