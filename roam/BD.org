@@ -158,6 +158,9 @@ Per semplificare la lettura delle query si puo' scriverne gli alberi sintattici
   + Raccolta e Analisi dei requisiti (informali)
   + Progettazione concettuale (indipendente dal DBMS)
     - separazione netta tra schema concettuale e logico
+    - produce
+      + schema ER
+      + Documentazione complementare (business rules)
   + Progettazione logica
   + Progettazione fisica (Basi di dati II)
 
@@ -210,7 +213,7 @@ Identificano univocamente le occorrenze di una entita', rappresentati da pallini
 Distinti in
 - identificatore interno
   - attributi dell'entita'
-- idintificatore esterno
+- identificatore esterno
   - attributi dell'entita' e entita' esterne attraverso associazioni
 
 Ogni entita' deve avere almeno un identificatore, questo per facilitare il passaggio al modello relazionale.
@@ -245,6 +248,97 @@ Mette in relazione una o piu' entita'
   + Vincoli di integrita'
   + Vincoli di derivazione
 ** Progettazione Concettuale e Logica (LAB)
+*** Concettuale
+Analisi dei requisiti, spesso ambigui.
+Vanno rimosse le ambiguita'
+- fonti di requisiti
+  + utenti
+    - utenti diversi possono fornire info contraddittorie
+      + vanno verificati gli aspetti essenziali e i casi limite
+  + documentazione esistente
+    - normative
+    - regole interne
+  + realizzazioni preesistenti
+
+**** Pattern di progettazione
+un ricettario di casi comuni di progettazione
+- Reificazione di attributo di entita'
+  - una associazione non puo' rappresentare cose che si ripetono
+- Part-of
+- Instance-of
+- storicizzazione di un'entita'
+  + generalizzazione
+    - storico
+      + aggiunge attributi (fine)
+    - corrente
+- storicizzazione di un'associazione
+  + si sdoppia la associazione
+  + o si reifica l'associazione e poi si generalizza quest'ultima
+- evoluzione di concetto
+- reificazione di associazione ternaria
+  + permette di capire la correttezza dell'associazione ternaria
+
+**** Strategie di progetto
+- top-down
+  + serie di raffinamenti successivi
+  + aumenta il dettagli passo passo
+  + entita' senza attributi e relazioni
+    - poi concretizziamo aggiungendo dettagli
+  + pro: si possono ignorare i dettagli inizialmente
+  + contro: e' possibi solo se si possiede una visione gloxarlle di tutte le componenti
+- bottom-up
+  + partiamo da specifiche divise in parti elementari
+    - di queste sono fatti i singoli schemi ER
+  + poi aggreghiamo in uno schema finale
+  + pro: le parti semplici sono da spartire e sviluppare a se stanti
+  + contro: possono sorgere problemi nel aggregare schemi completamente diversi
+- inside-out
+  + individuiamo concetti chiave e partiamo da li'
+  + ci espandiamo a partire da questi ultimi
+  + pro: non richiede passi di integrazione
+  + contro: ogni passo vanno riesaminati gli elementi presenti e non presenti
+Nella pratica si utilizza una strategia ibrida
+- vanno suddivisi i requisiti in componenti separati
+- si forma uno schema scheletro
+  + fa da base per successivi raffinamenti
+   
+**** Schema di Analisi
+- Inizialmente
+  + vanno specificate parole abigue, concetti simili tra loro
+    - individuare omonimie (stessa parola ma diverso concetto) e sinonimie (stessa parola e stesso concetto)
+      + posti (di impiego), posto (di nascita)
+      + luoghi (di nascita), luogo (delle lezioni)
+      + partecipanti, studenti
+  + standardizzare la sintassi
+    - per ENTITA' rappresentiamo ATTRIBUTI
+  + costruire un glossario dei termini
+    - termine | descrizione | sinonimi | collegamenti
+    - ancora un lavoro linguistico, non corrispondono necessariamente alle entita'
+- Strutturazione dei Requisiti in gruppi di frasi omogenee
+  + Frasi relative ai partecipanti
+  + Frasi relative ai datori di lavoro
+  + Frasi relative ai corsi
+  + Frasi relative a particolari partecipanti
+  + Frasi relative ai docenti
+- Operazioni (piu' impattanti sul sistema) sui dati
+  + e frequenza
+  + per assicurarci che i dati permettano di svolgere tutti le operazioni
+  + per poter considerare l'efficienza del nostro schema logico piu' avanti
+- Progettazione concettuale vera e propria
+  + se un concetto da proprieta' significative e descrive oggetti con esistenza autonoma
+    - *entita'*
+  + se e' semplice e non ha proprieta'
+    - *attributo* ad un'altra entita'
+  + se correla due o piu' concetti
+    - *associazione* (se non possono ripetersi, altrimenti dovra' essere un'altra entita')
+  + se e' un caso  particolare di un altro
+    - *generalizzazione*
+
+**** Qualita' di uno schema ER
+- Correttezza
+- Completezza
+- Leggibilita'
+- Minimalita'
 ** Normalizzazione
 * Sistemi per la gestione dei dati
 ** Metodi di accesso e indici
