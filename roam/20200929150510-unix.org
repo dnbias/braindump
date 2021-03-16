@@ -426,7 +426,7 @@ struct sembuf {
 #+end_src
 Una semop bloccata fino a che:
 - un processo sblocca il semaforo
-- viene interrotto da in segnale di Interrupt
+- viene interrotto da un segnale di Interrupt
   + EINTR
 
 ***** binary semaphores
@@ -460,7 +460,7 @@ Si scrivono/leggono numeri arbitrari di byte
 :PROPERTIES:
 :NOTER_PAGE: 19
 :END:
-Permettono l'utilizzo dell'output di un processo come input di un altro processio
+Permettono l'utilizzo dell'output di un processo come input di un altro processo
 Il suo funzionamento é implementato utilizzando
 - fork()
 - exec()
@@ -569,7 +569,7 @@ I figli ereditano i segmenti di SM a disposizione del genitore
 **** lifecycle
 + shmget()
   - creazione
-  - ottenere l'id di un segmento giá esistente
+  - ottenere l'id di un segmento giá esistentsetxkbmap -option ctrl:swapcapse
 + shmat()
   - attach
 + shmdt()

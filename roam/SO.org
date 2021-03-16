@@ -840,7 +840,7 @@ Code multilivello con retroazione
       + se il quanto viene esaurito la sua prioritá é abbassata
         - limite 1
     Favorisce i processi che interagiscono con mouse e tastiera
-    Inoltre W distingue tra background e foreground
+    Inoltre distingue tra background e foreground
     - il processo foreground ottiene 3 volte l'aumento del quanto di tempo che gli altri processi
 
 **** Linux

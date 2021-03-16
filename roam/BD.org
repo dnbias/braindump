@@ -120,6 +120,7 @@ _Di base_
   + non devono esserci ripetizioni nel risultato, viene compattato, altrimenti non sarebbe un insieme
   + se gli attrimuti proiettati formano una suporchiave allora la || eq |r|
 - prodotto cartesiano
+  + utilizzato per costruire altri operatori
 - unione
   - max(|r_1|,|r_2|) le || le |r_1|+|r_2|
 - differenza
@@ -128,8 +129,28 @@ _Di base_
 _Derivati_
 - intersezione
   + 0 le || le min(|r_1|,|r_2|)
-- join
+- join - theta
+  + unione di informazioni in schemi diversi
+  + prodotto cartesiano a cui e' applicata una selezione utilizzando il predicato theta
+    - NB gli schemi sono disgiunti
+  + cardinalita' molto ampia
+    - 0 le || le |r1(A)|*|r2(B)|
+- join - equi
+  + utilizziamo solo ugualianze
+  + possiamo specificare meglio la cardinalita', ottimizzabile
+    - confrontando una chiave primaria e un attributo con un vincolo di integrita'
+      + || eq |r_1|
+- natural join
+  + deriva dall'equi-join
+  + eguaglia tutti gli attributi che hanno lo stesso nome
+  + molto facile sbagliare
+  + se gli schemi sono disgiunti corrisponde al prodotto cartesiano
+  + se applicato su schemi della stessa relazione corrisponde a trovare l'intersezione
 - quoziente
+  + binario, il secondo operando deve essere parte del primo
+  + r(A,B) q s(B)
+    - u(A) risultato, contiene le tuple che in r(A,B) compaiono in combinazione con ogni tupla in s(B)
+
 *** Predicati
 Un'espressione booleana formata componendo predicati atomici
 - attributo - costante
@@ -139,6 +160,29 @@ Un'espressione booleana formata componendo predicati atomici
 La cardinalita' di una predicato e' compresa tra 0 (relazione vuota) e la cardinalita' di r, se il predicato e' vero per ogni tupla
 
 Per semplificare la lettura delle query si puo' scriverne gli alberi sintattici
+
+*** Interrogazioni con Negazione
+caso semplice se possibile utilizzare selezione 'diverso da', negandolo
+caso complesso se e' una negazione essenziale, e' innegabile
+- premesse
+  + si lavora all'interno delle basi di dati: *Closed-World Assumption*
+    - tutto cio' che esiste e' contenuto all'interno della base di dati
+    - i soli fatti veri del mondo sone quelli presenti nella base di dati
+      + se qualcosa non e' descritto non esiste
+- si definisce l'universo $U$
+  + es: medici
+- si risponde in forma positiva alla domanda $P$
+  + es: tutti i medici primari
+- si risponde con il complemento $R : U-P$
+  + es: medici - medici_primari
+
+_Negazione essenziale nascosta_
+- es: elencare i pazienti con un solo ricovero
+  + aka: elencare i pazienti ricoverati almeno una volta e che non hanno avuto due o piu' ricoveri
+- es: estrarre il massimo
+  + facciamo il prodotto cartesiano dell'attributo
+    - cotrolliamo se un numero e' minore di almeno un altro numero della relazione
+*La quantificazione universale e' la negazione di una quantificazione esistenziale*
 ** Calcolo Relazionale
 ** SQL (LAB)
 * Programmazione di Basi di Dati
