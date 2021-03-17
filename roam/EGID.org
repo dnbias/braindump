@@ -4,6 +4,81 @@
 [[file:#universita.org][#universita]]
 
 * Economia
+(25/30 di scritto + esercitazioni)
+** Business Model Canvas
+Modello economico sostenibile
+- backend - frontend
+  + condividono la Value Proposition
+    - risoluzione di un problema
+    - di do l'opportunita' di fare qualcosa che prima non facevi
+- Customer Segments
+- Channels
+
+*** Customer Segments
+gruppi di persone o organizzazione che la azienda mira a raggiungere, fornire
+- bisogni comuni
+- comportamenti comuni
+- altri attributi
+
+Le aziende devono fare scelte coscienziose per quanto riguarda che aree servire e che aree ignorare
+- deve esserci una forte comprensione dei bisogni dei clienti
+Divisioni
+- bisogni
+- canali di distribuzione
+- tipi di relazione
+- profittabilita'
+- aspetti dell'offerta
+Q:
+- per chi creo valore
+- chi sono i nostri clienti piu' importanti
+
+Segmenti
+- mass market
+  + il business model non distingue tra customer segments
+  + i canali e le relazioni si concetrano su un largo gruppo di clienti
+- niche market
+  + Specifico e specializzato
+  + spesso tratta relazioni tra fornitore-compratore
+- segmentato
+  + prodotto simile ma offerto a diversi gruppi
+- diversificato
+  + segmenti diversi e prodotti diversi
+- multi-piattoforma
+  + permettono l'incontro tra offerta e domanda
+  + non forniscono nulla di reale se non la piattaforma
+*** Value Proposition
+Tutta la struttura dovra' essere compatibile con questa sezione
+- Qual'e' lo scopo del prodotto e i suoi usi
+- A chi e' mirato questo prodotto, dove si collocano
+  + decisori o utenti, clienti (e' disponto a riconoscere un valore non necessariamente monetario)
+  + che prodotto indiriziamo ad ogni segmento di clientela
+    - Valori diversi
+      + quantitativo
+        - prezzo
+        - velocita' di consegna
+      + qualitativo
+        - design
+        - esperienza cliente
+- Che bisogni soddisfa il prodotto
+  + che problema risolve
+- Come trasferisco il prodotto al cliente
+- Qual'e' il posizionamento del prodotto, definizione del prezzo
+
+Elementi
+- novita'
+- performance
+- custom
+- ti consento di fare meglio il tuo lavoro
+- Design
+- Brand/Status
+- prezzo
+  + scelta in base all'aspettativa delle clientela
+- aumento del margine di guadagno per i clienti
+- riduzione del rischio
+- accessibilita'
+  + a servizi non normalmente accedibili
+- convenienza/usabilita'
+
 
 * Diritto
 Esistono diverse fonti di Diritto
