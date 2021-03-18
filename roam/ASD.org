@@ -271,3 +271,38 @@ le foglie dell'albero devono essere tutte le possibili pormutazioni degli elemen
   + $n log_2 n$
 Che cresce molto piu' lentamente di una funzione quadratica
 - cio' implica che esistano algoritmi molto piu' efficienti di quelli quadratici visti
+
+** Complessita' di un algoritmo
+Risorse utilizzate dall'algoritmo
+- tempo
+- spazio
+- hardware
+  + sempre piu' importante con piu' core e thread di esecuzione
+Noi trattiamo la complessita' temporale
+- per stimare la grandezza massima dell'ingresso(input) di un esecuzione ragionevole
+- per confrontare l'efficienza di piu' algoritmi
+
+Il tempo di calcolo e' una funzione rispetto all'input
+Approcci, gli approcci differiscono solo di una costante moltiplicativa sotto certe condizioni:
+- secondi di esecuzioni
+- numero di operazioni elementari
+- numero di volte una specifica operazione viene eseguita
+  + piu' semplice
+
+Una volta stabiliti i numeri di esecuzioni si passa all'analisi del caso migliore e del caso peggiore, si riconducono a polinomi
+
+La *dimensione dell'ingresso* e' una misura della sua rappresentazione
+- $|m| log_2 (m)+1$
+- $|A[0...n-1]| nc$
+  + $c$ numero bit del generico elemento di $A$
+    - $c 1$ perche' le costanti moltiplicative non contano dal punto di vista dell'analisi asintotica
+
+Fissato la dimensione esistano algoritmi per cui $T$ puo' cambiare rispetto alla forma dell'input
+Distinguiamo i casi: migliore e peggiore
+ - $T_{peggiore}(n) max{T()x}: |x|n$
+ - $T_{migliore}(n) min{T()x}: |x|n$
+
+*** Minimo
+$cn + d le T(n) le an+b$
+- contenuto tra funzioni lineari
+  + al piu' lineare

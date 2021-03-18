@@ -383,6 +383,83 @@ Nella pratica si utilizza una strategia ibrida
 - Completezza
 - Leggibilita'
 - Minimalita'
+*** Logica
+Obiettivo: tradurre lo schema concettuale in uno schema logico che rappresenti gli stessi dati it maniera corretta ed efficiente
+- e' necessario considerare le prestazioni
+- ci sono aspetti non direttamente rappresentabili
+IN:
+- schema concettuale
+- info sul carico applicativo
+  + utili nella ristrutturazione dello schema concettuale dal punto di vista dell'efficienza
+- modello logico che si intendo usare (nel nostro caso relazionale)
+OUT:
+- schema logico
+- vincoli di integrita'
+- documentazione associata
+
+**** Fasi
+***** ristrutturazione dello schema concettuale (EER)
++ vanno rimosse inefficiente
++ se serve si cambiano le business rules
+Si crea uno schema che non e' piu' uno schema concettuale in quanto si introducono considurazioni applicative
+Non si possono valutare prestazioni senza parametri fisici
+- facciamo solo una stima con indicatori di *massima*
+- *Indicatori di prestazione*
+  - tempo
+    + numero di occorrenze di entita' e di associazioni visitate per eseguire un'operazione sul DB
+  - spazio
+    + necessario per rappresentare i dati
+  - volume
+    + numero di occorrenze
+    + dimensione degli attributi
+  - caratteristiche delle operazioni
+    + operazione interattiva/batch
+    + frequenza
+    + entita'/associazioni coinvolte
+
+- *Tavola dei Volumi*
+  - concetto | tipo | volume
+
+
+- *Tavola delle Operazioni*
+  - operazione | descrizione | tipo | frequenza
+   + particolare attenzione per le op. di tipo interattivo
+  - di solito sufficiente considerare solo le operazioni principali per la regola 80-20
+
+Passi:
+1. Analisi delle ridondanze
+   - ridondonza: informazione significativa ma derivabile da altre
+   - si decide se eliminare o mantenere le ridondanze
+     + *passo piu' difficile*
+     + derivabile da attributi della stessa entita' o associazione
+     + derivabile da attributi di altre entita' o associazioni
+   - _vantaggi_
+     + in caso di op. di interrogazione/lettura dei dati
+       - piu' efficienti
+       - semplificate
+   - _svantaggi_
+     + op. di inserimento e modifica dei dati
+       - meno efficienti
+     + maggiore occupazione di spazio
+   - Analisi costi/benefici
+   - per ogni ridondanza
+     + per ogri operazione significatia su cui la presenza o assenza della ridondanza puo' avere effetto
+       - schema delle operazioni nei due scenari
+       - tavola degli accessi nei due scenari
+2. Eliminazione delle generalizzazioni
+
+3. Partizianamento/Accorpamento di entita' e associazioni
+
+4. Scelta degli identificatori principali
+   - si sceglie un identificatore per le entita' che ne hanno piu' di uno
+
+5. Eliminazione degli attributi multivalore
+
+6. Eliminazione degli attributi composti
+
+
+***** traduzione verso il modello logico e ottimizzazione
++ algoritmo traduce lo schema
 ** Normalizzazione
 * Sistemi per la gestione dei dati
 ** Metodi di accesso e indici
