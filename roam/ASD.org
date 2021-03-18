@@ -301,6 +301,13 @@ Fissato la dimensione esistano algoritmi per cui $T$ puo' cambiare rispetto alla
 Distinguiamo i casi: migliore e peggiore
  - $T_{peggiore}(n) max{T()x}: |x|n$
  - $T_{migliore}(n) min{T()x}: |x|n$
+Dobbiamo confrontare tra loro funzioni che hanno infiniti valori
+- si trascura il numero finito di casi, conviene scegliere la funzione che cresce piu' lentamente all'infinito
+  + se non ci interessano questi casi, se abbiamo informazioni in piu' allora vanno analizzati anche questi casi
+Quanto contano le costanti?
+- con un computer molto piu' veloce la dimensione massima trattabile cambia in maniera trascurabile
+- la funzione che cresce meno velocemente e' comunque piu' importante di una costante moltiplicativa per il calcolo della complessita'
+- inoltre la stima delle costanti e' molto difficile nella pratica
 
 *** Minimo
 $cn + d le T(n) le an+b$
