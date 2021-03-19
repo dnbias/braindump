@@ -309,6 +309,36 @@ Quanto contano le costanti?
 - la funzione che cresce meno velocemente e' comunque piu' importante di una costante moltiplicativa per il calcolo della complessita'
 - inoltre la stima delle costanti e' molto difficile nella pratica
 
+**** O-grande
+Definito da P. Bachman, 1892.
+Un $f(n)$ e' O-grande di $g(n)$ se e solo se $f(n)$ cresce al piu' come $g(n)$ dopo un numero finito di casi $n_0$ e eventuali costanti moltiplicative $c$.
+- $O(1)$
+  + insieme delle funzioni superiormente limitate
+    - la dimensione dell'input non ha impatto sul lavoro dell'algoritmo
+Se $p(n)$ e' un polinomio di grado $k$ allora $p(k) in O(n^k)$
+
+*Definizione equivalente*
+$f(n) in O(g(n)) <-> lim_{n to infty}frac{f(n)}{g(n)}$ e
+$0 le lim_{n to infty} frac{f(n)}{g(n)} lt infty$
+
+*Teorema Utile*
+$lim_{ n to infty}frac{f(n)}{g(n)} eq 0 <-> f(n) in O(g(n)) and g(n) notin O(f(n))$
+
+- *NB*
+  + nei polinomi cio' che conta e' il termine di grado piu' alto: il grado del polinomio
+  + nei logaritmi non conta la base per O-grande
+    + $O(log_a n) eq O(log_b n), a,b >1$
+
+- *Inclusioni*
+  - $O(1) in O(log n)$
+
+  - $O(log n) in O(n)$
+
+  - $O(n) in O(n log n)$
+
+  - $O(n^p) in O(2^n)$
+
+  - $O(2^n) in O(3^n)$
 *** Minimo
 $cn + d le T(n) le an+b$
 - contenuto tra funzioni lineari
