@@ -10,7 +10,7 @@ Modello economico sostenibile
 - backend - frontend
   + condividono la Value Proposition
     - risoluzione di un problema
-    - di do l'opportunita' di fare qualcosa che prima non facevi
+    - ti do l'opportunita' di fare qualcosa che prima non facevi
 - Customer Segments
 - Channels
 
@@ -78,6 +78,16 @@ Elementi
 - accessibilita'
   + a servizi non normalmente accedibili
 - convenienza/usabilita'
+
+*** Channels
+Strumenti fisici o virtuali che permettono di raggiungere i segmenti di mercato
+I canali sono insiemi di strumenti con cui l'azienda consegna la Value Proposition ai clienti
+- *Funzioni*
+  + Rendere a conoscenza dell'offerta dell'azienda il cliente
+  + Consentire una valutazione della value proposition corretta da parte del cliente
+  + Permettere l'acquisto del prodotto
+  + Trasferire materialmente o meno il prodotto
+  + Assicurare supporto al cliente (assistenza)
 
 
 * Diritto

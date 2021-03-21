@@ -311,15 +311,17 @@ Quanto contano le costanti?
 
 **** O-grande
 Definito da P. Bachman, 1892.
+$f(n) \in O(g(n)) \iff \exists c > 0, n_0 \forall n > n_0 \mid f(n) \le cg(n)$
 Un $f(n)$ e' O-grande di $g(n)$ se e solo se $f(n)$ cresce al piu' come $g(n)$ dopo un numero finito di casi $n_0$ e eventuali costanti moltiplicative $c$.
+Permette di specificare limiti superiori non stretti.
 - $O(1)$
   + insieme delle funzioni superiormente limitate
     - la dimensione dell'input non ha impatto sul lavoro dell'algoritmo
 Se $p(n)$ e' un polinomio di grado $k$ allora $p(k) in O(n^k)$
 
 *Definizione equivalente*
-$f(n) in O(g(n)) <-> lim_{n to infty}frac{f(n)}{g(n)}$ e
-$0 le lim_{n to infty} frac{f(n)}{g(n)} lt infty$
+$f(n) \in O(g(n)) \iff lim_{n \to \infty}\frac{f(n)}{g(n)}$ e
+$0 \le lim_{n \to \infty} \frac{f(n)}{g(n)} < \infty$
 
 *Teorema Utile*
 $lim_{ n to infty}frac{f(n)}{g(n)} eq 0 <-> f(n) in O(g(n)) and g(n) notin O(f(n))$
@@ -327,18 +329,82 @@ $lim_{ n to infty}frac{f(n)}{g(n)} eq 0 <-> f(n) in O(g(n)) and g(n) notin O(f(n
 - *NB*
   + nei polinomi cio' che conta e' il termine di grado piu' alto: il grado del polinomio
   + nei logaritmi non conta la base per O-grande
-    + $O(log_a n) eq O(log_b n), a,b >1$
+    + $O(\log_a n) = O(\log_b n), a,b >1$
 
 - *Inclusioni*
-  - $O(1) in O(log n)$
+  - $O(1) \subset O(\log n)$
 
-  - $O(log n) in O(n)$
+  - $O(\log n) \subset O(n)$
 
-  - $O(n) in O(n log n)$
+  - $O(n) \subset O(n \log n)$
 
-  - $O(n^p) in O(2^n)$
+  - $O(n^p) \subset O(2^n)$
 
-  - $O(2^n) in O(3^n)$
+  - $O(2^n) \subset O(3^n)$
+Il tempo di calcolo sufficiente alla risoluzione del problema é il suo confine superiore
+- confine superiore alla complessitá di un problema
+Il tempo di calcolo necessario alla risoluzione del problema
+- confine inferiore alla complessitá del problema, per i tempi di calcolo di tutti gli algoritmi che risolvono il problema
+- banali
+  + dimensione del input
+  + dimensione del output
+  + eventi contabili
+**** Omega
+$\Omega$ limite asintotico inferiore
+$f(n) \in \Omega(g(n)) \iff \exists c > 0, n_0 \forall n > n_0 \mid cg(n) \le f(n)$
+$0< lim_{n \to \infty} \frac{f(n)}{g(n)} \le \infty$
+
+**** Teta
+\Theta limite asintotico sia inferiore sia superiore
+$f(n) \in \Theta(g(n)) \iff \exists c_1 > 0,c_2 >0, n_0 \forall n > n_0 \mid c_1 g(n) \le f(n) \le c_2 g(n)$
+$f(n) \in \Theta(g(n)) \iff f(n) \in O(g(n)) \land f(n) \in \Omega (g(n))$
+$0< lim_{n \to \infty} \frac{f(n)}{g(n)} < \infty$
+**** o-piccolo
+$f(n) \in (g(n)) \iff \forall c > 0 \exists n_0 \forall n > n_0 \mid f(n) \le cg(n)$
+$f(n)$ é un infinitesimo di $g(n)$
+
+*** Somma-17
+
+#+begin_example
+Somma-17(V)
+- Pre: V é un vettore che contiene numeri positivi
+- Post: True se ci sono due numeri a,b t.c. a+b=17, False altrimenti
+
+boolean b = False
+for i=0 to length(V)-1
+  for j=i+1 to length(V)-1
+    if V[] + V[] == 17
+      b = True
+    end-if
+  end-for
+end-for
+return b
+#+end_example
+
+$O(n^2)$ per il numero di volte che viene eseguito l'if nel caso peggiore
+$\Omega(n)$ per la dimensione dei dati
+
+
+_Soluzione di complessita' lineare_
+#+begin_example
+Somma-17-Lineare(V)
+
+bool C[18]
+int i, j
+for i=0 to 17
+  C[i] = False
+end-for
+for i=0 to length(V)-1
+  if V[i] <= 17
+    C[V[i]] = True
+end-for
+for i=0,j=17; i<j && !(C[i] && C[j]); i++,j--
+end-for
+return i < j
+#+end_example
+$T_{Somma-17-Lineare}(n) \in O(18+n+9+1) \in O(n)$
+Questo implica che l'algoritmo é ottimo in quanto $\Omega(n)$ é confine inferiore del problema.
+
 *** Minimo
 $cn + d le T(n) le an+b$
 - contenuto tra funzioni lineari
