@@ -13,3 +13,15 @@ Momento del Dipolo p
 
 **** lungo asse
 *** Distribuzione Lineare e Uniforme Infinita
+
+*** Legge di Gauss
+Vale sempre, é una legge generale del campo elettrico.
+$\Phi_{\vec{\sum}}= \int_{S} \vec{E} \cdot \vec{n} dS = 4\pi k_e \sum_{i\to \infty} Q_i$
+
+Valgono alcuni casi particolari
+**** Simmetria Sferica di carica
+$E = k_e \frac{Q}{R^2}$
+**** Simmetria Assiale
+$E= 2k_e \frac{\lambda}{R}$
+**** Simmetria Planare
+$E = 2 \pi k_e \sigma = \frac{\sigma}{2\epsilon_0}$

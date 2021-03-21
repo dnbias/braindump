@@ -89,7 +89,27 @@ I canali sono insiemi di strumenti con cui l'azienda consegna la Value Propositi
   + Trasferire materialmente o meno il prodotto
   + Assicurare supporto al cliente (assistenza)
 
+Da considerare l'efficienza dei canali e della loro integrazione reciproca
+anche rispetto a canali diretti e indiretti, piú il cliente finale é lontano piú sará difficile analizzarlo.
 
+*** Customer Relationships
+Spesso sono bidirezionali
+- 3 *obiettivi*
+  + Acquisizione di nuovi target, aumento della base di clientela
+  + Mantenimento della base di clientela
+  + Aumento della vendita, upselling e cross-selling
+
+Le diverse modalitá devono essere integrate, non devono creare confusione nel cliente: in questo caso é alto il rischio di perdita del cliente.
+
+- *Modalitá*
+  + Assistenza personale
+  + Assistenza personale dedicata, molto piú costruito sulle singole esigenze
+  + Self-service
+  + Servizi automatizzati
+  + Comunitá
+    - acquisti di gruppo
+  + Co-creazione
+    - Kickstarter, Youtube, Amazon
 * Diritto
 Esistono diverse fonti di Diritto
 - nazionali
