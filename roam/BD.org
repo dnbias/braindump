@@ -427,36 +427,60 @@ Non si possono valutare prestazioni senza parametri fisici
   - di solito sufficiente considerare solo le operazioni principali per la regola 80-20
 
 Passi:
-1. Analisi delle ridondanze
-   - ridondonza: informazione significativa ma derivabile da altre
-   - si decide se eliminare o mantenere le ridondanze
-     + *passo piu' difficile*
-     + derivabile da attributi della stessa entita' o associazione
-     + derivabile da attributi di altre entita' o associazioni
-   - _vantaggi_
-     + in caso di op. di interrogazione/lettura dei dati
-       - piu' efficienti
-       - semplificate
-   - _svantaggi_
-     + op. di inserimento e modifica dei dati
-       - meno efficienti
-     + maggiore occupazione di spazio
-   - Analisi costi/benefici
-   - per ogni ridondanza
-     + per ogri operazione significatia su cui la presenza o assenza della ridondanza puo' avere effetto
-       - schema delle operazioni nei due scenari
-       - tavola degli accessi nei due scenari
-2. Eliminazione delle generalizzazioni
+ 1. Analisi delle =ridondanze=
+    - ridondonza: informazione significativa ma derivabile da altre
+    - si decide se eliminare o mantenere le ridondanze
+      + *passo piu' difficile*
+      + derivabile da attributi della stessa entita' o associazione
+      + derivabile da attributi di altre entita' o associazioni
+    - _vantaggi_
+      + in caso di op. di interrogazione/lettura dei dati
+        - piu' efficienti
+        - semplificate
+    - _svantaggi_
+      + op. di inserimento e modifica dei dati
+        - meno efficienti
+      + maggiore occupazione di spazio
+    - Analisi costi/benefici
+    - per ogni ridondanza
+      + per ogri operazione significatia su cui la presenza o assenza della ridondanza puo' avere effetto
+        - schema delle operazioni nei due scenari
+        - tavola degli accessi nei due scenari
 
-3. Partizianamento/Accorpamento di entita' e associazioni
+ 2. Eliminazione delle =generalizzazioni=
+    a. accorpamento dei figli della generalizzazione nel genitore
+       - se la generalizzazione é totale/esclusiva vanno aggiunte regole aziendali
+         + esclusiva: vincolo che gli attributi non possono essere contemporaneamente valorizzati
+         + totale: vincolo che gli attributi non possono essere contemporaneamente valorizzati
+       - conveniente quando le operazioni non fanno troppa distinzione tra le istanze della varie entitá (le transazioni accederebbero infatti a un'unica tabella relazionale)
+       - spreca spazio producendo una base di dati con valori nulli
+    b. accorpamento del genitore della generalizzazione nei figli
+       - possibile quando la generalizzazione é a partecipazione totale
+         + conveniente quando le operazioni effettuano pochi accessi alle istanze di entrambe le entitá
+         + ottimizza maggiormente lo spazio rispetto alle altre alternative perché usa meno attributi e associazioni
+    c. sostituzione della generalizzazione con associazioni
+       - se esclusiva occorre aggiungere il vincolo che ogni occerrenza del genitore non puó partecipare contemporaneamente alle due relazioni
+       - se totale occorre aggiungere il vincolo che ogni occorrenza del genitore deve partecipare ad una delle relazioni
 
-4. Scelta degli identificatori principali
-   - si sceglie un identificatore per le entita' che ne hanno piu' di uno
+ 3. Partizionamento/Accorpamento di entita' e associazioni
+    - dipende dalle transazioni che accedono alle istanze, se necessitano spesso di informazioni relative ad altre entitá
+    - gli accorpamenti si fanno in genere su entitá legate da associazioni 1 a 1
 
-5. Eliminazione degli attributi multivalore
+ 4. Scelta degli =identificatori principali=
+    - si sceglie un identificatore per le entita' che ne hanno piu' di uno
+    - indispensabile per la traduzione nel modell relazionale
+    - criteri
+      + assenza di opzionalitá
+      + semplicitá
+      + utilizzo nelle operazioni piú frequenti o importanti
+    - se nessun identificatore rispetta i requisiti si introducono nuovi attributi (codici) appositamente
+    - puó essere necessarionio creare un identificatore surrogato
 
-6. Eliminazione degli attributi composti
+ 5. Eliminazione degli =attributi multivalore=
+    - si reificano in entitá e si collegano con relazioni
 
+ 6. Eliminazione degli =attributi composti=
+    - vengono ereditati direttamente dall'entitá
 
 ***** traduzione verso il modello logico e ottimizzazione
 + algoritmo traduce lo schema
