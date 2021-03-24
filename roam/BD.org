@@ -92,7 +92,7 @@ _Non sono permesse tabelle nidificate_ *prima forma normale*
   + usata per stabilire corrispondanza tra relazioni
 - Le chiavi sono utilizzate per fare riferimento a tuple in altre relazioni
 
-**** Vincoli di integrita' referenziale
+**** Vincoli di integritá referenziale
 Vincoli foreign key
 - tra relazioni diverse non possiamo utilizzare vincoli chiave con valori qualsiasi
   + questi vincoli hanno un verso
@@ -114,32 +114,32 @@ Formalizzata da Codd, per l'interrogazione di basi di dati
 *** Operatori
 _Di base_
 - selezione - sigma
-  + 0 le || le |r|
+  + $0 \le |\sigma | \le |r|$
 - proiezione - pi
-  + 0 le || le |r|
+  + $0 \le |\pi | \le |r|$
   + non devono esserci ripetizioni nel risultato, viene compattato, altrimenti non sarebbe un insieme
   + se gli attrimuti proiettati formano una suporchiave allora la || eq |r|
 - prodotto cartesiano
   + utilizzato per costruire altri operatori
 - unione
-  - max(|r_1|,|r_2|) le || le |r_1|+|r_2|
+  - $max(|r_1|,|r_2|) \le |\cup| \le |r_1|+|r_2|$
 - differenza
-  - 0 le || le |r_1|
+  - $0 \le |-| \le |r_1|$
 - ridenominazione - ro
 _Derivati_
 - intersezione
-  + 0 le || le min(|r_1|,|r_2|)
+  + $0 \le |\rho | \le min(|r_1|,|r_2|)$
 - join - theta
   + unione di informazioni in schemi diversi
   + prodotto cartesiano a cui e' applicata una selezione utilizzando il predicato theta
     - NB gli schemi sono disgiunti
   + cardinalita' molto ampia
-    - 0 le || le |r1(A)|*|r2(B)|
+    - $0 \le |\theta | \le |r_1(A)|\cdot |r_2(B)|$
 - join - equi
   + utilizziamo solo ugualianze
   + possiamo specificare meglio la cardinalita', ottimizzabile
     - confrontando una chiave primaria e un attributo con un vincolo di integrita'
-      + || eq |r_1|
+      + $|\theta | = |r_1|$
 - natural join
   + deriva dall'equi-join
   + eguaglia tutti gli attributi che hanno lo stesso nome
@@ -150,6 +150,12 @@ _Derivati_
   + binario, il secondo operando deve essere parte del primo
   + r(A,B) q s(B)
     - u(A) risultato, contiene le tuple che in r(A,B) compaiono in combinazione con ogni tupla in s(B)
+
+I Join visti sono tutti Inner-join o Join interni
+- Outer (natural) Join - Join Esterni: mantengono tutte le tuple inserendo NULL dove non esiste corrispondenza
+  + Left join
+  + Right join
+  + Full join
 
 *** Predicati
 Un'espressione booleana formata componendo predicati atomici
@@ -183,6 +189,47 @@ _Negazione essenziale nascosta_
   + facciamo il prodotto cartesiano dell'attributo
     - cotrolliamo se un numero e' minore di almeno un altro numero della relazione
 *La quantificazione universale e' la negazione di una quantificazione esistenziale*
+
+*** Semantica di Codd del valore nullo
+- Info esestente ma non nota
+- Info inesistente
+- Info che non si sa se classificare nel primo o nel secondo caso
+Il modello relazionale non distingue i tre casi: _l'interpretazione del valore nullo é esterna al modello relazionale_
+
+Il confronto tra una costante ed una tupla con valore nullo per Codd é una *logica a 3 valori*
+- False (0)
+- True (2)
+- Unknown (1)
+  + sempre quando si confronta almeno un valore nullo
+  + non é possibile cercare valori NULL quindi: si introducono IS NULL e IS NOT NULL
+    - unici operatori che non danno mai NULL, solo TRUE o FALSE
+
+Vanno estese le tabelle di veritá degli operatori base della logica classica
+- and
+  + minimo
+- or
+  + massimo
+- not
+  + 2-p
+
+*** Proprietá
+- Commutativa del prodotto cartesiano
+- Commutativa del Theta-join
+- Associativa del prodotto cantesiano
+- Associativa ristretta del Theta-join
+  + a patto che gli attributi de Theta possano essere suddivisi
+    - vedere =slide 04=
+- Selezione multipla
+- Sostituzione di operatori
+- Distributiva della selezione rispetto alla proiezione
+  + la proiezione deve includere la selezione affinche la proprietá valga in entrambi i versi
+- Distributiva ristretta della selezione rispetto al prodotto cartesiano
+- Distributiva ristretta della selezione rispetta ai join
+- Distributiva della selezione rispetta all'unione, intersezione e differenza
+- Proiezione multipla
+- Distributiva della proiezione rispetta al prodotto cartesiano
+- Distributiva ristratta della proiezione rispetta al join
+- distributiva della proiezione rispetta all'unione
 ** Calcolo Relazionale
 ** SQL (LAB)
 * Programmazione di Basi di Dati
@@ -443,7 +490,7 @@ Passi:
       + maggiore occupazione di spazio
     - Analisi costi/benefici
     - per ogni ridondanza
-      + per ogri operazione significatia su cui la presenza o assenza della ridondanza puo' avere effetto
+      + per ogni operazione significativa su cui la presenza o assenza della ridondanza puo' avere effetto
         - schema delle operazioni nei due scenari
         - tavola degli accessi nei due scenari
 
@@ -468,7 +515,7 @@ Passi:
 
  4. Scelta degli =identificatori principali=
     - si sceglie un identificatore per le entita' che ne hanno piu' di uno
-    - indispensabile per la traduzione nel modell relazionale
+    - indispensabile per la traduzione nel modello relazionale
     - criteri
       + assenza di opzionalitá
       + semplicitá
@@ -484,6 +531,40 @@ Passi:
 
 ***** traduzione verso il modello logico e ottimizzazione
 + algoritmo traduce lo schema
+
+Le =entitá= diventano relazioni con gli stessa attributi delle entitá
+Le =associazioni= diventano relazione con attributi delle associazioni + gli identificatori delle entitá coinvolte
+
+Associazioni
+(le cardinalitá minime non sono tenute in conto, sarebbero necessari costrutti SQL complessi e poco efficienti)
+- molti a molti
+  + attributi
+    - chiavi delle entitá legate
+    - suoi attributi
+  + la chiave primaria é l'unione delle chiavi delle entitá (ora a loro volta relazioni)
+  + vincoli di integritá referenziale
+    - Tra gli attributi della ex associazione e gli attributi delle ex entitá
+  + puó essere comodo ridenominare gli attributi con il nome delle entitá
+    - in questo modo lo schema sará piú facilmente leggibile
+  + non cambia anche per associazioni ricorsive
+- uno a molti
+  + possiamo accorpare gli attributi della relazione dell'associazione in uno delle due ex entitá, quella che avrá la stessa chiave primaria (dalla parte del 1 non dei molti)
+  + la relazione puó modellare sia cardinalitá minima 1 che 0
+    - 0 allora gli attributi saranno NULLABLE*
+- uno a uno
+  + due modi simmetrici e entrambi validi
+    - con vincoli unique sulla relazioni
+  + terza possibilitá
+    - usare un'unica relazione
+      + puó non essere fedele all'idea iniziale
+  + se ci sono cardinalitá minime 0
+    - se solo 1 conviene tradurre dalla parte 1,1
+      + si evitano valori nulli nella relazione
+    - se entrambi
+      + si aggiunge una relazione per l'associazione con chiave primaria una tra le due chiavi delle entitá e un vincolo unique sulla chiave non utilizzata
+        - non ci sono valori nulli a differenza delle altre possibilitá
+
+
 ** Normalizzazione
 * Sistemi per la gestione dei dati
 ** Metodi di accesso e indici
