@@ -1,0 +1,24 @@
+#+title: Discord
+* Fonti
+  - [[https://scarzer.medium.com/make-a-discord-bot-for-you-and-your-friends-to-trade-stocks-bde681ad38e2][Discord Bot for Trading]]
+* Bot
+  ~Discord.py~ is a well supported wrapper for the discord API.
+  - To add a command use ~async def~
+  - Adding a prefix to commands helps find issued commands
+#+begin_src python
+  import discord, io, os
+  from discord.ext import command
+  DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN")
+
+  ## First command
+  @bot.command()
+  async def hello_world(context):
+      await context.send("Hello!")
+
+  ## Start the bot
+  bot.run(DISCOND_TOKEN)
+#+end_src
+
+** Tools
+   - [[https://cog-creators.github.io/discord-embed-sandbox/][Discord Embed Sandbox]]
+   - [[file:20210328171522-alpaca.org][Alpaca]]

@@ -1,0 +1,8 @@
+#+title: Python
+
+* matplotlib
+  - ~.title~
+  - ~.xlabel~
+  - ~.plot~
+  - ~.savefig~
+  - ~.close~

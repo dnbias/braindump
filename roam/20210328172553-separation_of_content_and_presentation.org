@@ -1,0 +1,2 @@
+#+title: Separation of content and presentation
+#+site: https://en.m.wikipedia.org/wiki/Separation_of_content_and_presentation
