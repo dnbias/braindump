@@ -10,7 +10,7 @@
   - [[https://en.wikipedia.org/wiki/Minification_(programming)][Minification]]
 
 * BackEnd
-  Python/Ruby
+  Python/[[file:20210329170852-ruby.org][Ruby]]
 
 * Tools
   - [[https://caprover.com/][CapRover]]
