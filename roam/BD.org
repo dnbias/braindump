@@ -231,6 +231,23 @@ Vanno estese le tabelle di veritá degli operatori base della logica classica
 - Distributiva ristratta della proiezione rispetta al join
 - distributiva della proiezione rispetta all'unione
 ** Calcolo Relazionale
+Linguaggio di tipo procedurale
+- l'utente indica il risultato a cui vuole arrivare, il DBMS sceglie la strategia ottimale
+L'interrogazione delle basi di dati puo' avvenire con un approccio dichiarativo
+- si specificano le proprietá del risultato
+*** Su tuple con dichiarazione di range
+- Le variabili denotano tuple
+- si specifica il range dei valori (relazioni) che le variabili possono assumere
+
+Un'integrazione ha questa forma:
+     { ~Target~ | ~Range List~ | ~Formula~ }
+
+Nella formula e' possibile specificare anche predicati esistenziali o universali: $\exists$ e $\forall$
+In particolale la ~formula~ e' un predicato del primo ordine che puo' contenere sia variabili libere che quantificate (vincolate). Le variabili libere presenti devono essere dichiarate nella range list
+
+Questo schema si trasporta direttamente su SQL:
+      select ... from ... where ...
+*** Calcolo sui domini
 ** SQL (LAB)
 * Programmazione di Basi di Dati
 - Ciclo di vita di un sistema informativo:
@@ -392,7 +409,7 @@ Nella pratica si utilizza una strategia ibrida
 - vanno suddivisi i requisiti in componenti separati
 - si forma uno schema scheletro
   + fa da base per successivi raffinamenti
-   
+
 **** Schema di Analisi
 - Inizialmente
   + vanno specificate parole abigue, concetti simili tra loro
@@ -563,6 +580,17 @@ Associazioni
     - se entrambi
       + si aggiunge una relazione per l'associazione con chiave primaria una tra le due chiavi delle entitá e un vincolo unique sulla chiave non utilizzata
         - non ci sono valori nulli a differenza delle altre possibilitá
+
+** Ottimizzazione
+*** Logica
+1)
+2)
+3)
+4)
+5)
+6)
+7)
+*** Fisica
 
 
 ** Normalizzazione
