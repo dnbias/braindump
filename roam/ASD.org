@@ -9,7 +9,6 @@ Libro
 - Introduzione agli algoritmi e strutture dati
 
 * Problemi e Algoritmi
-
 ** Problemi Computazionali
 Collezione di domande (istanze-ingressi) per cui sia stabilito un criterio astratto per riconoscere le risposte (uscite) corrette
 - Es
@@ -272,7 +271,7 @@ le foglie dell'albero devono essere tutte le possibili pormutazioni degli elemen
 Che cresce molto piu' lentamente di una funzione quadratica
 - cio' implica che esistano algoritmi molto piu' efficienti di quelli quadratici visti
 
-** Complessita' di un algoritmo
+** Complessitá di un algoritmo
 Risorse utilizzate dall'algoritmo
 - tempo
 - spazio
@@ -409,13 +408,211 @@ Questo implica che l'algoritmo é ottimo in quanto $\Omega(n)$ é confine inferi
 $cn + d le T(n) le an+b$
 - contenuto tra funzioni lineari
   + al piu' lineare
+** Relazioni di Ricorrenza
+La funzione tempo di un algoritmo ricorsivo é a sua volta ricorsiva: é detta *Relazione di ricorrenza*
+- Calcolo ricorsivo del fattoriale
 
+$T(n) = c$ se $n=0$
+$T(n) = T(n-1)+d$ altrimenti
+
+#+begin_src C
+int min_ric(int a[], int i){
+  if (i = length(a))
+      return a[i];
+  else
+      return min(a[i], min_ric(a, i+1));
+}
+#+end_src
+
+Nel caso dell'algoritmo della torre di Hanoi ci si riconduce ad una sommatoria di progressione geometrica.
+
+$T(n)=c^n b + \frac{c^n - 1}{c - 1}d$
+$T(n) \subset \Theta(c^n)$
+*** Quick Sort
+Sceglie un perno e riorganizza il vettore per avere elementi minori di $q$ prima di questo maggiori dopo.
+Ogni passo se necessario vá partizionato il vettore.
+#+begin_src C
+  int partition(int a[],int s, int n){
+      int i=s;
+      int j = n-1;
+      while(i<=j){
+          if(a[i] <= a[0]){
+              i += 1;
+          }
+          else if(a[j] > a[1]){
+              j -= 1;
+          }
+          else {
+              int temp = a[i];
+              a[i] = a[j];
+              a[j] = temp;
+          }
+      }
+      int temp = a[j];
+      a[j] = a[s];
+      a[s] = temp;
+      return j;
+  }
+
+  void quick_sort(int a[]){
+      int n = length(a)-1;
+      if(n>0){
+          int p = partition(a,0,n);
+          if(p>2)
+              quick_sort(a,0,n);
+          if(p<n-1)
+              quick_sort(a,p+1,n);
+      }
+  }
+#+end_src
+
+Per dimostrarne la correttezza va utilizzata l'induzione completa, non semplice.
+- in quanto la dimensione delle due chiamate ricorsive operano su dimensioni ignote minori di n elementi
+Uno volta dimostrata la correttezza di =partizione= la dimostrazione é banale
+**** Complessitá
+Il partizionamento esamina una volta ogni elemento: é lineare
+$T_p(n)=an$
+Identifichiamo le situazioni estreme della ricorsione di quicksort
+1. due partizioni con lo stesso numero degli elementi
+2. una contiene tutti gli elementi e una é vuota
+
+3. da luogo ad una relazione di  ricorrenza
+   - $T(n) = c$ con $n=1$
+
+   - $T(n)= T(n-1)+T_p(n)+b$ altriment
+
+*** Relazioni Lineari a Partizione costante
+Teorema master per relazioni lineari in termini $O()$, con $a$ che rappresenta il numero di chiamate ricorsive.
+h: quanto diminuisce la dimensione del problema
+a: numero delle chiamate ricorsive
+b e c: quanto tempo impiegano le parti non ricorsive
+- $a=1$: $T(n)\subset O(n^{b+1})$
+- $a\ge 2$: $T(n)\subset O(a^n n^b)$
+
+Il risultato dá meno informazioni rispetto alla sostituzione o l'iterazione, che dá informazioni rispetto a $\Theta()$.
+Puó anche non fornire il limite piú stretto possibile.
+** Divide et Impera - Relazioni lineari a partizione bilanciata
+~Teorema~
+$T(n) = d$ se $n=1$
+$T(n) = aT(n/b)+cn^\beta$ se $n=1$
+allora:
+posto $\alpha = \log a / \log b$
+$\alpha > \beta$: $T(n) \subset O(n^\alpha)$
+$\alpha = \beta$: $T(n) \subset O(n^\alpha \log n)$
+$\alpha < \beta$: $T(n) \subset O(n^\beta)$ 
+*** Minimo e Massimo
+*** Merge Sort
+Fondere array ordinati impiega molto meno tempo rispetto che altrimenti
+#+begin_src C
+  int *merge(int b[],int c[]){
+      if (b == NULL)
+          return c;
+      else if(c == NULL)
+          return B;
+      else if(b[1] <= c[1])
+          return {b[1],merge(b[2...length(b)],c)};
+      else
+          return {c[1],merge(b,c[2...length(b)])};
+  }
+
+
+  int *merge_sort(int a[], int i, int n){
+      if(n-i == 1)
+          return a;
+      else{
+          int k = (n-i)/2;
+          int b[] = merge_sort(a, 1, k);
+          int c[] = merge_sort(a, k+1, n);
+          return merge(b,c);
+      }
+  }
++end_src
+
+**** Complessita'
+$T(n)=2T(n/2)+n$
+$T(n)=\log_2 n \cdot n . cn \subset \Theta(n \log n)$
+L'algoritmo e' ottimo.
+
+*** Quick Sort: caso medio
+Il caso peggiore e' noto (quadratico), il caso migliore sara' come il Merge Sort (n log n)
+
+Si dimostra che e' ottimo con $O(n \log n)$
+** Programmazione Dinamica
+Si basano come i Divide et Impera sulla scomposizione ricorsiva di un problema in sottoproblemi per poi ricomporli
+- *DI* efficiente se i sottopreblemi sono indipendenti, altrimenti puo' fare lo stesso lavoro piu' di una volta
+- *DI* puo' essere molto inefficiente se i sottoproblemi non sono indipendenti tra loro
+Al contrario *PD* puo' semplificare molto il problema.
+
+Il problema deve possedere due proprieta'
+1. =sottostruttura della soluzione=
+   - la soluzione del sottoproblema e' un sottoinsieme del problema
+2. =sottoproblemi ripetuti=
+   - una soluzione deve essere riutilizzabile in un altro sottoproblema
+   - annotazione dei risultati piu' semplici
+     - [[file:20210402203855-memoization.org][Memoization]]
+   - per efficienza di memoria si sviluppa un approccio [[file:20210402203940-bottom_up.org][Bottom-up]]
+
+Prima si sviluppa una soluzione iterativa, poi la si migliora con le tecniche della *PD*
+*** Successione di Fibonacci
+$f_0 = 0$, $f_1=1$
+$f_n = f_{n-2} + f_{n-1}$ per $n>1$
+#+begin_example
+Fib(n)
+if n <= 2 then
+  f = 1
+else
+  f = Fib(n-1) + Fib(n-2)
+endif
+return f
+#+end_example
+La relazione di ricorrenza del numero di nodi $N_n$ nell'albero delle chiamate e' simile a quella della sequenza di Fibonacci $f_n$. Cambia per un +1.
+La _formula di Binet_ permette il calcolo del ennesimo Fibonacci.
+
+$N_n \subset \Omega(\phi^n)$
+Quindi ha crescita esponenziale, almeno.
+
+Molto lento  perche' e' richiesto il calcolo della stessa cosa ripetutamente
+- percio' implementiamo la memoization: approccio [[file:20210402210717-top_down.org][Top-down]]
+  - lo spazio utilizzato per migliorare l'algoritmo cosi' e' $\Theta(n)$
+L'albero ha uno sviluppa lineare verso sinitra, anche il tempo sara $\Theta(n)$
+
+#+begin_example
+Fib-BottomUp(n)
+if n <= 2 then
+  return 1
+else
+  Fib[1] = 1, Fib[2] = 1
+  for i=3 to n do
+    Fib[i] = Fib[i-1]+Fib[i-2]
+  end-for
+endif
+return Fib[n]
+#+end_example
+Tempo e spazio sono $\Theta(n)$
+
+L'array puo' essere eliminato, servono solo gli ultimi due numeri
+#+begin_example
+Fib-Iter(n)
+if n <= 2 then
+  return 1
+else
+  FibA = 1, FibB = 1
+  for i=3 to n do
+    tmp = FibA+FibB
+    FibB = FibA
+    FibA=tmp
+  end-for
+endif
+return FibA
+#+end_example
+Il tempo di calcolo e' sempre $\Theta(n)$
+ma lo spazio  ora e' $\Theta(1)$
 * Laboratorio
 ** Fonti utili
 - Cormer, Leiserson, Rivest, Stein: Introduzione agli algoritmi e strutture dati
 - Pro Git
   + bibbia di git
-- junit 4
+- Junit 4
   + per lo unit testing in java
 ** Indicazioni per il progetto
 Vedere [[https://gitlab2.educ.di.unito.it/pozzato/laboratorio-algoritmi-2020-2021][GitLab]] del dipartimento.
