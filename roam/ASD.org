@@ -1,6 +1,6 @@
 #+TITLE: Algoritmi e Strutture Dati
 #+TEACHER: Andras Horvath(horvath@di.unito.it)
-[[file:#universita.org][#universita]]
+[[file:#university.org][#university]]
 Esame
 - scritto
 - discussione laboratorio
@@ -666,3 +666,29 @@ C:    =Unity=
 Sistema di Versioning del software
 - [[https://git-scm.com/book/en/v2][Pro Git]]
 -
+
+** Java
+*** Documentazione secondo JavaDoc
+*** Hash-code
+Fare attenzione che sia consistente con Equals
+- quando si implementa =compare=
+*** BufferedReader
+Utilizzato per leggere ~file.csv~ di input
+*** Try with resources
+*** String.split()
+** C
+*** Documentare nell'header
+*** Generici non disponibili
+Utilizziamo puntatori a puntatori void
+- ~void** array~
+*** Comparatori
+Si richiede all'utente un puntatore ad una funzione
+che implementa il comparator
+*** Unit Testing
+- Assert
+- Unity
+  + non é uno standard ma é utile
+
+** Algoritmi
+*** [[file:20210409200632-generic_merge_binary_insertion_sort.org][Generic Merge-Binary Insertion Sort]]
+*** [[file:20210409200833-dynamic_edit_distance.org][Dynamic Edit Distance]]

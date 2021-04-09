@@ -1,6 +1,6 @@
 #+title: Taxicab
 [[file:20201205215419-project.org][#project]]
-[[file:#universita.org][#universita]]
+[[file:#university.org][#university]]
 
 - [[file:/home/dan/Documents/UNI/II/SO/PROGETTO.pdf][Documento di Presentazione del Progetto]]
 

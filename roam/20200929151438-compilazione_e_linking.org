@@ -1,5 +1,5 @@
 #+TITLE: Compilazione e Linking
-[[file:#universita.org][#universitá]]
+[[file:#university.org][#university]]
 
 * Dal C al binario passando dall'assembler IJVM ~ Compilazione e Linking
 

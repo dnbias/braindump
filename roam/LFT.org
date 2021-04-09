@@ -2,7 +2,7 @@
 #+COURSE: LFT A
 #+TEACHER: Sproston Jeremy
 #+startup: latexpreview
-[[file:#universita.org][#universitá]]
+[[file:#university.org][#university]]
 
 Informazioni varie del Corso:
 - Lunedi' lezione sincrona per domande: 11:00

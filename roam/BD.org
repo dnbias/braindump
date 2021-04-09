@@ -1,6 +1,6 @@
 #+TITLE: Basi di Dati
 #+TEACHER: Luca Anselma (anselmaATdi.unito.it)
-[[file:#universita.org][#universita]]
+[[file:#university.org][#university]]
 - Esame:
   - Scritto 70
     + Teoria
@@ -236,6 +236,7 @@ Linguaggio di tipo procedurale
 L'interrogazione delle basi di dati puo' avvenire con un approccio dichiarativo
 - si specificano le proprietá del risultato
 *** Su tuple con dichiarazione di range
+L'algebra relazionale é procedurale, esiste un approccio dichiarativo fondato sulla logica:
 - Le variabili denotano tuple
 - si specifica il range dei valori (relazioni) che le variabili possono assumere
 
@@ -247,8 +248,105 @@ In particolale la ~formula~ e' un predicato del primo ordine che puo' contenere 
 
 Questo schema si trasporta direttamente su SQL:
       select ... from ... where ...
+
+Il prodotto cartesiano é facilmente  esprimibile con
+    { ~x.*,y.*~ | ~x(R),y(S)~ }
+
+L'unione di due tuple non é esprimibile (con due relazioni nella range list otterremmo il prodotto cartesiano)
+
+L'operatore di implicazione é utilizzato per definire della condizioni pregresse alla formula
+$\alpha \implies \beta$
+- se $\alpha$ é falso l'implicazione é sempre vera
+
+Manca comunque il concetto di ricorsione rispetto alla computazione
+- richiedono chiusura transitiva, SQL lo permette
 *** Calcolo sui domini
 ** SQL (LAB)
+Standard =SQL-92=, il piú diffuso
+La maggior parte dei DBMS si basa sull'architettura client/server
+- Server accetta le connessioni dei client e interagisce sui database su delega
+- il programmatore usa intefacce al DBMS chiamate ~Client Library~
+
+*** DLL
+Il linguaggio é _dichiarativo_ per la maggior parte
+- l'utente definisce cosa vuole non come ottenerlo, si ignora idealmente l'aspetto prestazionale e di efficienza
+
+- =unique=
+  + se piú ~null~ non infrangeranno il vincolo
+- =primary key=
+  + possibile una tabella senza ma sconsigliabile
+  + sottointeso
+    - =not null=
+    - =unique=
+  + possibile sia composta da piú attributi
+- =foreign key= ... =refences=
+  + chiave esterna
+Normalmente la violazione di un viscolo non vengono accettate
+In caso di violazione di integritá referenziale si possono specificare reazioni diverse a seconda se la violazione sia interna o esterna
+- l'asimmetria deriva dal fatto che dal punto di vista applicativo la tabella esterna ricopre il ruolo di tabella _master_ e quella interna di _slave_: =on update= ... / =on delete= ...
+  - =cascade=
+    - nuovo valore riportato in tutte le corrispondenti righe della tabella interna
+    - in caso di cancellazione si cancellano le righe nella interna
+  - =set null=
+  - =set default=
+  - =no action=
+    + l'azione non viene consentita
+  - non tutti i DBMS non sono possibili tutti questi vincoli di integritá referenziale
+  - é possibile assegnare nomi ai vincoli
+    + in modo da referenziarli per aggiornarli, modificarli, eliminarli
+- sintassi porticolare per la modificazione delle definizioni, della schema definito
+  + =alter=
+  + =drop=
+  + =add=
+
+- =insert into= ... =values= ...
+- =delete from= ... =where= ...
+  + se non specificato =where= saranno eliminate tutte le tuple
+
+- =like=
+  + utilizzabili caratteri speciali per ricerche regex-like, solitamente case-sensitive
+  + %
+    - sequenza di lunghezza arbitraria (anche zero)
+  + _
+    - carattere qualsiasi (deve esserci)
+
+Per effettuare un join:
+- elencare le tabelle di interesse nel ~from~
+- definire nel ~where~ le condizioni necessarie per il join
+
+Oppure:
+- =join=
+  - ~select~ ... ~from~ ... =[ inner | right | left | full ] join= Tab1 =on= Cond =where= ...
+  - =outer join= ottengono tutto ció che ottiene un =inner= con in piú righe che non hanno una corrispondenza nella tabella di sinistra o destra
+    + *NB* il full join non é disponibile in _MySQL_
+    + le operazioni di outer join se concatenate vanno parentizzate per chiarire quale tabella sará la sx o dx dei join
+
+In algebra relazionale le tabelle sono insiemi di tuple (quindi diverse tra loro)
+In SQL si possono avere nelle tabelle risultanti righe uguali
+- per motivi di efficienza la rimozione dei duplicati é effettuata solo se richiesta dal utente
+  - =distinct=
+
+É possibile specificare l'ordinamento del risultato delle query:
+- =order by= Attribute1 [asc | desc], Attribute2 [asc | desc] ...
+Il default é _ascending_ e quindi crescente
+
+/null/ nella logica a 3 valori implica risultato sempre ~unknown~, allora SQL offre i predicati:
+- =is null= che restituisce sempre *true* o *false*
+- =is not null= per l'opposto
+Per la logica a 3 valori alcune apparenti tautologie su tabelle con presenti valori /null/ restituiranno risultati inaspettati
+- le tuple per cui la condizione é ~unknown~ sono escluse dal where normalmente
+  + é necessario specificare =where ... or ... is null=
+
+Esiste la funzione =coalesce= che restituisce il primo parametro non nullo
+- /null/ se tutti sono nulli
+- puó essere utilizzato per sostituire eventuali /null/ nella tabella risultante della query
+
+I commenti possono essere specificati:
+- -- Commento
+- /* Commento multi-riga */
+
+*** DML
+
 * Programmazione di Basi di Dati
 - Ciclo di vita di un sistema informativo:
   + Studio di fattibilita'

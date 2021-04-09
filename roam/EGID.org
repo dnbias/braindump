@@ -1,7 +1,7 @@
 #+TITLE:  Economia e Diritto
 #+ROAM-ALIAS: EGID
 #+Teacher: Camillo Sacchetto, Fabio Montalcino
-[[file:#universita.org][#universita]]
+[[file:#university.org][#university]]
 
 * Economia
 (25/30 di scritto + esercitazioni)
