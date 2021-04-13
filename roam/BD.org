@@ -346,6 +346,35 @@ I commenti possono essere specificati:
 - /* Commento multi-riga */
 
 *** DML
+Funzioni aggregate
+- conteggio
+- somma
+- massimo
+- minimo
+
+select ...
+
+=count=
+- conta il numero del risultato della query
+  + anche eventuali NULL
+- puó essere utilizzato anche su singoli attributi, anche piú di uno (allora ignorerá i NULL)
+  + puó essere anche specificato =distinct=
+=sum=
+=avp=
+=max=
+=min=
+    - questi 2 possono essere utilizzate su stringhe, seguendo l'ordine alfabetico
+I DBMS di solito forniscono altre funzioni (come deviazione standard)
+
+Non é possibile utilizzare F. aggregate nella clausola ~where~
+
+=group by=
+ - aggrega secondo un attributo il risultato
+ - gli attributi selezionati devono essere discriminanti
+ - NULL é considerato un valore a parte, vengono raggruppati
+clausola =having=
+- specifica condizioni da verificare dopo il risultato
+- diversamente da ~where~ vanno messe condizioni su funzioni aggregate
 
 * Programmazione di Basi di Dati
 - Ciclo di vita di un sistema informativo:

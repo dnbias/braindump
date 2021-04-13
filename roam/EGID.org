@@ -110,6 +110,46 @@ Le diverse modalitá devono essere integrate, non devono creare confusione nel c
     - acquisti di gruppo
   + Co-creazione
     - Kickstarter, Youtube, Amazon
+
+
+*** Revenue Streams
+L'utile o margine netto che si ricava
+- transazioni unica una tantum di un cliente
+- transazioni ricorrenti
+
+Domanda importante: a cosa il cliente é disposto a riconoscere un valore
+- ci sono diversi modi per generare _revenue stream_
+- ció che conta é la somma complessiva dei R.S.
+
+Modalitá
+- venditá di asset
+- pagamento in base all'uso
+- pagamento ad iscrizione
+- affitto/leasing/prestito
+- pagamento di licenza
+  + uso di prodotti ~intangible~
+- brokeraggio
+- pubblicitá
+Meccanismi di definizioni del Prezzo
+- fisso
+- dinamico
+  + in base al momento, al metodo di acquisto, il prezza cambia
+  + negoziazione
+  + al momento in base a domanda e offerta
+
+*** Resources
+Gli asset che permettono di non venir meno alla Value Proposition
+Le risorse si dividono in:
+- fisiche - tangibili
+- finanziarie
+  - vantaggio nel trasferimento della risorsa
+- intellettuale
+- umane
+Ulteriormente divise in:
+- proprietarie o gestite dall'azienda
+- acquisiti da partner
+Quest'ultima distinzione non importa molto dal punto di vista della Value Proposition
+
 * Diritto
 Esistono diverse fonti di Diritto
 - nazionali
@@ -190,6 +230,8 @@ Responsabilita' nell'attivita' di memorizzazione di informazioni (hosting)
 2. 1 non si applicano se il destinatario del servizio agisce sotto l'autorita' o il controllo del prestatore
 3. L'autorita' puo' esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
 
+*** Art. 17 2019
+
 *** Sentenze
 **** Case history RTI
 Gruppo Mediaset
@@ -241,3 +283,77 @@ Gia' la commissione europea specificava gli stati potessero specificare leggi in
   + l'automatismo non e' sinonimo di neutralita' dell'ISP
   + nel suo ruolo svolge ulteriori attivita' non meramente automatiche e necessarie per la sola trasmissione o raccolta dei contenuti
   + inoltre l'elemento di lucro pone un ulteriore aspetto attivo da parte dell'azienda
+
+**** Mediaset vs Facebook
+=Roma, 20 Feb 2019=
+Pagina facebook dedicata ad un cantone animato, con link a contenuti protetti da diritto d'autore.
+Facebook non rimosse i contenuti, si passó al tribunale.
+Caso storico per la presa di posizione nei confronti del Social Network
+- definito come ISP
+  + sia caching che hosting
+- riconosce la responsabilitá del SN per violazioni avvenuti tramite ~linking~
+  + quindi con pubblicazioni esterne alla piattaforma vera e propria
+Focebook afferma la non correttezza del giudice, volendo il giudizio in California
+- convenzione di Bruxelles '68 (principalmente tra paesi Europei, non USA)
+  + cerca di chiarire dove va fatta la contestazione
+- viene deciso che il mercato della parte lesa, luogo dell'evento in questione
+  + Italia
+Il link é una comunicazione al pubblico, l'articolo 13 della /riforma del diritto d'autore nel mercato unico digitale/ cita:
+"I fornitori di servizi che fanno _comunicazione al pubblico_ devono ottenere l'autorizzazione per la messa a disposizione di contenuti dai titolari di diritti"
+- qui c'é illecito nella non autorizzazione da parte di Mediaset, proprietaria dei diritti
+
+**** Direttiva UE 2019/790 Del Parlamento Europeo e del Consiglio
+=Direttiva Copyright=
+In rif. al prestatore di un servizio dell'informazione... *va esclusa la responsabilitá prevista dall'art. 14 della direttiva 31/2000* ... dopo aver preso conoscenza, mediante informazione fornito dalla persona lesa o in altro modo, della natura illecita di quei dati o attivitá.
+- se l'illiceitá é manifesto é obbligo del provider sospendere e rimuovere, se non manifesta va chiarita riferendosi, puó essere anche un elemento esterno a renderla manifesta
+**** RTI vs Yahoo
+=Corte di Cassazione, 19 Mar 2019=
+Presunta violazione di diritti d'autore da parte di Yahoo
+- DIFESA: la non immediata attivazione non implicava un illecito un quanto sito di Hosting Passivo
+La giurisprudenza della Corte di giustizia ha accolto la nozione di hosting provider attivo riferendosi a prestatori che non conoscono né controllano le informazioni trasmesse o memorizzate dalle persone alle quali forniscono i loro servizi
+- Cassazione: provider qualificabile come hosting attivo quando *completa e arricchisce* in modo non passivo *la fruizione dei contenuti*
+
+Alla luce... l'hosting passivo é responsabile per non avere prevveduto all'immediata rimozione dei cantenuti illeciti o per aver continuato a pubblicarli
+
+**** L'Oréal vs Ebay
+- la disposizione della direttiva ~2000/31/CE art. 14~ deve essere interpretata non soltanto in considerazione del suo tenore letterale, ma anche del suo contesto e degli scopi perseguiti dalla normativa di cui essa fa parte
+
+Sostanza sopra la forma
+
+- Per quanto concerne l'art. 14 é necessario verificare se il prestatori di servizi svolge un ruolo attivo, anche ottimizzando la prestazione delle opere o altro materiale caricati o promuovenali, indipendentemente dalla naturo del mezzo utilizzato a tal fine.
+  Dovrebbero adottare misure appropriate e proporzionate per garantire la protezione di tali opere a altro materiale, ad esempio tramite l'uso di tecnologie efficaci.
+  - questo anche quando i prestatori di servizi rientrano nell'esenzione di responsabilitá di cui all' ~art. 14 della direttiva 2000/31/CE~
+
+
+**** TikTok vs Garante Privacy
+Gen 2021, strangolamento bambina di 10 anni a seguito della Blackout Challenge
+- Fonti
+  - Regolamento UE 2016/679
+    - in vigore dal 2018
+  - Decreto Legislativo 101/2018
+
+Giá a dicembre il Garante della Privacy aveva sollevato delle contestazioni a TikTok
+- Divieto di iscrizione ai piú piccoli facilmente aggirabile
+- Scarsa tutela dei minori
+- Poca trasparenza nelle informazioni resa agli utenti
+- Impostazioni predefinite non rispettose della privacy
+  - profilo pubblico di default
+
+ Il limite d'etá prima del regolamento prevedeva 13 anni, questo per la legge federale USA:
+ COPPA, prescrive che nessuno persona giuridica puó raccogliere dati relativi a minori di 13 anni
+ In Italia il limite é definito a 14 anni.
+
+ *Art. 66* procedura d'urgenza
+ - per proteggere i diritti e le libertá degli interessati, un'autoritá, puó adottare immediatamente misure provvisorie intese a predurre effetti giuridici nel proprio territorio
+   - periodo di validitá determinato che non supera i tre mesi
+
+ Provvedimento dispone la misura della ~limitazione provvisoria~ del trattamento, vietando l'ulteriore trattamente doi dati degli utenti che si trovano sul territorio italiano per i quali non vi sia assoluta certezza dell'etá
+ - prima ancora di sentire la controparte, ma ha giá valore di legge
+
+TikTok si é impegnato ad adeguarsi alle richieste del Garante privacy
+- blocco degli utenti per la richiesta di inserimento dell'etá
+- miglioramento della propria informativa privacy in un linguaggio anch piú accessibile
+- introduzione di report di utenti minori dei 14 anni
+- banner di informazione sull'impostazione del profilo da pubblico a privato
+Il garante ha avviato una collaborazione con il telefono Azzurro
+- campagna di sensibilizzazione con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza

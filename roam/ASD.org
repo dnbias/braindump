@@ -607,6 +607,63 @@ return FibA
 #+end_example
 Il tempo di calcolo e' sempre $\Theta(n)$
 ma lo spazio  ora e' $\Theta(1)$
+*** Massima Sottosequenza Comune - LCS
+=Longest Common Subsequence=
+Trattando Stringhe di DNA
+Non si intendono elementi necessariamente successivi
+- CS == sotto-sequenza
+Z é LCS se
+- Z cs X && Z cs Y && Z ha lunghezza massima
+
+*Proprietá della sottostruttura*
+- mettere in relazione $LCS(X,Y)$ con la soluzioni che coinvolgono prefissi di $X$ e $Y$
+- definiamo $k,m,n$ come lunghezze di $Z,X.Y$
+- due casi
+  + $x_m = y_n$
+    - se $Z$ é $LCS(X,Y)$ allora $z_k$ sará $x_m$
+      + allora $Z_{k-1}$ é $LCS(X_{m-1},Y_{n-1})$
+  + $x_m \neq y_n$
+    - se $Z$ é $LCS(X,Y)$ allora $z_k$ puó essere $x_m$ o $y_n$ o qualsiasi altro
+      + sicuramente $x_m$ o $y_n$ non serve per formare $Z$, anche entrambi
+      + allora $Z_{k-1}$ é $LCS(X_{m-1},Y_{n})$ o $LCS(X_{m},Y_{n-1})$ o entrambi
+=Teorema=
+- se $i=0 || j=0$
+  + < >
+- se $x_i = y_j$
+  + $LCS(X_{i-1}, Y_{j-1}) + x_i$ dove $+$ indica la concatenazione
+- se $x_i \neq y_j$
+  - longest($LCS(X_{i-1},Y)$, $LCS(X,Y_{j-1})$)
+
+Il Tempo di calcolo di questa procedura ricorsiva é esponenziale:
+$T(k)=2T(k-1)+1 \in \Theta(2^k) =  \Theta(2^{m+n})$
+
+Si costruiscono due tabelle basate sullo schema ricorsivo
+$c[0..m, 0..n]$ e $b[1..m, 1..n]$
+
+**** Algoritmo Bottom-up
+permette di ottimizzare riempiendo una tabella $m \cdot n$
+$T(k) \in \Theta(m \cdot n)$
+
+
+* Strutture Dati
+** Insiemi Dinamici
+Possibili in array, liste o hash, ma con tempo di calcolo diversi
+- elementi finiti
+- gli elementi possono cambiare
+- il loro numero puó cambiare
+- si assume che ogni elemento abbia un attributo chiave
+- si assume che le chiavi sono tutte distinte
+** Array
+*** Statici
+*** Ridimensionabili
+** Liste
+** Hashing
+*** Tavole a indirizzamente diretto
+*** Tavole di hash
+*** Tavole hash con concatenamento
+*** Funzioni hash
+*** Indirizzamente aperto
+
 * Laboratorio
 ** Fonti utili
 - Cormer, Leiserson, Rivest, Stein: Introduzione agli algoritmi e strutture dati
