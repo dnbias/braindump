@@ -1,0 +1,252 @@
+#+title: Data Structures
+
+* Strutture Dati
+** Insiemi Dinamici
+Possibili in array, liste o hash, ma con tempo di calcolo diversi
+- elementi finiti
+- gli elementi possono cambiare
+- il loro numero puó cambiare
+- si assume che ogni elemento abbia un attributo chiave
+- si assume che le chiavi sono tutte distinte
+
+2 tipi di operazione
+- query
+- modifiche
+tipicamente
+- insert
+- search
+- delete
+inoltre hanno senso se l'insieme é ordinato (le chiavi sono ordinate)
+- minimum
+- maximum
+- successor
+- predecessor
+
+Strutture dati diverse hanno diversa complessitá con operazioni diverse
+- ogni struttura ha efficienza migliore in base a ció che si va a sviluppare
+
+** Array
+caselle
+- contengono un elemento
+- sono grandi uguali
+- posizionati in una sequenza nella memoria
+- il ~calcolo dell'indirizzo~ di qualunque casella ho costo ~costante~
+  + non dipende dal numero di elementi
+  + base + (i-1) * dim(valore)
+- =accesso diretto=
+  + $O(1)$
+
+
+*** Statici
+Numero massimo di elementi prefissato
+- M: numero massimo
+  - non ha impatti sui tempi di calcolo
+- N: numero attuale de elementi
+  + occupano sempre le prime N celle dell'array
+**** Insert
+Senza controllo sulla ripetizione di chiave
+#+begin-example
+ArrayInsert(A,k):
+  if A.N != A.M
+    A[A.N] = k
+    A.N++
+    return k
+  else
+    return nil
+#+end-example
+$O(1)$ costante
+
+Se l'Array é ordinato gli inserimenti costano di piú
+- inserendo k in fondo
+- far scendere alla posizione giusta con scambi (=InsertionSort=)
+$O(N)$
+
+**** Delete
+Assumendo non ci siano ripetizioni
+#+begin-example
+ArrayDelete(A, k):
+  for i=1 to A.N do
+    if A[i] == k then
+      A.N = A.N + 1
+      for j=i to A.N do
+        A[j] = A[j+1]
+      return k
+  return nil
+#+end-example
+$O(N)$ lineare
+**** Search
+#+begin-example
+ArraySearch(A,k):
+  for i=1 to A.N do
+    if A[i] == k then
+      return k
+  return nil
+#+end-example
+$O(N)$ lineare
+
+Se l'Array é ordinato allora possiamo implementare la =BinarySearch=
+$O(n \log n)$
+
+*** Ridimensionabili / Dinamici
+Se non si conosce il numero massimo di elementi a priori
+Se non si vuole sprecare spazio
+
+Le 2 idee utilizzate sono due soluzioni diverse per la realizzazione di un =Abstract Data Type=
+- per confrontarle valutiamo i tempi di esecuzione di =sequenze di operazioni=
+  + consideriamo allora il costo medio per i confronti: =costo ammortizzato=
+    - costo ammortizzato nel futuro anche se costoso subito
+
+- $2^k$ inserimenti, con M=1 inizialmente
+  1. ogni inserimento tranne il primo ha costo $O(N)$
+     - $T_{amm} = \frac{d + c + 2c + ... + (n-1)c}{n} \in O(n)$
+       - sopra abbiamo una progressione aritmetica
+         + numeratore di secondo grado, denominatore di primo grado
+  2. $k$ inserimenti con $O(N)$, gli altri $O(1)$
+     - $T_{amm}= \frac{(c+2c+...+2^{k-1}c)+2^kd}{2^k}$
+     - $T_{amm}= \frac{(2^k -1)c+2^kd}{2^k} \in O(1)$
+- sequenza di rimozioni di elementi
+- sequenza di inserimenti, ma aumentando la dimensione dell'array di una costante se riempito
+
+
+**** Extend
+Si basa sull'espandere l'array quando esso diventa troppo piccolo
+- l'espansione costa $O(N)$ in quanto richiede di allocare memoria e copiare gli elementi dell'array
+#+begin-example
+ArrayExtend(A,n):
+  B = array[A.M + n]
+  B.M = A.M + n
+  B.N = A.N
+  for i=1 to A.N do
+    B[i] = A[i]
+  return B
+#+end-example
+
+Il problema é che se N == M allora i successivi inserimenti richiedono ulteriori riallocazioni
+
+**** Insert
+#+begin-example
+DynArrayInsert(A,k):
+  if A.N == A.M then
+    A = ArrayExtend(A,1)
+  ArrayInsert(A,k)
+#+end-example
+Array non pieno: $O(1)$
+Array pieno: $O(N)$
+Dipende dalle operazioni precendenti
+- se M é sufficientemente grande si sforeranno poche volte
+  + il costo sará circa $O(1)$ ma si rischia di sprecare spazio
+- se M é tale da sforare molte volte
+  + il costo sará circa $O(N)$
+
+Il problema é che se N == M allora i successivi inserimenti richiedono ulteriori riallocazioni
+- raddoppiamo il numero di elementi se l'array si riempie
+#+begin-example
+DynArrayInsert(A,k):
+  if A.N == A.M then
+    A = ArrayExtend(A,A.M)
+  ArrayInsert(A,k)
+#+end-example
+
+**** Delete
+Possiamo recuperare spazio se l'array si riduce di dimensione
+#+begin-example
+DynArrayDelete2(A,k):
+  ArrayDelete(A,k)
+  if A.N <= 1/4 * A.M then
+    B = array[A.M/2]
+    B.M = A.M/2
+    B.N = A.N
+    for i=1 to A.N do
+      B[i] = A[i]
+    A = B
+#+end-example
+
+**** Search
+** Liste
+Una struttura lineare
+- l'ordine é determinato dai puntatori che indicano l'elemento successivo
+- data una lista L il primo elemento é indicano da L.head
+Puó essere doppiamente concatenata
+- con puntatori .prev e .next
+Puó essere
+- ordinata
+- non ordinata
+Puó essere circolare
+- l'ultimo elemento punta il primo e viceversa
+  + permette di accedere all'ultimo elemento piú facilmente
+
+*** Insert
+In Liste doppiamente concatenate e non ordinate:
+#+begin-example
+ListInsert(L,x):
+  x.next = L.head
+  x.prev = nil
+  if L.head != nil then
+    L.head.prev = x
+  L.head = x
+#+end-example
+$O(1)$
+
+Con sentinella:
+#+begin-example
+ListInsert(L,x):
+  x.next = L.sen.next
+  L.sen.next.prev = x
+  L.sen.next = x
+  x.prev = L.sen
+#+end-example
+$O(1)$
+
+*** Delete
+In Liste doppiamente concatenate e non ordinate:
+- ricevendo un puntatore al nodo da rimuovere
+#+begin-example
+ListDelete(L,x):
+  if x.prev != nil then
+    x.prev.next = x.next
+  else
+    L.head = x.next
+  if x.next != nil then
+    x.next.prev = x.prev
+#+end-example
+$O(1)$
+
+L'operazione é macchinosa perché bisogna controllare le condizioni "in testa" e "in coda"
+- aggiungiamo nodo ~sentinella~ che rende piú omogenei i dati nella lista
+  + Lista circolare
+Si ha sempre la certezza che la lista contenga sempre almeno un elemento:
+#+begin-example
+ListDelete(L,x):
+  x.prev.next = x.next
+  x.next.prev = x.prev
+#+end-example
+$O(1)$ comunque tempo costante minore che senza sentinella
+Ma il codice diventa piú semplice e leggibile
+
+*** Search
+In Liste doppiamente concatenate e non ordinate:
+#+begin-example
+ListSearch(L,x):
+  x = L.head
+  while x != nil and x.key != k do
+    x = x.next
+  return x
+#+end-example
+$O(N)$
+
+Con sentinella:
+#+begin-example
+ListSearch(L,x):
+  x = L.sen.next
+  while x != L.sen and x.key != k do
+    x = x.next
+  return x
+#+end-example
+$O(N)$
+
+** Hashing
+*** Tavole a indirizzamente diretto
+*** Tavole di hash
+*** Tavole hash con concatenamento
+*** Funzioni hash
+*** Indirizzamente aperto

@@ -1,0 +1,18 @@
+#+title: Dynamic Edit Distance
+[[file:#university.org][#university]] [[file:20201205215419-project.org][#project]]
+In [[file:20200929150429-c.org][C]]
+
+* Libraries
+** Naif ver.
+
+** Recursive ver.
+
+** Dynamic ver.
+The structure of the algorithm should still be recursive
+
+* Application using the Dynamic Version
+Taking a =dictionary= and a =sentence= as inputs:
+- For all words with at least one possible correction suggests all the minimal possible corrections
+
+Where:
+- any word with a =edit_distance= > 0 has at least a correction found in the dictionary used
