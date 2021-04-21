@@ -246,7 +246,184 @@ $O(N)$
 
 ** Hashing
 *** Tavole a indirizzamente diretto
+$U$ universo delle chiavi, tutte le chiavi possibili
+- interi positivi tra 0 e m-1
+L'insieme viene rappresentato con un array $T$ con dimensione $m$
+- quindi si ha indirizzamento diretto
+
+L'insieme delle chiavi $S$ é sottoinsieme di $U$
+- ogni posizione di T contiene un puntatore hai dati con la chiave associata
+#+begin-example
+TableInsert(T,x):
+  T[x.key] = x
+TableDelete(T,x):
+  T[x.key] = nil
+TableSearch(T,k):
+  return T[k]
+#+end-example
+Tutte le operazioni hanno complessita temporale $O(1)$
+
+Sembra molto efficiente temporalmente
+Non lo é sempre in termini di spazio
+- se l'universo é molto grande occuperó molto spazio dovendo avere un puntatore per ognuna delle chiavi dell'universo
+
 *** Tavole di hash
+Possiamo utilizzare una tabella $T$ di dimensione $m$ molto piú piccola di $|U|$
+- allora la posizione della chiave $k$ é determinata utilizzando una funzione di hash in quanto non c'é piú corrispondenza diretta tra chiave e indice
+Quindi:
+- l'indirizzamento non é piú diretto
+- la posizione di $k$ é $h(k)$
+- 2 chiavi possono corrispondere alla stessa posizione di $T$
+  + una buona funzione hash riduce al minimo il numero di collisioni, cercando di distribuire in maniera casuale le coppie $k$ e posizione
+
+*hash perfetto*
+- funzione che non crea mai collisione, cioé una ~funzione iniettiva~:
+  - $k_1 \neq k_2 \implies h(k_1) \neq h(k_2)$
+
 *** Tavole hash con concatenamento
+Cercano di risolvere le collisioni:
+- usiamo liste per gestirle
+  - allora se c'é collisione l'elemento é inserito in testa alla lista puntata dal puntatore nella posizione della array T
+
+Il calcolo del hash ha tempo costante $O(1)$
+
+#+begin-example
+HashInsert(T,x):
+  L = T[h(x.key)]
+  ListInsert(L,x)
+#+end-example
+$O(1)$
+
+#+begin-example
+HashDelete(T,x):
+  L = T[h(x.key)]
+  ListDelete(L,x)
+#+end-example
+$O(1)$ perché la lista é doppiamente concatenata
+- di un elemento giá individuato
+
+#+begin-example
+HashSearch(T,k):
+  L = T[h(k)]
+  return ListSearch(L,k)
+#+end-example
+La ricerca di un elemento richiede un tempo proporzionale alla lunghezza hella lista T[h(k)]
+Definiamo:
+- $m$ numero di celle in $T$
+- $N$ numero di elementi memorizzati
+- $\alpha = N / m$ fattore di carico
+  - lunghezza media delle liste contenute nella tabella hash
+~caso peggiore~:
+- inserimenti con la stessa hash
+- tutte le chiavi sono associate con la stessa cella di T
+- ricerca $O(N)$
+~caso migliore~:
+- quando la lista T[h(k)] é vuota o contiene un solo elemento
+- ricerca $O(1)$
+~caso medio~:
+- dipende dalla funzione hash
+  - assumiamo $O(1)$
+  - gode della proprietá di uniformitá semplice
+    + =uniformitá semplice=
+      + distribuisce in modo uniforme le chiavi fra le celle
+        - ogni cella ha la stessa probabilitá di essere destinazione di una chiave casuale
+- ricerca di un elemento non presente
+  + individuare la lista é $\Theta(1)$
+  + ogni lista ha la stessa probabilitá di essere associata con la chiave
+  + percorrere la lista costa in media $\Theta(\alpha)$
+  + infine il tempo richiesto é $\Theta(1+\alpha)$
+    - $\alpha$ non é costante!
+- ricerca di un elemento che c'é
+  - dipende da dove l'elemento si colloca nella lista
+  - il tempo di individuare la lista é $\Theta(1)$
+  - assumiamo che la ricerca riguardi l'i-esimo elemento inserito
+    + quanti di questi finiscono nella lista di $x_i$?
+    + ogni elemento viene inserito nella lista di $x_i$ con probabilitá $\frac{1}{m}$
+    + in media $\frac{N-i}{m}$ elementi precedono $x_i$ nella lista di $x_i$
+  - il tempo di ricerca di $x_i$ é proporzionale a $1+\frac{N-i}{m}$
+  - generalizzando alla ricerca di un elemento a caso
+    + $\frac{1}{N} \sum_{i=1}^{N}(1+\frac{N-i}{m})$
+    + $1+ \frac{\alpha}{2} - \frac{\alpha}{2N}$
+  - in totale:
+    + $\Theta(1) + \Theta(1+ \frac{\alpha}{2} - \frac{\alpha}{2N}) = \Theta(1+\alpha)$
+Si conclude che se il numero di celle in T é proporzionale a N allora $N = O(m)$ e quindi $\alpha = O(1)$ e la ricerca richiede tempo $O(1)$
+
 *** Funzioni hash
+Solitamente la distribuzione secondo la quale si estagono le chiavi nno é nota
+- non si puó creare una funzione hash perfetta
+In un Computer le chiavi sono interpretate come sequenze di bit
+- si cerca di utilizzare ogni bit della chiave
+- una buona funzione hash sceglie posizioni in modo tale da eliminare eventuale regalaritá nei dati
+
+**** Metodo della divisione
+Veloce ma dipende da m
+- m potenza di 2 é una buona scelta solo se si ha la certezza che gli ultimi bit hanno distribuzione uniforme
+
+****   Metodo della moltiplicazione
+m non é critico, solitamente si sceglie una potenza di 2
+A dipende dai dati
+- una scelta rogionevole empiricamente é $(\sqrt{5} - 1) / 2$
 *** Indirizzamente aperto
+Tutti gli elementi sono memorizzati nella tavola T
+- l'elemento con chiave k viene inserito nella posizione h(k) se é libera
+- se non é libera allora si cerca una posizione libera secondo uno ~schema di ispezione~
+Possono avvenire collisioni anche tra elementi con chiavi diverse
+In generale si definisce una funzione hash estese con l'ordene di ispezione
+- $h: U \times \{0,1,2,...,m-1\} \to \{0,1,2,...,m-1\}$
+
+=ispezione lineare=
+- crea file di celle occupate, ovvero ~addensamento primario~
+=ispezione quadratica=
+- $h(k,i) = (h^{'}(k) + c_1i + c_2i^2) \mod m$
+  - l'ordine con cui vengono esaminate le celle dipende solo dal hash della chiave k, ~addensamento secondario~
+Per risolvere questo addensamento si introduce il =doppio hashing=
+- $h(k,i) = (h_1(k) + ih_2(k)) \mod m$
+  - permette una uguale probabilitá per ogni sequenza di ispezione
+
+
+
+**** Insert
+#+begin-example
+HashInsert(T,x):
+  for i=0 to i < m do
+    j = h(x.key,i)
+    if T[j] == nil then
+      T[j] = x
+      return j
+  return nil
+#+end-example
+
+**** Search
+#+begin-example
+HashSearch(T,k):
+  for i=0 to i < m do
+    j = h(x.key,i)
+    if T[j] == nil then
+      return nil
+    if T[j].key == k then
+      return T[j]
+  return nil
+#+end-example
+
+~caso ottimale~
+- posizione di una chiave scelta a caso ha distribuzione uniforme
+- qualunque sequenza di ispezione ha la stessa probabilitá
+- Elemento Assente
+  + $X$ numero di celle esaminate durante una ricerca senza successo
+  + $X$ é una variabile aleatoria
+    - almeno 1:
+      - $P(X\ge 1)=1$
+    - se la prima cella é occupata dovremo esaminare 2 celle:
+      - $P(X\ge 2)= \frac{N}{m}$
+    - se la seconda cella é occupata dovremo esaminare 3 celle:
+      - $P(X\ge 3)= \frac{N}{m}\frac{N-1}{m-1}$
+    - $P(X\ge i) \le \alpha^{i-1}}$
+    - $E[X] = \sum_{i=1}^{\infty}(X \ge i) \le \sum_{i=1}^{\infty} \alpha^{i-1}=\frac{1}{1-\alpha}$
+- Elemento Presente
+  - sicuramente meno celle da esaminare che nel caso dell'elemento assente
+
+
+**** Delete
+Inserire nil creerebbe buchi nella tabella
+- si potrebbe marcare le con costanti =deleted=
+Di solito l'indirizzamento aperto si usa quando non c'é necessitá di cancellazione di elementi

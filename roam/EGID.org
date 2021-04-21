@@ -357,3 +357,64 @@ TikTok si é impegnato ad adeguarsi alle richieste del Garante privacy
 - banner di informazione sull'impostazione del profilo da pubblico a privato
 Il garante ha avviato una collaborazione con il telefono Azzurro
 - campagna di sensibilizzazione con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza
+
+** Computer Crimes
+*** Principio di legalitá
+3 presupposti
+- riserva di legge
+  + solo il potere legislativo, espressione del paese, ha manopolio normativo in materia penale
+- tassativitá
+  + tecnica di legge tassativa, tipo di formulazione precisa analitica: non si puó essere generali
+    - non si fa ricorso all'analogia
+- irretroattivitá
+  + irretroattivitá della legge sfavorevole
+  + retroattivitá della legge favorevole
+*** Il Reato
+illecito penale == reato
+- non esiste reato non penale
+
+Solo la persona umana é soggetto attivo del reato
+Distinzione:
+- capacitá penale
+  + tutti
+- capacitá alla pena
+  + etá, capaciá di intendere e di volere
+
+Il reato é integrato se tutti questi elementi sono compiuti
+- condotta-evento
+  + C: elemento essenziale, senza condotta non puó esserci reato
+    - ma puó esserci reato senza evento, ~reato di pura condotta~
+      + ~omissione~
+        - ha essenza normativa, non fisica, in quanto consiste nel non compiere l'azione possibile che il soggetto ha il dovere giuridico di compiere
+          + es. omessa denuncia da parte dal pubblico ufficiale
+  + E: il risultato dell'azione o dell'omissione e deve essere legata a queste da nesso causale
+    - c'é anche una differenza temporale tra evento e condotta, o anche spaziale
+      + ~reati ad evento differito~
+      + ~reati a distanza~
+- rapporto di causalitá
+  + conseguenza
+  + in caso fortuito o forza maggiore: decade il rapporto di causalitá tra condotta ed evento
+- offesa-elemento soggettivo
+  + profilo psicologico, soggettivo
+    - il fatto illecito deve appartenere psicologicamente all'autore della condotta
+  + ~sistemo misto~
+    - non basta la lesione oggettiva del bene o la sola volontá criminosa
+    - sono necessari entrambi
+  + responsabilitá colpevole
+  + responsabilitá personalizzata
+
+
+*** Colpevolezza
+- imputabilitá
+- conoscenza, conoscibilitá del precetto penale
+  + non si puó sostenere di non conoscere una norma pubblica
+- dolo o colpa
+  + D: rappresentazione e volontá del fatto materiale
+  + C: forma attenuata, eccezionale e minoritaria, sussidiaria, storicamente piú recente
+    - é un rimprovero per aver realizzato, anche se involontariamente, un fatto-reato che avrebbe potuto essere evitato mediante l'osservanza esigibile di detta regola
+      + mancanza della volontá del fatto tipico
+      + inosservanza della regola di condotta
+      + attribuibilitá dell'inosservanza all'agente
+- preterintenzione
+  + oltre il reato voluto
+    - volontá di un evento minore e la non volontá di un evento piú grave
