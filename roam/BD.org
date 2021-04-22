@@ -6,7 +6,7 @@
     + Teoria
     + Lab - SQL
   - Laboratorio 30
-    - Progettazione
+    - Progettazione: [[file:20210422185244-bd_vaccini.org][BD Vaccini]]
 
 - Testi di riferimento
   + Basi di Dati: Modelli e Linguaggi di Interrogazione (Atzeni, Ceri, Paraboschi, Torlone)
@@ -18,7 +18,7 @@ Distinzione tra
 - *schema* della base di dati
   - componente intenzionale
 - *istanza* della base di dati
-  - componente estenzionale
+  - componente estensionale
 Costruttore: Relazione
 
 _Anni 70 - Codd_
@@ -66,7 +66,7 @@ _Non sono permesse tabelle nidificate_ *prima forma normale*
     - valore sconosciuto
     - valore inesistente
     - senza informazione
-*** Vincoli di integrita'
+*** Vincoli di integritá
 - si garantisce la correttezza della base di dati
 - si garantisce coerenza tra i valori
 - sono predicati logici che associano a ogni istanza un valore di verita'
@@ -80,15 +80,15 @@ _Non sono permesse tabelle nidificate_ *prima forma normale*
 **** Vincoli di chiave
 - Superchiave
   + insieme di attributi usato per identificare univocamente le tuple di una relazione
-  + un insieme di attributi $K$ e' detto superchiave di una relazione $r$ se $r$ non puo' contenere due tuple che hanno valori uguali su $K$
+  + un insieme di attributi $K$ é detto superchiave di una relazione $r$ se $r$ non puó contenere due tuple che hanno valori uguali su $K$
   + tutti i sottoinsiemi di una superchiave sono superchiavi
-- Una chiave (candidata) di $r$ e' una superchiave minimale di $r$
-  + non contiene una superchiave: se si toglie un attributo da $K$ allora $K$ non sara' piu' una superchiave
-  + tutte le chiavi sono suporchiavi
-  + l'insieme di tutti gli attributi di una relazione, pur essendo superchiave, non e' detto sia una chiave
-- Una chiave primaria e' una particolare chiave di $r$ scelta dal progettista, e' una sola anche se le chiavi possono esse piu' di una
-  + non puo' assumero valori nulli
-  + e' rappresentata mediante sottolineatura
+- Una chiave (candidata) di $r$ é una superchiave minimale di $r$
+  + non contiene una superchiave: se si toglie un attributo da $K$ allora $K$ non sará piú una superchiave
+  + tutte le chiavi sono superchiavi
+  + l'insieme di tutti gli attributi di una relazione, pur essendo superchiave, non é detto sia una chiave
+- Una chiave primaria é una particolare chiave di $r$ scelta dal progettista, é una sola anche se le chiavi possono esse piú di una
+  + non puó assumere valori nulli
+  + é rappresentata mediante sottolineatura
   + usata per stabilire corrispondanza tra relazioni
 - Le chiavi sono utilizzate per fare riferimento a tuple in altre relazioni
 
@@ -106,8 +106,8 @@ Vincoli foreign key
 
 ** Algebra Relazionale
 Formalizzata da Codd, per l'interrogazione di basi di dati
-- e' una costruzione procedurale, un elenco di passi per eseguire l'interrogazione
-- la risposta e' sempre un modello relazionale
+- é una costruzione procedurale, un elenco di passi per eseguire l'interrogazione
+- la risposta é sempre un modello relazionale
 - input: relazioni del modello relazionale
 - output: relazione del modello relazionale
   + *relazione virtuale*
@@ -133,12 +133,12 @@ _Derivati_
   + unione di informazioni in schemi diversi
   + prodotto cartesiano a cui e' applicata una selezione utilizzando il predicato theta
     - NB gli schemi sono disgiunti
-  + cardinalita' molto ampia
+  + cardinalité molto ampia
     - $0 \le |\theta | \le |r_1(A)|\cdot |r_2(B)|$
 - join - equi
   + utilizziamo solo ugualianze
-  + possiamo specificare meglio la cardinalita', ottimizzabile
-    - confrontando una chiave primaria e un attributo con un vincolo di integrita'
+  + possiamo specificare meglio la cardinalitá, ottimizzabile
+    - confrontando una chiave primaria e un attributo con un vincolo di integritá
       + $|\theta | = |r_1|$
 - natural join
   + deriva dall'equi-join
@@ -163,9 +163,9 @@ Un'espressione booleana formata componendo predicati atomici
 - attributo - attributo
   - '-' operatore di confronto
 
-La cardinalita' di una predicato e' compresa tra 0 (relazione vuota) e la cardinalita' di r, se il predicato e' vero per ogni tupla
+La cardinalitá di una predicato é compresa tra 0 (relazione vuota) e la cardinalitá di r, se il predicato é vero per ogni tupla
 
-Per semplificare la lettura delle query si puo' scriverne gli alberi sintattici
+Per semplificare la lettura delle query si puó scriverne gli alberi sintattici
 
 *** Interrogazioni con Negazione
 caso semplice se possibile utilizzare selezione 'diverso da', negandolo
@@ -191,7 +191,7 @@ _Negazione essenziale nascosta_
 *La quantificazione universale e' la negazione di una quantificazione esistenziale*
 
 *** Semantica di Codd del valore nullo
-- Info esestente ma non nota
+- Info esistente ma non nota
 - Info inesistente
 - Info che non si sa se classificare nel primo o nel secondo caso
 Il modello relazionale non distingue i tre casi: _l'interpretazione del valore nullo é esterna al modello relazionale_
@@ -230,7 +230,7 @@ Vanno estese le tabelle di veritá degli operatori base della logica classica
 - Distributiva della proiezione rispetta al prodotto cartesiano
 - Distributiva ristratta della proiezione rispetta al join
 - distributiva della proiezione rispetta all'unione
-** Calcolo Relazionale
+*** Calcolo Relazionale
 Linguaggio di tipo procedurale
 - l'utente indica il risultato a cui vuole arrivare, il DBMS sceglie la strategia ottimale
 L'interrogazione delle basi di dati puo' avvenire con un approccio dichiarativo
@@ -345,6 +345,7 @@ I commenti possono essere specificati:
 - -- Commento
 - /* Commento multi-riga */
 
+
 *** DML
 Funzioni aggregate
 - conteggio
@@ -376,9 +377,33 @@ clausola =having=
 - specifica condizioni da verificare dopo il risultato
 - diversamente da ~where~ vanno messe condizioni su funzioni aggregate
 
+=operatori insiemistici=
+si applicano a tabelle con esattamente gli stessi attributi
+si inseriscono tra query
+- =union=
+  + =all= mantiene i duplicati
+- =intersect=
+  + =all= mantiene i duplicati
+- =except= / differenza
+  + =all= mantiene i duplicati
+=query nidificate=
+query all'interno di altre query
+- si risolvono problemi intermedi passando il risultato al problema esterno
+- =semplici= stratificate
+  + =where=
+    - se la query restituisce una sola riga allora si utilizzano i classici operatori
+    - altrimenti usiamo i quantificatori
+      - =any=
+        + il ris deve essere soddisfatto da almeno una riga
+      - =all=
+        + il ris deve essere soddisfatto da tutte le righe
+        + in caso di NULL all non seleziona mai nessuna riga
+- =correlate= incrociate
+  + dall'interno si fanno riferimento a tabelle esterne
+
 * Programmazione di Basi di Dati
 - Ciclo di vita di un sistema informativo:
-  + Studio di fattibilita'
+  + Studio di fattibilitá
   + Raccolta e analisi dei requisiti
   + Progettazione
   + Implementazione
@@ -399,93 +424,93 @@ clausola =having=
   + Progettazione logica
   + Progettazione fisica (Basi di dati II)
 
-Il processo di riproduzione di uno schema concettuale a partire da una schema logico e' chiamato Reverse Engineering
+Il processo di riproduzione di uno schema concettuale a partire da una schema logico é chiamato Reverse Engineering
 ** Metodologie e modello Entity-Relationship (LAB)
 ~ER~
 Non modella il comportamento del sistema, come UML, ma _modella i dati_
 *** Costrutti
-**** Entita'
+**** Entitá
 Rappresentano aspetti del mondo reale con esistenza "autonoma" ai fini della'applicazione
 Sono rappresentate da rettangoli, hanno nomi propri e unici.
-L'occorrenza di un'entita e' un oggetto della classe che l'entita rappresenta. Le entita' possono essere pensati come l'=insieme= delle loro occorrenze
-Un'occorrenza di entita' non si riduce ai valori che la identificano: questo a differenza del modello relazionale
+L'occorrenza di un'entitá é un oggetto della classe che l'entita rappresenta. Le entitá possono essere pensate come l'=insieme= delle loro occorrenze
+Un'occorrenza di entitá non si riduce ai valori che la identificano: questo a differenza del modello relazionale
 ***** Attributi
-Proprieta' delle entita' o associazioni che sono di interesse ai fini dell'applicazione
+Proprietá delle entitá o associazioni che sono di interesse ai fini dell'applicazione
 - dominio, insieme dei valori ammissibili per l'attributo
 - linea con pallino vuoto
 - possono essere composti se sono a loro volta divisi in sottoattributi
   - *questo non ha una corrispondenza nel modello relazionale*
-- possono avere una cardinalita'
+- possono avere una cardinalitá
   + se non specificata si sottointende 1:1
   + attributi multivalore
     - costrutto non ammesso dal modello relazionale
       + ogni tupla ha un singolo valore
 **** Associazione
-Rappresentano legami logici tra due e piu' entita'
-Sono rappresentate da rombi. Sono linee semplici che collegano le associazioni, non c'e' un verso di lettura.
+Rappresentano legami logici tra due e piú entitá
+Sono rappresentate da rombi. Sono linee semplici che collegano le associazioni, non c'é un verso di lettura.
 Le Associazioni possono essere ricorsive.
 - Simmetriche
 - Non simmetriche
   + occorre specificare i versi che specificano la associazione
-Le occorrenze di un'associazione fra due entita' sone le coppie delle occorrenze delle entita'.
-Un'associazione puo' essere pensata come l'=insieme= delle sue occorrenze (essendo un'insieme non possono esserci duplicati)
-- *cardinalita'* , numero di occorrenze dell'associazione a cui l'occorrenza di entita' puo' partecipare
+Le occorrenze di un'associazione fra due entitá sono le coppie delle occorrenze delle entitá.
+Un'associazione puó essere pensata come l'=insieme= delle sue occorrenze (essendo un'insieme non possono esserci duplicati)
+- *cardinalitá* , numero di occorrenze dell'associazione a cui l'occorrenza di entitá puó partecipare
   - nella pratica si usano
     - 0, 1 , n (minimo)
-      + si usa piu' spesso una c.minima 0
-        - perche' alla prima occorrevza di entita' spesso non esistono ancora le corrispondenti occorrenze delle entita' a essa collegate
+      + si usa piú spesso una c.minima 0
+        - perché alla prima occorrenza di entitá spesso non esistono ancora le corrispondenti occorrenze delle entitá a essa collegate
     - 1, n     (massimo)
-  - classificazioni (si considerano le cardinalita' massime a sx e dx)
+  - classificazioni (si considerano le cardinalitá massime a sx e dx)
     + molti a molti
     + uno a molti
     + uno a uno
 **** Identificatori
 Simile al concetto di chiave primaria ma *diverso*
-- che e' un concetto del modello relazionale
-  - *differenza* possiamo avere piu' identificatori allo stesso tempo, nel modello relazionale abbiamo una sola chiave primaria
+- che é un concetto del modello relazionale
+  - *differenza* possiamo avere piú identificatori allo stesso tempo, nel modello relazionale abbiamo una sola chiave primaria
 
-Identificano univocamente le occorrenze di una entita', rappresentati da pallini pieni
+Identificano univocamente le occorrenze di una entitá, rappresentati da pallini pieni
 Distinti in
 - identificatore interno
-  - attributi dell'entita'
+  - attributi dell'entitá
 - identificatore esterno
-  - attributi dell'entita' e entita' esterne attraverso associazioni
+  - attributi dell'entitá e entitá esterne attraverso associazioni
 
-Ogni entita' deve avere almeno un identificatore, questo per facilitare il passaggio al modello relazionale.
+Ogni entitá deve avere almeno un identificatore, questo per facilitare il passaggio al modello relazionale.
 
 NB
-- ogni attributo che fa parte di un identificatore deve avere cardinalita' (1,1)
-- in id. esterna e' pollibile solo attraverso associazioni a cui l'entita' da identificare partecipa con cardinalita' (1,1)
-- una id. esterna puo' convolgere entita' a loro volta identificate esternamene purche' non vengano generati cicli
+- ogni attributo che fa parte di un identificatore deve avere cardinalitá (1,1)
+- in id. esterna é possibile solo attraverso associazioni a cui l'entitá da identificare partecipa con cardinalita' (1,1)
+- una id. esterna puó convolgere entitá a loro volta identificate esternamente purché non vengano generati cicli
 
 **** Generalizzazioni
-Mette in relazione una o piu' entita'
-- E generalizzazione dei figli
-- figli sono specializzazioni di E
+Mette in relazione una o piú entitá
+- $E$ generalizzazione dei figli
+- figli sono specializzazioni di $E$
 
-- Proprieta'
-  + ogni occorrenza di una specializzazione e' una occorrenza di E
-  + ogni proprieta' di E e' una proprieta' dei figli, per ereditarieta'
-- Classificazioni (combianabili)
+- Proprietá
+  + ogni occorrenza di una specializzazione é una occorrenza di $E$
+  + ogni proprietá di $E$ é una proprietá dei figli, per ereditarietá
+- Classificazioni (combinabili)
   + Totale/Parziale
-    - ogni occorrenza padre e' occorrenza di almeno una dei figli; altrimenti e' parziale
+    - ogni occorrenza padre é occorrenza di almeno una dei figli; altrimenti é parziale
   + Esclusiva/Sovrapposta
-    - ogni occorrenza padre e' occorrenza al piu' di una delle entita' figlie; altrimenti e' sovrapposta
+    - ogni occorrenza padre é occorrenza al piú di una delle entitá figlie; altrimenti é sovrapposta
 
 - Sottoinsieme
-  + generalizzazione con una sola entita' figlia
+  + generalizzazione con una sola entitá figlia
 
 *** Documentazione
 - Descrizione dei concetti
-  + dizionario dei dati per le entita'
+  + dizionario dei dati per le entitá
   + dizionario dei dati per le associazioni
 - Vincoli non esprimibili in E-R (business rules)
-  + Vincoli di integrita'
+  + Vincoli di integritá
   + Vincoli di derivazione
 ** Progettazione Concettuale e Logica (LAB)
 *** Concettuale
 Analisi dei requisiti, spesso ambigui.
-Vanno rimosse le ambiguita'
+Vanno rimosse le ambiguitá
 - fonti di requisiti
   + utenti
     - utenti diversi possono fornire info contraddittorie
@@ -497,11 +522,11 @@ Vanno rimosse le ambiguita'
 
 **** Pattern di progettazione
 un ricettario di casi comuni di progettazione
-- Reificazione di attributo di entita'
-  - una associazione non puo' rappresentare cose che si ripetono
+- Reificazione di attributo di entitá
+  - una associazione non puó rappresentare cose che si ripetono
 - Part-of
 - Instance-of
-- storicizzazione di un'entita'
+- storicizzazione di un'entitá
   + generalizzazione
     - storico
       + aggiunge attributi (fine)
@@ -517,10 +542,10 @@ un ricettario di casi comuni di progettazione
 - top-down
   + serie di raffinamenti successivi
   + aumenta il dettagli passo passo
-  + entita' senza attributi e relazioni
+  + entitá senza attributi e relazioni
     - poi concretizziamo aggiungendo dettagli
   + pro: si possono ignorare i dettagli inizialmente
-  + contro: e' possibi solo se si possiede una visione gloxarlle di tutte le componenti
+  + contro: é possibe solo se si possiede una visione gloxarlle di tutte le componenti
 - bottom-up
   + partiamo da specifiche divise in parti elementari
     - di queste sono fatti i singoli schemi ER
@@ -528,7 +553,7 @@ un ricettario di casi comuni di progettazione
   + pro: le parti semplici sono da spartire e sviluppare a se stanti
   + contro: possono sorgere problemi nel aggregare schemi completamente diversi
 - inside-out
-  + individuiamo concetti chiave e partiamo da li'
+  + individuiamo concetti chiave e partiamo da lí
   + ci espandiamo a partire da questi ultimi
   + pro: non richiede passi di integrazione
   + contro: ogni passo vanno riesaminati gli elementi presenti e non presenti
@@ -545,28 +570,28 @@ Nella pratica si utilizza una strategia ibrida
       + luoghi (di nascita), luogo (delle lezioni)
       + partecipanti, studenti
   + standardizzare la sintassi
-    - per ENTITA' rappresentiamo ATTRIBUTI
+    - per ENTITÁ rappresentiamo ATTRIBUTI
   + costruire un glossario dei termini
     - termine | descrizione | sinonimi | collegamenti
-    - ancora un lavoro linguistico, non corrispondono necessariamente alle entita'
+    - ancora un lavoro linguistico, non corrispondono necessariamente alle entitá
 - Strutturazione dei Requisiti in gruppi di frasi omogenee
   + Frasi relative ai partecipanti
   + Frasi relative ai datori di lavoro
   + Frasi relative ai corsi
   + Frasi relative a particolari partecipanti
   + Frasi relative ai docenti
-- Operazioni (piu' impattanti sul sistema) sui dati
+- Operazioni (piú impattanti sul sistema) sui dati
   + e frequenza
   + per assicurarci che i dati permettano di svolgere tutti le operazioni
-  + per poter considerare l'efficienza del nostro schema logico piu' avanti
+  + per poter considerare l'efficienza del nostro schema logico piú avanti
 - Progettazione concettuale vera e propria
-  + se un concetto da proprieta' significative e descrive oggetti con esistenza autonoma
+  + se un concetto da proprietá significative e descrive oggetti con esistenza autonoma
     - *entita'*
-  + se e' semplice e non ha proprieta'
-    - *attributo* ad un'altra entita'
-  + se correla due o piu' concetti
-    - *associazione* (se non possono ripetersi, altrimenti dovra' essere un'altra entita')
-  + se e' un caso  particolare di un altro
+  + se é semplice e non ha proprietá
+    - *attributo* ad un'altra entitá
+  + se correla due o piú concetti
+    - *associazione* (se non possono ripetersi, altrimenti dovrá essere un'altra entitá)
+  + se é un caso  particolare di un altro
     - *generalizzazione*
 
 **** Qualita' di uno schema ER
@@ -575,8 +600,8 @@ Nella pratica si utilizza una strategia ibrida
 - Leggibilita'
 - Minimalita'
 *** Logica
-Obiettivo: tradurre lo schema concettuale in uno schema logico che rappresenti gli stessi dati it maniera corretta ed efficiente
-- e' necessario considerare le prestazioni
+Obiettivo: tradurre lo schema concettuale in uno schema logico che rappresenti gli stessi dati in maniera corretta ed efficiente
+- é necessario considerare le prestazioni
 - ci sono aspetti non direttamente rappresentabili
 IN:
 - schema concettuale
@@ -585,19 +610,19 @@ IN:
 - modello logico che si intendo usare (nel nostro caso relazionale)
 OUT:
 - schema logico
-- vincoli di integrita'
+- vincoli di integritá
 - documentazione associata
 
 **** Fasi
 ***** ristrutturazione dello schema concettuale (EER)
 + vanno rimosse inefficiente
 + se serve si cambiano le business rules
-Si crea uno schema che non e' piu' uno schema concettuale in quanto si introducono considurazioni applicative
+Si crea uno schema che non é piú uno schema concettuale in quanto si introducono considurazioni applicative
 Non si possono valutare prestazioni senza parametri fisici
 - facciamo solo una stima con indicatori di *massima*
 - *Indicatori di prestazione*
   - tempo
-    + numero di occorrenze di entita' e di associazioni visitate per eseguire un'operazione sul DB
+    + numero di occorrenze di entitá e di associazioni visitate per eseguire un'operazione sul DB
   - spazio
     + necessario per rappresentare i dati
   - volume
@@ -606,7 +631,7 @@ Non si possono valutare prestazioni senza parametri fisici
   - caratteristiche delle operazioni
     + operazione interattiva/batch
     + frequenza
-    + entita'/associazioni coinvolte
+    + entitá/associazioni coinvolte
 
 - *Tavola dei Volumi*
   - concetto | tipo | volume
@@ -618,60 +643,60 @@ Non si possono valutare prestazioni senza parametri fisici
   - di solito sufficiente considerare solo le operazioni principali per la regola 80-20
 
 Passi:
- 1. Analisi delle =ridondanze=
-    - ridondonza: informazione significativa ma derivabile da altre
-    - si decide se eliminare o mantenere le ridondanze
-      + *passo piu' difficile*
-      + derivabile da attributi della stessa entita' o associazione
-      + derivabile da attributi di altre entita' o associazioni
-    - _vantaggi_
-      + in caso di op. di interrogazione/lettura dei dati
-        - piu' efficienti
-        - semplificate
-    - _svantaggi_
-      + op. di inserimento e modifica dei dati
-        - meno efficienti
-      + maggiore occupazione di spazio
-    - Analisi costi/benefici
-    - per ogni ridondanza
-      + per ogni operazione significativa su cui la presenza o assenza della ridondanza puo' avere effetto
-        - schema delle operazioni nei due scenari
-        - tavola degli accessi nei due scenari
+1. Analisi delle =ridondanze=
+   a. ridondonza: informazione significativa ma derivabile da altre
+      + si decide se eliminare o mantenere le ridondanze
+        - *passo piú difficile*
+        - derivabile da attributi della stessa entitá o associazione
+        - derivabile da attributi di altre entitá o associazioni
+   b. _vantaggi_
+      - in caso di op. di interrogazione/lettura dei dati
+        + piú efficienti
+        + semplificate
+   c. _svantaggi_
+      - op. di inserimento e modifica dei dati
+        + meno efficienti
+   d. maggiore occupazione di spazio
+   e. Analisi costi/benefici
+   f. per ogni ridondanza
+      - per ogni operazione significativa su cui la presenza o assenza della ridondanza puó avere effetto
+        + schema delle operazioni nei due scenari
+        + tavola degli accessi nei due scenari
 
- 2. Eliminazione delle =generalizzazioni=
-    a. accorpamento dei figli della generalizzazione nel genitore
-       - se la generalizzazione é totale/esclusiva vanno aggiunte regole aziendali
-         + esclusiva: vincolo che gli attributi non possono essere contemporaneamente valorizzati
-         + totale: vincolo che gli attributi non possono essere contemporaneamente valorizzati
-       - conveniente quando le operazioni non fanno troppa distinzione tra le istanze della varie entitá (le transazioni accederebbero infatti a un'unica tabella relazionale)
-       - spreca spazio producendo una base di dati con valori nulli
-    b. accorpamento del genitore della generalizzazione nei figli
-       - possibile quando la generalizzazione é a partecipazione totale
-         + conveniente quando le operazioni effettuano pochi accessi alle istanze di entrambe le entitá
-         + ottimizza maggiormente lo spazio rispetto alle altre alternative perché usa meno attributi e associazioni
-    c. sostituzione della generalizzazione con associazioni
-       - se esclusiva occorre aggiungere il vincolo che ogni occerrenza del genitore non puó partecipare contemporaneamente alle due relazioni
-       - se totale occorre aggiungere il vincolo che ogni occorrenza del genitore deve partecipare ad una delle relazioni
+2. Eliminazione delle =generalizzazioni=
+   a. accorpamento dei figli della generalizzazione nel genitore
+      - se la generalizzazione é totale/esclusiva vanno aggiunte regole aziendali
+        + esclusiva: vincolo che gli attributi non possono essere contemporaneamente valorizzati
+        + totale: vincolo che gli attributi non possono essere contemporaneamente valorizzati
+      - conveniente quando le operazioni non fanno troppa distinzione tra le istanze della varie entitá (le transazioni accederebbero infatti a un'unica tabella relazionale)
+      - spreca spazio producendo una base di dati con valori nulli
+   b. accorpamento del genitore della generalizzazione nei figli
+      - possibile quando la generalizzazione é a partecipazione totale
+        + conveniente quando le operazioni effettuano pochi accessi alle istanze di entrambe le entitá
+        + ottimizza maggiormente lo spazio rispetto alle altre alternative perché usa meno attributi e associazioni
+   c. sostituzione della generalizzazione con associazioni
+      - se esclusiva occorre aggiungere il vincolo che ogni occerrenza del genitore non puó partecipare contemporaneamente alle due relazioni
+      - se totale occorre aggiungere il vincolo che ogni occorrenza del genitore deve partecipare ad una delle relazioni
 
- 3. Partizionamento/Accorpamento di entita' e associazioni
-    - dipende dalle transazioni che accedono alle istanze, se necessitano spesso di informazioni relative ad altre entitá
-    - gli accorpamenti si fanno in genere su entitá legate da associazioni 1 a 1
+3. Partizionamento/Accorpamento di entita' e associazioni
+   - dipende dalle transazioni che accedono alle istanze, se necessitano spesso di informazioni relative ad altre entitá
+   - gli accorpamenti si fanno in genere su entitá legate da associazioni 1 a 1
 
- 4. Scelta degli =identificatori principali=
-    - si sceglie un identificatore per le entita' che ne hanno piu' di uno
-    - indispensabile per la traduzione nel modello relazionale
-    - criteri
-      + assenza di opzionalitá
-      + semplicitá
-      + utilizzo nelle operazioni piú frequenti o importanti
-    - se nessun identificatore rispetta i requisiti si introducono nuovi attributi (codici) appositamente
-    - puó essere necessarionio creare un identificatore surrogato
+4. Scelta degli =identificatori principali=
+   - si sceglie un identificatore per le entita' che ne hanno piu' di uno
+   - indispensabile per la traduzione nel modello relazionale
+   - criteri
+     + assenza di opzionalitá
+     + semplicitá
+     + utilizzo nelle operazioni piú frequenti o importanti
+   - se nessun identificatore rispetta i requisiti si introducono nuovi attributi (codici) appositamente
+   - puó essere necessarionio creare un identificatore surrogato
 
- 5. Eliminazione degli =attributi multivalore=
-    - si reificano in entitá e si collegano con relazioni
+5. Eliminazione degli =attributi multivalore=
+   - si reificano in entitá e si collegano con relazioni
 
- 6. Eliminazione degli =attributi composti=
-    - vengono ereditati direttamente dall'entitá
+6. Eliminazione degli =attributi composti=
+   - vengono ereditati direttamente dall'entitá
 
 ***** traduzione verso il modello logico e ottimizzazione
 + algoritmo traduce lo schema
@@ -718,7 +743,6 @@ Associazioni
 6)
 7)
 *** Fisica
-
 
 ** Normalizzazione
 * Sistemi per la gestione dei dati

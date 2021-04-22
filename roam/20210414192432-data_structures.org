@@ -1,4 +1,13 @@
 #+title: Data Structures
+* Abstract Data Type
+Tipi predefiniti sono forniti dai linguaggi
+- ogni tipo é associato con un insieme di valori e operatori
+
+Una implementazione concreta di un ADT é
+- struttura dati
+- collezione di procedure con cui realizzare le operazioni
+
+La relazione fra tipo astratto e struttura concreta é analoga a quella fra problema algoritmico e algoritmo
 
 * Strutture Dati
 ** Insiemi Dinamici
@@ -35,7 +44,6 @@ caselle
   + base + (i-1) * dim(valore)
 - =accesso diretto=
   + $O(1)$
-
 
 *** Statici
 Numero massimo di elementi prefissato
@@ -106,7 +114,6 @@ Le 2 idee utilizzate sono due soluzioni diverse per la realizzazione di un =Abst
      - $T_{amm}= \frac{(2^k -1)c+2^kd}{2^k} \in O(1)$
 - sequenza di rimozioni di elementi
 - sequenza di inserimenti, ma aumentando la dimensione dell'array di una costante se riempito
-
 
 **** Extend
 Si basa sull'espandere l'array quando esso diventa troppo piccolo
@@ -381,7 +388,6 @@ Per risolvere questo addensamento si introduce il =doppio hashing=
   - permette una uguale probabilitá per ogni sequenza di ispezione
 
 
-
 **** Insert
 #+begin-example
 HashInsert(T,x):
@@ -422,8 +428,277 @@ HashSearch(T,k):
 - Elemento Presente
   - sicuramente meno celle da esaminare che nel caso dell'elemento assente
 
-
 **** Delete
 Inserire nil creerebbe buchi nella tabella
 - si potrebbe marcare le con costanti =deleted=
 Di solito l'indirizzamento aperto si usa quando non c'é necessitá di cancellazione di elementi
+
+** Pile
+Inserisce chiavi in cima, rimuove le chiavi dalla cima
+Come ADT:
+- collezione di dati
+  + elementi qualunque di tipo T
+- operazioni
+  + void Pusn(Stack S, T t)
+  + T Pop(Stack S)
+  + T Top(Stack S)
+  + bool Empty(Stack S)
+  + int Size(Stack S)
+
+*** applicazioni
+- chiamate ricorsive di funzioni
+- visita in profonditá di grafi
+- valutazione di un'espressione un notazione postfissa
+
+
+*** assiomi
+- Size(S), Empty(S), Push(S,t)
+  + smepre definiti
+- Pop(S), Top(S)
+  + sono definite iff Empty(S) é false
+- Empty(S)
+  + true iff Size(S) é 0
+- Push(S,t); Pop(S)
+  + restituisce t e non modifica S
+- Push(S,t); Top(S)
+  + restituisce t
+- Push(S,t)
+  + incremento Size(S) di uno
+- Pop(S)
+  + decrementa Size(S) di uno
+
+*** implementazione con array
+statico di M celle
+- assioma ulteriore
+  + Push(S,t)
+    - iff Size(S) < M
+meccanismo =LIFO=
+
+Complessitá
+- Temporale $O(1)$
+- Spaziale $O(M)$
+
+
+#+begin_example
+Push(S,t)
+  if S.N != S.M then
+    S.N = S.N + 1
+    S[N] = t
+  else
+    error overflow
+#+end_example
+
+#+begin_example
+Size(S)
+  return S.N
+#+end_example
+
+#+begin_example
+Empty(S)
+  if S.N == 0 then
+    return true
+  else
+    return false
+#+end_example
+
+#+begin_example
+Top(S)
+  if S.N == 0 then
+    error underflow
+  else
+    return S[S.N]
+#+end_example
+
+#+begin_example
+Pop(S)
+  if S.N == 0 then
+    error underflow
+  else
+    S.N = S.N - 1
+    return S[S.N+1]
+#+end_example
+
+*** implementazione con lista
+Conviene una lista semplice con sentinella
+Complessitá
+- Temporale $O(1)$
+- Spaziale $O(N)$
+  + ma con overhead dovuto ai puntatori
+  + non abbiamo un limite al massimo degli elementi
+#+begin_example
+Push(S,t)
+  S.N = S.N + 1
+  t.next = S.sen.next
+  S.sen.next = t
+#+end_example
+
+#+begin_example
+Size(S)
+  return S.N
+#+end_example
+#+begin_example
+Empty(S)
+  if S.N == 0 then
+    return true
+  else
+    return false
+#+end_example
+#+begin_example
+Top(S)
+  if S.N == 0 then
+    error underflow
+  else
+    return S.sen.next
+#+end_example
+
+#+begin_example
+Pop(S)
+  if S.N == 0 then
+    error underflow
+  else
+    S.N = S.N - 1
+    t = S.sen.next
+    S.sen.next = S.sen.next.next
+    return t
+#+end_example
+
+
+** Code
+- collezione di dati
+  + elementi qualunque di tipo T
+- operazioni
+  + void Enqueue(Queue Q, T t)
+  + T Dequeue (Queue Q)
+  + T Front(Queue Q)
+
+- Utilizzi
+  + buffer
+  + visita in ampiezza di grafi
+  + simulazione di eventi complessi
+
+*** assiomi
+- Size Empty Enqueue
+  + sempre definiti
+- dequeue front
+  + definiti iff Empty é false
+- empty size e front
+  + non modificano la coda
+- empty
+  + true iff Size é 0
+- size; enqueue(Q,t)
+  + N, dopo N esecuzioni di Dequeue(Q) abbiamo Front(Q) = t
+- Front(Q) = t ==> Dequeue(Q) = t
+- Enqueue(Q,t) incrementa Size(Q) di 1
+- Dequeue(Q) decrementa Size(Q) di 1
+
+*** implementazione con array
+statico
+si temgono elementi nelle ultime posizioni
+- altrimenti sarebbe necessario spostare tutti gli elementi
+si usa l'array un maniera circolare
+- si utilizzano riferimenti tail e head per tener conto delle posizioni dell'array
+  + Q.head indica dove estrarre
+  + Q.tail indica dove inserire
+    - se head == tail allora la coda é vuota
+
+Complessitá
+- Temporale $O(1)$
+- Spaziale $O(M)$
+#+begin_example
+Size(Q)
+  if Q.tail >= Q.head then
+    return Q.tail - Q.head
+  else
+    return Q.M - (Q.head - Q.tail)
+#+end_example
+
+#+begin_example
+Empty(Q)
+  if Q.tail == Q.head then
+    return true
+  else
+    return false
+#+end_example
+#+begin_example
+NextCell(Q,c)
+  if c != Q.M then
+    return c+1
+  else
+    return 1
+#+end_example
+#+begin_example
+Enqueue(Q,t)
+  if Q.tail == Q.head-1 then
+    error overflow
+  else
+    Q[Q.tail] = t
+    Q.tail = NextCell(Q,Q.tail)
+#+end_example
+#+begin_example
+Front(Q)
+  if Q.tail == Q.head then
+    error underflow
+  else
+    return Q[Q.head]
+#+end_example
+#+begin_example
+Dequeue(Q)
+  if Size(Q) == 0 then
+    error underflow
+  else
+    t = Q[Q.head]
+    Q.head = NextCell(Q,Q.head)
+    return t
+#+end_example
+*** implementazione con lista
+inserimenti in testa, estrazioni in coda
+- lista semplice con puntatore all'ultimo elemento della coda
+
+Q.head punta l'elemento da estrarre
+Q.tail punta l'ultimo elemento inserito
+Q.head == nil <==> la coda é vuota
+Q.N tiene conto del numero di elementi
+
+
+Complessitá
+- Temporale $O(1)$
+- Spaziale $O(N)$
+  - con overhead dei puntatori
+  - non abbiamo il vincolo del massimo degli elementi
+
+#+begin_example
+Enqueue(Q,t)
+  if Q.N == 0 then
+    Q.head = t
+    Q.tail = t
+  else
+    Q.tail.next = t
+    Q.tail = t
+  Q.N = Q.N +1
+#+end_example
+#+begin_example
+Size(Q)
+  return Q.N
+#+end_example
+#+begin_example
+Empty(Q)
+  return Q.N == 0
+#+end_example
+#+begin_example
+Front(Q)
+  if Empty(Q) then
+    error underflow
+  else
+   return Q.head
+#+end_example
+
+#+begin_example
+Dequeue(Q)
+  if Empty(Q) then
+    error underflow
+  else
+    t = Q.head
+    Q.head = Q.head.next
+    Q.N = Q.N -1
+    return t
+#+end_example
