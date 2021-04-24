@@ -358,8 +358,7 @@ TikTok si é impegnato ad adeguarsi alle richieste del Garante privacy
 Il garante ha avviato una collaborazione con il telefono Azzurro
 - campagna di sensibilizzazione con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza
 
-** Computer Crimes
-*** Principio di legalitá
+** Principio di legalitá
 3 presupposti
 - riserva di legge
   + solo il potere legislativo, espressione del paese, ha manopolio normativo in materia penale
@@ -369,7 +368,7 @@ Il garante ha avviato una collaborazione con il telefono Azzurro
 - irretroattivitá
   + irretroattivitá della legge sfavorevole
   + retroattivitá della legge favorevole
-*** Il Reato
+**** Il Reato
 illecito penale == reato
 - non esiste reato non penale
 
@@ -403,8 +402,7 @@ Il reato é integrato se tutti questi elementi sono compiuti
   + responsabilitá colpevole
   + responsabilitá personalizzata
 
-
-*** Colpevolezza
+**** Colpevolezza
 - imputabilitá
 - conoscenza, conoscibilitá del precetto penale
   + non si puó sostenere di non conoscere una norma pubblica
@@ -418,3 +416,63 @@ Il reato é integrato se tutti questi elementi sono compiuti
 - preterintenzione
   + oltre il reato voluto
     - volontá di un evento minore e la non volontá di un evento piú grave
+
+
+** Computer Crimes
+Inseriti con Novelle nel codice penale
+- fine anni '80 e inizio anni '90
+
+- Legge 23 Dic 1993 n. 547
+  - sazionato l'*accesso abusivo* ad un computer, software, sistemi telematici
+  - se *danneggiamento* del sistema o dei dati: aggravante
+  - natura di *documento informatico* ai supporti di qualunque specie contenenti dati
+    + vengono inclusi anche supporti digitali
+  - vengono permesse le intercettazioni informatiche o telematiche - 266-bis
+
+- Convenzione di Budapest (Cybercrime) - Nov 2001
+  a. delimitare definizioni comuni di reato
+  b. definire poteri comuni di indagine
+  c. predisporre mezzi di cooperazione internazionale
+     - anche in via esecutiva
+  d. definizioni
+     a. *sistema informatico*
+        + apparrecchiatura o gruppo di apparecchiature interconnesse che in base ad un programma compiono l'elaborazione automatica di dati
+     b. *dati informatici*
+        + presentazioni di fatti, informazioni o concetti in forma suscettibile di essere utilizzata in un sistema computerizzato
+     c. *trasmissione di dati*
+        + informazione computerizzata relativa ad una comunicazione attraverso sistema informatico, parte nella catena di comunicazione, indicando origine, destinazione, percorso, tempo, data, grandezza, durata, tipo del servizio
+
+Il CC é un reato che
+- implica l'uso di un sistema informatico (accesso abusivo al sistema)
+- coinvolge un apparato informatico (diffamazione)
+
+- Art. 615-tre c.p.
+  - 1 a 3 anni per chiunque abusivamente si introduce in un sistema ... protetto ...
+    + punibile a querela della persona offesa (negli altri casi si procede d'ufficio)
+  - aggravanti:
+    1. commesso da pubblico ufficiale o da un incaricato di un pubblico servizio / abuso della qualitá di operatore del sistema
+    2. uso violenza sulle cose o alle persone
+    3. ne deriva distruzione o danneggiamento del sistema / dati / informazioni / programmi
+  - qualora i fatti riguardino sistemi ... di interesse militare / ordine pubblico / sanitá / interesse pubblico la pena si alza da 3 a 8 anni
+
+- Cassazione Penale - 2012 (NB principio di tassativitá)
+  + carte di debito o credito sono s.i.
+  + casella di posta elettronica, spazio di memoria di un s.i., é un accesso a s.i.
+  + una porzione di memoria protetta (es. da password) rivela la chiara volontá dell'utente di farne una spazio a sé riservato
+*** Accesso Abusivo
++ *domicilio informatico*
+  - deve essere protetto, anche da misure minime
+  - *misura di sicurezza*
++ non hanno rilievo gli scopi e le finalitá che hanno soggettivamente motivato l'ingresso al sistema
++ *Locus Commissi Delicti*
+  - l'introduzione abusiva ... integrati nel luogo in cui l'operatore materialmente digita la passward di accesso o esegue la procedura di login, che determina il superamento delle misure di sicurezza
+  - client / terminale
+  - condotta criminosa fisicamente, nel senso di movimento muscolare dell'agente, é l'attivazione del terminale periferica da parte dell'operatore
++ in caso di *pubblico ufficiale*:
+  - anche se non violando prescrizioni impartite per delimitarne l'accesso dall'amministratore del s.i.
+  - é sufficiente che si acceda o si mantenga nel sistema per *ragioni ontologicamente entranee* a quelle per cui la facoltá di accesso gli é stata attribuita
++ reato sussiste anche se i dati cancellati abusivamente possono essere recuperati
+  - nuova specifica previsione della *cancellazione* in accezione informatica e non semantica del termine, anche in presenza di backup o se eventualmente reversibili
+  - coerente anche con l'interpretazione tradizionale del reato di danneggiamento, deve la condatta criminosa apporti una modificazione - anche impedendone anche parzialmente l'uso - che richieda un intervento ripristinatorio dell'essenza e della funzionalitá della cosa stessa
++ i *file* sono qualificabili come cose mobili e sono suscettibili di appropriazione rilevante
+  - dimensione fisica che é determinata dal numero delle componenti, cifre binarie

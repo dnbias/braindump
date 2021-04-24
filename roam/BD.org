@@ -398,9 +398,13 @@ query all'interno di altre query
       - =all=
         + il ris deve essere soddisfatto da tutte le righe
         + in caso di NULL all non seleziona mai nessuna riga
+- =in= e =not in=
+
 - =correlate= incrociate
   + dall'interno si fanno riferimento a tabelle esterne
-
+  + le query vengono valutate con passaggio di binding tra un conteste e l'altro
+  + =exists= e =not exists=
+    - vera se la query interna non é vuota o lo é
 * Programmazione di Basi di Dati
 - Ciclo di vita di un sistema informativo:
   + Studio di fattibilitá
@@ -745,6 +749,58 @@ Associazioni
 *** Fisica
 
 ** Normalizzazione
+Le forme normali sono proprietá che garantiscono l'assenza di determinati difetti nella base di dati
+Una relazione /non/ in forma normale:
+- presenta ridondanze
+- causa anomalie quando si aggiornano, cancellano e inseriscono dati
+  + ~Criticitá di esprimibilitá~
+  + ~Criticitá di efficienza~
+    - per cambiare un dato questo va modificato in /tutte/ le tuple che lo coinvolgono
+Queste forme sono definite sul modello relazionale (solitamente)
+La *normalizzazione* puó essere usata come tecnica di *verifica* dei risultati della progettazione
+
+*** Dipendenze Funzionali
+Ci sono attributi che caratterizzano concetti, inoltre alcuni attributi hanno una correlazione tra di loro.
+Esistono vincoli (a volte impliciti) tra attributi che caratterizzano lo stesso concetto
+$X$ e $Y$ sottoinsiemi di attributi di $A$
+Vincolo di dipendenza funzionale $X \rightarrow Y$ ($X$ determina $Y$)
+- se e solo se
+  - $\forall t_1,t_2\in r (t_1[X]=t_2[X] \implies t_1[Y]=t_2[Y])$
+Le dipendenze funzionali si modellano conoscendo il /dominio/ che si rappresenta
+
+**** Problema dell'equivalenza
+Come stabilire che due insiemi di dipendenze funzionali sono equivalenti?
+- dimostrazione della biimplicazione
+- utilizzare la *Teoria di Armstrong*
+- calcolarne la chiusura
+
+Due =def= di equivalenza
+1) $F \equiv G \iff F\vdash G \land G \vdash F$
+   - deducibile
+2) $F \equiv G \iff F^+ = G^+$
+
+***** Teoria di Armstrong
+*Assiomi* della Teoria di Armstrong
+- assiomi non sono dimostrabili, sarebbero meglio definibili come regole
+- Riflessivitá
+- Unione
+- Transitivitá
+Si dimostra che la Teoria é ~corretta~ e ~completa~
+
+*Regole* aggiuntive
+- Espansione
+- Decomposizione
+  + si applica solo al conseguente
+- Pseudo-transitivitá
+- Prodotto
+
+***** Chiusura di un insieme F
+Calcolo di $F^*$ applicando Armstrong fino a che non é piú possibile applicarne le regole
+$F \equiv G \iff F^+ = G^+$
+ma la complessitá di un algoritmo che verifica l'equivalenza é almeno esponenziale in $|F|$
+
+
+
 * Sistemi per la gestione dei dati
 ** Metodi di accesso e indici
 ** Ottimizzatore logico e fisico
