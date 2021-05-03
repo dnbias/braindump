@@ -779,6 +779,14 @@ Due =def= di equivalenza
    - deducibile
 2) $F \equiv G \iff F^+ = G^+$
 
+La chiusura di un insieme di dipendenze funzionali e la chiusura di un insieme di attributi sono strettamente legati:
+$X \rightarrow Y \in F^+ \iff Y \subseteq X_X^+$
+allora
+controllo che ogni $X \rightarrow Y$ di $F$ é deducibile in $G$: $Y \subseteq X_G^+$ e viceversa che ogni $X \rightarrow Y$ di $G$ é deducibile in $F$: $Y \subseteq X_F^+$
+3) $F \equiv G \iff \forall X \rightarrow Y \in F(Y \subseteq X_G^+) \land \forall X \rightarrow Y \in G(Y \subseteq X_F^+)$
+
+
+
 ***** Teoria di Armstrong
 *Assiomi* della Teoria di Armstrong
 - assiomi non sono dimostrabili, sarebbero meglio definibili come regole
@@ -797,9 +805,14 @@ Si dimostra che la Teoria é ~corretta~ e ~completa~
 ***** Chiusura di un insieme F
 Calcolo di $F^*$ applicando Armstrong fino a che non é piú possibile applicarne le regole
 $F \equiv G \iff F^+ = G^+$
-ma la complessitá di un algoritmo che verifica l'equivalenza é almeno esponenziale in $|F|$
+ma la complessitá di un algoritmo che verifica l'equivalenza é almeno *esponenziale* in $|F|$
 
-
+***** Chiusura di un insieme di Attributi
+$X_F^+ = \{A \mid X \rightarrow A \in F^+\}$
+Ottenibile con un algoritmo,
+possiamo ciclare sul insieme $F$ aggiungendo gli attributi alla chiusura passo passo e ripetendo fino al termine del algoritmo
+É dimostrabile che l'algoritmo é ~corretto~ e ~completo~
+La complessitá é *polinomiale*
 
 * Sistemi per la gestione dei dati
 ** Metodi di accesso e indici

@@ -702,3 +702,241 @@ Dequeue(Q)
     Q.N = Q.N -1
     return t
 #+end_example
+
+** Alberi
+Strutture gerarchiche:
+$a \in A \land T_1 \in T(A) \land T_2 \in T(A) \land ... \land T_k \in T(A)\implies \{a,T_1,T_2,...,T_k\} \in T(A)$
+- k >= 0
+- A insieme di etichette
+- T(A) insieme di alberi su A
+- a radice
+
+- Un =albero= é un grafo connesso aciclico
+  + una =radice= é un nodo privilegiato
+  + una =foglia= é un nodo da cui non esce alcun arco
+  + se un nodo non é foglia é interno
+  + il grado di un albero é il massimo numero di figli di un nodo
+  + un insieme di alberi é una =foresta=
+- Ma un grafo non é detto sia un albero
+
+=Cammino=
+- sequenza di archi cascuno incidente sul vertice di quello successivo
+- un cammino da una radice ad una foglia si dice =ramo=
+=Livelli=
+- insiemi di vertici equidistandi dalla radice
+- =altezza=
+  + massima distanza dalla radice di un livello non vuoto (n. livelli -1)
+
+Le operazioni di Cardinalitá e Altezza
+- hanno complessitá temporale simile a quella di visita
+  - $O(n)$
+
+*** Binary Trees
+=Alberi binari posizionali=
+$BT(A)$ definito induttivamente
+- albero vuoto
+- sottoalberi sinistro destro
+
+Rappresentato all'interno di un Computer:
+- key (etichetta)
+  + left (puntatore)
+  + right (puntatore)
+
+#+begin_example
+BTCard(Tree T)
+  if(T == nil)
+    return 0
+  else
+    return 1 + BTCard(T.left) + BTCard(T.right)
+  end if
+#+end_example
+#+begin_example
+BTHeight(Tree T)
+  if(T == nil)
+    return -1
+  else
+    l = BTHeight(T.left)
+    r = BTHeight(T.right)
+    return 1 + max(l,r)
+  end if
+
+#+end_example
+La complessitá sará uguale a quella di una visita (completa) di un albero
+
+
+*** K-ary Trees
+per ogni nodo
+- key
+- lista di puntatori
+
+É possibile codificare ogni albero k-ario con un albero binario
+- ogni nodo punta al primo figlio e al primo fratello
+- key
+  + child
+  + sibling
+- si perde la connessione diretta tra genitori e figli non primi
+
+#+begin_example
+k-TCard(Tree T)
+  if(T == nil)
+    return 0
+  else
+    card = 1
+    C = T.child
+    while C != nil do
+      card = card + k-TCard(C)
+      C = C.sibling
+    end while
+    return card
+  end if
+#+end_example
+Ma la rappresentazione binaria permetterebbe anche l'algoritmo BTCard()
+#+begin_example
+k-THeight(Tree T)
+  if(T.child == nil)
+    return 0
+  else
+    h = 0
+    C = T.child
+    while C != nil do
+      h = max(h,k_THeight(C))
+      C = C.sibling
+    return h+1
+  end if
+#+end_example
+In questo caso non é possbile utilizzare l'algoritmo per alberi binari
+
+*** Visite
+Stessa complessitá degli algoritmi di Cardinalitá e Altezza per alberi
+
+**** In profonditá DFS
+DFS con preordine sinistro
+#+begin_example
+Tree-DFS(k-Tree T)
+  visit T.key
+  C = T.child
+  while C != nil do
+    Tree-DFS(C)
+    C = S.sibling
+  end while
+#+end_example
+
+DFS iterativo con preordine destro utilizzando uno Stack
+- l'ordine di visita é l'ordine di rimozione dallo Stack
+#+begin_example
+Tree-DFS-Stack(k-Tree T)
+  S = empty stack
+  Push(S,T)
+  while S != empty stack do
+    T' = Pop(S)
+    visits T'.key
+    for all C child of T' do
+      Push(S,C)
+    end for
+  end while
+#+end_example
+**** In ampiezza BFS
+Non operabile con una ricorsione
+Iterativo utilizzando una coda
+- l'ordine di visita é l'ordine di rimozione dalla Coda
+#+begin_example
+Tree-BFS(k-Tree T)
+  Q = empty queue
+  Enqueue(Q,T)
+  while Q != empty queue do
+    T' = Dequeue(Q)
+    visits T'.key
+    for all C child of T' do
+      Enqueue(Q,C)
+    end for
+  end while
+#+end_example
+
+**** Complessitá
+- in base alla cardinalitá n dell'albero
+- il numero di cicli dipendono molto dalla struttura dell'albero
+  + possiamo contare il numero di operazioni Push/Pop e Enqueue/Dequeue
+  + ogni nodo dell'albero viene inserito ed estratto esattamente una volta
+    - $O(2n) = O(n)$
+      - sono ottimi in quanto per visitare un albero bisogna visitare almeno $n$ volte l'albero
+
+* Alberi di Ricerca
+Definizione induttiva
+- non basta fare verifiche localmente
+Con una radice $a$ con agganciati due BRT $l$ e $r$
+- tutti gli elementi di $l$ sono minori di $a$
+- tutti gli elementi di $r$ sono maggiori di $a$
+Questa regola vale per tutto l'albero
+
+i BRT possono diventare anche molto sbilanciati
+- dipende dall'ordine in cui vengono inseriti gli elementi
+#+begin_example
+Ric-Search(x, T)
+  if x < T.key then
+    Search(x,T.left)
+  else if x > T.key then
+    Search(x,T.right)
+  else
+    return T
+  end if
+#+end_example
+Complessitá $O(h)$ con $h$ altezza di $T$ nel caso peggiore
+
+#+begin_example
+It-Search(x, T)
+  Tree S = T
+  while S != nil and S.key != x do
+    if S.key < x then
+      S = S.right
+    else
+      S = S.left
+    end if
+    return S
+#+end_example
+
+Stampa in Ordine
+- pre: T binario di ricerca
+- post: stampate le chiavi di T in ordine
+#+begin_example
+Print-Inorder(T)
+  if T != nil
+    Print-Inorder(T.left)
+    print(T.key)
+    Print-Inorder(T.right)
+  end if
+#+end_example
+
+Minimo
+#+begin_example
+Tree-Min(T)
+  if T.left != nil then
+    return Tree-Min(T.left)
+  end if
+  return T
+#+end_example
+
+Massimo
+#+begin_example
+Tree-Max(T)
+  if T.right != nil then
+    return Tree-Max(T.right)
+  end if
+  return T
+#+end_example
+
+Successore
+- pre: N nodo di un albere bin. di ricerca
+- post: il successore di N se esiste, /nil/ altrimenti
+#+begin_example
+Tree-Successor(N)
+  if N.right == nil then
+    Tree P = N
+    while P.right == N and P != nil do
+      N = P
+      P = N.parent
+    end while
+    return P
+  else
+    return Tree-Min(N.right)
+  end if
+#+end_example

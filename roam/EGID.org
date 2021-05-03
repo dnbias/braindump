@@ -111,7 +111,6 @@ Le diverse modalitá devono essere integrate, non devono creare confusione nel c
   + Co-creazione
     - Kickstarter, Youtube, Amazon
 
-
 *** Revenue Streams
 L'utile o margine netto che si ricava
 - transazioni unica una tantum di un cliente
@@ -149,6 +148,177 @@ Ulteriormente divise in:
 - proprietarie o gestite dall'azienda
 - acquisiti da partner
 Quest'ultima distinzione non importa molto dal punto di vista della Value Proposition
+
+** Contesto Socio Economico dell'impresa
+*** Ambiente di riferimento
+tutto ció che puó direttamente e indirettamente influire sulla crescita e dinamica dell'impresa
+Include:
+- vincoli e opportunitá
+- minacce, convenienze
+- specifico e generale
+Puó essere:
+- competitivo
+- socio culturale
+- ecosistema (fisico - naturale)
+
+=DEF= Mercato
+In termini economici, si ha un mercato in tutti i casi in cui vi siano due o piú contraenti disposti a scambiare tra di loro i beni rispettivamente posseduti
+
+Impresa e Ambiente
+- si scambiano risorse
+  - scambi in entrata
+    + acquisizione degli input
+  - scambi in uscita
+    + cessione dell'output
+- si influenzano
+- =macroambiente=
+  + rischi e opportunitá provengono da qui
+  + sistema delle condizioni e dei vincoli in cui si verificano gli scambi
+    - Sistema politico-istituzionale
+    - Sistema culturale tecnologico
+    - Sistema economico
+    - Sistema socio-demografico
+  + l'impresa non puó condizionare il macroambiente
+- =microambiente=
+  + mercati con cui l'impresa scambia in entrata ed uscita
+    - ambiente transazionale
+      + mercato del lavoro
+      + mercado di produzione
+      + mercado finanziario
+    - ambiente competitivo
+      + clienti serviti
+      + imprese concorrenti
+  + l'impresa puó condizionare il microambiente
+
+- =outcome=
+  + impotto sull'utenza con il mio output
+  + misurato con la soddisfazione del mercato di riferimento
+
+*** L'Industria 4.0
+1. Meccanizzazione, macchina a vapore ~1784~
+2. Produzione di massa, elettricitá ~1870~
+3. Automazione, computer, elettronica ~1969~
+4. Robotica, intenet delle cose, reti ~oggi~
+
+Per ogni industria ci sono delle tecnologie abilitanti
+Per la 4.0
+- robotica
+- stampanti 3d
+- realtá aumentata
+- simulazione
+- integrazione verticale o orizzontale
+- internet
+- cloud
+- big data
+- cyber-security
+
+*** Impresa
+organizzazione economica che svoge processi di acquisizione e di prodzione di beni o servizi
+Attivitá economica organizzata dall'imprenditore al fine della produzione e dello scambio di beni o di servizi
+
+Puó essere considerata un sistema socio-tecnico
+- sociale: il suo andamento é condizionato dall'ambiente sociale
+- tecnico: il suo funzionamento necessita di strumenti che incorporano tecnologie
+- aperto: l'ambiente esterno influenza l'andamento dell'impresa: é anche dinamico in quanto deve adattarsi all'esterno
+
+Funzioni Istituzionali:
+- organizazione economica
+- sistema sociale
+- struttura patrimoniale
+
+Teorie sulle finalitá
+- massimizzazione del profitto
+- sopravvivenza dell'impresa
+- creazione e diffusione del valore economico
+- sviluppo dimensionale
+- massimizzazione sociale del profitto
+- conseguimento del successo sociale
+  + reddito
+  + potere
+  + posizione sociale
+
+Forme istituzionali
+- capitalistica
+- manageriale
+- cooperativa
+- non profit
+- post-manageriale
+Grado di controllo dell'imprenditore varia
+- assoluto
+- familiare
+- coalizione
+- supervisione finanziaria
+- public company
+Ragione Sociale
+- forme individuali
+- forme collettive
+
+- Gestione
+  + Strategica
+  + Direzionale
+  + Operativa
+
+- Stakeholder, Portatori di interesse
+  + primari
+  + secondari
+  + supportive
+  + non supportive
+  + mixed
+  + marginali
+- Joint venture
+  + rapporti strategici con stakeholder
+  + con concorrenti
+
+*** Catene del Valore
+
+Progettazione -> Produzione -> Logistica ->
+Marketing(in e out) -> Servizio clienti -> Gestione delle risorse(umane, tecnologiche)
+
+Le scelte di make/buy vengono fatte con studi su conti/benefici
+
+Dipende dal tipo di attivitá, dal suo tipo, dal suo ciclo vitale
+- insieme delle attivitá primarie
+  + che seguono il percorso del cliente
+Evidenzia insiemi di attivitá interdipendenti
+- legate in termini di risorse allocate e di competenze necessarie
+  + orizzontali
+    - collegamenti tra Produzione e Servizi per esempio
+      + attivitá di manutenzione e conti degli interventi in garanzia
+  + verticali
+    - tra attivitá di supporto e primarie
+      + collaborazione tra risorse umane, sviluppo di tecnologia,approvvigionamento con la Produzione(e le attivitá base primarie)
+
+I collegamenti vanno considerati per ottenere un vantaggio competitivo
+- ottimizzazione
+  + trade-off tra le attivitá
+- coordinamento
+  + spesso riduce i costi o enfatizza la differenziazione
+    - prodotto generico / costi minori
+    - prodotto unico / conto maggiore
+Quindi vantaggi:
+- di costo
+- di differenziazione
+  + prestazione
+  + caratteristiche
+  + el. complementari
+    - assistenza
+    - consegna
+    - disponibilitá
+
+Strategie:
+- strategie di costo
+- strategie di differenziazione
+  + modificare caratteristiche fisiche, tecniche, estetiche o psicologiche associate al prodotto
+- strategie di focalizzazione
+  + la differenza sta nell'area di mercato, delle nicchie
+
+**** VRIO
+- Valore
+- Raritá
+- Imitabile
+- Caratteristico nella Organizzazione
+- Implicazioni competitive
+- Performance
 
 * Diritto
 Esistono diverse fonti di Diritto
@@ -302,7 +472,8 @@ Il link é una comunicazione al pubblico, l'articolo 13 della /riforma del dirit
 "I fornitori di servizi che fanno _comunicazione al pubblico_ devono ottenere l'autorizzazione per la messa a disposizione di contenuti dai titolari di diritti"
 - qui c'é illecito nella non autorizzazione da parte di Mediaset, proprietaria dei diritti
 
-**** Direttiva UE 2019/790 Del Parlamento Europeo e del Consiglio
+**** Direttiva UE 2019/790
+Del Parlamento Europeo e del Consiglio
 =Direttiva Copyright=
 In rif. al prestatore di un servizio dell'informazione... *va esclusa la responsabilitá prevista dall'art. 14 della direttiva 31/2000* ... dopo aver preso conoscenza, mediante informazione fornito dalla persona lesa o in altro modo, della natura illecita di quei dati o attivitá.
 - se l'illiceitá é manifesto é obbligo del provider sospendere e rimuovere, se non manifesta va chiarita riferendosi, puó essere anche un elemento esterno a renderla manifesta
@@ -323,7 +494,6 @@ Sostanza sopra la forma
 - Per quanto concerne l'art. 14 é necessario verificare se il prestatori di servizi svolge un ruolo attivo, anche ottimizzando la prestazione delle opere o altro materiale caricati o promuovenali, indipendentemente dalla naturo del mezzo utilizzato a tal fine.
   Dovrebbero adottare misure appropriate e proporzionate per garantire la protezione di tali opere a altro materiale, ad esempio tramite l'uso di tecnologie efficaci.
   - questo anche quando i prestatori di servizi rientrano nell'esenzione di responsabilitá di cui all' ~art. 14 della direttiva 2000/31/CE~
-
 
 **** TikTok vs Garante Privacy
 Gen 2021, strangolamento bambina di 10 anni a seguito della Blackout Challenge
@@ -368,7 +538,7 @@ Il garante ha avviato una collaborazione con il telefono Azzurro
 - irretroattivitá
   + irretroattivitá della legge sfavorevole
   + retroattivitá della legge favorevole
-**** Il Reato
+*** Il Reato
 illecito penale == reato
 - non esiste reato non penale
 
@@ -402,7 +572,7 @@ Il reato é integrato se tutti questi elementi sono compiuti
   + responsabilitá colpevole
   + responsabilitá personalizzata
 
-**** Colpevolezza
+*** Colpevolezza
 - imputabilitá
 - conoscenza, conoscibilitá del precetto penale
   + non si puó sostenere di non conoscere una norma pubblica
@@ -416,7 +586,6 @@ Il reato é integrato se tutti questi elementi sono compiuti
 - preterintenzione
   + oltre il reato voluto
     - volontá di un evento minore e la non volontá di un evento piú grave
-
 
 ** Computer Crimes
 Inseriti con Novelle nel codice penale
