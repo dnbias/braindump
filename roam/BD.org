@@ -345,7 +345,6 @@ I commenti possono essere specificati:
 - -- Commento
 - /* Commento multi-riga */
 
-
 *** DML
 Funzioni aggregate
 - conteggio
@@ -786,7 +785,6 @@ controllo che ogni $X \rightarrow Y$ di $F$ é deducibile in $G$: $Y \subseteq X
 3) $F \equiv G \iff \forall X \rightarrow Y \in F(Y \subseteq X_G^+) \land \forall X \rightarrow Y \in G(Y \subseteq X_F^+)$
 
 
-
 ***** Teoria di Armstrong
 *Assiomi* della Teoria di Armstrong
 - assiomi non sono dimostrabili, sarebbero meglio definibili come regole
@@ -814,6 +812,105 @@ possiamo ciclare sul insieme $F$ aggiungendo gli attributi alla chiusura passo p
 É dimostrabile che l'algoritmo é ~corretto~ e ~completo~
 La complessitá é *polinomiale*
 
+**** Dipendenze Funzionali e Superchiavi
+Nuova definizione in luce della definizione di Dip. F.
+Dato uno schema di relazione $R(A)$ con Dip. F. $F$ un insieme di attributi $K \subseteq A$ é superchiave se e solo se $A=K_F^+$
+- cioé se in $F^+$ si trova il vincolo di dipendenza funzionale $K \rightarrow A$
+Una chiave (candidata) é una superchiave minimale
+
+*** Decomposizioni
+Normalizzazione consistente nella decomposizione di uno schema di relazione in modo da ottenere piú schemi che rispettino una forma normale e minimizzino le anomalie
+- esistono diverse forme normali
+**** Senza perdita
+Da una relazione originale ottengo la decomposizione proiettandola rispetto agli attributi scelti
+$r_1(A_1) = \pi_A_1(r(A))$
+$r_2(A_2) = \pi_A_{2}(r(A))$
+$A_1 \cup A_2 = A$
+Posso ricomporre le informazioni con un natural join, includendo peró eventuali ~spurie~
+- pur avendo tuple in piú ho una ~perdita di informazioni~ in quanto non si sa quale sia la combinazione originale
+
+Una decomposizione é senza perdita se non ha tuple spurie nel self join
+=Teorema=
+La decomposizione di $R$ é senza perdita di informazione per ogni istanza che soddisfa le dipendenze funzionali $F$ se e solo se:
+$A_1 \cap A_2$ é superchiave di $A_1$ oppure
+$A_1 \cap A_2$ é superchiave di $A_2$
+- questa intersezione di attributi é quella usata dal natural join per ricamporre $R$
+Quindi con $K$ superchiave di $R$ se e solo se $K \rightarrow A \in F^+$
+$A_1 \subseteq (A_1 \cap A_2)_F^+ \lor A_2 \subseteq (A_1 \cap A_2)_F^+$
+
+**** Che conservano le dipendenze
+Definendo le restrizioni di $F$ di $R$ in
+- $F_1$ restrizione di $F$ in $R_1$
+- $F_2$ restrizione di $F$ in $R_2$
+=def= restrizione
+- $F_1 = \{X\rightarrow Y \mid (X \rightarrow Y \in F^+) \land (X,Y\subseteq A_i)\}$
+Ma alcune decomposizioni non conservano le dipendenze
+- andrebbero aggiuente le d.f. perse come vincoli globali
+  + molto costoso, all'aggiunta di una tupla andrebbe fatto il join e ricontrollata la condizione
+
+
+*** Le Forme Normali
+Sono ricette di buona progottazione volte alla minimizzazione delle ridondanze e anomalie
+A una forma puó essere associato un algoritmo di normalizzazione
+Esistono forme diverse, diversi compromessi tra proprietá delle decomposizione, compattezza e minimizzazione delle anomalie
+**** BCNF
+Per ogni $X \rightarrow Y \in F$ si verifica almeno una delle condizioni:
+1. $Y \subseteq X$ ovvero $X \rightarrow Y$ é una dipendenza riflessiva
+2. $X$ é superchiave di $R$
+
+La BCNF, escludendo le d.f. banali (riflessive), ammette solo d.f. che dipendono da superchiavi
+- evita ~ridondanze~
+  + aka ripetizione evitabile
+  + evitabili se deducibile da altre informazioni
+  + ogni d.f. introduce una ripetizione
+  + ma se ogni d.f. non banale é BCNF non ho ripetizioni in quanto X é superchiave per def, quindi non é detto che due tuple con X uguale siano uguali su Y
+- evita ~anomalie~
+  + aggiornamento
+    - causate da ridondanze
+    - in BCNF non ci sono ridondanze
+  + inserimento/cancellazione
+    - ogni concetto viene rappresentato in una relazione a sé e quindi un inserimento non darebbe problemi di NULL
+
+Ma esistono degli schemi che víolano la BCNF e per cui non esiste alcuna decomposizione in BCNF che conservi le dipendenze
+**** 3NF
+- meno restrittiva
+- non elimina tutte le anomalie
+- é sempre possibile raggiungerla conservando le dipendenze funzionali
+
+=def= Attributo Primo
+Data una relazione $R(A)$ gli attrbuti $Y \subseteq A$ sono detti *attributi primi* se e solo se $Y \subseteq K$, dove $K$ é chiave di $R(A)$
+
+Per ogni $X \rightarrow Y \in F$ si verifica almeno una delle seguenti proprietá:
+1. $X \rightarrow Y$ é riflessiva
+2. $X$ é superchiave
+3. $Y$ sono attributi primi
+
+Se una relazione é in BCNF allora é anche in 3NF, l'inverso non é necessariamente vero.
+La 3NF puó avere anomalie di inserimento e cancellazione
+*** Insieme di copertura minimale
+Un insieme $F^'$ di d.f. é un insieme di copertura minimale rispetto a $F$ quando:
+1. $F^' \eq F$
+   - $F^'$ é *copertura* per $F$
+2. in ogni $X \rightarrow Y \in F^'$, $Y$ é attributo singolo
+   - *forma canonica*, non necessario ma semplifica la trattazione
+3. ogni $X \rightarrow Y \in F^'$ é priva di attributi estranei
+4. ogni $X \rightarrow Y \in F^'$ non é ridondante
+
+2., 3. e 4. indicano che $F^'$ é *minimale*
+
+=Algoritmo=
+1. decomporre in attributi singoli le d.f.
+2. eliminare attributi estranei
+3. eliminare d.f. ridondanti
+La complessitá é *polinomiale*
+- contiene cicli su F e cicli su X con all'interno il calcolo della chiusura di attributi che é polinomiale
+
+**** Attributo estraneo
+Un attributo in uno d.f. che é possibile rimuovere continuaundo ad avere un insieme di d.f. equivalente
+- possibile calcolarlo con la chiusura degli attributi
+**** Dipendenze ridondanti
+Possibile rimuoverla continuando ad avere un insieme di d.f. equivalente
+- verificabile usando la chiusura di un insieme di attributi
 * Sistemi per la gestione dei dati
 ** Metodi di accesso e indici
 ** Ottimizzatore logico e fisico

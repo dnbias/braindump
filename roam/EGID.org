@@ -634,7 +634,7 @@ Il CC é un reato che
   - *misura di sicurezza*
 + non hanno rilievo gli scopi e le finalitá che hanno soggettivamente motivato l'ingresso al sistema
 + *Locus Commissi Delicti*
-  - l'introduzione abusiva ... integrati nel luogo in cui l'operatore materialmente digita la passward di accesso o esegue la procedura di login, che determina il superamento delle misure di sicurezza
+  - l'introduzione abusiva ... integrati nel luogo in cui l'operatore materialmente digita la password di accesso o esegue la procedura di login, che determina il superamento delle misure di sicurezza
   - client / terminale
   - condotta criminosa fisicamente, nel senso di movimento muscolare dell'agente, é l'attivazione del terminale periferica da parte dell'operatore
 + in caso di *pubblico ufficiale*:
@@ -642,6 +642,214 @@ Il CC é un reato che
   - é sufficiente che si acceda o si mantenga nel sistema per *ragioni ontologicamente entranee* a quelle per cui la facoltá di accesso gli é stata attribuita
 + reato sussiste anche se i dati cancellati abusivamente possono essere recuperati
   - nuova specifica previsione della *cancellazione* in accezione informatica e non semantica del termine, anche in presenza di backup o se eventualmente reversibili
-  - coerente anche con l'interpretazione tradizionale del reato di danneggiamento, deve la condatta criminosa apporti una modificazione - anche impedendone anche parzialmente l'uso - che richieda un intervento ripristinatorio dell'essenza e della funzionalitá della cosa stessa
+  - coerente anche con l'interpretazione tradizionale del reato di danneggiamento, dove la condatta criminosa apporti una modificazione - anche impedendone anche parzialmente l'uso - che richieda un intervento ripristinatorio dell'essenza e della funzionalitá della cosa stessa
 + i *file* sono qualificabili come cose mobili e sono suscettibili di appropriazione rilevante
   - dimensione fisica che é determinata dal numero delle componenti, cifre binarie
+
+** Documento e Identitá Digitale
+- =Regolamente UE n.910/2014=
+  + base normativa a livello comunitario per servizi di:
+    - ident. digitale
+    - firma elettronica
+    - recapito elettronico
+=eIDAS= electronic IDentification Authentication and Signature
+Identificazione elettronica
+
+- *identificazione elettronica*
+  + processa per cui si fa usa di dati di identificazione personale in forma elettronica che rappresentano un'unica persona fisica o giuridica
+  + =SPID= e Carta di identitá elettronica
+    - per accedere ai servizi online della pubblica amministrazione e dei privati aderenti, con una coppia di credenziali personali
+    - erogati da gestori di identitá, prestatori di servizi fiduciari
+      + identity provider
+    - 3 livelli di sicurezza (ISO/IEC DIS 29115)
+      + userid/pass LoA2
+      + OTP LoA3 - one time password
+      + Dispositivo hardware LoA4
+  + =AgID= - Agenzia per l'Italia Digitale
+    - organismo di vigilanza
+    - responsabile nello stato membro designante
+- *Documenti*
+  + elettronico
+    - contenuto conservato in forma elettronica
+  + informatico (particolare di d. elettronico)
+    - rappresentazione informatica di atti, fatti o dati giuridicamente rilevanti
+    - ha effetti sulla sfera giuridica del soggetto
+    - valenza probatoria: Art.20 CAD
+      + quando vi é apposta
+        - firma digitale
+        - firma elettronica qualificata
+        - firma elettronica avanzata
+        - o é formato, previa identif. informatica del suo autore (requisiti fissati da AgID Art.71), con modalitá tali da garantire la sicurezza, integritá e immodificabilitá e in maniera manifesta e inequivoca, con la sua riconducibilitá all'autore
+        - in tutti gli altri casi il requisito della forma scritta e il suo valore probatorio sono liberamenti valutabili in giudizio (caso delle firme el. semplici)
+  + analogico
+    - rappresentazione non informatica di atti, fatti o dati giuridicamente rilevanti
+- *Firme*
+  + elettronica (semplice)
+    - dati in forma elettronica, acclusi o connessi (tramite associazione) ad altri dati elettronici e utilizzati dal firmatario per firmare
+      + dati utilizzati:
+        - conoscenze dell'utente (password)
+        - caratteristiche fisiche dell'utente (impronta digitale)
+        - possesso di un oggetto da parte dell'utente (tessera)
+  + elettronica avanzata (tecniche biometriche: firma grafometrica)
+    - requisiti:
+      + connessa unicamente al firmatario
+      + idonea a identificarlo
+      + creata con dati che il f. puó, con alto livello di sicurezza, utilizzare sotto il proprio esclusivo controllo
+      + deve consentire l'identificazione di ogni successiva modifica di tali dati
+  + elettronica (avanzata) qualificata
+    - basata su un certificato qualificato per firme elettroniche
+      + rilasciati da prestatori di servizi fiduciari accreditati, sotto la vigilanza dell'AgID
+  + digitale - ~crittografia a chiavi asimmetriche~
+    - normata dal CAD (Codice dell'Amministrazione Digitale, italiano)
+      + particolare di firma e. qualificata
+    - sistema di chiavi crittografiche, pubblica e privata, correlate tra loro
+      + permettono di verificare la provenienza e l'integritá di un documento informatico o un insieme di documenti informatici
+      + algoritmo di hash: collision resistant, non invertibile
+        - genera digest usando la chiave privata memorizzata sul certificato di firma
+        - il documento sottoscritto, l'impronta cifrata, il certificato dell'ente certificatore sono inseriti in una busta .p7m
+        - viene controllato che l'impronta del file originale ricalcolata dalla stessa funzione sia uguale a quella recuperato decriptando il digest usando la chiave pubblica
+
+** Posta Elettronica Certificata
+=PEC=
+Normato nel DPR 11 Feb. 2005,n.68
+~sistema di posta elettronica~ nel quale é fornita al mittente documentazione elettronica, con valenza legale, attestante l'invio e la consegna di documenti informatici.
+~obbligatorio~ per imprese e professionisti e di comunicarlo rispettivamente al registro imprese e agli ardini o collegi di appartenenza
+Il proprio indirizzo di PEC é considerato domicilio digitale
+- sono state introdotte sanzioni e obblighi nel Art.37 D.L.76/2020 per professionisti e relativi Collegi e Ordini di apportenenza e per le imprese in caso di mancata comunicazione del preprio domicilio digitale
+  + diffida -> sospensione dall'albo (professionisti)
+  + sanzione -> societá e imprese individuali
+
+- Validitá giuridica
+  + PEC -> PEC  -  piena
+  + PEC -> PEO  -  intermedia
+
+Il gestore del servizio, soggetto, pubblico o privato, che eroga il servizio di posta elettronica certificato e che gestisce domini di posta elettronica certificata
+
+La ricevuta di avvenuta consegna fornisce al mittente prova che il suo messaggio di PEC é effettivamente pervenuto all'indirizzo elettronico dichiarato dal destinatario e certifica il momento della consegna
+- *presunzione di conoscenza*
+  + una volta che il sistema genera la ricevuta di accettazione e di consegna del messaggio nella casella del destinatario, se determina una presunzione di conoscenza da parte del destinatario, il quale é responsabile della gestione della propria utenza
+    - il destinatario ha l'onere di dotarsi degli strumenti necessari per decodificare o leggere i messaggi inviatigli ma anche presidiare la propria casella procedendo alla periodica verifica delle comunicazioni regolarmente inviatigli
+Le ricevute rilasciate dai gestori di PEC sono sottoscritte dai medesimi mediante una firma elettronica avanzata, generata automaticamente dal sistema di posta elettronica
+- tipi di ric. avvenuta consegna
+  + completa
+    - postacert.eml
+    - daticert.xml
+  + breve
+    - daticert.xml
+    - breve estratto
+  + sintetica
+    - daticert.xml
+
+- =Virus Informatico=
+  + un programma informatico avente per scopo o per effetto il danneggiamente di un sistema informatico o telematico, dei dati o dei programmi in esso contenuti o ad esso pertinenti, ovvero l'interruzione, totale o parziale, o l'alterazione del suo funzionamento
+  + il gestore del mittente é tenuto a non accettarli, informando tempestivamente il mittente
+    - il gestore conserva i messaggi ricevuti per 30 mesi
+  + il gestore del destinatario é tenuto a non inoltrarli al destinatario
+    - tenuto a informare il gestore del mittente
+    - conserva i messaggi ricevuti per 30 mesi
+
+** Contratto
+Un accordo di due o piú parti per costituire, regolare o estinguere tra loro un rapporto giuridico patrimoniale
+- Digesto Romano
+  + do ut des
+  + do ut facias
+  + facio ut des
+  + facio ut facias
+- Requisiti
+  + accordo delle parti
+    - tacito
+      + intenzione manifestata dal comportamente delle parti
+    - espresso
+      + dichiarazione specifica
+  + causa
+    - se illecito il contratto é nullo
+      + causa é illecita se contraria a norme imperative, all'ordine pubblico o al buon costume
+    - obbligazioni naturali
+      + obblicazione che trovano la propria fonte nei doveri morali e sociali che, pur non essendo giuridici, quindi non coercibili, non sono indifferenti per l'ordinamento
+  + oggetto
+    - caratteristiche:
+      + possibile
+      + lecito
+      + determinato o determinabile
+  + forma
+    - espressa / tacita
+    - scritta / orale
+    - Contratti formali
+    - Contratti a forma libera
+    - Forma ad substantiam / Forma ad probationem
+
+- Conclusione
+  + scambio di proposta ed accettazione
+    - concluso nel momento in cui chi ha fatto la proposta ha conoscenza dell'accettazione dell'altra parte
+      + un'accettazione non conforme alla proposta equivale a nuova proposta, si invertono le parti
+      + in email é sufficiente la conoscibilitá dell'accettazione
+  + offerta al pubblico (sito internet)
+    - proposta (con estremi essenziali)
+    - invito a proposta (senza estremi essenziali)
+    - acquirente invia accettazione con ~point and click~ sull'OK
+  + comportamente concludente
+    - se richiesto dal proponente o da natura affare a usi, il contratto é concluso con l'inizio di esecuzione
+
+*** Telematico
+Contratti stipulati per via elettronica, mediante l'uso di un computer
+=Classificazioni=
+- Diretto
+  + conclusi e eseguiti online
+  + software, dati
+- Indiretto
+  + conclusi online e eseguiti offline
+  + beni materiali
+- Sito
+  + con pubblico indeterminato
+- E-mail
+  + tra parti determinate
+- B to B
+  + tra imprenditori (professionisti)
+    - desciplina generale sui contratti
+      + norme derogabili
+      + clausole vessatorie (Codice Civile)
+- B to Consumer
+  + tra imprenditore e consumatore
+  + consumatore parte piú debole, la legislazione va a suo favore
+    - Legislazione speciale a tutela dei consumatori
+      + norme inderogabili
+        - diritto di recesso (14 giorni)
+          + regola generale(CC) secondo cui un contratto non puó essere sciolto per mutuo consenso o per cause ammesse dalla legge
+            - una delle cause é il caso del ~recesso unilaterale~, una parte puó esercitare la facoltá a determinate condizioni:
+              + se é prevista nel contratto
+              + finché il contratto non abbia avuto un principio di esecuzione
+          + senza dover fornire alcuna motivazione e senza dover sostenere costi (tranne quelli specificati e previsti)
+            - beni confezionati su misura o personalizzati
+            - beni deteriorabili rapidamente
+            - beni sigillati per motivi igienici in caso di apertura
+          + non é dovuto se il bene é stato acquistato in fisico
+            - ma esiste tutela per la garanzia per un bene difettoso
+              + denunciare entro 8 giorni dalla scoperta
+              + azione prescritta entro 1 anno dalla consegna
+      + clausole vessatorie (Codice del Consumo)
+        - considerate sempre nulle
+=Soggetti=
+- Professionista
+  + agisce nell'ambito della propria attivitá imprenditoriale o professionale
+- Consumatore
+  + agisce per scopi estranei all'attivitá imprenditoriale o professionale
+
+*** E-Commerce
+=Direttiva 2000/31/CE= del 8.6.2000
+é ogni tipo di attivitá commerciale online
+- diritto di stabilimento e dell'esercizio
+  + country of origin, luogo di esercizio dell'attivitá, non dove é collocato il server
+  + criterio sostanzialistico, non piú formalistico
+- responsabilitá degli operatori
+  + non hanno necessitá di ulteriore autorizzazione per l'attivitá online
+- comunicazioni commerciali e pubblicitarie
+  + obbligo di informazione
+    - dati per reperibilitá
+    - prezzi
+- contratti telematici
+  + obblighi di informazione precontrattuali
+    - fasi tecniche di conclusione del contratto
+    - archiviazione o meno di tutte o parte delle informazioni
+    - mezzi tecnici per correzione di errori
+    - lingue disponibili
+    - clausole e condizioni generali memorizzabili e riproducibili

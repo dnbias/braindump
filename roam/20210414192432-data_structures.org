@@ -860,13 +860,16 @@ Tree-BFS(k-Tree T)
     - $O(2n) = O(n)$
       - sono ottimi in quanto per visitare un albero bisogna visitare almeno $n$ volte l'albero
 
-* Alberi di Ricerca
+*** Alberi di Ricerca
 Definizione induttiva
 - non basta fare verifiche localmente
 Con una radice $a$ con agganciati due BRT $l$ e $r$
 - tutti gli elementi di $l$ sono minori di $a$
 - tutti gli elementi di $r$ sono maggiori di $a$
 Questa regola vale per tutto l'albero
+
+$n$ numero dei nodi
+$h$ numero di archi che compongono il ramo piú lungo
 
 i BRT possono diventare anche molto sbilanciati
 - dipende dall'ordine in cui vengono inseriti gli elementi
@@ -939,4 +942,169 @@ Tree-Successor(N)
   else
     return Tree-Min(N.right)
   end if
+#+end_example
+
+Un inserimento avviene a livello delle foglie sostituendo un sottoalbero vuoto (/nil/) in modo che l'albero rimanga albero di ricerca
+
+#+begin_example
+Tree-Insert(N,T)
+  P = nil
+  S = T
+  while S != nil
+    P = S
+    if N.key = S.key then
+      return
+    else
+      if N.key < S.key then
+        S = S.left
+      else
+        S = S.right
+      end if
+    end if
+  end while
+  N.parent = P
+  if P == nil then
+    T = N
+  else
+    if N.key < P.key then
+      P.left = N
+    else
+      P.right = N
+    end if
+  end if
+#+end_example
+
+Cancellazione
+Nel caso particolare che N abbia un solo figlio
+
+#+begin_example
+1-Delete(N,T)
+  if N == T then
+    if N.left != nil and N.right == nil then
+      T = N.left
+    else
+      T = N.right
+    end if
+    N.parent = nil
+  else
+    P = N.parent
+    if N == P.left then
+      if N.left != nil and N.right == nil then
+        P.left = N.left
+        N.left.parent = P
+      else
+        P.left = N.right
+        N.right.parent = P
+      end if
+    else
+      if N.left != nil and N.right == nil then
+        P.right = N.left
+        N.left.parent = P
+      else
+        P.right = N.right
+        N.right.parent = P
+      end if
+    end if
+  end if
+#+end_example
+
+Quindi risolvendo il caso piú generale:
+
+#+begin_example
+Tree-Delete(Z,T)
+  if Z.left == nil and Z.right == nil then
+    if Z == T then
+      T = nil
+    else
+      if Z.parent.left = Z then
+        Z.parent.left = nil
+      else
+        Z.parent.right = nil
+  else
+    if Z.left == nil or Z.right == nil then
+      1-Delete(Z,T)
+    else
+      Y = Tree-Min(Z.right)
+      Z.key = Y.key
+      Tree-Delete(Y,T)
+#+end_example
+
+Salvataggio in lista
+- inserire gli elementi di un BRT in ordine in una lista
+- stessa tecnica per Print-Tree
+- O(n) best case sbilanciato a destra
+- O(n^2) worst case sbilanciato a sinistra
+#+begin_example
+ToList-InOrder(T)
+  if T == nil then
+    return nil
+  else
+    L = ToList-InOrder(T.left)
+    R = ToList-InOrder(T.right)
+    R = ListInsert(T.key,R)
+    return Append(L,R)
+#+end_example
+
+Visitando i nodo in ordine decrescente di etichette si evita l'utilizza di Append
+- O(n)
+#+begin_example
+ToList-InOrder(T,L)
+if T == nil then
+  return L
+else
+  L = ToList-InOrder(T.right,L)
+  L = ListInsert(T.key,L)
+  return ToList-InOrder(T.left,L)
+#+end_example
+
+Copia isomorfo di un albero
+- inserimenti successivi di una lista dei nodi visitati in preordine di T
+
+**** Red-Black
+=Alberi binari di ricerca bilanciati=
+Questo é utile in alberi in cui le operazioni in cui l'altezza conta sono usate spesso
+- in un albero sbilanciato
+  - $h = n-1$
+- un albero bilanciato
+  - $h$ proporzionale al logaritmo di $n$
+  - $n=2^h$
+Senza meccanismi particolari la forma dell'albero dipende solamente dall'ordine dell'inserimento
+
+$R-N$ é un BRT aumentato, i cui vertici sono colorati di rosso o nero:
+- nero: la radice e tutte le foglie (/nil/) sono nere
+- rosso: se un nodo é rosso tutti i suoi figli sono neri
+  + nodi adiacenti non possono essere entrambi rossi
+- cammino: per ogni nodo x tutti i cammini da x ad una foglia hanno lo stesso numero di nodi neri
+
+$bh(x) =$ altezza nera di x
+- numero di nodi neri su un ramo a x ad una foglia(/nil/) (x escluso)
+
+=Proposizione=
+- l'altezza massima di un albero R-N con n nodi é $2 \log_2(n+1)$
+  - limite massimo di $h$
+
+Ricerca $O(\log n)$
+Inserimento $O(\log n)$
+Cancellazione $O(\log n)$
+
+Queste peró devono mantenere l'albero bilanciato
+=Rotazione=
+- dopo una rotazione l'albero rimane di ricerca
+- se non rispettava le regole R-N dopo le rispetta
+#+begin_example
+Left-Rotate(T,x)
+  y = x.right
+  x.right = y.left
+  y.parent = x.parent
+  if x.parent == nil then
+    T = y
+  else
+    if x.parent.left == x then
+      x.parent.left = y
+    else
+      x.parent.right = y
+  if x.right != nil then
+    x.right.parent = x
+  y.left = x
+  x.parent = y
 #+end_example
