@@ -1,6 +1,6 @@
 #+TITLE:  Economia e Diritto
 #+ROAM-ALIAS: EGID
-#+Teacher: Camillo Sacchetto, Fabio Montalcino
+#+Teacher: Camillo Sacchetto, Fabio Montalcino, Valentina Cillo
 [[file:#university.org][#university]]
 
 * Economia
@@ -213,7 +213,7 @@ Per la 4.0
 - cyber-security
 
 *** Impresa
-organizzazione economica che svoge processi di acquisizione e di prodzione di beni o servizi
+organizzazione economica che svolge processi di acquisizione e di prodzione di beni o servizi
 Attivitá economica organizzata dall'imprenditore al fine della produzione e dello scambio di beni o di servizi
 
 Puó essere considerata un sistema socio-tecnico
