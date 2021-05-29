@@ -10,7 +10,7 @@ Modello economico sostenibile
 - backend - frontend
   + condividono la Value Proposition
     - risoluzione di un problema
-    - ti do l'opportunita' di fare qualcosa che prima non facevi
+    - ti do l'opportunitá di fare qualcosa che prima non facevi
 - Customer Segments
 - Channels
 
@@ -50,7 +50,7 @@ Segmenti
 Tutta la struttura dovra' essere compatibile con questa sezione
 - Qual'e' lo scopo del prodotto e i suoi usi
 - A chi e' mirato questo prodotto, dove si collocano
-  + decisori o utenti, clienti (e' disponto a riconoscere un valore non necessariamente monetario)
+  + decisori o utenti, clienti (e' disponto a riconoscere un valore, non necessariamente monetario)
   + che prodotto indiriziamo ad ogni segmento di clientela
     - Valori diversi
       + quantitativo
@@ -198,7 +198,7 @@ Impresa e Ambiente
 1. Meccanizzazione, macchina a vapore ~1784~
 2. Produzione di massa, elettricitá ~1870~
 3. Automazione, computer, elettronica ~1969~
-4. Robotica, intenet delle cose, reti ~oggi~
+4. Robotica, internet delle cose, reti ~oggi~
 
 Per ogni industria ci sono delle tecnologie abilitanti
 Per la 4.0
@@ -320,6 +320,355 @@ Strategie:
 - Implicazioni competitive
 - Performance
 
+** Funzioni Operative di Gestione
+Vari livelli strategici
+- corporate
+- competitive, di business
+  + per ciascun campo ci si orienta verso la leadership di costo
+Processo di marketing, produzione, logistica, ricerca e sviluppo, ricerca del personale
+
+Principale funzione ciclo produttivo, guida il ciclo produttivo dell'impresa
+- gestione operativa(commerciale) e marketing
+  - distribuzione e vendita
+
+Inizialmente l'orientamento era al prodotto, principale funzione operativa
+- non ci si preoccupava allo stesso modo alla vendita del prodotto
+- questo perché il mercato era favorevole
+- processo
+  1. capacitá di produzione
+  2. produzione
+  3. azione di vendita
+  4. clientela
+
+Ora l'orientamento é al mercato
+- piú importante il mercato del venditore
+- non c'era feedback
+- processo
+  1. valutazione della domanda
+  2. potenziale di mercato
+  3. programmazione della produzione
+  4. produzione
+  5. vendita
+  6. clientela
+
+Anni '80, orientamento al Business/Cliente
+- processo
+  1. analisi dei bisogni degli attuali/potenziali consumatori e clienti
+  2. nuove opportunitá
+  3. marketing / capacitá di produzione
+  4. produzione
+  5. vendita
+  6. clientela
+
+Attraverso il marketing si analizza
+- clientela
+- opportunitá
+- competitor
+
+*** Funzione di Marketing
+Orientamento di gestione, pone l'interesse del cliente al centro dell'attenzione aziendale
+Dá indicazioni alla produzione in funzione del target di mercato, provvede a collocare i prodotti presso gli sbocchi prescelti
+- bisogni e desideri dei consumatori
+  + possono indicare nuove tendenze e opportunitá di business
+- M. strategico
+  Si filtrano le variabili e si suddividono in sub-cluster i clienti omogenei, per meglio posizionarsi nei confronti di ognuno di questi
+  + macro-segmentazione
+  + micro-segmentazione
+  + targeting
+  + positioning
+  + orientato all'analisi
+    - bisogni
+    - segmentazione
+    - attrattivitá
+    - competivitá
+    - posizionamento
+- M. analitica
+  + analisi del comportamento del consumatore
+    - individui e gruppi sociali
+    - come scelgono, acquintono, utilizzano, si disfano di beni, servizi e idee per soddisfare i propri bisogni
+- M. operativo
+  Attivitá gestione marketing mix
+  - 4P
+    + gestione del prodotto
+    + gestione del prezzo
+    + gestione della promozione
+    + gestione della distribuzione
+  - orientato all'azione
+
+**** analisi del mercato
+Si parte dalla analisi della domanda
+- dai consumatori o dei distributori
+La domanda analizzata puó essere derivata, complementare
+- di prodotti necessari per l'utilizzo del prodotto
+  + pneumatici/benzina
+Per la definizione della domanda va definito il mercato
+- potenziale
+  + consumatori che dichiarano interesse
+- disponibile
+  + consumatori che hanno interesse, reddito,  possibilitá di accesso
+- obiettivo
+  + parte del mercato disponibile, libero dalla competizione, o che si vuole sottrarre dal competitor
+- penetrato
+  + consumatori che effettivamente acquistano il prodotto
+
+~Domanda~:
+- potenziale
+  + potenziale di mercato; limite massimo a cui puó tendere il mercato in un dato periodo di tempo
+  + stima che considera anche i possibile effetti delle azioni di marketing delle imprese e della situazione ambientale in cui operano le imprese e i consumatori
+    - dipende anche dalle spese commerciali
+- effettiva
+  + dimensione della domanda esistente in un momento specifica
+- prevista
+  + vendite potenzialmente sviluppabili in un determinato arco di tempo prospettico
+~Saturazione~
+Bassi margini di saturazione indicano margini di future possibilitá di sviluppo dei consumi
+- la conoscenza del potenziale di mercato permette all'azienda di formulare considerazioni sull'indirizza strategico della politica di marketing
+
+~Potenziale di Mercato~ (t) =
+- Numerositá popolazione X
+- % potenzialmente interessate X
+- numero delle occasioni d'uso del prodotti X
+- dose minima del prodotto per ogni occasione d'uso
+$MktPot_t = (N_t \times P_t \times O_t \times DP_t)$
+
+Questa analisi volge ad aumentare la propria ~quota di mercato~ (assoluta)
+- porzione di mercato detenuta da una azienda
+  - volumi di fatturato / quantitá della vendita di un prodotto
+  - vendita del prodotta A dell'azienda / vendite totali del prodotto A
+Quota di mercato relativa:
+- rapporto tra la QM di un azienda e quella del piú grande concorrente
+  + una QM relativa vicino al 1 indica una concorrenza agguerrita
+  + una QM relativa di diversi punti é difficilmente attaccabile
+
+***** Matrice di Ansoff
+Come sviluppare l'offerta secondo le caratteristiche e richieste del mercato
+
+4 alternative strategiche
+1. penetrazione di mercato - piú sicuro
+   - prodotto esistente
+   - mercato giá presidiato
+   - cosa fa l'impresa
+     + si creano promozioni, abbassano il prezzo
+       - per sottrarre clienti alla concorrenza
+     + politiche di prezzo
+       - ma puó essere solo temporanea
+2. sviluppo del prodotto | product development
+   - prodotto non esistente
+   - mercato presidiato
+   - richiede investimenti importanti
+3. sviluppo del mercato
+   - prodotto esistente
+   - mercato non ancora presidiato
+     + magari un segmento non copert
+4. diversificazione e sviluppo integrato - piú rischioso
+   - nuovo mercato
+   - nuovo prodotto
+   - richiede grandi investimenti
+     + grande rischio ma grande ritorno se efficace
+   - diversificazione di 2 tipi
+     + collegata - stesso settore
+     + non collegata - settore diverso
+***** Piano di Marketing
+partendo dalle analisi del mercato di riferimento si definisce li piano di marketing attraverso le leve del ~marketing mix~
+Un sistema coerente di azioni che il promotore intende intraprendere per raggiungere i propri obiettivi di penetrazione nel mercato
+- prodotto
+- prezzo
+- distribuzione
+- comunicazione
+Queste sono le ~politiche del marketing~
+
+Ogni mercato va segmentato secondo parametri:
+- demografici
+- socio-economici
+- ubicazionali
+- psicografici - costoso
+  + personalitá, autonomia, preferenza per l'innovazione
+- comportamentali - costoso
+  + disposzione all'acquisto, grado di fedeltá, benefici desiderati
+Per individuare il target
+
+Strategia di Marketing:
+- indifferenziato
+  + considera il mercato come se fosse omogeneo
+  + unica strategia per tutti i consumatori
+- differenziato
+  + indirizzato verso un numero di segmenti
+  + programma di marketing specifico per ogni segmento
+- concentrato
+  + indirizzato verso uno o al massimo pochi segmenti
+  + unico programma di marketing
+
+Politica di =prodotto=:
+- ampiezza dell'offerta
+  + ampiezza della gamma di venditá
+    - categorie di prodotti diverse
+  + profonditá della gamma
+    - vari modelli di uno stesso prodotto
+- differenziazione degli assortimenti
+  + differenziazione dei modelli e posizionamento di mercato
+    - qualitá alta
+    - prezzo basso
+    - rapporto qualitá/prezza
+  + rapporto tra profonditá della gamma di vendita e marketing
+- ciclo di vita e rinnovamento della gamma
+  + considerare vendite e profitti del prodotto nel corso nel tempo
+    - capire in che stadio si colloca ogni prodotto
+      + bilanciare i prodotti in base al ciclo di vita e la matrice portafoglio-prodotti
+        - ~BCG~
+          + l'impresa puó capire come organizzare i suoi prodotti
+          + 2 criteri
+            - tasso di crescita del mercato
+            - quota di mercato relativa
+          + 4 categorie
+            - star (maggiori possibiltá di mercato)
+              + in crescita e con alta quota di mercato
+              + investire nella crescita
+                - equilibrio tra entrate e uscite
+            - question mark (non averne troppi)
+              + in crescita ma non abbiamo quota di mercato
+              + da osservare se evolve verso star o dog
+            - cash cow (buona quota)
+              + non cresce ma con alta quota di mercato
+              + mungere
+                - cassa stabile ma non altissima
+            - dog (fedeltá)
+              + non cresce e bassa quota di mercato
+              + disinvestire o averne pochi
+                - flusso di cassa in equilibrio o negativo
+  + o viene rivitalizzato o va in declino
+- innovativitá delle produzioni
+- visibilitá dei prodotti
+
+Politiche di =prezzo=:
+- funzione del prezzo in relazione alla segmentazione / posizionamento
+- equilibrio volumi / margini
+- ruolo del prodotto nella gamma
+- relazione con il marketing mix
+- cosa lo definisce:
+  + costo
+    - aggiungere un markup
+    - margine
+    - puó anche cercare di prevedere i volumi di produzione e di vendita
+  + elasticitá della domanda
+    - volure attribuito al prodotto dai consumatori
+  + concorrenza
+- Scrematura del mercato
+  + si parte con un costo piú alto e lo si abbassa per inserirsi in nuovi settori
+
+Politiche di =distribuzione=:
+- contatto di contatto con il mercato
+  + tipologia degli sbocchi
+- intensitá della distribuzione
+  + numero di sbocchi
+- tipo di operatori cui affidare il collocamento del prodotto
+  + modo di collegamento
+- grado di controllo sulla domanda
+  + canali
+    - diretti
+    - brevi
+    - lunghi
+- grado di copertura del merato
+  + quota
+    - numerica
+    - ponderata
+
+***** Customer Life-Time Value
+Obiettivo finale é il miglioramento della profittabilitá nel lungo termine e la massimizzazione del customer lifetime value
+Valore medio transazione X Frequenza annua di acquisto X ciclo di vita atteso del cliente
+**** programmazione della produzione
+**** promozione, vendita
+
+*** Funzione di Produzione
+Processo di trasformazioni dei beni, da risorse(INPUT) a prodotti(OUTPUT) da collocare sul mercato
+- a metá tra approvvigionamenti e vendite
+  + anche in aziende che forniscono servizi e non beni materiali
+La produzione é suddivisibile in due macroaree
+- tecnico / fisico / ingenieristico
+  + razionalizzazione dei fattori produttivi
+  + massimizzazione degli utili
+- manageriale
+  + processo produttivo come creazione del valore (aggiunto)
+
+=Scelte=:
+1. strategiche
+   - per la creazione del vantaggio competitivo
+2. strutturali
+   - sistema operativo, coordinando le risorse disponibili
+3. gestione operativa
+   - finalizzate alla razionalizzazione dell'operativitá del processo produttivo
+   - mediante programmazione e controllo della produzione
+     + in termini economici e gestionali
+
+Rapporto strategia produzione e strategia competitiva deve essere coerente
+La S.P. deve essere centrata sugli aspetti principali della S.C.
+- bassi costi -> strategia di price-competition
+- qualitá -> strategia di differenziazione
+
+=Aspetti Operativi=:
+Orientati piú specificamente ai problemi di logistica industriale, l'efficienza é il risultato di scelte coordinate di approvvigionamento, produzione e vendita
+- miglioramento del time-to-market
+- riduzione degli immobilizzi in scorte
+- compressione dei tempi d'ozio dei fattori produttivi
+Progettazione della produzione
+- prendere in considerazione:
+  + situazione economica/geopolitica dell'area di approvvigionamento
+  + layout degli impianti
+Fase operativa
+- attenzione al piano operativo per mantenere coerenza tra la necessitá del mercato e la necessitá di efficienza
+  + varietá / costi
+Travare equilibrio tra stardardizzazione e customizzazione
+Leve per migliorare la Funzione Produttiva
+- riduzione dei costi di trasformazione
+- flessibilitá del sistema produttivo
+  + rispondere in maniera piú efficace al mercato
+- elasticitá del sistema produttivo
+  + agire sul miglioramento della produttivitá
+    - es. migliorare l'offerta, facendo un mix delle soluzioni esistenti
+
+=Processo di pianificazione della produzione=
+- programmazione della produzione
+=Sistemi Ripetitivi=
+- Modelli di Produzione,
+  da minore ripetitivitá del ciclo a maggiore uniformitá dei prodotti:
+  - di beni per unitá distinte - artigianalitá
+    + laboratorio
+  - di massa differenziata - cerca un livello di efficienza
+    + intermettente o continuo
+    + produzione a lotti
+    + differenziazione nelle fase piú avanzate della trasformazione
+  - di massa standandizzata
+    + continuo
+    + produzione in linea
+  - omogenea continua - automazione
+    + produzione a flusso continuo o di processo
+Per trovare il confine di efficienza l'azienda puó attuare:
+- Outsourcing
+  + scelta di approvvigionamento
+  + ricorso al mercato per certe forniture (revocabile)
+- Deintegrazione
+  + accorciamento strategico della filiera
+  + rinuncia a certe fasi di lavorazione
+
+=Filiera= complesso di imprese che partecipano alla trasformazione di una serie di materiali in prodotti finiti(o, meglio, in prodotti finali)
+=Prodotto Finito= output del ciclo di lavorazioni di un'azienda
+=Prodotto Finale= quello che é immesso sul mercato
+
+=Programmazione della Produzione=, coerente con la strategia competitiva, qualitá della fornitura
+- lungo periodo
+- medio periodo
+- breve periodo
+
+=Modelli di suddivisione dei cicli di produzione=
+Il problema del dimensionamento si affianca a quello di scelta del modello di suddivisione dei cicli o delle linee di produzione, trovare il giusto tradeoff tra efficienza e qualitá
+Imprese ~multi-plant~
+- modello
+  + di ripetizione
+    - ogni centro lavora gli stessi prodotti
+  + di parcellizzazione
+    - ciascun impianto svolge una parte del processo, inviando a stabilimenti centrali per il montaggio
+  + di specializzazione
+    - ogni impianto produce uno specifico prodotto della gamma
+
 * Diritto
 Esistono diverse fonti di Diritto
 - nazionali
@@ -344,8 +693,7 @@ Quando si regolamenta - tecnica linguistica:
    - vietata nel diritto penale italiano
 2. tecnica per principi
    - si mantiene una generalita'
-   - va sempre fatto un passaggio logico quando questa e'
-applicata
+   - va sempre fatto un passaggio logico quando questa e' applicata
    - e' facilmente ambigua
 
 3. Settori
@@ -376,8 +724,8 @@ Scelta della *fonte*
   a. elemento integrativo da parte dell'Italia
 
 *** Art. 14
-Responsabilita' di Mere Conduit (semplice trasporto, Telecom)
-1. colui che trasmette su una rete informazioni fornite da un destinatario o fronisce accesso alla rete, non e' responsabile delle informazioni trasmesse a condizione che
+Responsabilitá di Mere Conduit (semplice trasporto, Telecom)
+1. colui che trasmette su una rete informazioni fornite da un destinatario o fornisce accesso alla rete, non é responsabile delle informazioni trasmesse a condizione che
    a. non dia origine alla trasmissione
    b. non selezioni il destinatario della trasmissione
    c. non selezioni ne' modifichi le informazioni trasmesse
@@ -484,14 +832,14 @@ Presunta violazione di diritti d'autore da parte di Yahoo
 La giurisprudenza della Corte di giustizia ha accolto la nozione di hosting provider attivo riferendosi a prestatori che non conoscono né controllano le informazioni trasmesse o memorizzate dalle persone alle quali forniscono i loro servizi
 - Cassazione: provider qualificabile come hosting attivo quando *completa e arricchisce* in modo non passivo *la fruizione dei contenuti*
 
-Alla luce... l'hosting passivo é responsabile per non avere prevveduto all'immediata rimozione dei cantenuti illeciti o per aver continuato a pubblicarli
+Alla luce... l'hosting passivo é responsabile per non avere prevveduto all'immediata rimozione dei contenuti illeciti o per aver continuato a pubblicarli
 
 **** L'Oréal vs Ebay
 - la disposizione della direttiva ~2000/31/CE art. 14~ deve essere interpretata non soltanto in considerazione del suo tenore letterale, ma anche del suo contesto e degli scopi perseguiti dalla normativa di cui essa fa parte
 
 Sostanza sopra la forma
 
-- Per quanto concerne l'art. 14 é necessario verificare se il prestatori di servizi svolge un ruolo attivo, anche ottimizzando la prestazione delle opere o altro materiale caricati o promuovenali, indipendentemente dalla naturo del mezzo utilizzato a tal fine.
+- Per quanto concerne l'art. 14 é necessario verificare se il prestatori di servizi svolge un ruolo attivo, anche ottimizzando la prestazione delle opere o altro materiale caricati o promuovendoli, indipendentemente dalla natura del mezzo utilizzato a tal fine.
   Dovrebbero adottare misure appropriate e proporzionate per garantire la protezione di tali opere a altro materiale, ad esempio tramite l'uso di tecnologie efficaci.
   - questo anche quando i prestatori di servizi rientrano nell'esenzione di responsabilitá di cui all' ~art. 14 della direttiva 2000/31/CE~
 
@@ -522,13 +870,13 @@ Giá a dicembre il Garante della Privacy aveva sollevato delle contestazioni a T
 
 TikTok si é impegnato ad adeguarsi alle richieste del Garante privacy
 - blocco degli utenti per la richiesta di inserimento dell'etá
-- miglioramento della propria informativa privacy in un linguaggio anch piú accessibile
+- miglioramento della propria informativa privacy in un linguaggio anche piú accessibile
 - introduzione di report di utenti minori dei 14 anni
 - banner di informazione sull'impostazione del profilo da pubblico a privato
 Il garante ha avviato una collaborazione con il telefono Azzurro
 - campagna di sensibilizzazione con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza
 
-** Principio di legalitá
+** Principi di legalitá
 3 presupposti
 - riserva di legge
   + solo il potere legislativo, espressione del paese, ha manopolio normativo in materia penale
@@ -566,7 +914,7 @@ Il reato é integrato se tutti questi elementi sono compiuti
 - offesa-elemento soggettivo
   + profilo psicologico, soggettivo
     - il fatto illecito deve appartenere psicologicamente all'autore della condotta
-  + ~sistemo misto~
+  + ~sistema misto~
     - non basta la lesione oggettiva del bene o la sola volontá criminosa
     - sono necessari entrambi
   + responsabilitá colpevole
@@ -656,7 +1004,7 @@ Il CC é un reato che
 Identificazione elettronica
 
 - *identificazione elettronica*
-  + processa per cui si fa usa di dati di identificazione personale in forma elettronica che rappresentano un'unica persona fisica o giuridica
+  + processo per cui si fa uso di dati di identificazione personale in forma elettronica che rappresentano un'unica persona fisica o giuridica
   + =SPID= e Carta di identitá elettronica
     - per accedere ai servizi online della pubblica amministrazione e dei privati aderenti, con una coppia di credenziali personali
     - erogati da gestori di identitá, prestatori di servizi fiduciari
@@ -853,3 +1201,479 @@ Contratti stipulati per via elettronica, mediante l'uso di un computer
     - mezzi tecnici per correzione di errori
     - lingue disponibili
     - clausole e condizioni generali memorizzabili e riproducibili
+
+** Dati Personali
+*** Considerando
+1. protezione delle presone fisiche con riguardo al trattamento dei dati di carattere personale é un diretto fondamentale
+2. i principi e le norme a ... al trattamento dei dati personali dovrebbero rispettarne i diritti e le libertá fondamentali, in particolare il diritto alla protezione dei dati personali
+4. il trattamento dei dati dewrebbe essere al servizio dell'uomo
+6. rapiditá dell'evoluzione tecnologica e la globalizzazione comportano nuove sfide per la protezione dei dati personali
+7. questa evoluzione richiede un quadro piú solido e coerente in materio di pretezione dei dati nell'Unione
+8. gli Stati membri possono, nella minura necessaria per la coerenza e per rendere le disposizione nazionali comprensibile alle persone cui si applicano, integrare elementi del presente regolamento nel proprio diritto nazionale
+*** Privacy
+Concetto principalmente Americano, per la prima volta utilizzato da S. Warren e L. Brandeis in "The Right to Privacy"
+*** Data Protection
+Concetto europeo principalmento delineato in seguito alla Seconda Guerra Mondiale
+- dalla profilazione della popolazione e dai processi decisionali automatizzati
+Il termine é un'abbreviazione perché la normativa non tutela i dati, ma i diritti delle persone cui dati sono trattati
+**** OECD
+1980
+- Collection Limitation Principle
+- Data Quality Principle
+- Purpose Specification Principle
+- Use Limitation Priciple
+- Security Safeguards
+- Openness Principle
+- Individual Participation Priciple
+- Accountability Priciple
+**** Direttiva Europea 1995
+Doppio intento:
+- assicurare la protezione dei dati, come diritto costituzionalmente rilevante
+- consentire lo sviluppo del mercato e permettere la libera circolazione di merci e di dati necessari per le transazioni
+Non direttamente applicabile negli Stati Membri, va recepita tramite una legge statale
+- recepita in Italia necessaria per l'ingresso in Schengen
+- rivista con il decreto 2003 - Codice Protezione Dati Personali
+**** Normative in vigore
+- Regolamento Europeo 2016
+  + tradizione della normativa ha sia contunuitá ma anche novitá
+  + accountability
+  + nomina del DPO/RPD
+  + registri attivitá trattamento
+  + procedure data breach
+  + analisi rischi
+  + criteri proattivi di progettazione e tutela a norma
+    - privacy dy design and by default
+  + incremento diritti
+    - revoca consenso
+  + ambito di applicazione materiale
+  + ambito di applicazione territoriale
+    - trattamento effettuato nell'ambito di attivitá di soggetto stabilito UE
+    - trattamento che si trovano in UE
+    - trattamento effetuato da soggetto non stabilito in UE, ma soggetto al diritto di uno Stato membro per diritto
+- Decreto Legislativo 2003
+  + modificato nel 2018
+    - fattispecie penali
+    - specificazioni delle finalitá di interesse pubblico rilevante
+    - indicazione di un'etá per il consenso dei minori
+    - disposizioni per CV ed informative per ricezione
+    - definizione dei diritti delle persone decedute e diritti di accesso
+- Dati Giudiziari
+- Direttiva NIS
+- Dati non Personali
+- Trade Secrets
+- Direttiva ePrivacy
+  + in revisione
+
+*** Definizioni, Concetti, Pricipi
+**** Dato Personale
+- info riguardante una persona fisica identificata o identificabile, direttamente o indirettamente
+Considerando 30
+- le persone fisiche possono essre associate a identificativi online prodotti dai dispositivi
+  + indirizzi IP
+  + cookies
+  + tag
+*Dato Anonimo*
+- l'anonimmizzazione esclude l'applicazione del GDPR, ma la procedura deve essere definitiva
+*Pseudonimo*
+- il dato persanole spesso non é anonimizzato, ma reso meno facilmente intellegibile con le tecniche di pseudonimizzazione
+  + trattamento dei tadi senza l'utilizzo di informaioni aggiuntive
+    - a cond. che tali info siano conservate separatamente . soggette a misure tecniche e organizzative
+  + contatore
+  + generatore numeri casuali
+  + funzione crittografica di hash
+  + autenticazione del messaggio
+  + crittografia
+    - simmetrica, cifratura a blocchi(AES)
+Considerando 28
+- puó ridurre il rischio per gli interessati ed aiutare i titolari
+*Dato Personale Particolare*
+- che rivelino l'origine razziale o etnica, opinioni politiche, convinzioni religiose o filosofiche, dati genetici, dati biometrici, dati relativi alla salute o vita sessuale, orientamento sessuale della persona
+- =divieto di trattamento=
+  - eccezioni
+    + consenso esplicito
+    + obblighi specifici del Titolare del trattamento
+    + interesse vitale dell'interessato
+    + attivitá di associazione senza scopi di lucro con finalitá politiche/religiose/filosofiche/sindacale
+    + dati resi manifestatamento pubblici dall'interessato
+    + attivitá necessarie in sede giudiziaria
+    + motivi di interesse pubblico
+*Dato Giudiziario*
+- dati relativi alle condanne penali e ai reati o connesse misure di sicurezza
+**** Trattamento Dati* / data processing
+- qualsiasi operazione o insieme di operazioni, con o senza l'ausilio di processi(strumenti) automatizzati e applicate ai dati personali
+  + ogni fase del ciclo vitale del trattamento sempre trattamento é e deve essere gestito in sicurezza
+- soggetti:
+  + attivi di trattamento - =doveri=
+    - titolare ~data controller~ che singolarmente o insieme ad altri, determina finalitá e mezzi del trattamento dei dati personali
+    - responsabile del trattamento ~data processor~ che tratta dati personali per conto del titolare del trattamento
+    - destinatario
+      + riceve comunicazione di dati personali
+    - terzo
+    - autorizzato
+      + persona autorizzata al trattamento sotto l'autoritá del titolare o responsabile
+  + ruolo passivo - =diritti=
+    - interessato
+  + di controllo
+    - ogni stato membro dispone di un'autorita per la protezione dei dati
+      + IT: Autoritá Garante Protezione dei Dati Personali (Autoritá Garante Privacy)
+        - l'attivitá ispettiva del Garante é svolta dalla Guardia di Finanza Nucleo Privacy mediante Protocollo di Intesa
+          + Protocollo di Intesa con Polizia di Stato, Corecom Piemonte
+          + Collabora con social per il fenomeno di Revenge Porn
+    - riuniti nel Comitato Europeo (COPD o EDPB)
+    - informare e sensibilizzare il titolare
+    - sorvegliare l'osservanza del regolameno
+    - fornire parere se richiesto
+    - cooperare con il Garante
+***** Principi
+I dati devono essere
+- ~liceitá~
+  + trattati in modo lecito, corretto e trasparente verso l'interessato
+- ~limitazione delle finalitá~
+  + raccolti per finalitá determinate, esplicite, legittime e successivamente trattati in modo non incompatibile con finalitá
+- ~minimizzazione dei dati~
+  + adeguati, pertinenti e limitati a quanto necessario rispetto alla finalitá del trattamento
+- ~esattezza~
+  + esatti e se necessario aggiornati, misure ragionevoli per cancellare o rettificare tempestivamenti i dati inesatti rispetto alle finalitá
+- ~limitazione della conservazione~
+- ~integritá e riservatezza~
+- ~accountability~
+  + Il titolare é competente per il rispetto della norma e in grado di comprovarlo
+  + =Ciclo di Deming=
+    - Plan-Do-Check-Act
+    - sviluppato nel dopoguerra in Giappone
+
+Il trattamento é lecito solo se e nella misura in cui ricorre almeno delle condizioni:
+- consenso
+  + se richiesto deve essere libero, specifico, informato ed enequivocabile
+  + prestato per una specifica finalitá
+    - documentabile, revocabile
+- necessario all'esecuzione di un contratto
+- necessario per adempiere un obbligo legale
+- interessi legali del interessato
+- compito di interesse pubblico
+- legittimo interesse
+
+*** Doveri
+- Titolare
+  + interiorizzare/applicare i principi
+  + liceitá del trattamento
+  + applicare trasparenza
+  + riscontrare gli interessati e favorirne l'esercizio dei diritti
+  + accountability
+    - disporre di documenti di rilevanza sostanziale
+    - analisi del rischio
+    - valutazione impatto preventiva
+    - redazione registro attivitá di trattamento
+    - verifica ruoli soggetti interni esterni
+    - misure adeguate
+    - privacy by design e by default
+    - violazione dei dati personali: procedura di gestione
+  + selezionare misure di sicurezza adeguate
+    - psuedonimizzazione
+    - cifratura
+    - garanzie per la riservatezza
+    - integritá e resilienza dei sistemi
+    - ripristino tempestivo
+    - verifica periodica delle misure adottate
+  + prestare attenzione al consenso e alla sua revoca
+    - considerare se libero, specifico ed informato
+  + interesse vitale
+    - valutare portata e sussistenza
+  + legittimo interesse
+    - valutare con cura ed operare il bilanciamento tra diritti e libertá
+  + considerare i rischi e gli impatti negativi su diritti e libertá dell'interessato
+    - appositi strumenti:
+      + analisi del rischio
+      + valutazione impatto protezione dati DPIA
+
+**** Analisi del rischio
+origine -> natura -> gravitá -> probabilitá -> impatto sui diritti e le libertá degli interessati
+= rischio
+
+- non confordere la gestione dei rischi con le misure di sicurezza
+- non riferire il rischio al titolare ma al soggetto interessato
+
+- Elementi
+  + riservatezza
+  + integritá
+  + disponibilitá
+- Impatto
+  + basso
+    - minori inconvenienti superabile senza problemi
+  + medio
+    - inconvenienti significativi superabili con difficoltá
+  + alto
+    - conseguenze significative superabili ma con difficoltá serie (perdita di fondi, collocazione in liste nere, perdita di impiego)
+  + molto alto
+    - inconvenienti significativi quasi del tutto irreversibili (perdita capacitá lavorativa, danni psicologici a lungo termine, morte)
+- DPIA - Valutazione Impatto Preventiva
+  + valutare necessitá e proporzionalitá di un trattamento
+  + rischi allo scopo di approntare misure idonee ad affrontarli
+  + obbligatoria se un trattamento puó presentare rischio elevato per diritti e libertá degli interessati
+    - trattamenti valutativi o di scoring
+    - decisioni automatizzate che producono significativi effetti giuridici o analoghi
+    - monitoraggio sistematico
+    - dati particolari, o strettamente personali
+    - trattamenti su larga scala
+    - combinazione o raffronto di dati
+    - dati relativi ad interessati vulnerabili
+    - utilizzi innovativi o applicazione di nuove soluzioni tecnoloiche
+    - trattamenti che in sé impediscono l'esercizio di un diritto o di avvalersi di un servizio
+  + puó essere attuabili facoltativamente
+  + é bene un riesame periodico
+
+**** Registro attivitá di trattamento
+=art. 30 c.5 GDPR=
+Gli obblighi non si applicano alle imprese o organizzazioni con meno di 250 dipendenti
+a meno che
+- rischio per i diritti e le libertá dell'interessato
+- trattamento non occasionale
+- trattamento di categorie particolari di dati / dati giudiziari
+
+Su richiesta il titolare o il responsabile mettono il registro a disposizione dell'autoritá di controllo
+Registro Titolare
+Contiene:
+- nome e dati di contatto del titolare/contitolare/rappresentante/responsabile della protezione dei dati
+- finalitá del trattamento
+- categorie di interessati/dati personali
+- categorie di destinatari, comperesi destinatori di paesi terzi
+- trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
+Registro Responsabile
+Contiene:
+- nome e dati di contatto del responsabile
+- finalitá del trattamento
+- categorie di interessati/dati personali
+- categorie di destinatari, comperesi destinatori di paesi terzi
+- trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
+- ove possibile, una descrizione generale delle misure di sicurezza tecniche e organizzative
+Anche analisi dei ruoli dei soggetti
+- interni, autorizzati
+  + anche designato
+- esterni
+  + figura che tratta dati personali per conto del titolare del trattamento
+  + trattamenti disciplinati da un conttratto a norma del diritto dell'Unione (art.28 GDPR)
+- contitolari
+
+**** Misure di Sicurezza
+- tecniche per trattamento analogici
+- tecniche per trattamenti informatici
+- organizzative
+
+Principi:
+- minimizzazione
+- pseudonimizzazione
+- anonimizzazione
+- cifratura
+- conservazione
+- qualitá del dato
+
+**** Violazione dei dati personali
+=data breach=
+- Valutazione della portata e gravitá
+  + documentare la violazione
+  + se grave notificare entro 72h al Garante
+  + se rischio elevato, comunicaro agli interessati
+  + misure tecniche/organizzative per porre rimedio
+  + misure che avrebbero potuto ridurre il rischio per diritti e libertá degli interessati
+- Tipologie di data breach
+  + confidentiality breach
+  + availability breach
+  + integrity breach
+- Sanzioni
+  + limitazione provvisoria o definitiva al trattamento
+  + rettifica, cancellazione di dati, limitazione al trattamento
+  + sospensione dei flussi dati verso extra UE o Org. Internazionali
+  + sanzione pecuniaria
+  + 4%
+
+*** Diritti
+- Interessato, deve essere tutelato
+  + conoscitivi
+    - dir. a ricevere informativa
+    - dir. a richiedere ed ottenere info (accesso)
+    - dir. a ricevere info in caso di violazioni
+  + controllo sul trattamento
+    - dir. al consenso ed autorizzazione del trattamento
+    - dir. alla lim. del trattamento
+    - dir. di revoca del consenso e di opposizione
+  + intervento sui dati
+    - portabilitá
+    - rettifica ed integrazione
+    - cancellazione e oblio
+  + non essere sottoposto a decisione basata unicamente sul trattamento automatizzato, comprese la profilazione ceh produca effitti giuridice che lo riguardano o che indica in modo analogo significativamente sulla sua persona
+**** Informative
+- Caratteristiche
+  + forma concisa, trasparente, intelligibile e facilmente accessibile
+  + linguaggio semplice e chiaro
+    - soprattutto se destinate a minori
+  + per iscritto o altri mezzi
+  + oralmente
+    - deve essere comprovabile l'aver fornito le informazioni
+- Dirette
+  + identitá e dati di contatto del Titolare del Trattamento
+  + dati di contatto del RPD/DPO se designato
+  + finalitá del trattamento e base giuridica
+  + categorie destinatari
+  + trasferimento extraUE
+  + periodo di conservazione e criteri di determinazione e della durata del trattamento
+  + diritti degli interessati e modalitá di esercizio
+  + consenso, diritto di revoca
+  + contestazione, diretto di proporre reclamo all'autoritá
+  + esistenza di processo decisionale automatizzato e logiche utilizzate
+- Tempi
+  + informativa prima del trattamento
+  + si indiretta, entro tempo ragionevole
+  + puó essere omessa:
+    - caso l'interessato giá disponga delle info
+    - casi di esonero
+    - se impossibile
+    - se dati riservati per segreto professionale
+** Proprietá Intellettuale
+2 Macrocategorie
+- diritti di proprietá industriale
+- diritti d'autore
+3 categorie per le opere di ingegno
+- opere dell'ingegno creativo
+- segni distintivi
+- innovazioni tecniche/di design
+distinzione tra
+- diritti titolati
+- diritto non titolati
+
+=Legge n.633 1941=
+Protette ai sensi della legge le opere dell'ingegno di carattere creativo ... letteratura, musica, arti figurative, architettura, teatro, cinematografia ... programmi (includendo materiale preparatorio) per elaboratore, banche dati (non estesa al suo contenuto) ...
+Escluse le idee e i principi alla base di qualsiasi elemento di un programma.
+Il carattere creativo é presente quando dotate di un minimo livello di creativitá, presente tutte le volte che l'autore ha potuto esprimere le sue capacitá creative nella realizzazione dell'opera effettuando scelte libere e creative
+
+*** Marchio
+=Art.7 C.P.I.=
+Segno distintivo che consente di
+- distinguere
+- riconoscere
+- associare
+Possono costituire oggetto di registrazione come marchio d'impresa tutti i segni:
+- parole
+- disegni
+- lettere
+- cifre
+- suoni
+- forma del prodotto
+- combinazioni
+- tonalitá cromatiche
+=Art.12-14=
+Requisiti
+- Capacitá distintiva
+- Novitá
+- Liceitá
+- Rappresentazione
+
+Distinzioni
+- Marchi denominativi
+- Marchi figurativi
+- Marchi figurativi contenenti elementi denominativi
+- Marchi a pattern
+- Marchi di posizione
+- Marchi di colore
+- Marchi sonori
+- Marchi multimediali
+- Marchi individuali
+- Marchi Collettivi
+- Marchi di certificazione
+
+Depositi
+- Italiano =UIBM=
+- Comunitario =EUIPO=
+- Estero
+Tutelato per 10 anni dal deposito, rinnovabile decennio per decennio
+
+Uso
+- dovere del titolare
+  + uso serio e continuativo del marchio
+  + se no: decadenza
+
+**** Classificazione Internazionale di Nizza
+45 classi, prodotti e servizi
+
+*** Brevetto di Invenzione
+Invenzione, nuove e implicano un'attivitá inventiva e sono atte ad avere  una applicazione industriale
+- novitá
+- liceitá
+- attivitá inventiva
+  + non banalitá, se per una persona esperta del ramo non risulta evidente dallo stato della tecnica
+- industrialitá
+
+Strumenti giuridici per casi medici e farmaceutici
+- licenza obbligatoria
+- espropriazione per pubblica utilitá del brevetto
+*** Design
+l'aspetto dell'intero prodotto o di una sua parte puó costituire oggetto di registrazione
+- a cond. siano nuovi e con carattere individuale
+~prodotto~ é qualsiasi oggetto industriale/artigianale, ~prodotto complesso~ é prodotto formato da componenti sostituibili
+
+*** Funzione tecnica
+Non possono costituire oggetto di registrazione caratteristiche di un prodotto unicamente determinate dalla funzione tecnica del prodotto stesso
+
+*** Diritti Morali
+Sono inalienabili, gli eredi possono far valere tali diritti senza limiti di tempo, non hanno scadenza
+- rivendicare la paternitá
+- diritto di opporsi a deformazioni, mutilazioni e modifiche che possano essere di pregiudizio al suo onore o alla sua reputazione
+- diritto al ripensamento
+*** Diritti Patrimoniali
+Sono alienabile (cedibili a terzi), durano tutta la vita dell'autore e fino a 70 anni dopa la sua morte, sono trasmissibili per ereditá
+- pubblicare
+- utilizzare economicamente
+- riprodurre
+- trascrivere
+- eseguire, rappresentare in pubblico
+- ottenere compenso
+- comunicare al pubblico l'opera
+- distribuire
+- tradurre
+- noleggiare
+*** Know-how
+Patrimonio di conoscenze non brevettate o brevettabili, derivanti da esperienze e da prove che sia
+- segreto
+- sostanziale
+- individuato
+
+=segreti commerciali= sono informazioni aziendali, esperienze tecnico-industriali, comprese quelle commerciali, soggette al legittimo cotrollo del detentore, ove:
+- segrete
+- di valore economico
+- sottoposte a misure adeguate a mantenerle segrete
+*** Concorrenza Sleale
+In caso di plagio, la contraffazione di software contituirebbe giá di per sé atto di concorrenza sleale per violazione dei principi di correttezza professionale
+Compiuta da chiunque:
+- usi nomi o segni distintivi in modo da produrre confusione / imiti i prodotti di un concorrente
+- diffonde notizie sui prodotti o attivitá di un concorrente per determinarne discredito
+- si vale di mezzo non conforme ai principi della correttezza professionale
+** Diffamazione e Social Network
+Decoro: complesso di valori e atteggiamente ritenuti confacenti a una vita dignitosa, riservata, corretta
+Onore: elemento personale che costituisce motivo di soddisfazione, di vanto
+Reputazione: considerazione in cui si é tenuti dagli altri
+- Ingiuria
+  + offesa all'onere o decoro di persona presente
+  + aggravante se attribuzione di un fatto determinato
+  + aggravante se in presenza di piú persone
+- Diffamazione
+  + comunicazione a piú persone (anche passaparola) che offende l'altrui reputazione
+  + aggravante nell'attribuzione di un fatto determinato
+  + aggravante usando qualsiasi messo di pubblicitá (es. Social)
+  + reato a forma libera
+  + reato di danno
+- Libertá di pensiero
+  + affinche una manifestazione del pensiero possa essere considerato rientrante nel diritto di critica e di cronaca:
+    - veridicitá
+    - continenza
+    - interesse pubblico
+- Facebook
+  + l'utente concede a FB licenze per l'uso dei contenuti condivisi
+    - per contenuti pretetti da diritti di proprietá intellettuale
+    - licenza nono esclusiva, trasferibile, sub-licenziabile, non soggetta a royalty e valida in tutto il mondo
+  + se i file prelevati vengono ripubblicati ex novo al di fuori del social
+    - sono applicabili le norme sul diritto d'autore
+      + non puó essere riprodotto al di fuori del social senza il consenso del suo titolare
+- Diritto all'oblio
+  + al ripensamento, di ritirare l'opera dal commercio in caso di gravi ragioni morali
+    - ragioni etiche, intellettuali, politiche, religiose
+  + anche riguardo a particolari versioni
+  + obbligo di rimborso a chi ha acquistato i diritti

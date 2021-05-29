@@ -98,3 +98,4 @@ che implementa il comparator
 ** Algoritmi
 *** [[file:20210409200632-generic_merge_binary_insertion_sort.org][Generic Merge-Binary Insertion Sort]]
 *** [[file:20210409200833-dynamic_edit_distance.org][Dynamic Edit Distance]]
+*** [[file:20210516213623-union_find_set.org][Union-Find Set]]
