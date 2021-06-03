@@ -1,11 +1,13 @@
 !*.org
 *.db
-agenda.*
+*/agenda.org
 Inbox.org
 ledger.org
+*/inbox.org
+*/journal.org
 #*
 *#
 roam/ltximg/
 .orgids
 .auctex-auto/
-roam/BulletJournal.org
+
