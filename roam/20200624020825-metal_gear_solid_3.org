@@ -1,5 +1,5 @@
 #+TITLE: Metal Gear Solid 3
-~Snake Eater~
+#+roam_alias: "Snake Eater" "MGS3"
 Ambientato nella foresta russa fittizia nel 19--
 
 Un cadavere morto da tempo, sotto il ponte da cui The Boss ha buttato giu' Naked Snake, chi e'?

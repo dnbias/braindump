@@ -1,6 +1,5 @@
 #+TITLE: Zettelkasten
-:NoteTaking:
-[[file:20200528214634-note_taking.org][Note Taking]]
+- tags: [[file:20200528214634-note_taking.org][Note Taking]]
 
 * nuova conoscenza si aggiunge a conoscenza pregressa
     in questo modo si sviluppano nuove idee

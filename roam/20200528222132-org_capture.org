@@ -1,9 +1,6 @@
 #+TITLE: org-capture
-#+SOURCE:
-[[https://orgmode.org/manual/Capture.html#Capture][docs]]
-#+TAGS
-:emacs:
-
+- source: https://orgmode.org/manual/Capture.html#Capture
+- tags: [[file:20200530210833-emacs.org][Emacs]]
 
 * Setting up
 ** (setq org-default-notes-file (concat org-directory "/notes.org"))

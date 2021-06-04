@@ -1,6 +1,7 @@
 #+title: Gene Wolfe
 [[file:20210527192825-authors.org][#authors]]
 1931 - 2019, American
+
 * The Solar Cycle
 ** The Book of the New Sun
 - [[file:20210529212816-the_shadow_of_the_torturer.org][The Shadow of the Torturer]]
