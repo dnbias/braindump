@@ -1,14 +1,17 @@
 #+TITLE: Zettelkasten
-- tags: [[file:20200528214634-note_taking.org][Note Taking]]
+- tags: [[file:20200528214634-note_taking.org][Note Taking]], [[file:20210604135308-org_roam.org][org-roam]]
+- books: [[file:20210605235823-how_to_take_smart_notes.org][How to Take Smart Notes]]
 
-* nuova conoscenza si aggiunge a conoscenza pregressa
-    in questo modo si sviluppano nuove idee
-* bidirectional linking
+- nuova conoscenza si aggiunge a conoscenza pregressa
+  + in questo modo si sviluppano nuove idee
+- bidirectional linking
+- notes on the go
+  + includendo la ~fonte~
+- tagging
+  + rivisitare le note della giornata/settimana e processarle
+- cercando di metterle in relazione con le altre idee nel zettelkasten
+  + meglio se specifiche
+  + cosa tenere e cosa rielaborare o eliminare
 
-* notes on the go
-    includendo la ~fonte~
-* tagging
-    rivisitare le note della giornata/settimana e processarle
-** cercando di metterle in relazione con le altre idee nel zettelkasten
-** meglio se specifiche
-** cosa tenere e cosa rielaborare o eliminare
+- la domanda fondamentale: =dove voglio rivedere questa idea?=
+  + [[file:20210604135054-how_to_take_smart_notes_with_org_mode.org][How to take smart notes with org-mode]]

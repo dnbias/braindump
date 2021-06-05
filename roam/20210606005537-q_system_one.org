@@ -1,0 +1,2 @@
+#+title: Q System One
+[[file:20210606005110-quantum_neural_network.org][Quantum Neural Network]] made by IBM

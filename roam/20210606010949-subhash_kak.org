@@ -1,0 +1,4 @@
+#+title: Subhash Kak
+[[file:20210527192825-authors.org][#authors]]
+
+- [[file:20210606011122-on_quantum_neural_computing.org][On quantum neural computing]]

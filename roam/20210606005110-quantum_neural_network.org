@@ -1,0 +1,6 @@
+#+title: Quantum Neural Network
+- Tags: [[file:20210606005140-quantum_mechanics.org][Quantum Mechanics]], [[file:20210606005210-artificial_intelligence.org][Artificial Intelligence]]
+
+- first published ideas by [[file:20210606010949-subhash_kak.org][Subhash Kak]] and [[file:20210606011011-ron_chrisly.org][Ron Chrisly]]
+  - [[file:20210606011122-on_quantum_neural_computing.org][On quantum neural computing]] - 1995
+  - [[file:20210606012035-quantum_learning.org][Quantum Learning]] - 1995
