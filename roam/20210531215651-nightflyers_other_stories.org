@@ -1,5 +1,5 @@
 #+title: Nightflyers & Other Stories
-[[file:20201029112426-books.org][#books]]
+[[file:20201029112426-books.org][$books]]
 Martin, George, R.R., /Nightflyers & Other Stories/, 1985, pp.295
 
 * Nightflyers

@@ -1,5 +1,5 @@
 #+title: Richard Feynman
-[[file:20210527192825-authors.org][#authors]]
+[[file:20210527192825-authors.org][$authors]]
 1918 - 1988, American theoretical physicist
 * Citazioni
-Notes aren’t a record of my thinking process. They are my thinking process.[[file:20210604132601-cit.org][ #cit]]
+Notes aren’t a record of my thinking process. They are my thinking process.[[file:20210604132601-cit.org][#cit]]

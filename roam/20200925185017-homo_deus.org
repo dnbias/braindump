@@ -1,5 +1,5 @@
 #+title: Homo Deus
-[[file:20201029112426-books.org][#books]]
+[[file:20201029112426-books.org][$books]]
 Harari, Noha, Yuval, /Home Deus: A brief History of Tomorrow/, Dvir publishing, 2015, pp.448
 
 

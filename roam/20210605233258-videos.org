@@ -1,2 +1,2 @@
-#+title: #videos
+#+title: $videos
 #+roam_alias: Videos

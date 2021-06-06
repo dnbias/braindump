@@ -1,5 +1,5 @@
 #+title: Come si fa una Tesi di Laurea
-[[file:20201029112426-books.org][#books]]
+[[file:20201029112426-books.org][$books]]
 Eco, Umberto, /Come si fa una Tesi di Laurea/, Bompiani, 1977 (La Nave di Teseo 5a ed., 2020) pp.302
 * Tempo per la tesi
 =... non più di tre anni e non meno di sei mesi.= (p.43)

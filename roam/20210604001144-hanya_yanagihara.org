@@ -1,4 +1,4 @@
 #+title: Hanya Yanagihara
-[[file:20210527192825-authors.org][#authors]]
+[[file:20210527192825-authors.org][$authors]]
 
 * [[file:20210604000550-a_little_life.org][A Little Life]]

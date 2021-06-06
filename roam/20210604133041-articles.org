@@ -1,2 +1,2 @@
-#+title: #articles
+#+title: $articles
 #+roam_alias: Articles

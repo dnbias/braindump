@@ -1,4 +1,4 @@
 #+title: Jeffrey Ullman
-[[file:20210527192825-authors.org][#authors]]
+[[file:20210527192825-authors.org][$authors]]
 
 * [[file:20200929235308-introduction_to_automata_theory_languages_and_computation.org][Introduction to Automata Theory, Languages, and Computation]]

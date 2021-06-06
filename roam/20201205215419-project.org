@@ -1,2 +1,2 @@
-#+title: #project
+#+title: $project
 #+roam_alias: Project

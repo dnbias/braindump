@@ -1,2 +1,2 @@
 #+title: A Song for Lya
-[[file:20201029112426-books.org][#books]]
+[[file:20201029112426-books.org][$books]]

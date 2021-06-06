@@ -1,5 +1,5 @@
 #+title: Why Browse the web on Emacs
-[[file:20210604133041-articles.org][#articles]]
+[[file:20210604133041-articles.org][$articles]]
 - source: https://sachachua.com/blog/2008/08/why-browse-the-web-in-emacs/
 - author: [[file:20200531191654-sacha_chua.org][Sacha Chua]]
 - tags: [[file:20200530210833-emacs.org][Emacs]], [[file:20200602041220-w3m.org][w3m]]

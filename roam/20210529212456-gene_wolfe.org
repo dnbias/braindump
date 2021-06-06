@@ -1,5 +1,5 @@
 #+title: Gene Wolfe
-[[file:20210527192825-authors.org][#authors]]
+[[file:20210527192825-authors.org][$authors]]
 1931 - 2019, American
 
 * The Solar Cycle

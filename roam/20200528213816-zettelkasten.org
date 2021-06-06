@@ -2,6 +2,7 @@
 - tags: [[file:20200528214634-note_taking.org][Note Taking]], [[file:20210604135308-org_roam.org][org-roam]]
 - books: [[file:20210605235823-how_to_take_smart_notes.org][How to Take Smart Notes]]
 
+
 - nuova conoscenza si aggiunge a conoscenza pregressa
   + in questo modo si sviluppano nuove idee
 - bidirectional linking
