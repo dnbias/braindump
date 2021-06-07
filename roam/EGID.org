@@ -10,7 +10,7 @@ Modello economico sostenibile
 - backend - frontend
   + condividono la Value Proposition
     - risoluzione di un problema
-    - ti do l'opportunita' di fare qualcosa che prima non facevi
+    - ti dò l'opportunità di fare qualcosa che prima non facevi
 - Customer Segments
 - Channels
 
@@ -30,25 +30,25 @@ Divisioni
 - aspetti dell'offerta
 Q:
 - per chi creo valore
-- chi sono i nostri clienti piu' importanti
+- chi sono i clienti più importanti
 
 Segmenti
-- mass market
+- =mass market=
   + il business model non distingue tra customer segments
   + i canali e le relazioni si concetrano su un largo gruppo di clienti
-- niche market
+- =niche market=
   + Specifico e specializzato
   + spesso tratta relazioni tra fornitore-compratore
-- segmentato
+- =segmentato=
   + prodotto simile ma offerto a diversi gruppi
-- diversificato
+- =diversificato=
   + segmenti diversi e prodotti diversi
-- multi-piattoforma
+- =multi-piattaforma=
   + permettono l'incontro tra offerta e domanda
   + non forniscono nulla di reale se non la piattaforma
 *** Value Proposition
-Tutta la struttura dovra' essere compatibile con questa sezione
-- Qual'e' lo scopo del prodotto e i suoi usi
+Tutta la struttura dovrà essere compatibile con questa sezione
+- Qual'è lo scopo del prodotto e i suoi usi
 - A chi e' mirato questo prodotto, dove si collocano
   + decisori o utenti, clienti (e' disponto a riconoscere un valore non necessariamente monetario)
   + che prodotto indiriziamo ad ogni segmento di clientela
@@ -81,7 +81,7 @@ Elementi
 
 *** Channels
 Strumenti fisici o virtuali che permettono di raggiungere i segmenti di mercato
-I canali sono insiemi di strumenti con cui l'azienda consegna la Value Proposition ai clienti
+I =canali= sono insiemi di strumenti con cui l'azienda /consegna la Value Proposition/ ai clienti
 - *Funzioni*
   + Rendere a conoscenza dell'offerta dell'azienda il cliente
   + Consentire una valutazione della value proposition corretta da parte del cliente
@@ -112,7 +112,7 @@ Le diverse modalitá devono essere integrate, non devono creare confusione nel c
     - Kickstarter, Youtube, Amazon
 
 *** Revenue Streams
-L'utile o margine netto che si ricava
+L'utile o =margine netto= che si ricava
 - transazioni unica una tantum di un cliente
 - transazioni ricorrenti
 
@@ -120,7 +120,7 @@ Domanda importante: a cosa il cliente é disposto a riconoscere un valore
 - ci sono diversi modi per generare _revenue stream_
 - ció che conta é la somma complessiva dei R.S.
 
-Modalitá
+=Modalitá=
 - venditá di asset
 - pagamento in base all'uso
 - pagamento ad iscrizione
@@ -129,7 +129,7 @@ Modalitá
   + uso di prodotti ~intangible~
 - brokeraggio
 - pubblicitá
-Meccanismi di definizioni del Prezzo
+Meccanismi di =definizione del Prezzo=
 - fisso
 - dinamico
   + in base al momento, al metodo di acquisto, il prezza cambia
@@ -213,7 +213,7 @@ Per la 4.0
 - cyber-security
 
 *** Impresa
-organizzazione economica che svolge processi di acquisizione e di prodzione di beni o servizi
+organizzazione economica che svolge processi di acquisizione e di produzione di beni o servizi
 Attivitá economica organizzata dall'imprenditore al fine della produzione e dello scambio di beni o di servizi
 
 Puó essere considerata un sistema socio-tecnico
@@ -226,7 +226,7 @@ Funzioni Istituzionali:
 - sistema sociale
 - struttura patrimoniale
 
-Teorie sulle finalitá
+Teorie sulle =finalitá=
 - massimizzazione del profitto
 - sopravvivenza dell'impresa
 - creazione e diffusione del valore economico
@@ -237,27 +237,30 @@ Teorie sulle finalitá
   + potere
   + posizione sociale
 
-Forme istituzionali
+=Forme= istituzionali
 - capitalistica
 - manageriale
 - cooperativa
 - non profit
 - post-manageriale
-Grado di controllo dell'imprenditore varia
+
+Grado di =controllo= dell'imprenditore varia
 - assoluto
 - familiare
 - coalizione
 - supervisione finanziaria
 - public company
+
 Ragione Sociale
 - forme individuali
 - forme collettive
 
-- Gestione
-  + Strategica
-  + Direzionale
-  + Operativa
+Gestione
+- Strategica
+- Direzionale
+- Operativa
 
+=DEF=
 - Stakeholder, Portatori di interesse
   + primari
   + secondari
@@ -274,12 +277,12 @@ Ragione Sociale
 Progettazione -> Produzione -> Logistica ->
 Marketing(in e out) -> Servizio clienti -> Gestione delle risorse(umane, tecnologiche)
 
-Le scelte di make/buy vengono fatte con studi su conti/benefici
+Le scelte di make/buy vengono fatte con studi su costi/benefici
 
 Dipende dal tipo di attivitá, dal suo tipo, dal suo ciclo vitale
 - insieme delle attivitá primarie
   + che seguono il percorso del cliente
-Evidenzia insiemi di attivitá interdipendenti
+Evidenzia insiemi di =attivitá interdipendenti=
 - legate in termini di risorse allocate e di competenze necessarie
   + orizzontali
     - collegamenti tra Produzione e Servizi per esempio
@@ -288,16 +291,17 @@ Evidenzia insiemi di attivitá interdipendenti
     - tra attivitá di supporto e primarie
       + collaborazione tra risorse umane, sviluppo di tecnologia,approvvigionamento con la Produzione(e le attivitá base primarie)
 
-I collegamenti vanno considerati per ottenere un vantaggio competitivo
+I collegamenti vanno considerati per ottenere un =vantaggio competitivo=
 - ottimizzazione
   + trade-off tra le attivitá
 - coordinamento
   + spesso riduce i costi o enfatizza la differenziazione
     - prodotto generico / costi minori
     - prodotto unico / conto maggiore
+
 Quindi vantaggi:
-- di costo
-- di differenziazione
+- /di costo/
+- /di differenziazione/
   + prestazione
   + caratteristiche
   + el. complementari
@@ -306,10 +310,10 @@ Quindi vantaggi:
     - disponibilitá
 
 Strategie:
-- strategie di costo
-- strategie di differenziazione
+- /di costo/
+- /di differenziazione/
   + modificare caratteristiche fisiche, tecniche, estetiche o psicologiche associate al prodotto
-- strategie di focalizzazione
+- /di focalizzazione/
   + la differenza sta nell'area di mercato, delle nicchie
 
 **** VRIO
@@ -319,6 +323,59 @@ Strategie:
 - Caratteristico nella Organizzazione
 - Implicazioni competitive
 - Performance
+
+** Innovazione
+Ruolo particolarmente significativo come =variabile esplicativa della competitività= dell'impresa e dello sviluppo dei sistemi socio-economici
+- risultato di un processo dinamico e sistemico
+- da cambiamenti tecno-economici
+- accumulo, applicazione, rinnovazione delle risorse di conoscenza
+Tutto questo forma il patrimonio distintivo dell'impresa e del suo contesto di riferimento
+Aziende senza le possibilità possono intraprendere collaborazioni virtuose Open con altri agenti del settore.
+- per ció si deve fare peró attenzione alla proprietà intellettuale
+  - è più sicuro esternalizzare solo alcune fasi, quelle meno sensibili, di ricerca e sviluppo
+
+Due =tipi di innovazione=
+- tecnologia in senso /stretto/ (industriale)
+- tecnologia in senso /lato/ (post-industriale)
+Il processo:
+- Planning
+- Concept Development
+- System-Level Design
+- Detail Design
+- Testing & Refinement
+- Production Ramp-Up
+
+Il =profilo strategico= può essere
+- /offensive/, rivolte ad acquisire un nuovo vantaggio competitivo
+  - supportano le strategie competitive
+- /neutrali/, finalizzate ad annullare ritardi sotto il profilo dell'efficienza funzionale
+  - importanti a livello operativo
+- /difensive/, orientate a ridurre il gap tecnologico in limiti che non lasciano svantaggi competitivi
+
+Il =profilo operativo= può essere:
+- /manageriale/
+- /tecnologico/
+  - prodotto (variazioni alla gamma in vendita)
+  - processo (efficienza dei cicli di lavorazioni)
+  - impianto (messa a punto degli impianti)
+- /commerciale/
+
+Dal punto di vista =organizzativo= le innovazioni sono:
+- /autonome/ (indipendenti da altre innovazioni)
+- /sistematiche/ (producono vantaggi solo se accompagnate da innovazioni complementari ed accessorie)
+
+Le innovazioni possono avere dei gradi di =protezione= diversi:
+- /protette/ (se esistono strumenti giuridici di difesa)
+- /proteggibili/ (legata a investimenti promozionali/tecnici volti a scoraggiare il processo imitativo, accedendo al mercato il più velocemente possibile)
+- /non protette/
+
+=Economicamente= le possibilità strategiche sono:
+- /immediata/ redditività
+- redditività /diffusa/
+- redditività /futura/
+L'asset più importante è immateriale ed è la conoscenza dell'impresa, importante il knowledge management
+
+L'innovazione a livello macroscopico ha impatto sulle nazioni
 
 * Diritto
 Esistono diverse fonti di Diritto
