@@ -1,0 +1,6 @@
+#+title: A brain in a supercomputer
+- Author: [[file:20210606220207-henry_markram.org][Henry Markram]]
+- Source:  https://www.ted.com/talks/henry_markram_a_brain_in_a_supercomputer/up-next?language=en
+- Tags: [[file:20210606220121-ted_talks.org][TED Talks]], [[file:20210606215832-neural_network.org][Neural Network]], [[file:20210606220443-simulation.org][Simulation]]
+
+- Simulate a human brain inside a computer to perform non-intrusive tests and improve our understanding of [[file:20210606220413-neuroscience.org][Neuroscience]]

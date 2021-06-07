@@ -1,1 +1,2 @@
-#+title: #space
+#+title: $space
+#+roam_alias: Spaceflight Space

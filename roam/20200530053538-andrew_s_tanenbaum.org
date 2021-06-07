@@ -1,4 +1,4 @@
 #+TITLE: Andrew S. Tanenbaum
-:author:
+[[file:20210527192825-authors.org][$authors]]
 
 * Structured Computer Organization

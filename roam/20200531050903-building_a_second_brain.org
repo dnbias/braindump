@@ -4,7 +4,7 @@
 
 * OBJECTIVE
 
-    - Creating a [[file:../../../../../../mnt/sda1/DanyB/Documents/org/roam/20200528214634-note_taking.org][Note Taking]] system that takes out the maze from your brain
+    - Creating a [[file:20200528214634-note_taking.org][Note Taking]] system that takes out the maze from your brain
     - Creare un serbatoio di conoscenza, sicura dall'influsso del tempo
       - cosi facendo l'energia risparmiata non dovendo sforzare la memoria puo' essere reindirizzata
       - mettere insieme un sistema che permette di creare ~nuove~ connessioni, prima non realizzate
@@ -41,6 +41,6 @@ Projects, Areas, (Resources), Archives
     Integra in modo fluido la scrittura e i collegamenti, lasciando l'utente libero di esplorare, riesplorare, la rete di collegamenti
 
 
-+ [[file:20200531055420-quotes.org][Quotes]]
-    "As Homo Sapiens, we're especially adapted to learning in ways that are vivid, visual and experimental. Scientists refer to this as 'the picture superiority effect.'"
++ [[file:20210604132601-cit.org][Quotes]]
+  As Homo Sapiens, we're especially adapted to learning in ways that are vivid, visual and experimental. Scientists refer to this as 'the picture superiority effect.'"
     ~ [[file:20200531055134-jonathan_levi.org][Jonathan Levi]]

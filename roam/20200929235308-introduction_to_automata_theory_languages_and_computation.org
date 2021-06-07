@@ -1,5 +1,8 @@
 #+title: Introduction to Automata Theory, Languages, and Computation
 #+STARTUP: latexpreview
+Hopcroft, John, Ullman, Jeffrey, /Introduction to Automata Theory, Languages, and Computation/, Addison-Wesley, 1979, pp.521
+
+
 =def= Automata is the study of abstract computing devices - machine
 
 * A finite-state automaton

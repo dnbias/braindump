@@ -1,1 +1,1 @@
-#+title: #authors
+#+title: $authors

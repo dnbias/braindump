@@ -1,0 +1,18 @@
+#+title: How to take smart notes with org-mode
+[[file:20210604133041-articles.org][$articles]]
+- source: https://blog.jethro.dev/posts/how_to_take_smart_notes_org/
+- author: [[file:20210604133348-jethro_kuan.org][Jethro Kuan]]
+- tags: [[file:20200530210833-emacs.org][Emacs]], [[file:20210604135308-org_roam.org][org-roam]], [[file:20200528214634-note_taking.org][Note Taking]]
+
+* One fundamental question
+=In what context do I want to see this note again?=
+
+* Fleeting notes
+A reminder of what's going on inside one's head
+
+* Project Notes
+Anything else
+- talks
+- books
+- papers
+- anything refined from the fleeting notes

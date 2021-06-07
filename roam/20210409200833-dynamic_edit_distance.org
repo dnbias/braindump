@@ -1,5 +1,5 @@
 #+title: Dynamic Edit Distance
-[[file:#university.org][#university]] [[file:20201205215419-project.org][#project]]
+[[file:#university.org][#university]] [[file:20201205215419-project.org][$project]]
 In [[file:20200929150429-c.org][C]]
 
 * Libraries

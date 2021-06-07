@@ -1,1 +1,2 @@
-#+TITLE:#university
+#+TITLE:$university
+#+roam_alias: University

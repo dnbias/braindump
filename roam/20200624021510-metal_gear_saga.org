@@ -1,4 +1,5 @@
 #+TITLE: Metal Gear Saga
+#+roam_alias: MGS
 
 * Metal Gear
 

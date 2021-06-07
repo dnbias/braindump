@@ -1,0 +1,2 @@
+#+title: PKM
+#+roam_alias: "Personal Knowledge Management System"

@@ -1,7 +1,7 @@
 #+title: LFTCompiler
 #+startup: latexpreview
 [[file:#university.org][#university]]
-[[file:20201205215419-project.org][#project]]
+[[file:20201205215419-project.org][$project]]
 
 Progetto per il Corso di [[file:LFT.org][Linguaggi Formali e Traduttori]]
 - [[file:~/Documents/Uni/II/LFT/Lab/LFT_Lab2021_L8v2.pdf][Doc del Progetto]]

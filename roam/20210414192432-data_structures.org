@@ -356,7 +356,7 @@ Definiamo:
 Si conclude che se il numero di celle in T é proporzionale a N allora $N = O(m)$ e quindi $\alpha = O(1)$ e la ricerca richiede tempo $O(1)$
 
 *** Funzioni hash
-Solitamente la distribuzione secondo la quale si estagono le chiavi nno é nota
+Solitamente la distribuzione secondo la quale si estraggono le chiavi non é nota
 - non si puó creare una funzione hash perfetta
 In un Computer le chiavi sono interpretate come sequenze di bit
 - si cerca di utilizzare ogni bit della chiave
@@ -386,7 +386,6 @@ In generale si definisce una funzione hash estese con l'ordene di ispezione
 Per risolvere questo addensamento si introduce il =doppio hashing=
 - $h(k,i) = (h_1(k) + ih_2(k)) \mod m$
   - permette una uguale probabilitá per ogni sequenza di ispezione
-
 
 **** Insert
 #+begin-example
@@ -449,7 +448,6 @@ Come ADT:
 - chiamate ricorsive di funzioni
 - visita in profonditá di grafi
 - valutazione di un'espressione un notazione postfissa
-
 
 *** assiomi
 - Size(S), Empty(S), Push(S,t)
@@ -561,7 +559,6 @@ Pop(S)
     S.sen.next = S.sen.next.next
     return t
 #+end_example
-
 
 ** Code
 - collezione di dati
@@ -762,7 +759,6 @@ BTHeight(Tree T)
 
 #+end_example
 La complessitá sará uguale a quella di una visita (completa) di un albero
-
 
 *** K-ary Trees
 per ogni nodo
@@ -1088,7 +1084,7 @@ Inserimento $O(\log n)$
 Cancellazione $O(\log n)$
 
 Queste peró devono mantenere l'albero bilanciato
-=Rotazione=
+***** Rotazione
 - dopo una rotazione l'albero rimane di ricerca
 - se non rispettava le regole R-N dopo le rispetta
 #+begin_example
@@ -1108,3 +1104,686 @@ Left-Rotate(T,x)
   y.left = x
   x.parent = y
 #+end_example
+***** Inserimento
+1. ~x(R)~ come in albero binario
+   a. se ~x~ radice allora colorato B
+2. ...
+   a. Caso 0
+      - ~p(B)~
+        + altezza B di ~p~ non cambia
+   b. Caso 1
+      - ~u(R)~, ~p(R)~ altrimenti Caso 0
+        + violata la regola R
+          - invertiamo colori di ~p,u~ con quello di ~g~
+        + dopo le modifiche le regole localmente sono rispettate
+          - ~p di g (B)~ regole rispettate
+          - ~p di g (R)~ regola del R violata
+          - ~g~ radice basta colorarla di B
+      - puó causare problemi a livelli superiori
+        + ~u(R)~ si ricolora come prima
+          - invertiamo colori di ~p,u~ con quello di ~g~ come Caso 1
+        + ~u(N)~ e ~x~ figlio sinistro
+          - rotazione ~g~ verso destra come Caso 2
+        + ~u(N)~ e ~x~ figlio destro
+          - 2 rotazioni come Caso 3
+   c. Caso 2
+      - ~p(R)~ ~u(B)~ ed é nil
+        + rotazione verso destra di ~g~
+        + regola R violata
+        + ~g(B)~ diventa R
+        + ~p(R)~ deventa B
+        + localmente le regole vengono rispettate
+        + l'altezza B del padre di ~p~ non cambia
+   d. Caso 3
+      - ~u(B)~ ed é nil e ~x~ figlio destro
+      - rotazione a sinistra di ~p~
+      - rotazione a destra di ~g~
+      - ricondotto al Caso 2
+
+x é il nodo che puó creare problemi
+#+begin_example
+RB-Insert-Fixup(T,x)
+  while x.p.color = red do
+    if x.p == x.p.p.left then
+      u = x.p.p.right
+      if u.color = red then     // caso 1?
+        x.p.color = black
+        u.color = black
+        x.p.p.color = red
+        x = x.p.p
+      else                      // caso 2 e 3
+        if x == x.p.right then  // caso 3?
+          x = x.p
+          Left-Rotate(T,x)
+        x.p.color = black
+        x.p.p.color = red
+        Right-Rotate(T,x.p.p)
+    else
+      // corpo del if esterno con left e right scambiati, rotazioni scambiate
+  T.root.color = black
+#+end_example
+***** Cancellazione
+1. cancellazione come in un albero di ricerca ordinario
+2. ripristino delle regole per ricolorazioni/rotazioni
+   - ~x~ mantiene il suo colore
+   - ~y~ prende il colore di ~z~
+   - ~lostcolor~ memorizza il nodo effettivamente perso: nel caso A,B ~z~, nel caso C,D ~y~
+     + se il nodo rimosso é B allora viene violata la regola dei cammini
+   - Caso -1
+     + ~lostcolor~ = R
+     + non si fa nulla
+   - Caso 0
+     + ~lostcolor~ = B, ~x~ é rosso
+     + violate regola R, regola dei cammini
+       - ~x~ puó essere radice e R
+     + si colora ~x~ di B
+
+#+begin_example
+#+end_example
+
+** Grafi
+$G = (V,E)$
+- vertici,archi
+
+Un grafo puó essere ~orientato~ o meno se la relazione é asimmetrica o simmetrica
+Un grafo é un ~multigrafo~ se ci sono piú archi tra le stesse coppie
+
+Un vertice $x$ é ~adiacente~ a $y$ se $(y,x)\in E$
+
+Il grado entrante di un vertice é il numero di archi entranti, viceversa per il grado uscente
+Il ~grado~ é la somma di g entrante e g uscente
+
+~peso~ di un arco in un grafo pesato é diverso da 1
+il ~grado pesato~ somma i pesi degli archi
+
+Un ~cammino~ in un grafo é una sequenza di vertici tale che $(v_i,v_{i+1})\in E$ per $1<i<n$
+~cammino~ semplice se tutti i vertici sono distinti eccetto al piú il primo e l'ultimo vertice della sequenza
+Se esiste un cammino $p$ tra i vertici $x$ e $y$, si dice che $y$ é raggiungibile da $x$ e si scrive $x \rightarrow y$
+- in un grafo orientato la raggiungibilitá non é simmetrica
+
+Un grafo non orientato é connesso se esiste un cammino da ogni vertice ad ogni altro vertice
+Un grafo orientato é
+- fortemente connesso se esiste un cammino da ogni vertice ad ogni altro vertice
+- debolmente connesso se il grafo ottenuto ignorando la direzione degli archi é connesso
+
+In ciclo é un cammino che parte da un certo vertice e ci torna, dove ci sono almeno 2 archi
+- se il grafo non é orientato allora é un ciclo solo se non si utilizzano due volte lo stesso arco
+
+un grafo aciclico é detto Directed Acyclic Graph se orientato
+
+Un grafo non é completo se ci sono vertici da cui non partono archi
+- se completo il numero di archi é $n-1$
+
+Un albero libero (senza radice definita) é un grafo non orientato, connesso, aciclico
+Foresta é un grafo non orientato, aciclico ma non necessariamente connesso
+
+*** Rappresentazioni
+In un computer possiamo utilzzare diverse tecniche
+
+*Matrice di adiacenza*
+- troppi zeri
+- simmetrica per grafi non orientati
+
+*Lista di adiacenza*
+- ogni nodo ha associata una lista di nodi adiacenti
+- doppio del numero di archi nelle liste se il grafo non é orientato
+
+Semplicemente estendibile per i grafi pesati
+
+*** Visita
+3 sottoinsiemi
+- Bianchi, nodi non ancora scoperti
+- Grigi, nodi scoperti di cui gli adiacenti non sono ancora tutti scoperti
+  + la ~frangia~ da cui continuare la visita
+- Neri, nodi scoperti cui adiacenti sono stati giá scoperti
+
+#+begin_example
+Inizializza(G)
+  for \forall u \in V do
+    u.color = bianco
+    u.predecessor = nil
+
+Visita(G,s)                             // s nodo da cui partire
+  s.color = grigio
+  while \exists nodo grigio do
+    u = nodo grigio
+    if \exists v bianco \in adj[u] then // adiacente bianco?
+      v.color = grigio
+    else                                // u non ha adiacenti bianchi
+      u.color = nero
+#+end_example
+- =proprietá=
+  + colore puó solo passare da B a G a N
+- =invarianti=
+  - se $(u,v) \in E$ e $u$ é N allora $v$ é G o N
+  - tutti i vertici G o N sono raggiungibile da s
+  - qualunque cammino da s ad un nodo B deve contenere almeno un vertice G
+- =teorema=
+  + un vertice $v$ é N $\iff$ é raggiungibile da $s$
+#+begin_example
+Visita(G,s)
+  s.color = grigio
+  while \exists nodo grigio do
+    u = nodo grigio
+    if \exists v bianco \in adj[u] then
+      v.color = grigio
+      v.predecessor = u
+       else
+      u.color = nero
+#+end_example
+- =proprietá=
+  + al termine di Visita(G,s), l'unico vertice nero con predecessore /nil/ é s
+- =teorema=
+  + il sottografo dei predecessori é un albero
+    - un ~albero di scoperta~
+Questo Algoritmo visita solo il componente di cui il nodo iniziale (s) fa parte
+- il Grafo puó non essere connesso
+
+Visita intera di un grafo non connesso:
+#+begin_example
+Visita-Tutti-Vert(G)
+  Inizializza(G)
+  for \forall u \in V do
+    if u.color == bianco then
+      Visita(G,u)
+#+end_example
+Il sottografo di predecessori diventa una foresta se il grafo contiene piú componenti
+- ~foresta di scoperta~
+
+**** Versione piú concreta
+- operazioni, D insiemi dei nodi Grigi
+  + Make-Empty
+    - crea una nuova struttura
+  + First(D)
+    - restituisce il primo elemento senza modificare D
+  + Add(D,x)
+    - aggiunge x a D
+    - se aggiunge x come primo el -> stack
+    - se aggiunge x come ultimo el -> queue
+  + Remove-First(D)
+  + Not-Empty(D)
+
+#+begin_example
+Visita(G,s)
+  D = Make-Empty
+  s.color = G
+  Add(D,s)
+  while Not-Empty(D) do
+    u = First(D)
+    if \exists v B \in adj[u] then   // come implementarlo?
+      v.color = G
+      v.p = u
+      Add(D,v)
+    else
+      u.color = N
+      Remove-First(D)
+#+end_example
+Complessitá $O(|V|)$ per le operazioni su D e $O(|E|)$ per la ricerca dei nodi B
+- tempo totale $O(|V|+|E|)$
+
+D ~coda~
+- visita in ampiezza (breadth first search - =BFS=)
+- la costruzione del livello n+1 non comincia prima di concludere la costruzione del livello n
+In una coda possiamo modificare l'Algoritmo cosí:
+#+begin_example
+Visita(G,s)
+  D = Make-Empty
+  s.color = G
+  Add(D,s)
+  while Not-Empty(D) do
+    u = First(D)
+    for \forall v: v.color == B \in adj[u] do // in quanto il primo el non cambia
+                                              // finché ci sono adiacenti B
+      v.color = G
+      v.p = u
+      Add(D,v)
+    u.color = N
+    Remove-First(D)
+#+end_example
+
+**** Versione ulteriore BFS
+~Breadth First Search~
+due campi per ogni el nella lista di adiacenti
+- vtx é il vertice
+- next é il prossimo
+#+begin_example
+Visita(G,s)
+  D = Make-Empty
+  s.color = G
+  Add(D,s)
+  while Not-Empty(D) do
+    u = First(D)
+    ptr = adj[u]
+    while ptr != nil do
+      v = ptr.vtx
+      if v.color == B then
+        v.color = G
+        v.p = u
+        Add(D,v)
+      ptr = ptr.next
+    u.color = N
+    Remove-First(D)
+#+end_example
+
+Con calcolo di Livello d:
+#+begin_example
+Inizializza(G)
+  for  \forall u \in V do
+    u.color = B
+    u.p = nil
+    u.d = \infty
+
+Visita(G,s)
+  D = Make-Empty
+  s.color = G
+  s.d = 0
+  Add(D,s)
+  while Not-Empty(D) do
+    u = First(D)
+    ptr = adj[u]
+    while ptr != nil do
+      v = ptr.vtx
+      if v.color == B then
+        v.color = G
+        v.p = u
+        v.d = u.d + 1
+        Add(D,v)
+      ptr = ptr.next
+    u.color = N
+    Remove-First(D)
+#+end_example
+La forma dell'albero dipende dall'ordine un cui si trovano i nodi nelle liste di adiacenza
+- =teorema= al termine della visita BFS
+  + $\forall v \in V,v.d = \delta(s,v)$
+- =proprietá=
+  + il cammino da s a v nell'albero BFS é un cammino minimo
+  + il livello di un nodo nell'albero ottenuto con la visita BFS é indipendente dal ordine in cui sono memorizzati i vertice nelle liste di adiacenza
+
+**** Versione ulteriore DFS
+~Depth First Search~
+Ordine di scoperta con un contatore
+- inc quando un nodo cambia colore
+- ogni nodo é marcato 2 volte (B -> G, G -> N) su 2 attributi
+  1. inizio visita
+  2. fine visita
+#+begin_example
+Inizializza(G)
+  for \forall u \in V do
+    u.color = B
+    u.p = nil
+    u.ptr = adj[u]
+
+Visita(G,s)
+  D = Make-Empty
+  s.color = G
+  Add(D,s)
+  while Not-Empty(D) do
+    while First(D).ptr != nil do
+      v = First(D).ptr.vtx
+      First(D).ptr = First(D).ptr.next
+      if v.color == B then
+        v.color = G
+        v.p = First(D)
+        Add(D,v)
+    First(D).color = N
+    Remove-First(D)
+#+end_example
+La struttura di attivazione rivela che un vertice non viene disattivato finché non sono stati attivati e disattivati tutti i suoi discendenti
+- stesso ordine in cui si percorre un albero di ricorsione
+
+
+#+begin_example
+Visita(G,s)
+  s.color = G
+  while \exists v: v == B \in adj[s] do
+    v.p = s
+    Visita(G,v)
+  s.color = N
+#+end_example
+C'é corrispondenza fra lo stack della versione iterativa e lo stack delle attivazione della procedura ricorsiva
+
+Contatore =time= per ricordare l'ordine della attivazioni/disattivazione
+- .d
+- .f
+#+begin_example
+Inizializza(G)
+  for \forall u \in V do
+    u.color = B
+    u.p = nil
+    u.ptr = adj[u]
+    u.d = \infty
+    u.f = \infty
+  time = 1
+
+Visita(G,s)
+  s.color = G
+  s.d = time
+  time = time + 1
+  while \exists v: v == B \in adj[s] do
+    v.p = s
+    Visita(G,v)
+  s.f = time
+  time = time + 1
+  s.color = N
+#+end_example
+***** Proprietá
+- =Teorema delle parestesi=
+  + ogni visita DFS in un grafo, $\forall (u,v) \in G$ 1 e 1 sola di queste condizioni é soddisfatta:
+    a) u.d < v.d < v.f < u.f e u é antenato di v in un albero della foresta DFS
+       - nel G esiste un cammino do u a v
+    b) v.d < u.d < u.f < v.f e u é discendente di v in un albero della foresta DFS
+       - nel G esiste un cammino da v a u
+    c) u.d < u.f < v.d < v.f o v.d < v.f < u.d < u.f e non esiste relazione antenato-discendente tra u e v nella foresta DFS
+       - u e v fanno parte di 2 alberi distinti, nel G non esiste cammino da uno all'altro
+- =classificazione degli archi del grafo durante DFS=
+  + arco dell'albero
+    - inserito nella foresta DFS
+  + arco all'indietro
+    - nodo - antenato
+  + arco in avanti
+    - nodo - discendente
+  + arco di attraversamento
+    - nodi - nodo non in relazione antenato-discendente,
+      + due alberi distinti della foresta
+      + due rami distinti dello stesso albero
+La classificazione é fatta quando si esamina v nella lista di adiaceti adj[u]
+- v.color:
+  + B, (u,v) arco della foresta
+  + G, u discendente di v (u,v) arco all'indietro
+  + N, visita v giá terminata, (u,v) é un arco
+    - in avanti se v é discendente di u
+      + u.d < v.d $\implies$ u.d < v.d < v.f < u.f
+    - di attraversamento altrimenti
+      + v.d < u.d $\implies$ v.d < v.f < u.d < u.f
+- =teoremi=
+  + in una visita DFS di un G non orientato, ogni arco é un arco dell'albero o un arco all'indietro
+  + un G, orientato o meno, é aciclico se e solo se una visita DFS non produce archi all'indietro
+
+*** Cammino di scoperta
+#+begin_example
+Print-Path(G,s,u)
+  if u == s then
+    print u
+  else
+    if u.predecessor == nil then
+      print "Non c'é cammino da s a u"
+    else
+      Print-Path(G,s,u.predecessor)
+      print u
+#+end_example
+*** Ordinamento Topologico
+**** Def, Proprietá
+$\sigma : V \rightarrow \{1,...,|V|\}$ t.c. $\sigma(u) < \sigma(v)$ se esiste un cammino da $u$ a $v$ in $G$
+Ció ha senso solo in grafi ~orientati~
+def equivalente: un ordinamento lineare dei vertici di un grafo tale che $\forall (u,v) \in E$, $u$ precede $v$ nell'ordinamento
+
+L'ordinamento puó esistere solo se il grafo é ~aciclico~ (~DAG~)
+Ne puó esistere piú di uno
+**** Algoritmo naive
+- il primo nodo deve essere senza archi entrambi, denotato $o_1$
+- il secondo nodo puó avere archi entranti solo da $o_1$, denotato $o_2$
+- il terzo nodo puó evere archi entranti solo da $o_1,o_2$, denotato i$o_3$
+- ...
+
+#+begin_example
+Topological-Order(G)
+  H = G
+  o = lista vuota di vertici
+  while \exists u: \not\exists v: (v,u) \in E(H) do
+    o.append(u)
+    H.remove(u)
+  if H != vuoto
+    print "grafo non aciclico"
+  return o
+#+end_example
+
+**** Algoritmo DFS
+In ordine di attributo fine visita decrescente
+- si parte alla radice dell'ultimo albero DFS
+  + si scorrono i rami da destra a sinistra
+#+begin_example
+Topological-Sort(G)
+  L = lista vuota di vertici
+  Inizializza(G)
+  for all u in V do
+    if u.color == B then
+      DFS-Topological(G,u,L)
+  return L
+
+DFS-Topological(G,s,L)
+  s.color = g
+  s.d = time
+  time = time + 1
+  for all v == b && in adj[s] do
+    v.p = s
+    DFS-Topological(G,v,L)
+  s.color = nero
+  s.f = time
+  time = time + 1
+  L.insert(s)        // in testa
+#+end_example
+Complessitá sempre uguale a quella della visita in profonditá
+*** Componenti Fortemente Connesse
+=cfc=
+**** Def, Proprietá
+2 nodi u,v sono mutualmente raggiungibili se u é raggiungibile da v e viceversa
+In un grafo $G = (V,E)$ la relazione $V \for V$ mutualmente raggiungibile é una relazione di equivalenza (riflessiva, simmetrica, transitiva)
+Le cfc di un grafo orientato sono le classi di equivalenza su questa relazione
+$u \leftrightarrow v$ simboleggia la appartenenza alla stessa classe di equivalenza, e alla stessa cfc
+**** Naive
+**** DFS
+- =lemmi=
+  1. se $x \leftrightarrow y$ allora nessun cammino tra essi puó uscire dalla loro cfc
+- =teoremi=
+  1. in una qualunque DFS di un grafo G orientato tutti i vertici di una cfc vengono collocati nello stesso albero
+     - nello stesso albero di scoperta ci sono nodi di piú cfc
+
+Gli alberi della foresta di scoperta si possono, sempre, ~potare~ in modo da separare le cfc
+
+Consideriamo il grafo trasposto:
+- dall'alto al basso
+- da destra verso sinistra
+Intervalli di attivazione di due vertici
+1. x.d < y.d < y.f < x.f
+2. y.d < y.f < x.d < x.f
+In entrambi i casi x.f > y.f
+- i vertici vanno considerati in ordine decrescente di tempo di fine visita
+
+*Algoritmo*:
+1. visita $G$ in profonditá preparando una lista dei vertici in ordine decrescente dei tempi di fine visita
+2. costruisci $G^T$
+3. visita $G^T$ in profonditá considerando i vertici secondo la lista restituita dal passo 1. per quanto riguarda la scelta del nodo bianco da dove fare (ri)partire la visita
+Complessitá:
+$3 * O(|V| + |E|) = O(|V|+|E|)$
+*** Albero Minimo Ricoprente
+=Minimal Spanning Tree=
+dato un grafo $G(V,E)$
+- connesso
+- non orientato
+un albero ricoprente é un sottografo che
+- contiene tutti i nodi
+- aciclico
+- connesso
+
+La funzione peso $W$ é la sommatoria dei pesi degli archi
+L'albero minimo ricoprente é l'a.r. $T$ con peso minimo
+- $W(T)$ minimo
+
+Un grafo ne puó evere piú di uno equivalenti
+#+begin_example
+Min-AR(G)
+  A = nil
+  while A non é un ar do
+    trova arco (u,v) sicuro per A
+    A = A \Cup (u,v)
+#+end_example
+$(u,v)$ é un arco sicuro per $A$:
+- $A \cup (u,v)$ é un sottoinsieme degli archi di un minimo albero di copertura di $G$
+
+Al termine $T=(V,A)$ é un minimo ar
+
+- =Taglio= di $G$
+  + partizione di $V$ in due insiemi $X$ e $V-X$
+  + un arco attraversa il taglio se parte da $X$ e arriva in $V-X$
+    - gli archi in questi casi non sono orientati, é simmetrico
+  + rispetta un insieme di archi se nessun arco dell'insieme attraversa il taglio
+  + un arco che attraversa un taglio é ~leggero~ se é un arco di peso minimo tra quelli che attraversano il taglio
+- =Teorema=
+  + $G(V,E)$ non orientato, connesso, pesato
+  + $A$ sottoinsieme di $E$ contenuti in qualche ar minimo
+  + $(X,V-X$ taglio che rispetta $A$
+  + $(u,v)$ arco leggero che attraversa $(X,V-X)$
+  + $\implies (u,v)$ sicuro per $A$
+    - per allargare la soluzione parziale
+- =Corollario=
+  - $C$ componente connessa nella foresta $G(A)=(V,A)$
+  - $(u,v)$ arco leggero che connetta $C$ a una qualche altra componente connessa di $G(A)$
+  - $\implies (u,v)$ sicuro per $A$
+*** Algoritmo di Kruscal
+mantiene sottografo non necessariamente connesso di un MST
+- inizialmente:
+  + tutti i vertici e nessun arco
+  + per ogni arco, in ordine non decrescente di costo
+    - arco con entrambi gli estremi nella stessa componente connessa
+      + scarto
+    - viceversa incluso nella soluzione
+L'algoritmo si ferma una volta aggiunti $|V| - 1$ archi ad $A$
+
+#+begin_example
+MST-Kruskal(G)
+  A = nil
+  ordina gli archi in ordine crescente di peso
+  for all (u,v) nell'ordine do
+    if (u,v) non crea ciclo in G(A) then
+      A = A + (u,v)
+#+end_example
+Sequenza di n+m operazioni MakeSet, FindSet e Union di cui:
+- n sono MakeSet
+  + n nodi diventano n alberi o insiemi
+- m sono Union e/o Find
+  + m archi cercati e uniti se sicuri
+La UnionFind esegue una tale sequenza in tempo $O((n+m) \log n)$ nel caso peggiore
+#+begin_example
+MST-Kruskal(G)
+  A = empty_set
+  for all v in V do
+    MakeSet(v)
+  ordina archi per peso crescente
+  for all (u,v) in E nell'ordine do
+    if Find(u) != Find(v) do
+      A = A + (u,v)
+      Union(u,v)
+#+end_example
+
+**** Complessitá
+Ordinamento: $O(|E|\log |E|)$
+Operazioni sulla foresta di insiemi disgiunti: $O((|V|+|E|) \log |V|)$
+Il grafo é connesso: $O((|V|+|E|) \log |V|) = O(|E|\log |V|)$
+Totale:
+$O(|E|\log |E|) = O(|E| \log |V|^2) = O(|E|2\log |V|) = O(|E|\log |V|)$
+**** Correttezza
+Invariante: $A$ é un sottoinsieme degli archi di un MST di $G$
+- inizializzazione: $A = \emptyset$  OK
+- ciclo for:
+  + se l'arco crea un ciclo non viene aggiunto
+  + se non crea un ciclo allora per corollario l'arco é sicuro e OK
+Si dimostra per assurdo che al termine del algoritmo $(V,A)$ é connesso
+*** Algoritmo di Prim
+Mantiene un sottografo connesso $(V-Q,A)$ di un MST
+- inizialmente consiste di un nodo arbitrario
+  + $Q$ contiene tutti i nodi tranne questo nodo iniziale
+  + $A$ é vuoto
+- $n-1$ volte:
+  + sceglie un arco $(u,v)$ di peso minimo che collego un nodo in $V-Q$ ad un nodo in $Q$
+    - aggiungilo a $A$
+    - togli da $Q$ il vertice a cui porta l'arco
+#+begin_example
+MST-Prim(G,s)
+  A = emptyset
+  Q = V - {s}
+  while Q != emptyset
+    scegli arco (u,v) con peso minimo e u in V-Q, v in Q
+    A = A + (u,v)
+    Q = V - {v}
+#+end_example
+Per facilitare la scelta dell'arco successivo memoriziomo per ogni nodo $u \in Q$ l'arco piú leggero fra $V-Q$ e $u$
+- attributo $\pi$ é l'estremitá dell'arco in $V-Q$ e $d$ il suo peso
+#+begin_example
+MST-Prim(G,s)
+  Q = V
+  for all v in V do v.d = infty
+  s.d = 0
+  s.pi = nil
+  while Q != emptyset do
+    u = nodo con d minimo in Q (tolto da Q)
+    for all v in adj[u] do
+      if v in Q && W(u,v) < v.d then
+        v.d = W(u,v)
+        v.pi = u
+#+end_example
+**** Complessitá
+$Q$ puó essere implementata come coda di prioritá usando un heap minimo
+Le prioritá sono date dall'attributo $d$
+il costo dell'algoritmo di Prim é limitato da:
+- inizializzazione: $O(|V|)$
+- estrazioni del minimo: $O(|V|\log |V|)$
+- risistemazione dello heap benario dopo il decremento eventuale delle chiavi: $O(|E|\log |V|)$
+Complessitá: $O((|V|+|E|)\log |V|) = O(|E|\log|V|)$
+**** Correttezza
+Invarianti
+1. $\forall t \in Q: t.\pi \neq nil \implies t.\pi \in V-Q$
+2. $\forall t \in Q: (t.\pi ,t)$ un arco di peso minimo tra $t$ e un vertice di $V-Q$
+3. $(V-Q,\{(t.\pi ,t): t \neq s,t \in V-Q\})$ é un sottografo di un MST:
+   - inizialmente vero in quanto un solo nodo
+   - corpo del ciclo:
+     + $u$ vertice estratto da $Q$
+     + per invariante 1. e 2. l'arco $(u.\pi ,u)$ é un arco leggero che unisce le componenti connesse $(V-Q,A)$ e $(\{u\}, \emptyset)$
+     + $\implies$ arco sicuro per corollario
+*** Cammini Minimi
+dato un $G$ orientato e pesato
+Definiamo distanza di un vertice $u$ da un vertice $v$: $\delta(u,v)$, il peso di un cammino di peso minimo tra tutti i cammini da $v$ a $u$.
+Una tale distanza é ben definita se non contiene al suo interno archi con peso negativo.
+Un algoritmo per trovare cammini minimi da un dato nodo:
+- input
+  + G orientato e pesato
+  + un nodo sorgente $s$
+- output
+  + $\forall v \in V(G)$ l'attributo $v.d$ indica la distanza dal vertice sorgente
+  + l'attributo mantiene una approssimazione della distanza dal nodo sorgente
+Si costruisce un albero radicato in $s$ che percorre tutti i cammini minimi
+- man mano che si inseriscono i vertici con il loro costo si controllano i suoi adiacenti, in quanto potrebbe esserci un cammino dal costo minore di quello precedentemente considerato passante dall'ultimo vertice aggiunto
+**** Algoritmo di Dijkstra
+#+begin_example
+Dijkstra(G,s)
+  Q = V
+  for all v in V do v.d = infty, v.p = nil
+  s.d = 0
+  s.p = nil
+  while Q != empty do
+    u = togli nodo con d minimo da Q
+    for all v in adj[u] do
+      if v in Q && u.d + W(u,v) < v.d then
+        v.d = u.d + W(u,v)
+        v.p = u
+#+end_example
+***** Complessitá
+Simile all'algoritmo di Prim
+- entrambi costruiscono un albero
+La complessitá di Dijkstra é uguale a quella di Prim
+***** Correttezza
+- proprietá
+  1. un sottocammino di un cammino minimo é minimo
+- invarianti banali
+  1. $\forall v \in V(G): v \notin Q \implies v.d$ non modificato
+  2. $\forall v \in Q: v.\pi \neq nil \implies v.\pi \notin Q$
+  3. $\forall v \in V(G) - \{s\}: v.d \neq \infty \iff v.\pi \neq nil$
+  4. $\forall v \in V(G) - \{s\}: v.d \neq \infty \implies v.d = v.\pi .d + W(v.\pi,v)$
+- invariante del ciclo
+  1. $\forall v \notin Q : v.d \neq \infty \iff$ esiste un cammino da (s,v) in G
+- invariante principale del ciclo
+  1. $\forall t \notin Q: t.d = \delta(s,t)$
+
+
+** Disjoint-Set Forest
+Vedi progetto svolto per esercizio:
+- [[file:20210516213623-union_find_set.org][Union-Find Set]]
