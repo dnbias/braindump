@@ -1,8 +1,8 @@
 #+TITLE: Sistemi Operativi
-#+COURSE: SO A
-#+PROF: Davide Gunetti ~ Daniele.Gunetti@unito.it
+#+roam_alias: SO
 #+STARTUP: latexpreview
-[[file:#university.org][#university]]
+[[file:#university.org][$university]]
+- Teacher:  Daniele Gunetti (daniele.gunetti@unito.it)
 
 * Generalita'
 2 obiettivi di un OS:

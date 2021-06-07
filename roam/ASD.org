@@ -1,6 +1,6 @@
 #+TITLE: Algoritmi e Strutture Dati
 #+TEACHER: Andras Horvath(horvath@di.unito.it)
-[[file:#university.org][#university]]
+[[file:#university.org][$university]]
 Esame
 - scritto
 - discussione laboratorio

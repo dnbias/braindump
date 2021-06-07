@@ -1,8 +1,8 @@
 #+TITLE: Linguaggi Formali e Traduttori
-#+COURSE: LFT A
-#+TEACHER: Sproston Jeremy
+#+roam_alias: LFT
 #+startup: latexpreview
-[[file:#university.org][#university]]
+[[file:#university.org][$university]]
+- Teacher:  Sproston Jeremy
 
 Informazioni varie del Corso:
 - Lunedi' lezione sincrona per domande: 11:00
