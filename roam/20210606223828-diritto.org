@@ -1300,11 +1300,22 @@ FB si era opposta, l'ordinanza del Tribunale di Napoli Nord ha rappresentato pre
 - non sarebbe ragionevole attendere un ordine dell'autoritá per intervenire, quando gli interessi in gioco sono diritti della personalitá. Si rischierebbe di attivarsi una volta che questi siano stati irrimediabilmente compromenssi e non piú suscettibili di reintegrazione.
 **** FB pratiche ingannevole
 AGCOM vs FB ireland e casa madre
+- pratica ingannevole
+- pratica scorretta
+  + aggressiva: /opt-in/ e /opt-out/
+    - preselezione che costringe l'utente all'opt-out
+Prima =Tar del Lazio= poi =Consiglio di Stato=
 
-Mentre il social informa l'utente della gratuitá dell'iscrizione il social non informa che i dati ceduti vengano usati a fini commerciali (es. profilazione)
+
+=pratica scorretta= secondo il Codice del Consumo:
+- contraria alla diligenza professionale
+- falso o ionea a falsare il comportamente economico del consumatore medio
+
+Mentre il social informa l'utente della gratuitá dell'iscrizione il social non informa che i dati ceduti vengano usati a fini commerciali (es. =profilazione=)
 - 98% del fatturato deriva dalla pubblicitá online basata sulla profilazione degli utenti
 
 FB contesta la ricostruzione ritenendo che la cessione dei dati non abbia natura corrispettiva, l'utente puó cancellarli in ogni momento, sostiene che i dati personali rappresentano diritti fondamentali della persona che non possono essere venduti o scambiati: questo per dimostrare l'inapplicabilitá delle norme del Codice del Consumo
+- ritiene che il caso debba essere disciplinato dal =GDPR=
 
 Ma secondo il Consiglio di Stato l'ambito operativo della disciplina speciale, costituita dal GDPR, non é assoluto e non esclude l'applicazione di altre discipline
 - GDPR e Codice del Consumo presentano ambiti operativi differenti e non contrastanti
