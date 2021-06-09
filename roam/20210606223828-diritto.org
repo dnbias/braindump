@@ -905,23 +905,35 @@ aka =data breach=
     - se impossibile
     - se dati riservati per segreto professionale
 ** Proprietá Intellettuale
+Normato nel =Codice della Proprietá industriale (CPI)=
 2 Macrocategorie
 - diritti di proprietá industriale
 - diritti d'autore
 3 categorie per le opere di ingegno
-- opere dell'ingegno creativo
-- segni distintivi
-- innovazioni tecniche/di design
+- _opere dell'ingegno creativo_
+  + arte e cultura
+- _segni distintivi_
+  + marchi
+    - segni utilizzati in ambito commerciale per distinguere i prodotti o servizi di un'impresa da quelli di altre imprese
+    - un segno é marchio quando assume la funzione di =strumento di identificazione e differenziazione=
+- _innovazioni tecniche/di design_
+  + modelli di utilitá industriale
 distinzione tra
 - diritti titolati
+  + originati dalla brevettazione
 - diritto non titolati
 
-=Legge n.633 1941=
-Protette ai sensi della legge le opere dell'ingegno di carattere creativo [...] letteratura, musica, arti figurative, architettura, teatro, cinematografia [...] programmi (includendo materiale preparatorio) per elaboratore, banche dati (non estesa al suo contenuto) [...]
-Escluse le idee e i principi alla base di qualsiasi elemento di un programma.
-Il carattere creativo é presente quando dotate di un minimo livello di creativitá, presente tutte le volte che l'autore ha potuto esprimere le sue capacitá creative nella realizzazione dell'opera effettuando scelte libere e creative.
+=Legge n.633/1941= - Legge sul Diritto d'Autore
+- Protette ai sensi della legge le opere dell'ingegno di carattere creativo [...] letteratura, musica, arti figurative, architettura, teatro, cinematografia [...] programmi (includendo materiale preparatorio) per elaboratore, banche dati (non estesa al suo contenuto) [...]
+- Escluse le idee e i principi alla base di qualsiasi elemento di un programma.
+  + sono protette la forme di espressione, l'aspetto formale del codice
+- Il carattere creativo é presente quando dotate di un minimo livello di creativitá, ossia tutte le volte che l'autore ha potuto esprimere le sue capacitá creative nella realizzazione dell'opera effettuando scelte libere e creative.
 
 *** Marchio
+Non possono essere marchi:
+- denominazioni generiche di prodotti o servizi
+- indicazioni destrittive cui essi si riferiscono
+
 =Art.7 C.P.I.=
 Segno distintivo che consente di
 - distinguere
@@ -962,6 +974,8 @@ Depositi
 - Estero
 Tutelato per 10 anni dal deposito, rinnovabile decennio per decennio
 
+I _marchi non registrati_ o di fatto sono comunque tutelati, anche se in misura minore
+
 Uso
 - dovere del titolare
   + uso serio e continuativo del marchio
@@ -983,29 +997,62 @@ Invenzioni, nuove e implicano un'attivitá inventiva, sono atte ad avere una app
 Strumenti giuridici per casi medici e farmaceutici
 - licenza obbligatoria
 - espropriazione per pubblica utilitá del brevetto
+  + bilanciamento tra la tutela della proprietá intelluttuale ed il perseguimento dell'interesse generale
 
 Non sono invenzioni:
 - scoperte scientifiche e metodi matematici
 - principi e metodi per attivitá intellettuale
 - presentazioni di informazioni
 - programmi per elaboratore
-
 *** Design
 l'aspetto dell'intero prodotto o di una sua parte puó costituire oggetto di registrazione
 - a cond. siano nuovi e con ~carattere individuale~
   + suscita nell'utilizzatore informato impressioni diverse da qualsiasi altro modello
 ~prodotto~ é qualsiasi oggetto industriale/artigianale, ~prodotto complesso~ é prodotto formato da componenti sostituibili
 
-*** Funzione tecnica
+- un disegno o modello si considera =divulgato= se
+  + *accessibile al pubblico*
+  + *esposto, messo in commercio*
+- non lo é se rivelato sotto vincolo di riservatezza
+
+- un design non registrato é meritevole di tutela al pari di qualsiasi altro design per tre anni
+  + i design protetti rimangono tali fino al sessantesimo anno dopo la morte dell'autore
+
+**** Funzione tecnica
 Non possono costituire oggetto di registrazione caratteristiche di un prodotto unicamente determinate dalla funzione tecnica del prodotto stesso
 
+**** Caso Moon Boots
+=Tribunale di Milano, 2016=
+Riconosce il modello come opera di design industriale
+- interpretazione del valore artistico necessario per il riconoscimento della tutela del diritto d'autore in favore di un novero circoscritto di opere
+  + questo valore va ricavato da indicatori oggettivi:
+    - riconoscimento della qualitá estetica e artistica negli ambienti culturali
+    - esposizione in mostre e musei
+    - pubblicazioni su riviste specializzate
+    - attribuzione di premi
+
+*** Opere dell'ingegno di carattere creativo
+Appartengono alla letteratura, musica, arti figurative, architettura, teatro, cinema
+- sono protetti
+  + i programmi per elaboratore come opere letterarie ed artistiche
+    - questo include anche il materiale preparatorio di progettazione
+  + le banche dati, per la scelta o la disposizione del materiale
+    - la tutela esclude il contenuto delle BD
+- non sono protetti
+  + idee e principi alla base di un qualsiasi elemento di un programma
+
+Il ~carattere creativo~ é l'unico requisito richiesto per la tutela autorale
+- non implica la novitá assoluta
+- personale e individuale espressione di un'oggettivitá in cui sia riscontrabile un atto creativo
+
 *** Diritti Morali
+=Art.20-24 lda=
 Sono inalienabili (non cedibili a terzi), gli eredi possono far valere tali diritti senza limiti di tempo, non hanno scadenza
 - rivendicare la paternitá
 - diritto di opporsi a deformazioni, mutilazioni e modifiche che possano essere di pregiudizio al suo onore o alla sua reputazione
 - diritto al ripensamento
 *** Diritti Patrimoniali
-Sono alienabili (cedibili a terzi), durano tutta la vita dell'autore e fino a 70 anni dopa la sua morte, sono trasmissibili per ereditá
+Sono alienabili (cedibili a terzi), durano tutta la vita dell'autore e fino a 70 anni dopo la sua morte, sono trasmissibili per ereditá
 - pubblicare
 - utilizzare economicamente
 - riprodurre
@@ -1013,6 +1060,7 @@ Sono alienabili (cedibili a terzi), durano tutta la vita dell'autore e fino a 70
 - eseguire, rappresentare in pubblico
 - ottenere compenso
 - comunicare al pubblico l'opera
+  + comprende la messa a disposizione del pubblico
 - distribuire
 - tradurre
 - noleggiare
@@ -1022,16 +1070,73 @@ Patrimonio di conoscenze non brevettate o brevettabili, derivanti da esperienze 
 - sostanziale
 - individuato
 
-=segreti commerciali= sono informazioni aziendali, esperienze tecnico-industriali, comprese quelle commerciali, soggette al legittimo cotrollo del detentore, ove:
+i =segreti commerciali= sono
+- informazioni aziendali
+- esperienze tecnico-industriali, comprese quelle commerciali
+soggette al legittimo cotrollo del detentore, ove queste siano:
 - segrete
 - di valore economico
 - sottoposte a misure adeguate a mantenerle segrete
+
 *** Concorrenza Sleale
+=Art. 2598 c.c.=
 In caso di plagio, la contraffazione di software contituirebbe giá di per sé atto di concorrenza sleale per violazione dei principi di correttezza professionale
 Compiuta da chiunque:
 - usi nomi o segni distintivi in modo da produrre confusione / imiti i prodotti di un concorrente
 - diffonde notizie sui prodotti o attivitá di un concorrente per determinarne discredito
 - si vale di mezzo non conforme ai principi della correttezza professionale
+
+*** Software e tutela
+=def=: un programma per elaboratore é definito come una sequenza d'istruzioni, scritte in un linguaggio di programmazione, per ottenere un determinato risultato e per compiere funzioni in un dispositivo elettronico.
+
+Strumenti di tutela:
+- =Legge n.633/1941=
+- Tutela Brevettuale (quando applicabile)
+- Informazioni segrete (=Art.98-99 CPI=)
+- =Art.2598 c.c.=
+  + [[*Concorrenza Sleale]]
+
+*** Casi
+**** DABUS
+Device for the Autonomous Bootstrapping of Unified Sentience
+Caso di brevetti depositati aventi ad oggetto invenzioni di un /machine learning algorithm/
+- l'EPO (European Patent Office) ha respinto le domande in quanto richiesto che l'inventore sia umano
+
+**** Vespa
+=Corte d'appello di Torino=
+Confermata la forma della Vespa come icona simbolo del costume e del design artistico italiano
+- conseguita la notorietá qualificata, da pubblicitá, diffusione sul territorio, riconoscimenti culturali
+
+**** Dreamwriter
+Oggetto: articolo scritto da una intelligenza artificiale cinese, pubblicato senza consenso da una societá di tecnologia di Shangai.
+- la difesa affermava che l'articolo non essendo scritto da un essere umano doveva ritenersi di dominio pubblico
+Per =tribunale cinese= é tutelato dal diritto d'autore
+- l'articolo era chiaro, ragionevole e dotato di originalitá
+
+**** Satispay | Bill Sisal Pay
+Conflitto tra App
+- Sisal Pay accusata di plagio
+  + replica profili funzionali e commerciali di Satispay
+- Sisal Pay accusata di condotta parassitaria - concorrenza sleale
+=Tribunale di Milano=
+- riconosce carattere creativo e originale di Satispay
+- rileva che Bill Sisal Pay
+  + é frutto di sviluppo autonomo
+  + dotata di banca dati originale
+Escluso il plagio
+
+Per quanto riguarda la concorrenza sleale
+- condotte scorrette
+  + ripetizione di terminologia inventata dalla concorrente
+  + uso di slide del tutto analoghe alla concorrente nella presentazione della propria app
+Condannata
+
+**** C.Accountant | UNIDATA
+Contraffazione di Software e carattere creativo, in questo caso una banca dati
+=Corte d'Appello di Roma=
+- é emerso che la BD che asseriva di essere violata non presentasse nessun elemento creativo
+- UNIDATA aveva utilizzato la BD C.Accountant solo per maggiore sicurezza degli utente e rapiditá
+
 ** Diffamazione e Social Network
 =Decoro=: complesso di valori e atteggiamente ritenuti confacenti a una vita dignitosa, riservata, corretta
 =Onore=: elemento personale che costituisce motivo di soddisfazione, di vanto
@@ -1066,7 +1171,8 @@ Compiuta da chiunque:
   + anche riguardo a particolari versioni
   + obbligo di rimborso a chi ha acquistato i diritti
 
-*** Caso Fondazione MAE Torino
+*** Casi
+**** Caso Fondazione MAE Torino
 "Fortunato chi parla arabo", campagna promozionale della Fondazione Museo delle Antichitá Egizie di Torino per avvicinare la comunitá araba alle esposizioni.
 - politico su Facebook lancia una polemica con chiamata ad una centralinista del museo
   + dubbi in merito all'autenticitá del video
@@ -1076,12 +1182,12 @@ Compiuta da chiunque:
   + critica, diritto di esprimere opinioni frutto di un'interpretazione necessariamente soggettiva di fatti
     - non possono pretendersi rigorosamente obbiettive
     - un'opinione non puó essere vera o falsa
-    - deveno essere veri i fatti che ne costituiscono il presupposto
+    - devono essere veri i fatti che ne costituiscono il presupposto
 - ulteriore tratto di illiceitá ravvisato nella condotta
   + formulazione di insulti dai toni abnormi, finalitá di istigazione
   + incitamento all'odio (hate speech)
     - illecito civile, quindi deve esserci il danno, lesione della personalitá
-*** Caso Tripadvisor
+**** Caso Tripadvisor
 Puó configurare ulteriori reati
 - truffa
   + con artifizi o raggiri procura a sé o ad altri un ingiusto profitto can altrui danno
@@ -1095,11 +1201,23 @@ AGICOM inizialmente aveva ritenuto la piattaforma responsabile del controllo del
 Successimente é stato giudicato che TripAdvisor non possa materialmente controllare milioni di recensioni
 Inoltre ha l'obbligo di agire a seguito di una segnalazione dell'autoritá competente
 - la piattaforma aveva peraltro agito con liceitá dopo solo due giorni della segnalazione
-*** Caso sito sportivo
+**** Caso sito sportivo
 Cassazione rileva un'ipotesi di responsabilitá penale del titolare del sito, in concorso di persone con l'autore del commento diffamatorio, avendo il gestore preso attivamente le difese del commento diffamatorio,
 non si spinge la cassazione ad affermare una responsabilitá generale dei siti per i commenti ivi pubblicati
+**** Caso Parlamentore Autriaca dei Verdi
+Richiesta rimozione del commento diffamatori di un utente
+- FB ha agito solo dopo che questa vinse il primo grado
+La corte di giustizia é chiamata a chiarire le responsabilitá del prestatore di hosting previa ingiunzione di un giudice di uno Stato membro
+a. obbligato a rimuovere le informazioni da esso memorizzate il cui contenuto sia =identico= o =equivalente= precedentemente  dichiarata illecita o di bloccore l'accesso alle medesime
+b. il cui contenuto sia equivalente
+   + purché la sorveglianza e la ricerca delle informazione siano limitate a informazioni che veicolano un messaggio ... invariato
+   + purché sia possibile effettuare valutazione autonoma di tale contenuto
+c. rimuovere li informazioni oggetto ... o bloccarne l'accesso a =livello mondiale=, nell'ambito del diritto internazionale pertinente
+   + provvedimenti permessi pro futuro (~Art.18~)
+     - consentano di prendere rapidamente provvedimenti anche provvisori, atti a porre fine alle violazioni e a impedire ulteriori danni agli interessi in causa
 ** Cyberbullismo & Revenge Porn
-L.71/2017 tutela i minori per prevenzione e contrasto del cyberbullismo
+~Questi sono fenomeni recenti e caratterizzati dall'impiego errato ed illecito degli strumenti informatici~
+=Legge 71/2017= tutela i minori per prevenzione e contrasto del cyberbullismo
 - odio online (hate speech)
 - bullismo tradizionale
 - caratteristiche peculiari
@@ -1121,6 +1239,11 @@ Tipologie
 - exclusion
 - cyberstalking
 - cyberbashing
+
+La legge consente ai minori di chiedere al titolare del trattamento o ai gestori dei siti/social media, rispetto ai contenuti che ritergono atti di cyberbullismo:
+- oscuramento
+- rimozione
+- blocco
 
 Tipologie connesse
 - hate speech
@@ -1165,33 +1288,27 @@ Informazioni, dati e altri contenuti resi disponibili dall'utente o per suo cont
 - la licenza resta in vigore anche se l'utente cessa l'utilizzo della Piattaforma
 
 Il nome, marchi registrati e logo dell'utente sono soggetti a licenza, che resta in vigore per i materiali e le istanze esistenti, anche nel caso in cui l'utente cessi l'utilizzo della Piattaforma
-*** Caso Parlamentore Autriaca dei Verdi
-Richiesta rimozione del commento diffamatori di un utente
-- FB ha agito solo dopo che questa vinse il primo grado
-La corte di giustizia é chiamata a chiarire le responsabilitá del prestatore di hosting previa ingiunzione di un giudice di uno Stato membro
-a. obbligato a rimuovere le informazioni da esso memorizzate il cui contenuto sia =identico= o =equivalente= precedentemente  dichiarata illecita o di bloccore l'accesso alle medesime
-b. il cui contenuto sia equivalente
-   + purché la sorveglianza e la ricerca delle informazione siano limitate a informazioni che veicolano un messaggio ... invariato
-   + purché sia possibile effettuare valutazione autonoma di tale contenuto
-c. rimuovere li informazioni oggetto ... o bloccarne l'accesso a =livello mondiale=, nell'ambito del diritto internazionale pertinente
-   + provvedimenti permessi pro futuro (~Art.18~)
-     - consentano di prendere rapidamente provvedimenti anche provvisori, atti a porre fine alle violazioni e a impedire ulteriori danni agli interessi in causa
-*** Caso Cantone
-Dopo la diffusione incontrollato e incontrollabile dei contenuti
-- la vittima ha ottenuto un provvedimento d'ungenza con il quale eliminare i contenuti, negato invece il diritto all'oblio
-FB si era opposta, l'ordinanza del Tribunale di Napoli Nord ha rappresentato precedente per tutti i casi di revenge porn e ha chiarito il ruolo e i compiti degli hosting provider.
-- ritenuto sussistente la responsabilitá del provider, che sia venuto a conoscenza del fatto che l'informazione é illecita e non si sia attivato per impedire l'ulteriore diffusione della stessa
-- non é necessaria l'ordine di un autoritá, sufficiente la segnalazione dell'utente
-- non sarebbe ragionevole attendere un ordine dell'autoritá per intervenire, quendo gli interessi in gioco siano diritti della personalitá. Si rischierebbe di attivarsi una volta che questi siano stati irrimediabilmente compromenssi e non piú suscettibili di reintegrazione
-*** Caso FB pratiche ingannevole
+*** Casi
+**** Cantone
+Dopo la diffusione incontrollata e incontrollabile dei contenuti:
+- la vittima ha ottenuto un provvedimento d'ungenza con il quale =eliminare i contenuti=
+- negato invece il diritto all'oblio
+
+FB si era opposta, l'ordinanza del Tribunale di Napoli Nord ha rappresentato precedente per tutti i casi di *revenge porn* e ha chiarito il ruolo e i compiti degli hosting provider.
+- ritenuta sussistente la responsabilitá del provider, venuto a conoscenza del fatto che l'informazione fosse illecita e non si sia attivato per impedire l'ulteriore diffusione della stessa
+- non é necessaria l'ordine di un autoritá, =sufficiente la segnalazione dell'utente=
+- non sarebbe ragionevole attendere un ordine dell'autoritá per intervenire, quando gli interessi in gioco sono diritti della personalitá. Si rischierebbe di attivarsi una volta che questi siano stati irrimediabilmente compromenssi e non piú suscettibili di reintegrazione.
+**** FB pratiche ingannevole
 AGCOM vs FB ireland e casa madre
+
 Mentre il social informa l'utente della gratuitá dell'iscrizione il social non informa che i dati ceduti vengano usati a fini commerciali (es. profilazione)
 - 98% del fatturato deriva dalla pubblicitá online basata sulla profilazione degli utenti
 
-FB contesta la ricostruzione ritenendo che la cessione dei dati non abbia natura corrispettiva, l'utente puó cancellarli in ogni momento, sostiene che i dati personali rappresentano diritti fondamentali della persona che non possono essere venduti o scambiati; questo per dimostrare l'inapplicabilitá delle norme del Codice del Consumo
+FB contesta la ricostruzione ritenendo che la cessione dei dati non abbia natura corrispettiva, l'utente puó cancellarli in ogni momento, sostiene che i dati personali rappresentano diritti fondamentali della persona che non possono essere venduti o scambiati: questo per dimostrare l'inapplicabilitá delle norme del Codice del Consumo
 
-Ma secondo il Consiglio di Stato l'ambito operativo della disciplina speciale, costituita dal GDPR, non é assoluto e non esclude l'applicazione di altre discipline, GDPR e Codice del Consumo presentato ambiti operativi differenti e non contrastanti
+Ma secondo il Consiglio di Stato l'ambito operativo della disciplina speciale, costituita dal GDPR, non é assoluto e non esclude l'applicazione di altre discipline
+- GDPR e Codice del Consumo presentano ambiti operativi differenti e non contrastanti
 
 Il Consiglio di Stato respinge sia il ricorso di FB che del AGCOM
-- confermata la sanzione pecuniaria di 5 milioni di euro per protica ingannevole
-- annullata la sanzione di 5 milioni di euro per protiga aggressiva, ritenuta insussistente
+- confermata la =sanzione pecuniaria di 5 milioni di euro= per =pratica ingannevole=
+- annullata la sanzione di 5 milioni di euro per pratiga aggressiva, ritenuta insussistente
