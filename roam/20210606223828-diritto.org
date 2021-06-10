@@ -31,10 +31,10 @@ Quando si regolamenta - tecnica linguistica:
    - amministrativo
    - del lavoro
 
-** Responsabilitá ISP
+* Responsabilitá ISP
 Tematica sorta nei primi anni 2000
 Scelta della *fonte*
-*** Direttiva Comunitaria 2000/31 (!Regolamento Comunitario)
+** Direttiva Comunitaria 2000/31 (!Regolamento Comunitario)
 + commissione europea
   - dá dei parametri a tutti i paesi membri
   - che dovranno essere applicati dai singoli paesi
@@ -46,8 +46,8 @@ Scelta della *fonte*
     * l'ISP non conosce né controlla le informazioni
   - n.48
     + la direttiva non pregiudica la possibiltá pre gli Stati membri di chiedero [...] di adempiere al dovere di diligenza che é ragionevole attendersi ed é previsto dal diritto nazionale
-*** Decreto Legislativo n.70 2003
-**** Art. 14
+** Decreto Legislativo n.70 2003
+*** Art. 14
 Responsabilitá di =Mere Conduit= (semplice trasporto, Telecom)
 1. colui che trasmette su una rete informazioni fornite da un destinatario o fornisce accesso alla rete, non é responsabile delle informazioni trasmesse a condizione che
    a. non dia origine alla trasmissione
@@ -56,14 +56,14 @@ Responsabilitá di =Mere Conduit= (semplice trasporto, Telecom)
 2. la memorizzazione automatica, intermedia e transitoria delle informazioni trasmesse deve servire solo alla trasmissione e la sua durata non deve eccedere il tempo ragionevolmente necessario a tale scopo
 3. L'autoritá puó esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazioni commesse
 
-**** Art. 15
+*** Art. 15
 Responsabilitá nell'attivitá di =memorizzazione temporanea= (caching, Google)
 1. il prestatore non é responsabile della memorizzazione temporanea delle informazioni effettuata al solo scopo di rendere piú efficace il successivo inoltro ad altri destinatari a loro richiesta
    a condizione che
    a. non modifiche tali info
    e. agisca prontamente per rimuovere le informazioni e senza indugio
 2. L'autoritá puó esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
-**** Art. 16
+*** Art. 16
 Responsabilitá nell'attivitá di =memorizzazione di informazioni= (hosting)
 1. Memorizzazione di info fornite da un destinatario
    1) non sia a conoscenza del fatto che l'attivitá o l'informazione é illecita
@@ -72,7 +72,7 @@ Responsabilitá nell'attivitá di =memorizzazione di informazioni= (hosting)
 2. non si applicano se il destinatario del servizio agisce sotto l'autoritá o il controllo del prestatore
 3. L'autoritá puó esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
 
-**** Art. 17
+*** Art. 17
 1. =assenza dell'obbligo generale di sorveglianza= da parte del prestatore e di ricerca attiva
 2. tenuto ad
   a. informare l'autoritá qualora sia a conoscenza di attivitá o informazioni illecite riguardanti un suo destinatario
@@ -80,7 +80,7 @@ Responsabilitá nell'attivitá di =memorizzazione di informazioni= (hosting)
 3. prestatore civilmente responsabile del contenuto di tali servizi in caso non ha agito prontamente per impedire l'accesso a detto contenuto
   a. elemento integrativo da parte dell'Italia
 
-*** Direttiva UE 2019/790
+** Direttiva UE 2019/790
 Del Parlamento Europeo e del Consiglio
 aka =Direttiva Copyright=, modifica direttive 96/9/CE e 2001/29/CE
 In rif. al prestatore di un servizio dell'informazione... *va esclusa la responsabilitá prevista dall'art. 14 della direttiva 31/2000* ... dopo aver preso conoscenza, mediante informazione fornito dalla persona lesa o in altro modo, della natura illecita di quei dati o attivitá.
@@ -89,11 +89,11 @@ In rif. al prestatore di un servizio dell'informazione... *va esclusa la respons
   + alcuni servize della societá dell'informazione [...] sono concepiti in modo da dare al pubblico l'accesso a contenuti o altri materiali protetti dal diritto d'autore
   + definizione di =prestatore di servizi di condivisione di contenuti online=
   + la presente direttiva riguarda i servizi [...il cui scopo é] memorizzare e consentire agli utenti di caricare e condividere un gran numero di contenuti, al fine di trarne profitto [...]
-**** Art. 17 2019
+*** Art. 17 2019
 Qualora non sia concessa alcuna autorizzazione, i prestatori di servizi di condivisione di contenuti online sono responsabili per atti non autorizzati di comunicazione al pubblico
 
-*** Sentenze
-**** Case history RTI
+** Sentenze
+*** Case history RTI
 Gruppo Mediaset
 - Febbraio 2010 - RTI | Youtube
   - diritto d'autore delle reti Mediaset
@@ -107,7 +107,7 @@ Gruppo Mediaset
   + ricorso respinto perché RTI aveva inviato un'unica diffida senza una dettagliata e specifica indicazione dei video da rimuovere
   + non conta il paese in cui é basato il provider, conta il luogo dove viene commesso l'illecito
     - RTI aveva visto lesi i suoi diritti nell'area del mercato italiana, quindi
-**** Case history Google
+*** Case history Google
 Giá la commissione europea specificava gli stati potessero specificare leggi in tema di motore ricerche
 - Maggio 2012 - Meneghetti | Google (utente anonimo)
   - in mancanza di un *ruolo "attivo" sulla conoscenza e controllo dei dati memorizzati* il ~motore di ricerca non é responsabile dei contenuti immessi da terzi in rete~, anche laddove gli stessi siano raggiungibili in quanto risultanti delle ricerche effettuate sullo stesso motore.
@@ -146,7 +146,7 @@ Giá la commissione europea specificava gli stati potessero specificare leggi in
   + si conclude quindi che pur non essendo Content Provider ~gli aggregatori~ non sono nemmeno totalmente dissimili, in quanto ~assumono una posizione attiva nei confronti dei dati indicizzati~
     - non compatibile con la neutralitá e passivitá previste dagli art. 15,16 D.Lgs. n.70/2003
 
-**** Mediaset vs Facebook
+*** Mediaset vs Facebook
 :PROPERTIES:
 :ID:       32e03ff4-ee68-4a76-bc75-7afc5299ee93
 :END:
@@ -167,7 +167,7 @@ Il link é una comunicazione al pubblico, l'articolo 13 della /Riforma del Dirit
 | I fornitori di servizi che fanno _comunicazione al pubblico_ devono ottenere l'autorizzazione per la messa a disposizione di contenuti dai titolari di diritti |
 - qui c'é illecito nella non autorizzazione da parte di Mediaset, proprietaria dei diritti
 
-**** RTI vs Yahoo
+*** RTI vs Yahoo
 =Corte di Cassazione, 19 Mar 2019=
 Presunta violazione di diritti d'autore da parte di Yahoo
 - DIFESA: la non immediata attivazione non implicava un illecito un quanto sito di Hosting Passivo
@@ -176,7 +176,7 @@ La giurisprudenza della Corte di giustizia ha accolto la nozione di hosting prov
 
 Alla luce [...] l'hosting passivo é responsabile per non avere prevveduto all'immediata rimozione dei contenuti illeciti o per aver continuato a pubblicarli
 
-**** L'Oréal vs Ebay
+*** L'Oréal vs Ebay
 - la disposizione della direttiva ~2000/31/CE art. 14~ deve essere interpretata non soltanto in considerazione del suo tenore letterale, ma anche del suo contesto e degli scopi perseguiti dalla normativa di cui essa fa parte
   + la fornitura e la gestione di una piattaforma di condivisiane online, é =atto di comunicazione=
 
@@ -186,7 +186,7 @@ Sostanza sopra la forma
   Dovrebbero adottare misure appropriate e proporzionate per garantire la protezione di tali opere a altro materiale, ad esempio tramite l'uso di tecnologie efficaci.
   - questo anche quando i prestatori di servizi rientrano nell'esenzione di responsabilitá di cui all' ~art. 14 della direttiva 2000/31/CE~
 
-**** TikTok vs Garante Privacy
+*** TikTok vs Garante Privacy
 Gen 2021, strangolamento bambina di 10 anni a seguito della Blackout Challenge
 - Fonti
   - Regolamento UE 2016/679
@@ -202,7 +202,7 @@ Giá a dicembre il Garante della Privacy aveva sollevato delle =contestazioni= a
 
 Il ~limite d'etá~ prima del regolamento prevedeva 13 anni, questo per la legge federale USA:
 COPPA, prescrive che nessuno persona giuridica puó raccogliere dati relativi a minori di 13 anni
-In Italia il limite é definito a 14 anni.
+_In Italia il limite é definito a 14 anni_.
 
 *Art. 66* procedura d'urgenza
 - per proteggere i diritti e le libertá degli interessati, un'autoritá, puó adottare immediatamente misure provvisorie intese a produrre effetti giuridici nel proprio territorio
@@ -220,14 +220,14 @@ TikTok si é impegnato ad adeguarsi alle richieste del Garante privacy
 Il Garante ha avviato una collaborazione con il telefono Azzurro
 - campagna di sensibilizzazione con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza
 
-*** Nuovi Sviluppi
+** Nuovi Sviluppi
 Figura piú specifica di ISP: /prestatori di servizi di condivisione online/ [vedi [[id:32e03ff4-ee68-4a76-bc75-7afc5299ee93][Mediaset vs Facebook]]]
 - servizi con lo =scopo= di fare caricare e condividere contenuto protetto dai propri utenti al fine di trarne lucro
 - sono =esclusi= servizi:
   + che non danno accesso a contenuti protetti da diritto d'autore
   + di sviluppo open source
 - enciclopedie senza scopo di lucro
-** Principi di legalitá
+* Principi di legalitá
 3 presupposti
 - =riserva di legge=
   + solo il potere legislativo, espressione del paese, ha manopolio normativo in materia penale
@@ -286,7 +286,7 @@ Il reato é integrato se tutti questi elementi sono compiuti
   + oltre il reato voluto
     - volontá di un evento minore e la non volontá di un evento piú grave
 
-** Computer Crimes
+* Computer Crimes
 Inseriti con Novelle nel codice penale
 - fine anni '80 e inizio anni '90
 
@@ -294,14 +294,14 @@ Il =Computer Crime= é un reato che
 - implica l'uso di un sistema informatico (accesso abusivo al sistema)
 - coinvolge un apparato informatico (diffamazione)
 
-*** Legge 23 Dic 1993 n. 547
+** Legge 23 Dic 1993 n. 547
 - sazionato l'*accesso abusivo* ad un computer, software, sistemi telematici
 - se *danneggiamento* del sistema o dei dati: aggravante
 - natura di *documento informatico* ai supporti di qualunque specie contenenti dati
   + vengono inclusi anche supporti digitali
 - vengono permesse le intercettazioni informatiche o telematiche - 266-bis
 
-*** Convenzione di =Budapest= (Cybercrime) - Nov 2001
+** Convenzione di =Budapest= (Cybercrime) - Nov 2001
 a. delimitare definizioni comuni di reato
 b. definire poteri comuni di indagine
 c. predisporre mezzi di cooperazione internazionale
@@ -314,7 +314,7 @@ d. definizioni
   c. *trasmissione di dati*
     + informazione computerizzata relativa ad una comunicazione attraverso sistema informatico, parte nella catena di comunicazione, indicando origine, destinazione, percorso, tempo, data, grandezza, durata, tipo del servizio
 
-*** Art. 615.III c.p.
+** Art. 615.III c.p.
 Accesso Abusivo a Sistema Informatico
 - 1 a 3 anni per chiunque /abusivamente si introduce/ in un sistema [...] protetto [...]
   + punibile a querela della persona offesa (negli altri casi si procede d'ufficio)
@@ -324,12 +324,12 @@ Accesso Abusivo a Sistema Informatico
   3. ne deriva ~distruzione o danneggiamento~ del sistema / dati / informazioni / programmi
 - qualora i fatti riguardino sistemi ... di interesse militare / ordine pubblico / sanitá / interesse pubblico la pena si alza da 3 a 8 anni
 
-*** Cassazione Penale - 2012
+** Cassazione Penale - 2012
 =principio di tassativitá=
 + carte di debito o credito sono s.i.
 + casella di posta elettronica, spazio di memoria di un s.i., é un accesso a s.i.
 + una porzione di memoria protetta (es. da password) rivela la chiara volontá dell'utente di farne una spazio a sé riservato
-*** Cassazione a Sezioni Unite 2015-2017-2019
+** Cassazione a Sezioni Unite 2015-2017-2019
 =Accesso Abusivo=
 + *domicilio informatico*
   - deve essere protetto, anche da misure minime
@@ -351,8 +351,8 @@ Accesso Abusivo a Sistema Informatico
   - dimensione fisica che é determinata dal numero delle componenti, cifre binarie
   - il file é cosa mobile
 
-** Documento e Identitá Digitale
-*** Fonti
+* Documento e Identitá Digitale
+** Fonti
 **** Regolamente UE n.910/2014
 + base normativa a livello comunitario per servizi di:
   - ident. digitale
@@ -363,7 +363,7 @@ Identificazione elettronica
 **** Codice dell'Amministrazione Digitale
 aka =CAD=, modificato dal Decreto Semplificazioni
 
-*** identificazione elettronica
+** identificazione elettronica
 + processo per cui si fa uso di /dati di identificazione personale/ in forma elettronica che rappresentano un'unica persona fisica o giuridica
 + =SPID= e Carta di identitá elettronica
   - per accedere ai servizi online della pubblica amministrazione e dei privati aderenti, con una coppia di credenziali personali
@@ -376,7 +376,7 @@ aka =CAD=, modificato dal Decreto Semplificazioni
 + =AgID= - Agenzia per l'Italia Digitale
   - organismo di vigilanza
   - responsabile nello stato membro designante
-*** Documenti
+** Documenti
 + elettronico
   - contenuto conservato in forma elettronica
 + informatico (particolare di d. elettronico)
@@ -432,7 +432,7 @@ Le ricevute rilasciate dai gestori di PEC sono sottoscritte dai medesimi mediant
     - tenuto a informare il gestore del mittente
     - conserva i messaggi ricevuti per 30 mesi
 
-*** Firme
+** Firme
 + =elettronica (semplice)=
   - dati in forma elettronica, acclusi o connessi (tramite associazione) ad altri dati elettronici e utilizzati dal firmatario per firmare
     + dati utilizzati:
@@ -458,7 +458,7 @@ Le ricevute rilasciate dai gestori di PEC sono sottoscritte dai medesimi mediant
       - il documento sottoscritto, l'impronta cifrata, il certificato dell'ente certificatore sono inseriti in una busta .p7m
       - viene controllato che l'impronta del file originale ricalcolata dalla stessa funzione sia uguale a quella recuperato decriptando il digest usando la chiave pubblica
 
-** Contratto
+* Contratto
 Un ~accordo di due o piú parti~ per costituire, regolare o estinguere tra loro un ~rapporto giuridico patrimoniale~
 - Digesto Romano
   + do ut des
@@ -466,7 +466,7 @@ Un ~accordo di due o piú parti~ per costituire, regolare o estinguere tra loro 
   + facio ut des
   + facio ut facias
 
-*** Requisiti
+** Requisiti
 + =accordo= delle parti
   - tacito
     + intenzione manifestata dal comportamente delle parti
@@ -489,7 +489,7 @@ Un ~accordo di due o piú parti~ per costituire, regolare o estinguere tra loro 
   - Contratti a forma libera
   - Forma ad substantiam / Forma ad probationem
 
-*** Conclusione
+** Conclusione
 + scambio di =proposta= ed accettazione
   - concluso nel momento in cui chi ha fatto la proposta ha conoscenza dell'accettazione dell'altra parte
     + un'accettazione non conforme alla proposta equivale a nuova proposta, si invertono le parti
@@ -501,9 +501,9 @@ Un ~accordo di due o piú parti~ per costituire, regolare o estinguere tra loro 
 + =comportamente= concludente
   - se richiesto dal proponente o da natura affare a usi, il contratto é concluso con l'inizio di esecuzione
 
-*** Telematico
+** Telematico
 ~Contratti stipulati per via elettronica~, mediante l'uso di un computer
-**** Classificazioni
+*** Classificazioni
 - Diretto
   + conclusi e eseguiti online
   + software, dati
@@ -539,13 +539,13 @@ Un ~accordo di due o piú parti~ per costituire, regolare o estinguere tra loro 
               + azione prescritta entro 1 anno dalla consegna
       + clausole vessatorie (Codice del Consumo)
         - considerate sempre nulle
-**** Soggetti
+*** Soggetti
 - Professionista
   + agisce nell'ambito della propria attivitá imprenditoriale o professionale
 - Consumatore
   + agisce per scopi estranei all'attivitá imprenditoriale o professionale
 
-*** E-Commerce
+** E-Commerce
 Normato con:
 - =Direttiva 2000/31/CE=
 - =Legge Comunitaria 2001 a.31=
@@ -568,16 +568,16 @@ Normato con:
     - lingue disponibili
     - clausole e condizioni generali memorizzabili e riproducibili
 
-** Dati Personali
-*** [[file:20210605224537-privacy.org][Privacy]]
+* Dati Personali
+** [[file:20210605224537-privacy.org][Privacy]]
 ~right to be let alone~
 Concetto principalmente =statunitense=, per la prima volta utilizzato in /The Right to Privacy/, Warren S. e Brandeis L., 1890.
 
-*** [[file:20210605224618-data_protection.org][Data Protection]]
+** [[file:20210605224618-data_protection.org][Data Protection]]
 Concetto =europeo= principalmento delineato in seguito alla Seconda Guerra Mondiale
 - dalla profilazione della popolazione e dai processi decisionali automatizzati
 Il termine é un'abbreviazione perché la normativa non tutela i dati, ma /i diritti delle persone cui dati sono trattati/
-**** Organisation for Economic Co-operation and Development
+*** Organisation for Economic Co-operation and Development
 aka =OECD=, 1980
 - Collection Limitation Principle
 - Data Quality Principle
@@ -587,14 +587,14 @@ aka =OECD=, 1980
 - Openness Principle
 - Individual Participation Principle
 - Accountability Principle
-**** Direttiva Europea 1995/46
+*** Direttiva Europea 1995/46
 Doppio intento:
 - assicurare la protezione dei dati, come diritto costituzionalmente rilevante
 - consentire lo sviluppo del mercato e permettere la libera circolazione di merci e di dati necessari per le transazioni
 Non direttamente applicabile negli Stati Membri, va recepita tramite una legge statale
 - recepita in Italia necessaria per l'ingresso in Schengen
 - rivista con il =decreto 2003 - Codice Protezione Dati Personali=
-**** Considerando
+*** Considerando
 Introducono il =GDPR=:
 1. la protezione delle persone fisiche con riguardo al trattamento dei dati di carattere personale é un =diritto fondamentale=
 2. i principi e le norme [...] al trattamento dei dati personali dovrebbero rispettarne i diritti e le libertá fondamentali, in particolare il diritto alla protezione dei dati personali
@@ -602,9 +602,9 @@ Introducono il =GDPR=:
 6. la rapiditá dell'evoluzione tecnologica e la globalizzazione comportano nuove sfide per la protezione dei dati personali
 7. questa evoluzione richiede un =quadro piú solido e coerente= in materia di protezione dei dati nell'Unione
 8. gli Stati membri possono, nella misura necessaria per la coerenza e per rendere le disposizioni nazionali =comprensibili alle persone cui si applicano=, integrare elementi del presente regolamento nel proprio diritto nazionale
-**** GDPR
+*** GDPR
 Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
-- Regolamento EU 2016/679 - =General Data Protection Regulation=
+- =Regolamento EU 2016/679= - General Data Protection Regulation
   + la normativa porta sia continuitá che novitá rispetto alle norme tradizionali
   + accountability
   + nomina del DPO/RPD
@@ -639,16 +639,19 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
   + Direttiva ePrivacy
   + in revisione
 
-*** Definizioni, Concetti, Pricipi
-**** Dato Personale
+** Definizioni, Concetti, Pricipi
+*** Dato Personale
 - info riguardante una persona fisica identificata o identificabile, direttamente o indirettamente
+  
 =Considerando 30=
-- le persone fisiche possono essre associate a identificativi online prodotti dai dispositivi
+- le persone fisiche possono essere associate a =identificativi= online prodotti dai dispositivi
   + indirizzi IP
   + cookies
   + tag
+    
 *Dato Anonimo*
-- l'anonimmizzazione esclude l'applicazione del =GDPR=, ma la procedura deve essere definitiva
+- l'anonimizzazione esclude l'applicazione del =GDPR=, ma la procedura deve essere definitiva
+  
 *Pseudonimo*
 - il dato personale spesso non é anonimizzato, ma reso meno facilmente intellegibile con le tecniche di /pseudonimizzazione/
   + trattamento dei dati senza l'utilizzo di informazioni aggiuntive
@@ -659,8 +662,10 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
   + autenticazione del messaggio
   + crittografia
     - simmetrica, cifratura a blocchi(AES)
+      
 =Considerando 28=
 - puó ridurre il rischio per gli interessati ed aiutare i titolari
+  
 *Dato Personale Particolare*
 - che rivelino l'origine razziale o etnica, opinioni politiche, convinzioni religiose o filosofiche, dati genetici, dati biometrici, dati relativi alla salute o vita sessuale, orientamento sessuale della persona
 - =divieto di trattamento=
@@ -672,9 +677,11 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
     + dati resi manifestatamento pubblici dall'interessato
     + attivitá necessarie in sede giudiziaria
     + motivi di interesse pubblico
+      
 *Dato Giudiziario*
 - dati relativi alle condanne penali e ai reati o connesse misure di sicurezza
-**** Trattamento Dati
+  
+*** Trattamento Dati
 aka =Data Processing=
 - qualsiasi /operazione/ o insieme di operazioni, con o senza l'ausilio di processi(strumenti) automatizzati e applicate ai dati personali
   + ogni fase del ciclo vitale del trattamento sempre trattamento é e deve essere gestito in sicurezza
@@ -700,7 +707,7 @@ aka =Data Processing=
     - sorvegliare l'osservanza del regolameno
     - fornire parere se richiesto
     - cooperare con il Garante
-***** Principi
+**** Principi
 sull'uso e la raccolta di dati personali:
 - ~liceitá~
   + trattati in modo lecito, corretto e trasparente verso l'interessato
@@ -729,7 +736,7 @@ Il trattamento é /lecito/ solo se e nella misura in cui ricorre almeno delle co
 - compito di ~interesse pubblico~
 - ~legittimo interesse~
 
-*** Doveri
+** Doveri
 - Titolare
   + interiorizzare/applicare i principi
   + liceitá del trattamento
@@ -762,8 +769,9 @@ Il trattamento é /lecito/ solo se e nella misura in cui ricorre almeno delle co
       + analisi del rischio
       + valutazione impatto protezione dati DPIA
 
-**** Analisi del rischio
-origine -> natura -> gravitá -> probabilitá -> impatto sui diritti e le libertá degli interessati
+*** Analisi del rischio
+origine -> natura -> gravitá -> probabilitá ->
+-> impatto sui diritti e le libertá degli interessati
 = rischio
 
 - non confordere la gestione dei rischi con le misure di sicurezza
@@ -793,44 +801,44 @@ origine -> natura -> gravitá -> probabilitá -> impatto sui diritti e le libert
     - trattamenti su larga scala
     - combinazione o raffronto di dati
     - dati relativi ad interessati vulnerabili
-    - utilizzi innovativi o applicazione di nuove soluzioni tecnoloiche
+    - utilizzi innovativi o applicazione di nuove soluzioni tecnologiche
     - trattamenti che in sé impediscono l'esercizio di un diritto o di avvalersi di un servizio
   + puó essere attuabili facoltativamente
   + é bene un riesame periodico
 
-**** Registro attivitá di trattamento
+*** Registro attivitá di trattamento
 =art. 30 c.5 GDPR=
-Gli obblighi non si applicano alle imprese o organizzazioni con meno di 250 dipendenti
-a meno che
+Gli obblighi non si applicano alle imprese o organizzazioni con meno di 250 dipendenti,
+a meno che:
 - rischio per i diritti e le libertá dell'interessato
 - trattamento non occasionale
 - trattamento di categorie particolari di dati / dati giudiziari
 
 Su richiesta il titolare o il responsabile mettono il registro a disposizione dell'autoritá di controllo
-Registro Titolare
-Contiene:
-- nome e dati di contatto del titolare/contitolare/rappresentante/responsabile della protezione dei dati
-- finalitá del trattamento
-- categorie di interessati/dati personali
-- categorie di destinatari, comperesi destinatori di paesi terzi
-- trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
-Registro Responsabile
-Contiene:
-- nome e dati di contatto del responsabile
-- finalitá del trattamento
-- categorie di interessati/dati personali
-- categorie di destinatari, comperesi destinatori di paesi terzi
-- trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
-- ove possibile, una descrizione generale delle misure di sicurezza tecniche e organizzative
+- Registro Titolare
+  + nome e dati di contatto del titolare/contitolare/rappresentante/responsabile della protezione dei dati
+  + finalitá del trattamento
+  + categorie di interessati/dati personali
+  + categorie di destinatari, compresi destinatari di paesi terzi
+  + trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
+- Registro Responsabile
+  + nome e dati di contatto del responsabile
+  + finalitá del trattamento
+  + categorie di interessati/dati personali
+  + categorie di destinatari, compresi destinatari di paesi terzi
+  + trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
+  + ove possibile, una descrizione generale delle misure di sicurezza tecniche e organizzative
+    
 Anche analisi dei ruoli dei soggetti
 - interni, autorizzati
   + anche designato
 - esterni
   + figura che tratta dati personali per conto del titolare del trattamento
-  + trattamenti disciplinati da un conttratto a norma del diritto dell'Unione (art.28 GDPR)
+  + trattamenti disciplinati da un contratto a norma del diritto dell'Unione (art.28 GDPR)
 - contitolari
 
-**** Misure di Sicurezza
+*** Misure di Sicurezza
+[[file:20210610191411-security.org][Security]]
 - tecniche per trattamento analogici
 - tecniche per trattamenti informatici
 - organizzative
@@ -843,7 +851,7 @@ Principi:
 - conservazione
 - qualitá del dato
 
-**** Violazione dei dati personali
+*** Violazione dei dati personali
 aka =data breach=
 - Valutazione della portata e gravitá
   + documentare la violazione
@@ -852,9 +860,9 @@ aka =data breach=
   + misure tecniche/organizzative per porre rimedio
   + misure che avrebbero potuto ridurre il rischio per diritti e libertá degli interessati
 - Tipologie di data breach
-  + confidentiality breach
-  + availability breach
-  + integrity breach
+  + ~confidentiality~ breach
+  + ~availability~ breach
+  + ~integrity~ breach
 - Sanzioni
   + limitazione provvisoria o definitiva al trattamento
   + rettifica, cancellazione di dati, limitazione al trattamento
@@ -862,7 +870,7 @@ aka =data breach=
   + sanzione pecuniaria
     - 4%
 
-*** Diritti
+** Diritti
 - Interessato, deve essere tutelato
   + conoscitivi
     - dir. a ricevere informativa
@@ -877,7 +885,7 @@ aka =data breach=
     - rettifica ed integrazione
     - cancellazione e oblio
   + non essere sottoposto a decisione basata unicamente sul trattamento automatizzato, comprese la profilazione che produca effitti giuridice che lo riguardano o che indica in modo analogo significativamente sulla sua persona
-**** Informative
+*** Informative
 - Caratteristiche
   + forma concisa, trasparente, intelligibile e facilmente accessibile
   + linguaggio semplice e chiaro
@@ -904,7 +912,7 @@ aka =data breach=
     - casi di esonero
     - se impossibile
     - se dati riservati per segreto professionale
-** Proprietá Intellettuale
+* Proprietá Intellettuale
 Normato nel =Codice della Proprietá industriale (CPI)=
 2 Macrocategorie
 - diritti di proprietá industriale
@@ -929,7 +937,7 @@ distinzione tra
   + sono protette la forme di espressione, l'aspetto formale del codice
 - Il carattere creativo é presente quando dotate di un minimo livello di creativitá, ossia tutte le volte che l'autore ha potuto esprimere le sue capacitá creative nella realizzazione dell'opera effettuando scelte libere e creative.
 
-*** Marchio
+** Marchio
 Non possono essere marchi:
 - denominazioni generiche di prodotti o servizi
 - indicazioni destrittive cui essi si riferiscono
@@ -981,11 +989,11 @@ Uso
   + uso serio e continuativo del marchio
   + se no: decadenza
 
-**** Classificazione Internazionale di Nizza
+*** Classificazione Internazionale di Nizza
 45 classi, prodotti e servizi
 
-*** Brevetto di Invenzione
-Invenzioni, nuove e implicano un'attivitá inventiva, sono atte ad avere una applicazione industriale, non sono banali
+** Brevetto di Invenzione
+Invenzioni, nuove e =implicano un'attivitá inventiva=, sono atte ad avere una applicazione industriale, non sono banali
 - novitá
   + non fa parte dello stato della tecnica
 - liceitá
@@ -996,7 +1004,7 @@ Invenzioni, nuove e implicano un'attivitá inventiva, sono atte ad avere una app
 
 Strumenti giuridici per casi medici e farmaceutici
 - licenza obbligatoria
-- espropriazione per pubblica utilitá del brevetto
+- =espropriazione per pubblica utilitá del brevetto=
   + bilanciamento tra la tutela della proprietá intelluttuale ed il perseguimento dell'interesse generale
 
 Non sono invenzioni:
@@ -1004,9 +1012,10 @@ Non sono invenzioni:
 - principi e metodi per attivitá intellettuale
 - presentazioni di informazioni
 - programmi per elaboratore
-*** Design
+  
+** Design
 l'aspetto dell'intero prodotto o di una sua parte puó costituire oggetto di registrazione
-- a cond. siano nuovi e con ~carattere individuale~
+- a condizione siano nuovi e con ~carattere individuale~
   + suscita nell'utilizzatore informato impressioni diverse da qualsiasi altro modello
 ~prodotto~ é qualsiasi oggetto industriale/artigianale, ~prodotto complesso~ é prodotto formato da componenti sostituibili
 
@@ -1018,10 +1027,10 @@ l'aspetto dell'intero prodotto o di una sua parte puó costituire oggetto di reg
 - un design non registrato é meritevole di tutela al pari di qualsiasi altro design per tre anni
   + i design protetti rimangono tali fino al sessantesimo anno dopo la morte dell'autore
 
-**** Funzione tecnica
+*** Funzione tecnica
 Non possono costituire oggetto di registrazione caratteristiche di un prodotto unicamente determinate dalla funzione tecnica del prodotto stesso
 
-**** Caso Moon Boots
+*** Caso Moon Boots
 =Tribunale di Milano, 2016=
 Riconosce il modello come opera di design industriale
 - interpretazione del valore artistico necessario per il riconoscimento della tutela del diritto d'autore in favore di un novero circoscritto di opere
@@ -1031,7 +1040,7 @@ Riconosce il modello come opera di design industriale
     - pubblicazioni su riviste specializzate
     - attribuzione di premi
 
-*** Opere dell'ingegno di carattere creativo
+** Opere dell'ingegno di carattere creativo
 Appartengono alla letteratura, musica, arti figurative, architettura, teatro, cinema
 - sono protetti
   + i programmi per elaboratore come opere letterarie ed artistiche
@@ -1045,13 +1054,13 @@ Il ~carattere creativo~ é l'unico requisito richiesto per la tutela autorale
 - non implica la novitá assoluta
 - personale e individuale espressione di un'oggettivitá in cui sia riscontrabile un atto creativo
 
-*** Diritti Morali
+** Diritti Morali
 =Art.20-24 lda=
 Sono inalienabili (non cedibili a terzi), gli eredi possono far valere tali diritti senza limiti di tempo, non hanno scadenza
 - rivendicare la paternitá
 - diritto di opporsi a deformazioni, mutilazioni e modifiche che possano essere di pregiudizio al suo onore o alla sua reputazione
 - diritto al ripensamento
-*** Diritti Patrimoniali
+** Diritti Patrimoniali
 Sono alienabili (cedibili a terzi), durano tutta la vita dell'autore e fino a 70 anni dopo la sua morte, sono trasmissibili per ereditá
 - pubblicare
 - utilizzare economicamente
@@ -1064,7 +1073,7 @@ Sono alienabili (cedibili a terzi), durano tutta la vita dell'autore e fino a 70
 - distribuire
 - tradurre
 - noleggiare
-*** Know-how
+** Know-how
 Patrimonio di conoscenze non brevettate o brevettabili, derivanti da esperienze e da prove che sia
 - segreto
 - sostanziale
@@ -1078,7 +1087,7 @@ soggette al legittimo cotrollo del detentore, ove queste siano:
 - di valore economico
 - sottoposte a misure adeguate a mantenerle segrete
 
-*** Concorrenza Sleale
+** Concorrenza Sleale
 =Art. 2598 c.c.=
 In caso di plagio, la contraffazione di software contituirebbe giá di per sé atto di concorrenza sleale per violazione dei principi di correttezza professionale
 Compiuta da chiunque:
@@ -1086,7 +1095,7 @@ Compiuta da chiunque:
 - diffonde notizie sui prodotti o attivitá di un concorrente per determinarne discredito
 - si vale di mezzo non conforme ai principi della correttezza professionale
 
-*** Software e tutela
+** Software e tutela
 =def=: un programma per elaboratore é definito come una sequenza d'istruzioni, scritte in un linguaggio di programmazione, per ottenere un determinato risultato e per compiere funzioni in un dispositivo elettronico.
 
 Strumenti di tutela:
@@ -1096,7 +1105,7 @@ Strumenti di tutela:
 - =Art.2598 c.c.=
   + [[*Concorrenza Sleale]]
 
-*** Casi
+** Casi
 **** DABUS
 Device for the Autonomous Bootstrapping of Unified Sentience
 Caso di brevetti depositati aventi ad oggetto invenzioni di un /machine learning algorithm/
@@ -1137,7 +1146,7 @@ Contraffazione di Software e carattere creativo, in questo caso una banca dati
 - é emerso che la BD che asseriva di essere violata non presentasse nessun elemento creativo
 - UNIDATA aveva utilizzato la BD C.Accountant solo per maggiore sicurezza degli utente e rapiditá
 
-** Diffamazione e Social Network
+* Diffamazione e Social Network
 =Decoro=: complesso di valori e atteggiamente ritenuti confacenti a una vita dignitosa, riservata, corretta
 =Onore=: elemento personale che costituisce motivo di soddisfazione, di vanto
 =Reputazione=: considerazione in cui si é tenuti dagli altri, aspetto legato alla comunitá
@@ -1171,8 +1180,8 @@ Contraffazione di Software e carattere creativo, in questo caso una banca dati
   + anche riguardo a particolari versioni
   + obbligo di rimborso a chi ha acquistato i diritti
 
-*** Casi
-**** Caso Fondazione MAE Torino
+** Casi
+*** Caso Fondazione MAE Torino
 "Fortunato chi parla arabo", campagna promozionale della Fondazione Museo delle Antichitá Egizie di Torino per avvicinare la comunitá araba alle esposizioni.
 - politico su Facebook lancia una polemica con chiamata ad una centralinista del museo
   + dubbi in merito all'autenticitá del video
@@ -1187,7 +1196,7 @@ Contraffazione di Software e carattere creativo, in questo caso una banca dati
   + formulazione di insulti dai toni abnormi, finalitá di istigazione
   + incitamento all'odio (hate speech)
     - illecito civile, quindi deve esserci il danno, lesione della personalitá
-**** Caso Tripadvisor
+*** Caso Tripadvisor
 Puó configurare ulteriori reati
 - truffa
   + con artifizi o raggiri procura a sé o ad altri un ingiusto profitto can altrui danno
@@ -1201,10 +1210,10 @@ AGICOM inizialmente aveva ritenuto la piattaforma responsabile del controllo del
 Successimente é stato giudicato che TripAdvisor non possa materialmente controllare milioni di recensioni
 Inoltre ha l'obbligo di agire a seguito di una segnalazione dell'autoritá competente
 - la piattaforma aveva peraltro agito con liceitá dopo solo due giorni della segnalazione
-**** Caso sito sportivo
+*** Caso sito sportivo
 Cassazione rileva un'ipotesi di responsabilitá penale del titolare del sito, in concorso di persone con l'autore del commento diffamatorio, avendo il gestore preso attivamente le difese del commento diffamatorio,
 non si spinge la cassazione ad affermare una responsabilitá generale dei siti per i commenti ivi pubblicati
-**** Caso Parlamentore Autriaca dei Verdi
+*** Caso Parlamentore Autriaca dei Verdi
 Richiesta rimozione del commento diffamatori di un utente
 - FB ha agito solo dopo che questa vinse il primo grado
 La corte di giustizia é chiamata a chiarire le responsabilitá del prestatore di hosting previa ingiunzione di un giudice di uno Stato membro
@@ -1215,7 +1224,7 @@ b. il cui contenuto sia equivalente
 c. rimuovere li informazioni oggetto ... o bloccarne l'accesso a =livello mondiale=, nell'ambito del diritto internazionale pertinente
    + provvedimenti permessi pro futuro (~Art.18~)
      - consentano di prendere rapidamente provvedimenti anche provvisori, atti a porre fine alle violazioni e a impedire ulteriori danni agli interessi in causa
-** Cyberbullismo & Revenge Porn
+* Cyberbullismo & Revenge Porn
 ~Questi sono fenomeni recenti e caratterizzati dall'impiego errato ed illecito degli strumenti informatici~
 =Legge 71/2017= tutela i minori per prevenzione e contrasto del cyberbullismo
 - odio online (hate speech)
@@ -1257,12 +1266,12 @@ Tipologie connesse
       + programma pilota
         - lo scopo é quello di tutelare le persone ed escludere determinati contenuti dalle piattaforme. Si colloca nell'ambito dei propositi degli Standard della comunitá e delle normative interne, per consentire libertá di espressione, ma al contempo offrire un ambiente sicuro ed accogliente per tutti
 
-** Proprietá Intellettuale & Social
+* Proprietá Intellettuale & Social
 Condivisione prevista dalle clausole contrattuali del social
 Autorizzazioni concesse dall'utente a FB
 - all'uso dei contenuti creati e condivisi dall'utente
-- l'utente deve concedere autorizzazioni di legge (licenze) per l'uso dei contenuti soggetti a dirittti d'autore
-  + una licenza non esclusiva, trasferibile, sub-licenziabile, non soggetta a royalty e valida in tutto il mondo
+- l'utente deve concedere autorizzazioni di legge (=licenze=) per l'uso dei contenuti soggetti a dirittti d'autore
+  + una licenza _non esclusiva, trasferibile, sub-licenziabile, non soggetta a royalty e valida in tutto il mondo_
     - questo autorizza FB a memorizzare, copiare e condividere il materiale pubblicato
       + la condivisione interna all'interno di FB é sempre lecita, questo per questo permesso implicito
 
@@ -1271,14 +1280,14 @@ Un contenuto tratto da un Social e riprodotto al di fuori di esso deve avere il 
 
 Se é l'utente ad usare contenuti coperti da diritti di proprietá intellettuale di cui FB é titolare, FB si riserva tutti i diritti relativi a tali contenuti
 
-La piattaforma avverte che il contenuto postato dall'utente é di suo solo responsabilitá, FB non si ritiene responsabile del contenuto protetto.
+La piattaforma avverte che il contenuto postato dall'utente é di sua sola responsabilitá, FB non si ritiene responsabile del contenuto protetto.
 La piattaforma ha responsabilitá in capo al ruolo di ISP
 
-*** Licenza d'uso
+** Licenza d'uso
 Contratto tra parti in cui il titolare di una privativa consente ad un terzo di sfruttare dal punto di vista patrimoniale la sua opera dell'ingegno
 - oggetto del contratto solo i diritti patrimoniali
-*** Diritto all'oblio / al ripensamento
-L'utente puó eliminare i file complevvivamente ma
+** Diritto all'oblio / al ripensamento
+L'utente puó eliminare i file complessiivamente ma
 - potrebbero continuare a esistere in altri luoghi all'interno dei sistemi FB se
   - l'eliminazione immediata non sia possibile per limitazioni tecniche
   - siano stati utilizzati da altri utenti nel rispetto della licenza e non siano stati eliminati
@@ -1288,8 +1297,8 @@ Informazioni, dati e altri contenuti resi disponibili dall'utente o per suo cont
 - la licenza resta in vigore anche se l'utente cessa l'utilizzo della Piattaforma
 
 Il nome, marchi registrati e logo dell'utente sono soggetti a licenza, che resta in vigore per i materiali e le istanze esistenti, anche nel caso in cui l'utente cessi l'utilizzo della Piattaforma
-*** Casi
-**** Cantone
+** Casi
+*** Cantone
 Dopo la diffusione incontrollata e incontrollabile dei contenuti:
 - la vittima ha ottenuto un provvedimento d'ungenza con il quale =eliminare i contenuti=
 - negato invece il diritto all'oblio
@@ -1298,7 +1307,7 @@ FB si era opposta, l'ordinanza del Tribunale di Napoli Nord ha rappresentato pre
 - ritenuta sussistente la responsabilitá del provider, venuto a conoscenza del fatto che l'informazione fosse illecita e non si sia attivato per impedire l'ulteriore diffusione della stessa
 - non é necessaria l'ordine di un autoritá, =sufficiente la segnalazione dell'utente=
 - non sarebbe ragionevole attendere un ordine dell'autoritá per intervenire, quando gli interessi in gioco sono diritti della personalitá. Si rischierebbe di attivarsi una volta che questi siano stati irrimediabilmente compromenssi e non piú suscettibili di reintegrazione.
-**** FB pratiche ingannevole
+*** FB pratiche ingannevole
 AGCOM vs FB ireland e casa madre
 - pratica ingannevole
 - pratica scorretta
