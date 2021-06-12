@@ -163,7 +163,7 @@ Focebook afferma la non correttezza del giudice, volendo il giudizio in Californ
   + cerca di chiarire dove va fatta la contestazione
 - viene deciso che il mercato della parte lesa, luogo dell'evento in questione
   + Italia
-Il link é una comunicazione al pubblico, l'articolo 13 della =Riforma del Diritto d'Autore nel Mercato Unico Digitale= cita:
+_Il link é una comunicazione al pubblico_, l'articolo 13 della =Riforma del Diritto d'Autore nel Mercato Unico Digitale= cita:
 | I fornitori di servizi che fanno _comunicazione al pubblico_ devono ottenere l'autorizzazione per la messa a disposizione di contenuti dai titolari di diritti |
 - qui c'é illecito nella non autorizzazione da parte di Mediaset, proprietaria dei diritti
 
@@ -171,7 +171,7 @@ Il link é una comunicazione al pubblico, l'articolo 13 della =Riforma del Dirit
 =Corte di Cassazione, 19 Mar 2019=
 Presunta violazione di diritti d'autore da parte di Yahoo
 - DIFESA: la non immediata attivazione non implicava un illecito un quanto sito di Hosting Passivo
-La giurisprudenza della Corte di giustizia ha accolto la nozione di hosting provider attivo riferendosi a prestatori che non conoscono né controllano le informazioni trasmesse o memorizzate dalle persone alle quali forniscono i loro servizi
+La giurisprudenza della Corte di giustizia ha accolto la nozione di _hosting provider attivo riferendosi a prestatori che non conoscono né controllano le informazioni trasmesse o memorizzate_ dalle persone alle quali forniscono i loro servizi
 - Cassazione: provider qualificabile come hosting attivo quando *completa e arricchisce* in modo non passivo *la fruizione dei contenuti*
 
 Alla luce [...] l'hosting passivo é responsabile per non avere prevveduto all'immediata rimozione dei contenuti illeciti o per aver continuato a pubblicarli
@@ -186,7 +186,7 @@ Sostanza sopra la forma:
   - questo anche quando i prestatori di servizi rientrano nell'esenzione di responsabilitá di cui all' =art.14 2000/31/CE=
 
 *** TikTok vs Garante Privacy
-Gen 2021, strangolamento bambina di 10 anni a seguito della Blackout Challenge
+=Gen 2021=, strangolamento bambina di 10 anni a seguito della Blackout Challenge
 - Fonti
   - Regolamento UE 2016/679
     - in vigore dal 2018
@@ -194,16 +194,16 @@ Gen 2021, strangolamento bambina di 10 anni a seguito della Blackout Challenge
 
 Giá a dicembre il Garante della Privacy aveva sollevato delle =contestazioni= a TikTok
 - Divieto di iscrizione ai piú piccoli facilmente aggirabile
-- Scarsa tutela dei minori
-- Poca trasparenza nelle informazioni resa agli utenti
+- _Scarsa tutela dei minori_
+- _Poca trasparenza_ nelle informazioni resa agli utenti
 - Impostazioni predefinite non rispettose della privacy
   - profilo pubblico di default
 
 Il ~limite d'etá~ prima del regolamento prevedeva 13 anni, questo per la legge federale USA:
-COPPA, prescrive che nessuno persona giuridica puó raccogliere dati relativi a minori di 13 anni
+ - COPPA, prescrive che nessuno persona giuridica puó raccogliere dati relativi a minori di 13 anni
 _In Italia il limite é definito a 14 anni_.
 
-*Art. 66* procedura d'urgenza
+*Art. 66*, procedura d'urgenza
 - per proteggere i diritti e le libertá degli interessati, un'autoritá, puó adottare immediatamente misure provvisorie intese a produrre effetti giuridici nel proprio territorio
   - periodo di validitá determinato che non supera i tre mesi
 
@@ -211,13 +211,13 @@ Provvedimento dispone la misura della ~limitazione provvisoria~ del trattamento,
 - prima ancora di sentire la controparte, ma ha giá valore di legge
 
 TikTok si é impegnato ad adeguarsi alle richieste del Garante privacy
-- blocco degli utenti per la richiesta di inserimento dell'etá
-- trattative con l'ente di controllo irlandese per l'uso di sistemi di IA ai fini dell'age verification
-- miglioramento della propria informativa privacy in un linguaggio anche piú accessibile
-- introduzione di report di utenti minori dei 14 anni
-- banner di informazione sull'impostazione del profilo da pubblico a privato
+- _blocco degli utenti_ per la richiesta di inserimento dell'etá
+- trattative con l'ente di controllo irlandese per l'_uso di sistemi di IA ai fini dell'age verification_
+- miglioramento della propria informativa privacy in un _linguaggio anche piú accessibile_
+- introduzione di _report di utenti minori dei 14 anni_
+- _banner di informazione_ sull'impostazione del profilo da pubblico a privato
 Il Garante ha avviato una collaborazione con il telefono Azzurro
-- campagna di sensibilizzazione con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza
+- _campagna di sensibilizzazione_ con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza
 
 ** Nuovi Sviluppi
 Figura piú specifica di ISP: /prestatori di servizi di condivisione online/ [vedi [[id:32e03ff4-ee68-4a76-bc75-7afc5299ee93][Mediaset vs Facebook]]]
@@ -344,7 +344,7 @@ Accesso Abusivo a Sistema Informatico
 + =Cassazione 2011=:
   | reato sussiste anche se i dati cancellati abusivamente possono essere recuperati |
   - nuova specifica previsione della *cancellazione* in accezione informatica e non semantica del termine, anche in presenza di backup o se eventualmente reversibili
-  - coerente anche con l'interpretazione tradizionale del reato di danneggiamento, dove la condatta criminosa apporti una modificazione - anche impedendone anche parzialmente l'uso - che richieda un intervento ripristinatorio dell'essenza e della funzionalitá della cosa stessa
+  - coerente anche con l'interpretazione tradizionale del reato di danneggiamento, dove la condotta criminosa apporti una modificazione - anche impedendone anche parzialmente l'uso - che richieda un intervento ripristinatorio dell'essenza e della funzionalitá della cosa stessa
 + =Cassazione 2019=:
   | il *file* possiede una dimensione fisica che é determinata dal numero delle componenti [...] il file [...] possiede una dimensione fisica costituita dalla grandezza dei dati che lo compongonosono qualificabili come cose mobili e sono suscettibili di appropriazione rilevante |
   - dimensione fisica che é determinata dal numero delle componenti, cifre binarie
@@ -606,7 +606,7 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
 - =Regolamento EU 2016/679= - General Data Protection Regulation
   + la normativa porta sia continuitá che novitá rispetto alle norme tradizionali
   + accountability
-  + nomina del DPO/RPD
+  + nomina del *DPO/RPD*
     - Data Protection Officer
   + registri attivitá trattamento
   + procedure data breach
@@ -707,7 +707,7 @@ aka =Data Processing=
     - sorvegliare l'osservanza del regolameno
     - fornire parere se richiesto
     - cooperare con il Garante
-**** Principi
+*** Principi
 sull'uso e la raccolta di dati personali:
 - ~liceitá~
   + trattati in modo lecito, corretto e trasparente verso l'interessato
@@ -774,7 +774,7 @@ origine =->= natura =->= gravitá =->= probabilitá =->=
 =->= impatto sui diritti e le libertá degli interessati
 = rischio
 
-- non confordere la gestione dei rischi con le misure di sicurezza
+- non confondere la gestione dei rischi con le misure di sicurezza
 - non riferire il rischio al titolare ma al soggetto interessato
 
 - Elementi
@@ -790,7 +790,7 @@ origine =->= natura =->= gravitá =->= probabilitá =->=
     - conseguenze significative superabili ma con difficoltá serie (perdita di fondi, collocazione in liste nere, perdita di impiego)
   + molto alto
     - inconvenienti significativi quasi del tutto irreversibili (perdita capacitá lavorativa, danni psicologici a lungo termine, morte)
-- DPIA - Valutazione Impatto Preventiva
+- =DPIA= - Valutazione Impatto Preventiva
   + valutare necessitá e proporzionalitá di un trattamento
   + rischi allo scopo di approntare misure idonee ad affrontarli
   + obbligatoria se un trattamento puó presentare rischio elevato per diritti e libertá degli interessati
@@ -814,7 +814,7 @@ a meno che:
 - trattamento non occasionale
 - trattamento di categorie particolari di dati / dati giudiziari
 
-Su richiesta il titolare o il responsabile mettono il registro a disposizione dell'autoritá di controllo
+Su richiesta il titolare o il responsabile mettono il _registro a disposizione dell'autoritá di controllo_
 - Registro Titolare
   + nome e dati di contatto del titolare/contitolare/rappresentante/responsabile della protezione dei dati
   + finalitá del trattamento
@@ -868,7 +868,7 @@ aka =data breach=
   + rettifica, cancellazione di dati, limitazione al trattamento
   + sospensione dei flussi dati verso extra UE o Org. Internazionali
   + sanzione pecuniaria
-    - 4%
+    - 4% fatturato annuo mondiale
 
 ** Diritti
 - Interessato, deve essere tutelato
@@ -887,29 +887,31 @@ aka =data breach=
   + non essere sottoposto a decisione basata unicamente sul trattamento automatizzato, comprese la profilazione che produca effitti giuridice che lo riguardano o che indica in modo analogo significativamente sulla sua persona
 *** Informative
 - Caratteristiche
-  + forma concisa, trasparente, intelligibile e facilmente accessibile
-  + linguaggio semplice e chiaro
+  + forma /concisa/, trasparente, intelligibile e /facilmente accessibile/
+  + linguaggio /semplice/ e /chiaro/
     - soprattutto se destinate a minori
   + per iscritto o altri mezzi
   + oralmente
     - deve essere comprovabile l'aver fornito le informazioni
+
 - Dirette
-  + identitá e dati di contatto del Titolare del Trattamento
-  + dati di contatto del RPD/DPO se designato
+  + identitá e _dati di contatto del Titolare_ del Trattamento
+  + dati di contatto del *RPD/DPO* se designato
   + finalitá del trattamento e base giuridica
   + categorie destinatari
   + trasferimento extraUE
   + periodo di conservazione e criteri di determinazione e della durata del trattamento
   + diritti degli interessati e modalitá di esercizio
-  + consenso, diritto di revoca
+  + consenso, _diritto di revoca_
   + contestazione, diretto di proporre reclamo all'autoritá
   + esistenza di processo decisionale automatizzato e logiche utilizzate
+
 - Tempi
   + informativa prima del trattamento
-  + si indiretta, entro tempo ragionevole
+  + se indiretta, entro tempo ragionevole
   + puó essere omessa:
-    - caso l'interessato giá disponga delle info
-    - casi di esonero
+    - in caso l'interessato giá disponga delle info
+    - nei casi di esonero
     - se impossibile
     - se dati riservati per segreto professionale
 * Proprietá Intellettuale
@@ -924,7 +926,7 @@ Normato nel =Codice della Proprietá industriale (CPI)=
   2. _segni distintivi_
      - marchi
        + segni utilizzati in ambito commerciale per distinguere i prodotti o servizi di un'impresa da quelli di altre imprese
-       + un segno é marchio quando assume la funzione di =strumento di identificazione e differenziazione=
+       + un segno é marchio quando assume la funzione di /strumento di identificazione e differenziazione/
   3. _innovazioni tecniche/di design_
      - modelli di utilitá industriale
 
@@ -935,10 +937,10 @@ Normato nel =Codice della Proprietá industriale (CPI)=
 
 ** Legge sul Diritto d'Autore
 =Legge n.633/1941=
-- Protette ai sensi della legge le opere dell'ingegno di carattere creativo [...] letteratura, musica, arti figurative, architettura, teatro, cinematografia [...] programmi (includendo materiale preparatorio) per elaboratore, banche dati (non estesa al suo contenuto) [...]
-- Escluse le idee e i principi alla base di qualsiasi elemento di un programma.
+- Protette ai sensi della legge le opere dell'ingegno di /carattere creativo/ [...] letteratura, musica, arti figurative, architettura, teatro, cinematografia [...] /programmi/ (includendo /materiale preparatorio/) per elaboratore, banche dati (non estesa al suo contenuto) [...]
+- _Escluse le idee e i principi_ alla base di qualsiasi elemento di un programma.
   + sono protette la forme di espressione, l'aspetto formale del codice
-- Il carattere creativo é presente quando dotate di un minimo livello di creativitá, ossia tutte le volte che l'autore ha potuto esprimere le sue capacitá creative nella realizzazione dell'opera effettuando scelte libere e creative.
+- Il carattere creativo é presente quando dotate di un minimo livello di creativitá, ossia tutte le volte che _l'autore ha potuto esprimere le sue capacitá creative nella realizzazione dell'opera effettuando scelte libere e creative_.
 
 ** Marchio
 Non possono essere marchi:
@@ -950,7 +952,7 @@ Segno distintivo che consente di
 - distinguere
 - riconoscere
 - associare
-Possono costituire oggetto di registrazione come marchio d'impresa tutti i segni:
+Possono costituire oggetto di registrazione come marchio d'impresa /tutti i segni/:
 - parole
 - disegni
 - lettere
@@ -959,6 +961,7 @@ Possono costituire oggetto di registrazione come marchio d'impresa tutti i segni
 - forma del prodotto
 - combinazioni
 - tonalitá cromatiche
+
 =Art.12-14=
 Requisiti
 - Capacitá distintiva
@@ -966,7 +969,7 @@ Requisiti
 - Liceitá
 - Rappresentazione
 
-Distinzioni
+*Distinzioni*:
 - Marchi denominativi
 - Marchi figurativi
 - Marchi figurativi contenenti elementi denominativi
@@ -979,15 +982,15 @@ Distinzioni
 - Marchi Collettivi
 - Marchi di certificazione
 
-Depositi
+*Depositi*:
 - Italiano =UIBM=
 - Comunitario =EUIPO=
 - Estero
 Tutelato per 10 anni dal deposito, rinnovabile decennio per decennio
 
-I _marchi non registrati_ o di fatto sono comunque tutelati, anche se in misura minore
+I _marchi non registrati_ o di fatto sono _comunque tutelati_, anche se in misura minore
 
-Uso
+*Uso*:
 - dovere del titolare
   + uso serio e continuativo del marchio
   + se no: decadenza
@@ -996,16 +999,16 @@ Uso
 45 classi, prodotti e servizi
 
 ** Brevetto di Invenzione
-Invenzioni, nuove e =implicano un'attivitá inventiva=, sono atte ad avere una applicazione industriale, non sono banali
-- novitá
+Invenzioni, nuove e /implicano un'attivitá inventiva/, sono atte ad avere una applicazione industriale, non sono banali
+- _novitá_
   + non fa parte dello stato della tecnica
-- liceitá
-- attivitá inventiva
+- _liceitá_
+- attivitá _inventiva_
   + non banalitá, se per una persona esperta del ramo non risulta evidente dallo stato della tecnica
-- industrialitá
+- _industrialitá_
   + applicabili nell'industria
 
-Strumenti giuridici per casi medici e farmaceutici
+Strumenti giuridici per casi medici e farmaceutici:
 - licenza obbligatoria
 - =espropriazione per pubblica utilitá del brevetto=
   + bilanciamento tra la tutela della proprietá intelluttuale ed il perseguimento dell'interesse generale
@@ -1017,31 +1020,31 @@ Non sono invenzioni:
 - programmi per elaboratore
   
 ** Design
-l'aspetto dell'intero prodotto o di una sua parte puó costituire oggetto di registrazione
+_l'aspetto dell'intero prodotto o di una sua parte_ puó costituire oggetto di registrazione
 - a condizione siano nuovi e con ~carattere individuale~
   + suscita nell'utilizzatore informato impressioni diverse da qualsiasi altro modello
 ~prodotto~ é qualsiasi oggetto industriale/artigianale, ~prodotto complesso~ é prodotto formato da componenti sostituibili
 
-- un disegno o modello si considera =divulgato= se
+- un disegno o modello si considera /divulgato/ se
   + *accessibile al pubblico*
   + *esposto, messo in commercio*
-- non lo é se rivelato sotto vincolo di riservatezza
+- _non lo é se rivelato sotto vincolo di riservatezza_
 
 - un design non registrato é meritevole di tutela al pari di qualsiasi altro design per tre anni
   + i design protetti rimangono tali fino al sessantesimo anno dopo la morte dell'autore
 
 *** Funzione tecnica
-Non possono costituire oggetto di registrazione caratteristiche di un prodotto unicamente determinate dalla funzione tecnica del prodotto stesso
+_Non possono_ costituire oggetto di registrazione caratteristiche di un prodotto unicamente determinate dalla _funzione tecnica del prodotto stesso_
 
 ** Opere dell'ingegno di carattere creativo
 Appartengono alla letteratura, musica, arti figurative, architettura, teatro, cinema
 - sono protetti
-  + i programmi per elaboratore come opere letterarie ed artistiche
+  + /i programmi/ per elaboratore come opere letterarie ed artistiche
     - questo include anche il materiale preparatorio di progettazione
-  + le banche dati, per la scelta o la disposizione del materiale
+  + /le banche dati/, per la scelta o la disposizione del materiale
     - la tutela esclude il contenuto delle BD
 - non sono protetti
-  + idee e principi alla base di un qualsiasi elemento di un programma
+  + /idee e principi/ alla base di un qualsiasi elemento di un programma
 
 Il ~carattere creativo~ é l'unico requisito richiesto per la tutela autorale
 - non implica la novitá assoluta
@@ -1216,7 +1219,7 @@ Inoltre ha l'obbligo di agire a seguito di una segnalazione dell'autoritá compe
 *** Caso sito sportivo
 Cassazione rileva un'ipotesi di responsabilitá penale del titolare del sito, in concorso di persone con l'autore del commento diffamatorio, avendo il gestore preso attivamente le difese del commento diffamatorio,
 non si spinge la cassazione ad affermare una responsabilitá generale dei siti per i commenti ivi pubblicati
-*** Caso Parlamentore Autriaca dei Verdi
+*** Caso Parlamentare Autriaca dei Verdi
 Richiesta rimozione del commento diffamatori di un utente
 - FB ha agito solo dopo che questa vinse il primo grado
 La corte di giustizia é chiamata a chiarire le responsabilitá del prestatore di hosting previa ingiunzione di un giudice di uno Stato membro
@@ -1229,6 +1232,7 @@ c. rimuovere li informazioni oggetto ... o bloccarne l'accesso a =livello mondia
      - consentano di prendere rapidamente provvedimenti anche provvisori, atti a porre fine alle violazioni e a impedire ulteriori danni agli interessi in causa
 * Cyberbullismo & Revenge Porn
 ~Questi sono fenomeni recenti e caratterizzati dall'impiego errato ed illecito degli strumenti informatici~
+** Fonte
 =Legge 71/2017= tutela i minori per prevenzione e contrasto del cyberbullismo
 - odio online (hate speech)
 - bullismo tradizionale
@@ -1241,8 +1245,13 @@ c. rimuovere li informazioni oggetto ... o bloccarne l'accesso a =livello mondia
   + social
     - vittima piú esposta
     - bullo si sente protetto dalla anonimitá o apparente tale
+La legge consente ai minori di chiedere al titolare del trattamento o ai gestori dei siti/social media, rispetto ai contenuti che ritergono atti di cyberbullismo:
+- oscuramento
+- rimozione
+- blocco
 
-Tipologie:
+** Classificazioni
+*Tipologie*:
 - flaming
 - harassment
 - denigration
@@ -1252,19 +1261,14 @@ Tipologie:
 - cyberstalking
 - cyberbashing
 
-La legge consente ai minori di chiedere al titolare del trattamento o ai gestori dei siti/social media, rispetto ai contenuti che ritergono atti di cyberbullismo:
-- oscuramento
-- rimozione
-- blocco
-
-Tipologie connesse
+*Tipologie connesse*:
 - hate speech
 - cyberstalking
 - cyberharassment
 - sexting
 - revenge porn
   + deep nude
-  + Garante puó richiedere la cancellazione
+  + _Garante puó richiedere la cancellazione_
     - canale sperimentale per segnalazioni su Facebook/Instagram
       + programma pilota
         - lo scopo é quello di tutelare le persone ed escludere determinati contenuti dalle piattaforme. Si colloca nell'ambito dei propositi degli Standard della comunitá e delle normative interne, per consentire libertá di espressione, ma al contempo offrire un ambiente sicuro ed accogliente per tutti
@@ -1279,7 +1283,7 @@ Autorizzazioni concesse dall'utente a FB
       + la condivisione interna all'interno di FB é sempre lecita, questo per questo permesso implicito
 
 Un contenuto tratto da un Social e riprodotto al di fuori di esso deve avere il consenso del titolare
-- art. 12 Legge sul diritto d'autore
+- =art. 12 Legge sul diritto d'autore=
 
 Se é l'utente ad usare contenuti coperti da diritti di proprietá intellettuale di cui FB é titolare, FB si riserva tutti i diritti relativi a tali contenuti
 
@@ -1287,19 +1291,20 @@ La piattaforma avverte che il contenuto postato dall'utente é di sua sola respo
 La piattaforma ha responsabilitá in capo al ruolo di ISP
 
 *** Licenza d'uso
-Contratto tra parti in cui il titolare di una privativa consente ad un terzo di sfruttare dal punto di vista patrimoniale la sua opera dell'ingegno
+_Contratto_ tra parti in cui il titolare di una privativa _consente ad un terzo di sfruttare dal punto di vista patrimoniale la sua opera dell'ingegno_
 - oggetto del contratto solo i diritti patrimoniali
+
 *** Diritto all'oblio / al ripensamento
-L'utente puó eliminare i file complessiivamente ma
+L'utente puó eliminare i file complessivamente ma
 - potrebbero continuare a esistere in altri luoghi all'interno dei sistemi FB se
-  - l'eliminazione immediata non sia possibile per limitazioni tecniche
-  - siano stati utilizzati da altri utenti nel rispetto della licenza e non siano stati eliminati
+  + l'eliminazione immediata non sia possibile per limitazioni tecniche
+  + siano stati utilizzati da altri utenti nel rispetto della licenza e non siano stati eliminati
 
 Utenti Developer:
 Informazioni, dati e altri contenuti resi disponibili dall'utente o per suo conto, in relazione all piattaforma per scopi aziendali in relazione all'utilizzo, fornitura, migliramento della piattaforma o di qualsiasi altro prodotto FB
 - la licenza resta in vigore anche se l'utente cessa l'utilizzo della Piattaforma
 
-Il nome, marchi registrati e logo dell'utente sono soggetti a licenza, che resta in vigore per i materiali e le istanze esistenti, anche nel caso in cui l'utente cessi l'utilizzo della Piattaforma
+Il nome, marchi registrati e logo dell'utente sono soggetti a licenza, che resta in vigore per i materiali e le istanze esistenti, anche nel caso in cui l'utente cessi l'utilizzo della Piattaforma.
 ** Casi
 *** Cantone
 Dopo la diffusione incontrollata e incontrollabile dei contenuti:
