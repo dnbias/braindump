@@ -1,15 +1,15 @@
 #+title: Economia
 (25/30 di scritto + esercitazioni)
-** Business Model Canvas
+* Business Model Canvas
 Modello economico sostenibile
 - backend - frontend
   + condividono la Value Proposition
     - risoluzione di un problema
-    - ti do l'opportunitá di fare qualcosa che prima non facevi
+    - ti dó l'opportunitá di fare qualcosa che prima non facevi
 - Customer Segments
 - Channels
 
-*** Customer Segments
+** Customer Segments
 gruppi di persone o organizzazione che la azienda mira a raggiungere, fornire
 - bisogni comuni
 - comportamenti comuni
@@ -41,8 +41,8 @@ Segmenti
 - multi-piattoforma
   + permettono l'incontro tra offerta e domanda
   + non forniscono nulla di reale se non la piattaforma
-*** Value Proposition
-Tutta la struttura dovra' essere compatibile con questa sezione
+** Value Proposition
+Tutta la struttura dovrá essere compatibile con questa sezione
 - Qual'e' lo scopo del prodotto e i suoi usi
 - A chi e' mirato questo prodotto, dove si collocano
   + decisori o utenti, clienti (e' disponto a riconoscere un valore, non necessariamente monetario)
@@ -60,7 +60,7 @@ Tutta la struttura dovra' essere compatibile con questa sezione
 - Qual'e' il posizionamento del prodotto, definizione del prezzo
 
 Elementi
-- novita'
+- novitá
 - performance
 - custom
 - ti consento di fare meglio il tuo lavoro
@@ -70,11 +70,11 @@ Elementi
   + scelta in base all'aspettativa delle clientela
 - aumento del margine di guadagno per i clienti
 - riduzione del rischio
-- accessibilita'
+- accessibilitá
   + a servizi non normalmente accedibili
-- convenienza/usabilita'
+- convenienza/usabilitá
 
-*** Channels
+** Channels
 Strumenti fisici o virtuali che permettono di raggiungere i segmenti di mercato
 I canali sono insiemi di strumenti con cui l'azienda consegna la Value Proposition ai clienti
 - *Funzioni*
@@ -87,7 +87,7 @@ I canali sono insiemi di strumenti con cui l'azienda consegna la Value Propositi
 Da considerare l'efficienza dei canali e della loro integrazione reciproca
 anche rispetto a canali diretti e indiretti, piú il cliente finale é lontano piú sará difficile analizzarlo.
 
-*** Customer Relationships
+** Customer Relationships
 Spesso sono bidirezionali
 - 3 *obiettivi*
   + Acquisizione di nuovi target, aumento della base di clientela
@@ -106,7 +106,7 @@ Le diverse modalitá devono essere integrate, non devono creare confusione nel c
   + Co-creazione
     - Kickstarter, Youtube, Amazon
 
-*** Revenue Streams
+** Revenue Streams
 L'utile o margine netto che si ricava
 - transazioni unica una tantum di un cliente
 - transazioni ricorrenti
@@ -131,7 +131,7 @@ Meccanismi di definizioni del Prezzo
   + negoziazione
   + al momento in base a domanda e offerta
 
-*** Resources
+** Resources
 Gli asset che permettono di non venir meno alla Value Proposition
 Le risorse si dividono in:
 - fisiche - tangibili
@@ -144,8 +144,8 @@ Ulteriormente divise in:
 - acquisiti da partner
 Quest'ultima distinzione non importa molto dal punto di vista della Value Proposition
 
-** Contesto Socio Economico dell'impresa
-*** Ambiente di riferimento
+* Contesto Socio Economico dell'impresa
+** Ambiente di riferimento
 tutto ció che puó direttamente e indirettamente influire sulla crescita e dinamica dell'impresa
 Include:
 - vincoli e opportunitá
@@ -186,10 +186,10 @@ Impresa e Ambiente
   + l'impresa puó condizionare il microambiente
 
 - =outcome=
-  + impotto sull'utenza con il mio output
+  + impatto sull'utenza con il mio output
   + misurato con la soddisfazione del mercato di riferimento
 
-*** L'Industria 4.0
+** L'Industria 4.0
 1. Meccanizzazione, macchina a vapore ~1784~
 2. Produzione di massa, elettricitá ~1870~
 3. Automazione, computer, elettronica ~1969~
@@ -207,14 +207,14 @@ Per la 4.0
 - big data
 - cyber-security
 
-*** Impresa
-organizzazione economica che svolge processi di acquisizione e di prodzione di beni o servizi
+** Impresa
+organizzazione economica che svolge processi di acquisizione e di produzione di beni o servizi
 Attivitá economica organizzata dall'imprenditore al fine della produzione e dello scambio di beni o di servizi
 
 Puó essere considerata un sistema socio-tecnico
 - sociale: il suo andamento é condizionato dall'ambiente sociale
 - tecnico: il suo funzionamento necessita di strumenti che incorporano tecnologie
-- aperto: l'ambiente esterno influenza l'andamento dell'impresa: é anche dinamico in quanto deve adattarsi all'esterno
+- aperto: l'ambiente esterno influenza l'andamento dell'impresa; é anche dinamico in quanto deve adattarsi all'esterno
 
 Funzioni Istituzionali:
 - organizazione economica
@@ -264,7 +264,7 @@ Ragione Sociale
   + rapporti strategici con stakeholder
   + con concorrenti
 
-*** Catene del Valore
+** Catene del Valore
 
 Progettazione -> Produzione -> Logistica ->
 Marketing(in e out) -> Servizio clienti -> Gestione delle risorse(umane, tecnologiche)
@@ -307,7 +307,7 @@ Strategie:
 - strategie di focalizzazione
   + la differenza sta nell'area di mercato, delle nicchie
 
-**** VRIO
+*** VRIO
 - Valore
 - Raritá
 - Imitabile
@@ -315,7 +315,7 @@ Strategie:
 - Implicazioni competitive
 - Performance
 
-** Funzioni Operative di Gestione
+* Funzioni Operative di Gestione
 Vari livelli strategici
 - corporate
 - competitive, di business
@@ -360,7 +360,7 @@ Attraverso il marketing si analizza
 - opportunitá
 - competitor
 
-*** Funzione di Marketing
+** Funzione di Marketing
 Orientamento di gestione, pone l'interesse del cliente al centro dell'attenzione aziendale
 Dá indicazioni alla produzione in funzione del target di mercato, provvede a collocare i prodotti presso gli sbocchi prescelti
 - bisogni e desideri dei consumatori
@@ -390,7 +390,7 @@ Dá indicazioni alla produzione in funzione del target di mercato, provvede a co
     + gestione della distribuzione
   - orientato all'azione
 
-**** analisi del mercato
+*** analisi del mercato
 Si parte dalla analisi della domanda
 - dai consumatori o dei distributori
 La domanda analizzata puó essere derivata, complementare
@@ -435,7 +435,7 @@ Quota di mercato relativa:
   + una QM relativa vicino al 1 indica una concorrenza agguerrita
   + una QM relativa di diversi punti é difficilmente attaccabile
 
-***** Matrice di Ansoff
+**** Matrice di Ansoff
 Come sviluppare l'offerta secondo le caratteristiche e richieste del mercato
 
 4 alternative strategiche
@@ -454,7 +454,7 @@ Come sviluppare l'offerta secondo le caratteristiche e richieste del mercato
 3. sviluppo del mercato
    - prodotto esistente
    - mercato non ancora presidiato
-     + magari un segmento non copert
+     + magari un segmento non coperto
 4. diversificazione e sviluppo integrato - piú rischioso
    - nuovo mercato
    - nuovo prodotto
@@ -463,8 +463,8 @@ Come sviluppare l'offerta secondo le caratteristiche e richieste del mercato
    - diversificazione di 2 tipi
      + collegata - stesso settore
      + non collegata - settore diverso
-***** Piano di Marketing
-partendo dalle analisi del mercato di riferimento si definisce li piano di marketing attraverso le leve del ~marketing mix~
+**** Piano di Marketing
+partendo dalle analisi del mercato di riferimento si definisce li piano di marketing attraverso le leve del ~marketing mix~ (product, price, promotion, place)
 Un sistema coerente di azioni che il promotore intende intraprendere per raggiungere i propri obiettivi di penetrazione nel mercato
 - prodotto
 - prezzo
@@ -545,13 +545,13 @@ Politiche di =prezzo=:
     - margine
     - puó anche cercare di prevedere i volumi di produzione e di vendita
   + elasticitá della domanda
-    - volure attribuito al prodotto dai consumatori
+    - valore attribuito al prodotto dai consumatori
   + concorrenza
 - Scrematura del mercato
   + si parte con un costo piú alto e lo si abbassa per inserirsi in nuovi settori
 
 Politiche di =distribuzione=:
-- contatto di contatto con il mercato
+- contatto con il mercato
   + tipologia degli sbocchi
 - intensitá della distribuzione
   + numero di sbocchi
@@ -562,18 +562,18 @@ Politiche di =distribuzione=:
     - diretti
     - brevi
     - lunghi
-- grado di copertura del merato
+- grado di copertura del mercato
   + quota
     - numerica
     - ponderata
 
-***** Customer Life-Time Value
+**** Customer Life-Time Value
 Obiettivo finale é il miglioramento della profittabilitá nel lungo termine e la massimizzazione del customer lifetime value
 Valore medio transazione X Frequenza annua di acquisto X ciclo di vita atteso del cliente
-**** programmazione della produzione
-**** promozione, vendita
+*** programmazione della produzione
+*** promozione, vendita
 
-*** Funzione di Produzione
+** Funzione di Produzione
 Processo di trasformazioni dei beni, da risorse(INPUT) a prodotti(OUTPUT) da collocare sul mercato
 - a metá tra approvvigionamenti e vendite
   + anche in aziende che forniscono servizi e non beni materiali
@@ -665,7 +665,7 @@ Imprese ~multi-plant~
     - ogni impianto produce uno specifico prodotto della gamma
 
 
-**** VRIO
+*** VRIO
 - Valore
 - Raritá
 - Imitabile
@@ -673,7 +673,7 @@ Imprese ~multi-plant~
 - Implicazioni competitive
 - Performance
 
-** Innovazione
+* Innovazione
 Ruolo particolarmente significativo come =variabile esplicativa della competitività= dell'impresa e dello sviluppo dei sistemi socio-economici
 - risultato di un processo dinamico e sistemico
 - da cambiamenti tecno-economici
