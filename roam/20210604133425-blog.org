@@ -1,2 +1,2 @@
-# +title: #blog
+#+title: $blog
 #+roam_alias: Blog
