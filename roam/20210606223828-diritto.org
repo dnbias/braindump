@@ -63,6 +63,7 @@ Responsabilitá nell'attivitá di =memorizzazione temporanea= (caching, Google)
    a. non modifiche tali info
    e. agisca prontamente per rimuovere le informazioni e senza indugio
 2. L'autoritá puó esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
+
 *** Art. 16
 Responsabilitá nell'attivitá di =memorizzazione di informazioni= (hosting)
 1. Memorizzazione di info fornite da un destinatario
