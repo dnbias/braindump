@@ -233,7 +233,7 @@ Ma il codice diventa piú semplice e leggibile
 *** Search
 In Liste doppiamente concatenate e non ordinate:
 #+begin-example
-ListSearch(L,x):
+ListSearch(L,k):
   x = L.head
   while x != nil and x.key != k do
     x = x.next
@@ -259,7 +259,7 @@ L'insieme viene rappresentato con un array $T$ con dimensione $m$
 - quindi si ha indirizzamento diretto
 
 L'insieme delle chiavi $S$ é sottoinsieme di $U$
-- ogni posizione di T contiene un puntatore hai dati con la chiave associata
+- ogni posizione di T contiene un puntatore ai dati con la chiave associata
 #+begin-example
 TableInsert(T,x):
   T[x.key] = x
@@ -369,13 +369,13 @@ Veloce ma dipende da m
 ****   Metodo della moltiplicazione
 m non é critico, solitamente si sceglie una potenza di 2
 A dipende dai dati
-- una scelta rogionevole empiricamente é $(\sqrt{5} - 1) / 2$
+- una scelta ragionevole empiricamente é $(\sqrt{5} - 1) / 2$
 *** Indirizzamente aperto
 Tutti gli elementi sono memorizzati nella tavola T
 - l'elemento con chiave k viene inserito nella posizione h(k) se é libera
 - se non é libera allora si cerca una posizione libera secondo uno ~schema di ispezione~
 Possono avvenire collisioni anche tra elementi con chiavi diverse
-In generale si definisce una funzione hash estese con l'ordene di ispezione
+In generale si definisce una funzione hash estesa con l'ordine di ispezione
 - $h: U \times \{0,1,2,...,m-1\} \to \{0,1,2,...,m-1\}$
 
 =ispezione lineare=
@@ -438,7 +438,7 @@ Come ADT:
 - collezione di dati
   + elementi qualunque di tipo T
 - operazioni
-  + void Pusn(Stack S, T t)
+  + void Push(Stack S, T t)
   + T Pop(Stack S)
   + T Top(Stack S)
   + bool Empty(Stack S)
@@ -451,7 +451,7 @@ Come ADT:
 
 *** assiomi
 - Size(S), Empty(S), Push(S,t)
-  + smepre definiti
+  + sempre definiti
 - Pop(S), Top(S)
   + sono definite iff Empty(S) é false
 - Empty(S)
@@ -590,7 +590,7 @@ Pop(S)
 
 *** implementazione con array
 statico
-si temgono elementi nelle ultime posizioni
+si tengono elementi nelle ultime posizioni
 - altrimenti sarebbe necessario spostare tutti gli elementi
 si usa l'array un maniera circolare
 - si utilizzano riferimenti tail e head per tener conto delle posizioni dell'array
@@ -608,7 +608,6 @@ Size(Q)
   else
     return Q.M - (Q.head - Q.tail)
 #+end_example
-
 #+begin_example
 Empty(Q)
   if Q.tail == Q.head then
@@ -756,7 +755,6 @@ BTHeight(Tree T)
     r = BTHeight(T.right)
     return 1 + max(l,r)
   end if
-
 #+end_example
 La complessitá sará uguale a quella di una visita (completa) di un albero
 
@@ -1041,7 +1039,7 @@ ToList-InOrder(T)
     return Append(L,R)
 #+end_example
 
-Visitando i nodo in ordine decrescente di etichette si evita l'utilizza di Append
+Visitando i nodo in ordine decrescente di etichette si evita l'utilizzo di Append
 - O(n)
 #+begin_example
 ToList-InOrder(T,L)
