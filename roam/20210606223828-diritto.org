@@ -353,7 +353,7 @@ Accesso Abusivo a Sistema Informatico
 
 * Documento e Identitá Digitale
 ** Fonti
-*** Regolamente UE n.910/2014
+*** Regolamento UE n.910/2014
 + base normativa a livello comunitario per servizi di:
   - ident. digitale
   - firma elettronica
@@ -643,16 +643,16 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
 ** Definizioni, Concetti, Pricipi
 *** Dato Personale
 - info riguardante una persona fisica identificata o identificabile, direttamente o indirettamente
-  
+
 =Considerando 30=
 - le persone fisiche possono essere associate a =identificativi= online prodotti dai dispositivi
   + indirizzi IP
   + cookies
   + tag
-    
+
 *Dato Anonimo*
 - l'anonimizzazione esclude l'applicazione del =GDPR=, ma la procedura deve essere definitiva
-  
+
 *Pseudonimo*
 - il dato personale spesso non é anonimizzato, ma reso meno facilmente intellegibile con le tecniche di /pseudonimizzazione/
   + trattamento dei dati senza l'utilizzo di informazioni aggiuntive
@@ -663,10 +663,10 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
   + autenticazione del messaggio
   + crittografia
     - simmetrica, cifratura a blocchi(AES)
-      
+
 =Considerando 28=
 - puó ridurre il rischio per gli interessati ed aiutare i titolari
-  
+
 *Dato Personale Particolare*
 - che rivelino l'origine razziale o etnica, opinioni politiche, convinzioni religiose o filosofiche, dati genetici, dati biometrici, dati relativi alla salute o vita sessuale, orientamento sessuale della persona
 - =divieto di trattamento=
@@ -678,10 +678,10 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
     + dati resi manifestatamento pubblici dall'interessato
     + attivitá necessarie in sede giudiziaria
     + motivi di interesse pubblico
-      
+
 *Dato Giudiziario*
 - dati relativi alle condanne penali e ai reati o connesse misure di sicurezza
-  
+
 *** Trattamento Dati
 aka =Data Processing=
 - qualsiasi /operazione/ o insieme di operazioni, con o senza l'ausilio di processi(strumenti) automatizzati e applicate ai dati personali
@@ -829,7 +829,7 @@ Su richiesta il titolare o il responsabile mettono il _registro a disposizione d
   + categorie di destinatari, compresi destinatari di paesi terzi
   + trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
   + ove possibile, una descrizione generale delle misure di sicurezza tecniche e organizzative
-    
+
 Anche analisi dei ruoli dei soggetti
 - interni, autorizzati
   + anche designato
@@ -1019,7 +1019,7 @@ Non sono invenzioni:
 - principi e metodi per attivitá intellettuale
 - presentazioni di informazioni
 - programmi per elaboratore
-  
+
 ** Design
 _l'aspetto dell'intero prodotto o di una sua parte_ puó costituire oggetto di registrazione
 - a condizione siano nuovi e con ~carattere individuale~
