@@ -10,9 +10,9 @@ Collezione di domande (istanze-ingressi) per cui sia stabilito un criterio astra
   - ordinamento
   - percorso ottimo in un grafo
 
-Un Problema e' una _Relazione Binaria_
+Un Problema é una _Relazione Binaria_
 $R = {(istanza,risposta) : istanza, risposta soddisfano...}$
-Il _dominio_ della relazione e' l'insieme delle domande possibili
+Il _dominio_ della relazione é l'insieme delle domande possibili
 R é _univoca_ se ogni istanza ammette una sola risposta
 
 ** Algoritmi
@@ -42,8 +42,8 @@ end for
 #+end_example
 
 **** Left Peak Finding
-Nel caso migliore p=0 e' un picco
-Nel caso peggiore p=n-1 confronti
+Nel caso migliore =p=0= é un picco
+Nel caso peggiore =p=n-1= confronti
 **** Max Peak Finding
 #+begin_example
 MAX-PEAK(A)
@@ -57,11 +57,11 @@ end while
 return r
 #+end_example
 
-Fa sempre lo stesso numero di confronti, sempre n-1
+Fa sempre lo stesso numero di confronti, sempre =n-1=
 
 **** Analisi
 Teorema picco
-Si trovano segmenti sempre piú corti su cui vale il teorema a partire da un q centrale.
+Si trovano segmenti sempre piú corti su cui vale il teorema a partire da un =q= centrale.
 
 **** Divide et Impera
 #+begin_example
@@ -81,12 +81,10 @@ PEAK-FIND-DI(A,n)
 return PEAK-DI(A,0,n-1)
 #+end_example
 
-- T(n)=
-  - 1;        n=1
-  - T(n/2)+1; n>1
+$T(n)=\begin{cases} 1 & n=1 \\ T(\frac{n}{2})+1 & n>1 \end{cases}$
 $T(n)=T(\frac{n}{2^k})+k$ per $1\le k \le \log_{2}n$
 $T(n)=1+\log_{2}n$
-** Insolubilita' e Intrattabilita'
+** Insolubilitá e Intrattabilitá
 - non tutti i problemi hanno una soluzione algoritmica (problema della =terminazione=)
 - =intrattabile= é un problema che ha una soluzione algoritmica ma il cui sforzo computazionale é troppo grande
 
@@ -98,7 +96,7 @@ Specifica
 - Postcondizioni
   - criterio che stabilisce come deve essere fatto l'output
 *** Ricorsione
-Un problema si presta alla ricorsione quando la ricorsione con un certo input ha una relazione semplice con la soluzione del problema con uno o piú input diminuiti
+Un problema si presta alla ricorsione quando la soluzione con un certo input ha una _relazione semplice_ con la soluzione del problema con uno o piú input diminuiti
 #+begin_example
 HANOI(n,sorgente,destinazione,appoggio)
 PRE:
