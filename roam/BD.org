@@ -1,5 +1,5 @@
 #+TITLE: Basi di Dati
-#+TEACHER: Luca Anselma (anselmaATdi.unito.it)
+#+TEACHER: Luca Anselma (anselma@di.unito.it)
 [[file:#university.org][#university]]
 - Esame:
   - Scritto 70
@@ -69,7 +69,7 @@ _Non sono permesse tabelle nidificate_ *prima forma normale*
 *** Vincoli di integritá
 - si garantisce la correttezza della base di dati
 - si garantisce coerenza tra i valori
-- sono predicati logici che associano a ogni istanza un valore di verita'
+- sono predicati logici che associano a ogni istanza un valore di veritá
 - ad ogni cambiamento il DBMS verifica tutti i vincoli
 - tipologie
   + intrarelazionali
@@ -168,13 +168,13 @@ La cardinalitá di una predicato é compresa tra 0 (relazione vuota) e la cardin
 Per semplificare la lettura delle query si puó scriverne gli alberi sintattici
 
 *** Interrogazioni con Negazione
-caso semplice se possibile utilizzare selezione 'diverso da', negandolo
-caso complesso se e' una negazione essenziale, e' innegabile
+caso _semplice_ se possibile utilizzare selezione 'diverso da', negandolo
+caso _complesso_ se é una negazione essenziale, é innegabile
 - premesse
   + si lavora all'interno delle basi di dati: *Closed-World Assumption*
-    - tutto cio' che esiste e' contenuto all'interno della base di dati
+    - tutto cio' che esiste é contenuto all'interno della base di dati
     - i soli fatti veri del mondo sone quelli presenti nella base di dati
-      + se qualcosa non e' descritto non esiste
+      + se qualcosa non é descritto non esiste
 - si definisce l'universo $U$
   + es: medici
 - si risponde in forma positiva alla domanda $P$
@@ -187,8 +187,8 @@ _Negazione essenziale nascosta_
   + aka: elencare i pazienti ricoverati almeno una volta e che non hanno avuto due o piu' ricoveri
 - es: estrarre il massimo
   + facciamo il prodotto cartesiano dell'attributo
-    - cotrolliamo se un numero e' minore di almeno un altro numero della relazione
-*La quantificazione universale e' la negazione di una quantificazione esistenziale*
+    - cotrolliamo se un numero é minore di almeno un altro numero della relazione
+*La quantificazione universale é la negazione di una quantificazione esistenziale*
 
 *** Semantica di Codd del valore nullo
 - Info esistente ma non nota
@@ -196,10 +196,10 @@ _Negazione essenziale nascosta_
 - Info che non si sa se classificare nel primo o nel secondo caso
 Il modello relazionale non distingue i tre casi: _l'interpretazione del valore nullo é esterna al modello relazionale_
 
-Il confronto tra una costante ed una tupla con valore nullo per Codd é una *logica a 3 valori*
-- False (0)
-- True (2)
-- Unknown (1)
+Il confronto tra una costante ed una tupla con valore nullo per Codd rispetta la *logica a 3 valori*
+- *False* (0)
+- *True* (2)
+- *Unknown* (1)
   + sempre quando si confronta almeno un valore nullo
   + non é possibile cercare valori NULL quindi: si introducono IS NULL e IS NOT NULL
     - unici operatori che non danno mai NULL, solo TRUE o FALSE
@@ -231,9 +231,9 @@ Vanno estese le tabelle di veritá degli operatori base della logica classica
 - Distributiva ristratta della proiezione rispetta al join
 - distributiva della proiezione rispetta all'unione
 *** Calcolo Relazionale
-Linguaggio di tipo procedurale
+_Linguaggio di tipo procedurale_
 - l'utente indica il risultato a cui vuole arrivare, il DBMS sceglie la strategia ottimale
-L'interrogazione delle basi di dati puo' avvenire con un approccio dichiarativo
+L'interrogazione delle basi di dati puó avvenire con un approccio dichiarativo
 - si specificano le proprietá del risultato
 *** Su tuple con dichiarazione di range
 L'algebra relazionale é procedurale, esiste un approccio dichiarativo fondato sulla logica:
@@ -243,11 +243,11 @@ L'algebra relazionale é procedurale, esiste un approccio dichiarativo fondato s
 Un'integrazione ha questa forma:
      { ~Target~ | ~Range List~ | ~Formula~ }
 
-Nella formula e' possibile specificare anche predicati esistenziali o universali: $\exists$ e $\forall$
-In particolale la ~formula~ e' un predicato del primo ordine che puo' contenere sia variabili libere che quantificate (vincolate). Le variabili libere presenti devono essere dichiarate nella range list
+Nella formula é possibile specificare anche predicati esistenziali o universali: $\exists$ e $\forall$
+In particolale la ~formula~ é un predicato del primo ordine che puó contenere sia variabili libere che quantificate (vincolate). Le variabili libere presenti devono essere dichiarate nella range list
 
 Questo schema si trasporta direttamente su SQL:
-      select ... from ... where ...
+      =select ... from ... where ...=
 
 Il prodotto cartesiano é facilmente  esprimibile con
     { ~x.*,y.*~ | ~x(R),y(S)~ }
@@ -418,14 +418,14 @@ query all'interno di altre query
   + Data
     - DBMS
 - Fasi Progettazione
-  + Raccolta e Analisi dei requisiti (informali)
-  + Progettazione concettuale (indipendente dal DBMS)
+  + Raccolta e /Analisi dei requisiti/ (informali)
+  + Progettazione /concettuale/ (indipendente dal DBMS)
     - separazione netta tra schema concettuale e logico
     - produce
       + schema ER
       + Documentazione complementare (business rules)
-  + Progettazione logica
-  + Progettazione fisica (Basi di dati II)
+  + Progettazione /logica/
+  + Progettazione /fisica/ (Basi di dati II)
 
 Il processo di riproduzione di uno schema concettuale a partire da una schema logico é chiamato Reverse Engineering
 ** Metodologie e modello Entity-Relationship (LAB)
@@ -433,12 +433,12 @@ Il processo di riproduzione di uno schema concettuale a partire da una schema lo
 Non modella il comportamento del sistema, come UML, ma _modella i dati_
 *** Costrutti
 **** Entitá
-Rappresentano aspetti del mondo reale con esistenza "autonoma" ai fini della'applicazione
+Rappresentano aspetti del mondo reale con _esistenza "autonoma"_ ai fini della'applicazione
 Sono rappresentate da rettangoli, hanno nomi propri e unici.
 L'occorrenza di un'entitá é un oggetto della classe che l'entita rappresenta. Le entitá possono essere pensate come l'=insieme= delle loro occorrenze
 Un'occorrenza di entitá non si riduce ai valori che la identificano: questo a differenza del modello relazionale
-***** Attributi
-Proprietá delle entitá o associazioni che sono di interesse ai fini dell'applicazione
+**** Attributi
+_Proprietá delle entitá o associazioni_ che sono di interesse ai fini dell'applicazione
 - dominio, insieme dei valori ammissibili per l'attributo
 - linea con pallino vuoto
 - possono essere composti se sono a loro volta divisi in sottoattributi
@@ -455,8 +455,9 @@ Le Associazioni possono essere ricorsive.
 - Simmetriche
 - Non simmetriche
   + occorre specificare i versi che specificano la associazione
+
 Le occorrenze di un'associazione fra due entitá sono le coppie delle occorrenze delle entitá.
-Un'associazione puó essere pensata come l'=insieme= delle sue occorrenze (essendo un'insieme non possono esserci duplicati)
+Un'associazione puó essere pensata come l'=insieme= delle sue occorrenze (essendo un'insieme _non possono esserci duplicati_)
 - *cardinalitá* , numero di occorrenze dell'associazione a cui l'occorrenza di entitá puó partecipare
   - nella pratica si usano
     - 0, 1 , n (minimo)
@@ -470,7 +471,7 @@ Un'associazione puó essere pensata come l'=insieme= delle sue occorrenze (essen
 **** Identificatori
 Simile al concetto di chiave primaria ma *diverso*
 - che é un concetto del modello relazionale
-  - *differenza* possiamo avere piú identificatori allo stesso tempo, nel modello relazionale abbiamo una sola chiave primaria
+  - *differenza*: possiamo avere piú identificatori allo stesso tempo, nel modello relazionale abbiamo una sola chiave primaria
 
 Identificano univocamente le occorrenze di una entitá, rappresentati da pallini pieni
 Distinti in
@@ -481,15 +482,15 @@ Distinti in
 
 Ogni entitá deve avere almeno un identificatore, questo per facilitare il passaggio al modello relazionale.
 
-NB
-- ogni attributo che fa parte di un identificatore deve avere cardinalitá (1,1)
-- in id. esterna é possibile solo attraverso associazioni a cui l'entitá da identificare partecipa con cardinalita' (1,1)
-- una id. esterna puó convolgere entitá a loro volta identificate esternamente purché non vengano generati cicli
+- NB
+  + ogni attributo che fa parte di un identificatore deve avere cardinalitá (1,1)
+  + in id. esterna é possibile solo attraverso associazioni a cui l'entitá da identificare partecipa con cardinalitá (1,1)
+  + una id. esterna puó convolgere entitá a loro volta identificate esternamente purché non vengano generati cicli
 
 **** Generalizzazioni
 Mette in relazione una o piú entitá
 - $E$ generalizzazione dei figli
-- figli sono specializzazioni di $E$
+  + figli sono /specializzazioni/ di $E$
 
 - Proprietá
   + ogni occorrenza di una specializzazione é una occorrenza di $E$
@@ -507,7 +508,7 @@ Mette in relazione una o piú entitá
 - Descrizione dei concetti
   + dizionario dei dati per le entitá
   + dizionario dei dati per le associazioni
-- Vincoli non esprimibili in E-R (business rules)
+- Vincoli non esprimibili in E-R: *business rules*
   + Vincoli di integritá
   + Vincoli di derivazione
 ** Progettazione Concettuale e Logica (LAB)
@@ -525,42 +526,43 @@ Vanno rimosse le ambiguitá
 
 **** Pattern di progettazione
 un ricettario di casi comuni di progettazione
-- Reificazione di attributo di entitá
+- =Reificazione di attributo di entitá=
   - una associazione non puó rappresentare cose che si ripetono
-- Part-of
-- Instance-of
-- storicizzazione di un'entitá
+- =Part-of=
+- =Instance-of=
+- =Storicizzazione di un'entitá=
   + generalizzazione
     - storico
       + aggiunge attributi (fine)
     - corrente
-- storicizzazione di un'associazione
+- =Storicizzazione di un'associazione=
   + si sdoppia la associazione
   + o si reifica l'associazione e poi si generalizza quest'ultima
-- evoluzione di concetto
-- reificazione di associazione ternaria
+- =Evoluzione di concetto=
+- =Reificazione di associazione ternaria=
   + permette di capire la correttezza dell'associazione ternaria
 
-**** Strategie di progetto
-- top-down
+**** Strategie di progettazione
+- =top-down=
   + serie di raffinamenti successivi
   + aumenta il dettagli passo passo
   + entitá senza attributi e relazioni
     - poi concretizziamo aggiungendo dettagli
   + pro: si possono ignorare i dettagli inizialmente
   + contro: é possibe solo se si possiede una visione gloxarlle di tutte le componenti
-- bottom-up
+- =bottom-up=
   + partiamo da specifiche divise in parti elementari
     - di queste sono fatti i singoli schemi ER
   + poi aggreghiamo in uno schema finale
   + pro: le parti semplici sono da spartire e sviluppare a se stanti
   + contro: possono sorgere problemi nel aggregare schemi completamente diversi
-- inside-out
+- =inside-out=
   + individuiamo concetti chiave e partiamo da lí
   + ci espandiamo a partire da questi ultimi
   + pro: non richiede passi di integrazione
   + contro: ogni passo vanno riesaminati gli elementi presenti e non presenti
-Nella pratica si utilizza una strategia ibrida
+
+_Nella pratica si utilizza una strategia ibrida_
 - vanno suddivisi i requisiti in componenti separati
 - si forma uno schema scheletro
   + fa da base per successivi raffinamenti
@@ -573,23 +575,23 @@ Nella pratica si utilizza una strategia ibrida
       + luoghi (di nascita), luogo (delle lezioni)
       + partecipanti, studenti
   + standardizzare la sintassi
-    - per ENTITÁ rappresentiamo ATTRIBUTI
+    - es: "per ENTITÁ rappresentiamo ATTRIBUTI"
   + costruire un glossario dei termini
     - termine | descrizione | sinonimi | collegamenti
     - ancora un lavoro linguistico, non corrispondono necessariamente alle entitá
-- Strutturazione dei Requisiti in gruppi di frasi omogenee
+- *Strutturazione dei Requisiti* in gruppi di frasi omogenee
   + Frasi relative ai partecipanti
   + Frasi relative ai datori di lavoro
   + Frasi relative ai corsi
   + Frasi relative a particolari partecipanti
   + Frasi relative ai docenti
-- Operazioni (piú impattanti sul sistema) sui dati
+- *Operazioni* (piú impattanti sul sistema) sui dati
   + e frequenza
   + per assicurarci che i dati permettano di svolgere tutti le operazioni
   + per poter considerare l'efficienza del nostro schema logico piú avanti
-- Progettazione concettuale vera e propria
+- *Progettazione concettuale* vera e propria
   + se un concetto da proprietá significative e descrive oggetti con esistenza autonoma
-    - *entita'*
+    - *entitá*
   + se é semplice e non ha proprietá
     - *attributo* ad un'altra entitá
   + se correla due o piú concetti
@@ -597,13 +599,13 @@ Nella pratica si utilizza una strategia ibrida
   + se é un caso  particolare di un altro
     - *generalizzazione*
 
-**** Qualita' di uno schema ER
+**** Qualitá di uno schema ER
 - Correttezza
 - Completezza
-- Leggibilita'
-- Minimalita'
+- Leggibilitá
+- Minimalitá
 *** Logica
-Obiettivo: tradurre lo schema concettuale in uno schema logico che rappresenti gli stessi dati in maniera corretta ed efficiente
+Obiettivo: _tradurre lo schema concettuale in uno schema logico che rappresenti gli stessi dati in maniera corretta ed efficiente_
 - é necessario considerare le prestazioni
 - ci sono aspetti non direttamente rappresentabili
 IN:
@@ -617,28 +619,28 @@ OUT:
 - documentazione associata
 
 **** Fasi
-***** ristrutturazione dello schema concettuale (EER)
-+ vanno rimosse inefficiente
+***** Ristrutturazione dello schema concettuale (EER)
++ vanno rimosse inefficienze
 + se serve si cambiano le business rules
-Si crea uno schema che non é piú uno schema concettuale in quanto si introducono considurazioni applicative
+
+Si crea uno schema che non é piú uno schema concettuale in quanto si introducono considerazioni applicative
 Non si possono valutare prestazioni senza parametri fisici
 - facciamo solo una stima con indicatori di *massima*
 - *Indicatori di prestazione*
-  - tempo
+  - /tempo/
     + numero di occorrenze di entitá e di associazioni visitate per eseguire un'operazione sul DB
-  - spazio
+  - /spazio/
     + necessario per rappresentare i dati
-  - volume
+  - /volume/
     + numero di occorrenze
     + dimensione degli attributi
-  - caratteristiche delle operazioni
+  - caratteristiche delle /operazioni/
     + operazione interattiva/batch
     + frequenza
     + entitá/associazioni coinvolte
 
 - *Tavola dei Volumi*
   - concetto | tipo | volume
-
 
 - *Tavola delle Operazioni*
   - operazione | descrizione | tipo | frequenza
@@ -654,13 +656,13 @@ Passi:
         - derivabile da attributi di altre entitá o associazioni
    b. _vantaggi_
       - in caso di op. di interrogazione/lettura dei dati
-        + piú efficienti
         + semplificate
+        + piú efficienti
    c. _svantaggi_
       - op. di inserimento e modifica dei dati
         + meno efficienti
    d. maggiore occupazione di spazio
-   e. Analisi costi/benefici
+   e. Analisi *costi/benefici*
    f. per ogni ridondanza
       - per ogni operazione significativa su cui la presenza o assenza della ridondanza puó avere effetto
         + schema delle operazioni nei due scenari
@@ -678,22 +680,22 @@ Passi:
         + conveniente quando le operazioni effettuano pochi accessi alle istanze di entrambe le entitá
         + ottimizza maggiormente lo spazio rispetto alle altre alternative perché usa meno attributi e associazioni
    c. sostituzione della generalizzazione con associazioni
-      - se esclusiva occorre aggiungere il vincolo che ogni occerrenza del genitore non puó partecipare contemporaneamente alle due relazioni
+      - se esclusiva occorre aggiungere il vincolo che ogni occorrenza del genitore non puó partecipare contemporaneamente alle due relazioni
       - se totale occorre aggiungere il vincolo che ogni occorrenza del genitore deve partecipare ad una delle relazioni
 
-3. Partizionamento/Accorpamento di entita' e associazioni
+3. =Partizionamento= / =Accorpamento= di entitá e associazioni
    - dipende dalle transazioni che accedono alle istanze, se necessitano spesso di informazioni relative ad altre entitá
    - gli accorpamenti si fanno in genere su entitá legate da associazioni 1 a 1
 
 4. Scelta degli =identificatori principali=
-   - si sceglie un identificatore per le entita' che ne hanno piu' di uno
+   - si sceglie un identificatore per le entitá che ne hanno piú di uno
    - indispensabile per la traduzione nel modello relazionale
    - criteri
      + assenza di opzionalitá
      + semplicitá
      + utilizzo nelle operazioni piú frequenti o importanti
    - se nessun identificatore rispetta i requisiti si introducono nuovi attributi (codici) appositamente
-   - puó essere necessarionio creare un identificatore surrogato
+   - puó essere necessario creare un identificatore surrogato
 
 5. Eliminazione degli =attributi multivalore=
    - si reificano in entitá e si collegano con relazioni
@@ -702,12 +704,11 @@ Passi:
    - vengono ereditati direttamente dall'entitá
 
 ***** traduzione verso il modello logico e ottimizzazione
-+ algoritmo traduce lo schema
+- algoritmo traduce lo schema
+  + Le =entitá= diventano relazioni con gli stessa attributi delle entitá
+  + Le =associazioni= diventano relazioni con attributi delle associazioni + gli identificatori delle entitá coinvolte
 
-Le =entitá= diventano relazioni con gli stessa attributi delle entitá
-Le =associazioni= diventano relazione con attributi delle associazioni + gli identificatori delle entitá coinvolte
-
-Associazioni
+*Associazioni:*
 (le cardinalitá minime non sono tenute in conto, sarebbero necessari costrutti SQL complessi e poco efficienti)
 - molti a molti
   + attributi
@@ -722,7 +723,7 @@ Associazioni
 - uno a molti
   + possiamo accorpare gli attributi della relazione dell'associazione in uno delle due ex entitá, quella che avrá la stessa chiave primaria (dalla parte del 1 non dei molti)
   + la relazione puó modellare sia cardinalitá minima 1 che 0
-    - 0 allora gli attributi saranno NULLABLE*
+    - 0 allora gli attributi saranno *NULLABLE*
 - uno a uno
   + due modi simmetrici e entrambi validi
     - con vincoli unique sulla relazioni
@@ -750,8 +751,8 @@ Associazioni
 ** Normalizzazione
 Le forme normali sono proprietá che garantiscono l'assenza di determinati difetti nella base di dati
 Una relazione /non/ in forma normale:
-- presenta ridondanze
-- causa anomalie quando si aggiornano, cancellano e inseriscono dati
+- presenta _ridondanze_
+- causa _anomalie_ quando si aggiornano, cancellano e inseriscono dati
   + ~Criticitá di esprimibilitá~
   + ~Criticitá di efficienza~
     - per cambiare un dato questo va modificato in /tutte/ le tuple che lo coinvolgono
@@ -762,7 +763,7 @@ La *normalizzazione* puó essere usata come tecnica di *verifica* dei risultati 
 Ci sono attributi che caratterizzano concetti, inoltre alcuni attributi hanno una correlazione tra di loro.
 Esistono vincoli (a volte impliciti) tra attributi che caratterizzano lo stesso concetto
 $X$ e $Y$ sottoinsiemi di attributi di $A$
-Vincolo di dipendenza funzionale $X \rightarrow Y$ ($X$ determina $Y$)
+Vincolo di dipendenza funzionale $X \rightarrow Y$ ($X$ /determina/ $Y$)
 - se e solo se
   - $\forall t_1,t_2\in r (t_1[X]=t_2[X] \implies t_1[Y]=t_2[Y])$
 Le dipendenze funzionali si modellano conoscendo il /dominio/ che si rappresenta
@@ -787,7 +788,7 @@ controllo che ogni $X \rightarrow Y$ di $F$ é deducibile in $G$: $Y \subseteq X
 
 ***** Teoria di Armstrong
 *Assiomi* della Teoria di Armstrong
-- assiomi non sono dimostrabili, sarebbero meglio definibili come regole
+- assiomi non sono dimostrabili, /sarebbero meglio definibili come regole/
 - Riflessivitá
 - Unione
 - Transitivitá
@@ -829,12 +830,13 @@ $A_1 \cup A_2 = A$
 Posso ricomporre le informazioni con un natural join, includendo peró eventuali ~spurie~
 - pur avendo tuple in piú ho una ~perdita di informazioni~ in quanto non si sa quale sia la combinazione originale
 
-Una decomposizione é senza perdita se non ha tuple spurie nel self join
+_Una decomposizione é senza perdita se non ha tuple spurie nel self join_
+
 =Teorema=
 La decomposizione di $R$ é senza perdita di informazione per ogni istanza che soddisfa le dipendenze funzionali $F$ se e solo se:
 $A_1 \cap A_2$ é superchiave di $A_1$ oppure
 $A_1 \cap A_2$ é superchiave di $A_2$
-- questa intersezione di attributi é quella usata dal natural join per ricamporre $R$
+- questa intersezione di attributi é quella usata dal natural join per ricomporre $R$
 Quindi con $K$ superchiave di $R$ se e solo se $K \rightarrow A \in F^+$
 $A_1 \subseteq (A_1 \cap A_2)_F^+ \lor A_2 \subseteq (A_1 \cap A_2)_F^+$
 
@@ -845,12 +847,11 @@ Definendo le restrizioni di $F$ di $R$ in
 =def= restrizione
 - $F_1 = \{X\rightarrow Y \mid (X \rightarrow Y \in F^+) \land (X,Y\subseteq A_i)\}$
 Ma alcune decomposizioni non conservano le dipendenze
-- andrebbero aggiuente le d.f. perse come vincoli globali
+- andrebbero aggiunte le d.f. perse come vincoli globali
   + molto costoso, all'aggiunta di una tupla andrebbe fatto il join e ricontrollata la condizione
 
-
 *** Le Forme Normali
-Sono ricette di buona progottazione volte alla minimizzazione delle ridondanze e anomalie
+Sono ricette di buona progettazione volte alla minimizzazione delle ridondanze e anomalie
 A una forma puó essere associato un algoritmo di normalizzazione
 Esistono forme diverse, diversi compromessi tra proprietá delle decomposizione, compattezza e minimizzazione delle anomalie
 **** BCNF
@@ -877,16 +878,16 @@ Ma esistono degli schemi che víolano la BCNF e per cui non esiste alcuna decomp
 - non elimina tutte le anomalie
 - é sempre possibile raggiungerla conservando le dipendenze funzionali
 
-=def= Attributo Primo
-Data una relazione $R(A)$ gli attrbuti $Y \subseteq A$ sono detti *attributi primi* se e solo se $Y \subseteq K$, dove $K$ é chiave di $R(A)$
+=def= *Attributo Primo*
+Data una relazione $R(A)$ gli attributi $Y \subseteq A$ sono detti *attributi primi* se e solo se $Y \subseteq K$, dove $K$ é chiave di $R(A)$
 
 Per ogni $X \rightarrow Y \in F$ si verifica almeno una delle seguenti proprietá:
 1. $X \rightarrow Y$ é riflessiva
 2. $X$ é superchiave
 3. $Y$ sono attributi primi
 
-Se una relazione é in BCNF allora é anche in 3NF, l'inverso non é necessariamente vero.
-La 3NF puó avere anomalie di inserimento e cancellazione
+Se una relazione é in BCNF allora é anche in 3NF, _l'inverso non é necessariamente vero_.
+La 3NF puó avere _anomalie_ di inserimento e cancellazione
 *** Insieme di copertura minimale
 Un insieme $F^'$ di d.f. é un insieme di copertura minimale rispetto a $F$ quando:
 1. $F^' \eq F$
@@ -924,7 +925,7 @@ Possibile rimuoverla continuando ad avere un insieme di d.f. equivalente
 - accezione specifica - ~metodologica e tecnologica~
   + insieme di dati gestito da un =DBMS=
 ** DBMS
-Data Base Management System
+=Data Base Management System=
 Componente Software specificamente dedicata alla gestione delle basi di dati
 - Oracle DB
 - PostreSQL
@@ -951,7 +952,7 @@ Sistema che gestisce collezioni di dati
       + accessi contemporanei (gestiti dai DBMS)
 - privatezza
   + meccanismi autorizzazione
-- affidabilita'
+- affidabilitá
   + resistenti a malfunzionamenti hardware e software
   + tecniche
     - gestione delle transazioni
@@ -976,10 +977,10 @@ utente - schema esterno - schema logico - schema interno - BD
 ** Indipendenza
 *** Fisica
 Livello logico e esterno sono indipendenti da quello fisico
-- una relazione e' utilizzata allo stesso modo qualunque sia la realizzazione fisica
-- la realizzazione fisica puo' cambiare senza problemi
+- una relazione éutilizzata allo stesso modo qualunque sia la realizzazione fisica
+- la realizzazione fisica puó cambiare senza problemi
 *** Logica
-Lo schema esterno e' indipendente da quello logico
+Lo schema esterno é indipendente da quello logico
 
 ** Transazione
 Sequenza di operazioni considerate in modo atomico anche in presenza di concorrenza
@@ -1007,7 +1008,7 @@ Manipolazione, interrogazione e aggiornamento di istanze di basi di dati
 *** DDL
 Definizione di schemi (logici, esterni, fisici) e operazioni generali
 ** Sistema Informativo
-NON necessariamente un Sistema Informatico (Questo ne e' una parte)
+NON necessariamente un Sistema Informatico (questo ne é una parte)
 Componente che gestisce le informazioni di una Base Dati
 - Raccolta
 - Archiviazione
