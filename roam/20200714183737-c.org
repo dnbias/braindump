@@ -1,7 +1,4 @@
 #+TITLE: C++
-:Programming:
-:Language:
-
 * Cherno
     Crash Course
     Engine Developer
