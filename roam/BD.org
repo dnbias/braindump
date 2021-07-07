@@ -385,6 +385,7 @@ si inseriscono tra query
   + =all= mantiene i duplicati
 - =except= / differenza
   + =all= mantiene i duplicati
+
 =query nidificate=
 query all'interno di altre query
 - si risolvono problemi intermedi passando il risultato al problema esterno

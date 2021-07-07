@@ -1704,7 +1704,7 @@ MST-Prim(G,s)
     A = A + (u,v)
     Q = V - {v}
 #+end_example
-Per facilitare la scelta dell'arco successivo memoriziomo per ogni nodo $u \in Q$ l'arco piú leggero fra $V-Q$ e $u$
+Per facilitare la scelta dell'arco successivo memoriziamo per ogni nodo $u \in Q$ l'arco piú leggero fra $V-Q$ e $u$
 - attributo $\pi$ é l'estremitá dell'arco in $V-Q$ e $d$ il suo peso
 #+begin_example
 MST-Prim(G,s)
