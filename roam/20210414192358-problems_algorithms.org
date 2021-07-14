@@ -18,7 +18,7 @@ R é _univoca_ se ogni istanza ammette una sola risposta
 ** Algoritmi
 Metodo meccanico per risolvere un Problema Computazionale
 - Procedura
-  + produce un output da qualsiasi input
+  + produce un output qualsiasi da input
 - Algoritmo
   + procedura che termina per ogni ingressa ammissibile
 
@@ -231,7 +231,7 @@ Nel caso peggiore Insert-Sort ha _complessitá temporale quadratica_
 $dn + e$
 Nel caso migliore Insert-Sort ha _complessitá temporale lineare_
 *** Selection Sort
-Assumiamo che la parte sx del vettore sia giá ordinata e che contenga elementi \ge di questa parte a dx
+Assumiamo che la parte sx del vettore sia giá ordinata e che contenga elementi <= di questa parte a dx
 - cerchiamo l'elemento minimo della parte dx e lo spostiamo in ultima posizione a sx (diminuendo la dimensione del problema)
 #+begin_example
 Selection-Sort(A)
@@ -252,7 +252,7 @@ return A
 Implicata dalla terminazione dei cicli
 **** Correttezza
 2 Invarianti
-1. =A[1...i-1]= ordinato e =A[i...n]= \ge =A[1...i-1]=
+1. =A[1...i-1]= ordinato e =A[i...n]= <= =A[1...i-1]=
 2. =A[k]= \le =A[i...j-1]=
 
 **** Complessitá
