@@ -187,7 +187,7 @@ _Negazione essenziale nascosta_
   + aka: elencare i pazienti ricoverati almeno una volta e che non hanno avuto due o piu' ricoveri
 - es: estrarre il massimo
   + facciamo il prodotto cartesiano dell'attributo
-    - cotrolliamo se un numero é minore di almeno un altro numero della relazione
+    - controlliamo se un numero é minore di almeno un altro numero della relazione
 *La quantificazione universale é la negazione di una quantificazione esistenziale*
 
 *** Semantica di Codd del valore nullo
@@ -908,7 +908,7 @@ La complessitá é *polinomiale*
 - contiene cicli su F e cicli su X con all'interno il calcolo della chiusura di attributi che é polinomiale
 
 **** Attributo estraneo
-Un attributo in uno d.f. che é possibile rimuovere continuaundo ad avere un insieme di d.f. equivalente
+Un attributo in uno d.f. che é possibile rimuovere continuando ad avere un insieme di d.f. equivalente
 - possibile calcolarlo con la chiusura degli attributi
 **** Dipendenze ridondanti
 Possibile rimuoverla continuando ad avere un insieme di d.f. equivalente
@@ -922,7 +922,7 @@ Possibile rimuoverla continuando ad avere un insieme di d.f. equivalente
 * Definizioni
 ** Base di Dati
 - accezione generica - ~metodologica~
-  + insieme organizzato di dati utizizzati per il supporto allo svolgimento delle attivita di un ente
+  + insieme organizzato di dati utilizzati per il supporto allo svolgimento delle attivita' di un ente
 - accezione specifica - ~metodologica e tecnologica~
   + insieme di dati gestito da un =DBMS=
 ** DBMS
