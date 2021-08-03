@@ -1,7 +1,7 @@
 #+title: Buddy Program UniTo
 Contatti: Marcella Re
 * Ore
-*2.B: Buddy accoglienza Exchange students, DD, Progetti speciali (50h)*
+not 2.B - 2.C : Buddy accoglienza Degree Seeking / Partner Countries (100h)
 *** DONE 9:30/12:30
 - State "DONE"       from "WAIT"       [2021-07-14 Wed 12:26]
 * Generale
@@ -198,3 +198,44 @@ gratuiti per studenti Erasmus e Exchange
 *** Disabilitá/Bisogni Speciali
 - entrare in contatto con lo studente
 - Servizi/lo studio/studenti con disabilitá
+
+* Polo di Scienze della Natura
+[[https://drive.google.com/drive/u/1/folders/16auXMMOBEyrPnjd5DGWxJn7npq_uNGdv][Drive]]
+- contatti
+  + [[mail:international.sciences@unito.it]]
+  + Google Meet
+  + Telefono
+- Mail Dedicata
+  + [[mail:buddy.sciences@unito.it]]
+    * credenziali reperibili su slide
+
+Polo: struttura amministrativa di gestione e offerta di servizi alle strutture didattiche e di ricerca
+A questo polo afferiscono 8 dipartimenti.
+- SUISM afferisce per gli exchange al Dip. di Psicologia, per i degree seeking si appoggiano al Polo di riferimento
+
+Coordinatrice: Chiara Tenneriello
+Corsi a me assegnati:
+- Scienze della Vita
+  + Cellular & Molecular Biology
+- Informatica
+* Degree Seeking
+Le attivita' iniziano a Settebre
+- non ancora immatricolati:
+  + moodle - si
+  + Webex - si, come ospiti
+  + Student Booking - si
+    - prenotare posto in aula
+  + CampusNet - no
+    - piattaforma grafica dei dipartimenti
+    - Informatica, altra piattaforma: supporto a [mail]
+- una volta immatricolati si utilizzano le credenziali MyUnito
+- segreteria
+  + ticket Help Desk
+  + solo in italiano
+  + Scienze vita e Biologia: [[olizier.friard@unito.it]]
+- tutorato
+  + Scienze della Natura
+  + Psicologia
+  + Scienza e Tecnologia del Farmaco
+- ESN
+- Biblioteche
