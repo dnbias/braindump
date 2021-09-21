@@ -1,7 +1,10 @@
 #+title: Calcolabilitá e Complessitá
 #+roam_alias: CalcCompl
+[[file:#university.org][$university]]
 * Info Corso
 - Orari:
+  + Lun 9-11
+  + Mer 9-11
 - Testo:
   + [[file:20210921121359-introduction_to_the_theory_of_computation.org][Introduction to the theory of Computation]]
 * Teoria

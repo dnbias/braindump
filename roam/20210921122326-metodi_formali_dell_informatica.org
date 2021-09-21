@@ -1,0 +1,11 @@
+#+title: Metodi Formali dell'Informatica
+#+roam_alias: MFI
+[[file:#university.org][$university]]
+* Info Corso
+- Orario:
+  + Mer 14-16
+  + Ven 11-13
+- Testo:
+  + [[file:20210921122441-programming_language_foundation_in_agda.org][Programming Language Foundation in Agda]]
+
+* Teoria

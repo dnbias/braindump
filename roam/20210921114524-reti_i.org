@@ -1,5 +1,10 @@
 #+title: Reti I
+[[file:#university.org][$university]]
 * Info Corso
+- Orari:
+  + Mar 16-18
+  + Mer 16-18
+  + Gio 11-13
 - Testo:
-  + [[file:20210921114932-computer_netwoking_a_top_down_approach.org][Computer Netwoking, A Top-Down Approach]]
+  + Computer Netwoking, A Top-Down Approach
 * Teoria

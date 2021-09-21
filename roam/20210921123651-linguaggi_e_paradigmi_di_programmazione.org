@@ -1,0 +1,13 @@
+#+title: Linguaggi e Paradigmi di Programmazione
+#+roam_alias: LPP
+[[file:#university.org][$university]]
+* Info Corso
+- Orario
+  + Lun 16-18
+  + Gio 9-11
+  + Ven 16-18
+- Testo
+  + [[file:20210921124001-introduction_to_the_theory_of_programming_languages.org][Introduction to the Theory of Programming Languages]]
+  + [[file:20210921124127-haskel_the_craft_of_functional_programming.org][Haskel: the Craft of Functional Programming]]
+
+* Teoria

@@ -1,0 +1,3 @@
+#+title: Philip Wadler
+[[file:20210527192825-authors.org][$authors]]
+[[file:20210921122441-programming_language_foundation_in_agda.org][Programming Language Foundation in Agda]]

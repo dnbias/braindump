@@ -5,6 +5,7 @@
 - Orari:
   + Mar: 9-11
   + Gio: 11-13
+  + Mer: 9-11 (Lab1)
 - Testi:
   + [[file:20210921120356-java_how_to_program_late_objects.org][Java: How to Program, Late Objects]]
 - IDE
