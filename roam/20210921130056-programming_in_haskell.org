@@ -1,0 +1,3 @@
+#+title: Programming in Haskell
+[[file:20201029112426-books.org][$books]]
+Hutton, Graham, /Programming in Haskell/, 2006 (2ed, 2016), pp.171
