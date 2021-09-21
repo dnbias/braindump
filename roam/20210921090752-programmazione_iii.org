@@ -6,7 +6,7 @@
   + Mar: 9-11
   + Gio: 11-13
 - Testi:
-  + /Programmare in Java11/ - MyLab P.J.Deitel, H.M.Deitel
+  + [[file:20210921120356-java_how_to_program_late_objects.org][Java: How to Program, Late Objects]]
 - IDE
   + IntelliJ IDEA
 * Teoria

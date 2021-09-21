@@ -1,0 +1,7 @@
+#+title: Calcolabilitá e Complessitá
+#+roam_alias: CalcCompl
+* Info Corso
+- Orari:
+- Testo:
+  + [[file:20210921121359-introduction_to_the_theory_of_computation.org][Introduction to the theory of Computation]]
+* Teoria
