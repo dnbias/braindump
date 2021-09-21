@@ -1,4 +1,5 @@
 #+title: Programmazione III
+#+roam_alias: ProgIII
 [[file:#university.org][$university]]
 * Info Corso
 - Orari:
@@ -6,7 +7,35 @@
   + Gio: 11-13
 - Testi:
   + /Programmare in Java11/ - MyLab P.J.Deitel, H.M.Deitel
+- IDE
+  + IntelliJ IDEA
 * Teoria
+** Programmazione ad Oggetti
+*** Concetti Base
+Secondo _Alan Kay (Smalltalk)_
+- Oggetti
+  /fornitori di servizi/
+  + Stato
+    - attributi
+  + Tipo/Classe
+- Richieste/Metodi - /delega al metodo, si conosce l'API non l'implementazione/
+  + modificano lo stato
+  + invio richieste ad altri oggetti
+  + comunicazione di informazioni
+- Object-oriented Design
+  + progettazione orientato ad O
+
+- Classe/Istanza
+  + astratto/concreto
+    - concreto anche in memoria nello Heap
+*** p. procedurale vs p. oggetti
+- Procedurale
+  + Algoritmi + Strutture Dait
+- Oggetti
+  + Oggetti + Collaborazione
+    /si scorporano funzionalitá diverse in oggetti diversi:/ *delega*
+    a) dati + algoritmi
+    b) interfacce
 ** Programmazione ad Eventi
 *** Event-Driven Programming
 *** Organizzazione e uso GUI
