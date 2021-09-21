@@ -118,8 +118,21 @@ I medici di base possono somministrare solo vaccini a doppia dose, mentre gli al
 *** Operazioni
 
 ** Schema ER Iniziale
+[[https://erdplus.com/edit-diagram/95b219b3-3c04-46d2-bc6e-4bc802c5b98b][link]]
 
 ** Business Rules
+- Un cittadino puó accedere solo a centri vaccinali della propria cittá di residenza
+- Un cittadino per un dato Vaccino deve  al massimo avere confermato $n$ appuntamenti con $n$ uguale al Numero Somministrazioni del Vaccino
+- Un Cittadino per poter ricevere un Vaccino deve avere Etá compresa tra le etá minima e massima di somministrazione
+- Un Cittadino:
+  + fragile, CORONAX, FLUSTOP
+  + personale sanitario, COVIDIN, CORONAX
+  + personale scolastico, COVIDIN, CORONAX
+  + nessuno dei precedenti, CORONAX
+- Un cittadino che ha riscontrato reazioni avverse non puó accedere a dosi il
+  cui lotto ha riscostrato almeno una reazione avversa negli ultimi 30 giorni
+- Un cittadino con positivitá pregressa non deve ricevere seconda dose se specificata
+- Medici base somministrano solo vaccini a doppia dose
 
 ** Schema + BR
 

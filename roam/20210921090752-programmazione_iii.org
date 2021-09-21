@@ -1,0 +1,21 @@
+#+title: Programmazione III
+[[file:#university.org][$university]]
+* Info Corso
+- Orari:
+  + Mar: 9-11
+  + Gio: 11-13
+- Testi:
+  + /Programmare in Java11/ - MyLab P.J.Deitel, H.M.Deitel
+* Teoria
+** Programmazione ad Eventi
+*** Event-Driven Programming
+*** Organizzazione e uso GUI
+*** Model View Controller
+** Programmazione Multithread
+/Stesso processo - Esecuzione concorrente di istruzioni/
+** Programmazione in Rete
+*** Architettura Client-Server
+*** Socket
+*** Polimorfismo
+*** Esecuzione Distribuita
+* Laboratorio
