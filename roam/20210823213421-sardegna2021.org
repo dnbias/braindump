@@ -1,0 +1,2 @@
+#+title: Sardegna2021
+[[file:$trip.org][$trip]]

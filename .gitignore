@@ -1,7 +1,8 @@
 !*.org
 *.db
 */agenda.org
-Inbox.org
+agenda.org
+inbox.org
 ledger.org
 */inbox.org
 */journal.org
