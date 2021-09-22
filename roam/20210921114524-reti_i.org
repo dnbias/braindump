@@ -1,10 +1,183 @@
 #+title: Reti I
 [[file:#university.org][$university]]
 * Info Corso
+- Prof:
+  + Marco Botta
 - Orari:
   + Mar 16-18
   + Mer 16-18
-  + Gio 11-13
+  + Gio 11-13 (in alternativa a [[file:20210921090752-programmazione_iii.org][ProgIII]])
 - Testo:
-  + Computer Netwoking, A Top-Down Approach
+  + [[file:20210921114932-computer_netwoking_a_top_down_approach.org][Computer Netwoking - A Top-Down Approach]]
 * Teoria
+** Introduzione alle Reti di Calcolatori
+Internet come esempio delle reti
+*** Componenti
+- Computing Devices connessi
+  + hosts / sistemi terminali
+    - alla periferia della rete
+    - eseguono degli applicativi
+      + applicazioni di rete
+  + links
+    - wireless
+    - wired
+  + router
+    - collegati tra di loro
+    - collegati agli hosts
+      + permettono a questi di comunicare a grandi distanze
+      + _packet switching_
+- Gerarchia
+  + Internet come rete di reti
+  + home Network
+    - Regional ISP
+      + Global ISP
+        - mobile Network
+    - Institutional Network
+
+In sostanza:
+- hosts: clients, servers / dispositivi periferici alla rete / _edge networks_
+  + in prevalenza wireless
+  + _access network_ punto di accesso
+    - per connettere terminali si utilizzano /router di frontiera/
+    - reti di accesso residenziale/istituzionale/mobile
+- routers in profonditá nella rete / _core network_
+  + in prevalenza wired
+
+***** Accesso
+****** Digital Subscriber Line
+=DSL=
+Utilizza linee telefoniche esistenti
+- splitter
+  + dati vanno su Internet
+  + voce va sulla rete telefonica
+La linea é asincrona:
+- Up < 1Mbps
+- Down < 10Mbps
+  + poiché questa é la piú utilizzata generalmente
+Collegato direttamente alla Centrale
+****** Cable Network
+Via cavo, utilizzata dagli anglosassoni
+- cavo condiviso da vari utenti
+- cable modem
+  + collegato da uno splitter
+    - dati vanno su Internet
+    - segnale televisivo va su TV
+    - vengono utilizzate tecniche di multiplexing
+- Hybrid fiber coax
+  + Up < 2Mbps
+  + Down < 30Mbps
+A differenza della DSL non ha un collegamento diretto al centtrale
+
+****** Enterprise Access Network
+Ethernet, sono dei Router che fanno parte della rete internet del ISP
+- institutional router
+  + Ethernet switch
+    - connessioni singole
+- Velocitá: 10Mbps, 100Mbps, 1Gbps, 10Gbps
+****** Wireless Access Network
+- LAN:
+  + 100ft
+  + 802.11 b/g: 11Mbps, 54Mbps
+- Wide-Area
+  + telco operator, 10km
+  + 1 - 10 Mbps
+    - 3G, 4G, LTE
+***** Host
+Invio di pacchetti di dati tra gli Host
+pacchetti di bit di lunghezza $L$, trasmissione a velocitá $R$
+- packets
+- link bandwidth
+Packet Transmission Delay = $\frac{L}{R}$
+***** Mezzi Trasmissivi
+- guiditati
+  + il segnale segue un percorso ben preciso
+  + cavi
+    - Twisted Pair (TP)
+      + 2 cavi di rame intrecciati
+    - Coaxial Cable
+      + 2 cavi di came concentrici
+      + maglia di rame intorno per schermare
+      + cavo interno biderezionale banda langa
+    - Fiber Optic
+      + fibre di vetro all'interno della quale passa la luce
+      + il segnale é luminoso, ogni bit é un impulso luminoso
+      + molto flessibili
+      + molto veloci, immune alle interferenze elettromagnetiche
+        - tasso di errore molto basso
+- non guidati
+  + onde radio
+    - segnali trasportati nello spettro elettromagnetico
+    - possono essere riflessi, ostruiti, interferiti
+    - Microonde terresti
+      + < 45Mbps
+    - LAN WiFI
+      + < 11 - 54Mbps
+    - Wide-Area
+      + 3G, 4G
+    - satellitare
+      + delay per la distanza con il satellite
+      + da Kbps a Mbps
+***** Nucleo della Rete
+Packet Switching preferito perché permette a piú utenti di usare la rete contemporaneamente
+- questo in quanto é bassa la probabilitá che tutti gli utenti siano attivi contemporaneamente
+****** Packet Switching
+Router Interconnessi che comunicano usando il packet switching
+- ogni pacchetto ha lo stesso formato e dimensione, semplici da _smistare_ verso la destinazione
+- ogni pacchetto usa l'intera capacitá del collegamento per essere inviato
+
+_Store-And-Forward_
+- il router deve ricevere almeno parte del pacchetto, supponiamo tutto
+- solo allora puó decidere su quale collegamento in uscita trasmetterlo
+_Queuieng and Loss_
+- in uscita solo un pacchetto puó passare per volta
+  + si formano delle code nel ~buffer~ del router
+  + se la coda é piena un nuovo pacchetto viene scartato
+
+- Funzioni principali del Nucleo
+  + routing - instradamento
+    - Routing Algorithm
+      + determina il cammino che i pacchetti dovranno seguire
+    - Local Forwarding Table
+  + forwarding - inoltro
+    - copia sull'uscita scelta il pacchetto
+
+Piú semplice del circuit switching, i router non devono attivarsi per creare la connessione, ma condividendo le risorse possono crearsi congestioni
+- puó essere garantita banda ad alcune app audio/video per ottenere del comportamento simile al circuit switching
+
+****** Circuit Switching
+Creare un collegamento diretto tra mittente e destinatario
+C'é una ridondanza di collegamenti tra i router
+- a seguito di una richiesta i router aprono e chiudono i circuiti per creare una linea diretta di circuiti
+- con questo schema non ci sono risorse condivise a differenza del Packet Switching
+  + i pacchetti andranno alla massima velocitá possile
+  + un circuito non utilizzato puó essere considerato uno spreco
+******* FDM
+******* TDM
+**** Protocolli
+Skype, TCP, IP, HTTP, 802.11
+Definiscono:
+- formato,ordine di messaggi ricevuti e mandati
+- azioni intraprese su invio e ricevuta di messaggi
+**** Internet Stardards
+- RFC: Request for comments
+- IETF: Internet Engineering Task Force
+  + ente che valuta e accetta standard di comunicazione
+*** Servizi
+Internet puó essere definito come infrastruttura di servizio ad applicativi
+- che ne hanno bisogno per comunicare tra loro
+Internet puó anche fornire un'interfaccia di programmazione utile alla comunicazione
+- Generalmente:
+  + server
+    - fornisce un servizio
+  + client
+    - accede a servizi
+Ma la divisione non é netta, ogni Computer puó essere entrambi
+
+L'ISP fornisce una certa bandwidth
+- che dipende anche dal proprio PC, che potrebbe fare bottleneck
+
+** Livello Applicativo
+** Livello di Trasporto
+** Livello di Rete
+** Livello di Collegamento
+** Reti Wireless
