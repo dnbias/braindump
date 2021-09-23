@@ -31,12 +31,17 @@ Secondo _Alan Kay (Smalltalk)_
     - concreto anche in memoria nello Heap
 *** p. procedurale vs p. oggetti
 - Procedurale
-  + Algoritmi + Strutture Dait
+  + Algoritmi + Strutture Dati
 - Oggetti
   + Oggetti + Collaborazione
     /si scorporano funzionalitá diverse in oggetti diversi:/ *delega*
     a) dati + algoritmi
     b) interfacce
+*** Gerarchia
+- kind-of hierarchy
+- part-of hierarchy
+**** ereditarieta'
+**** polimorfismo
 ** Programmazione ad Eventi
 *** Event-Driven Programming
 *** Organizzazione e uso GUI

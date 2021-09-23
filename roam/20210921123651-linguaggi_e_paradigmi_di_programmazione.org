@@ -1,14 +1,106 @@
 #+title: Linguaggi e Paradigmi di Programmazione
 #+roam_alias: LPP
 [[file:#university.org][$university]]
+Prof: Luca Padovani
 * Info Corso
 - Orario
   + Lun 16-18
   + Gio 9-11
   + Ven 16-18
-- Testo
+- Testi
   + [[file:20210921124001-introduction_to_the_theory_of_programming_languages.org][Introduction to the Theory of Programming Languages]]
   + [[file:20210921124127-haskell_the_craft_of_functional_programming.org][Haskell: the Craft of Functional Programming]]
   + [[file:20210921130056-programming_in_haskell.org][Programming in Haskell]]
+  + Modern Java in Action
+- Esame
+  + Esercizi di programmazione Haskell in tempo limitato
+  + Teoria
+    - Fondamenti del paradigma funzionale
+  + Esercizi (Java 8) e Domande - 9 CFU
+
 
 * Teoria
+** Introduzione
+Il paradigma funzionale mette le funzioni allo stesso livello delle variabili
+- e' possibile definire funzioni che trasformano funzioni, che restituiscono funzioni, che utilizzano funzioni in input
+*** Paradigmi e Storia
+- imperativo
+  + C, Pascal
+  + programma come sequenza di comandi da eseguire
+    - l'esecuzione modifica lo stato della macchina ad ogni istruzione
+- object-oriented
+  + Smalltalk
+  + oggetti che comunicano tra loro
+    - permette di gestire piu' facilmente la complessita'
+  + programma come interazioni (metodi) tra oggetti
+    - le interazioni modificano lo stato della macchina
+    - i metodi sono riconducibili al paradigma imperativo
+- funzionale
+  + Haskell
+  + espressione valutazionale restituisce un risultato
+
+Negli anni:
+- '50
+  + Assembly
+  + FORTRAN
+    - formula translator
+    - procedure, espressioni
+  + COBOL
+    - per gestione aziendale, introduce il record
+- '60
+  + ALGOL
+    - forma BNF
+    - indipendente dall'architettura
+    - blocchi, variabili locali, ricorsione
+  + BASIC
+    - facile da imparare ma poco strutturato
+  + Simula 67
+    - classi, oggetti, ereditarieta'
+- '70
+  + Pascal
+    - programmazione strutturata, tipi per evitare errori
+    - ideale per imparare a programmare
+  + Smalltalk
+    - programmazione ad oggetti estrema, tutto e' un oggetto
+    - l'unica operazione possibile e' l'invio di messaggi, metodi
+  + C
+- '80
+  + Ada
+    - evoluzione di Pascal con concorrenza e tipi astratti
+    - sviluppado dal ministero della difesa USA
+  + C++
+  + PostScript
+    - scripting basato sullo stack, interpretato dalle stampanti
+  + Perl
+    - linguaggio interpretato
+- '90
+  + Python
+  + Java
+  + PHP
+  + JavaScript
+** Haskel
+- $\lambda$ calcolo
+  + Alonzo Church
+    - calcolare con le funzioni, cosi' come con in numeri
+    - tutto e' una funzione con 1 IN e 1 OUT
+      + funzioni anonime
+        - identita'
+          + $\lambda x,x$
+  + Haskell Curry
+    - currying
+- LISP - anni '50
+  + John McCarthy
+    - elaborazione informazione non-numerica/simbolica
+    - LISP = List Processor
+      + cons e map nascono qui
+    - primo _garbage collector_
+- ML
+- SASL, KRC, Miranda
+  + linguaggi _lazy_ con valutazione solo al momento della richiesta della funzione
+  + SASL introduce guardie e currying
+- Haskell - anni '90
+  + linguaggio lazy, standardizzato
+  + separazione tra puro e impuro
+    - monadi
+  + overloading
+  + grosso impatto sul calcolo parallelo
