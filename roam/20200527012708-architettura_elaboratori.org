@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       4d069476-962f-4871-b757-2b3ec9fdda6b
+:END:
 #+TITLE: Architettura Elaboratori
 #+ROAM-ALIAS: "AE I" "AE II"
 PROF: =Cattuto=
@@ -136,14 +139,14 @@ Elemento base: ~Transistor~
   * LSI
   * VLSI
 
-******* [[file:20200605013212-circuiti_combinatori.org][Circuiti Combinatori]]
+******* [[id:3a71189c-0c67-4008-8dd4-28166965a830][Circuiti Combinatori]]
 
     Dipendono da una ~funzione~ d'entrata
 
     - L'output dipende solo dall'input
 
 
-******* [[file:20200605014640-circuiti_sequenziali.org][Circuiti Sequenziali]]
+******* [[id:3a70414d-dd41-4f9a-b08f-8b223e1f41f7][Circuiti Sequenziali]]
 
     Dipendono da una ~funzione~ d'entrata e da uno ~stato~
 
@@ -227,17 +230,17 @@ Ordinamento:
 
        
 ** 1 - Microarchitettura
-[[file:20201109165841-microarchitecture.org][Microarchitecture]]
+[[id:a5086369-a30d-4d6c-bea9-d265551fa3c1][Microarchitecture]]
      - ALU
      - Microprogramma
 
-****** [[file:20200530052847-mic_1.org][Mic-1]]
+****** [[id:01110ed7-ee2c-463b-8ff5-a7e5019b62ca][Mic-1]]
     composto da:
     - Data Path
     - Control Unit
 
 
-** 2 - Instruction Set Architecture : [[file:20200531012943-isa.org][ISA]]
+** 2 - Instruction Set Architecture : [[id:2f9eb0c6-047a-4665-9e5a-a8410e941918][ISA]]
      - linguaggio macchina
        - opcode
 

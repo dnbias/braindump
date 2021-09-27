@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       316c54d9-3095-47f8-bf9c-ee2bdc57e4a3
+:END:
 #+title: Progressive Enhancement
 * Reads
   - https://alistapart.com/article/understandingprogressiveenhancement/

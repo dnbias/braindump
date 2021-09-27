@@ -1,7 +1,10 @@
+:PROPERTIES:
+:ID:       324d8ba8-c790-46d9-aef8-56b977b783ba
+:ROAM_ALIASES: LFT
+:END:
 #+TITLE: Linguaggi Formali e Traduttori
-#+roam_alias: LFT
 #+startup: latexpreview
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 - Teacher:  Sproston Jeremy
 
 Informazioni varie del Corso:
@@ -14,7 +17,7 @@ Informazioni varie del Corso:
   anche in caso di progetto di gruppo con gruppi da 3)
   - Sostenibile dopo aver superato Teoria
   1/3 del voto
-  -[[file:20210107003338-lftcompiler.org][ LFTCompiler]]
+  -[[id:d119de03-4b7a-49f8-85e4-15994b3edd11][LFTCompiler]]
 
 * Testi
 
@@ -359,7 +362,7 @@ Dimostrabile
 :PROPERTIES:
 :ID:       6b12c8b8-4c7b-4630-8ceb-e0a14b6c897b
 :END:
-Vedi:[[file:20201110134001-parser_top_down.org][File dedicato]]
+Vedi:[[id:ef6ce070-f976-414b-ad37-0935c9741bed][File dedicato]]
 * Grammatiche Libere
 =Teorema=
 
@@ -570,7 +573,7 @@ _SI_
 \(G^R = (V,T,P^RS)\) dove \(P^R= \{A \to \alpha^R\mid A \to \alpha \in P\}\)
 Si dimostra che \(L(G^R) = L(G)^R\)
 * JVM
-Vedi: [[file:20200531062306-ijvm.org][IJVM]], [[https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings][Bytecode Instruction Listing]]
+Vedi: [[id:5d9aab5a-c1c4-4f94-9947-7a1629c5f9c9][IJVM]], [[https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings][Bytecode Instruction Listing]]
 Progetto: [[~/Code/Java/LFTCompiler/Translator.java][Translator.java]]
 - Interprete =bytecode=
 - macchina virtuale basata su =pila=

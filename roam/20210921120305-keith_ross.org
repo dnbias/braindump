@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       154aa5f4-44ff-410e-be56-6fe2a423d5dd
+:END:
 #+title: Keith Ross
-[[file:20210527192825-authors.org][$authors]]
-[[file:20210921114932-computer_netwoking_a_top_down_approach.org][Computer Netwoking - A Top-Down Approach]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+[[id:76b7b469-bc51-4cd7-8386-779fc351552c][Computer Netwoking - A Top-Down Approach]]

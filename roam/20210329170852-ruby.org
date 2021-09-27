@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       63d90baf-23ab-4e78-8400-a4fa8ebe8509
+:END:
 #+title: Ruby
 * Sources & Cool stuff
 - [[https://www.theodinproject.com/paths/full-stack-ruby-on-rails?][TheOdinProject]]

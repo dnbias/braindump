@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       9f341802-57c7-4663-b320-784260bd915b
+:END:
 #+TITLE: Compilazione e Linking
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 
 * Dal C al binario passando dall'assembler IJVM ~ Compilazione e Linking
 
@@ -61,7 +64,7 @@
 
 3) Codice Oggetto
 
-   - [[file:20200604021818-linker.org][Linker]]
+   - [[id:77236563-9844-42cf-a8a1-d59e2771a6d8][Linker]]
 
         Esegue il processo di collegamento
 

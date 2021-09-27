@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       f7482274-f660-4c53-a6bd-1022d385da92
+:END:
 #+TITLE: Building a Second Brain
 [[https://www.reddit.com/r/RoamResearch/comments/eho7de/building_a_second_brain_in_roamand_why_you_might/][source]]
 
 
 * OBJECTIVE
 
-    - Creating a [[file:20200528214634-note_taking.org][Note Taking]] system that takes out the maze from your brain
+    - Creating a [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]] system that takes out the maze from your brain
     - Creare un serbatoio di conoscenza, sicura dall'influsso del tempo
       - cosi facendo l'energia risparmiata non dovendo sforzare la memoria puo' essere reindirizzata
       - mettere insieme un sistema che permette di creare ~nuove~ connessioni, prima non realizzate
@@ -41,6 +44,6 @@ Projects, Areas, (Resources), Archives
     Integra in modo fluido la scrittura e i collegamenti, lasciando l'utente libero di esplorare, riesplorare, la rete di collegamenti
 
 
-+ [[file:20210604132601-cit.org][Quotes]]
++ [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][Quotes]]
   As Homo Sapiens, we're especially adapted to learning in ways that are vivid, visual and experimental. Scientists refer to this as 'the picture superiority effect.'"
-    ~ [[file:20200531055134-jonathan_levi.org][Jonathan Levi]]
+    ~ [[id:9301476d-9d23-4e60-bb6a-939d9dcd92f4][Jonathan Levi]]

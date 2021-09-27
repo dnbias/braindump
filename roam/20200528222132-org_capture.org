@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       803f6824-d4b7-4869-97fd-c1853677e2f3
+:END:
 #+TITLE: org-capture
 - source: https://orgmode.org/manual/Capture.html#Capture
-- tags: [[file:20200530210833-emacs.org][Emacs]]
+- tags: [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]]
 
 * Setting up
 ** (setq org-default-notes-file (concat org-directory "/notes.org"))

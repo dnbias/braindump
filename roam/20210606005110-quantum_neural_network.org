@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       86aa3744-94b3-47a5-acc3-9e638ea43a91
+:END:
 #+title: Quantum Neural Network
-- Tags: [[file:20210606005140-quantum_mechanics.org][Quantum Mechanics]], [[file:20210606005210-artificial_intelligence.org][Artificial Intelligence]]
+- Tags: [[id:dd2daf8d-cbf2-41c9-b0a0-96862f3033bf][Quantum Mechanics]], [[id:b3a0aa55-d105-4e8f-8497-4421b31739eb][Artificial Intelligence]]
 
-- first published ideas by [[file:20210606010949-subhash_kak.org][Subhash Kak]] and [[file:20210606011011-ron_chrisly.org][Ron Chrisly]]
-  - [[file:20210606011122-on_quantum_neural_computing.org][On quantum neural computing]] - 1995
-  - [[file:20210606012035-quantum_learning.org][Quantum Learning]] - 1995
+- first published ideas by [[id:117ed382-7c75-43a7-836d-cdc5dc69ed83][Subhash Kak]] and [[id:87eaf147-e6f5-4e5c-a2ab-47b5316a9d92][Ron Chrisly]]
+  - [[id:e886776f-eeea-4bbc-9066-3da1ab192fd9][On quantum neural computing]] - 1995
+  - [[id:e5986b49-7905-422f-932c-eb1f321425c0][Quantum Learning]] - 1995

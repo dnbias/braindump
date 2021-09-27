@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       d3d5cfa8-7bbb-4330-8ada-87c916c7e9f7
+:END:
 #+TITLE: Algoritmi e Strutture Dati
 #+TEACHER: Andras Horvath(horvath@di.unito.it)
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 Esame
 - scritto
 - discussione laboratorio
@@ -9,9 +12,9 @@ Libro
 - Introduzione agli algoritmi e strutture dati
 
 
-* [[file:20210414192358-problems_algorithms.org][Problems & Algorithms]]
+* [[id:73c4d43d-7ea2-48c3-a114-e4a73b93f998][Problems & Algorithms]]
 
-* [[file:20210414192432-data_structures.org][Data Structures]]
+* [[id:d7b21fc3-32d0-49d3-9fab-bc8d81b23581][Data Structures]]
 
 * Laboratorio
 ** Fonti utili
@@ -96,6 +99,6 @@ che implementa il comparator
   + non é uno standard ma é utile
 
 ** Algoritmi
-*** [[file:20210409200632-generic_merge_binary_insertion_sort.org][Generic Merge-Binary Insertion Sort]]
-*** [[file:20210409200833-dynamic_edit_distance.org][Dynamic Edit Distance]]
-*** [[file:20210516213623-union_find_set.org][Union-Find Set]]
+*** [[id:92ad27c3-ff54-4475-8ef9-f43991e09b6b][Generic Merge-Binary Insertion Sort]]
+*** [[id:badcc515-8bb7-4b59-a265-6b7dadd66e0a][Dynamic Edit Distance]]
+*** [[id:0cddeb95-4c7f-4074-8e60-67998daf7873][Union-Find Set]]

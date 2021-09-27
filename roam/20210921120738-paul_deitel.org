@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       01a297f8-518c-49a3-8cba-a07e9d69cb76
+:END:
 #+title: Paul Deitel
-[[file:20210527192825-authors.org][$authors]]
-[[file:20210921120356-java_how_to_program_late_objects.org][Java: How to Program, Late Objects]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+[[id:21f4f4a4-aaa4-4932-9f39-65ed93de3116][Java: How to Program, Late Objects]]

@@ -1,13 +1,16 @@
+:PROPERTIES:
+:ID:       b9d02edb-6458-4237-88de-41fb865974d2
+:ROAM_ALIASES: CalcCompl
+:END:
 #+title: Calcolabilitá e Complessitá
-#+roam_alias: CalcCompl
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 Prof: Stefano Berardi
 * Info Corso
 - Orari:
   + Lun 9-11
   + Mer 9-11
 - Testo:
-  + [[file:20210921121359-introduction_to_the_theory_of_computation.org][Introduction to the theory of Computation]]
+  + [[id:e5d00ea5-5ff0-4025-a0f6-38c9f5ad26e6][Introduction to the theory of Computation]]
 - Link:
   + https://turingmachinesimulator.com/
 * Teoria
@@ -20,6 +23,7 @@ Utilizzata per definire un problema risolvibile
   - come un nastro, legge dall'inizio fino alla fine
     + lenta
     + non é una architettura realmente implementabile
+
 Caratterizzata da:
 - controllo
   + stati interni
@@ -28,16 +32,42 @@ Caratterizzata da:
   + testa di lettura
   + alfabeto a scelta
 La macchina é infinita ma la memoria é infinita
+
 - l'Input é finito
 - la fine del Input é marcata con un simbolo speciale
+
 A differenza degli Automi a Stati Finiti puó sovrascrivere, appunta per aiutarsi nell'esecuzione
 - una macchina di turing puó simulare qualsiasi macchina a differenza di un DFA
+La Macchina di Turing essendo estremamente semplice é ottima per lo studio
+
 *** Definizione Formale
+~MT 1936~
 7-tupla $(Q,\Sigma,\Gamma,\delta,q_0,q_{accept},q_{reject})$
 1. $Q$: insieme di stati
 2. $\Sigma$: alfabeto di Input non contenente il simbolo di blank
 3. $\Gamma$: alfabeto del nastro
 4. $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,R\}$: funzione di transizione
+   *  Left (<) / Right (>)
 5. $q_{accept}$
 
-Lo stato di rifiuto non viene inserito, é sottointeso a ogni Input non riconosciuto una transizione allo stato di rifiuto, bloccante
+
+- Lo stato di rifiuto non viene inserito, é sottointeso a ogni Input non riconosciuto una transizione allo stato di rifiuto, bloccante
+- Lo stato $S$ di =StayPut= é simulabile muovendosi continuamente $L$ e $R$, raddoppiando gli stati
+- Il nastro infinito a destra e sinistra si simula sulle celle pari e dispari su un nastro infinito solamente a destra
+
+*** Grafi
+**** Stringhe Uguali
+[[../media/img/grafoEs1.jpg]]
+**** Stringa di 0 di lunghezza 2^n
+[[../media/img/graphPowerOfTwoLength.jpg]]
+*** Macchine Turing a piú registri
+Con piú /tapes/ diventa molto piú semplice controllare stringhe, ci si avvicina nel comportamente ad una macchina di Von Neumann
+Il primo nastro é l'Input, gli altri sono registri
+$\delta: Q \times \Gamma^{k} \longrightarrow Q \times \Gamma^{k} \times \{L,R,S\}^{k}$
+- con $k$ simboli / tapes
+- $S$ é =StayPut=
+
+Si puó simulare una ~MT~ a piú nastri con una ~MT~ ad un nastro solo
+- perché? per semplificare la definizione di calcolo
+- se un algoritmo a piú nastri é lineare su un nastro solo sará quadratico
+[[../media/img/3tapes1tape.jpg]]

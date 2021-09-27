@@ -1,7 +1,10 @@
+:PROPERTIES:
+:ID:       5c91241d-3da3-47e6-b27a-9afe7e0b4ff0
+:ROAM_ALIASES: SO
+:END:
 #+TITLE: Sistemi Operativi
-#+roam_alias: SO
 #+STARTUP: latexpreview
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 - Teacher:  Daniele Gunetti (daniele.gunetti@unito.it)
 
 * Generalita'
@@ -1222,7 +1225,7 @@ _In fase di esecuzione_ aka ~binding dinamico degli indirizzi~
 :PROPERTIES:
 :ID:       e20e286c-f8ae-48a6-9447-a94f3588f4cd
 :END:
-tag: [[file:20201102165014-ram.org][Memorie]]
+tag: [[id:fc1e0bc2-cab7-4c7b-ac38-55f3acc974da][Memorie]]
 
 Ogni indirizzo di un programma in un sistema allocato dinamicamente sará sempre compreso tra $0$ e un $max$
 - Questo spazio e' chiamato spazio degli indirizzi o _spazio di indirizzamento logico_
@@ -1294,7 +1297,7 @@ _Soluzione_
   + creazione di un unica area libera di memoria
   + la compattazione puo' richiedere molto tempo e rende il sistema inutilizzabile
 **** Paginazione
-- Vedi [[file:20201109165742-microarchitettura_ia_32.org][IA-32]]
+- Vedi [[id:cb8e8fdf-5b13-41ef-892c-0db1de960586][IA-32]]
 Area di memoria allocata da un processo suddivisa in pezzi _non contigui_
 - ~Frame~ o ~Pagine Fisiche~
   + pezzi di dimensione fissa in cui e' divisa la Memoria Principale aka spazio di indirizzamento fisico (potenze di 2)
@@ -2102,11 +2105,11 @@ Necessari degli accorgimenti da parte del Sistema Operativo
 
 * Laboratorio
 
-** [[file:20200929150429-c.org][C]]
+** [[id:07584adc-f4c2-42b5-8fbe-340700f14217][C]]
 
-** [[file:20200929150510-unix.org][Unix]]
+** [[id:2f83c44e-774c-41d2-abe6-a13e3276e3f0][Unix]]
 
-** [[file:20201205215343-taxicab.org][Progetto]]
+** [[id:0454350f-2cfc-429d-a371-e44564c99d0b][Progetto]]
 :PROPERTIES:
 :ID:       2096a4b8-7439-45f6-a9c9-e9946f11849a
 :END:

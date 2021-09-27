@@ -1,13 +1,16 @@
+:PROPERTIES:
+:ID:       f97d251f-6fb4-42da-8878-8fc9d67b2a57
+:ROAM_ALIASES: MFI
+:END:
 #+title: Metodi Formali dell'Informatica
-#+roam_alias: MFI
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 Prof: Ugo De' Liguoro
 * Info Corso
 - Orario:
   + Mer 14-16
   + Ven 11-13
 - Testo:
-  + [[file:20210921122441-programming_language_foundation_in_agda.org][Programming Language Foundation in Agda]]
+  + [[id:ca905cae-fdf3-421c-a255-ec32435ef818][Programming Language Foundation in Agda]]
 
 * Teoria
 ** Metodi Formali
@@ -108,3 +111,36 @@ Allora si utilizzano Truth Assistant, il teorema di Rice ci dimostra che i Verif
   + un linguaggio di programmazione funzionale
 - VeriFast
   + ProofAssistant dedicato a _Separation Logic_ in C e Java
+** Grammatiche
+*** Concrete
+Descrivo _Grammatiche Senza Contesti_ con le _Regole di Inferenza_
+
+- $\frac{}{n \in Aexp}$
+- $\frac{}{x \in Aexp}$
+- $\frac{a_1\in Aexp \quad a_2 \in Aexp}{a_1 +  a_2 \in Aexp}$
+
+*** Astratte
+**** Backus Normal Form
+Utiliziamo la notazione _carrificata_
+#+begin_example
+vname ::== String
+aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
+#+end_example
+**** Agda
+=Set=, insieme o =Tipo=
+#+begin_example
+data aexp: Set nohere
+N: N -> aexp
+V: String -> aexp
+Plus: aexp -> aexp -> aexp
+
+depth: aexp -> N
+  depth (Nn) = 0
+  depth (Vx) = 0
+  depth (Plus a b) = 1 + max (depth a) (depth b)
+#+end_example
+
+Dim. per induzione strutturale:
+#+begin_example
+depth (Plus a b) <= size (Plus a b)
+#+end_example

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f75ee0f1-1166-47bc-9b12-2e121b8ba7b6
+:END:
 #+TITLE: Analisi I
 #+PROF: Vivina Barutello
 

@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       8574f3ee-5f22-4157-bf01-f262556f77b6
+:END:
 #+title: The Shadow of the Torturer
-[[file:20201029112426-books.org][$books]]
+[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
 Gene Wolfe, /The Shadow of the Torturer/, 1980 pp.303
 
 Molto interessante il linguaggio, criptico, pregno di simbolismo e posso giá vederlo chiaramente. Dicono che vada riletto, vedremo se mantiene la qualitá che dimostra anche nel seguito.

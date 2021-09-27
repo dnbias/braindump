@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       fd2e0275-14bb-4cec-9057-4703506fdb2a
+:END:
 #+title: Hipsters on Food Stamps, Part 1
-[[file:20210604133041-articles.org][$articles]]
+[[id:efbaaebd-f20e-4063-9a38-6493eef9900e][$articles]]
 - Source: https://thelastpsychiatrist.com/2012/11/hipsters_on_food_stamps.html
 - [[https://outline.com/YGwU93][Outline]]
 - Tags:

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       15a30c15-e774-4d52-94b0-856c8a3aa7ad
+:END:
 #+title: Buddy Program UniTo
 Contatti: Marcella Re
 * Ore

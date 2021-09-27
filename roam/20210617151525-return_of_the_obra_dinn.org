@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       fa32a373-ff86-4d9e-a678-c119564071a8
+:END:
 #+title: Return of the Obra Dinn
-[[file:20210617151544-games.org][$games]]
+[[id:bd67dc1a-1b1b-4cbd-ada8-7736bec0c798][$games]]

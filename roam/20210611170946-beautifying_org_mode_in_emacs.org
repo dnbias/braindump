@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       ac778275-af6d-4130-890e-3de72c20d222
+:END:
 #+title: Beautifying Org Mode in Emacs
-[[file:20210604133041-articles.org][$articles]]
-Author: [[file:20210611171032-zzamboni.org][Zzamboni]]
+[[id:efbaaebd-f20e-4063-9a38-6493eef9900e][$articles]]
+Author: [[id:f6116ed3-6387-4841-a6f0-0d442b879ba5][Zzamboni]]
 Source: https://zzamboni.org/post/beautifying-org-mode-in-emacs/
-Tags: [[file:20200530210833-emacs.org][Emacs]], [[file:20210611164917-typography.org][Typography]]
+Tags: [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]], [[id:35dad9b4-f8d6-48ce-8828-64a47297dbaf][Typography]]
 
-- References: [[file:20210611171249-org_as_a_word_processor.org][Org as a Word Processor]]
+- References: [[id:43703d48-e460-4abf-8db7-05e66abb7f24][Org as a Word Processor]]
 
 - headlines and lists
   + =emphasis-markers=

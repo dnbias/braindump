@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       d0b5e0ca-d69d-40c7-a9cd-3fb1a58cf474
+:ROAM_ALIASES: Sartre
+:END:
 #+title: Jean-Paul Sartre
-#+roam_alias: "Sartre"
 1905 - 1980, French

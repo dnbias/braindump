@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       c3ba872e-8a85-4336-9b69-951f11125840
+:END:
 #+title: $books
 #+roam_alias Books

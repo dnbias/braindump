@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       efbaaebd-f20e-4063-9a38-6493eef9900e
+:ROAM_ALIASES: Articles
+:END:
 #+title: $articles
-#+roam_alias: Articles

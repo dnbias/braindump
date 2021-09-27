@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       e753b7c9-648e-4084-9577-001b50a7210e
+:END:
 #+title: John Hopcroft
-[[file:20210527192825-authors.org][$authors]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
 
-* [[file:20200929235308-introduction_to_automata_theory_languages_and_computation.org][Introduction to Automata Theory, Languages, and Computation]]
+* [[id:fe372fcd-2506-4f03-aee2-8ccf96f56d36][Introduction to Automata Theory, Languages, and Computation]]

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       3a70414d-dd41-4f9a-b08f-8b223e1f41f7
+:END:
 #+TITLE: Circuiti Sequenziali
 
 #+ROAM-ALIAS: "Macchine a Stati Finiti" "Finite State Machine" "FSM"

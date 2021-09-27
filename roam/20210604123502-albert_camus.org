@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       cb819d74-ca15-48ae-a506-30f22772f6cc
+:END:
 #+title: Albert Camus
-[[file:20210527192825-authors.org][$authors]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
 1913 - 1960, French

@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       c0419aca-348f-4c0a-bf6d-3c2f0506bb68
+:END:
 #+title: Q System One
-[[file:20210606005110-quantum_neural_network.org][Quantum Neural Network]] made by IBM
+[[id:86aa3744-94b3-47a5-acc3-9e638ea43a91][Quantum Neural Network]] made by IBM

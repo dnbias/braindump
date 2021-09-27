@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ead1cac8-45c1-4f46-aa06-608ade960470
+:END:
 #+title: Scacchi
 
 L'evoluzione degli scacchi dice tanto dell'evoluzione della cultura Occidentale

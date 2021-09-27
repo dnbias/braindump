@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       c5461b03-abb3-4dfb-9334-a1fd6fe1f70b
+:END:
 #+TITLE: Fisica
 #+TEACHER: Gagliardi Martino
 

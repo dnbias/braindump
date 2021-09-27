@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       3a71189c-0c67-4008-8dd4-28166965a830
+:END:
 #+TITLE: Circuiti Combinatori
 #+ROAM-TAG: "Elettronica"
 
@@ -82,11 +85,11 @@ Implementa la moltiplicazione binaria
 Implementa la somma
 half-adder e riporto/carry --> full-adder
 
-* [[file:20200530050045-alu.org][ALU]]
+* [[id:85c733f9-1e29-4680-a5ed-fe0ddf1f5acc][ALU]]
 :PROPERTIES:
 :ID:       49cb7400-d989-42be-bcc0-a731e0684360
 :END:
 
 * 1 Linked References
-** [[file:20200929150429-c.org][C ➦]]
+** [[id:07584adc-f4c2-42b5-8fbe-340700f14217][C ➦]]
 1. Digital Logic

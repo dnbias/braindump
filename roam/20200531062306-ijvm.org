@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5d9aab5a-c1c4-4f94-9947-7a1629c5f9c9
+:END:
 #+TITLE: IJVM
 
-Linguaggio [[file:20200531012943-isa.org][ISA]] utilizzato dall'architettura della Java Virtual Machine
+Linguaggio [[id:2f9eb0c6-047a-4665-9e5a-a8410e941918][ISA]] utilizzato dall'architettura della Java Virtual Machine

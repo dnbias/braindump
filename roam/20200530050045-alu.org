@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       85c733f9-1e29-4680-a5ed-fe0ddf1f5acc
+:END:
 #+TITLE: ALU
 :Circuiti:
 :Elettronica:

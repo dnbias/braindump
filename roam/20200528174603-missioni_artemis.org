@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       9226c095-da61-4526-b294-daa21ff27a40
+:END:
 #+TITLE: Missioni Artemis
 #+FONTI:
-[[file:20201029012435-space.org][$space]]
+[[id:1c0b16e0-e08f-4c78-8ba9-db5e2019715b][$space]]
 ** [[https://www.youtube.com/watch?v=1903UZD84dE][Link4Universe]]
 *** [[https://telegra.ph/Artemis-05-13][Fonti varie per approfondimento]]
 
@@ -72,5 +75,5 @@
 * Obiettivo: primo viaggio attorno alla luna: Artemis 2 ~2024~
 ** corso di un solo mandato in modo da raccogliere fondi dal congresso
 
-* [[file:20200528183515-space_launch_system.org][Space Launch System]]
+* [[id:e5a28976-d16f-4eb9-95a7-33f19d725323][Space Launch System]]
     riutilizzo della forza lavore disponibile con tecnologie piu' datate

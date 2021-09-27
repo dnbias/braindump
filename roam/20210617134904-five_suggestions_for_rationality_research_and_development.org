@@ -1,7 +1,10 @@
+:PROPERTIES:
+:ID:       f27b36e0-8772-4485-aa19-e3d11a5f1183
+:END:
 #+title: Five Suggestions For Rationality Research and Development
-- Author: LoganStrohl - [[file:20210617133526-lesswrong.org][Lesswrong]]
+- Author: LoganStrohl - [[id:395c6914-ed10-4163-8776-e830aa45b033][Lesswrong]]
 - Source: https://www.lesswrong.com/posts/bRs5QZ4Ku6zk9WWLj/five-suggestions-for-rationality-research-and-development
-- Tags: [[file:20210617135217-research.org][Research]]
+- Tags: [[id:3f9e8e01-bcc3-4bf0-8b74-13f1cb600472][Research]]
 
 - *field work*: make it the bulk of what you do
 - make *conversation* part of the work

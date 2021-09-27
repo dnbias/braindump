@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       c5c5ea6e-ade8-4941-ba39-afa407947d4b
+:ROAM_ALIASES: Videos
+:END:
 #+title: $videos
-#+roam_alias: Videos

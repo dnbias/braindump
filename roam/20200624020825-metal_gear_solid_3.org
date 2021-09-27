@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       662dc8f3-c1d5-4d0a-9029-bd3df0adbdd5
+:ROAM_ALIASES: MGS3 "Snake Eater"
+:END:
 #+TITLE: Metal Gear Solid 3
-#+roam_alias: "Snake Eater" "MGS3"
 Ambientato nella foresta russa fittizia nel 19--
 
 Un cadavere morto da tempo, sotto il ponte da cui The Boss ha buttato giu' Naked Snake, chi e'?
 
-* The Joy ~ [[file:20200624175553-the_boss.org][The Boss]]
+* The Joy ~ [[id:ad468e77-6cfd-4139-91c6-ded6a147aaea][The Boss]]
     Voyevoda in russia
 ** diserta per Volgin
     mhhhh non proprio: doppio gioco!
@@ -19,9 +22,9 @@ Un cadavere morto da tempo, sotto il ponte da cui The Boss ha buttato giu' Naked
 *** doppio gioco rispetto a Volgin
 *** deve morire per non rovinare la facciata americana rispetto alla Russia, che chiede la morte di The Boss
 *** John la uccide, puo' esserci un solo boss, un solo snake
-** madre di [[file:20200627034213-ocelot.org][Ocelot]]
+** madre di [[id:b1983936-283d-433a-a972-57f18dc8fed9][Ocelot]]
 *** partorito il D-Day
-* Naked Snake ~ [[file:20200624175455-big_boss.org][Big Boss]]
+* Naked Snake ~ [[id:5d8d46d1-4c01-427b-b7d7-5f6cf5dbf825][Big Boss]]
 
 ** Jack/John Doe
 
@@ -38,7 +41,7 @@ Un cadavere morto da tempo, sotto il ponte da cui The Boss ha buttato giu' Naked
 - Alan Smithy (?)
 
 
-* Major Tom - Major [[file:20200624175530-zero.org][Zero]]
+* Major Tom - Major [[id:e51ac45a-af4e-4003-8632-7a541dd72f9b][Zero]]
 - Tom muore nei tunnel (Great Escape)
   - sfortuna! il maggiore decide di cambiare nome in codice
 * Volgin

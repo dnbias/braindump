@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       f8dd629d-deae-48e9-912b-c90b8707bdfc
+:END:
 #+TITLE: Orari
 
 

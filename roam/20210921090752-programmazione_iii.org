@@ -1,13 +1,16 @@
+:PROPERTIES:
+:ID:       6e332ccc-6881-4fff-a9e9-fd1f14286559
+:ROAM_ALIASES: ProgIII
+:END:
 #+title: Programmazione III
-#+roam_alias: ProgIII
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 * Info Corso
 - Orari:
   + Mar: 9-11
   + Gio: 11-13
   + Mer: 9-11 (Lab1)
 - Testi:
-  + [[file:20210921120356-java_how_to_program_late_objects.org][Java: How to Program, Late Objects]]
+  + [[id:21f4f4a4-aaa4-4932-9f39-65ed93de3116][Java: How to Program, Late Objects]]
 - IDE
   + IntelliJ IDEA
 * Teoria

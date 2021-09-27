@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       01bbe584-fb9a-4b91-b5ec-e0c589143d2b
+:END:
 #+title: Jethro Kuan
-[[file:20210604133425-blog.org][$blog]]
+[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][$blog]]

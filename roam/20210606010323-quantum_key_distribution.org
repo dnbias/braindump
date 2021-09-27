@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       1e428890-f7d2-4226-bb98-7bfa9feb2d38
+:END:
 #+title: Quantum Key Distribution
-[[file:20210606005140-quantum_mechanics.org][Quantum Mechanics]]
+[[id:dd2daf8d-cbf2-41c9-b0a0-96862f3033bf][Quantum Mechanics]]

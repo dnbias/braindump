@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       a25c2d74-9e94-4bfe-9b97-ca45ba6148a0
+:END:
 #+TITLE: Programmazione II
 Prof: =Cattuto=
 :Computer_Science:

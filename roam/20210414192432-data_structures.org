@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       d7b21fc3-32d0-49d3-9fab-bc8d81b23581
+:END:
 #+title: Data Structures
 * Abstract Data Type
 Tipi predefiniti sono forniti dai linguaggi
@@ -1784,4 +1787,4 @@ La complessitá di Dijkstra é uguale a quella di Prim
 
 ** Disjoint-Set Forest
 Vedi progetto svolto per esercizio:
-- [[file:20210516213623-union_find_set.org][Union-Find Set]]
+- [[id:0cddeb95-4c7f-4074-8e60-67998daf7873][Union-Find Set]]

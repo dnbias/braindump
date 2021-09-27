@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       155f1d36-1122-44e2-a5e2-b615e62f3bb5
+:END:
 #+TITLE: Budgetting
 
 * [[https://www.youneedabudget.com/the-four-rules/][YouNeedABudget]]
@@ -29,7 +32,7 @@
 - [[https://www.reddit.com/r/emacs/comments/8x4xtt/tip_how_i_use_ledger_to_track_my_money/][Fonte]]
 - [[https://www.ledger-cli.org/3.0/doc/ledger3.html#SEC_Contents][Docs]]
 - [[https://www.ledger-cli.org/features.html][Features]]
-- [[https://sachachua.com/blog/tag/ledger/?order=asc][Blog]] di [[file:20200531191654-sacha_chua.org][Sacha Chua]]
+- [[https://sachachua.com/blog/tag/ledger/?order=asc][Blog]] di [[id:1c26cced-4efe-4fc7-9bde-180a28298393][Sacha Chua]]
 - [[https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html][Emacs Cafe']] di Nicolas Petton
 #+BEGIN_SRC #+begin_src emacs-lisp :tangle yes
  (use-package ledger-mode

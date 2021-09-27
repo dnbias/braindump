@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       bcce0410-d072-4997-bf34-8d9dd640ba46
+:ROAM_ALIASES: "La Nausea"
+:END:
 #+title: La Nausée
-#+roam_alias: "La Nausea"
-[[file:20201029112426-books.org][$books]]
+[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
 Sartre, Jean-Paul, /La Nausée/, Éditions Gallimard, 1938, pp.253

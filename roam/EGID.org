@@ -1,8 +1,11 @@
+:PROPERTIES:
+:ID:       a42ef3ac-4bbd-4ba0-9227-f651907e8eb0
+:ROAM_ALIASES: EGID
+:END:
 #+TITLE:  Economia e Diritto
-#+ROAM_ALIAS: EGID
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 - Teachers: Camillo Sacchetto, Fabio Montalcino, Valentina Cillo
 
-* [[file:20210606223955-economia.org][Economia]]
+* [[id:533253f6-5d54-453e-856b-a2ece596e2bc][Economia]]
 
-* [[file:20210606223828-diritto.org][Diritto]]
+* [[id:2a3fb588-9539-49e4-8012-595e4630675a][Diritto]]

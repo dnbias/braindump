@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e5d00ea5-5ff0-4025-a0f6-38c9f5ad26e6
+:END:
 #+title: Introduction to the theory of Computation
-[[file:20201029112426-books.org][$books]]
+[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
 Sipser, Michael, /Introduction to the theory of Computation/, Course Technology Ptr. 1996, (3ed., 2012), pp.1000

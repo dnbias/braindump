@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       92cc6903-bea6-4684-967e-4bc56afa80ad
+:END:
 #+title: Sonke Ahrens
-[[file:20210527192825-authors.org][$authors]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
 
-- [[file:20210605235823-how_to_take_smart_notes.org][How to Take Smart Notes]]
+- [[id:2d54b2f1-5c39-4849-a4d1-4b117e8db961][How to Take Smart Notes]]

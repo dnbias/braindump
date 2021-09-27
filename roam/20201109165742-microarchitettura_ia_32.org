@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       cb8e8fdf-5b13-41ef-892c-0db1de960586
+:END:
 #+title: IA-32
-[[file:20201109165841-microarchitecture.org][Microarchitecture]]
+[[id:a5086369-a30d-4d6c-bea9-d265551fa3c1][Microarchitecture]]
 
 * Intel
 

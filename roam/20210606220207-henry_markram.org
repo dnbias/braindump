@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       7c6b1b2c-c7d1-408c-a159-b02be176bcb6
+:ROAM_ALIASES: Markram
+:END:
 #+title: Henry Markram
-#+roam_alias: Markram

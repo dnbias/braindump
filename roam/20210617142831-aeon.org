@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       893205e6-42e1-477b-b119-d59353b69d95
+:END:
 #+title: Aeon
-[[file:20210604133425-blog.org][$blog]]: https://aeon.co/
+[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][$blog]]: https://aeon.co/

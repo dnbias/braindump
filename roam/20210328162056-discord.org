@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       fbd6e617-26bd-494d-9299-b60bed09d351
+:END:
 #+title: Discord
 * Fonti
   - [[https://scarzer.medium.com/make-a-discord-bot-for-you-and-your-friends-to-trade-stocks-bde681ad38e2][Discord Bot for Trading]]
@@ -21,4 +24,4 @@
 
 ** Tools
    - [[https://cog-creators.github.io/discord-embed-sandbox/][Discord Embed Sandbox]]
-   - [[file:20210328171522-alpaca.org][Alpaca]]
+   - [[id:36de8b41-5449-4d51-b8b6-84cf18e383ca][Alpaca]]

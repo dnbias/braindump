@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       5a05dcd1-f5ac-4c68-8a70-9727c9978955
+:END:
 #+title: Compilers: Principles Techniques and Tools
 #+author: Aho, Lam, Sethi, Ullman
 

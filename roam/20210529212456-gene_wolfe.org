@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       2794d5ab-85bc-4c8f-8963-d708cd2c796b
+:END:
 #+title: Gene Wolfe
-[[file:20210527192825-authors.org][$authors]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
 1931 - 2019, American
 
 * The Solar Cycle
 ** The Book of the New Sun
-- [[file:20210529212816-the_shadow_of_the_torturer.org][The Shadow of the Torturer]]
-- [[file:20210529212950-the_claw_of_the_conciliator.org][The Claw of the Conciliator]]
+- [[id:8574f3ee-5f22-4157-bf01-f262556f77b6][The Shadow of the Torturer]]
+- [[id:a8f00e02-0b2e-4c58-89ae-5db04db0eefb][The Claw of the Conciliator]]
 ** The Book of the Long Sun
 ** The Book of the Short Sun

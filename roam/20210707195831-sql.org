@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       52d8590b-5698-4fed-83e7-a6b49d6d240c
+:END:
 #+title: SQL
 * Es
 ** 4

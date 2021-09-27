@@ -1,7 +1,10 @@
+:PROPERTIES:
+:ID:       ff29ae25-95a6-4f24-9cbb-464d08aab664
+:END:
 #+title: Ricing up Org Mode
-Author: [[file:20210611164743-lepisma.org][lepisma]]
+Author: [[id:7319da7b-a95f-4a88-87e3-5f7a06aad7ab][lepisma]]
 Source: https://lepisma.xyz/2017/10/28/ricing-org-mode/index.html
-Tags: [[file:20200530210833-emacs.org][Emacs]], [[file:20210611164917-typography.org][Typography]]
+Tags: [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]], [[id:35dad9b4-f8d6-48ce-8828-64a47297dbaf][Typography]]
 
 - Look inspired by the style used by Edwand Tufte in his books
   + font: https://github.com/edwardtufte/et-book

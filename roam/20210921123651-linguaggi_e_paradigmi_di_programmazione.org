@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       3e9b697a-f7a8-4c9b-995d-da2d51202299
+:ROAM_ALIASES: LPP
+:END:
 #+title: Linguaggi e Paradigmi di Programmazione
-#+roam_alias: LPP
-[[file:#university.org][$university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
 Prof: Luca Padovani
 * Info Corso
 - Orario
@@ -8,10 +11,12 @@ Prof: Luca Padovani
   + Gio 9-11
   + Ven 16-18
 - Testi
-  + [[file:20210921124001-introduction_to_the_theory_of_programming_languages.org][Introduction to the Theory of Programming Languages]]
-  + [[file:20210921124127-haskell_the_craft_of_functional_programming.org][Haskell: the Craft of Functional Programming]]
-  + [[file:20210921130056-programming_in_haskell.org][Programming in Haskell]]
+  + [[id:f46e95c3-14c2-4dda-b150-f8ca209495d1][Introduction to the Theory of Programming Languages]]
+  + [[id:8f3dfc67-9e04-4cc6-8958-98559505065c][Haskell: the Craft of Functional Programming]]
+  + [[id:dfb13901-7195-44df-843e-5601b65ad3b4][Programming in Haskell]]
   + Modern Java in Action
+- Links
+  +  https://boystrange.github.io/LPP/
 - Esame
   + Esercizi di programmazione Haskell in tempo limitato
   + Teoria
@@ -79,6 +84,7 @@ Negli anni:
   + PHP
   + JavaScript
 ** Haskel
+*** Storia
 - $\lambda$ calcolo
   + Alonzo Church
     - calcolare con le funzioni, cosi' come con in numeri
@@ -104,3 +110,42 @@ Negli anni:
     - monadi
   + overloading
   + grosso impatto sul calcolo parallelo
+*** Casi di Studio
+**** Contatore accessi Web
+- [[https://boystrange.github.io/LPP/HitCounter][Source]]
+Relazione biunivoca tra IP e utenti unici in accesso
+
+Java
+#+begin_src java
+public static int counter(InputStream stream) {
+    Scanner scanner = new Scanner(stream);
+    Set<String> clients = new HashSet<>();
+    while (scanner.hasNextLine()) {
+        String line = scanner.nextLine();
+        String ip = line.substring(0, line.indexOf(' ') + 1);
+        clients.add(ip);
+    }
+    return clients.size();
+}
+#+end_src
+Bash
+#+begin_src bash
+cut -d' ' -f1 | sort -u | wc -l
+#+end_src
+Haskell
+#+begin_src haskell
+import Data.List (nub);
+counter :: String -> Int
+counter = length . nub . map (\line -> takeWhile (/= ' ') line) . lines
+#+end_src
+Java 8
+#+begin_src java
+public static long counter(InputStream stream) {
+    InputStreamReader reader = new InputStreamReader(stream);
+    return new BufferedReader(reader)
+        .lines()
+        .map(line -> line.substring(0, line.indexOf(' ') + 1))
+        .distinct()
+        .count();
+}
+#+end_src

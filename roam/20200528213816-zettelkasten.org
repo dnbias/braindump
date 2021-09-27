@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       42ee0edd-831e-46b6-82b1-199427452149
+:END:
 #+TITLE: Zettelkasten
-- tags: [[file:20200528214634-note_taking.org][Note Taking]], [[file:20210604135308-org_roam.org][org-roam]]
-- books: [[file:20210605235823-how_to_take_smart_notes.org][How to Take Smart Notes]]
+- tags: [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]], [[id:a9417549-6f9f-48ab-b23c-1c411fee45b8][org-roam]]
+- books: [[id:2d54b2f1-5c39-4849-a4d1-4b117e8db961][How to Take Smart Notes]]
 
 
 - nuova conoscenza si aggiunge a conoscenza pregressa
@@ -15,4 +18,4 @@
   + cosa tenere e cosa rielaborare o eliminare
 
 - la domanda fondamentale: =dove voglio rivedere questa idea?=
-  + [[file:20210604135054-how_to_take_smart_notes_with_org_mode.org][How to take smart notes with org-mode]]
+  + [[id:283a0ee4-6416-40ea-b5eb-78d5f3a44b4a][How to take smart notes with org-mode]]

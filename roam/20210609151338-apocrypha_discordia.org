@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       c65def88-681c-4767-9fbc-9606fb2c14bb
+:END:
 #+title: Apocrypha Discordia
 
 * Quotes
-  | Time flows like a river. Which is to say, downhill. We can tell this because everything is going downhill rapidly. It would seem prudent to be somewhere else when we reach the sea.[[file:20210604132601-cit.org][$cit]]
+  | Time flows like a river. Which is to say, downhill. We can tell this because everything is going downhill rapidly. It would seem prudent to be somewhere else when we reach the sea.[[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]]

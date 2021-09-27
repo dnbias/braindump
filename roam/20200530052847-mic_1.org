@@ -1,9 +1,12 @@
+:PROPERTIES:
+:ID:       01110ed7-ee2c-463b-8ff5-a7e5019b62ca
+:END:
 #+TITLE: Mic-1
-[[file:20201109165841-microarchitecture.org][Microarchitecture]]
+[[id:a5086369-a30d-4d6c-bea9-d265551fa3c1][Microarchitecture]]
 Dal
-[[file:20200530053538-andrew_s_tanenbaum.org][Tanenbaum]]
+[[id:368b4feb-1877-493c-9639-a476872e62fa][Tanenbaum]]
 
-Implementazione hardware di un interprete del linguaggio [[file:20200531012943-isa.org][ISA]] [[file:20200531062306-ijvm.org][IJVM]]
+Implementazione hardware di un interprete del linguaggio [[id:2f9eb0c6-047a-4665-9e5a-a8410e941918][ISA]] [[id:5d9aab5a-c1c4-4f94-9947-7a1629c5f9c9][IJVM]]
 
 
 Composto da:
@@ -74,7 +77,7 @@ Composto da:
           * utilizzando dei semplici segnali di controllo
 
 
-***** [[file:20200530050230-shifter.org][Shifter]] + [[file:20200530050045-alu.org][ALU]]
+***** [[id:87d9d8f9-6bbd-4c41-a77b-a0cf02184c5b][Shifter]] + [[id:85c733f9-1e29-4680-a5ed-fe0ddf1f5acc][ALU]]
 
 ****** SLL8
 shift sinistra logico
@@ -106,7 +109,7 @@ shift sinistra logico
         + riguardante ~PC~ e ~MBR~
 
 ***** Controllo del Bus B
-- controlla un [[file:20200530045456-decoder.org][decoder]] a 4 bit, 2^4 uscite
+- controlla un [[id:07a750fa-077e-4293-9a3c-88f570e2ae94][decoder]] a 4 bit, 2^4 uscite
   + utilizziamo 9 delle 16 possibili uscite
     - le uscite in piu' ci permettono una decima configurazione che sara' il segnale per la selezione di nessun registro
     - tutti tranne ~MAR~
@@ -206,12 +209,12 @@ shift sinistra logico
            * qui possiamo fondere un =Main1.pop=
          + questo non e' possibile con molte miscroistruzioni
     2) Cambiare il DataPath
-       - H unico ingresso A della [[file:20200530050045-alu.org][ALU]]
+       - H unico ingresso A della [[id:85c733f9-1e29-4680-a5ed-fe0ddf1f5acc][ALU]]
          + rallentamento nel dover sempre inserire un registro in H per eseguire algerbra
        - introdurre un ~terzo Bus A~
          + DataPath Mic-2
          + permette operazioni piu' flessibili al prezzo di piu' del doppio della complessita'
-    3) Introduzione di una Instruction Fetch Unit aka [[file:20200602031108-ifu.org][IFU]]
+    3) Introduzione di una Instruction Fetch Unit aka [[id:35484472-2791-4efd-b07e-a7ae0f39b644][IFU]]
        - INC sempre dello stesso registro PC
        - ~Pre-Fetching~
 

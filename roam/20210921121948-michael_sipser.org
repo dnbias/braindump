@@ -1,2 +1,5 @@
+:PROPERTIES:
+:ID:       b15b3dcd-ac31-4342-8008-07d68d04fd07
+:END:
 #+title: Michael Sipser
-[[file:20210527192825-authors.org][$authors]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]

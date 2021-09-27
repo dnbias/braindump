@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       6e04805d-f958-4056-81f9-a9a418d04f5e
+:END:
 #+title: Gilles Dowek
-[[file:20210527192825-authors.org][$authors]]
-[[file:20210921124001-introduction_to_the_theory_of_programming_languages.org][Introduction to the Theory of Programming Languages]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+[[id:f46e95c3-14c2-4dda-b150-f8ca209495d1][Introduction to the Theory of Programming Languages]]

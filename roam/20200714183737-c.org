@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       c347479c-31b9-4be3-9992-3f11d1c9f5c8
+:END:
 #+TITLE: C++
 * Cherno
     Crash Course

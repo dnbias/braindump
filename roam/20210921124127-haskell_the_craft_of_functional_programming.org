@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       8f3dfc67-9e04-4cc6-8958-98559505065c
+:END:
 #+title: Haskell: the Craft of Functional Programming
-[[file:20201029112426-books.org][$books]]
+[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
 Thompson, Simon, /Haskell: the Craft of Functional Programming/, 1996 (Addison-Wesley, 3ed, 2011), pp.487

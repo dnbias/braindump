@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       73c4d43d-7ea2-48c3-a114-e4a73b93f998
+:END:
 #+title: Problems & Algorithms
 
 * Problemi e Algoritmi
@@ -545,8 +548,8 @@ Il problema deve possedere due proprietá
 2. /sottoproblemi ripetuti/
    - una soluzione deve essere riutilizzabile in un altro sottoproblema
    - annotazione dei risultati piu' semplici
-     - [[file:20210402203855-memoization.org][Memoization]]
-   - per efficienza di memoria si sviluppa un approccio [[file:20210402203940-bottom_up.org][Bottom-up]]
+     - [[id:84fc1dd6-6557-4c28-b3fd-df9ecc46a54c][Memoization]]
+   - per efficienza di memoria si sviluppa un approccio [[id:09bb12cb-ffa3-4947-bbff-133f34cca4a4][Bottom-up]]
 
 Prima si sviluppa una soluzione iterativa, poi la si migliora con le tecniche della *PD*
 *** Successione di Fibonacci
@@ -567,7 +570,7 @@ $N_n \subset \Omega(\phi^n)$
 Quindi ha crescita esponenziale, almeno.
 
 Molto lento  perché é richiesto il _calcolo della stessa cosa ripetutamente_
-- perció implementiamo la /memoization/: approccio [[file:20210402210717-top_down.org][Top-down]]
+- perció implementiamo la /memoization/: approccio [[id:7d0fa0ab-5575-4f0c-a545-2457cc5bd015][Top-down]]
   - lo spazio utilizzato per migliorare l'algoritmo cosí é $\Theta(n)$
 L'albero ha uno sviluppa lineare verso sinistra, anche il tempo sará $\Theta(n)$
 

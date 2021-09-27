@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       badcc515-8bb7-4b59-a265-6b7dadd66e0a
+:END:
 #+title: Dynamic Edit Distance
-[[file:#university.org][#university]] [[file:20201205215419-project.org][$project]]
-In [[file:20200929150429-c.org][C]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][#university]] [[id:96d0a247-0c7c-40c2-bd29-e514a2d93502][$project]]
+In [[id:07584adc-f4c2-42b5-8fbe-340700f14217][C]]
 
 * Libraries
 ** Naif ver.

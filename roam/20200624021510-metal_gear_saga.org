@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       c3792673-2478-45db-990f-7bdf76862491
+:ROAM_ALIASES: MGS
+:END:
 #+TITLE: Metal Gear Saga
-#+roam_alias: MGS
 
 * Metal Gear
 
@@ -9,7 +12,7 @@
 
 * Metal Gear Solid 2 - Sons of Liberty
 
-* [[file:20200624020825-metal_gear_solid_3.org][Metal Gear Solid 3]] - Snake Eater
+* [[id:662dc8f3-c1d5-4d0a-9029-bd3df0adbdd5][Metal Gear Solid 3]] - Snake Eater
 
 * Metal Gear Solid 4 - Guns of the Patriots
 

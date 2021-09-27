@@ -1,1 +1,4 @@
+:PROPERTIES:
+:ID:       bd67dc1a-1b1b-4cbd-ada8-7736bec0c798
+:END:
 #+title: $games

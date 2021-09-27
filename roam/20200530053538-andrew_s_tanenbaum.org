@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       368b4feb-1877-493c-9639-a476872e62fa
+:END:
 #+TITLE: Andrew S. Tanenbaum
-[[file:20210527192825-authors.org][$authors]]
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
 
 * Structured Computer Organization

@@ -1,10 +1,13 @@
+:PROPERTIES:
+:ID:       6c9cc3b0-d36d-4d77-ba70-1c6d46962972
+:END:
 #+title: Radical acceptance
-- Author: Joshua Coleman - [[file:20210617142831-aeon.org][Aeon]]
+- Author: Joshua Coleman - [[id:893205e6-42e1-477b-b119-d59353b69d95][Aeon]]
 - Source: https://aeon.co/essays/free-yourself-from-the-tentacles-of-pain-with-radical-acceptance
-- Tags: [[file:20210609150135-philosophy.org][Philosophy]], [[file:20210617145851-sufference.org][Sufference]], [[file:20210617150022-happiness.org][Happiness]]
+- Tags: [[id:c06c7bc2-ba3b-4865-94f6-9f8874ebfb67][Philosophy]], [[id:4ecd7927-8948-4bab-a356-44285e3758f0][Sufference]], [[id:090e16cd-7ae7-4ee6-93f1-1904631fe6c7][Happiness]]
 
 - Marsha Linehan, founder of dialectical behaviour therapy:
-  | The path out of hell is through misery [...] by refusing to accept the misery that is part of climbing out of hell, you fall back into hell.[[file:20210604132601-cit.org][ $cit]]  |
+  | The path out of hell is through misery [...] by refusing to accept the misery that is part of climbing out of hell, you fall back into hell.[[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]]  |
 
 - being able to determine what one's feeling with more granularity is was associated (by Lisa Feldman Barret, /How Emotions Are Made/) with
   + lowered needs for medication,
@@ -21,4 +24,4 @@
 
 - anxiety
   + our brains evolved to keep us alive, not to keep us happy
-  + [[https://pubmed.ncbi.nlm.nih.gov/21517168/][research]] found the more actively [[file:20210617150022-happiness.org][Happiness]]  is pursued the more unhappy, lonely and depressed we're likely to become
+  + [[https://pubmed.ncbi.nlm.nih.gov/21517168/][research]] found the more actively [[id:090e16cd-7ae7-4ee6-93f1-1904631fe6c7][Happiness]]  is pursued the more unhappy, lonely and depressed we're likely to become

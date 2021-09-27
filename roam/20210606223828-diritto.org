@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       2a3fb588-9539-49e4-8012-595e4630675a
+:END:
 #+title: Diritto
 Esistono diverse fonti di Diritto
 - nazionali
@@ -569,11 +572,11 @@ Normato con:
     - clausole e condizioni generali memorizzabili e riproducibili
 
 * Dati Personali
-** [[file:20210605224537-privacy.org][Privacy]]
+** [[id:335ce537-26fd-4235-ad89-7c800282dbf7][Privacy]]
 ~right to be let alone~
 Concetto principalmente =statunitense=, per la prima volta utilizzato in /The Right to Privacy/, Warren S. e Brandeis L., 1890.
 
-** [[file:20210605224618-data_protection.org][Data Protection]]
+** [[id:6d41a8c3-7102-4ce2-8d0f-bcffcb80ceaf][Data Protection]]
 Concetto =europeo= principalmento delineato in seguito alla Seconda Guerra Mondiale
 - dalla profilazione della popolazione e dai processi decisionali automatizzati
 Il termine é un'abbreviazione perché la normativa non tutela i dati, ma /i diritti delle persone cui dati sono trattati/
@@ -613,7 +616,7 @@ Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
   + procedure data breach
   + analisi rischi
   + criteri proattivi di progettazione e tutela a norma
-    - /[[file:20210605224537-privacy.org][privacy]] by design and by default/
+    - /[[id:335ce537-26fd-4235-ad89-7c800282dbf7][privacy]] by design and by default/
   + incremento diritti
     - revoca consenso
   + ambito di applicazione materiale
@@ -839,7 +842,7 @@ Anche analisi dei ruoli dei soggetti
 - contitolari
 
 *** Misure di Sicurezza
-[[file:20210610191411-security.org][Security]]
+[[id:900b7475-3e9a-41e4-9f9c-3327aaedc7d3][Security]]
 - tecniche per trattamento analogici
 - tecniche per trattamenti informatici
 - organizzative

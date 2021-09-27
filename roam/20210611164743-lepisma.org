@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       7319da7b-a95f-4a88-87e3-5f7a06aad7ab
+:END:
 #+title: lepisma
-[[file:20210604133425-blog.org][$blog]]
+[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][$blog]]
 https://lepisma.xyz/

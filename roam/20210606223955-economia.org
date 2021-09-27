@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       533253f6-5d54-453e-856b-a2ece596e2bc
+:END:
 #+title: Economia
 (25/30 di scritto + esercitazioni)
 * Business Model Canvas

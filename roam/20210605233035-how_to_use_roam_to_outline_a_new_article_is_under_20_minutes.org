@@ -1,11 +1,14 @@
+:PROPERTIES:
+:ID:       63da4a77-4007-4d25-b20c-0a05061beaab
+:END:
 #+title: How to Use Roam to Outline a New Article is Under 20 Minutes
-- author: [[file:20210605233053-nat_eliason.org][Nat Eliason]]
+- author: [[id:e1665606-99cb-4eb7-bce0-917b60c738aa][Nat Eliason]]
 - source: https://www.youtube.com/watch?v=RvWic15iXjk
-- tags: [[file:20210605233227-productivity.org][Productivity]], [[file:20210605233258-videos.org][Videos]] , [[file:20210604135308-org_roam.org][org-roam]]
+- tags: [[id:db656235-73df-4b8c-b090-4308fe89470a][Productivity]], [[id:c5c5ea6e-ade8-4941-ba39-afa407947d4b][Videos]] , [[id:a9417549-6f9f-48ab-b23c-1c411fee45b8][org-roam]]
 
-- using links in the [[file:20200528213816-zettelkasten.org][Zettelkasten]] to build piece by piece your own article
+- using links in the [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]] to build piece by piece your own article
 
-- jumping around between links, good aid to [[file:20210605234133-creativity.org][creativity]]
+- jumping around between links, good aid to [[id:685facc5-5823-416d-bfa0-9ccea21933d5][creativity]]
   + leverage the sidebar
 
 - the idea is to surf your own web of verified data

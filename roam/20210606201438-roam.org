@@ -1,4 +1,7 @@
+:PROPERTIES:
+:ID:       8d7717ec-69d7-475e-a98f-bf0bdf25f6bb
+:ROAM_REFS: https://roamresearch.com/
+:ROAM_ALIASES: "Roam Research"
+:END:
 #+title: roam
-#+roam_alias: "Roam Research"
-#+roam_key: https://roamresearch.com/
-Author: [[file:20210606203601-conor_white_sullivan.org][Conor White-Sullivan]]
+Author: [[id:5b6ce879-ff55-49e5-a029-d5b35a8eef28][Conor White-Sullivan]]

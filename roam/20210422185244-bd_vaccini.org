@@ -1,6 +1,9 @@
+:PROPERTIES:
+:ID:       993bbd99-1094-42bc-98bf-3eeeba0c4d9f
+:END:
 #+title: BD Vaccini
-[[file:20201205215419-project.org][$project]]
-[[file:#university.org][#university]]
+[[id:96d0a247-0c7c-40c2-bd29-e514a2d93502][$project]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][#university]]
 
 * Progettazione Concettuale
 

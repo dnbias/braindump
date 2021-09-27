@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       c1d9dd6d-add6-416a-887c-ee2505edf12d
+:END:
 #+TITLE: SO
 #+course: SO I A
 Mail Prof: ~daniele.radicioni@unito.it~
@@ -9,9 +12,9 @@ Informazioni corso
 
 
 
-* [[file:SO.org][Teoria]]
+* [[id:5c91241d-3da3-47e6-b27a-9afe7e0b4ff0][Teoria]]
 
-* [[file:20200929150510-unix.org][Unix]]
+* [[id:2f83c44e-774c-41d2-abe6-a13e3276e3f0][Unix]]
 - The Linux Programming Interface
 
 ** Introduzione
@@ -278,7 +281,7 @@ $ tar xvzf foo.tgz
 ** Bash
 
 
-* [[file:20200929150429-c.org][C]]
+* [[id:07584adc-f4c2-42b5-8fbe-340700f14217][C]]
 
 * Esercitazioni
     La sua discussione permette l'accesso allo Scritto (5 scritti all'anno)

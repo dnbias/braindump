@@ -1,12 +1,15 @@
+:PROPERTIES:
+:ID:       74221f00-81a0-40f2-a4cc-091e5866ea3a
+:END:
 #+TITLE: Basi di Dati
 #+TEACHER: Luca Anselma (anselma@di.unito.it)
-[[file:#university.org][#university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][#university]]
 - Esame:
   - Scritto 70
     + Teoria
     + Lab - SQL
   - Laboratorio 30
-    - Progettazione: [[file:20210422185244-bd_vaccini.org][BD Vaccini]]
+    - Progettazione: [[id:993bbd99-1094-42bc-98bf-3eeeba0c4d9f][BD Vaccini]]
 
 - Testi di riferimento
   + Basi di Dati: Modelli e Linguaggi di Interrogazione (Atzeni, Ceri, Paraboschi, Torlone)

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       0cddeb95-4c7f-4074-8e60-67998daf7873
+:END:
 #+title: Union-Find Set
 aka =disjointed-set Forest=
 Vedi:

@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       ef192796-53dc-4c10-a420-46abdbcbefc3
+:END:
 #+TITLE: work-life balance
 * GAS
 ** da distribuire tra 4 fornelli

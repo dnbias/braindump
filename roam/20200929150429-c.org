@@ -1,5 +1,8 @@
+:PROPERTIES:
+:ID:       07584adc-f4c2-42b5-8fbe-340700f14217
+:END:
 #+TITLE: C
-[[file:#university.org][#university]]
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][#university]]
 
 Gerarchia Elaboratore
 1. Digital Logic
@@ -10,7 +13,7 @@ Gerarchia Elaboratore
 6. High Level Language
 
 
-Processo da file sorgente a eseguibile: vedi [[file:20200929151438-compilazione_e_linking.org][Compilazione e Linking]]
+Processo da file sorgente a eseguibile: vedi [[id:9f341802-57c7-4663-b320-784260bd915b][Compilazione e Linking]]
 1. Pre-processing ~ .c
 2. Compilazione   ~ .s
    da qui il linguaggio diventa =architecture specific=
@@ -26,7 +29,7 @@ Gnu Compiler Collection - gcc
   - -E ferma dopo il pre-processore
     - stampa in standard output
 
-Il C nasce come linguaggio per lo sviluppo del [[file:20200923141318-so.org][OS]] Unix
+Il C nasce come linguaggio per lo sviluppo del [[id:c1d9dd6d-add6-416a-887c-ee2505edf12d][OS]] Unix
 Il C e' un linguaggio tipato, ogni valore deve essere di un determinato =tipo=
 
 

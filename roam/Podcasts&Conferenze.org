@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       e18cb691-4f1e-45f2-83ae-7b73bcecb3c2
+:END:
 #+TITLE: Podcasts&Conferenze
 
 * Supernova in the East :history:
