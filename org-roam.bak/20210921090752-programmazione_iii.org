@@ -1,0 +1,56 @@
+#+title: Programmazione III
+#+roam_alias: ProgIII
+[[file:#university.org][$university]]
+* Info Corso
+- Orari:
+  + Mar: 9-11
+  + Gio: 11-13
+  + Mer: 9-11 (Lab1)
+- Testi:
+  + [[file:20210921120356-java_how_to_program_late_objects.org][Java: How to Program, Late Objects]]
+- IDE
+  + IntelliJ IDEA
+* Teoria
+** Programmazione ad Oggetti
+*** Concetti Base
+Secondo _Alan Kay (Smalltalk)_
+- Oggetti
+  /fornitori di servizi/
+  + Stato
+    - attributi
+  + Tipo/Classe
+- Richieste/Metodi - /delega al metodo, si conosce l'API non l'implementazione/
+  + modificano lo stato
+  + invio richieste ad altri oggetti
+  + comunicazione di informazioni
+- Object-oriented Design
+  + progettazione orientato ad O
+
+- Classe/Istanza
+  + astratto/concreto
+    - concreto anche in memoria nello Heap
+*** p. procedurale vs p. oggetti
+- Procedurale
+  + Algoritmi + Strutture Dati
+- Oggetti
+  + Oggetti + Collaborazione
+    /si scorporano funzionalitá diverse in oggetti diversi:/ *delega*
+    a) dati + algoritmi
+    b) interfacce
+*** Gerarchia
+- kind-of hierarchy
+- part-of hierarchy
+**** ereditarieta'
+**** polimorfismo
+** Programmazione ad Eventi
+*** Event-Driven Programming
+*** Organizzazione e uso GUI
+*** Model View Controller
+** Programmazione Multithread
+/Stesso processo - Esecuzione concorrente di istruzioni/
+** Programmazione in Rete
+*** Architettura Client-Server
+*** Socket
+*** Polimorfismo
+*** Esecuzione Distribuita
+* Laboratorio

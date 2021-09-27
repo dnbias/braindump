@@ -1,0 +1,3 @@
+#+title: Paul Deitel
+[[file:20210527192825-authors.org][$authors]]
+[[file:20210921120356-java_how_to_program_late_objects.org][Java: How to Program, Late Objects]]

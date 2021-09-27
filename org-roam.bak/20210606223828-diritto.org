@@ -1,0 +1,1343 @@
+#+title: Diritto
+Esistono diverse fonti di Diritto
+- nazionali
+  + sentenze
+  + DPCM
+  + DPC
+- internazionali
+
+Esistono conflitti di fonti
+- nazionali | comunitarie
+- gerarchia delle fonti
+
+Definizione dei soggetti
+- giuridica
+  + aggiunge sfumature
+- tecnica
+
+Quando si regolamenta - tecnica linguistica:
+1. tecnica analitica
+   - disciplinare soggetti utilizzando un elenco analitico ricade nella regolamentazione
+     + ció che non e' citato rimane non disciplinato, allora va estesa eventualmente per analogia
+   - vietata nel diritto penale italiano
+2. tecnica per principi
+   - si mantiene una generalitá
+   - va sempre fatto un passaggio logico quando questa é applicata
+   - é facilmente ambigua
+
+3. Settori
+   - civile
+   - penale
+   - amministrativo
+   - del lavoro
+
+* Responsabilitá ISP
+Tematica sorta nei primi anni 2000
+Scelta della *fonte*
+** Direttiva Comunitaria 2000/31 (!Regolamento Comunitario)
++ commissione europea
+  - dá dei parametri a tutti i paesi membri
+  - che dovranno essere applicati dai singoli paesi
+    * se non in linea potranno essere disapplicati
++ considerando che...
+  - n.42, le deroghe alla responsabilitá stabilite si applicano esclusivamente dove:
+    * l'ISP si limiti al processo tecnico di attivare e fornire accesso ad una rete
+    * l'attivitá é meramente tecnica automatica e passiva
+    * l'ISP non conosce né controlla le informazioni
+  - n.48
+    + la direttiva non pregiudica la possibiltá pre gli Stati membri di chiedero [...] di adempiere al dovere di diligenza che é ragionevole attendersi ed é previsto dal diritto nazionale
+** Decreto Legislativo n.70 2003
+*** Art. 14
+Responsabilitá di =Mere Conduit= (semplice trasporto, Telecom)
+1. colui che trasmette su una rete informazioni fornite da un destinatario o fornisce accesso alla rete, non é responsabile delle informazioni trasmesse a condizione che
+   a. non dia origine alla trasmissione
+   b. non selezioni il destinatario della trasmissione
+   c. non selezioni né modifichi le informazioni trasmesse
+2. la memorizzazione automatica, intermedia e transitoria delle informazioni trasmesse deve servire solo alla trasmissione e la sua durata non deve eccedere il tempo ragionevolmente necessario a tale scopo
+3. L'autoritá puó esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazioni commesse
+
+*** Art. 15
+Responsabilitá nell'attivitá di =memorizzazione temporanea= (caching, Google)
+1. il prestatore non é responsabile della memorizzazione temporanea delle informazioni effettuata al solo scopo di rendere piú efficace il successivo inoltro ad altri destinatari a loro richiesta
+   a condizione che
+   a. non modifiche tali info
+   e. agisca prontamente per rimuovere le informazioni e senza indugio
+2. L'autoritá puó esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
+
+*** Art. 16
+Responsabilitá nell'attivitá di =memorizzazione di informazioni= (hosting)
+1. Memorizzazione di info fornite da un destinatario
+   1) non sia a conoscenza del fatto che l'attivitá o l'informazione é illecita
+   2) *non appena* sia a conoscenza di tali fatti, *su comunicazione delle autoritá*, agisca immediatamente per rimuovere le informazioni o per disabilitarne l'accesso
+      - aggiunta italiana, ha generato una ambiguitá
+2. non si applicano se il destinatario del servizio agisce sotto l'autoritá o il controllo del prestatore
+3. L'autoritá puó esigere, anche in via d'urgenza, che il prestatore impedisca o ponga fine alle violazione commesse
+
+*** Art. 17
+1. =assenza dell'obbligo generale di sorveglianza= da parte del prestatore e di ricerca attiva
+2. tenuto ad
+  a. informare l'autoritá qualora sia a conoscenza di attivitá o informazioni illecite riguardanti un suo destinatario
+  b. fornire a richiesta delle autoritá competenti le informazioni in suo possesso
+3. prestatore civilmente responsabile del contenuto di tali servizi in caso non ha agito prontamente per impedire l'accesso a detto contenuto
+  a. elemento integrativo da parte dell'Italia
+
+** Direttiva UE 2019/790
+Del Parlamento Europeo e del Consiglio
+aka =Direttiva Copyright=, modifica direttive 96/9/CE e 2001/29/CE
+In rif. al prestatore di un servizio dell'informazione... *va esclusa la responsabilitá prevista dall'art. 14 della direttiva 31/2000* ... dopo aver preso conoscenza, mediante informazione fornito dalla persona lesa o in altro modo, della natura illecita di quei dati o attivitá.
+- se l'illiceitá é manifesta é obbligo del provider sospendere e rimuovere, se non manifesta va chiarita riferendosi, puó essere anche un elemento esterno a renderla manifesta
+- Considerando n.62
+  + alcuni servize della societá dell'informazione [...] sono concepiti in modo da dare al pubblico l'accesso a contenuti o altri materiali protetti dal diritto d'autore
+  + definizione di =prestatore di servizi di condivisione di contenuti online=
+  + la presente direttiva riguarda i servizi [...il cui scopo é] memorizzare e consentire agli utenti di caricare e condividere un gran numero di contenuti, al fine di trarne profitto [...]
+*** Art. 17 2019
+Qualora non sia concessa alcuna autorizzazione, i prestatori di servizi di condivisione di contenuti online sono responsabili per atti non autorizzati di comunicazione al pubblico
+
+** Sentenze
+*** Case history RTI
+Gruppo Mediaset
+- Febbraio 2010 - RTI | Youtube
+  - diritto d'autore delle reti Mediaset
+  - ~pone a carico del host provider l'obbligo di rimuovere immediatamente non appena avuto conoscenza di tale illiceitá~
+    + anche su comunicazione dal titolare dei diritti
+  - Youtube non ha agito immediatamente
+- Settembre 2011 - RTI | Yahoo!
+  - ~l'inattivitá del prestatore di servizio~, nonostante le segnalazioni delle presenza di numerosi contenuti in violazione dei diritti d'autore, ~lo rende colposamente responsabile~
+- Ottobre 2011 - RTI | Choopa , VVB
+  + la non responsabilitá dell'hosting provider si ha purché il prestatore del servizio non sia effettivamente a conoscenza dell'illiceitá o di fatti e circostanze che rendono manifesta detta illiceitá
+  + ricorso respinto perché RTI aveva inviato un'unica diffida senza una dettagliata e specifica indicazione dei video da rimuovere
+  + non conta il paese in cui é basato il provider, conta il luogo dove viene commesso l'illecito
+    - RTI aveva visto lesi i suoi diritti nell'area del mercato italiana, quindi
+*** Case history Google
+Giá la commissione europea specificava gli stati potessero specificare leggi in tema di motore di ricerca
+- Maggio 2012 - Meneghetti | Google (utente anonimo)
+  - in mancanza di un *ruolo "attivo" sulla conoscenza e controllo dei dati memorizzati* il ~motore di ricerca non é responsabile dei contenuti immessi da terzi in rete~, anche laddove gli stessi siano raggiungibili in quanto risultanti delle ricerche effettuate sullo stesso motore.
+    + il mettere a disposizione non é un ruolo attivo, in quanto inconoscibile
+  - é necessario che un organo giurisdizionale competente ne dichiari la effettiva illiceita' dei dati
+- Febbraio 2013 - caso Vividown
+  + video di violenze e insulti sulla piattaforma Google Video
+  + Milano perché sede Vividown
+  + Google non responsabile del reato di diffamazione, in quanto rimosso appena segnalato
+  + (primo grado) ma c'é un trattamento illecito dei dati del ragazza disabile (dati sensibili) che non ha informato gli utenti della loro possibile responsabilitá
+    - (secondo grado) ribaltata la responsabilitá
+      + (cassazione) il decreto legislativo non si applica nel campo del diritto e alla riservatezza, Google ha fatto anche indicizzazione (azione attiva?) oltre che il mero upload
+        - non c'é trattamento illecito perché *mancava della conoscenza dell'illecito,* anche avendo rimosso il contenuto collaborando con le autoritá
+- Marzo 2009 - AVIS | SIXT, Google ADWords
+  + concorrenza sleale, in quanto digitando AVIS si era reindirizzati a SIXT
+  + Comportamento abusivo del soggette che utilizzi come keyword segno distintivo altrui
+    - la tecnica di marketing telematico ADWords, di per se, é lecita
+    - richieste di condanna respinte per carenza di legittimazione processuale (sarebbe dovuto essere Google Ireland)
+- Marzo 2011 - | Google Autocomplete
+  + ruolo attivo, evidente valenza diffamatoria
+  + intervento sul software in modo da rimuovere l'associazione diffamatoria
+- Maggio 2012 - | Google Autocomplete
+  + Effetto del funzionamento del ~servizio completamente automatico~, del tutto privo di valenza diffamatoria
+  + non c'é l'elemento del dolo, inoltre una azienda ~non ha una chiara componente psicologica~
+- Marzo 2013 - | Google Autocomplete
+  + Secondo l'attore, Google é un content provider, in quanto le funzioni di completamento automatico e di generazione di ricerche sono messe a punto dal provider
+  + il Tribunale esclude la qualificazione di content provider
+    - in quanto un sistema di attivazione del servizio e non certo di una funzione, né un contenuto
+    - riproduce statisticamente il risultato delle ricerche piú popolari
+    - i risultati non costituiscono un archivio, né sono strutturati, organizzati o influenzati da Google
+    - trattando di un Algoritmo non é applicabile un Diritto prettamente umano
+- Maggio 2013 - Reclamo al Collegio | Google Autocomplete
+  + l'automatismo non é sinonimo di neutralitá dell'ISP
+  + nel suo ruolo svolge ulteriori attivitá non meramente automatiche e necessarie per la sola trasmissione o raccolta dei contenuti
+  + inoltre l'elemento di lucro pone un ulteriore aspetto attivo da parte dell'azienda
+  + si conclude quindi che pur non essendo Content Provider ~gli aggregatori~ non sono nemmeno totalmente dissimili, in quanto ~assumono una posizione attiva nei confronti dei dati indicizzati~
+    - non compatibile con la neutralitá e passivitá previste dagli art. 15,16 D.Lgs. n.70/2003
+
+*** Mediaset vs Facebook
+:PROPERTIES:
+:ID:       32e03ff4-ee68-4a76-bc75-7afc5299ee93
+:END:
+=Roma, 20 Feb 2019=
+Pagina facebook dedicata ad un cartone animato, con link a contenuti protetti da diritto d'autore.
+Facebook non rimosse i contenuti, si passó al tribunale.
+Caso storico per la presa di posizione nei confronti del Social Network
+- definito come ISP
+  + sia caching che hosting
+- riconosce la responsabilitá del SN per violazioni avvenuti tramite ~linking~
+  + quindi con pubblicazioni esterne alla piattaforma vera e propria
+Focebook afferma la non correttezza del giudice, volendo il giudizio in California
+- convenzione di Bruxelles '68 (principalmente tra paesi Europei, non USA)
+  + cerca di chiarire dove va fatta la contestazione
+- viene deciso che il mercato della parte lesa, luogo dell'evento in questione
+  + Italia
+_Il link é una comunicazione al pubblico_, l'articolo 13 della =Riforma del Diritto d'Autore nel Mercato Unico Digitale= cita:
+| I fornitori di servizi che fanno _comunicazione al pubblico_ devono ottenere l'autorizzazione per la messa a disposizione di contenuti dai titolari di diritti |
+- qui c'é illecito nella non autorizzazione da parte di Mediaset, proprietaria dei diritti
+
+*** RTI vs Yahoo
+=Corte di Cassazione, 19 Mar 2019=
+Presunta violazione di diritti d'autore da parte di Yahoo
+- DIFESA: la non immediata attivazione non implicava un illecito un quanto sito di Hosting Passivo
+La giurisprudenza della Corte di giustizia ha accolto la nozione di _hosting provider attivo riferendosi a prestatori che non conoscono né controllano le informazioni trasmesse o memorizzate_ dalle persone alle quali forniscono i loro servizi
+- Cassazione: provider qualificabile come hosting attivo quando *completa e arricchisce* in modo non passivo *la fruizione dei contenuti*
+
+Alla luce [...] l'hosting passivo é responsabile per non avere prevveduto all'immediata rimozione dei contenuti illeciti o per aver continuato a pubblicarli
+
+*** L'Oréal vs Ebay
+- la disposizione della direttiva =art.14 2000/31/CE= deve essere interpretata non soltanto in considerazione del suo tenore letterale, ma anche del suo contesto e degli scopi perseguiti dalla normativa di cui essa fa parte
+  + la fornitura e la gestione di una piattaforma di condivisiane online, é =atto di comunicazione=
+
+Sostanza sopra la forma:
+- Per quanto concerne l'art. 14 é necessario verificare se il prestatore di servizi svolge un ruolo attivo, anche ottimizzando la prestazione delle opere o altro materiale caricati o promuovendoli, indipendentemente dalla natura del mezzo utilizzato a tal fine.
+  Dovrebbero adottare misure appropriate e proporzionate per garantire la protezione di tali opere a altro materiale, ad esempio tramite l'uso di tecnologie efficaci.
+  - questo anche quando i prestatori di servizi rientrano nell'esenzione di responsabilitá di cui all' =art.14 2000/31/CE=
+
+*** TikTok vs Garante Privacy
+=Gen 2021=, strangolamento bambina di 10 anni a seguito della Blackout Challenge
+- Fonti
+  - Regolamento UE 2016/679
+    - in vigore dal 2018
+  - Decreto Legislativo 101/2018
+
+Giá a dicembre il Garante della Privacy aveva sollevato delle =contestazioni= a TikTok
+- Divieto di iscrizione ai piú piccoli facilmente aggirabile
+- _Scarsa tutela dei minori_
+- _Poca trasparenza_ nelle informazioni resa agli utenti
+- Impostazioni predefinite non rispettose della privacy
+  - profilo pubblico di default
+
+Il ~limite d'etá~ prima del regolamento prevedeva 13 anni, questo per la legge federale USA:
+ - COPPA, prescrive che nessuno persona giuridica puó raccogliere dati relativi a minori di 13 anni
+_In Italia il limite é definito a 14 anni_.
+
+*Art. 66*, procedura d'urgenza
+- per proteggere i diritti e le libertá degli interessati, un'autoritá, puó adottare immediatamente misure provvisorie intese a produrre effetti giuridici nel proprio territorio
+  - periodo di validitá determinato che non supera i tre mesi
+
+Provvedimento dispone la misura della ~limitazione provvisoria~ del trattamento, vietando l'ulteriore trattamente dei dati degli utenti che si trovano sul territorio italiano per i quali non vi sia assoluta certezza dell'etá
+- prima ancora di sentire la controparte, ma ha giá valore di legge
+
+TikTok si é impegnato ad adeguarsi alle richieste del Garante privacy
+- _blocco degli utenti_ per la richiesta di inserimento dell'etá
+- trattative con l'ente di controllo irlandese per l'_uso di sistemi di IA ai fini dell'age verification_
+- miglioramento della propria informativa privacy in un _linguaggio anche piú accessibile_
+- introduzione di _report di utenti minori dei 14 anni_
+- _banner di informazione_ sull'impostazione del profilo da pubblico a privato
+Il Garante ha avviato una collaborazione con il telefono Azzurro
+- _campagna di sensibilizzazione_ con l'obiettivo di richiamare i genitori a svolgere un ruolo attivo di vigilanza
+
+** Nuovi Sviluppi
+Figura piú specifica di ISP: /prestatori di servizi di condivisione online/ [vedi [[id:32e03ff4-ee68-4a76-bc75-7afc5299ee93][Mediaset vs Facebook]]]
+- servizi con lo =scopo= di fare caricare e condividere contenuto protetto dai propri utenti al fine di trarne lucro
+- sono =esclusi= servizi:
+  + che non danno accesso a contenuti protetti da diritto d'autore
+  + di sviluppo open source
+  + enciclopedie senza scopo di lucro
+* Principi di legalitá
+3 presupposti
+- =riserva di legge=
+  + solo il potere legislativo, espressione del paese, ha manopolio normativo in materia penale
+- =tassativitá=
+  + tecnica di legge tassativa, tipo di formulazione precisa analitica: non si puó essere generali
+    - non si fa ricorso all'analogia
+- =irretroattivitá=
+  + irretroattivitá della legge sfavorevole
+  + retroattivitá della legge favorevole
+** Il Reato
+illecito penale == reato
+- non esiste reato non penale
+
+Solo la persona umana é soggetto attivo del reato
+Distinzione:
+- =capacitá penale=
+  + tutti
+- =capacitá alla pena=
+  + etá, capacitá di intendere e di volere
+
+Il reato é integrato se tutti questi elementi sono compiuti
+- =condotta-evento=
+  + C: elemento essenziale, senza condotta non puó esserci reato
+    - ma puó esserci reato senza evento, ~reato di pura condotta~
+      + ~omissione~
+        - ha essenza normativa, non fisica, in quanto consiste nel non compiere l'azione possibile che il soggetto ha il dovere giuridico di compiere
+          + es. omessa denuncia da parte dal pubblico ufficiale
+  + E: il risultato dell'azione o dell'omissione e deve essere legata a queste da nesso causale
+    - c'é anche una differenza temporale tra evento e condotta, o anche spaziale
+      + ~reati ad evento differito~
+      + ~reati a distanza~
+- =rapporto di causalitá=
+  + conseguenza
+  + in caso fortuito o forza maggiore: decade il rapporto di causalitá tra condotta ed evento
+- =offesa-elemento soggettivo=
+  + profilo psicologico, soggettivo
+    - il fatto illecito deve appartenere psicologicamente all'autore della condotta
+  + ~sistema misto~
+    - non basta la lesione oggettiva del bene o la sola volontá criminosa
+    - sono necessari entrambi
+  + responsabilitá colpevole
+  + responsabilitá personalizzata
+
+** Colpevolezza
+- /imputabilitá/
+- conoscenza, /conoscibilitá/ del precetto penale
+  + non si puó sostenere di non conoscere una norma pubblica
+- dolo o colpa
+  + D: rappresentazione e volontá del fatto materiale
+  + C: forma attenuata, eccezionale e minoritaria, sussidiaria, storicamente piú recente
+    - é un rimprovero per aver realizzato, anche se involontariamente, un fatto-reato che avrebbe potuto essere evitato mediante l'osservanza esigibile di detta regola
+      + mancanza della volontá del fatto tipico
+      + inosservanza della regola di condotta
+      + attribuibilitá dell'inosservanza all'agente
+- preterintenzione
+  + oltre il reato voluto
+    - volontá di un evento minore e la non volontá di un evento piú grave
+
+* Computer Crimes
+Inseriti con Novelle nel codice penale
+- fine anni '80 e inizio anni '90
+
+Il =Computer Crime= é un reato che
+- implica l'uso di un sistema informatico (accesso abusivo al sistema)
+- coinvolge un apparato informatico (diffamazione)
+
+** Legge 23 Dic 1993 n. 547
+- sazionato l'*accesso abusivo* ad un computer, software, sistemi telematici
+- se *danneggiamento* del sistema o dei dati: aggravante
+- natura di *documento informatico* ai supporti di qualunque specie contenenti dati
+  + vengono inclusi anche supporti digitali
+- vengono permesse le intercettazioni informatiche o telematiche - 266-bis
+
+** Convenzione di =Budapest= (Cybercrime) - Nov 2001
+a. delimitare definizioni comuni di reato
+b. definire poteri comuni di indagine
+c. predisporre mezzi di cooperazione internazionale
+  - anche in via esecutiva
+d. definizioni
+  a. *sistema informatico*
+    + apparecchiatura o gruppo di apparecchiature interconnesse che in base ad un programma /compiono l'elaborazione automatica di dati/
+  b. *dati informatici*
+    + presentazioni di fatti, informazioni o concetti in forma suscettibile di essere utilizzata in un sistema computerizzato
+  c. *trasmissione di dati*
+    + informazione computerizzata relativa ad una comunicazione attraverso sistema informatico, parte nella catena di comunicazione, indicando origine, destinazione, percorso, tempo, data, grandezza, durata, tipo del servizio
+
+** Art. 615.III c.p.
+Accesso Abusivo a Sistema Informatico
+- 1 a 3 anni per chiunque /abusivamente si introduce/ in un sistema [...] protetto [...]
+  + punibile a querela della persona offesa (negli altri casi si procede d'ufficio)
+- aggravanti:
+  1. commesso da ~pubblico ufficiale~ o da un incaricato di un pubblico servizio / abuso della qualitá di operatore del sistema
+  2. uso ~violenza~ sulle cose o alle persone
+  3. ne deriva ~distruzione o danneggiamento~ del sistema / dati / informazioni / programmi
+- qualora i fatti riguardino sistemi ... di interesse militare / ordine pubblico / sanitá / interesse pubblico la pena si alza da 3 a 8 anni
+
+** Cassazione Penale - 2012
+=principio di tassativitá=
++ carte di debito o credito sono s.i.
++ casella di posta elettronica, spazio di memoria di un s.i., é un accesso a s.i.
++ una porzione di memoria protetta (es. da password) rivela la chiara volontá dell'utente di farne una spazio a sé riservato
+** Cassazione a Sezioni Unite 2015-2017-2019
+=Accesso Abusivo=
++ *domicilio informatico*
+  - deve essere protetto, anche da misure minime
+  - *misura di sicurezza*
++ non hanno rilievo gli scopi e le finalitá che hanno soggettivamente motivato l'ingresso al sistema
++ *Locus Commissi Delicti*
+  | l'introduzione abusiva [...] integrati nel luogo in cui l'operatore materialmente digita la password di accesso o esegue la procedura di login, che determina il superamento delle misure di sicurezza |
+  - client / terminale
+  - condotta criminosa fisicamente, nel senso di movimento muscolare dell'agente, é l'attivazione del terminale periferica da parte dell'operatore
++ =Cassazione 2019=: in caso di *pubblico ufficiale*:
+  | é sufficiente che si acceda o si mantenga nel sistema per *ragioni deontologicamente entranee* a quelle per cui la facoltá di accesso gli é stata attribuita |
+  - anche se non violando prescrizioni impartite per delimitarne l'accesso dall'amministratore del s.i.
++ =Cassazione 2011=:
+  | reato sussiste anche se i dati cancellati abusivamente possono essere recuperati |
+  - nuova specifica previsione della *cancellazione* in accezione informatica e non semantica del termine, anche in presenza di backup o se eventualmente reversibili
+  - coerente anche con l'interpretazione tradizionale del reato di danneggiamento, dove la condotta criminosa apporti una modificazione - anche impedendone anche parzialmente l'uso - che richieda un intervento ripristinatorio dell'essenza e della funzionalitá della cosa stessa
++ =Cassazione 2019=:
+  | il *file* possiede una dimensione fisica che é determinata dal numero delle componenti [...] il file [...] possiede una dimensione fisica costituita dalla grandezza dei dati che lo compongonosono qualificabili come cose mobili e sono suscettibili di appropriazione rilevante |
+  - dimensione fisica che é determinata dal numero delle componenti, cifre binarie
+  - il file é cosa mobile
+
+* Documento e Identitá Digitale
+** Fonti
+*** Regolamento UE n.910/2014
++ base normativa a livello comunitario per servizi di:
+  - ident. digitale
+  - firma elettronica
+  - recapito elettronico
+=eIDAS= electronic IDentification Authentication and Signature
+Identificazione elettronica
+*** Codice dell'Amministrazione Digitale
+aka =CAD=, modificato dal Decreto Semplificazioni
+
+** identificazione elettronica
++ processo per cui si fa uso di /dati di identificazione personale/ in forma elettronica che rappresentano un'unica persona fisica o giuridica
++ =SPID= e Carta di identitá elettronica
+  - per accedere ai servizi online della pubblica amministrazione e dei privati aderenti, con una coppia di credenziali personali
+  - erogati da gestori di identitá, prestatori di servizi fiduciari
+      + identity provider
+  - 3 livelli di sicurezza (ISO/IEC DIS 29115)
+    + userid/pass LoA2
+    + OTP LoA3 - one time password
+    + Dispositivo hardware LoA4
++ =AgID= - Agenzia per l'Italia Digitale
+  - organismo di vigilanza
+  - responsabile nello stato membro designante
+** Documenti
++ elettronico
+  - contenuto conservato in forma elettronica
++ informatico (particolare di d. elettronico)
+  - rappresentazione informatica di atti, fatti o dati giuridicamente rilevanti
+  - ha effetti sulla sfera giuridica del soggetto
+  - valenza probatoria: Art.20 CAD
+    + quando vi é apposta
+      - firma digitale
+      - firma elettronica qualificata
+      - firma elettronica avanzata
+      - o é formato, previa identif. informatica del suo autore (requisiti fissati da AgID Art.71), con modalitá tali da garantire la sicurezza, integritá e immodificabilitá e in maniera manifesta e inequivoca, con la sua riconducibilitá all'autore
+      - in tutti gli altri casi il requisito della forma scritta e il suo valore probatorio sono liberamenti valutabili in giudizio (caso delle firme el. semplici)
++ analogico
+  - rappresentazione non informatica di atti, fatti o dati giuridicamente rilevanti
+*** Posta Elettronica Certificata
+aka =PEC=
+Normato nel =DPR 11 Feb. 2005,n.68=
+
+~Sistema di posta elettronica~ nel quale é fornita al mittente documentazione elettronica, con valenza legale, attestante l'invio e la consegna di documenti informatici.
+~Obbligatorio~ per imprese e professionisti, va comunicato rispettivamente al registro imprese e agli ardini o collegi di appartenenza
+Il proprio indirizzo di PEC é considerato /domicilio digitale/
+- sono state introdotte sanzioni e obblighi nel Art.37 D.L.76/2020 per professionisti e relativi Collegi e Ordini di apportenenza e per le imprese in caso di mancata comunicazione del preprio domicilio digitale
+  + diffida -> sospensione dall'albo (professionisti)
+  + sanzione -> societá e imprese individuali
+
+- Validitá giuridica
+  + PEC -> PEC  -  piena
+  + PEC -> PEO  -  intermedia
+
+=gestore del servizio=:
+soggetto, pubblico o privato, che eroga il servizio di posta elettronica certificato e che gestisce domini di posta elettronica certificata
+
+La =ricevuta di avvenuta consegna= fornisce al mittente prova che il suo messaggio di PEC é effettivamente pervenuto all'indirizzo elettronico dichiarato dal destinatario e certifica il momento della consegna
+- *presunzione di conoscenza*
+  + una volta che il sistema genera la ricevuta di accettazione e di consegna del messaggio nella casella del destinatario, /si determina una presunzione di conoscenza da parte del destinatario/, il quale é responsabile della gestione della propria utenza
+    - il destinatario ha l'onere di dotarsi degli strumenti necessari per decodificare o leggere i messaggi inviatigli ma anche presidiare la propria casella procedendo alla periodica verifica delle comunicazioni regolarmente inviatigli
+Le ricevute rilasciate dai gestori di PEC sono sottoscritte dai medesimi mediante una ~firma elettronica avanzata~, generata automaticamente dal sistema di posta elettronica
+- tipi di ric. avvenuta consegna
+  + completa
+    - postacert.eml
+    - daticert.xml
+  + breve
+    - daticert.xml
+    - breve estratto
+  + sintetica
+    - daticert.xml
+
+- =Virus Informatico=
+  + un programma informatico avente per scopo o per effetto il danneggiamente di un sistema informatico o telematico, dei dati o dei programmi in esso contenuti o ad esso pertinenti, ovvero l'interruzione, totale o parziale, o l'alterazione del suo funzionamento
+  + il gestore del mittente é tenuto a non accettarli, informando tempestivamente il mittente
+    - il gestore conserva i messaggi ricevuti per 30 mesi
+  + il gestore del destinatario é tenuto a non inoltrarli al destinatario
+    - tenuto a informare il gestore del mittente
+    - conserva i messaggi ricevuti per 30 mesi
+
+** Firme
++ =elettronica (semplice)=
+  - dati in forma elettronica, acclusi o connessi (tramite associazione) ad altri dati elettronici e utilizzati dal firmatario per firmare
+    + dati utilizzati:
+      - conoscenze dell'utente (password)
+      - caratteristiche fisiche dell'utente (impronta digitale)
+      - possesso di un oggetto da parte dell'utente (tessera)
++ =elettronica avanzata= (tecniche biometriche: firma grafometrica)
+  - requisiti:
+    + connessa unicamente al firmatario
+    + idonea a identificarlo
+    + creata con dati che il f. puó, con alto livello di sicurezza, utilizzare sotto il proprio esclusivo controllo
+    + deve consentire l'identificazione di ogni successiva modifica di tali dati
++ =elettronica (avanzata) qualificata=
+  - basata su un certificato qualificato per firme elettroniche
+    + rilasciati da prestatori di servizi fiduciari accreditati, sotto la vigilanza dell'AgID
++ =digitale= - ~crittografia a chiavi asimmetriche~
+  - normata dal _CAD (Codice dell'Amministrazione Digitale)_
+    + particolare di firma e. qualificata
+  - sistema di /chiavi crittografiche, pubblica e privata, correlate/ tra loro
+    + permettono di verificare la provenienza e l'integritá di un documento informatico o un insieme di documenti informatici
+    + algoritmo di hash: collision resistant, non invertibile
+      - genera digest usando la chiave privata memorizzata sul certificato di firma
+      - il documento sottoscritto, l'impronta cifrata, il certificato dell'ente certificatore sono inseriti in una busta .p7m
+      - viene controllato che l'impronta del file originale ricalcolata dalla stessa funzione sia uguale a quella recuperato decriptando il digest usando la chiave pubblica
+
+* Contratto
+Un ~accordo di due o piú parti~ per costituire, regolare o estinguere tra loro un ~rapporto giuridico patrimoniale~
+- Digesto Romano
+  + do ut des
+  + do ut facias
+  + facio ut des
+  + facio ut facias
+
+** Requisiti
++ =accordo= delle parti
+  - tacito
+    + intenzione manifestata dal comportamente delle parti
+  - espresso
+    + dichiarazione specifica
++ =causa=
+  - se illecito il contratto é nullo
+    + causa é illecita se contraria a norme imperative, all'ordine pubblico o al buon costume
+  - obbligazioni naturali
+    + obblicazione che trovano la propria fonte nei doveri morali e sociali che, pur non essendo giuridici, quindi non coercibili, non sono indifferenti per l'ordinamento
++ =oggetto=
+  - caratteristiche:
+    + possibile
+    + lecito
+    + determinato o determinabile
++ =forma=
+  - espressa / tacita
+  - scritta / orale
+  - Contratti formali
+  - Contratti a forma libera
+  - Forma ad substantiam / Forma ad probationem
+
+** Conclusione
++ scambio di =proposta= ed accettazione
+  - concluso nel momento in cui chi ha fatto la proposta ha conoscenza dell'accettazione dell'altra parte
+    + un'accettazione non conforme alla proposta equivale a nuova proposta, si invertono le parti
+    + in email é sufficiente la conoscibilitá dell'accettazione
++ =offerta al pubblico= (sito internet)
+  - proposta (con estremi essenziali)
+  - invito a proposta (senza estremi essenziali)
+  - acquirente invia accettazione con ~point and click~ sull'OK
++ =comportamente= concludente
+  - se richiesto dal proponente o da natura affare a usi, il contratto é concluso con l'inizio di esecuzione
+
+** Telematico
+~Contratti stipulati per via elettronica~, mediante l'uso di un computer
+*** Classificazioni
+- Diretto
+  + conclusi e eseguiti online
+  + software, dati
+- Indiretto
+  + conclusi online e eseguiti offline
+  + beni materiali
+- Sito
+  + con pubblico indeterminato
+- E-mail
+  + tra parti determinate
+- B to B
+  + tra imprenditori (professionisti)
+    - desciplina generale sui contratti
+      + norme derogabili
+      + clausole vessatorie (Codice Civile)
+- B to Consumer | =Codice del Consumo: DL 2005/206=
+  + tra imprenditore e consumatore
+  + consumatore parte piú debole, la legislazione va a suo favore
+    - Legislazione speciale /a tutela/ dei consumatori
+      + norme inderogabili
+        - diritto di recesso (14 giorni)
+          + regola generale(CC) secondo cui un contratto non puó essere sciolto per mutuo consenso o per cause ammesse dalla legge
+            - una delle cause é il caso del ~recesso unilaterale~, una parte puó esercitare la facoltá a determinate condizioni:
+              + se é prevista nel contratto
+              + finché il contratto non abbia avuto un principio di esecuzione
+          + senza dover fornire alcuna motivazione e senza dover sostenere costi, tranne quelli specificati e previsti:
+            - beni confezionati su misura o personalizzati
+            - beni deteriorabili rapidamente
+            - beni sigillati per motivi igienici in caso di apertura
+          + non é dovuto se il bene é stato acquistato in fisico
+            - ma esiste tutela per la garanzia per un bene difettoso
+              + denunciare entro 8 giorni dalla scoperta
+              + azione prescritta entro 1 anno dalla consegna
+      + clausole vessatorie (Codice del Consumo)
+        - considerate sempre nulle
+*** Soggetti
+- Professionista
+  + agisce nell'ambito della propria attivitá imprenditoriale o professionale
+- Consumatore
+  + agisce per scopi estranei all'attivitá imprenditoriale o professionale
+
+** E-Commerce
+Normato con:
+- =Direttiva 2000/31/CE=
+- =Legge Comunitaria 2001 a.31=
+- =DL 2003/70=
+~é ogni tipo di attivitá commerciale online~
+- diritto di stabilimento e dell'esercizio
+  + country of origin, luogo di esercizio dell'attivitá, non dove é collocato il server
+  + criterio sostanzialistico, non piú formalistico
+- responsabilitá degli operatori
+  + non hanno necessitá di ulteriore autorizzazione per l'attivitá online
+- comunicazioni commerciali e pubblicitarie
+  + obbligo di informazione
+    - dati per reperibilitá
+    - prezzi
+- contratti telematici
+  + obblighi di informazione precontrattuali
+    - fasi tecniche di conclusione del contratto
+    - archiviazione o meno di tutte o parte delle informazioni
+    - mezzi tecnici per correzione di errori
+    - lingue disponibili
+    - clausole e condizioni generali memorizzabili e riproducibili
+
+* Dati Personali
+** [[file:20210605224537-privacy.org][Privacy]]
+~right to be let alone~
+Concetto principalmente =statunitense=, per la prima volta utilizzato in /The Right to Privacy/, Warren S. e Brandeis L., 1890.
+
+** [[file:20210605224618-data_protection.org][Data Protection]]
+Concetto =europeo= principalmento delineato in seguito alla Seconda Guerra Mondiale
+- dalla profilazione della popolazione e dai processi decisionali automatizzati
+Il termine é un'abbreviazione perché la normativa non tutela i dati, ma /i diritti delle persone cui dati sono trattati/
+*** Organisation for Economic Co-operation and Development
+aka =OECD=, 1980
+- Collection Limitation Principle
+- Data Quality Principle
+- Purpose Specification Principle
+- Use Limitation Principle
+- Security Safeguards
+- Openness Principle
+- Individual Participation Principle
+- Accountability Principle
+*** Direttiva Europea 1995/46
+Doppio intento:
+- assicurare la protezione dei dati, come diritto costituzionalmente rilevante
+- consentire lo sviluppo del mercato e permettere la libera circolazione di merci e di dati necessari per le transazioni
+Non direttamente applicabile negli Stati Membri, va recepita tramite una legge statale
+- recepita in Italia necessaria per l'ingresso in Schengen
+- rivista con il =decreto 2003 - Codice Protezione Dati Personali=
+*** Considerando
+Introducono il =GDPR=:
+1. la protezione delle persone fisiche con riguardo al trattamento dei dati di carattere personale é un =diritto fondamentale=
+2. i principi e le norme [...] al trattamento dei dati personali dovrebbero rispettarne i diritti e le libertá fondamentali, in particolare il diritto alla protezione dei dati personali
+4. il trattamento dei dati dovrebbe essere al =servizio dell'uomo=
+6. la rapiditá dell'evoluzione tecnologica e la globalizzazione comportano nuove sfide per la protezione dei dati personali
+7. questa evoluzione richiede un =quadro piú solido e coerente= in materia di protezione dei dati nell'Unione
+8. gli Stati membri possono, nella misura necessaria per la coerenza e per rendere le disposizioni nazionali =comprensibili alle persone cui si applicano=, integrare elementi del presente regolamento nel proprio diritto nazionale
+*** GDPR
+Non vuole dare divieti ma ha un approccio basato piuttosto sul rischio effettivo
+- =Regolamento EU 2016/679= - General Data Protection Regulation
+  + la normativa porta sia continuitá che novitá rispetto alle norme tradizionali
+  + accountability
+  + nomina del *DPO/RPD*
+    - Data Protection Officer
+  + registri attivitá trattamento
+  + procedure data breach
+  + analisi rischi
+  + criteri proattivi di progettazione e tutela a norma
+    - /[[file:20210605224537-privacy.org][privacy]] by design and by default/
+  + incremento diritti
+    - revoca consenso
+  + ambito di applicazione materiale
+  + ambito di applicazione territoriale
+    - trattamento effettuato nell'ambito di attivitá di soggetto stabilito UE
+    - trattamento che si colloca in UE
+    - trattamento effettuato da soggetto non stabilito in UE, ma soggetto al diritto di uno Stato membro per diritto
+- =DL 2003/193=
+  + /modificato/ nel 2018
+    - fattispecie penali
+    - specificazioni delle finalitá di interesse pubblico rilevante
+    - indicazione di un'etá per il consenso dei minori
+    - disposizioni per CV ed informative per ricezione
+    - definizione dei diritti delle persone decedute e diritti di accesso
+- Dir 2016/680/CE
+  + Dati Giudiziari
+- Dir. 2016/1148/CE
+  + Direttiva NIS
+- Reg. 2018/1807/CE
+  + Dati non Personali
+- Dir. 2016/943/CE
+  + Trade Secrets
+- Dir. 2002/58/CE
+  + Direttiva ePrivacy
+  + in revisione
+
+** Definizioni, Concetti, Pricipi
+*** Dato Personale
+- info riguardante una persona fisica identificata o identificabile, direttamente o indirettamente
+
+=Considerando 30=
+- le persone fisiche possono essere associate a =identificativi= online prodotti dai dispositivi
+  + indirizzi IP
+  + cookies
+  + tag
+
+*Dato Anonimo*
+- l'anonimizzazione esclude l'applicazione del =GDPR=, ma la procedura deve essere definitiva
+
+*Pseudonimo*
+- il dato personale spesso non é anonimizzato, ma reso meno facilmente intellegibile con le tecniche di /pseudonimizzazione/
+  + trattamento dei dati senza l'utilizzo di informazioni aggiuntive
+    - a condizione che tali info siano conservate separatamente, soggette a misure tecniche e organizzative
+  + contatore
+  + generatore numeri casuali
+  + funzione crittografica di hash
+  + autenticazione del messaggio
+  + crittografia
+    - simmetrica, cifratura a blocchi(AES)
+
+=Considerando 28=
+- puó ridurre il rischio per gli interessati ed aiutare i titolari
+
+*Dato Personale Particolare*
+- che rivelino l'origine razziale o etnica, opinioni politiche, convinzioni religiose o filosofiche, dati genetici, dati biometrici, dati relativi alla salute o vita sessuale, orientamento sessuale della persona
+- =divieto di trattamento=
+  - eccezioni
+    + consenso esplicito
+    + obblighi specifici del Titolare del trattamento
+    + interesse vitale dell'interessato
+    + attivitá di associazione senza scopi di lucro con finalitá politiche/religiose/filosofiche/sindacale
+    + dati resi manifestatamento pubblici dall'interessato
+    + attivitá necessarie in sede giudiziaria
+    + motivi di interesse pubblico
+
+*Dato Giudiziario*
+- dati relativi alle condanne penali e ai reati o connesse misure di sicurezza
+
+*** Trattamento Dati
+aka =Data Processing=
+- qualsiasi /operazione/ o insieme di operazioni, con o senza l'ausilio di processi(strumenti) automatizzati e applicate ai dati personali
+  + ogni fase del ciclo vitale del trattamento sempre trattamento é e deve essere gestito in sicurezza
+- soggetti:
+  + /attivi/ di trattamento - =doveri=
+    - titolare ~data controller~ che singolarmente o insieme ad altri, determina finalitá e mezzi del trattamento dei dati personali
+    - responsabile del trattamento ~data processor~ che tratta dati personali per conto del titolare del trattamento
+    - destinatario
+      + riceve comunicazione di dati personali
+    - terzo
+    - autorizzato
+      + persona autorizzata al trattamento sotto l'autoritá del titolare o responsabile
+  + /passivi/ - =diritti=
+    - interessato
+  + /di controllo/
+    - ogni stato membro dispone di un'autoritá per la protezione dei dati
+      + IT: Autoritá Garante Protezione dei Dati Personali (Autoritá =Garante Privacy=)
+        - l'attivitá ispettiva del Garante é svolta dalla Guardia di Finanza Nucleo Privacy mediante Protocollo di Intesa
+          + Protocollo di Intesa con Polizia di Stato, Corecom Piemonte
+          + Collabora con social per il fenomeno di Revenge Porn
+    - riuniti nel Comitato Europeo (COPD o EDPB)
+    - informare e sensibilizzare il titolare
+    - sorvegliare l'osservanza del regolameno
+    - fornire parere se richiesto
+    - cooperare con il Garante
+*** Principi
+sull'uso e la raccolta di dati personali:
+- ~liceitá~
+  + trattati in modo lecito, corretto e trasparente verso l'interessato
+- ~limitazione delle finalitá~
+  + raccolti per finalitá determinate, esplicite, legittime e successivamente trattati in modo non incompatibile con finalitá
+- ~minimizzazione dei dati~
+  + adeguati, pertinenti e limitati a quanto necessario rispetto alla finalitá del trattamento
+- ~esattezza~
+  + esatti e se necessario aggiornati, misure ragionevoli per cancellare o rettificare tempestivamenti i dati inesatti rispetto alle finalitá
+- ~limitazione della conservazione~
+- ~integritá e riservatezza~
+- ~accountability~
+  + Il titolare é competente per il rispetto della norma e in grado di comprovarlo
+  + =Ciclo di Deming=
+    - Plan-Do-Check-Act
+    - sviluppato nel dopoguerra in Giappone
+
+Il trattamento é /lecito/ solo se e nella misura in cui ricorre almeno delle condizioni:
+- ~consenso~
+  + se richiesto deve essere libero, specifico, informato ed inequivocabile
+  + prestato per una specifica finalitá
+    - documentabile, revocabile
+- ~necessario all'esecuzione di un contratto~
+- ~necessario per adempiere un obbligo legale~
+- ~interessi legali del interessato~
+- compito di ~interesse pubblico~
+- ~legittimo interesse~
+
+** Doveri
+- Titolare
+  + interiorizzare/applicare i principi
+  + liceitá del trattamento
+  + applicare trasparenza
+  + riscontrare gli interessati e favorirne l'esercizio dei diritti
+  + accountability
+    - disporre di documenti di rilevanza sostanziale
+    - analisi del rischio
+    - valutazione impatto preventiva
+    - redazione registro attivitá di trattamento
+    - verifica ruoli soggetti interni esterni
+    - misure adeguate
+    - privacy by design e by default
+    - violazione dei dati personali: procedura di gestione
+  + selezionare misure di sicurezza adeguate
+    - psuedonimizzazione
+    - cifratura
+    - garanzie per la riservatezza
+    - integritá e resilienza dei sistemi
+    - ripristino tempestivo
+    - verifica periodica delle misure adottate
+  + prestare attenzione al consenso e alla sua revoca
+    - considerare se libero, specifico ed informato
+  + interesse vitale
+    - valutare portata e sussistenza
+  + legittimo interesse
+    - valutare con cura ed operare il bilanciamento tra diritti e libertá
+  + considerare i rischi e gli impatti negativi su diritti e libertá dell'interessato
+    - appositi strumenti:
+      + analisi del rischio
+      + valutazione impatto protezione dati DPIA
+
+*** Analisi del rischio
+origine =->= natura =->= gravitá =->= probabilitá =->=
+=->= impatto sui diritti e le libertá degli interessati
+= rischio
+
+- non confondere la gestione dei rischi con le misure di sicurezza
+- non riferire il rischio al titolare ma al soggetto interessato
+
+- Elementi
+  + riservatezza
+  + integritá
+  + disponibilitá
+- Impatto
+  + basso
+    - minori inconvenienti superabile senza problemi
+  + medio
+    - inconvenienti significativi superabili con difficoltá
+  + alto
+    - conseguenze significative superabili ma con difficoltá serie (perdita di fondi, collocazione in liste nere, perdita di impiego)
+  + molto alto
+    - inconvenienti significativi quasi del tutto irreversibili (perdita capacitá lavorativa, danni psicologici a lungo termine, morte)
+- =DPIA= - Valutazione Impatto Preventiva
+  + valutare necessitá e proporzionalitá di un trattamento
+  + rischi allo scopo di approntare misure idonee ad affrontarli
+  + obbligatoria se un trattamento puó presentare rischio elevato per diritti e libertá degli interessati
+    - trattamenti valutativi o di scoring
+    - decisioni automatizzate che producono significativi effetti giuridici o analoghi
+    - monitoraggio sistematico
+    - dati particolari, o strettamente personali
+    - trattamenti su larga scala
+    - combinazione o raffronto di dati
+    - dati relativi ad interessati vulnerabili
+    - utilizzi innovativi o applicazione di nuove soluzioni tecnologiche
+    - trattamenti che in sé impediscono l'esercizio di un diritto o di avvalersi di un servizio
+  + puó essere attuabili facoltativamente
+  + é bene un riesame periodico
+
+*** Registro attivitá di trattamento
+=art. 30 c.5 GDPR=
+Gli obblighi non si applicano alle imprese o organizzazioni con meno di 250 dipendenti,
+a meno che:
+- rischio per i diritti e le libertá dell'interessato
+- trattamento non occasionale
+- trattamento di categorie particolari di dati / dati giudiziari
+
+Su richiesta il titolare o il responsabile mettono il _registro a disposizione dell'autoritá di controllo_
+- Registro Titolare
+  + nome e dati di contatto del titolare/contitolare/rappresentante/responsabile della protezione dei dati
+  + finalitá del trattamento
+  + categorie di interessati/dati personali
+  + categorie di destinatari, compresi destinatari di paesi terzi
+  + trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
+- Registro Responsabile
+  + nome e dati di contatto del responsabile
+  + finalitá del trattamento
+  + categorie di interessati/dati personali
+  + categorie di destinatari, compresi destinatari di paesi terzi
+  + trasferimenti di dati personali verso un paese terzo o organizzazione internazionale
+  + ove possibile, una descrizione generale delle misure di sicurezza tecniche e organizzative
+
+Anche analisi dei ruoli dei soggetti
+- interni, autorizzati
+  + anche designato
+- esterni
+  + figura che tratta dati personali per conto del titolare del trattamento
+  + trattamenti disciplinati da un contratto a norma del diritto dell'Unione (art.28 GDPR)
+- contitolari
+
+*** Misure di Sicurezza
+[[file:20210610191411-security.org][Security]]
+- tecniche per trattamento analogici
+- tecniche per trattamenti informatici
+- organizzative
+
+Principi:
+- minimizzazione
+- pseudonimizzazione
+- anonimizzazione
+- cifratura
+- conservazione
+- qualitá del dato
+
+*** Violazione dei dati personali
+aka =data breach=
+- Valutazione della portata e gravitá
+  + documentare la violazione
+  + se grave notificare entro 72h al Garante
+  + se rischio elevato, comunicarlo agli interessati
+  + misure tecniche/organizzative per porre rimedio
+  + misure che avrebbero potuto ridurre il rischio per diritti e libertá degli interessati
+- Tipologie di data breach
+  + ~confidentiality~ breach
+  + ~availability~ breach
+  + ~integrity~ breach
+- Sanzioni
+  + limitazione provvisoria o definitiva al trattamento
+  + rettifica, cancellazione di dati, limitazione al trattamento
+  + sospensione dei flussi dati verso extra UE o Org. Internazionali
+  + sanzione pecuniaria
+    - 4% fatturato annuo mondiale
+
+** Diritti
+- Interessato, deve essere tutelato
+  + conoscitivi
+    - dir. a ricevere informativa
+    - dir. a richiedere ed ottenere info (accesso)
+    - dir. a ricevere info in caso di violazioni
+  + controllo sul trattamento
+    - dir. al consenso ed autorizzazione del trattamento
+    - dir. alla lim. del trattamento
+    - dir. di revoca del consenso e di opposizione
+  + intervento sui dati
+    - portabilitá
+    - rettifica ed integrazione
+    - cancellazione e oblio
+  + non essere sottoposto a decisione basata unicamente sul trattamento automatizzato, comprese la profilazione che produca effitti giuridice che lo riguardano o che indica in modo analogo significativamente sulla sua persona
+*** Informative
+- Caratteristiche
+  + forma /concisa/, trasparente, intelligibile e /facilmente accessibile/
+  + linguaggio /semplice/ e /chiaro/
+    - soprattutto se destinate a minori
+  + per iscritto o altri mezzi
+  + oralmente
+    - deve essere comprovabile l'aver fornito le informazioni
+
+- Dirette
+  + identitá e _dati di contatto del Titolare_ del Trattamento
+  + dati di contatto del *RPD/DPO* se designato
+  + finalitá del trattamento e base giuridica
+  + categorie destinatari
+  + trasferimento extraUE
+  + periodo di conservazione e criteri di determinazione e della durata del trattamento
+  + diritti degli interessati e modalitá di esercizio
+  + consenso, _diritto di revoca_
+  + contestazione, diretto di proporre reclamo all'autoritá
+  + esistenza di processo decisionale automatizzato e logiche utilizzate
+
+- Tempi
+  + informativa prima del trattamento
+  + se indiretta, entro tempo ragionevole
+  + puó essere omessa:
+    - in caso l'interessato giá disponga delle info
+    - nei casi di esonero
+    - se impossibile
+    - se dati riservati per segreto professionale
+* Proprietá Intellettuale
+Normato nel =Codice della Proprietá industriale (CPI)=
+- Macrocategorie
+  1. diritti di proprietá industriale
+  2. diritti d'autore
+
+- categorie per le opere di ingegno
+  1. _opere dell'ingegno creativo_
+     - arte e cultura
+  2. _segni distintivi_
+     - marchi
+       + segni utilizzati in ambito commerciale per distinguere i prodotti o servizi di un'impresa da quelli di altre imprese
+       + un segno é marchio quando assume la funzione di /strumento di identificazione e differenziazione/
+  3. _innovazioni tecniche/di design_
+     - modelli di utilitá industriale
+
+- distinzione tra:
+  + diritti titolati
+    - originati dalla brevettazione
+  + diritto non titolati
+
+** Legge sul Diritto d'Autore
+=Legge n.633/1941=
+- Protette ai sensi della legge le opere dell'ingegno di /carattere creativo/ [...] letteratura, musica, arti figurative, architettura, teatro, cinematografia [...] /programmi/ (includendo /materiale preparatorio/) per elaboratore, banche dati (non estesa al suo contenuto) [...]
+- _Escluse le idee e i principi_ alla base di qualsiasi elemento di un programma.
+  + sono protette la forme di espressione, l'aspetto formale del codice
+- Il carattere creativo é presente quando dotate di un minimo livello di creativitá, ossia tutte le volte che _l'autore ha potuto esprimere le sue capacitá creative nella realizzazione dell'opera effettuando scelte libere e creative_.
+
+** Marchio
+Non possono essere marchi:
+- denominazioni generiche di prodotti o servizi
+- indicazioni destrittive cui essi si riferiscono
+
+=Art.7 C.P.I.=
+Segno distintivo che consente di
+- distinguere
+- riconoscere
+- associare
+Possono costituire oggetto di registrazione come marchio d'impresa /tutti i segni/:
+- parole
+- disegni
+- lettere
+- cifre
+- suoni
+- forma del prodotto
+- combinazioni
+- tonalitá cromatiche
+
+=Art.12-14=
+Requisiti
+- Capacitá distintiva
+- Novitá
+- Liceitá
+- Rappresentazione
+
+*Distinzioni*:
+- Marchi denominativi
+- Marchi figurativi
+- Marchi figurativi contenenti elementi denominativi
+- Marchi a pattern
+- Marchi di posizione
+- Marchi di colore
+- Marchi sonori
+- Marchi multimediali
+- Marchi individuali
+- Marchi Collettivi
+- Marchi di certificazione
+
+*Depositi*:
+- Italiano =UIBM=
+- Comunitario =EUIPO=
+- Estero
+Tutelato per 10 anni dal deposito, rinnovabile decennio per decennio
+
+I _marchi non registrati_ o di fatto sono _comunque tutelati_, anche se in misura minore
+
+*Uso*:
+- dovere del titolare
+  + uso serio e continuativo del marchio
+  + se no: decadenza
+
+*** Classificazione Internazionale di Nizza
+45 classi, prodotti e servizi
+
+** Brevetto di Invenzione
+Invenzioni, nuove e /implicano un'attivitá inventiva/, sono atte ad avere una applicazione industriale, non sono banali
+- _novitá_
+  + non fa parte dello stato della tecnica
+- _liceitá_
+- attivitá _inventiva_
+  + non banalitá, se per una persona esperta del ramo non risulta evidente dallo stato della tecnica
+- _industrialitá_
+  + applicabili nell'industria
+
+Strumenti giuridici per casi medici e farmaceutici:
+- licenza obbligatoria
+- =espropriazione per pubblica utilitá del brevetto=
+  + bilanciamento tra la tutela della proprietá intelluttuale ed il perseguimento dell'interesse generale
+
+Non sono invenzioni:
+- scoperte scientifiche e metodi matematici
+- principi e metodi per attivitá intellettuale
+- presentazioni di informazioni
+- programmi per elaboratore
+
+** Design
+_l'aspetto dell'intero prodotto o di una sua parte_ puó costituire oggetto di registrazione
+- a condizione siano nuovi e con ~carattere individuale~
+  + suscita nell'utilizzatore informato impressioni diverse da qualsiasi altro modello
+~prodotto~ é qualsiasi oggetto industriale/artigianale, ~prodotto complesso~ é prodotto formato da componenti sostituibili
+
+- un disegno o modello si considera /divulgato/ se
+  + *accessibile al pubblico*
+  + *esposto, messo in commercio*
+- _non lo é se rivelato sotto vincolo di riservatezza_
+
+- un design non registrato é meritevole di tutela al pari di qualsiasi altro design per tre anni
+  + i design protetti rimangono tali fino al sessantesimo anno dopo la morte dell'autore
+
+*** Funzione tecnica
+_Non possono_ costituire oggetto di registrazione caratteristiche di un prodotto unicamente determinate dalla _funzione tecnica del prodotto stesso_
+
+** Opere dell'ingegno di carattere creativo
+Appartengono alla letteratura, musica, arti figurative, architettura, teatro, cinema
+- sono protetti
+  + /i programmi/ per elaboratore come opere letterarie ed artistiche
+    - questo include anche il materiale preparatorio di progettazione
+  + /le banche dati/, per la scelta o la disposizione del materiale
+    - la tutela esclude il contenuto delle BD
+- non sono protetti
+  + /idee e principi/ alla base di un qualsiasi elemento di un programma
+
+Il ~carattere creativo~ é l'unico requisito richiesto per la tutela autorale
+- non implica la novitá assoluta
+- personale e individuale espressione di un'oggettivitá in cui sia riscontrabile un atto creativo
+
+** Diritti Morali
+=Art.20-24 lda=
+Sono inalienabili (non cedibili a terzi), gli eredi possono far valere tali diritti senza limiti di tempo, non hanno scadenza
+- rivendicare la paternitá
+- diritto di opporsi a deformazioni, mutilazioni e modifiche che possano essere di pregiudizio al suo onore o alla sua reputazione
+- diritto al ripensamento
+** Diritti Patrimoniali
+Sono alienabili (cedibili a terzi), durano tutta la vita dell'autore e fino a 70 anni dopo la sua morte, sono trasmissibili per ereditá
+- pubblicare
+- utilizzare economicamente
+- riprodurre
+- trascrivere
+- eseguire, rappresentare in pubblico
+- ottenere compenso
+- comunicare al pubblico l'opera
+  + comprende la messa a disposizione del pubblico
+- distribuire
+- tradurre
+- noleggiare
+** Know-how
+Patrimonio di conoscenze non brevettate o brevettabili, derivanti da esperienze e da prove che sia
+- segreto
+- sostanziale
+- individuato
+
+i =segreti commerciali= sono
+- informazioni aziendali
+- esperienze tecnico-industriali, comprese quelle commerciali
+soggette al legittimo controllo del detentore, ove queste siano:
+- segrete
+- di valore economico
+- sottoposte a misure adeguate a mantenerle segrete
+
+** Concorrenza Sleale
+=Art. 2598 c.c.=
+In caso di plagio, la contraffazione di software contituirebbe giá di per sé atto di concorrenza sleale per violazione dei principi di correttezza professionale
+Compiuta da chiunque:
+- usi nomi o segni distintivi in modo da produrre confusione / imiti i prodotti di un concorrente
+- diffonde notizie sui prodotti o attivitá di un concorrente per determinarne discredito
+- si vale di mezzo non conforme ai principi della correttezza professionale
+
+** Software e tutela
+=def=: un programma per elaboratore é definito come una sequenza d'istruzioni, scritte in un linguaggio di programmazione, per ottenere un determinato risultato e per compiere funzioni in un dispositivo elettronico.
+
+Strumenti di tutela:
+- =Legge n.633/1941=
+- Tutela Brevettuale (quando applicabile)
+- Informazioni segrete (=Art.98-99 CPI=)
+- =Art.2598 c.c.=
+  + [[*Concorrenza Sleale]]
+
+** Casi
+*** DABUS
+Device for the Autonomous Bootstrapping of Unified Sentience
+Caso di brevetti depositati aventi ad oggetto invenzioni di un /machine learning algorithm/
+- l'EPO (European Patent Office) ha respinto le domande in quanto richiesto che l'inventore sia umano
+
+*** Vespa
+=Corte d'appello di Torino=
+Confermata la forma della Vespa come icona simbolo del costume e del design artistico italiano
+- conseguita la notorietá qualificata, da pubblicitá, diffusione sul territorio, riconoscimenti culturali
+
+*** Moon Boots
+=Tribunale di Milano, 2016=
+Riconosce il modello come opera di design industriale
+- interpretazione del valore artistico necessario per il riconoscimento della tutela del diritto d'autore in favore di un novero circoscritto di opere
+  + questo valore va ricavato da indicatori oggettivi:
+    - riconoscimento della qualitá estetica e artistica negli ambienti culturali
+    - esposizione in mostre e musei
+    - pubblicazioni su riviste specializzate
+    - attribuzione di premi
+
+*** Dreamwriter
+Oggetto: articolo scritto da una intelligenza artificiale cinese, pubblicato senza consenso da una societá di tecnologia di Shangai.
+- la difesa affermava che l'articolo non essendo scritto da un essere umano doveva ritenersi di dominio pubblico
+Per =tribunale cinese= é tutelato dal diritto d'autore
+- l'articolo era chiaro, ragionevole e dotato di originalitá
+
+*** Satispay | Bill Sisal Pay
+Conflitto tra App
+- Sisal Pay accusata di plagio
+  + replica profili funzionali e commerciali di Satispay
+- Sisal Pay accusata di condotta parassitaria - concorrenza sleale
+=Tribunale di Milano=
+- riconosce carattere creativo e originale di Satispay
+- rileva che Bill Sisal Pay
+  + é frutto di sviluppo autonomo
+  + dotata di banca dati originale
+Escluso il plagio
+
+Per quanto riguarda la concorrenza sleale
+- condotte scorrette
+  + ripetizione di terminologia inventata dalla concorrente
+  + uso di slide del tutto analoghe alla concorrente nella presentazione della propria app
+Condannata
+
+*** C.Accountant | UNIDATA
+Contraffazione di Software e carattere creativo, in questo caso una banca dati
+=Corte d'Appello di Roma=
+- é emerso che la BD che asseriva di essere violata non presentasse nessun elemento creativo
+- UNIDATA aveva utilizzato la BD C.Accountant solo per maggiore sicurezza degli utente e rapiditá
+
+* Diffamazione e Social Network
+=Decoro=: complesso di valori e atteggiamente ritenuti confacenti a una vita dignitosa, riservata, corretta
+=Onore=: elemento personale che costituisce motivo di soddisfazione, di vanto
+=Reputazione=: considerazione in cui si é tenuti dagli altri, aspetto legato alla comunitá
+- *Ingiuria* (ora depenalizzato)
+  + offesa all'=onore o decoro= di persona ~presente~
+    - aggravante se attribuzione di un fatto determinato
+    - aggravante se in presenza di piú persone
+- *Diffamazione*
+  + comunicazione ~a piú persone~ (anche passaparola, anche in tempi diversi) che offende l'altrui =reputazione=
+    - la persona non puó replicare
+  + aggravante nell'attribuzione di un fatto determinato
+  + aggravante usando qualsiasi messo di pubblicitá (es. Social, Stampa)
+  + reato a forma libera, perfezionato ogni qualvolta venga offesa la reputazione di una determinata persona
+  + reato di danno
+- *Libertá di pensiero*
+  + affinché una manifestazione del pensiero possa essere considerato rientrante nel ~diritto di critica e di cronaca~:
+    - veridicitá
+    - continenza
+    - interesse pubblico
+  + tutti hanno il diritto di manifestare liberamente il proprio pensiero con ogni mezzo di diffusione
+- Facebook
+  + l'utente concede a FB licenze per l'uso dei contenuti condivisi
+    - per contenuti pretetti da diritti di proprietá intellettuale
+    - licenza nono esclusiva, trasferibile, sub-licenziabile, non soggetta a royalty e valida in tutto il mondo
+  + se i file prelevati vengono ripubblicati ex novo al di fuori del social
+    - sono applicabili le norme sul diritto d'autore
+      + non puó essere riprodotto al di fuori del social senza il consenso del suo titolare
+- Diritto all'oblio
+  + al ripensamento, di ritirare l'opera dal commercio in caso di gravi ragioni morali
+    - ragioni etiche, intellettuali, politiche, religiose
+  + anche riguardo a particolari versioni
+  + obbligo di rimborso a chi ha acquistato i diritti
+
+** Casi
+*** Caso Fondazione MAE Torino
+"Fortunato chi parla arabo", campagna promozionale della Fondazione Museo delle Antichitá Egizie di Torino per avvicinare la comunitá araba alle esposizioni.
+- politico su Facebook lancia una polemica con chiamata ad una centralinista del museo
+  + dubbi in merito all'autenticitá del video
+    - conferma della non autenticitá
+- condizioni per il legittimo esercizio della libertá di manifestazione del pensiero, nelle accezioni di diritto di critica e cronaca
+  + cronaca, diritto di narrare fatti
+  + critica, diritto di esprimere opinioni frutto di un'interpretazione necessariamente soggettiva di fatti
+    - non possono pretendersi rigorosamente obbiettive
+    - un'opinione non puó essere vera o falsa
+    - devono essere veri i fatti che ne costituiscono il presupposto
+- ulteriore tratto di illiceitá ravvisato nella condotta
+  + formulazione di insulti dai toni abnormi, finalitá di istigazione
+  + incitamento all'odio (hate speech)
+    - illecito civile, quindi deve esserci il danno, lesione della personalitá
+*** Caso Tripadvisor
+Puó configurare ulteriori reati
+- truffa
+  + con artifizi o raggiri procura a sé o ad altri un ingiusto profitto can altrui danno
+- concorrenza sleale
+
+Recensione negativa su TripAdvisor, cliente deve risarcire lo chef Iginio Massari (danno all'immagine)
+- Diffamazione aggravata
+  + pubblicazione di contenuti sui social rappresenta una comunicazione con piú persone
+
+AGICOM inizialmente aveva ritenuto la piattaforma responsabile del controllo della lecitá dei post
+Successimente é stato giudicato che TripAdvisor non possa materialmente controllare milioni di recensioni
+Inoltre ha l'obbligo di agire a seguito di una segnalazione dell'autoritá competente
+- la piattaforma aveva peraltro agito con liceitá dopo solo due giorni della segnalazione
+*** Caso sito sportivo
+Cassazione rileva un'ipotesi di responsabilitá penale del titolare del sito, in concorso di persone con l'autore del commento diffamatorio, avendo il gestore preso attivamente le difese del commento diffamatorio,
+non si spinge la cassazione ad affermare una responsabilitá generale dei siti per i commenti ivi pubblicati
+*** Caso Parlamentare Autriaca dei Verdi
+Richiesta rimozione del commento diffamatori di un utente
+- FB ha agito solo dopo che questa vinse il primo grado
+La corte di giustizia é chiamata a chiarire le responsabilitá del prestatore di hosting previa ingiunzione di un giudice di uno Stato membro
+a. obbligato a rimuovere le informazioni da esso memorizzate il cui contenuto sia =identico= o =equivalente= precedentemente  dichiarata illecita o di bloccore l'accesso alle medesime
+b. il cui contenuto sia equivalente
+   + purché la sorveglianza e la ricerca delle informazione siano limitate a informazioni che veicolano un messaggio ... invariato
+   + purché sia possibile effettuare valutazione autonoma di tale contenuto
+c. rimuovere li informazioni oggetto ... o bloccarne l'accesso a =livello mondiale=, nell'ambito del diritto internazionale pertinente
+   + provvedimenti permessi pro futuro (~Art.18~)
+     - consentano di prendere rapidamente provvedimenti anche provvisori, atti a porre fine alle violazioni e a impedire ulteriori danni agli interessi in causa
+* Cyberbullismo & Revenge Porn
+~Questi sono fenomeni recenti e caratterizzati dall'impiego errato ed illecito degli strumenti informatici~
+** Fonte
+=Legge 71/2017= tutela i minori per prevenzione e contrasto del cyberbullismo
+- odio online (hate speech)
+- bullismo tradizionale
+- caratteristiche peculiari
+  + calo di rendita
+  + problemi di salute
+    - solitudine
+    - suicidio
+    - stress
+  + social
+    - vittima piú esposta
+    - bullo si sente protetto dalla anonimitá o apparente tale
+La legge consente ai minori di chiedere al titolare del trattamento o ai gestori dei siti/social media, rispetto ai contenuti che ritergono atti di cyberbullismo:
+- oscuramento
+- rimozione
+- blocco
+
+** Classificazioni
+*Tipologie*:
+- flaming
+- harassment
+- denigration
+- impersonification
+- outing and trickery
+- exclusion
+- cyberstalking
+- cyberbashing
+
+*Tipologie connesse*:
+- hate speech
+- cyberstalking
+- cyberharassment
+- sexting
+- revenge porn
+  + deep nude
+  + _Garante puó richiedere la cancellazione_
+    - canale sperimentale per segnalazioni su Facebook/Instagram
+      + programma pilota
+        - lo scopo é quello di tutelare le persone ed escludere determinati contenuti dalle piattaforme. Si colloca nell'ambito dei propositi degli Standard della comunitá e delle normative interne, per consentire libertá di espressione, ma al contempo offrire un ambiente sicuro ed accogliente per tutti
+
+** Proprietá Intellettuale & Social
+Condivisione prevista dalle clausole contrattuali del social
+Autorizzazioni concesse dall'utente a FB
+- all'uso dei contenuti creati e condivisi dall'utente
+- l'utente deve concedere autorizzazioni di legge (=licenze=) per l'uso dei contenuti soggetti a dirittti d'autore
+  + una licenza _non esclusiva, trasferibile, sub-licenziabile, non soggetta a royalty e valida in tutto il mondo_
+    - questo autorizza FB a memorizzare, copiare e condividere il materiale pubblicato
+      + la condivisione interna all'interno di FB é sempre lecita, questo per questo permesso implicito
+
+Un contenuto tratto da un Social e riprodotto al di fuori di esso deve avere il consenso del titolare
+- =art. 12 Legge sul diritto d'autore=
+
+Se é l'utente ad usare contenuti coperti da diritti di proprietá intellettuale di cui FB é titolare, FB si riserva tutti i diritti relativi a tali contenuti
+
+La piattaforma avverte che il contenuto postato dall'utente é di sua sola responsabilitá, FB non si ritiene responsabile del contenuto protetto.
+La piattaforma ha responsabilitá in capo al ruolo di ISP
+
+*** Licenza d'uso
+_Contratto_ tra parti in cui il titolare di una privativa _consente ad un terzo di sfruttare dal punto di vista patrimoniale la sua opera dell'ingegno_
+- oggetto del contratto solo i diritti patrimoniali
+
+*** Diritto all'oblio / al ripensamento
+L'utente puó eliminare i file complessivamente ma
+- potrebbero continuare a esistere in altri luoghi all'interno dei sistemi FB se
+  + l'eliminazione immediata non sia possibile per limitazioni tecniche
+  + siano stati utilizzati da altri utenti nel rispetto della licenza e non siano stati eliminati
+
+Utenti Developer:
+Informazioni, dati e altri contenuti resi disponibili dall'utente o per suo conto, in relazione all piattaforma per scopi aziendali in relazione all'utilizzo, fornitura, migliramento della piattaforma o di qualsiasi altro prodotto FB
+- la licenza resta in vigore anche se l'utente cessa l'utilizzo della Piattaforma
+
+Il nome, marchi registrati e logo dell'utente sono soggetti a licenza, che resta in vigore per i materiali e le istanze esistenti, anche nel caso in cui l'utente cessi l'utilizzo della Piattaforma.
+** Casi
+*** Cantone
+Dopo la diffusione incontrollata e incontrollabile dei contenuti:
+- la vittima ha ottenuto un provvedimento d'ungenza con il quale =eliminare i contenuti=
+- negato invece il diritto all'oblio
+
+FB si era opposta, l'ordinanza del Tribunale di Napoli Nord ha rappresentato precedente per tutti i casi di *revenge porn* e ha chiarito il ruolo e i compiti degli hosting provider:
+- ritenuta sussistente la responsabilitá del provider, venuto a conoscenza del fatto che l'informazione fosse illecita e non si sia attivato per impedire l'ulteriore diffusione della stessa
+- non é necessaria l'ordine di un autoritá, =sufficiente la segnalazione dell'utente=
+- non sarebbe ragionevole attendere un ordine dell'autoritá per intervenire, quando gli interessi in gioco sono diritti della personalitá. Si rischierebbe di attivarsi una volta che questi siano stati irrimediabilmente compromessi e non piú suscettibili di reintegrazione.
+*** FB pratiche ingannevole
+AGCOM vs FB ireland e casa madre
+- pratica ingannevole
+- pratica scorretta
+  + aggressiva: /opt-in/ e /opt-out/
+    - preselezione che costringe l'utente all'opt-out
+Prima =Tar del Lazio= poi =Consiglio di Stato=
+
+
+=pratica scorretta= secondo il Codice del Consumo:
+- contraria alla diligenza professionale
+- falso o ionea a falsare il comportamente economico del consumatore medio
+
+Mentre il social informa l'utente della gratuitá dell'iscrizione il social non informa che i dati ceduti vengano usati a fini commerciali (es. =profilazione=)
+- 98% del fatturato deriva dalla pubblicitá online basata sulla profilazione degli utenti
+
+FB contesta la ricostruzione ritenendo che la cessione dei dati non abbia natura corrispettiva, l'utente puó cancellarli in ogni momento, sostiene che i dati personali rappresentano diritti fondamentali della persona che non possono essere venduti o scambiati: questo per dimostrare l'inapplicabilitá delle norme del Codice del Consumo
+- ritiene che il caso debba essere disciplinato dal =GDPR=
+
+Ma secondo il Consiglio di Stato _l'ambito operativo della disciplina speciale_, costituita dal GDPR, _non é assoluto e non esclude l'applicazione di altre discipline_
+- GDPR e Codice del Consumo presentano ambiti operativi differenti e non contrastanti
+
+Il Consiglio di Stato respinge sia il ricorso di FB che del AGCOM
+- confermata la =sanzione pecuniaria di 5 milioni di euro= per =pratica ingannevole=
+- annullata la sanzione di 5 milioni di euro per pratiga aggressiva, ritenuta insussistente

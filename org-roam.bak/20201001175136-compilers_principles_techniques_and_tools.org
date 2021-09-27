@@ -1,0 +1,29 @@
+#+title: Compilers: Principles Techniques and Tools
+#+author: Aho, Lam, Sethi, Ullman
+
+A Compiler reads a program in a Source Language and translates it in a target language
+[[file:~/Pictures/screenshots/compiler.png]]
+- Compiler
+    translates
+- Linker
+    resolves external mamory addresses
+- Loader
+    puts together object files into memory
+
+* Compiler
+[[file:~/Pictures/screenshots/compilerProcess.png]]
+
+** Analysis
+
+*** Lexical analysis | Scanning
+
+The =Lexer= groups character, the =Lexical Analyzer= outputs Tokens for each Lexem. The token are then used by the =Syntax Analyzer= to get information from the =symbol-table=
+**** Lexemes
+Meaningful groups of characters
+
+**** Tokens
+<token-name,attribute-value>
+
+
+
+** Synthesis

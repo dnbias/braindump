@@ -1,0 +1,3 @@
+#+title: Simon Thompson
+[[file:20210527192825-authors.org][$authors]]
+[[file:20210921124127-haskell_the_craft_of_functional_programming.org][Haskell: the Craft of Functional Programming]]

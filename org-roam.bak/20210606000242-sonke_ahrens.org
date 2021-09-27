@@ -1,0 +1,4 @@
+#+title: Sonke Ahrens
+[[file:20210527192825-authors.org][$authors]]
+
+- [[file:20210605235823-how_to_take_smart_notes.org][How to Take Smart Notes]]

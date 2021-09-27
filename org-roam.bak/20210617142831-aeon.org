@@ -1,0 +1,2 @@
+#+title: Aeon
+[[file:20210604133425-blog.org][$blog]]: https://aeon.co/

@@ -1,0 +1,100 @@
+#+title: Ruby
+* Sources & Cool stuff
+- [[https://www.theodinproject.com/paths/full-stack-ruby-on-rails?][TheOdinProject]]
+- [[https://ruby-doc.org/][Ruby Docs]]
+- [[http://ruby.bastardsbook.com/chapters][The Bastards Book of Ruby]]
+- [[https://replit.com/languages/ruby][repl Online Interpreter]]
+* Naming conventions
+  a_variable
+* Variables
+  > [[http://ruby.bastardsbook.com/chapters/variables/][The Bastards Book of Ruby]]
+  #+begin_src ruby
+  $global_variables
+  @@class_variables
+  #+end_src
+* I/O
+  - ~puts~
+    - inserts a ~\n~
+  - ~print~
+  - ~gets~
+    - ~.chomp~ to trim separators
+* Conditionals & Flow
+  The only ~false~ values are:
+  - ~nil~
+  - ~false~
+  Everything else is ~true~
+  So:
+  - "" is ~true~
+  - 0  is ~true~
+
+  For _boolean evaluation_ there are classic operators and *the spaceship operator*:
+  - ~<=>~ returns
+    - -1 if the value on the left is less than the value on the right
+    - 0 if ... left is equal to ... right
+    - 1 if ... left is greater than ... right
+  Used for sorting.
+
+  For _flow control_ there are:
+  - if ... else
+  - elifs
+  - case ... when ... then
+  - unless ... else
+  - cond ? if_true : if_false
+
+  - Loops
+    > [[https://skorks.com/2009/09/a-wealth-of-ruby-loops-and-iterators/][Article on Skorks About Loops and Iterators]]
+    - ~while~
+    - ~for~
+    - ~loop~
+    - ~until~
+    - ~.times~
+    - ~.upto~
+    - ~.downto~
+  - Arrays
+    > [[https://ruby-doc.org/core-3.0.0/Array.html][docs API]]
+    > [[https://zetcode.com/lang/rubytutorial/arrays/][ZetCode tutorial]]
+
+    - ~.last(n)~
+    - ~.first(n)~
+    - ~.push~
+    - ~.pop~
+    - ~<<~
+      - shovel operator, like ~push~
+    - ~.shift~
+      - removes the first element and returns
+    - ~.unshift~
+      - add elements at the beginning
+    - ~.concat()~
+      - works the same as +, also - can subtract any element from an array
+
+    To get a list of available methods run:
+    #+begin_src ruby
+        num_array.methods
+    #+end_src
+
+    * Hashes
+      Similar to JS' objects and Python's dictionaries.
+      Hashes are similar to arrays but in place of indexes to access the values stored it uses =keys=.
+      Hashes depend solely an keys whereas arrays are highly dependant an order.
+      #+begin_src ruby
+        hash = {
+          "score" => 11,
+          "the array" => [1, 2, 3]
+        }
+
+        # Symbol's concise syntax
+        hash2 = {
+          symbol1: "hello",
+          symbol2: "world"
+        }
+        hash2[:symbol1]
+        another_hash = Hash.new
+
+        hash["score"] #=> 11
+      #+end_src
+      Using symbols instead of strings as keys is more efficient and readable.
+      - ~.fetch(key, [default value])~
+        - instead of silently returning ~nil~ it raises an error if the key is not in the hash
+      - ~.delete(key)~
+        - also returns the value of the key-value pair
+      - ~.merge(second_hash)~

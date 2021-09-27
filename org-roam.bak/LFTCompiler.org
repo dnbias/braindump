@@ -1,0 +1,3 @@
+#+TITLE: Lft Compiler
+[[file:20201205215419-project.org][$project]]
+[[file:LFT.org][Linguaggi Formali e Traduttori]]
