@@ -27,7 +27,7 @@ Prof: Luca Padovani
 * Teoria
 ** Introduzione
 Il paradigma funzionale mette le funzioni allo stesso livello delle variabili
-- e' possibile definire funzioni che trasformano funzioni, che restituiscono funzioni, che utilizzano funzioni in input
+- é possibile definire funzioni che trasformano funzioni, che restituiscono funzioni, che utilizzano funzioni in input
 *** Paradigmi e Storia
 - imperativo
   + C, Pascal
@@ -83,6 +83,67 @@ Negli anni:
   + Java
   + PHP
   + JavaScript
+** \lambda-calcolo
+Ci si restringe sull'essenza della programmazione in linguaggio funzionale
+- si distilla un piccolo linguaggio facilmente studiabile
+
+Differenze tra /linguaggio/ e /calcolo/
+- il calcolo é confluente
+  + il risultato non dipende dalle azioni intraprese per raggiungerlo
+- non é deterministico
+
+*** Concetti
+- processo di valutazione / =riduzione=
+- funzioni con singolo argomento / =currificate= (Haskell Curry)
+  + funzioni di ordine superiore
+    * accettano come argomenti funzioni / restituiscono altre funzioni
+  + agendo per specializzazioni
+- linguaggi
+  + =eager=
+  + =lazy=
+- Sistema di =Tipi= / Algoritmo di =Inferenza=
+*** Funzioni
+**** Punto di vista estensionale
+$f = \{(0,1),(1,2),(2,5),\cdots\}$
+**** Punto di vista intensionale
+$f(x) = x^{2} + 1$
+*** Sintassi
+- Variabili
+  + $Var = \{x,y,z.\cdots\}$
+    * infinito
+- Sintassi
+  + $M,N ::= x \mid (\lambda x.M) \mid (M N)$
+- Terminologia
+  + $(\lambda x.M)$ astrazione o funzione con argomento $x$ e corpo $M$
+  + $(M N)$ applicazione della funzione $M$ all'argomento $N$
+- Esempi
+  + $(\lambda x.x)$ - Funzione Identitá
+  + $((\lambda x.(xx))(\lambda y.(yy)))$ - loop infinito
+  + $(\lambda f.(\lambda x.(f(f x))))$
+
+**** Convenzioni Sintattiche
+- parentesi esterne omesse
+- corpo delle astrazioni si estende a destra
+  - a destra del punto
+- l'applicazione é associativa a sinistra
+**** Variabili Libere e Legate
+- $x$ in $M$ é legata se compare in sotto-termine
+- diciamo che un'occorrenza di $x$ in $M$ é libera altrimenti
+Esempi
+- $\lambda x.\: x$
+  + nessuna variabile libera => termine chiuso
+- $x \: y \: z$
+  + tutte le variabili sono libere
+- $(\lambda x.\: x \: y) \: x$
+  + $x$ sia legata che libera
+***** Sostituzione
+- $M\{N/y\}$ é ottenuta sostituendo le occorrenze libere di $y$ in $M$ con $N$
+- evitare la cattura delle variabili libere di $N$ per non alterarne il senso
+  + le variabili libere sono definite esternamente allo scope della astrazione, non posso modificarle
+*** Relazioni di Equivalenza
+**** \alpha-conversione
+$y \notin fv(M) \implies \lambda x.M \iff_{\alpha} \lambda y.M\{y/x\}$
+* Laboratorio
 ** Haskel
 *** Storia
 - $\lambda$ calcolo
