@@ -165,6 +165,34 @@ Definiscono:
 - RFC: Request for comments
 - IETF: Internet Engineering Task Force
   + ente che valuta e accetta standard di comunicazione
+**** Packet Delay
+:PROPERTIES:
+:ID:       21e709d3-7471-45e0-9194-16df2ecb30f1
+:END:
+$d_{nodal} = d_{proc} + d_{queue} + d_{trans} + d_{prop}$
+- processing
+- queue
+  + dipende dalla congestione
+- transmission
+  + dipende dalla velocitá
+  + $L/R$
+- propagation
+  + $d/s$
+  + $d$: lunghezza del collegamento
+  + $s$: velocitá di propagazione nel medium
+    + $2e8$ m/sec
+Se il buffer é pieno il packetto é perso (/packet drop/)
+$\frac{L\cdot a}{R}$ = traffic intensity
+$a$ é la quantitá media di pacchetti in entrata
+quando questa frazione supera 1 i bit in entrata superano la capacitá trasmissiva, i buffer si vanno a riempire
+***** Packet Loss
+Il buffer (coda) é piena, un pacchetto é perso, viene comunicato al router precedente/alla sorgente/viene ignorato
+**** Throughput
+due casi:
+1. $R_{S}<R_{C}$
+2. $R_{S}>R_{C}$
+Throughput, la quantitá minima
+- compreso il /bottlenoek link/
 *** Servizi
 Internet puó essere definito come infrastruttura di servizio ad applicativi
 - che ne hanno bisogno per comunicare tra loro
@@ -179,8 +207,178 @@ Ma la divisione non é netta, ogni Computer puó essere entrambi
 L'ISP fornisce una certa bandwidth
 - che dipende anche dal proprio PC, che potrebbe fare bottleneck
 
-** Livello Applicativo
-** Livello di Trasporto
-** Livello di Rete
-** Livello di Collegamento
+*** Storia
+- 1961: Kleinrock
+  + queuing theory dimostra l'efficacia del packet-switching
+- 1964: Baran
+  + packet-switching in reti militari
+- 1967: ARPAnet
+  + dell'Advanced Research Project Agency
+- 1969
+  + attivazione primo nodo ARPAnet
+- 1972
+  + prima vera rete ARPAnet, posta elettronica
+- 1970: ALOHAnet
+- 1974: Cerf and Kahn
+  + architettura di interconnessione delle reti
+  + principi alla base dell'architettura odierna
+    - minimalismo
+    - autonomia
+    - controllo decentralizzato
+    - best effort service model
+    - dispositivi stateless
+- 1976: Xorox
+  + Ethernet
+- 1979: ARPAnet ha 200 nodi
+
+Proliferano Reti e Protocolli:
+- 1983: TCP/IP
+- 1982: smtp e-mail
+- 1983: DNS
+- 1985: ftp
+- 1988: controllo congestioni TCP
+
+Commercializzazione e World Wide Web
+- 1990~: ARPAnet decommisionata
+- 1990~: Web
+  - Berners-Lee
+    - HTTP, HTML
+- 1994: Mosaic, poi Netscape
+
+** Livelli
+*** Livello Applicativo
+Applicazioni su terminali, permettono uno sviluppo e propagaziose software molto veloce
+- il software non si occupa dei dettagli implementativi della comunicazione web
+**** Concetti delle Implementazioni
+Esistono strutture diverse per le applicazioni
+- client-server
+  + server - attende richieste
+    * host sempre acceso
+    * IP permanente
+    * data centers
+  + client - invia richieste
+    * comunicano con il server
+    * puó essere connesso periodicamente
+    * puó avere IP dinamico
+    * non comunicano direttamente tra loro
+- peer-to-peer
+  + non esiste un server sempre attivo
+  + i peer possono comunicare direttamente
+  + i peer richiedono servizio ad altri peer che li fornincono
+  + auto-scalabile
+
+I processi inviano/ricevono messaggi attraverso i =socket=
+- analogo ad una porta
+- il percoso e il trasporto é lasciato ai livelli sottostanti
+
+Per ricevere i messaggi i processi devono avere un _identificatore_
+- l'host ha un IP unico, ma non basta
+  + possono esserci tanti processi in esecuzione
+- IP-host + port number
+  + HTTP server: 80
+  + mail servel: 25
+
+**** Protocolli di Livello Applicativo
+Definiscono
+- tipo dei messaggi
+- sintassi dei messaggi
+- semantica dei messaggi
+- regole per quando si inviano messaggi e si risponde
+
+Due tipologia
+- open protocols
+  - RFC liberamente consultabili
+  - permettono interoperabilitá
+- proprietary protocols
+
+***** Integritá dati
+Alcune applicazioni non necessitano dati al 100% corretti
+Altre necessitano della completa integritá dei dati
+
+***** Tempi di comunicazione
+Alcune applicazioni necessitano una certa temporizzazione, delay basso
+
+***** Throughput
+Alcune applicazioni necessitano un minimo throughput da mantenere per funzionare
+- multimedia
+- a differenza di file-transfer
+  + elastic app
+
+***** Sicurezza
+Criptazione dei dati, integritá dei dati
+
+***** TCP
+- reliable transport
+- flow control
+- congestion control
+- no
+  + timing
+  + security
+  + minimum throughput
+- connection-oriented
+***** UDP
+- unreliable data transfer
+- no
+  + reliability
+  + flow control
+  + timing
+  + security
+
+Non fornisce servizi particolari, é utilizzato per esempio da applicazioni multimediali
+- permette di inviare dati alla stesso velocitá a cui il mittente li puó inviare
+
+***** HTTP
+=HyperText Transfer Protocol=
+- pagine = insieme di oggetti
+- pagine che hanno riferimenti ad altri oggetti
+  - identificati URL
+
+- client: browser
+- server: web server
+
+Utilizzando TCP
+- lato client inizializza connessione creando socket su client e connettendosi alla porta 80 sul server
+
+HTTP é /stateless/
+- non mantiene informazioni riguardo le passate connessioni
+- questo perché un protocollo con stato é molto complesso
+
+- /non-persistent/
+  + al massimo 1 oggetto viene inviato su TCP
+    + poi si chiude
+  + si deve aprire una nuova connessione per ogni UL/DL
+  + =RTT= tempo di andata e ritorno per dati dal client al server
+    + puó essere calcolato dal client con questa definizione
+
+- /persistent/
+  + viene mantenuta la stessa connessione TCP per un periodo
+  + puó velocizzare leggermente la comunicazione
+
+
+*** Livello di Trasporto
+*** Livello di Rete
+*** Livello di Collegamento
+*** Incapsulamento
+Ogni livello che si discende si aggiunge una intestazione
+** Sicurezza
+Non é stata pensata inizialmente con la sicurezza in mente
+- facilitare la comunicazione tra ricercatori
+  + con trasparenza
+
+Malware:
+- virus
+- worm
+- spyware
+- botnet
+
+Attacchi DoS
+- Denial of Service
+- attaccanti rendono le risorse sul server non disponibili per il traffico reale con moltissime richieste
+
+Packet Sniffing
+- con l'accesso ai mezzi trasmissivi (spesso condivisi)
+- intercettazione dei pacchetti trasferiti nel percorso compromesso
+
+IP spoofing
+- invio di pacchetti con IP falso, rubato
 ** Reti Wireless

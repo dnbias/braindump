@@ -45,6 +45,26 @@ Secondo _Alan Kay (Smalltalk)_
 - part-of hierarchy
 **** ereditarieta'
 **** polimorfismo
+***** Binding Dinamico
+:PROPERTIES:
+:ID:       c893d363-1f4f-4de6-bbe9-7e5157caec8d
+:END:
+_Binding statico_, all'atto della compilazione
+_Binding dinamico_, l'esecutore puó controllare i tipi degli oggetti, e decidere a runtime il body del metodo da eseguire
+- esegue l'implementazione piú specifica possibile
+- solo sui metodi, le variabili non vanno a fare overriding
+
+Estremamente modulare e scalabile, meccanismo di delaga
+***** Classi Astratte
+Utilizzate come interfaccia comune e pubblica, la sottoclasse andrá a implementare i dettagli
+***** Interfacce
+Non possono avere metodi non astratti
+- non sono soggette all'ereditarietá singola, una classe puó implementare tutte le interfacce di cui ha bisogro
+***** Overloading
+Definizione di firma alternativa di metodo esistente
+A tempo _statico_ viene scelta la firma, é bloccante e se ci sono eventuali overloading vengono persi
+- a runtime si discende solamente la catena di ereditarietá
+**** reflection
 ** Programmazione ad Eventi
 *** Event-Driven Programming
 *** Organizzazione e uso GUI

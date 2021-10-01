@@ -88,8 +88,9 @@ Ci si restringe sull'essenza della programmazione in linguaggio funzionale
 - si distilla un piccolo linguaggio facilmente studiabile
 
 Differenze tra /linguaggio/ e /calcolo/
-- il calcolo é confluente
-  + il risultato non dipende dalle azioni intraprese per raggiungerlo
+- il calcolo é *confluente*
+  + il risultato non dipende dall'ordine delle azioni intraprese per raggiungerlo
+    + in quanto le espressioni non possono modificare la memoria, non c'é memoria
 - non é deterministico
 
 *** Concetti
@@ -142,19 +143,36 @@ Esempi
   + le variabili libere sono definite esternamente allo scope della astrazione, non posso modificarle
 *** Relazioni di Equivalenza
 **** \alpha-conversione
-$y \notin fv(M) \implies \lambda x.M \iff_{\alpha} \lambda y.M\{y/x\}$
+$y \notin fv(M) \implies \lambda x.M \: \iff_{\alpha}\: \lambda y.M\{y/x\}$
+congruenza tra \lambda-espressioni tali che hanno lo stesso corpo, solo con nome dell'argomento diverso
+**** \beta-riduzione
+_Applicare_ una funzione $\lambda x.M$ a un argomento $N$ significa valutare il corpo in cui ogni occorrenza libera dell'argomento $x$ é sostituita con $N$.
+$(\lambda x.M) \: N \rightarrow_{\beta}M\{N/x\}$
+- $M \rightarrow_{\beta}M^{'} \implies M \: N \rightarrow_{\beta}M^{'}\:N$
+
+Da =redex= (reducible expression) a =ridotto=
+- $(\lambda x.M) \: N$
+- $M\{N/x\}$
+**** \eta-riduzione
+$x \notin fv(M) \implies \lambda x.M \: x \rightarrow_{\eta}M$
+- $M \rightarrow_{\eta}M^{'} \implies M\: N \rightarrow_{\eta}M^{'}\: N$
+- $M \rightarrow_{\eta}M^{'} \implies N\: M \rightarrow_{\eta}N \: M^{'}$
+- $M \rightarrow_{\eta}M^{'} \implies \lambda x.M \rightarrow_{\eta} \lambda x.M^{'}$
+**** Convertibilitá
+$N\rightarrow M \land M\rightarrow N  \implies M \leftrightarrow N$
+- $\Leftrightarrow$ indica la chiusura riflessiva e transitiva di $\leftrightarrow$
 * Laboratorio
 ** Haskel
 *** Storia
 - $\lambda$ calcolo
   + Alonzo Church
-    - calcolare con le funzioni, cosi' come con in numeri
-    - tutto e' una funzione con 1 IN e 1 OUT
+    - calcolare con le funzioni, cosí come con in numeri
+    - tutto é una funzione con 1 IN e 1 OUT
       + funzioni anonime
-        - identita'
+        - identitá
           + $\lambda x,x$
   + Haskell Curry
-    - currying
+    - curring
 - LISP - anni '50
   + John McCarthy
     - elaborazione informazione non-numerica/simbolica
