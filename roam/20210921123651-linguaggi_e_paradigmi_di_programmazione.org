@@ -228,3 +228,63 @@ public static long counter(InputStream stream) {
         .count();
 }
 #+end_src
+*** Caratteristiche Linguaggio
+**** Guardie
+Introducono delle condizioni, alternativa al piú operazionale =if...then...else=
+#+begin_src haskell
+assoluto :: Int -> Int
+assoluto n | n >= 0 = n
+           | n < 0  = negate n
+#+end_src
+Nel caso che i casi siano _esaustivi_ l'ultimo identificatore puó essere =otherwise=
+L'ordine delle guardie é significativo, sará scelta la prima guardia il cui valore sia valutato =True=
+**** Ricorsione
+Non esistono /loop/ non esistendo la memoria, e quindi variabili su cui fare iterazione.e
+É quindi necessario utilizzare le definizioni ricorsive:
+#+begin_src haskell
+fattoriale :: Int -> Int
+fattoriale n | n == 0    = 1 -- supponendo n >= 0
+             | otherwise = n * fattoriale (n - 1)
+#+end_src
+
+Si possono specificare piú equazioni, semplificando il codice
+#+begin_src haskell
+fattoriale :: Int -> Int
+fattoriale 0 = 1 -- lo 0 fa riferimento al parametro utilizzato
+fattoriale n = n * fattoriale (n - 1)
+#+end_src
+
+Altro esempio classico, la sequenza di fibonacci
+#+begin_src haskell
+fibonacci :: Int -> Int
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
+#+end_src
+Anche usando questa forma Haskell valuta le funzioni dall'alto verso il basso, nell'ordine.
+- i pattern piú generali vanno piú in basso, =Haskell= in caso emette un ~Warning~ riguardo la ridondanza dei match non raggiungibili
+*** Funzioni Anonime
+_\lambda-Astrazioni_
+#+begin_src haskell
+(\x -> x+1) 2
+(\x -> x >= 0) 2
+#+end_src
+In Haskell, si dice *sezione* un'espressione racchiusa tra parentesi in cui un operatore binario viene applicato a uno solo dei suoi due argomenti.
+#+begin_src haskell
+(1 +)
+('mod' 2)
+#+end_src
+*** Currying
+#+begin_src haskell
+addizione :: Int -> Int -> Int
+addizione x y = x + y
+addizione = \x -> \y -> x + y -- espandendo in lambda astrazioni é piú chiaro il tipo
+#+end_src
+Da qui emerge l'associativitá a destra del tipo freccia:
+#+begin_src haskell
+(Int -> (Int -> Int))
+#+end_src
+Questo é speculare alla composizione in lambda calcolo
+
+_Applicazione parziale_: Il fatto che tutte le funzioni sono ad un unico argomento permette di crearne *specializzazioni* applicandole a meno argomenti del necessario.
+- posso applicare solo parzialmente funzioni se mi puó essere utile
