@@ -64,7 +64,34 @@ Non possono avere metodi non astratti
 Definizione di firma alternativa di metodo esistente
 A tempo _statico_ viene scelta la firma, é bloccante e se ci sono eventuali overloading vengono persi
 - a runtime si discende solamente la catena di ereditarietá
+***** Overriding
+Diverso dall'Overloading in quanto le firme sono le stesse
 **** reflection
+*** Tipi Generici
+Introdotti per scrivere codice generico, applicabile a piú tipi di dati
+- *type checking statico*
+- il compilatore previa compatibilitá tra tipo attuale e generico, sostituisce il tipo attuale a E
+  + /erasure/
+- vincoli/restrizioni sul tipo T: upperbound al tipo parametrico
+  + =extends Comparable <T>.=
+  + =extends= a una singola classe
+    * ma multiple inferfacce
+**** Raw types
+Utilizzando Object direttamente, in questo modo peró il compilatore non puó controllare la correttezza dei tipi
+**** Collezioni
+Vincoli sintattici per evitare errori a Runtime che non sarebbero rilevati:
+- quindi le =Collection= sono controllate per Nome del tipo, non viene considerata l'ereditarietá
+  + si risolve utilizzando l'upcasting
+Per risolvere e definire una =Collection= di qualsiasi cosa
+- =Collection<?>.=
+- si utilizza la /wildcard/
+  + per restringerlo si utilizza anche in questo caso =extends=
+*** Interfacce
+- Collection
+  + Add()
+- Iterator
+  + hasNext()
+  + next()
 ** Programmazione ad Eventi
 *** Event-Driven Programming
 *** Organizzazione e uso GUI

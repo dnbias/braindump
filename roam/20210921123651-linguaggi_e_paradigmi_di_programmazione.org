@@ -161,6 +161,56 @@ $x \notin fv(M) \implies \lambda x.M \: x \rightarrow_{\eta}M$
 **** Convertibilitá
 $N\rightarrow M \land M\rightarrow N  \implies M \leftrightarrow N$
 - $\Leftrightarrow$ indica la chiusura riflessiva e transitiva di $\leftrightarrow$
+**** Confluenza
+*Teorema*:
+- $M \Rightarrow N_{1} \land M \Rightarrow N_{2} \implies \exists N \mid N_{1} \Rightarrow N \land N_{2} \Rightarrow N$
+- l'ordine delle riduzioni del \beta-redex non importa
+- il teorema si generalizza in $n$ $N$
+Questo risultato é importante in quanto non risulta per nessun altro linguaggio di programmazione
+- in quanto la memoria puó essere modificata dall'esecuzione, l'ordine diventa fondamentale
+  - al contrario del lambda calcolo che é un /linguaggio puro/
+    - come =Haskell=, nella sua versione piú pura
+- /Es/: l'assegnamento é una espressione mista, sia espressione sia un comando
+***** Forma Normale
+Un =M= é in forma normale se non puó piú essere ridotto, ovvero:
+- $\nexists N \mid M \rightarrow N \implies M \nrightarrow$
+Un termine in forma normale ci indica che _la computazione é finita_
+***** Corollario
+La forma normale di =M=, se esiste, é unica (a meno di \alpha-conversioni).
+**** Strategie di Riduzione
+In alcuni casi é piú efficiente l'uno, in altri l'altro
+***** Ordine Applicativo
+redex piú a sinistra e piú interno, *linguaggi zelanti*
+=(\lambda x.x)((\lambda y.y)z) -> (\lambda x.x)z -> z=
+=.      ----------     --------=
+- applicare una funzione a un argomento signifira prima valutare l'argomento poi sostituire nel corpo della funzione
+***** Ordine Normale
+redex piú a sinistra e piú esterno, *linguaggi pigri*
+=(\lambda x.x)((\lambda y.y)z) -> (\lambda y.y)z -> z=
+=-----------------     --------=
+- applicare una funzione a un argomento significa sostituire l'argomento nel corpo della funzione
+  + si posticipa la valutazione degli argomenti fino a che non é strettamente necessaria
+
+Ottimizzabile in caso di argomenti valutati piú volte
+- si memorizza il risultato parziale, in modo da non doverlo ricalcolare multiple volte
+  + questo é sicuro se il linguaggio é puro
+  + molto delicato da utilizzare in contesti diversi
+  + simile alla tecnica di /memoizzazione/
+
+***** Teorema Normalizzazione
+Se $M \Leftrightarrow N$ é normale, allora c'é una riduzione in ordine nomale $M \Rightarrow N$
+- se la forma normale di un'espressione esiste, la posso trovare riducendo l'espressione in ordine normale
+  + in un numero finito di passi
+- questa proprietá non vale per l'ordine applicativo
+  + potrebbe finire in un loop nel cercare di risolvere subito gli argomenti
+*** Programmare nel \lambda-calcolo
+**** Booleani
+=TRUE = \lambda x.\lambda y.x=
+=FALSE = \lambda x.\lambda y.y=
+=IF = \lambda z.z=
+=AND = \lambda x.\lambda y.IF x y FALSE=
+=OR = \lambda x.\lambda y.IF x TRUE y=
+=NOT = \lambda x.\lambda y.IF x FALSE TRUE=
 * Laboratorio
 ** Haskel
 *** Storia

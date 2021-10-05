@@ -124,6 +124,9 @@ Packet Transmission Delay = $\frac{L}{R}$
 Packet Switching preferito perché permette a piú utenti di usare la rete contemporaneamente
 - questo in quanto é bassa la probabilitá che tutti gli utenti siano attivi contemporaneamente
 ****** Packet Switching
+:PROPERTIES:
+:ID:       279faeb3-247c-4b7e-8521-a8a7959bdf11
+:END:
 Router Interconnessi che comunicano usando il packet switching
 - ogni pacchetto ha lo stesso formato e dimensione, semplici da _smistare_ verso la destinazione
 - ogni pacchetto usa l'intera capacitá del collegamento per essere inviato
@@ -353,6 +356,103 @@ HTTP é /stateless/
 - /persistent/
   + viene mantenuta la stessa connessione TCP per un periodo
   + puó velocizzare leggermente la comunicazione
+  + 1.0
+
+- Metodi
+  + POST
+    * web page include input
+  + URL
+
+- differenze versioni
+  + 1.0
+    * GET
+    * POST
+    * HEAD
+  + 1.1
+    + precedenti
+    + PUT
+    + DELETE
+****** Status Codes
+- 200 OK
+- 301 Moved Permanently
+- 400 Bad Request
+- 404 Not Found
+- 505 HTTP Version Not Supported
+****** Cookies
+Dato che il protocollo é /stateless/ i cookies sono utilizzati per memorizzare alcune informazioni
+- 4 componti
+  + header HTTP response
+  + header HTTP request
+  + cookies mantenuti sulla memoria del browser
+  + DB backend sito Web
+Utilizzati per
+- mantenere autorizzazioni
+- carrelli della spesa
+- pubblicitá targettizzata
+- sessione Web utente (email)
+****** Web Caches
+Per fornire all'utente ció che richiede senza interagire direttamente con il server d'origine
+- una richiesta giá fornita puó essere risolta da un /proxy server cache/
+  + solitamente installati dalle ISP
+  + riduce il carico sul link di accesso
+    + secondo un suo /hit rate/
+- lo stesso browser inserisce gli oggetti ricevuti in cache
+****** Conditional GET
+Per controllare che gli oggetti ricevuti siano aggiornati
+- le cache fanno C.GET al server
+  + la risposta non contiene nessun oggetto se la versione in cache sia aggiornata
+
+***** FTP
+=File Transfer Protocol=
+- TCP, per trasferimento affidabile
+- client-server
+- porta 20-21
+- Richiede autenticazione
+  + primo TCP - client puó navigare il filesystem remoto
+    * chiusa alla fine della comunicazione
+  + secondo TCP - dopo file transfer command il server apre connessione (porta 20)
+    * chiusa alla fine della trasmissione del file
+- control connection: /out of band/
+  + 2 canali diversi
+- il server FTP mantiene lo stato
+  + directory corrente
+  + autenticazione utente
+
+****** Comandi e Codici
+Comandi
+- USER username
+- PASS password
+- RETR filename
+- STOR filename
+- CD directory
+Codici di ritorno
+- 331 Username OK, password required
+- 125 data connection already open
+- 425 Can't open data connection
+- 452 Error writing file
+
+***** SMTP
+=Simple Mail Transfer Protocol=
+3 componenti
+- user agents
+  + client
+  + interfaccia utente
+- mail servers
+  + i messaggi in uscita e in entrata vengono memorizzati qui
+- SMTP
+  + utilizzato nella comunicazione diretta tra i mail server, o dai user agents ai server
+
+Specifiche:
+- porta 25
+- trasferimento diretto dei messaggi
+- 3 fasi
+  + handshake
+  + transfer
+  + closure
+- comandi/risposte
+  + ASCII
+  + Status code & frase descrittiva
+- messaggi in ASCII 7-bit
 
 
 *** Livello di Trasporto

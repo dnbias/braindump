@@ -126,7 +126,8 @@ Utiliziamo la notazione _carrificata_
 vname ::== String
 aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
 #+end_example
-**** Agda
+** Semantica
+*** Agda
 =Set=, insieme o =Tipo=
 #+begin_example
 data aexp: Set nohere
@@ -144,3 +145,116 @@ Dim. per induzione strutturale:
 #+begin_example
 depth (Plus a b) <= size (Plus a b)
 #+end_example
+
+La semantica di $a \in aexp$ é un numero $n \in N$
+Per def il valore di $V x$ usiamo gli stati
+- $s \in state = vname \rightarrow val$
+
+#+begin_example
+aval: aexp -> state -> val
+  aval (N n) s = n
+  aval (V x) s = sx
+  aval (Plus a_1 a_2) s = (aval a_1 s) + (aval a_2 s)
+#+end_example
+
+$FVa$: l'insieme delle variabili libere in $a \in aexp$
+#+begin_example
+  FV (N n) = nil
+  FV (V x) = { n }
+  FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
+#+end_example
+
+**** Lemma FVa
+Se per ogni $x \in FVa$ gli stati $s, s^{'} \mid sx = s^{'}x$
+allora $aval \: as = aval \: as^{'}$
+- dim su ind. strutturale su $a$
+*** Sostituzione
+$a[a^{'}/n]$ intendiama la _sostituzione di x con a' in a_
+#+begin_example
+  (N n)[a'/x] = N n
+  (V x)[a'/x] = a'
+  (V y)[a'/x] = V y
+  (Plus a_1 a_2)[a'/x] = Plus a_1[a'/x] a_2[a'/x]
+#+end_example
+
+*Modifica delle variabili*
+Se $s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state$
+***** Lemma di Sostituzione
+$aval \: (a[a^{'}/n])s = aval \: a \: s [x\rightarrow aval \: a^{'}\: s]$
+
+*** Booleani
+#+begin_example
+bexp ::= B bval
+      | Not bexp | And bexp bexp
+      | Less aexp aexp -- a < a'
+
+bval ::= tt | ff
+#+end_example
+
+*** Comandi
+Espressioni generate dalla grammatica (BNF)
+
+*Sintassi*
+#+begin_example
+com ::= SKIP                      -- noop
+     |  vname := aexp             -- assegnazione
+     |  com ; com                 -- composizione sequenziale
+     |  IF bexp THEN com ELSE com -- selezione
+     |  WHILE bexp DO com         -- iterazione
+#+end_example
+Con queste caratteristiche il nostro linguaggio =IMP= é Touring completo:
+- vedi _Arbib_ /A programming approach to computability/
+
+*Semantica* di =com=
+#+begin_example
+cval : com -> state -> state
+#+end_example
+Se questa funzione esiste deve essee parziale
+- definita solo in alcuni casi
+#+begin_example
+cval (WHILE b DO c) s = ??
+cval (WHILE b DO c) s = s  -- bval b s = ff
+cval (WHILE b DO c) s =    -- bval b s = t
+    = cval (c; WHILE b DO c) s
+    = cval (WHILE b DO c) (cval c s)
+#+end_example
+In questo caso la definizione é circolare
+*** Semantica Naturale
+*Big-step*
+Usiamo la relazione $(c,s) \implies t$ su $com \times state \times state$
+$\iff$ l'esecuzione di $c$ in $s$ termina in $t$
+
+$(c,s,t) \rightarrow (c,s) \implies t \in bool$
+- true se in una stato finale, false altrimenti
+- questa funzione é definibile in =Agda=
+Sistema formale:
+$\frac{(c_{1},s_{1}) \implies t_{1}\cdots (c_{n},s_{n})\implies t_{n}}{(c_{n+1},s_{n+1})\implies t_{n+1}}$
+
+***** Regole
+Skip $\frac{}{(SKIP,s)\implies s}$
+Ass $\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]$
+Comp $\frac{(c_{1},s)\implies s^{'} \: \: (c_{2},s^{'})\implies t}{(c_{1};c_{2},s)\implies t}$
+IF b THEN c_1 ELSE c_2
+- $\frac{bval \: b\: s = tt \:\: (c_{1},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
+- $\frac{bval \: b\: s = ff \:\: (c_{2},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
+WHILE
+- $\frac{ bval \: b\: s = ff}{(WHILE \: b\:DO \: c, s)\implies s}$
+- $\frac{ bval \: b\: s = tt \:\: (c,s)\implies s^{'} \:\: (W,s^{'})\implies t}{(WHILE \: b\:DO \: c, s)\implies t}$
+  - $W$ abbrevia $(WHILE \: b \: DO \: c, s)\implies t$
+
+Con queste si studia la *convergenza*
+
+***** Proposizione SKIP
+$\forall s,t \nvdash (WHILE \: true \: DO \: SKIP,s) \Rightarrow t$
+_Dim_
+- per assurdo sia $D$ una dimostrazione (/derivazione chiusa/) t.c. la sua conclusione sia  $(WHILE \: true \: DO \: SKIP,s) \Rightarrow t$
+- poiché =bval true s = tt= per ogni =s=, =D= deve terminare con:
+  + $\frac{(SKIP,s)\Rightarrow s^{'} \:\: (W,s^{'})\Rightarrow t}{(W,s)\Rightarrow t}$
+  + ma =s'=s= per SKIP, dunque la des. =D'= ha la stessa forma di =D=, essendo propriamente inclusa in =D=, cioé é infinita
+- dunque =D= non é una dimostrazione
+***** Equivalenza di Programmi
+I comandi $c_{1},c_{2}$ sono _equivalenti_ [$c_{1} \sim c_{2}$]
+- $\forall s,t \in state . (c_{1},s)\Rightarrow t \iff (c_{2},s)\Rightarrow t$
+
+*Lemma*
+=WHILE b DO c ~ IF b THEN (c;WHILE b DO c) ELSE SKIP=
