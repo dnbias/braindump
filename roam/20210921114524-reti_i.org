@@ -444,7 +444,7 @@ Codici di ritorno
 
 Specifiche:
 - porta 25
-- trasferimento diretto dei messaggi
+- trasferimento diretto dei messaggi _tra i server_
 - 3 fasi
   + handshake
   + transfer
@@ -453,7 +453,94 @@ Specifiche:
   + ASCII
   + Status code & frase descrittiva
 - messaggi in ASCII 7-bit
+- connessioni _persistenti_
+- protocollo di tipo /push/
+  + invia dati al server, al contrario di =HTTP=
+- oggetti multipli fanno _parte dello stesso messaggio_
+  + mentre =HTTP= incapsula ogni oggetto all'interno di una risposta ognuno
+***** POP3
+- authorization phase
+  + user, pass
+  + OK, ERR
+- transaction phase
+  + list, retr, dele, quit
+***** DNS
+=Domain Name System=
+/protocollo di Livello Applicativo/
+- Internet hosts router
+  + IP address 32 bit
+  + nome simbolico leggibile
+- =DNS= si occupa di mappare IP a nome e viceversa
 
+****** Specifiche
+- database _distribuito_
+- host e name server comunicano per risolvere i nomi in IP
+- é implementato come _Application-Layer_
+  + la complessitá é lasciata ai sistemi terminali
+    * se fosse centralizzato sarebbe l'unico punto di fallimento, database singolo e lontano, grande traffico, manutenzione complessa e costosa
+- _distribuisce il carico_
+  + indirizza il client che fa la richiesta verso l'indirizzo IP meno carico di richieste tra quelli disponibili
+
+Il sistema é distribuito e gerarchico
+- com /DNS servers/
+  + yahoo.com /DNS serves/
+  + ...
+- org /DNS servers/
+  + pbs.org /DNS servers/
+- edu /DNS servers/
+  + poly.edu /DNS servers/
+****** Gerarchia
+******* Root
+I server DNS radici sono 13, in tutto il mondo
+ - interrogati solo se uno dei server sottostanti non riesce a risolvere il nome
+******* TLD
+=Top Level Domain=
+com, org, net, edu, jobs, uk, it, fr
+Educause e Network Solution gestiscono questi domini
+******* Authorative DNS
+=DNS= propri delle organizzazioni pubbliche e private
+******* Local DNS
+Non appartengono strettamente alla gerarchia
+- ogni ISP ne ha uno
+- quando l'host fa una query questa é inviata a questo =DNS=
+  + gestito localmente
+  + se non puó risolvere l'indirizzo agisce come proxy e risale la gerarchia
+    + la query puó essere /ricorsiva/ o /itecativa/
+****** Caching
+Una volta risolto un indirizzo il servel lo memorizza
+- timeout, per evitare associazioni obsolete - ~TTL~
+  + /time to leave/
+- tipicamente la cache é mantenuta nei DNS locali
+****** Resource Records
+=RR=
+=(name, value, type, ttl)=
+- tipi
+  - ~A~
+    * name = hostname
+    * vasue = IP
+  - ~CNAME~
+    * name = sinonimo
+    * value = hostname / nome canonico
+  - ~NS~
+    * name = domain
+    * value = hostname del Authorative DNS
+  - ~MX~
+    * name = nome
+    * value = mailserver
+****** Messaggi
+- header
+  + identification
+  + flags
+    * query or reply
+    * recursive or not
+    * recursion available
+    * reply authoritative
+- questions
+  + name, type
+- answers
+  + RRs
+- authority
+- info
 
 *** Livello di Trasporto
 *** Livello di Rete
