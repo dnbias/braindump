@@ -289,7 +289,7 @@ assoluto n | n >= 0 = n
 Nel caso che i casi siano _esaustivi_ l'ultimo identificatore puó essere =otherwise=
 L'ordine delle guardie é significativo, sará scelta la prima guardia il cui valore sia valutato =True=
 **** Ricorsione
-Non esistono /loop/ non esistendo la memoria, e quindi variabili su cui fare iterazione.e
+Non esistono /loop/ non esistendo la memoria, e quindi variabili su cui fare iterazione. e
 É quindi necessario utilizzare le definizioni ricorsive:
 #+begin_src haskell
 fattoriale :: Int -> Int
@@ -313,10 +313,51 @@ fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
 #+end_src
 Anche usando questa forma Haskell valuta le funzioni dall'alto verso il basso, nell'ordine.
 - i pattern piú generali vanno piú in basso, =Haskell= in caso emette un ~Warning~ riguardo la ridondanza dei match non raggiungibili
+
+***** Dall'iterazione alla ricorsione
+Esistono algoritmi piú efficienti in forma iterativa
+- =fibonacci= applicato ricorsivamente ha una complessitá $n^{2}$
+- una versione iterativa in un linguaggio imperativo ha complessitá $n$
+É possibile riprodurre anche in =Haskell= l'iterazione con un metodo meccanico
+- inserire le variabili che vengono modificate nell'iterazione all'interno di una funzione ricorsiva che simula il ciclo
+
+
+#+begin_src java
+public static int fibonacci(int k) {
+    assert k >= 0;
+    int m = 0;
+    int n = 1;
+    while (k > 0) {
+        n = n + m;
+        m = n - m;
+        k = k - 1;
+    }
+    return m;
+}
+
+#+end_src
+#+begin_src haskell
+fibonacciAux :: Integer -> Integer -> Int -> Integer
+fibonacciAux m _ 0 = m
+fibonacciAux m n k = fibonacciAux n (m + n) (k - 1)
+
+fibonacci :: Int -> Integer
+fibonacciAux 0 1 -- applicazione parziale
+
+fibonacci :: Int -> Integer
+fibonacci = aux 0 1
+  where
+    aux m _ 0 = m
+    aux m n k = aux n (m + n) (k - 1)
+#+end_src
+Una serie di chiamate ricorsive del genere consumerebbe memoria aumentando la dimensione dello stack dei frame? Meno efficiente del corrispettivo imperativo?
+No, il compilatore =Haskell= ricicla il vecchio frame delle funzione in quanto vede che i vecchi valori non sono utilizzati dopo la prima applicazione
+- quando la funzione é /ricorsiva in coda/, ovvero la chiamata ricorsiva é l'ultima cosa fatta dalla funzione
 *** Funzioni Anonime
 _\lambda-Astrazioni_
 #+begin_src haskell
-(\x -> x+1) 2
+(\x -> x+1)
+  2
 (\x -> x >= 0) 2
 #+end_src
 In Haskell, si dice *sezione* un'espressione racchiusa tra parentesi in cui un operatore binario viene applicato a uno solo dei suoi due argomenti.
