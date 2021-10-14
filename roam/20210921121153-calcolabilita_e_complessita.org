@@ -71,3 +71,44 @@ Si puó simulare una ~MT~ a piú nastri con una ~MT~ ad un nastro solo
 - perché? per semplificare la definizione di calcolo
 - se un algoritmo a piú nastri é lineare su un nastro solo sará quadratico
 [[../media/img/3tapes1tape.jpg]]
+** Decidibilitá
+Per un =DFA= possiamo definire una =TM M= che lo simula e verifira l'accettazione o meno dell'Input
+[[file:../media/img/decidable-recognizable.jpg][Decidable - Turing-recognizable]]
+- =NFA= convertibili
+- =RegEx= convertibili
+
+*** Problemi Decibidili
+$E_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
+- decidibile studiando i percorsi nel grafo delle transizioni
+$EQ_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
+- automa che descrive la differenza simmetrica dei linguaggi
+- si riconduce a $E_{\textsc{dfa}}$
+$A_{\textsc{CFG}}=\{\langle G,w \rangle \mid G\mbox{ is a \textsc{CFG} that generates string }w\}$
+- tempo di accettazione $2^n$
+- non c'é problema di fermata
+$E_{\textsc{CFG}}=\{\langle G \rangle \mid G\mbox{is a \textsc{CFG} and }L(G) = \emptyset\}$
+
+*** Problemi Indecidibili
+**** Egualianza Chompsky
+$EQ_{\textsc{CFG}}=\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\}$
+**** Accettazione e Fermata
+Problema _positivamente decidibile_
+$M_{\textsc{TM}}=\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\}$
+- simulabile con una macchina =U= di Turing universale
+  + macchina capace di simulare qualsiasi macchina utilizzando 5 tape
+- si osserva l'esecuzione che non termina
+Si prova utilizzando la tecnica della /diagonalizzazione/ scoperta dal matematico [[id:b5e515b5-ab9b-4dc5-87d4-bcfc1d8e8618][Georg Cantor]] nel 1873
+- iniezione - biezione
+  + corrispondenza 1 a 1
+- prova che non esiste una enumerazione per un dato insieme di numeri
+  + per i Reali si cambia nella ennesima enumerazione la ennesima cifra dopo la virgola
+    * si trova cosí un numero che differisce per una cifra da tutti i numeri enumerati
+- esistono infinite terne
+Supponiamo che =H= esista, e accetti se =M= accetta =w= e viceversa
+=D= prende in input una macchina =M= e con un decisore =H= che decide =M= con input la propria descrizione $\langle M \rangle$, accetta se =H= rifiuta e viceversa, continua con altre macchine
+- diagonalizza infinite macchine =M=
+Allora si procede diagonalizzando con $D$ applicato a $\langle D\rangle$
+- dovrebbe rifiutare se $D$ accetta
+- dovrebbe accettare altrimenti
+  + non puó terminare perché per terminare avrebbe bisogno di dare la risposta opposta di se stesso
+_Abbiamo raggiunto una contraddizione_
