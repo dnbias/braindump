@@ -111,6 +111,36 @@ Posso essere ancora piú sintetico utilizzando le =lambda expression=
 - inoltre é possibile omette i tipi dei parametri se sono inferibili
 - é possibile omettere graffe e =return= se si tratta di una singola istruzione, deve essere una funzione (restituire un valore)
 - se il paremetro é uno si possono omettere le parentesi tonde
+*** Pattern Architetturali
+Una classe =Kernel= che utilizza una =Interfaccia Modulo= cui poi si sceglierá una implementazione con una =Implementazione del Modulo=
+*** IO
+- Flussi di byte
+  + InputStream
+  + OutputStream
+  + PrintStream
+- File
+  + FileReader
+  + FileWriter
+Utile comporre stream
+#+begin_code java
+Buffered Reader in = new BufferedReader(new FileReader("es.txt"))
+#+end_code
+Per scrivere e leggere dati primitivi:
+- DataInputStream
+- DataOutputStream
+Per scrivere e leggere oggetti (=Serializable=)
+- ObjectInputStream
+- ObjectOutputStream
+Da File
+- file testuali
+  + Scanner
+  + File
+  + PrintWriter
+- file binari
+  + FileInputStream
+  + FileOutputStream
+
+
 ** Programmazione ad Eventi
 *** Event-Driven Programming
 *** Organizzazione e uso GUI
