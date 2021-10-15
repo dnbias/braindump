@@ -211,6 +211,35 @@ Se $M \Leftrightarrow N$ é normale, allora c'é una riduzione in ordine nomale 
 =AND = \lambda x.\lambda y.IF x y FALSE=
 =OR = \lambda x.\lambda y.IF x TRUE y=
 =NOT = \lambda x.\lambda y.IF x FALSE TRUE=
+
+L'ordine applicativo non puó  essere utilizzato nel caso di questo =IF=
+- questo perché nel caso del =False= l'elemento piú interno é quello che non andrebbe valutato, sprecando computazione per valutarlo inutilmente
+**** Coppie
+=PAIR = \lambda x . \lambda y . \lambda z . z x y=
+=FST = \lambda p . p TRUE=
+=SND = \lambda p . p FALSE=
+**** Naturali
+Come iteratori:
+=n = \lambda f . \lambda x . f^n x=
+=SUCC = \lambda a . \lambda f . \lambda x . a f (f x)=
+=ADD = \lambda a . \lambda b . b  SUCC a=
+=MUL = \lambda a . \lambda b . b (ADD a) 0=
+=EXP = \lambda a . \lambda b . b (MUL a ) 1=
+
+Il predecessore é piú complesso
+- idea: applicare =n= volte una funzione che calcola =n= coppie, questa n-esima coppia nella prima componente avrá =n-1=
+=ISZERO = \lambda a . a (\lambda x . FALSE) TRUE=
+=FACT = \lambda a . IF (ISZERO a) 1 (MUL a (FACT (PRED a)))=
+- non é una definizione in senso stretto, compare il nome della funzione anche a destra
+Da questa scrittura si evince che =FACT= é in forma
+- $x = F(x)$
+- =FACT = AUX FACT=
+Che é la definizione di _punto fisso_ della funzione =F=
+Definiamo allora l'operatore di punto fisso:
+=FIX = \lambda f . (\lambda x . f (x x)) (\lambda x . f (x x))=
+allora
+=FACT = FIX AUX=
+
 * Laboratorio
 ** Haskel
 *** Storia
@@ -278,6 +307,59 @@ public static long counter(InputStream stream) {
         .count();
 }
 #+end_src
+**** Fibonacci Logaritmico
+#+begin_code haskell
+type Matrice = (Integer, Integer, Integer, Integer)
+
+mul :: Matrice -> Matrice -> Matrice
+mul (a₁₁, a₁₂, a₂₁, a₂₂) (b₁₁, b₁₂, b₂₁, b₂₂) =
+  (a₁₁ * b₁₁ + a₁₂ * b₂₁,
+   a₁₁ * b₁₂ + a₁₂ * b₂₂,
+   a₂₁ * b₁₁ + a₂₂ * b₂₁,
+   a₂₁ * b₁₂ + a₂₂ * b₂₂)
+
+pow :: Matrice -> Int -> Matrice
+pow a k | k == 0         = (1, 0, 0, 1)
+        | k `mod` 2 == 0 = b `mul` b
+        | otherwise      = a `mul` b `mul` b
+  where
+    b = a `pow` (k `div` 2)
+
+fibonacci :: Int -> Integer
+fibonacci k = risultato
+  where
+    (_, risultato, _, _) = (1, 1, 1, 0) `pow` k
+#+end_code
+**** Ordinamento
+#+begin_code haskell
+insertSort :: [Int] -> [Int]
+insertSort []       = []
+insertSort (x : xs) = insert x (insertSort xs)
+  where
+    insert x [] = [x]
+    insert x (y : ys) | x <= y    = x : y : ys
+                      | otherwise = y : insert x ys
+
+split :: [Int] -> ([Int], [Int])
+split []           = ([], [])
+split [x]          = ([x], [])
+split (x : y : xs) = (x : ys, y : zs)
+  where
+    (ys, zs) = split xs
+
+merge :: [Int] -> [Int] -> [Int]
+merge []       ys = ys
+merge xs       [] = xs
+merge (x : xs) (y : ys) | x <= y    = x : merge xs (y : ys)
+                        | otherwise = y : merge (x : xs) ys
+
+mergeSort :: [Int] -> [Int]
+mergeSort []  = []
+mergeSort [x] = [x]
+mergeSort xs  = merge (mergeSort ys) (mergeSort zs)
+  where
+    (ys, zs) = split xs
+#+end_code
 *** Caratteristiche Linguaggio
 **** Guardie
 Introducono delle condizioni, alternativa al piú operazionale =if...then...else=
