@@ -92,6 +92,55 @@ Per risolvere e definire una =Collection= di qualsiasi cosa
 - Iterator
   + hasNext()
   + next()
+*** Classi e Interfacce innestate
+Innestando una classe dentro l'altra si facilita il codice mantenendo i contenenti privati
+- questo vale sia dalla classe interna che quella estesna
+Per information hiding la classe interna puó essere solo meno visibile o uguale a quella esternaPer information hiding la classe interna puó essere solo meno visibile o uguale a quella esternanon puó sempre rispondere
+- le classe =IN= hanno un puntatore =outerThis= che permette di fare riferemento al contenitore
+  + tramite quello hanno accesso come fossero locali
+
+**** Classi innestate in interfacce
+- Interfaccia publica
+  + classe statica che rappresenta l'implementazione di default dell'Iterfaccia
+- si puó estendere oppure
+
+Possibile avere classi nested anonime definendo in line
+- =return new Iteratore(){ ... }=
+Posso essere ancora piú sintetico utilizzando le =lambda expression=
+- ovviamente non deve esserci ambiguitá per quanto riguarda i parametri, un'interfaccia con metodi non ambigui e con poche righe di codice si presta ad una =lambda=
+- inoltre é possibile omette i tipi dei parametri se sono inferibili
+- é possibile omettere graffe e =return= se si tratta di una singola istruzione, deve essere una funzione (restituire un valore)
+- se il paremetro é uno si possono omettere le parentesi tonde
+*** Pattern Architetturali
+Una classe =Kernel= che utilizza una =Interfaccia Modulo= cui poi si sceglierá una implementazione con una =Implementazione del Modulo=
+*** IO
+- Flussi di byte
+  + InputStream
+  + OutputStream
+  + PrintStream
+- File
+  + FileReader
+  + FileWriter
+Utile comporre stream
+#+begin_code java
+Buffered Reader in = new BufferedReader(new FileReader("es.txt"))
+#+end_code
+Per scrivere e leggere dati primitivi:
+- DataInputStream
+- DataOutputStream
+Per scrivere e leggere oggetti (=Serializable=)
+- ObjectInputStream
+- ObjectOutputStream
+Da File
+- file testuali
+  + Scanner
+  + File
+  + PrintWriter
+- file binari
+  + FileInputStream
+  + FileOutputStream
+
+
 ** Programmazione ad Eventi
 *** Event-Driven Programming
 *** Organizzazione e uso GUI

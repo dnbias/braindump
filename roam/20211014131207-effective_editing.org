@@ -1,0 +1,43 @@
+:PROPERTIES:
+:ID:       d8fb65c9-9551-4423-9313-7463e900e740
+:END:
+#+title: Effective Editing
+[[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]]
+- [[https://masteringemacs.org/article/effective-editing-movement][Source]]
+* Fundamental Movement Keys
+- =C-n=
+- =C-p=
+- =C-f=
+- =C-b=
+Insert newline at the end of the buffer:
+#+begin_code elisp
+(setq next-line-add-newlines t)
+#+end_code
+* Extended Movement
+** Word
+Same as /Fundamental/ but prefix =M-=
+** Paragraph
+- =M-e=
+- =M-a=
+** Sentence
+** Scrolling
+- =C-v= - down
+- =M-v= - up
+** Buffer
+These leave a mark, jump to the mark with =C-u C-SPC= (on marks see [[id:102211fb-50a2-4b56-aa5d-78ff41d5fedd][Fixing the mark commands]])
+* Advanced Movement
+** s-Expression
+Or Balanced-Expression
+- =C-M-f=
+- =C-M-b=
+** ISearch
+- =C-s=
+- =C-s C-s=
+  + repeats last query
+- =M-s w=
+  + fuzzy finds matches
+- =M-m=
+- back to indentation
+** Defun
+- =C-M-a=
+- =C-M-e=

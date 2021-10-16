@@ -219,8 +219,7 @@ cval (WHILE b DO c) s =    -- bval b s = t
     = cval (WHILE b DO c) (cval c s)
 #+end_example
 In questo caso la definizione é circolare
-*** Semantica Naturale
-*Big-step*
+*** Semantica Naturale - Big-step
 Usiamo la relazione $(c,s) \implies t$ su $com \times state \times state$
 $\iff$ l'esecuzione di $c$ in $s$ termina in $t$
 
@@ -258,3 +257,33 @@ I comandi $c_{1},c_{2}$ sono _equivalenti_ [$c_{1} \sim c_{2}$]
 
 *Lemma*
 =WHILE b DO c ~ IF b THEN (c;WHILE b DO c) ELSE SKIP=
+***** Determinismo della semantica naturale
+*Teorema*:
+- Per ogni $c \in com$ , per ogni $s,t,t' \in state$
+- $(c,s)\Rightarrow t \land (c,s)\Rightarrow t^{'} \implies t=t^{'}$
+
+***** Funzione parziale
+$[\![ \cdot ]\!]: com \rightarrow state \rightharpoonup state$
+\([\![c]\!]s = \begin{cases}t & \mbox{se} \vdash (c,s) \Rightarrow t\\\perp & \mbox{altrimenti}\end{cases}\)
+**** Semantica SOS - Small Step
+Singolo _passo di calcolo_
+$(c,s) \rightarrow (c^{'},s^{'})$
+
+- *Lemma - determinismo*
+  + $(c,s)\rightarrow(c^{'},s^{'}) \land (c,s)\rightarrow(c^{''},s^{''}) \implies c^{'}=c^{''}\land s^{'}=s^{''}$
+- *Corollario*
+  + $(c,s)$ _termina_ se $\exists t \mid (c,s) \rightarrow^{*}(\textsc{skip},t)$, _cicla_ se esiste una sequenza infinita
+- =Assegnazione=
+  + $(x := a,s) \rightarrow (\textsc{skip}, s[x \mapsto aval \: as])$
+- =SKIP=
+  + $(\textsc{skip};c,s) \rightarrow (c,s)$
+- =IF=
+  + $\frac{bval \: b \: s = tt}{(\textsc{if}\: b\: \textsc{then}\:c_{1}\: \textsc{else}\: c_{2},s)\rightarrow (c_{1},s)}$
+  + $ff$ speculare
+- =WHILE=
+  + $(\textsc{while}\: b\: \textsc{do}\: c,s) \rightarrow
+    (\textsc{if}\: b\: \textsc{then}\: (c;\: \textsc{while}\: b\: \textsc{do}\: c)\: \textsc{else}\: \textsc{skip}, s$
+
+\([\![c]\!]_{\textsc{sos}}s = \begin{cases}t & \mbox{se} \vdash (c,s) \rightarrow^{*}(\textsc{skip},t)\\\perp & \mbox{se}\:(c,s)\:\mbox{cicla}\end{cases}\)
+- *Teorema di equivalenza delle Semantiche*
+$\forall c\in \mbox{com}\: \forall s,t\in\mbox{state}\mid[\![c]\!]_{\textsc{nat}}s=[\![c]\!]_{\textsc{sos}}s$

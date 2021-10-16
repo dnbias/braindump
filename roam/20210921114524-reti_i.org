@@ -542,6 +542,53 @@ Una volta risolto un indirizzo il servel lo memorizza
 - authority
 - info
 
+**** Architetture
+***** Client-Server
+***** P2P
+=Peer to Peer=
+Non esiste un server sempre attivo
+
+Utilizzato in
+- condivisione di file
+  + BitTorrent
+    + file diviso in /chunks/ dal server e distribuiti in rete
+    + i peer condividono tra loro (torrent)
+    + *tracker*
+      * tiene traccia dei /chunks/ dei peer
+      * registra i peer
+    + *tit-for-tat*
+      * ci si scambia /chunks/ dai peer piú vicini, piú a contatto
+      * ogni 30 secondi si selezionano peer random
+- VoIP
+- streaming
+Qualunque Peer é un pari, ognuno di essi puó condividere risorse
+******* Skype
+Inerentemente =P2P=
+Server:
+- gestisce login
+- mette in contatto i peer
+Clients
+- mappati sui SuperNodi
+  + username =->= IP
+
+Peer riflettori - /relays/
+- I =NAT= non permettono connessione diretta tra i clients
+- i supernodi fanno da /relay/
+  + i supernodi tra loro comunicano
+  + aprono una connessione tra i dispositivi
+
+**** Programmazione Socket
+- Socket - operato dallo sviluppatore
+  + porta tra processo e protocollo di trasporto end-to-end
+- TCP - operato dal =OS=
+  + buffer
+  + variabili
+- UDP
+  + non c'é connessione tra client e server
+    * questi si scambiano solo messaggi
+  + i dati possono perdersi o essere consegnati in ordine diverso a quello di invio
+
+
 *** Livello di Trasporto
 *** Livello di Rete
 *** Livello di Collegamento
