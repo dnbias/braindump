@@ -88,9 +88,8 @@ Ci si restringe sull'essenza della programmazione in linguaggio funzionale
 - si distilla un piccolo linguaggio facilmente studiabile
 
 Differenze tra /linguaggio/ e /calcolo/
-- il calcolo é *confluente*
-  + il risultato non dipende dall'ordine delle azioni intraprese per raggiungerlo
-    + in quanto le espressioni non possono modificare la memoria, non c'é memoria
+- il calcolo é confluente
+  + il risultato non dipende dalle azioni intraprese per raggiungerlo
 - non é deterministico
 
 *** Concetti
@@ -143,86 +142,19 @@ Esempi
   + le variabili libere sono definite esternamente allo scope della astrazione, non posso modificarle
 *** Relazioni di Equivalenza
 **** \alpha-conversione
-$y \notin fv(M) \implies \lambda x.M \: \iff_{\alpha}\: \lambda y.M\{y/x\}$
-congruenza tra \lambda-espressioni tali che hanno lo stesso corpo, solo con nome dell'argomento diverso
-**** \beta-riduzione
-_Applicare_ una funzione $\lambda x.M$ a un argomento $N$ significa valutare il corpo in cui ogni occorrenza libera dell'argomento $x$ é sostituita con $N$.
-$(\lambda x.M) \: N \rightarrow_{\beta}M\{N/x\}$
-- $M \rightarrow_{\beta}M^{'} \implies M \: N \rightarrow_{\beta}M^{'}\:N$
-
-Da =redex= (reducible expression) a =ridotto=
-- $(\lambda x.M) \: N$
-- $M\{N/x\}$
-**** \eta-riduzione
-$x \notin fv(M) \implies \lambda x.M \: x \rightarrow_{\eta}M$
-- $M \rightarrow_{\eta}M^{'} \implies M\: N \rightarrow_{\eta}M^{'}\: N$
-- $M \rightarrow_{\eta}M^{'} \implies N\: M \rightarrow_{\eta}N \: M^{'}$
-- $M \rightarrow_{\eta}M^{'} \implies \lambda x.M \rightarrow_{\eta} \lambda x.M^{'}$
-**** Convertibilitá
-$N\rightarrow M \land M\rightarrow N  \implies M \leftrightarrow N$
-- $\Leftrightarrow$ indica la chiusura riflessiva e transitiva di $\leftrightarrow$
-**** Confluenza
-*Teorema*:
-- $M \Rightarrow N_{1} \land M \Rightarrow N_{2} \implies \exists N \mid N_{1} \Rightarrow N \land N_{2} \Rightarrow N$
-- l'ordine delle riduzioni del \beta-redex non importa
-- il teorema si generalizza in $n$ $N$
-Questo risultato é importante in quanto non risulta per nessun altro linguaggio di programmazione
-- in quanto la memoria puó essere modificata dall'esecuzione, l'ordine diventa fondamentale
-  - al contrario del lambda calcolo che é un /linguaggio puro/
-    - come =Haskell=, nella sua versione piú pura
-- /Es/: l'assegnamento é una espressione mista, sia espressione sia un comando
-***** Forma Normale
-Un =M= é in forma normale se non puó piú essere ridotto, ovvero:
-- $\nexists N \mid M \rightarrow N \implies M \nrightarrow$
-Un termine in forma normale ci indica che _la computazione é finita_
-***** Corollario
-La forma normale di =M=, se esiste, é unica (a meno di \alpha-conversioni).
-**** Strategie di Riduzione
-In alcuni casi é piú efficiente l'uno, in altri l'altro
-***** Ordine Applicativo
-redex piú a sinistra e piú interno, *linguaggi zelanti*
-=(\lambda x.x)((\lambda y.y)z) -> (\lambda x.x)z -> z=
-=.      ----------     --------=
-- applicare una funzione a un argomento signifira prima valutare l'argomento poi sostituire nel corpo della funzione
-***** Ordine Normale
-redex piú a sinistra e piú esterno, *linguaggi pigri*
-=(\lambda x.x)((\lambda y.y)z) -> (\lambda y.y)z -> z=
-=-----------------     --------=
-- applicare una funzione a un argomento significa sostituire l'argomento nel corpo della funzione
-  + si posticipa la valutazione degli argomenti fino a che non é strettamente necessaria
-
-Ottimizzabile in caso di argomenti valutati piú volte
-- si memorizza il risultato parziale, in modo da non doverlo ricalcolare multiple volte
-  + questo é sicuro se il linguaggio é puro
-  + molto delicato da utilizzare in contesti diversi
-  + simile alla tecnica di /memoizzazione/
-
-***** Teorema Normalizzazione
-Se $M \Leftrightarrow N$ é normale, allora c'é una riduzione in ordine nomale $M \Rightarrow N$
-- se la forma normale di un'espressione esiste, la posso trovare riducendo l'espressione in ordine normale
-  + in un numero finito di passi
-- questa proprietá non vale per l'ordine applicativo
-  + potrebbe finire in un loop nel cercare di risolvere subito gli argomenti
-*** Programmare nel \lambda-calcolo
-**** Booleani
-=TRUE = \lambda x.\lambda y.x=
-=FALSE = \lambda x.\lambda y.y=
-=IF = \lambda z.z=
-=AND = \lambda x.\lambda y.IF x y FALSE=
-=OR = \lambda x.\lambda y.IF x TRUE y=
-=NOT = \lambda x.\lambda y.IF x FALSE TRUE=
+$y \notin fv(M) \implies \lambda x.M \iff_{\alpha} \lambda y.M\{y/x\}$
 * Laboratorio
 ** Haskel
 *** Storia
 - $\lambda$ calcolo
   + Alonzo Church
-    - calcolare con le funzioni, cosí come con in numeri
-    - tutto é una funzione con 1 IN e 1 OUT
+    - calcolare con le funzioni, cosi' come con in numeri
+    - tutto e' una funzione con 1 IN e 1 OUT
       + funzioni anonime
-        - identitá
+        - identita'
           + $\lambda x,x$
   + Haskell Curry
-    - curring
+    - currying
 - LISP - anni '50
   + John McCarthy
     - elaborazione informazione non-numerica/simbolica
@@ -278,63 +210,36 @@ public static long counter(InputStream stream) {
         .count();
 }
 #+end_src
-*** Caratteristiche Linguaggio
-**** Guardie
-Introducono delle condizioni, alternativa al piú operazionale =if...then...else=
-#+begin_src haskell
-assoluto :: Int -> Int
-assoluto n | n >= 0 = n
-           | n < 0  = negate n
-#+end_src
-Nel caso che i casi siano _esaustivi_ l'ultimo identificatore puó essere =otherwise=
-L'ordine delle guardie é significativo, sará scelta la prima guardia il cui valore sia valutato =True=
-**** Ricorsione
-Non esistono /loop/ non esistendo la memoria, e quindi variabili su cui fare iterazione.e
-É quindi necessario utilizzare le definizioni ricorsive:
-#+begin_src haskell
-fattoriale :: Int -> Int
-fattoriale n | n == 0    = 1 -- supponendo n >= 0
-             | otherwise = n * fattoriale (n - 1)
-#+end_src
 
-Si possono specificare piú equazioni, semplificando il codice
-#+begin_src haskell
-fattoriale :: Int -> Int
-fattoriale 0 = 1 -- lo 0 fa riferimento al parametro utilizzato
-fattoriale n = n * fattoriale (n - 1)
-#+end_src
+*** Tipi e Classi
+=Haskell= e' un linguaggio fortemente tipato
+**** Tipi primitivi
+- =Int= numeri interi a precisione finita
+- =Integer= numeri interi a precisione arbitraria
+- =Float= numeri in virgola mobile a precisione singola
+- =Double= numeri i nvirgola mobile a precisione doppia
+- =Bool= booleani
+  Il comando =:type= di GHCi interroga =Haskell= sul tipo inferito ad una espressione
+ Si puo' scrivere il tipo di un valore affianco ad esso con la sintassi =:: Int=
+ - non e' una conversione di tipo, e' solo una annotazione utile al compilatore
 
-Altro esempio classico, la sequenza di fibonacci
-#+begin_src haskell
-fibonacci :: Int -> Int
-fibonacci 0 = 0
-fibonacci 1 = 1
-fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
-#+end_src
-Anche usando questa forma Haskell valuta le funzioni dall'alto verso il basso, nell'ordine.
-- i pattern piú generali vanno piú in basso, =Haskell= in caso emette un ~Warning~ riguardo la ridondanza dei match non raggiungibili
-*** Funzioni Anonime
-_\lambda-Astrazioni_
-#+begin_src haskell
-(\x -> x+1) 2
-(\x -> x >= 0) 2
-#+end_src
-In Haskell, si dice *sezione* un'espressione racchiusa tra parentesi in cui un operatore binario viene applicato a uno solo dei suoi due argomenti.
-#+begin_src haskell
-(1 +)
-('mod' 2)
-#+end_src
-*** Currying
-#+begin_src haskell
-addizione :: Int -> Int -> Int
-addizione x y = x + y
-addizione = \x -> \y -> x + y -- espandendo in lambda astrazioni é piú chiaro il tipo
-#+end_src
-Da qui emerge l'associativitá a destra del tipo freccia:
-#+begin_src haskell
-(Int -> (Int -> Int))
-#+end_src
-Questo é speculare alla composizione in lambda calcolo
-
-_Applicazione parziale_: Il fatto che tutte le funzioni sono ad un unico argomento permette di crearne *specializzazioni* applicandole a meno argomenti del necessario.
-- posso applicare solo parzialmente funzioni se mi puó essere utile
+Si puo' convertire tra tipi numerici utilizzando:
+- =fromIntegral=
+- =truncate=
+- =round=
+**** Coppie e Tuple
+E' sufficiente circondare gli elementi con parentesi tonde
+**** Liste
+Sequenza omogenea di elementi, che hanno quindi lo stesso tipo
+La sintassi utilizza le parentesi quadre.
+- =[1..]= lista con tutti i numeri interi da 1 in avanti
+  - possibile perche' il linguaggio e' lazy
+Ogni lista puo' essere contruita a partire da due /costruttori canonici/
+- =X : L=
+  - utilizzando /cons/
+- =1 : 2 : 3 : []=
+  - cons e lista vuota
+Esiste funzione di concatenazione di liste
+- =++=
+  - non modifica le liste di partenza, ne crea una nuova
+  - un linguaggio puro come =Haskell= non modifica strutture esistenti
