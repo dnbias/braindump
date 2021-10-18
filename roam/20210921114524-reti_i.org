@@ -590,7 +590,67 @@ Peer riflettori - /relays/
 
 
 *** Livello di Trasporto
+/Comunicazione logica tra processi/
+- affidabile, consegna ordinata
+  + *TCP*
+- non affidabile, consegna disordinata
+  + *UDP*
+**** Multiplexing
+- Multiplexing mittente
+  - aggiunge _transport header_
+- Demultiplexing ricevente
+  * riceve /IP datagramma/
+  * con IP mittente e IP destinatario
+  * con numero di porta mittente e destinatario
+**** TCP Socket
+  - 4-tupla
+    + source IP
+    + source port number
+    + dest IP
+    + dest port number
+**** UDP
+=User Datagram Protocol=
+- bare bones
+- best effort
+  + i segmenti possono essere persi
+  + consegna disordinata
+- *connectionless*
+  + niente handshaking
+  + ogni segmento e' gestito indipendentemente
+- uso
+  + streaming
+  + DNS
+  + SNMP
+Non avendo connessione iniziale e' piu' veloce, non ha limiti di congestion control, header piccoli.
+
+- gestione errori
+  + UDP checksum
+    * mittende e destinatario calcolano la checksum e la confrontano
+
+**** RDT
+=Reliable Data Transfer=
+- 1.0
+  - channel sottostante perfettamente affidabile
+  - =FSM= separate per sender / receiver
+- 2.0
+  * channel sottostante puo' invertire bit
+    - checksum
+  * =ACK=
+    - receiver comunica al sender OK
+  * =NAK=
+    - receiver comunica al sender che si hanno errori
+    - sender ritrasmette
+- 2.1
+  * se =ACK= o =NAK= corrotti
+    - ritrasmesso il pacchetto
+  * per gestire i duplicati sender aggiunge numero di sequenza
+- 2.2
+  * stessa funzionalita' ma senza =NAK=
+  * =ACK= dell'ultimo pacchetto ricevuto OK invece di =NAK=
+- 3.0
+  *
 *** Livello di Rete
+/Comunicazione logica tra hosts/
 *** Livello di Collegamento
 *** Incapsulamento
 Ogni livello che si discende si aggiunge una intestazione

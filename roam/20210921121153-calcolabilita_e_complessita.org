@@ -112,3 +112,31 @@ Allora si procede diagonalizzando con $D$ applicato a $\langle D\rangle$
 - dovrebbe accettare altrimenti
   + non puó terminare perché per terminare avrebbe bisogno di dare la risposta opposta di se stesso
 _Abbiamo raggiunto una contraddizione_
+
+Esistono indebolimenti del decisore, ovvero decisori /parziali/
+
+*** Teorema di Post
+=4.22=
+Linguaggio $L$ decidibile $\iff$ e' _positivamente_ e _negativamente_ decidibile
+- $M$ termina sempre $\forall w \in \Sigma^{*}$
+- $M$ e' un decisore che simula $M_{1}$ e $M_{2}$ in parallelo
+  + il primo che termina decide
+*** Immortalita'
+=4.23=
+$\overline A_{\textsc{tm}}$ _positivamente decidibile_ $\implies  A_{\textsc{tm}}$ _negativamente decidibile_ per =T.Post=
+- Falso per =4.11=
+*** Fermata
+=5.1=
+| Il problema della decisione per $L_{1}$ si riduce al problema della decisione per $L_{2}$ se sappiamo trasformare un decisore per $L_{2}$ in un decisore per $L_{1}$
+
+Per contraddizione, non e' decidibile
+$\textsc{halt}_{\textsc{tm}}=\{\langle M,w\rangle \mid M \mbox{ is a \textsc{tm} and }M \mbox{ halts on input } w\}$
+*** Decibidilita' dei Linguaggi di Chompsky
+Simboli, Produzioni, Terminali
+Un linpuaggio definibile da una grammatica in forma normale di Chompsky e' detto =context-free=
+Si dimostra che il numero di passi per derivare una stringa di lunghezza $n$ e' $2n-1$
+Questo implica che il problema e' decidibile, anche se in tempo esponenziale
+- si scrivono sulla tape 2 tutte le deduzioni di lunghezza $2n-1$
+- si controlla la correttezza una ad una, se ne si trova una corretta e che corrisponde accettimo, altrimenti continuiamo, se alche l'ultima non va bene rifiutiamo
+Per ridurre la complessita' si utilizza la *programmazione dinamica*
+- ci si appunta i risultati intermedi
