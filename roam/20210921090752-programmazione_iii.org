@@ -131,7 +131,6 @@ Per scrivere e leggere dati primitivi:
 Per scrivere e leggere oggetti (=Serializable=)
 - ObjectInputStream
 - ObjectOutputStream
-Da File
 - file testuali
   + Scanner
   + File
@@ -139,10 +138,66 @@ Da File
 - file binari
   + FileInputStream
   + FileOutputStream
+Da File
 
+*** GUI
+- =AWT= - Abstact Window Toolkit
+- =SWING=
+  + =JFrame=
+  + =JApplet=
+  + =JDialog=
 
 ** Programmazione ad Eventi
 *** Event-Driven Programming
+Differentemente da un classico programma, che ad un input restituisce un output seguendo un suo flusso di controllo e solo raramente si attende input dal utente, questa metodologia consiste in procedure che rispondono a certi eventi
+- /event handlers/
+- /events/
+
+Si distinguono due fasi:
+- Ciclo di individuazione degli eventi
+- Gestione degli eventi
+
+Dopo essere stati creati gli /event-handlers/ devono essere associati come /listener/ ad un evento di una specifica sorgente, componente la =GUI=
+
+**** Eventi
+In =Java=
+Oggetti derivati dalla classe =EventObject=
+- eventi /semantici/
+  + su componenti virtuali dell'interfaccia
+- eventi /low-level/
+  + eventi fisici relativi al mouse o tastiera
+
+Sono gestiti con un meccanismo di _delega_
+- la sorgente, generato un evento, passa un *oggetto* che descrive l'evento ad un listener
+  + registrato presso la sorgente
+  + il passaggio dell'evento cousa l'invocazione di un metodo del /listener/
+**** Sorgenti
+I diversi componenti dell'interfaccia
+- =JButton=
+- =JTextField=
+- =Component=
+- =Window=
+**** Listener
+O /event-handler/, istanza di una classe che contiene metodi per gestire gli eventi
+Per ogni tipo di evento é definita una interfaccia che il /listener/ deve implementare
+- =ActionListener=
+  + =void addActionListener(ActionListener I)=
+- =MouseListener=
+- =MouseMotionListener=
+- =WindowListener=
+
+Per non dover implementare tutti i metodi dell'interfaccia che ci interessa sono state introdotte le /classi filtro/
+- implementazioni di default delle interfacce dei listener
+  + metodi che non fanno nulla
+  + si fa /overriding/ solamente dei metodi di gestione che ci servono
+
+- =WindowListener= -> =WindowAdapter=
+
+
+
+
+
+
 *** Organizzazione e uso GUI
 *** Model View Controller
 ** Programmazione Multithread

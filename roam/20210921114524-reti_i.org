@@ -588,7 +588,6 @@ Peer riflettori - /relays/
     * questi si scambiano solo messaggi
   + i dati possono perdersi o essere consegnati in ordine diverso a quello di invio
 
-
 *** Livello di Trasporto
 /Comunicazione logica tra processi/
 - affidabile, consegna ordinata
@@ -616,12 +615,12 @@ Peer riflettori - /relays/
   + consegna disordinata
 - *connectionless*
   + niente handshaking
-  + ogni segmento e' gestito indipendentemente
-- uso
+  + ogni segmento é gestito indipendentemente
+- usi
   + streaming
   + DNS
   + SNMP
-Non avendo connessione iniziale e' piu' veloce, non ha limiti di congestion control, header piccoli.
+Non avendo connessione iniziale é piú veloce, non ha limiti di congestion control, header piccoli.
 
 - gestione errori
   + UDP checksum
@@ -632,7 +631,7 @@ Non avendo connessione iniziale e' piu' veloce, non ha limiti di congestion cont
 - 1.0
   - channel sottostante perfettamente affidabile
   - =FSM= separate per sender / receiver
-- 2.0
+- 2.0 - /errors/
   * channel sottostante puo' invertire bit
     - checksum
   * =ACK=
@@ -644,11 +643,40 @@ Non avendo connessione iniziale e' piu' veloce, non ha limiti di congestion cont
   * se =ACK= o =NAK= corrotti
     - ritrasmesso il pacchetto
   * per gestire i duplicati sender aggiunge numero di sequenza
+    + 0 o 1
 - 2.2
-  * stessa funzionalita' ma senza =NAK=
+  * stessa funzionalitá ma senza =NAK=
   * =ACK= dell'ultimo pacchetto ricevuto OK invece di =NAK=
-- 3.0
-  *
+- 3.0 - /errors/ and /loss/
+  * il canale sottostante puó anche perdere pacchetti
+  * implementiamo un'attesa ragionevole
+    + dopo di che il mittente se non ha ancora ricevuto =ACK= ritrasmette
+    + i ritardi inducono del lavoro in piú con delle sovrapposizioni di invio e risposta
+***** Performance
+3.0 é corretto, le performance sono problematiche
+- il protocollo limita l'uso delle risorse fisiche disponibili
+Il protocollo é molto limitato dal $\textsc{rtt}$ in quanto si deve stare in attesa del =ACK= di risposta per poter procedere
+
+**** Pipelining
+Per risolvere il problema di performance del =RDT= si continuano a trasmettere pacchetti anche durante l'attesa dell'=ACK=
+Ci sono due _forme generiche di pipelined protocols_:
+- ~Go-Back-N~
+  + sender invia fino a =N= pacchetti _unacked_
+    * c'é una finestra di grandezza =N= tra tutti i pacchetti comprendente:
+      a) pacchetti inviati, senza =ACK=
+      b) pacchetti disponibili ad essere inviati
+  + receiver invia solo =ACK= cumulativo
+    * non lo invia se c'é un gap
+    * non necessita buffering a questo lato
+      + si riceve solo nell'ordine corretto, altrimenti si scarta
+  + sender ha un timer per il piú vecchio pacchetto unacked
+    * quando scade reinvia tutti i pacchetti unacked
+- ~Selective Repeat~
+  + sender invia fino a =N= pacchetti unacked
+  + receiver invia =ACK= singoli
+  + sender ha un timer per ciascun pacchetto unacked
+    * reinvia solo quello relativo allo scadere
+
 *** Livello di Rete
 /Comunicazione logica tra hosts/
 *** Livello di Collegamento
