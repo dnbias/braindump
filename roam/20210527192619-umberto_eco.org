@@ -4,4 +4,5 @@
 #+title: Umberto Eco
 [[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
 
-[[id:32bc88b9-c766-4100-ba8f-e153b981839b][Come si fa una Tesi di Laurea]]
+- [[id:32bc88b9-c766-4100-ba8f-e153b981839b][Come si fa una Tesi di Laurea]]
+- [[id:afab5179-f649-4e57-b5b9-f14e9736e94d][Il Pendolo di Foucault]]
