@@ -238,6 +238,22 @@ Definiamo allora l'operatore di punto fisso:
 =FIX = \lambda f . (\lambda x . f (x x)) (\lambda x . f (x x))=
 allora
 =FACT = FIX AUX=
+**** Estendere il calcolo
+Per ragioni di efficienza ogni linguaggio di programmazione basato sul \lambda-calcolo fornisce dati nativi (numeri, booleani, caratteri, ...)
+- questo peró permette di espressioni _sintatticamente corrette ma prive di significato_
+***** Sistema di tipi
+Il problema é indecibile, vanno quindi previste delle approssimazioni conservative nello sviluppo di un *sistema di tipi*
+
+****** *Giudizio di Tipo*
+  + $\vdash M :\: t$
+    * =M= é ben tipato e ha tipo =t= nel /contesto/ \Gamma
+****** *Proprietá*
+- Lemma *Subject Reduction*
+  + $\Gamma \vdash M : \: t \land M \rightarrow N \implies \Gamma \vdash N : \: t$
+- Teorema *Progresso*
+  + $\vdash M : \: t \land M \Rightarrow N \not\rightarrow \: \implies N \mbox{ é un valore}$
+    + quindi _una costante o una astrazione_
+
 * Laboratorio
 ** Haskel
 *** Storia
@@ -306,18 +322,6 @@ public static long counter(InputStream stream) {
 }
 #+end_src
 
-*** Tipi e Classi
-=Haskell= e' un linguaggio fortemente tipato
-**** Tipi primitivi
-- =Int= numeri interi a precisione finita
-- =Integer= numeri interi a precisione arbitraria
-- =Float= numeri in virgola mobile a precisione singola
-- =Double= numeri i nvirgola mobile a precisione doppia
-- =Bool= booleani
-  Il comando =:type= di GHCi interroga =Haskell= sul tipo inferito ad una espressione
- Si puo' scrivere il tipo di un valore affianco ad esso con la sintassi =:: Int=
- - non e' una conversione di tipo, e' solo una annotazione utile al compilatore
-=======
 **** Fibonacci Logaritmico
 #+begin_code haskell
 type Matrice = (Integer, Integer, Integer, Integer)
@@ -446,7 +450,7 @@ fibonacci = aux 0 1
 Una serie di chiamate ricorsive del genere consumerebbe memoria aumentando la dimensione dello stack dei frame? Meno efficiente del corrispettivo imperativo?
 No, il compilatore =Haskell= ricicla il vecchio frame delle funzione in quanto vede che i vecchi valori non sono utilizzati dopo la prima applicazione
 - quando la funzione é /ricorsiva in coda/, ovvero la chiamata ricorsiva é l'ultima cosa fatta dalla funzione
-*** Funzioni Anonime
+**** Funzioni Anonime
 _\lambda-Astrazioni_
 #+begin_src haskell
 (\x -> x+1)
@@ -458,7 +462,7 @@ In Haskell, si dice *sezione* un'espressione racchiusa tra parentesi in cui un o
 (1 +)
 ('mod' 2)
 #+end_src
-*** Currying
+**** Currying
 #+begin_src haskell
 addizione :: Int -> Int -> Int
 addizione x y = x + y
@@ -490,3 +494,33 @@ Esiste funzione di concatenazione di liste
 - =++=
   - non modifica le liste di partenza, ne crea una nuova
   - un linguaggio puro come =Haskell= non modifica strutture esistenti
+*** Tipi e Classi
+=Haskell= e' un linguaggio fortemente tipato
+**** Tipi primitivi
+- =Int= numeri interi a precisione finita
+- =Integer= numeri interi a precisione arbitraria
+- =Float= numeri in virgola mobile a precisione singola
+- =Double= numeri i nvirgola mobile a precisione doppia
+- =Bool= booleani
+  Il comando =:type= di GHCi interroga =Haskell= sul tipo inferito ad una espressione
+ Si puo' scrivere il tipo di un valore affianco ad esso con la sintassi =:: Int=
+ - non e' una conversione di tipo, e' solo una annotazione utile al compilatore
+**** map
+#+begin_code haskell
+map :: (a -> b) -> [a] -> [b]
+map _ [] = []
+map f (x : xs) = f x : map f xs
+#+end_code
+**** filter
+#+begin_code haskell
+filter :: (a -> bool) -> [a] -> [b]
+filter _ [] = []
+filter p (x : xs) | p x       = x : filter p xs
+                  | otherwise = filter p xs
+#+end_code
+**** fold
+#+begin_code haskell
+foldr :: (a -> b -> b) -> b -> [a] -> b
+foldr _ x [] = x
+foldr f x (y : ys) = f y (foldr f x ys) -- come fosse associativo a destra
+#+end_code
