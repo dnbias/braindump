@@ -187,7 +187,7 @@ Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
 $A \le_{m}B$
 se esiste una /funzione computazionale/ $f$ tale che:
 $w \in L(A) \iff f(w) \in L(B)$
-[[../media/img/mapping-reducibility.jpg][Mapping Reducibility]]
+[[../media/img/mapping-reducibility.jpg]]
 
 Seguono i corollari:
 - Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
