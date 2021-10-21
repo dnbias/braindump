@@ -14,7 +14,7 @@
   + [[id:76b7b469-bc51-4cd7-8386-779fc351552c][Computer Netwoking - A Top-Down Approach]]
 * Teoria
 ** Introduzione alle Reti di Calcolatori
-Internet come esempio delle reti
+/Internet come esempio delle reti/
 *** Componenti
 - Computing Devices connessi
   + hosts / sistemi terminali
@@ -46,8 +46,8 @@ In sostanza:
 - routers in profonditá nella rete / _core network_
   + in prevalenza wired
 
-***** Accesso
-****** Digital Subscriber Line
+**** Accesso
+***** Digital Subscriber Line
 =DSL=
 Utilizza linee telefoniche esistenti
 - splitter
@@ -58,7 +58,7 @@ La linea é asincrona:
 - Down < 10Mbps
   + poiché questa é la piú utilizzata generalmente
 Collegato direttamente alla Centrale
-****** Cable Network
+***** Cable Network
 Via cavo, utilizzata dagli anglosassoni
 - cavo condiviso da vari utenti
 - cable modem
@@ -71,13 +71,13 @@ Via cavo, utilizzata dagli anglosassoni
   + Down < 30Mbps
 A differenza della DSL non ha un collegamento diretto al centtrale
 
-****** Enterprise Access Network
+***** Enterprise Access Network
 Ethernet, sono dei Router che fanno parte della rete internet del ISP
 - institutional router
   + Ethernet switch
     - connessioni singole
 - Velocitá: 10Mbps, 100Mbps, 1Gbps, 10Gbps
-****** Wireless Access Network
+***** Wireless Access Network
 - LAN:
   + 100ft
   + 802.11 b/g: 11Mbps, 54Mbps
@@ -85,13 +85,13 @@ Ethernet, sono dei Router che fanno parte della rete internet del ISP
   + telco operator, 10km
   + 1 - 10 Mbps
     - 3G, 4G, LTE
-***** Host
+**** Host
 Invio di pacchetti di dati tra gli Host
 pacchetti di bit di lunghezza $L$, trasmissione a velocitá $R$
 - packets
 - link bandwidth
 Packet Transmission Delay = $\frac{L}{R}$
-***** Mezzi Trasmissivi
+**** Mezzi Trasmissivi
 - guiditati
   + il segnale segue un percorso ben preciso
   + cavi
@@ -120,10 +120,10 @@ Packet Transmission Delay = $\frac{L}{R}$
     - satellitare
       + delay per la distanza con il satellite
       + da Kbps a Mbps
-***** Nucleo della Rete
+**** Nucleo della Rete
 Packet Switching preferito perché permette a piú utenti di usare la rete contemporaneamente
 - questo in quanto é bassa la probabilitá che tutti gli utenti siano attivi contemporaneamente
-****** Packet Switching
+**** Packet Switching
 :PROPERTIES:
 :ID:       279faeb3-247c-4b7e-8521-a8a7959bdf11
 :END:
@@ -150,25 +150,25 @@ _Queuieng and Loss_
 Piú semplice del circuit switching, i router non devono attivarsi per creare la connessione, ma condividendo le risorse possono crearsi congestioni
 - puó essere garantita banda ad alcune app audio/video per ottenere del comportamento simile al circuit switching
 
-****** Circuit Switching
+***** Circuit Switching
 Creare un collegamento diretto tra mittente e destinatario
 C'é una ridondanza di collegamenti tra i router
 - a seguito di una richiesta i router aprono e chiudono i circuiti per creare una linea diretta di circuiti
 - con questo schema non ci sono risorse condivise a differenza del Packet Switching
   + i pacchetti andranno alla massima velocitá possile
   + un circuito non utilizzato puó essere considerato uno spreco
-******* FDM
-******* TDM
-**** Protocolli
+****** FDM
+****** TDM
+*** Protocolli
 Skype, TCP, IP, HTTP, 802.11
 Definiscono:
 - formato,ordine di messaggi ricevuti e mandati
 - azioni intraprese su invio e ricevuta di messaggi
-**** Internet Stardards
+*** Internet Stardards
 - RFC: Request for comments
 - IETF: Internet Engineering Task Force
   + ente che valuta e accetta standard di comunicazione
-**** Packet Delay
+*** Packet Delay
 :PROPERTIES:
 :ID:       21e709d3-7471-45e0-9194-16df2ecb30f1
 :END:
@@ -188,9 +188,9 @@ Se il buffer é pieno il packetto é perso (/packet drop/)
 $\frac{L\cdot a}{R}$ = traffic intensity
 $a$ é la quantitá media di pacchetti in entrata
 quando questa frazione supera 1 i bit in entrata superano la capacitá trasmissiva, i buffer si vanno a riempire
-***** Packet Loss
+**** Packet Loss
 Il buffer (coda) é piena, un pacchetto é perso, viene comunicato al router precedente/alla sorgente/viene ignorato
-**** Throughput
+*** Throughput
 due casi:
 1. $R_{S}<R_{C}$
 2. $R_{S}>R_{C}$
@@ -601,12 +601,66 @@ Peer riflettori - /relays/
   * riceve /IP datagramma/
   * con IP mittente e IP destinatario
   * con numero di porta mittente e destinatario
-**** TCP Socket
-  - 4-tupla
-    + source IP
-    + source port number
-    + dest IP
-    + dest port number
+**** TCP
+- 4-tupla
+  + source IP
+  + source port number
+  + dest IP
+  + dest port number
+
+***** Caratteristiche
+- /point-to-point/
+- /reliable/, in-order byte stream
+- /full duplex data/
+- /pipelined/
+  + congestion e flow control impostati a window size
+  + =ACK= cumulativi
+    * del pacchetto che si aspetta di ricevere
+- /connection-oriented/
+  + handshaking
+- /flow controlled/
+
+***** Segmento
+- campi da 32 bit
+  + source port # | dest port #
+  + sequence #
+  + =ACK= #
+  + head len | not used | U | A | P | R | S | F | receive window
+  + checksum | urg data pointer
+- campi a lunghezza variabile
+  + options
+  + application
+
+***** Timeout
+- piú lungo del =RTT= - /Round Trip Time/
+  + ma puó variare
+- corto
+  + trasmissioni non necessarie
+- lungo
+  + trasmissione _poco reattiva_ a packet-loss
+- Si stima =RTT=
+  + tempo dalla trasmissione alla ricezione =ACK=
+  + si fa una media dei =Sample=
+    * $RTT_{\text{est}} = (1-\alpha)\cdot RTT_{\text{est}}+\alpha\cdot \text{Sample}$
+      - dove solitamente $\alpha = 0.125$
+    * $\textsc{Dev}_{\textsc{rtt}} = (1-\beta) \cdot \textsc{Dev}_{\textsc{rtt}} + \beta \cdot |\text{Sample}-RTT_{\text{est}}|$
+      - dove solitamente $\beta = 0.25$
+      - _margine di sicurezza_
+  + $\text{TimeoutInterval} = RTT_{\text{est}} + 4\cdot \textsc{Dev}_{\textsc{rtt}}$
+- timer impostato sul pacchetto piú vecchio di cui non si é ricevuto =ACK=
+
+***** ACK
+- vari scenari per ridurre il numero di =ACK=
+***** Fast Retransmit
+- 3 =ACK= duplicati indicano che probabilmente un segmento é andato  perso
+- non aspettare il timer ma ritrasmetti immediatamente il segmento /unacked/
+
+***** Connection Management
+- handshake
+  + si decide di stabilere la connessione
+  + si decidono i parametri di comunicazione
+- socket buffer, variabile
+  + comunicato dal ricevente
 **** UDP
 =User Datagram Protocol=
 - bare bones

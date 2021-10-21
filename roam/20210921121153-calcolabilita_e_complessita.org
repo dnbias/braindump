@@ -192,3 +192,5 @@ $w \in L(A) \iff f(w) \in L(B)$
 Seguono i corollari:
 - Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
 - Se $A \le_{m}B$ e $A$ non é decidibile $\implies B$ non é decidibile
+$ciao$
+$test$
