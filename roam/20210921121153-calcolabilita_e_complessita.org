@@ -72,7 +72,7 @@ Si puó simulare una ~MT~ a piú nastri con una ~MT~ ad un nastro solo
 - se un algoritmo a piú nastri é lineare su un nastro solo sará quadratico
 [[../media/img/3tapes1tape.jpg]]
 ** Decidibilitá
-Per un =DFA= possiamo definire una =TM M= che lo simula e verifira l'accettazione o meno dell'Input
+Per un =DFA= possiamo definire una =TM M= che lo simula e verifica l'accettazione o meno dell'Input
 [[file:../media/img/decidable-recognizable.jpg][Decidable - Turing-recognizable]]
 - =NFA= convertibili
 - =RegEx= convertibili
@@ -88,7 +88,15 @@ $A_{\textsc{CFG}}=\{\langle G,w \rangle \mid G\mbox{ is a \textsc{CFG} that gene
 - non c'é problema di fermata
 $E_{\textsc{CFG}}=\{\langle G \rangle \mid G\mbox{is a \textsc{CFG} and }L(G) = \emptyset\}$
 
+*** Teorema di Post
+=4.22=
+Linguaggio $L$ decidibile $\iff$ e' _positivamente_ e _negativamente_ decidibile
+- $M$ termina sempre $\forall w \in \Sigma^{*}$
+- $M$ é un decisore che simula $M_{1}$ e $M_{2}$ in parallelo
+  + il primo che termina decide
 *** Problemi Indecidibili
+Per molti problemi si utilizza la tecnica della riduzione
+- se un problema che sappiamo non decidibile si puó ridurre al problema che stiamo studiando allora anche questo non sará decibidile
 **** Egualianza Chompsky
 $EQ_{\textsc{CFG}}=\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\}$
 **** Accettazione e Fermata
@@ -115,28 +123,72 @@ _Abbiamo raggiunto una contraddizione_
 
 Esistono indebolimenti del decisore, ovvero decisori /parziali/
 
-*** Teorema di Post
-=4.22=
-Linguaggio $L$ decidibile $\iff$ e' _positivamente_ e _negativamente_ decidibile
-- $M$ termina sempre $\forall w \in \Sigma^{*}$
-- $M$ e' un decisore che simula $M_{1}$ e $M_{2}$ in parallelo
-  + il primo che termina decide
-*** Immortalita'
+**** Immortalitá
 =4.23=
 $\overline A_{\textsc{tm}}$ _positivamente decidibile_ $\implies  A_{\textsc{tm}}$ _negativamente decidibile_ per =T.Post=
 - Falso per =4.11=
-*** Fermata
+**** Fermata
 =5.1=
 | Il problema della decisione per $L_{1}$ si riduce al problema della decisione per $L_{2}$ se sappiamo trasformare un decisore per $L_{2}$ in un decisore per $L_{1}$
 
-Per contraddizione, non e' decidibile
+Per contraddizione, non é decidibile
 $\textsc{halt}_{\textsc{tm}}=\{\langle M,w\rangle \mid M \mbox{ is a \textsc{tm} and }M \mbox{ halts on input } w\}$
-*** Decibidilita' dei Linguaggi di Chompsky
-Simboli, Produzioni, Terminali
-Un linpuaggio definibile da una grammatica in forma normale di Chompsky e' detto =context-free=
-Si dimostra che il numero di passi per derivare una stringa di lunghezza $n$ e' $2n-1$
-Questo implica che il problema e' decidibile, anche se in tempo esponenziale
+**** Decibidilitá dei Linguaggi di Chompsky
+/Simboli, Produzioni, Terminali/
+Un linpuaggio definibile da una grammatica in forma normale di Chompsky é detto =context-free=
+Si dimostra che il numero di passi per derivare una stringa di lunghezza $n$ é $2n-1$
+Questo implica che il problema é decidibile, anche se in tempo esponenziale
 - si scrivono sulla tape 2 tutte le deduzioni di lunghezza $2n-1$
-- si controlla la correttezza una ad una, se ne si trova una corretta e che corrisponde accettimo, altrimenti continuiamo, se alche l'ultima non va bene rifiutiamo
-Per ridurre la complessita' si utilizza la *programmazione dinamica*
+- si controlla la correttezza una ad una, se ne si trova una corretta e che corrisponde accettiamo, altrimenti continuiamo, se alche l'ultima non va bene rifiutiamo
+Per ridurre la complessitá si utilizza la *programmazione dinamica*
 - ci si appunta i risultati intermedi
+**** Emptyness
+=5.2=
+Si dimostra per assurdo, se esistesse si potrebbe risolvere l'accettazione
+**** Equality
+=5.3=
+Intesa tra due =MT=
+- se sapessi deciderla potrei decidere anche l'=Emptyness=
+
+Anche per i reali:
+- calcoli diversi portano anche arrotondamenti diversi, per questo reali rigorosamente uguali possono risultare diversi
+- $A_{\textsc{tm}}$ si riduce a $EQ_{\textsc{Real}}$
+  + e di conseguenza anche il < e il >
+**** Corrispondenza di Post
+**** Tassellazione - Wang Tiles
+[[https://en.wikipedia.org/wiki/Wang_tile][Wikipedia]]
+Solo negativamente decidibile
+- le tassellazioni aperiodiche sono utilizzate per la sintesi procedurale di texture, heightfields
+
+**** Esistenza di un DFA equivalente
+=5.3=
+$A_{\textsc{tm}}$ é riducibile a $\textsc{Regular}_{\textsc{tm}}$
+*** Recap
+- Negativamente Decidibili
+  + $E_{\textsc{tm}}$
+  + $\overline A_{\textsc{tm}}$
+  + $\textsc{All}_{\textsc{cfg}}$
+  + $\textsc{Wang}$
+- Decidibili
+  + $E_{\textsc{cfg}}$
+  + $A_{\textsc{cfg}}$
+  + $\textsc{Eq}_{\textsc{dfa}}$
+- Positivamente Decidibili
+  + $\overline E_{\textsc{tm}}$
+  + $A_{\textsc{tm}}$
+  + $\textsc{Halt}_{\textsc{tm}}$
+  + $\textsc{pcp}$
+- Né negativamente né positivamente decidibili
+  + $\textsc{Regular}_{\textsc{tm}}$
+  + $\textsc{Eq}_{\textsc{tm}}$
+  + $\textsc{Context-Free}_{\textsc{tm}}$
+*** Mapping Reducible Language
+Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
+$A \le_{m}B$
+se esiste una /funzione computazionale/ $f$ tale che:
+$w \in L(A) \iff f(w) \in L(B)$
+[[../media/img/mapping-reducibility.jpg][Mapping Reducibility]]
+
+Seguono i corollari:
+- Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
+- Se $A \le_{m}B$ e $A$ non é decidibile $\implies B$ non é decidibile
