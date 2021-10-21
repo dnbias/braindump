@@ -1,2 +1,0 @@
-#+title: Quantum Key Distribution
-[[file:20210606005140-quantum_mechanics.org][Quantum Mechanics]]

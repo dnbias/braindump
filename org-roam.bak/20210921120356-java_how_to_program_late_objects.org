@@ -1,3 +1,0 @@
-#+title: Java: How to Program, Late Objects
-[[file:20201029112426-books.org][$books]]
-Deitel, Harvey, Deitel, Paul, /Java: How to Program, Late Objects/, 1996 (Pearson, Global Edition, 11ed., 2017), pp.1242

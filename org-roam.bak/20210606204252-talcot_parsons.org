@@ -1,2 +1,0 @@
-#+title: Talcot Parsons
-[[file:20210527192825-authors.org][$authors]]

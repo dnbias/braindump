@@ -1,2 +1,0 @@
-#+title: Slate Star Codex
-#+roam_key: https://slatestarcodex.com

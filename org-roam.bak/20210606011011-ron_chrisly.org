@@ -1,2 +1,0 @@
-#+title: Ron Chrisly
-[[file:20210527192825-authors.org][$authors]]

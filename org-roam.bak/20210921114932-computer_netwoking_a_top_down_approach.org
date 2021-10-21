@@ -1,3 +1,0 @@
-#+title: Computer Netwoking - A Top-Down Approach
-[[file:20201029112426-books.org][$books]]
-Kurose, James F., Ross, Keith W., /Computer Networking: A Top-Down Approach/, 2000 (Pearson 8ed., 2020), pp.1199

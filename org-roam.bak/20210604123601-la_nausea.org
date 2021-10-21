@@ -1,4 +1,0 @@
-#+title: La Nausée
-#+roam_alias: "La Nausea"
-[[file:20201029112426-books.org][$books]]
-Sartre, Jean-Paul, /La Nausée/, Éditions Gallimard, 1938, pp.253

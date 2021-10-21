@@ -1,2 +1,0 @@
-#+title: Scott Alexander
-- blog: [[file:20210609140910-slate_star_codex.org][Slate Star Codex]]

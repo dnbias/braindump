@@ -1,2 +1,0 @@
-#+title: $zettel
-#+roam_alias: Zettel

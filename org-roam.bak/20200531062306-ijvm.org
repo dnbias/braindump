@@ -1,3 +1,0 @@
-#+TITLE: IJVM
-
-Linguaggio [[file:20200531012943-isa.org][ISA]] utilizzato dall'architettura della Java Virtual Machine

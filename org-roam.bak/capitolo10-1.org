@@ -1,6 +1,0 @@
-* Area di Swap
-
-:PROPERTIES:
-:NOTER_DOCUMENT: ../../../DL/capitolo10-1.pdf
-:NOTER_PAGE: [[pdf:~/DL/capitolo10-1.pdf::23++0.00;;annot-23-1]]
-:END:

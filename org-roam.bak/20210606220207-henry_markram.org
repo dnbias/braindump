@@ -1,2 +1,0 @@
-#+title: Henry Markram
-#+roam_alias: Markram

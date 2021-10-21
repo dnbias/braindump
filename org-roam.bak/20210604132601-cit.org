@@ -1,2 +1,0 @@
-#+title: $cit
-#+roam_alias: Quotes

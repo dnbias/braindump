@@ -1,7 +1,0 @@
-#+title: Stefano Rodotá
-1933 - 2017
-
-* cits
-| La [[file:20210605224537-privacy.org][privacy]] cammina ormai su due gambe: la riservatezza e il controllo. Alla prima si addice il silenzio, all'altra la trasparenza. (1997) [[file:20210604132601-cit.org][$cit]] |
-
-| Si passa pertanto dalla “tutela statica e negativa della riservatezza, che costituita sul modello di proprietà privata, si esaurisce nell'esecuzione dalle interferenze altrui (right to be let alone) alla protezione dei dati personali provvista di una realtà dinamica, composta di regole rigorose che delineano la modalità del trattamento e conferiscono poteri di controllo ed intervento alla persona interessata. (Il diritto di avere diritti) [[file:20210604132601-cit.org][$cit]]|

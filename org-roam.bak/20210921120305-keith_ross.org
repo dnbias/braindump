@@ -1,3 +1,0 @@
-#+title: Keith Ross
-[[file:20210527192825-authors.org][$authors]]
-[[file:20210921114932-computer_netwoking_a_top_down_approach.org][Computer Netwoking - A Top-Down Approach]]

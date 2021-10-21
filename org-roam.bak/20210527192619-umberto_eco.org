@@ -1,4 +1,0 @@
-#+title: Umberto Eco
-[[file:20210527192825-authors.org][$authors]]
-
-[[file:20210527182557-come_si_fa_una_tesi_di_laurea.org][Come si fa una Tesi di Laurea]]

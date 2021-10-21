@@ -1,2 +1,0 @@
-#+title: $articles
-#+roam_alias: Articles

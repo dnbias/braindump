@@ -1,3 +1,0 @@
-#+title: Gilles Dowek
-[[file:20210527192825-authors.org][$authors]]
-[[file:20210921124001-introduction_to_the_theory_of_programming_languages.org][Introduction to the Theory of Programming Languages]]

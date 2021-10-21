@@ -1,9 +1,0 @@
-#+title: G.R.R.M.
-#+roam_alias: "Martin" "GRRM"
-[[file:20210527192825-authors.org][$authors]]
-
-* A Song of Ice and Fire
-
-* Short Stories
-- [[file:20210531215651-nightflyers_other_stories.org][Nightflyers & Other Stories]]
-- [[file:20210531215747-a_song_for_lya.org][A Song for Lya]]

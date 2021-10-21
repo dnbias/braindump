@@ -1,4 +1,0 @@
-#+title: roam
-#+roam_alias: "Roam Research"
-#+roam_key: https://roamresearch.com/
-Author: [[file:20210606203601-conor_white_sullivan.org][Conor White-Sullivan]]

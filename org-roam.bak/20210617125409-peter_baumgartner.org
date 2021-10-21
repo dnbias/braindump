@@ -1,2 +1,0 @@
-#+title: Peter Baumgartner
-[[file:20210604133425-blog.org][$blog]]

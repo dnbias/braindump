@@ -1,6 +1,0 @@
-#+title: Niklas Lumann
-[[file:20210527192825-authors.org][$authors]]
-1927 - 1998, German sociologist
-- see: [[https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/luhmann-niklas][Encyclopedia]]
-- influeces: [[file:20210606204221-edmund_husserl.org][Edmund Husserl]], [[file:20210606204252-talcot_parsons.org][Talcot Parsons]]
-- Inventor of the[[file:20210606203437-pkm.org][ PKM]] [[file:20200528213816-zettelkasten.org][Zettelkasten]]

@@ -1,3 +1,0 @@
-#+title: lepisma
-[[file:20210604133425-blog.org][$blog]]
-https://lepisma.xyz/

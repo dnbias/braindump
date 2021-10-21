@@ -1,3 +1,0 @@
-#+title: org-roam
-- Author: [[file:20210604133348-jethro_kuan.org][Jethro Kuan]]
-- Manual: https://www.orgroam.com/manual.html

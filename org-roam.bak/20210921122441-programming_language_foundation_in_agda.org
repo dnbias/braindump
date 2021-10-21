@@ -1,3 +1,0 @@
-#+title: Programming Language Foundation in Agda
-[[file:20201029112426-books.org][$books]]
-Wadler, Philip, /Programming Language Foundation in Agda/, ([[https://plfa.github.io/][github]])

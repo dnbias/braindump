@@ -1,2 +1,0 @@
-#+title: Lesswrong
-[[file:20210604133425-blog.org][$blog]] at https://www.lesswrong.com/

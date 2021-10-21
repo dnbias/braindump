@@ -1,3 +1,0 @@
-#+title: Alpaca
-
-A stocks trading site, offering paper accounts and a good [[https://alpaca.markets/docs/api-documentation/][API]].
