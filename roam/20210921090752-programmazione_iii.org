@@ -200,6 +200,20 @@ Per non dover implementare tutti i metodi dell'interfaccia che ci interessa sono
 
 *** Organizzazione e uso GUI
 *** Model View Controller
+=MVC=
+- Model
+  + memorizza e recupera i dati
+  + mantiene lo stato dell'applicazione
+- View
+  + gestisce l'interfaccia
+  + visualizza i dati del /Model/
+  + gestisce l'interazione con l'utente
+- Controller
+  + interpreta l'input dell'utente
+  + istruisce il /Model/ in base all'input
+
+Separa le implementazioni, in questo modo sono indipendenti e facilmente sostituibili
+
 ** Programmazione Multithread
 /Stesso processo - Esecuzione concorrente di istruzioni/
 ** Programmazione in Rete

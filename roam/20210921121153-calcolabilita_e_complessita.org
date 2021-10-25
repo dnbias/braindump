@@ -154,7 +154,45 @@ Anche per i reali:
 - calcoli diversi portano anche arrotondamenti diversi, per questo reali rigorosamente uguali possono risultare diversi
 - $A_{\textsc{tm}}$ si riduce a $EQ_{\textsc{Real}}$
   + e di conseguenza anche il < e il >
+
+***** Prova EQ
+:PROPERTIES:
+:ID:       6fe4339a-9669-4dbf-b2bb-16f4e5b6b6a6
+:END:
+$EQ_{TM} = \{\langle M_{1}, M_{2} \rangle \mid L(M_{1}) = L(M_{2})\}$
+
+$\qed$
+1. $A_{TM} \le_{m} \overline{EQ}_{TM}$
+   - questo indica che $EQ_{TM}$ non puó essere negativamente decidibile
+   - spostiamo al decidibilitá a $A_{TM}$
+2. $\overline A_{TM} \le_{m} EQ_{TM}$
+   - questo indica che $EQ_{TM}$ non puó essere positivamente decidibile
+
+
+Ora basta raggiungere queste conclusioni per chiudere la dimostrazione.
+1. Definisco una macchina $F$ che implementa la funzione $f$ che riduce $A$ a $\overline{EQ}$
+   - $\langle M, w \rangle \rightarrow^{F} \langle M_{1}, M_{2} \rangle$
+   - se $L(M_{1}) \neq L(M_{2})$ allora $M$ accetta $w$
+     + $M_{1}$ rifiuta sempre
+       * $q_{0} = q_{\text{reject}}$
+     + $M_{2}$
+       * prende $x$ e lo ignora
+       * esegue $M$ su $w$ e accetta se $M$ accetta
+         - $\begin{cases} M \mbox{ accetta}: & L(M_{2})=\Sigma^{*}\\M \mbox{ non accetta}: & L(M_{2}) = \emptyset  \end{cases}$
+     + $L(M_{1}) = L(M_{2}) \iff M \mbox{ non accetta }w$
+2. Definisco una Macchina $G$ che implementa la funzione $g$ che riduce $\overline A$ a $EQ$
+   - $\langle M, w \rangle \rightarrow^{F} \langle M_{1}, M_{2} \rangle$
+   - se $L(M_{1}) \neq L(M_{2})$ allora $M$ non accetta $w$
+     + $M_{1}$ accetta sempre
+       * $q_{0} = q_{\text{accept}}$
+     + $M_{2}$
+       * prende $x$ e lo ignora
+       * esegue $M$ su $w$ e accetta se $M$ accetta
+         - $\begin{cases} M \mbox{ accetta}: & L(M_{2})=\Sigma^{*}\\M \mbox{ non accetta}: & L(M_{2}) = \emptyset  \end{cases}$
+     + $L(M_{1}) \neq L(M_{2}) \iff M \mbox{ non accetta }w \qquad\qquad \square$
+
 **** Corrispondenza di Post
+
 **** Tassellazione - Wang Tiles
 [[https://en.wikipedia.org/wiki/Wang_tile][Wikipedia]]
 Solo negativamente decidibile
@@ -181,7 +219,10 @@ $A_{\textsc{tm}}$ é riducibile a $\textsc{Regular}_{\textsc{tm}}$
 - Né negativamente né positivamente decidibili
   + $\textsc{Regular}_{\textsc{tm}}$
   + $\textsc{Eq}_{\textsc{tm}}$
+    * [[id:6fe4339a-9669-4dbf-b2bb-16f4e5b6b6a6][Prova EQ]]
   + $\textsc{Context-Free}_{\textsc{tm}}$
+  + $\textsc{All}_{\textsc{tm}}$
+    * se un programma accetta sempre
 *** Mapping Reducible Language
 Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
 $A \le_{m}B$
@@ -192,5 +233,5 @@ $w \in L(A) \iff f(w) \in L(B)$
 Seguono i corollari:
 - Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
 - Se $A \le_{m}B$ e $A$ non é decidibile $\implies B$ non é decidibile
-$ciao$
-$test$
+
+Si dimostra allora la riducibilitá $A_{\textsc{tm}}\rightarrow \textsc{halt}_{\textsc{tm}}$

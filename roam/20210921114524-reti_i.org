@@ -661,6 +661,46 @@ Peer riflettori - /relays/
   + si decidono i parametri di comunicazione
 - socket buffer, variabile
   + comunicato dal ricevente
+Listen \rightarrow SYN sent \rightarrow Established
+Listen \rightarrow SYN received \rightarrow Established
+****** Congestion Control
+Troppe sorgenti che inviano dati ad una velocitá superiore a quella gestibile dalla rete
+- pacchetti perse per buffer overflow ai router
+- lunghi ritardi in coda ai buffer dei router
+
+Con conoscenza perfetta il mittente invierebbe solo quando il router ha spazio libero in buffer, questo ovviamente non puó avvenire.
+Anche se si sapesse prima che il pacchetto é perso per buffer pieno il mittente reinvia
+Le _ritrasmissioni_ sono il prezzo da pagare per avere un buon throughput
+
+Due approcci:
+- /end-end/
+  + congestione inferita dalla perdita e ritardo osservati dai terminali
+    * cambiando la finestra di trasmissione =cwnd=
+  + usato da =TPC=
+    * /additive increase multiplicative decrease/
+      - cresce linearmente, limitata dividendo per 2
+    * mittente incrementa =cwnd= fino a quando rileva perdita
+    * /slow start/
+      - fino alla prima perdita aumenta =cwnd= esponenzialmente
+    * reazione alla perdita
+      - timeout
+        + finestra di trasmissione torna a 1
+        + /slow start/ fino a threshold
+      - 3 ACK duplicati (uguale al timeout in =TCP= Tahoe)
+        + finestra di trasmissione dimezzata (=TCP= RENO)
+- /network-assisted/
+  + router danno feedback ai terminali
+  + bit che indica congestione
+  + esplicita una frequenza di trasmissione per il mittente
+  + =ATM ABR=
+    * servizio elastico
+      - se il cammino é congestionato il mittente viene limitato
+      - se il cammino é libero il mittente viene avvantaggiato
+    * celle Resource Manager
+      - mandate assieme alle celle dei dati
+      - contengono informazioni sulla congestione
+      - restituiti al mittente dal ricevente con i bit intatti
+
 **** UDP
 =User Datagram Protocol=
 - bare bones
