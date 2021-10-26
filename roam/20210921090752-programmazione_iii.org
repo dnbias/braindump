@@ -113,6 +113,11 @@ Posso essere ancora piú sintetico utilizzando le =lambda expression=
 - se il paremetro é uno si possono omettere le parentesi tonde
 *** Pattern Architetturali
 Una classe =Kernel= che utilizza una =Interfaccia Modulo= cui poi si sceglierá una implementazione con una =Implementazione del Modulo=
+- =Observer-Observable=
+- =Model View Controller=
+- =Facade=
+  + lavorare in upcasting quando permesso
+  + utilizzare interfacce e non classi specifiche per parti la cui implementazione puó variare
 *** IO
 - Flussi di byte
   + InputStream
@@ -171,6 +176,8 @@ Sono gestiti con un meccanismo di _delega_
 - la sorgente, generato un evento, passa un *oggetto* che descrive l'evento ad un listener
   + registrato presso la sorgente
   + il passaggio dell'evento cousa l'invocazione di un metodo del /listener/
+
+
 **** Sorgenti
 I diversi componenti dell'interfaccia
 - =JButton=
@@ -191,12 +198,7 @@ Per non dover implementare tutti i metodi dell'interfaccia che ci interessa sono
   + metodi che non fanno nulla
   + si fa /overriding/ solamente dei metodi di gestione che ci servono
 
-- =WindowListener= -> =WindowAdapter=
-
-
-
-
-
+- =WindowListener= \rightarrow =WindowAdapter=
 
 *** Organizzazione e uso GUI
 *** Model View Controller
@@ -213,6 +215,11 @@ Per non dover implementare tutti i metodi dell'interfaccia che ci interessa sono
   + istruisce il /Model/ in base all'input
 
 Separa le implementazioni, in questo modo sono indipendenti e facilmente sostituibili
+- solitamente il legame principale é tra /controller/ e /modello/ e /controller/ e /view/
+- il legame diretto tra /modello/ e /vista/ é contemplato solo in situazioni piú semplici
+  + il refresh della vista é automatizzato dal modello =Observer-Observable=
+    * al cambiamento il /model/ segnala il cambiamento agli osservatori
+
 
 ** Programmazione Multithread
 /Stesso processo - Esecuzione concorrente di istruzioni/

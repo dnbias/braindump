@@ -701,6 +701,9 @@ Due approcci:
       - contengono informazioni sulla congestione
       - restituiti al mittente dal ricevente con i bit intatti
 
+Le app di multimedia non usano =TCP= per evitare il throttling dovuto al congestion control, tollerano il packet loss.
+
+
 **** UDP
 =User Datagram Protocol=
 - bare bones
@@ -773,6 +776,87 @@ Ci sono due _forme generiche di pipelined protocols_:
 
 *** Livello di Rete
 /Comunicazione logica tra hosts/
+**** Datagram
+/Internet/
+Non c'é setup di chiamata al livello di rete, i router non mantengono stati sulle connessioni.
+- non esiste il concetto di connessione a livello di rete
+- pacchetti inviati usando l'indirizzo di destinazione
+
+Caratteristiche:
+- scambio di dati tra computer
+  + servizio elastico, timing variabile
+- connessioni diverse tra terminali
+  + servizio poco uniforme
+- terminali intelligenti
+  + semplice nella rete, complesso ai terminali
+
+
+**** Virtual Circuit
+/ATM/
+Consiste in:
+- path
+- =VC= number
+  + pacchetti appartenenti a =VC= portano il suo numero invece che l'indirizzo destinazione
+- voci delle /forwarding tables/
+
+- signalling protocols
+  + setup, mantenimento e teardown =VC=
+  + in =ATM=, frame-delay, X.25
+  + non usato nell'internet odierno
+
+I router =VC= mantengono informazioni sullo stato della connessione.
+
+Tecnologia evoluta dalla telefonia
+- terminali semplici
+  + complessitá all'interno della rete
+**** Architettura Router
+Funzioni principali:
+- routing algorithms / protocol
+  + /routing processor/
+- forwarding datagrams da incoming a outgoing
+  + /high-seed switching fabric/
+    + switching-rate
+      * $N$ multipli del rapporto input/output
+    + tipologie
+      * memory
+        - prima generazione
+        - 1 pacchetto alla volta
+        - computer classico, switching sotto diretto controllo della =CPU=
+      * bus
+        - 1 pacchetto alla volta
+      * crossbar
+        - piú pacchetti per volta
+- input
+  + line termination
+    * /physical layer/
+  + link layer protocol
+    * /data link layer/
+  + lookup, forwarding, queueing
+    * datagram dest \rightarrow lookup con forwarding table
+    * /queuing/ per sovrapposizione di output, per Head-of-the-Line blocking
+- output
+  + datagram buffer, queueing
+    * /scheduling discipline/ sceglie datagrammi in coda
+    * /buffering/ avviene anche con uno switching veloce per via dei pacchetti che vanno allo stesso output
+  + link layer protocol
+  + line termination
+
+**** Internet Protocol
+=IP=
+***** IP Fragmentation
+Datagrammi di grandi dimensione frammentati all'interno della rete
+- riasseblati alla destinazione
+***** Addressing
+identificatore a 32-bit per host, interfaccia del router
+- un =IP= per interfaccia
+- Classless InterDomain Routing
+  + =CIDR=
+  + porzione di sottorete dell'indirizzo
+  + formato:
+    * =a.b.c.d/x=
+      - x # bit nella porzione di sottorete dell'indirizzo
+
+
 *** Livello di Collegamento
 *** Incapsulamento
 Ogni livello che si discende si aggiunge una intestazione
