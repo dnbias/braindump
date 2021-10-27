@@ -253,6 +253,44 @@ Il problema é indecibile, vanno quindi previste delle approssimazioni conservat
 - Teorema *Progresso*
   + $\vdash M : \: t \land M \Rightarrow N \not\rightarrow \: \implies N \mbox{ é un valore}$
     + quindi _una costante o una astrazione_
+*** Algoritmo di Inferenza
+**** Fase di Costruzione dell'albero sintattico
+L'albero corrispondente al termine $M$ é $T[M]$
+Casi:
+- variabile
+- costante
+- lambda astrazione
+  + /si estende a destra/
+- applicazione
+  + /associativa a sinistra/
+- if then else
+**** Fase dell'Annotazione dell'albero sintattico
+/e della generazione dei vincoli/
+
+Visita dal basso verso l'alto, a partire dalle foglie
+- *variabile di tipo*
+  + $\text{TVar} = \{\alpha,\beta,\gamma, \cdots\}$
+- *espressione di tipo*
+  + $\tau , \sigma := \begin{cases}\alpha \\ \mbox{Bool} \\ \tau \rightarrow \sigma \end{cases}$
+- *vincolo*
+  + $\tau = \sigma$
+
+Annotazioni:
+- variabile - $\alpha$
+  + nuova variabile di tipo, stessa per tutte occorrenze
+- costante - $\mbox{Bool}$
+- lambda - $\alpha \rightarrow \tau \qquad \tau$
+  + $\alpha$ é nuova o la stessa di una occorrenza precedente della stessa variabile
+- applicazione - $\alpha \;\mid\; \tau \qquad \sigma$
+  + $\alpha$ é nuova, generato il _vincolo_ $\tau = \sigma \rightarrow \alpha$
+- applicazione - $\tau_{2}\;\mid\; \tau_{1}\rightarrow\tau_{2}\qquad\sigma$
+  + ottimizzazione, generato il _vincolo_ $\tau_{1} = \sigma$
+- if then else - $\tau_{2} \;\mid\; \tau_{1} \qquad\tau_{2} \qquad \tau_{3}$
+  + generati i _vincoli_
+    * $\tau_{1}=\mbox{Bool}$
+    * $\tau_{2} = \tau_{3}$
+
+**** Fase di Risoluzione dei vincoli
 
 * Laboratorio
 ** Haskel
