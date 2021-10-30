@@ -222,7 +222,7 @@ Questi /domini/ rappresentano le funzioni di transizione attraverso le configura
     * utilizzato quando lo stato deve spostarsi a destra oltre l'ultimo simbolo
 
 Si devono definire dei domino per l'accettazione, che faccia /match/:
-$[\frac{q_{accept}\#\#}{\qquad \#}]$
+$[\frac{q_{accept}\#\#}{\qquad \;\;\;\: \#}]$
 Per arrivare a questo /accept/:
 $\forall a\in \Gamma$
 - $[\frac{a\: q_{accept}}{\quad q_{accept}}]$

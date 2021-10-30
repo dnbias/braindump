@@ -664,6 +664,7 @@ Peer riflettori - /relays/
 Listen \rightarrow SYN sent \rightarrow Established
 Listen \rightarrow SYN received \rightarrow Established
 ****** Congestion Control
+=TCP= é un protocollo /fair/ rispetto alle connessioni e le loro capacitá trasmissive
 Troppe sorgenti che inviano dati ad una velocitá superiore a quella gestibile dalla rete
 - pacchetti perse per buffer overflow ai router
 - lunghi ritardi in coda ai buffer dei router
@@ -702,7 +703,6 @@ Due approcci:
       - restituiti al mittente dal ricevente con i bit intatti
 
 Le app di multimedia non usano =TCP= per evitare il throttling dovuto al congestion control, tollerano il packet loss.
-
 
 **** UDP
 =User Datagram Protocol=
@@ -790,7 +790,6 @@ Caratteristiche:
 - terminali intelligenti
   + semplice nella rete, complesso ai terminali
 
-
 **** Virtual Circuit
 /ATM/
 Consiste in:
@@ -840,22 +839,51 @@ Funzioni principali:
     * /buffering/ avviene anche con uno switching veloce per via dei pacchetti che vanno allo stesso output
   + link layer protocol
   + line termination
+- buffer
+  + dimensione approssimata a $\frac{RTT \cdot C}{\sqrt{N}}$
+    + $C$ link capacity
+    + $N$ numero di flussi
 
 **** Internet Protocol
 =IP=
+Protocolli:
+- routing
+- =IP=
+  + altri 20B di intestazioni
+  + complessivamento 40B di overhead (=TPC= + =IP=) per ogni pacchetto
+- =ICMP=
 ***** IP Fragmentation
+Diversi collegamenti all'interno della rete hanno =MTU= diversi
+- Max. transfer size
 Datagrammi di grandi dimensione frammentati all'interno della rete
 - riasseblati alla destinazione
+- utilizzati i campi dell'intestazione =IP= per riassemblare i ordine corretto
+  + /fragflag/
+  + /offset/
+    * su 13 bit
+      - offset di 8B sul file (moltiplicare per 8 per posizione esatta)
 ***** Addressing
 identificatore a 32-bit per host, interfaccia del router
 - un =IP= per interfaccia
+  + gestiti dall'=ICANN=
+    * Internet Corporation for Assigned Names and Numbers
+  + =IP= assegnati dinamicamente nella sottorete con =DHCP=
+    * client-server
+    * il protocollo permette di utilizzare stessi indirizzi in tempi diversi a host diversi
+    * =DHCP= discover broadcast a tutti
+      + offer
+      + request
+      + =ACK=
 - Classless InterDomain Routing
   + =CIDR=
   + porzione di sottorete dell'indirizzo
   + formato:
     * =a.b.c.d/x=
       - x # bit nella porzione di sottorete dell'indirizzo
-
+- gli ISP prendono carico degli indirizzi di loro dominio e di tutti i pacchetti a loro indirizzati
+**** Routing Algorithms
+**** Routing
+**** Broadcast - Multicast
 
 *** Livello di Collegamento
 *** Incapsulamento
