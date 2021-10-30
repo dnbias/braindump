@@ -23,7 +23,6 @@ Prof: Luca Padovani
     - Fondamenti del paradigma funzionale
   + Esercizi (Java 8) e Domande - 9 CFU
 
-
 * Teoria
 ** Introduzione
 Il paradigma funzionale mette le funzioni allo stesso livello delle variabili
@@ -280,7 +279,7 @@ Annotazioni:
   + nuova variabile di tipo, stessa per tutte occorrenze
 - costante - $\mbox{Bool}$
 - lambda - $\alpha \rightarrow \tau \qquad \tau$
-  + $\alpha$ é nuova o la stessa di una occorrenza precedente della stessa variabile
+  + $\alpha$ é nuova o la stessa di una occorrenza precedente della stessa variabile nel corpo
 - applicazione - $\alpha \;\mid\; \tau \qquad \sigma$
   + $\alpha$ é nuova, generato il _vincolo_ $\tau = \sigma \rightarrow \alpha$
 - applicazione - $\tau_{2}\;\mid\; \tau_{1}\rightarrow\tau_{2}\qquad\sigma$
@@ -291,6 +290,36 @@ Annotazioni:
     * $\tau_{2} = \tau_{3}$
 
 **** Fase di Risoluzione dei vincoli
+Si parte da un sistema ottenuto dalla fase precedente della forma:
+
+$\{\tau_{i} = \sigma_{i}\}_{1\le i \le n}$
+
+Si determina se questo ammette una soluzione
+- cerchiamo la soluzione piú generale
+
+Si procede agendo per *sostituzioni*
+- $\theta(\tau)$ sostituendo in $\tau$ tutte le $\alpha$ con $\theta(\alpha)$
+Dove $\theta$ é detta *soluzione* (o *unificatore*) del sistema se
+
+$\forall i : 1\le i \le n \implies \theta(\tau_{i}) = \theta(\sigma_{i})$
+
+L'algoritmo:
+- $\tau = \tau$
+  + eliminare il vincolo
+- $\tau = \alpha \land \tau$  non é una variabile
+  + rimpiazzare il vincolo con $\alpha = \tau$
+- $\tau \rightarrow \tau^{'} = \sigma \rightarrow \sigma^{'}$
+  + rimpiazzare il vincolo con $\tau = \sigma \land \tau^{'}=\sigma^{'}$
+- $\tau \rightarrow \sigma = \text{Bool} \lor \text{Bool} = \tau \rightarrow \sigma$
+  + l'algoritmo fallisce con _errore di tipo_
+- $\alpha = \tau$
+  + $\alpha \neq \tau$ ma $\alpha$ compare in $\tau$
+    - l'algoritmo fallisce con _occur check_
+  + $\alpha$ non compare in $\tau$, $\alpha$ compare altrove
+    - sostituire $\alpha$ con $\tau$ in tutti gli altri vincoli ($\alpha = \tau$ rimane)
+- nessuna trasformazione applicabile
+  + l'algoritmo ha successo
+
 
 * Laboratorio
 ** Haskel
