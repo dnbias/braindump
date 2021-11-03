@@ -850,7 +850,7 @@ Protocolli:
 - routing
 - =IP=
   + altri 20B di intestazioni
-  + complessivamento 40B di overhead (=TPC= + =IP=) per ogni pacchetto
+  + complessivamente 40B di overhead (=TCP= + =IP=) per ogni pacchetto
 - =ICMP=
 ***** IP Fragmentation
 Diversi collegamenti all'interno della rete hanno =MTU= diversi
@@ -881,6 +881,69 @@ identificatore a 32-bit per host, interfaccia del router
     * =a.b.c.d/x=
       - x # bit nella porzione di sottorete dell'indirizzo
 - gli ISP prendono carico degli indirizzi di loro dominio e di tutti i pacchetti a loro indirizzati
+
+***** Network Address Translation
+=NAT=
+Gli indirizzi, anche se di numero molto grande, non soddisfano la domanda
+- in quanto sono assegnati in blocco
+
+Le reti locali utilizzano _un solo IP_ per tutti i dispositivi
+- i singoli terminali non sono direttamente raggiungibili
+  + livello di sicurezza in piú
+- si puó cambiare =ISP= senza cambiare =IP= a tutti i dispositivi in rete locale
+
+Implementazione:
+- datagrammi in uscita
+  + =IP= sostituito con =NAT=
+  + porta originale sostituita con una porta assegnata a quel pacchetto in particolare
+  + altri pacchetti della stessa connessione riutilizzano sempre la stessa porta assegnata fino a che necessario
+- datagrammi in entrata
+  + tradotto attraverso la =NAT= _translation table_
+
+Controverso:
+- i router non dovrebbero modificare le intestazione di livelli superiori, livello di rete e di trasporto
+  + il =NAT= modifica il livello di trasporto
+- viola la comunicazione punto-punto tra host
+  + questo crea problemi nel =P2P= ad esempio
+    * risolvibile attraverso /relay/
+
+Per rendere raggiungibile direttamente dall'esterno un dispositivo posto dietro =NAT= é possibile:
+- associare un indirizzo pubblico ad un indirizzo interno direttamento all'interno del Router
+- utilizzare il protocollo =UPnP=
+  + Universal Plug and Play
+  + automatizza la soluzione statica precedente
+- /relay/
+
+***** ICMP
+Protocollo di messaggistica
+- utilizzato da host e router per comunicare informazioni a livello di rete
+- ping
+
+Messaggi =ICMP= costituiti da
+- tipo
+- codice
+
+Utilizzato da =traceroute=
+
+***** IPv6
+128 bit - 16 Byte
+Motivazioni principale
+- estendere lo spazio degli indirizzi
+- migliorare la velocitá di eleborazione dell'intestazione
+- non piú /best-effort/ ed /elastica/ ma per facilitare il Quality of Service
+
+Formato:
+- lunghezza 40B fissa
+- frammentazione non permessa
+  + aggiunge messaggi "Packet Too Big"
+    * sará il mittente ad adeguarsi alla capacitá trasmissiva del collegamento
+- /flow/ label identifica pacchetti della stesso flusso di dati
+- non c'é piú il /checksum/
+- non ci sono piú le /options/
+  + possono essere inserite al di fuori dell'intestazioni
+
+Per la transizioni viene utilzzato il /tunnelling/
+- =IPv6= pacchetti trasportati come /payload/ all'interno di pacchetti =IPv4= attraverso router =IPv4=
 **** Routing Algorithms
 **** Routing
 **** Broadcast - Multicast

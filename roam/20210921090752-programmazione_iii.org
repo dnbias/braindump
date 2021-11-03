@@ -219,7 +219,22 @@ Separa le implementazioni, in questo modo sono indipendenti e facilmente sostitu
 - il legame diretto tra /modello/ e /vista/ é contemplato solo in situazioni piú semplici
   + il refresh della vista é automatizzato dal modello =Observer-Observable=
     * al cambiamento il /model/ segnala il cambiamento agli osservatori
+*** JavaFX
+Il successore di =SWING=
+- separa il contenuto dalla sua visualizzazione tramite /stylesheet/ =CSS=
+- permette il binding di property dei Model con elementi dell'interfaccia utente aggiornando automaticamente le viste
+- offre classi/interface che implementano Observer Observable
+- permette anche di scrivere interfacce in =XML=
 
+**** Componenti
+- Stage
+  + finestra
+- Scene
+  + una principale
+- Panels
+- Buttons
+
+**** Scene Builder
 
 ** Programmazione Multithread
 /Stesso processo - Esecuzione concorrente di istruzioni/

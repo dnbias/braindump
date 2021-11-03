@@ -98,7 +98,7 @@ Linguaggio $L$ decidibile $\iff$ e' _positivamente_ e _negativamente_ decidibile
 *** Problemi Indecidibili
 Per molti problemi si utilizza la tecnica della riduzione
 - se un problema che sappiamo non decidibile si puó ridurre al problema che stiamo studiando allora anche questo non sará decibidile
-**** Egualianza Chompsky
+**** Eguaglianza Chompsky
 $EQ_{\textsc{CFG}}=\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\}$
 **** Accettazione e Fermata
 Problema _positivamente decidibile_
@@ -262,9 +262,13 @@ $A_{\textsc{tm}}$ é riducibile a $\textsc{Regular}_{\textsc{tm}}$
     * se un programma accetta sempre
 *** Mapping Reducible Language
 Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
+
 $A \le_{m}B$
+
 se esiste una /funzione computazionale/ $f$ tale che:
+
 $w \in L(A) \iff f(w) \in L(B)$
+
 [[../media/img/mapping-reducibility.jpg]]
 
 Seguono i corollari:
