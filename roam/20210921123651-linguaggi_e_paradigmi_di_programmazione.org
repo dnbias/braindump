@@ -320,6 +320,60 @@ L'algoritmo:
 - nessuna trasformazione applicabile
   + l'algoritmo ha successo
 
+**** Estensioni
+Costanti:
+- False, True
+- numeri *interi*
+- numeri *float*
+
+Aggiungiamo i tipi corrispondenti.
+
+Le fasi 1 e 2 non hanno variazioni.
+La fase 3 fallisce se c'é un vincolo:
+- $\tau \rightarrow \sigma = \text{Int}$
+- $\text{Int} = \tau \rightarrow \sigma$
+- $\text{Int} = \text{Bool}$
+
+Aggiungendo le *liste*:
+$c \in \{\cdots, [\:] ,(:)\}$
+
+Tipi:
+- $(:) : : \alpha \rightarrow [\alpha] \rightarrow [\alpha]$
+- $[\:] : : [\alpha]$
+
+
+La fase 1 non varia.
+La fase 2:
+- ogni occorrenza di un costruttore fa uso di nuove variabili di tipo
+  + questo vale per qualsiasi funzione /polimorfa/
+La fase 3:
+- i vincoli $[\tau] = [\sigma]$ si rimpiazza con $\tau = \sigma$
+- fallisce per vincoli
+  + $[\tau] = \text{Bool}$
+  + $\text{Bool} = [\tau]$
+  + $[\tau] = \sigma_{1} \rightarrow \sigma_{2}$
+  + $\alpha = [\alpha]$ - /occur check/
+    * il tipo contiene se stesso ed é contenuto da se stesso, errore
+
+Stesse considerazione valgono per le *coppie*:
+$c \in \{\cdots,(\:,)\}$
+Tipo:
+- $(\:,) : : \alpha \rightarrow \beta \rightarrow (\alpha,\beta)$
+
+Le costanti includono le *funzioni di libreria*:
+$c \in \{\cdots, \text{id}, \text{head}, \text{tail}, \cdots\}$
+
+Per la *ricorsione*:
+$f = M$
+
+La fase 1:
+- $f$ é trattato come una variabile
+La fase 2:
+- $f$ é trattato come una variabile
+- alla fine dell'annotazione generare il vincolo $\alpha = \tau$
+  + $\alpha$ variabile associata a $f$
+
+
 
 * Laboratorio
 ** Haskel
