@@ -537,6 +537,9 @@ Il caso peggiore é noto (quadratico), il caso migliore sará come il =Merge Sor
 
 Si dimostra che é ottimo con $O(n \log n)$
 ** Programmazione Dinamica
+:PROPERTIES:
+:ID:       2453dad7-d3eb-402a-892a-bc89a9b7d511
+:END:
 Si basano come i /Divide et Impera/ sulla scomposizione ricorsiva di un problema in sottoproblemi per poi ricomporli
 - *DI* efficiente se i sottopreblemi sono indipendenti, altrimenti puó fare lo stesso lavoro piú di una volta
 - *DI* puó essere molto inefficiente se i sottoproblemi non sono indipendenti tra loro

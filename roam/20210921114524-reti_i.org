@@ -945,7 +945,142 @@ Formato:
 Per la transizioni viene utilzzato il /tunnelling/
 - =IPv6= pacchetti trasportati come /payload/ all'interno di pacchetti =IPv4= attraverso router =IPv4=
 **** Routing Algorithms
+vedi: [[id:c3b3800b-b670-4a7d-8a1d-cf0bdde990cc][Cammini Minimi]]
+
+Astrazione in forma di grafo
+$G = (N,E)$
+- $N$ insieme di /router/
+- $E$ insieme di /link/
+Costi:
+$c(x,x')$ - costo link $(x,x')$
+
+Specifiche:
+- global | decentralized
+  1. tutti i router hanno topologia completa
+     + =link state= algorithms
+  2. i router conoscono solamente i vicini direttamente connessi
+     + =distance vector= algorithms
+- static | dynamic
+  1. i cammini cambiano lentamente
+  2. i cammini cambiano velocemente, l'algoritmo puó reagire ai cambiamenti
+
+***** Link-State Routing
+[[id:8a3dab9e-c636-4fcd-a750-0cae583e66da][Algoritmo di Dijkstra]]
+- $O(n^{2})$
+  + esiste anche un costo in quanto i router si devono scambiare necessariamente dei messaggi per avere tutte le informazioni sulla topografia
+- esistono implementazioni piú efficienti in $O(n\log{n})$
+
+I costi dei link sono conosciuti da tutti i router, tutti possono eseguire l'algoritmo di Dijkstra
+- producendo la /forwarding table/ per quel particolare nodo
+
+Sono possibili *oscillazioni*
+- scegliendo un particolare cammino piú efficiente fa si di cambiare il costo stesso del cammino
+- aumentando il traffico per quel collegamento
+
+***** Distance Vector Routing
+vedi: [[id:2453dad7-d3eb-402a-892a-bc89a9b7d511][Programmazione Dinamica]]
+*Bellman-Ford Equation*
+
+$d_{x}(y) = \text{min}_{v}\{c(x,v) + d_{v}(y)\}$
+
+dove:
+$\text{min}_{v}$ é il minimo calcolato su tutti i vicini $v$ di $x$
+
+ogni nodo mantiene
+- una stima $D_x(y)$ per ogni nodo nella rete
+- una stima $D_v(y)$ dei vicini
+quando la propria $D_{x}(y)$ cambia lo si scambia tra vicini
+- si ricalcolano le stime
+- questo procedimento porta $D_{x}(y)$ a tendere a $d_{x}(y)$
+
+L'algoritmo é
+- /iterativo/
+- /asincrono/
+- /distribuito/
+
+L'algoritmo permette:
+- una veloce propagazione di cambiamenti positivi della rete
+- una lenta propagazione di cambiamenti negativi della rete
+  + /count to infinity problem/
+  + risolvibile attraverso la /poisoned reverse/
+
+In caso di errori questi si propagano nella rete in quanto i router utilizzano i risultati gli uni degli altri
+
 **** Routing
+Nella realtá:
+- i router non sono tutti identici
+- la struttura reale della rete non é piatta
+
+Principali problemi:
+- scala
+- amministrazione autonoma
+  + ogni admin potrebbe voler controllare il proprio routing
+
+Quindi si utilizza un =Hierarchical Routing=
+- collezioni di router
+
+***** Autonomous Systems
+=AS=
+- Un =ISP= puó consistere di piú =AS=
+- Router nello stesso =AS= utilizzano lo stesso protocollo di routing
+  + Intra-AS routing algorithm
+- Router in =AS= diversi
+  + Inter-AS routing algorithm
+
+Un /gateway router/
+- terminale rispetto al suo =AS=
+- connette a router di altri =AS=
+
+***** RIP
+- advertisement a timer
+- se la table cambia si invia advertisement
+- utilizza /poison reverse/ per evitare ping-pong loops
+  + distanza infinita = 16 salti
+
+=RIP= implementata su livello applicativo (daemon), advertisement attraverso pacchetti =UDP=
+***** OSPF
+=Open Shortest Path First=
+
+- algoritmo a stato del collegamento
+- calcolo dell'instradamento utilizzando Djikstra
+- advertisement direttamente ai vicini
+  + /advertisement flooding/
+  + propagati per tutto l'=AS=
+- direttamente in datagramma =IP=
+  + non ha bisogno del livello di trasporto
+- i messaggi =ASPF= sono cifrati
+- permette piú cammini a costo minimo
+- ogni link sono possibili metriche diverse per i costi
+- supporto integrato a multicast
+- é possibile strutturare grandi domini in livelli gerarchici ulteriori
+  + area locale - local
+  + area dorsale - backbone
+
+***** BGP
+=Border Gateway Protocol=
+- protocollo tra domini
+- =eBGP= info di raggiungibilitá
+- =iBGP= propaga le info di raggiungibilitá ai router interni alla sottorete
+- permette alle sottoreti di informare il resto di Internet della propria esistenza
+
+Si basa sul concetto di /sessione/ di messaggi =BGP=
+- /prefix advertisement/ tra peers
+- si scambiano pacchetti /path vector/
+  + si informano le altre =AS= che cosa é raggiungibile passando dalla propria =AS=
+  + attributi
+    * =AS-PATH=
+    * =NEXT-HOP=
+- connessioni semi-permanenti =TCP=
+- /sessioni/
+  + =eBGP=
+  + =iBGP=
+- /import politics/
+  + i router di frontiera possono avere politiche differenti per selezionare un /advertisement/ piuttosto che un altro per uno stesso prefisso
+    * lunghezza del collegamento
+      + =AS-PATH=
+    *
+
+
 **** Broadcast - Multicast
 
 *** Livello di Collegamento

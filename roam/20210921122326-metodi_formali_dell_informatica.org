@@ -287,3 +287,5 @@ $(c,s) \rightarrow (c^{'},s^{'})$
 \([\![c]\!]_{\textsc{sos}}s = \begin{cases}t & \mbox{se} \vdash (c,s) \rightarrow^{*}(\textsc{skip},t)\\\perp & \mbox{se}\:(c,s)\:\mbox{cicla}\end{cases}\)
 - *Teorema di equivalenza delle Semantiche*
 $\forall c\in \mbox{com}\: \forall s,t\in\mbox{state}\mid[\![c]\!]_{\textsc{nat}}s=[\![c]\!]_{\textsc{sos}}s$
+** Logica Classica e Intutiva
+[[https://plfa.github.io/Negation/][Wadler]]

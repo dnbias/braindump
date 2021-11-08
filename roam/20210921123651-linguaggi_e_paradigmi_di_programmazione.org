@@ -372,6 +372,7 @@ La fase 2:
 - $f$ é trattato come una variabile
 - alla fine dell'annotazione generare il vincolo $\alpha = \tau$
   + $\alpha$ variabile associata a $f$
+  + $\tau$ annotazione associata a $M$
 
 
 

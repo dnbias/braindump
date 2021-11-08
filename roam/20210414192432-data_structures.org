@@ -1183,6 +1183,10 @@ RB-Insert-Fixup(T,x)
 #+end_example
 
 ** Grafi
+:PROPERTIES:
+:ID:       6960b008-29f9-44ac-891b-f09489a4a9b7
+:END:
+
 $G = (V,E)$
 - vertici,archi
 
@@ -1741,6 +1745,9 @@ Invarianti
      + per invariante 1. e 2. l'arco $(u.\pi ,u)$ é un arco leggero che unisce le componenti connesse $(V-Q,A)$ e $(\{u\}, \emptyset)$
      + $\implies$ arco sicuro per corollario
 *** Cammini Minimi
+:PROPERTIES:
+:ID:       c3b3800b-b670-4a7d-8a1d-cf0bdde990cc
+:END:
 dato un $G$ orientato e pesato
 Definiamo distanza di un vertice $u$ da un vertice $v$: $\delta(u,v)$, il peso di un cammino di peso minimo tra tutti i cammini da $v$ a $u$.
 Una tale distanza é ben definita se non contiene al suo interno archi con peso negativo.
@@ -1754,6 +1761,9 @@ Un algoritmo per trovare cammini minimi da un dato nodo:
 Si costruisce un albero radicato in $s$ che percorre tutti i cammini minimi
 - man mano che si inseriscono i vertici con il loro costo si controllano i suoi adiacenti, in quanto potrebbe esserci un cammino dal costo minore di quello precedentemente considerato passante dall'ultimo vertice aggiunto
 **** Algoritmo di Dijkstra
+:PROPERTIES:
+:ID:       8a3dab9e-c636-4fcd-a750-0cae583e66da
+:END:
 #+begin_example
 Dijkstra(G,s)
   Q = V
