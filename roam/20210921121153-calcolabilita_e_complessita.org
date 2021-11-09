@@ -77,7 +77,28 @@ Per un =DFA= possiamo definire una =TM M= che lo simula e verifica l'accettazion
 [[file:../media/img/decidable-recognizable.jpg][Decidable - Turing-recognizable]]
 - =NFA= convertibili
 - =RegEx= convertibili
+*** Teorema di Post
+=4.22=
+Linguaggio $L$ decidibile $\iff$ e' _positivamente_ e _negativamente_ decidibile
+- $M$ termina sempre $\forall w \in \Sigma^{*}$
+- $M$ é un decisore che simula $M_{1}$ e $M_{2}$ in parallelo
+  + il primo che termina decide
+*** Mapping Reducible Language
+Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
 
+$A \le_{m}B$
+
+se esiste una /funzione computazionale/ $f$ tale che:
+
+$w \in L(A) \iff f(w) \in L(B)$
+
+[[../media/img/mapping-reducibility.jpg]]
+
+Seguono i corollari:
+- Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
+- Se $A \le_{m}B$ e $A$ non é decidibile $\implies B$ non é decidibile
+
+Si dimostra allora la riducibilitá $A_{\textsc{tm}}\rightarrow \textsc{halt}_{\textsc{tm}}$
 *** Problemi Decibidili
 $E_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
 - decidibile studiando i percorsi nel grafo delle transizioni
@@ -89,12 +110,6 @@ $A_{\textsc{CFG}}=\{\langle G,w \rangle \mid G\mbox{ is a \textsc{CFG} that gene
 - non c'é problema di fermata
 $E_{\textsc{CFG}}=\{\langle G \rangle \mid G\mbox{is a \textsc{CFG} and }L(G) = \emptyset\}$
 
-*** Teorema di Post
-=4.22=
-Linguaggio $L$ decidibile $\iff$ e' _positivamente_ e _negativamente_ decidibile
-- $M$ termina sempre $\forall w \in \Sigma^{*}$
-- $M$ é un decisore che simula $M_{1}$ e $M_{2}$ in parallelo
-  + il primo che termina decide
 *** Problemi Indecidibili
 Per molti problemi si utilizza la tecnica della riduzione
 - se un problema che sappiamo non decidibile si puó ridurre al problema che stiamo studiando allora anche questo non sará decibidile
@@ -227,8 +242,6 @@ Per arrivare a questo /accept/:
 $\forall a\in \Gamma$
 - $[\frac{a\: q_{accept}}{\quad q_{accept}}]$
 - $[\frac{q_{accept} \: a}{q_{accept}\quad}]$
-
-
 **** Tassellazione - Wang Tiles
 [[https://en.wikipedia.org/wiki/Wang_tile][Wikipedia]]
 Solo negativamente decidibile
@@ -237,6 +250,12 @@ Solo negativamente decidibile
 **** Esistenza di un DFA equivalente
 =5.3=
 $A_{\textsc{tm}}$ é riducibile a $\textsc{Regular}_{\textsc{tm}}$
+*** Configurazione di una TM
+:PROPERTIES:
+:ID:       028287f8-28e5-4085-b92a-db457989537f
+:END:
+#+caption: configurazione di $1011 q_{7} 01111$
+[[../media/img/tm-configuration.jpg]]
 *** Recap
 - Negativamente Decidibili
   + $E_{\textsc{tm}}$
@@ -260,25 +279,4 @@ $A_{\textsc{tm}}$ é riducibile a $\textsc{Regular}_{\textsc{tm}}$
   + $\textsc{Context-Free}_{\textsc{tm}}$
   + $\textsc{All}_{\textsc{tm}}$
     * se un programma accetta sempre
-*** Mapping Reducible Language
-Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
-
-$A \le_{m}B$
-
-se esiste una /funzione computazionale/ $f$ tale che:
-
-$w \in L(A) \iff f(w) \in L(B)$
-
-[[../media/img/mapping-reducibility.jpg]]
-
-Seguono i corollari:
-- Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
-- Se $A \le_{m}B$ e $A$ non é decidibile $\implies B$ non é decidibile
-
-Si dimostra allora la riducibilitá $A_{\textsc{tm}}\rightarrow \textsc{halt}_{\textsc{tm}}$
-*** Configurazione di una TM
-:PROPERTIES:
-:ID:       028287f8-28e5-4085-b92a-db457989537f
-:END:
-#+caption: configurazione di $1011 q_{7} 01111$
-[[../media/img/tm-configuration.jpg]]
+** Complessitá
