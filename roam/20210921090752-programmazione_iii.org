@@ -235,9 +235,24 @@ Il successore di =SWING=
 - Buttons
 
 **** Scene Builder
-
 ** Programmazione Multithread
 /Stesso processo - Esecuzione concorrente di istruzioni/
+Piú leggeri rispetto ai processi concorrenti
+- in =JFrame= viene attivato un thread di interfaccia utente
+  + contiene tutti i _listener_ dell'interfaccia
+
+Si utilizzano classi in estensione a =Thread=
+- si creano in memoria con la =new=
+- si lanciano in parallelo il metodo =run()= con il metodo =start()=
+- si puó inserire lo =start()= all'interno del costruttore
+Questo ha il problema dell'ereditarietá singola.
+
+Per separare logicamente =Thread= (esecutore) e ció che va eseguito esiste l'interfaccia =Runnable=
+- contengono il metodo =run()=
+- eseguibile con =new Thread(Runnable r)=
+
+I =Thread= possono eseguire il metodo =join(Thread t)= per aspettare che =t= abbia terminato =run()= per continuare la propria esecuzione
+
 ** Programmazione in Rete
 *** Architettura Client-Server
 *** Socket
