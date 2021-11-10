@@ -497,6 +497,99 @@ mergeSort xs  = merge (mergeSort ys) (mergeSort zs)
   where
     (ys, zs) = split xs
 #+end_code
+**** Java Virtual Mini-Machine
+vedi: [[id:5d9aab5a-c1c4-4f94-9947-7a1629c5f9c9][IJVM]], [[id:373ce75b-dddb-41f0-88a5-7671d9b640ec][JVM]]
+Istruzioni:
+- =PUSH v=
+- =LOAD x=
+- =STORE x=
+- =OP f=
+- =IF R l=
+- =RETURN=
+
+#+begin_code haskell
+type Value = Int
+type Var   = Int     -- indice di una variabile
+type Stack = [Value] -- con : inseriamo in testa
+                     -- estraiamo con pattern matching
+type Frame = [Value] -- qui invece dobbiamo accedere
+                     -- in posizioni arbitrarie
+#+end_code
+Per i =Frame= definiamo:
+#+begin_code haskell
+load :: Var -> Frame -> Value
+load _ []       = 0
+load 0 (v : _)   = v
+load n (__ : vs) = load (n-1) vs
+
+store :: Var -> Value -> Frame -> Frame
+store 0 v []          = [v]
+store 0 v (_ : vs)    = v : vs
+store n v []          = 0 : store (n-1) v [] -- inizializzazione a 0
+store n v (w : vs)    = w : store (n-1) v vs
+#+end_code
+
+Le Istruzioni possiamo pensarle come sottoclassi di una classe astratta =Istruzione=
+
+#+begin_code haskell
+data Instruction
+  = PUSH Value
+  | LOAD Var
+  | STORE Var
+  | OP (Value -> Value -> Value)
+  | IF (Value -> Value -> Bool) Code
+  | RETURN
+
+type Code = [Instruction]
+#+end_code
+Queste definizioni algebriche sono simili a produzioni di una grammatica
+
+Permettono l'espressione di codice di questa forma:
+#+begin_code haskell
+fibonacci :: Code
+fibonacci = init
+  where
+    init = PUSH 0 :
+           STORE m :
+           PUSH 1 :
+           STORE n :
+           loop
+    loop = LOAD k :
+           PUSH 0 :
+           IF (==) fine :
+           LOAD n :
+           LOAD n :
+           LOAD m :
+           OP (+) :
+           STORE n :
+           STORE m :
+           LOAD k :
+           PUSH 1 :
+           OP (-) :
+           STORE k :
+           loop
+    fine = LOAD m :
+           RETURN : []
+    k    = 0
+    m    = 1
+    n    = 2
+#+end_code
+
+L'implementazione é completata con un interprete:
+#+begin_code haskell
+run :: Code -> Frame -> Value
+run = aux []
+  where
+    aux :: Stack -> Code -> Frame -> Value
+    aux (v : [])     (RETURN : _)   _  = v
+    aux vs           (PUSH v : is)  fr = aux (v : vs) is fr
+    aux vs           (LOAD x : is)  fr = aux (load x fr : vs) is fr
+    aux (v : vs)     (STORE x : is) fr = aux vs is (store x v fr)
+    aux (w : v : vs) (OP f : is)    fr = aux (f v w : vs) is fr
+    aux (w : v : vs) (IF p is : _)   fr | p v w = aux vs is fr
+    aux (__ : _ : vs) (IF _ _ : is)  fr = aux vs is fr
+#+end_code
+
 *** Caratteristiche Linguaggio
 **** Guardie
 Introducono delle condizioni, alternativa al piú operazionale =if...then...else=

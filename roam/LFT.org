@@ -573,6 +573,9 @@ _SI_
 \(G^R = (V,T,P^RS)\) dove \(P^R= \{A \to \alpha^R\mid A \to \alpha \in P\}\)
 Si dimostra che \(L(G^R) = L(G)^R\)
 * JVM
+:PROPERTIES:
+:ID:       373ce75b-dddb-41f0-88a5-7671d9b640ec
+:END:
 Vedi: [[id:5d9aab5a-c1c4-4f94-9947-7a1629c5f9c9][IJVM]], [[https://en.wikipedia.org/wiki/Java_bytecode_instruction_listings][Bytecode Instruction Listing]]
 Progetto: [[~/Code/Java/LFTCompiler/Translator.java][Translator.java]]
 - Interprete =bytecode=
