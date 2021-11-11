@@ -1080,10 +1080,163 @@ Si basa sul concetto di /sessione/ di messaggi =BGP=
       + =AS-PATH=
     *
 
+**** Broadcast
+un singolo nodo trasmette a molti
+- duplicazione alla sorgente i pacchetti che invia
+  + inefficente
+  + non é detto che la sorgente conosca tutti gli indirizzi destinatari
+- duplicazione all'interno della rete
+  + /flooding/
+    * un nodo che riceve un pacchetto in broadcast lo duplica e invia a tutti i vicini
+    * puó creare cicli e /broadcast storm/
+  + /controlled flooding/
+    * invia solamente se non giá inviato in precedenza
+      - fatto con i numeri di sequenza (id)
+    * o con =RPF= (Reverse Path Forwanding)
+      - invio del pacchetto solo se é giunto dal cammino piú breve possibile tra nodo e sorgente
+  + /spanning tree/
+    * nessun pacchetto ridondante ricevuto da alcun nodo
+    * un albero non ha cicli
+    * va costruito
+      1. selezione di un nodo centrale
+         - si inviano dei messaggi di =join= dagli altri nodi
+         - questi messaggi sono reinviati fino a che non si raggiunge un nodo giá inserito nell'albero di distribuzione
 
-**** Broadcast - Multicast
+**** Multicast
+sistemi mittenti e sistemi riceventi
+- alcuni fanno parte del gruppo multicast altri no
+- anche router che non hanno membri multicast possono fare parte della rete multicast se essenziali al collegamento
 
+Approcci alla costruzione dell'albero di distribuzione
+- /source-based tree/
+  + shortest path trees
+    * [[id:8a3dab9e-c636-4fcd-a750-0cae583e66da][Algoritmo di Dijkstra]]
+  + =RPF=
+    * permette il /pruning/ su sottoalberi che non contengono membri del multicast
+- /group-share tree/
+  + minimal spanning (/Steiner/)
+    * albero a costo minimo che connetta tutti i router con membri
+    * problema NP-completo
+    * l'algoritmo é monolitico
+      - va rieseguito ogni volta che la rete varia
+    * esistono buone euristiche ma rimane poco usato
+  + center-base trees
+
+***** DVMRP
+=Distance Vector Multicast Routing Protocol=
+- /flood and prune/
+  + =RPF= tree basato sulle routing tables costruite comunicando tra i router =DVMRP=
+  + non assume nulla sull'unicast sottostante
+  + i router non nel gruppo possono mandare messaggi di pruning upstream
+- /soft state/
+  + resetta lo stato a intervalli di tempo
+- /tunnelling/
+  + utilizzato per collegare _fisicamente_ router multicast che sono connessi logicamente
+  + collegamenti virtuali
+    * datagrammi multicast inseriti in datagrammi non multicast
+***** PIM
+=Protocol Independent Multicast=
+- non dipende dall'algoritmo di routing utilizzato al livello di unicast
+- due scenari di distribuzione
+  1. /dense/
+     + membri posizionati densamente
+     + ampiezza di banda piú importante
+     + i router fanno implicitamente parte della distribuzione
+       * devono chiedere il pruning loro stessi
+     + /data-driven/ mcast tree (=RPF=)
+       * /flood and prune/
+       * meccanismo di protocollo per informare i nodi se sono foglie
+  2. /sparse/
+     + membri largamente sparsi
+       - in reti diverse
+     + ampiezza di banda non altrettanto importante
+     + l'appartenenza al gruppo va richiesta esplicitamente
+     + /receiver-driven/ mcast tree (center-based)
+       * i router inoltrano messaggi di /join/ verso il /rendezvous point/
+       * i messaggi sono inviati tramite =unicast= al centro che poi distribuisce
 *** Livello di Collegamento
+I protocolli di questo livello lavorano su /frame/, che incapsulano i datagrammi
+Il livello tratta di /link/ tra /nodi/
+- wired
+- wireless
+- =LANs=
+
+I protocolli di questo livello si trovano su tutti i nodi della rete
+- /netword interface card/ - =NIC=
+  - scheda di rete
+Implementati in parte in _hardware_, in parte in _firmware_ (controller della scheda), in parte in _software_
+
+**** Servizi
+- /framing/
+  + incapsulamento di un datatramma
+  + aggiunge header, trailer
+  + accesso condiviso se il medium é condiviso
+  + =MAC= address che identificano sorgente e destinazione del /frame/
+- /trasferimento dati affidabile/
+  + in particolare per i collegamenti con alto tasso di errori
+    * wireless
+- /flow control/
+- /error detection/
+- /error correction/
+- /half-duplex/ - /full-duplex/
+**** Errori
+***** Detection & Correction
+Bit aggiunti al datagramma:
+- =EDC= - Error Detection and Correction bits
+
+I bit sono controllati da ricevente
+- possono esserci errori non rilevati anche se raramente
+
+- /Parity checking/
+  + paritá singola
+    * permette di individuare errori di singoli bit
+    * non molto sicuro ma semplice e veloce
+  + paritá bidimensionale
+    * permette di individuare e correggere errori di singoli bit
+- *Cyclic Redundancy Check*
+  + $R$ bit tali che
+    * $\langle D,R \rangle$ divisibile per $G$
+  + permette di individuare fino a $r$ errori di bit consecutivi
+    * questo perché solitamente gli errori si presentano in /burst/
+  + $D \cdot 2^{r}\: \textsc{xor}\: R = nG$
+
+**** Protocolli ad Accesso Multiplo
+Esistono mezzi /broadcast/ condivisi oltre a quelli /point-to-point/
+- si verificano interferenze/collisioni se due o piú nodi trasmettono allo stesso momento
+
+I protocolli di questo tipo:
+- algoritmi distribuiti che determinano quando i nodi possono trasmettere
+- le comunicazioni riguardanti la condivisione del canale possono necessitare il canale stesso
+  + /in-band channel coordination/
+***** MAC
+=Medium Access Control Protocols=
+- /channel partitioning/
+  + suddivisione del canale in parti piú piccole
+- /random access/
+  + il canale non viene suddiviso
+  + permette le collisioni
+  + quando un nodo ha bisogno del mezzo lo utilizza
+    * vengono individuate le collisioni
+    * si specifica come risolvere la collisione
+      - tipicamente con la ritrasmissione ritardata
+- /turns/
+  + i nodi vanno a turni
+
+****** TDMA
+=Time Division Multiple Access=
+- accesso diviso su turni
+- ad ogni nodo é assegnato uno slot temporale
+- slot non utilizzati vanno sprecati
+****** FDMA
+=Frequency Division Multiple Access=
+- banda divisa in bande piú piccole
+  + su frequenze diverse
+- ogni nodo é assegnato ad una sotto-banda
+
+
+**** LANs
+**** Virtualizzazione
+**** Data Center Netwoking
 *** Incapsulamento
 Ogni livello che si discende si aggiunge una intestazione
 ** Sicurezza

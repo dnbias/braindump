@@ -253,6 +253,46 @@ Per separare logicamente =Thread= (esecutore) e ció che va eseguito esiste l'in
 
 I =Thread= possono eseguire il metodo =join(Thread t)= per aspettare che =t= abbia terminato =run()= per continuare la propria esecuzione
 
+*** Deamon
+Un =Thread= puó essere dichiarato come =Deamon=
+- utilizzato per servizi
+
+In particolare termina solo quando tutti i =Thread= parenti terminano
+*** Sincronizzazione
+Necessaria su oggetti con accesso condiviso
+- in particolare quando le operazioni eseguite non sono /atomiche/
+
+Le sezione critiche possono essere gestite con:
+- =Semaphore(int n)=
+  + =acquire()=
+  + =release()=
+
+In =Java= peró ogni =Object= é dotato di =lock=
+- ogni istanza possiede un semaforo binario =lock=
+- questo é utilizzato con la dichiarazione del metodo =synchronized=
+- il =lock= é sulla singola instanza dell'oggetto, quindi la sincronizzazione avviene su piú esecuzioni di metodo =synchronized= dello stesso oggetto
+- sincronizzazione /server side/
+  + i client chiamano senza preoccuparsi, della sincronizzazione se ne occupa il server
+Anche l'oggetto =Class= relativo ha un =lock=
+- relativo a tutto ció che statico
+
+Per dichiarare sezioni critiche solamente sezioni di metodi si utilizza il metodo:
+- =synchronized(Object o)=
+
+Per i puntatori o contatori esiste =AtomicInteger=
+
+I =Thread= possono attendere lo stato giusto della risorsa con il metodo:
+- =wait()=
+  + sbloccati attraverso notifica
+  + =notifyAll()=
+  + =notify()=
+    * risvegli il primo della coda di =wait=
+
+Le due situazioni che si possono creare con un utilizzo errato della sincronizzazione:
+- /deadlock/
+- /starvation/
+
+
 ** Programmazione in Rete
 *** Architettura Client-Server
 *** Socket
