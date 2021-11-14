@@ -82,7 +82,7 @@ Negli anni:
   + Java
   + PHP
   + JavaScript
-** \lambda-calcolo
+** Lambda-calcolo
 Ci si restringe sull'essenza della programmazione in linguaggio funzionale
 - si distilla un piccolo linguaggio facilmente studiabile
 
@@ -375,6 +375,32 @@ La fase 2:
   + $\tau$ annotazione associata a $M$
 
 
+** Correttezza
+Le dimostrazioni sono semplificate dal fatto che la funzione non mostra il suo stato al programmatore, tutto si trova nella definizione della funzione.
+
+Gli /approcci/ possibili sono:
+- test
+  + non esaustiva
+    * puó dimostrare la presenza di un problema ma non la sua assenza
+  + piú facile
+- dimostrazione
+  + esaustiva
+  + difficile, soprattutto se il linguaggio é imperativo
+
+*** Relazioni totali
+#+begin_code haskell
+foo :: Int -> Int -> Int -> Int
+#+end_code
+Essendo l'ordine tra numeri *totale* é possibile considerare un numero finito di casi complessivamente *esaustivi*
+*** Induzione
+Il principio di induzione permette di dimostrare una proprietá per un insieme *infinito* di casi.
+
+1. Si dimostra il caso base
+2. Si dimostra il caso induttivo
+   + assumendo che a proprietá sia vera per il caso precedente $(n-1)$
+
+**** Principio di Induzione Forte
+$(\forall m < n : P (m)) \implies P(n)\: \forall n \in \mathbb{N}$
 
 * Laboratorio
 ** Haskel

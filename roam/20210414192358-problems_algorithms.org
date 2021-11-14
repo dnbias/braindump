@@ -272,6 +272,9 @@ Che cresce molto piú lentamente di una funzione quadratica
 - ció implica che esistano algoritmi molto piú efficienti di quelli quadratici visti
 
 ** Complessitá di un algoritmo
+:PROPERTIES:
+:ID:       347b2529-bb45-4516-86fe-443b43c8edd6
+:END:
 Risorse utilizzate dall'algoritmo
 - tempo
 - spazio
@@ -310,6 +313,10 @@ Quanto contano le costanti?
 - inoltre la stima delle costanti é molto difficile nella pratica
 
 *** O-grande
+:PROPERTIES:
+:ID:       adc0b322-e761-439b-b7bf-7895bd638c23
+:END:
+
 Definito da P. Bachman, 1892.
 $f(n) \in O(g(n)) \iff \exists c > 0, n_0 \forall n > n_0 \mid f(n) \le cg(n)$
 Un $f(n)$ é O-grande di $g(n)$ se e solo se $f(n)$ cresce al piú come $g(n)$ dopo un numero finito di casi $n_0$ e eventuali costanti moltiplicative $c$.

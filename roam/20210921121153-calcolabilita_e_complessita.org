@@ -70,7 +70,7 @@ $\delta: Q \times \Gamma^{k} \longrightarrow Q \times \Gamma^{k} \times \{L,R,S\
 
 Si puó simulare una ~MT~ a piú nastri con una ~MT~ ad un nastro solo
 - perché? per semplificare la definizione di calcolo
-- se un algoritmo a piú nastri é lineare su un nastro solo sará quadratico
+- se un algoritmo a piú nastri é lineare su un nastro sará *quadratico*
 [[../media/img/3tapes1tape.jpg]]
 ** Decidibilitá
 Per un =DFA= possiamo definire una =TM M= che lo simula e verifica l'accettazione o meno dell'Input
@@ -280,3 +280,18 @@ $A_{\textsc{tm}}$ é riducibile a $\textsc{Regular}_{\textsc{tm}}$
   + $\textsc{All}_{\textsc{tm}}$
     * se un programma accetta sempre
 ** Complessitá
+Trattata nel corso di Algoritmi: [[id:347b2529-bb45-4516-86fe-443b43c8edd6][Complessitá di un algoritmo]]
+Per lo studio della complessitá consideriamo la _Macchina di Turing_ (1 registro)
+- questo in quanto la complessitá varia anche in base all'architettura
+
+Il tempo di calcolo della macchina $M$ é definito come
+
+$f : \mathbb{N} \to \mathbb{N}$ dove $f(n)$ é il numero massimo di passi compiuti dalla macchina $M$
+
+Si utilizza la /notazione asintotica/ o *big-O Notation*
+- [[id:adc0b322-e761-439b-b7bf-7895bd638c23][O-grande]]
+
+Teorema =7.8=
+Sia $t(n)$ una funzione t.c. $t(n) \ge n \implies$ qualsiasi macchina /multitape/ $M$ con  tempo $t(n)$ ha un equivalente $O(t^2(n))$ in una macchina $M'$ /singletape/
+- chiaro riprendendo la simulazione di /multitape/ in /singletape/
+- un passo della simulazione /singletape/ impiega al massimo $O(t(n))$ passi
