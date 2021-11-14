@@ -299,3 +299,44 @@ Le due situazioni che si possono creare con un utilizzo errato della sincronizza
 *** Polimorfismo
 *** Esecuzione Distribuita
 * Laboratorio
+** MVC
+1. [[~/Uni/III/ProgIII/L/MVC/org/prog3/lab/week6/es1/es1_svolto/Exercise1.java]]
+2. [[~/Uni/III/ProgIII/L/MVC/org/prog3/lab/week6/es2/ProverbsApp.java]]
+
+** Progetto
+[[id:6c78ec84-9bc2-461e-84f7-fa63ca5ca73a][eMail Client-Server]]
+- Server
+  + ha una interfaccia grafica con il log delle operazioni client-server
+- Modello
+  + mail
+    + account
+      * ben formata
+    + lista di messaggi - inbox
+      * eventualmente vuota se non ha messaggi
+      * List di Classe =EMail=
+        - ID
+        - mittente
+        - destinatario / destinatari
+        - soggetto
+        - testo
+        - data
+        - ...
+- Client
+  + associato ad un account
+  + Intefaccia grafica
+    * creazione / invio mail
+    * lettura messaggi inbox
+    * rispondere a un messaggio
+    * forward di un messaggi
+    * rimozione messaggi
+    * aggiornata
+      - notifica nuovi messaggi
+  + lo stato dell'Inbox mantenuto lato server
+    * /attendere riscontro docenti/
+  + il client dovrebbe funzionare anche se ci sono problemi di connessione con il server
+    * avvertendo il client
+- Multithreading
+  + se una operazione puó essere parallelizzata allora deve esserlo
+- =Properties / Java Beans=
+  + per l'implementazione della =View=
+  + consigliato
