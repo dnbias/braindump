@@ -280,7 +280,7 @@ Per dichiarare sezioni critiche solamente sezioni di metodi si utilizza il metod
 - =synchronized(Object o)=
 
 Per i puntatori o contatori esiste =AtomicInteger=
-
+**** Thread
 I =Thread= possono attendere lo stato giusto della risorsa con il metodo:
 - =wait()=
   + sbloccati attraverso notifica
@@ -292,6 +292,48 @@ Le due situazioni che si possono creare con un utilizzo errato della sincronizza
 - /deadlock/
 - /starvation/
 
+Tra =Thread= la comunicazione puó essere gestita facilmente con le =Pipe=
+**** BlockingQueue
+Interfaccia generica
+**** Lock e Condition
+Ogni oggetto ha un lock implicito.
+Per usare lock espliciti si utilizza l'interfaccia =Lock=
+Implementata ad esempio in =ReentrantLock=
+- =newCondition()=
+  + restituisce un oggetto di tipo =Condition=
+    * =await()=
+    * =signal()=
+    * =signalAll()=
+
+=ReadWriteLock=
+- =Lock readLock()=
+- =Lock writeLock()=
+*** Pool
+=Thread Pool=
+Si creano un numero di =Thread= in un colpo solo a cui sono poi assegnati man mano i compiti da eseguire.
+- sono dotati di coda in cui sono inserite le task man mano
+- il =Pool= si auto gestisce le code bilanciandole
+
+**** Executor
+=Executor= Interface
+- =ExecutorService newFixedThreadPool(int n)=
+- =ScheduleExecutorService newScheduledThreadPool(int n)=
+- =ScheduleAtFixedRate=
+
+=shutdown()=
+
+*** Runnable
+Task che corrisponde a un metodo con ritorno =void=
+
+*** Callable<T>
+Task che é parametrizzato con =T= generico
+- =public T call()=
+
+**** Future<T>
+=Futuretask(Callabre<T> task)=
+- =isDone()=
+- =get()=
+  + sospende in caso non abbia ancora terminato la computazione
 
 ** Programmazione in Rete
 *** Architettura Client-Server
