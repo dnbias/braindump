@@ -203,7 +203,7 @@ com ::= SKIP                      -- noop
      |  WHILE bexp DO com         -- iterazione
 #+end_example
 Con queste caratteristiche il nostro linguaggio =IMP= é Touring completo:
-- vedi _Arbib_ /A programming approach to computability/
+- _Arbib_, /A programming approach to computability/
 
 *Semantica* di =com=
 #+begin_example
@@ -265,7 +265,7 @@ I comandi $c_{1},c_{2}$ sono _equivalenti_ [$c_{1} \sim c_{2}$]
 ***** Funzione parziale
 $[\![ \cdot ]\!]: com \rightarrow state \rightharpoonup state$
 \([\![c]\!]s = \begin{cases}t & \mbox{se} \vdash (c,s) \Rightarrow t\\\perp & \mbox{altrimenti}\end{cases}\)
-**** Semantica SOS - Small Step
+*** Semantica SOS - Small Step
 Singolo _passo di calcolo_
 $(c,s) \rightarrow (c^{'},s^{'})$
 
@@ -287,5 +287,29 @@ $(c,s) \rightarrow (c^{'},s^{'})$
 \([\![c]\!]_{\textsc{sos}}s = \begin{cases}t & \mbox{se} \vdash (c,s) \rightarrow^{*}(\textsc{skip},t)\\\perp & \mbox{se}\:(c,s)\:\mbox{cicla}\end{cases}\)
 - *Teorema di equivalenza delle Semantiche*
 $\forall c\in \mbox{com}\: \forall s,t\in\mbox{state}\mid[\![c]\!]_{\textsc{nat}}s=[\![c]\!]_{\textsc{sos}}s$
-** Logica Classica e Intutiva
+** Teoria dei Tipi
+[[~/Code/Agda/quantifiers.agda][file Agda]]
+
+Il quantificatore universale si traduce, nella teoria dei tipi dipendenti, in
+
+$\frac{A : \text{Set} \qquad x : A \vdash B[x] : \text{Set}}{\pi[x : A] B[x] : \text{Set}}$
+dove
+
+$\pi [x:A] \: B[x] \equiv B[a_{1}] \times B[a_{2}] \times \cdots$ per $a_{i}\in A$
+corrisponde a
+$\forall x \: . \: B[x] \iff B[a_{1}] \land B[a_{2}] \land \cdots$
+
+Il $\pi$ sta per il concetto di indicizzazione:
+- forma famiglie secondo i suoi indici
+
+$\forall (\lambda \: x \: \rightarrow B\: x): \text{Set}$
+- il quantificatore é un operatore che viene applicata al lambda
+** Logica Classica e Intuizionistica
 [[https://plfa.github.io/Negation/][Wadler]]
+*** Semantica di Heyting
+$\frac{B[t]}{\exists x \: . \: B[x]}$
+$\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]$
+** IMP
+[[~/Code/Agda/IMP.agda][Definizione in Agda]]
+*** Semantica Operazionale
+[[~/Code/Agda/IMP-Op.agda][File Agda]]
