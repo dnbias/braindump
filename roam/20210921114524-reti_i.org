@@ -1222,19 +1222,137 @@ I protocolli di questo tipo:
 - /turns/
   + i nodi vanno a turni
 
-****** TDMA
+****** Channel Partitioning
+******* TDMA - channel part
 =Time Division Multiple Access=
 - accesso diviso su turni
 - ad ogni nodo é assegnato uno slot temporale
-- slot non utilizzati vanno sprecati
-****** FDMA
+  - slot non utilizzati vanno sprecati
+******* FDMA
 =Frequency Division Multiple Access=
 - banda divisa in bande piú piccole
   + su frequenze diverse
 - ogni nodo é assegnato ad una sotto-banda
+****** Random Access
+******* ALOHA
+- frame di grandezza uguale
+- tempo diviso in slot uguali
+- i nodi sono sincronizzati
+- se 2 piú nodi trasmettono nello stesso slot
+  + tutti i nodi registrano la collisione
+- quando un nodo riceve un frame, trasmette nello slot successivo
+  + se si verifica una collisione si tenta di ritrasmettere nello slot successivo con una certa probabilitá $p$, altrimenti ritenterá allo slot successivo ancora con la stessa probabilitá
 
+Quindi:
+- prob che un nodo abbia successo in un dato slot, $p(1-p)^{N-1}$
+- prob che un qualsiasi nodo abbia successo, $N\cdot p(1-p)^{N-1}$
+- massima efficienza massimizza questo valore, $1/e = 0.37$
+  + nel caso migliore solo il 37% del tempo uno slot viene sfruttato
+
+Nella versione pura, /unslotted/, di =ALOHA= non c'é sincronizzazione e qualsiasi nodo puó trasmettere immediatamente quando necessario
+- le collisioni avvengono nelle sovrapposizioni tra le trasmissioni
+- le collisioni aumentano
+
+In questa versione:
+- prob che un qualsiasi nodo abbia successo, $p \cdot (1-p)^{N-1} \cdot (1-p)^{N-1}$
+  + $p \cdot (1-p)^{2(N-1)}$
+- massima efficienza $1/e = 0.18$
+
+******* CSMA
+=Carrier Sense Multiple Access=
+Non interrompe la comunicazione altrui
+
+- se il canale viene individuato come in /idle/
+  + trasmette l'intero frame
+- se il canale é /busy/
+  + rimanda la trasmissione
+
+A causa del /propagation delay/ le collisioni possono ancora accadere
+- i nodi potrebbero non accorgersi in tempo che il canale é occupato in realtá
+- in caso di collisione tutto il tempo di trasmissione viene sprecato
+******** CSMA/CD
+=CSMA Collision Detection=
+
+[[~/org/media/img/CSMA-CD.jpg]]
+
+In caso di collisioni si individuano velocemente per interrompere la trasmissione
+- riduce lo spreco del canale
+- Collision Detection
+  + =LAN=
+    * si confronta l'intensitá del segnale trasmesso e ricevuto
+    * le interferenze creano una variazione di potenza del segnale
+    * protocollo utilizzato attualmente per reti =Ethernet=
+  + =Wireless=
+    * piú complesso
+    * il segnale ricevuto solitamente é attenuato mentre la trasmissione é piú potente
+- efficienza
+  + $t_{\text{prop}}$ max delay di propagazione tra 2 nodi
+  + $t_{\text{trans}}$ tempo di trasmissione di un frame di dimensione massima
+  + $\text{efficiency} = \frac{1}{1+ 5\frac{t_{\text{prop}}}{t_{\text{trans}}}}$
+    * aumenta con l'aumentare di $t_{\text{trans}}$
+    * aumenta con il diminuire di $t_{\text{prop}}$
+
+********* Algoritmo Ethernet CSMA/CD
+- =NIC= riceve datagramma, crea frame
+- =NIC= controlla il canale
+  + se occupato aspetta
+  + se libero trasmette
+    * se non determina disturbi durante la trasmissione suppone che il frame sia stato inviato correttamente
+    * se determina disturbi invia un /jam signal/ e interrompe la trasmissione
+      - reinvia dopo un determinato quantitativo di tempo
+        + /binary backoff/
+        + $k$ casuale tra $0$ e $2^{m}-1$ con $m$ collisioni
+        + =NIC= aspetta $k\cdot512\text{bit}$
+
+****** Turns
+
+******* Polling
+- nodo /master/ invita i nodi /slave/ a trasmettere a turno
+- solitamente /slave/ "dumb"
+- downsides
+  + overhead del /polling/
+  + latenza
+  + singolo punto di fallimento - /master/
+
+******* Token
+- /token/ di controllo passato da un nodo all'altro in sequenza
+- downsides
+  + /token/ overhead
+  + latenza
+  + singolo punto di fallimento - /token/
+    * puó essere perso
 
 **** LANs
+
+***** Addressing
+Il nodo destinazione nella rete locale é individuato con gli indirizzi fisici =MAC= o =LAN=
+- 48 bit scritto in =ROM= del =NIC=
+  + scheda di rete
+  + 6 coppie esadecimali di 4bit ciascuno
+  + indirizzo piatto, non cambia in base alla rete cui é connessa a differenza dell'indirizzo =IP=
+- l'indirizzo é univoco (unico per la singola scheda)
+  + amministrato da =IEEE= che assegna porzioni di indirizzi a produttori diversi
+    * garantisce l'unicitá
+- utilizzato per trasferire da un'interfaccia ad un altro, stesso =IP= per quanto riguardo il livello di rete
+
+****** ARP
+=Address Resolution Protocol=
+Passaggio da =IP= a =MAC=
+
+- nodo contiene una =ARP= table
+  + associa =IP/MAC=
+  + =<IP;MAC;TTL>=
+    * /Time to Leave/ in quanto il collegamento alla sottorete puó cambiare
+- quando si necessitá di un =MAC= si manda la richiesta nella propria rete
+  + il nodo cui corrisponde l'=IP= della richiesta e se questo é il suo risponde con il proprio =MAC=
+  + cosí viene popolata la =ARP= table
+
+***** Ethernet
+
+***** Switches
+
+***** VLANS
+
 **** Virtualizzazione
 **** Data Center Netwoking
 *** Incapsulamento

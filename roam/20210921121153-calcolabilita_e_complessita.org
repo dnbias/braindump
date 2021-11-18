@@ -295,3 +295,42 @@ Teorema =7.8=
 Sia $t(n)$ una funzione t.c. $t(n) \ge n \implies$ qualsiasi macchina /multitape/ $M$ con  tempo $t(n)$ ha un equivalente $O(t^2(n))$ in una macchina $M'$ /singletape/
 - chiaro riprendendo la simulazione di /multitape/ in /singletape/
 - un passo della simulazione /singletape/ impiega al massimo $O(t(n))$ passi
+
+La classe di tempo *Polinomiale* é definito come
+
+$\text{P} = \bigcup \textsc{time}(n^k)$
+
+*** Non Determinismo
+Teorema =7.11=
+Sia $t(n)$ una funzione dove $t(n)>n$.
+Allora ogni =TM= /singletape/ _non deterministica_ con complessitá temporale $t(n)$ ha una equivalente =TM= _determinitstica_ $2^{O(t(n))}$, nel caso di una macchina multiregistro
+Per una =TM= det. a registro singolo si avrá sempre complessitá $2^{O(t(n))}^2} = 2^{O(t(n))}$
+
+L'esplorazione dell'albero non deterministico é svolto utilizzando /l'ordine lessicografico/
+- in profonditá
+- questo é posto nell'/address tape/ della macchina *deterministica* corrispondente
+- a livello $n$ l'albero ha massimo $k^{n}$ nodi con $k$ numero di possibili figli
+- il numero di possi necessari all'eslorazione dell'albero é $2^{O(m)}$
+  + $m$ profonditá dell'albero
+*** Raggiungibilitá
+$\textsc{Path} = \{ \langle G,s,t  \rangle \mid G \text{ é  diretto con un cammino da }s \text{ a } t \}$
+La soluzione banale non deterministica ha $2^{O(t(n))}$ _esponenziale_
+
+Con un algoritmo marcando i nodi man mano che vengono scoperti si raggiunge complessitá _polinomiale_
+- rappresentando il grafo con liste di adiacenza la si puó stimare $O(n)$ nel numero di archi
+*** Algoritmo di Euclide
+$\textsc{RelPrime}$, il =MCD= tra due numeri Relativamente Primi é 1
+$\textsc{mcd}(x,y) = \textsc{mcd}(x \mod(y), y)$
+quindi procediamo:
+$(x,y) \to (x \mod{y}, y) \to (y, x\mod{y})\to \cdots \to (x,0)$
+$\textsc{mcd}(x,0) = x$
+
+I passi sono eseguiti $min(2 \log_{2} x, 2\log_{2} y)$ ovvero proporzionali al numero di cifre nella rappresentazione binaria: $O(n)$ quindi _polinomiale_
+
+*** Grammatiche di Chompsky
+Per migliorare la complessitá si cerca di derivare tutte le sottostringhe di lunghezza crescente della stringa di input
+- si memorizzano le soluzioni delle sottostringhe
+  + per ogni sottostringa la si divide in sottostringhe e si guarda la soluzione delle sottostringhe
+  + in una rappresentazione matriciale la soluzione si trova nella riga precedente
+- ogni controllo richiede $O(1)$ in quanto le sottostringhe sono sempre riconducibile ai siboli terminali
+Con questo algoritmo si raggiunge $O(n^3)$

@@ -122,7 +122,7 @@ I medici di base possono somministrare solo vaccini a doppia dose, mentre gli al
 
 ** Schema ER Iniziale
 [[https://erdplus.com/edit-diagram/95b219b3-3c04-46d2-bc6e-4bc802c5b98b][link]]
-
+[[~/Uni/II/BD/Progetto/Schema ER - Concettuale.png]]
 ** Business Rules
 - Un cittadino puó accedere solo a centri vaccinali della propria cittá di residenza
 - Un cittadino per un dato Vaccino deve  al massimo avere confermato $n$ appuntamenti con $n$ uguale al Numero Somministrazioni del Vaccino
