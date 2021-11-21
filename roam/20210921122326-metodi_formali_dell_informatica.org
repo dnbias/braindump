@@ -313,3 +313,7 @@ $\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]$
 [[~/Code/Agda/IMP.agda][Definizione in Agda]]
 *** Semantica Operazionale
 [[~/Code/Agda/IMP-Op.agda][File Agda]]
+*** StackMachine
+Basato su [[~/Code/Agda/C-List.agda]]
+- [[~/Code/Agda/StackMachine.agda][Source]]
+*** Compilatore

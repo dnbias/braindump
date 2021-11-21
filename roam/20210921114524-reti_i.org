@@ -1348,8 +1348,57 @@ Passaggio da =IP= a =MAC=
   + cosí viene popolata la =ARP= table
 
 ***** Ethernet
+Inizialmente pensato con una gerarchia definita:
+1. transiver
+2. cavo
+3. interfaccia
+4. controller
 
+Permettava una velocitá tra 10Mbps e 10 Gbps
+Inizialmente la topologia era di *bus*
+La topologia attuale é quella a *stella*
+- ora con una /switch/ al centro
+- collegamenti diretti tra nodi e /switch/
+- non c'é collisione
+
+I /frame/ Ethernet sono gli stessi indipendentemente dalla velocitá trasmissiva
+- preamble
+- destination (=MAC=)
+- source (=MAC=)
+- type
+  + solitamente =IP= ma puó essere un qualunque protocollo
+- data
+- =CRC=
+
+I /frame/ che non sono indirizzati al ricevente sono scartati
+- /connectionless/
+- /unreliable/
+  + non sono inviati =ACK=
+- protocollo =MAC=: =CSMA/CD= w/ binary backoff
+  + /jam/ signal in caso di disturbo
+    * 48 bit
+    * questo quantitativo di bit é utilizzato per attendere un tempo dipendente dalla velocitá del collegamento
+  + attesa esponenziale
+    * l'adattatore tenta di stimare quanti sono gli adattatori coinvolti
 ***** Switches
+funzione di =store-and-forward= dei /frame/ Ethernet
+- /trasparenti/
+  + gli host non sono a conoscenza degli switch
+- /plug-and-play/
+- /self-learning/
+
+Grazie a questi sono possibili trasmissioni simultanee
+- riceve i /frame/ e li inserisce in buffer
+- scelglie i buffer del collegamento in uscita desiderato per i pacchetti
+  + le interfaccie sono associate ai nodi raggiungibili tramite una /switch table/
+    * =MAC= - interfaccia - timestamp =TTL=
+    * popolata tramite autoapprendimento
+    * ogni volta che un /frame/ viene ricevuto viene memorizzata l'associazione tra interfaccia e =MAC= del mittente
+    * se il destinatario non é all'interno della tabella allora il /frame/ viene inviato su tutte le interfacce
+      - /flood/
+- le collisioni non avvengono in quanto pacchetti non si incontrano perché smistati su code diverse dallo switch
+
+Gli switch possono essere collegati tra di loro
 
 ***** VLANS
 

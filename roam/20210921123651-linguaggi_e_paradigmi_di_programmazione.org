@@ -374,7 +374,6 @@ La fase 2:
   + $\alpha$ variabile associata a $f$
   + $\tau$ annotazione associata a $M$
 
-
 ** Correttezza
 Le dimostrazioni sono semplificate dal fatto che la funzione non mostra il suo stato al programmatore, tutto si trova nella definizione della funzione.
 
@@ -401,6 +400,13 @@ Il principio di induzione permette di dimostrare una proprietá per un insieme *
 
 **** Principio di Induzione Forte
 $(\forall m < n : P (m)) \implies P(n)\: \forall n \in \mathbb{N}$
+**** Principio di Induzione sulle liste finite
+Ogni lista é costruita a partire dalla lista vuota e un numero finito di applicazioni del costruttore : o =cons=
+
+- $P([])$
+- $P(xs) \implies P(x : xs) \forall x \land xs$
+
+Come per il principio di induzione sui naturali é possibile generalizzare a tutte le liste _piú corte_ di quella considerata per dimostrare il caso induttivo
 
 * Laboratorio
 ** Haskel
