@@ -1389,7 +1389,7 @@ funzione di =store-and-forward= dei /frame/ Ethernet
 
 Grazie a questi sono possibili trasmissioni simultanee
 - riceve i /frame/ e li inserisce in buffer
-- scelglie i buffer del collegamento in uscita desiderato per i pacchetti
+- sceglie i buffer del collegamento in uscita desiderato per i pacchetti
   + le interfaccie sono associate ai nodi raggiungibili tramite una /switch table/
     * =MAC= - interfaccia - timestamp =TTL=
     * popolata tramite autoapprendimento
@@ -1398,13 +1398,51 @@ Grazie a questi sono possibili trasmissioni simultanee
       - /flood/
 - le collisioni non avvengono in quanto pacchetti non si incontrano perché smistati su code diverse dallo switch
 
-Gli switch possono essere collegati tra di loro
+Gli switch possono essere collegati tra di loro per creare sottoreti e strutture complesse
 
 ***** VLANS
+Permettono di risolvere problemi di privacy e sicurezza delle =LAN=
+Porte di uno /switch/ raggruppate in modo che un solo /switch/ fisico operi come piú dispositivi _virtuali_
+
+Se switch diversi fanno parte di una stessa =VLAN= questi sono collegati tra loro da porte particolari:
+- /trunk port/
+  + scambia /frame/ aggiungendo degli identificatori
+  + protocollo =802.1Q VLAN=
 
 **** Virtualizzazione
+***** MPLS
+=Multiprotocol Label Switching=
+- goal:
+  + velocizzare l'inoltro
+  + la ricerca dell'=IP= di destinazione nella tabella di inoltro puó essere lenta
+  + introdurre delle etichette per velocizzare lo switching all'interno del frame
+    * /header/ =MPLS=
+      - nuova tabella di inoltro piú efficiente
+    * l'inoltro viene fatto in base all'etichetta e non viene ispezionato l'=IP=
+    * capacitá di bilanciare il carico
+      - l'invio ad uno stesso destinatario puó essere diverso in base all'etichetta associata al /frame/
+
+Simile ai =Circuiti Virtuali=
+
 **** Data Center Netwoking
-*** Incapsulamento
+Da decine a centinaia di /hosts/ in prossimitá
+
+L'obiettivo é bilanciare il carico ed evitare bottleneck nell'accesso ai dati
+1. Server rack
+2. =TOR= switches
+3. Tier-2 switches
+4. Tier-1 switches
+5. Access Router
+   - Load Balancer
+     + riceve le richieste client esterne
+     + dirige il traffico nel data center
+     + ritorna i risultati ai client esterni
+       * nasconde l'interno del data center dai client
+6. Border Router
+
+Possono essere possibili diversi schemi di connessione tra i livelli di switch per ottimizzare l'accesso
+
+*** incapsulamento
 Ogni livello che si discende si aggiunge una intestazione
 ** Sicurezza
 Non é stata pensata inizialmente con la sicurezza in mente
