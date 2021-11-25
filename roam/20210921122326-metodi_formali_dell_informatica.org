@@ -317,3 +317,52 @@ $\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]$
 Basato su [[~/Code/Agda/C-List.agda]]
 - [[~/Code/Agda/StackMachine.agda][Source]]
 *** Compilatore
+[[id:4fd7520a-1c7f-4ca9-a361-fe3feb92dfc7][Nipkow]], cap. 8
+
+Linguaggio =IMP= $\longrightarrow$ istruzioni di una macchina astratta
+- c : com $\mapsto$ p : prog
+  + $(c,s) \Rightarrow t$
+    * correttezza $\Rightarrow$
+    * completezza $\Leftarrow$
+  + $p \vdash (0,s,[\:]) \rightarrow^* (\text{size }p,t,[\:])$
+    * program counter
+    * memoria
+    * stack
+
+instr
+- =LOADI int=
+- =LOAD vname=
+- =ADD=
+- =STORE vname=
+- =JMP int=
+- =JMPLESS int=
+- =JMPGE int=
+
+Si definisce =lookup i P= dove $0 \le i < \text{size} P$
+- in =Agda= le funzioni parziali non sono ammesse e quindi questo va adattato
+
+$\frac{0 \le i < \text{size }P \quad \text{iexec }(\text{lookup }i\; P)(i,s,stk) \equiv (i',s',stk')}{P\vdash (i,s,stk) \rightarrow (i',s',stk')}$
+
+Un singolo passo di esecuzione (programma $P$ esegue dalla configurazione $c$ a $c'$)
+$P \vdash c \rightarrow c'$
+
+**** bcomp
+$bcomp :: bexp \Rightarrow bool \Rightarrow int \Rightarrow prog$
+
+\begin{align*}
+bcomp\;(Bc\;v)\;f\;n &= (if\;v=f\;then\;[\textsc{jmp}\;n]\;else\;[\:]) \\
+bcomp\;(Not\;b)\;f\;n &= bcomp\;b\;(\lnot f)\;n \\
+bcomp\;(And\;b_1\;b_2)\;f\;n &= \\
+\end{align*}
+&bcomp\;(Less\;a_1\;a_2)\;f\;n &=& \\
+& & & acomp\;a_1\;@\;acomp\;a_2\;@\;( \\
+ &&& if\;f\;then\;[\textsc{jmpless}\;n]\;\\
+  &&& else\;[\textsc{jmpge}\;n])
+\end{align}
+
+=Lemma 8.8=
+Si definisce:
+
+$\text{pc'} = \text{size }(\text{bcomp }b \:f \:n) + (\text{ if } f = \text{ bval } b\: s \text{ then } n \text{ else } 0$
+
+****

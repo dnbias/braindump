@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       4fd7520a-1c7f-4ca9-a361-fe3feb92dfc7
+:END:
+#+title: Nipkow
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
