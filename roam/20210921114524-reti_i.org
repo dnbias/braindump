@@ -1522,6 +1522,7 @@ Copertura abbastanza limitata ma ad alta velocitá
   + 11 canali
   + i canali si sovrappongono, possono avvenire delle interferenze
     * solo 1, 6, 11 non si sovrappongono
+  + per gestire l'aumento di =BER= si cambia tipo di trasmissione, piú lenta ma anche  piú efficace
 
 
 Le stazioni base in modalitá infrastruttura sono gli =AP=, Access Points
@@ -1560,3 +1561,103 @@ Non é  implementata collision detection
   + frame ricevuta =OK=
   + trasmetti =ACK= dopo =SIFS=
     * =ACK= necessario a causa del problema del terminale nascosto
+
+
+***** Capacitá ulteriori
+- power management
+  + nodo si spegne attendendo il prossimo /beacon frame/
+  + =AP= non trasmette nodi a questo nodo
+
+**** 802.15
+Infrastruttura /master/ - /slave/
+- 10m di diametro
+- rimpiazza i cavi per device
+  + mouse, tastiere, cuffie
+- ad hoc
+  + non c'é infrastruttura
+- evoluzione del =Bluetooth=
+- =2.4 - 2.5 GHz=
+- fino a =721 kbps=
+*** Cellulari
+Basate sul concetto di cella
+- /base station/
+  + potenza molto alta ma per il resto equivalente agli =AP=
+- /air interface/
+- =MSC= - Mobile Switching Center
+  + connette le celle
+  + gestisce la mobilitá dei device
+    * hand-over da una stazione base ad un altra
+
+Tecniche di condivisione di banda:
+- =FDMA / TDMA=
+  + divide spettro in canali di frequenze
+  + divide canali in slot temporali
+- =CDMA=
+  + code division multiple access
+
+**** 2G
+Voice network
+1. =BSS=
+   - stazioni base
+2. =MSC=
+3. Gateway =MSC=
+4. rete telefonica pubblica, cablata
+**** 3G
+Voice + Data network
+Divisione tra le due reti per permettere scalabilitá
+1. =BSS=
+2. radio network controller
+   1. =MSC=
+      - gateway
+      - rete telefonica pubblica
+   2. =SGSN=
+      - =GGSN=
+      - Rete Internet
+*** Mobilitá
+Un dispositivo che si sposta, si connette e disconnette attraverso =AP= diversi
+- la mobilitá piú _elevata_ si ha quando il dispositivo pur spostandosi e cambiando =AP= mantiene una stessa connessione
+
+- home network
+  + indirizzo =IP= permanente
+- home agent
+  + gestisce le funzioni di mobilitá per conto del dispositivo mobile quando quest'ultimo non si trova all'interno della rete domestica
+- visited network
+- foreign agent
+
+Ci sono diversi approcci possibili
+- si lascia la gestione ai /router/
+  + non scalabile
+  + le tabelle sarebbero ingestibili con milioni di utenti che si spostano
+- si lascia la gestione ai terminali
+  + /indirect routing/
+    * comunicazione passa per /home agent/ poi per /remote/
+  + /direct routing/
+    * il corrispondente ottiene l'indirizzo /foreign/ del mobile
+
+Il mobile si _registra_ contattando il /foraign agent/
+- questo contatta l'/home agent/
+- entrambi sanno come contattare l'utente mobile
+**** Mobile IP
+- indirect routing
+- agent discovery
+  + agent advertisement
+    * foreign/home agents fanno broadcast di messaggi =ICMP=
+**** Cellulare
+- indirect routing
+  + switching center home controlla il proprio registro
+  + contatta lo switching center visitato creando la connessione
+**** Handoff
+1. vecchio =BSS= informa =MSC= dell'handoff
+   - lista di piú di uno =BSS=
+2. =MSC= imposta il cammino per il nuovo =BSS=
+3. nuovo =BSS= alloca canale audio per l'uso
+4. nuovo =BSS= signala =MSC= e vecchio =BSS=
+   - pronto
+5. vecchio =BSS= segnala =MSC=
+   - pronto
+6. mobile nuovo segnale =BSS= per attivare il nuovo canale
+7. mobile segnala attraverso nuovo =BSS= a =MSC=
+   - handoff complete
+8. =MSC= rilascia risorse del vecchio =BSS=
+
+In caso di =MSC= diversi l'originale ha funzione di ancora verso un nuovo =MSC=
