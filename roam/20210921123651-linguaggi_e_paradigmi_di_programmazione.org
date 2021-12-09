@@ -407,7 +407,29 @@ Ogni lista é costruita a partire dalla lista vuota e un numero finito di applic
 - $P(xs) \implies P(x : xs) \forall x \land xs$
 
 Come per il principio di induzione sui naturali é possibile generalizzare a tutte le liste _piú corte_ di quella considerata per dimostrare il caso induttivo
+*** Estensionalitá
+\begin{align*}
+(.)\: f \: id &= f\: \\
+(.)\: f\: id\: x &= f\: x
+\end{align*}
 
+Si applicano funzioni diverse ad uno stesso argomento arbitrario $x$ e si dimostra che il risultato non cambia.
+*** Legge di Fusione
+Se
+\begin{align*}
+f\: a &= b \\
+f\: (g\: x\: y)
+ &= h\: x (f\:y)
+\end{align*}
+
+Allora
+
+\begin{align*}
+f\:.\:\text{foldr}\:g\:a = \text{foldr}\:h\:b
+\end{align*}
+** Stream
+O liste infinite
+=Haskell= ne gestisce una parte finita grazie alla /lazyness/
 * Laboratorio
 ** Haskel
 *** Storia
