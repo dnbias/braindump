@@ -61,9 +61,11 @@ $\vec{p} = q\vec{d}$
 
 
 *** Dipolo elettrico
-Momento del Dipolo p
+Momento del Dipolo $p$
 **** piano mediano
-
+Sul piano il direzione del campo eletrico é costante e uguale a quella della congiungente tra i dui poli
+- le componenti $y$ si annullano
+- per $y >> a$ vale $\vec{E} =\frac{2kqa}{|y|^3}\vec{i}$
 **** lungo asse
 *** Distribuzione Lineare e Uniforme Infinita
 *** Legge di Gauss
@@ -97,7 +99,7 @@ $U_E = \frac{q^2}{2C} = \frac{1}{2}CV^2 = \frac{1}{2}qV$
 - Energia immagazzinata in un condensatore
 
 **** Condensatore Piano
-$C=\varepsilon_0 \frac{A}{d}$
+$C=\varepsilon_0 \frac{S}{d}$
 - \[\varepsilon_0 = \frac{1}{4\pi k_0} \]
 
 $E = \frac{\sigma}{\epsilon_0}$
@@ -146,8 +148,12 @@ $\vec{m}=IS$
 - flusso campo magnetico attraverso una superfice $\Sigma$
 $\Phi_B = \vec{B}\cdot\vec{n}S = BS \cos{\theta}$
 
-=Faraday Lenz
+** Faraday Lenz
 \[\varepsilon_i=-\frac{d\Phi_\Sigma(\vec{B}) }{dt}\]
+
+** Fili
+\[F= \frac{\mu_0I_1I_2l}{2\pi d}\]
+- repulsiva con correnti nel verso opposto, attrattiva se nello stesso verso
 ** Induttanza
 $\varepsilon = -L \frac{dI}{dt}$
 - /f.e.m./ autoindotta
