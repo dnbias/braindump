@@ -1,0 +1,26 @@
+:PROPERTIES:
+:ID:       65d2727b-cd97-4e73-8745-ac30803c6a3c
+:END:
+#+title: Hugo
+
+To blog with plain text, integrated with [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]]
+
+* Markdown Processors
+- Blackfriday (default)
+- Mmark
+
+* LaTeX
+Support for LaTeX math equations is added by rendering engine:
+- KaTeX
+- MathJax
+
+* Partials
+Support is added by creating partials inside =layouts/partials/=
+Partials are activated with:
+
+#+begin_example
+---
+katex: true
+markup: "mmark"
+---
+#+end_example

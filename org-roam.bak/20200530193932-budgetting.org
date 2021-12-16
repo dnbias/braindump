@@ -1,0 +1,92 @@
+:PROPERTIES:
+:ID:       155f1d36-1122-44e2-a5e2-b615e62f3bb5
+:END:
+#+TITLE: Budgetting
+
+* [[https://www.youneedabudget.com/the-four-rules/][YouNeedABudget]]
+#+ROAM-ALIAS: YNAB
+
+** Budget every Euro
+    Dovrei assegnare un compito ad ogni Euro che guadagno.
+
+** Embrace your true expenses
+    Pianificare per le spese piu' impegnative e meno frequenti, per arrivarci preparati.
+
+** Roll with the punches
+    Cambiare i budget in corso d'opera spostando soldi da un budget all'altro se si e' over-speso, l'obbiettivo e' continuare a tenere i conti.
+
+** Age your money
+    Spendere meno di quanto quadagnato, l'obbietivo e' arrivare a spendere soldi che hanno un mese d'eta', cosi' non si e' piu' preoccupati per la fine del mese.
+
+** Virtual Postings per i budget
+    2018-06-12 Budget
+    [Assets:Budget:Food]                         400.00 EUR
+    [Assets:Budget:Rent]                         600.00 EUR
+    [Assets:Budget:Utilities]                    600.00 EUR
+    [Equity:Budget]                            -1600.00 EUR
+    - usando [...] ledger non le riportera' quando richiesto un report
+      - usando il flag: --real
+
+* Ledger
+
+- [[https://www.reddit.com/r/emacs/comments/8x4xtt/tip_how_i_use_ledger_to_track_my_money/][Fonte]]
+- [[https://www.ledger-cli.org/3.0/doc/ledger3.html#SEC_Contents][Docs]]
+- [[https://www.ledger-cli.org/features.html][Features]]
+- [[https://sachachua.com/blog/tag/ledger/?order=asc][Blog]] di [[id:1c26cced-4efe-4fc7-9bde-180a28298393][Sacha Chua]]
+- [[https://emacs.cafe/ledger/emacs/ynab/budgeting/2018/06/12/elbank-ynab.html][Emacs Cafe']] di Nicolas Petton
+#+BEGIN_SRC #+begin_src emacs-lisp :tangle yes
+ (use-package ledger-mode
+    :mode ("\\.dat\\'"
+           "\\.ledger\\'")
+    :custom (ledger-clear-whole-transactions t))
+
+ (use-package flycheck-ledger :after ledger-mode)
+#+end_src
+
+** DONE ledger deve essere installato
+
+** [[https://www.ledger-cli.org/3.0/doc/ledger3.html#Automated-Transactions][Automated Transactions]]
+
+*** An automated transaction is a special kind of transaction which adds its postings to other transactions any time one of that other transactions’ postings matches its predicate. The predicate uses the same query syntax as the Ledger command-line.
+
+= expr true
+    Foo                          $50.00
+    Bar                         $-50.00
+
+*** se non e' specificata la commodity ($ sopra) allora dara' interpretato come un moltiplicatore
+
+*** l'espressione eredita tutte le variabili del post corrispondente alla regola
+
+= expr true
+    (Foo)                  (amount * 2)  ; same as  just "2"
+                                         ; this case
+
+2012-03-10 KFC
+    Expenses:Food                $20.00
+    Assets:Cash
+
+ -->
+
+ 2012-03-10 KFC
+    Expenses:Food                $20.00
+    (Foo)                        $40.00
+    Assets:Cash                 $-20.00
+    (Foo)                       $-40.00
+
+*** Data1=Data2
+
+**** per stimare delle date per uscite e entrate
+
+** Structuring Accounts
+
+*** Expenses: dove vanno i soldi
+
+*** Assets: dove stanno i soldi
+
+*** Income: da dove arrivano i soldi
+
+*** Liabilities: soldi che devo
+
+*** Equity: il valore reale della mia proprieta'
+
+**

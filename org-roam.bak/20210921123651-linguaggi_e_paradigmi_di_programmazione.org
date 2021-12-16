@@ -1,0 +1,795 @@
+:PROPERTIES:
+:ID:       3e9b697a-f7a8-4c9b-995d-da2d51202299
+:ROAM_ALIASES: LPP
+:END:
+#+title: Linguaggi e Paradigmi di Programmazione
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+Prof: Luca Padovani
+* Info Corso
+- Orario
+  + Lun 16-18
+  + Gio 9-11
+  + Ven 16-18
+- Testi
+  + [[id:f46e95c3-14c2-4dda-b150-f8ca209495d1][Introduction to the Theory of Programming Languages]]
+  + [[id:8f3dfc67-9e04-4cc6-8958-98559505065c][Haskell: the Craft of Functional Programming]]
+  + [[id:dfb13901-7195-44df-843e-5601b65ad3b4][Programming in Haskell]]
+  + Modern Java in Action
+- Links
+  +  https://boystrange.github.io/LPP/
+- Esame
+  + Esercizi di programmazione Haskell in tempo limitato
+  + Teoria
+    - Fondamenti del paradigma funzionale
+  + Esercizi (Java 8) e Domande - 9 CFU
+
+* Teoria
+** Introduzione
+Il paradigma funzionale mette le funzioni allo stesso livello delle variabili
+- é possibile definire funzioni che trasformano funzioni, che restituiscono funzioni, che utilizzano funzioni in input
+*** Paradigmi e Storia
+- imperativo
+  + C, Pascal
+  + programma come sequenza di comandi da eseguire
+    - l'esecuzione modifica lo stato della macchina ad ogni istruzione
+- object-oriented
+  + Smalltalk
+  + oggetti che comunicano tra loro
+    - permette di gestire piu' facilmente la complessita'
+  + programma come interazioni (metodi) tra oggetti
+    - le interazioni modificano lo stato della macchina
+    - i metodi sono riconducibili al paradigma imperativo
+- funzionale
+  + Haskell
+  + espressione valutazionale restituisce un risultato
+
+Negli anni:
+- '50
+  + Assembly
+  + FORTRAN
+    - formula translator
+    - procedure, espressioni
+  + COBOL
+    - per gestione aziendale, introduce il record
+- '60
+  + ALGOL
+    - forma BNF
+    - indipendente dall'architettura
+    - blocchi, variabili locali, ricorsione
+  + BASIC
+    - facile da imparare ma poco strutturato
+  + Simula 67
+    - classi, oggetti, ereditarieta'
+- '70
+  + Pascal
+    - programmazione strutturata, tipi per evitare errori
+    - ideale per imparare a programmare
+  + Smalltalk
+    - programmazione ad oggetti estrema, tutto e' un oggetto
+    - l'unica operazione possibile e' l'invio di messaggi, metodi
+  + C
+- '80
+  + Ada
+    - evoluzione di Pascal con concorrenza e tipi astratti
+    - sviluppado dal ministero della difesa USA
+  + C++
+  + PostScript
+    - scripting basato sullo stack, interpretato dalle stampanti
+  + Perl
+    - linguaggio interpretato
+- '90
+  + Python
+  + Java
+  + PHP
+  + JavaScript
+** Lambda-calcolo
+Ci si restringe sull'essenza della programmazione in linguaggio funzionale
+- si distilla un piccolo linguaggio facilmente studiabile
+
+Differenze tra /linguaggio/ e /calcolo/
+- il calcolo é confluente
+  + il risultato non dipende dalle azioni intraprese per raggiungerlo
+- non é deterministico
+
+*** Concetti
+- processo di valutazione / =riduzione=
+- funzioni con singolo argomento / =currificate= (Haskell Curry)
+  + funzioni di ordine superiore
+    * accettano come argomenti funzioni / restituiscono altre funzioni
+  + agendo per specializzazioni
+- linguaggi
+  + =eager=
+  + =lazy=
+- Sistema di =Tipi= / Algoritmo di =Inferenza=
+*** Funzioni
+**** Punto di vista estensionale
+$f = \{(0,1),(1,2),(2,5),\cdots\}$
+**** Punto di vista intensionale
+$f(x) = x^{2} + 1$
+*** Sintassi
+- Variabili
+  + $Var = \{x,y,z.\cdots\}$
+    * infinito
+- Sintassi
+  + $M,N ::= x \mid (\lambda x.M) \mid (M N)$
+- Terminologia
+  + $(\lambda x.M)$ astrazione o funzione con argomento $x$ e corpo $M$
+  + $(M N)$ applicazione della funzione $M$ all'argomento $N$
+- Esempi
+  + $(\lambda x.x)$ - Funzione Identitá
+  + $((\lambda x.(xx))(\lambda y.(yy)))$ - loop infinito
+  + $(\lambda f.(\lambda x.(f(f x))))$
+
+**** Convenzioni Sintattiche
+- parentesi esterne omesse
+- corpo delle astrazioni si estende a destra
+  - a destra del punto
+- l'applicazione é associativa a sinistra
+**** Variabili Libere e Legate
+- $x$ in $M$ é legata se compare in sotto-termine
+- diciamo che un'occorrenza di $x$ in $M$ é libera altrimenti
+Esempi
+- $\lambda x.\: x$
+  + nessuna variabile libera => termine chiuso
+- $x \: y \: z$
+  + tutte le variabili sono libere
+- $(\lambda x.\: x \: y) \: x$
+  + $x$ sia legata che libera
+***** Sostituzione
+- $M\{N/y\}$ é ottenuta sostituendo le occorrenze libere di $y$ in $M$ con $N$
+- evitare la cattura delle variabili libere di $N$ per non alterarne il senso
+  + le variabili libere sono definite esternamente allo scope della astrazione, non posso modificarle
+*** Relazioni di Equivalenza
+**** \alpha-conversione
+$y \notin fv(M) \implies \lambda x.M \: \iff_{\alpha}\: \lambda y.M\{y/x\}$
+congruenza tra \lambda-espressioni tali che hanno lo stesso corpo, solo con nome dell'argomento diverso
+**** \beta-riduzione
+_Applicare_ una funzione $\lambda x.M$ a un argomento $N$ significa valutare il corpo in cui ogni occorrenza libera dell'argomento $x$ é sostituita con $N$.
+$(\lambda x.M) \: N \rightarrow_{\beta}M\{N/x\}$
+- $M \rightarrow_{\beta}M^{'} \implies M \: N \rightarrow_{\beta}M^{'}\:N$
+
+Da =redex= (reducible expression) a =ridotto=
+- $(\lambda x.M) \: N$
+- $M\{N/x\}$
+**** \eta-riduzione
+$x \notin fv(M) \implies \lambda x.M \: x \rightarrow_{\eta}M$
+- $M \rightarrow_{\eta}M^{'} \implies M\: N \rightarrow_{\eta}M^{'}\: N$
+- $M \rightarrow_{\eta}M^{'} \implies N\: M \rightarrow_{\eta}N \: M^{'}$
+- $M \rightarrow_{\eta}M^{'} \implies \lambda x.M \rightarrow_{\eta} \lambda x.M^{'}$
+**** Convertibilitá
+$N\rightarrow M \land M\rightarrow N  \implies M \leftrightarrow N$
+- $\Leftrightarrow$ indica la chiusura riflessiva e transitiva di $\leftrightarrow$
+**** Confluenza
+*Teorema*:
+- $M \Rightarrow N_{1} \land M \Rightarrow N_{2} \implies \exists N \mid N_{1} \Rightarrow N \land N_{2} \Rightarrow N$
+- l'ordine delle riduzioni del \beta-redex non importa
+- il teorema si generalizza in $n$ $N$
+Questo risultato é importante in quanto non risulta per nessun altro linguaggio di programmazione
+- in quanto la memoria puó essere modificata dall'esecuzione, l'ordine diventa fondamentale
+  - al contrario del lambda calcolo che é un /linguaggio puro/
+    - come =Haskell=, nella sua versione piú pura
+- /Es/: l'assegnamento é una espressione mista, sia espressione sia un comando
+***** Forma Normale
+Un =M= é in forma normale se non puó piú essere ridotto, ovvero:
+- $\nexists N \mid M \rightarrow N \implies M \nrightarrow$
+Un termine in forma normale ci indica che _la computazione é finita_
+***** Corollario
+La forma normale di =M=, se esiste, é unica (a meno di \alpha-conversioni).
+**** Strategie di Riduzione
+In alcuni casi é piú efficiente l'uno, in altri l'altro
+***** Ordine Applicativo
+redex piú a sinistra e piú interno, *linguaggi zelanti*
+=(\lambda x.x)((\lambda y.y)z) -> (\lambda x.x)z -> z=
+=.      ----------     --------=
+- applicare una funzione a un argomento signifira prima valutare l'argomento poi sostituire nel corpo della funzione
+***** Ordine Normale
+redex piú a sinistra e piú esterno, *linguaggi pigri*
+=(\lambda x.x)((\lambda y.y)z) -> (\lambda y.y)z -> z=
+=-----------------     --------=
+- applicare una funzione a un argomento significa sostituire l'argomento nel corpo della funzione
+  + si posticipa la valutazione degli argomenti fino a che non é strettamente necessaria
+
+Ottimizzabile in caso di argomenti valutati piú volte
+- si memorizza il risultato parziale, in modo da non doverlo ricalcolare multiple volte
+  + questo é sicuro se il linguaggio é puro
+  + molto delicato da utilizzare in contesti diversi
+  + simile alla tecnica di /memoizzazione/
+
+***** Teorema Normalizzazione
+Se $M \Leftrightarrow N$ é normale, allora c'é una riduzione in ordine nomale $M \Rightarrow N$
+- se la forma normale di un'espressione esiste, la posso trovare riducendo l'espressione in ordine normale
+  + in un numero finito di passi
+- questa proprietá non vale per l'ordine applicativo
+  + potrebbe finire in un loop nel cercare di risolvere subito gli argomenti
+*** Programmare nel \lambda-calcolo
+**** Booleani
+=TRUE = \lambda x.\lambda y.x=
+=FALSE = \lambda x.\lambda y.y=
+=IF = \lambda z.z=
+=AND = \lambda x.\lambda y.IF x y FALSE=
+=OR = \lambda x.\lambda y.IF x TRUE y=
+=NOT = \lambda x.\lambda y.IF x FALSE TRUE=
+
+L'ordine applicativo non puó  essere utilizzato nel caso di questo =IF=
+- questo perché nel caso del =False= l'elemento piú interno é quello che non andrebbe valutato, sprecando computazione per valutarlo inutilmente
+**** Coppie
+=PAIR = \lambda x . \lambda y . \lambda z . z x y=
+=FST = \lambda p . p TRUE=
+=SND = \lambda p . p FALSE=
+**** Naturali
+Come iteratori:
+=n = \lambda f . \lambda x . f^n x=
+=SUCC = \lambda a . \lambda f . \lambda x . a f (f x)=
+=ADD = \lambda a . \lambda b . b  SUCC a=
+=MUL = \lambda a . \lambda b . b (ADD a) 0=
+=EXP = \lambda a . \lambda b . b (MUL a ) 1=
+
+Il predecessore é piú complesso
+- idea: applicare =n= volte una funzione che calcola =n= coppie, questa n-esima coppia nella prima componente avrá =n-1=
+=ISZERO = \lambda a . a (\lambda x . FALSE) TRUE=
+=FACT = \lambda a . IF (ISZERO a) 1 (MUL a (FACT (PRED a)))=
+- non é una definizione in senso stretto, compare il nome della funzione anche a destra
+Da questa scrittura si evince che =FACT= é in forma
+- $x = F(x)$
+- =FACT = AUX FACT=
+Che é la definizione di _punto fisso_ della funzione =F=
+Definiamo allora l'operatore di punto fisso:
+=FIX = \lambda f . (\lambda x . f (x x)) (\lambda x . f (x x))=
+allora
+=FACT = FIX AUX=
+**** Estendere il calcolo
+Per ragioni di efficienza ogni linguaggio di programmazione basato sul \lambda-calcolo fornisce dati nativi (numeri, booleani, caratteri, ...)
+- questo peró permette di espressioni _sintatticamente corrette ma prive di significato_
+***** Sistema di tipi
+Il problema é indecibile, vanno quindi previste delle approssimazioni conservative nello sviluppo di un *sistema di tipi*
+
+****** *Giudizio di Tipo*
+  + $\vdash M :\: t$
+    * =M= é ben tipato e ha tipo =t= nel /contesto/ \Gamma
+****** *Proprietá*
+- Lemma *Subject Reduction*
+  + $\Gamma \vdash M : \: t \land M \rightarrow N \implies \Gamma \vdash N : \: t$
+- Teorema *Progresso*
+  + $\vdash M : \: t \land M \Rightarrow N \not\rightarrow \: \implies N \mbox{ é un valore}$
+    + quindi _una costante o una astrazione_
+*** Algoritmo di Inferenza
+**** Fase di Costruzione dell'albero sintattico
+L'albero corrispondente al termine $M$ é $T[M]$
+Casi:
+- variabile
+- costante
+- lambda astrazione
+  + /si estende a destra/
+- applicazione
+  + /associativa a sinistra/
+- if then else
+**** Fase dell'Annotazione dell'albero sintattico
+/e della generazione dei vincoli/
+
+Visita dal basso verso l'alto, a partire dalle foglie
+- *variabile di tipo*
+  + $\text{TVar} = \{\alpha,\beta,\gamma, \cdots\}$
+- *espressione di tipo*
+  + $\tau , \sigma := \begin{cases}\alpha \\ \mbox{Bool} \\ \tau \rightarrow \sigma \end{cases}$
+- *vincolo*
+  + $\tau = \sigma$
+
+Annotazioni:
+- variabile - $\alpha$
+  + nuova variabile di tipo, stessa per tutte occorrenze
+- costante - $\mbox{Bool}$
+- lambda - $\alpha \rightarrow \tau \qquad \tau$
+  + $\alpha$ é nuova o la stessa di una occorrenza precedente della stessa variabile nel corpo
+- applicazione - $\alpha \;\mid\; \tau \qquad \sigma$
+  + $\alpha$ é nuova, generato il _vincolo_ $\tau = \sigma \rightarrow \alpha$
+- applicazione - $\tau_{2}\;\mid\; \tau_{1}\rightarrow\tau_{2}\qquad\sigma$
+  + ottimizzazione, generato il _vincolo_ $\tau_{1} = \sigma$
+- if then else - $\tau_{2} \;\mid\; \tau_{1} \qquad\tau_{2} \qquad \tau_{3}$
+  + generati i _vincoli_
+    * $\tau_{1}=\mbox{Bool}$
+    * $\tau_{2} = \tau_{3}$
+
+**** Fase di Risoluzione dei vincoli
+Si parte da un sistema ottenuto dalla fase precedente della forma:
+
+$\{\tau_{i} = \sigma_{i}\}_{1\le i \le n}$
+
+Si determina se questo ammette una soluzione
+- cerchiamo la soluzione piú generale
+
+Si procede agendo per *sostituzioni*
+- $\theta(\tau)$ sostituendo in $\tau$ tutte le $\alpha$ con $\theta(\alpha)$
+Dove $\theta$ é detta *soluzione* (o *unificatore*) del sistema se
+
+$\forall i : 1\le i \le n \implies \theta(\tau_{i}) = \theta(\sigma_{i})$
+
+L'algoritmo:
+- $\tau = \tau$
+  + eliminare il vincolo
+- $\tau = \alpha \land \tau$  non é una variabile
+  + rimpiazzare il vincolo con $\alpha = \tau$
+- $\tau \rightarrow \tau^{'} = \sigma \rightarrow \sigma^{'}$
+  + rimpiazzare il vincolo con $\tau = \sigma \land \tau^{'}=\sigma^{'}$
+- $\tau \rightarrow \sigma = \text{Bool} \lor \text{Bool} = \tau \rightarrow \sigma$
+  + l'algoritmo fallisce con _errore di tipo_
+- $\alpha = \tau$
+  + $\alpha \neq \tau$ ma $\alpha$ compare in $\tau$
+    - l'algoritmo fallisce con _occur check_
+  + $\alpha$ non compare in $\tau$, $\alpha$ compare altrove
+    - sostituire $\alpha$ con $\tau$ in tutti gli altri vincoli ($\alpha = \tau$ rimane)
+- nessuna trasformazione applicabile
+  + l'algoritmo ha successo
+
+**** Estensioni
+Costanti:
+- False, True
+- numeri *interi*
+- numeri *float*
+
+Aggiungiamo i tipi corrispondenti.
+
+Le fasi 1 e 2 non hanno variazioni.
+La fase 3 fallisce se c'é un vincolo:
+- $\tau \rightarrow \sigma = \text{Int}$
+- $\text{Int} = \tau \rightarrow \sigma$
+- $\text{Int} = \text{Bool}$
+
+Aggiungendo le *liste*:
+$c \in \{\cdots, [\:] ,(:)\}$
+
+Tipi:
+- $(:) : : \alpha \rightarrow [\alpha] \rightarrow [\alpha]$
+- $[\:] : : [\alpha]$
+
+
+La fase 1 non varia.
+La fase 2:
+- ogni occorrenza di un costruttore fa uso di nuove variabili di tipo
+  + questo vale per qualsiasi funzione /polimorfa/
+La fase 3:
+- i vincoli $[\tau] = [\sigma]$ si rimpiazza con $\tau = \sigma$
+- fallisce per vincoli
+  + $[\tau] = \text{Bool}$
+  + $\text{Bool} = [\tau]$
+  + $[\tau] = \sigma_{1} \rightarrow \sigma_{2}$
+  + $\alpha = [\alpha]$ - /occur check/
+    * il tipo contiene se stesso ed é contenuto da se stesso, errore
+
+Stesse considerazione valgono per le *coppie*:
+$c \in \{\cdots,(\:,)\}$
+Tipo:
+- $(\:,) : : \alpha \rightarrow \beta \rightarrow (\alpha,\beta)$
+
+Le costanti includono le *funzioni di libreria*:
+$c \in \{\cdots, \text{id}, \text{head}, \text{tail}, \cdots\}$
+
+Per la *ricorsione*:
+$f = M$
+
+La fase 1:
+- $f$ é trattato come una variabile
+La fase 2:
+- $f$ é trattato come una variabile
+- alla fine dell'annotazione generare il vincolo $\alpha = \tau$
+  + $\alpha$ variabile associata a $f$
+  + $\tau$ annotazione associata a $M$
+
+** Correttezza
+Le dimostrazioni sono semplificate dal fatto che la funzione non mostra il suo stato al programmatore, tutto si trova nella definizione della funzione.
+
+Gli /approcci/ possibili sono:
+- test
+  + non esaustiva
+    * puó dimostrare la presenza di un problema ma non la sua assenza
+  + piú facile
+- dimostrazione
+  + esaustiva
+  + difficile, soprattutto se il linguaggio é imperativo
+
+*** Relazioni totali
+#+begin_code haskell
+foo :: Int -> Int -> Int -> Int
+#+end_code
+Essendo l'ordine tra numeri *totale* é possibile considerare un numero finito di casi complessivamente *esaustivi*
+*** Induzione
+Il principio di induzione permette di dimostrare una proprietá per un insieme *infinito* di casi.
+
+1. Si dimostra il caso base
+2. Si dimostra il caso induttivo
+   + assumendo che a proprietá sia vera per il caso precedente $(n-1)$
+
+**** Principio di Induzione Forte
+$(\forall m < n : P (m)) \implies P(n)\: \forall n \in \mathbb{N}$
+**** Principio di Induzione sulle liste finite
+Ogni lista é costruita a partire dalla lista vuota e un numero finito di applicazioni del costruttore : o =cons=
+
+- $P([])$
+- $P(xs) \implies P(x : xs) \forall x \land xs$
+
+Come per il principio di induzione sui naturali é possibile generalizzare a tutte le liste _piú corte_ di quella considerata per dimostrare il caso induttivo
+*** Estensionalitá
+\begin{align*}
+(.)\: f \: id &= f\: \\
+(.)\: f\: id\: x &= f\: x
+\end{align*}
+
+Si applicano funzioni diverse ad uno stesso argomento arbitrario $x$ e si dimostra che il risultato non cambia.
+*** Legge di Fusione
+Se
+\begin{align*}
+f\: a &= b \\
+f\: (g\: x\: y)
+ &= h\: x (f\:y)
+\end{align*}
+
+Allora
+
+\begin{align*}
+f\:.\:\text{foldr}\:g\:a = \text{foldr}\:h\:b
+\end{align*}
+** Stream
+O liste infinite
+=Haskell= ne gestisce una parte finita grazie alla /lazyness/
+* Laboratorio
+** Haskel
+*** Storia
+- $\lambda$ calcolo
+  + Alonzo Church
+    - calcolare con le funzioni, cosi' come con in numeri
+    - tutto e' una funzione con 1 IN e 1 OUT
+      + funzioni anonime
+        - identita'
+          + $\lambda x,x$
+  + Haskell Curry
+    - currying
+- LISP - anni '50
+  + John McCarthy
+    - elaborazione informazione non-numerica/simbolica
+    - LISP = List Processor
+      + cons e map nascono qui
+    - primo _garbage collector_
+- ML
+- SASL, KRC, Miranda
+  + linguaggi _lazy_ con valutazione solo al momento della richiesta della funzione
+  + SASL introduce guardie e currying
+- Haskell - anni '90
+  + linguaggio lazy, standardizzato
+  + separazione tra puro e impuro
+    - monadi
+  + overloading
+  + grosso impatto sul calcolo parallelo
+*** Casi di Studio
+**** Contatore accessi Web
+- [[https://boystrange.github.io/LPP/HitCounter][Source]]
+Relazione biunivoca tra IP e utenti unici in accesso
+
+Java
+#+begin_src java
+public static int counter(InputStream stream) {
+    Scanner scanner = new Scanner(stream);
+    Set<String> clients = new HashSet<>();
+    while (scanner.hasNextLine()) {
+        String line = scanner.nextLine();
+        String ip = line.substring(0, line.indexOf(' ') + 1);
+        clients.add(ip);
+    }
+    return clients.size();
+}
+#+end_src
+Bash
+#+begin_src bash
+cut -d' ' -f1 | sort -u | wc -l
+#+end_src
+Haskell
+#+begin_src haskell
+import Data.List (nub);
+counter :: String -> Int
+counter = length . nub . map (\line -> takeWhile (/= ' ') line) . lines
+#+end_src
+Java 8
+#+begin_src java
+public static long counter(InputStream stream) {
+    InputStreamReader reader = new InputStreamReader(stream);
+    return new BufferedReader(reader)
+        .lines()
+        .map(line -> line.substring(0, line.indexOf(' ') + 1))
+        .distinct()
+        .count();
+}
+#+end_src
+
+**** Fibonacci Logaritmico
+#+begin_code haskell
+type Matrice = (Integer, Integer, Integer, Integer)
+
+mul :: Matrice -> Matrice -> Matrice
+mul (a₁₁, a₁₂, a₂₁, a₂₂) (b₁₁, b₁₂, b₂₁, b₂₂) =
+  (a₁₁ * b₁₁ + a₁₂ * b₂₁,
+   a₁₁ * b₁₂ + a₁₂ * b₂₂,
+   a₂₁ * b₁₁ + a₂₂ * b₂₁,
+   a₂₁ * b₁₂ + a₂₂ * b₂₂)
+
+pow :: Matrice -> Int -> Matrice
+pow a k | k == 0         = (1, 0, 0, 1)
+        | k `mod` 2 == 0 = b `mul` b
+        | otherwise      = a `mul` b `mul` b
+  where
+    b = a `pow` (k `div` 2)
+
+fibonacci :: Int -> Integer
+fibonacci k = risultato
+  where
+    (_, risultato, _, _) = (1, 1, 1, 0) `pow` k
+#+end_code
+**** Ordinamento
+#+begin_code haskell
+insertSort :: [Int] -> [Int]
+insertSort []       = []
+insertSort (x : xs) = insert x (insertSort xs)
+  where
+    insert x [] = [x]
+    insert x (y : ys) | x <= y    = x : y : ys
+                      | otherwise = y : insert x ys
+
+split :: [Int] -> ([Int], [Int])
+split []           = ([], [])
+split [x]          = ([x], [])
+split (x : y : xs) = (x : ys, y : zs)
+  where
+    (ys, zs) = split xs
+
+merge :: [Int] -> [Int] -> [Int]
+merge []       ys = ys
+merge xs       [] = xs
+merge (x : xs) (y : ys) | x <= y    = x : merge xs (y : ys)
+                        | otherwise = y : merge (x : xs) ys
+
+mergeSort :: [Int] -> [Int]
+mergeSort []  = []
+mergeSort [x] = [x]
+mergeSort xs  = merge (mergeSort ys) (mergeSort zs)
+  where
+    (ys, zs) = split xs
+#+end_code
+**** Java Virtual Mini-Machine
+vedi: [[id:5d9aab5a-c1c4-4f94-9947-7a1629c5f9c9][IJVM]], [[id:373ce75b-dddb-41f0-88a5-7671d9b640ec][JVM]]
+Istruzioni:
+- =PUSH v=
+- =LOAD x=
+- =STORE x=
+- =OP f=
+- =IF R l=
+- =RETURN=
+
+#+begin_code haskell
+type Value = Int
+type Var   = Int     -- indice di una variabile
+type Stack = [Value] -- con : inseriamo in testa
+                     -- estraiamo con pattern matching
+type Frame = [Value] -- qui invece dobbiamo accedere
+                     -- in posizioni arbitrarie
+#+end_code
+Per i =Frame= definiamo:
+#+begin_code haskell
+load :: Var -> Frame -> Value
+load _ []       = 0
+load 0 (v : _)   = v
+load n (__ : vs) = load (n-1) vs
+
+store :: Var -> Value -> Frame -> Frame
+store 0 v []          = [v]
+store 0 v (_ : vs)    = v : vs
+store n v []          = 0 : store (n-1) v [] -- inizializzazione a 0
+store n v (w : vs)    = w : store (n-1) v vs
+#+end_code
+
+Le Istruzioni possiamo pensarle come sottoclassi di una classe astratta =Istruzione=
+
+#+begin_code haskell
+data Instruction
+  = PUSH Value
+  | LOAD Var
+  | STORE Var
+  | OP (Value -> Value -> Value)
+  | IF (Value -> Value -> Bool) Code
+  | RETURN
+
+type Code = [Instruction]
+#+end_code
+Queste definizioni algebriche sono simili a produzioni di una grammatica
+
+Permettono l'espressione di codice di questa forma:
+#+begin_code haskell
+fibonacci :: Code
+fibonacci = init
+  where
+    init = PUSH 0 :
+           STORE m :
+           PUSH 1 :
+           STORE n :
+           loop
+    loop = LOAD k :
+           PUSH 0 :
+           IF (==) fine :
+           LOAD n :
+           LOAD n :
+           LOAD m :
+           OP (+) :
+           STORE n :
+           STORE m :
+           LOAD k :
+           PUSH 1 :
+           OP (-) :
+           STORE k :
+           loop
+    fine = LOAD m :
+           RETURN : []
+    k    = 0
+    m    = 1
+    n    = 2
+#+end_code
+
+L'implementazione é completata con un interprete:
+#+begin_code haskell
+run :: Code -> Frame -> Value
+run = aux []
+  where
+    aux :: Stack -> Code -> Frame -> Value
+    aux (v : [])     (RETURN : _)   _  = v
+    aux vs           (PUSH v : is)  fr = aux (v : vs) is fr
+    aux vs           (LOAD x : is)  fr = aux (load x fr : vs) is fr
+    aux (v : vs)     (STORE x : is) fr = aux vs is (store x v fr)
+    aux (w : v : vs) (OP f : is)    fr = aux (f v w : vs) is fr
+    aux (w : v : vs) (IF p is : _)   fr | p v w = aux vs is fr
+    aux (__ : _ : vs) (IF _ _ : is)  fr = aux vs is fr
+#+end_code
+
+*** Caratteristiche Linguaggio
+**** Guardie
+Introducono delle condizioni, alternativa al piú operazionale =if...then...else=
+#+begin_src haskell
+assoluto :: Int -> Int
+assoluto n | n >= 0 = n
+           | n < 0  = negate n
+#+end_src
+Nel caso che i casi siano _esaustivi_ l'ultimo identificatore puó essere =otherwise=
+L'ordine delle guardie é significativo, sará scelta la prima guardia il cui valore sia valutato =True=
+**** Ricorsione
+Non esistono /loop/ non esistendo la memoria, e quindi variabili su cui fare iterazione. e
+É quindi necessario utilizzare le definizioni ricorsive:
+#+begin_src haskell
+fattoriale :: Int -> Int
+fattoriale n | n == 0    = 1 -- supponendo n >= 0
+             | otherwise = n * fattoriale (n - 1)
+#+end_src
+
+Si possono specificare piú equazioni, semplificando il codice
+#+begin_src haskell
+fattoriale :: Int -> Int
+fattoriale 0 = 1 -- lo 0 fa riferimento al parametro utilizzato
+fattoriale n = n * fattoriale (n - 1)
+#+end_src
+
+Altro esempio classico, la sequenza di fibonacci
+#+begin_src haskell
+fibonacci :: Int -> Int
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci n = fibonacci (n - 1) + fibonacci (n - 2)
+#+end_src
+Anche usando questa forma Haskell valuta le funzioni dall'alto verso il basso, nell'ordine.
+- i pattern piú generali vanno piú in basso, =Haskell= in caso emette un ~Warning~ riguardo la ridondanza dei match non raggiungibili
+
+***** Dall'iterazione alla ricorsione
+Esistono algoritmi piú efficienti in forma iterativa
+- =fibonacci= applicato ricorsivamente ha una complessitá $n^{2}$
+- una versione iterativa in un linguaggio imperativo ha complessitá $n$
+É possibile riprodurre anche in =Haskell= l'iterazione con un metodo meccanico
+- inserire le variabili che vengono modificate nell'iterazione all'interno di una funzione ricorsiva che simula il ciclo
+
+
+#+begin_src java
+public static int fibonacci(int k) {
+    assert k >= 0;
+    int m = 0;
+    int n = 1;
+    while (k > 0) {
+        n = n + m;
+        m = n - m;
+        k = k - 1;
+    }
+    return m;
+}
+
+#+end_src
+#+begin_src haskell
+fibonacciAux :: Integer -> Integer -> Int -> Integer
+fibonacciAux m _ 0 = m
+fibonacciAux m n k = fibonacciAux n (m + n) (k - 1)
+
+fibonacci :: Int -> Integer
+fibonacciAux 0 1 -- applicazione parziale
+
+fibonacci :: Int -> Integer
+fibonacci = aux 0 1
+  where
+    aux m _ 0 = m
+    aux m n k = aux n (m + n) (k - 1)
+#+end_src
+Una serie di chiamate ricorsive del genere consumerebbe memoria aumentando la dimensione dello stack dei frame? Meno efficiente del corrispettivo imperativo?
+No, il compilatore =Haskell= ricicla il vecchio frame delle funzione in quanto vede che i vecchi valori non sono utilizzati dopo la prima applicazione
+- quando la funzione é /ricorsiva in coda/, ovvero la chiamata ricorsiva é l'ultima cosa fatta dalla funzione
+**** Funzioni Anonime
+_\lambda-Astrazioni_
+#+begin_src haskell
+(\x -> x+1)
+  2
+(\x -> x >= 0) 2
+#+end_src
+In Haskell, si dice *sezione* un'espressione racchiusa tra parentesi in cui un operatore binario viene applicato a uno solo dei suoi due argomenti.
+#+begin_src haskell
+(1 +)
+('mod' 2)
+#+end_src
+**** Currying
+#+begin_src haskell
+addizione :: Int -> Int -> Int
+addizione x y = x + y
+addizione = \x -> \y -> x + y -- espandendo in lambda astrazioni é piú chiaro il tipo
+#+end_src
+Da qui emerge l'associativitá a destra del tipo freccia:
+#+begin_src haskell
+(Int -> (Int -> Int))
+#+end_src
+Questo é speculare alla composizione in lambda calcolo
+
+Si puo' convertire tra tipi numerici utilizzando:
+- =fromIntegral=
+- =truncate=
+- =round=
+**** Coppie e Tuple
+E' sufficiente circondare gli elementi con parentesi tonde
+**** Liste
+Sequenza omogenea di elementi, che hanno quindi lo stesso tipo
+La sintassi utilizza le parentesi quadre.
+- =[1..]= lista con tutti i numeri interi da 1 in avanti
+  - possibile perche' il linguaggio e' lazy
+Ogni lista puo' essere contruita a partire da due /costruttori canonici/
+- =X : L=
+  - utilizzando /cons/
+- =1 : 2 : 3 : []=
+  - cons e lista vuota
+Esiste funzione di concatenazione di liste
+- =++=
+  - non modifica le liste di partenza, ne crea una nuova
+  - un linguaggio puro come =Haskell= non modifica strutture esistenti
+*** Tipi e Classi
+=Haskell= e' un linguaggio fortemente tipato
+**** Tipi primitivi
+- =Int= numeri interi a precisione finita
+- =Integer= numeri interi a precisione arbitraria
+- =Float= numeri in virgola mobile a precisione singola
+- =Double= numeri i nvirgola mobile a precisione doppia
+- =Bool= booleani
+  Il comando =:type= di GHCi interroga =Haskell= sul tipo inferito ad una espressione
+ Si puo' scrivere il tipo di un valore affianco ad esso con la sintassi =:: Int=
+ - non e' una conversione di tipo, e' solo una annotazione utile al compilatore
+**** map
+#+begin_code haskell
+map :: (a -> b) -> [a] -> [b]
+map _ [] = []
+map f (x : xs) = f x : map f xs
+#+end_code
+**** filter
+#+begin_code haskell
+filter :: (a -> bool) -> [a] -> [b]
+filter _ [] = []
+filter p (x : xs) | p x       = x : filter p xs
+                  | otherwise = filter p xs
+#+end_code
+**** fold
+#+begin_code haskell
+foldr :: (a -> b -> b) -> b -> [a] -> b
+foldr _ x [] = x
+foldr f x (y : ys) = f y (foldr f x ys) -- come fosse associativo a destra
+#+end_code

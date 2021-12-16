@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       395c6914-ed10-4163-8776-e830aa45b033
+:END:
+#+title: Lesswrong
+[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][$blog]] at https://www.lesswrong.com/

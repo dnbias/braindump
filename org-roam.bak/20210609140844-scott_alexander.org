@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       369682fc-23a5-42fc-8ad2-b1f085ac12d6
+:END:
+#+title: Scott Alexander
+- blog: [[id:c0fd7c38-2a33-4988-9f43-6eee6dca1666][Slate Star Codex]]

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       4f90918c-61eb-4e23-ac8f-b6cbfa0bb45f
+:ROAM_ALIASES: GRRM Martin
+:END:
+#+title: G.R.R.M.
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+
+* A Song of Ice and Fire
+
+* Short Stories
+- [[id:540c2711-8f1e-4dcc-b0fb-b32d92220da9][Nightflyers & Other Stories]]
+- [[id:1869d6de-6c44-4a2a-8a91-bd4cb21fa6d2][A Song for Lya]]

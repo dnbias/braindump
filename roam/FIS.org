@@ -44,7 +44,7 @@ $$
 
 
 ** Legge di Coulomb
-
+\[k_e = \frac{1}{4\pi \epsilon}\]
 ** Campi elettrici
 
 \[E(\vec{r})=k_e \frac{q}{|\vec{r}-\vec{r_o}|^2}\vec{u}\]
@@ -62,12 +62,13 @@ $\vec{p} = q\vec{d}$
 
 *** Dipolo elettrico
 Momento del Dipolo $p$
-**** piano mediano
-Sul piano il direzione del campo eletrico é costante e uguale a quella della congiungente tra i dui poli
+**** Piano Mediano
+Sul piano il direzione del campo eletrico é costante e uguale a quella della congiungente tra i due poli
 - le componenti $y$ si annullano
 - per $y >> a$ vale $\vec{E} =\frac{2kqa}{|y|^3}\vec{i}$
-**** lungo asse
+**** Lungo l'Asse
 *** Distribuzione Lineare e Uniforme Infinita
+\[\vec{E} = 2k_e\frac{\lambda}{r}\vec{u}\]
 *** Legge di Gauss
 Vale sempre, é una legge generale del campo elettrico.
 \[
@@ -134,6 +135,10 @@ $B=4\pi k_mnI = \mu_0nI$
 \[\vec{B}=2k_m\frac{I\pi R^2}{(R^2+z^2)^{3/2}}\vec{n}\]
 - Campo generato da una spira circolare percorsa da corrente, lungo l'asse della spira
 
+\[\vec{B} = \frac{k_m}{k_e}\vec{v}\times\vec{E}\]
+\[\vec{B} = \frac{1}{c^2}\vec{v}_a \times \vec{E}_B\]
+- Campo generato da una carica in moto in un campo elettrico
+
 $\vec{F}=q_0\vec{v}\times \vec{B}$
 - forza su una particella carica $q_0$ in moto in un campo magnetico
 $\vec{F}=\vec{I}\times\vec{B}l$
@@ -150,7 +155,6 @@ $\Phi_B = \vec{B}\cdot\vec{n}S = BS \cos{\theta}$
 
 ** Faraday Lenz
 \[\varepsilon_i=-\frac{d\Phi_\Sigma(\vec{B}) }{dt}\]
-
 ** Fili
 \[F= \frac{\mu_0I_1I_2l}{2\pi d}\]
 - repulsiva con correnti nel verso opposto, attrattiva se nello stesso verso

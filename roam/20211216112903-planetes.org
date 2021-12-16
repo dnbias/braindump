@@ -1,3 +1,6 @@
+:PROPERTIES:
+:ID:       6e6de1b9-0c60-42cb-ba3d-ba1d1b1de610
+:END:
 #+title: Planetes
-[[file:20211216112934-manga.org][$manga]] - [[file:20211216113053-makoto_yukimura.org][Makoto Yukimura]], 1999 - 2004
+[[id:af8daabf-26fa-4140-a2ef-aeb10b61ed53][$manga]] - [[id:785db1d0-808e-4fa0-ba68-d88adc60aeb2][Makoto Yukimura]], 1999 - 2004
 Letteralmente: viaggiatori - wanderers

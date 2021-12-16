@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       35e4db95-7fb3-4c6c-9387-037e933224ff
+:END:
+#+title: Talcot Parsons
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]

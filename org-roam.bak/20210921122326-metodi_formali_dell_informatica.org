@@ -1,0 +1,368 @@
+:PROPERTIES:
+:ID:       f97d251f-6fb4-42da-8878-8fc9d67b2a57
+:ROAM_ALIASES: MFI
+:END:
+#+title: Metodi Formali dell'Informatica
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+Prof: Ugo De' Liguoro
+* Info Corso
+- Orario:
+  + Mer 14-16
+  + Ven 11-13
+- Testo:
+  + [[id:ca905cae-fdf3-421c-a255-ec32435ef818][Programming Language Foundation in Agda]]
+
+* Teoria
+** Metodi Formali
+Derivano dalla logica-matematica
+- Chompsky - Teoria delle Grammatiche
+  + paralleli con gli automi
+- Linguaggi di programmazione - Linguaggi formali
+  + metodo che permette di verificare - Metodi Formale
+    - descrizioni formali del comportamento dei programmi
+
+#+begin_quote
+In computer science formal methods are a particular kind of mathematically based techniques for the specification, developmetn and verification of software and hardware systems  | Wikipedia
+#+end_quote
+
+- Componenti dei metodi formali
+  + calcoli logici
+  + sistemi di riscrittura
+    - semplificazioni
+  + linguaggi formali
+  + teoria degli automi
+  + sistemi di transizione
+  + algebra dei dati
+  + algebra dei processi
+    - esecuzione concorrente
+  + algebra relazionale
+    - basi di dati
+  + semantica dei linguaggi di programmazione
+  + teoria dei tipi
+  + analisi statica
+    - Data Flow
+    - Control Flow
+    - Abstract Interpretation
+
+L'utilitá é l'analisi matematica che dimostrino la robustezza e la correttezza della progettazione hardware e software
+
+- Tool:
+  + Infer
+  + Key
+  + Viper
+*** Il Problema della Verifica
+- In:
+  + descrizione di un sistema
+  + specifica del suo comportamento o sua proprietá
+- Out:
+  + evidenza del fatto che il sistema soddisfa la specifica
+  + controesempio che non funziona
+
+**** Semantica Operazionale
+Definisce il significato di un programma come il suo comportamento che, quando termina, tranforma uno stato in un altro
+***** Semantica Logica
+Pre e Post condizioni che un programma soddisfa
+- Floyd
+  + metodo delle asserzioni - 1967
+    - controllo del flusso di grafi che descrivono le aspettative sullo stato della memoria
+- Hoare
+  + formalizza le idee di Floyd
+  + Logica di Hoare
+    - $\{\varphi\} P \{\psi\}$
+      + in P out
+
+**** Verifica Statica
+Il programma non viene eseguito - statico
+Il testing é fatto sull'esecuzione - dinamico
+- l'importante é la scelta degli esempi di testing
+  + G.J.Myers, /The Art of Software Testing/
+- essendo i test infiniti il superamento di qualsiasi test non verifica il programma
+  + é un metodo di ricerca degli errori, non di verifica
+
+Processo:
+1. Contratto
+2. Invariante di Loop
+   - esistono euristiche per trovarlo ma non algoritmi
+3. Asserzioni Intermedie
+   - conducono alla dimostarzione di ció che voglio
+
+**** Logica di Hoare
+=HL=
+Usiamo logica debole, non dimostriamo la terminazione. Se il programma termina allora é il risultato sará corretto
+- Rules:
+  + skip
+  + assignments
+  + sequencing
+  + conditionals
+  + while loops
+  + consequence
+***** Correttezza di HL
+Teorema: Se la tripla é derivabile in HL, allora é valida
+***** Limiti teorici
+La logica del primo ordine é corretta e completa ma é _indecidibile_
+- Teorema di Church
+- non esiste un algoritmo che verifichi che formula logica sia corretta
+HL é corretta, ma completa solo in senso debole; include FOL dunque é indecidibile
+
+Allora si utilizzano Truth Assistant, il teorema di Rice ci dimostra che i Verificatori non possono esistere.
+- Isabelle
+- Coq
+- Agda
+  + un linguaggio di programmazione funzionale
+- VeriFast
+  + ProofAssistant dedicato a _Separation Logic_ in C e Java
+** Grammatiche
+*** Concrete
+Descrivo _Grammatiche Senza Contesti_ con le _Regole di Inferenza_
+
+- $\frac{}{n \in Aexp}$
+- $\frac{}{x \in Aexp}$
+- $\frac{a_1\in Aexp \quad a_2 \in Aexp}{a_1 +  a_2 \in Aexp}$
+
+*** Astratte
+**** Backus Normal Form
+Utiliziamo la notazione _carrificata_
+#+begin_example
+vname ::== String
+aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
+#+end_example
+** Semantica
+*** Agda
+=Set=, insieme o =Tipo=
+#+begin_example
+data aexp: Set nohere
+N: N -> aexp
+V: String -> aexp
+Plus: aexp -> aexp -> aexp
+
+depth: aexp -> N
+  depth (Nn) = 0
+  depth (Vx) = 0
+  depth (Plus a b) = 1 + max (depth a) (depth b)
+#+end_example
+
+Dim. per induzione strutturale:
+#+begin_example
+depth (Plus a b) <= size (Plus a b)
+#+end_example
+
+La semantica di $a \in aexp$ é un numero $n \in N$
+Per def il valore di $V x$ usiamo gli stati
+- $s \in state = vname \rightarrow val$
+
+#+begin_example
+aval: aexp -> state -> val
+  aval (N n) s = n
+  aval (V x) s = sx
+  aval (Plus a_1 a_2) s = (aval a_1 s) + (aval a_2 s)
+#+end_example
+
+$FVa$: l'insieme delle variabili libere in $a \in aexp$
+#+begin_example
+  FV (N n) = nil
+  FV (V x) = { n }
+  FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
+#+end_example
+
+**** Lemma FVa
+Se per ogni $x \in FVa$ gli stati $s, s^{'} \mid sx = s^{'}x$
+allora $aval \: as = aval \: as^{'}$
+- dim su ind. strutturale su $a$
+*** Sostituzione
+$a[a^{'}/n]$ intendiama la _sostituzione di x con a' in a_
+#+begin_example
+  (N n)[a'/x] = N n
+  (V x)[a'/x] = a'
+  (V y)[a'/x] = V y
+  (Plus a_1 a_2)[a'/x] = Plus a_1[a'/x] a_2[a'/x]
+#+end_example
+
+*Modifica delle variabili*
+Se $s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state$
+***** Lemma di Sostituzione
+$aval \: (a[a^{'}/n])s = aval \: a \: s [x\rightarrow aval \: a^{'}\: s]$
+
+*** Booleani
+#+begin_example
+bexp ::= B bval
+      | Not bexp | And bexp bexp
+      | Less aexp aexp -- a < a'
+
+bval ::= tt | ff
+#+end_example
+
+*** Comandi
+Espressioni generate dalla grammatica (BNF)
+
+*Sintassi*
+#+begin_example
+com ::= SKIP                      -- noop
+     |  vname := aexp             -- assegnazione
+     |  com ; com                 -- composizione sequenziale
+     |  IF bexp THEN com ELSE com -- selezione
+     |  WHILE bexp DO com         -- iterazione
+#+end_example
+Con queste caratteristiche il nostro linguaggio =IMP= é Touring completo:
+- _Arbib_, /A programming approach to computability/
+
+*Semantica* di =com=
+#+begin_example
+cval : com -> state -> state
+#+end_example
+Se questa funzione esiste deve essee parziale
+- definita solo in alcuni casi
+#+begin_example
+cval (WHILE b DO c) s = ??
+cval (WHILE b DO c) s = s  -- bval b s = ff
+cval (WHILE b DO c) s =    -- bval b s = t
+    = cval (c; WHILE b DO c) s
+    = cval (WHILE b DO c) (cval c s)
+#+end_example
+In questo caso la definizione é circolare
+*** Semantica Naturale - Big-step
+Usiamo la relazione $(c,s) \implies t$ su $com \times state \times state$
+$\iff$ l'esecuzione di $c$ in $s$ termina in $t$
+
+$(c,s,t) \rightarrow (c,s) \implies t \in bool$
+- true se in una stato finale, false altrimenti
+- questa funzione é definibile in =Agda=
+Sistema formale:
+$\frac{(c_{1},s_{1}) \implies t_{1}\cdots (c_{n},s_{n})\implies t_{n}}{(c_{n+1},s_{n+1})\implies t_{n+1}}$
+
+***** Regole
+Skip $\frac{}{(SKIP,s)\implies s}$
+Ass $\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]$
+Comp $\frac{(c_{1},s)\implies s^{'} \: \: (c_{2},s^{'})\implies t}{(c_{1};c_{2},s)\implies t}$
+IF b THEN c_1 ELSE c_2
+- $\frac{bval \: b\: s = tt \:\: (c_{1},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
+- $\frac{bval \: b\: s = ff \:\: (c_{2},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
+WHILE
+- $\frac{ bval \: b\: s = ff}{(WHILE \: b\:DO \: c, s)\implies s}$
+- $\frac{ bval \: b\: s = tt \:\: (c,s)\implies s^{'} \:\: (W,s^{'})\implies t}{(WHILE \: b\:DO \: c, s)\implies t}$
+  - $W$ abbrevia $(WHILE \: b \: DO \: c, s)\implies t$
+
+Con queste si studia la *convergenza*
+
+***** Proposizione SKIP
+$\forall s,t \nvdash (WHILE \: true \: DO \: SKIP,s) \Rightarrow t$
+_Dim_
+- per assurdo sia $D$ una dimostrazione (/derivazione chiusa/) t.c. la sua conclusione sia  $(WHILE \: true \: DO \: SKIP,s) \Rightarrow t$
+- poiché =bval true s = tt= per ogni =s=, =D= deve terminare con:
+  + $\frac{(SKIP,s)\Rightarrow s^{'} \:\: (W,s^{'})\Rightarrow t}{(W,s)\Rightarrow t}$
+  + ma =s'=s= per SKIP, dunque la des. =D'= ha la stessa forma di =D=, essendo propriamente inclusa in =D=, cioé é infinita
+- dunque =D= non é una dimostrazione
+***** Equivalenza di Programmi
+I comandi $c_{1},c_{2}$ sono _equivalenti_ [$c_{1} \sim c_{2}$]
+- $\forall s,t \in state . (c_{1},s)\Rightarrow t \iff (c_{2},s)\Rightarrow t$
+
+*Lemma*
+=WHILE b DO c ~ IF b THEN (c;WHILE b DO c) ELSE SKIP=
+***** Determinismo della semantica naturale
+*Teorema*:
+- Per ogni $c \in com$ , per ogni $s,t,t' \in state$
+- $(c,s)\Rightarrow t \land (c,s)\Rightarrow t^{'} \implies t=t^{'}$
+
+***** Funzione parziale
+$[\![ \cdot ]\!]: com \rightarrow state \rightharpoonup state$
+\([\![c]\!]s = \begin{cases}t & \mbox{se} \vdash (c,s) \Rightarrow t\\\perp & \mbox{altrimenti}\end{cases}\)
+*** Semantica SOS - Small Step
+Singolo _passo di calcolo_
+$(c,s) \rightarrow (c^{'},s^{'})$
+
+- *Lemma - determinismo*
+  + $(c,s)\rightarrow(c^{'},s^{'}) \land (c,s)\rightarrow(c^{''},s^{''}) \implies c^{'}=c^{''}\land s^{'}=s^{''}$
+- *Corollario*
+  + $(c,s)$ _termina_ se $\exists t \mid (c,s) \rightarrow^{*}(\textsc{skip},t)$, _cicla_ se esiste una sequenza infinita
+- =Assegnazione=
+  + $(x := a,s) \rightarrow (\textsc{skip}, s[x \mapsto aval \: as])$
+- =SKIP=
+  + $(\textsc{skip};c,s) \rightarrow (c,s)$
+- =IF=
+  + $\frac{bval \: b \: s = tt}{(\textsc{if}\: b\: \textsc{then}\:c_{1}\: \textsc{else}\: c_{2},s)\rightarrow (c_{1},s)}$
+  + $ff$ speculare
+- =WHILE=
+  + $(\textsc{while}\: b\: \textsc{do}\: c,s) \rightarrow
+    (\textsc{if}\: b\: \textsc{then}\: (c;\: \textsc{while}\: b\: \textsc{do}\: c)\: \textsc{else}\: \textsc{skip}, s$
+
+\([\![c]\!]_{\textsc{sos}}s = \begin{cases}t & \mbox{se} \vdash (c,s) \rightarrow^{*}(\textsc{skip},t)\\\perp & \mbox{se}\:(c,s)\:\mbox{cicla}\end{cases}\)
+- *Teorema di equivalenza delle Semantiche*
+$\forall c\in \mbox{com}\: \forall s,t\in\mbox{state}\mid[\![c]\!]_{\textsc{nat}}s=[\![c]\!]_{\textsc{sos}}s$
+** Teoria dei Tipi
+[[~/Code/Agda/quantifiers.agda][file Agda]]
+
+Il quantificatore universale si traduce, nella teoria dei tipi dipendenti, in
+
+$\frac{A : \text{Set} \qquad x : A \vdash B[x] : \text{Set}}{\pi[x : A] B[x] : \text{Set}}$
+dove
+
+$\pi [x:A] \: B[x] \equiv B[a_{1}] \times B[a_{2}] \times \cdots$ per $a_{i}\in A$
+corrisponde a
+$\forall x \: . \: B[x] \iff B[a_{1}] \land B[a_{2}] \land \cdots$
+
+Il $\pi$ sta per il concetto di indicizzazione:
+- forma famiglie secondo i suoi indici
+
+$\forall (\lambda \: x \: \rightarrow B\: x): \text{Set}$
+- il quantificatore é un operatore che viene applicata al lambda
+** Logica Classica e Intuizionistica
+[[https://plfa.github.io/Negation/][Wadler]]
+*** Semantica di Heyting
+$\frac{B[t]}{\exists x \: . \: B[x]}$
+$\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]$
+** IMP
+[[~/Code/Agda/IMP.agda][Definizione in Agda]]
+*** Semantica Operazionale
+[[~/Code/Agda/IMP-Op.agda][File Agda]]
+*** StackMachine
+Basato su [[~/Code/Agda/C-List.agda]]
+- [[~/Code/Agda/StackMachine.agda][Source]]
+*** Compilatore
+[[id:4fd7520a-1c7f-4ca9-a361-fe3feb92dfc7][Nipkow]], cap. 8
+
+Linguaggio =IMP= $\longrightarrow$ istruzioni di una macchina astratta
+- c : com $\mapsto$ p : prog
+  + $(c,s) \Rightarrow t$
+    * correttezza $\Rightarrow$
+    * completezza $\Leftarrow$
+  + $p \vdash (0,s,[\:]) \rightarrow^* (\text{size }p,t,[\:])$
+    * program counter
+    * memoria
+    * stack
+
+instr
+- =LOADI int=
+- =LOAD vname=
+- =ADD=
+- =STORE vname=
+- =JMP int=
+- =JMPLESS int=
+- =JMPGE int=
+
+Si definisce =lookup i P= dove $0 \le i < \text{size} P$
+- in =Agda= le funzioni parziali non sono ammesse e quindi questo va adattato
+
+$\frac{0 \le i < \text{size }P \quad \text{iexec }(\text{lookup }i\; P)(i,s,stk) \equiv (i',s',stk')}{P\vdash (i,s,stk) \rightarrow (i',s',stk')}$
+
+Un singolo passo di esecuzione (programma $P$ esegue dalla configurazione $c$ a $c'$)
+$P \vdash c \rightarrow c'$
+
+**** bcomp
+$bcomp :: bexp \Rightarrow bool \Rightarrow int \Rightarrow prog$
+
+\begin{align*}
+bcomp\;(Bc\;v)\;f\;n &= (if\;v=f\;then\;[\textsc{jmp}\;n]\;else\;[\:]) \\
+bcomp\;(Not\;b)\;f\;n &= bcomp\;b\;(\lnot f)\;n \\
+bcomp\;(And\;b_1\;b_2)\;f\;n &= \\
+\end{align*}
+&bcomp\;(Less\;a_1\;a_2)\;f\;n &=& \\
+& & & acomp\;a_1\;@\;acomp\;a_2\;@\;( \\
+ &&& if\;f\;then\;[\textsc{jmpless}\;n]\;\\
+  &&& else\;[\textsc{jmpge}\;n])
+\end{align}
+
+=Lemma 8.8=
+Si definisce:
+
+$\text{pc'} = \text{size }(\text{bcomp }b \:f \:n) + (\text{ if } f = \text{ bval } b\: s \text{ then } n \text{ else } 0$
+
+****

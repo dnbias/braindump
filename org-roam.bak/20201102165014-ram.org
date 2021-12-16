@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       fc1e0bc2-cab7-4c7b-ac38-55f3acc974da
+:END:
+#+title: RAM
+* A Nucleo Magnetico
+ - Anelli di ferrite magnetizzati in un verso o nell'altro
+   - Anni '60
+   - Migliaia di dollari per alcune decine di KB
+   - centimetri di dimensioni
+* Semiconduttori
+    - Intel li inizia a produrre negli anni '70
+    - Miniaturizzate

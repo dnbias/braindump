@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       bb1ff00c-74a5-46c9-adf8-0697a2c23b4d
+:END:
+#+TITLE: Emacs
+:editor:
+
+* [[https://sachachua.com/blog/2008/08/why-browse-the-web-in-emacs/][Why browse the Web in Emacs?]]

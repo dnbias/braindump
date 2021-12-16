@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       302ee384-dc88-49a4-be51-68dc4e861063
+:END:
+#+title: Simon Thompson
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+[[id:8f3dfc67-9e04-4cc6-8958-98559505065c][Haskell: the Craft of Functional Programming]]

@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       5f01f457-8432-4983-a3a2-291630342294
+:END:
+#+title: Meditations On Moloch
+[[id:26fa07f4-dafd-4567-b707-68c1e4bd856a][$essays]]
+- Source: https://slatestarcodex.com/2014/07/30/meditations-on-moloch/
+- Author: [[id:369682fc-23a5-42fc-8ad2-b1f085ac12d6][Scott Alexander]]
+- Tags: [[id:2bb3bb6a-bfda-481f-9926-7b06a1c0589a][Capitalism]], [[id:c06c7bc2-ba3b-4865-94f6-9f8874ebfb67][Philosophy]]
+
+- Moloch in the [[id:45824d22-b82b-42c7-b87a-05646a5d8ab6][Allen Ginsberg]] poem
+  + reply to [[id:da8de830-3481-4938-bbc1-4f7eb3373d58][C.S. Lewis]]
+- the Malthusian trap
+- Scott makes the case the poem is not talking directly of Capitalism, it is instead referring to the human condition inside a Capitalistic System
+  + like rats the  capitalists have to abandon their value if they want to survive, to be fit [evolutionary parallel]
+- These scenarios [examples in the essay] are in fact a race to the bottom. Once one agent learns how to become more competitive by sacrificing a common value, all its competitors must also sacrifice that value or be outcompeted and replaced by the less scrupulous. Therefore, the system is likely to end up with everyone once again equally competitive, but the sacrificed value is gone forever.
+
+These multipolar traps are united by one principle:
+| In some competition optimizing for X, the opportunity arises to throw some other value under the bus for improved X. Those who take it prosper. Those who don’t take it die out. Eventually, everyone’s relative status is about the same as before, but everyone’s absolute status is worse than before. The process continues until all other values that can be traded off have been – in other words, until human ingenuity cannot possibly figure out a way to make things any worse. [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]]|
+
+- [[id:c65def88-681c-4767-9fbc-9606fb2c14bb][Apocrypha Discordia]]
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |

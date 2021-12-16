@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       dd064a90-c859-4db6-b247-f07719d3ae95
+:END:
+#+title: Kentucky Route Zero
+- [[https://kentucky-route-zero.fandom.com/wiki/Kentucky_Route_Zero_Wiki][Wiki]]
+- [[https://consolidatedpower.co/~donald/zero/Main_Page][Highway 0]]

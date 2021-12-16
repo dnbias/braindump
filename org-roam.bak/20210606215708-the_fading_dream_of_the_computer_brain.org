@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       9416a341-f31e-4e6e-9f99-79c2c175c942
+:END:
+#+title: The Fading Dream of the Computer Brain
+[[id:efbaaebd-f20e-4063-9a38-6493eef9900e][$articles]]
+- Source: https://www.scientificamerican.com/article/the-fading-dream-of-the-computer-brain/
+- Author: [[id:618e2dc5-bd3c-4bb5-9ea4-42c45e404c29][Noah Hutton]]
+- Tags: [[id:b30832ab-1fca-4b99-9af4-7e0c12be5e28][Computational Neuroscience]], [[id:64bbb762-f416-4aea-8158-e3f0a0d42bc4][Neuroscience]], [[id:b6b078aa-ea4c-45f2-a9c8-683a175f7eb9][Simulation]]
+- References: [[id:cc93c1fe-666a-4b06-88c8-10229715cec9][A brain in a supercomputer]], [[id:173f4da0-00b2-418f-a4a2-651d5cf0f221][Blue Brain Project]]
+
+- technology hype often leads to unreasonable expectation
+  + [[id:d344457d-52db-4eff-ac4e-bac85b46f588][hype]] relies on a selective amnesia for the unfulfilled promised of the past, that way enthusiasm is replenished
+    - [seletive amnesia: how does it relate to the [[id:5ee8018e-0996-439d-9874-ad5a886e3a7a][Mandela Effect]]? Is it the opposite?]
+- with the [[id:173f4da0-00b2-418f-a4a2-651d5cf0f221][Blue Brain Project]] things weren't going as planned, then a bigger endevour was necessary: [[id:5301622e-1d9d-4019-977b-844f336ae6f5][Human Brain Project]], funded with a billion Euros by the EU
+  + controversy, open letter by 800 neuroscientists disagreeing with [[id:7c6b1b2c-c7d1-408c-a159-b02be176bcb6][Markram]]
+- seeing simulated neural activity: how do you know whether the activity was right or wrong?
+  + how can a perfectly fixed array of signals simulate the impredictability of biology?
+    - bugs are quickly fixed while neurons don't always have perfectly fixed action potential, cells mutate and change impredictably
+- Computational Neuroscience is gradually leaving behind biological brains in search of perfect algorithms

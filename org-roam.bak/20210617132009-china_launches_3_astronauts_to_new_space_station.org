@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       30e6d948-866c-4249-b694-ccc2149d42c0
+:END:
+#+title: China launches 3 astronauts to new space station
+- Source:  https://www.space.com/china-launches-astronauts-space-station-tianhe-shenzhou-12
+- Tags: [[id:1c0b16e0-e08f-4c78-8ba9-db5e2019715b][Space]]
+
+- [[id:97772fe3-a4e3-4b78-ae8c-134583fcc651][Shenzhou]] 12, launched 06.16.21
+- China's first crewed spaceflight in nearly 5 years
+  + mission to [[id:db39758e-b15e-4b9b-a2f8-fb0b3211640f][Tiangong Space Station]]
+    - China expects to complete its construction by the end of 2022
+    - experience in pathfinder vehicles: China did not gain this via the [[id:06fe24ce-ce63-466e-8be4-9c8217751adc][ISS]], because it's not a partner, U.S. law prohibited NASA etc. from cooperating with Chinese counterparts

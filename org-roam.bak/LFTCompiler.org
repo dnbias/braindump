@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       00d70554-6001-48b0-afea-8b1edc808a2c
+:END:
+#+TITLE: Lft Compiler
+[[id:96d0a247-0c7c-40c2-bd29-e514a2d93502][$project]]
+[[id:324d8ba8-c790-46d9-aef8-56b977b783ba][Linguaggi Formali e Traduttori]]

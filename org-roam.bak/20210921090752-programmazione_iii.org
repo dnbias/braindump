@@ -1,0 +1,450 @@
+:PROPERTIES:
+:ID:       6e332ccc-6881-4fff-a9e9-fd1f14286559
+:ROAM_ALIASES: ProgIII
+:END:
+#+title: Programmazione III
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+* Info Corso
+- Orari:
+  + Mar: 9-11
+  + Gio: 11-13
+  + Mer: 9-11 (Lab1)
+- Testi:
+  + [[id:21f4f4a4-aaa4-4932-9f39-65ed93de3116][Java: How to Program, Late Objects]]
+- IDE
+  + IntelliJ IDEA
+* Teoria
+** Programmazione ad Oggetti
+*** Concetti Base
+Secondo _Alan Kay (Smalltalk)_
+- Oggetti
+  /fornitori di servizi/
+  + Stato
+    - attributi
+  + Tipo/Classe
+- Richieste/Metodi - /delega al metodo, si conosce l'API non l'implementazione/
+  + modificano lo stato
+  + invio richieste ad altri oggetti
+  + comunicazione di informazioni
+- Object-oriented Design
+  + progettazione orientato ad O
+
+- Classe/Istanza
+  + astratto/concreto
+    - concreto anche in memoria nello Heap
+*** p. procedurale vs p. oggetti
+- Procedurale
+  + Algoritmi + Strutture Dati
+- Oggetti
+  + Oggetti + Collaborazione
+    /si scorporano funzionalitá diverse in oggetti diversi:/ *delega*
+    a) dati + algoritmi
+    b) interfacce
+*** Gerarchia
+- kind-of hierarchy
+- part-of hierarchy
+**** ereditarieta'
+**** polimorfismo
+***** Binding Dinamico
+:PROPERTIES:
+:ID:       c893d363-1f4f-4de6-bbe9-7e5157caec8d
+:END:
+_Binding statico_, all'atto della compilazione
+_Binding dinamico_, l'esecutore puó controllare i tipi degli oggetti, e decidere a runtime il body del metodo da eseguire
+- esegue l'implementazione piú specifica possibile
+- solo sui metodi, le variabili non vanno a fare overriding
+
+Estremamente modulare e scalabile, meccanismo di delaga
+***** Classi Astratte
+Utilizzate come interfaccia comune e pubblica, la sottoclasse andrá a implementare i dettagli
+***** Interfacce
+Non possono avere metodi non astratti
+- non sono soggette all'ereditarietá singola, una classe puó implementare tutte le interfacce di cui ha bisogro
+***** Overloading
+Definizione di firma alternativa di metodo esistente
+A tempo _statico_ viene scelta la firma, é bloccante e se ci sono eventuali overloading vengono persi
+- a runtime si discende solamente la catena di ereditarietá
+***** Overriding
+Diverso dall'Overloading in quanto le firme sono le stesse
+**** reflection
+*** Tipi Generici
+Introdotti per scrivere codice generico, applicabile a piú tipi di dati
+- *type checking statico*
+- il compilatore previa compatibilitá tra tipo attuale e generico, sostituisce il tipo attuale a E
+  + /erasure/
+- vincoli/restrizioni sul tipo T: upperbound al tipo parametrico
+  + =extends Comparable <T>.=
+  + =extends= a una singola classe
+    * ma multiple inferfacce
+**** Raw types
+Utilizzando Object direttamente, in questo modo peró il compilatore non puó controllare la correttezza dei tipi
+**** Collezioni
+Vincoli sintattici per evitare errori a Runtime che non sarebbero rilevati:
+- quindi le =Collection= sono controllate per Nome del tipo, non viene considerata l'ereditarietá
+  + si risolve utilizzando l'upcasting
+Per risolvere e definire una =Collection= di qualsiasi cosa
+- =Collection<?>.=
+- si utilizza la /wildcard/
+  + per restringerlo si utilizza anche in questo caso =extends=
+*** Interfacce
+- Collection
+  + Add()
+- Iterator
+  + hasNext()
+  + next()
+*** Classi e Interfacce innestate
+Innestando una classe dentro l'altra si facilita il codice mantenendo i contenenti privati
+- questo vale sia dalla classe interna che quella estesna
+Per information hiding la classe interna puó essere solo meno visibile o uguale a quella esternaPer information hiding la classe interna puó essere solo meno visibile o uguale a quella esternanon puó sempre rispondere
+- le classe =IN= hanno un puntatore =outerThis= che permette di fare riferemento al contenitore
+  + tramite quello hanno accesso come fossero locali
+
+**** Classi innestate in interfacce
+- Interfaccia publica
+  + classe statica che rappresenta l'implementazione di default dell'Iterfaccia
+- si puó estendere oppure
+
+Possibile avere classi nested anonime definendo in line
+- =return new Iteratore(){ ... }=
+Posso essere ancora piú sintetico utilizzando le =lambda expression=
+- ovviamente non deve esserci ambiguitá per quanto riguarda i parametri, un'interfaccia con metodi non ambigui e con poche righe di codice si presta ad una =lambda=
+- inoltre é possibile omette i tipi dei parametri se sono inferibili
+- é possibile omettere graffe e =return= se si tratta di una singola istruzione, deve essere una funzione (restituire un valore)
+- se il paremetro é uno si possono omettere le parentesi tonde
+*** Pattern Architetturali
+Una classe =Kernel= che utilizza una =Interfaccia Modulo= cui poi si sceglierá una implementazione con una =Implementazione del Modulo=
+- =Observer-Observable=
+- =Model View Controller=
+- =Facade=
+  + lavorare in upcasting quando permesso
+  + utilizzare interfacce e non classi specifiche per parti la cui implementazione puó variare
+*** IO
+- Flussi di byte
+  + InputStream
+  + OutputStream
+  + PrintStream
+- File
+  + FileReader
+  + FileWriter
+Utile comporre stream
+#+begin_code java
+Buffered Reader in = new BufferedReader(new FileReader("es.txt"))
+#+end_code
+Per scrivere e leggere dati primitivi:
+- DataInputStream
+- DataOutputStream
+Per scrivere e leggere oggetti (=Serializable=)
+- ObjectInputStream
+- ObjectOutputStream
+- file testuali
+  + Scanner
+  + File
+  + PrintWriter
+- file binari
+  + FileInputStream
+  + FileOutputStream
+Da File
+
+*** GUI
+- =AWT= - Abstact Window Toolkit
+- =SWING=
+  + =JFrame=
+  + =JApplet=
+  + =JDialog=
+
+** Programmazione ad Eventi
+*** Event-Driven Programming
+Differentemente da un classico programma, che ad un input restituisce un output seguendo un suo flusso di controllo e solo raramente si attende input dal utente, questa metodologia consiste in procedure che rispondono a certi eventi
+- /event handlers/
+- /events/
+
+Si distinguono due fasi:
+- Ciclo di individuazione degli eventi
+- Gestione degli eventi
+
+Dopo essere stati creati gli /event-handlers/ devono essere associati come /listener/ ad un evento di una specifica sorgente, componente la =GUI=
+
+**** Eventi
+In =Java=
+Oggetti derivati dalla classe =EventObject=
+- eventi /semantici/
+  + su componenti virtuali dell'interfaccia
+- eventi /low-level/
+  + eventi fisici relativi al mouse o tastiera
+
+Sono gestiti con un meccanismo di _delega_
+- la sorgente, generato un evento, passa un *oggetto* che descrive l'evento ad un listener
+  + registrato presso la sorgente
+  + il passaggio dell'evento cousa l'invocazione di un metodo del /listener/
+
+
+**** Sorgenti
+I diversi componenti dell'interfaccia
+- =JButton=
+- =JTextField=
+- =Component=
+- =Window=
+**** Listener
+O /event-handler/, istanza di una classe che contiene metodi per gestire gli eventi
+Per ogni tipo di evento é definita una interfaccia che il /listener/ deve implementare
+- =ActionListener=
+  + =void addActionListener(ActionListener I)=
+- =MouseListener=
+- =MouseMotionListener=
+- =WindowListener=
+
+Per non dover implementare tutti i metodi dell'interfaccia che ci interessa sono state introdotte le /classi filtro/
+- implementazioni di default delle interfacce dei listener
+  + metodi che non fanno nulla
+  + si fa /overriding/ solamente dei metodi di gestione che ci servono
+
+- =WindowListener= \rightarrow =WindowAdapter=
+
+*** Organizzazione e uso GUI
+*** Model View Controller
+=MVC=
+- Model
+  + memorizza e recupera i dati
+  + mantiene lo stato dell'applicazione
+- View
+  + gestisce l'interfaccia
+  + visualizza i dati del /Model/
+  + gestisce l'interazione con l'utente
+- Controller
+  + interpreta l'input dell'utente
+  + istruisce il /Model/ in base all'input
+
+Separa le implementazioni, in questo modo sono indipendenti e facilmente sostituibili
+- solitamente il legame principale é tra /controller/ e /modello/ e /controller/ e /view/
+- il legame diretto tra /modello/ e /vista/ é contemplato solo in situazioni piú semplici
+  + il refresh della vista é automatizzato dal modello =Observer-Observable=
+    * al cambiamento il /model/ segnala il cambiamento agli osservatori
+*** JavaFX
+Il successore di =SWING=
+- separa il contenuto dalla sua visualizzazione tramite /stylesheet/ =CSS=
+- permette il binding di property dei Model con elementi dell'interfaccia utente aggiornando automaticamente le viste
+- offre classi/interface che implementano Observer Observable
+- permette anche di scrivere interfacce in =XML=
+
+**** Componenti
+- Stage
+  + finestra
+- Scene
+  + una principale
+- Panels
+- Buttons
+
+**** Scene Builder
+** Programmazione Multithread
+/Stesso processo - Esecuzione concorrente di istruzioni/
+Piú leggeri rispetto ai processi concorrenti
+- in =JFrame= viene attivato un thread di interfaccia utente
+  + contiene tutti i _listener_ dell'interfaccia
+
+Si utilizzano classi in estensione a =Thread=
+- si creano in memoria con la =new=
+- si lanciano in parallelo il metodo =run()= con il metodo =start()=
+- si puó inserire lo =start()= all'interno del costruttore
+Questo ha il problema dell'ereditarietá singola.
+
+Per separare logicamente =Thread= (esecutore) e ció che va eseguito esiste l'interfaccia =Runnable=
+- contengono il metodo =run()=
+- eseguibile con =new Thread(Runnable r)=
+
+I =Thread= possono eseguire il metodo =join(Thread t)= per aspettare che =t= abbia terminato =run()= per continuare la propria esecuzione
+
+*** Deamon
+Un =Thread= puó essere dichiarato come =Deamon=
+- utilizzato per servizi
+
+In particolare termina solo quando tutti i =Thread= parenti terminano
+*** Sincronizzazione
+Necessaria su oggetti con accesso condiviso
+- in particolare quando le operazioni eseguite non sono /atomiche/
+
+Le sezione critiche possono essere gestite con:
+- =Semaphore(int n)=
+  + =acquire()=
+  + =release()=
+
+In =Java= peró ogni =Object= é dotato di =lock=
+- ogni istanza possiede un semaforo binario =lock=
+- questo é utilizzato con la dichiarazione del metodo =synchronized=
+- il =lock= é sulla singola instanza dell'oggetto, quindi la sincronizzazione avviene su piú esecuzioni di metodo =synchronized= dello stesso oggetto
+- sincronizzazione /server side/
+  + i client chiamano senza preoccuparsi, della sincronizzazione se ne occupa il server
+Anche l'oggetto =Class= relativo ha un =lock=
+- relativo a tutto ció che statico
+
+Per dichiarare sezioni critiche solamente sezioni di metodi si utilizza il metodo:
+- =synchronized(Object o)=
+
+Per i puntatori o contatori esiste =AtomicInteger=
+**** Thread
+I =Thread= possono attendere lo stato giusto della risorsa con il metodo:
+- =wait()=
+  + sbloccati attraverso notifica
+  + =notifyAll()=
+  + =notify()=
+    * risvegli il primo della coda di =wait=
+
+Le due situazioni che si possono creare con un utilizzo errato della sincronizzazione:
+- /deadlock/
+- /starvation/
+
+Tra =Thread= la comunicazione puó essere gestita facilmente con le =Pipe=
+**** BlockingQueue
+Interfaccia generica
+**** Lock e Condition
+Ogni oggetto ha un lock implicito.
+Per usare lock espliciti si utilizza l'interfaccia =Lock=
+Implementata ad esempio in =ReentrantLock=
+- =newCondition()=
+  + restituisce un oggetto di tipo =Condition=
+    * =await()=
+    * =signal()=
+    * =signalAll()=
+
+=ReadWriteLock=
+- =Lock readLock()=
+- =Lock writeLock()=
+*** Pool
+=Thread Pool=
+Si creano un numero di =Thread= in un colpo solo a cui sono poi assegnati man mano i compiti da eseguire.
+- sono dotati di coda in cui sono inserite le task man mano
+- il =Pool= si auto gestisce le code bilanciandole
+
+**** Executor
+=Executor= Interface
+- =ExecutorService newFixedThreadPool(int n)=
+- =ScheduleExecutorService newScheduledThreadPool(int n)=
+- =ScheduleAtFixedRate=
+
+=shutdown()=
+
+*** Runnable
+Task che corrisponde a un metodo con ritorno =void=
+
+*** Callable<T>
+Task che é parametrizzato con =T= generico
+- =public T call()=
+
+**** Future<T>
+=Futuretask(Callabre<T> task)=
+- =isDone()=
+- =get()=
+  + sospende in caso non abbia ancora terminato la computazione
+
+** Programmazione in Rete
+*** Architettura Client-Server
+*** Socket
+=Pipe= per applicativi su macchine diverse
+- l'unica differenza e' la connessione remota
+
+Il package Java che permettono l'uso di queste funzionalita' e' =java.net=
+
+#+begin_src java
+import java.net;
+try {
+    String ip = "time-c.nist.gov";
+    int port = 14;
+    Socket s = new Socket(ip, port);
+} catch (IOException e) {
+    e.pringStackTrace();
+} finally {
+    s.close();
+}
+#+end_src
+
+*** Server Socket
+Con l'uso di =accept()= ci si mette in attesa di una richiesta di connessione da un socket client
+#+begin_src java
+try {
+   ServerSocket server = new ServerSocket(port);
+   Socket client = s.accept();
+
+   try {
+       InputStream in = client.getInputStream();
+       OutputStream out = client.getOutputStream();
+   } catch (IOException e) {
+       e.pringStackTrace();
+   }
+} catch (IOException e){
+    e.pringStackTrace();
+} finally {
+    try {
+        client.close();
+        server.close();
+    } catch (IOException e) {
+        e.pringStackTrace();
+    }
+}
+#+end_src
+
+Per servire piu' client:
+#+begin_src java
+while (true){
+    Socket incoming = s.accept();
+    Runnable r = new ThreadedEchoHandler(incoming);
+    Thread t = new Thread(r);
+    t.start();
+}
+#+end_src
+
+*** Polimorfismo
+Il polimorfismo viene mantenuto ma il client deve disporre delle definizioni necessarie
+Questo tipo di operazione crea problemi di sicurezza e =Loader=
+- se si utilizzano classi definite da noi
+- ma queste classi non sono controllate
+  + se le classi devono essere scaricate da rete dinamicamente esiste
+  + =Security Manager=
+    * specificati permessi
+      - =IP= specifici
+      - tipo di connessioni
+    * permette l'uso di =class loader= dinamico
+
+
+*** Polimorfismo
+*** Esecuzione Distribuita
+* Laboratorio
+** MVC
+1. [[~/Uni/III/ProgIII/L/MVC/org/prog3/lab/week6/es1/es1_svolto/Exercise1.java]]
+2. [[~/Uni/III/ProgIII/L/MVC/org/prog3/lab/week6/es2/ProverbsApp.java]]
+
+** Progetto
+[[id:6c78ec84-9bc2-461e-84f7-fa63ca5ca73a][eMail Client-Server]]
+- Server
+  + ha una interfaccia grafica con il log delle operazioni client-server
+- Modello
+  + mail
+    + account
+      * ben formata
+    + lista di messaggi - inbox
+      * eventualmente vuota se non ha messaggi
+      * List di Classe =EMail=
+        - ID
+        - mittente
+        - destinatario / destinatari
+        - soggetto
+        - testo
+        - data
+        - ...
+- Client
+  + associato ad un account
+  + Intefaccia grafica
+    * creazione / invio mail
+    * lettura messaggi inbox
+    * rispondere a un messaggio
+    * forward di un messaggi
+    * rimozione messaggi
+    * aggiornata
+      - notifica nuovi messaggi
+  + lo stato dell'Inbox mantenuto lato server
+    * /attendere riscontro docenti/
+  + il client dovrebbe funzionare anche se ci sono problemi di connessione con il server
+    * avvertendo il client
+- Multithreading
+  + se una operazione puó essere parallelizzata allora deve esserlo
+- =Properties / Java Beans=
+  + per l'implementazione della =View=
+  + consigliato

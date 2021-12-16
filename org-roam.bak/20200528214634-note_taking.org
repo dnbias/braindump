@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       1479941e-151a-4bd1-8b31-ee11804d220c
+:END:
+#+TITLE: Note Taking
+:NoteTaking:
+* Tecniche
+** Gerarchy-based
+** [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]]

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       fc349247-58c8-42e0-8900-29ddb4d45246
+:END:
+#+title: Graham Hutton
+[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+[[id:dfb13901-7195-44df-843e-5601b65ad3b4][Programming in Haskell]]

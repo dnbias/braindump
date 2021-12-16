@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       e18cb691-4f1e-45f2-83ae-7b73bcecb3c2
+:END:
+#+TITLE: Podcasts&Conferenze
+
+* Supernova in the East :history:
+#+AUTHOR: Dan Carlin
+** Giappone Antico
+** Giappone Moderno
+
+* Lex Fridman Podcast :technology:
+#+AUTHOR: Lex Fridman
+**

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       3ea04258-1edd-48c3-be84-fbd0bda0a40e
+:END:
+#+title: cognitive constipation
+[[id:a4119815-2035-4119-b381-44352fc2fb9a][$zettel]]
+- Learning being much like eating, your intellect wants quality food but =needs= time to digest it.

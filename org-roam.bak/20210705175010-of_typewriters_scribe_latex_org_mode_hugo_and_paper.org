@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       d344cbe1-9672-46d8-9107-7e8b68834078
+:END:
+#+title: Of Typewriters, Scribe, LaTeX, Org mode, Hugo and Paper
+- Source: https://eludom.github.io/blog/typewriters/
+- Tags: [[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][Blog]]
+
+* [[id:eb69ccf8-94b4-4bfd-97cc-984280447be9][Donald Knuth]]
+- author of /The Art of Computer Programming/
+- creator of $\TeX$
+- won the Turning awand in 1974
+- came up with the concept of [[id:baa6bc86-e017-4114-85da-e5b5466c3e5d][Literate Programming]]
+
+* Dominik
+- creator of  [[id:ea38ccde-4a3a-4bce-a858-9889336ecb46][org-mode]]
+- co-wrote a paper on reproducible research:
+  + https://www.jstatsoft.org/article/view/v046i03
+* Production of the Blog
+- org mode
+- $\LaTeX$
+  + done with the =ox-hugo= exporter
+- Web
+- git

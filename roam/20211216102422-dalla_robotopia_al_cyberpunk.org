@@ -1,9 +1,12 @@
+:PROPERTIES:
+:ID:       95e51b2a-a53a-42a9-b585-a2f62d989828
+:END:
 #+title: Dalla Robotopia al Cyberpunk
 - Source: https://not.neroeditions.com/dalla-robotopia-al-cyberpunk/
 
   #+begin_quote
   Perché il Giappone appare, perennemente, come la più intrinsecamente futuristica tra le nazioni? Quando ero bambino il futuro era l’America. Il ruolo del Giappone stava solo nella produzione di robot di latta a carica e astronauti di plastica stampati a iniezione. Quarant’anni dopo, la relazione speciale che l’America aveva con il futuro si è spezzata.
-  ~ [[file:20211216102621-william_gibson.org][William Gibson]]
+  ~ [[id:7a2841f8-6093-4aac-8834-13b4d00a1e5b][William Gibson]]
   #+end_quote
 
 - Giappone - Tecnologia
@@ -15,7 +18,7 @@
     * vera apocalisse
   + Dopoguerra
     * tecnologia e societa' dei consumi creano a identita' nazionale odierna
-- [[file:20211216103448-nishida_kitaro.org][Nishida Kitaro]]
+- [[id:4ae3eed0-e31b-4e2b-a898-2883b06b6bb9][Nishida Kitaro]]
   + fondatore della scuola di Kyoto
     * /filosofi del nulla/
   + compremesso cultura giapponese e tecnologia occidentale
@@ -25,13 +28,13 @@
   + Kasei Tanken - 1940
   + Kagaku senshi - 1943
   + Tetsuwan Atom - 1950
-    * Astro Boy, [[file:20211216104340-automa.org][automa]] e non telecomandato, parte del successo
+    * Astro Boy, [[id:1ee42655-3289-4a7a-941f-f0bf8ff547be][automa]] e non telecomandato, parte del successo
 - generalizzando aspetti dello shintoismo
   + /ogni cosa e' sacra e ha uno spirito/
     * /kami/ in ogni dove
   + il robot e' visto come vivo
 
-Queste letture sono culla di autori come [[file:20211216104517-masamune_shiro.org][Masamune Shiro]] (/Ghost in the Shell/).
+Queste letture sono culla di autori come [[id:ec867e33-0be2-4fb2-9ebe-f337e4b614df][Masamune Shiro]] (/Ghost in the Shell/).
 - un infanzia educata dalla _fanta robotica_
 - robot amici, attrezzi umani
 - tecnologia nel dopoguerra fondamentale per la ricostruzione e per l'emancipazione dal'occidente e la colonializzazione
@@ -87,5 +90,5 @@ Alita, eroina senza memoria alla ricerca della propria identità, riproduce inco
 
 * Nichilismo
 - /Blame!/ - Tsutomu Nihei
-  + iperoggetti, [[file:20211216112703-timothy_morton.org][Timothy Morton]]
-  + incubi tecnologici, [[file:20211216112601-nick_bostrom.org][Nick Bostrom]]
+  + iperoggetti, [[id:0792e071-3ac6-4301-a2d3-740a0b162e29][Timothy Morton]]
+  + incubi tecnologici, [[id:04a74d3b-7659-4fb8-b939-253f854cb344][Nick Bostrom]]

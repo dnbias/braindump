@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       f0d8b7c7-2c2c-41f3-b91d-c8d00cbb6f68
+:END:
+#+title: Thriving Henry
+[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][$blog]]

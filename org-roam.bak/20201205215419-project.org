@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       96d0a247-0c7c-40c2-bd29-e514a2d93502
+:ROAM_ALIASES: Project
+:END:
+#+title: $project

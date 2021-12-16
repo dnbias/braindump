@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       fb21daef-3a51-4179-8fd6-6f26640c22c6
+:END:
+#+TITLE: Forme Mentali
+* Le Persone hanno diverse 'forme' che caratterizzano il loro comportamento
+** I
+conoscenze specifiche, profonde di un solo argomento
+Specialisti
+** T
+conoscenze specifiche E conoscenze settoriali conoscenze trasversali
+Leader ~ [[file:../../../../../../home/hiimpedro/.emacs.d/mnt/sda1/DanyB/Documents/org/mnt/sda1/DanyB/Documents/org/roam/20200528024130-elon_musk.org][Elon Musk]]
+
+Questa e' la base della creativita'
+
+** _
+conoscenze generali senza vera profondita'
+shit

@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       f956b52b-6fe3-4040-94e5-7474d1813a38
+:ROAM_ALIASES: University
+:END:
+#+TITLE:$university

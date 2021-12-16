@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       0cddeb95-4c7f-4074-8e60-67998daf7873
+:END:
+#+title: Union-Find Set
+aka =disjointed-set Forest=
+Vedi:
+- Cormen et al., Introduzione agli algoritmi e strutture dati, p. Foreste di insiemi disgiunti
+
+Used to represent sets by rooted trees, each node containing one member and each tree representing one set
+Each member points only to its parent. The root of each tree contains the representative, and is its own parent.
+This data structure is used by the Kruskal Algorithm (minimum covering tree).
+
+Asymptotically optimal implementation using these heuristics
+- union by rank
+  + ~rank~: greatest height in the three
+  + Union using this info
+    - attach the shortest tree to the longest one
+- path compression
+  + used by the Find-Set
+  + update the parent of the Find-Set parameter, point directly to the root when found
+
+Operations:
+- Make-Set(x)
+  + not in the family
+  + creates singleton x
+- Find-Set(x)
+  + must be in the family
+  + returns the representative of the set of x
+- Union(x,y)
+  + removes the sets of the two el., creates the union of these sets
+  + Link(x,y)

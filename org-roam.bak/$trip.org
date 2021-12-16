@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       7e16a66e-d37b-46f8-941c-ede33fb688df
+:END:
+#+TITLE: $trip
+

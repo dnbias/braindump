@@ -1,0 +1,386 @@
+:PROPERTIES:
+:ID:       b9d02edb-6458-4237-88de-41fb865974d2
+:ROAM_ALIASES: CalcCompl
+:ROAM_REFS:
+:END:
+#+title: Calcolabilitá e Complessitá
+[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+Prof: Stefano Berardi
+* Info Corso
+- Orari:
+  + Lun 9-11
+  + Mer 9-11
+- Testo:
+  + [[id:e5d00ea5-5ff0-4025-a0f6-38c9f5ad26e6][Introduction to the theory of Computation]]
+- Link:
+  + https://turingmachinesimulator.com/
+* Teoria
+** Macchina di Turing
+_The Church-Turing Thesis_
+Utilizzata per definire un problema risolvibile
+- nato per dare una definizione semplice di risolvibilitá
+  + un qualsiasi computer puó essere ridefinito con una =MdT= equivalente
+- unico accesso alla memoria
+  - come un nastro, legge dall'inizio fino alla fine
+    + lenta
+    + non é una architettura realmente implementabile
+
+Caratterizzata da:
+- controllo
+  + stati interni
+    - che definiscono comportamenti diversi
+- memoria/tape
+  + testa di lettura
+  + alfabeto a scelta
+La macchina é infinita ma la memoria é infinita
+
+- l'Input é finito
+- la fine del Input é marcata con un simbolo speciale
+
+A differenza degli Automi a Stati Finiti puó sovrascrivere, appunta per aiutarsi nell'esecuzione
+- una macchina di turing puó simulare qualsiasi macchina a differenza di un DFA
+La Macchina di Turing essendo estremamente semplice é ottima per lo studio
+
+*** Definizione Formale
+~MT 1936~
+7-tupla $(Q,\Sigma,\Gamma,\delta,q_0,q_{accept},q_{reject})$
+1. $Q$: insieme di stati
+2. $\Sigma$: alfabeto di Input non contenente il simbolo di blank
+3. $\Gamma$: alfabeto del nastro
+4. $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L,R\}$: funzione di transizione
+   *  Left (<) / Right (>)
+5. $q_{accept}$
+
+
+- Lo stato di rifiuto non viene inserito, é sottointeso a ogni Input non riconosciuto una transizione allo stato di rifiuto, bloccante
+- Lo stato $S$ di =StayPut= é simulabile muovendosi continuamente $L$ e $R$, raddoppiando gli stati
+- Il nastro infinito a destra e sinistra si simula sulle celle pari e dispari su un nastro infinito solamente a destra
+
+*** Grafi
+**** Stringhe Uguali
+[[../media/img/grafoEs1.jpg]]
+**** Stringa di 0 di lunghezza 2^n
+[[../media/img/graphPowerOfTwoLength.jpg]]
+*** Macchine Turing a piú registri
+Con piú /tapes/ diventa molto piú semplice controllare stringhe, ci si avvicina nel comportamente ad una macchina di Von Neumann
+Il primo nastro é l'Input, gli altri sono registri
+$\delta: Q \times \Gamma^{k} \longrightarrow Q \times \Gamma^{k} \times \{L,R,S\}^{k}$
+- con $k$ simboli / tapes
+- $S$ é =StayPut=
+
+Si puó simulare una ~MT~ a piú nastri con una ~MT~ ad un nastro solo
+- perché? per semplificare la definizione di calcolo
+- se un algoritmo a piú nastri é lineare su un nastro sará *quadratico*
+[[../media/img/3tapes1tape.jpg]]
+** Decidibilitá
+Per un =DFA= possiamo definire una =TM M= che lo simula e verifica l'accettazione o meno dell'Input
+[[file:../media/img/decidable-recognizable.jpg][Decidable - Turing-recognizable]]
+- =NFA= convertibili
+- =RegEx= convertibili
+*** Teorema di Post
+=4.22=
+Linguaggio $L$ decidibile $\iff$ e' _positivamente_ e _negativamente_ decidibile
+- $M$ termina sempre $\forall w \in \Sigma^{*}$
+- $M$ é un decisore che simula $M_{1}$ e $M_{2}$ in parallelo
+  + il primo che termina decide
+*** Mapping Reducible Language
+Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
+
+$A \le_{m}B$
+
+se esiste una /funzione computazionale/ $f$ tale che:
+
+$w \in L(A) \iff f(w) \in L(B)$
+
+[[../media/img/mapping-reducibility.jpg]]
+
+Seguono i corollari:
+- Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
+- Se $A \le_{m}B$ e $A$ non é decidibile $\implies B$ non é decidibile
+
+Si dimostra allora la riducibilitá $A_{\textsc{tm}}\rightarrow \textsc{halt}_{\textsc{tm}}$
+*** Problemi Decibidili
+$E_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
+- decidibile studiando i percorsi nel grafo delle transizioni
+$EQ_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
+- automa che descrive la differenza simmetrica dei linguaggi
+- si riconduce a $E_{\textsc{dfa}}$
+$A_{\textsc{CFG}}=\{\langle G,w \rangle \mid G\mbox{ is a \textsc{CFG} that generates string }w\}$
+- tempo di accettazione $2^n$
+- non c'é problema di fermata
+$E_{\textsc{CFG}}=\{\langle G \rangle \mid G\mbox{is a \textsc{CFG} and }L(G) = \emptyset\}$
+
+*** Problemi Indecidibili
+Per molti problemi si utilizza la tecnica della riduzione
+- se un problema che sappiamo non decidibile si puó ridurre al problema che stiamo studiando allora anche questo non sará decibidile
+**** Eguaglianza Chompsky
+$EQ_{\textsc{CFG}}=\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\}$
+**** Accettazione e Fermata
+Problema _positivamente decidibile_
+$M_{\textsc{TM}}=\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\}$
+- simulabile con una macchina =U= di Turing universale
+  + macchina capace di simulare qualsiasi macchina utilizzando 5 tape
+- si osserva l'esecuzione che non termina
+Si prova utilizzando la tecnica della /diagonalizzazione/ scoperta dal matematico [[id:b5e515b5-ab9b-4dc5-87d4-bcfc1d8e8618][Georg Cantor]] nel 1873
+- iniezione - biezione
+  + corrispondenza 1 a 1
+- prova che non esiste una enumerazione per un dato insieme di numeri
+  + per i Reali si cambia nella ennesima enumerazione la ennesima cifra dopo la virgola
+    * si trova cosí un numero che differisce per una cifra da tutti i numeri enumerati
+- esistono infinite terne
+Supponiamo che =H= esista, e accetti se =M= accetta =w= e viceversa
+=D= prende in input una macchina =M= e con un decisore =H= che decide =M= con input la propria descrizione $\langle M \rangle$, accetta se =H= rifiuta e viceversa, continua con altre macchine
+- diagonalizza infinite macchine =M=
+Allora si procede diagonalizzando con $D$ applicato a $\langle D\rangle$
+- dovrebbe rifiutare se $D$ accetta
+- dovrebbe accettare altrimenti
+  + non puó terminare perché per terminare avrebbe bisogno di dare la risposta opposta di se stesso
+_Abbiamo raggiunto una contraddizione_
+
+Esistono indebolimenti del decisore, ovvero decisori /parziali/
+
+**** Immortalitá
+=4.23=
+$\overline A_{\textsc{tm}}$ _positivamente decidibile_ $\implies  A_{\textsc{tm}}$ _negativamente decidibile_ per =T.Post=
+- Falso per =4.11=
+**** Fermata
+=5.1=
+| Il problema della decisione per $L_{1}$ si riduce al problema della decisione per $L_{2}$ se sappiamo trasformare un decisore per $L_{2}$ in un decisore per $L_{1}$
+
+Per contraddizione, non é decidibile
+$\textsc{halt}_{\textsc{tm}}=\{\langle M,w\rangle \mid M \mbox{ is a \textsc{tm} and }M \mbox{ halts on input } w\}$
+**** Decibidilitá dei Linguaggi di Chompsky
+/Simboli, Produzioni, Terminali/
+Un linpuaggio definibile da una grammatica in forma normale di Chompsky é detto =context-free=
+Si dimostra che il numero di passi per derivare una stringa di lunghezza $n$ é $2n-1$
+Questo implica che il problema é decidibile, anche se in tempo esponenziale
+- si scrivono sulla tape 2 tutte le deduzioni di lunghezza $2n-1$
+- si controlla la correttezza una ad una, se ne si trova una corretta e che corrisponde accettiamo, altrimenti continuiamo, se alche l'ultima non va bene rifiutiamo
+Per ridurre la complessitá si utilizza la *programmazione dinamica*
+- ci si appunta i risultati intermedi
+**** Emptyness
+=5.2=
+Si dimostra per assurdo, se esistesse si potrebbe risolvere l'accettazione
+**** Equality
+=5.3=
+Intesa tra due =MT=
+- se sapessi deciderla potrei decidere anche l'=Emptyness=
+
+Anche per i reali:
+- calcoli diversi portano anche arrotondamenti diversi, per questo reali rigorosamente uguali possono risultare diversi
+- $A_{\textsc{tm}}$ si riduce a $EQ_{\textsc{Real}}$
+  + e di conseguenza anche il < e il >
+
+***** Prova EQ
+:PROPERTIES:
+:ID:       6fe4339a-9669-4dbf-b2bb-16f4e5b6b6a6
+:END:
+$EQ_{TM} = \{\langle M_{1}, M_{2} \rangle \mid L(M_{1}) = L(M_{2})\}$
+
+$\qed$
+1. $A_{TM} \le_{m} \overline{EQ}_{TM}$
+   - questo indica che $EQ_{TM}$ non puó essere negativamente decidibile
+   - spostiamo al decidibilitá a $A_{TM}$
+2. $\overline A_{TM} \le_{m} EQ_{TM}$
+   - questo indica che $EQ_{TM}$ non puó essere positivamente decidibile
+
+
+Ora basta raggiungere queste conclusioni per chiudere la dimostrazione.
+1. Definisco una macchina $F$ che implementa la funzione $f$ che riduce $A$ a $\overline{EQ}$
+   - $\langle M, w \rangle \rightarrow^{F} \langle M_{1}, M_{2} \rangle$
+   - se $L(M_{1}) \neq L(M_{2})$ allora $M$ accetta $w$
+     + $M_{1}$ rifiuta sempre
+       * $q_{0} = q_{\text{reject}}$
+     + $M_{2}$
+       * prende $x$ e lo ignora
+       * esegue $M$ su $w$ e accetta se $M$ accetta
+         - $\begin{cases} M \mbox{ accetta}: & L(M_{2})=\Sigma^{*}\\M \mbox{ non accetta}: & L(M_{2}) = \emptyset  \end{cases}$
+     + $L(M_{1}) = L(M_{2}) \iff M \mbox{ non accetta }w$
+2. Definisco una Macchina $G$ che implementa la funzione $g$ che riduce $\overline A$ a $EQ$
+   - $\langle M, w \rangle \rightarrow^{F} \langle M_{1}, M_{2} \rangle$
+   - se $L(M_{1}) \neq L(M_{2})$ allora $M$ non accetta $w$
+     + $M_{1}$ accetta sempre
+       * $q_{0} = q_{\text{accept}}$
+     + $M_{2}$
+       * prende $x$ e lo ignora
+       * esegue $M$ su $w$ e accetta se $M$ accetta
+         - $\begin{cases} M \mbox{ accetta}: & L(M_{2})=\Sigma^{*}\\M \mbox{ non accetta}: & L(M_{2}) = \emptyset  \end{cases}$
+     + $L(M_{1}) \neq L(M_{2}) \iff M \mbox{ non accetta }w \qquad\qquad \square$
+
+**** Corrispondenza di Post
+:PROPERTIES:
+:ID:       f1afc3a9-22ad-4f4e-891a-2f8bef51d201
+:END:
+=PCP=
+
+$A_{TM} \le_{m} \text{PCP}$
+
+Questo problema (domino) contiene la Macchina di Turing
+- in quanto corrisponde alla visualizzazione della [[id:028287f8-28e5-4085-b92a-db457989537f][Configurazione di una TM]]
+  + visualizzando la storia del calcolo della macchina
+
+Si definisce un /Modified Post Correspondance Problem/:
+
+$A_{TM} \le_{m} \text{MPCP} \le_{m} \text{PCP}$
+
+Si decide che il primo elemento dell'insieme deve essere utilizzato all'inizio
+- sopra abbiamo $n-1$ passi di calcolo
+- sotto abbiamo $n$ passi di calcolo
+Questi /domini/ rappresentano le funzioni di transizione attraverso le configurazioni della =TM=
+- $[\frac{\#qa}{\#rb}]$
+  + $\delta(q,a) = (r,b,L)$
+- compresi i pezzi dei singoli simboli, che si mantengono da un istante all'altro se non toccati dalla trasformazione di stato
+  + $[\frac{1}{1}]$
+  + $[\frac{0}{0}]$
+  + $[\frac{\sqcup}{\sqcup}]$
+  + $[\frac{\#}{\sqcup\#}]$
+    * utilizzato quando lo stato deve spostarsi a destra oltre l'ultimo simbolo
+
+Si devono definire dei domino per l'accettazione, che faccia /match/:
+$[\frac{q_{accept}\#\#}{\qquad \;\;\;\: \#}]$
+Per arrivare a questo /accept/:
+$\forall a\in \Gamma$
+- $[\frac{a\: q_{accept}}{\quad q_{accept}}]$
+- $[\frac{q_{accept} \: a}{q_{accept}\quad}]$
+**** Tassellazione - Wang Tiles
+[[https://en.wikipedia.org/wiki/Wang_tile][Wikipedia]]
+Solo negativamente decidibile
+- le tassellazioni aperiodiche sono utilizzate per la sintesi procedurale di texture, heightfields
+
+**** Esistenza di un DFA equivalente
+=5.3=
+$A_{\textsc{tm}}$ é riducibile a $\textsc{Regular}_{\textsc{tm}}$
+*** Configurazione di una TM
+:PROPERTIES:
+:ID:       028287f8-28e5-4085-b92a-db457989537f
+:END:
+#+caption: configurazione di $1011 q_{7} 01111$
+[[../media/img/tm-configuration.jpg]]
+*** Recap
+- Negativamente Decidibili
+  + $E_{\textsc{tm}}$
+  + $\overline A_{\textsc{tm}}$
+  + $\textsc{All}_{\textsc{cfg}}$
+  + $\textsc{Wang}$
+- Decidibili
+  + $E_{\textsc{cfg}}$
+  + $A_{\textsc{cfg}}$
+  + $\textsc{Eq}_{\textsc{dfa}}$
+- Positivamente Decidibili
+  + $\overline E_{\textsc{tm}}$
+  + $A_{\textsc{tm}}$
+  + $\textsc{Halt}_{\textsc{tm}}$
+  + $\textsc{pcp}$
+    * [[id:f1afc3a9-22ad-4f4e-891a-2f8bef51d201][Corrispondenza di Post]]
+- Né negativamente né positivamente decidibili
+  + $\textsc{Regular}_{\textsc{tm}}$
+  + $\textsc{Eq}_{\textsc{tm}}$
+    * [[id:6fe4339a-9669-4dbf-b2bb-16f4e5b6b6a6][Prova EQ]]
+  + $\textsc{Context-Free}_{\textsc{tm}}$
+  + $\textsc{All}_{\textsc{tm}}$
+    * se un programma accetta sempre
+** Complessitá
+Trattata nel corso di Algoritmi: [[id:347b2529-bb45-4516-86fe-443b43c8edd6][Complessitá di un algoritmo]]
+Per lo studio della complessitá consideriamo la _Macchina di Turing_ (1 registro)
+- questo in quanto la complessitá varia anche in base all'architettura
+
+Il tempo di calcolo della macchina $M$ é definito come
+
+$f : \mathbb{N} \to \mathbb{N}$ dove $f(n)$ é il numero massimo di passi compiuti dalla macchina $M$
+
+Si utilizza la /notazione asintotica/ o *big-O Notation*
+- [[id:adc0b322-e761-439b-b7bf-7895bd638c23][O-grande]]
+
+Generalmente:
+- $\text{P} =$ classe dei linguaggi la cui appartenenza puó essere decisa velocemente
+- $\text{NP} =$ classe dei linguaggi la cui appartenenza puó essere verificata velocemente
+
+Non si é riuscita a provare l'esistenza di un singolo linguaggio $\text{NP}$ che non sia in $\text{P}$
+
+Piú grande problema aperto: $\text{P}=\text{NP}$
+[[../media/img/P-NP.jpg]]
+
+*** P
+Teorema =7.8=
+Sia $t(n)$ una funzione t.c. $t(n) \ge n \implies$ qualsiasi macchina /multitape/ $M$ con  tempo $t(n)$ ha un equivalente $O(t^2(n))$ in una macchina $M'$ /singletape/
+- chiaro riprendendo la simulazione di /multitape/ in /singletape/
+- un passo della simulazione /singletape/ impiega al massimo $O(t(n))$ passi
+
+La classe di tempo *Polinomiale* é definito come
+
+$\text{P} = \bigcup \textsc{time}(n^k)$
+
+*** Non Determinismo
+Teorema =7.11=
+Sia $t(n)$ una funzione dove $t(n)>n$.
+Allora ogni =TM= /singletape/ _non deterministica_ con complessitá temporale $t(n)$ ha una equivalente =TM= _determinitstica_ $2^{O(t(n))}$, nel caso di una macchina multiregistro
+Per una =TM= det. a registro singolo si avrá sempre complessitá $2^{O(t(n))}^2} = 2^{O(t(n))}$
+
+L'esplorazione dell'albero non deterministico é svolto utilizzando /l'ordine lessicografico/
+- in profonditá
+- questo é posto nell'/address tape/ della macchina *deterministica* corrispondente
+- a livello $n$ l'albero ha massimo $k^{n}$ nodi con $k$ numero di possibili figli
+- il numero di possi necessari all'eslorazione dell'albero é $2^{O(m)}$
+  + $m$ profonditá dell'albero
+**** Raggiungibilitá
+$\textsc{Path} = \{ \langle G,s,t  \rangle \mid G \text{ é  diretto con un cammino da }s \text{ a } t \}$
+La soluzione banale non deterministica ha $2^{O(t(n))}$ _esponenziale_
+
+Con un algoritmo marcando i nodi man mano che vengono scoperti si raggiunge complessitá _polinomiale_
+- rappresentando il grafo con liste di adiacenza la si puó stimare $O(n)$ nel numero di archi
+**** Algoritmo di Euclide
+$\textsc{RelPrime}$, il =MCD= tra due numeri Relativamente Primi é 1
+$\textsc{mcd}(x,y) = \textsc{mcd}(x \mod(y), y)$
+quindi procediamo:
+$(x,y) \to (x \mod{y}, y) \to (y, x\mod{y})\to \cdots \to (x,0)$
+$\textsc{mcd}(x,0) = x$
+
+I passi sono eseguiti $min(2 \log_{2} x, 2\log_{2} y)$ ovvero proporzionali al numero di cifre nella rappresentazione binaria: $O(n)$ quindi _polinomiale_
+
+**** Grammatiche di Chompsky
+Per migliorare la complessitá si cerca di derivare tutte le sottostringhe di lunghezza crescente della stringa di input
+- si memorizzano le soluzioni delle sottostringhe
+  + per ogni sottostringa la si divide in sottostringhe e si guarda la soluzione delle sottostringhe
+  + in una rappresentazione matriciale la soluzione si trova nella riga precedente
+- ogni controllo richiede $O(1)$ in quanto le sottostringhe sono sempre riconducibile ai siboli terminali
+Con questo algoritmo si raggiunge $O(n^3)$
+
+*** NP
+Un linguaggio é =NP= $\iff$ é deciso da un algoritmo _non deterministico polinomiale_
+Un $M: O(n^k)$ =NTM= equivale a $M': 2^{O(n^k)}$ =TM=
+- tempo polinomiale in tempo esponenziale
+
+$\text{NP} = \bigcup_k \textsc{ntime}(n^k)$
+
+Un linguaggio é =NP= se dispone di un /verificatore/ in tempo polinomiale, detto allora /polinomialmente verificabile/
+
+Def =7.18=
+Un *verificatore* é una macchina di turing $V$ tale che per un linguaggio $A$:
+- $A = \{w \mid V \text{ accepts } \langle w,c \rangle \text{ for some string }c\}$
+  + $w$ riguarda i dati del problema
+  + $c$ riguarda le istruzioni della =TM=, un candidato di soluzione o almeno ci é legato in qualche maniera
+    * potrebbe essere anche il cammino della macchina non deterministica
+    * la /address tape/ nella simulazione deterministica di una macchina non deterministica
+- si misura il tempo di un verificatore solo in funzione della lunghezza di $w$
+  + un verificatore polinomiale esegue in tempo polinomiale secondo la lunghezza di $w$
+
+Prova =7.20=
+Il determinismo con certificato $c$ utilizzando $V$ é convertito in non determinismo trovando il $c$ in maniera non deterministica di lunghezza massima $n^k$ (dove questo é il polinomio di complessitá)
+
+**** Hamilton's Path
+Percorso che percorre tutti il grafo a partire da $p$ arrivando in $t$ senza ripetizioni.
+Si percorre il grafo non deterministicamente
+- si scartano tutti i rami in cui il primo nodo non é $p$ o $t$ non é l'ultimo
+- si scartano i rami in cui ci sono ripetizioni
+
+Non conosciuto algoritmo in $\text{P}$
+**** Compositeness
+$\textsc{Composites} = \{x \mid x = pq \text{ for integers }p,q > 1\}$
+Un numero composto é un numero non primo.
+Esiste un algoritmo polinomiale per verificare se un numero é composto o meno ma non per trovare la sua scomposizione (o almeno non lo si é trovato)
+**** Clique
+Grafo _non orientato_, fornito un $k$
+- si richiede un _sottografo_ in cui 2 qualunque nodi distinti sono connessi di un arco
+Non si sa se esistono algoritmi polinomiali $\text{P}$
+
+$\textsc{Clique} = \{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\}}$

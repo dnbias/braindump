@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       f04767dc-15ae-42a3-bf17-39db2f716c1a
+:END:
+#+title: Separation of content and presentation
+#+site: https://en.m.wikipedia.org/wiki/Separation_of_content_and_presentation

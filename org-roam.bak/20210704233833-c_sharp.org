@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       d7ea043f-1f25-4666-b229-9147b7f74bec
+:END:
+#+title: C Sharp
+- Sources:
+  - [[https://www.youtube.com/watch?v=GhQdlIFylQ8][4h Course - YT]]
+
+
+* Namespace
+Container for related classes
+
+* Snippets
+#+begin_code csharp
+// Basic I/O
+Console.WriteLine("Hello");
+Console.ReadLine();
+
+// Inheritance
+public class Dog : Animal {}
+#+end_code
