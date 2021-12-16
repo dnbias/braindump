@@ -2,29 +2,189 @@
 :ID:       c5461b03-abb3-4dfb-9334-a1fd6fe1f70b
 :END:
 #+TITLE: Fisica
-#+TEACHER: Gagliardi Martino
+#+TEACHER: Gagliardi Martino | Migliore
 
+* Vettori
+Prodotti vettoriali tra i versori degli assi:
+\begin{align*}
+\vec{i} \times \vec{j} &= \vec{k} \qquad \vec{j}\times\vec{u}=-\vec{k} \\
+\vec{j} \times \vec{k} &= \vec{i} \qquad \vec{k}\times\vec{j}=-\vec{i} \\
+\vec{k} \times \vec{i} &= \vec{j} \qquad \vec{i}\times\vec{k}=-\vec{j} \\
+\vec{i} \times \vec{i} &= \vec{j}\times\vec{j} = \vec{k}\times\vec{k} = 0
+\end{align*}
 * Elettrostatica
+\[k_0 = 8.99 \cdot 10^9 \frac{Nm^2}{C^2}\]
+\[ q_e = -1.6 \cdot 10^{-19}C = -e \]
+\[ m_e = 9.11\cdot 10^{-31}kg \]
+** Moto di Cariche
+\[
+\vec{r} = \vec{r_0} + \vec{v_0}t + \frac{1}{2}\vec{a}t^2
+\]
+\[
+\vec{v} = \vec{v_0}+\vec{a}t
+\]
+
+Per un corpo con carica $q$ e massa $m$ in un campo elettrico:
+$$
+m\vec{a}=\vec{F}=q\vec{E}\rightarrow \vec{a}=\frac{q\vec{E}}{m}=\frac{q}{m}(E_x\vec{i}+E_y\vec{j})
+$$
+
+** Lavoro e Energia
+\[ L_E = |\vec{F}||\vec{s}| \cos{\theta_{\vec{F},\vec{s}}} \]
+\[ |\vec{F}| = |-e\vec{E}|=eE   \]
+
+\[ L_E = \Delta E_k = \Delta U = q(V_A - V_B)\]
+\[\Delta E_k = 0 - \frac{1}{2}m_e v_0^2  \]
+- in caso di corpo inizialmente fermo
+
+\[P_E = \frac{L_E}{\Delta t} = - \frac{eEs}{\Delta t}= - \frac{eEv_0\Delta t}{\Delta t}\]
+- potenza sviluppata dal campo elettrico
+- negativa nel caso la forza elettrica si opponga al moto
+
+
 
 ** Legge di Coulomb
 
 ** Campi elettrici
 
-*** Dipolo elettrico
-Momento del Dipolo p
-**** piano mediano
+\[E(\vec{r})=k_e \frac{q}{|\vec{r}-\vec{r_o}|^2}\vec{u}\]
+- campo elettrico prodotto in $\vec{r}$ da una carica puntiforme $q$ posta in $r_o$
 
+\[V(\vec{r}) = k_e \frac{q}{ |\vec{r}-\vec{r_o}| }+K  \]
+- potenziale prodotto in $\vec{r}$ da una carica puntiforme $q$ posta in $r_o$
+
+$\vec{F} = q_0\vec{E}$
+- forza su una particella di carica $q_0$ posta in un campo elettrico
+
+$\vec{p} = q\vec{d}$
+- momento di dipolo elettrico
+
+
+*** Dipolo elettrico
+Momento del Dipolo $p$
+**** piano mediano
+Sul piano il direzione del campo eletrico é costante e uguale a quella della congiungente tra i dui poli
+- le componenti $y$ si annullano
+- per $y >> a$ vale $\vec{E} =\frac{2kqa}{|y|^3}\vec{i}$
 **** lungo asse
 *** Distribuzione Lineare e Uniforme Infinita
-
 *** Legge di Gauss
 Vale sempre, é una legge generale del campo elettrico.
-$\Phi_{\vec{\sum}}= \int_{S} \vec{E} \cdot \vec{n} dS = 4\pi k_e \sum_{i\to \infty} Q_i$
-
+\[
+\Phi_{\vec{\sum}}= \int_{S} \vec{E} \cdot \vec{n} dS = 4\pi k_e \sum_{i\to \infty} Q_i
+\]
 Valgono alcuni casi particolari
+
 **** Simmetria Sferica di carica
 $E = k_e \frac{Q}{R^2}$
 **** Simmetria Assiale
 $E= 2k_e \frac{\lambda}{R}$
 **** Simmetria Planare
 $E = 2 \pi k_e \sigma = \frac{\sigma}{2\epsilon_0}$
+
+** Circuiti
+*** Legge di Ohm
+$V=RI$
+*** Condensatori
+$C = \frac{q}{V}$
+- Capacitá
+
+$\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2}$
+- Condensatori in serie
+
+$C = C_1+C_2$
+- Condensatori in parallelo
+
+$U_E = \frac{q^2}{2C} = \frac{1}{2}CV^2 = \frac{1}{2}qV$
+- Energia immagazzinata in un condensatore
+
+**** Condensatore Piano
+$C=\varepsilon_0 \frac{S}{d}$
+- \[\varepsilon_0 = \frac{1}{4\pi k_0} \]
+
+$E = \frac{\sigma}{\epsilon_0}$
+$V=Ed$
+*** Resistenze
+$R_{eq} = R_1 + R_2$
+$\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}$
+
+$P = RI^2$
+- potenza assorbita nella resistenza
+$P=VI$
+- potenza erogata da una forza elettromotrice (/f.e.m./)
+*** Kirchhoff
+\[\sum_i I_i = 0 \]
+- nodi
+
+\[\sum_j f_j - \sum_k R_kI_k = 0 \]
+- maglie
+
+*** Circuito RC
+$q(t) = q_0 (1-e^{-t/\tau})$
+$i(t)=\frac{dq}{dt} = i_0e^{-t/\tau}$
+- dove $\tau = RC$
+
+* Magnetismo
+$B=2k_m\frac{I}{r}$
+- modulo del campo magnetico generato da un filo rettilineo di lunghezza infinita percorso da una corrente $I$ in punto a distanza $r$ dal filo
+
+$B=4\pi k_mnI = \mu_0nI$
+- modulo del campo magnetico generato da un solenoide rettilineo ideale
+
+\[\vec{B}=2k_m\frac{I\pi R^2}{(R^2+z^2)^{3/2}}\vec{n}\]
+- Campo generato da una spira circolare percorsa da corrente, lungo l'asse della spira
+
+$\vec{F}=q_0\vec{v}\times \vec{B}$
+- forza su una particella carica $q_0$ in moto in un campo magnetico
+$\vec{F}=\vec{I}\times\vec{B}l$
+- forza su un filo rettilineo di lunghezza $l$ percorso da corrente
+\[F=2k_m\frac{I_1I_2}{d}l\]
+- modulo della forza fra due fili rettilei paralleli percorsi da corrente
+
+$\vec{m}=IS$
+- momento di dipolo magnetico di una spira di area $S$
+
+\[\Phi_{\Sigma}(\vec{B})=\int_\Sigma \vec{B}\cdot \vec{n}dS\]
+- flusso campo magnetico attraverso una superfice $\Sigma$
+$\Phi_B = \vec{B}\cdot\vec{n}S = BS \cos{\theta}$
+
+** Faraday Lenz
+\[\varepsilon_i=-\frac{d\Phi_\Sigma(\vec{B}) }{dt}\]
+
+** Fili
+\[F= \frac{\mu_0I_1I_2l}{2\pi d}\]
+- repulsiva con correnti nel verso opposto, attrattiva se nello stesso verso
+** Induttanza
+$\varepsilon = -L \frac{dI}{dt}$
+- /f.e.m./ autoindotta
+
+$L = 4\pi k_mn^2lS = \mu_0 n^2 lS$
+- induttanza di solenoide rettilineo
+
+$U_M = \frac{1}{2}LI^2$
+- energia immagazzinata in un solenoide
+
+$L_{eq} = L_1 + L_2$
+- induttanze in serie
+
+$\frac{1}{L_{eq}} = \frac{1}{L_1} + \frac{1}{L_2}$
+
+Forza elettromotrice autoindotta:
+\begin{align*}
+\vec{F}_B &= (I_0 + I_{\text{ind}})LB_I\vec{u} \\
+&= \frac{\varepsilon - B_ILv}{R}LB_I\vec{u}
+\end{align*}
+
+** Circuito LR
+$I=I_0(1-e^{-t/\tau})$
+- corrente dopo chiusura con $\tau = \frac{L}{R}$
+
+$I=I_0 e^{-t/\tau}$
+
+** Circuito LC
+$q = q_0 \cos{(\omega_0t + \emptyset)}$
+- dove $\omega_0 = \frac{1}{\sqrt{LC}}$
+
+** Circuito RLC
+$Z = \sqrt{R^2 + (\omega L - \frac{1}{\omega C})^2}$
+- impedenza in presenza di una /f.e.m./ alternata con pulsazione $\omega$

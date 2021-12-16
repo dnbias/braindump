@@ -1442,7 +1442,7 @@ L'obiettivo é bilanciare il carico ed evitare bottleneck nell'accesso ai dati
 
 Possono essere possibili diversi schemi di connessione tra i livelli di switch per ottimizzare l'accesso
 
-*** incapsulamento
+*** Incapsulamento
 Ogni livello che si discende si aggiunge una intestazione
 ** Sicurezza
 Non é stata pensata inizialmente con la sicurezza in mente
@@ -1466,3 +1466,198 @@ Packet Sniffing
 IP spoofing
 - invio di pacchetti con IP falso, rubato
 ** Reti Wireless
+Oggigiorno le connessioni Wireless sono in numero molto maggiore rispetto a quelle cablate
+- wireless hosts
+  + mobile o meno
+- stazioni base
+  + funzione di relay tra rete cablata e dispositivi host wireless
+  + torri cellulari
+  + access points
+- wireless link
+  + collegamento tra dispositivi e stazioni base
+  + anche tra stazioni base come collegamento di dorsale, /backbone link/
+
+Modalitá:
+- Infrastruttura
+  + stazioni base cui si connettono i dispositivi che permette il collegamento alla rete Internet
+- ad hoc
+  + non c'é una stazione base
+  + i nodi trasmettono agli altri nodi
+  + i nodi devono organizzare loro stessi una rete
+    * funzioni di /routing/ e /forwarding/
+- single hop
+- multiple hop
+
+*** Collegamento Fisico
+- il segnale radio viene attenuato maggiormente con l'attraversamento dell'etere
+- interferenza con altre sorgenti
+  + frequenze occupate da altri
+  + motori
+- il segnale radio viene diffuso in tutte le direzioni e puó essere riflesso, producendo cammini differenti, ritardi e sovrapposizioni
+
+=SNR= - Signal-to-Noise Ratio
+=BER= - Bit Error Rate
+
+Questi sono inversamente proporzionali (quasi esponenziale)
+- si aumenta la potenza di segnale in funzione del mezza fisico utilizzato per minimizzare il =BER=
+- un piccolo calo =SNR= introduce un =BER= elevato
+
+Se dei terminali sono nascosti questi non possono verificare le trasmessioni l'uno dell'altro
+- trasmettono comunque e interferiscono tra loro
+- /hidden terminal problem/
+
+*** CDMA
+=Code Division Multiple Access=
+- gli utenti condividono la stessa frequenza
+- gli utenti hanno una frequenza di /chipping/ per codificare le proprie trasmissioni
+- il ricevente puó estrarre il segnale utilizzando la frequenza di /chipping/
+- segnali _ortagonali_  interferiscono tra loro ma é possibile recuperare i dati originali
+
+*** Protocolli
+**** 802.11
+=Wireless LAN=
+Copertura abbastanza limitata ma ad alta velocitá
+- esiste una versione a lunga portata: =802.11a,g point-to-point=
+- 2.4GHz - 2.485GHz
+  + 11 canali
+  + i canali si sovrappongono, possono avvenire delle interferenze
+    * solo 1, 6, 11 non si sovrappongono
+  + per gestire l'aumento di =BER= si cambia tipo di trasmissione, piú lenta ma anche  piú efficace
+
+
+Le stazioni base in modalitá infrastruttura sono gli =AP=, Access Points
+- trasparente rispetto alla rete
+Le /cells/ sono i =BSS=, Basic Service Sets
+- in modalitá ad hoc contengono solo i terminali
+
+Gli host si associano agli =AP=
+- passive scanning
+  + frame beacon trasmessi dall'=AP=
+    * contiene =SSID= e =MAC= dell'access point
+- active scanning
+  + probe request broadcast
+  + probe request frame dall'=AP=
+
+***** Accesso Multiplo
+Evitare le collisioni
+Utilizza =CSMA=
+- se si nota una trasmissione in corso si aspetta
+Rimangono problemi
+- decadimento del segnale
+- terminali nascosti
+
+Non é  implementata collision detection
+
+- Sender
+  + =DIFS=
+    * timer di attesa
+  + se canale /idle/ dopo =DIFS=
+    * trasmetti frame
+  + altrimenti
+    1. aspetta random backoff time
+    2. trasmetti frame
+    3. aspetta =ACK=, se non lo si riceve si riparte da 1.
+- Receiver
+  + frame ricevuta =OK=
+  + trasmetti =ACK= dopo =SIFS=
+    * =ACK= necessario a causa del problema del terminale nascosto
+
+
+***** Capacitá ulteriori
+- power management
+  + nodo si spegne attendendo il prossimo /beacon frame/
+  + =AP= non trasmette nodi a questo nodo
+
+**** 802.15
+Infrastruttura /master/ - /slave/
+- 10m di diametro
+- rimpiazza i cavi per device
+  + mouse, tastiere, cuffie
+- ad hoc
+  + non c'é infrastruttura
+- evoluzione del =Bluetooth=
+- =2.4 - 2.5 GHz=
+- fino a =721 kbps=
+*** Cellulari
+Basate sul concetto di cella
+- /base station/
+  + potenza molto alta ma per il resto equivalente agli =AP=
+- /air interface/
+- =MSC= - Mobile Switching Center
+  + connette le celle
+  + gestisce la mobilitá dei device
+    * hand-over da una stazione base ad un altra
+
+Tecniche di condivisione di banda:
+- =FDMA / TDMA=
+  + divide spettro in canali di frequenze
+  + divide canali in slot temporali
+- =CDMA=
+  + code division multiple access
+
+**** 2G
+Voice network
+1. =BSS=
+   - stazioni base
+2. =MSC=
+3. Gateway =MSC=
+4. rete telefonica pubblica, cablata
+**** 3G
+Voice + Data network
+Divisione tra le due reti per permettere scalabilitá
+1. =BSS=
+2. radio network controller
+   1. =MSC=
+      - gateway
+      - rete telefonica pubblica
+   2. =SGSN=
+      - =GGSN=
+      - Rete Internet
+*** Mobilitá
+Un dispositivo che si sposta, si connette e disconnette attraverso =AP= diversi
+- la mobilitá piú _elevata_ si ha quando il dispositivo pur spostandosi e cambiando =AP= mantiene una stessa connessione
+
+- home network
+  + indirizzo =IP= permanente
+- home agent
+  + gestisce le funzioni di mobilitá per conto del dispositivo mobile quando quest'ultimo non si trova all'interno della rete domestica
+- visited network
+- foreign agent
+
+Ci sono diversi approcci possibili
+- si lascia la gestione ai /router/
+  + non scalabile
+  + le tabelle sarebbero ingestibili con milioni di utenti che si spostano
+- si lascia la gestione ai terminali
+  + /indirect routing/
+    * comunicazione passa per /home agent/ poi per /remote/
+  + /direct routing/
+    * il corrispondente ottiene l'indirizzo /foreign/ del mobile
+
+Il mobile si _registra_ contattando il /foraign agent/
+- questo contatta l'/home agent/
+- entrambi sanno come contattare l'utente mobile
+**** Mobile IP
+- indirect routing
+- agent discovery
+  + agent advertisement
+    * foreign/home agents fanno broadcast di messaggi =ICMP=
+**** Cellulare
+- indirect routing
+  + switching center home controlla il proprio registro
+  + contatta lo switching center visitato creando la connessione
+**** Handoff
+1. vecchio =BSS= informa =MSC= dell'handoff
+   - lista di piú di uno =BSS=
+2. =MSC= imposta il cammino per il nuovo =BSS=
+3. nuovo =BSS= alloca canale audio per l'uso
+4. nuovo =BSS= signala =MSC= e vecchio =BSS=
+   - pronto
+5. vecchio =BSS= segnala =MSC=
+   - pronto
+6. mobile nuovo segnale =BSS= per attivare il nuovo canale
+7. mobile segnala attraverso nuovo =BSS= a =MSC=
+   - handoff complete
+8. =MSC= rilascia risorse del vecchio =BSS=
+
+In caso di =MSC= diversi l'originale ha funzione di ancora verso un nuovo =MSC=

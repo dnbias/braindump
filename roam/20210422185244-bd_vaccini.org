@@ -46,7 +46,8 @@ Al contrario, se si verifica un effetto allergico, il medico emana un report che
 Il sistema deve permettere inoltre di eseguire le seguenti operazioni:
 - Ogni sera viene stilato un rapporto che indica quante vaccinazioni sono state fatte nella giornata in tutti i centri vaccinali suddivise per categoria di cittadino.
 - Ogni sera, ogni centro vaccinale fa l’inventario del numero di dosi ancora disponibili per ogni vaccino.
-- Ogni fine settimana, viene stilato un report che indica quante vaccinazioni sono state fatte per ogni vaccino per ognuna delle categorie di cittadini e quante di queste
+- Ogni fine settimana, viene stilato un report che indica quante vaccinazioni sono state fatte per ogni vaccino per ognuna delle categorie di cittadini e
+  quante di queste abbiano causato allergie
 
 ** Requisiti Rivisti
 
@@ -133,7 +134,7 @@ I medici di base possono somministrare solo vaccini a doppia dose, mentre gli al
   + personale scolastico, COVIDIN, CORONAX
   + nessuno dei precedenti, CORONAX
 - Un cittadino che ha riscontrato reazioni avverse non puó accedere a dosi il
-  cui lotto ha riscostrato almeno una reazione avversa negli ultimi 30 giorni
+  cui lotto ha riscontrato almeno una reazione avversa negli ultimi 30 giorni
 - Un cittadino con positivitá pregressa non deve ricevere seconda dose se specificata
 - Medici base somministrano solo vaccini a doppia dose
 
@@ -142,8 +143,51 @@ I medici di base possono somministrare solo vaccini a doppia dose, mentre gli al
 * Progettazione Logica
 
 ** Tavola dei Volumi
+| Concetto           | Tipo |   Volume |
+|--------------------+------+----------|
+| Cittadino          | E    | 60000000 |
+| Medico             | E    |   400000 |
+| Vaccino            | E    |        3 |
+| Lotto              | E    |     2000 |
+| Centro Vaccinale   | E    |     8000 |
+| Reazione Allergica | E    |     1000 |
+| Vaccinazione       | E    | 20000000 |
+| Appuntamento       | A    | 20000000 |
+| Incarico           | A    |   400000 |
+| Reazione           | A    |     1000 |
+| Locazione          | A    | 20000000 |
+| Amministra         | A    | 20000000 |
+| Afferisce          | A    |   400000 |
+| Disponibile        | A    |       15 |
+| Prodotto           | A    |     2000 |
+|--------------------+------+----------|
+
 
 ** Tavola delle Operazioni
+| Operazione | Descrizione                                  | Tipo | Frequenza        |
+|------------+----------------------------------------------+------+------------------|
+|          1 | Rapporto delle vaccinazioni della giornata   | B    | 1 al giorno      |
+|            | in tutti i centri vaccinali                  |      |                  |
+|            | suddivise per categoria di cittadino         |      |                  |
+|------------+----------------------------------------------+------+------------------|
+|          2 | Inventario del numero di dosi disponibili    | B    | 1 al giorno      |
+|            | per ogni vaccino                             |      |                  |
+|------------+----------------------------------------------+------+------------------|
+|          3 | Rapporto delle vaccinazioni per ogni vaccino | B    | 1 a settimana    |
+|            | per ognuna delle categorie di cittadini      |      |                  |
+|            | e quante di queste abbiano causato           |      |                  |
+|            | reazioni allergiche                          |      |                  |
+|------------+----------------------------------------------+------+------------------|
+|          4 | Inserimento dei dati di un Cittadino         | I    | 50000 al giorno  |
+|------------+----------------------------------------------+------+------------------|
+|          5 | Inserimento di un Appuntamento               | I    | 100000 al giorno |
+|------------+----------------------------------------------+------+------------------|
+|          6 | Annullamento di un Appuntamento              | I    | 100 al giorno    |
+|------------+----------------------------------------------+------+------------------|
+|          7 | Inserimento di una Reazione Allergica ad     | I    | 3 a settimana    |
+|            | una vaccinazione                             |      |                  |
+|------------+----------------------------------------------+------+------------------|
+
 
 ** Analisi delle Ridondanze
 

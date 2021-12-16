@@ -291,6 +291,16 @@ $f : \mathbb{N} \to \mathbb{N}$ dove $f(n)$ é il numero massimo di passi compiu
 Si utilizza la /notazione asintotica/ o *big-O Notation*
 - [[id:adc0b322-e761-439b-b7bf-7895bd638c23][O-grande]]
 
+Generalmente:
+- $\text{P} =$ classe dei linguaggi la cui appartenenza puó essere decisa velocemente
+- $\text{NP} =$ classe dei linguaggi la cui appartenenza puó essere verificata velocemente
+
+Non si é riuscita a provare l'esistenza di un singolo linguaggio $\text{NP}$ che non sia in $\text{P}$
+
+Piú grande problema aperto: $\text{P}=\text{NP}$
+[[../media/img/P-NP.jpg]]
+
+*** P
 Teorema =7.8=
 Sia $t(n)$ una funzione t.c. $t(n) \ge n \implies$ qualsiasi macchina /multitape/ $M$ con  tempo $t(n)$ ha un equivalente $O(t^2(n))$ in una macchina $M'$ /singletape/
 - chiaro riprendendo la simulazione di /multitape/ in /singletape/
@@ -312,13 +322,13 @@ L'esplorazione dell'albero non deterministico é svolto utilizzando /l'ordine le
 - a livello $n$ l'albero ha massimo $k^{n}$ nodi con $k$ numero di possibili figli
 - il numero di possi necessari all'eslorazione dell'albero é $2^{O(m)}$
   + $m$ profonditá dell'albero
-*** Raggiungibilitá
+**** Raggiungibilitá
 $\textsc{Path} = \{ \langle G,s,t  \rangle \mid G \text{ é  diretto con un cammino da }s \text{ a } t \}$
 La soluzione banale non deterministica ha $2^{O(t(n))}$ _esponenziale_
 
 Con un algoritmo marcando i nodi man mano che vengono scoperti si raggiunge complessitá _polinomiale_
 - rappresentando il grafo con liste di adiacenza la si puó stimare $O(n)$ nel numero di archi
-*** Algoritmo di Euclide
+**** Algoritmo di Euclide
 $\textsc{RelPrime}$, il =MCD= tra due numeri Relativamente Primi é 1
 $\textsc{mcd}(x,y) = \textsc{mcd}(x \mod(y), y)$
 quindi procediamo:
@@ -327,10 +337,50 @@ $\textsc{mcd}(x,0) = x$
 
 I passi sono eseguiti $min(2 \log_{2} x, 2\log_{2} y)$ ovvero proporzionali al numero di cifre nella rappresentazione binaria: $O(n)$ quindi _polinomiale_
 
-*** Grammatiche di Chompsky
+**** Grammatiche di Chompsky
 Per migliorare la complessitá si cerca di derivare tutte le sottostringhe di lunghezza crescente della stringa di input
 - si memorizzano le soluzioni delle sottostringhe
   + per ogni sottostringa la si divide in sottostringhe e si guarda la soluzione delle sottostringhe
   + in una rappresentazione matriciale la soluzione si trova nella riga precedente
 - ogni controllo richiede $O(1)$ in quanto le sottostringhe sono sempre riconducibile ai siboli terminali
 Con questo algoritmo si raggiunge $O(n^3)$
+
+*** NP
+Un linguaggio é =NP= $\iff$ é deciso da un algoritmo _non deterministico polinomiale_
+Un $M: O(n^k)$ =NTM= equivale a $M': 2^{O(n^k)}$ =TM=
+- tempo polinomiale in tempo esponenziale
+
+$\text{NP} = \bigcup_k \textsc{ntime}(n^k)$
+
+Un linguaggio é =NP= se dispone di un /verificatore/ in tempo polinomiale, detto allora /polinomialmente verificabile/
+
+Def =7.18=
+Un *verificatore* é una macchina di turing $V$ tale che per un linguaggio $A$:
+- $A = \{w \mid V \text{ accepts } \langle w,c \rangle \text{ for some string }c\}$
+  + $w$ riguarda i dati del problema
+  + $c$ riguarda le istruzioni della =TM=, un candidato di soluzione o almeno ci é legato in qualche maniera
+    * potrebbe essere anche il cammino della macchina non deterministica
+    * la /address tape/ nella simulazione deterministica di una macchina non deterministica
+- si misura il tempo di un verificatore solo in funzione della lunghezza di $w$
+  + un verificatore polinomiale esegue in tempo polinomiale secondo la lunghezza di $w$
+
+Prova =7.20=
+Il determinismo con certificato $c$ utilizzando $V$ é convertito in non determinismo trovando il $c$ in maniera non deterministica di lunghezza massima $n^k$ (dove questo é il polinomio di complessitá)
+
+**** Hamilton's Path
+Percorso che percorre tutti il grafo a partire da $p$ arrivando in $t$ senza ripetizioni.
+Si percorre il grafo non deterministicamente
+- si scartano tutti i rami in cui il primo nodo non é $p$ o $t$ non é l'ultimo
+- si scartano i rami in cui ci sono ripetizioni
+
+Non conosciuto algoritmo in $\text{P}$
+**** Compositeness
+$\textsc{Composites} = \{x \mid x = pq \text{ for integers }p,q > 1\}$
+Un numero composto é un numero non primo.
+Esiste un algoritmo polinomiale per verificare se un numero é composto o meno ma non per trovare la sua scomposizione (o almeno non lo si é trovato)
+**** Clique
+Grafo _non orientato_, fornito un $k$
+- si richiede un _sottografo_ in cui 2 qualunque nodi distinti sono connessi di un arco
+Non si sa se esistono algoritmi polinomiali $\text{P}$
+
+$\textsc{Clique} = \{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\}}$
