@@ -338,6 +338,72 @@ Task che é parametrizzato con =T= generico
 ** Programmazione in Rete
 *** Architettura Client-Server
 *** Socket
+=Pipe= per applicativi su macchine diverse
+- l'unica differenza e' la connessione remota
+
+Il package Java che permettono l'uso di queste funzionalita' e' =java.net=
+
+#+begin_src java
+import java.net;
+try {
+    String ip = "time-c.nist.gov";
+    int port = 14;
+    Socket s = new Socket(ip, port);
+} catch (IOException e) {
+    e.pringStackTrace();
+} finally {
+    s.close();
+}
+#+end_src
+
+*** Server Socket
+Con l'uso di =accept()= ci si mette in attesa di una richiesta di connessione da un socket client
+#+begin_src java
+try {
+   ServerSocket server = new ServerSocket(port);
+   Socket client = s.accept();
+
+   try {
+       InputStream in = client.getInputStream();
+       OutputStream out = client.getOutputStream();
+   } catch (IOException e) {
+       e.pringStackTrace();
+   }
+} catch (IOException e){
+    e.pringStackTrace();
+} finally {
+    try {
+        client.close();
+        server.close();
+    } catch (IOException e) {
+        e.pringStackTrace();
+    }
+}
+#+end_src
+
+Per servire piu' client:
+#+begin_src java
+while (true){
+    Socket incoming = s.accept();
+    Runnable r = new ThreadedEchoHandler(incoming);
+    Thread t = new Thread(r);
+    t.start();
+}
+#+end_src
+
+*** Polimorfismo
+Il polimorfismo viene mantenuto ma il client deve disporre delle definizioni necessarie
+Questo tipo di operazione crea problemi di sicurezza e =Loader=
+- se si utilizzano classi definite da noi
+- ma queste classi non sono controllate
+  + se le classi devono essere scaricate da rete dinamicamente esiste
+  + =Security Manager=
+    * specificati permessi
+      - =IP= specifici
+      - tipo di connessioni
+    * permette l'uso di =class loader= dinamico
+
+
 *** Polimorfismo
 *** Esecuzione Distribuita
 * Laboratorio
