@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       e3a9ecd2-7077-4ce3-91ad-d1df311d9fe4
+:END:
+#+title: Male vs Female Gaze
+#+subtitle: How Media Profits From Your Gender
+[[id:c5c5ea6e-ade8-4941-ba39-afa407947d4b][$videos]]
+- Source: https://youtu.be/rQIwHD_ITIo
+- Tags: [[id:79408259-22e6-429b-a783-5797e3f10a8a][Internet Impact]] ,[[id:3359c8c9-1a11-410e-a8de-2296a402bd1b][Gender]], [[id:aed5fc5f-ef54-443a-8ddd-b507ff654d71][Evolutionary Psychology]]
+
+- media often cater toward a specific sex
+  + this means the characters are portrait in very different ways
+  + different characteristics
+- the difference in promisquity can be observed from a social level and from the nature realm
+
+- [[id:bf439187-1e08-4249-b33e-d3216bec6c63][David Buss]]
+  + evolutionary psychologist have a theory about these differences in Female and Male
+  + traits good for the survival of the species ([[id:8fbff06a-a8f9-42cc-ac4a-1bf39cf5dcbf][Natural Selection]]) will be most common in individuals
+    * so male promiscuity and female pickiness should be traits developed to ease propagation of genes
+- many speculate the number of /gametes/ of the sex to be a deciding factor in the difference in behavior and promiscuity
+  + average male: 525 Bilion sperms
+  + average female: 300 Thousand eggs by puberty
+
+- [[id:ddb28682-53b0-4781-88ef-150a8c5e707e][Stereotypes]], what do them stem from?
+  + /men = pigs/
+    * /attractiveness/
+      - in the evolutionary theory: used as an indicator of health and fecundity
+    * stereotypical female in media:
+      - attractive
+      - not like other girls
+      - "sex symbols"
+  + /women = gold diggers/
+    * status
+      - /paternal investment/, higher in females just through gestation
+      - lower testosterone in males in a relationship
+        + most useful indicator of nurturing behavior
+    * attractive/heathy less important
+      - higher testosterone, higher
+    * stereotypical archetype
+      - good looks
+      - sweet side
+      - nurtiring and protective
+    * Bieber study
+      - the lyrics in the early albums:
+        + sensitive
+        + resourcefull
+        + /sweet boy/
+      - the lyrics in the later albums:
+        + not cheesy anymore
+        + more allusion to sex and drugs
+          * in line with its demografic
+  + many new web-stars in [[id:4f6e9ea7-2d4b-46e9-8e18-02d15de60805][TikTok]] and other [[id:909360ea-6b31-48b3-a4f4-54da0407fbd3][Social Media]] reach fame by following the male / female archetype
+
+- BUT
+  + everybody values positive characteristic
+    * these are necessities, but to different degrees to different people
+  + stereotypes cater to a younger demografic, more prone to idealize the opposite sex and unknown experiences
+    * experience in the real world changes the point of view

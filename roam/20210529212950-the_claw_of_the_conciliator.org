@@ -1,6 +1,55 @@
 :PROPERTIES:
 :ID:       a8f00e02-0b2e-4c58-89ae-5db04db0eefb
+:ROAM_ALIASES: COTC
 :END:
 #+title: The Claw of the Conciliator
 [[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
 Gene Wolfe, /The Claw of the Conciliator/, Timescape Books, 1981, pp.303
+
+Page references are referred to /The first half of the Book of the New Sun/ edition
+* The Tale of the Student and His Son
+:PROPERTIES:
+:ID:       71b43c21-ba26-44d6-9b2c-275a04c47d3a
+:END:
+- [p.307]
+- chapters
+- the archetypical path of the hero
+** The Redoubt of the Magicians
+- [[id:68260cdf-5359-4512-9531-4c5e261821e1][Magic]] is central
+  + could just be technology so developed that is no longer understood by people who _lost their culture_
+    * a post world-war / post [[id:28fffefb-0a01-4e0a-8e94-ad83dd005ca9][apocalypse]] world
+
+** The Fleshing of the Hero
+#+begin_quote
+Then the student dared turn himself where he sat, and he saw standing before him a youth haughty of port, wide of shoulder, and mighty of thew. Command was in his firm mouth, knowing wit in his bright eyes, and courage in all his face. Upon his brow sat that _crown that is invisible to every eye, but can be seen even by the blind_; the crown beyond price that draws brave men to a paladin, and makes weak men brave.
+#+end_quote
+There is talk of women and serpents, the [[id:d313e50b-e42f-4c18-ab75-35b51870c278][Adam and Eve]] myth comes to mind
+#+begin_quote
+"Father [...] every night for many nights my sleep has been rent with the _screams of women_, and often I have seen, like a _green [[id:aa2c88b4-3869-478f-b884-5a7a36d09b21][serpent]]_ called by the notes of a pipe, a column of _green_ slip down the cliff below our city to the quay."
+#+end_quote
+
+** The Encounter with the Princess
+#+begin_quote
+"[...] For I am [[id:5ddca298-4589-48c5-8b4b-ec74dcfd4922][Noctua]], the daughter of the [[id:d2be6b59-f8e6-4ef5-bec5-aeba8e5d2a77][Night]]
+#+end_quote
+Daughter of the Night, possibly meaning [[id:cb0d79aa-3a00-4bb2-b9d7-e0afcac74a8e][Moon]]
+#+begin_quote
+"Know that my father took my took my mother by force [...] she comes to me at each day's end."
+#+end_quote
+
+She then talks of giants
+#+begin_quote
+"[...] oh speak not of [[id:bdc6d171-755b-4143-871d-9014e28dc15d][giants]], for you know not what you say. [...] To find my father befor your last stick is burned, you need only search out the darkest [[id:f1685bca-d4e6-4211-a77c-812f1bda7dd0][water]], for wherever he passes his great body raises a foul mud, and by observing it you may discover him. But each day you must begin the search at dawn, and at noon desist; otherwise yo may come upon him by twilight, and it will go evilly with you."
+#+end_quote
+Reference to the encounter with [[id:a8f49eea-8e04-4266-9e10-72c3788510f7][undine]] later in the same book
+#+caption: p.385
+#+begin_quote
+"Please. When the sun reaches this water, I must go. There may be no two books editions other chance." [...]
+A face looked through the water at me, the face of a woman who might have dandled Bandanders like a toy. Her eyes were _scarlet_, and her mouth was bondered by full lips so _darkly crimson_ I had not first thought them lips at all. Behind them stood an army of pointed teeth; the green tendrils that framed her face were her floating hair.
+"I have come for you , Severian," she said. "No, you're not dreaming."
+#+end_quote
+
+
+** The Battle with the Ogre
+
+** The Death of the Student
