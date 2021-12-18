@@ -161,7 +161,7 @@ $\Phi_B = \vec{B}\cdot\vec{n}S = BS \cos{\theta}$
 \[F= \frac{\mu_0I_1I_2l}{2\pi d}\]
 - repulsiva con correnti nel verso opposto, attrattiva se nello stesso verso
 ** Induttanza
-$\varepsilon = -L \frac{dI}{dt}$
+ $\varepsilon = -L \frac{dI}{dt}$
 - /f.e.m./ autoindotta
 
 $L = 4\pi k_mn^2lS = \mu_0 n^2 lS$
