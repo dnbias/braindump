@@ -16,9 +16,24 @@
   + citazione nella scena e nel movimento di essa di [[id:0d8ce446-a51b-4250-a772-53b1e9ced044][Magritte]]
     * [[id:225a023d-6d84-44e0-9a77-8953c73e0f68][La Firma in Bianco]]
 * Act III
-- inizia con una rappresentazione teatreale
+- inizia con una rappresentazione teatrale
   + The [[id:5b792902-7db4-41a1-8f2a-87c66b3809cf][Entertainment]]
-  + il giocatore fa parte della rappresentazione ma ne e' spettatore
+  + il giocatore fa parte della rappresentazione ma ne é anche spettatore
   + spugna di alcool e di informazioni
-    * entertainment in senso generale e videogiocatore esattamente come spettatore e partecipante di una scena di cui a poco controllo
+    * /Entertainment/ in senso generale e videogiocatore esattamente come spettatore e partecipante di una scena di cui a poco controllo
   + i personaggi per tutta la durata dello spettacolo parlano e aspettano Junebug, come [[id:2c781358-5919-4e0c-92b2-d9f0af2a80b4][Aspettando Godot]]
+** A Tree
+Successivamente i protagonisti rimangono a piedi da un albero, scena di apertura di [[id:2c781358-5919-4e0c-92b2-d9f0af2a80b4][Aspettando Godot]]
+- e alla fine Godot arriva: Junebug
+** Hall of The Mountain King
+Riferimento a [[id:74aa8c34-14f4-40b8-84ee-7662a29b774d][Grieg]]
+- Il Vecchio Donaldo
+  + parla del software cui sta dedicando la vita: [[id:ca4027a9-4d48-445d-aeb7-a50af282f897][Xanadu]]
+    * in questo senso cita [[id:27428ecf-50c6-4e45-8a3c-ab03b8fca95a][Project Xanadu]]
+    * /Moltitudini letterarie: La narrativa ipertestuale come testimonianza post-strutturalista/
+Cita [[id:2a250a63-7fbf-484e-a1f2-f4e7a38a2f50][Ozymandias]]:
+#+begin_quote
+Sopraffatti e infiacchiti, battiamo su questa tastiera derelitta: "IL MIO NOME É RAGIONE, IL RE DEI RE!"
+
+Ma siamo soltanto dei giardinieri tra le rovine. Il nostro battere sui tasti fa eco nei cunicoli... sterminate e spoglie, le grotte si diramano in lontananza. Siamo in ritardo. Sempre in ritardo... ~ [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]]
+#+end_quote

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       27428ecf-50c6-4e45-8a3c-ab03b8fca95a
+:END:
+#+title: Project Xanadu
+[[id:235e89b2-ed6b-44cd-aa9f-f27accb00555][Ted Nelson]], 1960
+- https://xanadu.com/
+Il primo progetto web a fare uso dell'[[id:c5a96187-4384-45c4-959b-7d2467423235][Hypertext]]
+#+begin_quote
+Today's popular software simulates paper. The World Wide Web (another imitation of paper) trivialises our original hypertext model with one-way ever-breaking links and no management of version or contents.
+#+end_quote
+
+Una prima dimostrazione del progetto fu completata nel 1972, e successivamente Nelson rifini la sua idea su Xanadu in una fonte di informazione centralizzata, da lui chiamata [[id:cfbaf5dd-2242-42d5-a2d5-eca320dab0b7][Docuverse]].
