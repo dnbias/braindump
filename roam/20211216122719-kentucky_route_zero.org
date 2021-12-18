@@ -4,7 +4,21 @@
 #+title: Kentucky Route Zero
 - [[https://kentucky-route-zero.fandom.com/wiki/Kentucky_Route_Zero_Wiki][Wiki]]
 - [[https://consolidatedpower.co/~donald/zero/Main_Page][Highway 0]]
+- Tags: [[id:bd67dc1a-1b1b-4cbd-ada8-7736bec0c798][$games]]
 
 - Equus Oils
   + Letteralmente /petrolio equino/ richiamando il cavallo che fa da casa a Joseph e le cui fondamente depingono come al passo
   + =Equus= é l'ultimo genus sopravvissuto della specie
+* Act I
+* Act II
+- una enorme aquila porta Conway al lago
+- in realta' una foresta
+  + citazione nella scena e nel movimento di essa di [[id:0d8ce446-a51b-4250-a772-53b1e9ced044][Magritte]]
+    * [[id:225a023d-6d84-44e0-9a77-8953c73e0f68][La Firma in Bianco]]
+* Act III
+- inizia con una rappresentazione teatreale
+  + The [[id:5b792902-7db4-41a1-8f2a-87c66b3809cf][Entertainment]]
+  + il giocatore fa parte della rappresentazione ma ne e' spettatore
+  + spugna di alcool e di informazioni
+    * entertainment in senso generale e videogiocatore esattamente come spettatore e partecipante di una scena di cui a poco controllo
+  + i personaggi per tutta la durata dello spettacolo parlano e aspettano Junebug, come [[id:2c781358-5919-4e0c-92b2-d9f0af2a80b4][Aspettando Godot]]
