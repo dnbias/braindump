@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       dd08efb3-9ab0-4cb1-80c7-5d5e864d9351
+:END:
+#+title: Visage
+The face, countenance, or appearance of a person or sometimes an animal. [[id:1d453709-892a-465b-822a-ef52ca6b11fa][$english]]
