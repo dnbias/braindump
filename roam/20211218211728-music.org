@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       7ce955b8-a548-40eb-a94a-1b4f8e8dfeba
+:END:
+#+title: $music

@@ -1,4 +1,8 @@
 :PROPERTIES:
 :ID:       2c781358-5919-4e0c-92b2-d9f0af2a80b4
+:ROAM_REF: Waiting for Godot
 :END:
 #+title: Aspettando Godot
+#+begin_quote
+We are not saints, but we have kept our appointment. How many people can boast as much? ~ [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]]
+#+end_quote
