@@ -1,0 +1,98 @@
+:PROPERTIES:
+:ID:       ad594dbd-8a23-4082-8b92-feb142950869
+:END:
+#+title: Erasmus
+#+date: [2021-12-20 Mon 19:13]
+* Scuola di Scienze della Natura
+- competenze linguistiche
+  + da indicare nel campo /Note/ della prima destinazione scelta all'interno della domanda
+- motivazioni
+  + da indicare nel campo /Dichiarazione aggiuntive/
+
+Dettagli:
+1. Campi “Note” e “Dichiarazioni aggiuntive” nella domanda di partecipazione
+   1. Conoscenze linguistiche – Campo “Note” della prima destinazione selezionata
+      - La/il candidata/o dovrà specificare nel campo “Note” della prima destinazione selezionata all’interno della domanda di candidatura la conoscenza della lingua veicolare e/o della lingua del paese ospitante, con particolare riferimento ai requisiti linguistici richiesti dalle sedi partner. Tali conoscenze dovranno essere documentate attraverso l’indicazione di:
+        + Possesso di certificati internazionali: indicare tassativamente tipologia, punteggio ottenuto e data di conseguimento ed allegarne copia nell’apposito spazio;
+        + Periodi di studio/lavoro/soggiorno all’estero: indicare date, periodi, motivi;
+        + Numero di anni di studio della lingua/esami sostenuti, etc. (indicare date, periodi…).
+
+2. Motivazione – Campo “Dichiarazioni aggiuntive” nella domanda di partecipazione
+La/il candidata/o dovrà specificare nel campo “Dichiarazioni aggiuntive” della domanda di partecipazione una descrizione accurata della propria motivazione, seguendo i seguenti punti:
+- I contenuti devono essere dettagliati, completi e logici;
+- Gli obiettivi e le attività formative che si intende seguire/svolgere all’estero (es. corsi, esami, ricerca per tesi) devono essere indicati;
+- Se si desidera effettuare mobilità per studio, vanno indicati almeno 2 corsi all’interno dell’offerta formativa dell’università estera identificata come prima destinazione, con l’indicazione dei corrispettivi corsi UniTO di cui si intende richiedere il riconoscimento al ritorno dalla mobilità;
+- È opportuno evidenziare la compatibilità dei programmi dei corsi che si intende seguire all’estero con il programma dei corsi UniTO di cui si richiederà il riconoscimento;
+- È inoltre opportuno evidenziare la coerenza tra le suddette attività formative e la propria carriera universitaria: si precisa che in tale ambito verrà data priorità a studenti/esse che scelgono destinazioni proposte dal proprio Dipartimento di afferenza. Si consiglia pertanto a studentesse e studenti di prendere visione del sito dell’Università di destinazione e della relativa offerta formativa.
+
+* Dipartimento di Informatica
+- contributo aggiuntivo 3000,00
+- destinato a chi al rientro ha 3 CFU/Mese
+- contributo totale soglia minima 100 Euro/Mese
+- erogato alla fine 2023
+- necessario il riconoscimento dei crediti entro il 31 ottobre 2023
+- [[http://laurea.educ.di.unito.it/index.php/accreditamento/consultazione/ListaDocumenti?commissione=12][modulo di richiesta]]
+
+* Destinazioni
+- D DARMSTA01
+  + Technische Universitaet Darmstadt
+    * PG - UG
+- _DK ODENSE01_
+  + University of Southern Denmark
+    * D - PG
+- E BARCELO02
+- E VALENCI02
+- E ZARAGOZ01
+  + Universidad de Zaragoza
+- F CHAMBER01
+  + Université Savoie Mont Blanc - D
+  + Université Savoie Mont Blanc - PG
+  + Université Savoie Mont Blanc - UG
+- F MONTPEL54
+  + Universite de Montpellier - PG
+- _F PARIS013_
+  + Universite Paris Nord - Paris XIII - PG
+  + Universite Paris Nord - Paris XIII - UG
+- F PARIS482
+  + Universite de Paris - PG
+  + Universite de Paris - UG
+- F ST-ETIE01
+  + Universite Jean Monnet de Saint-Etienne
+    * D - PG -UG
+- F TOULOUS03
+  + Universite Paul Sabatier
+    * D -PG -UG
+- G VOLOS01
+  + University of Thessaly
+    * UG
+- _LUXLUX-VIL01_
+  + Université du Luxenbourg
+    * PG
+- _N BERGEN14_
+  + Western Norway University of Applied Sciences
+    * D - PG
+- NL GRONING01
+  + Rijksuniversiteit Groningen (Netherlands)
+    * D - PG - UG
+- _N OSLO01_
+  + University of Oslo
+    * D - PG - UG
+- PL LODZ02
+  + Lodz University of Technology
+    * PG - UG
+- PL WROCLAW02
+  + Wroclaw University of Technology
+    * D - PG - UG
+- RO ALBAIU01
+  + 1 Decembrie 1918" Universitatea Alba Iulia
+    * D - PG - UG
+- RO BUCURES11
+  + Universitatea "Politehnica" din Bucuresti
+- RO CLUJNAP05
+  + Technical University of Cluj-Napoca
+- RO TIMISOA01
+  + West University of Timisoara
+- SK BRATISL01
+  + Slovak University of Technology in Bratislava
+- TR ISTANBU20
+  + Sabanci University
