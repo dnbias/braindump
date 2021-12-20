@@ -3,8 +3,8 @@
 :ROAM_ALIASES: COTC
 :END:
 #+title: The Claw of the Conciliator
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Gene Wolfe, /The Claw of the Conciliator/, Timescape Books, 1981, pp.303
+#+filetags: book
+[[id:2794d5ab-85bc-4c8f-8963-d708cd2c796b][Gene Wolfe]], /The Claw of the Conciliator/, Timescape Books, 1981, pp.303
 
 Page references are referred to /The first half of the Book of the New Sun/ edition
 * The Tale of the Student and His Son

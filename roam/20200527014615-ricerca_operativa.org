@@ -2,7 +2,7 @@
 :ID:       eca07443-a2b5-4608-ab4f-4342839a9999
 :END:
 #+TITLE: Ricerca Operativa
-
+#+filetags: university
 * Programmi Lineari
 
 ** max z = c1x1 + c2x1

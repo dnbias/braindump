@@ -2,4 +2,4 @@
 :ID:       ddf84086-4f31-4239-b638-50e79c7e667a
 :END:
 #+title: James Kurose
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+#+filetags: author

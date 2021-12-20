@@ -2,9 +2,11 @@
 :ID:       dd064a90-c859-4db6-b247-f07719d3ae95
 :END:
 #+title: Kentucky Route Zero
+#+filetags: videogame
+#+startup: writer-mode
+- Related:
 - [[https://kentucky-route-zero.fandom.com/wiki/Kentucky_Route_Zero_Wiki][Wiki]]
 - [[https://consolidatedpower.co/~donald/zero/Main_Page][Highway 0]]
-- Tags: [[id:bd67dc1a-1b1b-4cbd-ada8-7736bec0c798][$games]]
 
 - Equus Oils
   + Letteralmente /petrolio equino/ richiamando il cavallo che fa da casa a Joseph e le cui fondamente depingono come al passo

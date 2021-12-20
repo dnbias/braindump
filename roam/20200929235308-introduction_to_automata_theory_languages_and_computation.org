@@ -2,8 +2,9 @@
 :ID:       fe372fcd-2506-4f03-aee2-8ccf96f56d36
 :END:
 #+title: Introduction to Automata Theory, Languages, and Computation
+#+filetags: book
 #+STARTUP: latexpreview
-Hopcroft, John, Ullman, Jeffrey, /Introduction to Automata Theory, Languages, and Computation/, Addison-Wesley, 1979, pp.521
+[[id:e753b7c9-648e-4084-9577-001b50a7210e][John Hopcroft]], [[id:34ebdefd-fcb3-4a06-8da4-74cf10e65294][Jeffrey Ullman]], /Introduction to Automata Theory, Languages, and Computation/, Addison-Wesley, 1979, pp.521
 
 
 =def= Automata is the study of abstract computing devices - machine

@@ -2,8 +2,7 @@
 :ID:       07584adc-f4c2-42b5-8fbe-340700f14217
 :END:
 #+TITLE: C
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][#university]]
-
+#+filetags: university
 Gerarchia Elaboratore
 1. Digital Logic
 2. Microarchitecture

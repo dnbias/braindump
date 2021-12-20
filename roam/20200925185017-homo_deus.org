@@ -2,8 +2,8 @@
 :ID:       731d1c82-9f15-46a0-a2c6-df9c7e71b2fa
 :END:
 #+title: Homo Deus
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Harari, Noha, Yuval, /Home Deus: A brief History of Tomorrow/, Dvir publishing, 2015, pp.448
+#+filetags: book
+[[id:f8b8ce61-390e-4e52-aa28-eba54150ab05][Yuval Noah Harari]], /Home Deus: A brief History of Tomorrow/, Dvir publishing, 2015, pp.448
 
 
 * The Agenda

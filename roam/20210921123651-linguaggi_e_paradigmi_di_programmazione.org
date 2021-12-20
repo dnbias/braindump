@@ -3,7 +3,7 @@
 :ROAM_ALIASES: LPP
 :END:
 #+title: Linguaggi e Paradigmi di Programmazione
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 Prof: Luca Padovani
 * Info Corso
 - Orario

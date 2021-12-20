@@ -2,4 +2,4 @@
 :ID:       0ec7c730-770a-47cf-bb8b-d70670d4037d
 :END:
 #+title: Sardegna2021
-[[id:7e16a66e-d37b-46f8-941c-ede33fb688df][$trip]]
+#+filetags: travel

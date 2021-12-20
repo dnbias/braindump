@@ -1,9 +1,9 @@
 :PROPERTIES:
 :ID:       4f90918c-61eb-4e23-ac8f-b6cbfa0bb45f
-:ROAM_ALIASES: GRRM Martin
+:ROAM_ALIASES: GRRM G.R.R.M.
 :END:
-#+title: G.R.R.M.
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+#+title: George R.R. Martin
+#+filetags: author
 
 * A Song of Ice and Fire
 

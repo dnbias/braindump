@@ -1,0 +1,4 @@
+#+filetags: author
+%^{YearBirth}-%^{YearDeath}
+
+%?

@@ -4,6 +4,7 @@
 #+TITLE: Fisica
 #+TEACHER: Gagliardi Martino | Migliore
 #+startup: latexpreview
+#+filetags: university
 * Vettori
 Prodotti vettoriali tra i versori degli assi:
 \begin{align*}

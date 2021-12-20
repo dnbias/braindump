@@ -1,0 +1,6 @@
+#+filetags: podcast
+- Source: %^{Link}
+- Podcast: %^{Podcast}
+- Related: %^{Note}
+
+%?

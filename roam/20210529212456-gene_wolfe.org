@@ -2,7 +2,7 @@
 :ID:       2794d5ab-85bc-4c8f-8963-d708cd2c796b
 :END:
 #+title: Gene Wolfe
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+#+filetags: author
 1931 - 2019, American
 
 * The Solar Cycle

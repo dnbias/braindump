@@ -2,6 +2,6 @@
 :ID:       34ebdefd-fcb3-4a06-8da4-74cf10e65294
 :END:
 #+title: Jeffrey Ullman
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+#+filetags: author
 
 * [[id:fe372fcd-2506-4f03-aee2-8ccf96f56d36][Introduction to Automata Theory, Languages, and Computation]]

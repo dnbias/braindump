@@ -27,9 +27,9 @@
 
 Projects, Areas, (Resources), Archives
 
-*** la forza di Roam sta nel non necessitare una struttura rigida, gerarchica
+- la forza di [[id:8d7717ec-69d7-475e-a98f-bf0bdf25f6bb][Roam]] sta nel non necessitare una struttura rigida, gerarchica
 
- + I progetti non sono creati nella pagina [[Projects]] ma sono semplicemente linkati, cosi' sono poi rimuovibili semplicemente cambiando il link in [[Archives]]
+  + I progetti non sono creati nella pagina [[Projects]] ma sono semplicemente linkati, cosi' sono poi rimuovibili semplicemente cambiando il link in [[Archives]]
 
 *** Progressive Summarization
 
@@ -43,7 +43,6 @@ Projects, Areas, (Resources), Archives
 
     Integra in modo fluido la scrittura e i collegamenti, lasciando l'utente libero di esplorare, riesplorare, la rete di collegamenti
 
-
-+ [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][Quotes]]
-  As Homo Sapiens, we're especially adapted to learning in ways that are vivid, visual and experimental. Scientists refer to this as 'the picture superiority effect.'"
-    ~ [[id:9301476d-9d23-4e60-bb6a-939d9dcd92f4][Jonathan Levi]]
+#+begin_quote
+As Homo Sapiens, we're especially adapted to learning in ways that are vivid, visual and experimental. Scientists refer to this as 'the picture superiority effect.'" ~ [[id:9301476d-9d23-4e60-bb6a-939d9dcd92f4][Jonathan Levi]] - [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]]
+#+end_quote

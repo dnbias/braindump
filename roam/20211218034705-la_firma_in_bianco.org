@@ -7,5 +7,5 @@
 
 #+begin_quote
 Le cose visibili possono essere invisibili. Se qualcuno va a cavallo in un bosco, prima lo si vede, poi no, ma si sa che c’è. Nella Firma in bianco, la cavalerizza nasconde gli alberi e gli alberi la nascondono a loro volta. Tuttavia il nostro pensiero comprende entrambi, il visibile e l’invisibile. E io utilizzo la pittura per rendere visibile il pensiero.
-~ Magritte
-#+end_quote
+~ Magritte - [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]]
+#+End_quote

@@ -4,7 +4,7 @@
 :END:
 #+TITLE: Linguaggi Formali e Traduttori
 #+startup: latexpreview
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 - Teacher:  Sproston Jeremy
 
 Informazioni varie del Corso:
