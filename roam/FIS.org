@@ -62,14 +62,15 @@ $\vec{p} = q\vec{d}$
 
 
 *** Dipolo elettrico
-Momento del Dipolo $p$
+Momento del Dipolo $p=qd$
 **** Piano Mediano
 Sul piano di direzione del campo elettrico é costante e uguale a quella della congiungente tra i due poli
 - le componenti $y$ si annullano
-\[\vec{E} = k_e \frac{qa}{(\frac{d^2}{4}+y^2)^{3/2}}\vec{i}\]
-- per $y >> a$ vale $\vec{E} =\frac{2kqa}{|y|^3}\vec{i}$
+\[\vec{E} =- k_e \frac{qa}{(\frac{d^2}{4}+y^2)^{3/2}}\vec{i}\]
+- per $|y| \gg a$ vale \[\vec{E} =-\frac{kp}{|y|^3}\vec{i}\]
 **** Lungo l'Asse
 \[\vec{E} = k_e \frac{2qxd}{x^2 - \frac{d^2}{4}}\vec{i}\]
+- per  $|x| \gg a$ vale \[\vec{E}= \frac{2kp}{|x|^3}\vec{i}\]
 *** Distribuzione Lineare e Uniforme Infinita
 \[\vec{E} = 2k_e\frac{\lambda}{r}\vec{u}\]
 *** Legge di Gauss
@@ -87,7 +88,7 @@ $E= 2k_e \frac{\lambda}{R}$
 $E = 2 \pi k_e \sigma = \frac{\sigma}{2\epsilon_0}$
 
 ** Circuiti
-*** Legge di Ohm
+*** Legge di O
 $V=RI$
 *** Condensatori
 $C = \frac{q}{V}$
@@ -175,6 +176,7 @@ $L_{eq} = L_1 + L_2$
 - induttanze in serie
 
 $\frac{1}{L_{eq}} = \frac{1}{L_1} + \frac{1}{L_2}$
+- induttanze in parallelo
 
 Forza elettromotrice autoindotta:
 \begin{align*}
