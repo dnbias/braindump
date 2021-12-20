@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       1d453709-892a-465b-822a-ef52ca6b11fa
-:END:
-#+title: $english

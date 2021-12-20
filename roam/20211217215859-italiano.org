@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       4c50e6b3-f75c-406d-973d-7f6795819824
-:END:
-#+title: $italiano
