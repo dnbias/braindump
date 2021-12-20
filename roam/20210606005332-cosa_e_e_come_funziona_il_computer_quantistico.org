@@ -2,9 +2,9 @@
 :ID:       87470887-1248-4639-a5c0-36c49941ad54
 :END:
 #+title: Cosa é e come funziona il computer quantistico?
-[[id:efbaaebd-f20e-4063-9a38-6493eef9900e][$articles]]
+#+filetags: article
 - Source: https://www.ilsole24ore.com/art/cosa-e-e-come-funziona-computer-quantistico--numeri-nuova-informatica-AE0SlREH
-- Author: Luca Tremolada
+- Author: [[id:670d4a71-7f99-4d2c-b30e-21829ba986ff][Luca Tremolada]]
 - Tags: [[id:86aa3744-94b3-47a5-acc3-9e638ea43a91][Quantum Neural Network]]
 
 - Annunciato il primo Computer Quantistico al Consumer Electronic Show di Las Vegas

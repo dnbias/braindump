@@ -2,7 +2,7 @@
 :ID:       a3f5657d-b3e4-4beb-ad77-afb8d864d792
 :END:
 #+title: Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research
-[[id:efbaaebd-f20e-4063-9a38-6493eef9900e][$articles]]
+#+filetags: article
 - Source: https://www.thrivinghenry.com/writings/roamkasten-a-practical-how-to-guide-to-optimize-zettelkasten-in-roam-research
 - Author: [[id:f0d8b7c7-2c2c-41f3-b91d-c8d00cbb6f68][Thriving Henry]]
 - Tags: [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]], [[id:8d7717ec-69d7-475e-a98f-bf0bdf25f6bb][roam]], [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]], [[id:f01972ec-1e3a-40e2-9482-c05a9922b738][PKM]]

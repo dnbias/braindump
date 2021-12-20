@@ -2,7 +2,7 @@
 :ID:       9416a341-f31e-4e6e-9f99-79c2c175c942
 :END:
 #+title: The Fading Dream of the Computer Brain
-[[id:efbaaebd-f20e-4063-9a38-6493eef9900e][$articles]]
+#+filetags: article
 - Source: https://www.scientificamerican.com/article/the-fading-dream-of-the-computer-brain/
 - Author: [[id:618e2dc5-bd3c-4bb5-9ea4-42c45e404c29][Noah Hutton]]
 - Tags: [[id:b30832ab-1fca-4b99-9af4-7e0c12be5e28][Computational Neuroscience]], [[id:64bbb762-f416-4aea-8158-e3f0a0d42bc4][Neuroscience]], [[id:b6b078aa-ea4c-45f2-a9c8-683a175f7eb9][Simulation]], [[id:19094e6c-6a1a-47bb-9196-514bcd52105d][Scientific American]]
