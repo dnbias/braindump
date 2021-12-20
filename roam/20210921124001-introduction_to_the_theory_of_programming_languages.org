@@ -2,5 +2,5 @@
 :ID:       f46e95c3-14c2-4dda-b150-f8ca209495d1
 :END:
 #+title: Introduction to the Theory of Programming Languages
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Dowek, Gilles, Lévy, Jean-Jacques, /Introduction to the Theory of Programming Languages/, Springer, 2010, pp.96
+#+filetags: book
+[[id:6e04805d-f958-4056-81f9-a9a418d04f5e][Gilles Dowek]], [[id:0964497d-5262-41f9-a47a-6ec056ecffe0][Jean-Jaques Lévy]], /Introduction to the Theory of Programming Languages/, Springer, 2010, pp.96

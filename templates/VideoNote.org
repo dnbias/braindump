@@ -1,0 +1,6 @@
+#+filetags: video
+- Source: %^{Link}
+- Channel: %^{Author}
+- Related: %^{Note}
+
+%?

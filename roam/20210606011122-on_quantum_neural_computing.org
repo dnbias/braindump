@@ -2,7 +2,7 @@
 :ID:       e886776f-eeea-4bbc-9066-3da1ab192fd9
 :END:
 #+title: On quantum neural computing
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-source: https://www.sciencedirect.com/science/article/pii/S1076567008701472
+#+filetags: book
+- Source: https://www.sciencedirect.com/science/article/pii/S1076567008701472
 
-Kak, Subhash, "On quantum neural computing", /Advances in Imaging and Electron Physics/, 1995, vol.94,pp.259-313
+[[id:117ed382-7c75-43a7-836d-cdc5dc69ed83][Subhash Kak]], "On quantum neural computing", /Advances in Imaging and Electron Physics/, 1995, vol.94,pp.259-313

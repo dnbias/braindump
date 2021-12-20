@@ -3,7 +3,7 @@
 :ROAM_ALIASES: ProgIII
 :END:
 #+title: Programmazione III
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 * Info Corso
 - Orari:
   + Mar: 9-11

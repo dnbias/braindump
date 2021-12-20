@@ -1,0 +1,5 @@
+#+filetags: project
+- Link: %^{Link}
+- Related: %^{Notes}
+
+%?

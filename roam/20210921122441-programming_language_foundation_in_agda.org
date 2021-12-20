@@ -2,5 +2,5 @@
 :ID:       ca905cae-fdf3-421c-a255-ec32435ef818
 :END:
 #+title: Programming Language Foundation in Agda
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Wadler, Philip, /Programming Language Foundation in Agda/, ([[https://plfa.github.io/][github]])
+#+filetags: book
+[[id:2e17b264-83c1-497a-b384-5d146b7ba638][Philip Wadler]], /Programming Language Foundation in Agda/, ([[https://plfa.github.io/][github]])

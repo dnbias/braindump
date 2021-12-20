@@ -2,5 +2,5 @@
 :ID:       f8b8ce61-390e-4e52-aa28-eba54150ab05
 :END:
 #+title:  Yuval Noah Harari
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
+#+filetags: author
 1976-

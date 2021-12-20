@@ -1,0 +1,5 @@
+#+filetags: book
+%^{Author}, /${title}/, %^{Year}, %^{Publisher}
+
+* Summary
+%?

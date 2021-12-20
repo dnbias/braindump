@@ -2,7 +2,7 @@
 :ID:       9f341802-57c7-4663-b320-784260bd915b
 :END:
 #+TITLE: Compilazione e Linking
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 
 * Dal C al binario passando dall'assembler IJVM ~ Compilazione e Linking
 

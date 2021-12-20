@@ -3,7 +3,7 @@
 :ROAM_ALIASES: MFI
 :END:
 #+title: Metodi Formali dell'Informatica
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 Prof: Ugo De' Liguoro
 * Info Corso
 - Orario:

@@ -4,7 +4,7 @@
 :ROAM_REFS:
 :END:
 #+title: Calcolabilitá e Complessitá
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 Prof: Stefano Berardi
 * Info Corso
 - Orari:

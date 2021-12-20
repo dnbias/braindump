@@ -3,7 +3,7 @@
 :END:
 #+TITLE: Algoritmi e Strutture Dati
 #+TEACHER: Andras Horvath(horvath@di.unito.it)
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 Esame
 - scritto
 - discussione laboratorio

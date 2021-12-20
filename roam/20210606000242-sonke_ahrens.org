@@ -2,6 +2,4 @@
 :ID:       92cc6903-bea6-4684-967e-4bc56afa80ad
 :END:
 #+title: Sonke Ahrens
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
-
-- [[id:2d54b2f1-5c39-4849-a4d1-4b117e8db961][How to Take Smart Notes]]
+#+filetags: author

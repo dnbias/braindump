@@ -2,5 +2,5 @@
 :ID:       dfb13901-7195-44df-843e-5601b65ad3b4
 :END:
 #+title: Programming in Haskell
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Hutton, Graham, /Programming in Haskell/, 2006 (2ed, 2016), pp.171
+#+filetags: book
+[[id:fc349247-58c8-42e0-8900-29ddb4d45246][Graham Hutton]], /Programming in Haskell/, 2006 (2ed, 2016), pp.171

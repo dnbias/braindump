@@ -3,8 +3,8 @@
 :ROAM_ALIASES: "La Nausea"
 :END:
 #+title: La Nausée
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Sartre, Jean-Paul, /La Nausée/, Éditions Gallimard, 1938, pp.253
+#+filetags: book
+[[id:d0b5e0ca-d69d-40c7-a9cd-3fb1a58cf474][Jean-Paul Sartre]], /La Nausée/, Éditions Gallimard, 1938, pp.253
 
 * Some of these days
 | Silenzio. [...] Quello che é accaduto é che la Nausea é scomparsa. [...] Colmava la sala con la sua trasparenza metallica, schiacciando contro i muri il snostro tempo miserabile. Io sono /dentro/ la musica. [p37]

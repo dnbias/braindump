@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       61abe61c-e3db-4039-8bf0-c80ec2c3cf2c
+:ROAM_REFS: https://systemcrafters.net/
+:END:
+#+title: System Crafters
+#+date: [2021-12-19 Sun 20:05]
+#+filetags: website
+https://systemcrafters.net/

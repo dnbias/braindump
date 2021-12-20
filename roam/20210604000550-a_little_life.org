@@ -2,5 +2,5 @@
 :ID:       48b7d324-c5af-4685-b1d0-d9aef8c6ace5
 :END:
 #+title: A Little Life
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Yamagihara, Hanya, /A Little Life/, Doubleday, 2015, pp.720
+#+filetags: music
+[[id:9bb42a8a-b4bb-45d3-a443-67715098e8fc][Hanya Yanagihara]], /A Little Life/, Doubleday, 2015, pp.720

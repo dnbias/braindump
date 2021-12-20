@@ -4,7 +4,7 @@
 :END:
 #+TITLE: Sistemi Operativi
 #+STARTUP: latexpreview
-[[id:f956b52b-6fe3-4040-94e5-7474d1813a38][$university]]
+#+filetags: university
 - Teacher:  Daniele Gunetti (daniele.gunetti@unito.it)
 
 * Generalita'
