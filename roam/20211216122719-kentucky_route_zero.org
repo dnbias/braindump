@@ -46,6 +46,6 @@ Ma siamo soltanto dei giardinieri tra le rovine. Il nostro battere sui tasti fa 
 - da lavoro a /Strangers/
 - non ci sono stagioni, favorisce la stagionatura del liquore
 - liquore allungato con l'acqua del lago [[id:73ef57da-d72f-4024-a6ed-4b0fbaa40f98][Lethe]]
-  + nella Divina Commedia va bevuto per purificarsi prima di accedere al Paradiso
+  + nella [[id:6bf0cf1d-12ba-4092-8d3d-5c55fcdf956f][Divina Commedia]] va bevuto per purificarsi prima di accedere al Paradiso
 - non possono licenziare
   + quindi lasciare andare
