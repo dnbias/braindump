@@ -33,13 +33,25 @@ La/il candidata/o dovrà specificare nel campo “Dichiarazioni aggiuntive” de
 - necessario il riconoscimento dei crediti entro il 31 ottobre 2023
 - [[http://laurea.educ.di.unito.it/index.php/accreditamento/consultazione/ListaDocumenti?commissione=12][modulo di richiesta]]
 
+* Tempistiche
+- stud. all'ultimo anno di laurea che intendono partire durante il Corso di Laura Magistrale devono candidarsi per mete =PG=
+- [[25/02/2022]] graduatoria provvisoria
+- 3 giorni di richieste di revisione
+- [[09/03/2022]] 1a graduatoria definitiva
+- 5 giorni di accettazione
+- ripescaggi
+- [[30/04/2022]] 2a graduatoria definitiva
+- 5 giorni di accettazione
 * Destinazioni
+Destinazioni =Post-Graduate= - =PG=
 - D DARMSTA01
   + Technische Universitaet Darmstadt
     * PG - UG
 - _DK ODENSE01_
-  + University of Southern Denmark
+  + University of Southern Denmark - http://www.sdu.dk/?sc_lang=en
     * D - PG
+    * IELTS 6.5
+    * partenza non garantita al primo semestre
 - E BARCELO02
 - E VALENCI02
 - E ZARAGOZ01
@@ -66,17 +78,22 @@ La/il candidata/o dovrà specificare nel campo “Dichiarazioni aggiuntive” de
   + University of Thessaly
     * UG
 - _LUXLUX-VIL01_
-  + Université du Luxenbourg
+  + Université du Luxenbourg - http://wwwen.uni.lu/
     * PG
+    * partenza non garantita al primo semestre
 - _N BERGEN14_
-  + Western Norway University of Applied Sciences
+  + Western Norway University of Applied Sciences - https://www.hvl.no/en/
     * D - PG
+    * English B2 ; Norwegian B2
+    * partenza al primo semestre non garantita
 - NL GRONING01
   + Rijksuniversiteit Groningen (Netherlands)
     * D - PG - UG
 - _N OSLO01_
-  + University of Oslo
+  + University of Oslo - http://www.uio.no/english/
     * D - PG - UG
+    * English B2 (CEFR)
+    * partenza non garantita al primo semestre
 - PL LODZ02
   + Lodz University of Technology
     * PG - UG
