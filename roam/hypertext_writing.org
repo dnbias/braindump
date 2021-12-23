@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       11057aef-cdf4-428e-bf6e-38bdd94858b5
+:END:
+#+title: Hypertext Writing
+#+date: [2021-12-23 Thu 01:13]
+#+filetags: article
+- Source: https://www.dschapman.com/articles/hypertext-writing
+- Author: [[id:87eb5ff7-b1dc-4528-adf5-55b9f6f350f6][D.S. Chapman]]
+- Related: [[id:c5a96187-4384-45c4-959b-7d2467423235][Hypertext]], [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]]
+
+* The Good
+- context throught side by side content: [[id:382632ea-6c46-4dc0-a02f-acd867750c8f][marginalia]]
+  + always been the power of the written word
+- here comes the Intenet with bidirectional links
+  + closer to out brain convolutedness
+
+* The Less Good
+- link are distracting
+  + a flood of links is cumbersome on the eyes
+  + but they are /great/ for note-taking and expanding on ideas
+  + for someone tryng to follow a logical thread the links get confusing quickly
+    * _links are rabbitholes_ the reader might never emerge from
+- [[id:27428ecf-50c6-4e45-8a3c-ab03b8fca95a][Project Xanadu]] is cool and all but results in pretty but confusing lines[fn:1]
+
+* Dilution of Meaning
+- links water down meaning
+  + in linking you are hiding behind someone else'sh writing[fn:2]
+
+
+[fn:1] right but hypertext is a great tool, it has to be used with purpose
+[fn:2] /write better/, if you can't then link somewhere

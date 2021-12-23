@@ -1,7 +1,8 @@
 :PROPERTIES:
 :ID:       57e0d79f-5f0d-48eb-9b76-83ec2cd3fd58
+:ROAM_ALIASES: Luhmann
 :END:
-#+title: Niklas Lumann
+#+title: Niklas Luhmann
 #+filetags: author
 1927 - 1998, German sociologist
 - see: [[https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/luhmann-niklas][Encyclopedia]]

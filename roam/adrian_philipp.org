@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       94369120-020b-43c3-b952-c63f9c96552d
+:END:
+#+title: Adrian Philipp
+#+date: [2021-12-22 Wed 23:43]
+#+filetags: author blog
+- Blog: https://adrian-philipp.com/

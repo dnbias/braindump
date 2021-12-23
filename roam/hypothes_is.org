@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       0709a81e-b7ee-440a-89e7-22519ab925dd
+:END:
+#+title: Hypothes.is
+#+date: [2021-12-23 Thu 00:29]
+#+filetags: tool
+- Related: [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]], [[id:72cdd6e6-0096-4c87-9b44-51889078c1e6][Learn In Public]]
+
+/A peer review layer to the entire Internet/
+- [[https://hypothes.is/users/dnbias][mine]]
+
+Great tool for [[id:aac86d39-bb8c-4270-a47b-5b0204d6dc13][OER]]!

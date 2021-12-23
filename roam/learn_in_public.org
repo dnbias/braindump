@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       72cdd6e6-0096-4c87-9b44-51889078c1e6
+:END:
+#+title: Learn In Public
+#+date: [2021-12-22 Wed 23:59]
+- Source: https://www.swyx.io/learn-in-public/
+- Author: [[id:003cf0a0-2433-4308-b0fc-d8c45cc3a320][Shawn Wang]]
+
+* Habits
+- have a habit of creating exhaust
+- [[id:d9679e74-67c4-4395-b643-13efa46e5129][make the thing you wish you had found]]
+- talk to yoursef from 3 months ago
+  + you were wrong, you'll be wrong, just try to be less wrong k?
+* Open Source Knowledge
+- document what you did and the problems you solved
+  + and do it well! what you wish you had when you were researching
+
+Great example of a long running [[id:adf949bf-9ffe-4c79-b225-9a47a2eecef4][TIL]]:
+- https://github.com/jbranchaud/til

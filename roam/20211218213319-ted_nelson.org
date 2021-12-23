@@ -2,3 +2,4 @@
 :ID:       235e89b2-ed6b-44cd-aa9f-f27accb00555
 :END:
 #+title: Ted Nelson
+An early pioneer of the internet and the inventor of the term [[id:fc1568cf-8638-4a6b-a9a3-54524304188a][hyperlink]]

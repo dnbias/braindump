@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       aac86d39-bb8c-4270-a47b-5b0204d6dc13
+:ROAM_ALIASES: OER
+:END:
+#+title: Open Educational Resources
+#+date: [2021-12-23 Thu 00:47]

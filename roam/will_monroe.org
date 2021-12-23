@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       50cbdcb6-aad9-425b-b124-df2690655a2b
+:END:
+#+title: Will Monroe
+#+date: [2021-12-23 Thu 00:49]
+#+filetags: author
+- https://willtmonroe.com/category/microblog/
+- Assistant Director for Instructional Technolofy @ Lousiana State University Law Center
