@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       69eaf96c-819c-4d8f-9d57-1582886d5d4d
+:END:
+#+title: The Curse of Xanadu
+#+date: [2021-12-24 Fri 15:13]
+#+filetags: article
+- Source: https://www.wired.com/1995/06/xanadu/
+- Author: [[id:a875d414-3583-4edf-b6e9-5647685ff308][Gary Wolf]]
+- Related: [[id:804c7ef4-e47a-4295-8646-85ea46c78a97][Wired]], [[id:ca4027a9-4d48-445d-aeb7-a50af282f897][Xanadu]], [[id:27428ecf-50c6-4e45-8a3c-ab03b8fca95a][Project Xanadu]]
+
+#+begin_quote
+It was the most radical computer dream of the hacker era. Ted Nelson's Xanadu project was supposed to be the universal, democratic hypertext library that would help human life evolve into an entirely new form.
+#+end_quote
+
+* Notes
+- [[id:235e89b2-ed6b-44cd-aa9f-f27accb00555][Ted Nelson]] "king of unsuccessful software development"
+- the goal of the project was to put all information within reach of all
+  + eliminate scientific ignorance
+  + create a formu for discussion and debate
+- Ted suffers from [[id:b17ad652-f198-41bc-87dd-6386809356ee][ADHD]][fn:1]
+
+
+[fn:1] All the recording, audio or otherwise, Nelson does is for combat the fleetability of his thoughts

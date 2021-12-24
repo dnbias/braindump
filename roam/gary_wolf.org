@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       a875d414-3583-4edf-b6e9-5647685ff308
+:END:
+#+title: Gary Wolf
+#+date: [2021-12-24 Fri 15:16]
+#+filetags: author

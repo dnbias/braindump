@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       804c7ef4-e47a-4295-8646-85ea46c78a97
+:END:
+#+title: Wired
+#+date: [2021-12-24 Fri 15:16]
+#+filetags: website

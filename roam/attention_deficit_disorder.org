@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b17ad652-f198-41bc-87dd-6386809356ee
+:ROAM_ALIASES: ADHD
+:END:
+#+title: Attention Deficit Disorder
+#+date: [2021-12-24 Fri 15:31]
+#+filetags: disorder syndrome
+A syndrome formerly thought to affect children only, but now known to also affect adults, that is characterized by frequent, chronic distractibility, and either inattentiveness or hyperactivity (fidgeting).
