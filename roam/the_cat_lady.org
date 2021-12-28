@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       0c44f0cd-7c3b-4d05-acbb-4463a520bff9
+:END:
+#+title: The Cat Lady
+#+date: [2021-12-27 Mon 23:44]
+#+filetags: videogame
+Horror psicologico, la protagonista si suicida in incipit.
+
+* Outline
+- =Susan= ritorna in vita ogni volta /soffiando una candela/
+  + simbolo di un desiderio espresso
+  + la vita della protagonista e' ripagata con la vita di altri
+** Atto I
+- seguiamo un cervo, poi un =corvo=
+- la vecchia che ci incarica
+  + si fa chiamare con molti nomi
+  + /Queen of maggots/
+** Atto II
+- le infermiere sono vestite come noi
+- =red tear of happiness=
+  + drogano le pazienti come premio
+  + possibile riferimento in contraltare a [[id:0cdc99dd-a79d-452c-bb9d-c742f956fb1d][Matrix]]
+- =Liz= parla male del =Doctor X=, che dice avere uno strano adore
+- il =Doctor X= e' un maniaco che crea /arte vivente/

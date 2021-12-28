@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       b88c3ad0-a2b8-4a8e-ad86-d63485804b21
+:END:
+#+title: beepb00p
+#+date: [2021-12-24 Fri 23:30]
+#+filetags: blog

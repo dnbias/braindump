@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       674852c3-f00f-41f8-86dc-85eeed4a0b69
+:END:
+#+title: La Satira secondo A. G. Bierce
+#+date: [2021-12-27 Mon 16:10]
+#+filetags: article
+- Source: https://www.iltascabile.com/letterature/satira-bierce/
+- Author: Jacopo Cirillo
+- Related: [[id:d08023ce-c044-4bf8-b437-adae446d8310][A. G. Bierce]], [[id:9f1b94d6-17f0-4ffa-8dcd-4ce50894e2a8][Satira]]
+
+* Outline
+- Ambrose scrittore del San Francisco News Letter
+  + caporedattore in breve tempo
+- /The Town Crier/
+  + rubrica quotidiana, strali umoristici contro tutto e tutti
+- scrive [[id:0ecfa10b-cbd7-4106-b6c6-05ac86aad1df][The Devil's Dictionary]], libretto in pieno stile che gioca con i ribaltamenti ironici piu' caustici
+- la sua produzione ha influenzato molti scrittori successivi oltre che altri media
+  + [[id:c33cff5c-eb43-46e4-ae8d-6a5055b128f7][Lovecraft]] lo cita come influenza nel /weird horror/
+  + [[id:afd833e9-e672-4463-bc29-3eacfd0528cf][Borges]]
+  + [[id:90ca87de-ed66-4cea-9a70-61c9d84d619c][Cortazar]]
+  + [[id:ae4cd2fa-589c-4af4-aa1f-d9f50456cdc4][Nabokov]]
+  + [[id:c3229dab-6ef8-4681-b508-dfb299a505fd][La Rivière du hibou]]

@@ -7,6 +7,7 @@
 - Author: [[id:f0d8b7c7-2c2c-41f3-b91d-c8d00cbb6f68][Thriving Henry]]
 - Tags: [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]], [[id:8d7717ec-69d7-475e-a98f-bf0bdf25f6bb][roam]], [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]], [[id:f01972ec-1e3a-40e2-9482-c05a9922b738][PKM]]
 
+* Outline
 - read a lot -> forget a lot
 - Roam + Zettelkasten = Roamkasten
 - reading a lot but not digesting the content: [[id:3ea04258-1edd-48c3-be84-fbd0bda0a40e][cognitive constipation]]
@@ -20,14 +21,17 @@
   + graph structure much like our brain
   + the more you use a link between concepts the more it strengthen
 - [[id:5b6ce879-ff55-49e5-a029-d5b35a8eef28][Conor White-Sullivan]]: ~Roam was built with a low floor and high ceiling~
-- flow of the [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]]: fleeting notes -> literature notes -> permanent notes -> related notes
+- flow of the Zettelkasten: fleeting notes -> literature notes -> permanent notes -> related notes
   + f.n.: highlighting, writing in the margin of the text, annotating ideas, sensations and links that come to mind while reading
   + l.n.: atomic concepts (one idea per literature note) paraphrased and with a direct reference back to the original text
     * not to add your own ideas here, just use your own words
     * they must be done with diligent, active reading to attenuate your own worldview bias
       + read and reread to distillate ideas
   + p.n.: or Zettels; declarative statements that make an assertion related to, but not bound by, the literature and fleeting notes
-    | a three-legged stool - the original text, fleeting notes, and literature notes are the three legs of the stool and the zettel is what you can stand on to see further in your intellectual landscape. |
+#+begin_quote
+ a three-legged stool - the original text, fleeting notes, and literature notes are the three legs of the stool and the zettel is what you can stand on to see further in your intellectual landscape.
+#+end_quote
+
 - possibility of Zettels built like [[id:2bba330e-c9cc-4c55-85e1-8444e1e09e25][Toulmin Argument]]
   + permanent notes are meaning less if isolated
     * they must be thought in relation with every other Zettel in the system
@@ -43,7 +47,7 @@
     - related topics
     - literature notes supporting
     - fleeting notes supporting
-- the [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]] process is content agnostic
+- the process is content agnostic
   + just pick what interests you: patterns will emerge
 
 - [[id:8d7717ec-69d7-475e-a98f-bf0bdf25f6bb][Roam Research]] is a supercharged [[id:57e0d79f-5f0d-48eb-9b76-83ec2cd3fd58][Niklas Lumann]]'s [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]], having a the power of a computer to track and backlink all the notes very fast and efficiently

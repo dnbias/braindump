@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       406ccddd-f8a1-4ed9-8307-102807ece956
+:END:
+#+title: Vialogues
+#+date: [2021-12-24 Fri 23:55]
+#+filetags: tool
+Video [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]]

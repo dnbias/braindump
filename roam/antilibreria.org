@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       0934f9bf-0c66-4fa1-9777-7d17d1da54c5
+:ROAM_ALIASES: Antilibrary
+:END:
+#+title: Antibiblioteca
+#+date: [2021-12-27 Mon 22:57]
+#+tags: concept
+Una collezione privata di libri non letti, concetto nato da [[id:a00f66b6-cd7d-43ff-84a7-e05812d5e0df][Taleb]] per descrivere la collezione personale di [[id:0e248755-8030-4c5a-a87e-0e6f374fc788][Umberto Eco]].
+- il valore di una /Antibiblioteca/ sta nel sapere che esistono e che possono essere consultati in ogni momento
+- socraticamente la conoscenza di un libro non letto accresce la nostra conoscenza e la nostra ignoranza al tempo stesso

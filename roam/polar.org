@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       81f69e6f-f195-4d45-9298-4c3954d2eaa8
+:END:
+#+title: Polar
+#+date: [2021-12-25 Sat 00:09]
+#+filetags: tool
+[[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]] for pdfs
+- https://github.com/burtonator/polar-bookshelf#polar-bookshelf

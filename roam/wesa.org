@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d3501ef7-422b-46f5-afd4-1203d721b13c
+:ROAM_ALIASES: Wesa
+:END:
+#+title: Riccardo Vessa
+#+date: [2021-12-24 Fri 22:46]
+#+filetags: author

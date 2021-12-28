@@ -1,0 +1,56 @@
+:PROPERTIES:
+:ID:       32f0ad3c-44e7-4be1-949c-38e487875032
+:END:
+#+title: How to Annotate Literally Everything
+#+date: [2021-12-24 Fri 23:27]
+#+filetags: article
+- Source: https://beepb00p.xyz/annotating.html
+- Author: [[id:b88c3ad0-a2b8-4a8e-ad86-d63485804b21][beepb00p]]
+- Related: [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]]
+
+* Outline
+** Web
+- Pocket
+  + no notes or highlighting
+- Instapaper
+  + highlighting only inside its app
+  + useful on mobile as the app has offline capabilities
+- Wallabag
+- [[id:0709a81e-b7ee-440a-89e7-22519ab925dd][Hypothes.is]]
+  + use of JS for a in-browser overlay
+  + fuzzy anchoring
+  + public annotation - [[id:72cdd6e6-0096-4c87-9b44-51889078c1e6][Learn In Public]]
+  + python [[https://github.com/judell/Hypothesis][wrapper]] for the API
+  + can use bookmarklet on mobile browser
+** PDF
+- Atril
+- Evince
+- Okular
+- [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]]
+  + pdf-tools
+  + org-noter
+- Zathura[fn:1]
+- Xournal
+- [[id:0709a81e-b7ee-440a-89e7-22519ab925dd][Hypothes.is]]
+  + via pdf.js[fn:2]
+- [[id:81f69e6f-f195-4d45-9298-4c3954d2eaa8][Polar]]
+
+On Mobile:
+- Adobe Reader
+- Xodo
+** E-Ink
+- Kindle
+  + annotations on =My Clippings.txt=
+- Kobo
+  + annotations on =.kobo/KoboReader.sqlite=
+    * https://github.com/karlicoss/kobuddy
+  + Official Android App
+- Koreader - https://github.com/koreader/koreader
+  + alternative open source software for e-ink devices
+
+
+** Video
+- A [[https://hyp.is/Cchw9t4VEeqy8os_dr4Hug/beepb00p.xyz/annotating.html][commenter]] on Hypothes.is suggested [[id:406ccddd-f8a1-4ed9-8307-102807ece956][Vialogues]]
+
+[fn:1] great viewer, horrible note-taker
+[fn:2] reading books in browsers sounds like some kind of torture

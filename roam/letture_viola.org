@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       cbd777b3-9f79-4e99-81a9-37a6f29ce6a1
+:END:
+#+title: Letture Viola
+#+date: [2021-12-24 Fri 22:44]
+#+filetags: format twitch
+Format Twitch di [[id:d3501ef7-422b-46f5-afd4-1203d721b13c][Wesa]] di lettura di estratti letterari.

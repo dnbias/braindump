@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       0ecfa10b-cbd7-4106-b6c6-05ac86aad1df
+:END:
+#+title: The Devil's Dictionary
+#+date: [2021-12-27 Mon 17:31]
+#+filetags: book
+[[id:d08023ce-c044-4bf8-b437-adae446d8310][A. G. Bierce]], /The Devil's Dictionary/, 1906,
+
+* Summary
