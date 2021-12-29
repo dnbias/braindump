@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e7208660-87fb-4e7a-a017-a03110f6948b
+:END:
+#+title: Net and Knives
+#+date: [2021-12-28 Tue 19:45]
+#+filetags: concept
+Found in [[https://mentalpivot.com/nets-and-knives-the-interplay-between-expansive-and-atomic-notes/][an article]] by [[id:ee63a481-a398-4f0d-baa5-bed2fc81f598][Mental Pivot]]: atomic notes ([[id:a4119815-2035-4119-b381-44352fc2fb9a][zettels]]) are the core of the [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]] method but more general, outline and summary type notes have their usefulness. These notes are like casting a /wide net/ gathering the interesting concepts in the source material.
+These concepts if important enough to the Knowledge Base make it to atomic notes, knives.

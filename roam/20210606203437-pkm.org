@@ -3,3 +3,4 @@
 :ROAM_ALIASES: "Personal Knowledge Management System"
 :END:
 #+title: PKM
+Personal knowledge management (PKM) is a process of collecting information that a person uses to gather, classify, store, search, retrieve and share knowledge in their daily activities.

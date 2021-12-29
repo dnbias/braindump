@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       eadb791b-4eac-4f4f-bf7b-266162429b6d
+:END:
+#+title: Braindump
+#+date: [2021-12-28 Tue 16:22]
+#+filetags: article
+- Source: https://www.badykov.com/common/braindump/
+- Author: Ayrat Badykov - [[https://github.com/ayrat555][github]]
+- Related: [[id:a9417549-6f9f-48ab-b23c-1c411fee45b8][org-roam]], [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]]
+
+* Outline
+- static site with the notes
+- different tools for exporting to the web
+  + firn
+    * no uppercase org properties
+  + zola
+    * [[id:6186ad0c-aabf-4ed7-a915-a65f1adeb10f][Rust]]
+  + [[id:65d2727b-cd97-4e73-8745-ac30803c6a3c][Hugo]]
+    * [[id:de2fbe90-7197-4686-b6b5-3deb32a9213f][Go]]
+    * most popular
+    * [[id:01bbe584-fb9a-4b91-b5ec-e0c589143d2b][Jethro Kuan]] uses [[https://github.com/jethrokuan/cortex][this theme]]

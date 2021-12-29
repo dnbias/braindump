@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       f259c2dc-fe03-4b66-8fa7-fbeed4260845
+:END:
+#+title: The Conversation We Have with Books
+#+date: [2021-12-28 Tue 20:00]
+#+filetags: article
+- Source: https://mentalpivot.com/the-conversation-we-have-with-books/
+- Author: [[id:ee63a481-a398-4f0d-baa5-bed2fc81f598][Mental Pivot]]
+- Related: [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]]
+
+* Notes
+- the conversation with books happens in different steps and at different times
+  + note taking[fn:1]
+    * summarizing
+    * outlining
+    * rewriting in your own words
+  + revisiting the notes[fn:2]
+  + reading other work of the same author
+  + reading on the same argument from different sources
+  + rereading your notes on the subject in different times
+
+[fn:1]To really digest a work of literature the output you put out from a book must be comparable to the input you are exposed to.
+[fn:2]Otherwise the knowledge from the book will be lost to memory.

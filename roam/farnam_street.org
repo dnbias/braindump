@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       87f4e5f5-8345-458c-b991-0821d50cbe06
+:END:
+#+title: Farnam Street
+#+date: [2021-12-29 Wed 02:26]
+#+filetags: blog
+https://fs.blog/

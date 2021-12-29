@@ -3,7 +3,7 @@
 :END:
 #+title: Male vs Female Gaze
 #+subtitle: How Media Profits From Your Gender
-[[id:c5c5ea6e-ade8-4941-ba39-afa407947d4b][$videos]]
+#+filetags: video
 - Source: https://youtu.be/rQIwHD_ITIo
 - Tags: [[id:79408259-22e6-429b-a783-5797e3f10a8a][Internet Impact]] ,[[id:3359c8c9-1a11-410e-a8de-2296a402bd1b][Gender]], [[id:aed5fc5f-ef54-443a-8ddd-b507ff654d71][Evolutionary Psychology]]
 

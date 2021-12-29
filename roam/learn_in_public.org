@@ -3,6 +3,7 @@
 :END:
 #+title: Learn In Public
 #+date: [2021-12-22 Wed 23:59]
+#+filetags: concept mentalModel
 - Source: https://www.swyx.io/learn-in-public/
 - Author: [[id:003cf0a0-2433-4308-b0fc-d8c45cc3a320][Shawn Wang]]
 

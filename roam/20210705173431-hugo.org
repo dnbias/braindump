@@ -2,8 +2,20 @@
 :ID:       65d2727b-cd97-4e73-8745-ac30803c6a3c
 :END:
 #+title: Hugo
+#+filetags: tool
 
-To blog with plain text, integrated with [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]]
+To blog with plain text
+* Emacs
+Integrated with [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]] by [[https://ox-hugo.scripter.co/][ox-hugo]]
+#+begin_src elisp
+(use-package ox-hugo
+  :ensure t            ;Auto-install the package from Melpa
+  :after ox)
+#+end_src
+
+Root directory of the source for the Hugo site:
+- ~HUGO_BASE_DIR~
+- ~#+hugo_base_dir:~ keyword in org file
 
 * Markdown Processors
 - Blackfriday (default)
@@ -24,3 +36,30 @@ katex: true
 markup: "mmark"
 ---
 #+end_example
+
+* Installation and Usage
+- [[https://gohugo.io/getting-started/installing/][Installing]]
+  + ~sudo pacman -Syu hugo~
+
+- [[https://gohugo.io/getting-started/quick-start/][Quick Start]]
+  + ~hugo new site quickstart~
+  + Theming
+    * https://themes.gohugo.io
+    * https://github.com/gohugoio/hugoThemes
+    * https://themes.gohugo.io/
+    * then add the theme to ~config.toml~
+#+begin_src bash
+cd quickstart
+git init
+git submodule add https://github.com/theNewDynamic/gohugo-theme.git
+#+end_src
+- Starting the server
+  + ~hugo server -D~
+  + http://localhost:1313/
+- Build static pages
+  + ~hugo -D~
+  + in ~./public/~ directory by default
+* Resources
+The best resource I could find by far is the work of [[id:01bbe584-fb9a-4b91-b5ec-e0c589143d2b][Jethro Kuan]] on
+- https://github.com/jethrokuan/braindump
+- https://github.com/jethrokuan/cortex

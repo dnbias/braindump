@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       ee63a481-a398-4f0d-baa5-bed2fc81f598
+:END:
+#+title: Mental Pivot
+#+date: [2021-12-28 Tue 19:46]
+#+filetags: blog
+https://mentalpivot.com/

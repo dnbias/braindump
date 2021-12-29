@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       52cbcf53-c46f-47af-a17c-4221ae7bcfed
+:END:
+#+title: The Map is Not the Territory
+#+date: [2021-12-28 Tue 19:25]
+#+filetags: concept mentalModel
+- https://conceptually.org/concepts/the-map-is-not-the-territory

@@ -17,7 +17,7 @@ Informazioni varie del Corso:
   anche in caso di progetto di gruppo con gruppi da 3)
   - Sostenibile dopo aver superato Teoria
   1/3 del voto
-  -[[id:d119de03-4b7a-49f8-85e4-15994b3edd11][LFTCompiler]]
+ - [[id:d119de03-4b7a-49f8-85e4-15994b3edd11][LFTCompiler]]
 
 * Testi
 

@@ -2,8 +2,10 @@
 :ID:       42ee0edd-831e-46b6-82b1-199427452149
 :END:
 #+TITLE: Zettelkasten
-- tags: [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]], [[id:a9417549-6f9f-48ab-b23c-1c411fee45b8][org-roam]]
+- tags: [[id:1479941e-151a-4bd1-8b31-ee11804d220c][Note Taking]], [[id:a9417549-6f9f-48ab-b23c-1c411fee45b8][org-roam]], [[id:f01972ec-1e3a-40e2-9482-c05a9922b738][PKM]]
 - books: [[id:2d54b2f1-5c39-4849-a4d1-4b117e8db961][How to Take Smart Notes]]
+
+Great resources at [[https://zettelkasten.de/posts/][zettelkasten.de]]
 
 * Concetto
 - nuova conoscenza si aggiunge a conoscenza pregressa
@@ -23,3 +25,5 @@
 * Esempi Online
 - https://wiki.nikitavoloboev.xyz/
 - https://beepb00p.xyz/exobrain/
+- https://hugocisneros.com/notes/
+- https://philosopher.life/#h0p3
