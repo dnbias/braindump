@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       a9300162-40f0-4d5e-8c05-31c6164bb28d
+:END:
+#+title: Shut up and calculate
+#+date: [2022-01-03 Mon 15:39]
+[[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]] [[id:cfa0b11e-d425-4667-b670-5bf8902839da][David Mermin]], e [[id:763850d7-1fbf-4ee5-8379-6277e81b292f][Richard Feynman]]
+- As long as the math is solid, it works
+- The reason he said it was because nobody could understand [[id:dd2daf8d-cbf2-41c9-b0a0-96862f3033bf][Quantum Mechanics]]

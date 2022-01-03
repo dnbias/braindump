@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       cfa0b11e-d425-4667-b670-5bf8902839da
+:END:
+#+title: David Mermin
+#+date: [2022-01-03 Mon 15:49]
+#+filetags: author
+1935
+
+[[id:c5461b03-abb3-4dfb-9334-a1fd6fe1f70b][Physicist]] at Cornell University, contributor to the the foundation to [[id:dd2daf8d-cbf2-41c9-b0a0-96862f3033bf][Quantum Mechanics]].
