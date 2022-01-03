@@ -4,7 +4,6 @@
 #+title: Kentucky Route Zero
 #+filetags: videogame
 #+startup: writer-mode
-- Related:
 - [[https://kentucky-route-zero.fandom.com/wiki/Kentucky_Route_Zero_Wiki][Wiki]]
 - [[https://consolidatedpower.co/~donald/zero/Main_Page][Highway 0]]
 

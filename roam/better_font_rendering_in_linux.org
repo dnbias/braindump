@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       5acee1bf-af10-4416-a576-5fd8aba8c186
+:END:
+#+title: Better Font Rendering in Linux
+#+date: [2021-12-22 Wed 14:59]
+#+filetags: article
+- Source: https://blog.aktsbot.in/better-font-rendering-linux.html
+- Author: Aktsbot
+- Related: [[id:2f83c44e-774c-41d2-abe6-a13e3276e3f0][Unix]]

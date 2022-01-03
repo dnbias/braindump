@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       30b20d54-eacd-42e3-8882-94071391857e
+:END:
+#+title: nix
+#+date: [2021-12-22 Wed 14:02]

@@ -12,7 +12,7 @@ Great resources at [[https://zettelkasten.de/posts/][zettelkasten.de]]
   + in questo modo si sviluppano nuove idee
 - bidirectional linking
 - notes on the go
-  + includendo la ~fonte~
+  + includendo la _fonte_
 - tagging
   + rivisitare le note della giornata/settimana e processarle
 - cercando di metterle in relazione con le altre idee nel zettelkasten
@@ -22,8 +22,14 @@ Great resources at [[https://zettelkasten.de/posts/][zettelkasten.de]]
 - la domanda fondamentale: =dove voglio rivedere questa idea?=
   + [[id:283a0ee4-6416-40ea-b5eb-78d5f3a44b4a][How to take smart notes with org-mode]]
 
-* Esempi Online
+* Public Zettels
+A curated list can be found [[https://github.com/KasperZutterman/Second-Brain][here]].
+- https://notes.azlen.me
+- https://notes.salman.io
+- https://www.mentalnodes.com/
+- https://sivers.org/book (not really a Zettelkasten but close enough)
 - https://wiki.nikitavoloboev.xyz/
-- https://beepb00p.xyz/exobrain/
 - https://hugocisneros.com/notes/
+- https://beepb00p.xyz/exobrain/
 - https://philosopher.life/#h0p3
+- https://sphygm.us/

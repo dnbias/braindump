@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       45c9f5fc-d3d2-4463-8341-f1ca2c74a892
+:END:
+#+title: Quotebacks
+#+date: [2021-12-22 Wed 15:36]
+- https://quotebacks.net/
+
+Project to help discourse throught the web
+- embed [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][quotes]] from other sites
+- exports to markdown
+- exports to image
