@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       549abf33-8fd6-4646-b7f0-f02def8e4e6e
+:ROAM_ALIASES: Semiotica
+:END:
+#+title: Semiotics
+#+date: [2022-01-03 Mon 00:06]
+The study of signs

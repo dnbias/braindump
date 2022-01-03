@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a996449f-5f2d-4833-9365-71fffd229670
+:END:
+#+title: Andy Weir
+#+date: [2021-12-30 Thu 15:46]
+#+filetags: author
+1972
+
+Has a [[http://www.galactanet.com/][Website]].

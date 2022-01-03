@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3bb646e8-3eb1-4881-bd92-f6fbf19356eb
+:END:
+#+title: EntropyForLife
+#+date: [2022-01-02 Sun 23:20]
+#+filetags: author youtube science divulgation
+[[https://www.youtube.com/c/EntropyforLife/][Canale]] italiano di divulgazione scientifica.

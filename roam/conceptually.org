@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       c3e3a070-2a26-4793-a2e9-ea50f2002aac
+:END:
+#+title: Conceptually
+#+date: [2021-12-29 Wed 02:39]
+#+filetags: blog
+https://conceptually.org/

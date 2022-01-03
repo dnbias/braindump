@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       33062a35-8f85-4780-bef8-6c682385a124
+:END:
+#+title: David Hume
+#+date: [2022-01-02 Sun 23:50]
+#+filetags: author
+1711-1776
+
+Influential and best known for his system of philosophical [[id:9b84a5c2-c6dd-4c7e-83b3-3e665bccca20][Empiricism]] and [[id:8d0d9ade-f935-4def-ba51-1af627003f3c][Skepticism]].

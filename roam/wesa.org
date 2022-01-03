@@ -5,3 +5,6 @@
 #+title: Riccardo Vessa
 #+date: [2021-12-24 Fri 22:46]
 #+filetags: author
+Dovessi riassumerlo in poco, mi perdonera':
+- [[id:914db62f-b7d9-4142-b973-eb894e627ba4][Antidogmatismo]]
+- [[id:549abf33-8fd6-4646-b7f0-f02def8e4e6e][Semiotica]]

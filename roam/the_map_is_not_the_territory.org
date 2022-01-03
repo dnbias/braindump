@@ -4,4 +4,11 @@
 #+title: The Map is Not the Territory
 #+date: [2021-12-28 Tue 19:25]
 #+filetags: concept mentalModel
-- https://conceptually.org/concepts/the-map-is-not-the-territory
+The /map/ we have of reality (any reality or subject or matter) is /not/ reality itself.[fn:1]
+The model we have of something is a simplification[fn:2] useful for ease of communication and study, memorization.
+The /territory/ is not as simple and we choose to ignore part of it, give it for granted.
+
+- [[https://conceptually.org/concepts/the-map-is-not-the-territory][related]] on [[id:c3e3a070-2a26-4793-a2e9-ea50f2002aac][Conceptually]]
+
+[fn:1]what happens when we forget this? /Wishful thinking/
+[fn:2][[https://www.youtube.com/watch?v=Q1lL-hXO27Q][here]] - [[id:763850d7-1fbf-4ee5-8379-6277e81b292f][Richard Feynman]] on this concept

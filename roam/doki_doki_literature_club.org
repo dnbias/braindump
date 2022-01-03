@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       998c14f5-570e-404d-baa2-1ddb779fb0e0
+:END:
+#+title: Doki Doki Literature Club
+#+date: [2021-12-29 Wed 02:52]
+#+filetags: videogame
