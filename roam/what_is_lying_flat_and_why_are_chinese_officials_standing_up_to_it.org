@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       07a36c86-bbf7-46cc-949e-63e9132c83df
+:END:
+#+title: What is ‘lying flat’, and why are Chinese officials standing up to it? 
+#+date: [2022-01-03 Mon 02:04]
+#+filetags: article
+- Source: https://www.scmp.com/economy/china-economy/article/3153362/what-lying-flat-and-why-are-chinese-officials-standing-it
+- Author: China Macro Economy, Ji Siqi, He Huifeng, Brian Peach
+- Related: [[id:db656235-73df-4b8c-b090-4308fe89470a][Productivity]], [[id:de94eda5-1071-447b-9722-d37d51f4bd90][Lying Flat]]
