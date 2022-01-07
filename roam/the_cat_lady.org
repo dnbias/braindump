@@ -3,8 +3,9 @@
 :END:
 #+title: The Cat Lady
 #+date: [2021-12-27 Mon 23:44]
-#+filetags: videogame
+#+filetags: videogame horror
 Horror psicologico, la protagonista si suicida in incipit.
+Fa parte di [[id:cf125a0e-76a9-4825-a614-eca47144976b][Devil Came Through Here]] trilogy
 
 * Outline
 - =Susan= ritorna in vita ogni volta /soffiando una candela/
@@ -14,7 +15,7 @@ Horror psicologico, la protagonista si suicida in incipit.
 - seguiamo un cervo, poi un =corvo=
 - la vecchia che ci incarica
   + si fa chiamare con molti nomi
-  + /Queen of maggots/
+  + =Queen of maggots=
 ** Atto II
 - le infermiere sono vestite come noi
 - =red tear of happiness=
@@ -22,3 +23,24 @@ Horror psicologico, la protagonista si suicida in incipit.
   + possibile riferimento in contraltare a [[id:0cdc99dd-a79d-452c-bb9d-c742f956fb1d][Matrix]]
 - =Liz= parla male del =Doctor X=, che dice avere uno strano adore
 - il =Doctor X= e' un maniaco che crea /arte vivente/
+* Atto III
+- piccole azioni quotidiane
+  + come per combattere la depressione della protagonista
+  + cibo
+  + sigaretta
+  + doccia
+  + gatti
+  + caffé
+- Arriva una nuova coinquilina - =Mitzi= - molto insistente nel prendere la stanza in affitto
+  + si scopre che lei é malata da cancro
+  + la =Queen of Maggots= la tocca, evidentemente morirá presto
+- ci ritroviamo a casa del prossimo maniaco, con moglie annessa
+  + veniamo sfigurati con la candeggina per gelosia della moglie
+  + =Susan= si spara con la pistola lasciata per pietá dal maniaco
+- =You Are Dead= - un poster nella stanza della ragazza, con una citazione di [[id:7fd778d4-8ce4-403d-91a1-a558ebc7fb0b][Death is Nothing at All]]
+#+begin_quote
+Death is nothing at all
+You have only slipped away into the next room
+I am I, and you are you
+whatever we were to each other, that we are still
+#+end_quote
