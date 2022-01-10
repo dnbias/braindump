@@ -30,6 +30,9 @@ Personale sanitario e personale scolastico possono accedere ai vaccini COVIDIN e
 I soggetti fragili possono accedere solo a CORONAX e FLUSTOP.
 Gli altri soggetti non possono accedere a CORONAX.
 
+#+caption: Possibile interfaccia web per la prenotazione
+[[~/org/media/img/prenotazioneDB.jpg]]
+
 Nel caso il cittadino abbia avuto precedenti reazioni allergiche, non può essere raccomandato nessun vaccino per cui almeno un lotto abbia registrato una segnalazione di reazione avversa negli ultimi 30 giorni.
 Il cittadino viene indirizzato al centro più vicino alla residenza dove vi sia disponibilità di almeno una fiala di vaccino compatibile con i vincoli sopra.
 Nel caso in cui il vaccinando abbia positività pregressa ad un test COVID, viene specificato che la seconda dose del vaccino, se prevista, non deve essere somministrata.
@@ -133,22 +136,24 @@ $\pagebreak$
 - Un =cittadino= puó accedere solo a centri vaccinali della propria cittá di residenza
 - Un =cittadino= per un dato =vaccino= deve al massimo avere confermato $n$ appuntamenti con $n$ uguale al Numero Somministrazioni del Vaccino
 - Un =cittadino= per poter ricevere un =vaccino= deve avere Etá compresa tra le etá minima e massima di somministrazione
+- Un =cittadino= con positivitá pregressa non deve ricevere seconda dose se specificata
+- Il =tipo= di un =cittadino= deve corrispondere ad una categorizzazione: fragile, personale sanitario, personale scolastico, altro
 - Un =cittadino= deve ricevere un dato =vaccino= in base alla propria categorizzazione:
   + fragile, =CORONAX=, =FLUSTOP=
   + personale sanitario, =COVIDIN=, =CORONAX=
   + personale scolastico, =COVIDIN=, =CORONAX=
   + nessuno dei precedenti, =CORONAX=
-- Un =cittadino= che ha riscontrato =reazioni avverse= non puó accedere a dosi il  cui lotto ha riscontrato almeno una reazione avversa negli ultimi 30 giorni
-- Un =cittadino= con positivitá pregressa non deve ricevere seconda dose se specificata
+- Un =cittadino= che ha riscontrato =reazioni avverse= non puó accedere a dosi il cui lotto ha riscontrato almeno una reazione avversa negli ultimi 30 giorni
 - =Medici di base= somministrano solo vaccini a doppia dose
-- Il =numero di somministrazioni= del singolo =vaccino= va aggiornato a fine giornata in base agli appuntamenti che non sono stati annullati
 - Il =numero di fiale disponibili= per ogni lotto di cui dispone un =centro vaccinale= va tenuto aggiornato in base alle vaccinazione fatte
+- =intervallo dosi= di un =vaccino= deve essere ~NOT-NULL~ in casi di piú dosi
+- le =fiale= disponibili per una vaccinazioni devono essere associate ad un =lotto= non scaduto alla data odierna
 
 $\pagebreak$
 * Progettazione Logica
 
 ** Tavola dei Volumi
-| Concetto             | Tipo |   Volume |
+| *Concetto*           | *Tipo* |   *Volume* |
 |----------------------+------+----------|
 | Cittadino            | E    | 60000000 |
 | Fragile              | E    |  5000000 |
@@ -192,7 +197,7 @@ Giustificazioni per i volumi
 - Prodotto, in base al numero di lotti
 
 ** Tavola delle Operazioni
-| Operazione | Descrizione                                  | Tipo | Frequenza        |
+| *Operazione* | *Descrizione*                                | *Tipo* | *Frequenza*      |
 |------------+----------------------------------------------+------+------------------|
 |          1 | Rapporto delle vaccinazioni della giornata   | B    | 1 al giorno      |
 |            | in tutti i centri vaccinali                  |      |                  |
@@ -227,7 +232,7 @@ $\pagebreak$
   + impatta le operazioni ~3~, ~9~
 
 *** Operazione 3
-**** Con Ridondanza
+*Con Ridondanza*:
 
 Lo schema di visita é:
 =Vaccinazione= - =Perfezionata= - =Convocazione= - =Appuntamento=
@@ -235,7 +240,7 @@ Lo schema di visita é:
 - =Vaccino= - =Prodotto= - =Lotto=
 
 La tavola degli accessi é:
-| Concetto             | Costrutto | Accessi | Tipo |
+| *Concetto*           | *Costrutto* | *Accessi* | *Tipo* |
 |----------------------+-----------+---------+------|
 | Vaccinazione         | E         | 20M     | L    |
 | Perfezionata         | A         | 20M     | L    |
@@ -256,9 +261,11 @@ Dove:
 - =Personale Scolastico= sono l'1.6% dei =Cittadini=
 - =Altri= sono l'88.8% dei =Cittadini=
 
-Accessi Totali: 120'004'003 in Lettura
+Considerando le stime indicate nella Tavola dei Volumi.
 
-**** Senza Ridondanza
+Accessi Totali: $120\:004\:003$ in Lettura
+
+*Senza Ridondanza*:
 
 Lo schema di visita é:
 =Vaccinazione= - =Perfezionata= - =Convocazione= - =Appuntamento=
@@ -266,7 +273,7 @@ Lo schema di visita é:
 - =Report= - =Reazione Allergica= - =Tipologia Vaccino= - =Vaccino=
 
 La tavola degli accessi é:
-| Concetto             | Costrutto | Accessi | Tipo |
+| *Concetto*           | *Costrutto* | *Accessi* | *Tipo* |
 |----------------------+-----------+---------+------|
 | Vaccinazione         | E         | 20M     | L    |
 | Perfezionata         | A         | 20M     | L    |
@@ -285,16 +292,16 @@ La tavola degli accessi é:
 Dove valgono le considerazioni precedenti e:
 - =Report= sono \[\frac{1000}{20000000} = 0.00005\%\] delle =Vaccinazioni=
 
-Accessi Totali: 160'000'640 in Lettura
+Accessi Totali: $160\:000\:640$ in Lettura
 
 $\pagebreak$
 *** Operazione 9
-**** Con Ridondanza
+*Con Ridondanza*
 
 Lo schema di visita é:
 =Reazione Allergica= - =Report= - =Vaccinazione= - =Amministrato= - =Lotto=
 
-| Concetto           | Costrutto | Accessi | Tipo |
+| *Concetto*         | *Costrutto* | *Accessi* | *Tipo* |
 |--------------------+-----------+---------+------|
 | Reazione Allergica | E         |       1 | S    |
 | Report             | A         |       1 | S    |
@@ -305,11 +312,11 @@ Lo schema di visita é:
 
 Accessi Totali: 8 (Supponendo gli accessi in scrittura equivalenti a 2 accessi in lettura)
 
-**** Senza Ridondanza
+*Senza Ridondanza*
 
 Lo schema di visita é:
 =Reazione Allergica= - =Report=
-| Concetto           | Costrutto | Accessi | Tipo |
+| *Concetto*         | *Costrutto* | *Accessi* | *Tipo* |
 |--------------------+-----------+---------+------|
 | Reazione Allergica | E         |       1 | S    |
 | Report             | A         |       1 | S    |
@@ -332,52 +339,54 @@ Assenza di Ridondanza:
   + Totale - \[160000652 \text{ accessi a settimana}\]
 
 Scegliamo di tenere la ridondanza a fronte del risparmio di quasi 40 milioni di accessi con l'utilizzo di solo 8000 byte.
-
-** Schema ER Ristrutturato & Business Rules
+$\pagebreak$
+** Schema ER Ristrutturato
 [[~/Uni/II/BD/Progetto/Schema ER - Ristrutturato.png]]
 
-Regole Aziendali:
+** Business Rules
 - Un =cittadino= puó accedere solo a centri vaccinali della propria cittá di residenza
 - Un =cittadino= per un dato =vaccino= deve al massimo avere confermato $n$ appuntamenti con $n$ uguale al Numero Somministrazioni del Vaccino
 - Un =cittadino= per poter ricevere un =vaccino= deve avere Etá compresa tra le etá minima e massima di somministrazione
+- Un =cittadino= con positivitá pregressa non deve ricevere seconda dose se specificata
+- Il =tipo= di un =cittadino= deve corrispondere ad una categorizzazione: fragile, personale sanitario, personale scolastico, altro
 - Un =cittadino= deve ricevere un dato =vaccino= in base alla propria categorizzazione:
   + fragile, =CORONAX=, =FLUSTOP=
   + personale sanitario, =COVIDIN=, =CORONAX=
   + personale scolastico, =COVIDIN=, =CORONAX=
   + nessuno dei precedenti, =CORONAX=
 - Un =cittadino= che ha riscontrato =reazioni avverse= non puó accedere a dosi il cui lotto ha riscontrato almeno una reazione avversa negli ultimi 30 giorni
-- Un =cittadino= con positivitá pregressa non deve ricevere seconda dose se specificata
 - =Medici di base= somministrano solo vaccini a doppia dose
 - Il =numero di fiale disponibili= per ogni lotto di cui dispone un =centro vaccinale= va tenuto aggiornato in base alle vaccinazione fatte
-- Il =tipo= di un =cittadino= deve corrispondere ad una categorizzazione: fragile, personale sanitario, personale scolastico, altro
+- =intervallo dosi= di un =vaccino= deve essere ~NOT-NULL~ in casi di piú dosi
+- le =fiale= disponibili per una vaccinazioni devono essere associate ad un =lotto= non scaduto alla data odierna
 
 L'attributo multivalore ~Allergia~ é stato convertito nella relazione molti a molti ~Ha~ e nell'entitá ~Allergia~
-La generalizzazione totale/esclusiva  di ~Cittadino~ é stata convertita del attributo ~Tipo~ dello stesso
-
+La generalizzazione totale/esclusiva  di ~Cittadino~ é stata convertita nel attributo ~Tipo~ dello stesso
+$\pagebreak$
 ** Schema Relazionale
 Vaccino( _Nome_, EtáMinima, EtáMassima,
-            IntervalloDosi*, Efficacia, NumSomministrazioni)
+            IntervalloDosi*, Efficacia, NumSomministrazioni )
 
-Lotto( _ID_, NomeVaccino, NumReazioniAllergiche, DataProduzione, Scadenza)
+Lotto( _ID_, NomeVaccino, NumReazioniAllergiche, DataProduzione, Scadenza )
 
-CentroVaccinale( _Cittá_, _Indirizzo_)
+CentroVaccinale( _Cittá_, _Indirizzo_ )
 
-Disponibile( _Cittá_, _Indirizzo_, _Lotto_, NumFiale)
+Disponibile( _Cittá_, _Indirizzo_, _Lotto_, NumFiale )
 
-Convocazione( _Data_, _CodiceFiscale_, Cittá, Indirizzo, Ora)
+Convocazione( _Data_, _CodiceFiscale_, Cittá, Indirizzo, Ora )
 
 Cittadino( _CodiceFiscale_, Etá, Nome, Cognome, Cittá, Indirizzo,
-               EMail*,PositivitáPregressa, Cellulare*, Tipo)
+               EMail*,PositivitáPregressa, Cellulare*, Tipo )
 
-Allergia( _Nome_)
+Allergia( _Nome_ )
 
-Ha( _CodiceFiscale_, _Allergia_)
+Ha( _CodiceFiscale_, _Allergia _)
 
-Vaccinazione( _CodiceFiscale_, _Data_, CodiceFiscaleMedico, ID)
+Vaccinazione( _CodiceFiscale_, _Data_, CodiceFiscaleMedico, ID )
 
-Medico( _CodiceFiscale_, Cittá, Indirizzo, Nome, Cognome, Di Base)
+Medico( _CodiceFiscale_, Cittá, Indirizzo, Nome, Cognome, Di Base )
 
-ReazioneAllergica( _ID_ ,Tipologia, Osservazioni, CodiceFiscale, Data)
+ReazioneAllergica( _ID_ ,Tipologia, Osservazioni, CodiceFiscale, Data )
 
 $\\$
 
@@ -529,7 +538,6 @@ CREATE TABLE Vaccinazione(
                      on update cascade
                      on delete cascade
        );
-
 CREATE TABLE ReazioneAllergica(
          ID smallint,
          Tipologia varchar(30) not null,
@@ -547,15 +555,14 @@ CREATE TABLE ReazioneAllergica(
                       on update cascade
                       on delete cascade
        );
-
 #+end_src
 $\pagebreak$
 ** DML
 #+begin_src sql
 insert into "BDvaccini".vaccino values
 	('Coronax', 16, 80, 6, 0.9, 2),
-	('Covidin', 13, 70, 8, 0.88, 1),
-	('Modernum', 20, 60, 4, 0.92, 2);
+	('Covidin', 13, 70, null, 0.88, 1),
+	('Flustop', 20, 60, 4, 0.92, 2);
 
 insert into "BDvaccini".cittadino values
 	('BSTED23DGC23DT3C',40,'Giuseppe','Pizza',
@@ -574,6 +581,8 @@ insert into "BDvaccini".cittadino values
 insert into "BDvaccini".centrovaccinale values
 	('Milano','Via Beccaria 3'),
 	('Pisa','Via Venezia 12c'),
+   ('Napoli','Via Tito 42'),
+   ('Alessandria','Via Zito 15'),
 	('Torino','Via Umberto 50');
 
 insert into "BDvaccini".lotto values
@@ -593,9 +602,15 @@ insert into "BDvaccini".disponibile values
 	('Torino','Via Umberto 50',3,10);
 
 insert into "BDvaccini".allergia values
+	('Acari')
+	('Muffe')
+	('Vespe')
+	('Gatti')
+	('Graminacee')
 	('Albicocche');
 
 insert into "BDvaccini".ha values
+	('EUT923DGC287IET8','Graminacee'),
 	('BSTED23DGC23DT3C','Albicocche');
 
 insert into "BDvaccini".medico values
@@ -614,4 +629,36 @@ insert into "BDvaccini".vaccinazione values
 insert into "BDvaccini".reazioneallergica values
 	(3,'Rossore','Lorem Ipsum','EUT923DGC287IET8','02/13/2020');
 #+end_src
+$\pagebreak$
 ** Operazioni
+#+begin_src sql
+update "BDvaccini".vaccino
+set efficacia = 0.95
+where nome = 'Flustop';
+
+delete from "BDvaccini".convocazione
+where data = '04/23/2020'
+and codicefiscale = 'BSTED23DGC23DT3C';
+
+update "BDvaccini".convocazione
+set data = '02/20/2020'
+where data = '02/13/2020'
+and codicefiscale = 'EUT923DGC287IET8';
+
+delete from "BDvaccini".allergia
+where nome = 'Albicocche';
+
+update "BDvaccini".cittadino
+set email = 'p123@elmail.org', cellulare = '338923004'
+where codicefiscale = 'CSTEEU3DGC256H3C';
+
+update "BDvaccini".vaccinazione
+set medico = 'GITIED23DGC23DT3'
+where data = '02/13/2020'
+and codicefiscale = 'EUT923DGC287IET8';
+
+update "BDvaccini".centrovaccinale
+set cittá = 'Pisa', indirizzo = 'Via Venezia 13'
+where cittá = 'Pisa'
+and indirizzo = 'Via Venezia 12c';
+#+end_src

@@ -429,7 +429,64 @@ f\:.\:\text{foldr}\:g\:a = \text{foldr}\:h\:b
 \end{align*}
 ** Stream
 O liste infinite
-=Haskell= ne gestisce una parte finita grazie alla /lazyness/
+- =Haskell= ne gestisce una parte finita grazie alla /lazyness/
+
+La /bisimulazione/ serve per stabilire delle relazioni tra liste infinite.
+- una tecnica indiretta per egualiare stream sintatticamente diversi
+
+*** List Comprehension
+\[S = \{2 \cdot x \mid x \in N , x \le 10\}\]
+
+#+begin_src haskell
+l = [x*2 | x <- [1..10]]
+m = [x | x <- [50..100],
+         x 'mod' 7 == 3] -- filters
+xs = [(i,j) | i <- (1,2),
+              j <- (1..4)]
+#+end_src
+
+Sintassi ispirata alla _definizione intensionale di insiemi_.
+
+*** Liste infinite in Haskell
+In =Haskell=
+#+begin_src haskell
+ones::[Integer]
+ones = 1 : ones
+ones = 1 : [1 | _ <- ones]
+
+-- fibonacci
+fibs::[Integer]
+fibs = 1: 1: zipWith(+) fibs tail fibs
+fibs = 1: 1: [x+y | x <- fibs, y <- tail fibs] -- wrong
+fibs = 1: 1: [x+y | x <- fibs, y <- [head(tail fibs)] -- still wrong
+fibs = 1: 1: [x+y | x:y:xs <- tails fibs] -- Data.List
+#+end_src
+La seconda versione di ~fibs~ non funziona in quanto con 2 generatori la list comprehension agisce come un for sui due, elemento per elemento; la seconda lista in ~y~ non finisce di ciclare e considera solo il primo ~x~ (1)
+La terza rimane sbagliata a causa della prioritá del generatore, che precede tutto ( ~<-~ )
+L'ultima versione risolve il problema con il /pattern matching/ e la funzione ~tails~ in ~Data.List~
+
+*** Formalmente
+Stream definiti su $A$:
+\[A^w = \{\sigma \mid \sigma : \{0,1,2,\cdots\}\rightarrow A \}\]
+- liste enumerate
+- $A$, il codominio, puó essere qualsiasi insieme
+  + uno Stream é infinito per definizione, il codominio di una funzione non puó essere $\emptyset$
+  + $A$ non puó essere $\emptyset$
+
+$\sigma(0)$
+- =head=
+
+$\sigma'(n) = \sigma(n+1)$
+- derivata prima
+- =tail=
+
+$\sigma(n)$
+- ennesimo di $\sigma$
+
+$\sigma^{(0)} = \sigma$
+- derivata zeresima
+$\sigma^{(k+1)}=(\sigma^{(k)})'$
+- induttivamente; derivata di ordine superiore
 * Laboratorio
 ** Haskel
 *** Storia
@@ -793,3 +850,10 @@ foldr :: (a -> b -> b) -> b -> [a] -> b
 foldr _ x [] = x
 foldr f x (y : ys) = f y (foldr f x ys) -- come fosse associativo a destra
 #+end_code
+** Java8
+Introduce /Lambda Espressioni/  e /Stream/ (ovvero liste infinite)
+- introdotti durante la revisione delle ~Collection~
+  + nella revisione é stato utilizzato il _paradigma funzionale_
+- Queste ~Stream~ sono lazy e sono molto piú ad alto livello degli /stream/ a livello di =OS=
+
+Java é un linguaggio /procedurale/, dove viene manipolata la mamoria. Al contrario di linguaggi /dichiarativi/ dove il programmatore si occupa del =cosa=, non del =come= (=SQL=, =Haskell=)
