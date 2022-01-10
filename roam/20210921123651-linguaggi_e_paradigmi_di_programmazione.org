@@ -487,6 +487,11 @@ $\sigma^{(0)} = \sigma$
 - derivata zeresima
 $\sigma^{(k+1)}=(\sigma^{(k)})'$
 - induttivamente; derivata di ordine superiore
+
+\[\sigma= a : \tau = (a,\tau(0),\tau(1),\cdots) \]
+- \[\sigma(0) = a \qquad \sigma' = \tau\]
+
+
 * Laboratorio
 ** Haskel
 *** Storia
@@ -857,3 +862,16 @@ Introduce /Lambda Espressioni/  e /Stream/ (ovvero liste infinite)
 - Queste ~Stream~ sono lazy e sono molto piú ad alto livello degli /stream/ a livello di =OS=
 
 Java é un linguaggio /procedurale/, dove viene manipolata la mamoria. Al contrario di linguaggi /dichiarativi/ dove il programmatore si occupa del =cosa=, non del =come= (=SQL=, =Haskell=)
+- la /lazyness/ é perfetta quando si trattano strutture infinite, permette infatti di non valutare tutto l'argomento prima di applicare funzioni
+
+*** Polimorfismo
+=class B extends class A= $\implies B <: A$
+- =B= é sottotipo e puó essere utilizzato in qualsiasi contesto in cui =A= puó essere utilizzato
+
+Il =bytecode Java= non é generico di per se (lo era), quindi a quel livello sono automaticamente introdotti cast dal compilatore
+
+Il =super= viene legato a tempo di compilazione (statico) a differenza di =this= (dinamico)
+
+*** Filters
+Utilizzando un =Design Pattern Strategy= posso parametrizzare il predicato rispetto al filtro
+- rendendolo polimorfo
