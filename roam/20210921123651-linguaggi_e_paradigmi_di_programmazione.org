@@ -875,3 +875,26 @@ Il =super= viene legato a tempo di compilazione (statico) a differenza di =this=
 *** Filters
 Utilizzando un =Design Pattern Strategy= posso parametrizzare il predicato rispetto al filtro
 - rendendolo polimorfo
+- utilizzando una =Interface= per una classe-predicato che implementerá effettivamente il ~test~
+- che poi é utilizzabile anche con le classi anonime /al volo/
+*** Lambda
+~(parameters) -> expression~
+oppure
+~(parameters) -> { statements; }~
+
+#+begin_src java
+(x:int) -> x
+// or
+(x:int) -> {return x;}
+#+end_src
+
+non é introdotto un nuovo costruttore di tipo, vengono riutilizzate le =interfacce funzionali=
+- questa interfaccia ha un solo metodo astratto che corrisponde al body della $\lambda$
+- esistono interfacce di questo tipo predefinite, ovviamente ne si puó definire
+  + ~@FunctionalInterface~
+    * ~Predicate<T>~
+    * ~Comparator<T>~
+    * ~Callable<T>~
+    * ~Runnable<T>~
+    * ~Function<T>~
+  + [[https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html][Docs Java8]]
