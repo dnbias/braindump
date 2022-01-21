@@ -17,6 +17,17 @@ Dettagli:
         + Periodi di studio/lavoro/soggiorno all’estero: indicare date, periodi, motivi;
         + Numero di anni di studio della lingua/esami sostenuti, etc. (indicare date, periodi…).
 
+#+begin_quote
+Competenze di Inglese
+- Cambridge English FIRST 186/190, certificato C1 [2021/07/2018]
+- Periodo di studio a Torbay, Inghilterra [15/07/2018 - 12/08/2018]
+  - Corso di Lingua: Intensive English (C1)
+- Inglese I, superato con il punteggio massimo [25/01/2021]
+
+Competenze di Francese
+- dallo studio della lingua durante la Scuola Secondaria di Primo grado
+#+end_quote
+
 2. Motivazione – Campo “Dichiarazioni aggiuntive” nella domanda di partecipazione
 La/il candidata/o dovrà specificare nel campo “Dichiarazioni aggiuntive” della domanda di partecipazione una descrizione accurata della propria motivazione, seguendo i seguenti punti:
 - I contenuti devono essere dettagliati, completi e logici;
@@ -25,6 +36,31 @@ La/il candidata/o dovrà specificare nel campo “Dichiarazioni aggiuntive” de
 - È opportuno evidenziare la compatibilità dei programmi dei corsi che si intende seguire all’estero con il programma dei corsi UniTO di cui si richiederà il riconoscimento;
 - È inoltre opportuno evidenziare la coerenza tra le suddette attività formative e la propria carriera universitaria: si precisa che in tale ambito verrà data priorità a studenti/esse che scelgono destinazioni proposte dal proprio Dipartimento di afferenza. Si consiglia pertanto a studentesse e studenti di prendere visione del sito dell’Università di destinazione e della relativa offerta formativa.
 
+#+begin_quote
+Motivazione del Periodo di Studio Erasmus all'Universitá di Lussemburgo
+
+- il periodo di riferimento é il secondo semestre del primo anno di Magistrale nel anno 2022/2023
+- mi iscriveró al corso Magistrale di Intelligenza Artificiale e Sistemi Informatici in Unito quest'estate
+- seguiró il corso Post Graduate Master in Information and Computer Sciences Profile: Artificial Intelligence
+  - https://wwwen.uni.lu/studies/fstm/master_in_information_and_computer_sciences/profiles/profile_artificial_intelligence
+- Seguono i corsi che desidero seguire e i corrispettivi Unito
+  - Principles of Security Engineering [MICS2-24] (5 ECTS)
+    - Sicurezza II
+  - Algorithms for Numbers and Public-Key Cryptography [MICS2-14] (5 ECTS)
+    - Sicurezza II, Algoritmi
+  - Big Data Analytics [MICS2-41] (5 ECTS)
+    - Modelli e Architetture Avanzati di Basi di Dati
+  - Intelligent Agents I [MICS2-21] (5 ECTS)
+    - Agenti Intelligenti
+  - Knowledge Discovery and Data Mining [MICS2-13] (5 ECTS)
+    - Intelligenza Artificiale (il corso tratta anche Machine Learning)
+  - Optimisation for Computer Science [MICS2-17] (5 ECTS)
+    - Algoritmi
+  - Principles of Software Development [MICS2-50] (5 ECTS)
+    - Programmazione per Dispositivi Mobili (il corso tratta lo sviluppo Android )
+- per un totale di 35 ECTS
+
+#+end_quote
 * Dipartimento di Informatica
 - contributo aggiuntivo 3000,00
 - destinato a chi al rientro ha 3 CFU/Mese
@@ -47,11 +83,12 @@ Destinazioni =Post-Graduate= - =PG=
 - D DARMSTA01
   + Technische Universitaet Darmstadt
     * PG - UG
-- _DK ODENSE01_
+- _DK ODENSE01_ - =333333333333333333333333=
   + University of Southern Denmark - http://www.sdu.dk/?sc_lang=en
     * D - PG
     * IELTS 6.5
     * partenza non garantita al primo semestre
+  +  https://www.sdu.dk/en/uddannelse/kandidat/datalogi/uddannelsens_opbygning/data-science-ai
 - E BARCELO02
 - E VALENCI02
 - E ZARAGOZ01
@@ -77,10 +114,11 @@ Destinazioni =Post-Graduate= - =PG=
 - G VOLOS01
   + University of Thessaly
     * UG
-- _LUXLUX-VIL01_
+- _LUXLUX-VIL01_ - =1111111111111111111111=
   + Université du Luxenbourg - http://wwwen.uni.lu/
     * PG
     * partenza non garantita al primo semestre
+  + https://wwwen.uni.lu/studies/fstm/master_in_information_and_computer_sciences/programme
 - _N BERGEN14_
   + Western Norway University of Applied Sciences - https://www.hvl.no/en/
     * D - PG
@@ -89,7 +127,7 @@ Destinazioni =Post-Graduate= - =PG=
 - NL GRONING01
   + Rijksuniversiteit Groningen (Netherlands)
     * D - PG - UG
-- _N OSLO01_
+- _N OSLO01_ - =222222222222222222222222222222222222=
   + University of Oslo - http://www.uio.no/english/
     * D - PG - UG
     * English B2 (CEFR)
