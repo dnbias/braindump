@@ -72,6 +72,30 @@ Si puó simulare una ~MT~ a piú nastri con una ~MT~ ad un nastro solo
 - perché? per semplificare la definizione di calcolo
 - se un algoritmo a piú nastri é lineare su un nastro sará *quadratico*
 [[../media/img/3tapes1tape.jpg]]
+*** Enumeratori
+Sono =TM= che enumerano stringhe.
+
+$\textsc{\textbf{theorem}}$     Si puó definire un enumeratore $E$ che enumeri un linguaggio $L$ se e solo se esiste una =TM= $M$ che riconosca (decida positivamente) il linguaggio $L$
+$\textsc{\textbf{proof}}$      Partiamo a dimostrare che se esiste un tale $E$ allora esiste una $M$ che riconosca il linguaggio enumerato $L$
+
+Possiamo definire $M$ su input $w$:
+- simula $E$
+- per ogni stringa enumerata da $E$ confrontala con $w$
+- se $w$ é uguale /accetta/, altrimenti continua con la simulazione di $E$
+
+Da questa costruzione si evince che $M$ accetta solo le stringhe enumerate da $E$ e quindi nel linguaggio $L$, $M$ riconosce $L$.
+
+Ora si dimostra l'altra direzione. Se $M$ riconosce il linguaggio $L$ definiamo un enumeratore $E$:
+- ignora l'input
+- ripeti per $i=0,1,\cdots$
+  + esegui per $i$ passi $M$ su $s_1,s_2,s_3,\cdots$
+  + se $M$ accetta, stampa la $s_j$ accettata
+
+Questa macchina di turing $E$ simula $M$ su tutte le stringhe $s_j$ che appartengono a $\Sigma^*$ per $i$ passi di simulazione, non terminando mai.
+In questa simulazione sostanzialmente si simula in parallelo la macchina $M$ su tutte le stringhe possibili in input, stampando tutte e sole le $s_j$ accettate da $M$.
+Viceversa se una stringa appartiene ad $L$ questa viene accettata in un numero finito di passi da $M$, e quindi dato abbastanza tempo $E$ la stamperá. Quindi $E$ enumera il linguaggio $L$.
+
+
 ** Decidibilitá
 Per un =DFA= possiamo definire una =TM M= che lo simula e verifica l'accettazione o meno dell'Input
 [[file:../media/img/decidable-recognizable.jpg][Decidable - Turing-recognizable]]
@@ -121,11 +145,11 @@ $\textsc{\textbf{proof}}$   Si dimostra prima una direzione e poi l'altra della 
        1. Esegui $M_1$ e $M_2$ sull'input $w$ in parallelo
        2. Se $M_1$ accetta, /accept/; se $M_2$ accetta, /rifiuta/
    - Ogni stringa $w$ appartiene a $A$ o $\overline{A}$
-   - Segue che per qualsiasi input una tra $M_1$ e $M_2$ deve accettare
+     + Segue che per qualsiasi input una tra $M_1$ e $M_2$ deve accettare
    - $M$ termina quando una tra $M_1$ e $M_2$ accetta
-   - Segue che $M$ termina sempre, quindi é un decisore
+     + Segue che $M$ termina sempre, quindi é un decisore
    - Inoltre $M$ accetta tutte le $w \in A$ e rifiuta tutte le $w \notin A$, quindi $M$ é un decisore per $A$
-   - $A$ quindi é decidibile in quanto ne esiste un decisore $M$                                            $\blacksquare$
+     + $A$ quindi é decidibile in quanto ne esiste un decisore $M$                                            $\blacksquare$
 
 *** Mapping Reducible Language
 Il Linguaggio $A$ é /mapping reducible/ al linguaggio $B$:
@@ -149,6 +173,17 @@ Si dimostra allora la riducibilitá $A_{\textsc{tm}}\rightarrow \textsc{halt}_{\
 
 Se $M$ cicla, $U$ cicla di conseguenza
 
+La macchina universale é definita a partire da $M$ codificando in un alfabeto binario tutti i simboli di $M$. La macchina $U$ é definita utilizzando un alfabeto $\Sigma=\{0,1\}$, quindi un qualsiasi stato o simbolo $s$ di $M$ sará convertibile in una stringa binaria $s^*\in \Sigma^*$
+Nelle tape di $U$ tutti i simboli sono delimitati da #.
+
+Queste codifiche sono utilizzate nelle 5 tape di $U$, definite in questo modo:
+1. la funzione di transizione $\sigma$ di $M$, questa tape é read-only e qui sono listate tutte le transizioni di $M$ nella forma $q^*, a^*,q'^*,a'^*,m^*$ dove $a$ sono simboli di $M$ e $m$ sono $L$ o $R$
+2. lo stato corrente di $M$, $q^*$
+3. lo stato accettante di $M$, $q_{accept}^*$
+4. lo stato di rifiuto di $M$, $q_{reject}^*$
+5. la tape di simulazione di $M$
+
+La macchina universale procede leggendo lo stato corrente di $M$ e il simbolo $a^*$ che si trova sotto la testina di lettura di nella tape 5. Quindi scorre le quintuple nella prima tape, se non trova una corrispondenza rifiuta. Se trova una corrispondenza allora sovrascrive la tape 2 con il nuovo stato indicato dalla funzione di transizione e sovrascrive $a^*$ nella tape 5 con la nuova $a'^*$ indicata dalla transizione e aggiungendo un divisore #. fatto questo simula il movimento a destra o a sinistra della testina di $M$ spostandosi nella direzione indicata fino ad un #.
 
 *** Problemi Decibidili
 $E_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
@@ -172,7 +207,7 @@ Problema _positivamente decidibile_
 
 $\textsc{\textbf{proof}}$   Si procede per /diagonalizzazione/ utilizzando due =TM= di supporto $H$ e $D$
 
-$M_{\textsc{TM}}=\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\}$
+$A_{\textsc{TM}}=\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\}$
 - simulabile con una macchina $U$ di Turing universale
   + macchina capace di simulare qualsiasi macchina utilizzando 5 tape
 - si osserva l'esecuzione che non termina
@@ -184,14 +219,15 @@ Si prova utilizzando la tecnica della /diagonalizzazione/ scoperta dal matematic
     * si trova cosí un numero che differisce per una cifra da tutti i numeri enumerati
 - esistono infinite terne
 
-Si definiscono delle =MT= di supporto:
+
+$\textsc{\textbf{proof}}$      Si definiscono delle =MT= di supporto:
 
 \[H(\langle M,w \rangle) = \begin{cases}
 \textit{accept} \quad &\text{if }M\text{ accepts }w \\
 \textit{reject} \quad &\text{if }M\text{ does not accept }w
 \end{cases}\]
 
-- supponiamo che =H= esista, e accetti se =M= accetta =w= e viceversa
+- supponiamo che =H= esista, e accetti se =M= accetta =w= e rifiuti altrimenti
 
 \[D(\langle M \rangle) = \begin{cases}
 \texttit{accept} \quad &\text{if }M\text{ does not accept } \langle M \rangle \\
@@ -219,9 +255,20 @@ $\overline A_{\textsc{tm}}$ _positivamente decidibile_ $\implies  A_{\textsc{tm}
 =5.1=
 Il problema della decisione per $L_{1}$ si riduce al problema della decisione per $L_{2}$ se sappiamo trasformare un decisore per $L_{2}$ in un decisore per $L_{1}$
 
-Per contraddizione, non é decidibile
 $\textsc{halt}_{\textsc{tm}}=\{\langle M,w\rangle \mid M \mbox{ is a \textsc{tm} and }M \mbox{ halts on input } w\}$
 - $A_{\textsc{tm}} <_m \textsc{Halt}_{TM}$
+
+$\textsc{\textbf{proof}}$     Per contraddizione. Supponiamo esista una =TM= $R$ che decida la fermata, definiamo una =TM= $S$ che decide l'accettazione. Ma l'accettazione non é decidibile.
+Definiamo $S$ su input $w$:
+- Se $R$ accetta $\langle M,w \rangle$ procedi, altrimenti rifiuta
+- Simula $M$ su $w$, se accetta fa altrettanto, altrimenti rifiuta
+
+$A_{\text{TM}} \le_m \text{HALT}_{\text{TM}}$ in quanto se $R$ accetta significa che $M$ termina, accettando o rifiutando. Se diverge $w$ non appartiene al linguaggio riconosciuto da $M$ e $S$ puó rifiutare.
+Per ció $S$ accetta tutte e sole le stringhe in $L$, ovvero riconosciute da $M$.
+
+Ma questa é una contraddizione  in quanto si dimostra che $A_{\text{TM}}$ non é decidibile.    $\blacksquare$
+
+
 **** Decibidilitá dei Linguaggi di Chompsky
 /Simboli, Produzioni, Terminali/
 Un linguaggio definibile da una grammatica in forma normale di Chompsky é detto =context-free=
@@ -237,10 +284,28 @@ Per ridurre la complessitá si utilizza la *programmazione dinamica*
 Si dimostra per assurdo, se esistesse si potrebbe risolvere l'accettazione
 - si riduce a $A_{\textsc{tm}}$
   + $A_{\textsc{tm}} <_m E_{\textsc{tm}}$
+
+$\textsc{\textbf{proof}}$   Per contraddizione. Supponiamo esista una $R$ tale che decida la emptyness, dato una stringa di input $w$ si modifica $M$ per accettare solo questa stringa.
+Definiamo $M$, su input $x$:
+- se $x \neq w$ rifiuta
+- altrimenti accetta
+
+Questa macchina decide il linguaggio che contiene la sola stringa $w$.
+
+Allora $S$, su input $\langle M, w \rangle$:
+- costruisce la $M$ modificata come specificato
+- esegue $R$ su $M$, se $R$ accetta allora rifiuta, e viceversa
+
+In questo modo abbiamo ridotto l'accettazione alla emptyness:
+$R$ rifiuta se e solo se $M$ accetta $w$, e quindi il linguaggio $L$ riconosciuto da $M$ non é vuoto. Viceversa se $M$ rifiuta $w$ allora $R$ accetterá in quanto $L$ riconosciuta da $M$ é il linguaggio vuoto. Quindi $S$ decide l'accettazione. Contraddizione in quanto l'accettazione é non decidibile.              $\blacksquare$
+
+
 **** Equality
 =5.3=
 Intesa tra due =MT=
 - se sapessi deciderla potrei decidere anche l'=Emptyness=
+  + In quanto $E_{\text{TM}}$ é considerabile un caso particolare di $EQ_{\text{TM}}$
+  + tra una macchiana e la macchina che rifiuta sempre
 
 Anche per i reali:
 - calcoli diversi portano anche arrotondamenti diversi, per questo reali rigorosamente uguali possono risultare diversi
@@ -271,7 +336,7 @@ Ora basta raggiungere queste conclusioni per chiudere la dimostrazione.
        * prende $x$ e lo ignora
        * esegue $M$ su $w$ e accetta se $M$ accetta
          - $\begin{cases} M \mbox{ accetta}: & L(M_{2})=\Sigma^{*}\\M \mbox{ non accetta}: & L(M_{2}) = \emptyset  \end{cases}$
-     + $L(M_{1}) = L(M_{2}) \iff M \mbox{ non accetta }w$
+     + $L(M_{1}) \neq L(M_{2}) \iff M \mbox{ accetta }w$
 2. Definisco una Macchina $G$ che implementa la funzione $g$ che riduce $\overline A$ a $EQ$
    - $\langle M, w \rangle \rightarrow^{F} \langle M_{1}, M_{2} \rangle$
    - se $L(M_{1}) \neq L(M_{2})$ allora $M$ non accetta $w$
@@ -323,6 +388,11 @@ $\forall a\in \Gamma$
 Solo negativamente decidibile
 - le tassellazioni aperiodiche sono utilizzate per la sintesi procedurale di texture, heightfields
 
+Si dimostra che $\textsc{Wang}$ non é positivamente decidibile in quanto
+- $\overline{\textsc{Halt}} \le_m \textsc{Wang}$
+- procedendo in maniera non deterministica, il caso di /non-rifiuto/ indica che un albero della computazione ha per caso scelto la configurazione corretta per risolvere il problema della tassellazione
+- la computazione non deterministica si ferma solo in caso di rifiuto di tutti i rami non deterministici, quindi se la computazione non si ferma si dovrebbe accettare
+
 **** Esistenza di un DFA equivalente
 =5.3=
 $A_{\textsc{tm}} <_m\textsc{Regular}_{\textsc{tm}}$
@@ -333,6 +403,8 @@ $A_{\textsc{tm}} <_m\textsc{Regular}_{\textsc{tm}}$
 #+caption: configurazione di $1011 q_{7} 01111$
 [[../media/img/tm-configuration.jpg]]
 *** Recap
+[[~/org/media/img/decidability.jpg]]
+
 - Negativamente Decidibili
   + $E_{\textsc{tm}}$
   + $\overline A_{\textsc{tm}}$
@@ -446,13 +518,20 @@ Il determinismo con certificato $c$ utilizzando $V$ é convertito in non determi
 **** NP-completo
 $\textsc{\textbf{definition}}$  Un linguaggio $B$ é $\textsc{NP}\text{-completo}$ se soddisfa le seguenti condizioni:
 1. $B \in \textsc{NP}$
-2 $\forall A\in \textsc{NP}, A  <_P B$
+2. $\forall A\in \textsc{NP}, A  <_P B$
+  - $A$ si riduce in tempo polinomiale a $B$
 
-**** Teorema di Cook
+Ci sono quindi due possibilitá che si escludono l'un l'altra:
+- $\text{P} = \text{NP}$
+- Tutti i problemi $\text{NP-completi}$ non sono polinomiali
+
+La classe $\text{NP-completo}$ descrive i problemi piú difficili in $\text{NP}$
+
+**** Teorema di Cook-Levin
 Problemi in $\textsc{NP}$ la cui complessitá é legata a quella dell'intera classe sono detti $\textsc{NP}\text{-completi}$
 Il problema della soddisfatibilitá (/satisfiability problem/) fa parte di questa classe
 - Una formula booleana é soddisfacibile se qualche assegnamento di 0 e di 1 fa si che la formula risulti 1
-- $\textsc{SAT}=\{ \langle \emptyset \mid \emptyset \rangle$ é una formula booleana soddisfacibile $\}$
+- $\textsc{SAT}=\{ \langle \phi \mid \phi \rangle$ é una formula booleana soddisfacibile $\}$
 
 =7.27=
 $\textsc{\textbf{theorem}}$  $\textsc{SAT}\in \textsc{P} \iff \textsc{P}=\textsc{NP}$
@@ -460,6 +539,12 @@ $\textsc{\textbf{theorem}}$  $\textsc{SAT}\in \textsc{P} \iff \textsc{P}=\textsc
 Questo teorema é implicato da =7.37=:
 $\textsc{\textbf{theorem}}$  $\textsc{SAT}$ é $\textsc{NP}\text{-completo}$
 $\textsc{\textbf{corollary}}$   $\text{3SAT}$ é $\text{NP-completo}$
+- $\text{CNF-SAT} \le_P \text{3-SAT}\le_P \text{CLIQUE}$
+
+
+*NB* - Per provare la $\text{NP-completessa}$ si procede da $\text{SAT}$ al problema in particolare
+
+
 
 **** Hamilton's Path
 Percorso che percorre tutti il grafo a partire da $p$ arrivando in $t$ senza ripetizioni.
@@ -468,10 +553,14 @@ Si percorre il grafo non deterministicamente
 - si scartano i rami in cui ci sono ripetizioni
 
 Non conosciuto algoritmo in $\text{P}$
+
+ $\text{3SAT}  \le_P \textsc{HamPath}$
+
 **** Compositeness
 $\textsc{Composites} = \{x \mid x = pq \text{ for integers }p,q > 1\}$
 Un numero composto é un numero non primo.
 Esiste un algoritmo polinomiale per verificare se un numero é composto o meno ma non per trovare la sua scomposizione (o almeno non lo si é trovato)
+Quindi: $\textsc{Composites} \in \text{NP} \land \textsc{Composites} \in \text{P}$
 **** Clique
 =7.32=
 Grafo _non orientato_, fornito un $k$
@@ -493,6 +582,15 @@ Si definisce la riduzione $f$ per cui $\textsc{Clique} <_P \text{3SAT}$
 
 Si dimostra che $\phi \in \text{3SAT} \iff G\in k\textsc{-Clique}$
 Quindi $\text{3SAT} <_P \textsc{Clique}$                                         $\blacksquare$
+**** Subset-Sum
+=7.56=
+$\textsc{Subset-Sum} = \{\langle S,t  \rangle \mid S = \{s_1,\ldots ,s_n\}$ dove esistono $\{y_1,\ldots,y_m\}\subseteq S$ tali che $\sum y_i  = t\}$
+
+Si dimostra facilmente che questo é $\textsc{np}$ definendone un verificatore polinomiale oppure una =TM= non deterministica polinomiale che lo definisca.
+
+$\textsc{Subset-Sum}$ é $\text{NP-completo}$
+
+La prova procede per riduzione polinomiale da $\text{3SAT}$ a $\textsc{Subset-Sum}$, convertendo elementi e strutture del problema che rappresentano variabili e clausole booleane.
 ** Complessitá Spaziale
 =8.1=
 $\textsc{\textbf{definition}}$  Data la =TM= $M$ che termina sempre. Si dice /complessitá spaziale/ di $M$ la funzione
@@ -512,10 +610,28 @@ In sommario:
 - $\textsc{p} \subseteq\textsc{np} \subseteq\textsc{pspace} =\textsc{npspace} \subseteq \textsc{exptime}$
 
 [[~/org/media/img/complexity-classes.jpg]]
-Qualsiasi di queste inclusioni potrebbero essere egualianze
+Qualsiasi di queste inclusioni potrebbero essere eguaglianze
 
 
 *** Teorema di Savitch
 =8.5=
 Per qualsiasi funzione $f: N \to R^+$, dove $f(n) \ge n$,
 - $\textsc{nspace}(f(n))\subseteq \textsc{space}(f^2(n))$
+
+Il passaggio da non determinismo a determinismo per il tempo é piú impegnativo che per lo spazio, lo spazio é piú potente in quanto puó essere riutilizzato, al contrario del tempo.
+- l'equivalente deterministico di una macchina non deterministica polinomiale ha:
+  - Tempo $2^{O(n^k)}$
+  - Spazio $O(n^2)$
+
+Da questo teorema segue che $\textsc{PSPACE} =  \textsc{NPSPACE}$ in quanto il quadrato di un polinomiale é ancora polinomiale.
+*** GG
+Gioco Generalizzato della Geografia
+- il gioco consiste nel spostarsi in un grafo i cui nodi sono nomi di cittá
+- gli archi vanno da un cittá il cui nome finisce con una certa lettere a un nodo/cittá che inizia per data lettera
+- ci sono due giocatori che partono da una data cittá
+- a turno scelgono un arco da percorrere, perde chi non puó scegliere un arco entrante in un nodo giá visitato
+
+Si dimostra che $\textsc{gg}$ é $\textsc{pspace}$ definendo una funzione ricorsiva detta di Von Neumann $VonN(a,X,g)$ una volta fissato il grafo $G$
+- vero se esiste una strategia vincente a partire da $a$ per il giocatore $g$, che porta quindi ad una configurazione in cui non esiste una mossa $b$ per il giocatore $\lnot g$ che non violi le regole
+
+Altro risultato della teoria é che $\textsc{gg}$ é $\textsc{pspace}\text{-completo}$, quindi se si scoprisse un algoritmo in tempo polinomiale che risolva $\textsc{gg}$ questo dimostrerebbe che $\textsc{P = NP = PSPACE = NPSPACE}$. In quanto per il teorema di =Savitch= $\textsc{NP = PSPACE}$. Questa ipotesi é ritenuta improbabile, anche se non si puó escludere.
