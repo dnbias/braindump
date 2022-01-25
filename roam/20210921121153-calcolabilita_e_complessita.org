@@ -439,6 +439,9 @@ $f : \mathbb{N} \to \mathbb{N}$ dove $f(n)$ é il numero massimo di passi compiu
 Si utilizza la /notazione asintotica/ o *big-O Notation*
 - [[id:adc0b322-e761-439b-b7bf-7895bd638c23][O-grande]]
 
+\[\textsc{Time}= \{L \mid L\] é risolvibile da una =TM= deterministica con \[O(f(n))\] polinomiale \[\}\]
+\[\textsc{NTime}= \{L \mid L\] é risolvibile da una =TM= non deterministica con \[O(f(n))\] polinomiale \[\}\]
+
 Generalmente:
 - $\text{P} =$ classe dei linguaggi la cui appartenenza puó essere decisa velocemente
 - $\text{NP} =$ classe dei linguaggi la cui appartenenza puó essere verificata velocemente
@@ -456,7 +459,7 @@ Sia $t(n)$ una funzione t.c. $t(n) \ge n \implies$ qualsiasi macchina /multitape
 
 La classe di tempo *Polinomiale* é definito come
 
-$\text{P} = \bigcup \textsc{time}(n^k)$
+\[\text{P} = \bigcup_k \textsc{time}(n^k)\]
 
 *** Non Determinismo
 Teorema =7.11=
@@ -561,6 +564,7 @@ $\textsc{Composites} = \{x \mid x = pq \text{ for integers }p,q > 1\}$
 Un numero composto é un numero non primo.
 Esiste un algoritmo polinomiale per verificare se un numero é composto o meno ma non per trovare la sua scomposizione (o almeno non lo si é trovato)
 Quindi: $\textsc{Composites} \in \text{NP} \land \textsc{Composites} \in \text{P}$
+
 **** Clique
 =7.32=
 Grafo _non orientato_, fornito un $k$
@@ -582,6 +586,7 @@ Si definisce la riduzione $f$ per cui $\textsc{Clique} <_P \text{3SAT}$
 
 Si dimostra che $\phi \in \text{3SAT} \iff G\in k\textsc{-Clique}$
 Quindi $\text{3SAT} <_P \textsc{Clique}$                                         $\blacksquare$
+
 **** Subset-Sum
 =7.56=
 $\textsc{Subset-Sum} = \{\langle S,t  \rangle \mid S = \{s_1,\ldots ,s_n\}$ dove esistono $\{y_1,\ldots,y_m\}\subseteq S$ tali che $\sum y_i  = t\}$
@@ -631,7 +636,7 @@ Gioco Generalizzato della Geografia
 - ci sono due giocatori che partono da una data cittá
 - a turno scelgono un arco da percorrere, perde chi non puó scegliere un arco entrante in un nodo giá visitato
 
-Si dimostra che $\textsc{gg}$ é $\textsc{pspace}$ definendo una funzione ricorsiva detta di Von Neumann $VonN(a,X,g)$ una volta fissato il grafo $G$
+Si dimostra che $\textsc{gg}$ é $\textsc{pspace}$ definendo una funzione ricorsiva detta di Von Neumann $\text{VonN}(a,X,g)$ una volta fissato il grafo $G$
 - vero se esiste una strategia vincente a partire da $a$ per il giocatore $g$, che porta quindi ad una configurazione in cui non esiste una mossa $b$ per il giocatore $\lnot g$ che non violi le regole
 
 Altro risultato della teoria é che $\textsc{gg}$ é $\textsc{pspace}\text{-completo}$, quindi se si scoprisse un algoritmo in tempo polinomiale che risolva $\textsc{gg}$ questo dimostrerebbe che $\textsc{P = NP = PSPACE = NPSPACE}$. In quanto per il teorema di =Savitch= $\textsc{NP = PSPACE}$. Questa ipotesi é ritenuta improbabile, anche se non si puó escludere.
