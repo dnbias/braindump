@@ -1,0 +1,51 @@
+:PROPERTIES:
+:ID:       4ed14fbf-ae6e-4536-b4d7-5897fcbdd016
+:END:
+#+title: Sistemi Intelligenti
+#+date: [2022-02-28 Mon 14:23]
+#+filetags: university
+Professoressa: Cristina Baroglio
+* Terminologia
+*AI* coniato da [[id:1bd058f7-555b-425a-a779-8073c6889c84][John McCarthy]]
+* Test di Turing
+- test per definire se un computer e' intelligente, o se un programma lo e'
+  + in linguaggio naturale
+- per T lo e' quando inganna l'uomo, imitando il comportamento umano
+- un computer che deve passare il test non eseguira' gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacita' di un umano
+- =The Imitation Game=
+* Compresione
+Output attesi $\implies$ comprensione? [[id:8c582ee0-1194-47b7-b6c9-9e46adaa60c7][John R. Searle]]
+* Captcha
+=Completely Automated Public Turing-test to tell Computers and Humans Apart=
+Turing test inverso
+* Strong & Weak
+1. studio del pensiero e del comportamento umano, scienze cognitive
+   + riprodurre l'intelligenza umana
+2. risolvere problemi che richiederebbero intelligenza degli umani per essere risolto
+   + non ci importa come l'umano ragiona, importa come risolvere il problema
+   + task-oriented
+* Agente - Environment
+L'agente e' immerso in un ambiente e svolge in ciclo esecutivo:
+1. Percepisce
+2. Delibera
+3. Agisce
+
+L'ambiente definisce cosa e' efficace e cosa non lo e'. questo in base agli /attuatori/ degli agenti possono essere posti in questo ambiente.
+L'ambiente, in base a come si evolve nel tempo della percezione e deliberazione, puo' essere:
+- statico
+- dinamico
+
+Inoltre si puo' distinguere un ambiente:
+- deterministico
+  + possibile prevedere in che stato un azione sposta l'ambiente
+- stocastico
+  + non e' possibile prevedere in tutti i casi lo stato in cui ci si trovera' dopo un azione
+* Paradigma Dichiarativo
+- imperativo: /how/, sequenza di passi
+- dichiaritivo: /what/, si sfrutta una =knowledge base=
+  + il cuore e' il *Modulo dichiarativo* che utilizza l'informazione dalla percezione e la propria knowledge base
+Quindi:
+- un programma, risolutore, produce un altro programma che risol una particolare istanza del mondo
+
+* Block World Problem
+Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti allo stesso dominio, l'agente deve trovare una soluzione

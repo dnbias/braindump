@@ -32,7 +32,6 @@ Caratterizzata da:
 - memoria/tape
   + testa di lettura
   + alfabeto a scelta
-La macchina é infinita ma la memoria é infinita
 
 - l'Input é finito
 - la fine del Input é marcata con un simbolo speciale
