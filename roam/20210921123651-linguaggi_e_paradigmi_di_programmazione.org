@@ -181,7 +181,7 @@ In alcuni casi é piú efficiente l'uno, in altri l'altro
 redex piú a sinistra e piú interno, *linguaggi zelanti*
 =(\lambda x.x)((\lambda y.y)z) -> (\lambda x.x)z -> z=
 =.      ----------     --------=
-- applicare una funzione a un argomento signifira prima valutare l'argomento poi sostituire nel corpo della funzione
+- applicare una funzione a un argomento significa prima valutare l'argomento poi sostituire nel corpo della funzione
 ***** Ordine Normale
 redex piú a sinistra e piú esterno, *linguaggi pigri*
 =(\lambda x.x)((\lambda y.y)z) -> (\lambda y.y)z -> z=
@@ -193,7 +193,7 @@ Ottimizzabile in caso di argomenti valutati piú volte
 - si memorizza il risultato parziale, in modo da non doverlo ricalcolare multiple volte
   + questo é sicuro se il linguaggio é puro
   + molto delicato da utilizzare in contesti diversi
-  + simile alla tecnica di /memoizzazione/
+  + simile alla tecnica di /memoizzazione/ nella [[id:2453dad7-d3eb-402a-892a-bc89a9b7d511][Programmazione Dinamica]]
 
 ***** Teorema Normalizzazione
 Se $M \Leftrightarrow N$ é normale, allora c'é una riduzione in ordine nomale $M \Rightarrow N$
@@ -831,7 +831,7 @@ Esiste funzione di concatenazione di liste
 - =Int= numeri interi a precisione finita
 - =Integer= numeri interi a precisione arbitraria
 - =Float= numeri in virgola mobile a precisione singola
-- =Double= numeri i nvirgola mobile a precisione doppia
+- =Double= numeri in virgola mobile a precisione doppia
 - =Bool= booleani
   Il comando =:type= di GHCi interroga =Haskell= sul tipo inferito ad una espressione
  Si puo' scrivere il tipo di un valore affianco ad esso con la sintassi =:: Int=

@@ -1,0 +1,77 @@
+:PROPERTIES:
+:ID:       b548a50a-dd36-41b8-8eb4-8fdb0f4cd078
+:END:
+#+title: Sviluppo Software
+#+date: [2022-03-03 Thu 00:08]
+#+filetags: university
+- Info Corso
+  + Matteo Baldoni
+  + Sviluppo Agile
+* Software
+Include:
+- tutta la documentazione elettronica che serve agli utenti dei sistemi, agli sviluppatore e i responsabili della qualitá
+É caratterizzato da:
+- mantenibilitá
+- fidatezza
+- efficienza
+- accettabilitá
+
+In generale un processo descrive
+- chi
+- fa cosa
+- come
+- quando
+Per raggiungere un obiettivo
+
+Le 4 /attivitá fondamentali/ comuni a tutti i processi software:
+1. specifiche
+2. sviluppo
+3. convalida
+4. evoluzione
+
+Nel _modello a cascata_ queste sono distinte e separate
+- requisiti in dettaglio
+- piano temporale delle attivitá da svolgere
+- modellazione
+- progetto software
+- programmazione software
+- verifica e rilascio
+Parte dal presupposto che le specifiche sono prevedibili e stabili e possono essere definite correttamente sin dall'inizio, a fronte di un basso tasso di cambiamenti
+- nella realtá questo non avviene quasi mai, questo modello é ottimo in caso di sistemi critici
+
+Nel _modello di sviluppo incrementale_ queste sono intrecciate, aggiunte di funzionalitá alla versione precedente (versioning)
+Nel _modello dell'integrazione e configurazione_ si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalitá
+
+Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software sará utilizzato
+* Object Oriented Analysis/Design
+=OOA/D=
+
+Ai concetti vengono attribuite le /responsabilitá/, a partire da queste si passa alla progettazione e poi al software
+=OOD= é fortemente correlata all'/analisi dei requisiti/:
+- casi d'uso
+- storie utente
+
+L'analisi si concentra sull'identificazione e la descrizione degli oggetti:
+- /concetti nel dominio del problema/
+
+Queste analisi dei requisiti sono svolte nel contesto di processi di sviluppo:
+- Processo di sviluppo iterativo
+- Sviluppo Agile
+- Unified Process - =UP=
+
+* Unified Modeling Language
+=UML=
+
+Strumento per pensare e comunicare
+- utilizzato per rappresentare il modello di dominio/concettuale
+- permette un passaggio piú veloce da modello a design/progettazione
+  + il gap rappresentativo sará piú semplice
+
+_É un linguaggio visuale per la specifica, la costruzione e la documentazione degli elaborati di un sistema software_
+- de facto standard un particolare per software OO
+- puó essere utilizzato come abbozzo, progetto o linguaggio di programmazione
+- la modellazione agile enfatizza l'uso di =UML= come abbozzo
+
+
+* Pattern
+Riassunto di esperienze precedenti

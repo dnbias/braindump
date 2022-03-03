@@ -4,12 +4,10 @@
 :ROAM_REFS:
 :END:
 #+title: Calcolabilitá e Complessitá
+#+author: Daniel Biasiotto
 #+filetags: university
 Prof: Stefano Berardi
 * Info Corso
-- Orari:
-  + Lun 9-11
-  + Mer 9-11
 - Testo:
   + [[id:e5d00ea5-5ff0-4025-a0f6-38c9f5ad26e6][Introduction to the theory of Computation]]
 - Link:
@@ -91,9 +89,8 @@ Ora si dimostra l'altra direzione. Se $M$ riconosce il linguaggio $L$ definiamo 
   + se $M$ accetta, stampa la $s_j$ accettata
 
 Questa macchina di turing $E$ simula $M$ su tutte le stringhe $s_j$ che appartengono a $\Sigma^*$ per $i$ passi di simulazione, non terminando mai.
-In questa simulazione sostanzialmente si simula in parallelo la macchina $M$ su tutte le stringhe possibili in input, stampando tutte e sole le $s_j$ accettate da $M$.
+In questa simulazione sostanzialmente si simula in parallelo la macchina $M$ su tutte le stringhe possibili in input (per un numero di passi di computazione sempre maggiore), stampando tutte e sole le $s_j$ accettate da $M$.
 Viceversa se una stringa appartiene ad $L$ questa viene accettata in un numero finito di passi da $M$, e quindi dato abbastanza tempo $E$ la stamperá. Quindi $E$ enumera il linguaggio $L$.
-
 
 ** Decidibilitá
 Per un =DFA= possiamo definire una =TM M= che lo simula e verifica l'accettazione o meno dell'Input
@@ -162,9 +159,17 @@ $w \in L(A) \iff f(w) \in L(B)$
 [[../media/img/mapping-reducibility.jpg]]
 
 Seguono i corollari:
-- Se $A \le_{m}B$ e $A$ é decidibile $\implies B$ é decidibile
-- Se $A \le_{m}B$ e $A$ non é decidibile $\implies B$ non é decidibile
-Si dimostra allora la riducibilitá $A_{\textsc{tm}}\rightarrow \textsc{halt}_{\textsc{tm}}$
+- Se $A \le_{m}B$ e $B$ é decidibile $\implies A$ é decidibile
+  + si dimostra costruendo la funzione e poi eseguendo $B$ sull'input trasformato
+  + stessa dimostrazione per la decidibilitá positiva
+- Se $A \le_{m}B$ e $A$ non é positivamente decidibile $\implies B$ non é positivamente decidibile
+  + $\textsc{\textbf{proof}}$   Supponendo $A = \overline{A_{TM}}$
+    1. $A \le_m B$
+    2. $\overline{A} \le_m \overline{B}$
+    3. $A_{TM} \le_m \overline{B}$
+       - ma se $\overline{B}$ fosse negativamente decidibile (quindi $B$ positivamente decidibile) allora per la proprietá di cui sopra $A_{TM}$ sarebbe negativamente decidibile
+       - Ma $A_{TM}$ non puó esserlo, altrimenti sarebbe decidibile per il Teorema di Post: contraddizione.     $\blacksquare$
+
 *** Macchina di Turing Universale
 \[U = \text{"Su input }\langle M,w \rangle\text{, dove } M \text{ é una TM e } w \text{ é una stringa"} \]
 1. Simula $M$ su $w$
@@ -201,6 +206,9 @@ Per molti problemi si utilizza la tecnica della riduzione
 **** Eguaglianza Chompsky
 $EQ_{\textsc{CFG}}=\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\}$
 **** Accettazione
+:PROPERTIES:
+:ID:       34f9331b-1e4a-4592-8bbe-ca5697f1b2b3
+:END:
 =4.11=
 Problema _positivamente decidibile_
 
@@ -211,7 +219,7 @@ $A_{\textsc{TM}}=\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox
   + macchina capace di simulare qualsiasi macchina utilizzando 5 tape
 - si osserva l'esecuzione che non termina
 Si prova utilizzando la tecnica della /diagonalizzazione/ scoperta dal matematico [[id:b5e515b5-ab9b-4dc5-87d4-bcfc1d8e8618][Georg Cantor]] nel 1873
-- iniezione - suriezione -biezione
+- iniezione - suriezione (biezione)
   + corrispondenza 1 a 1
 - prova che non esiste una enumerazione per un dato insieme di numeri
   + per i Reali si cambia nella ennesima enumerazione la ennesima cifra dopo la virgola
@@ -251,6 +259,9 @@ _Abbiamo raggiunto una contraddizione_                                          
 $\overline A_{\textsc{tm}}$ _positivamente decidibile_ $\implies  A_{\textsc{tm}}$ _negativamente decidibile_ per =T.Post=
 - Falso per =4.11=
 **** Fermata
+:PROPERTIES:
+:ID:       9101e060-cde8-4039-bb95-6b2f6c98a184
+:END:
 =5.1=
 Il problema della decisione per $L_{1}$ si riduce al problema della decisione per $L_{2}$ se sappiamo trasformare un decisore per $L_{2}$ in un decisore per $L_{1}$
 
@@ -279,6 +290,9 @@ Questo implica che il problema é decidibile, anche se in tempo esponenziale
 Per ridurre la complessitá si utilizza la *programmazione dinamica*
 - ci si appunta i risultati intermedi
 **** Emptyness
+:PROPERTIES:
+:ID:       20306992-5cd3-46ba-a6b0-abfaf16562e7
+:END:
 =5.2=
 Si dimostra per assurdo, se esistesse si potrebbe risolvere l'accettazione
 - si riduce a $A_{\textsc{tm}}$
@@ -300,7 +314,10 @@ $R$ rifiuta se e solo se $M$ accetta $w$, e quindi il linguaggio $L$ riconosciut
 
 
 **** Equality
-=5.3=
+:PROPERTIES:
+:ID:       b7feed71-c2f9-46be-b1c8-6834b3ae7926
+:END:
+=5.4=
 Intesa tra due =MT=
 - se sapessi deciderla potrei decidere anche l'=Emptyness=
   + In quanto $E_{\text{TM}}$ é considerabile un caso particolare di $EQ_{\text{TM}}$
@@ -311,13 +328,11 @@ Anche per i reali:
 - $A_{\textsc{tm}}<_m EQ_{\textsc{Real}}$
   + e di conseguenza anche il < e il >
 
-***** Prova EQ
-:PROPERTIES:
-:ID:       6fe4339a-9669-4dbf-b2bb-16f4e5b6b6a6
-:END:
-$EQ_{TM} = \{\langle M_{1}, M_{2} \rangle \mid L(M_{1}) = L(M_{2})\}$
 
+
+$EQ_{TM} = \{\langle M_{1}, M_{2} \rangle \mid L(M_{1}) = L(M_{2})\}$
 $\qed$
+$\textsc{\textbf{proof}}$    Si dimostra per riduzioni:
 1. $A_{TM} \le_{m} \overline{EQ}_{TM}$
    - questo indica che $EQ_{TM}$ non puó essere negativamente decidibile
    - spostiamo al decidibilitá a $A_{TM}$
@@ -337,7 +352,7 @@ Ora basta raggiungere queste conclusioni per chiudere la dimostrazione.
          - $\begin{cases} M \mbox{ accetta}: & L(M_{2})=\Sigma^{*}\\M \mbox{ non accetta}: & L(M_{2}) = \emptyset  \end{cases}$
      + $L(M_{1}) \neq L(M_{2}) \iff M \mbox{ accetta }w$
 2. Definisco una Macchina $G$ che implementa la funzione $g$ che riduce $\overline A$ a $EQ$
-   - $\langle M, w \rangle \rightarrow^{F} \langle M_{1}, M_{2} \rangle$
+   - $\langle M, w \rangle \rightarrow^{G} \langle M_{1}, M_{2} \rangle$
    - se $L(M_{1}) \neq L(M_{2})$ allora $M$ non accetta $w$
      + $M_{1}$ accetta sempre
        * $q_{0} = q_{\text{accept}}$
@@ -422,7 +437,6 @@ $A_{\textsc{tm}} <_m\textsc{Regular}_{\textsc{tm}}$
 - Né negativamente né positivamente decidibili
   + $\textsc{Regular}_{\textsc{tm}}$
   + $\textsc{Eq}_{\textsc{tm}}$
-    * [[id:6fe4339a-9669-4dbf-b2bb-16f4e5b6b6a6][Prova EQ]]
   + $\textsc{Context-Free}_{\textsc{tm}}$
   + $\textsc{All}_{\textsc{tm}}$
     * se un programma accetta sempre
@@ -438,8 +452,8 @@ $f : \mathbb{N} \to \mathbb{N}$ dove $f(n)$ é il numero massimo di passi compiu
 Si utilizza la /notazione asintotica/ o *big-O Notation*
 - [[id:adc0b322-e761-439b-b7bf-7895bd638c23][O-grande]]
 
-\[\textsc{Time}= \{L \mid L\] é risolvibile da una =TM= deterministica con \[O(f(n))\] polinomiale \[\}\]
-\[\textsc{NTime}= \{L \mid L\] é risolvibile da una =TM= non deterministica con \[O(f(n))\] polinomiale \[\}\]
+\[\textsc{Time}= \{L \mid L \text{ risolvibile da =TM= deterministica in }O(f(n)) \text{ polinomiale}\}\]
+\[\textsc{NTime}= \{L \mid L \text{ risolvibile da =TM= non deterministica in }O(f(n))\text{ polinomiale} \}\]
 
 Generalmente:
 - $\text{P} =$ classe dei linguaggi la cui appartenenza puó essere decisa velocemente
@@ -464,7 +478,7 @@ La classe di tempo *Polinomiale* é definito come
 Teorema =7.11=
 Sia $t(n)$ una funzione dove $t(n)>n$.
 Allora ogni =TM= /singletape/ _non deterministica_ con complessitá temporale $t(n)$ ha una equivalente =TM= _determinitistica_ $2^{O(t(n))}$, nel caso di una macchina multiregistro
-Per una =TM= det. a registro singolo si avrá sempre complessitá $2^{O(t(n))}^2} = 2^{O(t(n))}$
+Per una =TM= deterministica a registro singolo si avrá sempre complessitá $2^{O(t(n))}^2} = 2^{O(t(n))}$
 
 L'esplorazione dell'albero non deterministico é svolto utilizzando /l'ordine lessicografico/
 - in profonditá
@@ -500,7 +514,7 @@ Un linguaggio é =NP= $\iff$ é deciso da un algoritmo _non deterministico polin
 Un $M: O(n^k)$ =NTM= equivale a $M': 2^{O(n^k)}$ =TM=
 - da tempo polinomiale a tempo esponenziale
 
-$\text{NP} = \bigcup_k \textsc{ntime}(n^k)$
+\[\text{NP} = \bigcup_k \textsc{ntime}(n^k)\]
 
 Un linguaggio é =NP= se dispone di un /verificatore/ in tempo polinomiale, detto allora /polinomialmente verificabile/
 
@@ -516,6 +530,8 @@ Un *verificatore* é una macchina di turing $V$ tale che per un linguaggio $A$:
 
 *Prova* =7.20=
 Il determinismo con certificato $c$ utilizzando $V$ é convertito in non determinismo trovando il $c$ in maniera non deterministica di lunghezza massima $n^k$ (dove questo é il polinomio di complessitá)
+
+Si dimostra quindi che le due definizioni sono equivalenti in quanto é sempre possibile convertire un $V$ polinomiale in una $M$ polinomiale non deterministica e viceversa.
 
 **** NP-completo
 $\textsc{\textbf{definition}}$  Un linguaggio $B$ é $\textsc{NP}\text{-completo}$ se soddisfa le seguenti condizioni:
@@ -545,7 +561,6 @@ $\textsc{\textbf{corollary}}$   $\text{3SAT}$ é $\text{NP-completo}$
 
 
 *NB* - Per provare la $\text{NP-completessa}$ si procede da $\text{SAT}$ al problema in particolare
-
 
 
 **** Hamilton's Path
@@ -613,9 +628,20 @@ Da =8.5= segue che $\textsc{pspace} = \textsc{npspace}$
 In sommario:
 - $\textsc{p} \subseteq\textsc{np} \subseteq\textsc{pspace} =\textsc{npspace} \subseteq \textsc{exptime}$
 
-[[~/org/media/img/complexity-classes.jpg]]
-Qualsiasi di queste inclusioni potrebbero essere eguaglianze
+Questo perché:
+- $\textsc{np} \subseteq \textsc{npspace}$ in quanto una macchina in $f(n)$ passi puó esplorare al massimo $f(n)$ celle di memoria
+- $\textsc{pspace}\subseteq\textsc{exptime}$, una machina in $\textsc{pspace}$ puó eseguire passi senza ripetersi al massimo
+  + \[f(n)\cdot 2^{O(f(n))} = \bigcup_k \textsc{time}(2^{n^k)\], dopo di che é in loop
 
+[[~/org/media/img/complexity-classes.jpg]]
+Qualsiasi di queste inclusioni potrebbero essere eguaglianze, ma non sono state trovate prove a riguardo.
+
+Inoltre si definiscono le classi sottolineari:
+\[\textsc{L} = \bigcup_k \textsc{space}(\log n) \]
+\[\textsc{NL} = \bigcup_k \textsc{nspace}(\log n) \]
+
+E si dimostra:
+$\textsc{l} \subseteq\textsc{nl} \subseteq \textsc{p} \subseteq\textsc{np} \subseteq\textsc{pspace} =\textsc{npspace} \subseteq \textsc{exptime}$
 
 *** Teorema di Savitch
 =8.5=
@@ -638,4 +664,9 @@ Gioco Generalizzato della Geografia
 Si dimostra che $\textsc{gg}$ é $\textsc{pspace}$ definendo una funzione ricorsiva detta di Von Neumann $\text{VonN}(a,X,g)$ una volta fissato il grafo $G$
 - vero se esiste una strategia vincente a partire da $a$ per il giocatore $g$, che porta quindi ad una configurazione in cui non esiste una mossa $b$ per il giocatore $\lnot g$ che non violi le regole
 
-Altro risultato della teoria é che $\textsc{gg}$ é $\textsc{pspace}\text{-completo}$, quindi se si scoprisse un algoritmo in tempo polinomiale che risolva $\textsc{gg}$ questo dimostrerebbe che $\textsc{P = NP = PSPACE = NPSPACE}$. In quanto per il teorema di =Savitch= $\textsc{NP = PSPACE}$. Questa ipotesi é ritenuta improbabile, anche se non si puó escludere.
+Altro risultato della teoria é che $\textsc{gg}$ é $\textsc{pspace}\text{-completo}$, quindi se si scoprisse un algoritmo in tempo polinomiale che risolva $\textsc{gg}$ questo dimostrerebbe che:
+- $\textsc{P = NP = PSPACE = NPSPACE}$.
+
+In quanto per il teorema di =Savitch= $\textsc{NPSPACE = PSPACE}$.
+
+Questa ipotesi é ritenuta improbabile, anche se non si puó escludere.
