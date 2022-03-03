@@ -29,8 +29,10 @@ Le 4 /attivitá fondamentali/ comuni a tutti i processi software:
 3. convalida
 4. evoluzione
 
+** Modello a cascata
 Nel _modello a cascata_ queste sono distinte e separate
 - requisiti in dettaglio
+  + non c'e' feedback, molto lavoro speculativo
 - piano temporale delle attivitá da svolgere
 - modellazione
 - progetto software
@@ -39,7 +41,44 @@ Nel _modello a cascata_ queste sono distinte e separate
 Parte dal presupposto che le specifiche sono prevedibili e stabili e possono essere definite correttamente sin dall'inizio, a fronte di un basso tasso di cambiamenti
 - nella realtá questo non avviene quasi mai, questo modello é ottimo in caso di sistemi critici
 
+** Modello di Sviluppo Incrementale
 Nel _modello di sviluppo incrementale_ queste sono intrecciate, aggiunte di funzionalitá alla versione precedente (versioning)
+- utilizzato in caso di requisiti che cambiano durante lo sviluppo
+  + in molti casi se si procede progettando tutto fin dall'inizio si rischia di buttare molto del lavoro in seguito
+- si implementano immediatamente le funzionalita' piu' critiche
+  + per rilasciare il prima possibile: il /feedback/ e' l'aspetto piu' critico
+  + si procede per incrementi, /patch/
+    * il codice si degrada progressivamente
+    * per arginare la degradazione e' necessario un continuo /refactoring/ del codice
+- per il management e' piu' complesso gestire le tempistiche
+  + almeno in parte puo' essere essenziale pianificare le iterazioni
+- fin dall'inizio si procede con progettazione e testing del sistema
+
+L'ambiente odierno richiede cambiamenti rapidi:
+- la rapidita' delle consegne e' quindi un requisito critico
+- i requisiti reali diventano chiari solo dopo il feedback degli utenti
+per cio' questo metodo di sviluppo ha preso piede
+
+Lo sviluppo e' organizzato in sotto-progetti
+- progettazione
+- iterazione
+- test
+Il progetto si adatta iterazione dopo iterazione al feedback, e' /evolutivo/
+- ogni iterazione e' una scelta di un sottoinsieme dei requisiti
+  + produce un sistema eseguibile e subito testabile
+
+*** Esempi
+- Unified Progress
+- Extreme Programming
+- Scrum
+*** Vantaggi
+- riduzione rischi
+- progresso subito visibile
+- feedback immediato
+- gestione della complessita', evita la /paralisi da analisi/
+
+
+** Modello di Integrazione e Configurazione
 Nel _modello dell'integrazione e configurazione_ si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalitá
 
 Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software sará utilizzato
@@ -59,6 +98,83 @@ Queste analisi dei requisiti sono svolte nel contesto di processi di sviluppo:
 - Sviluppo Agile
 - Unified Process - =UP=
 
+** Unified Process
+=UP=
+- cerca di bilanciarsi tra estrema agilita' e pianificazione
+- la versione commerciale si chiama =RUP=, di =Rational=
+- iterazioni corte e timeboxed
+- raffinamento graduale
+- gruppi di lavoro auto-organizzati
+
+Orizzontalmente:
+- *ideazione*
+  + approssimazione
+  + portata
+  + studio della fattibilita'
+- *elaborazione*
+  + visione raffinata
+  + implementazione iterativo del nucreo
+  + risoluzione rischi maggiori, parte piu' critica
+  + implementata l'architettura del sistema, mitigazione rischi
+- *costruzione*
+- *transizione*
+
+Tutte queste fasi includono analisi, progettazione e programmazione
+
+Verticalmente si procede con:
+- discipline
+  + modellazione del business
+  + requisiti
+  + progettazione
+  + implementazione
+  + test
+  + rilascio
+- artefatti
+  + qualsiasi prodotto di lavoro
+
+In questo processo e' utilizzato solo =UML=
+- utilizzato solo se necessario, se viene tralasciato va indicato il motivo
+- i diagrammi seguono le iterazioni e gli incrementi
+
+Quasi tutto in =UP= e' opzionale, deciso dal project leader
+
+*** Requisiti
+Capacita' o condizioni a cui il sistema e il progetto devono essere conformi
+- e' l'utente che li stabilisce, non il progettista
+
+Possono essere
+- /funzionali/
+  + requisiti comportamentali
+  + comportamenti del sistema
+- /non funzionali/
+  + scalabilita'
+  + sicurezza
+  + tempi di risposta
+  + fattori umani
+  + usabilita'
+
+Nei processi a cascata sono molti i requisiti non utilizzati nei casi d'uso
+- spreco di tempo, denaro, rischi in piu'
+Per evitare questo =UP= spinge al feedback
+
+Modello requisiti =FURPS+=
+- modello dei casi d'uso
+- specifiche supplementali
+- glossario
+- visione
+- regole di business
+
+*** Ideazione
+Si tratta dello studio di fattibilita'
+- si decide se il caso merita un'analisi piu' completa
+
+La documentazione possibile e' tanta ma tutto e' opzionale
+- va documentato solo cio' che aggiunge valore al progetto
+
+*** Elaborazione
+*** Costruzione
+*** Transizione
+
 * Unified Modeling Language
 =UML=
 
@@ -71,7 +187,6 @@ _É un linguaggio visuale per la specifica, la costruzione e la documentazione d
 - de facto standard un particolare per software OO
 - puó essere utilizzato come abbozzo, progetto o linguaggio di programmazione
 - la modellazione agile enfatizza l'uso di =UML= come abbozzo
-
 
 * Pattern
 Riassunto di esperienze precedenti

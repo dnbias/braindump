@@ -45,7 +45,7 @@ Inoltre si puo' distinguere un ambiente:
 - dichiaritivo: /what/, si sfrutta una =knowledge base=
   + il cuore e' il *Modulo dichiarativo* che utilizza l'informazione dalla percezione e la propria knowledge base
 Quindi:
-- un programma, risolutore, produce un altro programma che risol una particolare istanza del mondo
+- un programma, risolutore, produce un altro programma che risolva una particolare istanza del mondo
 
 * Block World Problem
 Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti allo stesso dominio, l'agente deve trovare una soluzione
