@@ -164,6 +164,58 @@ Modello requisiti =FURPS+=
 - visione
 - regole di business
 
+La disciplina dei requisiti e' il processo per scoprire cosa deve essere costruito e orientare la sviluppo verso il sistema corretto
+Si incrementalmente una lista dei requisiti: /feature list/
+- breave descrizione
+- stato
+- costi stimati di implementazione
+- priorita'
+- rischio stimato per l'implementazione
+
+**** Casi d'uso
+Catturano (in =UP= e =Agile=) i requisiti funzionali
+Sono descrizioni testuali che indicano l'uso che l'utente fara' del sistema
+- attori; qualcuno o qualcoso dotato di comportamento
+- scenario (istanza di caso d'uso); sequenza specifica di azioni e interazioni tra sistema e attori
+- caso d'uso; collezione di scenari correlati (di successo/fallimento) che descrivono un attore che usa il sistema per raggiungere un obiettivo specifico
+
+=UP= e' /use-case driven/, questi sono il modo in cui si definiscono i requisiti di sistema
+- i casi d'uso definiscono analisi e progettazione
+- i casi sono utilizzati per pianificare le iterazioni
+- i casi definiscono i test
+
+Il *modello dei casi d'uso* include un grafico =UML=
+- e' un modello delle funzionalita' del sistema
+
+I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i requisiti come input all' =OOA/D=
+- l'enfasi e' sull'utente, sono il principale metodo di inclusione dell'attore nel processo di sviluppo
+- questi non sono algoritmi, sono semplici descrizioni dell'interazione, non la specifica di implementazione
+  + il /come/ e' obiettivo della progettazione =OOD=
+  + i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il /cosa/ e nulla riguardo al /come/
+
+***** Attori
+Sono ruoli svolti da persone, organizzazioni, sotware, macchine
+- primario
+- di supporto
+  + offre un servizio al sistema
+  + chiarisce interfacce esterne e protocolli
+- fuori scena
+  + ha interesse nel comportamento del caso d'uso
+
+***** Formati
+- breve
+  + un solo paragrafo informale che descrive solitamente lo scenario principale
+- informale
+  + piu' paragrafi in modo informale che descrivono vari scenari
+- dettagliato
+  + include precondizioni e garanzie di successo
+**** Requisiti non funzionali
+Possono essere inclusi nei casi d'uso se relazionati con il requisito funzinale descritto dal caso
+Altrimenti vengono descritti nelle specifiche supplementari
+
+*** Modello di dominio
+Casi d'uso e specifiche supplementari sono input che vanno a definire il modello di dominio
+
 *** Ideazione
 Si tratta dello studio di fattibilita'
 - si decide se il caso merita un'analisi piu' completa
@@ -172,7 +224,10 @@ La documentazione possibile e' tanta ma tutto e' opzionale
 - va documentato solo cio' che aggiunge valore al progetto
 
 *** Elaborazione
+Alla fine di questa fase si ha un'idea chiara del progetto
+- vengono stipulati contratti e obiettivi chiari, temporali e sui requisiti
 *** Costruzione
+Durante questa fale i requisiti principali dovrebbero essere stabili
 *** Transizione
 
 * Unified Modeling Language

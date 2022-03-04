@@ -6,14 +6,19 @@
 #+filetags: university
 Professoressa: Cristina Baroglio
 * Terminologia
-*AI* coniato da [[id:1bd058f7-555b-425a-a779-8073c6889c84][John McCarthy]]
+- *AI* coniato da [[id:1bd058f7-555b-425a-a779-8073c6889c84][John McCarthy]]
+- *Dato*, simbolo grezzo
+- *Informazione*, un dato elaborato
+- *Conoscenza*, compo di informazioni correlate tra loro
+- *Automazione*,
+- *Autonomia*,
 * Test di Turing
 - test per definire se un computer e' intelligente, o se un programma lo e'
   + in linguaggio naturale
 - per T lo e' quando inganna l'uomo, imitando il comportamento umano
 - un computer che deve passare il test non eseguira' gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacita' di un umano
 - =The Imitation Game=
-* Compresione
+* Comprensione
 Output attesi $\implies$ comprensione? [[id:8c582ee0-1194-47b7-b6c9-9e46adaa60c7][John R. Searle]]
 * Captcha
 =Completely Automated Public Turing-test to tell Computers and Humans Apart=
@@ -49,3 +54,55 @@ Quindi:
 
 * Block World Problem
 Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti allo stesso dominio, l'agente deve trovare una soluzione
+
+* Automazione
+Campo in cui l'informatico piu' in generale viene applicata
+- automazione del calcolo
+- automazione contabile
+- automiazione della ricerca di informazione, motori di ricerca
+
+Tratta di programmare un supporto a fare /ogni passo/, applicabile in domini fortemente ripetitivi
+* Autonomia
+Svolta da un agente artificiale che risolve un compito
+- non viene indicato passo passi il modo per raggiungere l'obiettivo
+- vengono forniti solo compiti ad alto livello
+
+Utile nei problemi:
+- non deterministici
+- in cui c'e' molteplicita' di soluzioni
+- con dati di natura simbolica
+- si ha una conoscenza ampia e completa
+- dove l'informazione e' parzialmente strutturata
+
+
+* Agente Autonomo
+- ha capacita' di /azione/
+- riceve compiti ad alto livello
+- esplora alternative, numero esponenziale di possibilita' da esplorale
+- riconosce
+  + se una strada non puo' portare a una soluzione
+  + un strada gia' esplorata
+
+Un =AA= rimane un programma, non fara' cio' che non e' programmato a fare
+
+Il cuore dell'agente e' la funzione *deliberativa*
+- un agente e' /razionale/ se opera per conseguire il /successo/
+- questo e' possibile con una _misura di prestazione_ utilizzata come guida
+
+La razionalita' ottimizza il risultato atteso
+- possono intercorrere fattori ignoti o imprevedibili
+
+* Risoluzione Automatica di Problemi
+- nella realta' di riferimento si astrae utilizzando degli /stati/
+  + astraendo si lascia solo una descrizione essenziale
+  + discreti
+  + tra questi ci saranno stati /target/ e stati di partenza
+- la realta' transisce da uno stato all'astro tramite /azioni/
+  + le azioni hanno effetto deterministico
+- il dominio della realta' e' statico
+- *l'algoritmo di ricerca* determina una soluzione
+  + permette di raggiungere da uno stato iniziale uno stato target
+    * una soluzione e' un percorso del grafo degli stati
+  + utilizza:
+    * descrizione del problema
+    * metodo di ricerca
