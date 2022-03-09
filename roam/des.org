@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       ad07cbed-5c0b-448c-861e-3f8ee80e6803
+:ROAM_ALIASES: DES
+:END:
+#+title: Data Encryption Standard
+#+date: [2022-03-09 Wed 17:27]
+Cifrario simmetrico moderno,
+- pubblicato nel 1977
+- piú diffuso fino al 2002
+  + sostituito da [[id:e2af7d7e-fcf8-4a63-8bb5-94a920dddd07][AES]]
+- basato su /diffusione/ e /confusione/
+
+Caratterizzato da:
+- chiavi da 56 bit
+  + solitamente estese a 64 bit con bit di paritá
+- 16 round
+- efficiente
+- noti solo attacchi di /brute force/
+
+\[\textsc{des}(T,K) = C\]
+- $T$ é plaintext 64 bit
+- $K$ é la chiave
+- $C$ é il ciphertext
+
+[[file:../media/img/DES.png]]

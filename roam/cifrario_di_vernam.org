@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       f5fa7caa-aa5f-403f-b340-57b7d07d673d
+:END:
+#+title: Cifrario di Vernam
+#+date: [2022-03-09 Wed 17:09]

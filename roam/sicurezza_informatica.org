@@ -1,0 +1,44 @@
+:PROPERTIES:
+:ID:       3da2dbd3-6bae-4612-9d0f-12fca387a8e4
+:ROAM_ALIASES: Sic
+:END:
+#+title: Sicurezza Reti e Calcolatori
+#+date: [2022-03-09 Wed 17:01]
+#+filetags: university
+- Prof: Bergadono
+* Cifrari Simmetrici
+Cifrari sono sempre esistiti, tra i cifrari pre-informatici piú famosi ci sono i cifrari simmetrici =character-oriented=:
+- Cifrario di Cesare, cifrari monoalfabetici a 1 lettera
+- Cifrario di Playfair, monoalfabetico a 2 lettere
+- Cifrari monoalfabetici a N lettere
+- Cifrario di Vigenére, polialfabetico
+
+| I cifrari polialfabetici sostituiscono una lettera ogni volta in modo diverso, a seconda della sua posizione nel testo.
+
+Questi cifrari si possono ancora suddividere in base alla tecnica utilizzata:
+- a sostituzione
+- a permutazione
+
+
+Da quest'ultimo derivano i cifrari simmetrici =bit-oriented=:
+- [[id:f5fa7caa-aa5f-403f-b340-57b7d07d673d][Cifrario di Vernam]]
+- [[id:51177984-16bc-4c8b-8b69-969dba9f1dd9][One-time Pad]]
+In questi cifrari al posto dell'operazione di sostituzione alfabetica viene utilizzato $\oplus$ (Exclusive Or).
+
+I cifrari simmetrici moderni sono caratterizzati da:
+- uso del calcolatore
+- combinazione di permutazioni e sostituzioni
+- uso di numerose fasi, /round/
+Di questi ne esistono diversi:
+- [[id:dcbad85b-98c9-48df-b57d-9480bc5bb239][Macchine a Rotori]]
+- [[id:aae9177d-7c30-4144-a42a-eb38cc7d5c90][Feistel Cipher]]
+- [[id:ad07cbed-5c0b-448c-861e-3f8ee80e6803][DES]]
+- [[id:e2af7d7e-fcf8-4a63-8bb5-94a920dddd07][AES]]
+
+** Metodi dell'avversario
+L'avversario puó decodificare i cifrari monoalfabetici a una lettera facilmente attraverso una [[id:76569df5-b21c-4670-87bb-20a3fda3b42f][Crittanalisi Statistica]].
+
+Questa analisi risulta molto piú difficile con un cifrario polialfabetico:
+- in conoscenza di $n$ é possibile fare la stessa analisi per lettere che distano $n$ posizioni nel testo
+  + per cui quindi vale la stessa sostituzione
+Di conseguenza un testo cifrato di questo tipo risulta tanto piú facile da decifrare tanto é piú lungo, ancor di piú in presenza di parti di testo fisse.

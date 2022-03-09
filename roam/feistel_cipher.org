@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       aae9177d-7c30-4144-a42a-eb38cc7d5c90
+:END:
+#+title: Feistel Cipher
+#+date: [2022-03-09 Wed 17:35]
+[[file:../media/img/feistel-cipher.png]]
