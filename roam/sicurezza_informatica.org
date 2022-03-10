@@ -35,6 +35,9 @@ Di questi ne esistono diversi:
 - [[id:ad07cbed-5c0b-448c-861e-3f8ee80e6803][DES]]
 - [[id:e2af7d7e-fcf8-4a63-8bb5-94a920dddd07][AES]]
 
+Una proprietá desiderabile in un encryption algorithm é chiamata /avalanche effect/
+- un cambiamento marginale in un input (chiave o plaintext) dovrebbe produrre un grande cambiamento nel ciphertext
+
 ** Metodi dell'avversario
 L'avversario puó decodificare i cifrari monoalfabetici a una lettera facilmente attraverso una [[id:76569df5-b21c-4670-87bb-20a3fda3b42f][Crittanalisi Statistica]].
 

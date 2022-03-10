@@ -5,17 +5,21 @@
 #+title: Data Encryption Standard
 #+date: [2022-03-09 Wed 17:27]
 Cifrario simmetrico moderno,
-- pubblicato nel 1977
+- pubblicato nel 1977 dal /National Bureau of Standards/
 - piú diffuso fino al 2002
   + sostituito da [[id:e2af7d7e-fcf8-4a63-8bb5-94a920dddd07][AES]]
-- basato su /diffusione/ e /confusione/
+- basato su [[id:ec117724-fe01-424b-aeb7-227655014273][Diffusione e Confusione]]
+- *block cipher*
+  + piú analizzati degli *stream cipher*, sembrano piú applicabili
 
-Caratterizzato da:
+* Caratteristiche
 - chiavi da 56 bit
   + solitamente estese a 64 bit con bit di paritá
 - 16 round
 - efficiente
 - noti solo attacchi di /brute force/
+
+Struttura simile al [[id:aae9177d-7c30-4144-a42a-eb38cc7d5c90][Feistel Cipher]], ne differische solo nell'uso di una permutazione iniziale $\text{IP}$ e una permutazione finale $\text{IP}^{-1}$.
 
 \[\textsc{des}(T,K) = C\]
 - $T$ é plaintext 64 bit
@@ -23,3 +27,7 @@ Caratterizzato da:
 - $C$ é il ciphertext
 
 [[file:../media/img/DES.png]]
+
+La sue debolezze sono:
+- lunghezza delle chiavi
+- algoritmo
