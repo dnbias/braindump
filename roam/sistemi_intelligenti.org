@@ -25,7 +25,7 @@ Turing test inverso
    + non ci importa come l'umano ragiona, importa come risolvere il problema
    + task-oriented
 * Agente - Environment
-L'agente e' immerso in un ambiente e svolge in ciclo esecutivo:
+L'agente é immerso in un ambiente e svolge in ciclo esecutivo:
 1. Percepisce
 2. Delibera
 3. Agisce
@@ -43,9 +43,47 @@ Inoltre si puo' distinguere un ambiente:
 * Paradigma Dichiarativo
 - imperativo: /how/, sequenza di passi
 - dichiaritivo: /what/, si sfrutta una =knowledge base=
-  + il cuore e' il *Modulo dichiarativo* che utilizza l'informazione dalla percezione e la propria knowledge base
+  + il cuore é il *Modulo dichiarativo* che utilizza l'informazione dalla percezione e la propria knowledge base
 Quindi:
 - un programma, risolutore, produce un altro programma che risolva una particolare istanza del mondo
 
 * Block World Problem
-Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti allo stesso dominio, l'agente deve trovare una soluzione
+Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti allo stesso dominio, l'agente deve trovare
+una soluzione
+
+* Problemi
+Un problema puó essere definito formalmente come una tupla di 4 elementi
+- Stato iniziale
+- Funzione successore
+- Test Obiettivo
+- Funzione del costo del cammino
+
+** Aspirapolvere
+** Gioco del 15
+Problema di ricerca nello spazio degli stati
+- stato iniziale, qualsiasi
+- funzione successore, spostamento di una tessera adiacente allo spazio vuoto nel suddetto
+- test obiettivo, verifica che la stato sia quello desiderato (tabella ordinata)
+- costo del cammino, ogni passo costa 1 e il costo del cammino é il numero di passi che lo costituiscono
+** 8 Regine
+Posizionare 8 regine su una scacchiera $8\times8$ in modo che nessuna sia sotto attacco
+- generalizzabile con $N$ regine su una scacchiera $N\times N$
+
+* Algoritmi
+** Ricerca non informata - Blind
+Costruiscono strutture dati proprie utilizzate nella soluzione di un problema
+- alberi o grafi di ricerca
+  + in un albero uno stato puó comparire piú volte
+
+
+Ogni nodo rappresenta uno stato, una soluzione é un particolare percorso dalla radice ad una foglia
+- i nodi figli sono creati dalla funzione successore
+  + questi sono creati mantenendo un puntatore al padre
+
+Gli approcci sono valutati secondo
+- completezza
+- ottimalitá
+- complessitá temporale
+- complessitá spaziale
+
+Gli alberi vengono esplorati tramite =Ricerca in Ampiezza= e =Ricerca in Profonditá=
