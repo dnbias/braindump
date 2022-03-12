@@ -52,8 +52,6 @@ Inoltre si puo' distinguere un ambiente:
 Quindi:
 - un programma, risolutore, produce un altro programma che risolva una particolare istanza del mondo
 
-* Block World Problem
-
 * Automazione
 Campo in cui l'informatico piu' in generale viene applicata
 - automazione del calcolo
@@ -72,7 +70,6 @@ Utile nei problemi:
 - con dati di natura simbolica
 - si ha una conoscenza ampia e completa
 - dove l'informazione e' parzialmente strutturata
-
 
 * Agente Autonomo
 - ha capacita' di /azione/
@@ -145,3 +142,36 @@ Gli approcci sono valutati secondo
 - complessitá spaziale
 
 Gli alberi vengono esplorati tramite =Ricerca in Ampiezza= e =Ricerca in Profonditá=
+
+Nello studio di queste ricerche si considerano:
+- $d$ profondita' minima del goal
+- $b$ branching factor
+
+Un goal a meno passi dalla radice non da' garanzia di ottimalita', in quanto vanno considerati i costi non il numero di passi.
+Il costo e' una funzione monotono crescente in relazione alla profondita'.
+
+** Ricerca in Ampiezza
+$O(b^{d+1})$
+- complessitá sia spaziale che temporale
+- esponenziale, non trattabile anche con $d$ ragionevoli
+** Ricerca Costo Uniforme
+Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
+La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
+
+La ricerca puo' non terminare in caso di =no-op=, che creano loop o percorsi infiniti sempre allo stesso stato.
+Quindi:
+$\text{costi} \ge \epsilon > 0$
+- $\epsilon$ costo minimo
+
+\[O(b^{1+\lfloor \frac{C^{*}}{\epsilon} \rfloor})\]
+- $C^{*}$ costo soluzione ottima
+
+** Ricerca in Profondita' w/ Backtracking
+Si producono successori su successori man mano, percorrendo in profondita' l'albero.
+In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
+- viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
+- piu' efficiente in utilizzo della memoria
+
+** Ricerca in Profondita' w/o Backtracking
+Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
+- viene utilizzato uno =stack= (=LIFO=)
