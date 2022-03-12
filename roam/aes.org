@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       e2af7d7e-fcf8-4a63-8bb5-94a920dddd07
+:ROAM_ALIASES: AES
+:END:
+#+title: Advanced Encrytion Standard
+#+date: [2022-03-09 Wed 17:28]

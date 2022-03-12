@@ -1,0 +1,19 @@
+:PROPERTIES:
+:ID:       aae9177d-7c30-4144-a42a-eb38cc7d5c90
+:END:
+#+title: Feistel Cipher
+#+date: [2022-03-09 Wed 17:35]
+[[file:../media/img/feistel-cipher.png]]
+
+For the singular step, with a broader view:
+[[file:../media/img/feistel16.jpg]]
+
+The most important parts of this approach:
+- number of rounds
+  + more rounds = harder cryptanalysis
+- design of the function $F$
+  + best if nonlinear
+  + should have good /avalanche/ properties
+    * /strict avalanche criterion/ - =SAC=
+    * /bit independence criterion/ - =BIC=
+- key schedule algorithm
