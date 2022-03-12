@@ -245,3 +245,8 @@ _É un linguaggio visuale per la specifica, la costruzione e la documentazione d
 
 * Pattern
 Riassunto di esperienze precedenti
+
+* Laboratorio
+Progetto =Cat & Ring=
+** Fase Preliminare dell'ideazione
+*** Glossario
