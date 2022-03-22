@@ -67,6 +67,8 @@ Il progetto si adatta iterazione dopo iterazione al feedback, e' /evolutivo/
 - ogni iterazione e' una scelta di un sottoinsieme dei requisiti
   + produce un sistema eseguibile e subito testabile
 
+$\textsc{nb}$   L'output di una iterazione /non/ é un esperimento o un prototipo. É una sottoinsieme a livello di produzione del sistema finale.
+
 *** Esempi
 - Unified Progress
 - Extreme Programming
@@ -193,6 +195,7 @@ I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i re
   + il /come/ e' obiettivo della progettazione =OOD=
   + i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il /cosa/ e nulla riguardo al /come/
 
+I casi devono essere /guidelines/, espremerle in uno  *stile essenziale*. A livello delle intenzioni e delle responsabilitá, non delle azioni concrete.
 ***** Attori
 Sono ruoli svolti da persone, organizzazioni, sotware, macchine
 - primario
