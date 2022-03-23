@@ -93,5 +93,7 @@ Di conseguenza un testo cifrato di questo tipo risulta tanto piú facile da deci
 * Cifrari Asimmetrici
 Si utilizzano 2 chiavi, una per criptare e una per decriptare
 Le due chiavi non sono solo diverse nella forma, sono generate insieme e non e' possibile ottenere una dall'altra
-La difficolta' per un avversario non e' piu' informativa ma computazionale
-Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piu' impegnativo a livello computazionale
+La difficolta' per un avversario non e' piu' informativa ma *computazionale*
+Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piu' impegnativo a livello computazionale, infatti i primi sono molto recenti ([[id:9f283e41-6b09-40bf-9dbe-26b10e493c8d][Diffie-Hellman Key Exchange]])
+- sono spesso combinati con cifrari simmetrici e funzioni di hash
+  + vedi [[id:e5c81738-06bf-4d9d-b962-cf9bc56023ef][Digital Envelope]]
