@@ -1,5 +1,6 @@
 :PROPERTIES:
 :ID:       b548a50a-dd36-41b8-8eb4-8fdb0f4cd078
+:ROAM_ALIASES: SAS
 :END:
 #+title: Sviluppo Software
 #+date: [2022-03-03 Thu 00:08]

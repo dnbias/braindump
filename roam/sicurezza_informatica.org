@@ -38,6 +38,50 @@ Di questi ne esistono diversi:
 Una proprietá desiderabile in un encryption algorithm é chiamata /avalanche effect/
 - un cambiamento marginale in un input (chiave o plaintext) dovrebbe produrre un grande cambiamento nel ciphertext
 
+Queste tecniche sono utilizzate nel contesto della /bulk encryption/
+
+** Cifrari a blocchi
+Utilizzando chiavi lunghe e testi arbitrariamente lunghi
+1. cifrare a 2 fasi
+   - suscettibile all'attacco /meet in the meddle/
+     + con /known plaintext/
+     + conoscendo =<P1,C1> <P2,C2>=
+       + servono estrambe per incrociare la ricerca, i match sono diversi per blocco
+       + ci sono molte piu' chiavi che blocchi
+     + /brute force/ sulla prima fase di cifratura, su $2^{56}$ possibilita' su [[id:ad07cbed-5c0b-448c-861e-3f8ee80e6803][DES]]
+2. cifrare a 3 fasi
+   - =triple DES= o =3DES=
+   - sicuro, chiave di $3\cdot 56=168$
+   - normalmente si utilizza =K1 = K3=
+     + la forza sta nelle 3 fasi, non nelle 3 chiavi
+   - si puo' utilizzare =3DES-EDE= con 3 chiavi uguali, che equivale a =DES=
+
+Per testi lunghi
+- Electonic Codebook
+  - divisione in blocchi esatti e criptarli tutti con la stessa chiave
+    - vulnerabilita' alla criptoanalisi statistica, utilizzabile solamente con testi corti
+- Cipher Block Chaining
+  + ogni blocco cifrato e' mette in $\oplus$ con il successivo plaintext
+  + il primo blocco e' in $\oplus$ con un /initialization vector/ $IV$
+    * solitamente publico
+  + il piu' usato, sicuro, semplice, efficiente
+  + un errore di 1 bit rende indecifrabile il blocco successivo
+- Cipher FeedBack
+  + cifrario a flusso
+  + simile al [[id:f5fa7caa-aa5f-403f-b340-57b7d07d673d][Cifrario di Vernam]]
+  + inefficiente, viene scartato del lavoro
+  + un errore di un bit effendoci feedback crea /effetto valanga/
+- Output Feedback
+  + molto simile al Cipher Feedback
+  + il feedback e' fatto utilizzando gli $i$ bit di output del cifrario a blocchi
+  + di fatto si divide in 2 fasi la procedura
+    1. prima di conoscere il testo si produce la sequenza di $i$ bit
+    2. utilizzare questa informazione bufferizzata per cifrare in $\oplus$
+  + simile al [[id:51177984-16bc-4c8b-8b69-969dba9f1dd9][One-time Pad]] e al [[id:f5fa7caa-aa5f-403f-b340-57b7d07d673d][Cifrario di Vernam]]
+    * solo simile in quanto il vettore di $i$ e' solo pseudocasuale
+
+
+
 ** Metodi dell'avversario
 L'avversario puó decodificare i cifrari monoalfabetici a una lettera facilmente attraverso una [[id:76569df5-b21c-4670-87bb-20a3fda3b42f][Crittanalisi Statistica]].
 
@@ -45,3 +89,9 @@ Questa analisi risulta molto piú difficile con un cifrario polialfabetico:
 - in conoscenza di $n$ é possibile fare la stessa analisi per lettere che distano $n$ posizioni nel testo
   + per cui quindi vale la stessa sostituzione
 Di conseguenza un testo cifrato di questo tipo risulta tanto piú facile da decifrare tanto é piú lungo, ancor di piú in presenza di parti di testo fisse.
+
+* Cifrari Asimmetrici
+Si utilizzano 2 chiavi, una per criptare e una per decriptare
+Le due chiavi non sono solo diverse nella forma, sono generate insieme e non e' possibile ottenere una dall'altra
+La difficolta' per un avversario non e' piu' informativa ma computazionale
+Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piu' impegnativo a livello computazionale
