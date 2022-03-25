@@ -72,20 +72,20 @@ Utile nei problemi:
 - dove l'informazione e' parzialmente strutturata
 
 * Agente Autonomo
-- ha capacita' di /azione/
+- ha capacitá di /azione/
 - riceve compiti ad alto livello
-- esplora alternative, numero esponenziale di possibilita' da esplorale
+- esplora alternative, numero esponenziale di possibilitá da esplorare
 - riconosce
-  + se una strada non puo' portare a una soluzione
-  + un strada gia' esplorata
+  + se una strada non puó portare a una soluzione
+  + un strada giá esplorata
 
-Un =AA= rimane un programma, non fara' cio' che non e' programmato a fare
+Un =AA= rimane un programma, non fará ció che non é programmato a fare
 
-Il cuore dell'agente e' la funzione *deliberativa*
-- un agente e' /razionale/ se opera per conseguire il /successo/
-- questo e' possibile con una _misura di prestazione_ utilizzata come guida
+Il cuore dell'agente é la funzione *deliberativa*
+- un agente é /razionale/ se opera per conseguire il /successo/
+- questo é possibile con una _misura di prestazione_ utilizzata come guida
 
-La razionalita' ottimizza il risultato atteso
+La razionalitá ottimizza il risultato atteso
 - possono intercorrere fattori ignoti o imprevedibili
 
 * Risoluzione Automatica di Problemi
@@ -120,6 +120,11 @@ Problema di ricerca nello spazio degli stati
 - funzione successore, spostamento di una tessera adiacente allo spazio vuoto nel suddetto
 - test obiettivo, verifica che la stato sia quello desiderato (tabella ordinata)
 - costo del cammino, ogni passo costa 1 e il costo del cammino é il numero di passi che lo costituiscono
+
+*** Euristiche
+- $h_1$ numero delle tessere fuori posto (rispetto alla configurazione goal)
+- $h_2$ distanza di Manhattan
+  + in particolare \[\sum_{\forall c}d_{\text{man}}(c)\]
 ** 8 Regine
 Posizionare 8 regine su una scacchiera $8\times8$ in modo che nessuna sia sotto attacco
 - generalizzabile con $N$ regine su una scacchiera $N\times N$
@@ -150,11 +155,11 @@ Nello studio di queste ricerche si considerano:
 Un goal a meno passi dalla radice non da' garanzia di ottimalita', in quanto vanno considerati i costi non il numero di passi.
 Il costo e' una funzione monotono crescente in relazione alla profondita'.
 
-** Ricerca in Ampiezza
+*** Ricerca in Ampiezza
 $O(b^{d+1})$
 - complessitá sia spaziale che temporale
 - esponenziale, non trattabile anche con $d$ ragionevoli
-** Ricerca Costo Uniforme
+*** Ricerca Costo Uniforme
 Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
 La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
 
@@ -166,12 +171,85 @@ $\text{costi} \ge \epsilon > 0$
 \[O(b^{1+\lfloor \frac{C^{*}}{\epsilon} \rfloor})\]
 - $C^{*}$ costo soluzione ottima
 
-** Ricerca in Profondita' w/ Backtracking
+*** Ricerca in Profondita' w/ Backtracking
 Si producono successori su successori man mano, percorrendo in profondita' l'albero.
 In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
 - viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
 - piu' efficiente in utilizzo della memoria
 
-** Ricerca in Profondita' w/o Backtracking
+*** Ricerca in Profondita' w/o Backtracking
 Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
 - viene utilizzato uno =stack= (=LIFO=)
+*** Iterative Deepening
+Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
+- cerca di combinare ricerca in profonditá e in ampiezza
+  + $\textsc{time}= O(b^d)$
+  + $\textsc{space}= O(b\cdot d)$
+  + completa
+  + ottima quando il costo non é funzione decrescente delle profonditá
+*** Ricerca Bidirezionale
+2 ricerche parallele
+- /forward/ dallo stato iniziale
+- /backwards/ dallo stato obiettivo
+
+Termina quando queste si incontrano a una intersezione.
+Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
+- $\textsc{time}= O( b^{\frac{d}{2}})$
+** Ricerca informata
+Si possiedono informazioni che permettono di identificare le strade piú promettenti
+- in funzione del costo
+
+Questa informazione é chiamata *euristica*
+$h(n)$: Il costo minimo stimato per raggiungere un nodo /preferito/ di $n$
+
+*** Greedy
+- costruisce un albero di ricerca
+- mantiene ordinata la frontiera a seconda di $h(n)$
+
+Ma l'euristica puó essere imperfetta e creare dei problemi.
+Questa strategia considera solo informazioni /future/, che riguardano ció che non é ancora stato esplorato.
+*** A*
+Combina informazioni future e passate:
+- *Greedy* e *Ricerca a costo uniforme*
+
+Utilizza una funzione di valutazione:
+$f(n) = g(n) + h(n)$
+
+Dove $g(n)$ é il costo minimo dei percorsi esplorati che portano dalla radice a $n$
+
+I costi minimi reali sono definiti con:
+$f^{\star}(n) = g^\star(n) + h^\star(n)$
+- definizione utilizzata nelle dimostrazioni
+
+$A^\star$ é ottimo quando
+- tutti i costi da un nodo a un successore sono positivi
+- l'euristica $h(n)$ é ammissibile
+
+*Ammissibilitá*
+- $\forall n: h(n) \le h^\star(n)$
+  + ovvero l'euristica é ottimistica
+
+Nel caso di ricerca in grafi $h(n)$ deve essere anche *monotona consistente* per garantire l'ottimalitá
+- vale una disuguaglianza triangolare
+- $h(n) \le c(n,a,n') + h(n')$
+- $\textsc{nb}$ tutte le monotone sono ammissibili ma non vale il viceversa
+
+Inoltre é *ottimamente efficiente*
+- espande sempre il numero minimo di nodi possibili
+Ma $\textsc{space}=O(b^d)$
+
+* Euristiche
+** Calcolo della Bontá
+Per decidere tra 2 euristiche ammissibili quale sia la piú buona
+1. confronto sperimentale
+2. confronto matematico
+
+Si considera la *dominanza*
+- $\forall n : h_2(n) \le h_1(n)\le h^\star(n)$
+  + restituisce sempre valore maggiore rispetto all'altra
+- una euristica dominante sará piú vicina alla realtá
+Si puó costruire una nuova $h(n) = \max(h_1(n),\dots,h_k(n))$ dominante su tutte quelle che la compongono
+
+Si valuta la qualitá dell'euristica (sperimentalmente) con il /branching factor/ effettivo $b^\star$
+- si costruisce con gli $N$ nodi costruiti nella ricerca un /albero uniforme/
+- $b^\star$ piccolo $\rightarrow$ euristica efficiente
