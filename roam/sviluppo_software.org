@@ -220,6 +220,16 @@ Altrimenti vengono descritti nelle specifiche supplementari
 *** Modello di dominio
 Casi d'uso e specifiche supplementari sono input che vanno a definire il modello di dominio
 
+$\textsc{definition}$   Nel =UP= il /Modello di Dominio/ é una rappresentazione delle classi concettuali della situazione reale. Queste /non sono/ oggetti software.
+- si puó pensare come un dizionario visivo, mostra le astrazioni astrazioni e le loro relazioni in maniera immediata
+- non tratta le responsabilitá/metodi degli oggetti, questi sono prettamente software
+- possibile distinguere:
+  + *simboli*
+  + *intenzioni*
+    * proprietá intrinseche, definizione
+  + *estensioni*
+    * esempi e casi in cui la classe concettuale si applica
+
 *** Ideazione
 Si tratta dello studio di fattibilita'
 - si decide se il caso merita un'analisi piu' completa
@@ -254,3 +264,62 @@ Riassunto di esperienze precedenti
 Progetto =Cat & Ring=
 ** Fase Preliminare dell'ideazione
 *** Glossario
+** UC Dettagliati
+*** Chef
+- Chef Claudio, ansioso
+  1. foglio riepilogativo ricette e preparazioni di tutti i servizi (automatico)
+     * /opzionalmente/ puó decidere di aggiungere cose al foglio (non al menú)
+  2. ordina l'elenco per importanza/difficoltá (il metodo é soggettivo)
+     * questo puó essere fatto anche in un momento successivo o puó essere modificato
+  3. tabellone dei turni: assegna a ogni elemento dell'elenco il /turno/ e un cuoco (disponibile per quel turno)
+     * stima del tempo necessario a ogni cuoco
+     * quantitá e porzioni
+  4. revisione degli assegnamenti e dell'ordine di questi
+  5. parallelamente sono creati i fogli riepilogativi dei /servizi/
+- Chef Tony, rilassato
+  1. fogli riepilogativi ricette e preparazioni di tutti i servizi (automatico)
+  2. ordina l'elenco per giorno del servizio
+  3. fogli riepilogativi dei /servizi/: assegna turno e cuoco (disponibile in quel turno)
+     * segna se ci sono preparati giá pronti/avanzati da servizi precedenti
+  4. tabellone dei turni: per preparazioni critiche nelle tempistiche le assegna a turni successivi
+     * anche senza scegliere subito il cuoco
+
+$\textsc{nb}$   emergono due nuovi concetti:
+- il *foglio riepilogativo*
+  + è associato ad un servizio all’interno di un evento, e riassume le ricette/preparazioni da preparare per quel servizio, riportando per ciascuna: se è stata assegnata, a chi e quando; se non è stata assegnata perché non serve prepararla; se il compito assegnato è stato portato a termine, e in tal caso eventuali commenti a riguardo del cuoco che l’ha preparata. Solo lo chef che ha in carico un evento e i relativi servizi può modificare (aggiungendo, eliminando o cambiando) l’elenco dei compiti nei relativi fogli riepilogativi.
+- il *tabellone dei turni*
+  + riepiloga ciascun turno i compiti già assegnati indipendentemente dal servizio per cui sono assegnati. E’ usato dallo chef per capire lo “stato” di un turno, e dai cuochi per sapere cos’hanno da fare. E’ dunque pubblico; ogni qual volta uno chef modifica i compiti a partire dal proprio foglio riepilogativo, anche il contenuto del tabellone viene modificato.
+
+Queste sono due visualizzazioni di una stessa informazione, l'utente inserirá l'informazione una volta sola.
+- responsabilitá del sistema queste visualizzazioni
+*** Primi UC
+- Claudio
+  1. crea foglio riepilogativo per un servizio di un evento *oppure* apre un foglie riepilogativo esistente (tra i servizi degli eventi di cui é stato incaricato)
+  2. *opzionalmente* aggiunge preparazioni/ricette all'elenco
+  3. ordina l'elenco per importanza e/o difficoltá
+  4. *opzionalmente* consulta tabellone turni
+  5. assegna un compito a un cuoco in un dato turno (sia sul tabellone dei turni che sul foglio riepilogativo) *oppure* modifica un assegnamento *oppure* elimina un assegnamento
+  6. *opzionalmente* specifica per il compito inserito nel tabellone una stima del tempo necessario
+  7. *opzionalmente* specifica per il compito inserito nel fogilo riepilogativo le quatitá/porzioni da preparare
+/ripete dal passo 4. fino a che soddisfatto/
+
+- Tony
+  1. crea foglio riepilogativo per un servizio di un evento *oppure* apre un foglie riepilogativo esistente (tra i servizi degli eventi di cui é stato incaricato)
+  2. *opzionalmente* apre piú fogli riepilogativi ripetendo il passo 1.
+  3. assegna compito a cuoco per dato turno (sia sul foglio riepilogativo che sul tabellone dei turni) *oppure* specifica che la ricetta/preparazione é giá pronta *oppure* assegna un compito a un turno senza specificare il cuoco
+  4. indica quantitá/porzioni per il compito inserito
+/ripete dal passo 3. fino a che soddisfatto/
+/torna al passo 2. oppure conclude/
+*** UC Combinato
+1. Genera foglio riepilogativo *oppure* apre foglio esistente (relativo a eventi cui é incaricato)
+/se desidera ripete 1. per aprire piú fogli parallelamente/
+/se desidera continua con 2. altrimenti termina il caso d'uso/
+2. *opzionalmente* aggiunge preparazioni/ricette al foglio
+3. *opzionalmente* ordina l'elenco
+4. *opzionalmente* consulta tabellone dei turni
+5. assegna un compito in un dato turno e *opzionalmente* a un cuoco *oppure* specifica se il compito é giá stato svolto *oppure* modifica un compito giá inserito *oppure* elimina un compito giá inserito
+6. *opzionalmente* specifica tempo necessario al compito e/o quantiá/porzioni da preparare
+/ripete dal passo 4. fino a che soddisfatto/
+
+$\textsc{nb}$  i passi 1. (per la generazione) e 4. (gestione delle 2 viste, /foglio servizio/ e /tabellone turni/ ) sono responsabilitá del *Sistema*
+*** Estensioni
