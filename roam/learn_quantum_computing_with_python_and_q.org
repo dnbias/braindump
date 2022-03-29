@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       c2bda57f-a02a-460c-96a2-796dd2fee708
+:END:
+#+title: Learn Quantum Computing with Python and Q#
+#+date: [2022-03-29 Tue 18:05]
+#+filetags: book
+Sarah Kaiser, Christopher Granade, /Learn Quantum Computing with Python and Q#/, 2021, Manning
+
+- Tags: [[id:6e504ff7-9a50-4a47-901d-4c524c229bc6][Quantum Computing]], [[id:96019e24-7f04-44ec-9bfe-727a0098d761][Q#]]
+- Code: https://github.com/crazy4pi314/learn-qc-with-python-and-qsharp
+
+* Setting Up the Environment
+- https://docs.microsoft.com/en-us/azure/quantum/install-overview-qdk
+
+The authors use Anaconda w/ [[id:b7330c27-133a-4c8a-9e5b-17f8c1d71f0b][Python]] 3 and the Conda package manager for the qsharp packages.

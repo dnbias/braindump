@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       6e504ff7-9a50-4a47-901d-4c524c229bc6
+:END:
+#+title: Quantum Computing
+#+date: [2022-03-29 Tue 18:03]

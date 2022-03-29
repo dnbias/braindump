@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       96019e24-7f04-44ec-9bfe-727a0098d761
+:END:
+#+title: Q#
+#+date: [2022-03-29 Tue 18:03]
+#+filetags: programming-language
+- [[https://docs.microsoft.com/en-us/azure/quantum/user-guide/libraries/?tabs=tabid-csproj][The Libraries]]
+- [[https://docs.microsoft.com/en-us/azure/quantum/install-overview-qdk][Setup QDK Environment]]
