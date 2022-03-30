@@ -13,3 +13,30 @@ Sarah Kaiser, Christopher Granade, /Learn Quantum Computing with Python and Q#/,
 - https://docs.microsoft.com/en-us/azure/quantum/install-overview-qdk
 
 The authors use Anaconda w/ [[id:b7330c27-133a-4c8a-9e5b-17f8c1d71f0b][Python]] 3 and the Conda package manager for the qsharp packages.
+
+On arch the =anaconda= package on the =AUR= installs everything but you need to add it to =PATH=:
+
+=PATH=/opt/anaconda/bin$PATH=
+
+Then you set the environment via =environment.yml= in the book's repo.
+
+=$ conda env create environment.yml=
+=$ conda activate qsharp-book=
+- for this =conda= needs to be set up on the console (=bash=, =zsh=, ...)
+
+After this the last thing to setup is =dotnet=, download the appropriate =Core SDK=.
+Install project templates:
+
+=$ dotnet new -i "Microsoft.Quantum.ProjectTemplates"=
+
+and to use them:
+
+=$ dotnet new console -lang Q# -O MyProject=
+
+Then to have language hinting on =VS Code= you need to install the extension =Microsoft Quantum Development Kit=
+- not available on the FOSS version of =VS Code= on the =AUR=
+
+For Jupyter Notebooks you can install =IQ#=
+
+=$ dotnet tool install -g Microsoft.Quantum.IQSharp=
+=$ dotnet iqsharp install=
