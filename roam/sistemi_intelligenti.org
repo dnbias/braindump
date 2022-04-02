@@ -9,7 +9,7 @@ Professoressa: Cristina Baroglio
 - *AI* coniato da [[id:1bd058f7-555b-425a-a779-8073c6889c84][John McCarthy]]
 - *Dato*, simbolo grezzo
 - *Informazione*, un dato elaborato
-- *Conoscenza*, compo di informazioni correlate tra loro
+- *Conoscenza*, campo di informazioni correlate tra loro
 - *Automazione*,
 - *Autonomia*,
 * Test di Turing
@@ -106,31 +106,31 @@ La razionalitá ottimizza il risultato atteso
 Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti allo stesso dominio, l'agente deve trovare
 una soluzione
 
-* Problemi
+** Problemi
 Un problema puó essere definito formalmente come una tupla di 4 elementi
 - Stato iniziale
 - Funzione successore
 - Test Obiettivo
 - Funzione del costo del cammino
 
-** Aspirapolvere
-** Gioco del 15
+*** Aspirapolvere
+*** Gioco del 15
 Problema di ricerca nello spazio degli stati
 - stato iniziale, qualsiasi
 - funzione successore, spostamento di una tessera adiacente allo spazio vuoto nel suddetto
 - test obiettivo, verifica che la stato sia quello desiderato (tabella ordinata)
 - costo del cammino, ogni passo costa 1 e il costo del cammino é il numero di passi che lo costituiscono
 
-*** Euristiche
+**** Euristiche
 - $h_1$ numero delle tessere fuori posto (rispetto alla configurazione goal)
 - $h_2$ distanza di Manhattan
   + in particolare \[\sum_{\forall c}d_{\text{man}}(c)\]
-** 8 Regine
+*** 8 Regine
 Posizionare 8 regine su una scacchiera $8\times8$ in modo che nessuna sia sotto attacco
 - generalizzabile con $N$ regine su una scacchiera $N\times N$
 
-* Algoritmi
-** Ricerca non informata - Blind
+** Algoritmi
+*** Ricerca non informata - Blind
 Costruiscono strutture dati proprie utilizzate nella soluzione di un problema
 - alberi o grafi di ricerca
   + in un albero uno stato puó comparire piú volte
@@ -155,11 +155,11 @@ Nello studio di queste ricerche si considerano:
 Un goal a meno passi dalla radice non da' garanzia di ottimalita', in quanto vanno considerati i costi non il numero di passi.
 Il costo e' una funzione monotono crescente in relazione alla profondita'.
 
-*** Ricerca in Ampiezza
+**** Ricerca in Ampiezza
 $O(b^{d+1})$
 - complessitá sia spaziale che temporale
 - esponenziale, non trattabile anche con $d$ ragionevoli
-*** Ricerca Costo Uniforme
+**** Ricerca Costo Uniforme
 Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
 La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
 
@@ -171,23 +171,23 @@ $\text{costi} \ge \epsilon > 0$
 \[O(b^{1+\lfloor \frac{C^{*}}{\epsilon} \rfloor})\]
 - $C^{*}$ costo soluzione ottima
 
-*** Ricerca in Profondita' w/ Backtracking
+**** Ricerca in Profondita' w/ Backtracking
 Si producono successori su successori man mano, percorrendo in profondita' l'albero.
 In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
 - viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
 - piu' efficiente in utilizzo della memoria
 
-*** Ricerca in Profondita' w/o Backtracking
+**** Ricerca in Profondita' w/o Backtracking
 Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
 - viene utilizzato uno =stack= (=LIFO=)
-*** Iterative Deepening
+**** Iterative Deepening
 Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
 - cerca di combinare ricerca in profonditá e in ampiezza
   + $\textsc{time}= O(b^d)$
   + $\textsc{space}= O(b\cdot d)$
   + completa
   + ottima quando il costo non é funzione decrescente delle profonditá
-*** Ricerca Bidirezionale
+**** Ricerca Bidirezionale
 2 ricerche parallele
 - /forward/ dallo stato iniziale
 - /backwards/ dallo stato obiettivo
@@ -195,20 +195,20 @@ Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazion
 Termina quando queste si incontrano a una intersezione.
 Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
 - $\textsc{time}= O( b^{\frac{d}{2}})$
-** Ricerca informata
+*** Ricerca informata
 Si possiedono informazioni che permettono di identificare le strade piú promettenti
 - in funzione del costo
 
 Questa informazione é chiamata *euristica*
 $h(n)$: Il costo minimo stimato per raggiungere un nodo /preferito/ di $n$
 
-*** Greedy
+**** Greedy
 - costruisce un albero di ricerca
 - mantiene ordinata la frontiera a seconda di $h(n)$
 
 Ma l'euristica puó essere imperfetta e creare dei problemi.
 Questa strategia considera solo informazioni /future/, che riguardano ció che non é ancora stato esplorato.
-*** A*
+**** A*
 Combina informazioni future e passate:
 - *Greedy* e *Ricerca a costo uniforme*
 
@@ -238,8 +238,8 @@ Inoltre é *ottimamente efficiente*
 - espande sempre il numero minimo di nodi possibili
 Ma $\textsc{space}=O(b^d)$
 
-* Euristiche
-** Calcolo della Bontá
+** Euristiche
+*** Calcolo della Bontá
 Per decidere tra 2 euristiche ammissibili quale sia la piú buona
 1. confronto sperimentale
 2. confronto matematico
@@ -253,3 +253,138 @@ Si puó costruire una nuova $h(n) = \max(h_1(n),\dots,h_k(n))$ dominante su tutt
 Si valuta la qualitá dell'euristica (sperimentalmente) con il /branching factor/ effettivo $b^\star$
 - si costruisce con gli $N$ nodi costruiti nella ricerca un /albero uniforme/
 - $b^\star$ piccolo $\rightarrow$ euristica efficiente
+
+** Ricerca Con Avversari
+*Informazione* puo' essere
+- perfetta
+- imperfetta
+Effetti delle *scelte*
+- deterministici
+- stocastici
+
+La ricerca in questo ambito si basa su delle *strategie* basate su punteggi dati dagli eventi.
+Alcuni giochi sono anche a /somma zero/.
+*** Teoria delle Decisioni
+Dall'Economia, poi traslata in algoritmi nell'ambito dell'IA.
+- *approccio maximax* - ottimistico
+- *approccio maximin* - conservativo
+- *approccio minimax regret* - minor /regret/
+
+**** Minimax
+~Minimax~ e' un algoritmo pessimista nel senso che simula che =Min= si muova in modo perfetto.
+- ricerca in profondita', esplora tutto l'albero ma non mantiene tutto in memoria
+
+Nella simulazione dell'albero di gioco si hanno i due attori
+1. =Max=
+2. =Min=
+
+L'algoritmo fa /venire a galla/ i costi /terminali/ dei rami del gioco, in quanto per guidare la scelta =Max= deve poter scegliere tra i nodi a se successivi.
+
+La funzione utilita' valuta gli stati /terminali/ del gioco, agisce per casi sul nodo $n$ in maniera ricorsiva
+$\text{minimax-value}(n)$:
+- se $n$ /terminale/
+  + $\text{utility}(n)$
+- se $n$ =Max=
+  + $\text{max}_{s \in succ(n)}(\text{minimax-value}(n))$
+- se $n$ =Min=
+  + $\text{min}_{s \in succ(n)}(\text{minimax-value}(n))$
+
+#+begin_src python
+def minimaxDecision(state): # returns action
+    v = maxValue(state)
+    return action in succ(state) with value == v
+
+def maxValue(state): # returns utility-value (state)
+    if (state.isTerminal()):
+        return utility(state)
+
+    v = sys.minint
+    for (a,s) in succ(state): # (action,successor)
+        v = max(v, minValue(s))
+
+    return v
+
+def minValue(state):
+    if (state.isTerminal()):
+        return utility(state)
+
+    v = sys.maxint
+    for (a,s) in succ(state):
+        v = min(v, maxValue(s))
+
+    return v
+#+end_src
+
+- $\textsc{space} = O(bm)$
+- $\textsc{time} = O(b^{m})$
+
+
+***** Potatura alpha-beta
+Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
+La potatura viene fatta in base all'intervallo $\alpha \cdots \beta$ dove:
+- $\alpha$ e' il valore della migliore alternativa per =Max= nel percorso verso =state=
+- $\beta$ e' il valore della migliore alternativa per =Min= nel percorso verso =state=
+Se il $v$ considerato e' fuori da questo intervallo allora e' inutile considerarlo.
+
+#+begin_src python
+def alphabetaSearch(state) # returns action
+    v = maxValue(state, sys.minint, sys.maxint)
+    return action in succ(state) with value == v
+
+def maxValue(state, alpha, beta) # returns utility-value (state)
+    if (state.isTerminal()):
+        return utility(state)
+
+    v = sys.minint
+    for (a,s) in succ(state): # (action,successor)
+        v = max(v, minValue(s, alpha, beta))
+        if (v >= beta) return v
+        alpha = max(alpha, v)
+
+    return v
+
+def minValue(state, alpha, beta)
+    if (state.isTerminal()):
+        return utility(state)
+
+    v = sys.maxint
+    for (a,s) in succ(state):
+        v = min(v, maxValue(s, alpha, beta))
+        if (v <= alpha) return v
+        beta = min(beta, v)
+
+    return v
+#+end_src
+
+Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azioni /killer move/ permettono di tagliare l'albero subito e non sprecare passi.
+
+- $\textsc{time} = O(b^{m/2})$
+  + nel caso migliore
+  + se l'ordine e' sfavorevole e' possibile che non avvengano potature
+
+Esistono tecniche di apprendimento per le /killer move/, il sistema si ricorda le /killer move/ passate e le cerca nelle successive applicazioni.
+Queste tecniche sono studiate in quanto la complessita' continua a essere troppo alta per applicazioni =RealTime=:
+- *trasposizioni*
+  + permutazioni dello stesso insieme di mosse
+  + mosse che portano allo stesso stato risultante
+  + vanno identificate ed evitate
+- *classificazione stati di gioco*
+  + per motivi di tempo vanno valutati come foglie nodi intermedi
+  + va valutata una situazione intermedia (/orizzonte/)
+    * valutazione rispetto alla facilita' di raggiungere una vittoria
+    * attraverso un classificatore sviluppato in precedenza
+- *quiescenza* dei nodi
+  + se mantiene la propria valutazione bene nei continuo
+  + non ribalta la valutazione nel giro di poche mosse
+
+** Soddisfacimento di Vincoli
+=CSP= - Constraint Satisfaction Problems
+- serie di =variabili= di dati dominii
+- =vincolo=, una condizione
+  + e' soddisfatto con una dato =assegnamento= che per essere una soluzione deve essere
+    1. completo, tutte le variabili sono assegnate
+    2. consistente, tutti i vincoli sono rispettati
+*** Problema dell'Australia
+3 colori per colorare i 7 territori dell'Australia
+- {=NA=, =NT=, =SA=, =Q=, =NSW=, =V=, =T=}
+- un territorio deve avere colore diverso da tutti i vicini

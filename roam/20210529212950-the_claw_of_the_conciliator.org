@@ -39,7 +39,7 @@ Daughter of the Night, possibly meaning [[id:cb0d79aa-3a00-4bb2-b9d7-e0afcac74a8
 
 She then talks of giants
 #+begin_quote
-"[...] oh speak not of [[id:bdc6d171-755b-4143-871d-9014e28dc15d][giants]], for you know not what you say. [...] To find my father befor your last stick is burned, you need only search out the darkest [[id:f1685bca-d4e6-4211-a77c-812f1bda7dd0][water]], for wherever he passes his great body raises a foul mud, and by observing it you may discover him. But each day you must begin the search at dawn, and at noon desist; otherwise yo may come upon him by twilight, and it will go evilly with you."
+"[...] oh speak not of [[id:bdc6d171-755b-4143-871d-9014e28dc15d][giants]], for you know not what you say. [...] To find my father before your last stick is burned, you need only search out the darkest [[id:f1685bca-d4e6-4211-a77c-812f1bda7dd0][water]], for wherever he passes his great body raises a foul mud, and by observing it you may discover him. But each day you must begin the search at dawn, and at noon desist; otherwise yo may come upon him by twilight, and it will go evilly with you."
 #+end_quote
 Reference to the encounter with [[id:a8f49eea-8e04-4266-9e10-72c3788510f7][undine]] later in the same book
 #+caption: p.385
