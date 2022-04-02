@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       d7686f15-7f24-476e-9ecf-87ef577d5a4c
+:END:
+#+title: Deutsch-Jozsa Algorithm
+#+date: [2022-04-02 Sat 09:28]
+#+filetags: algorithms compsci
+- Tags: [[id:6e504ff7-9a50-4a47-901d-4c524c229bc6][Quantum Computing]], [[id:b9d02edb-6458-4237-88de-41fb865974d2][CalcCompl]]
+- Source: [[https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html][qiskit]], [[id:c2bda57f-a02a-460c-96a2-796dd2fee708][Learn Quantum Computing with Python and Q#]] [Ap.D]
+The first example of a quantum algorithm performing better than the best classical algorithm.
