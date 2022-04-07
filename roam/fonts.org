@@ -1,0 +1,22 @@
+:PROPERTIES:
+:ID:       5334a2ab-458b-4086-8077-68fbc1356afd
+:END:
+#+title: Fonts
+#+date: [2022-04-03 Sun 15:46]
+#+filetags: aesthetic
+
+* Cool fonts
+** Monospaced
+- Roboto Mono
+- Victor Mono
+  + /very nice italics/
+- Inconsolata
+- Roboto Mono Nerd
+- SF Mono
+- Iosevka
+- Agave
+
+** Variable
+- SF Pro
+- ETBookOT
+- Adobe Garamond Pro

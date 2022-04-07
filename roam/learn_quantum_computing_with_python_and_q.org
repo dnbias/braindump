@@ -9,7 +9,27 @@ Sarah Kaiser, Christopher Granade, /Learn Quantum Computing with Python and Q#/,
 - Tags: [[id:6e504ff7-9a50-4a47-901d-4c524c229bc6][Quantum Computing]], [[id:96019e24-7f04-44ec-9bfe-727a0098d761][Q#]]
 - Code: https://github.com/crazy4pi314/learn-qc-with-python-and-qsharp
 
-* Setting Up the Environment
+* Concepts
+** Qubits
+Quantum analogue to the classical /bits/
+*** Quantum Random Number Generation
+=QRNG=
+
+Randomness is important, expecially where security is concerned.
+We need =RNG= that our adversary can't predict.
+While =RSA= relies on /just/ the assumption that factoring large numbers is hard the randomness of quantum mechanics is guaranteed by physics.
+Generating truly random numbers allows the implementation of a secure [[id:51177984-16bc-4c8b-8b69-969dba9f1dd9][One-time Pad]].
+
+The algorithm:
+1. allocate a =qubit=
+2. apply the =Hadamard= instruction to the =qubit=
+3. measure the =qubit=
+
+** Quantum Key Distribution
+** Nonlocal Games
+** Teleportation & Entanglement
+* Programming
+** Setting Up the Environment
 - https://docs.microsoft.com/en-us/azure/quantum/install-overview-qdk
 
 The authors use Anaconda w/ [[id:b7330c27-133a-4c8a-9e5b-17f8c1d71f0b][Python]] 3 and the Conda package manager for the qsharp packages.
@@ -51,3 +71,12 @@ For Jupyter Notebooks you can install =IQ#=
 $ dotnet tool install -g Microsoft.Quantum.IQSharp
 $ dotnet iqsharp install
 #+end_src
+** Q#
+** [[id:d7686f15-7f24-476e-9ecf-87ef577d5a4c][Deutsch-Jozsa Algorithm]]
+** Quantum Sensing
+* Applied Quantum Computing
+** Chemistry
+** Searching
+*** Grover's Search Algorithm
+** Arithmetic
+*** Shor's Algorithm

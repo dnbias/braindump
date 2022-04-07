@@ -135,7 +135,7 @@ Verticalmente si procede con:
 - artefatti
   + qualsiasi prodotto di lavoro
 
-In questo processo e' utilizzato solo =UML=
+In questo processo é utilizzato solo =UML=
 - utilizzato solo se necessario, se viene tralasciato va indicato il motivo
 - i diagrammi seguono le iterazioni e gli incrementi
 
@@ -167,12 +167,12 @@ Modello requisiti =FURPS+=
 - visione
 - regole di business
 
-La disciplina dei requisiti e' il processo per scoprire cosa deve essere costruito e orientare la sviluppo verso il sistema corretto
+La disciplina dei requisiti é il processo per scoprire cosa deve essere costruito e orientare la sviluppo verso il sistema corretto
 Si incrementalmente una lista dei requisiti: /feature list/
 - breave descrizione
 - stato
 - costi stimati di implementazione
-- priorita'
+- prioritá
 - rischio stimato per l'implementazione
 
 **** Casi d'uso
@@ -216,12 +216,13 @@ Sono ruoli svolti da persone, organizzazioni, sotware, macchine
 **** Requisiti non funzionali
 Possono essere inclusi nei casi d'uso se relazionati con il requisito funzinale descritto dal caso
 Altrimenti vengono descritti nelle specifiche supplementari
+**** Contratti
 
 *** Modello di dominio
 Casi d'uso e specifiche supplementari sono input che vanno a definire il modello di dominio
 
 $\textsc{definition}$   Nel =UP= il /Modello di Dominio/ é una rappresentazione delle classi concettuali della situazione reale. Queste /non sono/ oggetti software.
-- si puó pensare come un dizionario visivo, mostra le astrazioni astrazioni e le loro relazioni in maniera immediata
+- si puó pensare come un dizionario visivo, mostra le astrazioni  e le loro relazioni in maniera immediata
 - non tratta le responsabilitá/metodi degli oggetti, questi sono prettamente software
 - possibile distinguere:
   + *simboli*
@@ -230,19 +231,74 @@ $\textsc{definition}$   Nel =UP= il /Modello di Dominio/ é una rappresentazione
   + *estensioni*
     * esempi e casi in cui la classe concettuale si applica
 
-*** Ideazione
-Si tratta dello studio di fattibilita'
-- si decide se il caso merita un'analisi piu' completa
+*** Modello di Progetto
+/Architettura Logica e Layer/
+Si tratta di un modello indipendente dalla piattaforme che definisce i =layer=:
+- gruppi di classi software, =packages=, sottoinsiemi con responsabilitá condivisa
+  - =User Interface=
+  - =Application Logic=
+  - =Domain Objects=
+  - =Technical Services=
 
-La documentazione possibile e' tanta ma tutto e' opzionale
-- va documentato solo cio' che aggiunge valore al progetto
+I modelli per gli oggetti possono essere
+- statici, definiscono (/diagrammi delle classi/)
+  + package
+  + nomi delle classi
+  + attributi
+  + firme delle operazioni
+- dinamici, rappresentano il comportamento del sistema (/diagrammi di sequenza/)
+  + collaborazione tra oggetti per realizzare una caso d'uso
+  + i metodo delle classi software
+**** Diagrammi dei Package
+Vista /statica/
+**** Diagrammi di Interazione
+Vista /dinamica/
+
+#+begin_quote
+Un interazione é una specifica di come alcuni oggetti si scambiano messaggi nel tempo per eseguire un compito nell'ambito di un certo contesto.
+#+end_quote
+
+#+begin_quote
+Un compito é rappresentato da un messaggio che dá inizio all'interazione
+#+end_quote
+- questo messaggio é detto /messaggio trovato/
+
+Per questo scopo vengono usati i /diagrammi di sequenza/ o i /diagrammi di comunicazione/
+In particolare questi sono chiamati =Design Sequence Diagram - DSD=.
+
+
+**** Diagrammi delle Classi
+=Design Class Diagram - DCD=
+Vista /statica/
+#+begin_quote
+Il diagramma delle classi di progetto é un diagramma delle classi utilizzato da un punto di vista software o di progetto.
+#+end_quote
+
+A differenza del =Modello di Dominio= in questo contesto la visibilitá ha un significato:
+- le associazioni qui hanno un verso
+
+
+**** Progettazione a oggetti
+- /Quali sono le responsabilitá dell'oggetto?/
+- /Con chi collabora l'oggetto?/
+- /Quali design pattern devono essere applicati?/
+
+
+
+*** Ideazione
+Si tratta dello studio di fattibilitá
+- si decide se il caso merita un'analisi piú completa
+
+La documentazione possibile é tanta ma tutto é opzionale
+- va documentato solo ció che aggiunge valore al progetto
 
 *** Elaborazione
 Alla fine di questa fase si ha un'idea chiara del progetto
 - vengono stipulati contratti e obiettivi chiari, temporali e sui requisiti
 *** Costruzione
-Durante questa fale i requisiti principali dovrebbero essere stabili
+Durante questa fase i requisiti principali dovrebbero essere stabili
 *** Transizione
+
 
 * Unified Modeling Language
 =UML=

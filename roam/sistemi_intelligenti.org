@@ -377,6 +377,7 @@ Queste tecniche sono studiate in quanto la complessita' continua a essere troppo
   + se mantiene la propria valutazione bene nei continuo
   + non ribalta la valutazione nel giro di poche mosse
 
+
 ** Soddisfacimento di Vincoli
 =CSP= - Constraint Satisfaction Problems
 - serie di =variabili= di dati dominii
@@ -384,6 +385,38 @@ Queste tecniche sono studiate in quanto la complessita' continua a essere troppo
   + e' soddisfatto con una dato =assegnamento= che per essere una soluzione deve essere
     1. completo, tutte le variabili sono assegnate
     2. consistente, tutti i vincoli sono rispettati
+
+I problemi sono affrontati con approcci diversi in base alle caratteristiche del dominio (valori booleani/discreti/continui)
+*** Algoritmi
+**** Generate and Test
+1. genera un assegnamento completo
+2. controlla se e' una soluzione
+3. se si =return= altrimenti =continue=
+
+E' estremamente semplice ma non e' scalabile.
+
+**** Profondita' con Backtracking
+Si esplora l'albero delle possibili assegnazioni in profondita'. Si fa backtracking quando si incontra una assegnazione parziale che non seddisfa piu' le condizioni
+Il problema e' che in =CSP= il ~branching factor~ e' spesso molto alto, producendo alberi molto larghi.
+Dati $n$ variabili e $d$ media del numero di  valori possibili per una variabile:
+- il ~branching fator~ al primo livello, $n \cdot d$
+- ... al secondo, $(n-1)\cdot d$
+- l'albero avra' $n! \cdot d^{n}$ foglie
+
+Questo e' migliorabile con la tecnica del /fuoco/ su una singola variabile a agni livello dell'albero, questo in quanto i =CSP= godono della proprieta' commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
+
+Uno dei difetti di questo approccio e' il =Thrashing=, riconsiderando assegnamenti successivi che si sono gia' dimostrati fallimentari durante l'esplorazione.
+
+***** Euristiche
+- di variabile
+  + =Minimum Remaining Values= - /fail-first/
+  + =Grado=
+- di valore
+  + =Valore Meno Vincolante=
+    * lascia piú libertá alle variabili adiacenti sul grafo dei vincoli
+
+
+
 *** Problema dell'Australia
 3 colori per colorare i 7 territori dell'Australia
 - {=NA=, =NT=, =SA=, =Q=, =NSW=, =V=, =T=}
