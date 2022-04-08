@@ -89,16 +89,16 @@ La razionalitá ottimizza il risultato atteso
 - possono intercorrere fattori ignoti o imprevedibili
 
 * Risoluzione Automatica di Problemi
-- nella realta' di riferimento si astrae utilizzando degli /stati/
+- nella realtá di riferimento si astrae utilizzando degli /stati/
   + astraendo si lascia solo una descrizione essenziale
   + discreti
   + tra questi ci saranno stati /target/ e stati di partenza
-- la realta' transisce da uno stato all'astro tramite /azioni/
+- la realtá transisce da uno stato all'astro tramite /azioni/
   + le azioni hanno effetto deterministico
-- il dominio della realta' e' statico
+- il dominio della realtá é statico
 - *l'algoritmo di ricerca* determina una soluzione
   + permette di raggiungere da uno stato iniziale uno stato target
-    * una soluzione e' un percorso del grafo degli stati
+    * una soluzione é un percorso del grafo degli stati
   + utilizza:
     * descrizione del problema
     * metodo di ricerca
@@ -171,13 +171,13 @@ $\text{costi} \ge \epsilon > 0$
 \[O(b^{1+\lfloor \frac{C^{*}}{\epsilon} \rfloor})\]
 - $C^{*}$ costo soluzione ottima
 
-**** Ricerca in Profondita' w/ Backtracking
+**** Ricerca in Profonditá w/ Backtracking
 Si producono successori su successori man mano, percorrendo in profondita' l'albero.
 In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
 - viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
 - piu' efficiente in utilizzo della memoria
 
-**** Ricerca in Profondita' w/o Backtracking
+**** Ricerca in Profonditá w/o Backtracking
 Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
 - viene utilizzato uno =stack= (=LIFO=)
 **** Iterative Deepening
@@ -382,32 +382,62 @@ Queste tecniche sono studiate in quanto la complessita' continua a essere troppo
 =CSP= - Constraint Satisfaction Problems
 - serie di =variabili= di dati dominii
 - =vincolo=, una condizione
-  + e' soddisfatto con una dato =assegnamento= che per essere una soluzione deve essere
+  + é soddisfatto con una dato =assegnamento= che per essere una soluzione deve essere
     1. completo, tutte le variabili sono assegnate
     2. consistente, tutti i vincoli sono rispettati
 
 I problemi sono affrontati con approcci diversi in base alle caratteristiche del dominio (valori booleani/discreti/continui)
 *** Algoritmi
 **** Generate and Test
+/Bruteforce/
 1. genera un assegnamento completo
-2. controlla se e' una soluzione
+2. controlla se é una soluzione
 3. se si =return= altrimenti =continue=
 
-E' estremamente semplice ma non e' scalabile.
+É estremamente semplice ma non é scalabile.
 
-**** Profondita' con Backtracking
-Si esplora l'albero delle possibili assegnazioni in profondita'. Si fa backtracking quando si incontra una assegnazione parziale che non seddisfa piu' le condizioni
-Il problema e' che in =CSP= il ~branching factor~ e' spesso molto alto, producendo alberi molto larghi.
+**** Profonditá con Backtracking
+Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni
+Il problema é che in =CSP= il ~branching factor~ é spesso molto alto, producendo alberi molto larghi.
 Dati $n$ variabili e $d$ media del numero di  valori possibili per una variabile:
 - il ~branching fator~ al primo livello, $n \cdot d$
 - ... al secondo, $(n-1)\cdot d$
-- l'albero avra' $n! \cdot d^{n}$ foglie
+- l'albero avrá $n! \cdot d^{n}$ foglie
 
-Questo e' migliorabile con la tecnica del /fuoco/ su una singola variabile a agni livello dell'albero, questo in quanto i =CSP= godono della proprieta' commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
+Questo é migliorabile con la tecnica del /fuoco/ su una singola variabile a ogni livello dell'albero, questo in quanto i =CSP= godono della proprietá commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
 
-Uno dei difetti di questo approccio e' il =Thrashing=, riconsiderando assegnamenti successivi che si sono gia' dimostrati fallimentari durante l'esplorazione.
+Uno dei difetti di questo approccio é il =Thrashing=, riconsiderando assegnamenti successivi che si sono giá dimostrati fallimentari durante l'esplorazione.
 
-***** Euristiche
+**** Forward Checking
+Approccio locale di propagazione della conoscenza.
+Si propagano le scelte delle variabile ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
+
+**** AC-3
+=Arc Consistency= - McWorth
+- funziona con vincoli binari
+- simile al Forward Checking
+- =Arc Consistency= non é una proprietá sufficiente a garantire l'esistenza di una soluzione
+#+begin_src python
+def AC-3(csp): // returns CSP ridotto
+    queue = csp.arcs
+    while queue != empty:
+        (xi,xj) = queue.RemoveFirst()
+        if (RemoveInconsistentValues(xi,xj)):
+            for (xk in xi.neighbours):
+                queue.Add(xk,xi)
+
+
+def RemoveInconsistentValues(xi,xj): // returns boolean
+    removed = false
+    for (x in Domain[xi])
+        if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
+            Domain[xi].delete(x)
+            removed = true
+    return removed
+
+#+end_src
+
+*** Euristiche
 - di variabile
   + =Minimum Remaining Values= - /fail-first/
   + =Grado=
@@ -415,6 +445,32 @@ Uno dei difetti di questo approccio e' il =Thrashing=, riconsiderando assegnamen
   + =Valore Meno Vincolante=
     * lascia piú libertá alle variabili adiacenti sul grafo dei vincoli
 
+Euristiche di /scelta/ e /inferenza/
+- alternanza tra esplorazione e inferenza
+  + ovvero propagazione di informazione attraverso i vincoli
+
+**** Consistency
+1. =Node Consistency=
+   - vincoli di aritá 1 soddisfatti
+2. =Arc Consistency=
+   - vincoli di aritá 2 soddisfatti per ogni valore nel dominio
+   - un arco é =arc-consistent= quando $\forall$ valore del dominio del sorgente $\exists$ valore nel dominio della destinazione che permetta di rispettare il vincolo
+3. =Path Consistency=
+   - 3 variabili legate da vincoli binari
+   - considerate 2 variabili $x, y$ queste sono =path-consistent= con $z$ se $\forall$ assegnamento consistente di $x,y \; \exists$ un assegnamento $z$ tale che $\{x,z\}$ e $\{y,z\}$ questi sono entrambi consistenti.
+
+Questi concetti sono generalizzabili con la =k-consistenza=
+- per ogni sottoinsieme di $k-1$ variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la $k\text{-esima}$ variabile che é consistente con tutti gli altri.
+
+Un =CSP= fortemente consistente puó essere risolto in tempo lineare.
+
+*** Vincoli Speciali
+- =AllDifferent=
+  + test sul numero di valori rimanenti nei domini delle variabili considerate
+- =Atmost=
+  + disponibilitá $N$
+  + risorse richieste dalle entitá
+  + vincoli utilizzati nella /logistica/
 
 
 *** Problema dell'Australia
