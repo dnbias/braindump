@@ -12,24 +12,43 @@ Professoressa: Cristina Baroglio
 - *Conoscenza*, campo di informazioni correlate tra loro
 - *Automazione*,
 - *Autonomia*,
-* Test di Turing
+** Automazione
+Campo in cui l'informatico piu' in generale viene applicata
+- automazione del calcolo
+- automazione contabile
+- automiazione della ricerca di informazione, motori di ricerca
+
+Tratta di programmare un supporto a fare /ogni passo/, applicabile in domini fortemente ripetitivi
+** Autonomia
+Svolta da un agente artificiale che risolve un compito
+- non viene indicato passo passi il modo per raggiungere l'obiettivo
+- vengono forniti solo compiti ad alto livello
+
+Utile nei problemi:
+- non deterministici
+- in cui c'e' molteplicita' di soluzioni
+- con dati di natura simbolica
+- si ha una conoscenza ampia e completa
+- dove l'informazione e' parzialmente strutturata
+
+** Comprensione
+Output attesi $\implies$ comprensione? [[id:8c582ee0-1194-47b7-b6c9-9e46adaa60c7][John R. Searle]]
+** Test di Turing
 - test per definire se un computer e' intelligente, o se un programma lo e'
   + in linguaggio naturale
 - per T lo e' quando inganna l'uomo, imitando il comportamento umano
 - un computer che deve passare il test non eseguira' gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacita' di un umano
 - =The Imitation Game=
-* Comprensione
-Output attesi $\implies$ comprensione? [[id:8c582ee0-1194-47b7-b6c9-9e46adaa60c7][John R. Searle]]
-* Captcha
+** Captcha
 =Completely Automated Public Turing-test to tell Computers and Humans Apart=
 Turing test inverso
-* Strong & Weak
+** Strong & Weak
 1. studio del pensiero e del comportamento umano, scienze cognitive
    + riprodurre l'intelligenza umana
 2. risolvere problemi che richiederebbero intelligenza degli umani per essere risolto
    + non ci importa come l'umano ragiona, importa come risolvere il problema
    + task-oriented
-* Agente - Environment
+** Agente - Environment
 L'agente é immerso in un ambiente e svolge in ciclo esecutivo:
 1. Percepisce
 2. Delibera
@@ -45,33 +64,7 @@ Inoltre si puo' distinguere un ambiente:
   + possibile prevedere in che stato un azione sposta l'ambiente
 - stocastico
   + non e' possibile prevedere in tutti i casi lo stato in cui ci si trovera' dopo un azione
-* Paradigma Dichiarativo
-- imperativo: /how/, sequenza di passi
-- dichiaritivo: /what/, si sfrutta una =knowledge base=
-  + il cuore é il *Modulo dichiarativo* che utilizza l'informazione dalla percezione e la propria knowledge base
-Quindi:
-- un programma, risolutore, produce un altro programma che risolva una particolare istanza del mondo
-
-* Automazione
-Campo in cui l'informatico piu' in generale viene applicata
-- automazione del calcolo
-- automazione contabile
-- automiazione della ricerca di informazione, motori di ricerca
-
-Tratta di programmare un supporto a fare /ogni passo/, applicabile in domini fortemente ripetitivi
-* Autonomia
-Svolta da un agente artificiale che risolve un compito
-- non viene indicato passo passi il modo per raggiungere l'obiettivo
-- vengono forniti solo compiti ad alto livello
-
-Utile nei problemi:
-- non deterministici
-- in cui c'e' molteplicita' di soluzioni
-- con dati di natura simbolica
-- si ha una conoscenza ampia e completa
-- dove l'informazione e' parzialmente strutturata
-
-* Agente Autonomo
+*** Agente Autonomo
 - ha capacitá di /azione/
 - riceve compiti ad alto livello
 - esplora alternative, numero esponenziale di possibilitá da esplorare
@@ -88,7 +81,14 @@ Il cuore dell'agente é la funzione *deliberativa*
 La razionalitá ottimizza il risultato atteso
 - possono intercorrere fattori ignoti o imprevedibili
 
-* Risoluzione Automatica di Problemi
+** Paradigma Dichiarativo
+- imperativo: /how/, sequenza di passi
+- dichiaritivo: /what/, si sfrutta una =knowledge base=
+  + il cuore é il *Modulo dichiarativo* che utilizza l'informazione dalla percezione e la propria knowledge base
+Quindi:
+- un programma, risolutore, produce un altro programma che risolva una particolare istanza del mondo
+
+* Risoluzione Automatica
 - nella realtá di riferimento si astrae utilizzando degli /stati/
   + astraendo si lascia solo una descrizione essenziale
   + discreti
@@ -489,3 +489,23 @@ Un =CSP= fortemente consistente puó essere risolto in tempo lineare.
 3 colori per colorare i 7 territori dell'Australia
 - {=NA=, =NT=, =SA=, =Q=, =NSW=, =V=, =T=}
 - un territorio deve avere colore diverso da tutti i vicini
+
+* Rappresentazione della Conoscenza
+** Agenti su Conoscenza
+Caratterizzati da:
+- =Knowledge Base=
+  + generalmente cambia nel tempo
+  + inizialmente formata dalla /background knowledge/
+- =Tell= - /assert/
+- =Ask= - /query/
+  + ogni risposta deve essere una conseguenza di /asserts/ e /background knowledge/
+** Formalismi Logici
+/Per la rappresentazione di Knowledge Base/
+
+- *Linguaggio di Rappresentazione*
+  + con cui vengono formate formule /ben formate/
+  + la /semantica/ del linguaggio definisce la veritá delle formule
+- *Modello*
+- *Conseguenza*
+- *Inferenza*
+- *Grounding*
