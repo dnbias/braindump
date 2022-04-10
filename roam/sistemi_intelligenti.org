@@ -327,11 +327,11 @@ La potatura viene fatta in base all'intervallo $\alpha \cdots \beta$ dove:
 Se il $v$ considerato e' fuori da questo intervallo allora e' inutile considerarlo.
 
 #+begin_src python
-def alphabetaSearch(state) # returns action
+def alphabetaSearch(state): # returns action
     v = maxValue(state, sys.minint, sys.maxint)
     return action in succ(state) with value == v
 
-def maxValue(state, alpha, beta) # returns utility-value (state)
+def maxValue(state, alpha, beta): # returns utility-value (state)
     if (state.isTerminal()):
         return utility(state)
 
@@ -343,7 +343,7 @@ def maxValue(state, alpha, beta) # returns utility-value (state)
 
     return v
 
-def minValue(state, alpha, beta)
+def minValue(state, alpha, beta):
     if (state.isTerminal()):
         return utility(state)
 
@@ -436,6 +436,18 @@ def RemoveInconsistentValues(xi,xj): // returns boolean
     return removed
 
 #+end_src
+**** Back-Jumping
+Risolve i limiti del tradizionale =Backtracking Cronologico=, che torna passo per passo indietro senza sfruttare i vincoli.
+Si viene guidati dal /Conflict Set/. Si fa backtracking a una variabile che potrebbe risolvere il conflitto.
+- questi =CS= sono costruiti tramite =Forward Checking= durante gli assegnamenti
+#+begin_quote
+Sia $A$ un assegnamento parziale consistente, sia $X$ una variabile non ancora assegnata. Se l'assegnamento $A \cup \{X=v_{i}\}$ risulta inconsistente per qualsiasi valore $v_{i}$ appartenente al dominio di $X$ si dice che $A$ é un _conflict set_ di $X$
+#+end_quote
+
+Quando tutti gli assegnamenti possibili successivi a $X_{j}$ falliscono si agisce con il =Back-Jumping=
+- si considera l'ultimo assegnamento $X_{i}$ aggiunto al =CS= di $X_{j}$
+- viene aggiornato il =CS= di $X_{i}$
+  + $CS(X_{i})=CS(X_{i})\cup (CS(X_{j})- \{X_{i}\})$
 
 *** Euristiche
 - di variabile
