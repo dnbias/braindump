@@ -80,7 +80,6 @@ $\textsc{nb}$   L'output di una iterazione /non/ é un esperimento o un prototip
 - feedback immediato
 - gestione della complessita', evita la /paralisi da analisi/
 
-
 ** Modello di Integrazione e Configurazione
 Nel _modello dell'integrazione e configurazione_ si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalitá
 
@@ -265,8 +264,6 @@ Un compito é rappresentato da un messaggio che dá inizio all'interazione
 
 Per questo scopo vengono usati i /diagrammi di sequenza/ o i /diagrammi di comunicazione/
 In particolare questi sono chiamati =Design Sequence Diagram - DSD=.
-
-
 **** Diagrammi delle Classi
 =Design Class Diagram - DCD=
 Vista /statica/
@@ -276,15 +273,10 @@ Il diagramma delle classi di progetto é un diagramma delle classi utilizzato da
 
 A differenza del =Modello di Dominio= in questo contesto la visibilitá ha un significato:
 - le associazioni qui hanno un verso
-
-
 **** Progettazione a oggetti
 - /Quali sono le responsabilitá dell'oggetto?/
 - /Con chi collabora l'oggetto?/
 - /Quali design pattern devono essere applicati?/
-
-
-
 *** Ideazione
 Si tratta dello studio di fattibilitá
 - si decide se il caso merita un'analisi piú completa
@@ -298,7 +290,6 @@ Alla fine di questa fase si ha un'idea chiara del progetto
 *** Costruzione
 Durante questa fase i requisiti principali dovrebbero essere stabili
 *** Transizione
-
 
 * Unified Modeling Language
 =UML=
@@ -314,8 +305,111 @@ _É un linguaggio visuale per la specifica, la costruzione e la documentazione d
 - la modellazione agile enfatizza l'uso di =UML= come abbozzo
 
 * Pattern
-Riassunto di esperienze precedenti
+Riassunto di esperienze precedenti, permettono di individuare le pratiche ottime nello sviluppo di progetti complessi.
+Un /Pattern/ é una coppia /problema-soluzione/ ben conosciuta e con un nome associato.
 
+L'approccio complessivo é guidato dalla *responsabilitá*:
+- =RDD= - Responsibility-Driven Development
+  + *NB* quella della responsabilitá é una metafora per semplificare il ragionamento
+
+In =UML= la responsabilitá é un /contratto/ o un /obbligo/ di un classificatore.
+Sono correlate agli obblighi o al comportamento di un oggetto, sono di due tipi:
+1. di fare
+   - fare qualcosa esso stesso
+   - chiedere ad altri di aseguire azioni
+   - controllare e controllare attivitá di altri
+2. di conoscere
+   - i propri dati
+   - gli oggetti correlati
+   - cose che puó derivare o calcolare
+
+** GRASP
+=General Responsibility Assignment Software Patterns=
+#+begin_quote
+Capire le responsabilitá é fondamentale per una buona programmazione a oggetti. - [[id:5e36997b-2e9a-4e32-aef9-12c9319f0f50][Martin Fowler]]
+#+end_quote
+=GRASP= tratta i pattern di base per l'assegnazione di responsabilitá.
+- buon [[http://www.kamilgrzybek.com/design/grasp-explained/][blog post]] a riguardo
+
+Disegnare i diagrammi di interazione é occasione di considerare le responsabilitá (metodi) e assegnarle.
+
+La progettazione modulare é uno dei principi (=High Cohesion= - =Low Coupling= )
+- questi sono pattern /valutativi/, non ci danno la soluzione direttamente
+
+*** Creator
+- Chi crea un oggetto =A=?
+  + /Chi deve essere responsabile della creazione di una nuova istanza di una classe?/
+
+Assegna alla classe =B= la responsabilitá vale una delle seguenti condizioni:
+- =B= contiene o aggrega con una composizione oggetti di tipo =A=
+- =B= registra =A=
+  + ovvero ne salva una =reference= in un campo
+- =B= utilizza strettamente =A=
+- =B= possiede i dati per l'inizializzazione di =A=
+  + quindi =B= é un =Expert= rispetto ad =A=
+
+*** Information Expert
+- Chi ha una particolare responsabilitá?
+
+Assegna la responsabilitá alla classe che contiene le informazioni necessarie per soddisfarla.
+- =Expert=
+
+*** Low Coupling
+- Come ridurre l'impatto dei cambiamenti?
+- Come sostenere una dipendenza bassa?
+
+Assegna le responsabilitá in modo tale che l'accoppiamento (non necessario) rimanga basso.
+Questo é un principio da utilizzare per valutare le scelte possibili e gli altri pattern.
+- classi per natura *generiche* e che verranno riutilizzate devono avere un accoppiamento particolamente basso.
+- il rapporto tra classi-sottoclassi é un *accoppiamento forte*
+- accoppiamento alto con elementi /stabili/ o /pervasivi/ causano raramente problemi
+  + il problema sorge con /accoppiamento alto con elementi per certi aspetti instabili/
+
+*** High Cohesion
+- Come mantenere gli oggetti focalizzati, comprensibili e gestibili?
+  + effetto collaterale, sostenere =Low Coupling=
+
+Assegna le responsabilitá in modo tale che la coesione rimanga alta.
+Questo é un principio da utilizzare per valutare le scelte possibili e gli altri pattern alternativi.
+
+Una classe con una bassa coesione fa molte cose non correlate tra loro o svolge troppo lavoro.
+La coesione puó essere misurata in termini di:
+- coesione di dati
+- coesione funzionale
+  + questa corrisponde al principio di =High Cohesion=
+  + Grady Booch: c'é una coesione funzionale alta quando gli elementi di un componente /lavorano tutti insieme per fornire un comportamente ben circoscritto/
+- coesione temporale
+- coesione per pura coincidenza
+
+*** Controller
+- Qual é il primo oggetto oltre lo strato =UI= che riceve e coordina ("controlla") un'operazione di sistema?
+
+Assegna la responsabilitá a un oggetto che rappresenta uno di questi:
+- il sistema complessivo, un oggetto radice o entry point del software, un sottosistema principale
+  + /controller facade/
+- uno scenario di un caso d'uso all'interno del quale si verifica l'operazione di sistema
+  + /controller di sessione/ o /controller di caso d'uso/
+
+Il =Controller= é un pattern di delega:
+- oggetti dello strato =UI= catturano gli eventi di sistema generati dagli attori
+- oggetti dello strato =UI= devono delegare le richieste di lavoro a oggetti di un altro strato
+- il =Controller= é una sorta di /facciata/
+  + controlla e coordina ma non esegui lui stesso le operazioni, secondo la =High Cohesion=
+
+*NB* il controller =MVC= é distinto e solitamente dipende strettamente dalla tecnologia utilizzata per la =UI= e fa parte di questo strato, a sua volta delegerá al =Controller= dello strato di Dominio.
+
+*** Polymorphism
+
+*** Pure Fabrication
+
+*** Indirection
+
+*** Protected Variations
+
+** GoF
+=Gang of Four=
+=GoF= sono idee di progettazione piú avanzate rispetto a  =GRASP=.
+- articoli di [[https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns][journaldev]] a riguardo
 * Laboratorio
 Progetto =Cat & Ring=
 ** Fase Preliminare dell'ideazione
