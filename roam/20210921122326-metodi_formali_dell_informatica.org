@@ -22,7 +22,7 @@ Derivano dalla logica-matematica
     - descrizioni formali del comportamento dei programmi
 
 #+begin_quote
-In computer science formal methods are a particular kind of mathematically based techniques for the specification, developmetn and verification of software and hardware systems  | Wikipedia
+In computer science *formal methods* are a particular kind of mathematically based techniques for the specification, development and verification of software and hardware systems - Wikipedia
 #+end_quote
 
 - Componenti dei metodi formali
@@ -102,14 +102,14 @@ Teorema: Se la tripla é derivabile in HL, allora é valida
 La logica del primo ordine é corretta e completa ma é _indecidibile_
 - Teorema di Church
 - non esiste un algoritmo che verifichi che formula logica sia corretta
-HL é corretta, ma completa solo in senso debole; include FOL dunque é indecidibile
+=HL= é corretta, ma completa solo in senso debole; include FOL dunque é indecidibile
 
-Allora si utilizzano Truth Assistant, il teorema di Rice ci dimostra che i Verificatori non possono esistere.
-- Isabelle
-- Coq
-- Agda
+Allora si utilizzano Truth Assistant, il teorema di =Rice= ci dimostra che i Verificatori non possono esistere.
+- =Isabelle=
+- =Coq=
+- =Agda=
   + un linguaggio di programmazione funzionale
-- VeriFast
+- =VeriFast=
   + ProofAssistant dedicato a _Separation Logic_ in C e Java
 ** Grammatiche
 *** Concrete
@@ -354,15 +354,15 @@ bcomp\;(Bc\;v)\;f\;n &= (if\;v=f\;then\;[\textsc{jmp}\;n]\;else\;[\:]) \\
 bcomp\;(Not\;b)\;f\;n &= bcomp\;b\;(\lnot f)\;n \\
 bcomp\;(And\;b_1\;b_2)\;f\;n &= \\
 \end{align*}
+
+\begin{align*}
 &bcomp\;(Less\;a_1\;a_2)\;f\;n &=& \\
 & & & acomp\;a_1\;@\;acomp\;a_2\;@\;( \\
  &&& if\;f\;then\;[\textsc{jmpless}\;n]\;\\
   &&& else\;[\textsc{jmpge}\;n])
-\end{align}
+\end{align*}
 
 =Lemma 8.8=
 Si definisce:
 
 $\text{pc'} = \text{size }(\text{bcomp }b \:f \:n) + (\text{ if } f = \text{ bval } b\: s \text{ then } n \text{ else } 0$
-
-****
