@@ -3,6 +3,7 @@
 :END:
 #+title: Digital Envelope
 #+date: [2022-03-23 Wed 14:36]
+#+filetags: security
 - Source: http://security.nknu.edu.tw/crypto/faq/html/2-2-4.html
 
 Combines public and secret key encryption:

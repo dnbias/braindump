@@ -80,8 +80,6 @@ Per testi lunghi
   + simile al [[id:51177984-16bc-4c8b-8b69-969dba9f1dd9][One-time Pad]] e al [[id:f5fa7caa-aa5f-403f-b340-57b7d07d673d][Cifrario di Vernam]]
     * solo simile in quanto il vettore di $i$ e' solo pseudocasuale
 
-
-
 ** Metodi dell'avversario
 L'avversario puó decodificare i cifrari monoalfabetici a una lettera facilmente attraverso una [[id:76569df5-b21c-4670-87bb-20a3fda3b42f][Crittanalisi Statistica]].
 
@@ -93,7 +91,42 @@ Di conseguenza un testo cifrato di questo tipo risulta tanto piú facile da deci
 * Cifrari Asimmetrici
 Si utilizzano 2 chiavi, una per criptare e una per decriptare
 Le due chiavi non sono solo diverse nella forma, sono generate insieme e non e' possibile ottenere una dall'altra
-La difficolta' per un avversario non e' piu' informativa ma *computazionale*
-Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piu' impegnativo a livello computazionale, infatti i primi sono molto recenti ([[id:9f283e41-6b09-40bf-9dbe-26b10e493c8d][Diffie-Hellman Key Exchange]])
+La difficolta' per un avversario non é piú informativa ma *computazionale*
+Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piú impegnativo a livello computazionale, infatti i primi sono molto recenti ([[id:9f283e41-6b09-40bf-9dbe-26b10e493c8d][Diffie-Hellman Key Exchange]]).
+- il protocollo piú utilizzato in questo ambito é [[id:0cb7ffff-dc77-485a-80c6-872386ca0713][RSA]].
 - sono spesso combinati con cifrari simmetrici e funzioni di hash
   + vedi [[id:e5c81738-06bf-4d9d-b962-cf9bc56023ef][Digital Envelope]]
+
+É possibile classificare l'uso di questi sistemi in:
+1. Encryption/Decryption
+   * sender encrypts with recipient public key
+2. Digital Signature
+   * sender signs with its private key
+3. Key Exchange
+   * le parti collaborano per scambiarsi una chiave segreta
+
+[[../media/img/public-key-applications.jpg]]
+* Funzioni di Hash
+#+begin_quote
+Una funzione di Hash $H$ accetta un blocco di dati $M$ di lunghezza variabile e produce un valore di hash $h = H(M)$ di lunghezza fissa.
+#+end_quote
+- una buona funzione di Hash ha la proprietá che applicata a un gran numero di input gli output siano ben distribuiti e apparentemente random
+- un cambiamento a un qualsiasi bit o bits in $M$ causa, probabilmente, un cambiamento nel codice hash generato
+
+In crittografia si una un particolare tipo di funzione di hash, che ha ulteriori proprietá:
+- =one-way property=
+  + /infeasible to find an object mapping to a pre-specified hash/
+- =collision-free property=
+  + /infeasible to find two objects mapping to the same hash/
+
+Queste funzioni di hash sono utilizzate per:
+- autenticare messaggi con i =message digest=
+  + /sender/ e /recipient/ applicano entrambi la funzione e comparano i risultati
+- =digital signature=
+- =one-way password file=
+- =intrusion detection=
+- =virus detection=
+
+[[../media/img/secure-hash-code.jpg]]
+
+La funzione di hash piú utilizzata in tempi recenti é stato il [[id:5138a424-b3a8-42cb-b87d-3dd8d647c270][Secure Hash Algorithm]]
