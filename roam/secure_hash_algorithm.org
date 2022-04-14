@@ -1,0 +1,20 @@
+:PROPERTIES:
+:ID:       5138a424-b3a8-42cb-b87d-3dd8d647c270
+:ROAM_ALIASES: SHA
+:END:
+#+title: Secure Hash Algorithm
+#+date: [2022-04-15 Fri 01:40]
+#+filetags: security
+[[../media/img/SHAs.jpg]]
+
+=SHA= is based on the hash function =MD4=.
+=SHA-256= and =SHA-384= and =SHA-512= are collectively known as =SHA-2=.
+
+* SHA-512 Logic
+1. Append padding bits
+2. Append length
+3. Initialize hash buffer
+4. Process message in 1024-bit blocks
+5. Output
+
+[[../media/img/SHA-512-single-round.jpg]]

@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       0cb7ffff-dc77-485a-80c6-872386ca0713
+:END:
+#+title: RSA
+#+date: [2022-04-15 Fri 00:13]
+#+filetags: algorithm security
+
+* Algorithm
+1. choose $p$ and $q$ primes
+   - =Miller-Rabin=
+2. calculate module $n = pq$
+3. choose $e < (p-1)(q-1) such that $\text{gcd}(e,(p-1)(q-1))=1$
+4. calculate $d=e^{-1} \mod (p-1) (q-1)$
+5. $K^{+} = <e,n>$  ---  $K^{-} = <d,n>$
+
+This algorithm is *Generalized Euclid's Algorithm*
+* Usage
+Cypher: $c = m^{e} \mod n$
+Decypher: $m = c^{d} \mod n$
+
+* Security
+- *hard* - decypher without knowing $d$
+- *hard* - calculating $d$ knowing $e, n$ without knowing $p,q$
+- *hard* - calculating $p,q$ knowing $n$, with $n$ sufficiently big (at least 1024 bits)
