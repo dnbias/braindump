@@ -536,7 +536,55 @@ Vari approcci:
 1. Model Checking
    - $n$ simboli, $2^{n}$ modelli possibili
 2. Theorem Proving
-   - basato sull'inferenza
+   - basato sull'inferenza /sintattica/
+     + quindi sulla manipolazione delle formule
+     + utilizza le =Regole di Inferenza=
+       * contrapposizione, de Morgan, associativitá...
    - =Teorema di Deduzione=
      + date formule $R,Q$
      + $R\vDash Q \iff R\implies Q \text{ é una formula valida o tautologia}$
+       * $Q$ é conseguenza logica di $R$
+
+*** Theorem Proving
+1. Algoritmo di Ricerca (o di inferenza)
+2. Insieme di regole di inferenza
+   - =Risoluzione=
+     + disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
+     + il =Modus Ponens= ne é un caso particolare
+     + si applica a =CNF=
+       * $KB_{\text{LP}}  \vdash KB_{\text{CNF}}$
+         a) si eliminano le biimplicazioni
+         b) si eliminano le implicazioni
+         c) si portano all'interno i =not= applicando =de Morgan=
+         d) si eliminano le doppie negazioni
+         e) si distribuisce =or= sull'=and=
+       * congiunzioni di clausole (disgiunzioni di letterali)
+
+#+begin_quote
+*Teorema*: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
+#+end_quote
+- questo é utilizzato nella dimostrazione per refutazione
+
+**** Horn Clauses
+Un caso particolare delle clausole.
+
+#+begin_quote
+Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
+#+end_quote
+ad esempio:
+
+\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\]
+
+\[\frac{\lnot A \lor \lnot B}{A \land B}\]
+
+**** Forward Chaining
+Lineare nel numero di clausole
+- ogni clausola é applicata al piú  una volta
+- peró sono applicate clausole inutili per il /target/
+[[../media/img/forward-chaining.jpg]]
+
+**** Backward Chaining
+Parte dalla formula da dimostare e va a ritroso
+- piú efficiente del =Forward Chaining=
+- meno che lineare
+[[../media/img/backward-chaining.jpg]]
