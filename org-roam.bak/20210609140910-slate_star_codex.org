@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       c0fd7c38-2a33-4988-9f43-6eee6dca1666
-:ROAM_REFS: https://slatestarcodex.com
-:END:
-#+title: Slate Star Codex

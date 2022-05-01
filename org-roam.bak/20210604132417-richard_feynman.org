@@ -1,8 +1,0 @@
-:PROPERTIES:
-:ID:       763850d7-1fbf-4ee5-8379-6277e81b292f
-:END:
-#+title: Richard Feynman
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
-1918 - 1988, American theoretical physicist
-* Citazioni
-Notes aren’t a record of my thinking process. They are my thinking process.[[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]]

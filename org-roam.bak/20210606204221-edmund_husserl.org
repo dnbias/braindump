@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       c263e03e-fb76-4ad3-83ca-dc49f5c40349
-:END:
-#+title: Edmund Husserl
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]

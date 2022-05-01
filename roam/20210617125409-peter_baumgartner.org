@@ -2,4 +2,4 @@
 :ID:       5ea0c4d9-8e6f-4646-a7e4-b9bb579633b8
 :END:
 #+title: Peter Baumgartner
-[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][$blog]]
+#+filetags: blog

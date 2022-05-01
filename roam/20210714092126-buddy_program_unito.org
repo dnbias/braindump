@@ -5,8 +5,6 @@
 Contatti: Marcella Re
 * Ore
 not 2.B - 2.C : Buddy accoglienza Degree Seeking / Partner Countries (100h)
-*** DONE 9:30/12:30
-- State "DONE"       from "WAIT"       [2021-07-14 Wed 12:26]
 * Generale
 ** Internazionalizzazione e la sua organizzazione
 *** Servizi di Internalizzazione ai Poli
@@ -23,7 +21,7 @@ L'ufficio di Polo puó essere contattato per necessitá legate a
 -  modulistiche
 
 Contatti:
-- [[mail:international.sciences@unito.it][Polo Scienze della Natura]]
+- [[mailto:international.sciences@unito.it][Polo Scienze della Natura]]
 ** Progetto
 *** Compiti
 - agevolare l'ospite internazionale
@@ -66,14 +64,14 @@ Contatti:
     - MyUnito
   + videochiamare per comunicare piú facilmente
   + dare informazioni sul Sistema Sanitario Nazionale SSN
-    - ricerca di un medico per cittadini EU: [[mail:info.healthcare@edisu-piemonte.it]]
-  + sostegno psicologico/emotivo: [[mail:passi@unito]]
+    - ricerca di un medico per cittadini EU: [[mailto:info.healthcare@edisu-piemonte.it]]
+  + sostegno psicologico/emotivo: [[mailto:passi@unito]]
 *** link utili
-- [[studyintorino.it]]
+- [[https://www.studyintorino.it]]
   + cercare alloggio, altre info sulla cittá
-- [[infocovid.viaggioresicuri.it/dadoveparti.html]]
+- [[https://www.infocovid.viaggioresicuri.it/dadoveparti.html]]
   + percorso di partenza e verifica le disposizioni
-- [[edisu.piemonte.it]]
+- [[https://www.edisu.piemonte.it]]
   + residenze, mense, aule studio
 ** Buddy e Covid
 *** Da remoto o in presenza
@@ -84,11 +82,11 @@ In caso di presenza:
 - mascherina
 - infografica accesso alle strutture di Ateneo
 *** Link
-- [[mail:rientroinitalia@aslcittaditorino.it]]
+- [[mailto:rientroinitalia@aslcittaditorino.it]]
   + sia italiano che inglese, info sugli adempimenti sanitari
 ** Permessi, Assicurazione Sanitaria, CF
 *** Office Incoming
-[[mail:office.incoming@unito.it]]
+[[mailto:office.incoming@unito.it]]
 1. supporto visto e permesso di soggiorno
    + studenti extra-UE
      - con visto di studio di tipo D
@@ -149,8 +147,8 @@ In caso di presenza:
    * Rowing regatta
      + strumento di socialitá
 *** Uffici e Risorse
-- Sezione Mobilitá e didattica Internazionale: [[mail:internationalexchange@unito.it]]
-- Infopoint: [[mail:infopoint@unito.it]]
+- Sezione Mobilitá e didattica Internazionale: [[mailto:internationalexchange@unito.it]]
+- Infopoint: [[mailto:infopoint@unito.it]]
 - Sportello Edisu - Via Giulia Borolo 3/bis
   + prenotazioni online
   + per =Edisu Card=
@@ -196,8 +194,8 @@ gratuiti per studenti Erasmus e Exchange
 *** Infortuni
 - infortuni durante l'attivitá universitaria
   + casi coperti dall'assicurazione
-- scrivere urgentemente a [[mail:assicurazioni@unito.it]]
-  + con in copia [[mail:internationalexchange@unito.it]]
+- scrivere urgentemente a [[mailto:assicurazioni@unito.it]]
+  + con in copia [[mailto:internationalexchange@unito.it]]
 *** Disabilitá/Bisogni Speciali
 - entrare in contatto con lo studente
 - Servizi/lo studio/studenti con disabilitá
@@ -205,11 +203,11 @@ gratuiti per studenti Erasmus e Exchange
 * Polo di Scienze della Natura
 [[https://drive.google.com/drive/u/1/folders/16auXMMOBEyrPnjd5DGWxJn7npq_uNGdv][Drive]]
 - contatti
-  + [[mail:international.sciences@unito.it]]
+  + [[mailto:international.sciences@unito.it]]
   + Google Meet
   + Telefono
 - Mail Dedicata
-  + [[mail:buddy.sciences@unito.it]]
+  + [[mailto:buddy.sciences@unito.it]]
     * credenziali reperibili su slide
 
 Polo: struttura amministrativa di gestione e offerta di servizi alle strutture didattiche e di ricerca
@@ -235,7 +233,7 @@ Le attivita' iniziano a Settebre
 - segreteria
   + ticket Help Desk
   + solo in italiano
-  + Scienze vita e Biologia: [[olizier.friard@unito.it]]
+  + Scienze vita e Biologia: [[mailto:olizier.friard@unito.it]]
 - tutorato
   + Scienze della Natura
   + Psicologia

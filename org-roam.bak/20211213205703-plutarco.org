@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       dff7cc43-6395-43b5-9233-e99a52c65815
-:END:
-#+title: Plutarco
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]

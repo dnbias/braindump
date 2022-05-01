@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       a9417549-6f9f-48ab-b23c-1c411fee45b8
-:END:
-#+title: org-roam
-- Author: [[id:01bbe584-fb9a-4b91-b5ec-e0c589143d2b][Jethro Kuan]]
-- Manual: https://www.orgroam.com/manual.html

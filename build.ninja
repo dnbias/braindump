@@ -579,13 +579,9 @@ build content/posts/EGID.md: org2md roam/EGID.org
 
 build content/posts/FIS.md: org2md roam/FIS.org
 
-build content/posts/Forme Mentali.md: org2md roam/Forme Mentali.org
-
 build content/posts/LFT.md: org2md roam/LFT.org
 
 build content/posts/LFTCompiler.md: org2md roam/LFTCompiler.org
-
-build content/posts/Podcasts&Conferenze.md: org2md roam/Podcasts&Conferenze.org
 
 build content/posts/SO.md: org2md roam/SO.org
 
@@ -618,8 +614,6 @@ build content/posts/borges.md: org2md roam/borges.org
 build content/posts/braindump.md: org2md roam/braindump.org
 
 build content/posts/caccia.md: org2md roam/caccia.org
-
-build content/posts/capitolo10-1.md: org2md roam/capitolo10-1.org
 
 build content/posts/capturing_notes_efficiently_with_org_roam.md: org2md roam/capturing_notes_efficiently_with_org_roam.org
 
@@ -815,8 +809,6 @@ build content/posts/the_necessity_of_marginalia_in_the_age_of_the_ebook.md: org2
 
 build content/posts/til.md: org2md roam/til.org
 
-build content/posts/time management.md: org2md roam/time management.org
-
 build content/posts/vestigia.md: org2md roam/vestigia.org
 
 build content/posts/vialogues.md: org2md roam/vialogues.org
@@ -842,3 +834,9 @@ build content/posts/martin_fowler.md: org2md roam/martin_fowler.org
 build content/posts/rsa.md: org2md roam/rsa.org
 
 build content/posts/secure_hash_algorithm.md: org2md roam/secure_hash_algorithm.org
+
+build content/posts/time_management.md: org2md roam/time_management.org
+
+build content/posts/forme_mentali.md: org2md roam/forme_mentali.org
+
+build content/posts/podcast_conferenze.md: org2md roam/podcast_conferenze.org

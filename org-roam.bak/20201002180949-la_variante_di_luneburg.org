@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       f5d474c3-2de2-4982-ba10-11f530c775e1
-:END:
-#+title: La variante di Luneburg
-[[id:ead1cac8-45c1-4f46-aa06-608ade960470][Scacchi]]
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]

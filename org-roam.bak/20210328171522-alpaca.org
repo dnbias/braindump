@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       36de8b41-5449-4d51-b8b6-84cf18e383ca
-:END:
-#+title: Alpaca
-
-A stocks trading site, offering paper accounts and a good [[https://alpaca.markets/docs/api-documentation/][API]].

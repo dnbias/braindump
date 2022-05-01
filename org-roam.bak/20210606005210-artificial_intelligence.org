@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       b3a0aa55-d105-4e8f-8497-4421b31739eb
-:ROAM_ALIASES: IA AI
-:END:
-#+title: Artificial Intelligence

@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       db39758e-b15e-4b9b-a2f8-fb0b3211640f
-:ROAM_ALIASES: TSS
-:END:
-#+title: Tiangong Space Station

@@ -3,11 +3,10 @@
 :ROAM_ALIASES: SO
 :END:
 #+TITLE: Sistemi Operativi
-#+STARTUP: latexpreview
 #+filetags: university
 - Teacher:  Daniele Gunetti (daniele.gunetti@unito.it)
 
-* Generalita'
+* Generalitá
 2 obiettivi di un OS:
 - utente: rendere il sistema semplice
 - macchina: rendere il sistema efficente e sicuro
@@ -588,7 +587,7 @@ L'OS fa credere ai processi di avere tutta la CPU per loro
 Passaggio da un processo in esecuzione all'altro
 =Commutazione= della CPU tra i processi
 - OS prende il controllo CPU ~ questo e' tecnicamente pure un Context Switch
-- Salva lo stato della computazione del processo uscente in [[PCB]]
+- Salva lo stato della computazione del processo uscente in =PCB=
 - Scrive in PC e nei registri CPU i valori PCB del processo entrante
 
   Questa operazione richiede tempo: ~overhead~ di sistema (sovraccarico)
@@ -612,8 +611,8 @@ riformulazioe del diagramma di transizione prendendo in considerazione le code
 
 *** Implementazione
 Tecniche per massimizzare la produttivita' della CPU
-- [[Multitasking]]
-- [[Time Sharing]]
+- =Multitasking=
+- =Time Sharing=
   Per cio' devono essere definite delle regole dal progettista
 
   I processi vivono fasi di ~CPU-burst~ e ~I/O-burst~
