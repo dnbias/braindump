@@ -34,4 +34,4 @@ footer = "Built with ♥ with ξ Org-mode and Hugo"
     lineNumbersInTable = true
     noClasses = true
     style = "friendly"
-    tabWidth = 4
+    tabWidth = 2
