@@ -840,3 +840,9 @@ build content/posts/time_management.md: org2md roam/time_management.org
 build content/posts/forme_mentali.md: org2md roam/forme_mentali.org
 
 build content/posts/podcast_conferenze.md: org2md roam/podcast_conferenze.org
+
+build content/posts/numbering_headings_w_css.md: org2md roam/numbering_headings_w_css.org
+
+build content/posts/css_post_tags.md: org2md roam/css_post_tags.org
+
+build content/posts/retire_in_progress.md: org2md roam/retire_in_progress.org

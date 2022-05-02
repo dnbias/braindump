@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       be7124d8-a7bb-4309-907e-cf78b9d9f0f7
+:END:
+#+title: Retire In Progress
+#+date: [2022-05-02 Mon 04:20]
+#+filetags: blog
+- https://retireinprogress.com/

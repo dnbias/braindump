@@ -739,59 +739,115 @@ Vari approcci:
         -   \\(R\vDash Q \iff R\implies Q \text{ é una formula valida o tautologia}\\)
             -   \\(Q\\) é conseguenza logica di \\(R\\)
 
+<!--list-separator-->
 
-#### Theorem Proving {#theorem-proving}
+-  Theorem Proving
 
-1.  Algoritmo di Ricerca (o di inferenza)
-2.  Insieme di regole di inferenza
-    -   `Risoluzione`
-        -   disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
-        -   il `Modus Ponens` ne é un caso particolare
-        -   si applica a `CNF`
-            -   \\(KB\_{\text{LP}}  \vdash KB\_{\text{CNF}}\\)
-                1.  si eliminano le biimplicazioni
-                2.  si eliminano le implicazioni
-                3.  si portano all'interno i `not` applicando `de Morgan`
-                4.  si eliminano le doppie negazioni
-                5.  si distribuisce `or` sull'`and`
-            -   congiunzioni di clausole (disgiunzioni di letterali)
+    1.  Algoritmo di Ricerca (o di inferenza)
+    2.  Insieme di regole di inferenza
+        -   `Risoluzione`
+            -   disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
+            -   il `Modus Ponens` ne é un caso particolare
+            -   si applica a `CNF`
+                -   \\(KB\_{\text{LP}}  \vdash KB\_{\text{CNF}}\\)
+                    1.  si eliminano le biimplicazioni
+                    2.  si eliminano le implicazioni
+                    3.  si portano all'interno i `not` applicando `de Morgan`
+                    4.  si eliminano le doppie negazioni
+                    5.  si distribuisce `or` sull'`and`
+                -   congiunzioni di clausole (disgiunzioni di letterali)
 
-> **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
+    > **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
 
--   questo é utilizzato nella dimostrazione per refutazione
+    -   questo é utilizzato nella dimostrazione per refutazione
+
+    <!--list-separator-->
+
+    -  Horn Clauses
+
+        Un caso particolare delle clausole.
+
+        > Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
+
+        ad esempio:
+
+        \\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
+
+        \\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
+
+    <!--list-separator-->
+
+    -  Forward Chaining
+
+        Lineare nel numero di clausole
+
+        -   ogni clausola é applicata al piú  una volta
+        -   peró sono applicate clausole inutili per il _target_
+
+        {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
+
+    <!--list-separator-->
+
+    -  Backward Chaining
+
+        Parte dalla formula da dimostare e va a ritroso
+
+        -   piú efficiente del `Forward Chaining`
+        -   meno che lineare
+
+        {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
 
 <!--list-separator-->
 
--  Horn Clauses
+-  First Order Logic
 
-    Un caso particolare delle clausole.
+    -   dichiarativa
+        -   separa conoscenza da inferenza
+        -   si deriva conoscenza da altra conoscenza
 
-    > Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
+    Elementi:
 
-    ad esempio:
+    -   costanti
+    -   predicati
+    -   variabili
+    -   funzioni
+        -   **NB** questi non costruiscono oggetti: danno un _riferimento_ a oggetti esistenti
+    -   connettivi
+    -   ugualianza
+    -   quantificatori
+        -   \\(\forall\\) viene espanso in una catena di \\(\land\\)
+        -   \\(\exists\\) viene espanso in una catena di \\(\lor\\)
+        -   le espansioni vengono fatte sostituendo alla variabile **tutte** le costanti del modello
+        -   \\[\exists x \lnot F \equiv \lnot \forall x F\\]
+        -   \\[\exists x F \equiv \lnot \forall x \lnot F\\]
+    -   punteggiatura
 
-    \\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
+    Le formule in `FOL` sono poi _interpretate_
 
-    \\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
+    -   l'interpretazione forma un _mapping_ tra `simboli` e `dominio`
+    -   collega simboli e significati
+        -   funzioni - relazioni
+        -   predicati - relazioni
+        -   costanti - oggetti
+
+    Un modello é una coppia: \\(M = \langle D,I \rangle\\)
+
+    -   \\(D\\) dominio
+    -   \\(I\\) interpretazione
+
+    > Come nellla logica proposizionale, \\(M\\) é un modello per \\(\alpha\\) se questo é vero in \\(M\\).
+
+    I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:1]
+    Un termine é `ground` quando non contiene variabili. (i.e. fondato)
 
 <!--list-separator-->
 
--  Forward Chaining
+-  Database Semantics
 
-    Lineare nel numero di clausole
+    -   unicitá dei nomi
+    -   closed-world assumption
+    -   domain closure
 
-    -   ogni clausola é applicata al piú  una volta
-    -   peró sono applicate clausole inutili per il _target_
+    Riduce il numero di modelli a un numero finito.
 
-    {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
-
-<!--list-separator-->
-
--  Backward Chaining
-
-    Parte dalla formula da dimostare e va a ritroso
-
-    -   piú efficiente del `Forward Chaining`
-    -   meno che lineare
-
-    {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
+[^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
