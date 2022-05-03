@@ -1,0 +1,52 @@
+:PROPERTIES:
+:ID:       8c1765a3-7f08-4312-b5d0-8653b62dbcdf
+:END:
+#+title: VeriFast
+#+date: [2022-05-03 Tue 03:23]
+#+filetags: tool compsci
+- [[https://github.com/verifast/verifast][Github Page of the project]]
+- [[id:217b3f95-7f36-4be7-8644-3c0d8afcef57][VeriFast: Imperative Programs as Proofs]]
+- [[id:fa50b908-37bf-4fc7-bf13-dd1c84ab8775][Verification of Imperative Programs: The VeriFast Approach]]
+
+A tool for modular formal verification (/static symbolic analysis/) of [[id:87d3d62a-10a4-45af-ae97-c949be124080][Correctness]] properties of single-threaded and multithreaded C and Java Programs, annotated with preconditions and postconditions written in [[id:fa8dfe1a-7b8c-46a8-b37e-52e4335073f3][Separation Logic]].
+
+* Theoretical Syntax
+- $\exists$ and $\forall$ can be defined as recursive ~predicates~
+- a basic imperative language
+- the language has pointers
+
+* Symbolic State
+$(s,h,\pi)$
+- store
+- symbolic heap
+- pattern conditions
+
+* Production - Consumption
+1. production of $a$
+   * instantiation of chunk
+   * we have an assumption
+2. consumption of $a$
+   * removal of chunk
+   * we prove the assumption
+
+\[\text{produce}(h,s,\pi,a,Q) =
+\begin{cases}
+\pi,s,h' \vdash_{\text{SMT}} a \text{ with }h\perp h'\\
+Q (s, h \uplus h', \pi') \text{ with }\pi \subseteq \pi'
+\end{cases}\]
+
+\[\text{consume}(h,s,\pi,a,Q) =
+\begin{cases}
+\pi,s,h' \vdash_{\text{SMT}} a \text{ with }h = h' \uplus h''\\
+Q (s, h'', \pi') \text{ with }\pi \subseteq \pi'
+\end{cases}\]
+
+Then these are used by 2 routines:
+- ~verify(h,s,$\pi$,f(e),Q) where $f(x)$ requires $A_{1}$; ensures $A_{2}$;~
+- ~valid($f(x)$ requires $A_{1}$; ensures $A_{2}$; $\{\overline{s}\}$)~
+
+* Branches
+Happens in 2 cases:
+a. there is an ~if~ statement
+b. there is an ~heap~ allocation
+   - there is the case where the allocation does not succeed

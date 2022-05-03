@@ -3,6 +3,6 @@
 :END:
 #+title: Q#
 #+date: [2022-03-29 Tue 18:03]
-#+filetags: programming-language
+#+filetags: language
 - [[https://docs.microsoft.com/en-us/azure/quantum/user-guide/libraries/?tabs=tabid-csproj][The Libraries]]
 - [[https://docs.microsoft.com/en-us/azure/quantum/install-overview-qdk][Setup QDK Environment]]

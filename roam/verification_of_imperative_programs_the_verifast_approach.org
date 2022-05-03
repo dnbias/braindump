@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       fa50b908-37bf-4fc7-bf13-dd1c84ab8775
+:END:
+#+title: Verification of Imperative Programs: The VeriFast Approach
+#+date: [2022-05-03 Tue 05:21]
+#+filetags: article
+- Authors: [[id:d9f15adc-f8ec-4684-8787-9281baf21e3f][Bart Jacobs]] & co
