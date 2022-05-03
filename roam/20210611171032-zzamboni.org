@@ -2,5 +2,5 @@
 :ID:       f6116ed3-6387-4841-a6f0-0d442b879ba5
 :END:
 #+title: Zzamboni
-[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][#blog]]
-https://zzamboni.org/
+#+filetags: blog
+- https://zzamboni.org/

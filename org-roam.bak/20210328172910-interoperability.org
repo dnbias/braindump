@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       3cbd542f-883b-4bb2-85ce-a83f2cd5beca
-:END:
-#+title: Interoperability
-* Reads
-  - https://en.m.wikipedia.org/wiki/Interoperability

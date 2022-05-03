@@ -2,11 +2,12 @@
 :ID:       5f01f457-8432-4983-a3a2-291630342294
 :END:
 #+title: Meditations On Moloch
-[[id:26fa07f4-dafd-4567-b707-68c1e4bd856a][$essays]]
+#+filetags: essay
 - Source: https://slatestarcodex.com/2014/07/30/meditations-on-moloch/
 - Author: [[id:369682fc-23a5-42fc-8ad2-b1f085ac12d6][Scott Alexander]]
 - Tags: [[id:2bb3bb6a-bfda-481f-9926-7b06a1c0589a][Capitalism]], [[id:c06c7bc2-ba3b-4865-94f6-9f8874ebfb67][Philosophy]]
 
+* Summary
 - Moloch in the [[id:45824d22-b82b-42c7-b87a-05646a5d8ab6][Allen Ginsberg]] poem
   + reply to [[id:da8de830-3481-4938-bbc1-4f7eb3373d58][C.S. Lewis]]
 - the Malthusian trap
@@ -20,4 +21,3 @@ In some competition optimizing for X, the opportunity arises to throw some other
 #+end_quote
 
 - [[id:c65def88-681c-4767-9fbc-9606fb2c14bb][Apocrypha Discordia]]
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |

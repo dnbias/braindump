@@ -2,8 +2,8 @@
 :ID:       d344cbe1-9672-46d8-9107-7e8b68834078
 :END:
 #+title: Of Typewriters, Scribe, LaTeX, Org mode, Hugo and Paper
+#+filetags: blog
 - Source: https://eludom.github.io/blog/typewriters/
-- Tags: [[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][Blog]]
 
 * [[id:eb69ccf8-94b4-4bfd-97cc-984280447be9][Donald Knuth]]
 - author of /The Art of Computer Programming/

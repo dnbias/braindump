@@ -536,7 +536,101 @@ Vari approcci:
 1. Model Checking
    - $n$ simboli, $2^{n}$ modelli possibili
 2. Theorem Proving
-   - basato sull'inferenza
+   - basato sull'inferenza /sintattica/
+     + quindi sulla manipolazione delle formule
+     + utilizza le =Regole di Inferenza=
+       * contrapposizione, de Morgan, associativitá...
    - =Teorema di Deduzione=
      + date formule $R,Q$
      + $R\vDash Q \iff R\implies Q \text{ é una formula valida o tautologia}$
+       * $Q$ é conseguenza logica di $R$
+
+**** Theorem Proving
+1. Algoritmo di Ricerca (o di inferenza)
+2. Insieme di regole di inferenza
+   - =Risoluzione=
+     + disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
+     + il =Modus Ponens= ne é un caso particolare
+     + si applica a =CNF=
+       * $KB_{\text{LP}}  \vdash KB_{\text{CNF}}$
+         a) si eliminano le biimplicazioni
+         b) si eliminano le implicazioni
+         c) si portano all'interno i =not= applicando =de Morgan=
+         d) si eliminano le doppie negazioni
+         e) si distribuisce =or= sull'=and=
+       * congiunzioni di clausole (disgiunzioni di letterali)
+
+#+begin_quote
+*Teorema*: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
+#+end_quote
+- questo é utilizzato nella dimostrazione per refutazione
+
+***** Horn Clauses
+Un caso particolare delle clausole.
+
+#+begin_quote
+Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
+#+end_quote
+ad esempio:
+
+\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\]
+
+\[\frac{\lnot A \lor \lnot B}{A \land B}\]
+
+***** Forward Chaining
+Lineare nel numero di clausole
+- ogni clausola é applicata al piú  una volta
+- peró sono applicate clausole inutili per il /target/
+[[../media/img/forward-chaining.jpg]]
+
+***** Backward Chaining
+Parte dalla formula da dimostare e va a ritroso
+- piú efficiente del =Forward Chaining=
+- meno che lineare
+[[../media/img/backward-chaining.jpg]]
+**** First Order Logic
+- dichiarativa
+  + separa conoscenza da inferenza
+  + si deriva conoscenza da altra conoscenza
+
+Elementi:
+- costanti
+- predicati
+- variabili
+- funzioni
+  + *NB* questi non costruiscono oggetti: danno un /riferimento/ a oggetti esistenti
+- connettivi
+- ugualianza
+- quantificatori
+  + $\forall$ viene espanso in una catena di $\land$
+  + $\exists$ viene espanso in una catena di $\lor$
+  + le espansioni vengono fatte sostituendo alla variabile *tutte* le costanti del modello
+  + \[\exists x \lnot F \equiv \lnot \forall x F\]
+  + \[\exists x F \equiv \lnot \forall x \lnot F\]
+- punteggiatura
+
+Le formule in =FOL= sono poi /interpretate/
+- l'interpretazione forma un /mapping/ tra ~simboli~ e ~dominio~
+- collega simboli e significati
+  + funzioni - relazioni
+  + predicati - relazioni
+  + costanti - oggetti
+
+Un modello é una coppia: $M = \langle D,I \rangle$
+- $D$ dominio
+- $I$ interpretazione
+
+#+begin_quote
+Come nellla logica proposizionale, $M$ é un modello per $\alpha$ se questo é vero in $M$.
+#+end_quote
+I modelli di un insieme di formule del prim'ordine _possono essere infiniti_.[fn:1]
+Un termine é =ground= quando non contiene variabili. (i.e. fondato)
+
+**** Database Semantics
+- unicitá dei nomi
+- closed-world assumption
+- domain closure
+Riduce il numero di modelli a un numero finito.
+
+
+[fn:1] Se il dominio $D$ é un insieme illimitato e se qualche formula $P$ dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule

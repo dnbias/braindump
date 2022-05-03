@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       76b7b469-bc51-4cd7-8386-779fc351552c
-:END:
-#+title: Computer Netwoking - A Top-Down Approach
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Kurose, James F., Ross, Keith W., /Computer Networking: A Top-Down Approach/, 2000 (Pearson 8ed., 2020), pp.1199

@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       eb69ccf8-94b4-4bfd-97cc-984280447be9
-:END:
-#+title: Donald Knuth

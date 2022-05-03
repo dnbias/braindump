@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       f01972ec-1e3a-40e2-9482-c05a9922b738
-:ROAM_ALIASES: "Personal Knowledge Management System"
-:END:
-#+title: PKM

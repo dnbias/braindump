@@ -2,7 +2,7 @@
 :ID:       f7482274-f660-4c53-a6bd-1022d385da92
 :END:
 #+TITLE: Building a Second Brain
-[[https://www.reddit.com/r/RoamResearch/comments/eho7de/building_a_second_brain_in_roamand_why_you_might/][source]]
+- [[https://www.reddit.com/r/RoamResearch/comments/eho7de/building_a_second_brain_in_roamand_why_you_might/][Source]]
 
 
 * OBJECTIVE
@@ -29,11 +29,11 @@ Projects, Areas, (Resources), Archives
 
 - la forza di [[id:8d7717ec-69d7-475e-a98f-bf0bdf25f6bb][Roam]] sta nel non necessitare una struttura rigida, gerarchica
 
-  + I progetti non sono creati nella pagina [[Projects]] ma sono semplicemente linkati, cosi' sono poi rimuovibili semplicemente cambiando il link in [[Archives]]
+  + I progetti non sono creati nella pagina =Projects= ma sono semplicemente linkati, cosi' sono poi rimuovibili semplicemente cambiando il link in =Archives=
 
 *** Progressive Summarization
 
- - Una volta a livello 4 di riassunzione queste note, tra le piu' utili, saranno taggate a [[My Summaries]]
+ - Una volta a livello 4 di riassunzione queste note, tra le piu' utili, saranno taggate a =My Summaries=
 
 *** Resources
 

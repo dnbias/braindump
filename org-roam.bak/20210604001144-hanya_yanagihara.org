@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       9bb42a8a-b4bb-45d3-a443-67715098e8fc
-:END:
-#+title: Hanya Yanagihara
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
-
-* [[id:48b7d324-c5af-4685-b1d0-d9aef8c6ace5][A Little Life]]

@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       ad468e77-6cfd-4139-91c6-ded6a147aaea
-:ROAM_ALIASES: "The Joy"
-:END:
-#+TITLE: The Boss

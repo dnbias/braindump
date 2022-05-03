@@ -1,8 +1,0 @@
-:PROPERTIES:
-:ID:       b88bdf93-1028-4ecc-a6ce-249cf6cbc832
-:END:
-#+title: Why Browse the web on Emacs
-[[id:efbaaebd-f20e-4063-9a38-6493eef9900e][$articles]]
-- source: https://sachachua.com/blog/2008/08/why-browse-the-web-in-emacs/
-- author: [[id:1c26cced-4efe-4fc7-9bde-180a28298393][Sacha Chua]]
-- tags: [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]], [[id:e9f3a77c-c97b-4b33-b2c0-56616fa6d892][w3m]]

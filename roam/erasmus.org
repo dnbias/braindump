@@ -71,19 +71,19 @@ Motivazione del Periodo di Studio Erasmus all'Universitá di Lussemburgo
 
 * Tempistiche
 - stud. all'ultimo anno di laurea che intendono partire durante il Corso di Laura Magistrale devono candidarsi per mete =PG=
-- [[25/02/2022]] graduatoria provvisoria
+- =25/02/2022= graduatoria provvisoria
 - 3 giorni di richieste di revisione
-- [[09/03/2022]] 1a graduatoria definitiva
+- =09/03/2022= 1a graduatoria definitiva
 - 5 giorni di accettazione
 - ripescaggi
-- [[30/04/2022]] 2a graduatoria definitiva
+- =30/04/2022= 2a graduatoria definitiva
 - 5 giorni di accettazione
 * Destinazioni
-Destinazioni =Post-Graduate= - =PG=
+=Post-Graduate= - =PG=
 - D DARMSTA01
   + Technische Universitaet Darmstadt
     * PG - UG
-- _DK ODENSE01_ - =333333333333333333333333=
+- _DK ODENSE01_ - =3=
   + University of Southern Denmark - http://www.sdu.dk/?sc_lang=en
     * D - PG
     * IELTS 6.5
@@ -114,7 +114,7 @@ Destinazioni =Post-Graduate= - =PG=
 - G VOLOS01
   + University of Thessaly
     * UG
-- _LUXLUX-VIL01_ - =1111111111111111111111=
+- _LUXLUX-VIL01_ - =1=
   + Université du Luxenbourg - http://wwwen.uni.lu/
     * PG
     * partenza non garantita al primo semestre
@@ -127,7 +127,7 @@ Destinazioni =Post-Graduate= - =PG=
 - NL GRONING01
   + Rijksuniversiteit Groningen (Netherlands)
     * D - PG - UG
-- _N OSLO01_ - =222222222222222222222222222222222222=
+- _N OSLO01_ - =2=
   + University of Oslo - http://www.uio.no/english/
     * D - PG - UG
     * English B2 (CEFR)
@@ -151,3 +151,7 @@ Destinazioni =Post-Graduate= - =PG=
   + Slovak University of Technology in Bratislava
 - TR ISTANBU20
   + Sabanci University
+* Luxembourg
+- [[https://wwwen.uni.lu/international/mobility/incoming_exchange_students][Exchange info]]
+- [[https://wwwen.uni.lu/international/mobility/incoming_exchange_students/how_do_i_apply][How to Apply]]
+- [[https://wwwen.uni.lu/studies/fstm/master_in_information_and_computer_sciences/programme][Master in Information and CS]]

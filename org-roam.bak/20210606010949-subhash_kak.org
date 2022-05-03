@@ -1,7 +1,0 @@
-:PROPERTIES:
-:ID:       117ed382-7c75-43a7-836d-cdc5dc69ed83
-:END:
-#+title: Subhash Kak
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
-
-- [[id:e886776f-eeea-4bbc-9066-3da1ab192fd9][On quantum neural computing]]

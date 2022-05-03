@@ -60,7 +60,7 @@ L'utilitá é l'analisi matematica che dimostrino la robustezza e la correttezza
 
 **** Semantica Operazionale
 Definisce il significato di un programma come il suo comportamento che, quando termina, tranforma uno stato in un altro
-***** Semantica Logica
+**** Semantica Logica
 Pre e Post condizioni che un programma soddisfa
 - Floyd
   + metodo delle asserzioni - 1967
@@ -111,6 +111,53 @@ Allora si utilizzano Truth Assistant, il teorema di =Rice= ci dimostra che i Ver
   + un linguaggio di programmazione funzionale
 - =VeriFast=
   + ProofAssistant dedicato a _Separation Logic_ in C e Java
+**** Separation Logic
+Per trattare linguaggi imperativi con puntatori, gestione dinamica della memoria
+- si utilizza per /modularizzare/
+- si guarda una funzione per volta
+  + poi si uniscono i risultati per dimostrare la correttezza totale
+
+Si estendono le asserzioni con:
+- $s,h \vDash \text{emp}$
+  + /empty heap/
+- $s,h \vDash a \rightarrow a'$
+  + /singleton heap/
+- $s,h \vDash P \star Q$
+  + /separating conjunction/
+  + $h_{1} \uplus h_{2}$
+
+Le triple $(c,s,h)$ sono dette /safe/ se $(c,s,h)  \not{\rightarrow_{*}} \text{error}$
+
+***** Frame Rule
+\[\frac{\{P\}\; c\; \{Q\}}{\{P \star R\}\; c\; \{Q\star R\}}\]
+- pre-condizione $P$
+- post-condizione $Q$
+- contesto $R$
+
+Se vale questo allora posso spezzare in moduli il codice e verificare questi sottoinsiemi
+*Lemmi*:
+- /monotonicitá/
+  + $(c,s,h) \text{safe} \implies \forall h' \perp h : (c,s,h\uplus h') \text{safe}$
+  + $(c,s,h_{0}) \rightarrow^{*} (\text{skip},s',h_{0}') \implies  \\ \forall h_{1} \perp h_{0}:(c,s,h_{0} \uplus h_{1}) \rightarrow^{*} (\text{skip}, s', h_{0}' \uplus h_{1}')$
+  + $(c,s,h_{0})$ riduce all'infinito $\implies \forall h_{1} \perp h_{0} : (c,s,h_{0} \uplus h_{1})$ riduce all'infinito
+
+- /frame property/
+  + $(c,s,h_{0})\text{safe} \land (c,s,h_{0} \uplus h_{1}) \rightarrow^{*} (\text{skip},s',h') \implies \\
+    \exists h_{0}_{}' \perp h_{1} :  (c,s,h_{0})\rightarrow^{*} (\text{skip},s',h_{0}')\land h' = h_{0}' \uplus h_{1}$
+
+***** Heap Simbolici
+$H ::= \exists \vec{x} : (P_{1} \land \cdots \land P_{n}) \land (S_{1} \star \cdots \star S_{m})$
+- $\vec{x} = \Cup_{i} fv(P_{i}) \cup \Cup_{j} fv(S_{j})$
+- /puro/ e /spaziale/
+
+Dai /comandi atomici/, definiti conseguentemente alle rispettive regole della logica.
+Si eseguono poi  /sequenze atomiche/
+- $\{H\} A_{1};\cdots ;A_{n} \{H'\}$
+- \[\frac{\{H\}A_{1}\{H''\} \qquad \{H''\} A_{2} \{H'\}}{\{H\}A_{1};A_{2}\{H'\}}\]
+- \[\frac{H,A_{1} \implies H'}{H,A_{1};A_{2} \implies H',A_{2}}\]
+
+
+
 ** Grammatiche
 *** Concrete
 Descrivo _Grammatiche Senza Contesti_ con le _Regole di Inferenza_
@@ -311,8 +358,31 @@ $\frac{B[t]}{\exists x \: . \: B[x]}$
 $\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]$
 ** IMP
 [[~/Code/Agda/IMP.agda][Definizione in Agda]]
+*** Estensione Puntatori
+~com ::= ...~
+~| x := cons(a_1,...,a_2)~ /allocation/
+~| n := [a]~ /lookup/
+~| [a] := a'~ /mutation/
+~| dispose(a)~ /deallocation/
+
+la notazione ~[a]~ richiama il concetto di heap come array, dove ~a~ ne é l'indice
+**** Semantica
+~store = var_name -> Val~
+~heap = loc -> Val~
+
+Per $h \in \text{heap}, n\ge 0$
+- $h = \{l_{1} \rightarrow v_{1} \cdots  l_{n} \rightarrow v_{n}\}$
+- $\text{dom}(h | {l_{1}\cdots l_{n}})$
+  + le locazioni allocate
+
+Viene aggiunta alla semantica =SOS= lo heap ~h~
+
+***** Indipendenza dello Heap
+$h_{1} \perp h_{2} \iff \text{dom}(h_{1}) \cap \text{dom}(h_{2}) = \emptyset$
+
 *** Semantica Operazionale
 [[~/Code/Agda/IMP-Op.agda][File Agda]]
+
 *** StackMachine
 Basato su [[~/Code/Agda/C-List.agda]]
 - [[~/Code/Agda/StackMachine.agda][Source]]

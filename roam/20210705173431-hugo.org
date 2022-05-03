@@ -3,7 +3,6 @@
 :END:
 #+title: Hugo
 #+filetags: tool
-
 To blog with plain text
 * Emacs
 Integrated with [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]] by [[https://ox-hugo.scripter.co/][ox-hugo]]

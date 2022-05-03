@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       0964497d-5262-41f9-a47a-6ec056ecffe0
-:END:
-#+title: Jean-Jaques Lévy
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
-[[id:f46e95c3-14c2-4dda-b150-f8ca209495d1][Introduction to the Theory of Programming Languages]]

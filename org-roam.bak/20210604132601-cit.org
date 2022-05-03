@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a
-:ROAM_ALIASES: Quotes
-:END:
-#+title: $cit

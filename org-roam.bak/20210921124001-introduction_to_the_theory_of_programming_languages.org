@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       f46e95c3-14c2-4dda-b150-f8ca209495d1
-:END:
-#+title: Introduction to the Theory of Programming Languages
-[[id:c3ba872e-8a85-4336-9b69-951f11125840][$books]]
-Dowek, Gilles, Lévy, Jean-Jacques, /Introduction to the Theory of Programming Languages/, Springer, 2010, pp.96

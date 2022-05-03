@@ -130,3 +130,46 @@ Queste funzioni di hash sono utilizzate per:
 [[../media/img/secure-hash-code.jpg]]
 
 La funzione di hash piú utilizzata in tempi recenti é stato il [[id:5138a424-b3a8-42cb-b87d-3dd8d647c270][Secure Hash Algorithm]]
+
+Un /birthday attack/ é effettuato generando collissioni:
+- $2^{m}$ messaggi
+- codici di $c$ bit
+- $P(\text{collision}) > 0.5$ per $m > \frac{c}{2}$
+  + quindi per 64 bit bastano $2^{32}$ messaggi
+
+* Autenticazione
+#+begin_quote
+*NB*  Un messaggio cifrato non é necessariamente autentico, un messaggio autenticato puó essere leggibile. Spesso questi ultimi non vengono cifrati.
+#+end_quote
+
+** Simmetrica
+- basata su cifrari simmetrici
+- chiave condivisa
+
+$\textsc{mac}_{K}(M)$ - =Message Authentication Code=
+1. [[id:ad07cbed-5c0b-448c-861e-3f8ee80e6803][DES]]-CBC -  =MAC-CBC=
+   + si usa l'ultimo blocco cifrato (o una parte) come =MAC=
+2. /Keyed Hash Function/ - =HMAC=
+   + =MAC= generato applicando $H$ a una combinazione di $M$ e una chiave segreta
+   + $\textsc{hmac}_{K}(M) = H((K''\oplus \text{opad}) || H((K'' \oplus \text{ipad}) || M'))$
+     * $K''$: una chiave segrete $K'$ con padding di 0 fino a $j$ bit
+     * $\text{ipad}$: 00110110 ripetuto $j/8$ volte
+     * $\text{opad}$: 01011010 ripetuto $j/8$ volte
+   + efficiente quanto $H$
+     * molto piú efficiente che =MAC-CBC=
+** Firma elettronica
+- basata su cifrari asimmetrici
+- firma con la chiave /privata/, verifica con la chiave /pubblica/ di chi firma
+
+In questo caso:
+1. [[id:0cb7ffff-dc77-485a-80c6-872386ca0713][RSA]] con =MD5/SHA-1=
+   - $\textsc{sha-1}(M)$: /digest/
+   - $\textsc{rsa}(K^-(A),\text{digest})$
+2. =DSA= con =SHA-1=
+
+Per far funzionare questo meccanismo é necessario risolvere il problema della distribuzione delle chiavi pubbliche.
+- una terza parte =C= puó ricevere $<ID,K^+(ID)>$ e restituirne un certificato
+- questo poi viene condivisto da altre terze parti o dagli stessi che lo hanno richiesto
+
+Alla fine il messaggio autenticato avrá la forma:
+~M - FirmaElettronica - Certificato - Timestamp~

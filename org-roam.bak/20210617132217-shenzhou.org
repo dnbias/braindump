@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       97772fe3-a4e3-4b78-ae8c-134583fcc651
-:END:
-#+title: Shenzhou
-Chinese Spacecraft
-see [[https://www.britannica.com/technology/Shenzhou][Britannica]]

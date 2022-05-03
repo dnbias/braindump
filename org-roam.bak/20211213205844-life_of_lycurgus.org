@@ -1,8 +1,0 @@
-:PROPERTIES:
-:ID:       a647999e-6530-49d3-87a6-5dca12ac0467
-:END:
-#+title: Life of Lycurgus
-100 C.E. - Biography of [[id:dff7cc43-6395-43b5-9233-e99a52c65815][Plutarco]]
-
-- recounts how the ancient Spartans submitted newborns to a coucil of elders for inspection
-  + /Fit and strong/ babies survived, /lowborn or deformed/ were left outside to die

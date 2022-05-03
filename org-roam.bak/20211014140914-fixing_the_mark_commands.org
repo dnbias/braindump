@@ -1,5 +1,0 @@
-:PROPERTIES:
-:ID:       102211fb-50a2-4b56-aa5d-78ff41d5fedd
-:END:
-#+title: Fixing the mark commands
-- [[https://masteringemacs.org/article/fixing-mark-commands-transient-mark-mode][Source]]

@@ -1,6 +1,0 @@
-:PROPERTIES:
-:ID:       2e17b264-83c1-497a-b384-5d146b7ba638
-:END:
-#+title: Philip Wadler
-[[id:86527e6a-06bb-4ec0-a1cf-5e7120321016][$authors]]
-[[id:ca905cae-fdf3-421c-a255-ec32435ef818][Programming Language Foundation in Agda]]

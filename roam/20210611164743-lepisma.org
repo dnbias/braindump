@@ -2,5 +2,5 @@
 :ID:       7319da7b-a95f-4a88-87e3-5f7a06aad7ab
 :END:
 #+title: lepisma
-[[id:f76dcdb0-ab4e-4a3b-baab-abfd8ab56de4][$blog]]
-https://lepisma.xyz/
+#+filetags: blog
+- https://lepisma.xyz/
