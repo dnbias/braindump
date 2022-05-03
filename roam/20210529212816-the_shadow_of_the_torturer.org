@@ -6,8 +6,10 @@
 #+filetags: book
 [[id:2794d5ab-85bc-4c8f-8963-d708cd2c796b][Gene Wolfe]], /The Shadow of the Torturer/, 1980 pp.303
 
+* Appunti
 Molto interessante il linguaggio, criptico, pregno di simbolismo e posso giá vederlo chiaramente. Dicono che vada riletto, vedremo se mantiene la qualitá che dimostra anche nel seguito.
 
 - Al primo capitolo recuperano dalla sua tomba una donna
   + che lo facciano per mangiarla come fanno con Thecla piú avanti in [[id:a8f00e02-0b2e-4c58-89ae-5db04db0eefb][COTC]]?
-  + che memorie aveva di cosí importanti... Conoscenza della House of the Absolute
+    * wait a sec, Thecla e' morta suicida dopo la tortura...
+  + che memorie aveva di cosí importanti... Conoscenza della House of the Absolute forse
