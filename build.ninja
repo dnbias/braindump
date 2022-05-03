@@ -151,8 +151,6 @@ build content/posts/20210527192619-umberto_eco.md: org2md roam/20210527192619-um
 
 build content/posts/20210529212456-gene_wolfe.md: org2md roam/20210529212456-gene_wolfe.org
 
-build content/posts/20210529212816-the_shadow_of_the_torturer.md: org2md roam/20210529212816-the_shadow_of_the_torturer.org
-
 build content/posts/20210529212950-the_claw_of_the_conciliator.md: org2md roam/20210529212950-the_claw_of_the_conciliator.org
 
 build content/posts/20210531215418-g_r_r_m.md: org2md roam/20210531215418-g_r_r_m.org
@@ -396,8 +394,6 @@ build content/posts/20210921114932-computer_netwoking_a_top_down_approach.md: or
 build content/posts/20210921120229-james_kurose.md: org2md roam/20210921120229-james_kurose.org
 
 build content/posts/20210921120305-keith_ross.md: org2md roam/20210921120305-keith_ross.org
-
-build content/posts/20210921120356-java_how_to_program_late_objects.md: org2md roam/20210921120356-java_how_to_program_late_objects.org
 
 build content/posts/20210921120719-harvey_deitel.md: org2md roam/20210921120719-harvey_deitel.org
 
@@ -753,8 +749,6 @@ build content/posts/practical_nix_flakes.md: org2md roam/practical_nix_flakes.or
 
 build content/posts/prezzolato.md: org2md roam/prezzolato.org
 
-build content/posts/q.md: org2md roam/q.org
-
 build content/posts/quantum_computing.md: org2md roam/quantum_computing.org
 
 build content/posts/quotebacks.md: org2md roam/quotebacks.org
@@ -846,3 +840,21 @@ build content/posts/numbering_headings_w_css.md: org2md roam/numbering_headings_
 build content/posts/css_post_tags.md: org2md roam/css_post_tags.org
 
 build content/posts/retire_in_progress.md: org2md roam/retire_in_progress.org
+
+build content/posts/20210529212816-the_shadow_of_the_torturer.md: org2md roam/20210529212816-the_shadow_of_the_torturer.org
+
+build content/posts/20210921120356-java_how_to_program_late_objects.md: org2md roam/20210921120356-java_how_to_program_late_objects.org
+
+build content/posts/bart_jacobs.md: org2md roam/bart_jacobs.org
+
+build content/posts/correctness.md: org2md roam/correctness.org
+
+build content/posts/q.md: org2md roam/q.org
+
+build content/posts/separation_logic.md: org2md roam/separation_logic.org
+
+build content/posts/verifast.md: org2md roam/verifast.org
+
+build content/posts/verifast_imperative_programs_as_proofs.md: org2md roam/verifast_imperative_programs_as_proofs.org
+
+build content/posts/verification_of_imperative_programs_the_verifast_approach.md: org2md roam/verification_of_imperative_programs_the_verifast_approach.org

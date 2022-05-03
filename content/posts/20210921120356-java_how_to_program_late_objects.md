@@ -1,7 +1,7 @@
 +++
 title = "Java: How to Program, Late Objects"
 author = ["Daniel Biasiotto"]
-tags = ["book"]
+tags = ["book", "language", "compsci"]
 draft = false
 +++
 
