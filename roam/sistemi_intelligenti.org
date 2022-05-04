@@ -626,6 +626,38 @@ Come nellla logica proposizionale, $M$ é un modello per $\alpha$ se questo é v
 I modelli di un insieme di formule del prim'ordine _possono essere infiniti_.[fn:1]
 Un termine é =ground= quando non contiene variabili. (i.e. fondato)
 
+La base di conoscenza puó essere interrogata con ~ask~
+- quando compare una formula =ground= é banale la richiesta
+- quando compaiono variabili si intende una sostituzione
+  + quindi la variabile $x$ é interpretata in senso esistenziale ( $\exists$ )
+
+***** Come fare Inferenza su FOL
+- =Proposizionalizzazione=
+  + $KB_{\text{FOL}} \rightarrow KB_{\text{LP}}$
+  + Regola di Instanziazione Universale - =UI=
+    * \[\frac{\forall x, \alpha}{\text{subst}\{\{x/g\},\alpha\}}\]
+    * alla fine, in uno o piú passi, si deve arrivare a =ground=, $g$ é esso stesso =ground=
+    * la $KB_{\text{LP}}$ risultante é logicamente equivalente a quella precedente
+  + Regola di Instanziazione Esistenziale - =EI=
+    * \[\frac{\exists x,\alpha}{\text{subst}\{\{x/k\},\alpha\}}\]
+    * $k$ costante di Skolem, nuova
+      - non compare nella =KB=
+    * la $KB_{\text{LP}}$ risultante /non/ é logicamente equivalente a quella precedente /ma/ é soddisfacibile se $KB_{\text{FOL}}$
+  + =Herbrand=
+    + se una formula é conseguenza logica della $KB_{\text{FOL}}$, partendo dalla $KB_{\text{LP}}$ ottenuta esiste una dimostrazione della sua veritá
+      + $KB \vDash F$
+    + se non é conseguenza logica ... non é detto sia dimostrabile
+      + $KB \not\vDash F$ non sempre possibile
+    + la logica del prim'ordine é *semi-decidibile*
+  + =Inefficienza=
+    * crea delle basi di conoscenza grandi con le regole
+- =Lifting= delle regole di inferenza
+  + Regole di Inferenza $\text{LP}$ trasformate in Regole di Inferenza $\text{FOL}$
+  + =Unification= Martelli/Montanari
+  + *Modus Ponens Generalizzato*
+    * \[\frac{P_{1}',\cdots ,P_{n}' \qquad p_{1} \land \cdots \land p_{n} \implies q}{\text{subst}(q,\Theta)}\]
+    * $\Theta$ é un unificatore di ciascuna coppia $\langle P_{i}', p_{i} \rangle$
+
 **** Database Semantics
 - unicitá dei nomi
 - closed-world assumption
