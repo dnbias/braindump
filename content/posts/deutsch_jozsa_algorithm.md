@@ -8,6 +8,7 @@ draft = false
 
 -   Tags: [Quantum Computing]({{< relref "quantum_computing.md" >}}), [CalcCompl]({{< relref "20210921121153-calcolabilita_e_complessita.md" >}})
 -   Source: [qiskit](https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html), [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}}) [Ap.D]
+-   see [Jupiter Notebook Extract](/ox-hugo/deutsch-jozsa-notebook.pdf)
 
 The first example of a quantum algorithm performing better than the best classical algorithm.
 
@@ -21,5 +22,77 @@ The algorithm can be applied to an oracle \\(U\_{f}\\) where \\(f\\) is either _
 3.  apply the `oracle` \\(U\_{f}\\) to input state \\(| +- \rangle\\)
 4.  measure `control` in the \\(X\text{-basis}\\)
     -   if 0 then \\(f\\) is constant, otherwise \\(f\\) is balanced
+
+{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 1: </span>Circuit for Deutsch-Jozsa" >}}
+
+
+## Code {#code}
+
+
+### Algorithm {#algorithm}
+
+```Q#
+namespace DeutschJozsa {
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Diagnostics;
+
+    operation CheckIfOracleIsBalanced(oracle : ((Qubit, Qubit) => Unit))
+    : Bool {
+        use control = Qubit();
+        use target = Qubit();
+
+        H(control);
+        X(target);
+        H(target);
+
+        oracle(control, target);
+
+        H(target);
+        X(target);
+
+        return MResetX(control) == One;
+    }
+
+    operation RunDeutschJozsaAlgorithm() : Unit {
+        Fact(not CheckIfOracleIsBalanced(ApplyZeroOracle),
+            "Test failed for zero oracle.");
+        Fact(not CheckIfOracleIsBalanced(ApplyOneOracle),
+            "Test failed for one oracle.");
+        Fact(CheckIfOracleIsBalanced(ApplyIdOracle),
+            "Test failed for id oracle.");
+        Fact(CheckIfOracleIsBalanced(ApplyNotOracle),
+            "Test failed for not oracle.");
+
+        Message("All tests passed!");
+    }
+}
+```
+
+
+### Oracles {#oracles}
+
+```Q#
+namespace DeutschJozsa {
+    open Microsoft.Quantum.Intrinsic;
+
+    operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
+    }
+
+    operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
+        X(target);
+    }
+
+    operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
+        CNOT(control, target);
+    }
+
+    operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
+        X(control);
+        CNOT(control, target);
+        X(control);
+    }
+}
+```
 
 [^fn:1]: shortand for \\(| + \rangle \otimes | - \rangle\\)

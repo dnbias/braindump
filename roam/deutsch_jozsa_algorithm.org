@@ -6,6 +6,7 @@
 #+filetags: algorithms compsci
 - Tags: [[id:6e504ff7-9a50-4a47-901d-4c524c229bc6][Quantum Computing]], [[id:b9d02edb-6458-4237-88de-41fb865974d2][CalcCompl]]
 - Source: [[https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html][qiskit]], [[id:c2bda57f-a02a-460c-96a2-796dd2fee708][Learn Quantum Computing with Python and Q#]] [Ap.D]
+- see [[../media/docs/deutsch-jozsa-notebook.pdf][Jupiter Notebook Extract]]
 The first example of a quantum algorithm performing better than the best classical algorithm.
 
 The algorithm can be applied to an oracle $U_{f}$ where $f$ is either /constant/ or /balanced/ and decide in $O(1)$ whether it's one or the other, in a single application.
@@ -17,6 +18,70 @@ The algorithm can be applied to an oracle $U_{f}$ where $f$ is either /constant/
 4. measure ~control~ in the $X\text{-basis}$
    - if 0 then $f$ is constant, otherwise $f$ is balanced
 
-
+#+caption: Circuit for Deutsch-Jozsa
+[[../media/img/deutsch_steps.png]]
 
 [fn:1]shortand for $| + \rangle \otimes | - \rangle$
+
+* Code
+** Algorithm
+#+begin_src Q#
+namespace DeutschJozsa {
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Measurement;
+    open Microsoft.Quantum.Diagnostics;
+
+    operation CheckIfOracleIsBalanced(oracle : ((Qubit, Qubit) => Unit))
+    : Bool {
+        use control = Qubit();
+        use target = Qubit();
+
+        H(control);
+        X(target);
+        H(target);
+
+        oracle(control, target);
+
+        H(target);
+        X(target);
+
+        return MResetX(control) == One;
+    }
+
+    operation RunDeutschJozsaAlgorithm() : Unit {
+        Fact(not CheckIfOracleIsBalanced(ApplyZeroOracle),
+            "Test failed for zero oracle.");
+        Fact(not CheckIfOracleIsBalanced(ApplyOneOracle),
+            "Test failed for one oracle.");
+        Fact(CheckIfOracleIsBalanced(ApplyIdOracle),
+            "Test failed for id oracle.");
+        Fact(CheckIfOracleIsBalanced(ApplyNotOracle),
+            "Test failed for not oracle.");
+
+        Message("All tests passed!");
+    }
+}
+#+end_src
+** Oracles
+#+begin_src Q#
+namespace DeutschJozsa {
+    open Microsoft.Quantum.Intrinsic;
+
+    operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
+    }
+
+    operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
+        X(target);
+    }
+
+    operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
+        CNOT(control, target);
+    }
+
+    operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
+        X(control);
+        CNOT(control, target);
+        X(control);
+    }
+}
+#+end_src
