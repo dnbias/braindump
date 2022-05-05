@@ -290,7 +290,7 @@ Si incrementalmente una lista dei requisiti: _feature list_
 -  Contratti
 
 
-#### Modello di dominio {#modello-di-dominio}
+#### Modello di Dominio {#modello-di-dominio}
 
 Casi d'uso e specifiche supplementari sono input che vanno a definire il modello di dominio
 
@@ -371,6 +371,11 @@ I modelli per gli oggetti possono essere
     -   _Quali sono le responsabilitá dell'oggetto?_
     -   _Con chi collabora l'oggetto?_
     -   _Quali design pattern devono essere applicati?_
+
+    Si parte dal `Modello di Dominio`, ma l'implementazione impone dei vicoli ulteriori dovuti al `Object Oriented`
+
+    -   vengono letti e implementati i contratti, con le loro pre e post-condizioni
+    -   non si creano nuove associazioni nel `Modello di Dominio`: siamo a livello del codice e si fanno scelte progettuali di _visibilitá_
 
 
 #### Ideazione {#ideazione}
@@ -458,7 +463,7 @@ La progettazione modulare é uno dei principi (`High Cohesion` - `Low Coupling` 
 
 #### Creator {#creator}
 
--   Chi crea un oggetto `A`?
+-   _Chi crea un oggetto_ `A`?
     -   _Chi deve essere responsabile della creazione di una nuova istanza di una classe?_
 
 Assegna alla classe `B` la responsabilitá vale una delle seguenti condizioni:
@@ -473,7 +478,7 @@ Assegna alla classe `B` la responsabilitá vale una delle seguenti condizioni:
 
 #### Information Expert {#information-expert}
 
--   Chi ha una particolare responsabilitá?
+-   _Chi ha una particolare responsabilitá?_
 
 Assegna la responsabilitá alla classe che contiene le informazioni necessarie per soddisfarla.
 
@@ -482,8 +487,8 @@ Assegna la responsabilitá alla classe che contiene le informazioni necessarie p
 
 #### Low Coupling {#low-coupling}
 
--   Come ridurre l'impatto dei cambiamenti?
--   Come sostenere una dipendenza bassa?
+-   _Come ridurre l'impatto dei cambiamenti?_
+-   _Come sostenere una dipendenza bassa?_
 
 Assegna le responsabilitá in modo tale che l'accoppiamento (non necessario) rimanga basso.
 Questo é un principio da utilizzare per valutare le scelte possibili e gli altri pattern.
@@ -496,7 +501,7 @@ Questo é un principio da utilizzare per valutare le scelte possibili e gli altr
 
 #### High Cohesion {#high-cohesion}
 
--   Come mantenere gli oggetti focalizzati, comprensibili e gestibili?
+-   _Come mantenere gli oggetti focalizzati, comprensibili e gestibili?_
     -   effetto collaterale, sostenere `Low Coupling`
 
 Assegna le responsabilitá in modo tale che la coesione rimanga alta.
@@ -515,7 +520,7 @@ La coesione puó essere misurata in termini di:
 
 #### Controller {#controller}
 
--   Qual é il primo oggetto oltre lo strato `UI` che riceve e coordina ("controlla") un'operazione di sistema?
+-   _Qual é il primo oggetto oltre lo strato_ `UI` _che riceve e coordina ("controlla") un'operazione di sistema?_
 
 Assegna la responsabilitá a un oggetto che rappresenta uno di questi:
 
@@ -531,7 +536,7 @@ Il `Controller` é un pattern di delega:
 -   il `Controller` é una sorta di _facciata_
     -   controlla e coordina ma non esegui lui stesso le operazioni, secondo la `High Cohesion`
 
-**NB** il controller `MVC` é distinto e solitamente dipende strettamente dalla tecnologia utilizzata per la `UI` e fa parte di questo strato, a sua volta delegerá al `Controller` dello strato di Dominio.
+> Il controller `MVC` é distinto e solitamente dipende strettamente dalla tecnologia utilizzata per la `UI` e fa parte di questo strato, a sua volta delegerá al `Controller` dello strato di Dominio.
 
 
 #### Polymorphism {#polymorphism}

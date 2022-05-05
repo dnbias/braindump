@@ -217,7 +217,7 @@ Possono essere inclusi nei casi d'uso se relazionati con il requisito funzinale 
 Altrimenti vengono descritti nelle specifiche supplementari
 **** Contratti
 
-*** Modello di dominio
+*** Modello di Dominio
 Casi d'uso e specifiche supplementari sono input che vanno a definire il modello di dominio
 
 $\textsc{definition}$   Nel =UP= il /Modello di Dominio/ é una rappresentazione delle classi concettuali della situazione reale. Queste /non sono/ oggetti software.
@@ -277,6 +277,10 @@ A differenza del =Modello di Dominio= in questo contesto la visibilitá ha un si
 - /Quali sono le responsabilitá dell'oggetto?/
 - /Con chi collabora l'oggetto?/
 - /Quali design pattern devono essere applicati?/
+
+Si parte dal =Modello di Dominio=, ma l'implementazione impone dei vicoli ulteriori dovuti al =Object Oriented=
+- vengono letti e implementati i contratti, con le loro pre e post-condizioni
+- non si creano nuove associazioni nel =Modello di Dominio=: siamo a livello del codice e si fanno scelte progettuali di /visibilitá/
 *** Ideazione
 Si tratta dello studio di fattibilitá
 - si decide se il caso merita un'analisi piú completa
@@ -337,7 +341,7 @@ La progettazione modulare é uno dei principi (=High Cohesion= - =Low Coupling= 
 - questi sono pattern /valutativi/, non ci danno la soluzione direttamente
 
 *** Creator
-- Chi crea un oggetto =A=?
+- /Chi crea un oggetto/ =A=?
   + /Chi deve essere responsabile della creazione di una nuova istanza di una classe?/
 
 Assegna alla classe =B= la responsabilitá vale una delle seguenti condizioni:
@@ -349,14 +353,14 @@ Assegna alla classe =B= la responsabilitá vale una delle seguenti condizioni:
   + quindi =B= é un =Expert= rispetto ad =A=
 
 *** Information Expert
-- Chi ha una particolare responsabilitá?
+- /Chi ha una particolare responsabilitá?/
 
 Assegna la responsabilitá alla classe che contiene le informazioni necessarie per soddisfarla.
 - =Expert=
 
 *** Low Coupling
-- Come ridurre l'impatto dei cambiamenti?
-- Come sostenere una dipendenza bassa?
+- /Come ridurre l'impatto dei cambiamenti?/
+- /Come sostenere una dipendenza bassa?/
 
 Assegna le responsabilitá in modo tale che l'accoppiamento (non necessario) rimanga basso.
 Questo é un principio da utilizzare per valutare le scelte possibili e gli altri pattern.
@@ -366,7 +370,7 @@ Questo é un principio da utilizzare per valutare le scelte possibili e gli altr
   + il problema sorge con /accoppiamento alto con elementi per certi aspetti instabili/
 
 *** High Cohesion
-- Come mantenere gli oggetti focalizzati, comprensibili e gestibili?
+- /Come mantenere gli oggetti focalizzati, comprensibili e gestibili?/
   + effetto collaterale, sostenere =Low Coupling=
 
 Assegna le responsabilitá in modo tale che la coesione rimanga alta.
@@ -382,7 +386,7 @@ La coesione puó essere misurata in termini di:
 - coesione per pura coincidenza
 
 *** Controller
-- Qual é il primo oggetto oltre lo strato =UI= che riceve e coordina ("controlla") un'operazione di sistema?
+- /Qual é il primo oggetto oltre lo strato/ =UI= /che riceve e coordina ("controlla") un'operazione di sistema?/
 
 Assegna la responsabilitá a un oggetto che rappresenta uno di questi:
 - il sistema complessivo, un oggetto radice o entry point del software, un sottosistema principale
@@ -396,8 +400,9 @@ Il =Controller= é un pattern di delega:
 - il =Controller= é una sorta di /facciata/
   + controlla e coordina ma non esegui lui stesso le operazioni, secondo la =High Cohesion=
 
-*NB* il controller =MVC= é distinto e solitamente dipende strettamente dalla tecnologia utilizzata per la =UI= e fa parte di questo strato, a sua volta delegerá al =Controller= dello strato di Dominio.
-
+#+begin_quote
+Il controller =MVC= é distinto e solitamente dipende strettamente dalla tecnologia utilizzata per la =UI= e fa parte di questo strato, a sua volta delegerá al =Controller= dello strato di Dominio.
+#+end_quote
 *** Polymorphism
 
 *** Pure Fabrication

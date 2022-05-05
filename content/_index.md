@@ -15,4 +15,6 @@ Everything is a mess but it's slowly but surely getting better.
 I also haven't made good entry-points to my brain yet, but you can start hopping
 around by going to the [full index](/posts/) or the [tags](/tags/).
 
+If you wanna know more about all - <i>this</i> - look at [What is This?](/posts/what_is_this)
+
 <i>~ See you space cowboy.</i>
