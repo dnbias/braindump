@@ -105,8 +105,8 @@ Si puó simulare una `MT` a piú nastri con una `MT` ad un nastro solo
 
 Sono `TM` che enumerano stringhe.
 
-\\(\textsc{\textbf{theorem}}\\)     Si puó definire un enumeratore \\(E\\) che enumeri un linguaggio \\(L\\) se e solo se esiste una `TM` \\(M\\) che riconosca (decida positivamente) il linguaggio \\(L\\)
-\\(\textsc{\textbf{proof}}\\)      Partiamo a dimostrare che se esiste un tale \\(E\\) allora esiste una \\(M\\) che riconosca il linguaggio enumerato \\(L\\)
+\\(\textsc{theorem}\\)     Si puó definire un enumeratore \\(E\\) che enumeri un linguaggio \\(L\\) se e solo se esiste una `TM` \\(M\\) che riconosca (decida positivamente) il linguaggio \\(L\\)
+\\(\textsc{proof}\\)      Partiamo a dimostrare che se esiste un tale \\(E\\) allora esiste una \\(M\\) che riconosca il linguaggio enumerato \\(L\\)
 
 Possiamo definire \\(M\\) su input \\(w\\):
 
@@ -246,11 +246,11 @@ La macchina universale procede leggendo lo stato corrente di \\(M\\) e il simbol
 
 #### Problemi Decibidili {#problemi-decibidili}
 
-\\(E\_{\textsc{dfa}} = \\{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}\\)
+\\(E\_{\textsc{dfa}} = \\{\langle A \rangle \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset \\}\\)
 
 -   decidibile studiando i percorsi nel grafo delle transizioni
 
-\\(EQ\_{\textsc{dfa}} = \\{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}\\)
+\\(EQ\_{\textsc{dfa}} = \\{\langle A \rangle\mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset\\}\\)
 
 -   automa che descrive la differenza simmetrica dei linguaggi
 -   si riduce a \\(E\_{\textsc{dfa}}\\)
@@ -282,7 +282,7 @@ Per molti problemi si utilizza la tecnica della riduzione
     `4.11`
     Problema <span class="underline">positivamente decidibile</span>
 
-    \\(\textsc{\textbf{proof}}\\)   Si procede per _diagonalizzazione_ utilizzando due `TM` di supporto \\(H\\) e \\(D\\)
+    \\(\textsc{proof}\\)   Si procede per _diagonalizzazione_ utilizzando due `TM` di supporto \\(H\\) e \\(D\\)
 
     \\(A\_{\textsc{TM}}=\\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\\}\\)
 
@@ -309,8 +309,8 @@ Per molti problemi si utilizza la tecnica della riduzione
     -   supponiamo che `H` esista, e accetti se `M` accetta `w` e rifiuti altrimenti
 
     \\[D(\langle M \rangle) = \begin{cases}
-    \texttit{accept} \quad &\text{if }M\text{ does not accept } \langle M \rangle \\\\
-    \texttit{reject} \quad &\text{if }M\text{ accepts } \langle M \rangle
+    \text{accept} \quad &\text{if }M\text{ does not accept } \langle M \rangle \\\\
+    \text{reject} \quad &\text{if }M\text{ accepts } \langle M \rangle
     \end{cases}\\]
 
     -   `D` prende in input una macchina `M` e con un decisore `H` che decide `M` con input la propria descrizione \\(\langle M \rangle\\), accetta se `H` rifiuta e viceversa, continua con altre macchine
@@ -318,8 +318,8 @@ Per molti problemi si utilizza la tecnica della riduzione
 
     Allora si procede diagonalizzando con \\(D\\) applicato a \\(\langle D\rangle\\)
     \\[D(\langle D \rangle)\begin{cases}
-    \textit{accept} \quad &\text{if }D\text{ does not accept }\langle D \rangle \\\\
-    \textit{reject} \quad &\text{if }D\text{ accepts }\langle D \rangle
+    \text{accept} \quad &\text{if }D\text{ does not accept }\langle D \rangle \\\\
+    \text{reject} \quad &\text{if }D\text{ accepts }\langle D \rangle
     \end{cases}\\]
 
     -   dovrebbe rifiutare se \\(D\\) accetta
@@ -420,8 +420,8 @@ Per molti problemi si utilizza la tecnica della riduzione
         -   e di conseguenza anche il &lt; e il &gt;
 
     \\(EQ\_{TM} = \\{\langle M\_{1}, M\_{2} \rangle \mid L(M\_{1}) = L(M\_{2})\\}\\)
-    \\(\qed\\)
-    \\(\textsc{\textbf{proof}}\\)    Si dimostra per riduzioni:
+    \\(\blacksquare\\)
+    \\(\textsc{proof}\\)    Si dimostra per riduzioni:
 
     1.  \\(A\_{TM} \le\_{m} \overline{EQ}\_{TM}\\)
         -   questo indica che \\(EQ\_{TM}\\) non puó essere negativamente decidibile
@@ -595,7 +595,7 @@ La classe di tempo **Polinomiale** é definito come
 Teorema `7.11`
 Sia \\(t(n)\\) una funzione dove \\(t(n)>n\\).
 Allora ogni `TM` _singletape_ <span class="underline">non deterministica</span> con complessitá temporale \\(t(n)\\) ha una equivalente `TM` <span class="underline">determinitistica</span> \\(2^{O(t(n))}\\), nel caso di una macchina multiregistro
-Per una `TM` deterministica a registro singolo si avrá sempre complessitá \\(2^{O(t(n))}^2} = 2^{O(t(n))}\\)
+Per una `TM` deterministica a registro singolo si avrá sempre complessitá \\(2^{O(t(n))}^2 = 2^{O(t(n))}\\)
 
 L'esplorazione dell'albero non deterministico é svolto utilizzando _l'ordine lessicografico_
 
@@ -741,7 +741,7 @@ Si dimostra quindi che le due definizioni sono equivalenti in quanto é sempre p
 
     Non si sa se esistono algoritmi polinomiali \\(\text{P}\\)
 
-    \\(\textsc{Clique} = \\{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\\}}\\)
+    \\(\textsc{Clique} = \\{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\\}\\)
 
     É \\(\text{NP-completo}\\)
 
