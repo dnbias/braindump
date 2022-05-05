@@ -72,8 +72,8 @@ Si puó simulare una ~MT~ a piú nastri con una ~MT~ ad un nastro solo
 *** Enumeratori
 Sono =TM= che enumerano stringhe.
 
-$\textsc{\textbf{theorem}}$     Si puó definire un enumeratore $E$ che enumeri un linguaggio $L$ se e solo se esiste una =TM= $M$ che riconosca (decida positivamente) il linguaggio $L$
-$\textsc{\textbf{proof}}$      Partiamo a dimostrare che se esiste un tale $E$ allora esiste una $M$ che riconosca il linguaggio enumerato $L$
+$\textsc{theorem}$     Si puó definire un enumeratore $E$ che enumeri un linguaggio $L$ se e solo se esiste una =TM= $M$ che riconosca (decida positivamente) il linguaggio $L$
+$\textsc{proof}$      Partiamo a dimostrare che se esiste un tale $E$ allora esiste una $M$ che riconosca il linguaggio enumerato $L$
 
 Possiamo definire $M$ su input $w$:
 - simula $E$
@@ -190,9 +190,9 @@ Queste codifiche sono utilizzate nelle 5 tape di $U$, definite in questo modo:
 La macchina universale procede leggendo lo stato corrente di $M$ e il simbolo $a^*$ che si trova sotto la testina di lettura di nella tape 5. Quindi scorre le quintuple nella prima tape, se non trova una corrispondenza rifiuta. Se trova una corrispondenza allora sovrascrive la tape 2 con il nuovo stato indicato dalla funzione di transizione e sovrascrive $a^*$ nella tape 5 con la nuova $a'^*$ indicata dalla transizione e aggiungendo un divisore #. fatto questo simula il movimento a destra o a sinistra della testina di $M$ spostandosi nella direzione indicata fino ad un #.
 
 *** Problemi Decibidili
-$E_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
+$E_{\textsc{dfa}} = \{\langle A \rangle \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset \}$
 - decidibile studiando i percorsi nel grafo delle transizioni
-$EQ_{\textsc{dfa}} = \{\langle A \rangle\ \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset}$
+$EQ_{\textsc{dfa}} = \{\langle A \rangle\mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset\}$
 - automa che descrive la differenza simmetrica dei linguaggi
 - si riduce a $E_{\textsc{dfa}}$
 $A_{\textsc{CFG}}=\{\langle G,w \rangle \mid G\mbox{ is a \textsc{CFG} that generates string }w\}$
@@ -212,7 +212,7 @@ $EQ_{\textsc{CFG}}=\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{C
 =4.11=
 Problema _positivamente decidibile_
 
-$\textsc{\textbf{proof}}$   Si procede per /diagonalizzazione/ utilizzando due =TM= di supporto $H$ e $D$
+$\textsc{proof}$   Si procede per /diagonalizzazione/ utilizzando due =TM= di supporto $H$ e $D$
 
 $A_{\textsc{TM}}=\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\}$
 - simulabile con una macchina $U$ di Turing universale
@@ -237,8 +237,8 @@ $\textsc{\textbf{proof}}$      Si definiscono delle =MT= di supporto:
 - supponiamo che =H= esista, e accetti se =M= accetta =w= e rifiuti altrimenti
 
 \[D(\langle M \rangle) = \begin{cases}
-\texttit{accept} \quad &\text{if }M\text{ does not accept } \langle M \rangle \\
-\texttit{reject} \quad &\text{if }M\text{ accepts } \langle M \rangle
+\text{accept} \quad &\text{if }M\text{ does not accept } \langle M \rangle \\
+\text{reject} \quad &\text{if }M\text{ accepts } \langle M \rangle
 \end{cases}\]
 
 - =D= prende in input una macchina =M= e con un decisore =H= che decide =M= con input la propria descrizione $\langle M \rangle$, accetta se =H= rifiuta e viceversa, continua con altre macchine
@@ -246,8 +246,8 @@ $\textsc{\textbf{proof}}$      Si definiscono delle =MT= di supporto:
 
 Allora si procede diagonalizzando con $D$ applicato a $\langle D\rangle$
 \[D(\langle D \rangle)\begin{cases}
-\textit{accept} \quad &\text{if }D\text{ does not accept }\langle D \rangle \\
-\textit{reject} \quad &\text{if }D\text{ accepts }\langle D \rangle
+\text{accept} \quad &\text{if }D\text{ does not accept }\langle D \rangle \\
+\text{reject} \quad &\text{if }D\text{ accepts }\langle D \rangle
 \end{cases}\]
 - dovrebbe rifiutare se $D$ accetta
 - dovrebbe accettare altrimenti
@@ -331,8 +331,8 @@ Anche per i reali:
 
 
 $EQ_{TM} = \{\langle M_{1}, M_{2} \rangle \mid L(M_{1}) = L(M_{2})\}$
-$\qed$
-$\textsc{\textbf{proof}}$    Si dimostra per riduzioni:
+$\blacksquare$
+$\textsc{proof}$    Si dimostra per riduzioni:
 1. $A_{TM} \le_{m} \overline{EQ}_{TM}$
    - questo indica che $EQ_{TM}$ non puó essere negativamente decidibile
    - spostiamo al decidibilitá a $A_{TM}$
@@ -478,7 +478,7 @@ La classe di tempo *Polinomiale* é definito come
 Teorema =7.11=
 Sia $t(n)$ una funzione dove $t(n)>n$.
 Allora ogni =TM= /singletape/ _non deterministica_ con complessitá temporale $t(n)$ ha una equivalente =TM= _determinitistica_ $2^{O(t(n))}$, nel caso di una macchina multiregistro
-Per una =TM= deterministica a registro singolo si avrá sempre complessitá $2^{O(t(n))}^2} = 2^{O(t(n))}$
+Per una =TM= deterministica a registro singolo si avrá sempre complessitá $2^{O(t(n))}^2 = 2^{O(t(n))}$
 
 L'esplorazione dell'albero non deterministico é svolto utilizzando /l'ordine lessicografico/
 - in profonditá
@@ -585,7 +585,7 @@ Grafo _non orientato_, fornito un $k$
 - si richiede un _sottografo_ in cui 2 qualunque nodi distinti sono connessi di un arco
 Non si sa se esistono algoritmi polinomiali $\text{P}$
 
-$\textsc{Clique} = \{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\}}$
+ $\textsc{Clique} = \{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\}$
 
 É $\text{NP-completo}$
 

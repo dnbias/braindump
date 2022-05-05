@@ -697,8 +697,6 @@ build content/posts/la_satira_secondo_a_g_bierce.md: org2md roam/la_satira_secon
 
 build content/posts/learn_in_public.md: org2md roam/learn_in_public.org
 
-build content/posts/learn_quantum_computing_with_python_and_q.md: org2md roam/learn_quantum_computing_with_python_and_q.org
-
 build content/posts/letture_viola.md: org2md roam/letture_viola.org
 
 build content/posts/linkiesta.md: org2md roam/linkiesta.org
@@ -819,8 +817,6 @@ build content/posts/work_with_the_garage_door_up.md: org2md roam/work_with_the_g
 
 build content/posts/zettelkasten_principles.md: org2md roam/zettelkasten_principles.org
 
-build content/posts/deutsch_jozsa_algorithm.md: org2md roam/deutsch_jozsa_algorithm.org
-
 build content/posts/fonts.md: org2md roam/fonts.org
 
 build content/posts/martin_fowler.md: org2md roam/martin_fowler.org
@@ -858,3 +854,7 @@ build content/posts/verifast.md: org2md roam/verifast.org
 build content/posts/verifast_imperative_programs_as_proofs.md: org2md roam/verifast_imperative_programs_as_proofs.org
 
 build content/posts/verification_of_imperative_programs_the_verifast_approach.md: org2md roam/verification_of_imperative_programs_the_verifast_approach.org
+
+build content/posts/deutsch_jozsa_algorithm.md: org2md roam/deutsch_jozsa_algorithm.org
+
+build content/posts/learn_quantum_computing_with_python_and_q.md: org2md roam/learn_quantum_computing_with_python_and_q.org
