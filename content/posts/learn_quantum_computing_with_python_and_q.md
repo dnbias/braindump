@@ -110,12 +110,12 @@ To use the algorithm on function \\(f\\) to decide whether it is balanced or con
     -   `one`, unreversible
     -   constant functions are unreversible as they lose track of which input resulted in the output
 
-> Oracles are unitary matrixes defined by applying \\(f\\) conditionally to the labels for qubits states, applying an oracle twice results in the identity \\(I\\)
+> Oracles are unitary matrixes defined by applying \\(f\\) conditionally to the labels for qubits states, applying an oracle twice results in the identity \\(\mathbb{1}\\)
 
-To make a `classical reversible function` \\(h\\) from the unreversible \\(f\\):
+To make a **classical reversible function** \\(h\\) from the unreversible \\(f\\):
 \\[h(x,y) = (x,y \oplus f(x))\\]
 
-In the same way we can make a `reversible quantum operation` or `oracle`:
+In the same way we can make a **reversible quantum operation** or **oracle**:
 \\[U\_{f} |x \rangle | y \rangle = | x \rangle | y \oplus f(x) \rangle\\]
 
 -   \\(x\\) is the `control qubit`
@@ -126,12 +126,9 @@ The algorithm works by using a quantum programming technique colled _phase kickb
 -   the fact that the input qubit's state changes base on transformations defined in the output qubit
 
     The algorithm can be extended to \\(n\\) qubits with functions of form
-
-    \begin{centre}f(x\_{0}, x\_{1},\cdots,x\_{n})\end{centre}
-
-    and n-qubits oracles:
-
-    \begin{centre}U\_{f}|x\_{0} x\_{1}\cdots x\_{n}y\rangle = | x\_{0} x\_{1}\cdots x\_{n}\rangle \otimes | f(x\_{0}, x\_{1},\cdots,x\_{n}) \oplus y\rangle\end{centre}
+    \\[f(x\_{0}, x\_{1},\cdots,x\_{n})\\]
+    and n-qubits oracles
+    \\[U\_{f}|x\_{0} x\_{1}\cdots x\_{n}y\rangle = | x\_{0} x\_{1}\cdots x\_{n}\rangle \otimes | f(x\_{0}, x\_{1},\cdots,x\_{n}) \oplus y\rangle\\]
 
 
 ### Quantum Sensing {#quantum-sensing}

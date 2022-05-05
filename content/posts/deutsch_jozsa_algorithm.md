@@ -23,6 +23,11 @@ The algorithm can be applied to an oracle \\(U\_{f}\\) where \\(f\\) is either _
 4.  measure `control` in the \\(X\text{-basis}\\)
     -   if 0 then \\(f\\) is constant, otherwise \\(f\\) is balanced
 
+The algorithm can be extended to \\(n\\) qubits with functions of form
+\\[f(x\_{0}, x\_{1},\cdots,x\_{n})\\]
+and n-qubits oracles
+\\[U\_{f}|x\_{0} x\_{1}\cdots x\_{n}y\rangle = | x\_{0} x\_{1}\cdots x\_{n}\rangle \otimes | f(x\_{0}, x\_{1},\cdots,x\_{n}) \oplus y\rangle\\]
+
 {{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 1: </span>Circuit for Deutsch-Jozsa" >}}
 
 
