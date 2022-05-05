@@ -840,6 +840,42 @@ Vari approcci:
     I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:1]
     Un termine é `ground` quando non contiene variabili. (i.e. fondato)
 
+    La base di conoscenza puó essere interrogata con `ask`
+
+    -   quando compare una formula `ground` é banale la richiesta
+    -   quando compaiono variabili si intende una sostituzione
+        -   quindi la variabile \\(x\\) é interpretata in senso esistenziale ( \\(\exists\\) )
+
+    <!--list-separator-->
+
+    -  Come fare Inferenza su FOL
+
+        -   `Proposizionalizzazione`
+            -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
+            -   Regola di Instanziazione Universale - `UI`
+                -   \\[\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\]
+                -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
+                -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
+            -   Regola di Instanziazione Esistenziale - `EI`
+                -   \\[\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\]
+                -   \\(k\\) costante di Skolem, nuova
+                    -   non compare nella `KB`
+                -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\)
+            -   `Herbrand`
+                -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
+                    -   \\(KB \vDash F\\)
+                -   se non é conseguenza logica ... non é detto sia dimostrabile
+                    -   \\(KB \not\vDash F\\) non sempre possibile
+                -   la logica del prim'ordine é **semi-decidibile**
+            -   `Inefficienza`
+                -   crea delle basi di conoscenza grandi con le regole
+        -   `Lifting` delle regole di inferenza
+            -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
+            -   `Unification` Martelli/Montanari
+            -   **Modus Ponens Generalizzato**
+                -   \\[\frac{P\_{1}',\cdots ,P\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
+                -   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle P\_{i}', p\_{i} \rangle\\)
+
 <!--list-separator-->
 
 -  Database Semantics
