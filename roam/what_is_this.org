@@ -1,0 +1,17 @@
+:PROPERTIES:
+:ID:       a3d9f126-3a54-499e-8693-5b2ec1ee7bcd
+:END:
+#+title: What is This?
+#+date: [2022-05-05 Thu 11:02]
+
+This is a [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]] and what is also known on the web as a [[https://joelhooks.com/digital-garden][Digital Garden]].
+The work that inspired me to publish this is [[id:dd94b067-fcd4-4ff9-8c0d-11d410b5e605][Work with the garage door up]] and the [[id:72cdd6e6-0096-4c87-9b44-51889078c1e6][Learn In Public]] movement.
+I think that having my working notes public for all to see creates a good kind of peer pressure, the kind that gets things done, possibly.
+
+#+caption: Sometimes the door doesn't get up - smh
+[[../media/img/garage-door-not-working.png]]
+
+All the content is =WIP= and in a mix of languages, mainly italian and english. Sometimes I switch in between sentences. Scusate.
+
+The website is based off the blueprint of [[id:01bbe584-fb9a-4b91-b5ec-e0c589143d2b][Jethro Kuan]]'s own [[https://braindump.jethro.dev/][braindump]]. Everything is done in [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]] ([[id:ea38ccde-4a3a-4bce-a858-9889336ecb46][org-mode]] + [[id:a9417549-6f9f-48ab-b23c-1c411fee45b8][org-roam]] ♡), converted to markdown compatible with [[id:65d2727b-cd97-4e73-8745-ac30803c6a3c][Hugo]] and deployed via [[https://www.netlify.com/][Netlify]].
+If you're curious look at my [[https://github.com/dnbias/braindump][github]].

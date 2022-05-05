@@ -858,3 +858,5 @@ build content/posts/verification_of_imperative_programs_the_verifast_approach.md
 build content/posts/deutsch_jozsa_algorithm.md: org2md roam/deutsch_jozsa_algorithm.org
 
 build content/posts/learn_quantum_computing_with_python_and_q.md: org2md roam/learn_quantum_computing_with_python_and_q.org
+
+build content/posts/what_is_this.md: org2md roam/what_is_this.org
