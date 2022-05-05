@@ -71,8 +71,38 @@ For Jupyter Notebooks you can install =IQ#=
 $ dotnet tool install -g Microsoft.Quantum.IQSharp
 $ dotnet iqsharp install
 #+end_src
+
+If there are problems with ~iqsharp~ install the correct runtime, =aspnet-runtime= on the =AUR=.
 ** Q#
 ** [[id:d7686f15-7f24-476e-9ecf-87ef577d5a4c][Deutsch-Jozsa Algorithm]]
+To use the algorithm on function $f$ to decide whether it is balanced or constant we need to define an /oracle/ for that function.
+- this is because functions can be /unreversible/
+  + ~id~, reversible
+  + ~not~, reversible
+  + ~zero~, unreversible
+  + ~one~, unreversible
+  + constant functions are unreversible as they lose track of which input resulted in the output
+
+#+begin_quote
+Oracles are unitary matrixes defined by applying $f$ conditionally to the labels for qubits states, applying an oracle twice results in the identity \(I\)
+#+end_quote
+
+To make a =classical reversible function= $h$ from the unreversible $f$:
+\[h(x,y) = (x,y \oplus f(x))\]
+
+In the same way we can make a =reversible quantum operation= or =oracle=:
+\[U_{f} |x \rangle | y \rangle = | x \rangle | y \oplus f(x) \rangle\]
+- $x$ is the =control qubit=
+- $y$ is the =target qubit=
+
+The algorithm works by using a quantum programming technique colled /phase kickback/.
+- the fact that the input qubit's state changes base on transformations defined in the output qubit
+
+  The algorithm can be extended to $n$ qubits with functions of form
+  \begin{centre}f(x_{0}, x_{1},\cdots,x_{n})\end{centre}
+  and n-qubits oracles:
+  \begin{centre}U_{f}|x_{0} x_{1}\cdots x_{n}y\rangle = | x_{0} x_{1}\cdots x_{n}\rangle \otimes | f(x_{0}, x_{1},\cdots,x_{n}) \oplus y\rangle\end{centre}
+
 ** Quantum Sensing
 * Applied Quantum Computing
 ** Chemistry
