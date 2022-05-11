@@ -51,13 +51,11 @@ x `combinazione lineare convessa` di u e v
 
 x vertice se non esistono u,v t.c   `x = 1/2u + 1/2v`
 
-<!--list-separator-->
 
--  se un programma lineare ammette soluzioni ottime almeno una di esse e vertice di Sa: [Teorema Fondamentale della Programmazione Lineare](#teorema-fondamentale-della-programmazione-lineare)
+##### se un programma lineare ammette soluzioni ottime almeno una di esse e vertice di Sa: [Teorema Fondamentale della Programmazione Lineare](#teorema-fondamentale-della-programmazione-lineare) {#se-un-programma-lineare-ammette-soluzioni-ottime-almeno-una-di-esse-e-vertice-di-sa-teorema-fondamentale-della-programmazione-lineare--org98182af}
 
-<!--list-separator-->
 
--  x e' vertice di Sa se e solo se le colonne di A in { Aj: xj &gt; 0 } sono linermente indipendenti
+##### x e' vertice di Sa se e solo se le colonne di A in { Aj: xj &gt; 0 } sono linermente indipendenti {#x-e-vertice-di-sa-se-e-solo-se-le-colonne-di-a-in-aj-xj-0-sono-linermente-indipendenti}
 
 
 ### Una Base e' un insieme { xj1,xj2,...,xjm } dette variabili di base tali che: {#una-base-e-un-insieme-xj1-xj2-dot-dot-dot-xjm-dette-variabili-di-base-tali-che}
@@ -97,11 +95,10 @@ ammette soluzioni ottime, allora almeno una di esse e' vertice di Sa
 
 #### di ottimalita' {#di-ottimalita}
 
-<!--list-separator-->
 
--  costo ridotto
+##### costo ridotto {#costo-ridotto}
 
-    condizione sufficiente affinche x(B) sia ottima e' che risulti che rj &lt;=0 per ogni variabile xj fuori base
+condizione sufficiente affinche x(B) sia ottima e' che risulti che rj &lt;=0 per ogni variabile xj fuori base
 
 
 #### di illimitatezza {#di-illimitatezza}
@@ -127,15 +124,13 @@ Semispazio: definito a partire da un iperpiano e da un vettore
 
 #### un insieme convesso {#un-insieme-convesso}
 
-<!--list-separator-->
 
--  in particolare un `Poliedro convesso`
+##### in particolare un `Poliedro convesso` {#in-particolare-un-poliedro-convesso}
 
-    <!--list-separator-->
 
-    -  se limitato e' chiamato `Politopo`
+###### se limitato e' chiamato `Politopo` {#se-limitato-e-chiamato-politopo}
 
-        Un Politopo avra' sempre almeno una soluzione che sara' un vertice
+Un Politopo avra' sempre almeno una soluzione che sara' un vertice
 
 
 ## Combinazioni Lineari {#combinazioni-lineari}
@@ -225,12 +220,11 @@ S = { v1,v2, ... ,vk } S' = { v2, ... ,vk }
 
 Un insieme generatore di un sottospazio v e' detto base se e solo se e' anche un insieme libero
 
+
+###### tutte le infinite basi di V hanno la stessa cardinalita' {#tutte-le-infinite-basi-di-v-hanno-la-stessa-cardinalita}
+
 <!--list-separator-->
 
--  tutte le infinite basi di V hanno la stessa cardinalita'
+-  detta dimensione di V
 
-    <!--list-separator-->
-
-    -  detta dimensione di V
-
-        dimostrabile per il metodo degli scarti successivi
+    dimostrabile per il metodo degli scarti successivi

@@ -103,35 +103,28 @@ Questo in quanto i reali allo la `potenza dell'infinito`: avremo aree non rappre
 
 #### Codifiche {#codifiche}
 
-<!--list-separator-->
 
--  Caratteri
+##### Caratteri {#caratteri}
 
-    <!--list-separator-->
 
-    -  ASCII
+###### ASCII {#ascii}
 
-    <!--list-separator-->
 
-    -  UNICODE
+###### UNICODE {#unicode}
 
-    <!--list-separator-->
 
-    -  UTF-8
+###### UTF-8 {#utf-8}
 
-<!--list-separator-->
 
--  Suoni e Immagini
+##### Suoni e Immagini {#suoni-e-immagini}
 
-    `Campionamento del segnale`
+`Campionamento del segnale`
 
-    <!--list-separator-->
 
-    -  discretizzando colori nello spazio
+###### discretizzando colori nello spazio {#discretizzando-colori-nello-spazio}
 
-    <!--list-separator-->
 
-    -  discretizzando suoni nel tempo
+###### discretizzando suoni nel tempo {#discretizzando-suoni-nel-tempo}
 
 
 ## Livelli di Architettura di un Elaboratore {#livelli-di-architettura-di-un-elaboratore}

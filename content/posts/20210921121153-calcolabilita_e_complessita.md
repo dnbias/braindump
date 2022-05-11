@@ -71,17 +71,15 @@ La Macchina di Turing essendo estremamente semplice é ottima per lo studio dell
 
 #### Grafi {#grafi}
 
-<!--list-separator-->
 
--  Stringhe Uguali
+##### Stringhe Uguali {#stringhe-uguali}
 
-    {{< figure src="/ox-hugo/grafoEs1.jpg" >}}
+{{< figure src="/ox-hugo/grafoEs1.jpg" >}}
 
-<!--list-separator-->
 
--  Stringa di 0 di lunghezza 2^n
+##### Stringa di 0 di lunghezza 2^n {#stringa-di-0-di-lunghezza-2-n}
 
-    {{< figure src="/ox-hugo/graphPowerOfTwoLength.jpg" >}}
+{{< figure src="/ox-hugo/graphPowerOfTwoLength.jpg" >}}
 
 
 #### Macchine Turing a piú registri {#macchine-turing-a-piú-registri}
@@ -269,251 +267,241 @@ Per molti problemi si utilizza la tecnica della riduzione
 
 -   se un problema che sappiamo non decidibile si puó ridurre al problema che stiamo studiando allora anche questo non sará decibidile
 
-<!--list-separator-->
 
--  Eguaglianza Chompsky
+##### Eguaglianza Chompsky {#eguaglianza-chompsky}
 
-    \\(EQ\_{\textsc{CFG}}=\\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\\}\\)
+\\(EQ\_{\textsc{CFG}}=\\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\\}\\)
 
-<!--list-separator-->
 
--  Accettazione
+##### Accettazione {#accettazione}
 
-    `4.11`
-    Problema <span class="underline">positivamente decidibile</span>
+`4.11`
+Problema <span class="underline">positivamente decidibile</span>
 
-    \\(\textsc{proof}\\)   Si procede per _diagonalizzazione_ utilizzando due `TM` di supporto \\(H\\) e \\(D\\)
+\\(\textsc{proof}\\)   Si procede per _diagonalizzazione_ utilizzando due `TM` di supporto \\(H\\) e \\(D\\)
 
-    \\(A\_{\textsc{TM}}=\\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\\}\\)
+\\(A\_{\textsc{TM}}=\\{\langle M,w \rangle \mid M\mbox{ is a \textsc{TM} and }M\mbox{ accepts }w\\}\\)
 
-    -   simulabile con una macchina \\(U\\) di Turing universale
-        -   macchina capace di simulare qualsiasi macchina utilizzando 5 tape
-    -   si osserva l'esecuzione che non termina
+-   simulabile con una macchina \\(U\\) di Turing universale
+    -   macchina capace di simulare qualsiasi macchina utilizzando 5 tape
+-   si osserva l'esecuzione che non termina
 
-    Si prova utilizzando la tecnica della _diagonalizzazione_ scoperta dal matematico [Georg Cantor]({{< relref "20211014120018-georg_cantor.md" >}}) nel 1873
+Si prova utilizzando la tecnica della _diagonalizzazione_ scoperta dal matematico [Georg Cantor]({{< relref "20211014120018-georg_cantor.md" >}}) nel 1873
 
-    -   iniezione - suriezione (biezione)
-        -   corrispondenza 1 a 1
-    -   prova che non esiste una enumerazione per un dato insieme di numeri
-        -   per i Reali si cambia nella ennesima enumerazione la ennesima cifra dopo la virgola
-            -   si trova cosí un numero che differisce per una cifra da tutti i numeri enumerati
-    -   esistono infinite terne
+-   iniezione - suriezione (biezione)
+    -   corrispondenza 1 a 1
+-   prova che non esiste una enumerazione per un dato insieme di numeri
+    -   per i Reali si cambia nella ennesima enumerazione la ennesima cifra dopo la virgola
+        -   si trova cosí un numero che differisce per una cifra da tutti i numeri enumerati
+-   esistono infinite terne
 
-    \\(\textsc{\textbf{proof}}\\)      Si definiscono delle `MT` di supporto:
+\\(\textsc{\textbf{proof}}\\)      Si definiscono delle `MT` di supporto:
 
-    \\[H(\langle M,w \rangle) = \begin{cases}
-    \textit{accept} \quad &\text{if }M\text{ accepts }w \\\\
-    \textit{reject} \quad &\text{if }M\text{ does not accept }w
-    \end{cases}\\]
+\\[H(\langle M,w \rangle) = \begin{cases}
+\textit{accept} \quad &\text{if }M\text{ accepts }w \\\\
+\textit{reject} \quad &\text{if }M\text{ does not accept }w
+\end{cases}\\]
 
-    -   supponiamo che `H` esista, e accetti se `M` accetta `w` e rifiuti altrimenti
+-   supponiamo che `H` esista, e accetti se `M` accetta `w` e rifiuti altrimenti
 
-    \\[D(\langle M \rangle) = \begin{cases}
-    \text{accept} \quad &\text{if }M\text{ does not accept } \langle M \rangle \\\\
-    \text{reject} \quad &\text{if }M\text{ accepts } \langle M \rangle
-    \end{cases}\\]
+\\[D(\langle M \rangle) = \begin{cases}
+\text{accept} \quad &\text{if }M\text{ does not accept } \langle M \rangle \\\\
+\text{reject} \quad &\text{if }M\text{ accepts } \langle M \rangle
+\end{cases}\\]
 
-    -   `D` prende in input una macchina `M` e con un decisore `H` che decide `M` con input la propria descrizione \\(\langle M \rangle\\), accetta se `H` rifiuta e viceversa, continua con altre macchine
-        -   diagonalizza infinite macchine `M`
+-   `D` prende in input una macchina `M` e con un decisore `H` che decide `M` con input la propria descrizione \\(\langle M \rangle\\), accetta se `H` rifiuta e viceversa, continua con altre macchine
+    -   diagonalizza infinite macchine `M`
 
-    Allora si procede diagonalizzando con \\(D\\) applicato a \\(\langle D\rangle\\)
-    \\[D(\langle D \rangle)\begin{cases}
-    \text{accept} \quad &\text{if }D\text{ does not accept }\langle D \rangle \\\\
-    \text{reject} \quad &\text{if }D\text{ accepts }\langle D \rangle
-    \end{cases}\\]
+Allora si procede diagonalizzando con \\(D\\) applicato a \\(\langle D\rangle\\)
+\\[D(\langle D \rangle)\begin{cases}
+\text{accept} \quad &\text{if }D\text{ does not accept }\langle D \rangle \\\\
+\text{reject} \quad &\text{if }D\text{ accepts }\langle D \rangle
+\end{cases}\\]
 
-    -   dovrebbe rifiutare se \\(D\\) accetta
-    -   dovrebbe accettare altrimenti
-        -   non puó terminare perché per terminare avrebbe bisogno di dare la risposta opposta di se stesso
+-   dovrebbe rifiutare se \\(D\\) accetta
+-   dovrebbe accettare altrimenti
+    -   non puó terminare perché per terminare avrebbe bisogno di dare la risposta opposta di se stesso
 
-    <span class="underline">Abbiamo raggiunto una contraddizione</span>                                                             \\(\blacksquare\\)
+<span class="underline">Abbiamo raggiunto una contraddizione</span>                                                             \\(\blacksquare\\)
 
-<!--list-separator-->
 
--  Immortalitá
+##### Immortalitá {#immortalitá}
 
-    `4.23`
-    \\(\overline A\_{\textsc{tm}}\\) <span class="underline">positivamente decidibile</span> \\(\implies  A\_{\textsc{tm}}\\) <span class="underline">negativamente decidibile</span> per `T.Post`
+`4.23`
+\\(\overline A\_{\textsc{tm}}\\) <span class="underline">positivamente decidibile</span> \\(\implies  A\_{\textsc{tm}}\\) <span class="underline">negativamente decidibile</span> per `T.Post`
 
-    -   Falso per `4.11`
+-   Falso per `4.11`
 
-<!--list-separator-->
 
--  Fermata
+##### Fermata {#fermata}
 
-    `5.1`
-    Il problema della decisione per \\(L\_{1}\\) si riduce al problema della decisione per \\(L\_{2}\\) se sappiamo trasformare un decisore per \\(L\_{2}\\) in un decisore per \\(L\_{1}\\)
+`5.1`
+Il problema della decisione per \\(L\_{1}\\) si riduce al problema della decisione per \\(L\_{2}\\) se sappiamo trasformare un decisore per \\(L\_{2}\\) in un decisore per \\(L\_{1}\\)
 
-    \\(\textsc{halt}\_{\textsc{tm}}=\\{\langle M,w\rangle \mid M \mbox{ is a \textsc{tm} and }M \mbox{ halts on input } w\\}\\)
+\\(\textsc{halt}\_{\textsc{tm}}=\\{\langle M,w\rangle \mid M \mbox{ is a \textsc{tm} and }M \mbox{ halts on input } w\\}\\)
 
-    -   \\(A\_{\textsc{tm}} <\_m \textsc{Halt}\_{TM}\\)
+-   \\(A\_{\textsc{tm}} <\_m \textsc{Halt}\_{TM}\\)
 
-    \\(\textsc{\textbf{proof}}\\)     Per contraddizione. Supponiamo esista una `TM` \\(R\\) che decida la fermata, definiamo una `TM` \\(S\\) che decide l'accettazione. Ma l'accettazione non é decidibile.
-    Definiamo \\(S\\) su input \\(w\\):
+\\(\textsc{\textbf{proof}}\\)     Per contraddizione. Supponiamo esista una `TM` \\(R\\) che decida la fermata, definiamo una `TM` \\(S\\) che decide l'accettazione. Ma l'accettazione non é decidibile.
+Definiamo \\(S\\) su input \\(w\\):
 
-    -   Se \\(R\\) accetta \\(\langle M,w \rangle\\) procedi, altrimenti rifiuta
-    -   Simula \\(M\\) su \\(w\\), se accetta fa altrettanto, altrimenti rifiuta
+-   Se \\(R\\) accetta \\(\langle M,w \rangle\\) procedi, altrimenti rifiuta
+-   Simula \\(M\\) su \\(w\\), se accetta fa altrettanto, altrimenti rifiuta
 
-    \\(A\_{\text{TM}} \le\_m \text{HALT}\_{\text{TM}}\\) in quanto se \\(R\\) accetta significa che \\(M\\) termina, accettando o rifiutando. Se diverge \\(w\\) non appartiene al linguaggio riconosciuto da \\(M\\) e \\(S\\) puó rifiutare.
-    Per ció \\(S\\) accetta tutte e sole le stringhe in \\(L\\), ovvero riconosciute da \\(M\\).
+\\(A\_{\text{TM}} \le\_m \text{HALT}\_{\text{TM}}\\) in quanto se \\(R\\) accetta significa che \\(M\\) termina, accettando o rifiutando. Se diverge \\(w\\) non appartiene al linguaggio riconosciuto da \\(M\\) e \\(S\\) puó rifiutare.
+Per ció \\(S\\) accetta tutte e sole le stringhe in \\(L\\), ovvero riconosciute da \\(M\\).
 
-    Ma questa é una contraddizione  in quanto si dimostra che \\(A\_{\text{TM}}\\) non é decidibile.    \\(\blacksquare\\)
+Ma questa é una contraddizione  in quanto si dimostra che \\(A\_{\text{TM}}\\) non é decidibile.    \\(\blacksquare\\)
 
-<!--list-separator-->
 
--  Decibidilitá dei Linguaggi di Chompsky
+##### Decibidilitá dei Linguaggi di Chompsky {#decibidilitá-dei-linguaggi-di-chompsky}
 
-    _Simboli, Produzioni, Terminali_
-    Un linguaggio definibile da una grammatica in forma normale di Chompsky é detto `context-free`
-    Si dimostra che il numero di passi per derivare una stringa di lunghezza \\(n\\) é \\(2n-1\\)
+_Simboli, Produzioni, Terminali_
+Un linguaggio definibile da una grammatica in forma normale di Chompsky é detto `context-free`
+Si dimostra che il numero di passi per derivare una stringa di lunghezza \\(n\\) é \\(2n-1\\)
 
-    Questo implica che il problema é decidibile, anche se in tempo esponenziale
+Questo implica che il problema é decidibile, anche se in tempo esponenziale
 
-    -   si scrivono sulla tape 2 tutte le deduzioni di lunghezza \\(2n-1\\)
-    -   si controlla la correttezza una ad una, se ne si trova una corretta e che corrisponde accettiamo, altrimenti continuiamo, se alche l'ultima non va bene rifiutiamo
+-   si scrivono sulla tape 2 tutte le deduzioni di lunghezza \\(2n-1\\)
+-   si controlla la correttezza una ad una, se ne si trova una corretta e che corrisponde accettiamo, altrimenti continuiamo, se alche l'ultima non va bene rifiutiamo
 
-    Per ridurre la complessitá si utilizza la **programmazione dinamica**
+Per ridurre la complessitá si utilizza la **programmazione dinamica**
 
-    -   ci si appunta i risultati intermedi
+-   ci si appunta i risultati intermedi
 
-<!--list-separator-->
 
--  Emptyness
+##### Emptyness {#emptyness}
 
-    `5.2`
-    Si dimostra per assurdo, se esistesse si potrebbe risolvere l'accettazione
+`5.2`
+Si dimostra per assurdo, se esistesse si potrebbe risolvere l'accettazione
 
-    -   si riduce a \\(A\_{\textsc{tm}}\\)
-        -   \\(A\_{\textsc{tm}} <\_m E\_{\textsc{tm}}\\)
+-   si riduce a \\(A\_{\textsc{tm}}\\)
+    -   \\(A\_{\textsc{tm}} <\_m E\_{\textsc{tm}}\\)
 
-    \\(\textsc{\textbf{proof}}\\)   Per contraddizione. Supponiamo esista una \\(R\\) tale che decida la emptyness, dato una stringa di input \\(w\\) si modifica \\(M\\) per accettare solo questa stringa.
-    Definiamo \\(M\\), su input \\(x\\):
+\\(\textsc{\textbf{proof}}\\)   Per contraddizione. Supponiamo esista una \\(R\\) tale che decida la emptyness, dato una stringa di input \\(w\\) si modifica \\(M\\) per accettare solo questa stringa.
+Definiamo \\(M\\), su input \\(x\\):
 
-    -   se \\(x \neq w\\) rifiuta
-    -   altrimenti accetta
+-   se \\(x \neq w\\) rifiuta
+-   altrimenti accetta
 
-    Questa macchina decide il linguaggio che contiene la sola stringa \\(w\\).
+Questa macchina decide il linguaggio che contiene la sola stringa \\(w\\).
 
-    Allora \\(S\\), su input \\(\langle M, w \rangle\\):
+Allora \\(S\\), su input \\(\langle M, w \rangle\\):
 
-    -   costruisce la \\(M\\) modificata come specificato
-    -   esegue \\(R\\) su \\(M\\), se \\(R\\) accetta allora rifiuta, e viceversa
+-   costruisce la \\(M\\) modificata come specificato
+-   esegue \\(R\\) su \\(M\\), se \\(R\\) accetta allora rifiuta, e viceversa
 
-    In questo modo abbiamo ridotto l'accettazione alla emptyness:
-    \\(R\\) rifiuta se e solo se \\(M\\) accetta \\(w\\), e quindi il linguaggio \\(L\\) riconosciuto da \\(M\\) non é vuoto. Viceversa se \\(M\\) rifiuta \\(w\\) allora \\(R\\) accetterá in quanto \\(L\\) riconosciuta da \\(M\\) é il linguaggio vuoto. Quindi \\(S\\) decide l'accettazione. Contraddizione in quanto l'accettazione é non decidibile.              \\(\blacksquare\\)
+In questo modo abbiamo ridotto l'accettazione alla emptyness:
+\\(R\\) rifiuta se e solo se \\(M\\) accetta \\(w\\), e quindi il linguaggio \\(L\\) riconosciuto da \\(M\\) non é vuoto. Viceversa se \\(M\\) rifiuta \\(w\\) allora \\(R\\) accetterá in quanto \\(L\\) riconosciuta da \\(M\\) é il linguaggio vuoto. Quindi \\(S\\) decide l'accettazione. Contraddizione in quanto l'accettazione é non decidibile.              \\(\blacksquare\\)
 
-<!--list-separator-->
 
--  Equality
+##### Equality {#equality}
 
-    `5.4`
-    Intesa tra due `MT`
+`5.4`
+Intesa tra due `MT`
 
-    -   se sapessi deciderla potrei decidere anche l'`Emptyness`
-        -   In quanto \\(E\_{\text{TM}}\\) é considerabile un caso particolare di \\(EQ\_{\text{TM}}\\)
-        -   tra una macchiana e la macchina che rifiuta sempre
+-   se sapessi deciderla potrei decidere anche l'`Emptyness`
+    -   In quanto \\(E\_{\text{TM}}\\) é considerabile un caso particolare di \\(EQ\_{\text{TM}}\\)
+    -   tra una macchiana e la macchina che rifiuta sempre
 
-    Anche per i reali:
+Anche per i reali:
 
-    -   calcoli diversi portano anche arrotondamenti diversi, per questo reali rigorosamente uguali possono risultare diversi
-    -   \\(A\_{\textsc{tm}}<\_m EQ\_{\textsc{Real}}\\)
-        -   e di conseguenza anche il &lt; e il &gt;
+-   calcoli diversi portano anche arrotondamenti diversi, per questo reali rigorosamente uguali possono risultare diversi
+-   \\(A\_{\textsc{tm}}<\_m EQ\_{\textsc{Real}}\\)
+    -   e di conseguenza anche il &lt; e il &gt;
 
-    \\(EQ\_{TM} = \\{\langle M\_{1}, M\_{2} \rangle \mid L(M\_{1}) = L(M\_{2})\\}\\)
-    \\(\blacksquare\\)
-    \\(\textsc{proof}\\)    Si dimostra per riduzioni:
+\\(EQ\_{TM} = \\{\langle M\_{1}, M\_{2} \rangle \mid L(M\_{1}) = L(M\_{2})\\}\\)
+\\(\blacksquare\\)
+\\(\textsc{proof}\\)    Si dimostra per riduzioni:
 
-    1.  \\(A\_{TM} \le\_{m} \overline{EQ}\_{TM}\\)
-        -   questo indica che \\(EQ\_{TM}\\) non puó essere negativamente decidibile
-        -   spostiamo al decidibilitá a \\(A\_{TM}\\)
-    2.  \\(\overline A\_{TM} \le\_{m} EQ\_{TM}\\)
-        -   questo indica che \\(EQ\_{TM}\\) non puó essere positivamente decidibile
+1.  \\(A\_{TM} \le\_{m} \overline{EQ}\_{TM}\\)
+    -   questo indica che \\(EQ\_{TM}\\) non puó essere negativamente decidibile
+    -   spostiamo al decidibilitá a \\(A\_{TM}\\)
+2.  \\(\overline A\_{TM} \le\_{m} EQ\_{TM}\\)
+    -   questo indica che \\(EQ\_{TM}\\) non puó essere positivamente decidibile
 
-    Ora basta raggiungere queste conclusioni per chiudere la dimostrazione.
+Ora basta raggiungere queste conclusioni per chiudere la dimostrazione.
 
-    1.  Definisco una macchina \\(F\\) che implementa la funzione \\(f\\) che riduce \\(A\\) a \\(\overline{EQ}\\)
-        -   \\(\langle M, w \rangle \rightarrow^{F} \langle M\_{1}, M\_{2} \rangle\\)
-        -   se \\(L(M\_{1}) \neq L(M\_{2})\\) allora \\(M\\) accetta \\(w\\)
-            -   \\(M\_{1}\\) rifiuta sempre
-                -   \\(q\_{0} = q\_{\text{reject}}\\)
-            -   \\(M\_{2}\\)
-                -   prende \\(x\\) e lo ignora
-                -   esegue \\(M\\) su \\(w\\) e accetta se \\(M\\) accetta
-                    -   \\(\begin{cases} M \mbox{ accetta}: & L(M\_{2})=\Sigma^{\*}\\\M \mbox{ non accetta}: & L(M\_{2}) = \emptyset  \end{cases}\\)
-            -   \\(L(M\_{1}) \neq L(M\_{2}) \iff M \mbox{ accetta }w\\)
-    2.  Definisco una Macchina \\(G\\) che implementa la funzione \\(g\\) che riduce \\(\overline A\\) a \\(EQ\\)
-        -   \\(\langle M, w \rangle \rightarrow^{G} \langle M\_{1}, M\_{2} \rangle\\)
-        -   se \\(L(M\_{1}) \neq L(M\_{2})\\) allora \\(M\\) non accetta \\(w\\)
-            -   \\(M\_{1}\\) accetta sempre
-                -   \\(q\_{0} = q\_{\text{accept}}\\)
-            -   \\(M\_{2}\\)
-                -   prende \\(x\\) e lo ignora
-                -   esegue \\(M\\) su \\(w\\) e accetta se \\(M\\) accetta
-                    -   \\(\begin{cases} M \mbox{ accetta}: & L(M\_{2})=\Sigma^{\*}\\\M \mbox{ non accetta}: & L(M\_{2}) = \emptyset  \end{cases}\\)
-            -   \\(L(M\_{1}) \neq L(M\_{2}) \iff M \mbox{ non accetta }w \qquad\qquad \blacksquare\\)
+1.  Definisco una macchina \\(F\\) che implementa la funzione \\(f\\) che riduce \\(A\\) a \\(\overline{EQ}\\)
+    -   \\(\langle M, w \rangle \rightarrow^{F} \langle M\_{1}, M\_{2} \rangle\\)
+    -   se \\(L(M\_{1}) \neq L(M\_{2})\\) allora \\(M\\) accetta \\(w\\)
+        -   \\(M\_{1}\\) rifiuta sempre
+            -   \\(q\_{0} = q\_{\text{reject}}\\)
+        -   \\(M\_{2}\\)
+            -   prende \\(x\\) e lo ignora
+            -   esegue \\(M\\) su \\(w\\) e accetta se \\(M\\) accetta
+                -   \\(\begin{cases} M \mbox{ accetta}: & L(M\_{2})=\Sigma^{\*}\\\M \mbox{ non accetta}: & L(M\_{2}) = \emptyset  \end{cases}\\)
+        -   \\(L(M\_{1}) \neq L(M\_{2}) \iff M \mbox{ accetta }w\\)
+2.  Definisco una Macchina \\(G\\) che implementa la funzione \\(g\\) che riduce \\(\overline A\\) a \\(EQ\\)
+    -   \\(\langle M, w \rangle \rightarrow^{G} \langle M\_{1}, M\_{2} \rangle\\)
+    -   se \\(L(M\_{1}) \neq L(M\_{2})\\) allora \\(M\\) non accetta \\(w\\)
+        -   \\(M\_{1}\\) accetta sempre
+            -   \\(q\_{0} = q\_{\text{accept}}\\)
+        -   \\(M\_{2}\\)
+            -   prende \\(x\\) e lo ignora
+            -   esegue \\(M\\) su \\(w\\) e accetta se \\(M\\) accetta
+                -   \\(\begin{cases} M \mbox{ accetta}: & L(M\_{2})=\Sigma^{\*}\\\M \mbox{ non accetta}: & L(M\_{2}) = \emptyset  \end{cases}\\)
+        -   \\(L(M\_{1}) \neq L(M\_{2}) \iff M \mbox{ non accetta }w \qquad\qquad \blacksquare\\)
 
-<!--list-separator-->
 
--  Corrispondenza di Post
+##### Corrispondenza di Post {#corrispondenza-di-post}
 
-    `PCP - 4.22`
+`PCP - 4.22`
 
-    \\(A\_{TM} \le\_{m} \text{PCP}\\)
+\\(A\_{TM} \le\_{m} \text{PCP}\\)
 
-    Questo problema (domino) contiene la Macchina di Turing
+Questo problema (domino) contiene la Macchina di Turing
 
-    -   in quanto corrisponde alla visualizzazione della [Configurazione di una TM](#configurazione-di-una-tm)
-        -   visualizzando la storia del calcolo della macchina
+-   in quanto corrisponde alla visualizzazione della [Configurazione di una TM](#configurazione-di-una-tm)
+    -   visualizzando la storia del calcolo della macchina
 
-    Si definisce un _Modified Post Correspondance Problem_:
+Si definisce un _Modified Post Correspondance Problem_:
 
-    \\(A\_{TM} \le\_{m} \text{MPCP} \le\_{m} \text{PCP}\\)
+\\(A\_{TM} \le\_{m} \text{MPCP} \le\_{m} \text{PCP}\\)
 
-    Si decide che il primo elemento dell'insieme deve essere utilizzato all'inizio
+Si decide che il primo elemento dell'insieme deve essere utilizzato all'inizio
 
-    -   sopra abbiamo \\(n-1\\) passi di calcolo
-    -   sotto abbiamo \\(n\\) passi di calcolo
+-   sopra abbiamo \\(n-1\\) passi di calcolo
+-   sotto abbiamo \\(n\\) passi di calcolo
 
-    Questi _domini_ rappresentano le funzioni di transizione attraverso le configurazioni della `TM`
+Questi _domini_ rappresentano le funzioni di transizione attraverso le configurazioni della `TM`
 
-    -   \\([\frac{\\#qa}{\\#rb}]\\)
-        -   \\(\delta(q,a) = (r,b,L)\\)
-    -   compresi i pezzi dei singoli simboli, che si mantengono da un istante all'altro se non toccati dalla trasformazione di stato
-        -   \\([\frac{1}{1}]\\)
-        -   \\([\frac{0}{0}]\\)
-        -   \\([\frac{\sqcup}{\sqcup}]\\)
-        -   \\([\frac{\\#}{\sqcup\\#}]\\)
-            -   utilizzato quando lo stato deve spostarsi a destra oltre l'ultimo simbolo
+-   \\([\frac{\\#qa}{\\#rb}]\\)
+    -   \\(\delta(q,a) = (r,b,L)\\)
+-   compresi i pezzi dei singoli simboli, che si mantengono da un istante all'altro se non toccati dalla trasformazione di stato
+    -   \\([\frac{1}{1}]\\)
+    -   \\([\frac{0}{0}]\\)
+    -   \\([\frac{\sqcup}{\sqcup}]\\)
+    -   \\([\frac{\\#}{\sqcup\\#}]\\)
+        -   utilizzato quando lo stato deve spostarsi a destra oltre l'ultimo simbolo
 
-    Si devono definire dei domino per l'accettazione, che faccia _match_:
-    \\([\frac{q\_{accept}\\#\\#}{\qquad \\;\\;\\;\\: \\#}]\\)
-    Per arrivare a questo _accept_:
-    \\(\forall a\in \Gamma\\)
+Si devono definire dei domino per l'accettazione, che faccia _match_:
+\\([\frac{q\_{accept}\\#\\#}{\qquad \\;\\;\\;\\: \\#}]\\)
+Per arrivare a questo _accept_:
+\\(\forall a\in \Gamma\\)
 
-    -   \\([\frac{a\\: q\_{accept}}{\quad q\_{accept}}]\\)
-    -   \\([\frac{q\_{accept} \\: a}{q\_{accept}\quad}]\\)
+-   \\([\frac{a\\: q\_{accept}}{\quad q\_{accept}}]\\)
+-   \\([\frac{q\_{accept} \\: a}{q\_{accept}\quad}]\\)
 
-<!--list-separator-->
 
--  Tassellazione - Wang Tiles
+##### Tassellazione - Wang Tiles {#tassellazione-wang-tiles}
 
-    [Wikipedia](https://en.wikipedia.org/wiki/Wang_tile)
-    Solo negativamente decidibile
+[Wikipedia](https://en.wikipedia.org/wiki/Wang_tile)
+Solo negativamente decidibile
 
-    -   le tassellazioni aperiodiche sono utilizzate per la sintesi procedurale di texture, heightfields
+-   le tassellazioni aperiodiche sono utilizzate per la sintesi procedurale di texture, heightfields
 
-    Si dimostra che \\(\textsc{Wang}\\) non é positivamente decidibile in quanto
+Si dimostra che \\(\textsc{Wang}\\) non é positivamente decidibile in quanto
 
-    -   \\(\overline{\textsc{Halt}} \le\_m \textsc{Wang}\\)
-    -   procedendo in maniera non deterministica, il caso di _non-rifiuto_ indica che un albero della computazione ha per caso scelto la configurazione corretta per risolvere il problema della tassellazione
-    -   la computazione non deterministica si ferma solo in caso di rifiuto di tutti i rami non deterministici, quindi se la computazione non si ferma si dovrebbe accettare
+-   \\(\overline{\textsc{Halt}} \le\_m \textsc{Wang}\\)
+-   procedendo in maniera non deterministica, il caso di _non-rifiuto_ indica che un albero della computazione ha per caso scelto la configurazione corretta per risolvere il problema della tassellazione
+-   la computazione non deterministica si ferma solo in caso di rifiuto di tutti i rami non deterministici, quindi se la computazione non si ferma si dovrebbe accettare
 
-<!--list-separator-->
 
--  Esistenza di un DFA equivalente
+##### Esistenza di un DFA equivalente {#esistenza-di-un-dfa-equivalente}
 
-    `5.3`
-    \\(A\_{\textsc{tm}} <\_m\textsc{Regular}\_{\textsc{tm}}\\)
+`5.3`
+\\(A\_{\textsc{tm}} <\_m\textsc{Regular}\_{\textsc{tm}}\\)
 
 
 #### Configurazione di una TM {#configurazione-di-una-tm}
@@ -605,41 +593,38 @@ L'esplorazione dell'albero non deterministico é svolto utilizzando _l'ordine le
 -   il numero di passi necessari all'esplorazione dell'albero é \\(2^{O(m)}\\)
     -   \\(m\\) profonditá dell'albero
 
-<!--list-separator-->
 
--  Raggiungibilitá
+##### Raggiungibilitá {#raggiungibilitá}
 
-    \\(\textsc{Path} = \\{ \langle G,s,t  \rangle \mid G \text{ é  diretto con un cammino da }s \text{ a } t \\}\\)
-    La soluzione banale non deterministica ha \\(2^{O(t(n))}\\) <span class="underline">esponenziale</span>
+\\(\textsc{Path} = \\{ \langle G,s,t  \rangle \mid G \text{ é  diretto con un cammino da }s \text{ a } t \\}\\)
+La soluzione banale non deterministica ha \\(2^{O(t(n))}\\) <span class="underline">esponenziale</span>
 
-    Con un algoritmo marcando i nodi man mano che vengono scoperti si raggiunge complessitá <span class="underline">polinomiale</span>
+Con un algoritmo marcando i nodi man mano che vengono scoperti si raggiunge complessitá <span class="underline">polinomiale</span>
 
-    -   rappresentando il grafo con liste di adiacenza la si puó stimare \\(O(n)\\) nel numero di archi
+-   rappresentando il grafo con liste di adiacenza la si puó stimare \\(O(n)\\) nel numero di archi
 
-<!--list-separator-->
 
--  Algoritmo di Euclide
+##### Algoritmo di Euclide {#algoritmo-di-euclide}
 
-    \\(\textsc{RelPrime}\\), il `MCD` tra due numeri Relativamente Primi é 1
-    \\(\textsc{mcd}(x,y) = \textsc{mcd}(x \mod(y), y)\\)
-    quindi procediamo:
-    \\((x,y) \to (x \mod{y}, y) \to (y, x\mod{y})\to \cdots \to (x,0)\\)
-    \\(\textsc{mcd}(x,0) = x\\)
+\\(\textsc{RelPrime}\\), il `MCD` tra due numeri Relativamente Primi é 1
+\\(\textsc{mcd}(x,y) = \textsc{mcd}(x \mod(y), y)\\)
+quindi procediamo:
+\\((x,y) \to (x \mod{y}, y) \to (y, x\mod{y})\to \cdots \to (x,0)\\)
+\\(\textsc{mcd}(x,0) = x\\)
 
-    I passi sono eseguiti \\(min(2 \log\_{2} x, 2\log\_{2} y)\\) ovvero proporzionali al numero di cifre nella rappresentazione binaria: \\(O(n)\\) quindi <span class="underline">polinomiale</span>
+I passi sono eseguiti \\(min(2 \log\_{2} x, 2\log\_{2} y)\\) ovvero proporzionali al numero di cifre nella rappresentazione binaria: \\(O(n)\\) quindi <span class="underline">polinomiale</span>
 
-<!--list-separator-->
 
--  Grammatiche di Chompsky
+##### Grammatiche di Chompsky {#grammatiche-di-chompsky}
 
-    Per migliorare la complessitá si cerca di derivare tutte le sottostringhe di lunghezza crescente della stringa di input
+Per migliorare la complessitá si cerca di derivare tutte le sottostringhe di lunghezza crescente della stringa di input
 
-    -   si memorizzano le soluzioni delle sottostringhe
-        -   per ogni sottostringa la si divide in sottostringhe e si guarda la soluzione delle sottostringhe
-        -   in una rappresentazione matriciale la soluzione si trova nella riga precedente
-    -   ogni controllo richiede \\(O(1)\\) in quanto le sottostringhe sono sempre riconducibile ai siboli terminali
+-   si memorizzano le soluzioni delle sottostringhe
+    -   per ogni sottostringa la si divide in sottostringhe e si guarda la soluzione delle sottostringhe
+    -   in una rappresentazione matriciale la soluzione si trova nella riga precedente
+-   ogni controllo richiede \\(O(1)\\) in quanto le sottostringhe sono sempre riconducibile ai siboli terminali
 
-    Con questo algoritmo si raggiunge \\(O(n^3)\\)
+Con questo algoritmo si raggiunge \\(O(n^3)\\)
 
 
 #### NP {#np}
@@ -669,109 +654,103 @@ Il determinismo con certificato \\(c\\) utilizzando \\(V\\) é convertito in non
 
 Si dimostra quindi che le due definizioni sono equivalenti in quanto é sempre possibile convertire un \\(V\\) polinomiale in una \\(M\\) polinomiale non deterministica e viceversa.
 
-<!--list-separator-->
 
--  NP-completo
+##### NP-completo {#np-completo}
 
-    \\(\textsc{\textbf{definition}}\\)  Un linguaggio \\(B\\) é \\(\textsc{NP}\text{-completo}\\) se soddisfa le seguenti condizioni:
+\\(\textsc{\textbf{definition}}\\)  Un linguaggio \\(B\\) é \\(\textsc{NP}\text{-completo}\\) se soddisfa le seguenti condizioni:
 
-    1.  \\(B \in \textsc{NP}\\)
-    2.  \\(\forall A\in \textsc{NP}, A  <\_P B\\)
-        -   \\(A\\) si riduce in tempo polinomiale a \\(B\\)
+1.  \\(B \in \textsc{NP}\\)
+2.  \\(\forall A\in \textsc{NP}, A  <\_P B\\)
+    -   \\(A\\) si riduce in tempo polinomiale a \\(B\\)
 
-    Ci sono quindi due possibilitá che si escludono l'un l'altra:
+Ci sono quindi due possibilitá che si escludono l'un l'altra:
 
-    -   \\(\text{P} = \text{NP}\\)
-    -   Tutti i problemi \\(\text{NP-completi}\\) non sono polinomiali
+-   \\(\text{P} = \text{NP}\\)
+-   Tutti i problemi \\(\text{NP-completi}\\) non sono polinomiali
 
-    La classe \\(\text{NP-completo}\\) descrive i problemi piú difficili in \\(\text{NP}\\)
+La classe \\(\text{NP-completo}\\) descrive i problemi piú difficili in \\(\text{NP}\\)
 
-<!--list-separator-->
 
--  Teorema di Cook-Levin
+##### Teorema di Cook-Levin {#teorema-di-cook-levin}
 
-    Problemi in \\(\textsc{NP}\\) la cui complessitá é legata a quella dell'intera classe sono detti \\(\textsc{NP}\text{-completi}\\)
-    Il problema della soddisfatibilitá (_satisfiability problem_) fa parte di questa classe
+Problemi in \\(\textsc{NP}\\) la cui complessitá é legata a quella dell'intera classe sono detti \\(\textsc{NP}\text{-completi}\\)
+Il problema della soddisfatibilitá (_satisfiability problem_) fa parte di questa classe
 
-    -   Una formula booleana é soddisfacibile se qualche assegnamento di 0 e di 1 fa si che la formula risulti 1
-    -   \\(\textsc{SAT}=\\{ \langle \phi \mid \phi \rangle\\) é una formula booleana soddisfacibile \\(\\}\\)
+-   Una formula booleana é soddisfacibile se qualche assegnamento di 0 e di 1 fa si che la formula risulti 1
+-   \\(\textsc{SAT}=\\{ \langle \phi \mid \phi \rangle\\) é una formula booleana soddisfacibile \\(\\}\\)
 
-    `7.27`
-    \\(\textsc{\textbf{theorem}}\\)  \\(\textsc{SAT}\in \textsc{P} \iff \textsc{P}=\textsc{NP}\\)
+`7.27`
+\\(\textsc{\textbf{theorem}}\\)  \\(\textsc{SAT}\in \textsc{P} \iff \textsc{P}=\textsc{NP}\\)
 
-    Questo teorema é implicato da `7.37`:
-    \\(\textsc{\textbf{theorem}}\\)  \\(\textsc{SAT}\\) é \\(\textsc{NP}\text{-completo}\\)
-    \\(\textsc{\textbf{corollary}}\\)   \\(\text{3SAT}\\) é \\(\text{NP-completo}\\)
+Questo teorema é implicato da `7.37`:
+\\(\textsc{\textbf{theorem}}\\)  \\(\textsc{SAT}\\) é \\(\textsc{NP}\text{-completo}\\)
+\\(\textsc{\textbf{corollary}}\\)   \\(\text{3SAT}\\) é \\(\text{NP-completo}\\)
 
-    -   \\(\text{CNF-SAT} \le\_P \text{3-SAT}\le\_P \text{CLIQUE}\\)
+-   \\(\text{CNF-SAT} \le\_P \text{3-SAT}\le\_P \text{CLIQUE}\\)
 
-    **NB** - Per provare la \\(\text{NP-completessa}\\) si procede da \\(\text{SAT}\\) al problema in particolare
+**NB** - Per provare la \\(\text{NP-completessa}\\) si procede da \\(\text{SAT}\\) al problema in particolare
 
-<!--list-separator-->
 
--  Hamilton's Path
+##### Hamilton's Path {#hamilton-s-path}
 
-    Percorso che percorre tutti il grafo a partire da \\(p\\) arrivando in \\(t\\) senza ripetizioni.
-    Si percorre il grafo non deterministicamente
+Percorso che percorre tutti il grafo a partire da \\(p\\) arrivando in \\(t\\) senza ripetizioni.
+Si percorre il grafo non deterministicamente
 
-    -   si scartano tutti i rami in cui il primo nodo non é \\(p\\) o \\(t\\) non é l'ultimo
-    -   si scartano i rami in cui ci sono ripetizioni
+-   si scartano tutti i rami in cui il primo nodo non é \\(p\\) o \\(t\\) non é l'ultimo
+-   si scartano i rami in cui ci sono ripetizioni
 
-    Non conosciuto algoritmo in \\(\text{P}\\)
+Non conosciuto algoritmo in \\(\text{P}\\)
 
-    \\(\text{3SAT}  \le\_P \textsc{HamPath}\\)
+\\(\text{3SAT}  \le\_P \textsc{HamPath}\\)
 
-<!--list-separator-->
 
--  Compositeness
+##### Compositeness {#compositeness}
 
-    \\(\textsc{Composites} = \\{x \mid x = pq \text{ for integers }p,q > 1\\}\\)
-    Un numero composto é un numero non primo.
-    Esiste un algoritmo polinomiale per verificare se un numero é composto o meno ma non per trovare la sua scomposizione (o almeno non lo si é trovato)
-    Quindi: \\(\textsc{Composites} \in \text{NP} \land \textsc{Composites} \in \text{P}\\)
+\\(\textsc{Composites} = \\{x \mid x = pq \text{ for integers }p,q > 1\\}\\)
+Un numero composto é un numero non primo.
+Esiste un algoritmo polinomiale per verificare se un numero é composto o meno ma non per trovare la sua scomposizione (o almeno non lo si é trovato)
+Quindi: \\(\textsc{Composites} \in \text{NP} \land \textsc{Composites} \in \text{P}\\)
 
-<!--list-separator-->
 
--  Clique
+##### Clique {#clique}
 
-    `7.32`
-    Grafo <span class="underline">non orientato</span>, fornito un \\(k\\)
+`7.32`
+Grafo <span class="underline">non orientato</span>, fornito un \\(k\\)
 
-    -   si richiede un <span class="underline">sottografo</span> in cui 2 qualunque nodi distinti sono connessi di un arco
+-   si richiede un <span class="underline">sottografo</span> in cui 2 qualunque nodi distinti sono connessi di un arco
 
-    Non si sa se esistono algoritmi polinomiali \\(\text{P}\\)
+Non si sa se esistono algoritmi polinomiali \\(\text{P}\\)
 
-    \\(\textsc{Clique} = \\{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\\}\\)
+\\(\textsc{Clique} = \\{\langle G,k \rangle \mid G \text{ is an undirected graph with a k-clique}\\}\\)
 
-    É \\(\text{NP-completo}\\)
+É \\(\text{NP-completo}\\)
 
-    \\(\textsc{\textbf{proof}}\\)   Data \\(\phi\\) una formula con \\(k\\) clausole del tipo
+\\(\textsc{\textbf{proof}}\\)   Data \\(\phi\\) una formula con \\(k\\) clausole del tipo
 
-    -   \\(\phi = (a\_1 \lor b\_1 \lor c\_1) \land \cdots \land (a\_k \lor b\_k \lor c\_k)\\)
+-   \\(\phi = (a\_1 \lor b\_1 \lor c\_1) \land \cdots \land (a\_k \lor b\_k \lor c\_k)\\)
 
-    Si definisce la riduzione \\(f\\) per cui \\(\textsc{Clique} <\_P \text{3SAT}\\)
+Si definisce la riduzione \\(f\\) per cui \\(\textsc{Clique} <\_P \text{3SAT}\\)
 
-    -   \\(f\\) genera la stringa \\(\langle G,k \rangle\\), dove \\(G\\) é un grafo non orientato
-    -   i nodi di \\(G\\) sono raggruppati in \\(k\\) triplette \\(t\_1,\ldots ,t\_k\\)
-    -   gli archi di \\(G\\) connettono tutti i nodi tranne:
-        1.  nodi della stessa tripletta
-        2.  due nodi contraddittori, come \\(x\_1\\) e \\(\overline{x\_1}\\)
+-   \\(f\\) genera la stringa \\(\langle G,k \rangle\\), dove \\(G\\) é un grafo non orientato
+-   i nodi di \\(G\\) sono raggruppati in \\(k\\) triplette \\(t\_1,\ldots ,t\_k\\)
+-   gli archi di \\(G\\) connettono tutti i nodi tranne:
+    1.  nodi della stessa tripletta
+    2.  due nodi contraddittori, come \\(x\_1\\) e \\(\overline{x\_1}\\)
 
-    Si dimostra che \\(\phi \in \text{3SAT} \iff G\in k\textsc{-Clique}\\)
-    Quindi \\(\text{3SAT} <\_P \textsc{Clique}\\)                                         \\(\blacksquare\\)
+Si dimostra che \\(\phi \in \text{3SAT} \iff G\in k\textsc{-Clique}\\)
+Quindi \\(\text{3SAT} <\_P \textsc{Clique}\\)                                         \\(\blacksquare\\)
 
-<!--list-separator-->
 
--  Subset-Sum
+##### Subset-Sum {#subset-sum}
 
-    `7.56`
-    \\(\textsc{Subset-Sum} = \\{\langle S,t  \rangle \mid S = \\{s\_1,\ldots ,s\_n\\}\\) dove esistono \\(\\{y\_1,\ldots,y\_m\\}\subseteq S\\) tali che \\(\sum y\_i  = t\\}\\)
+`7.56`
+\\(\textsc{Subset-Sum} = \\{\langle S,t  \rangle \mid S = \\{s\_1,\ldots ,s\_n\\}\\) dove esistono \\(\\{y\_1,\ldots,y\_m\\}\subseteq S\\) tali che \\(\sum y\_i  = t\\}\\)
 
-    Si dimostra facilmente che questo é \\(\textsc{np}\\) definendone un verificatore polinomiale oppure una `TM` non deterministica polinomiale che lo definisca.
+Si dimostra facilmente che questo é \\(\textsc{np}\\) definendone un verificatore polinomiale oppure una `TM` non deterministica polinomiale che lo definisca.
 
-    \\(\textsc{Subset-Sum}\\) é \\(\text{NP-completo}\\)
+\\(\textsc{Subset-Sum}\\) é \\(\text{NP-completo}\\)
 
-    La prova procede per riduzione polinomiale da \\(\text{3SAT}\\) a \\(\textsc{Subset-Sum}\\), convertendo elementi e strutture del problema che rappresentano variabili e clausole booleane.
+La prova procede per riduzione polinomiale da \\(\text{3SAT}\\) a \\(\textsc{Subset-Sum}\\), convertendo elementi e strutture del problema che rappresentano variabili e clausole booleane.
 
 
 ### Complessitá Spaziale {#complessitá-spaziale}

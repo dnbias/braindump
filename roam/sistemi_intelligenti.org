@@ -631,6 +631,10 @@ La base di conoscenza puó essere interrogata con ~ask~
 - quando compaiono variabili si intende una sostituzione
   + quindi la variabile $x$ é interpretata in senso esistenziale ( $\exists$ )
 
+***** Clausole di Horn
+- disgiunzioni di letterali di cui al piú uno é positivo
+- atomiche
+- implicazioni il cui antecedente é una congiunzione di letterali
 ***** Come fare Inferenza su FOL
 - =Proposizionalizzazione=
   + $KB_{\text{FOL}} \rightarrow KB_{\text{LP}}$
@@ -653,11 +657,19 @@ La base di conoscenza puó essere interrogata con ~ask~
     * crea delle basi di conoscenza grandi con le regole
 - =Lifting= delle regole di inferenza
   + Regole di Inferenza $\text{LP}$ trasformate in Regole di Inferenza $\text{FOL}$
-  + =Unification= Martelli/Montanari
   + *Modus Ponens Generalizzato*
-    * \[\frac{P_{1}',\cdots ,P_{n}' \qquad p_{1} \land \cdots \land p_{n} \implies q}{\text{subst}(q,\Theta)}\]
-    * $\Theta$ é un unificatore di ciascuna coppia $\langle P_{i}', p_{i} \rangle$
+    * \[\frac{p_{1}',\cdots ,p_{n}' \qquad p_{1} \land \cdots \land p_{n} \implies q}{\text{subst}(q,\Theta)}\] [fn:2]
+    * $\Theta$ é un unificatore di ciascuna coppia $\langle p_{i}', p_{i} \rangle$ per cui $p_{i}' \theta = p_{i} \theta$ per ogni $i\in [1,n]$
+  + =Unification= (Martelli/Montanari)
+    * algoritmo di ricerca che date due formule trova la sostituzione $\theta$ piú generale che le unifichi
+  + =Forward Chaining=
+    * *Corretto* e *Completo* se la =KB= é una =DATALOG=[fn:datalog]
+      - in caso contrario il caso negativo puó non terminare
+  + =Backward Chaining=
+    * stesse considerazioni del =FC= ma piú efficiente
 
+[fn:datalog] una =KB= senza funzioni
+[fn:2] *NB* nella parte sinistra e destra le $p$ e $q$ contengono variabili e/o costanti
 **** Database Semantics
 - unicitá dei nomi
 - closed-world assumption

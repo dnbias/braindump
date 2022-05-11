@@ -12,11 +12,10 @@ draft = false
 
 #### Parkingson's Law {#parkingson-s-law}
 
-<!--list-separator-->
 
--  attivita' si adeguano al tempo a disposizione
+##### attivita' si adeguano al tempo a disposizione {#attivita-si-adeguano-al-tempo-a-disposizione}
 
-    quindi se non ci si crea un sitema ff
+quindi se non ci si crea un sitema ff
 
 
 ### Time Boxing {#time-boxing}
@@ -33,40 +32,34 @@ possibile usare un calendario
 
 es gaps tra lezioni
 
-<!--list-separator-->
 
--  metodo di Cal Newport
+##### metodo di Cal Newport {#metodo-di-cal-newport}
 
-    BUT
+BUT
 
-<!--list-separator-->
 
--  Planning Fallacy
+##### Planning Fallacy {#planning-fallacy}
 
-    bestcase == average case
+bestcase == average case
 
-    stupid humans
+stupid humans
 
-    <!--list-separator-->
 
-    -  Time Traking
+###### Time Traking {#time-traking}
 
-        puo' compattere la PF, in questo modo si migliorano le previsioni
+puo' compattere la PF, in questo modo si migliorano le previsioni
 
 
 #### Split tasks into sub-tasks {#split-tasks-into-sub-tasks}
 
-<!--list-separator-->
 
--  Interruzioni
+##### Interruzioni {#interruzioni}
 
-    <!--list-separator-->
 
-    -  revisions
+###### revisions {#revisions}
 
-    <!--list-separator-->
 
-    -  buffer time tra le tasks
+###### buffer time tra le tasks {#buffer-time-tra-le-tasks}
 
 
 ## Over Scheduling {#over-scheduling}

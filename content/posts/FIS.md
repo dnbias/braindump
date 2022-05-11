@@ -83,25 +83,23 @@ m\vec{a}=\vec{F}=q\vec{E}\rightarrow \vec{a}=\frac{q\vec{E}}{m}=\frac{q}{m}(E\_x
 
 Momento del Dipolo \\(p=qd\\)
 
-<!--list-separator-->
 
--  Piano Mediano
+##### Piano Mediano {#piano-mediano}
 
-    Sul piano di direzione del campo elettrico é costante e uguale a quella della congiungente tra i due poli
+Sul piano di direzione del campo elettrico é costante e uguale a quella della congiungente tra i due poli
 
-    -   le componenti \\(y\\) si annullano
+-   le componenti \\(y\\) si annullano
 
-    \\[\vec{E} =- k\_e \frac{qa}{(\frac{d^2}{4}+y^2)^{3/2}}\vec{i}\\]
+\\[\vec{E} =- k\_e \frac{qa}{(\frac{d^2}{4}+y^2)^{3/2}}\vec{i}\\]
 
-    -   per \\(|y| \gg a\\) vale \\[\vec{E} =-\frac{kp}{|y|^3}\vec{i}\\]
+-   per \\(|y| \gg a\\) vale \\[\vec{E} =-\frac{kp}{|y|^3}\vec{i}\\]
 
-<!--list-separator-->
 
--  Lungo l'Asse
+##### Lungo l'Asse {#lungo-l-asse}
 
-    \\[\vec{E} = k\_e \frac{2qxd}{x^2 - \frac{d^2}{4}}\vec{i}\\]
+\\[\vec{E} = k\_e \frac{2qxd}{x^2 - \frac{d^2}{4}}\vec{i}\\]
 
-    -   per  \\(|x| \gg a\\) vale \\[\vec{E}= \frac{2kp}{|x|^3}\vec{i}\\]
+-   per  \\(|x| \gg a\\) vale \\[\vec{E}= \frac{2kp}{|x|^3}\vec{i}\\]
 
 
 #### Distribuzione Lineare e Uniforme Infinita {#distribuzione-lineare-e-uniforme-infinita}
@@ -117,23 +115,20 @@ Vale sempre, é una legge generale del campo elettrico.
 \\]
 Valgono alcuni casi particolari
 
-<!--list-separator-->
 
--  Simmetria Sferica di carica
+##### Simmetria Sferica di carica {#simmetria-sferica-di-carica}
 
-    \\(E = k\_e \frac{Q}{R^2}\\)
+\\(E = k\_e \frac{Q}{R^2}\\)
 
-<!--list-separator-->
 
--  Simmetria Assiale
+##### Simmetria Assiale {#simmetria-assiale}
 
-    \\(E= 2k\_e \frac{\lambda}{R}\\)
+\\(E= 2k\_e \frac{\lambda}{R}\\)
 
-<!--list-separator-->
 
--  Simmetria Planare
+##### Simmetria Planare {#simmetria-planare}
 
-    \\(E = 2 \pi k\_e \sigma = \frac{\sigma}{2\epsilon\_0}\\)
+\\(E = 2 \pi k\_e \sigma = \frac{\sigma}{2\epsilon\_0}\\)
 
 
 ### Circuiti {#circuiti}
@@ -162,16 +157,15 @@ Valgono alcuni casi particolari
 
 -   Energia immagazzinata in un condensatore
 
-<!--list-separator-->
 
--  Condensatore Piano
+##### Condensatore Piano {#condensatore-piano}
 
-    \\(C=\varepsilon\_0 \frac{S}{d}\\)
+\\(C=\varepsilon\_0 \frac{S}{d}\\)
 
-    -   \\[\varepsilon\_0 = \frac{1}{4\pi k\_0} \\]
+-   \\[\varepsilon\_0 = \frac{1}{4\pi k\_0} \\]
 
-    \\(E = \frac{\sigma}{\epsilon\_0}\\)
-    \\(V=Ed\\)
+\\(E = \frac{\sigma}{\epsilon\_0}\\)
+\\(V=Ed\\)
 
 
 #### Resistenze {#resistenze}

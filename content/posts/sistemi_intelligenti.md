@@ -171,13 +171,12 @@ Problema di ricerca nello spazio degli stati
 -   test obiettivo, verifica che la stato sia quello desiderato (tabella ordinata)
 -   costo del cammino, ogni passo costa 1 e il costo del cammino é il numero di passi che lo costituiscono
 
-<!--list-separator-->
 
--  Euristiche
+##### Euristiche {#euristiche}
 
-    -   \\(h\_1\\) numero delle tessere fuori posto (rispetto alla configurazione goal)
-    -   \\(h\_2\\) distanza di Manhattan
-        -   in particolare \\[\sum\_{\forall c}d\_{\text{man}}( c)\\]
+-   \\(h\_1\\) numero delle tessere fuori posto (rispetto alla configurazione goal)
+-   \\(h\_2\\) distanza di Manhattan
+    -   in particolare \\[\sum\_{\forall c}d\_{\text{man}}( c)\\]
 
 
 #### 8 Regine {#8-regine}
@@ -219,75 +218,69 @@ Nello studio di queste ricerche si considerano:
 Un goal a meno passi dalla radice non da' garanzia di ottimalita', in quanto vanno considerati i costi non il numero di passi.
 Il costo e' una funzione monotono crescente in relazione alla profondita'.
 
-<!--list-separator-->
 
--  Ricerca in Ampiezza
+##### Ricerca in Ampiezza {#ricerca-in-ampiezza}
 
-    \\(O(b^{d+1})\\)
+\\(O(b^{d+1})\\)
 
-    -   complessitá sia spaziale che temporale
-    -   esponenziale, non trattabile anche con \\(d\\) ragionevoli
+-   complessitá sia spaziale che temporale
+-   esponenziale, non trattabile anche con \\(d\\) ragionevoli
 
-<!--list-separator-->
 
--  Ricerca Costo Uniforme
+##### Ricerca Costo Uniforme {#ricerca-costo-uniforme}
 
-    Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
-    La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
+Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
+La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
 
-    La ricerca puo' non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
-    Quindi:
-    \\(\text{costi} \ge \epsilon > 0\\)
+La ricerca puo' non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
+Quindi:
+\\(\text{costi} \ge \epsilon > 0\\)
 
-    -   \\(\epsilon\\) costo minimo
+-   \\(\epsilon\\) costo minimo
 
-    \\[O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
+\\[O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
 
-    -   \\(C^{\*}\\) costo soluzione ottima
+-   \\(C^{\*}\\) costo soluzione ottima
 
-<!--list-separator-->
 
--  Ricerca in Profonditá w/ Backtracking
+##### Ricerca in Profonditá w/ Backtracking {#ricerca-in-profonditá-w-backtracking}
 
-    Si producono successori su successori man mano, percorrendo in profondita' l'albero.
-    In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
+Si producono successori su successori man mano, percorrendo in profondita' l'albero.
+In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
 
-    -   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
-    -   piu' efficiente in utilizzo della memoria
+-   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
+-   piu' efficiente in utilizzo della memoria
 
-<!--list-separator-->
 
--  Ricerca in Profonditá w/o Backtracking
+##### Ricerca in Profonditá w/o Backtracking {#ricerca-in-profonditá-w-o-backtracking}
 
-    Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
+Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
 
-    -   viene utilizzato uno `stack` (`LIFO`)
+-   viene utilizzato uno `stack` (`LIFO`)
 
-<!--list-separator-->
 
--  Iterative Deepening
+##### Iterative Deepening {#iterative-deepening}
 
-    Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
+Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
 
-    -   cerca di combinare ricerca in profonditá e in ampiezza
-        -   \\(\textsc{time}= O(b^d)\\)
-        -   \\(\textsc{space}= O(b\cdot d)\\)
-        -   completa
-        -   ottima quando il costo non é funzione decrescente delle profonditá
+-   cerca di combinare ricerca in profonditá e in ampiezza
+    -   \\(\textsc{time}= O(b^d)\\)
+    -   \\(\textsc{space}= O(b\cdot d)\\)
+    -   completa
+    -   ottima quando il costo non é funzione decrescente delle profonditá
 
-<!--list-separator-->
 
--  Ricerca Bidirezionale
+##### Ricerca Bidirezionale {#ricerca-bidirezionale}
 
-    2 ricerche parallele
+2 ricerche parallele
 
-    -   _forward_ dallo stato iniziale
-    -   _backwards_ dallo stato obiettivo
+-   _forward_ dallo stato iniziale
+-   _backwards_ dallo stato obiettivo
 
-    Termina quando queste si incontrano a una intersezione.
-    Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
+Termina quando queste si incontrano a una intersezione.
+Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
 
-    -   \\(\textsc{time}= O( b^{\frac{d}{2}})\\)
+-   \\(\textsc{time}= O( b^{\frac{d}{2}})\\)
 
 
 #### Ricerca informata {#ricerca-informata}
@@ -299,55 +292,53 @@ Si possiedono informazioni che permettono di identificare le strade piú promett
 Questa informazione é chiamata **euristica**
 \\(h(n)\\): Il costo minimo stimato per raggiungere un nodo _preferito_ di \\(n\\)
 
-<!--list-separator-->
 
--  Greedy
+##### Greedy {#greedy}
 
-    -   costruisce un albero di ricerca
-    -   mantiene ordinata la frontiera a seconda di \\(h(n)\\)
+-   costruisce un albero di ricerca
+-   mantiene ordinata la frontiera a seconda di \\(h(n)\\)
 
-    Ma l'euristica puó essere imperfetta e creare dei problemi.
-    Questa strategia considera solo informazioni _future_, che riguardano ció che non é ancora stato esplorato.
+Ma l'euristica puó essere imperfetta e creare dei problemi.
+Questa strategia considera solo informazioni _future_, che riguardano ció che non é ancora stato esplorato.
 
-<!--list-separator-->
 
--  A\*
+##### A\* {#a}
 
-    Combina informazioni future e passate:
+Combina informazioni future e passate:
 
-    -   **Greedy** e **Ricerca a costo uniforme**
+-   **Greedy** e **Ricerca a costo uniforme**
 
-    Utilizza una funzione di valutazione:
-    \\(f(n) = g(n) + h(n)\\)
+Utilizza una funzione di valutazione:
+\\(f(n) = g(n) + h(n)\\)
 
-    Dove \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
+Dove \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
 
-    I costi minimi reali sono definiti con:
-    \\(f^{\star}(n) = g^\star(n) + h^\star(n)\\)
+I costi minimi reali sono definiti con:
+\\(f^{\star}(n) = g^\star(n) + h^\star(n)\\)
 
-    -   definizione utilizzata nelle dimostrazioni
+-   definizione utilizzata nelle dimostrazioni
 
-    \\(A^\star\\) é ottimo quando
+\\(A^\star\\) é ottimo quando
 
-    -   tutti i costi da un nodo a un successore sono positivi
-    -   l'euristica \\(h(n)\\) é ammissibile
+-   tutti i costi da un nodo a un successore sono positivi
+-   l'euristica \\(h(n)\\) é ammissibile
 
-    **Ammissibilitá**
+**Ammissibilitá**
 
-    -   \\(\forall n: h(n) \le h^\star(n)\\)
-        -   ovvero l'euristica é ottimistica
+-   \\(\forall n: h(n) \le h^\star(n)\\)
+    -   ovvero l'euristica é ottimistica
 
-    Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalitá
+Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalitá
 
-    -   vale una disuguaglianza triangolare
-    -   \\(h(n) \le c(n,a,n') + h(n')\\)
-    -   \\(\textsc{nb}\\) tutte le monotone sono ammissibili ma non vale il viceversa
+-   vale una disuguaglianza triangolare
+-   \\(h(n) \le c(n,a,n') + h(n')\\)
+-   \\(\textsc{nb}\\) tutte le monotone sono ammissibili ma non vale il viceversa
 
-    Inoltre é **ottimamente efficiente**
+Inoltre é **ottimamente efficiente**
 
-    -   espande sempre il numero minimo di nodi possibili
+-   espande sempre il numero minimo di nodi possibili
 
-    Ma \\(\textsc{space}=O(b^d)\\)
+Ma \\(\textsc{space}=O(b^d)\\)
 
 
 ### Euristiche {#euristiche}
@@ -398,125 +389,123 @@ Dall'Economia, poi traslata in algoritmi nell'ambito dell'IA.
 -   **approccio maximin** - conservativo
 -   **approccio minimax regret** - minor _regret_
 
-<!--list-separator-->
 
--  Minimax
+##### Minimax {#minimax}
 
-    `Minimax` e' un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
+`Minimax` e' un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
 
-    -   ricerca in profondita', esplora tutto l'albero ma non mantiene tutto in memoria
+-   ricerca in profondita', esplora tutto l'albero ma non mantiene tutto in memoria
 
-    Nella simulazione dell'albero di gioco si hanno i due attori
+Nella simulazione dell'albero di gioco si hanno i due attori
 
-    1.  `Max`
-    2.  `Min`
+1.  `Max`
+2.  `Min`
 
-    L'algoritmo fa _venire a galla_ i costi _terminali_ dei rami del gioco, in quanto per guidare la scelta `Max` deve poter scegliere tra i nodi a se successivi.
+L'algoritmo fa _venire a galla_ i costi _terminali_ dei rami del gioco, in quanto per guidare la scelta `Max` deve poter scegliere tra i nodi a se successivi.
 
-    La funzione utilita' valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
-    \\(\text{minimax-value}(n)\\):
+La funzione utilita' valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
+\\(\text{minimax-value}(n)\\):
 
-    -   se \\(n\\) _terminale_
-        -   \\(\text{utility}(n)\\)
-    -   se \\(n\\) `Max`
-        -   \\(\text{max}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
-    -   se \\(n\\) `Min`
-        -   \\(\text{min}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
+-   se \\(n\\) _terminale_
+    -   \\(\text{utility}(n)\\)
+-   se \\(n\\) `Max`
+    -   \\(\text{max}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
+-   se \\(n\\) `Min`
+    -   \\(\text{min}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
 
-    <!--listend-->
+<!--listend-->
 
-    ```python
-    def minimaxDecision(state): # returns action
-        v = maxValue(state)
-        return action in succ(state) with value == v
+```python
+def minimaxDecision(state): # returns action
+    v = maxValue(state)
+    return action in succ(state) with value == v
 
-    def maxValue(state): # returns utility-value (state)
-        if (state.isTerminal()):
-            return utility(state)
+def maxValue(state): # returns utility-value (state)
+    if (state.isTerminal()):
+        return utility(state)
 
-        v = sys.minint
-        for (a,s) in succ(state): # (action,successor)
-            v = max(v, minValue(s))
+    v = sys.minint
+    for (a,s) in succ(state): # (action,successor)
+        v = max(v, minValue(s))
 
-        return v
+    return v
 
-    def minValue(state):
-        if (state.isTerminal()):
-            return utility(state)
+def minValue(state):
+    if (state.isTerminal()):
+        return utility(state)
 
-        v = sys.maxint
-        for (a,s) in succ(state):
-            v = min(v, maxValue(s))
+    v = sys.maxint
+    for (a,s) in succ(state):
+        v = min(v, maxValue(s))
 
-        return v
-    ```
+    return v
+```
 
-    -   \\(\textsc{space} = O(bm)\\)
-    -   \\(\textsc{time} = O(b^{m})\\)
+-   \\(\textsc{space} = O(bm)\\)
+-   \\(\textsc{time} = O(b^{m})\\)
 
-    <!--list-separator-->
 
-    -  Potatura alpha-beta
+###### Potatura alpha-beta {#potatura-alpha-beta}
 
-        Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
-        La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
+Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
+La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
 
-        -   \\(\alpha\\) e' il valore della migliore alternativa per `Max` nel percorso verso `state`
-        -   \\(\beta\\) e' il valore della migliore alternativa per `Min` nel percorso verso `state`
+-   \\(\alpha\\) e' il valore della migliore alternativa per `Max` nel percorso verso `state`
+-   \\(\beta\\) e' il valore della migliore alternativa per `Min` nel percorso verso `state`
 
-        Se il \\(v\\) considerato e' fuori da questo intervallo allora e' inutile considerarlo.
+Se il \\(v\\) considerato e' fuori da questo intervallo allora e' inutile considerarlo.
 
-        ```python
-        def alphabetaSearch(state): # returns action
-            v = maxValue(state, sys.minint, sys.maxint)
-            return action in succ(state) with value == v
+```python
+def alphabetaSearch(state): # returns action
+    v = maxValue(state, sys.minint, sys.maxint)
+    return action in succ(state) with value == v
 
-        def maxValue(state, alpha, beta): # returns utility-value (state)
-            if (state.isTerminal()):
-                return utility(state)
+def maxValue(state, alpha, beta): # returns utility-value (state)
+    if (state.isTerminal()):
+        return utility(state)
 
-            v = sys.minint
-            for (a,s) in succ(state): # (action,successor)
-                v = max(v, minValue(s, alpha, beta))
-                if (v >= beta) return v
-                alpha = max(alpha, v)
+    v = sys.minint
+    for (a,s) in succ(state): # (action,successor)
+        v = max(v, minValue(s, alpha, beta))
+        if (v >= beta) return v
+        alpha = max(alpha, v)
 
-            return v
+    return v
 
-        def minValue(state, alpha, beta):
-            if (state.isTerminal()):
-                return utility(state)
+def minValue(state, alpha, beta):
+    if (state.isTerminal()):
+        return utility(state)
 
-            v = sys.maxint
-            for (a,s) in succ(state):
-                v = min(v, maxValue(s, alpha, beta))
-                if (v <= alpha) return v
-                beta = min(beta, v)
+    v = sys.maxint
+    for (a,s) in succ(state):
+        v = min(v, maxValue(s, alpha, beta))
+        if (v <= alpha) return v
+        beta = min(beta, v)
 
-            return v
-        ```
+    return v
+```
 
-        Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
+Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
 
-        -   \\(\textsc{time} = O(b^{m/2})\\)
-            -   nel caso migliore
-            -   se l'ordine e' sfavorevole e' possibile che non avvengano potature
+-   \\(\textsc{time} = O(b^{m/2})\\)
+    -   nel caso migliore
+    -   se l'ordine e' sfavorevole e' possibile che non avvengano potature
 
-        Esistono tecniche di apprendimento per le _killer move_, il sistema si ricorda le _killer move_ passate e le cerca nelle successive applicazioni.
-        Queste tecniche sono studiate in quanto la complessita' continua a essere troppo alta per applicazioni `RealTime`:
+Esistono tecniche di apprendimento per le _killer move_, il sistema si ricorda le _killer move_ passate e le cerca nelle successive applicazioni.
+Queste tecniche sono studiate in quanto la complessita' continua a essere troppo alta per applicazioni `RealTime`:
 
-        -   **trasposizioni**
-            -   permutazioni dello stesso insieme di mosse
-            -   mosse che portano allo stesso stato risultante
-            -   vanno identificate ed evitate
-        -   **classificazione stati di gioco**
-            -   per motivi di tempo vanno valutati come foglie nodi intermedi
-            -   va valutata una situazione intermedia (_orizzonte_)
-                -   valutazione rispetto alla facilita' di raggiungere una vittoria
-                -   attraverso un classificatore sviluppato in precedenza
-        -   **quiescenza** dei nodi
-            -   se mantiene la propria valutazione bene nei continuo
-            -   non ribalta la valutazione nel giro di poche mosse
+-   **trasposizioni**
+    -   permutazioni dello stesso insieme di mosse
+    -   mosse che portano allo stesso stato risultante
+    -   vanno identificate ed evitate
+-   **classificazione stati di gioco**
+    -   per motivi di tempo vanno valutati come foglie nodi intermedi
+    -   va valutata una situazione intermedia (_orizzonte_)
+        -   valutazione rispetto alla facilita' di raggiungere una vittoria
+        -   attraverso un classificatore sviluppato in precedenza
+-   **quiescenza** dei nodi
+    -   se mantiene la propria valutazione bene nei continuo
+    -   non ribalta la valutazione nel giro di poche mosse
 
 
 ### Soddisfacimento di Vincoli {#soddisfacimento-di-vincoli}
@@ -534,89 +523,84 @@ I problemi sono affrontati con approcci diversi in base alle caratteristiche del
 
 #### Algoritmi {#algoritmi}
 
-<!--list-separator-->
 
--  Generate and Test
+##### Generate and Test {#generate-and-test}
 
-    _Bruteforce_
+_Bruteforce_
 
-    1.  genera un assegnamento completo
-    2.  controlla se é una soluzione
-    3.  se si `return` altrimenti `continue`
+1.  genera un assegnamento completo
+2.  controlla se é una soluzione
+3.  se si `return` altrimenti `continue`
 
-    É estremamente semplice ma non é scalabile.
-
-<!--list-separator-->
-
--  Profonditá con Backtracking
-
-    Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni
-    Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
-    Dati \\(n\\) variabili e \\(d\\) media del numero di  valori possibili per una variabile:
-
-    -   il `branching fator` al primo livello, \\(n \cdot d\\)
-    -   ... al secondo, \\((n-1)\cdot d\\)
-    -   l'albero avrá \\(n! \cdot d^{n}\\) foglie
-
-    Questo é migliorabile con la tecnica del _fuoco_ su una singola variabile a ogni livello dell'albero, questo in quanto i `CSP` godono della proprietá commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
-
-    Uno dei difetti di questo approccio é il `Thrashing`, riconsiderando assegnamenti successivi che si sono giá dimostrati fallimentari durante l'esplorazione.
-
-<!--list-separator-->
-
--  Forward Checking
-
-    Approccio locale di propagazione della conoscenza.
-    Si propagano le scelte delle variabile ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
-
-<!--list-separator-->
-
--  AC-3
-
-    `Arc Consistency` - McWorth
-
-    -   funziona con vincoli binari
-    -   simile al Forward Checking
-    -   `Arc Consistency` non é una proprietá sufficiente a garantire l'esistenza di una soluzione
-
-    <!--listend-->
-
-    ```python
-    def AC-3(csp): // returns CSP ridotto
-        queue = csp.arcs
-        while queue != empty:
-            (xi,xj) = queue.RemoveFirst()
-            if (RemoveInconsistentValues(xi,xj)):
-                for (xk in xi.neighbours):
-                    queue.Add(xk,xi)
+É estremamente semplice ma non é scalabile.
 
 
-    def RemoveInconsistentValues(xi,xj): // returns boolean
-        removed = false
-        for (x in Domain[xi])
-            if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
-                Domain[xi].delete(x)
-                removed = true
-        return removed
+##### Profonditá con Backtracking {#profonditá-con-backtracking}
 
-    ```
+Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni
+Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
+Dati \\(n\\) variabili e \\(d\\) media del numero di  valori possibili per una variabile:
 
-<!--list-separator-->
+-   il `branching fator` al primo livello, \\(n \cdot d\\)
+-   ... al secondo, \\((n-1)\cdot d\\)
+-   l'albero avrá \\(n! \cdot d^{n}\\) foglie
 
--  Back-Jumping
+Questo é migliorabile con la tecnica del _fuoco_ su una singola variabile a ogni livello dell'albero, questo in quanto i `CSP` godono della proprietá commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
 
-    Risolve i limiti del tradizionale `Backtracking Cronologico`, che torna passo per passo indietro senza sfruttare i vincoli.
-    Si viene guidati dal _Conflict Set_. Si fa backtracking a una variabile che potrebbe risolvere il conflitto.
+Uno dei difetti di questo approccio é il `Thrashing`, riconsiderando assegnamenti successivi che si sono giá dimostrati fallimentari durante l'esplorazione.
 
-    -   questi `CS` sono costruiti tramite `Forward Checking` durante gli assegnamenti
 
-    > Sia \\(A\\) un assegnamento parziale consistente, sia \\(X\\) una variabile non ancora assegnata. Se l'assegnamento \\(A \cup \\{X=v\_{i}\\}\\) risulta inconsistente per qualsiasi valore \\(v\_{i}\\) appartenente al dominio di \\(X\\) si dice che \\(A\\) é un <span class="underline">conflict set</span> di \\(X\\)
+##### Forward Checking {#forward-checking}
 
-    Quando tutti gli assegnamenti possibili successivi a \\(X\_{j}\\) falliscono si agisce con il `Back-Jumping`
+Approccio locale di propagazione della conoscenza.
+Si propagano le scelte delle variabile ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
 
-    -   si considera l'ultimo assegnamento \\(X\_{i}\\) aggiunto al `CS` di \\(X\_{j}\\)
-    -   viene aggiornato il `CS` di \\(X\_{i}\\)
-        -   \\(CS(X\_{i})=CS(X\_{i})\cup (CS(X\_{j})- \\{X\_{i}\\})\\)
+
+##### AC-3 {#ac-3}
+
+`Arc Consistency` - McWorth
+
+-   funziona con vincoli binari
+-   simile al Forward Checking
+-   `Arc Consistency` non é una proprietá sufficiente a garantire l'esistenza di una soluzione
+
+<!--listend-->
+
+```python
+def AC-3(csp): // returns CSP ridotto
+    queue = csp.arcs
+    while queue != empty:
+        (xi,xj) = queue.RemoveFirst()
+        if (RemoveInconsistentValues(xi,xj)):
+            for (xk in xi.neighbours):
+                queue.Add(xk,xi)
+
+
+def RemoveInconsistentValues(xi,xj): // returns boolean
+    removed = false
+    for (x in Domain[xi])
+        if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
+            Domain[xi].delete(x)
+            removed = true
+    return removed
+
+```
+
+
+##### Back-Jumping {#back-jumping}
+
+Risolve i limiti del tradizionale `Backtracking Cronologico`, che torna passo per passo indietro senza sfruttare i vincoli.
+Si viene guidati dal _Conflict Set_. Si fa backtracking a una variabile che potrebbe risolvere il conflitto.
+
+-   questi `CS` sono costruiti tramite `Forward Checking` durante gli assegnamenti
+
+> Sia \\(A\\) un assegnamento parziale consistente, sia \\(X\\) una variabile non ancora assegnata. Se l'assegnamento \\(A \cup \\{X=v\_{i}\\}\\) risulta inconsistente per qualsiasi valore \\(v\_{i}\\) appartenente al dominio di \\(X\\) si dice che \\(A\\) é un <span class="underline">conflict set</span> di \\(X\\)
+
+Quando tutti gli assegnamenti possibili successivi a \\(X\_{j}\\) falliscono si agisce con il `Back-Jumping`
+
+-   si considera l'ultimo assegnamento \\(X\_{i}\\) aggiunto al `CS` di \\(X\_{j}\\)
+-   viene aggiornato il `CS` di \\(X\_{i}\\)
+    -   \\(CS(X\_{i})=CS(X\_{i})\cup (CS(X\_{j})- \\{X\_{i}\\})\\)
 
 
 #### Euristiche {#euristiche}
@@ -633,24 +617,23 @@ Euristiche di _scelta_ e _inferenza_
 -   alternanza tra esplorazione e inferenza
     -   ovvero propagazione di informazione attraverso i vincoli
 
-<!--list-separator-->
 
--  Consistency
+##### Consistency {#consistency}
 
-    1.  `Node Consistency`
-        -   vincoli di aritá 1 soddisfatti
-    2.  `Arc Consistency`
-        -   vincoli di aritá 2 soddisfatti per ogni valore nel dominio
-        -   un arco é `arc-consistent` quando \\(\forall\\) valore del dominio del sorgente \\(\exists\\) valore nel dominio della destinazione che permetta di rispettare il vincolo
-    3.  `Path Consistency`
-        -   3 variabili legate da vincoli binari
-        -   considerate 2 variabili \\(x, y\\) queste sono `path-consistent` con \\(z\\) se \\(\forall\\) assegnamento consistente di \\(x,y \\; \exists\\) un assegnamento \\(z\\) tale che \\(\\{x,z\\}\\) e \\(\\{y,z\\}\\) questi sono entrambi consistenti.
+1.  `Node Consistency`
+    -   vincoli di aritá 1 soddisfatti
+2.  `Arc Consistency`
+    -   vincoli di aritá 2 soddisfatti per ogni valore nel dominio
+    -   un arco é `arc-consistent` quando \\(\forall\\) valore del dominio del sorgente \\(\exists\\) valore nel dominio della destinazione che permetta di rispettare il vincolo
+3.  `Path Consistency`
+    -   3 variabili legate da vincoli binari
+    -   considerate 2 variabili \\(x, y\\) queste sono `path-consistent` con \\(z\\) se \\(\forall\\) assegnamento consistente di \\(x,y \\; \exists\\) un assegnamento \\(z\\) tale che \\(\\{x,z\\}\\) e \\(\\{y,z\\}\\) questi sono entrambi consistenti.
 
-    Questi concetti sono generalizzabili con la `k-consistenza`
+Questi concetti sono generalizzabili con la `k-consistenza`
 
-    -   per ogni sottoinsieme di \\(k-1\\) variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la \\(k\text{-esima}\\) variabile che é consistente con tutti gli altri.
+-   per ogni sottoinsieme di \\(k-1\\) variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la \\(k\text{-esima}\\) variabile che é consistente con tutti gli altri.
 
-    Un `CSP` fortemente consistente puó essere risolto in tempo lineare.
+Un `CSP` fortemente consistente puó essere risolto in tempo lineare.
 
 
 #### Vincoli Speciali {#vincoli-speciali}
@@ -739,151 +722,159 @@ Vari approcci:
         -   \\(R\vDash Q \iff R\implies Q \text{ é una formula valida o tautologia}\\)
             -   \\(Q\\) é conseguenza logica di \\(R\\)
 
-<!--list-separator-->
 
--  Theorem Proving
+##### Theorem Proving {#theorem-proving}
 
-    1.  Algoritmo di Ricerca (o di inferenza)
-    2.  Insieme di regole di inferenza
-        -   `Risoluzione`
-            -   disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
-            -   il `Modus Ponens` ne é un caso particolare
-            -   si applica a `CNF`
-                -   \\(KB\_{\text{LP}}  \vdash KB\_{\text{CNF}}\\)
-                    1.  si eliminano le biimplicazioni
-                    2.  si eliminano le implicazioni
-                    3.  si portano all'interno i `not` applicando `de Morgan`
-                    4.  si eliminano le doppie negazioni
-                    5.  si distribuisce `or` sull'`and`
-                -   congiunzioni di clausole (disgiunzioni di letterali)
+1.  Algoritmo di Ricerca (o di inferenza)
+2.  Insieme di regole di inferenza
+    -   `Risoluzione`
+        -   disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
+        -   il `Modus Ponens` ne é un caso particolare
+        -   si applica a `CNF`
+            -   \\(KB\_{\text{LP}}  \vdash KB\_{\text{CNF}}\\)
+                1.  si eliminano le biimplicazioni
+                2.  si eliminano le implicazioni
+                3.  si portano all'interno i `not` applicando `de Morgan`
+                4.  si eliminano le doppie negazioni
+                5.  si distribuisce `or` sull'`and`
+            -   congiunzioni di clausole (disgiunzioni di letterali)
 
-    > **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
+> **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
 
-    -   questo é utilizzato nella dimostrazione per refutazione
+-   questo é utilizzato nella dimostrazione per refutazione
 
-    <!--list-separator-->
 
-    -  Horn Clauses
+###### Horn Clauses {#horn-clauses}
 
-        Un caso particolare delle clausole.
+Un caso particolare delle clausole.
 
-        > Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
+> Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
 
-        ad esempio:
+ad esempio:
 
-        \\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
+\\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
 
-        \\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
+\\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
 
-    <!--list-separator-->
 
-    -  Forward Chaining
+###### Forward Chaining {#forward-chaining}
 
-        Lineare nel numero di clausole
+Lineare nel numero di clausole
 
-        -   ogni clausola é applicata al piú  una volta
-        -   peró sono applicate clausole inutili per il _target_
+-   ogni clausola é applicata al piú  una volta
+-   peró sono applicate clausole inutili per il _target_
 
-        {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
+{{< figure src="/ox-hugo/forward-chaining.jpg" >}}
 
-    <!--list-separator-->
 
-    -  Backward Chaining
+###### Backward Chaining {#backward-chaining}
 
-        Parte dalla formula da dimostare e va a ritroso
+Parte dalla formula da dimostare e va a ritroso
 
-        -   piú efficiente del `Forward Chaining`
-        -   meno che lineare
+-   piú efficiente del `Forward Chaining`
+-   meno che lineare
 
-        {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
+{{< figure src="/ox-hugo/backward-chaining.jpg" >}}
 
-<!--list-separator-->
 
--  First Order Logic
+##### First Order Logic {#first-order-logic}
 
-    -   dichiarativa
-        -   separa conoscenza da inferenza
-        -   si deriva conoscenza da altra conoscenza
+-   dichiarativa
+    -   separa conoscenza da inferenza
+    -   si deriva conoscenza da altra conoscenza
 
-    Elementi:
+Elementi:
 
-    -   costanti
-    -   predicati
-    -   variabili
-    -   funzioni
-        -   **NB** questi non costruiscono oggetti: danno un _riferimento_ a oggetti esistenti
-    -   connettivi
-    -   ugualianza
-    -   quantificatori
-        -   \\(\forall\\) viene espanso in una catena di \\(\land\\)
-        -   \\(\exists\\) viene espanso in una catena di \\(\lor\\)
-        -   le espansioni vengono fatte sostituendo alla variabile **tutte** le costanti del modello
-        -   \\[\exists x \lnot F \equiv \lnot \forall x F\\]
-        -   \\[\exists x F \equiv \lnot \forall x \lnot F\\]
-    -   punteggiatura
+-   costanti
+-   predicati
+-   variabili
+-   funzioni
+    -   **NB** questi non costruiscono oggetti: danno un _riferimento_ a oggetti esistenti
+-   connettivi
+-   ugualianza
+-   quantificatori
+    -   \\(\forall\\) viene espanso in una catena di \\(\land\\)
+    -   \\(\exists\\) viene espanso in una catena di \\(\lor\\)
+    -   le espansioni vengono fatte sostituendo alla variabile **tutte** le costanti del modello
+    -   \\[\exists x \lnot F \equiv \lnot \forall x F\\]
+    -   \\[\exists x F \equiv \lnot \forall x \lnot F\\]
+-   punteggiatura
 
-    Le formule in `FOL` sono poi _interpretate_
+Le formule in `FOL` sono poi _interpretate_
 
-    -   l'interpretazione forma un _mapping_ tra `simboli` e `dominio`
-    -   collega simboli e significati
-        -   funzioni - relazioni
-        -   predicati - relazioni
-        -   costanti - oggetti
+-   l'interpretazione forma un _mapping_ tra `simboli` e `dominio`
+-   collega simboli e significati
+    -   funzioni - relazioni
+    -   predicati - relazioni
+    -   costanti - oggetti
 
-    Un modello é una coppia: \\(M = \langle D,I \rangle\\)
+Un modello é una coppia: \\(M = \langle D,I \rangle\\)
 
-    -   \\(D\\) dominio
-    -   \\(I\\) interpretazione
+-   \\(D\\) dominio
+-   \\(I\\) interpretazione
 
-    > Come nellla logica proposizionale, \\(M\\) é un modello per \\(\alpha\\) se questo é vero in \\(M\\).
+> Come nellla logica proposizionale, \\(M\\) é un modello per \\(\alpha\\) se questo é vero in \\(M\\).
 
-    I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:1]
-    Un termine é `ground` quando non contiene variabili. (i.e. fondato)
+I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:1]
+Un termine é `ground` quando non contiene variabili. (i.e. fondato)
 
-    La base di conoscenza puó essere interrogata con `ask`
+La base di conoscenza puó essere interrogata con `ask`
 
-    -   quando compare una formula `ground` é banale la richiesta
-    -   quando compaiono variabili si intende una sostituzione
-        -   quindi la variabile \\(x\\) é interpretata in senso esistenziale ( \\(\exists\\) )
+-   quando compare una formula `ground` é banale la richiesta
+-   quando compaiono variabili si intende una sostituzione
+    -   quindi la variabile \\(x\\) é interpretata in senso esistenziale ( \\(\exists\\) )
 
-    <!--list-separator-->
 
-    -  Come fare Inferenza su FOL
+###### Clausole di Horn {#clausole-di-horn}
 
-        -   `Proposizionalizzazione`
-            -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
-            -   Regola di Instanziazione Universale - `UI`
-                -   \\[\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\]
-                -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
-                -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
-            -   Regola di Instanziazione Esistenziale - `EI`
-                -   \\[\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\]
-                -   \\(k\\) costante di Skolem, nuova
-                    -   non compare nella `KB`
-                -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\)
-            -   `Herbrand`
-                -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
-                    -   \\(KB \vDash F\\)
-                -   se non é conseguenza logica ... non é detto sia dimostrabile
-                    -   \\(KB \not\vDash F\\) non sempre possibile
-                -   la logica del prim'ordine é **semi-decidibile**
-            -   `Inefficienza`
-                -   crea delle basi di conoscenza grandi con le regole
-        -   `Lifting` delle regole di inferenza
-            -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
-            -   `Unification` Martelli/Montanari
-            -   **Modus Ponens Generalizzato**
-                -   \\[\frac{P\_{1}',\cdots ,P\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
-                -   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle P\_{i}', p\_{i} \rangle\\)
+-   disgiunzioni di letterali di cui al piú uno é positivo
+-   atomiche
+-   implicazioni il cui antecedente é una congiunzione di letterali
 
-<!--list-separator-->
 
--  Database Semantics
+###### Come fare Inferenza su FOL {#come-fare-inferenza-su-fol}
 
-    -   unicitá dei nomi
-    -   closed-world assumption
-    -   domain closure
+-   `Proposizionalizzazione`
+    -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
+    -   Regola di Instanziazione Universale - `UI`
+        -   \\[\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\]
+        -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
+        -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
+    -   Regola di Instanziazione Esistenziale - `EI`
+        -   \\[\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\]
+        -   \\(k\\) costante di Skolem, nuova
+            -   non compare nella `KB`
+        -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\)
+    -   `Herbrand`
+        -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
+            -   \\(KB \vDash F\\)
+        -   se non é conseguenza logica ... non é detto sia dimostrabile
+            -   \\(KB \not\vDash F\\) non sempre possibile
+        -   la logica del prim'ordine é **semi-decidibile**
+    -   `Inefficienza`
+        -   crea delle basi di conoscenza grandi con le regole
+-   `Lifting` delle regole di inferenza
+    -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
+    -   **Modus Ponens Generalizzato**
+        -   \\[\frac{p\_{1}',\cdots ,p\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]&nbsp;[^fn:2]
+        -   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle p\_{i}', p\_{i} \rangle\\) per cui \\(p\_{i}' \theta = p\_{i} \theta\\) per ogni \\(i\in [1,n]\\)
+    -   `Unification` (Martelli/Montanari)
+        -   algoritmo di ricerca che date due formule trova la sostituzione \\(\theta\\) piú generale che le unifichi
+    -   `Forward Chaining`
+        -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:3]
+            -   in caso contrario il caso negativo puó non terminare
+    -   `Backward Chaining`
+        -   stesse considerazioni del `FC` ma piú efficiente
 
-    Riduce il numero di modelli a un numero finito.
+
+##### Database Semantics {#database-semantics}
+
+-   unicitá dei nomi
+-   closed-world assumption
+-   domain closure
+
+Riduce il numero di modelli a un numero finito.
 
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
+[^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti
+[^fn:3]: una `KB` senza funzioni

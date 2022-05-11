@@ -60,58 +60,50 @@ Secondo <span class="underline">Alan Kay (Smalltalk)</span>
 -   kind-of hierarchy
 -   part-of hierarchy
 
-<!--list-separator-->
 
--  ereditarieta'
+##### ereditarieta' {#ereditarieta}
 
-<!--list-separator-->
 
--  polimorfismo
+##### polimorfismo {#polimorfismo}
 
-    <!--list-separator-->
 
-    -  Binding Dinamico
+###### Binding Dinamico {#binding-dinamico}
 
-        <span class="underline">Binding statico</span>, all'atto della compilazione
-        <span class="underline">Binding dinamico</span>, l'esecutore puó controllare i tipi degli oggetti, e decidere a runtime il body del metodo da eseguire
+<span class="underline">Binding statico</span>, all'atto della compilazione
+<span class="underline">Binding dinamico</span>, l'esecutore puó controllare i tipi degli oggetti, e decidere a runtime il body del metodo da eseguire
 
-        -   esegue l'implementazione piú specifica possibile
-        -   solo sui metodi, le variabili non vanno a fare overriding
+-   esegue l'implementazione piú specifica possibile
+-   solo sui metodi, le variabili non vanno a fare overriding
 
-        Estremamente modulare e scalabile, meccanismo di delaga
+Estremamente modulare e scalabile, meccanismo di delaga
 
-    <!--list-separator-->
 
-    -  Classi Astratte
+###### Classi Astratte {#classi-astratte}
 
-        Utilizzate come interfaccia comune e pubblica, la sottoclasse andrá a implementare i dettagli
+Utilizzate come interfaccia comune e pubblica, la sottoclasse andrá a implementare i dettagli
 
-    <!--list-separator-->
 
-    -  Interfacce
+###### Interfacce {#interfacce}
 
-        Non possono avere metodi non astratti
+Non possono avere metodi non astratti
 
-        -   non sono soggette all'ereditarietá singola, una classe puó implementare tutte le interfacce di cui ha bisogro
+-   non sono soggette all'ereditarietá singola, una classe puó implementare tutte le interfacce di cui ha bisogro
 
-    <!--list-separator-->
 
-    -  Overloading
+###### Overloading {#overloading}
 
-        Definizione di firma alternativa di metodo esistente
-        A tempo <span class="underline">statico</span> viene scelta la firma, é bloccante e se ci sono eventuali overloading vengono persi
+Definizione di firma alternativa di metodo esistente
+A tempo <span class="underline">statico</span> viene scelta la firma, é bloccante e se ci sono eventuali overloading vengono persi
 
-        -   a runtime si discende solamente la catena di ereditarietá
+-   a runtime si discende solamente la catena di ereditarietá
 
-    <!--list-separator-->
 
-    -  Overriding
+###### Overriding {#overriding}
 
-        Diverso dall'Overloading in quanto le firme sono le stesse
+Diverso dall'Overloading in quanto le firme sono le stesse
 
-<!--list-separator-->
 
--  reflection
+##### reflection {#reflection}
 
 
 #### Tipi Generici {#tipi-generici}
@@ -126,26 +118,24 @@ Introdotti per scrivere codice generico, applicabile a piú tipi di dati
     -   `extends` a una singola classe
         -   ma multiple inferfacce
 
-<!--list-separator-->
 
--  Raw types
+##### Raw types {#raw-types}
 
-    Utilizzando Object direttamente, in questo modo peró il compilatore non puó controllare la correttezza dei tipi
+Utilizzando Object direttamente, in questo modo peró il compilatore non puó controllare la correttezza dei tipi
 
-<!--list-separator-->
 
--  Collezioni
+##### Collezioni {#collezioni}
 
-    Vincoli sintattici per evitare errori a Runtime che non sarebbero rilevati:
+Vincoli sintattici per evitare errori a Runtime che non sarebbero rilevati:
 
-    -   quindi le `Collection` sono controllate per Nome del tipo, non viene considerata l'ereditarietá
-        -   si risolve utilizzando l'upcasting
+-   quindi le `Collection` sono controllate per Nome del tipo, non viene considerata l'ereditarietá
+    -   si risolve utilizzando l'upcasting
 
-    Per risolvere e definire una `Collection` di qualsiasi cosa
+Per risolvere e definire una `Collection` di qualsiasi cosa
 
-    -   `Collection<?>.`
-    -   si utilizza la _wildcard_
-        -   per restringerlo si utilizza anche in questo caso `extends`
+-   `Collection<?>.`
+-   si utilizza la _wildcard_
+    -   per restringerlo si utilizza anche in questo caso `extends`
 
 
 #### Interfacce {#interfacce}
@@ -168,24 +158,23 @@ Per information hiding la classe interna puó essere solo meno visibile o uguale
 -   le classe `IN` hanno un puntatore `outerThis` che permette di fare riferemento al contenitore
     -   tramite quello hanno accesso come fossero locali
 
-<!--list-separator-->
 
--  Classi innestate in interfacce
+##### Classi innestate in interfacce {#classi-innestate-in-interfacce}
 
-    -   Interfaccia publica
-        -   classe statica che rappresenta l'implementazione di default dell'Iterfaccia
-    -   si puó estendere oppure
+-   Interfaccia publica
+    -   classe statica che rappresenta l'implementazione di default dell'Iterfaccia
+-   si puó estendere oppure
 
-    Possibile avere classi nested anonime definendo in line
+Possibile avere classi nested anonime definendo in line
 
-    -   `return new Iteratore(){ ... }`
+-   `return new Iteratore(){ ... }`
 
-    Posso essere ancora piú sintetico utilizzando le `lambda expression`
+Posso essere ancora piú sintetico utilizzando le `lambda expression`
 
-    -   ovviamente non deve esserci ambiguitá per quanto riguarda i parametri, un'interfaccia con metodi non ambigui e con poche righe di codice si presta ad una `lambda`
-    -   inoltre é possibile omette i tipi dei parametri se sono inferibili
-    -   é possibile omettere graffe e `return` se si tratta di una singola istruzione, deve essere una funzione (restituire un valore)
-    -   se il paremetro é uno si possono omettere le parentesi tonde
+-   ovviamente non deve esserci ambiguitá per quanto riguarda i parametri, un'interfaccia con metodi non ambigui e con poche righe di codice si presta ad una `lambda`
+-   inoltre é possibile omette i tipi dei parametri se sono inferibili
+-   é possibile omettere graffe e `return` se si tratta di una singola istruzione, deve essere una funzione (restituire un valore)
+-   se il paremetro é uno si possono omettere le parentesi tonde
 
 
 #### Pattern Architetturali {#pattern-architetturali}
@@ -263,55 +252,52 @@ Si distinguono due fasi:
 
 Dopo essere stati creati gli _event-handlers_ devono essere associati come _listener_ ad un evento di una specifica sorgente, componente la `GUI`
 
-<!--list-separator-->
 
--  Eventi
+##### Eventi {#eventi}
 
-    In `Java`
-    Oggetti derivati dalla classe `EventObject`
+In `Java`
+Oggetti derivati dalla classe `EventObject`
 
-    -   eventi _semantici_
-        -   su componenti virtuali dell'interfaccia
-    -   eventi _low-level_
-        -   eventi fisici relativi al mouse o tastiera
+-   eventi _semantici_
+    -   su componenti virtuali dell'interfaccia
+-   eventi _low-level_
+    -   eventi fisici relativi al mouse o tastiera
 
-    Sono gestiti con un meccanismo di <span class="underline">delega</span>
+Sono gestiti con un meccanismo di <span class="underline">delega</span>
 
-    -   la sorgente, generato un evento, passa un **oggetto** che descrive l'evento ad un listener
-        -   registrato presso la sorgente
-        -   il passaggio dell'evento cousa l'invocazione di un metodo del _listener_
+-   la sorgente, generato un evento, passa un **oggetto** che descrive l'evento ad un listener
+    -   registrato presso la sorgente
+    -   il passaggio dell'evento cousa l'invocazione di un metodo del _listener_
 
-<!--list-separator-->
 
--  Sorgenti
+##### Sorgenti {#sorgenti}
 
-    I diversi componenti dell'interfaccia
+I diversi componenti dell'interfaccia
 
-    -   `JButton`
-    -   `JTextField`
-    -   `Component`
-    -   `Window`
+-   `JButton`
+-   `JTextField`
+-   `Component`
+-   `Window`
 
-<!--list-separator-->
 
--  Listener
+##### Listener {#listener}
 
-    O _event-handler_, istanza di una classe che contiene metodi per gestire gli eventi
-    Per ogni tipo di evento é definita una interfaccia che il _listener_ deve implementare
+O _event-handler_, istanza di una classe che contiene metodi per gestire gli eventi
+Per ogni tipo di evento é definita una interfaccia che il _listener_ deve implementare
 
-    -   `ActionListener`
-        -   `void addActionListener(ActionListener I)`
-    -   `MouseListener`
-    -   `MouseMotionListener`
-    -   `WindowListener`
+-   `ActionListener`
+    -   `void addActionListener(ActionListener I)`
+-   `MouseListener`
+-   `MouseMotionListener`
+-   `WindowListener`
 
-    Per non dover implementare tutti i metodi dell'interfaccia che ci interessa sono state introdotte le _classi filtro_
+Per non dover implementare tutti i metodi dell'interfaccia che ci interessa sono state introdotte le _classi filtro_
 
-    -   implementazioni di default delle interfacce dei listener
-        -   metodi che non fanno nulla
-        -   si fa _overriding_ solamente dei metodi di gestione che ci servono
+-   implementazioni di default delle interfacce dei listener
+    -   metodi che non fanno nulla
+    -   si fa _overriding_ solamente dei metodi di gestione che ci servono
 
-    -   `WindowListener` &rarr; `WindowAdapter`
+-   `WindowListener` &rarr; `WindowAdapter`
 
 
 #### Organizzazione e uso GUI {#organizzazione-e-uso-gui}
@@ -349,20 +335,18 @@ Il successore di `SWING`
 -   offre classi/interface che implementano Observer Observable
 -   permette anche di scrivere interfacce in `XML`
 
-<!--list-separator-->
 
--  Componenti
+##### Componenti {#componenti}
 
-    -   Stage
-        -   finestra
-    -   Scene
-        -   una principale
-    -   Panels
-    -   Buttons
+-   Stage
+    -   finestra
+-   Scene
+    -   una principale
+-   Panels
+-   Buttons
 
-<!--list-separator-->
 
--  Scene Builder
+##### Scene Builder {#scene-builder}
 
 
 ### Programmazione Multithread {#programmazione-multithread}
@@ -428,49 +412,46 @@ Per dichiarare sezioni critiche solamente sezioni di metodi si utilizza il metod
 
 Per i puntatori o contatori esiste `AtomicInteger`
 
-<!--list-separator-->
 
--  Thread
+##### Thread {#thread}
 
-    I `Thread` possono attendere lo stato giusto della risorsa con il metodo:
+I `Thread` possono attendere lo stato giusto della risorsa con il metodo:
 
-    -   `wait()`
-        -   sbloccati attraverso notifica
-        -   `notifyAll()`
-        -   `notify()`
-            -   risvegli il primo della coda di `wait`
+-   `wait()`
+    -   sbloccati attraverso notifica
+    -   `notifyAll()`
+    -   `notify()`
+        -   risvegli il primo della coda di `wait`
 
-    Le due situazioni che si possono creare con un utilizzo errato della sincronizzazione:
+Le due situazioni che si possono creare con un utilizzo errato della sincronizzazione:
 
-    -   _deadlock_
-    -   _starvation_
+-   _deadlock_
+-   _starvation_
 
-    Tra `Thread` la comunicazione puó essere gestita facilmente con le `Pipe`
+Tra `Thread` la comunicazione puó essere gestita facilmente con le `Pipe`
 
-<!--list-separator-->
 
--  BlockingQueue
+##### BlockingQueue {#blockingqueue}
 
-    Interfaccia generica
+Interfaccia generica
 
-<!--list-separator-->
 
--  Lock e Condition
+##### Lock e Condition {#lock-e-condition}
 
-    Ogni oggetto ha un lock implicito.
-    Per usare lock espliciti si utilizza l'interfaccia `Lock`
-    Implementata ad esempio in `ReentrantLock`
+Ogni oggetto ha un lock implicito.
+Per usare lock espliciti si utilizza l'interfaccia `Lock`
+Implementata ad esempio in `ReentrantLock`
 
-    -   `newCondition()`
-        -   restituisce un oggetto di tipo `Condition`
-            -   `await()`
-            -   `signal()`
-            -   `signalAll()`
+-   `newCondition()`
+    -   restituisce un oggetto di tipo `Condition`
+        -   `await()`
+        -   `signal()`
+        -   `signalAll()`
 
-    `ReadWriteLock`
+`ReadWriteLock`
 
-    -   `Lock readLock()`
-    -   `Lock writeLock()`
+-   `Lock readLock()`
+-   `Lock writeLock()`
 
 
 #### Pool {#pool}
@@ -481,17 +462,16 @@ Si creano un numero di `Thread` in un colpo solo a cui sono poi assegnati man ma
 -   sono dotati di coda in cui sono inserite le task man mano
 -   il `Pool` si auto gestisce le code bilanciandole
 
-<!--list-separator-->
 
--  Executor
+##### Executor {#executor}
 
-    `Executor` Interface
+`Executor` Interface
 
-    -   `ExecutorService newFixedThreadPool(int n)`
-    -   `ScheduleExecutorService newScheduledThreadPool(int n)`
-    -   `ScheduleAtFixedRate`
+-   `ExecutorService newFixedThreadPool(int n)`
+-   `ScheduleExecutorService newScheduledThreadPool(int n)`
+-   `ScheduleAtFixedRate`
 
-    `shutdown()`
+`shutdown()`
 
 
 #### Runnable {#runnable}
@@ -505,15 +485,14 @@ Task che é parametrizzato con `T` generico
 
 -   `public T call()`
 
-<!--list-separator-->
 
--  Future&lt;T&gt;
+##### Future&lt;T&gt; {#future-t}
 
-    `Futuretask(Callabre<T> task)`
+`Futuretask(Callabre<T> task)`
 
-    -   `isDone()`
-    -   `get()`
-        -   sospende in caso non abbia ancora terminato la computazione
+-   `isDone()`
+-   `get()`
+    -   sospende in caso non abbia ancora terminato la computazione
 
 
 ### Programmazione in Rete {#programmazione-in-rete}
