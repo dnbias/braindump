@@ -63,3 +63,80 @@ Happens in 2 cases:
 1.  there is an `if` statement
 2.  there is an `heap` allocation
     -   there is the case where the allocation does not succeed
+
+
+## Examples {#examples}
+
+No preconditions are `true`, empty heap is `emp`
+
+```C
+struct account
+{
+    int balance;
+};
+
+struct account *create_account()
+/*@ requires true;
+     ensures malloc_block_account(result) &*&
+              result->balance |-> 0;
+@*/
+{
+    struct account *myAccount = malloc(sizeof(struct account));
+    if (myAccount == 0) abort();
+    myAccount->balance = 0;
+    return myAccount;
+}
+
+void account_set_balance(struct account *myAccount, int newBalance)
+//@ requires myAccount->balance |-> _;
+//@ ensures  myAccount->balance |-> newBalance;
+{
+    myAccount->balance = newBalance;
+}
+
+void account_deposit(struct account *myAccount, int amount)
+//@ requires myAccount->balance |-> ?balance;
+//@ ensures  myAccount->balance |-> (balance + amount);
+{
+    myAccount->balance += amount;
+}
+```
+
+Here we use a ghost variable `value` using _pattern matching_
+
+```C
+int account_get_balance(struct account *myAccount)
+//@ requires myAccount->balance |-> ?value;
+//@ ensures result == value &*&
+//@         myAccount->balance |-> value;
+{
+    return myAccount->balance;
+}
+
+void account_dispose(struct account *myAccount)
+//@ requires malloc_block_account(myAccount) &*&
+//@          myAccount->balance |-> _;
+//@ ensures  emp;
+{
+    free(myAccount);
+}
+```
+
+`predicates` are abbreviations
+
+```C
+/*@
+predicate account_pred(struct account *myAccount, int theLimit, int theBalance) =
+    myAccount->limit |-> theLimit &*& myAccount->balance |-> theBalance &*&
+    malloc_block_account(myAccount);
+@*/
+
+int account_get_balance(struct account *myAccount)
+//@ requires account_pred(myAccount, ?limit, ?balance);
+//@ ensures  account_pred(myAccount, limit, balance) &*& result == balance;
+{
+   //@ open account_pred(myAccount, limit, balance);
+    return myAccount->balance;
+    //@ close account_pred(myAccount, limit, balance);
+}
+```

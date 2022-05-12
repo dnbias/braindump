@@ -862,3 +862,7 @@ build content/posts/learn_quantum_computing_with_python_and_q.md: org2md roam/le
 build content/posts/what_is_this.md: org2md roam/what_is_this.org
 
 build content/posts/quantum_device_simulator.md: org2md roam/quantum_device_simulator.org
+
+build content/posts/quantum_q_algorithms.md: org2md roam/quantum_q_algorithms.org
+
+build content/posts/adding_double_borders_to_bspwm.md: org2md roam/adding_double_borders_to_bspwm.org

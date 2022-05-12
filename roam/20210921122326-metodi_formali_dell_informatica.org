@@ -109,7 +109,7 @@ Allora si utilizzano Truth Assistant, il teorema di =Rice= ci dimostra che i Ver
 - =Coq=
 - =Agda=
   + un linguaggio di programmazione funzionale
-- =VeriFast=
+- [[id:8c1765a3-7f08-4312-b5d0-8653b62dbcdf][VeriFast]]
   + ProofAssistant dedicato a _Separation Logic_ in C e Java
 **** Separation Logic
 Per trattare linguaggi imperativi con puntatori, gestione dinamica della memoria

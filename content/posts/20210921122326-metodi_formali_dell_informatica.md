@@ -141,7 +141,7 @@ Allora si utilizzano Truth Assistant, il teorema di `Rice` ci dimostra che i Ver
 -   `Coq`
 -   `Agda`
     -   un linguaggio di programmazione funzionale
--   `VeriFast`
+-   [VeriFast]({{< relref "verifast.md" >}})
     -   ProofAssistant dedicato a <span class="underline">Separation Logic</span> in C e Java
 
 

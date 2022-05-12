@@ -630,7 +630,7 @@ _se desidera continua con 2. altrimenti termina il caso d'uso_
 2.  **opzionalmente** ordina l'elenco
 3.  **opzionalmente** consulta tabellone dei turni
 4.  assegna un compito in un dato turno e **opzionalmente** a un cuoco **oppure** specifica se il compito é giá stato svolto **oppure** modifica un compito giá inserito **oppure** elimina un compito giá inserito
-5.  **opzionalmente** specifica tempo necessario al compito e/o quantiá/porzioni da preparare
+5.  **opzionalmente** specifica tempo necessario al compito e/o quantitá/porzioni da preparare
 
 _ripete dal passo 4. fino a che soddisfatto_
 

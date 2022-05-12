@@ -473,7 +473,7 @@ Queste sono due visualizzazioni di una stessa informazione, l'utente inserirá l
 3. *opzionalmente* ordina l'elenco
 4. *opzionalmente* consulta tabellone dei turni
 5. assegna un compito in un dato turno e *opzionalmente* a un cuoco *oppure* specifica se il compito é giá stato svolto *oppure* modifica un compito giá inserito *oppure* elimina un compito giá inserito
-6. *opzionalmente* specifica tempo necessario al compito e/o quantiá/porzioni da preparare
+6. *opzionalmente* specifica tempo necessario al compito e/o quantitá/porzioni da preparare
 /ripete dal passo 4. fino a che soddisfatto/
 
 $\textsc{nb}$  i passi 1. (per la generazione) e 4. (gestione delle 2 viste, /foglio servizio/ e /tabellone turni/ ) sono responsabilitá del *Sistema*
