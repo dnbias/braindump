@@ -924,3 +924,7 @@ build content/posts/strategy.md: org2md roam/strategy.org
 build content/posts/template_method.md: org2md roam/template_method.org
 
 build content/posts/visitor.md: org2md roam/visitor.org
+
+build content/posts/automatic_table_of_content_in_css_js.md: org2md roam/automatic_table_of_content_in_css_js.org
+
+build content/posts/generate_ids_for_headings_in_js.md: org2md roam/generate_ids_for_headings_in_js.org
