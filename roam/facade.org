@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       11b4e0f5-4448-40e3-8f15-5e25f4bde9ae
+:END:
+#+title: Facade
+#+date: [2022-05-13 Fri 14:08]
+#+filetags: pattern compsci
+- [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]]

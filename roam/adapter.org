@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       16fcdc54-e304-423d-ade5-41a7cc513714
+:END:
+#+title: Adapter
+#+date: [2022-05-13 Fri 14:06]
+#+filetags: pattern compsci
+- [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]]

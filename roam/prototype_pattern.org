@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3e086b1d-ced8-4994-b641-0c8e145d2beb
+:END:
+#+title: Prototype Pattern
+#+date: [2022-05-13 Fri 14:06]
+#+filetags: pattern compsci
+- [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]]
