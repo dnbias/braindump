@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       bc7b517f-abf2-47d4-b944-dc5d38298f75
+:END:
+#+title: Interpreter
+#+date: [2022-05-13 Fri 14:45]
+#+filetags: pattern compsci
+- [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]]

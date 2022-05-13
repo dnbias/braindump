@@ -457,6 +457,21 @@ Riguardanti l'instanziazione delle classi
 4. [[id:f955c7ef-7a47-4373-a87a-2eb1a6151b4c][Lazy Initialization]]
 5. [[id:3e086b1d-ced8-4994-b641-0c8e145d2beb][Prototype Pattern]]
 6. [[id:d8d63e3a-5420-4bd1-95b6-3b3830c95b78][Singleton]]
+   - é consentita/richiesta _una sola istanza_ di una classe
+   - gli altri oggetti hanno bisogno di un punto di accesso globale e singolo al /singleton/
+   - si definisce un *metodo statico* della classe che restituisce l'oggetto /singleton/
+     + questo in Java
+     + restituisce un puntatore all'oggetto se giá esiste, se non esiste ancora prima lo crea
+       * [[id:f955c7ef-7a47-4373-a87a-2eb1a6151b4c][Lazy Initialization]]
+     + questa implementazione é preferibile
+       * la classe puó essere raffinata in sottoclassi
+       * la maggior parte dei meccanismi di comunicazione remota object oriented supporta l'accesso remoto solo a metodi d'istanza
+       * una classe non é sempre /singleton/ in tutti i contesti applicativi, dipende dalla =virtual machine=
+   - il /singleton/ puó essere anche implementato come *classe statica*
+     + non un vero e proprio /singleton/, si lavora con la classe statica non l'oggetto
+     + la classe statica ha metodi statici che offrono ció che é richiesto
+   - in =UML= é indicato con un $1$ nella sezione del nome, in alto a destra
+   - puó esserci concorrenza in /multithreading/
 7. [[id:d5c40b47-85cd-4b7e-b819-dc51e640ec5c][Double-check Locking]]
 *** Strutturali
 Riguardanti la struttura delle classi/oggeti
@@ -471,18 +486,18 @@ Riguardanti la struttura delle classi/oggeti
 Riguardanti l'interazione tra classi
 1. [[id:071228a3-f672-407f-8755-138ca175b6b5][Chain of Responsibility]]
    - utilizzato nella gestione delle /eccezioni/, delega a ritroso
-2. Command
-3. Event Listener
-4. Hirarchical Visitor
-5. Interpreter
-6. Iterator
-7. Mediator
-8. Memento
-9. Observer
-10. State
-11. Strategy
-12. Template method
-13. Visitor
+2. [[id:8144570f-56ab-4845-b7dc-5e8abbe5e92f][Command]]
+3. [[id:69eeca3a-965d-4293-9783-ce8a3daacf00][Event Listener]]
+4. [[id:8816e76c-4fb3-4a5d-8f45-c6c85fd70ff9][Hirarchical Visitor]]
+5. [[id:bc7b517f-abf2-47d4-b944-dc5d38298f75][Interpreter]]
+6. [[id:a5f22cec-cfa9-45ad-9513-7cdc62b5da38][Iterator]]
+7. [[id:13398893-4960-4ce7-ae8c-50037b881e39][Mediator]]
+8. [[id:0aaee7f1-4f57-4c54-a523-3133d8f6b0c3][Memento]]
+9. [[id:975404b1-5b7f-46f4-9fa9-a9c2b0b7a6f9][Observer]]
+10. [[id:553570b8-f2bf-47de-9735-d8b80be2d73b][State]]
+11. [[id:a43daa2a-ca97-4d87-922b-f825558d6ca9][Strategy]]
+12. [[id:14fead0a-ddba-4b2e-8c2a-89a6feeed8f2][Template method]]
+13. [[id:8091376c-f0a0-4631-a769-74c031331257][Visitor]]
 * Laboratorio
 Progetto =Cat & Ring=
 ** Fase Preliminare dell'ideazione
