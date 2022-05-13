@@ -98,6 +98,21 @@ If there are problems with `iqsharp` install the correct runtime, `aspnet-runtim
 
 ### Q# {#q}
 
+`Q#` code can be run on Jupyter notebooks with the apropriate kernel or via `python` thanks to the `qsharp` package.
+
+<a id="code-snippet--host.py"></a>
+```python
+import qsharp
+from QsharpNamespace import Operation_One, Operation_Two
+var1 = 10
+print("Simulation started...")
+Operation_One.simulate(par1=var1)
+Operation_Two.simulate(par2=var1,par3=5)
+```
+
+Operation `imported` are automatically found in `*.qs` files in the `host.py` directory.
+These imports are converted to `python` objects and have a `simulate()` function, taking the required arguments and passing them along to the `Q#` simulator.
+
 
 ### [Deutsch-Jozsa Algorithm]({{< relref "deutsch_jozsa_algorithm.md" >}}) {#deutsch-jozsa-algorithm--deutsch-jozsa-algorithm-dot-md}
 

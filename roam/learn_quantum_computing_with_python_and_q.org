@@ -74,6 +74,19 @@ $ dotnet iqsharp install
 
 If there are problems with ~iqsharp~ install the correct runtime, =aspnet-runtime= on the =AUR=.
 ** Q#
+~Q#~ code can be run on Jupyter notebooks with the apropriate kernel or via ~python~ thanks to the ~qsharp~ package.
+#+name: host.py
+#+begin_src python
+import qsharp
+from QsharpNamespace import Operation_One, Operation_Two
+var1 = 10
+print("Simulation started...")
+Operation_One.simulate(par1=var1)
+Operation_Two.simulate(par2=var1,par3=5)
+#+end_src
+Operation ~imported~ are automatically found in =*.qs= files in the ~host.py~ directory.
+These imports are converted to ~python~ objects and have a ~simulate()~ function, taking the required arguments and passing them along to the ~Q#~ simulator.
+
 ** [[id:d7686f15-7f24-476e-9ecf-87ef577d5a4c][Deutsch-Jozsa Algorithm]]
 To use the algorithm on function $f$ to decide whether it is balanced or constant we need to define an /oracle/ for that function.
 - this is because functions can be /unreversible/

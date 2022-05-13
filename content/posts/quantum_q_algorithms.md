@@ -16,6 +16,11 @@ L'ambiente di esecuzione `Q#` puó essere configurato sul editor `Visual Studio 
 
 Oppure é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`.
 
+```bash
+$ conda create -n qsharp-env -c microsoft qsharp notebook
+$ conda activate qsharp-env
+```
+
 
 ## Algoritmo di Deutsch-Jozsa {#algoritmo-di-deutsch-jozsa}
 
@@ -64,7 +69,84 @@ I passi dell'algoritmo in particolare sono:
 
 #### single-bit Deutsch-Jozsa {#single-bit-deutsch-jozsa}
 
+```Q#
+operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
+    use control = Qubit();
+    use target = Qubit();
+
+    H(control);
+    X(target);
+    H(target);
+
+    oracle(control, target);
+
+    H(target);
+    X(target);
+
+    return MResetX(control) == One;
+}
+```
+
 
 #### n-bit Deutsch-Jozsa {#n-bit-deutsch-jozsa}
+
+```Q#
+operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
+    use control = Qubit[size];
+    use target = Qubit();
+
+    ApplyToEachA(H, control);
+    X(target);
+    H(target);
+
+    oracle(control, target);
+
+    H(target);
+    X(target);
+
+    let result = MResetX(control[0]) == One;
+    ResetAll(control);
+    return result;
+}
+function _And(a : Bool, b : Result) : Bool {
+      return a and ResultAsBool(b);
+}
+```
+
+
+## Oracoli {#oracoli}
+
+```Q#
+operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyZeroOracleN(control : Qubit[], target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracleN(control : Qubit[], target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
+    CNOT(control,target);
+  }
+
+  operation ApplyXOROracleN(control : Qubit[], target : Qubit) : Unit {
+    for qubit in control {
+        CNOT(qubit,target);
+    }
+  }
+
+  operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
+    X(control);
+    CNOT(control,target);
+    X(control);
+  }
+
+```
 
 [^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\)

@@ -11,6 +11,12 @@
 L'ambiente di esecuzione ~Q#~ puó essere configurato sul editor =Visual Studio Code= tramite l'add-on proprietario di Microsoft.
 
 Oppure é possibile sviluppare codice ~Q#~ ed eseguirlo tramite =Jupyter Notebook= tramite ~Python~.
+
+#+begin_src bash
+$ conda create -n qsharp-env -c microsoft qsharp notebook
+$ conda activate qsharp-env
+#+end_src
+
 * Algoritmo di Deutsch-Jozsa
 L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantico. Spingendo la ricerca in questa direzione per determinati problemi.
 
@@ -51,6 +57,79 @@ I passi dell'algoritmo in particolare sono:
 [[../media/img/deutsch_steps.png]]
 
 *** single-bit Deutsch-Jozsa
+#+begin_src Q#
+operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
+    use control = Qubit();
+    use target = Qubit();
+
+    H(control);
+    X(target);
+    H(target);
+
+    oracle(control, target);
+
+    H(target);
+    X(target);
+
+    return MResetX(control) == One;
+}
+#+end_src
 *** n-bit Deutsch-Jozsa
+#+begin_src Q#
+operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
+    use control = Qubit[size];
+    use target = Qubit();
+
+    ApplyToEachA(H, control);
+    X(target);
+    H(target);
+
+    oracle(control, target);
+
+    H(target);
+    X(target);
+
+    let result = MResetX(control[0]) == One;
+    ResetAll(control);
+    return result;
+}
+function _And(a : Bool, b : Result) : Bool {
+      return a and ResultAsBool(b);
+}
+#+end_src
+
+* Oracoli
+#+begin_src Q#
+operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyZeroOracleN(control : Qubit[], target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracleN(control : Qubit[], target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
+    CNOT(control,target);
+  }
+
+  operation ApplyXOROracleN(control : Qubit[], target : Qubit) : Unit {
+    for qubit in control {
+        CNOT(qubit,target);
+    }
+  }
+
+  operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
+    X(control);
+    CNOT(control,target);
+    X(control);
+  }
+
+#+end_src
 
 [fn:oplus] dove $\oplus$ é l'addizione modulo $2$
