@@ -781,8 +781,6 @@ build content/posts/stanislaw_jerzy_lec.md: org2md roam/stanislaw_jerzy_lec.org
 
 build content/posts/strawman.md: org2md roam/strawman.org
 
-build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
-
 build content/posts/system_crafters.md: org2md roam/system_crafters.org
 
 build content/posts/the_cat_lady.md: org2md roam/the_cat_lady.org
@@ -866,3 +864,63 @@ build content/posts/quantum_device_simulator.md: org2md roam/quantum_device_simu
 build content/posts/quantum_q_algorithms.md: org2md roam/quantum_q_algorithms.org
 
 build content/posts/adding_double_borders_to_bspwm.md: org2md roam/adding_double_borders_to_bspwm.org
+
+build content/posts/abstract_factory.md: org2md roam/abstract_factory.org
+
+build content/posts/adapter.md: org2md roam/adapter.org
+
+build content/posts/bridge.md: org2md roam/bridge.org
+
+build content/posts/builder.md: org2md roam/builder.org
+
+build content/posts/chain_of_responsibility.md: org2md roam/chain_of_responsibility.org
+
+build content/posts/composite.md: org2md roam/composite.org
+
+build content/posts/decorator.md: org2md roam/decorator.org
+
+build content/posts/double_check_locking.md: org2md roam/double_check_locking.org
+
+build content/posts/facade.md: org2md roam/facade.org
+
+build content/posts/factory_method.md: org2md roam/factory_method.org
+
+build content/posts/flyweight.md: org2md roam/flyweight.org
+
+build content/posts/gof.md: org2md roam/gof.org
+
+build content/posts/grasp.md: org2md roam/grasp.org
+
+build content/posts/lazy_initialization.md: org2md roam/lazy_initialization.org
+
+build content/posts/prototype_pattern.md: org2md roam/prototype_pattern.org
+
+build content/posts/proxy.md: org2md roam/proxy.org
+
+build content/posts/singleton.md: org2md roam/singleton.org
+
+build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
+
+build content/posts/command.md: org2md roam/command.org
+
+build content/posts/event_listener.md: org2md roam/event_listener.org
+
+build content/posts/hirarchical_visitor.md: org2md roam/hirarchical_visitor.org
+
+build content/posts/interpreter.md: org2md roam/interpreter.org
+
+build content/posts/iterator.md: org2md roam/iterator.org
+
+build content/posts/mediator.md: org2md roam/mediator.org
+
+build content/posts/memento.md: org2md roam/memento.org
+
+build content/posts/observer.md: org2md roam/observer.org
+
+build content/posts/state.md: org2md roam/state.org
+
+build content/posts/strategy.md: org2md roam/strategy.org
+
+build content/posts/template_method.md: org2md roam/template_method.org
+
+build content/posts/visitor.md: org2md roam/visitor.org

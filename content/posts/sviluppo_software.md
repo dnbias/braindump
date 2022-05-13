@@ -441,7 +441,7 @@ Sono correlate agli obblighi o al comportamento di un oggetto, sono di due tipi:
 
 > Capire le responsabilitá é fondamentale per una buona programmazione a oggetti. - [Martin Fowler]({{< relref "martin_fowler.md" >}})
 
-`GRASP` tratta i pattern di base per l'assegnazione di responsabilitá.
+[GRASP]({{< relref "grasp.md" >}}) tratta i pattern di base per l'assegnazione di responsabilitá.
 
 -   buon [blog post](http://www.kamilgrzybek.com/design/grasp-explained/) a riguardo
 
@@ -545,9 +545,105 @@ Il `Controller` é un pattern di delega:
 ### GoF {#gof}
 
 `Gang of Four`
-`GoF` sono idee di progettazione piú avanzate rispetto a  `GRASP`.
+[GoF]({{< relref "gof.md" >}}) sono idee di progettazione piú avanzate rispetto a  [GRASP]({{< relref "grasp.md" >}}).
 
+-   non sono proprio principi
 -   articoli di [journaldev](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns) a riguardo
+
+Soluzioni progettuali comuni, emengono dal codice di progetti di successo.
+Un fattore emerso é la superioritá della _composizione_ rispetto all'_ereditarietá_:
+
+-   **Ereditarietá**
+    -   la sottoclasse puó accedere ai dettagli della superclasse
+    -   **whitebox**, a scatola aperta
+    -   é definita _staticamente_, non é modificabile a tempo di esecuzione
+    -   una modifica alla superclasse potrebbe avere ripercussioni indesiderate sulla classe che la estende
+        -   non rispetta l'incapsulamento
+-   **Composizione**
+    -   le funzionalitá sono ottenute tramite composizione/assemblamento di oggetti
+    -   riuso **blackbox**, i dettagli interni sono nascosti
+    -   una classe che utilizza un'altra classe puó referenziarla attraverso una _interfaccia_, questo meccanismo é dinamico
+        -   questa composizione tramite interfaccia rispetta l'incapsulamento, solo una modifica all'interfaccia comporterebbe ripercussioni
+
+Questo aiuta a mantenere le classi _incapsulate_ e _coese_.
+L'ereditarietá puó essere realizzato in due modi:
+
+1.  Polimorfismo
+    -   le sottoclassi possono essere scambiate l'una con l'altra
+    -   si utilizza una superclasse comune
+    -   si sfrutta _l'upcasting_
+2.  Specializzazione
+    -   le sottoclassi guadagnano elementi e proprietá rispetto alla classe base
+
+I pattern mostrano che il **polimorfismo** e il _binding dinamico_ é molto sfruttato, mentre la **specializzazione** non é comunemente utilizzata.
+
+
+#### Creazionali {#creazionali}
+
+Riguardanti l'instanziazione delle classi
+
+1.  [Abstract Factory]({{< relref "abstract_factory.md" >}})
+    -   _interfaccia_ factory
+    -   classe factory concreta per ciascuna famiglia di elementi da creare
+    -   opzionalmente definire una classe astratta che implementa l'interfaccia factory e fornisce servizi comuni alle factory concrete che la estendono
+    -   il cliente che la utilizza non ha conoscenza delle classi concrete
+        -   la factory si occupa di creare oggetti correlati tra loro
+    -   una variante crea la factory come [Singleton]({{< relref "singleton.md" >}})
+    -   utilizzata in libreria Java per le `GUI`
+2.  [Builder]({{< relref "builder.md" >}})
+3.  [Factory Method]({{< relref "factory_method.md" >}})
+4.  [Lazy Initialization]({{< relref "lazy_initialization.md" >}})
+5.  [Prototype Pattern]({{< relref "prototype_pattern.md" >}})
+6.  [Singleton]({{< relref "singleton.md" >}})
+    -   é consentita/richiesta <span class="underline">una sola istanza</span> di una classe
+    -   gli altri oggetti hanno bisogno di un punto di accesso globale e singolo al _singleton_
+    -   si definisce un **metodo statico** della classe che restituisce l'oggetto _singleton_
+        -   questo in Java
+        -   restituisce un puntatore all'oggetto se giá esiste, se non esiste ancora prima lo crea
+            -   [Lazy Initialization]({{< relref "lazy_initialization.md" >}})
+        -   questa implementazione é preferibile
+            -   la classe puó essere raffinata in sottoclassi
+            -   la maggior parte dei meccanismi di comunicazione remota object oriented supporta l'accesso remoto solo a metodi d'istanza
+            -   una classe non é sempre _singleton_ in tutti i contesti applicativi, dipende dalla `virtual machine`
+    -   il _singleton_ puó essere anche implementato come **classe statica**
+        -   non un vero e proprio _singleton_, si lavora con la classe statica non l'oggetto
+        -   la classe statica ha metodi statici che offrono ció che é richiesto
+    -   in `UML` é indicato con un \\(1\\) nella sezione del nome, in alto a destra
+    -   puó esserci concorrenza in _multithreading_
+7.  [Double-check Locking]({{< relref "double_check_locking.md" >}})
+
+
+#### Strutturali {#strutturali}
+
+Riguardanti la struttura delle classi/oggeti
+
+1.  [Adapter]({{< relref "adapter.md" >}})
+2.  [Bridge]({{< relref "bridge.md" >}})
+3.  [Composite]({{< relref "composite.md" >}})
+4.  [Decorator]({{< relref "decorator.md" >}})
+5.  [Facade]({{< relref "facade.md" >}})
+6.  [Flyweight]({{< relref "flyweight.md" >}})
+7.  [Proxy]({{< relref "proxy.md" >}})
+
+
+#### Comportamentali {#comportamentali}
+
+Riguardanti l'interazione tra classi
+
+1.  [Chain of Responsibility]({{< relref "chain_of_responsibility.md" >}})
+    -   utilizzato nella gestione delle _eccezioni_, delega a ritroso
+2.  [Command]({{< relref "command.md" >}})
+3.  [Event Listener]({{< relref "event_listener.md" >}})
+4.  [Hirarchical Visitor]({{< relref "hirarchical_visitor.md" >}})
+5.  [Interpreter]({{< relref "interpreter.md" >}})
+6.  [Iterator]({{< relref "iterator.md" >}})
+7.  [Mediator]({{< relref "mediator.md" >}})
+8.  [Memento]({{< relref "memento.md" >}})
+9.  [Observer]({{< relref "observer.md" >}})
+10. [State]({{< relref "state.md" >}})
+11. [Strategy]({{< relref "strategy.md" >}})
+12. [Template method]({{< relref "template_method.md" >}})
+13. [Visitor]({{< relref "visitor.md" >}})
 
 
 ## Laboratorio {#laboratorio}
