@@ -476,9 +476,25 @@ Riguardanti l'instanziazione delle classi
 *** Strutturali
 Riguardanti la struttura delle classi/oggeti
 1. [[id:16fcdc54-e304-423d-ade5-41a7cc513714][Adapter]]
+   - gestire interfacce incompatibili
+   - fornire interfaccia stabile a comportamenti simili ma interfacce diverse
+   - converti l'interfaccia originale in un'altra interfaccia, attraverso un /adapter/ intermedio
+   - da preferire l'utilizzo di un riferimento ~adaptee~ da parte del ~Adapter~, per incapsulamento
+     + questo piuttosto che /estendere/ direttamente l'~Adaptee~
 2. [[id:61f4610e-c782-4e7d-96eb-23ac0387dbf1][Bridge]]
 3. [[id:b166acf6-0477-455c-b93c-476e6a7a141c][Composite]]
-4. [[id:df9b6536-86f5-4371-9f45-ad04b16f7d51][Decorator]]
+   - trattare un gruppo o una struttura composta nello stesso modo di un oggetto non composto
+   - si definiscono classi per gli oggetti composti e atomici in modo che implementino la stessa /interfaccia/
+   - rappresenta gerarchie /tutto-parte/
+   - permette di ignorare le differenze tra oggetti semplici e composti
+     + saranno le differenze interne a definire le operazioni, il ~client~ non vede questo
+   - costruisce strutture ricorsive dove il cliente gestisce un'unica entitá
+4. [[id:df9b6536-86f5-4371-9f45-ad04b16f7d51][Decorator]] o /Wrapper/
+   - permettere di assegnare responsabilitá addizionali a un oggetto dinamicamente
+   - inglobare l'oggetto all'interno di un altro che aggiunge le nuove funzionalitá
+     + piú flessibile dell'estensione della classe
+     + evitano l'esplosione delle sotto classi
+     + simile al [[id:b166acf6-0477-455c-b93c-476e6a7a141c][Composite]] ma aggiunge funzionalitá
 5. [[id:11b4e0f5-4448-40e3-8f15-5e25f4bde9ae][Facade]]
 6. [[id:6f308c5d-968c-4ce2-a2b7-7af73d9a405a][Flyweight]]
 7. [[id:ef9c3f09-bf5f-485b-9e71-9275ba3235d5][Proxy]]

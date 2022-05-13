@@ -618,9 +618,25 @@ Riguardanti l'instanziazione delle classi
 Riguardanti la struttura delle classi/oggeti
 
 1.  [Adapter]({{< relref "adapter.md" >}})
+    -   gestire interfacce incompatibili
+    -   fornire interfaccia stabile a comportamenti simili ma interfacce diverse
+    -   converti l'interfaccia originale in un'altra interfaccia, attraverso un _adapter_ intermedio
+    -   da preferire l'utilizzo di un riferimento `adaptee` da parte del `Adapter`, per incapsulamento
+        -   questo piuttosto che _estendere_ direttamente l'`Adaptee`
 2.  [Bridge]({{< relref "bridge.md" >}})
 3.  [Composite]({{< relref "composite.md" >}})
-4.  [Decorator]({{< relref "decorator.md" >}})
+    -   trattare un gruppo o una struttura composta nello stesso modo di un oggetto non composto
+    -   si definiscono classi per gli oggetti composti e atomici in modo che implementino la stessa _interfaccia_
+    -   rappresenta gerarchie _tutto-parte_
+    -   permette di ignorare le differenze tra oggetti semplici e composti
+        -   saranno le differenze interne a definire le operazioni, il `client` non vede questo
+    -   costruisce strutture ricorsive dove il cliente gestisce un'unica entitá
+4.  [Decorator]({{< relref "decorator.md" >}}) o _Wrapper_
+    -   permettere di assegnare responsabilitá addizionali a un oggetto dinamicamente
+    -   inglobare l'oggetto all'interno di un altro che aggiunge le nuove funzionalitá
+        -   piú flessibile dell'estensione della classe
+        -   evitano l'esplosione delle sotto classi
+        -   simile al [Composite]({{< relref "composite.md" >}}) ma aggiunge funzionalitá
 5.  [Facade]({{< relref "facade.md" >}})
 6.  [Flyweight]({{< relref "flyweight.md" >}})
 7.  [Proxy]({{< relref "proxy.md" >}})

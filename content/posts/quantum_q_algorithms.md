@@ -1,5 +1,5 @@
 +++
-title = "Quantum Q# Algorithms"
+title = "Quantum e Algoritmi in Q#"
 author = ["Daniel Biasiotto"]
 date = 2022-05-12T19:31:00+02:00
 tags = ["university", "thesis", "compsci"]
@@ -49,7 +49,17 @@ In quanto il numero di input possibili é \\(2^{n}\\) questo significa che saran
 
 Tramite la computazione quantica é possibile risolvere questo problema con un'unica chiamata della funzione \\(f(x)\\).
 Questo a patto che la funzione \\(f\\) sia implementata come un oracolo quantico, che mappi:
-/[|x&rang; | y &rang;$ a $| x &rang; |y &oplus; f(x) &rang;/][^fn:1]
+\\(|x\rangle | y \rangle\\) a \\(| x \rangle |y \oplus f(x) \rangle\\)&nbsp;[^fn:1]
+
+I passi dell'algoritmo in particolare sono:
+
+1.  prepara 2 registri di `qubit`, il primo di \\(n\\) `qubit` inizializzato a \\(| 0 \rangle\\) e il secondo di un singolo `qubit` inizializzato a \\(| 1\rangle\\)
+2.  applica `Hadamard` a entrambi i registri
+3.  applica l'oracolo quantico
+4.  a questo punto il secondo registro puó essere ignorato, riapplica `Hadamard` al primo registro
+5.  misura il primo registro, questa risulta \\(1\\) per \\(f(x)\\) costante e \\(0\\) altrimenti nel caso bilanciato
+
+{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 1: </span>i passi dell'algoritmo in forma di circuito" >}}
 
 
 #### single-bit Deutsch-Jozsa {#single-bit-deutsch-jozsa}
@@ -58,13 +68,3 @@ Questo a patto che la funzione \\(f\\) sia implementata come un oracolo quantico
 #### n-bit Deutsch-Jozsa {#n-bit-deutsch-jozsa}
 
 [^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\)
-
-    I passi dell'algoritmo in particolare sono:
-
-    1.  prepara 2 registri di `qubit`, il primo di \\(n\\) `qubit` inizializzato a \\(| 0 \rangle\\) e il secondo di un singolo `qubit` inizializzato a \\(| 1\rangle\\)
-    2.  applica `Hadamard` a entrambi i registri
-    3.  applica l'oracolo quantico
-    4.  a questo punto il secondo registro puó essere ignorato, riapplica `Hadamard` al primo registro
-    5.  misura il primo registro, questa risulta \\(1\\) per \\(f(x)\\) costante e \\(0\\) altrimenti nel caso bilanciato
-
-    {{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 1: </span>i passi dell'algoritmo in forma di circuito" >}}

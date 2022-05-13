@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       07f2115c-edc3-4541-812b-19534cf6e019
 :END:
-#+title: Quantum Q# Algorithms  
+#+title: Quantum e Algoritmi in Q#
 #+date: [2022-05-12 Thu 19:31]
 #+filetags: university thesis compsci
 - Tags: [[id:6e504ff7-9a50-4a47-901d-4c524c229bc6][Quantum Computing]], [[id:b9d02edb-6458-4237-88de-41fb865974d2][CalcCompl]], [[id:d7686f15-7f24-476e-9ecf-87ef577d5a4c][Deutsch-Jozsa Algorithm]]
@@ -37,9 +37,8 @@ In quanto il numero di input possibili é $2^{n}$ questo significa che saranno n
 ** La Soluzione Quantica
 Tramite la computazione quantica é possibile risolvere questo problema con un'unica chiamata della funzione $f(x)$.
 Questo a patto che la funzione $f$ sia implementata come un oracolo quantico, che mappi:
-/[|x\rangle | y \rangle$ a $| x \rangle |y \oplus f(x) \rangle/][fn:oplus]
+$|x\rangle | y \rangle$ a $| x \rangle |y \oplus f(x) \rangle$ [fn:oplus]
 
-[fn:oplus] dove $\oplus$ é l'addizione modulo $2$
 
 I passi dell'algoritmo in particolare sono:
 1. prepara 2 registri di =qubit=, il primo di $n$ =qubit= inizializzato a $| 0 \rangle$ e il secondo di un singolo =qubit= inizializzato a $| 1\rangle$
@@ -53,3 +52,5 @@ I passi dell'algoritmo in particolare sono:
 
 *** single-bit Deutsch-Jozsa
 *** n-bit Deutsch-Jozsa
+
+[fn:oplus] dove $\oplus$ é l'addizione modulo $2$
