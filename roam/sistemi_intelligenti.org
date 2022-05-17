@@ -507,7 +507,7 @@ Caratterizzati da:
   + permette la valutazione delle formule
 - *Conseguenza*  $\vDash$
   + in generale il lato sinistro é sottoinsieme del destro
-    * per ogni caso di $F_{1}$ vale anche $F_{2}$:  $F_{1}_{}_{} \vDash F_{2}$
+    * per ogni caso di $F_{1}$ vale anche $F_{2}: F_{1}_{}_{} \vDash F_{2}$
   + *non é* l'/implicazione/ logica, sono su piani diversi anche se sono simili
 - *Equivalenza*  $\equiv$
   + $F_{1} \vDash F_{2} \land F_{2} \vDash F_{1}$
@@ -668,7 +668,7 @@ La base di conoscenza puó essere interrogata con ~ask~
     * =Backward Chaining=
       * stesse considerazioni del =FC= ma piú efficiente
 - =Lifting= della Risoluzione[fn:unificatore]
-\[\frac{l_{1}\lor \cdots \lor l_{k} \qquad m_{1} \lor \cdots \lor m_{n}}{\text{subst}(\Theta, l_{1} \lor \cdots \lor l_{i-1} \lor l_{i+1} \lor \cdots \lor l_{k} \lor m_{1}  \lor \cdots \lor m_{j-1} \lor m_{j+1} \lor \cdots \lor m_{n})\]
+  - $\frac{l_{1}\lor \cdots \lor l_{k} \qquad m_{1} \lor \cdots \lor m_{n}}{\text{subst}(\Theta, l_{1} \lor \cdots \lor l_{i-1} \lor l_{i+1} \lor \cdots \lor l_{k} \lor m_{1}  \lor \cdots \lor m_{j-1} \lor m_{j+1} \lor \cdots \lor m_{n})$
   - $KB_{\text{FOL}} \rightarrow_{\text{traduzione}}  KB_{\text{FOL-CNF}}$
     1. Eliminazione delle *implicazioni*
     2. Spostamento delle *negazioni all'interno* ($\lnot \forall \equiv \exists \lnot$)
@@ -694,3 +694,74 @@ Riduce il numero di modelli a un numero finito.
 [fn:1] Se il dominio $D$ é un insieme illimitato e se qualche formula $P$ dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
 
 ** Ontologie
+Le categorie vengono =reificate=, rese oggetti
+- questi oggetti sono utilizzati al posto dei predicati utilizzati in =FOL=
+Vengono aggiunti predicati:
+- ~Member~ applicabile a /istanze/ di oggetti e una /categoria/
+  + ~true~ se l'istanza appartiene alla categoria
+- ~IS-A~ applicabile a due /categorie/
+  + vera se la prima é una sottocategoria della seconda
+
+Con questi elementi si possono definire =tassonomie=
+- insieme di regole di sottocategorie / sottoclassi
+
+Le categorie di una tassonomia possono essere caratterizzate tramite la definizione di =proprietá=:
+- ~Member(X, Pallone)~ $\Rightarrow$ ~Sferico(X)~
+- le proprietá si ereditano dalle superclassi
+- possono essere contraddette dalle proprietá delle sottoclassi
+
+Le categorie:
+- possono essere =disgiunte= se non hanno istanze in comune nelle proprie sottoclassi
+  + ~Disjoint(S)~
+- costituiscono una =decomposizione esaustiva= rispetto a una $C$ loro superclasse quando le istanze di $C$ sono esattamente l'unione delle istanze di queste sottoclassi
+  + ~ExhaustiveDec(S,C)~
+- costituiscono una =partizione= se valgono entrambe le precedenti
+  + ~Partition(S,C)~
+
+Strutturalmente:
+- ~Part-of(x,y)~
+- ~On-top(x,y)~
+
+L'=ontologia= é una forma piú generale delle =tassonomie=
+- hanno forma di grafo e non di albero
+- si struttura in
+  + =T-box=
+    * generale, concettualizzazione intensionale
+    * quantificato universalmente
+  + =A-box=
+    * su istanze specifiche, estensionale
+    * contiene fatti che devono essere /coerenti/ con il contenuto della =T-box=
+*** Ontologia come agente
+L'=ontologia= é la =Knowledge Base=, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti.
+
+Un'ontologia puó essere interrogata in maniere diverse
+1. istanza appartiene a categoria
+2. istanza gode di proprietá
+3. differenza fra categorie
+4. identificazione di istanze
+
+Esempi ontologie: [[id:ee8ddd33-8177-497c-a5e3-3fdafe40c021][Provenance]], [[id:6456f3d1-2bc3-4e50-abf0-1379bef1278d][Semantic Web]]
+Utilizzate da: =DBpedia=, =CreativeCommons=, =FOAF=, =Press Association=, =Linked (Open) Data=
+*** Data Interchange
+=RDF= - Resource Description Framework
+- Un linguaggio / modello di rappresentazione
+- Base di linguaggi come =OWL=, =SKOS=, =FOAF=
+- Rappresentato in =XML=
+
+*Triple* soggetto, predicato, oggetto possono essere rappresentate in forma di grafo.
+*** Knowledge Engineering
+1. Identificazione dei concetti
+   - elencare tutti i concetti riferiti nel =DB= di partenza
+   - solitamento /sostantivi/
+   - definire etichette e descrizioni
+   - identificare in seguito le sottoclassi
+2. Controllare se esistono ontologie giá definite online almeno parzialmente
+   - allineamento delle ontologie necessario se non compatibili
+   - matching di ontologie
+   - la corrispondenza non sará mai perfetta
+3. definire =T-box=
+4. definire =A-box=
+
+Strumenti:
+- =Protégé=
+- =CEL=, =FaCT++=
