@@ -928,3 +928,9 @@ build content/posts/visitor.md: org2md roam/visitor.org
 build content/posts/automatic_table_of_content_in_css_js.md: org2md roam/automatic_table_of_content_in_css_js.org
 
 build content/posts/generate_ids_for_headings_in_js.md: org2md roam/generate_ids_for_headings_in_js.org
+
+build content/posts/provenance.md: org2md roam/provenance.org
+
+build content/posts/semantic_web.md: org2md roam/semantic_web.org
+
+build content/posts/sparql.md: org2md roam/sparql.org

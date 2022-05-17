@@ -681,7 +681,7 @@ _Per la rappresentazione di Knowledge Base_
     -   permette la valutazione delle formule
 -   **Conseguenza**  \\(\vDash\\)
     -   in generale il lato sinistro é sottoinsieme del destro
-        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}\\):  \\(F\_{1}\_{}\_{} \vDash F\_{2}\\)
+        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}: F\_{1}\_{}\_{} \vDash F\_{2}\\)
     -   **non é** l'_implicazione_ logica, sono su piani diversi anche se sono simili
 -   **Equivalenza**  \\(\equiv\\)
     -   \\(F\_{1} \vDash F\_{2} \land F\_{2} \vDash F\_{1}\\)
@@ -876,18 +876,16 @@ La base di conoscenza puó essere interrogata con `ask`
 <!--listend-->
 
 -   `Lifting` della Risoluzione[^fn:4]
-
-\\[\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})\\]
-
--   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
-    1.  Eliminazione delle **implicazioni**
-    2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
-    3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
-    4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:5]
-        -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
-        -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
-        -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
-    5.  Eliminazione dei \\(\forall\\)
+    -   \\(\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})\\)
+    -   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
+        1.  Eliminazione delle **implicazioni**
+        2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
+        3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
+        4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:5]
+            -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
+            -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
+            -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
+        5.  Eliminazione dei \\(\forall\\)
 
 
 #### Database Semantics {#database-semantics}
@@ -900,6 +898,98 @@ Riduce il numero di modelli a un numero finito.
 
 
 ### Ontologie {#ontologie}
+
+Le categorie vengono `reificate`, rese oggetti
+
+-   questi oggetti sono utilizzati al posto dei predicati utilizzati in `FOL`
+
+Vengono aggiunti predicati:
+
+-   `Member` applicabile a _istanze_ di oggetti e una _categoria_
+    -   `true` se l'istanza appartiene alla categoria
+-   `IS-A` applicabile a due _categorie_
+    -   vera se la prima é una sottocategoria della seconda
+
+Con questi elementi si possono definire `tassonomie`
+
+-   insieme di regole di sottocategorie / sottoclassi
+
+Le categorie di una tassonomia possono essere caratterizzate tramite la definizione di `proprietá`:
+
+-   `Member(X, Pallone)` \\(\Rightarrow\\) `Sferico(X)`
+-   le proprietá si ereditano dalle superclassi
+-   possono essere contraddette dalle proprietá delle sottoclassi
+
+Le categorie:
+
+-   possono essere `disgiunte` se non hanno istanze in comune nelle proprie sottoclassi
+    -   `Disjoint(S)`
+-   costituiscono una `decomposizione esaustiva` rispetto a una \\(C\\) loro superclasse quando le istanze di \\(C\\) sono esattamente l'unione delle istanze di queste sottoclassi
+    -   `ExhaustiveDec(S,C)`
+-   costituiscono una `partizione` se valgono entrambe le precedenti
+    -   `Partition(S,C)`
+
+Strutturalmente:
+
+-   `Part-of(x,y)`
+-   `On-top(x,y)`
+
+L'`ontologia` é una forma piú generale delle `tassonomie`
+
+-   hanno forma di grafo e non di albero
+-   si struttura in
+    -   `T-box`
+        -   generale, concettualizzazione intensionale
+        -   quantificato universalmente
+    -   `A-box`
+        -   su istanze specifiche, estensionale
+        -   contiene fatti che devono essere _coerenti_ con il contenuto della `T-box`
+
+
+#### Ontologia come agente {#ontologia-come-agente}
+
+L'`ontologia` é la `Knowledge Base`, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti.
+
+Un'ontologia puó essere interrogata in maniere diverse
+
+1.  istanza appartiene a categoria
+2.  istanza gode di proprietá
+3.  differenza fra categorie
+4.  identificazione di istanze
+
+Esempi ontologie: [Provenance]({{< relref "provenance.md" >}}), [Semantic Web]({{< relref "semantic_web.md" >}})
+Utilizzate da: `DBpedia`, `CreativeCommons`, `FOAF`, `Press Association`, `Linked (Open) Data`
+
+
+#### Data Interchange {#data-interchange}
+
+`RDF` - Resource Description Framework
+
+-   Un linguaggio / modello di rappresentazione
+-   Base di linguaggi come `OWL`, `SKOS`, `FOAF`
+-   Rappresentato in `XML`
+
+**Triple** soggetto, predicato, oggetto possono essere rappresentate in forma di grafo.
+
+
+#### Knowledge Engineering {#knowledge-engineering}
+
+1.  Identificazione dei concetti
+    -   elencare tutti i concetti riferiti nel `DB` di partenza
+    -   solitamento _sostantivi_
+    -   definire etichette e descrizioni
+    -   identificare in seguito le sottoclassi
+2.  Controllare se esistono ontologie giá definite online almeno parzialmente
+    -   allineamento delle ontologie necessario se non compatibili
+    -   matching di ontologie
+    -   la corrispondenza non sará mai perfetta
+3.  definire `T-box`
+4.  definire `A-box`
+
+Strumenti:
+
+-   `Protégé`
+-   `CEL`, `FaCT++`
 
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
 [^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti
