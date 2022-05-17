@@ -681,7 +681,7 @@ _Per la rappresentazione di Knowledge Base_
     -   permette la valutazione delle formule
 -   **Conseguenza**  \\(\vDash\\)
     -   in generale il lato sinistro é sottoinsieme del destro
-        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}\\): \\(F\_{}\_{}\_{1} \vDash F\_{2}\\)
+        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}\\):  \\(F\_{1}\_{}\_{} \vDash F\_{2}\\)
     -   **non é** l'_implicazione_ logica, sono su piani diversi anche se sono simili
 -   **Equivalenza**  \\(\equiv\\)
     -   \\(F\_{1} \vDash F\_{2} \land F\_{2} \vDash F\_{1}\\)
@@ -695,16 +695,21 @@ _Per la rappresentazione di Knowledge Base_
     -   formula per il quale esiste qualche modello in cui é vera
 -   **Inferenza**  \\(\vdash\\)
     -   propagazione informazione
-    -   \\[\frac{\text{premesse}}{\text{conclusione}}\\]
-    -   **Algoritmi di Inferenza** manipolano inferenze per derivare formule
-        1.  correttezza (_soundness_)
-            -   \\(KB \vdash\_{i} A \implies KB \vDash A\\)
-        2.  completezza
-            -   \\(KB \vDash\_{} A \implies KB \vdash\_{i} A\\)
+
+\\[\frac{\text{premesse}}{\text{conclusione}}\\]
+
+-   **Algoritmi di Inferenza** manipolano inferenze per derivare formule
+    1.  correttezza (_soundness_)
+        -   \\(KB \vdash\_{i} A \implies KB \vDash A\\)
+    2.  completezza
+        -   \\(KB \vDash\_{} A \implies KB \vdash\_{i} A\\)
+
+<!--listend-->
+
 -   **Grounding**
 
 
-#### Semantica {#semantica}
+### Semantica {#semantica}
 
 -   \\(KB\_{LP}\vDash P\_{LP}\\)
 
@@ -723,7 +728,7 @@ Vari approcci:
             -   \\(Q\\) é conseguenza logica di \\(R\\)
 
 
-##### Theorem Proving {#theorem-proving}
+#### Theorem Proving {#theorem-proving}
 
 1.  Algoritmo di Ricerca (o di inferenza)
 2.  Insieme di regole di inferenza
@@ -744,7 +749,7 @@ Vari approcci:
 -   questo é utilizzato nella dimostrazione per refutazione
 
 
-###### Horn Clauses {#horn-clauses}
+##### Horn Clauses {#horn-clauses}
 
 Un caso particolare delle clausole.
 
@@ -757,7 +762,7 @@ ad esempio:
 \\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
 
 
-###### Forward Chaining {#forward-chaining}
+##### Forward Chaining {#forward-chaining}
 
 Lineare nel numero di clausole
 
@@ -767,7 +772,7 @@ Lineare nel numero di clausole
 {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
 
 
-###### Backward Chaining {#backward-chaining}
+##### Backward Chaining {#backward-chaining}
 
 Parte dalla formula da dimostare e va a ritroso
 
@@ -777,7 +782,7 @@ Parte dalla formula da dimostare e va a ritroso
 {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
 
 
-##### First Order Logic {#first-order-logic}
+#### First Order Logic {#first-order-logic}
 
 -   dichiarativa
     -   separa conoscenza da inferenza
@@ -796,8 +801,8 @@ Elementi:
     -   \\(\forall\\) viene espanso in una catena di \\(\land\\)
     -   \\(\exists\\) viene espanso in una catena di \\(\lor\\)
     -   le espansioni vengono fatte sostituendo alla variabile **tutte** le costanti del modello
-    -   \\[\exists x \lnot F \equiv \lnot \forall x F\\]
-    -   \\[\exists x F \equiv \lnot \forall x \lnot F\\]
+    -   \\(\exists x \lnot F \equiv \lnot \forall x F\\)
+    -   \\(\exists x F \equiv \lnot \forall x \lnot F\\)
 -   punteggiatura
 
 Le formule in `FOL` sono poi _interpretate_
@@ -825,23 +830,23 @@ La base di conoscenza puó essere interrogata con `ask`
     -   quindi la variabile \\(x\\) é interpretata in senso esistenziale ( \\(\exists\\) )
 
 
-###### Clausole di Horn {#clausole-di-horn}
+##### Clausole di Horn {#clausole-di-horn}
 
 -   disgiunzioni di letterali di cui al piú uno é positivo
 -   atomiche
 -   implicazioni il cui antecedente é una congiunzione di letterali
 
 
-###### Come fare Inferenza su FOL {#come-fare-inferenza-su-fol}
+##### Inferenza su FOL {#inferenza-su-fol}
 
 -   `Proposizionalizzazione`
     -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
     -   Regola di Instanziazione Universale - `UI`
-        -   \\[\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\]
+        -   \\(\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\)
         -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
         -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
     -   Regola di Instanziazione Esistenziale - `EI`
-        -   \\[\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\]
+        -   \\(\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\)
         -   \\(k\\) costante di Skolem, nuova
             -   non compare nella `KB`
         -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\)
@@ -855,19 +860,37 @@ La base di conoscenza puó essere interrogata con `ask`
         -   crea delle basi di conoscenza grandi con le regole
 -   `Lifting` delle regole di inferenza
     -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
-    -   **Modus Ponens Generalizzato**
-        -   \\[\frac{p\_{1}',\cdots ,p\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]&nbsp;[^fn:2]
-        -   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle p\_{i}', p\_{i} \rangle\\) per cui \\(p\_{i}' \theta = p\_{i} \theta\\) per ogni \\(i\in [1,n]\\)
-    -   `Unification` (Martelli/Montanari)
-        -   algoritmo di ricerca che date due formule trova la sostituzione \\(\theta\\) piú generale che le unifichi
-    -   `Forward Chaining`
-        -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:3]
-            -   in caso contrario il caso negativo puó non terminare
-    -   `Backward Chaining`
-        -   stesse considerazioni del `FC` ma piú efficiente
+    -   **Modus Ponens Generalizzato**[^fn:2]
+
+\\[\frac{p\_{1}',\cdots ,p\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
+
+-   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle p\_{i}', p\_{i} \rangle\\) per cui \\(p\_{i}' \theta = p\_{i} \theta\\) per ogni \\(i\in [1,n]\\)
+-   `Unification` (Martelli/Montanari)
+    -   algoritmo di ricerca che date due formule trova la sostituzione \\(\theta\\) piú generale che le unifichi
+-   `Forward Chaining`
+    -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:3]
+        -   in caso contrario il caso negativo puó non terminare
+-   `Backward Chaining`
+    -   stesse considerazioni del `FC` ma piú efficiente
+
+<!--listend-->
+
+-   `Lifting` della Risoluzione[^fn:4]
+
+\\[\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})\\]
+
+-   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
+    1.  Eliminazione delle **implicazioni**
+    2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
+    3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
+    4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:5]
+        -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
+        -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
+        -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
+    5.  Eliminazione dei \\(\forall\\)
 
 
-##### Database Semantics {#database-semantics}
+#### Database Semantics {#database-semantics}
 
 -   unicitá dei nomi
 -   closed-world assumption
@@ -875,6 +898,11 @@ La base di conoscenza puó essere interrogata con `ask`
 
 Riduce il numero di modelli a un numero finito.
 
+
+### Ontologie {#ontologie}
+
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
 [^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti
 [^fn:3]: una `KB` senza funzioni
+[^fn:4]: \\(\Theta\\) unificatore di \\(l\_{i}\\) e \\(\lnot m\_{j}\\)
+[^fn:5]: esistenziali _in scope_ di universali
