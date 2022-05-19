@@ -492,7 +492,7 @@ Riguardanti la struttura delle classi/oggeti
 4. [[id:df9b6536-86f5-4371-9f45-ad04b16f7d51][Decorator]] o /Wrapper/
    - permettere di assegnare responsabilitá addizionali a un oggetto dinamicamente
    - inglobare l'oggetto all'interno di un altro che aggiunge le nuove funzionalitá
-     + piú flessibile dell'estensione della classe
+     + piú flessibile dell'estensione della classe, completamente dinamico
      + evitano l'esplosione delle sotto classi
      + simile al [[id:b166acf6-0477-455c-b93c-476e6a7a141c][Composite]] ma aggiunge funzionalitá
 5. [[id:11b4e0f5-4448-40e3-8f15-5e25f4bde9ae][Facade]]
@@ -510,10 +510,27 @@ Riguardanti l'interazione tra classi
 7. [[id:13398893-4960-4ce7-ae8c-50037b881e39][Mediator]]
 8. [[id:0aaee7f1-4f57-4c54-a523-3133d8f6b0c3][Memento]]
 9. [[id:975404b1-5b7f-46f4-9fa9-a9c2b0b7a6f9][Observer]]
+   - oggetti /subscriber/ interessati ai cambiamenti o agli eventi di un oggetto /publisher/
+     + spesso associato al pattern architetturale =MVC=
+   - Il /publisher/ vuole un basso accoppiamento con i /subscriber/
+   - ~interface~ /subscriber/ o /listener/, gli oggetti subscriber implementano questa interfaccia
+     + il /publisher/ notifica i cambiamenti
+   - dipendenza *uno-a-molti*
 10. [[id:553570b8-f2bf-47de-9735-d8b80be2d73b][State]]
+    - il comportamento di un oggetto dipende dal suo stato
+      + i metodi contengono logica condizionale per casi
+    - classi /stato/ per ciascun stato implementanti una ~interface~ comune
+      + delega le operazioni che dipendono dallo stato all'oggetto stato corrente corrispondente
+      + assicura che l'oggetto contesto referenzi sempre un oggetto stato che riflette il suo stato corrente
 11. [[id:a43daa2a-ca97-4d87-922b-f825558d6ca9][Strategy]]
+    - algoritmi diversi che hanno obiettivi in comune
+    - stategie come oggetti distinti che implementano una ~interface~ comune
 12. [[id:14fead0a-ddba-4b2e-8c2a-89a6feeed8f2][Template method]]
 13. [[id:8091376c-f0a0-4631-a769-74c031331257][Visitor]]
+    - separare l'operazione applicata su un contenitore complesso dalla struttura dati cui é applicata
+    - oggetto ~ConcreteVisitor~ in grado di percorrere la collezione
+      + applica un metodo proprio su ogni oggetto ~Element~ visitato (parametro)
+    - gli oggetti della collezione implementano una ~interface~ ~Visitable~ che consente al visitatore di essere accettato e invocare l'operazione relativa all'elemento
 * Laboratorio
 Progetto =Cat & Ring=
 ** Fase Preliminare dell'ideazione
