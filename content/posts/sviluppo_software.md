@@ -634,7 +634,7 @@ Riguardanti la struttura delle classi/oggeti
 4.  [Decorator]({{< relref "decorator.md" >}}) o _Wrapper_
     -   permettere di assegnare responsabilitá addizionali a un oggetto dinamicamente
     -   inglobare l'oggetto all'interno di un altro che aggiunge le nuove funzionalitá
-        -   piú flessibile dell'estensione della classe
+        -   piú flessibile dell'estensione della classe, completamente dinamico
         -   evitano l'esplosione delle sotto classi
         -   simile al [Composite]({{< relref "composite.md" >}}) ma aggiunge funzionalitá
 5.  [Facade]({{< relref "facade.md" >}})
@@ -656,10 +656,27 @@ Riguardanti l'interazione tra classi
 7.  [Mediator]({{< relref "mediator.md" >}})
 8.  [Memento]({{< relref "memento.md" >}})
 9.  [Observer]({{< relref "observer.md" >}})
+    -   oggetti _subscriber_ interessati ai cambiamenti o agli eventi di un oggetto _publisher_
+        -   spesso associato al pattern architetturale `MVC`
+    -   Il _publisher_ vuole un basso accoppiamento con i _subscriber_
+    -   `interface` _subscriber_ o _listener_, gli oggetti subscriber implementano questa interfaccia
+        -   il _publisher_ notifica i cambiamenti
+    -   dipendenza **uno-a-molti**
 10. [State]({{< relref "state.md" >}})
+    -   il comportamento di un oggetto dipende dal suo stato
+        -   i metodi contengono logica condizionale per casi
+    -   classi _stato_ per ciascun stato implementanti una `interface` comune
+        -   delega le operazioni che dipendono dallo stato all'oggetto stato corrente corrispondente
+        -   assicura che l'oggetto contesto referenzi sempre un oggetto stato che riflette il suo stato corrente
 11. [Strategy]({{< relref "strategy.md" >}})
+    -   algoritmi diversi che hanno obiettivi in comune
+    -   stategie come oggetti distinti che implementano una `interface` comune
 12. [Template method]({{< relref "template_method.md" >}})
 13. [Visitor]({{< relref "visitor.md" >}})
+    -   separare l'operazione applicata su un contenitore complesso dalla struttura dati cui é applicata
+    -   oggetto `ConcreteVisitor` in grado di percorrere la collezione
+        -   applica un metodo proprio su ogni oggetto `Element` visitato (parametro)
+    -   gli oggetti della collezione implementano una `interface` `Visitable` che consente al visitatore di essere accettato e invocare l'operazione relativa all'elemento
 
 
 ## Laboratorio {#laboratorio}

@@ -891,10 +891,15 @@ La base di conoscenza puó essere interrogata con `ask`
 #### Database Semantics {#database-semantics}
 
 -   unicitá dei nomi
--   closed-world assumption
+-   _closed-world assumption_
+    -   ció che non é rappresentato é falso
+    -   questo é diverso dalle `Ontologie OWL` che assumono un mondo aperto
+        -   esiste il concetto di ignoto oltre al vero/falso
 -   domain closure
 
 Riduce il numero di modelli a un numero finito.
+
+Le `ontologie` a loro differenza possono avere istanze con ulteriori proprietá rispetto al concetto cui appartengono.
 
 
 ### Ontologie {#ontologie}
@@ -946,9 +951,28 @@ L'`ontologia` é una forma piú generale delle `tassonomie`
         -   contiene fatti che devono essere _coerenti_ con il contenuto della `T-box`
 
 
+#### Relazioni tra Ontologie {#relazioni-tra-ontologie}
+
+Nello stesso dominio:
+
+1.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">identiche</span>; sono due copie dello stesso file
+2.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">equivalenti</span>; condividono vocabolario e proprietá ma sono espresse in linguaggi diversi[^fn:6]
+3.  \\(O\_{1}\\) estende \\(O\_{2}\\); vocabolari e proprietá di \\(O\_{2}\\) sono preservati in \\(O\_{1}\\) ma non viceversa
+4.  `Weakly-Translatable`
+    -   non si introducono inconsistenze
+5.  `Strongly-Translatable`
+    -   il vocabolario di `Source` é completamente mappabili in concetti di `Dest`
+    -   le proprietá di `Source` valgono in `Dest`
+    -   non c'é perdita di informazione
+    -   non si introducono inconsistenze
+6.  `Approx-Translatable`
+    -   `Source` é `Weakly-Translatable` in `Dest`
+    -   possono essere introdotte delle _inconsistenze_
+
+
 #### Ontologia come agente {#ontologia-come-agente}
 
-L'`ontologia` é la `Knowledge Base`, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti.
+L'`ontologia` é la `Knowledge Base`, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti. Sono rappresentazione di concettualizzazioni
 
 Un'ontologia puó essere interrogata in maniere diverse
 
@@ -991,8 +1015,58 @@ Strumenti:
 -   `Protégé`
 -   `CEL`, `FaCT++`
 
+
+### Situation Calculus {#situation-calculus}
+
+Sulla basa della `FOL` contruisce:
+
+-   **Azione**
+    -   cambia lo stato del mondo
+    -   oggetti immateriali, rappresentate dalle _funzioni_
+    -   \\(\text{Move}(O,P\_{1},P\_{2})\\)
+-   **Situazione**
+    -   stato di cose, solitamente il prodotto di azioni
+    -   il tempo non é gestito esplicitamente perché rappresentato dal susseguirsi delle azioni
+    -   possiamo rappresentarle con funzioni \\(\text{Do}(\text{seq-az}, S)\\)
+        -   sequenza ottenuta applicando la sequenza di azioni nella situazione \\(S\\)
+        -   \\(\text{Do}([\\;\\;], S) = S\\)
+        -   \\(\text{Do}([a | r], S) = \text{Do}(r, \text{Result}(a,S))\\)
+    -   le rappresentazioni \\(\text{Do}\\) ci danno delle `proiezioni`, permettendoci di ragionare sugli effetti delle azioni senza modificare la situazione. Ragionando sugli effetti.
+-   **Fluente**
+    -   proprietá/predicato che puó cambiare nel tempo
+    -   \\(P(A,B,S)\\)
+    -   \\(\text{Holds}(P(A,B),S)\\)
+        -   formula + situation
+-   **Predicato Atemporale**
+    -   proprietá/predicato che non é influenzata dalle azioni
+
+
+#### Assiomi della azioni {#assiomi-della-azioni}
+
+1.  `applicabilitá`, proprietá che devono valere nella situazione di partenza
+    -   \\(\forall \text{params},s: \text{Applicable}(\text{Action}(\text{params}),s) \iff \text{Precond}(\text{params},s)\\)
+2.  `effetto`, proprietá che devono valere nella situazione di arrivo
+    -   la soluzione semplice di riportare solamente le modifiche dello stato da parte dell'azione
+    -   `frame problem`
+3.  `frame`
+    -   \\(\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action(\text{params}),s}))\\)
+4.  `Assioma di Stato Successore`
+    -   aggiunto per sostituire gli `assiomi di frame`
+    -   `Azione Applicabile` \\(\implies\\) `(Fluente vero nella` \\(s\\) `risultante` \\(\iff\\) `l'azione lo rendeva vero` \\(\lor\\) `era vero e l'azione non l'ha reso falso)`
+
+
+#### Anomalia di Sussman {#anomalia-di-sussman}
+
+_Perseguimento di goal complessi_
+
+1.  suddividere il _goal_ in sottogoal
+2.  raggiungere i _sottogoal_ sequenzialmente
+
+> Non tutti i _goal_ possono essere risolti suddivedendoli prima in sottogoal e affrontandoli in maniera sequenziale.
+
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
 [^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti
 [^fn:3]: una `KB` senza funzioni
 [^fn:4]: \\(\Theta\\) unificatore di \\(l\_{i}\\) e \\(\lnot m\_{j}\\)
 [^fn:5]: esistenziali _in scope_ di universali
+[^fn:6]: i.e. `RDF` e `OWL`
