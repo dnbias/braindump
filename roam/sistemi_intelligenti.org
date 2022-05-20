@@ -825,7 +825,105 @@ Sulla basa della =FOL= contruisce:
 1. suddividere il /goal/ in sottogoal
 2. raggiungere i /sottogoal/ sequenzialmente
 
-
 #+begin_quote
-Non tutti i /goal/ possono essere risolti suddivedendoli prima in sottogoal e affrontandoli in maniera sequenziale.
+Non tutti i /goal/ possono essere risolti suddividendoli prima in subgoal e affrontandoli in maniera sequenziale.
 #+end_quote
+* Agente
+Ciclo di vita:
+1. ha una percezione / ha un input
+2. delibera / costruisce la risposta
+3. agisce / restituisce la risposta
+
+L'/agente/ vive una =sequenza percettiva=, ovvero la storia completa delle percezioni
+
+** Deliberazione
+Definibile come una $f$ in forma tabellare
+- sequenza percettiva | azione
+
+Si misura la /prestazione/
+- misura la bontá degli stati attraversati
+- un'altra $f$ che data una /sequenza percettiva/ e valuta un /valore di bontá/
+
+Queste considerazioni ci servono per definera la razionalitá del comportamento dell'agente.
+- un agente razionale effettua azioni che lo avvicinano al proprio /goal/ _nei limiti dell'informazione a esso disponibile_
+
+** Ambiente
+- =Task Environment=
+  + contesto in cui l'agente é inserito
+  + fisico o meno
+- =PEAS=, definiscono il =Task Environment=
+  + performance
+  + environment
+  + actuators
+  + sensors
+
+Distinzione tra
+- dinamico / statico
+- monoagente / multiagente
+  + in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei prorpi obiettivi
+  + va sviluppato un =protocollo di interazione= che permetta di coordinare piú agenti
+    * attraverso scambi di messaggi
+    * =FIPA= - Foundation for Intelligent Physical Agents
+      - ha definito una semantica per i messaggi tra agenti e ha standardizzato dei protocolli
+** Architettura
+Un'/agente/ é l'unione di /programma/ e /architettura/:
+- =architettura=, specifica degli elementi strutturali e funzionali
+- =programma=, funzione che mette in relazione percezioni e azioni
+
+Si distingue anche tra:
+- =funzione agente=, input la sequenza percettiva (storia delle percezioni)
+- =programma agente=, input la percezione corrente
+
+Tipologie:
+- *agenti reattivi semplici*
+  + reagisce alla percezione immediata
+  + si basa sulla /percezione corrente/
+  + funzionano in ambienti _completamente osservabili_
+  + per evitare =loop= si introducono comportamenti =random=
+- *agenti reattivi basati su modello*
+  + agisce tramite /modello - sequenza percettiva - storia delle azioni/
+  + mantiene uno =stato=
+  + di base sempre un ~if - then~
+- *agenti guidati dagli obiettivi* - /goal-driven/
+  + l'azione o piano di azione dell'agente é volto ad avvicinarlo all'/obiettivo/
+  + cambiando gli obiettivi dell'agente posso fargli realizzare diversi comportamenti
+- *agenti guidati dall'utilitá* - /utility-driven/
+  + l'agente puó scegliere approcci diversi in base a parametri esterni
+  + utilitá calcolabile
+- *agenti capaci di apprendere*
+  + la parte di apprendimento é caratterizzata da 3 elementi:
+    * /critico/
+      - valuta il livello di prestazione decidendo se attivare l'apprendimento
+    * /modulo dell'apprendimento/
+      - modifica la conoscenza dell'agente
+    * /generatore di problemi/
+      - causa l'esecuzione di azioni esplorative
+* Apprendimento Automatico
+** Classificazione
+Dati $\rightarrow f \rightarrow$ Classe
+- questa $f$ é il risultato dell'apprendimento
+
+Tra i dati forniamo /esempi/ ma anche le /categorie/.
+Costruisco un =Learning Set= costruito da coppie
+- istanza $x$ - classe $y$
+  + le istanze sono tuple
+
+Con cui eseguo l'[[id:4dee707f-daf6-413e-9f65-cfdc14055d29][Apprendimento Supervisionato]]
+- il modello viene costruito da questo
+- il modello viene poi utilizzato per la /predizione/
+Si pongono subito dei problemi:
+1. rappresentazione dei dati/istanze
+2. analisi dei dati
+3. utilizzo della conoscenza costruita
+
+Schema:
+- =Training Set= $\rightarrow$ Induzione $\rightarrow$ Modello
+- =Test Set= $\rightarrow$ Deduzione $\rightarrow$ Classe
+
+I modelli si caratterizzano in:
+- predittivi
+  + strumento di previsione
+  + assegna una appartenenza a istanze ignote
+- descrittivi
+  + strumento esplicativo
+  + evidenzia caratteristiche che distinguono le categorie

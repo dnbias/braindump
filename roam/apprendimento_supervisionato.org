@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       4dee707f-daf6-413e-9f65-cfdc14055d29
+:END:
+#+title: #+title: Apprendimento Supervisionato
+#+date: [2022-05-20 Fri 19:12]
