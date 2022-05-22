@@ -1062,7 +1062,136 @@ _Perseguimento di goal complessi_
 1.  suddividere il _goal_ in sottogoal
 2.  raggiungere i _sottogoal_ sequenzialmente
 
-> Non tutti i _goal_ possono essere risolti suddivedendoli prima in sottogoal e affrontandoli in maniera sequenziale.
+> Non tutti i _goal_ possono essere risolti suddividendoli prima in subgoal e affrontandoli in maniera sequenziale.
+
+
+## Agente {#agente}
+
+Ciclo di vita:
+
+1.  ha una percezione / ha un input
+2.  delibera / costruisce la risposta
+3.  agisce / restituisce la risposta
+
+L'_agente_ vive una `sequenza percettiva`, ovvero la storia completa delle percezioni
+
+
+### Deliberazione {#deliberazione}
+
+Definibile come una \\(f\\) in forma tabellare
+
+-   sequenza percettiva | azione
+
+Si misura la _prestazione_
+
+-   misura la bontá degli stati attraversati
+-   un'altra \\(f\\) che data una _sequenza percettiva_ e valuta un _valore di bontá_
+
+Queste considerazioni ci servono per definera la razionalitá del comportamento dell'agente.
+
+-   un agente razionale effettua azioni che lo avvicinano al proprio _goal_ <span class="underline">nei limiti dell'informazione a esso disponibile</span>
+
+
+### Ambiente {#ambiente}
+
+-   `Task Environment`
+    -   contesto in cui l'agente é inserito
+    -   fisico o meno
+-   `PEAS`, definiscono il `Task Environment`
+    -   performance
+    -   environment
+    -   actuators
+    -   sensors
+
+Distinzione tra
+
+-   dinamico / statico
+-   monoagente / multiagente
+    -   in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei prorpi obiettivi
+    -   va sviluppato un `protocollo di interazione` che permetta di coordinare piú agenti
+        -   attraverso scambi di messaggi
+        -   `FIPA` - Foundation for Intelligent Physical Agents
+            -   ha definito una semantica per i messaggi tra agenti e ha standardizzato dei protocolli
+
+
+### Architettura {#architettura}
+
+Un'_agente_ é l'unione di _programma_ e _architettura_:
+
+-   `architettura`, specifica degli elementi strutturali e funzionali
+-   `programma`, funzione che mette in relazione percezioni e azioni
+
+Si distingue anche tra:
+
+-   `funzione agente`, input la sequenza percettiva (storia delle percezioni)
+-   `programma agente`, input la percezione corrente
+
+Tipologie:
+
+-   **agenti reattivi semplici**
+    -   reagisce alla percezione immediata
+    -   si basa sulla _percezione corrente_
+    -   funzionano in ambienti <span class="underline">completamente osservabili</span>
+    -   per evitare `loop` si introducono comportamenti `random`
+-   **agenti reattivi basati su modello**
+    -   agisce tramite _modello - sequenza percettiva - storia delle azioni_
+    -   mantiene uno `stato`
+    -   di base sempre un `if - then`
+-   **agenti guidati dagli obiettivi** - _goal-driven_
+    -   l'azione o piano di azione dell'agente é volto ad avvicinarlo all'_obiettivo_
+    -   cambiando gli obiettivi dell'agente posso fargli realizzare diversi comportamenti
+-   **agenti guidati dall'utilitá** - _utility-driven_
+    -   l'agente puó scegliere approcci diversi in base a parametri esterni
+    -   utilitá calcolabile
+-   **agenti capaci di apprendere**
+    -   la parte di apprendimento é caratterizzata da 3 elementi:
+        -   _critico_
+            -   valuta il livello di prestazione decidendo se attivare l'apprendimento
+        -   _modulo dell'apprendimento_
+            -   modifica la conoscenza dell'agente
+        -   _generatore di problemi_
+            -   causa l'esecuzione di azioni esplorative
+
+
+## Apprendimento Automatico {#apprendimento-automatico}
+
+
+### Classificazione {#classificazione}
+
+Dati \\(\rightarrow f \rightarrow\\) Classe
+
+-   questa \\(f\\) é il risultato dell'apprendimento
+
+Tra i dati forniamo _esempi_ ma anche le _categorie_.
+Costruisco un `Learning Set` costruito da coppie
+
+-   istanza \\(x\\) - classe \\(y\\)
+    -   le istanze sono tuple
+
+Con cui eseguo l'[Apprendimento Supervisionato]({{< relref "apprendimento_supervisionato.md" >}})
+
+-   il modello viene costruito da questo
+-   il modello viene poi utilizzato per la _predizione_
+
+Si pongono subito dei problemi:
+
+1.  rappresentazione dei dati/istanze
+2.  analisi dei dati
+3.  utilizzo della conoscenza costruita
+
+Schema:
+
+-   `Training Set` \\(\rightarrow\\) Induzione \\(\rightarrow\\) Modello
+-   `Test Set` \\(\rightarrow\\) Deduzione \\(\rightarrow\\) Classe
+
+I modelli si caratterizzano in:
+
+-   predittivi
+    -   strumento di previsione
+    -   assegna una appartenenza a istanze ignote
+-   descrittivi
+    -   strumento esplicativo
+    -   evidenzia caratteristiche che distinguono le categorie
 
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
 [^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti

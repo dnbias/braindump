@@ -934,3 +934,5 @@ build content/posts/provenance.md: org2md roam/provenance.org
 build content/posts/semantic_web.md: org2md roam/semantic_web.org
 
 build content/posts/sparql.md: org2md roam/sparql.org
+
+build content/posts/apprendimento_supervisionato.md: org2md roam/apprendimento_supervisionato.org
