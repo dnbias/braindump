@@ -13,7 +13,9 @@ Cifrari sono sempre esistiti, tra i cifrari pre-informatici piú famosi ci sono 
 - Cifrari monoalfabetici a N lettere
 - Cifrario di Vigenére, polialfabetico
 
-| I cifrari polialfabetici sostituiscono una lettera ogni volta in modo diverso, a seconda della sua posizione nel testo.
+#+begin_quote
+I cifrari polialfabetici sostituiscono una lettera ogni volta in modo diverso, a seconda della sua posizione nel testo.
+#+end_quote
 
 Questi cifrari si possono ancora suddividere in base alla tecnica utilizzata:
 - a sostituzione
@@ -168,8 +170,217 @@ In questo caso:
 2. =DSA= con =SHA-1=
 
 Per far funzionare questo meccanismo é necessario risolvere il problema della distribuzione delle chiavi pubbliche.
-- una terza parte =C= puó ricevere $<ID,K^+(ID)>$ e restituirne un certificato
+- una terza parte =C= puó ricevere $\langle ID,K^+(ID)\rangle$ e restituirne un certificato
 - questo poi viene condivisto da altre terze parti o dagli stessi che lo hanno richiesto
 
 Alla fine il messaggio autenticato avrá la forma:
 ~M - FirmaElettronica - Certificato - Timestamp~
+
+* Sniffing & Spoofing
+1. sniffing
+   - non facile su rete geografica
+   - possibile su =LAN=
+     + sia su switch che non
+     + non é possibile su /switch unicast/
+     + solo su /broadcast/
+2. spoofing
+   - =ARP= spoofing/poisoning
+   - =DHCP= associa automaticamente =IP= di router e =DNS=
+   - =ARP= associa =MAC-IP=
+     + /broadcast/ per la richiesta del =MAC= associato a un =IP=
+     + /unicast/ per la risposta
+     + l'avversario risponde con il proprio =MAC= ingannando il richiedente
+   - possibile tecnica per:
+     + =MAC=
+       * scheda di rete in modalitá promiscua
+       * =MAC= della scheda cambiato malevolmente
+     + =IP=
+       * non in =TCP= dove c'é il /3-way handshake/
+     + =DNS=
+       * instradamento degli utenti verso un =DNS= malevolo
+       * =DNS= malevolo serve =IP= falsificati
+     + =URL=
+       * indirizzi falsi
+
+
+Per evitare questi attacchi:
+- non usare =HUB= ma switch
+- non usare /broadcast/
+- cifrare a livello applicativo e a livello di trasporto
+
+* DDoS
+- raro
+- difficile da evitare per i principi costituenti della rete
+  + per applicazioni critiche é utile avere reti dedicate
+
+Possibili attacchi:
+1. =syn flooding=
+   - primo messaggio dell'handshake =TCP= senza che questo sia poi portato a termine
+2. =ICMP echo request=
+   - distibuted, /zombie/ e /reflectors/
+   - /smurf attack/
+     + =echo= request con payload consistente
+       + possibilitá pensata per testing di rete, =echo= in broadcast
+       + ora non piú possibile
+3. =relay SMTP=
+   - flooding tramite server mail
+   - possibili configurazioni server per evitare questi attacchi
+* Firewall
+- vulnerabilitá locali di una macchina possono permettere il controllo della rete intera
+- un =PC= compromesso in =LAN= permette attacchi diretti alla rete locale
+- il =Firewall= si interpone tra =LAN= e =WAN= come unico punto di accesso
+  + servizi di
+    * filtro (direzione, servizio, utente)
+    * log (traffico, utenti)
+    * allarme
+  + incluso nel /router/, =screening router=
+    * scarta i pacchetti sospetti
+    * non notifica
+  + =dual homed gateway=
+    * tra =LAN= e /router/
+    * il router si occupa di routing
+    * spesso comunque tutte le funzioni sono concentrate in un unico dispositivo
+    * dispositivi specializzati: /firewall appliance/
+  + =screened host gateway=
+    * fisicamente i pacchetti non sono forzati attraverso il =FW=
+    * si forza il passaggio a livello logico =IP=
+
+Spesso in sicurezza, e anche per questi dispositivi, si parla di /High Availability/
+- piú =FW= possono servire in parallelo per garantire la funzionalitá in caso di guasti
+- Internet $\rightarrow$ Router $\rightarrow$ Switch $\rightarrow$ FW | FW $\rightarrow$ Switch $\rightarrow$ =LAN=
+
+Una =DMZ= é una cosiddetta
+- /DeMilitarized Zone/
+- server che devono poter comunicare con l'esterno senza interferenze dall'=FW=
+** Package Filter
+- livello 3 e parzialmente 4
+  + =IP= e =TCP/UDP=
+- protegge in base alla direzione
+  + interfaccia in/out
+  + =IP= mittente e destinatario
+  + porta sorgente e destinazione
+- la /frammentazione IP/ puó essere usata per passare attraverso un =FW=
+  + piccoli frammenti 24-28 Byte, senza header =TCP=
+- da bloccare il /source routing/
+  + permette al mittente di decidere l'instradamento
+  + permette =IP= spoofing con =TCP= su =WAN=
+- =ACL= - Access Control List
+  + omonimo con sistema /Windows/, diversi
+  + lista di regole di accesso
+** Sofware Firewall
+- livello 5
+  + applicativo e di trasporto =TCP/UDP=
+- piú semplice attraverso un =proxy-FW=
+  + va configurato un /proxy/ per ogni servizio da attivare
+  + non é trasparente
+  + piú lento
+  + sicuro, sofisticato
+- mascheramento degli indirizzi tramite =NAT=
+  + megli il =NAPT=
+    * unico indirizzo pubblico
+    * indirizzi tradotti assieme alle porte
+  + puó anche effettuare /load balancing/
+    * round robin, evita attacchi di carico
+- =WAF= - Web Application =FW=
+  + /reverse proxy/
+  + esamina il payload applicativo
+  + solo se sicura apre la connessione al nostro server web e inoltra
+* VPN
+Standard: =IPsec=
+- permette collegamento a rete privata virtualmente
+  + lavorare da remoto con la stessa sicurezza che si ha all'interno della =LAN=
+- traffico /virtualmente interno/ passa su internet e va protetto
+** IPsec
+=IP= level security
+- livello 3
+- =RFC 1825=
+- layer che si va a inserire sopra quello =IP=
+  + header annidato all'interno dell'header =IP=
+  + =PDU= cifrata/autenticata assieme a info per decifrazione
+  + l'header =IP= non viene modificato
+    * i router non si accorgono del cambiamento
+- protezione da modifica e intercettazioni
+- cifratura ai capi della comunicazione tra le =LAN=
+- ovviamento non protegge da vulnerabilitá interne
+
+Due modalitá di funzionamento:
+1. transport
+2. tunnel
+
+E tecniche
+1. =AH=
+2. =ESP=
+
+Queste tecniche sono annidabili
+- prima applicando =AH= e poi =ESP=
+
+*** Transport
+- software =VPN= sui calcolatori comunicanti
+- protegge da spoofing/sniffing si rete locale
+- non é trasparente, necessaria configurazione
+- unico metodo per una postazione mobile
+  + sono possibili soluzioni miste
+*** Tunnel
+- cifratura/auth da parte di un agente esterno /terminatore/
+  + spesso incluso nel router e =FW=
+  + i pacchetti escono dal /tunnel/ decriptati
+- _non_ protegge da spoofing/sniffing su rete locale
+- nasconde gli indirizzi
+  + sono solamento noti gli =IP= dei /terminatori/
+- trasparente
+- veloce, efficiente
+*** Authentication Header
+=AH=
+- garantisce integritá
+- posizionato tra =header IP= e =PDU=
+- formato
+  + Next Header
+    * 8B
+    * protocollo superiore
+  + Length
+    * 8B
+  + Reserved
+    * 16B
+  + =SPI=
+    * 32B
+    * Security Parameter Index
+    * parametri (entrambi indici di una tabella interna condivisa)
+      - tipo di algoritmo
+      - chiave simmetrica
+  + Data
+    * $N\times$ 32B
+    * dati di autenticazione =MAC=
+    * questo =MAC= coper da =header IP= in poi
+      - ignora campi variabili =TTP= e =checksum= impostandoli a 0
+*** Encapsulating Security Payload
+=ESP=
+- posizionato dopo =header IP= e incapsula il =PDU= cifrato
+- formato in modalitá /Transport/
+  + =SPI=
+    + non cifrato
+  + =PDU=, Next Header, autenticazione
+    + cifrati
+- formato in modalitá /Tunnel/
+  + =SPI=
+    + non cifrato
+  + =header IP= incapsulato
+    * cifrato
+    * header originale nascosto dal terminatore =VPN=
+    * funzione di offuscamento del traffico
+  + =PDU=, =NH=, auth
+    * cifrati
+
+*** Anti-Replay
+- individua ripetizione pacchetti
+  + non é possibile escludere che non creino problemi a livello applicativo
+- pacchetti =IPsec= numerati con un /sequence number/ 16bit
+- tecnica a /sliding window/ con $W$ bit
+  + implementazione con un /bit vector/
+  + $N$ ultimo /sn/ ricevuto
+  + finestra da $N-W$ a $N+1$
+    * /sn/ ricevuto a sinistra della finestra, non posso decidere
+    * /sn/ ricevuto a destra, sicuramente nuovo
+    * /sn/ all'interno il vettore indica se é stato ricevuto o no
+* Web Security
+
+* Blockchain
