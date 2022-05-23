@@ -10,15 +10,91 @@ draft = false
 -   Source: [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}})
 
 
+## Introduzione {#introduzione}
+
+Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilitá di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
+Per esempio é possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
+
+-   crittografia
+-   problemi di ricerca
+-   simulazione di sistemi quantistici
+-   machine learning
+-   computazione biologica
+-   chimica generativa
+
+Ovviamente il calcolo classico non verrá abbandonato, l'approccio classico e quello quantistico differiscono nelle loro forze e debolezze.
+Mentre gli attuali computer diventano sempre piú veloci e le tecniche industriali permettono miniaturizzazioni sempre maggiori gli hardware quantistici rimangono estremamenti complicati da costruire e distribuire.
+Il modo attualmente piú congeniale di utilizzare questi hardware rimane quello della condivisione di risorse attraverso le tecnologie di _cloud computing_.
+
+Ma questo non significa che non sia possibile studiare i problemi che il calcolo quantistico offre a livello teorico e di sviluppo software.
+Attualmente i software sviluppati per hardware quantistici possono essere eseguito su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in _cloud computing_.
+I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilitá di essere testata in maniera indiscriminata su un qualsiasi di questi.
+
+
 ## Ambiente {#ambiente}
 
-L'ambiente di esecuzione `Q#` puó essere configurato sul editor `Visual Studio Code` tramite l'add-on proprietario di Microsoft.
+Per lo sviluppo di software quantistici sono disponibili diversi ambienti e framework, tra i piú conosciuti troviamo **Microsoft Azure** con il proprio Quantum Development Kit (`QDK`) o l'ambiente di sviluppo di `IBM` **Qiskit**.
+Altri _Software Development Kit_ che possono essere utilizzati per eseguire circuiti quantistici su prototipi di device quantistici o simulatori sono:
 
-Oppure é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`.
+-   Ocean
+-   ProjectQ
+-   Forest
+-   t|ket&gt;
+-   Strawberry Fields
+-   PennyLane
+
+Molti di questi progetti sono open-source e sviluppati sulla base di `Python`.
+
+Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto era ció che era utilizzato dalla nostra fonte principale [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}}).
+
+L'ambiente di esecuzione `Q#` puó essere configurato sul editor `Visual Studio Code` tramite l'add-on proprietario di Microsoft.
+Quest'ultimo é disponibile solo sulla versione non `FOSS` del software, che é possibile installare tramite le repository opensource linux.
+
+In alternativa o parallelamente é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`. Questo con i kernel necessari installati.
+
+Tramite l'ambiente `anaconda` vanno installati:
 
 ```bash
 $ conda create -n qsharp-env -c microsoft qsharp notebook
 $ conda activate qsharp-env
+```
+
+
+## Oracoli {#oracoli}
+
+Gli oracoli
+
+```Q#
+operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyZeroOracleN(control : Qubit[], target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracleN(control : Qubit[], target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
+    CNOT(control,target);
+  }
+
+  operation ApplyXOROracleN(control : Qubit[], target : Qubit) : Unit {
+    for qubit in control {
+        CNOT(qubit,target);
+    }
+  }
+
+  operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
+    X(control);
+    CNOT(control,target);
+    X(control);
+  }
+
 ```
 
 
@@ -111,42 +187,6 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
 function _And(a : Bool, b : Result) : Bool {
       return a and ResultAsBool(b);
 }
-```
-
-
-## Oracoli {#oracoli}
-
-```Q#
-operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
-  }
-
-  operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
-    X(target);
-  }
-
-  operation ApplyZeroOracleN(control : Qubit[], target : Qubit) : Unit {
-  }
-
-  operation ApplyOneOracleN(control : Qubit[], target : Qubit) : Unit {
-    X(target);
-  }
-
-  operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
-    CNOT(control,target);
-  }
-
-  operation ApplyXOROracleN(control : Qubit[], target : Qubit) : Unit {
-    for qubit in control {
-        CNOT(qubit,target);
-    }
-  }
-
-  operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
-    X(control);
-    CNOT(control,target);
-    X(control);
-  }
-
 ```
 
 [^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\)

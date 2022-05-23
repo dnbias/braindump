@@ -11,7 +11,7 @@ draft = false
 1.  choose \\(p\\) and \\(q\\) primes
     -   `Miller-Rabin`
 2.  calculate module \\(n = pq\\)
-3.  choose $e &lt; (p-1)(q-1) such that \\(\text{gcd}(e,(p-1)(q-1))=1\\)
+3.  choose \\(e < (p-1)(q-1)\\) such that \\(\text{gcd}(e,(p-1)(q-1))=1\\)
 4.  calculate \\(d=e^{-1} \mod (p-1) (q-1)\\)
 5.  \\(K^{+} = <e,n>\\)  ---  \\(K^{-} = <d,n>\\)
 
@@ -20,8 +20,18 @@ This algorithm is **Generalized Euclid's Algorithm**
 
 ## Usage {#usage}
 
-Cypher: \\(c = m^{e} \mod n\\)
-Decypher: \\(m = c^{d} \mod n\\)
+-   Cypher: \\(c = m^{e} \mod n\\)
+-   Decypher: \\(m = c^{d} \mod n\\)
+
+_Bob_ and _Alice_:
+
+-   modulus \\(p\\) and base \\(g\\) are agreed publicly
+-   \\(a\\) private Alice key
+-   \\(A\\) public Alice key
+    -   \\(A= g^{a} \mod p\\)
+-   \\(b\\) private Bob key
+-   \\(B\\) public Bob key
+    -   \\(A= g^{b}^{} \mod p\\)
 
 
 ## Security {#security}

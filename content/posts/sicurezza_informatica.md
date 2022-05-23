@@ -30,26 +30,7 @@ Da quest'ultimo derivano i cifrari simmetrici `bit-oriented`:
 -   [Cifrario di Vernam]({{< relref "cifrario_di_vernam.md" >}})
 -   [One-time Pad]({{< relref "one_time_pad.md" >}})
 
-In questi cifrari al posto dell'operazione di sostituzione alfabetica viene utilizzato \\(\oplus\\) (Exclusive Or).
-
-I cifrari simmetrici moderni sono caratterizzati da:
-
--   uso del calcolatore
--   combinazione di permutazioni e sostituzioni
--   uso di numerose fasi, _round_
-
-Di questi ne esistono diversi:
-
--   [Macchine a Rotori]({{< relref "macchine_a_rotori.md" >}})
--   [Feistel Cipher]({{< relref "feistel_cipher.md" >}})
--   [DES]({{< relref "des.md" >}})
--   [AES]({{< relref "aes.md" >}})
-
-Una proprietá desiderabile in un encryption algorithm é chiamata _avalanche effect_
-
--   un cambiamento marginale in un input (chiave o plaintext) dovrebbe produrre un grande cambiamento nel ciphertext
-
-Queste tecniche sono utilizzate nel contesto della _bulk encryption_
+In questi cifrari al posto dell'operazione di sostituzione alfabetica viene utilizzato \\(\oplus\\)[^fn:1]
 
 
 ### Cifrari a blocchi {#cifrari-a-blocchi}
@@ -76,7 +57,7 @@ Per testi lunghi
     -   divisione in blocchi esatti e criptarli tutti con la stessa chiave
         -   vulnerabilita' alla criptoanalisi statistica, utilizzabile solamente con testi corti
 -   Cipher Block Chaining
-    -   ogni blocco cifrato e' mette in \\(\oplus\\) con il successivo plaintext
+    -   ogni blocco cifrato e mette in \\(\oplus\\) con il successivo plaintext
     -   il primo blocco e' in \\(\oplus\\) con un _initialization vector_ \\(IV\\)
         -   solitamente publico
     -   il piu' usato, sicuro, semplice, efficiente
@@ -138,7 +119,7 @@ Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piú
 -   una buona funzione di Hash ha la proprietá che applicata a un gran numero di input gli output siano ben distribuiti e apparentemente random
 -   un cambiamento a un qualsiasi bit o bits in \\(M\\) causa, probabilmente, un cambiamento nel codice hash generato
 
-In crittografia si una un particolare tipo di funzione di hash, che ha ulteriori proprietá:
+In crittografia si usa un particolare tipo di funzione di hash, che ha ulteriori proprietá:
 
 -   `one-way property`
     -   _infeasible to find an object mapping to a pre-specified hash_
@@ -463,3 +444,24 @@ Queste tecniche sono annidabili
 
 
 ## Blockchain {#blockchain}
+
+[^fn:1]: Exclusive Or
+
+    I cifrari simmetrici moderni sono caratterizzati da:
+
+    -   uso del calcolatore
+    -   combinazione di permutazioni e sostituzioni
+    -   uso di numerose fasi, _round_
+
+    Di questi ne esistono diversi:
+
+    -   [Macchine a Rotori]({{< relref "macchine_a_rotori.md" >}})
+    -   [Feistel Cipher]({{< relref "feistel_cipher.md" >}})
+    -   [DES]({{< relref "des.md" >}})
+    -   [AES]({{< relref "aes.md" >}})
+
+    Una proprietá desiderabile in un encryption algorithm é chiamata _avalanche effect_
+
+    -   un cambiamento marginale in un input (chiave o plaintext) dovrebbe produrre un grande cambiamento nel ciphertext
+
+    Queste tecniche sono utilizzate nel contesto della _bulk encryption_

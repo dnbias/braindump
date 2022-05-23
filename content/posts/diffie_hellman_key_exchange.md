@@ -16,7 +16,7 @@ It functions using module arithmetics.
 -   \\(q\\) prime
 -   \\(\alpha\\) primitive root of \\(q\\)
 
-> Let \\(n\\) be a positive integer. A **primitive root** \\(\mod n\\) is an integer \\(g\\) such that every integer relatively prime to \\(n\\) is congruent to a power of \\(g \mod n\\). That is, the integer \\(g\\) is a primitive root (\\(\mod n\\)) if for every number \\(a\\) relatively prime to \\(n\\) there is an integer \\(z\\) such that \\(a \equiv (g^z \mod{n})\\)
+> Let \\(n\\) be a positive integer. A **primitive root** \\(\mod n\\) is an integer \\(g\\) such that every integer relatively prime to \\(n\\) is congruent to a power of \\(g \mod n\\). That is, the integer \\(g\\) is a primitive root (\\(\mod n\\) ) if for every number \\(a\\) relatively prime to \\(n\\) there is an integer \\(z\\) such that \\(a \equiv (g^z \mod{n})\\)
 
 
 ## Algorithm {#algorithm}
@@ -33,9 +33,9 @@ To realize `DH` we need:
 int expmod_r (int a, int b, int q) {
     if (b == 0) return 1;
     if (b%2 == 0)
-        return ((expmod(a,b/2,q))^2) % q;
+        return ((expmod_r(a,b/2,q))^2) % q;
     else
-        return (a*expmod(a,b-1,q)) % q;
+        return (a*expmod_r(a,b-1,q)) % q;
 }
 
 int expmod_i (int a, int[] b, int q) { // here b is encoded in binary
@@ -75,11 +75,9 @@ The only way the adversary can solve this knowing:
 -   \\(Y\_{A}\\)
 -   \\(Y\_{B}\\)
 
-\begin{center}
 \begin{align\*}
 X\_{B} &= \text{dlog}\_{\alpha,q}(Y\_{B}) \\\\
 K &= (Y\_{A})^{X\_{B}} \text{mod }q
 \end{align\*}
-\end{center}
 
-But for langer primes discrete logarithms are considered infeasible.
+But for larger primes discrete logarithms are considered infeasible.
