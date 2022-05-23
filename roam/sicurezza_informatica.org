@@ -25,7 +25,9 @@ Questi cifrari si possono ancora suddividere in base alla tecnica utilizzata:
 Da quest'ultimo derivano i cifrari simmetrici =bit-oriented=:
 - [[id:f5fa7caa-aa5f-403f-b340-57b7d07d673d][Cifrario di Vernam]]
 - [[id:51177984-16bc-4c8b-8b69-969dba9f1dd9][One-time Pad]]
-In questi cifrari al posto dell'operazione di sostituzione alfabetica viene utilizzato $\oplus$ (Exclusive Or).
+In questi cifrari al posto dell'operazione di sostituzione alfabetica viene utilizzato $\oplus$[fn:exor]
+
+[fn:exor] Exclusive Or
 
 I cifrari simmetrici moderni sono caratterizzati da:
 - uso del calcolatore
@@ -63,7 +65,7 @@ Per testi lunghi
   - divisione in blocchi esatti e criptarli tutti con la stessa chiave
     - vulnerabilita' alla criptoanalisi statistica, utilizzabile solamente con testi corti
 - Cipher Block Chaining
-  + ogni blocco cifrato e' mette in $\oplus$ con il successivo plaintext
+  + ogni blocco cifrato e mette in $\oplus$ con il successivo plaintext
   + il primo blocco e' in $\oplus$ con un /initialization vector/ $IV$
     * solitamente publico
   + il piu' usato, sicuro, semplice, efficiente
@@ -115,7 +117,7 @@ Una funzione di Hash $H$ accetta un blocco di dati $M$ di lunghezza variabile e 
 - una buona funzione di Hash ha la proprietá che applicata a un gran numero di input gli output siano ben distribuiti e apparentemente random
 - un cambiamento a un qualsiasi bit o bits in $M$ causa, probabilmente, un cambiamento nel codice hash generato
 
-In crittografia si una un particolare tipo di funzione di hash, che ha ulteriori proprietá:
+In crittografia si usa un particolare tipo di funzione di hash, che ha ulteriori proprietá:
 - =one-way property=
   + /infeasible to find an object mapping to a pre-specified hash/
 - =collision-free property=
