@@ -47,7 +47,7 @@ Queste tecniche sono utilizzate nel contesto della /bulk encryption/
 ** Cifrari a blocchi
 Utilizzando chiavi lunghe e testi arbitrariamente lunghi
 1. cifrare a 2 fasi
-   - suscettibile all'attacco /meet in the meddle/
+   - suscettibile all'attacco /meet in the middle/
      + con /known plaintext/
      + conoscendo =<P1,C1> <P2,C2>=
        + servono estrambe per incrociare la ricerca, i match sono diversi per blocco
