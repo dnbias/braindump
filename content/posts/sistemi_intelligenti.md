@@ -1167,11 +1167,15 @@ Costruisco un `Learning Set` costruito da coppie
 
 -   istanza \\(x\\) - classe \\(y\\)
     -   le istanze sono tuple
+-   é supervisionato
+-   il rischio é che questo set di apprendimento sia troppo _specialistico_
+    -   non riconoscerá l'intera classe ma solamente una sua specializzazione
 
 Con cui eseguo l'[Apprendimento Supervisionato]({{< relref "apprendimento_supervisionato.md" >}})
 
--   il modello viene costruito da questo
--   il modello viene poi utilizzato per la _predizione_
+-   implementata tramite un **algoritmo di apprendimento**
+-   il **modello** viene costruito da questo
+-   il **modello** viene poi utilizzato per la _predizione_
 
 Si pongono subito dei problemi:
 
@@ -1192,6 +1196,106 @@ I modelli si caratterizzano in:
 -   descrittivi
     -   strumento esplicativo
     -   evidenzia caratteristiche che distinguono le categorie
+
+
+#### Attributi {#attributi}
+
+Gli attributi sono distinguibili in classi diverse
+
+-   `binari`
+-   `nominali`
+    -   assumono delle _etichette_ distinte
+    -   definiti in un insieme
+    -   _spit_
+        -   multivalore
+            -   un nodo per ogni etichetta
+        -   binario
+            -   un nodo per una etichetta e uno per le rimanenti
+-   `ordinali`
+    -   sono nominali in cui vale una relazione di ordinamento tra le etichette
+    -   _spit_
+        -   multivalore
+        -   binario
+            -   possibile ma deve preservare l'ordinamento
+-   `continui`
+    -   si identifica un valore rispetto il quale fare _split_
+        -   in base a questo l'attributo diviene binario
+
+
+#### Matrice di Confusione {#matrice-di-confusione}
+
+É uno strumento di valutazione in ambito della classificazione.
+Consiste nel mettere alla prova il _modello_.
+Consiste in un insieme di _istanze_
+
+-   `Test Set`
+-   hanno la stessa forma del `Learning Set`
+-   il modello restituisce una classificazione di tutte le istanze
+    -   poi esaminate e suddivise in _corrette_ e _sbagliate_
+    -   la percentuale desiderata di classificazioni corrette é relativo all'ambito, il dominio
+
+La `matrice di confusione` é una matrice quadrada
+
+-   numero di righe/colonne come il <span class="underline">numero delle classi</span>
+    -   righe, <span class="underline">classi reali</span>
+    -   colonne, <span class="underline">classi predette</span>
+    -   il \\(v\\) in una cella \\(\langle c\_{i},c\_{j} \rangle\\)
+        -   numero di istanze appartenenti a \\(c\_{i}\\) che il modello ha detto appartenere a \\(c\_{j}\\)
+        -   desideriamo che i \\(v\\) si accumulino nella diagonale, dove troviamo le risposte corrette
+
+Si hanno due considerazioni sui risultati:
+
+-   `accuracy`
+
+\\[\frac{\sum\_{i} v\_{ii}}{\sum\_{i,j} v\_{ij}}\\]
+
+-   `error rate`
+
+\\[\frac{\sum\_{i \neq j} v\_{ij}}{\sum\_{i,j} v\_{ij}}\\]
+
+Chiaramente \\(\text{acc} + \text{er} = 100\\%\\)
+
+Il limite della matrice di confusione é che gli errori hanno tutti lo stesso peso.
+
+-   per sopperire a questo si puó aggiungere una `matrice dei costi`
+    -   ha la stessa forma della `matrice di confusione`
+    -   gli errori saranno poi moltiplicati per questi pesi per valutare il modello
+
+Altro limite é che su `test set` sbilanciati gli _error rate_ saranno falsati.
+
+
+#### Alberi di Decisione {#alberi-di-decisione}
+
+`Decision Trees`
+Banalmente, in un altro contesto, un menú a tendina.
+
+-   si tratta di un albero con _test_ per nodi e _azioni_ per foglie
+    -   test portano in base ai risultati a test successivi o foglie
+    -   alle  foglie si decide la classe di appartenenza dell'istanza
+
+Le istanze hanno la stessa forma
+
+-   n-attributi organizzati in una n-tupla
+
+I _test_ sono ognuno su un singolo attributo e a cascata caratterizzano le istanze.
+
+
+##### Algoritmo di Hunt {#algoritmo-di-hunt}
+
+**L'algoritmo di Hunt** lavora sul `Learning Set`
+
+-   dividendo il sottoinsiemi via via piú puri
+-   \\(D\_{t}\\) sottoinsieme del `LS` associato al nodo \\(t\\)
+-   \\(y = \\{y\_{1},y\_{2},\cdots,y\_{c}\\}\\) insieme delle etichette delle classi
+
+Passi:
+
+1.  <span class="underline">test</span> se tutte le istanze in \\(D\_{t}\\) appartengono alla stessa classe
+    -   `true`: \\(t\\) é una _foglia_ e le viene assegnata l'etichetta \\(y\_{t}\\)
+    -   `false`: si sceglie un attributo descrittivo su cui fare lo _split_
+        1.  si verifica il suo range in \\(D\_{t}\\)
+        2.  si crea un _nodo successore_ per ogni suo possibile valore
+        3.  a ogni successore si assegna il sottoinsieme di \\(D\_{t}\\) per cui l'attributo scelto vale quello cui il successore é associato
 
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
 [^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti

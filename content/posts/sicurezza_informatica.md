@@ -38,7 +38,7 @@ In questi cifrari al posto dell'operazione di sostituzione alfabetica viene util
 Utilizzando chiavi lunghe e testi arbitrariamente lunghi
 
 1.  cifrare a 2 fasi
-    -   suscettibile all'attacco _meet in the meddle_
+    -   suscettibile all'attacco _meet in the middle_
         -   con _known plaintext_
         -   conoscendo `<P1,C1> <P2,C2>`
             -   servono estrambe per incrociare la ricerca, i match sono diversi per blocco
