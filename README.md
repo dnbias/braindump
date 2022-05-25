@@ -23,7 +23,7 @@ Or run the following to get an immediately browsable website on localhost:
     $ hugo serve
 
 
-# # Deployment
+## Deployment
 I deploy through [Netlify][netlify] and is easy enough, just feed it the github repository and set the build tool as hugo.
 
 
