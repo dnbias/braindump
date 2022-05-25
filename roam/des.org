@@ -15,11 +15,14 @@ Cifrario simmetrico moderno,
 * Caratteristiche
 - chiavi da 56 bit
   + solitamente estese a 64 bit con bit di paritá
+  + /key schedule/ per i round
 - 16 round
 - efficiente
 - noti solo attacchi di /brute force/
 
-Struttura simile al [[id:aae9177d-7c30-4144-a42a-eb38cc7d5c90][Feistel Cipher]], ne differische solo nell'uso di una permutazione iniziale $\text{IP}$ e una permutazione finale $\text{IP}^{-1}$.
+Struttura simile al [[id:aae9177d-7c30-4144-a42a-eb38cc7d5c90][Feistel Cipher]], ne differische solo nell'uso di una permutazione iniziale $\text{IP}$ e una permutazione finale $\text{IP}^{-1}$ o $\text{FP}$ /final permutation/ .
+- queste permutazioni non hasso significato a livello crittografico: sono prederminate
+- non é chiaro il perché della loro incrusione nell'algoritmo
 
 \[\textsc{des}(T,K) = C\]
 - $T$ é plaintext 64 bit
@@ -31,3 +34,7 @@ Struttura simile al [[id:aae9177d-7c30-4144-a42a-eb38cc7d5c90][Feistel Cipher]],
 La sue debolezze sono:
 - lunghezza delle chiavi
 - algoritmo
+Che lo rendono vulnerabile ad attacchi /brute force/
+
+Questo é risolvibile con =Double DES= o =Triple DES=.
+- applicare =DES= piú volte allo stesso blocco, raddoppiondo la lunghezza della chiave

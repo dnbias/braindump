@@ -19,10 +19,11 @@ Let $n$ be a positive integer. A *primitive root* $\mod n$ is an integer $g$ suc
 
 * Algorithm
 To realize =DH= we need:
-- efficient algorithm for $a^{b}\mod q$
-- efficient algorithm for generating a prime $q$
-- efficient algorithm for generating a primitive root for this $q$
+1. efficient algorithm for $a^{b}\mod q$
+2. efficient algorithm for generating a prime $q$
+3. efficient algorithm for generating a primitive root for this $q$
 
+*1.*
 #+begin_src c
 int expmod_r (int a, int b, int q) {
     if (b == 0) return 1;
@@ -45,6 +46,32 @@ int expmod_i (int a, int[] b, int q) { // here b is encoded in binary
     return d;
 }
 #+end_src
+
+*2.*
+Probabilistic approach is best: *Miller Rabin primality test*
+#+begin_src c
+int generate_prime(int k) { // k rounds of testing to perform
+    bool probablyPrime = false;
+    while (!probablyPrime) {
+        int n = getRandomInt();
+        probablyPrime = miller_rabin(n,k);
+    }
+    return n;
+}
+#+end_src
+For full algorithm in =C= see [[https://www.sanfoundry.com/c-program-implement-rabin-miller-primality-test-check-number-prime/][here]].
+
+*3.*
+
+** Complexity
+For $a^{b} \mod q$, with $n$ as the bit-length of $b$
+- recursive algorithm: $O(2 \log_{2}(b)) = O(2\log_{2} (2^{n})) = O(2n)=O(n)$
+- iterative algorithm: $O(n)$
+*Miller Rabin*
+- $O(k \log^{3} n)$
+  + polynomial
+
+
 * Security
 By  the rules of modular arithmetics:
 \begin{align*}
