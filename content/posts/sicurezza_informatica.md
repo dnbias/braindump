@@ -51,25 +51,28 @@ Utilizzando chiavi lunghe e testi arbitrariamente lunghi
         -   la forza sta nelle 3 fasi, non nelle 3 chiavi
     -   si puo' utilizzare `3DES-EDE` con 3 chiavi uguali, che equivale a `DES`
 
-Per testi lunghi
+Per _plaintext_ lunghi si hanno diverse tecniche per creare un messaggio cifrato a partire dai blocchi:
 
--   Electonic Codebook
+-   **Electonic Codebook**
+    -   molto semplice ed efficiente ma insicuro
     -   divisione in blocchi esatti e criptarli tutti con la stessa chiave
-        -   vulnerabilita' alla criptoanalisi statistica, utilizzabile solamente con testi corti
--   Cipher Block Chaining
+        -   parti di testo uguali avranno blocco _ciphertext_ uguali
+        -   vulnerabilitá alla criptoanalisi statistica, utilizzabile solamente con testi corti
+-   **Cipher Block Chaining**
     -   ogni blocco cifrato e mette in \\(\oplus\\) con il successivo plaintext
-    -   il primo blocco e' in \\(\oplus\\) con un _initialization vector_ \\(IV\\)
+        -   si decifra con un \\(\oplus\\) tra la decrittazione del blocco corrente \\(C\_{i}\\) e il blocco precedente (cifrato) \\(C\_{i-1}\\)
+    -   il primo blocco é in \\(\oplus\\) con un _initialization vector_ \\(IV\\)
         -   solitamente publico
-    -   il piu' usato, sicuro, semplice, efficiente
+    -   il piú usato, sicuro, semplice, efficiente
     -   un errore di 1 bit rende indecifrabile il blocco successivo
--   Cipher FeedBack
+-   **Cipher FeedBack**
     -   cifrario a flusso
     -   simile al [Cifrario di Vernam]({{< relref "cifrario_di_vernam.md" >}})
     -   inefficiente, viene scartato del lavoro
-    -   un errore di un bit effendoci feedback crea _effetto valanga_
--   Output Feedback
+    -   un errore di un bit essendoci feedback crea _effetto valanga_
+-   **Output Feedback**
     -   molto simile al Cipher Feedback
-    -   il feedback e' fatto utilizzando gli \\(i\\) bit di output del cifrario a blocchi
+    -   il feedback é fatto utilizzando gli \\(i\\) bit di output del cifrario a blocchi
     -   di fatto si divide in 2 fasi la procedura
         1.  prima di conoscere il testo si produce la sequenza di \\(i\\) bit
         2.  utilizzare questa informazione bufferizzata per cifrare in \\(\oplus\\)
@@ -102,12 +105,12 @@ Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piú
 
 É possibile classificare l'uso di questi sistemi in:
 
-1.  Encryption/Decryption
+1.  **Encryption/Decryption**
     -   sender encrypts with recipient public key
-2.  Digital Signature
+2.  **Digital Signature**
     -   sender signs with its private key
-3.  Key Exchange
-    -   le parti collaborano per scambiarsi una chiave segreta
+3.  **Key Exchange**
+    -   parts work together  to exchange a common secret key
 
 {{< figure src="/ox-hugo/public-key-applications.jpg" >}}
 

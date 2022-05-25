@@ -23,11 +23,11 @@ It functions using module arithmetics.
 
 To realize `DH` we need:
 
--   efficient algorithm for \\(a^{b}\mod q\\)
--   efficient algorithm for generating a prime \\(q\\)
--   efficient algorithm for generating a primitive root for this \\(q\\)
+1.  efficient algorithm for \\(a^{b}\mod q\\)
+2.  efficient algorithm for generating a prime \\(q\\)
+3.  efficient algorithm for generating a primitive root for this \\(q\\)
 
-<!--listend-->
+**1.**
 
 ```c
 int expmod_r (int a, int b, int q) {
@@ -51,6 +51,37 @@ int expmod_i (int a, int[] b, int q) { // here b is encoded in binary
     return d;
 }
 ```
+
+**2.**
+Probabilistic approach is best: **Miller Rabin primality test**
+
+```c
+int generate_prime(int k) { // k rounds of testing to perform
+    bool probablyPrime = false;
+    while (!probablyPrime) {
+        int n = getRandomInt();
+        probablyPrime = miller_rabin(n,k);
+    }
+    return n;
+}
+```
+
+For full algorithm in `C` see [here](https://www.sanfoundry.com/c-program-implement-rabin-miller-primality-test-check-number-prime/).
+
+**3.**
+
+
+### Complexity {#complexity}
+
+For \\(a^{b} \mod q\\), with \\(n\\) as the bit-length of \\(b\\)
+
+-   recursive algorithm: \\(O(2 \log\_{2}(b)) = O(2\log\_{2} (2^{n})) = O(2n)=O(n)\\)
+-   iterative algorithm: \\(O(n)\\)
+
+**Miller Rabin**
+
+-   \\(O(k \log^{3} n)\\)
+    -   polynomial
 
 
 ## Security {#security}

@@ -57,8 +57,6 @@ build content/posts/20200605013212-circuiti_combinatori.md: org2md roam/20200605
 
 build content/posts/20200605014640-circuiti_sequenziali.md: org2md roam/20200605014640-circuiti_sequenziali.org
 
-build content/posts/20200624020825-metal_gear_solid_3.md: org2md roam/20200624020825-metal_gear_solid_3.org
-
 build content/posts/20200624021510-metal_gear_saga.md: org2md roam/20200624021510-metal_gear_saga.org
 
 build content/posts/20200624175455-big_boss.md: org2md roam/20200624175455-big_boss.org
