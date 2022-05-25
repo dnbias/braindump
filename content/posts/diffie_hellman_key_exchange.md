@@ -70,6 +70,12 @@ For full algorithm in `C` see [here](https://www.sanfoundry.com/c-program-implem
 
 **3.**
 
+1.  generate \\(j\\) factors \\(f\\), multiply them, add 1, result is \\(\alpha\\), test primality
+    -   do until you have a prime \\(\alpha\\)
+2.  loop factors, test if there is \\(f\_{i } \mid \alpha^{q-1/f\_{i} } \equiv 1\\), in modulo \\(q\\)
+    -   if `true` go back to step  **1.**
+3.  return \\(\alpha\\)
+
 
 ### Complexity {#complexity}
 
@@ -82,6 +88,10 @@ For \\(a^{b} \mod q\\), with \\(n\\) as the bit-length of \\(b\\)
 
 -   \\(O(k \log^{3} n)\\)
     -   polynomial
+
+**Primitive Root**
+
+-   complexity is in step **2.** meaning complexity of modulo exponent \\(O(n)\\)
 
 
 ## Security {#security}
