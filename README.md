@@ -7,6 +7,7 @@ This is a Zettelkasten generated via Emacs [ox-hugo][ox-hugo] and uses my branch
 
 I write everything in Emacs [org-mode][org] and then convert everything through the [Ninja](https://ninja-build.org/ "Ninja") build tool. 
 
+## Build
 To convert all Org files into Markdown, run:
 
 ```bash
@@ -21,7 +22,13 @@ Or run the following to get an immediately browsable website on localhost:
 
     $ hugo serve
 
+
+# # Deployment
+I deploy through [Netlify][netlify] and is easy enough, just feed it the github repository and set the build tool as hugo.
+
+
 [hugo]: https://gohugo.io/
 [ox-hugo]: https://github.com/kaushalmodi/ox-hugo
 [cortex]: https://github.com/jethrokuan/cortex
 [org]: https://github.com/jethrokuan/braindump/tree/master/org
+[netlify]: https://app.netlify.com/
