@@ -53,7 +53,7 @@ Example with _Bob_ and _Alice_:
     -   \\(A= g^{a} \mod p\\)
 -   \\(b\\) private Bob key
 -   \\(B\\) public Bob key
-    -   \\(A= g^{b}^{} \mod p\\)
+    -   \\(A= g^{b} \mod p\\)
 
 
 ## Security {#security}
