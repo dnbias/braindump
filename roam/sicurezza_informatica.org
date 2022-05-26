@@ -4,8 +4,8 @@
 :END:
 #+title: Sicurezza Reti e Calcolatori
 #+date: [2022-03-09 Wed 17:01]
-#+filetags: university
-- Prof: Bergadono
+#+filetags: university security
+- Prof: Bergadano Francesco
 * Cifrari Simmetrici
 Cifrari sono sempre esistiti, tra i cifrari pre-informatici piú famosi ci sono i cifrari simmetrici =character-oriented=:
 - Cifrario di Cesare, cifrari monoalfabetici a 1 lettera
@@ -27,8 +27,6 @@ Da quest'ultimo derivano i cifrari simmetrici =bit-oriented=:
 - [[id:51177984-16bc-4c8b-8b69-969dba9f1dd9][One-time Pad]]
 In questi cifrari al posto dell'operazione di sostituzione alfabetica viene utilizzato $\oplus$[fn:exor]
 
-[fn:exor] Exclusive Or
-
 I cifrari simmetrici moderni sono caratterizzati da:
 - uso del calcolatore
 - combinazione di permutazioni e sostituzioni
@@ -44,6 +42,7 @@ Una proprietá desiderabile in un encryption algorithm é chiamata /avalanche ef
 
 Queste tecniche sono utilizzate nel contesto della /bulk encryption/
 
+[fn:exor] Exclusive Or
 ** Cifrari a blocchi
 Utilizzando chiavi lunghe e testi arbitrariamente lunghi
 1. cifrare a 2 fasi
