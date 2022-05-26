@@ -21,7 +21,7 @@ Professoressa: Cristina Baroglio
 
 ### Automazione {#automazione}
 
-Campo in cui l'informatico piu' in generale viene applicata
+Campo in cui l'informatica piú in generale viene applicata
 
 -   automazione del calcolo
 -   automazione contabile
@@ -40,10 +40,10 @@ Svolta da un agente artificiale che risolve un compito
 Utile nei problemi:
 
 -   non deterministici
--   in cui c'e' molteplicita' di soluzioni
+-   in cui c'é molteplicitá di soluzioni
 -   con dati di natura simbolica
 -   si ha una conoscenza ampia e completa
--   dove l'informazione e' parzialmente strutturata
+-   dove l'informazione é parzialmente strutturata
 
 
 ### Comprensione {#comprensione}
@@ -53,10 +53,10 @@ Output attesi \\(\implies\\) comprensione? [John R. Searle]({{< relref "john_r_s
 
 ### Test di Turing {#test-di-turing}
 
--   test per definire se un computer e' intelligente, o se un programma lo e'
+-   test per definire se un computer é intelligente, o se un programma lo é
     -   in linguaggio naturale
--   per T lo e' quando inganna l'uomo, imitando il comportamento umano
--   un computer che deve passare il test non eseguira' gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacita' di un umano
+-   per T lo é quando inganna l'uomo, imitando il comportamento umano
+-   un computer che deve passare il test non eseguirá gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacitá di un umano
 -   `The Imitation Game`
 
 
@@ -292,11 +292,18 @@ Si possiedono informazioni che permettono di identificare le strade piú promett
 Questa informazione é chiamata **euristica**
 \\(h(n)\\): Il costo minimo stimato per raggiungere un nodo _preferito_ di \\(n\\)
 
+Una strategia é il mantenere la frontiera ordinata secondo una \\(f(n)\\) detta funzione di valutazione
+
+-   questa contiene a sua volta una componente \\(h(n)\\) spesso
+-   in generale questa strategia é chiamata **best-first search**
+    -   famiglia di strategia (greedy, A\*, RBFS)
+
 
 ##### Greedy {#greedy}
 
 -   costruisce un albero di ricerca
 -   mantiene ordinata la frontiera a seconda di \\(h(n)\\)
+    -   \\(f(n) = h(n)\\)
 
 Ma l'euristica puó essere imperfetta e creare dei problemi.
 Questa strategia considera solo informazioni _future_, che riguardano ció che non é ancora stato esplorato.
@@ -311,14 +318,14 @@ Combina informazioni future e passate:
 Utilizza una funzione di valutazione:
 \\(f(n) = g(n) + h(n)\\)
 
-Dove \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
+-   \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
 
 I costi minimi reali sono definiti con:
 \\(f^{\star}(n) = g^\star(n) + h^\star(n)\\)
 
 -   definizione utilizzata nelle dimostrazioni
 
-\\(A^\star\\) é ottimo quando
+\\(A^\star\\) é **ottimo** quando
 
 -   tutti i costi da un nodo a un successore sono positivi
 -   l'euristica \\(h(n)\\) é ammissibile
@@ -341,7 +348,41 @@ Inoltre é **ottimamente efficiente**
 Ma \\(\textsc{space}=O(b^d)\\)
 
 
+##### Recursive Best-First Strategy {#recursive-best-first-strategy}
+
+`RBFS`
+
+-   simile alla ricerca ricorsiva in profonditáv
+-   usa un _upper bound_ dinamico
+    -   ricorda la migliore alternativa fra i percorsi aperti
+-   ha poche esigenze di spazio
+    -   mantiene solo nodi del percorso corrente e fratelli
+-   lo stesso nodo puó essere visitato piú volte se l'algoritmo ritorna a un percorso aperto
+
+Intuitivamente:
+
+-   procede come \\(A^{\star}\\) fino a che la soluzione rispetta l'_upper bound_
+-   sospende la ricerca lungo il cammino quando non piú migliore
+    -   il cammino viene dimenticato, si cancella dalla memoria
+    -   é conservata la traccia nella sua radice del costo ultimo  stimato
+
+`RBFS` é ottimo se l'euristica é ammissibile
+
+-   \\(\textsc{Space} = O(b\cdot d)\\)
+-   \\(\textsc{Time}\\) dipende dall'accuratezza dell'euristica
+
+
 ### Euristiche {#euristiche}
+
+La qualitá di un euristica puó essere calcolata computado il _branching factor effettivo_ \\(b^\star\\)
+
+-   \\(N\\) numero di nodi generati a partire da un nodo iniziale
+-   \\(d\\) profonditá della soluzione trovata
+
+\\[N+1 = 1 + b^\star + (b^\star)^{2} + \cdots + (b^\star)^{d} \\]
+\\[N \simeq (b^\star)^{d} \implies b^\star \simeq \sqrt[d]{N}\\]
+
+Le euristiche migliori mostreranno \\(b^\star\\) vicini a 1.
 
 
 #### Calcolo della Bontá {#calcolo-della-bontá}
@@ -354,7 +395,8 @@ Per decidere tra 2 euristiche ammissibili quale sia la piú buona
 Si considera la **dominanza**
 
 -   \\(\forall n : h\_2(n) \le h\_1(n)\le h^\star(n)\\)
-    -   restituisce sempre valore maggiore rispetto all'altra
+    -   \\(h\_{1}\\) domina perché restituisce sempre valore maggiore rispetto all'altra
+    -   si puó dire sia piú informata in quanto approssima meglio
 -   una euristica dominante sará piú vicina alla realtá
 
 Si puó costruire una nuova \\(h(n) = \max(h\_1(n),\dots,h\_k(n))\\) dominante su tutte quelle che la compongono
@@ -537,11 +579,12 @@ _Bruteforce_
 
 ##### Profonditá con Backtracking {#profonditá-con-backtracking}
 
-Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni
+Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni.
 Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
+
 Dati \\(n\\) variabili e \\(d\\) media del numero di  valori possibili per una variabile:
 
--   il `branching fator` al primo livello, \\(n \cdot d\\)
+-   il `branching factor` al primo livello, \\(n \cdot d\\)
 -   ... al secondo, \\((n-1)\cdot d\\)
 -   l'albero avrá \\(n! \cdot d^{n}\\) foglie
 
@@ -567,7 +610,7 @@ Si propagano le scelte delle variabile ai vicini diretti, restringendo il domini
 <!--listend-->
 
 ```python
-def AC-3(csp): // returns CSP ridotto
+def AC-3(csp): # returns redox CSP
     queue = csp.arcs
     while queue != empty:
         (xi,xj) = queue.RemoveFirst()
@@ -576,7 +619,7 @@ def AC-3(csp): // returns CSP ridotto
                 queue.Add(xk,xi)
 
 
-def RemoveInconsistentValues(xi,xj): // returns boolean
+def RemoveInconsistentValues(xi,xj): # returns boolean
     removed = false
     for (x in Domain[xi])
         if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
@@ -681,7 +724,7 @@ _Per la rappresentazione di Knowledge Base_
     -   permette la valutazione delle formule
 -   **Conseguenza**  \\(\vDash\\)
     -   in generale il lato sinistro é sottoinsieme del destro
-        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}: F\_{1}\_{}\_{} \vDash F\_{2}\\)
+        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}: F\_{1} \vDash F\_{2}\\)
     -   **non é** l'_implicazione_ logica, sono su piani diversi anche se sono simili
 -   **Equivalenza**  \\(\equiv\\)
     -   \\(F\_{1} \vDash F\_{2} \land F\_{2} \vDash F\_{1}\\)
@@ -700,24 +743,25 @@ _Per la rappresentazione di Knowledge Base_
 
 -   **Algoritmi di Inferenza** manipolano inferenze per derivare formule
     1.  correttezza (_soundness_)
-        -   \\(KB \vdash\_{i} A \implies KB \vDash A\\)
-    2.  completezza
-        -   \\(KB \vDash\_{} A \implies KB \vdash\_{i} A\\)
 
-<!--listend-->
+\\[KB \vdash\_{i} A \implies KB \vDash A\\]
+
+1.  completezza
+
+\\[KB \vDash\_{} A \implies KB \vdash\_{i} A\\]
 
 -   **Grounding**
 
 
 ### Semantica {#semantica}
 
--   \\(KB\_{LP}\vDash P\_{LP}\\)
+\\[KB\_{LP}\vDash P\_{LP}\\]
 
 Vari approcci:
 
-1.  Model Checking
+1.  **Model Checking**
     -   \\(n\\) simboli, \\(2^{n}\\) modelli possibili
-2.  Theorem Proving
+2.  **Theorem Proving**
     -   basato sull'inferenza _sintattica_
         -   quindi sulla manipolazione delle formule
         -   utilizza le `Regole di Inferenza`
@@ -746,7 +790,7 @@ Vari approcci:
 
 > **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
 
--   questo é utilizzato nella dimostrazione per refutazione
+Questo é utilizzato nella dimostrazione per refutazione.
 
 
 ##### Horn Clauses {#horn-clauses}
@@ -876,16 +920,18 @@ La base di conoscenza puó essere interrogata con `ask`
 <!--listend-->
 
 -   `Lifting` della Risoluzione[^fn:4]
-    -   \\(\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})\\)
-    -   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
-        1.  Eliminazione delle **implicazioni**
-        2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
-        3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
-        4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:5]
-            -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
-            -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
-            -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
-        5.  Eliminazione dei \\(\forall\\)
+
+\\[\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})\\]
+
+-   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
+    1.  Eliminazione delle **implicazioni**
+    2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
+    3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
+    4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:5]
+        -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
+        -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
+        -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
+    5.  Eliminazione dei \\(\forall\\)
 
 
 #### Database Semantics {#database-semantics}

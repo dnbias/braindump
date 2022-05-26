@@ -2,11 +2,11 @@
 title = "Sicurezza Reti e Calcolatori"
 author = ["Daniel Biasiotto"]
 date = 2022-03-09T17:01:00+01:00
-tags = ["university"]
+tags = ["university", "security"]
 draft = false
 +++
 
--   Prof: Bergadono
+-   Prof: Bergadano Francesco
 
 
 ## Cifrari Simmetrici {#cifrari-simmetrici}
@@ -31,6 +31,25 @@ Da quest'ultimo derivano i cifrari simmetrici `bit-oriented`:
 -   [One-time Pad]({{< relref "one_time_pad.md" >}})
 
 In questi cifrari al posto dell'operazione di sostituzione alfabetica viene utilizzato \\(\oplus\\)[^fn:1]
+
+I cifrari simmetrici moderni sono caratterizzati da:
+
+-   uso del calcolatore
+-   combinazione di permutazioni e sostituzioni
+-   uso di numerose fasi, _round_
+
+Di questi ne esistono diversi:
+
+-   [Macchine a Rotori]({{< relref "macchine_a_rotori.md" >}})
+-   [Feistel Cipher]({{< relref "feistel_cipher.md" >}})
+-   [DES]({{< relref "des.md" >}})
+-   [AES]({{< relref "aes.md" >}})
+
+Una proprietá desiderabile in un encryption algorithm é chiamata _avalanche effect_
+
+-   un cambiamento marginale in un input (chiave o plaintext) dovrebbe produrre un grande cambiamento nel ciphertext
+
+Queste tecniche sono utilizzate nel contesto della _bulk encryption_
 
 
 ### Cifrari a blocchi {#cifrari-a-blocchi}
@@ -204,13 +223,13 @@ Alla fine il messaggio autenticato avrá la forma:
 
 ## Sniffing &amp; Spoofing {#sniffing-and-spoofing}
 
-1.  sniffing
+1.  _sniffing_
     -   non facile su rete geografica
     -   possibile su `LAN`
         -   sia su switch che non
         -   non é possibile su _switch unicast_
         -   solo su _broadcast_
-2.  spoofing
+2.  _spoofing_
     -   `ARP` spoofing/poisoning
     -   `DHCP` associa automaticamente `IP` di router e `DNS`
     -   `ARP` associa `MAC-IP`
@@ -409,7 +428,7 @@ Queste tecniche sono annidabili
             -   tipo di algoritmo
             -   chiave simmetrica
     -   Data
-        -   \\(N\times\\) 32B
+        -   $N&times;$32B
         -   dati di autenticazione `MAC`
         -   questo `MAC` coper da `header IP` in poi
             -   ignora campi variabili `TTP` e `checksum` impostandoli a 0
@@ -456,22 +475,3 @@ Queste tecniche sono annidabili
 ## Blockchain {#blockchain}
 
 [^fn:1]: Exclusive Or
-
-    I cifrari simmetrici moderni sono caratterizzati da:
-
-    -   uso del calcolatore
-    -   combinazione di permutazioni e sostituzioni
-    -   uso di numerose fasi, _round_
-
-    Di questi ne esistono diversi:
-
-    -   [Macchine a Rotori]({{< relref "macchine_a_rotori.md" >}})
-    -   [Feistel Cipher]({{< relref "feistel_cipher.md" >}})
-    -   [DES]({{< relref "des.md" >}})
-    -   [AES]({{< relref "aes.md" >}})
-
-    Una proprietá desiderabile in un encryption algorithm é chiamata _avalanche effect_
-
-    -   un cambiamento marginale in un input (chiave o plaintext) dovrebbe produrre un grande cambiamento nel ciphertext
-
-    Queste tecniche sono utilizzate nel contesto della _bulk encryption_
