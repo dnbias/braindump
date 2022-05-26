@@ -42,7 +42,7 @@ ed  &\equiv 1 \mod (p-1)(q-1) \\\\
 we can conclude
 
 \begin{align\*}
-m^{ed} \mod n =  m^{k'(p-1)(q-1) +1} = m  hspace{6em} \blacksquare
+m^{ed} \mod n =  m^{k'(p-1)(q-1) +1} = m  \hspace{6em} \blacksquare
 \end{align\*}
 
 Example with _Bob_ and _Alice_:
