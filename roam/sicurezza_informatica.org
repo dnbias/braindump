@@ -185,15 +185,14 @@ Per far funzionare questo meccanismo é necessario risolvere il problema della d
 
 Alla fine il messaggio autenticato avrá la forma:
 ~M - FirmaElettronica - Certificato - Timestamp~
-
 * Sniffing & Spoofing
-1. sniffing
+1. /sniffing/
    - non facile su rete geografica
    - possibile su =LAN=
      + sia su switch che non
      + non é possibile su /switch unicast/
      + solo su /broadcast/
-2. spoofing
+2. /spoofing/
    - =ARP= spoofing/poisoning
    - =DHCP= associa automaticamente =IP= di router e =DNS=
    - =ARP= associa =MAC-IP=
@@ -212,12 +211,10 @@ Alla fine il messaggio autenticato avrá la forma:
      + =URL=
        * indirizzi falsi
 
-
 Per evitare questi attacchi:
 - non usare =HUB= ma switch
 - non usare /broadcast/
 - cifrare a livello applicativo e a livello di trasporto
-
 * DDoS
 - raro
 - difficile da evitare per i principi costituenti della rete
@@ -323,7 +320,6 @@ E tecniche
 
 Queste tecniche sono annidabili
 - prima applicando =AH= e poi =ESP=
-
 *** Transport
 - software =VPN= sui calcolatori comunicanti
 - protegge da spoofing/sniffing si rete locale
@@ -358,7 +354,7 @@ Queste tecniche sono annidabili
       - tipo di algoritmo
       - chiave simmetrica
   + Data
-    * $N\times$ 32B
+    * $N\times$32B
     * dati di autenticazione =MAC=
     * questo =MAC= coper da =header IP= in poi
       - ignora campi variabili =TTP= e =checksum= impostandoli a 0
@@ -379,7 +375,6 @@ Queste tecniche sono annidabili
     * funzione di offuscamento del traffico
   + =PDU=, =NH=, auth
     * cifrati
-
 *** Anti-Replay
 - individua ripetizione pacchetti
   + non é possibile escludere che non creino problemi a livello applicativo
