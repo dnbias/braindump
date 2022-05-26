@@ -48,7 +48,7 @@ Example with /Bob/ and /Alice/:
   + $A= g^{a} \mod p$
 - $b$ private Bob key
 - $B$ public Bob key
-  + $A= g^{b}^{} \mod p$
+  + $A= g^{b} \mod p$
 
 
 [fn:euler] for $p,q$ primes: $\phi(n) = \phi(p\cdot q) = (p-1)\cdot(q-1)$
