@@ -10,11 +10,11 @@
    - =Miller-Rabin=
 2. calculate modulo $n = pq$
 3. choose $e < (p-1)(q-1)$ such that $\text{gcd}(e,(p-1)(q-1))=1$
-4. calculate $d=e^{-1} \mod (p-1) (q-1)$
+4. calculate $d=e^{-1} \mod (p-1) (q-1)$[fn:algo]
    - private key
 5. $K^{+} = <e,n>$  ---  $K^{-} = <d,n>$
 
-This algorithm is *Generalized Euclid's Algorithm*
+[fn:algo] The algorithm used is *Generalized Euclid's Algorithm*,
 * Usage
 - Cypher: $c = m^{e} \mod n$
 - Decypher: $m = c^{d} \mod n$
