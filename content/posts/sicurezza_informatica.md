@@ -95,8 +95,8 @@ Di conseguenza un testo cifrato di questo tipo risulta tanto piú facile da deci
 ## Cifrari Asimmetrici {#cifrari-asimmetrici}
 
 Si utilizzano 2 chiavi, una per criptare e una per decriptare
-Le due chiavi non sono solo diverse nella forma, sono generate insieme e non e' possibile ottenere una dall'altra
-La difficolta' per un avversario non é piú informativa ma **computazionale**
+Le due chiavi non sono solo diverse nella forma, sono generate insieme e non é possibile ottenere una dall'altra
+La difficoltá per un avversario non é piú informativa ma **computazionale**
 Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piú impegnativo a livello computazionale, infatti i primi sono molto recenti ([Diffie-Hellman Key Exchange]({{< relref "diffie_hellman_key_exchange.md" >}})).
 
 -   il protocollo piú utilizzato in questo ambito é [RSA]({{< relref "rsa.md" >}}).
@@ -147,7 +147,10 @@ Un _birthday attack_ é effettuato generando collissioni:
 -   \\(2^{m}\\) messaggi
 -   codici di \\(c\\) bit
 -   \\(P(\text{collision}) > 0.5\\) per \\(m > \frac{c}{2}\\)
-    -   quindi per 64 bit bastano \\(2^{32}\\) messaggi
+    -   quindi per \\(64\\) bit bastano \\(2^{32}\\) messaggi
+
+Quindi un attaccante puó facilmente creare collisioni, ma il messaggio di cui il digest colliderá sará comunque incomprensibile, questo attacco é utile quando il ricevente si aspetta numeri o stringhe arbitrarie e non noterá nulla di strano nel messaggio ricevuto.
+Questi risultati impongono digest con almeno \\(256\\) bit.
 
 
 ## Autenticazione {#autenticazione}
@@ -157,7 +160,7 @@ Un _birthday attack_ é effettuato generando collissioni:
 
 ### Simmetrica {#simmetrica}
 
--   basata su cifrari simmetrici
+-   basata su **cifrari simmetrici**
 -   chiave condivisa
 
 \\(\textsc{mac}\_{K}(M)\\) - `Message Authentication Code`
@@ -167,7 +170,8 @@ Un _birthday attack_ é effettuato generando collissioni:
 2.  _Keyed Hash Function_ - `HMAC`
     -   `MAC` generato applicando \\(H\\) a una combinazione di \\(M\\) e una chiave segreta
     -   \\(\textsc{hmac}\_{K}(M) = H((K''\oplus \text{opad}) || H((K'' \oplus \text{ipad}) || M'))\\)
-        -   \\(K''\\): una chiave segrete \\(K'\\) con padding di 0 fino a \\(j\\) bit
+        -   \\(K''\\): una chiave segreta \\(K'\\) con padding di 0 fino a \\(j\\) bit
+            -   se maggiore di \\(j\\) bit \\(K'' = H(K')\\)
         -   \\(\text{ipad}\\): 00110110 ripetuto \\(j/8\\) volte
         -   \\(\text{opad}\\): 01011010 ripetuto \\(j/8\\) volte
     -   efficiente quanto \\(H\\)
@@ -176,7 +180,7 @@ Un _birthday attack_ é effettuato generando collissioni:
 
 ### Firma elettronica {#firma-elettronica}
 
--   basata su cifrari asimmetrici
+-   basata su **cifrari asimmetrici**
 -   firma con la chiave _privata_, verifica con la chiave _pubblica_ di chi firma
 
 In questo caso:
@@ -186,10 +190,13 @@ In questo caso:
     -   \\(\textsc{rsa}(K^-(A),\text{digest})\\)
 2.  `DSA` con `SHA-1`
 
-Per far funzionare questo meccanismo é necessario risolvere il problema della distribuzione delle chiavi pubbliche.
+Per far funzionare questo meccanismo é necessario risolvere il problema della distribuzione delle chiavi pubbliche. Questo in quanto rimane possibile un **Man in the Middle attack**.
 
 -   una terza parte `C` puó ricevere \\(\langle ID,K^+(ID)\rangle\\) e restituirne un certificato
 -   questo poi viene condivisto da altre terze parti o dagli stessi che lo hanno richiesto
+-   il certificato di chiave pubblica é un documento che attesta <span class="underline">l'associazione univoca</span> tra chiave pubblica e l'identitá del soggetto
+-   queste operazioni sono eseguite da un ente fidato, `Certification Authority` o `CA`
+    -   un attaccante pur sostituendo una chiave certificata _sniffata_ non puó sostituirla con la propria, non ha accesso alla chiave privata della `CA` e non puó crearsi un certificato falso
 
 Alla fine il messaggio autenticato avrá la forma:
 `M - FirmaElettronica - Certificato - Timestamp`

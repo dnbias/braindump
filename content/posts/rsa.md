@@ -12,11 +12,9 @@ draft = false
     -   `Miller-Rabin`
 2.  calculate modulo \\(n = pq\\)
 3.  choose \\(e < (p-1)(q-1)\\) such that \\(\text{gcd}(e,(p-1)(q-1))=1\\)
-4.  calculate \\(d=e^{-1} \mod (p-1) (q-1)\\)
+4.  calculate \\(d=e^{-1} \mod (p-1) (q-1)\\)[^fn:1]
     -   private key
 5.  \\(K^{+} = <e,n>\\)  ---  \\(K^{-} = <d,n>\\)
-
-This algorithm is **Generalized Euclid's Algorithm**
 
 
 ## Usage {#usage}
@@ -24,7 +22,7 @@ This algorithm is **Generalized Euclid's Algorithm**
 -   Cypher: \\(c = m^{e} \mod n\\)
 -   Decypher: \\(m = c^{d} \mod n\\)
 
-\\(\textsc{Proof}\\)   using **Euler's Theorem**[^fn:1], modulo used is \\(n\\):
+\\(\textsc{Proof}\\)   using **Euler's Theorem**[^fn:2], modulo used is \\(n\\):
 
 \begin{align\*}
 m^{\phi(n)} &\equiv 1 \\\\
@@ -64,4 +62,5 @@ Example with _Bob_ and _Alice_:
 -   **hard** - calculating \\(d\\) knowing \\(e, n\\) without knowing \\(p,q\\)
 -   **hard** - calculating \\(p,q\\) knowing \\(n\\), with \\(n\\) sufficiently big (at least 1024 bits)
 
-[^fn:1]: for \\(p,q\\) primes: \\(\phi(n) = \phi(p\cdot q) = (p-1)\cdot(q-1)\\)
+[^fn:1]: The algorithm used is **Generalized Euclid's Algorithm**,
+[^fn:2]: for \\(p,q\\) primes: \\(\phi(n) = \phi(p\cdot q) = (p-1)\cdot(q-1)\\)
