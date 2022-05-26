@@ -38,19 +38,16 @@ Prof: `Cattuto`
 -   Sono cosi' comuni che il compilatore pretende che il programmatore gestisca l'eccezione
     -   o avverta con la parola chiave `throws`
 
-<!--list-separator-->
 
--  IOException
+##### IOException {#ioexception}
 
-    <!--list-separator-->
 
-    -  FileNotFoundException
+###### FileNotFoundException {#filenotfoundexception}
 
-    <!--list-separator-->
 
-    -  EOFException
+###### EOFException {#eofexception}
 
-        -   End Of File
+-   End Of File
 
 
 #### Unchecked {#unchecked}
@@ -59,32 +56,28 @@ Prof: `Cattuto`
     -   origine interna
     -   possiomo prevedere un rimedio oppure no
 
+
+##### RuntimeException {#runtimeexception}
+
+
+###### NullPointerException {#nullpointerexception}
+
+
+###### ArithmeticException {#arithmeticexception}
+
+-   / 0
+
+
+###### IllegalArgumentException {#illegalargumentexception}
+
 <!--list-separator-->
 
--  RuntimeException
+-  NumberFormatException
 
-    <!--list-separator-->
-
-    -  NullPointerException
-
-    <!--list-separator-->
-
-    -  ArithmeticException
-
-        -   / 0
-
-    <!--list-separator-->
-
-    -  IllegalArgumentException
-
-        <!--list-separator-->
-
-        -  NumberFormatException
-
-            <a id="code-snippet--Esempio"></a>
-            ```java
-            Integer.parseInt("ciro");
-            ```
+    <a id="code-snippet--Esempio"></a>
+    ```java
+    Integer.parseInt("ciro");
+    ```
 
 
 ### Uso {#uso}

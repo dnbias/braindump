@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       6456f3d1-2bc3-4e50-abf0-1379bef1278d
+:END:
+#+title: Semantic Web
+#+date: [2022-05-17 Tue 21:25]
+=WWW= extension where the content is enriched by metadata.
+- this metadata is then used in the context of interpretation, inference, queries, automatic elaboration
+- [[id:aa6d9ae2-387e-4109-ba74-5f264c1a0b64][SPARQL]]

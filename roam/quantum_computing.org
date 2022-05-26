@@ -3,3 +3,6 @@
 :END:
 #+title: Quantum Computing
 #+date: [2022-03-29 Tue 18:03]
+* Resources
+- [[https://cs.uwaterloo.ca/%7Ewatrous/QC-notes/][John Watrous' Lecture notes]]
+- [[https://github.com/Microsoft/QuantumKatas][Quantum Katas]]

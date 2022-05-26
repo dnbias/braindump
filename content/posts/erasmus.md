@@ -170,3 +170,9 @@ La/il candidata/o dovrà specificare nel campo “Dichiarazioni aggiuntive” de
 -   [Exchange info](https://wwwen.uni.lu/international/mobility/incoming_exchange_students)
 -   [How to Apply](https://wwwen.uni.lu/international/mobility/incoming_exchange_students/how_do_i_apply)
 -   [Master in Information and CS](https://wwwen.uni.lu/studies/fstm/master_in_information_and_computer_sciences/programme)
+-   [Plug type F](https://www.power-plugs-sockets.com/luxembourg/)
+-   Stay
+    -   [FreeRentads](https://www.freerentads.com/rentals-properties-for-rent-luxembourg-QQSZ126067618-Hxt66O)
+    -   [Housing Request](https://wwwen.uni.lu/students/accommodation/housing_request)
+        -   no earlier than 10 weeks before the reservation date (start 1st or 16th of the month)
+-   [Belval Map](https://wwwen.uni.lu/content/download/78869/980182/file/Belval%20Campus_detailed_map.pdf)

@@ -16,26 +16,26 @@ It functions using module arithmetics.
 -   \\(q\\) prime
 -   \\(\alpha\\) primitive root of \\(q\\)
 
-> Let \\(n\\) be a positive integer. A **primitive root** \\(\mod n\\) is an integer \\(g\\) such that every integer relatively prime to \\(n\\) is congruent to a power of \\(g \mod n\\). That is, the integer \\(g\\) is a primitive root (\\(\mod n\\)) if for every number \\(a\\) relatively prime to \\(n\\) there is an integer \\(z\\) such that \\(a \equiv (g^z \mod{n})\\)
+> Let \\(n\\) be a positive integer. A **primitive root** \\(\mod n\\) is an integer \\(g\\) such that every integer relatively prime to \\(n\\) is congruent to a power of \\(g \mod n\\). That is, the integer \\(g\\) is a primitive root (\\(\mod n\\) ) if for every number \\(a\\) relatively prime to \\(n\\) there is an integer \\(z\\) such that \\(a \equiv (g^z \mod{n})\\)
 
 
 ## Algorithm {#algorithm}
 
 To realize `DH` we need:
 
--   efficient algorithm for \\(a^{b}\mod q\\)
--   efficient algorithm for generating a prime \\(q\\)
--   efficient algorithm for generating a primitive root for this \\(q\\)
+1.  efficient algorithm for \\(a^{b}\mod q\\)
+2.  efficient algorithm for generating a prime \\(q\\)
+3.  efficient algorithm for generating a primitive root for this \\(q\\)
 
-<!--listend-->
+**1.**
 
 ```c
 int expmod_r (int a, int b, int q) {
     if (b == 0) return 1;
     if (b%2 == 0)
-        return ((expmod(a,b/2,q))^2) % q;
+        return ((expmod_r(a,b/2,q))^2) % q;
     else
-        return (a*expmod(a,b-1,q)) % q;
+        return (a*expmod_r(a,b-1,q)) % q;
 }
 
 int expmod_i (int a, int[] b, int q) { // here b is encoded in binary
@@ -51,6 +51,47 @@ int expmod_i (int a, int[] b, int q) { // here b is encoded in binary
     return d;
 }
 ```
+
+**2.**
+Probabilistic approach is best: **Miller Rabin primality test**
+
+```c
+int generate_prime(int k) { // k rounds of testing to perform
+    bool probablyPrime = false;
+    while (!probablyPrime) {
+        int n = getRandomInt();
+        probablyPrime = miller_rabin(n,k);
+    }
+    return n;
+}
+```
+
+For full algorithm in `C` see [here](https://www.sanfoundry.com/c-program-implement-rabin-miller-primality-test-check-number-prime/).
+
+**3.**
+
+1.  generate \\(j\\) factors \\(f\\), multiply them, add 1, result is \\(\alpha\\), test primality
+    -   do until you have a prime \\(\alpha\\)
+2.  loop factors, test if there is \\(f\_{i } \mid \alpha^{q-1/f\_{i} } \equiv 1\\), in modulo \\(q\\)
+    -   if `true` go back to step  **1.**
+3.  return \\(\alpha\\)
+
+
+### Complexity {#complexity}
+
+For \\(a^{b} \mod q\\), with \\(n\\) as the bit-length of \\(b\\)
+
+-   recursive algorithm: \\(O(2 \log\_{2}(b)) = O(2\log\_{2} (2^{n})) = O(2n)=O(n)\\)
+-   iterative algorithm: \\(O(n)\\)
+
+**Miller Rabin**
+
+-   \\(O(k \log^{3} n)\\)
+    -   polynomial
+
+**Primitive Root**
+
+-   complexity is in step **2.** meaning complexity of modulo exponent \\(O(n)\\)
 
 
 ## Security {#security}
@@ -75,11 +116,9 @@ The only way the adversary can solve this knowing:
 -   \\(Y\_{A}\\)
 -   \\(Y\_{B}\\)
 
-\begin{center}
 \begin{align\*}
 X\_{B} &= \text{dlog}\_{\alpha,q}(Y\_{B}) \\\\
 K &= (Y\_{A})^{X\_{B}} \text{mod }q
 \end{align\*}
-\end{center}
 
-But for langer primes discrete logarithms are considered infeasible.
+But for larger primes discrete logarithms are considered infeasible.

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       ee8ddd33-8177-497c-a5e3-3fdafe40c021
+:END:
+#+title: Provenance
+#+date: [2022-05-17 Tue 21:23]
+- [[https://www.w3.org/TR/prov-dm]]

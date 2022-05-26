@@ -13,7 +13,7 @@ Professoressa: Cristina Baroglio
 - *Automazione*,
 - *Autonomia*,
 ** Automazione
-Campo in cui l'informatico piu' in generale viene applicata
+Campo in cui l'informatica piú in generale viene applicata
 - automazione del calcolo
 - automazione contabile
 - automiazione della ricerca di informazione, motori di ricerca
@@ -26,18 +26,17 @@ Svolta da un agente artificiale che risolve un compito
 
 Utile nei problemi:
 - non deterministici
-- in cui c'e' molteplicita' di soluzioni
+- in cui c'é molteplicitá di soluzioni
 - con dati di natura simbolica
 - si ha una conoscenza ampia e completa
-- dove l'informazione e' parzialmente strutturata
-
+- dove l'informazione é parzialmente strutturata
 ** Comprensione
 Output attesi $\implies$ comprensione? [[id:8c582ee0-1194-47b7-b6c9-9e46adaa60c7][John R. Searle]]
 ** Test di Turing
-- test per definire se un computer e' intelligente, o se un programma lo e'
+- test per definire se un computer é intelligente, o se un programma lo é
   + in linguaggio naturale
-- per T lo e' quando inganna l'uomo, imitando il comportamento umano
-- un computer che deve passare il test non eseguira' gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacita' di un umano
+- per T lo é quando inganna l'uomo, imitando il comportamento umano
+- un computer che deve passare il test non eseguirá gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacitá di un umano
 - =The Imitation Game=
 ** Captcha
 =Completely Automated Public Turing-test to tell Computers and Humans Apart=
@@ -202,9 +201,15 @@ Si possiedono informazioni che permettono di identificare le strade piú promett
 Questa informazione é chiamata *euristica*
 $h(n)$: Il costo minimo stimato per raggiungere un nodo /preferito/ di $n$
 
+Una strategia é il mantenere la frontiera ordinata secondo una $f(n)$ detta funzione di valutazione
+- questa contiene a sua volta una componente $h(n)$ spesso
+- in generale questa strategia é chiamata *best-first search*
+  + famiglia di strategia (greedy, A*, RBFS)
+
 **** Greedy
 - costruisce un albero di ricerca
 - mantiene ordinata la frontiera a seconda di $h(n)$
+  + $f(n) = h(n)$
 
 Ma l'euristica puó essere imperfetta e creare dei problemi.
 Questa strategia considera solo informazioni /future/, che riguardano ció che non é ancora stato esplorato.
@@ -214,14 +219,13 @@ Combina informazioni future e passate:
 
 Utilizza una funzione di valutazione:
 $f(n) = g(n) + h(n)$
-
-Dove $g(n)$ é il costo minimo dei percorsi esplorati che portano dalla radice a $n$
+-  $g(n)$ é il costo minimo dei percorsi esplorati che portano dalla radice a $n$
 
 I costi minimi reali sono definiti con:
 $f^{\star}(n) = g^\star(n) + h^\star(n)$
 - definizione utilizzata nelle dimostrazioni
 
-$A^\star$ é ottimo quando
+$A^\star$ é *ottimo* quando
 - tutti i costi da un nodo a un successore sono positivi
 - l'euristica $h(n)$ é ammissibile
 
@@ -238,7 +242,32 @@ Inoltre é *ottimamente efficiente*
 - espande sempre il numero minimo di nodi possibili
 Ma $\textsc{space}=O(b^d)$
 
+**** Recursive Best-First Strategy
+=RBFS=
+- simile alla ricerca ricorsiva in profonditáv
+- usa un /upper bound/ dinamico
+  + ricorda la migliore alternativa fra i percorsi aperti
+- ha poche esigenze di spazio
+  + mantiene solo nodi del percorso corrente e fratelli
+- lo stesso nodo puó essere visitato piú volte se l'algoritmo ritorna a un percorso aperto
+
+Intuitivamente:
+- procede come $A^{\star}$ fino a che la soluzione rispetta l'/upper bound/
+- sospende la ricerca lungo il cammino quando non piú migliore
+  + il cammino viene dimenticato, si cancella dalla memoria
+  + é conservata la traccia nella sua radice del costo ultimo  stimato
+
+=RBFS= é ottimo se l'euristica é ammissibile
+- $\textsc{Space} = O(b\cdot d)$
+- $\textsc{Time}$ dipende dall'accuratezza dell'euristica
 ** Euristiche
+La qualitá di un euristica puó essere calcolata computado il /branching factor effettivo/ $b^\star$
+- $N$ numero di nodi generati a partire da un nodo iniziale
+- $d$ profonditá della soluzione trovata
+\[N+1 = 1 + b^\star + (b^\star)^{2} + \cdots + (b^\star)^{d} \]
+\[N \simeq (b^\star)^{d} \implies b^\star \simeq \sqrt[d]{N}\]
+
+Le euristiche migliori mostreranno $b^\star$ vicini a 1.
 *** Calcolo della Bontá
 Per decidere tra 2 euristiche ammissibili quale sia la piú buona
 1. confronto sperimentale
@@ -246,7 +275,8 @@ Per decidere tra 2 euristiche ammissibili quale sia la piú buona
 
 Si considera la *dominanza*
 - $\forall n : h_2(n) \le h_1(n)\le h^\star(n)$
-  + restituisce sempre valore maggiore rispetto all'altra
+  + $h_{1}$ domina perché restituisce sempre valore maggiore rispetto all'altra
+  + si puó dire sia piú informata in quanto approssima meglio
 - una euristica dominante sará piú vicina alla realtá
 Si puó costruire una nuova $h(n) = \max(h_1(n),\dots,h_k(n))$ dominante su tutte quelle che la compongono
 
@@ -395,10 +425,11 @@ I problemi sono affrontati con approcci diversi in base alle caratteristiche del
 É estremamente semplice ma non é scalabile.
 
 **** Profonditá con Backtracking
-Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni
+Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni.
 Il problema é che in =CSP= il ~branching factor~ é spesso molto alto, producendo alberi molto larghi.
+
 Dati $n$ variabili e $d$ media del numero di  valori possibili per una variabile:
-- il ~branching fator~ al primo livello, $n \cdot d$
+- il ~branching factor~ al primo livello, $n \cdot d$
 - ... al secondo, $(n-1)\cdot d$
 - l'albero avrá $n! \cdot d^{n}$ foglie
 
@@ -416,7 +447,7 @@ Si propagano le scelte delle variabile ai vicini diretti, restringendo il domini
 - simile al Forward Checking
 - =Arc Consistency= non é una proprietá sufficiente a garantire l'esistenza di una soluzione
 #+begin_src python
-def AC-3(csp): // returns CSP ridotto
+def AC-3(csp): # returns redox CSP
     queue = csp.arcs
     while queue != empty:
         (xi,xj) = queue.RemoveFirst()
@@ -425,7 +456,7 @@ def AC-3(csp): // returns CSP ridotto
                 queue.Add(xk,xi)
 
 
-def RemoveInconsistentValues(xi,xj): // returns boolean
+def RemoveInconsistentValues(xi,xj): # returns boolean
     removed = false
     for (x in Domain[xi])
         if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
@@ -507,7 +538,7 @@ Caratterizzati da:
   + permette la valutazione delle formule
 - *Conseguenza*  $\vDash$
   + in generale il lato sinistro é sottoinsieme del destro
-    * per ogni caso di $F_{1}$ vale anche $F_{2}$: $F_{}_{}_{1} \vDash F_{2}$
+    * per ogni caso di $F_{1}$ vale anche $F_{2}: F_{1} \vDash F_{2}$
   + *non é* l'/implicazione/ logica, sono su piani diversi anche se sono simili
 - *Equivalenza*  $\equiv$
   + $F_{1} \vDash F_{2} \land F_{2} \vDash F_{1}$
@@ -521,21 +552,21 @@ Caratterizzati da:
   + formula per il quale esiste qualche modello in cui é vera
 - *Inferenza*  $\vdash$
   + propagazione informazione
-  + \[\frac{\text{premesse}}{\text{conclusione}}\]
+\[\frac{\text{premesse}}{\text{conclusione}}\]
   + *Algoritmi di Inferenza* manipolano inferenze per derivare formule
     1. correttezza (/soundness/)
-       - $KB \vdash_{i} A \implies KB \vDash A$
+\[KB \vdash_{i} A \implies KB \vDash A\]
     2. completezza
-       - $KB \vDash_{} A \implies KB \vdash_{i} A$
+\[KB \vDash_{} A \implies KB \vdash_{i} A\]
 - *Grounding*
 
-*** Semantica
-- $KB_{LP}\vDash P_{LP}$
+** Semantica
+\[KB_{LP}\vDash P_{LP}\]
 
 Vari approcci:
-1. Model Checking
+1. *Model Checking*
    - $n$ simboli, $2^{n}$ modelli possibili
-2. Theorem Proving
+2. *Theorem Proving*
    - basato sull'inferenza /sintattica/
      + quindi sulla manipolazione delle formule
      + utilizza le =Regole di Inferenza=
@@ -545,7 +576,7 @@ Vari approcci:
      + $R\vDash Q \iff R\implies Q \text{ é una formula valida o tautologia}$
        * $Q$ é conseguenza logica di $R$
 
-**** Theorem Proving
+*** Theorem Proving
 1. Algoritmo di Ricerca (o di inferenza)
 2. Insieme di regole di inferenza
    - =Risoluzione=
@@ -563,9 +594,9 @@ Vari approcci:
 #+begin_quote
 *Teorema*: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
 #+end_quote
-- questo é utilizzato nella dimostrazione per refutazione
+Questo é utilizzato nella dimostrazione per refutazione.
 
-***** Horn Clauses
+**** Horn Clauses
 Un caso particolare delle clausole.
 
 #+begin_quote
@@ -577,18 +608,18 @@ ad esempio:
 
 \[\frac{\lnot A \lor \lnot B}{A \land B}\]
 
-***** Forward Chaining
+**** Forward Chaining
 Lineare nel numero di clausole
 - ogni clausola é applicata al piú  una volta
 - peró sono applicate clausole inutili per il /target/
 [[../media/img/forward-chaining.jpg]]
 
-***** Backward Chaining
+**** Backward Chaining
 Parte dalla formula da dimostare e va a ritroso
 - piú efficiente del =Forward Chaining=
 - meno che lineare
 [[../media/img/backward-chaining.jpg]]
-**** First Order Logic
+*** First Order Logic
 - dichiarativa
   + separa conoscenza da inferenza
   + si deriva conoscenza da altra conoscenza
@@ -605,8 +636,8 @@ Elementi:
   + $\forall$ viene espanso in una catena di $\land$
   + $\exists$ viene espanso in una catena di $\lor$
   + le espansioni vengono fatte sostituendo alla variabile *tutte* le costanti del modello
-  + \[\exists x \lnot F \equiv \lnot \forall x F\]
-  + \[\exists x F \equiv \lnot \forall x \lnot F\]
+  + $\exists x \lnot F \equiv \lnot \forall x F$
+  + $\exists x F \equiv \lnot \forall x \lnot F$
 - punteggiatura
 
 Le formule in =FOL= sono poi /interpretate/
@@ -631,15 +662,19 @@ La base di conoscenza puó essere interrogata con ~ask~
 - quando compaiono variabili si intende una sostituzione
   + quindi la variabile $x$ é interpretata in senso esistenziale ( $\exists$ )
 
-***** Come fare Inferenza su FOL
+**** Clausole di Horn
+- disgiunzioni di letterali di cui al piú uno é positivo
+- atomiche
+- implicazioni il cui antecedente é una congiunzione di letterali
+**** Inferenza su FOL
 - =Proposizionalizzazione=
   + $KB_{\text{FOL}} \rightarrow KB_{\text{LP}}$
   + Regola di Instanziazione Universale - =UI=
-    * \[\frac{\forall x, \alpha}{\text{subst}\{\{x/g\},\alpha\}}\]
+    * $\frac{\forall x, \alpha}{\text{subst}\{\{x/g\},\alpha\}}$
     * alla fine, in uno o piú passi, si deve arrivare a =ground=, $g$ é esso stesso =ground=
     * la $KB_{\text{LP}}$ risultante é logicamente equivalente a quella precedente
   + Regola di Instanziazione Esistenziale - =EI=
-    * \[\frac{\exists x,\alpha}{\text{subst}\{\{x/k\},\alpha\}}\]
+    * $\frac{\exists x,\alpha}{\text{subst}\{\{x/k\},\alpha\}}$
     * $k$ costante di Skolem, nuova
       - non compare nella =KB=
     * la $KB_{\text{LP}}$ risultante /non/ é logicamente equivalente a quella precedente /ma/ é soddisfacibile se $KB_{\text{FOL}}$
@@ -653,16 +688,355 @@ La base di conoscenza puó essere interrogata con ~ask~
     * crea delle basi di conoscenza grandi con le regole
 - =Lifting= delle regole di inferenza
   + Regole di Inferenza $\text{LP}$ trasformate in Regole di Inferenza $\text{FOL}$
-  + =Unification= Martelli/Montanari
-  + *Modus Ponens Generalizzato*
-    * \[\frac{P_{1}',\cdots ,P_{n}' \qquad p_{1} \land \cdots \land p_{n} \implies q}{\text{subst}(q,\Theta)}\]
-    * $\Theta$ é un unificatore di ciascuna coppia $\langle P_{i}', p_{i} \rangle$
+  + *Modus Ponens Generalizzato*[fn:2]
+\[\frac{p_{1}',\cdots ,p_{n}' \qquad p_{1} \land \cdots \land p_{n} \implies q}{\text{subst}(q,\Theta)}\]
+    * $\Theta$ é un unificatore di ciascuna coppia $\langle p_{i}', p_{i} \rangle$ per cui $p_{i}' \theta = p_{i} \theta$ per ogni $i\in [1,n]$
+    * =Unification= (Martelli/Montanari)
+      * algoritmo di ricerca che date due formule trova la sostituzione $\theta$ piú generale che le unifichi
+    * =Forward Chaining=
+      * *Corretto* e *Completo* se la =KB= é una =DATALOG=[fn:datalog]
+        - in caso contrario il caso negativo puó non terminare
+    * =Backward Chaining=
+      * stesse considerazioni del =FC= ma piú efficiente
+- =Lifting= della Risoluzione[fn:unificatore]
+\[\frac{l_{1}\lor \cdots \lor l_{k} \qquad m_{1} \lor \cdots \lor m_{n}}{\text{subst}(\Theta, l_{1} \lor \cdots \lor l_{i-1} \lor l_{i+1} \lor \cdots \lor l_{k} \lor m_{1}  \lor \cdots \lor m_{j-1} \lor m_{j+1} \lor \cdots \lor m_{n})\]
+  - $KB_{\text{FOL}} \rightarrow_{\text{traduzione}}  KB_{\text{FOL-CNF}}$
+    1. Eliminazione delle *implicazioni*
+    2. Spostamento delle *negazioni all'interno* ($\lnot \forall \equiv \exists \lnot$)
+    3. *Standardizzazione* delle variabili (rinomina variabili ambigue)
+    4. *Skolemizzazione* (eliminazione degli $\exists$)[fn:skolemizzazione]
+        - _funzioni di Skolem_ in contesti $\forall x_{1},x_{2},\cdots [\exists y P(y,x_{1},x_{2},\cdots)] \cdots [\exists z Q(z,x_{1},x_{2}\cdots)]$
+        - $\forall x P (F(x), x_{})$ dove $F$ é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
+        - _Caso Particolare_, in assenza di parametri la $F$ non ha parametri: é una costante
+    5. Eliminazione dei $\forall$
 
-**** Database Semantics
+
+[fn:skolemizzazione]  esistenziali /in scope/ di universali
+[fn:unificatore] $\Theta$ unificatore di $l_{i}$ e $\lnot m_{j}$
+[fn:datalog] una =KB= senza funzioni
+[fn:2] *NB* nella parte sinistra e destra le $p$ e $q$ contengono variabili e/o costanti
+*** Database Semantics
 - unicitá dei nomi
-- closed-world assumption
+- /closed-world assumption/
+  + ció che non é rappresentato é falso
+  + questo é diverso dalle =Ontologie OWL= che assumono un mondo aperto
+    * esiste il concetto di ignoto oltre al vero/falso
 - domain closure
 Riduce il numero di modelli a un numero finito.
 
+Le =ontologie= a loro differenza possono avere istanze con ulteriori proprietá rispetto al concetto cui appartengono.
 
 [fn:1] Se il dominio $D$ é un insieme illimitato e se qualche formula $P$ dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
+
+** Ontologie
+Le categorie vengono =reificate=, rese oggetti
+- questi oggetti sono utilizzati al posto dei predicati utilizzati in =FOL=
+Vengono aggiunti predicati:
+- ~Member~ applicabile a /istanze/ di oggetti e una /categoria/
+  + ~true~ se l'istanza appartiene alla categoria
+- ~IS-A~ applicabile a due /categorie/
+  + vera se la prima é una sottocategoria della seconda
+
+Con questi elementi si possono definire =tassonomie=
+- insieme di regole di sottocategorie / sottoclassi
+
+Le categorie di una tassonomia possono essere caratterizzate tramite la definizione di =proprietá=:
+- ~Member(X, Pallone)~ $\Rightarrow$ ~Sferico(X)~
+- le proprietá si ereditano dalle superclassi
+- possono essere contraddette dalle proprietá delle sottoclassi
+
+Le categorie:
+- possono essere =disgiunte= se non hanno istanze in comune nelle proprie sottoclassi
+  + ~Disjoint(S)~
+- costituiscono una =decomposizione esaustiva= rispetto a una $C$ loro superclasse quando le istanze di $C$ sono esattamente l'unione delle istanze di queste sottoclassi
+  + ~ExhaustiveDec(S,C)~
+- costituiscono una =partizione= se valgono entrambe le precedenti
+  + ~Partition(S,C)~
+
+Strutturalmente:
+- ~Part-of(x,y)~
+- ~On-top(x,y)~
+
+L'=ontologia= é una forma piú generale delle =tassonomie=
+- hanno forma di grafo e non di albero
+- si struttura in
+  + =T-box=
+    * generale, concettualizzazione intensionale
+    * quantificato universalmente
+  + =A-box=
+    * su istanze specifiche, estensionale
+    * contiene fatti che devono essere /coerenti/ con il contenuto della =T-box=
+*** Relazioni tra Ontologie
+Nello stesso dominio:
+1. $O_{1}$ e $O_{2}$ sono _identiche_; sono due copie dello stesso file
+2. $O_{1}$ e $O_{2}$ sono _equivalenti_; condividono vocabolario e proprietá ma sono espresse in linguaggi diversi[fn:linguaggi]
+3. $O_{1}$ estende $O_{2}$; vocabolari e proprietá di $O_{2}$ sono preservati in $O_{1}$ ma non viceversa
+4. =Weakly-Translatable=
+   - non si introducono inconsistenze
+5. =Strongly-Translatable=
+   - il vocabolario di =Source= é completamente mappabili in concetti di =Dest=
+   - le proprietá di =Source= valgono in =Dest=
+   - non c'é perdita di informazione
+   - non si introducono inconsistenze
+6. =Approx-Translatable=
+   - =Source= é =Weakly-Translatable= in =Dest=
+   - possono essere introdotte delle /inconsistenze/
+
+
+[fn:linguaggi]i.e. =RDF= e =OWL=
+*** Ontologia come agente
+L'=ontologia= é la =Knowledge Base=, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti. Sono rappresentazione di concettualizzazioni
+
+Un'ontologia puó essere interrogata in maniere diverse
+1. istanza appartiene a categoria
+2. istanza gode di proprietá
+3. differenza fra categorie
+4. identificazione di istanze
+
+Esempi ontologie: [[id:ee8ddd33-8177-497c-a5e3-3fdafe40c021][Provenance]], [[id:6456f3d1-2bc3-4e50-abf0-1379bef1278d][Semantic Web]]
+Utilizzate da: =DBpedia=, =CreativeCommons=, =FOAF=, =Press Association=, =Linked (Open) Data=
+*** Data Interchange
+=RDF= - Resource Description Framework
+- Un linguaggio / modello di rappresentazione
+- Base di linguaggi come =OWL=, =SKOS=, =FOAF=
+- Rappresentato in =XML=
+
+*Triple* soggetto, predicato, oggetto possono essere rappresentate in forma di grafo.
+*** Knowledge Engineering
+1. Identificazione dei concetti
+   - elencare tutti i concetti riferiti nel =DB= di partenza
+   - solitamento /sostantivi/
+   - definire etichette e descrizioni
+   - identificare in seguito le sottoclassi
+2. Controllare se esistono ontologie giá definite online almeno parzialmente
+   - allineamento delle ontologie necessario se non compatibili
+   - matching di ontologie
+   - la corrispondenza non sará mai perfetta
+3. definire =T-box=
+4. definire =A-box=
+
+Strumenti:
+- =Protégé=
+- =CEL=, =FaCT++=
+
+** Situation Calculus
+Sulla basa della =FOL= contruisce:
+- *Azione*
+  + cambia lo stato del mondo
+  + oggetti immateriali, rappresentate dalle /funzioni/
+  + $\text{Move}(O,P_{1},P_{2})$
+- *Situazione*
+  + stato di cose, solitamente il prodotto di azioni
+  + il tempo non é gestito esplicitamente perché rappresentato dal susseguirsi delle azioni
+  + possiamo rappresentarle con funzioni $\text{Do}(\text{seq-az}, S)$
+    * sequenza ottenuta applicando la sequenza di azioni nella situazione $S$
+    * $\text{Do}([\;\;], S) = S$
+    * $\text{Do}([a | r], S) = \text{Do}(r, \text{Result}(a,S))$
+  + le rappresentazioni $\text{Do}$ ci danno delle =proiezioni=, permettendoci di ragionare sugli effetti delle azioni senza modificare la situazione. Ragionando sugli effetti.
+- *Fluente*
+  + proprietá/predicato che puó cambiare nel tempo
+  + $P(A,B,S)$
+  + $\text{Holds}(P(A,B),S)$
+    * formula + situation
+- *Predicato Atemporale*
+  + proprietá/predicato che non é influenzata dalle azioni
+*** Assiomi della azioni
+1. =applicabilitá=, proprietá che devono valere nella situazione di partenza
+    - $\forall \text{params},s: \text{Applicable}(\text{Action}(\text{params}),s) \iff \text{Precond}(\text{params},s)$
+2. =effetto=, proprietá che devono valere nella situazione di arrivo
+    - la soluzione semplice di riportare solamente le modifiche dello stato da parte dell'azione
+    - =frame problem=
+3. =frame=
+    - $\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action(\text{params}),s}))$
+4. =Assioma di Stato Successore=
+    - aggiunto per sostituire gli =assiomi di frame=
+    - =Azione Applicabile= $\implies$ =(Fluente vero nella= $s$ =risultante= $\iff$ =l'azione lo rendeva vero= $\lor$ =era vero e l'azione non l'ha reso falso)=
+*** Anomalia di Sussman
+/Perseguimento di goal complessi/
+1. suddividere il /goal/ in sottogoal
+2. raggiungere i /sottogoal/ sequenzialmente
+
+#+begin_quote
+Non tutti i /goal/ possono essere risolti suddividendoli prima in subgoal e affrontandoli in maniera sequenziale.
+#+end_quote
+* Agente
+Ciclo di vita:
+1. ha una percezione / ha un input
+2. delibera / costruisce la risposta
+3. agisce / restituisce la risposta
+
+L'/agente/ vive una =sequenza percettiva=, ovvero la storia completa delle percezioni
+
+** Deliberazione
+Definibile come una $f$ in forma tabellare
+- sequenza percettiva | azione
+
+Si misura la /prestazione/
+- misura la bontá degli stati attraversati
+- un'altra $f$ che data una /sequenza percettiva/ e valuta un /valore di bontá/
+
+Queste considerazioni ci servono per definera la razionalitá del comportamento dell'agente.
+- un agente razionale effettua azioni che lo avvicinano al proprio /goal/ _nei limiti dell'informazione a esso disponibile_
+
+** Ambiente
+- =Task Environment=
+  + contesto in cui l'agente é inserito
+  + fisico o meno
+- =PEAS=, definiscono il =Task Environment=
+  + performance
+  + environment
+  + actuators
+  + sensors
+
+Distinzione tra
+- dinamico / statico
+- monoagente / multiagente
+  + in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei prorpi obiettivi
+  + va sviluppato un =protocollo di interazione= che permetta di coordinare piú agenti
+    * attraverso scambi di messaggi
+    * =FIPA= - Foundation for Intelligent Physical Agents
+      - ha definito una semantica per i messaggi tra agenti e ha standardizzato dei protocolli
+** Architettura
+Un'/agente/ é l'unione di /programma/ e /architettura/:
+- =architettura=, specifica degli elementi strutturali e funzionali
+- =programma=, funzione che mette in relazione percezioni e azioni
+
+Si distingue anche tra:
+- =funzione agente=, input la sequenza percettiva (storia delle percezioni)
+- =programma agente=, input la percezione corrente
+
+Tipologie:
+- *agenti reattivi semplici*
+  + reagisce alla percezione immediata
+  + si basa sulla /percezione corrente/
+  + funzionano in ambienti _completamente osservabili_
+  + per evitare =loop= si introducono comportamenti =random=
+- *agenti reattivi basati su modello*
+  + agisce tramite /modello - sequenza percettiva - storia delle azioni/
+  + mantiene uno =stato=
+  + di base sempre un ~if - then~
+- *agenti guidati dagli obiettivi* - /goal-driven/
+  + l'azione o piano di azione dell'agente é volto ad avvicinarlo all'/obiettivo/
+  + cambiando gli obiettivi dell'agente posso fargli realizzare diversi comportamenti
+- *agenti guidati dall'utilitá* - /utility-driven/
+  + l'agente puó scegliere approcci diversi in base a parametri esterni
+  + utilitá calcolabile
+- *agenti capaci di apprendere*
+  + la parte di apprendimento é caratterizzata da 3 elementi:
+    * /critico/
+      - valuta il livello di prestazione decidendo se attivare l'apprendimento
+    * /modulo dell'apprendimento/
+      - modifica la conoscenza dell'agente
+    * /generatore di problemi/
+      - causa l'esecuzione di azioni esplorative
+* Apprendimento Automatico
+** Classificazione
+Dati $\rightarrow f \rightarrow$ Classe
+- questa $f$ é il risultato dell'apprendimento
+
+Tra i dati forniamo /esempi/ ma anche le /categorie/.
+Costruisco un =Learning Set= costruito da coppie
+- istanza $x$ - classe $y$
+  + le istanze sono tuple
+- é supervisionato
+- il rischio é che questo set di apprendimento sia troppo /specialistico/
+  + non riconoscerá l'intera classe ma solamente una sua specializzazione
+
+Con cui eseguo l'[[id:4dee707f-daf6-413e-9f65-cfdc14055d29][Apprendimento Supervisionato]]
+- implementata tramite un *algoritmo di apprendimento*
+- il *modello* viene costruito da questo
+- il *modello* viene poi utilizzato per la /predizione/
+Si pongono subito dei problemi:
+1. rappresentazione dei dati/istanze
+2. analisi dei dati
+3. utilizzo della conoscenza costruita
+
+Schema:
+- =Training Set= $\rightarrow$ Induzione $\rightarrow$ Modello
+- =Test Set= $\rightarrow$ Deduzione $\rightarrow$ Classe
+
+I modelli si caratterizzano in:
+- predittivi
+  + strumento di previsione
+  + assegna una appartenenza a istanze ignote
+- descrittivi
+  + strumento esplicativo
+  + evidenzia caratteristiche che distinguono le categorie
+
+*** Attributi
+Gli attributi sono distinguibili in classi diverse
+- =binari=
+- =nominali=
+  + assumono delle /etichette/ distinte
+  + definiti in un insieme
+  + /spit/
+    * multivalore
+      - un nodo per ogni etichetta
+    * binario
+      - un nodo per una etichetta e uno per le rimanenti
+- =ordinali=
+  + sono nominali in cui vale una relazione di ordinamento tra le etichette
+  + /spit/
+    * multivalore
+    * binario
+      - possibile ma deve preservare l'ordinamento
+- =continui=
+  + si identifica un valore rispetto il quale fare /split/
+    * in base a questo l'attributo diviene binario
+*** Matrice di Confusione
+É uno strumento di valutazione in ambito della classificazione.
+Consiste nel mettere alla prova il /modello/.
+Consiste in un insieme di /istanze/
+- =Test Set=
+- hanno la stessa forma del =Learning Set=
+- il modello restituisce una classificazione di tutte le istanze
+  + poi esaminate e suddivise in /corrette/ e /sbagliate/
+  + la percentuale desiderata di classificazioni corrette é relativo all'ambito, il dominio
+
+La =matrice di confusione= é una matrice quadrada
+- numero di righe/colonne come il _numero delle classi_
+  + righe, _classi reali_
+  + colonne, _classi predette_
+  + il $v$ in una cella $\langle c_{i},c_{j} \rangle$
+    * numero di istanze appartenenti a $c_{i}$ che il modello ha detto appartenere a $c_{j}$
+    * desideriamo che i $v$ si accumulino nella diagonale, dove troviamo le risposte corrette
+
+Si hanno due considerazioni sui risultati:
+- =accuracy=
+\[\frac{\sum_{i} v_{ii}}{\sum_{i,j} v_{ij}}\]
+- =error rate=
+\[\frac{\sum_{i \neq j} v_{ij}}{\sum_{i,j} v_{ij}}\]
+
+Chiaramente $\text{acc} + \text{er} = 100\%$
+
+Il limite della matrice di confusione é che gli errori hanno tutti lo stesso peso.
+- per sopperire a questo si puó aggiungere una =matrice dei costi=
+  + ha la stessa forma della =matrice di confusione=
+  + gli errori saranno poi moltiplicati per questi pesi per valutare il modello
+
+Altro limite é che su =test set= sbilanciati gli /error rate/ saranno falsati.
+
+*** Alberi di Decisione
+=Decision Trees=
+Banalmente, in un altro contesto, un menú a tendina.
+- si tratta di un albero con /test/ per nodi e /azioni/ per foglie
+  + test portano in base ai risultati a test successivi o foglie
+  + alle  foglie si decide la classe di appartenenza dell'istanza
+
+Le istanze hanno la stessa forma
+- n-attributi organizzati in una n-tupla
+
+I /test/ sono ognuno su un singolo attributo e a cascata caratterizzano le istanze.
+
+**** Algoritmo di Hunt
+*L'algoritmo di Hunt* lavora sul =Learning Set=
+- dividendo il sottoinsiemi via via piú puri
+- $D_{t}$ sottoinsieme del =LS= associato al nodo $t$
+- $y = \{y_{1},y_{2},\cdots,y_{c}\}$ insieme delle etichette delle classi
+Passi:
+1. _test_ se tutte le istanze in $D_{t}$ appartengono alla stessa classe
+   - ~true~: $t$ é una /foglia/ e le viene assegnata l'etichetta $y_{t}$
+   - ~false~: si sceglie un attributo descrittivo su cui fare lo /split/
+     1. si verifica il suo range in $D_{t}$
+     2. si crea un /nodo successore/ per ogni suo possibile valore
+     3. a ogni successore si assegna il sottoinsieme di $D_{t}$ per cui l'attributo scelto vale quello cui il successore é associato

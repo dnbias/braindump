@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       aa6d9ae2-387e-4109-ba74-5f264c1a0b64
+:END:
+#+title: SPARQL
+#+date: [2022-05-17 Tue 21:28]
+Interrogation language for =WWW= ontologies

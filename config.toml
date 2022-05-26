@@ -35,3 +35,8 @@ footer = "Built with ♥ with ξ Org-mode and Hugo"
     noClasses = true
     style = "friendly"
     tabWidth = 2
+
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2

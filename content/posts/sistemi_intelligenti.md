@@ -21,7 +21,7 @@ Professoressa: Cristina Baroglio
 
 ### Automazione {#automazione}
 
-Campo in cui l'informatico piu' in generale viene applicata
+Campo in cui l'informatica piú in generale viene applicata
 
 -   automazione del calcolo
 -   automazione contabile
@@ -40,10 +40,10 @@ Svolta da un agente artificiale che risolve un compito
 Utile nei problemi:
 
 -   non deterministici
--   in cui c'e' molteplicita' di soluzioni
+-   in cui c'é molteplicitá di soluzioni
 -   con dati di natura simbolica
 -   si ha una conoscenza ampia e completa
--   dove l'informazione e' parzialmente strutturata
+-   dove l'informazione é parzialmente strutturata
 
 
 ### Comprensione {#comprensione}
@@ -53,10 +53,10 @@ Output attesi \\(\implies\\) comprensione? [John R. Searle]({{< relref "john_r_s
 
 ### Test di Turing {#test-di-turing}
 
--   test per definire se un computer e' intelligente, o se un programma lo e'
+-   test per definire se un computer é intelligente, o se un programma lo é
     -   in linguaggio naturale
--   per T lo e' quando inganna l'uomo, imitando il comportamento umano
--   un computer che deve passare il test non eseguira' gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacita' di un umano
+-   per T lo é quando inganna l'uomo, imitando il comportamento umano
+-   un computer che deve passare il test non eseguirá gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacitá di un umano
 -   `The Imitation Game`
 
 
@@ -171,13 +171,12 @@ Problema di ricerca nello spazio degli stati
 -   test obiettivo, verifica che la stato sia quello desiderato (tabella ordinata)
 -   costo del cammino, ogni passo costa 1 e il costo del cammino é il numero di passi che lo costituiscono
 
-<!--list-separator-->
 
--  Euristiche
+##### Euristiche {#euristiche}
 
-    -   \\(h\_1\\) numero delle tessere fuori posto (rispetto alla configurazione goal)
-    -   \\(h\_2\\) distanza di Manhattan
-        -   in particolare \\[\sum\_{\forall c}d\_{\text{man}}( c)\\]
+-   \\(h\_1\\) numero delle tessere fuori posto (rispetto alla configurazione goal)
+-   \\(h\_2\\) distanza di Manhattan
+    -   in particolare \\[\sum\_{\forall c}d\_{\text{man}}( c)\\]
 
 
 #### 8 Regine {#8-regine}
@@ -219,75 +218,69 @@ Nello studio di queste ricerche si considerano:
 Un goal a meno passi dalla radice non da' garanzia di ottimalita', in quanto vanno considerati i costi non il numero di passi.
 Il costo e' una funzione monotono crescente in relazione alla profondita'.
 
-<!--list-separator-->
 
--  Ricerca in Ampiezza
+##### Ricerca in Ampiezza {#ricerca-in-ampiezza}
 
-    \\(O(b^{d+1})\\)
+\\(O(b^{d+1})\\)
 
-    -   complessitá sia spaziale che temporale
-    -   esponenziale, non trattabile anche con \\(d\\) ragionevoli
+-   complessitá sia spaziale che temporale
+-   esponenziale, non trattabile anche con \\(d\\) ragionevoli
 
-<!--list-separator-->
 
--  Ricerca Costo Uniforme
+##### Ricerca Costo Uniforme {#ricerca-costo-uniforme}
 
-    Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
-    La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
+Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
+La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
 
-    La ricerca puo' non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
-    Quindi:
-    \\(\text{costi} \ge \epsilon > 0\\)
+La ricerca puo' non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
+Quindi:
+\\(\text{costi} \ge \epsilon > 0\\)
 
-    -   \\(\epsilon\\) costo minimo
+-   \\(\epsilon\\) costo minimo
 
-    \\[O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
+\\[O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
 
-    -   \\(C^{\*}\\) costo soluzione ottima
+-   \\(C^{\*}\\) costo soluzione ottima
 
-<!--list-separator-->
 
--  Ricerca in Profonditá w/ Backtracking
+##### Ricerca in Profonditá w/ Backtracking {#ricerca-in-profonditá-w-backtracking}
 
-    Si producono successori su successori man mano, percorrendo in profondita' l'albero.
-    In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
+Si producono successori su successori man mano, percorrendo in profondita' l'albero.
+In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
 
-    -   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
-    -   piu' efficiente in utilizzo della memoria
+-   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
+-   piu' efficiente in utilizzo della memoria
 
-<!--list-separator-->
 
--  Ricerca in Profonditá w/o Backtracking
+##### Ricerca in Profonditá w/o Backtracking {#ricerca-in-profonditá-w-o-backtracking}
 
-    Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
+Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
 
-    -   viene utilizzato uno `stack` (`LIFO`)
+-   viene utilizzato uno `stack` (`LIFO`)
 
-<!--list-separator-->
 
--  Iterative Deepening
+##### Iterative Deepening {#iterative-deepening}
 
-    Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
+Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
 
-    -   cerca di combinare ricerca in profonditá e in ampiezza
-        -   \\(\textsc{time}= O(b^d)\\)
-        -   \\(\textsc{space}= O(b\cdot d)\\)
-        -   completa
-        -   ottima quando il costo non é funzione decrescente delle profonditá
+-   cerca di combinare ricerca in profonditá e in ampiezza
+    -   \\(\textsc{time}= O(b^d)\\)
+    -   \\(\textsc{space}= O(b\cdot d)\\)
+    -   completa
+    -   ottima quando il costo non é funzione decrescente delle profonditá
 
-<!--list-separator-->
 
--  Ricerca Bidirezionale
+##### Ricerca Bidirezionale {#ricerca-bidirezionale}
 
-    2 ricerche parallele
+2 ricerche parallele
 
-    -   _forward_ dallo stato iniziale
-    -   _backwards_ dallo stato obiettivo
+-   _forward_ dallo stato iniziale
+-   _backwards_ dallo stato obiettivo
 
-    Termina quando queste si incontrano a una intersezione.
-    Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
+Termina quando queste si incontrano a una intersezione.
+Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
 
-    -   \\(\textsc{time}= O( b^{\frac{d}{2}})\\)
+-   \\(\textsc{time}= O( b^{\frac{d}{2}})\\)
 
 
 #### Ricerca informata {#ricerca-informata}
@@ -299,58 +292,97 @@ Si possiedono informazioni che permettono di identificare le strade piú promett
 Questa informazione é chiamata **euristica**
 \\(h(n)\\): Il costo minimo stimato per raggiungere un nodo _preferito_ di \\(n\\)
 
-<!--list-separator-->
+Una strategia é il mantenere la frontiera ordinata secondo una \\(f(n)\\) detta funzione di valutazione
 
--  Greedy
+-   questa contiene a sua volta una componente \\(h(n)\\) spesso
+-   in generale questa strategia é chiamata **best-first search**
+    -   famiglia di strategia (greedy, A\*, RBFS)
 
-    -   costruisce un albero di ricerca
-    -   mantiene ordinata la frontiera a seconda di \\(h(n)\\)
 
-    Ma l'euristica puó essere imperfetta e creare dei problemi.
-    Questa strategia considera solo informazioni _future_, che riguardano ció che non é ancora stato esplorato.
+##### Greedy {#greedy}
 
-<!--list-separator-->
+-   costruisce un albero di ricerca
+-   mantiene ordinata la frontiera a seconda di \\(h(n)\\)
+    -   \\(f(n) = h(n)\\)
 
--  A\*
+Ma l'euristica puó essere imperfetta e creare dei problemi.
+Questa strategia considera solo informazioni _future_, che riguardano ció che non é ancora stato esplorato.
 
-    Combina informazioni future e passate:
 
-    -   **Greedy** e **Ricerca a costo uniforme**
+##### A\* {#a}
 
-    Utilizza una funzione di valutazione:
-    \\(f(n) = g(n) + h(n)\\)
+Combina informazioni future e passate:
 
-    Dove \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
+-   **Greedy** e **Ricerca a costo uniforme**
 
-    I costi minimi reali sono definiti con:
-    \\(f^{\star}(n) = g^\star(n) + h^\star(n)\\)
+Utilizza una funzione di valutazione:
+\\(f(n) = g(n) + h(n)\\)
 
-    -   definizione utilizzata nelle dimostrazioni
+-   \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
 
-    \\(A^\star\\) é ottimo quando
+I costi minimi reali sono definiti con:
+\\(f^{\star}(n) = g^\star(n) + h^\star(n)\\)
 
-    -   tutti i costi da un nodo a un successore sono positivi
-    -   l'euristica \\(h(n)\\) é ammissibile
+-   definizione utilizzata nelle dimostrazioni
 
-    **Ammissibilitá**
+\\(A^\star\\) é **ottimo** quando
 
-    -   \\(\forall n: h(n) \le h^\star(n)\\)
-        -   ovvero l'euristica é ottimistica
+-   tutti i costi da un nodo a un successore sono positivi
+-   l'euristica \\(h(n)\\) é ammissibile
 
-    Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalitá
+**Ammissibilitá**
 
-    -   vale una disuguaglianza triangolare
-    -   \\(h(n) \le c(n,a,n') + h(n')\\)
-    -   \\(\textsc{nb}\\) tutte le monotone sono ammissibili ma non vale il viceversa
+-   \\(\forall n: h(n) \le h^\star(n)\\)
+    -   ovvero l'euristica é ottimistica
 
-    Inoltre é **ottimamente efficiente**
+Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalitá
 
-    -   espande sempre il numero minimo di nodi possibili
+-   vale una disuguaglianza triangolare
+-   \\(h(n) \le c(n,a,n') + h(n')\\)
+-   \\(\textsc{nb}\\) tutte le monotone sono ammissibili ma non vale il viceversa
 
-    Ma \\(\textsc{space}=O(b^d)\\)
+Inoltre é **ottimamente efficiente**
+
+-   espande sempre il numero minimo di nodi possibili
+
+Ma \\(\textsc{space}=O(b^d)\\)
+
+
+##### Recursive Best-First Strategy {#recursive-best-first-strategy}
+
+`RBFS`
+
+-   simile alla ricerca ricorsiva in profonditáv
+-   usa un _upper bound_ dinamico
+    -   ricorda la migliore alternativa fra i percorsi aperti
+-   ha poche esigenze di spazio
+    -   mantiene solo nodi del percorso corrente e fratelli
+-   lo stesso nodo puó essere visitato piú volte se l'algoritmo ritorna a un percorso aperto
+
+Intuitivamente:
+
+-   procede come \\(A^{\star}\\) fino a che la soluzione rispetta l'_upper bound_
+-   sospende la ricerca lungo il cammino quando non piú migliore
+    -   il cammino viene dimenticato, si cancella dalla memoria
+    -   é conservata la traccia nella sua radice del costo ultimo  stimato
+
+`RBFS` é ottimo se l'euristica é ammissibile
+
+-   \\(\textsc{Space} = O(b\cdot d)\\)
+-   \\(\textsc{Time}\\) dipende dall'accuratezza dell'euristica
 
 
 ### Euristiche {#euristiche}
+
+La qualitá di un euristica puó essere calcolata computado il _branching factor effettivo_ \\(b^\star\\)
+
+-   \\(N\\) numero di nodi generati a partire da un nodo iniziale
+-   \\(d\\) profonditá della soluzione trovata
+
+\\[N+1 = 1 + b^\star + (b^\star)^{2} + \cdots + (b^\star)^{d} \\]
+\\[N \simeq (b^\star)^{d} \implies b^\star \simeq \sqrt[d]{N}\\]
+
+Le euristiche migliori mostreranno \\(b^\star\\) vicini a 1.
 
 
 #### Calcolo della Bontá {#calcolo-della-bontá}
@@ -363,7 +395,8 @@ Per decidere tra 2 euristiche ammissibili quale sia la piú buona
 Si considera la **dominanza**
 
 -   \\(\forall n : h\_2(n) \le h\_1(n)\le h^\star(n)\\)
-    -   restituisce sempre valore maggiore rispetto all'altra
+    -   \\(h\_{1}\\) domina perché restituisce sempre valore maggiore rispetto all'altra
+    -   si puó dire sia piú informata in quanto approssima meglio
 -   una euristica dominante sará piú vicina alla realtá
 
 Si puó costruire una nuova \\(h(n) = \max(h\_1(n),\dots,h\_k(n))\\) dominante su tutte quelle che la compongono
@@ -398,125 +431,123 @@ Dall'Economia, poi traslata in algoritmi nell'ambito dell'IA.
 -   **approccio maximin** - conservativo
 -   **approccio minimax regret** - minor _regret_
 
-<!--list-separator-->
 
--  Minimax
+##### Minimax {#minimax}
 
-    `Minimax` e' un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
+`Minimax` e' un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
 
-    -   ricerca in profondita', esplora tutto l'albero ma non mantiene tutto in memoria
+-   ricerca in profondita', esplora tutto l'albero ma non mantiene tutto in memoria
 
-    Nella simulazione dell'albero di gioco si hanno i due attori
+Nella simulazione dell'albero di gioco si hanno i due attori
 
-    1.  `Max`
-    2.  `Min`
+1.  `Max`
+2.  `Min`
 
-    L'algoritmo fa _venire a galla_ i costi _terminali_ dei rami del gioco, in quanto per guidare la scelta `Max` deve poter scegliere tra i nodi a se successivi.
+L'algoritmo fa _venire a galla_ i costi _terminali_ dei rami del gioco, in quanto per guidare la scelta `Max` deve poter scegliere tra i nodi a se successivi.
 
-    La funzione utilita' valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
-    \\(\text{minimax-value}(n)\\):
+La funzione utilita' valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
+\\(\text{minimax-value}(n)\\):
 
-    -   se \\(n\\) _terminale_
-        -   \\(\text{utility}(n)\\)
-    -   se \\(n\\) `Max`
-        -   \\(\text{max}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
-    -   se \\(n\\) `Min`
-        -   \\(\text{min}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
+-   se \\(n\\) _terminale_
+    -   \\(\text{utility}(n)\\)
+-   se \\(n\\) `Max`
+    -   \\(\text{max}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
+-   se \\(n\\) `Min`
+    -   \\(\text{min}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
 
-    <!--listend-->
+<!--listend-->
 
-    ```python
-    def minimaxDecision(state): # returns action
-        v = maxValue(state)
-        return action in succ(state) with value == v
+```python
+def minimaxDecision(state): # returns action
+    v = maxValue(state)
+    return action in succ(state) with value == v
 
-    def maxValue(state): # returns utility-value (state)
-        if (state.isTerminal()):
-            return utility(state)
+def maxValue(state): # returns utility-value (state)
+    if (state.isTerminal()):
+        return utility(state)
 
-        v = sys.minint
-        for (a,s) in succ(state): # (action,successor)
-            v = max(v, minValue(s))
+    v = sys.minint
+    for (a,s) in succ(state): # (action,successor)
+        v = max(v, minValue(s))
 
-        return v
+    return v
 
-    def minValue(state):
-        if (state.isTerminal()):
-            return utility(state)
+def minValue(state):
+    if (state.isTerminal()):
+        return utility(state)
 
-        v = sys.maxint
-        for (a,s) in succ(state):
-            v = min(v, maxValue(s))
+    v = sys.maxint
+    for (a,s) in succ(state):
+        v = min(v, maxValue(s))
 
-        return v
-    ```
+    return v
+```
 
-    -   \\(\textsc{space} = O(bm)\\)
-    -   \\(\textsc{time} = O(b^{m})\\)
+-   \\(\textsc{space} = O(bm)\\)
+-   \\(\textsc{time} = O(b^{m})\\)
 
-    <!--list-separator-->
 
-    -  Potatura alpha-beta
+###### Potatura alpha-beta {#potatura-alpha-beta}
 
-        Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
-        La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
+Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
+La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
 
-        -   \\(\alpha\\) e' il valore della migliore alternativa per `Max` nel percorso verso `state`
-        -   \\(\beta\\) e' il valore della migliore alternativa per `Min` nel percorso verso `state`
+-   \\(\alpha\\) e' il valore della migliore alternativa per `Max` nel percorso verso `state`
+-   \\(\beta\\) e' il valore della migliore alternativa per `Min` nel percorso verso `state`
 
-        Se il \\(v\\) considerato e' fuori da questo intervallo allora e' inutile considerarlo.
+Se il \\(v\\) considerato e' fuori da questo intervallo allora e' inutile considerarlo.
 
-        ```python
-        def alphabetaSearch(state): # returns action
-            v = maxValue(state, sys.minint, sys.maxint)
-            return action in succ(state) with value == v
+```python
+def alphabetaSearch(state): # returns action
+    v = maxValue(state, sys.minint, sys.maxint)
+    return action in succ(state) with value == v
 
-        def maxValue(state, alpha, beta): # returns utility-value (state)
-            if (state.isTerminal()):
-                return utility(state)
+def maxValue(state, alpha, beta): # returns utility-value (state)
+    if (state.isTerminal()):
+        return utility(state)
 
-            v = sys.minint
-            for (a,s) in succ(state): # (action,successor)
-                v = max(v, minValue(s, alpha, beta))
-                if (v >= beta) return v
-                alpha = max(alpha, v)
+    v = sys.minint
+    for (a,s) in succ(state): # (action,successor)
+        v = max(v, minValue(s, alpha, beta))
+        if (v >= beta) return v
+        alpha = max(alpha, v)
 
-            return v
+    return v
 
-        def minValue(state, alpha, beta):
-            if (state.isTerminal()):
-                return utility(state)
+def minValue(state, alpha, beta):
+    if (state.isTerminal()):
+        return utility(state)
 
-            v = sys.maxint
-            for (a,s) in succ(state):
-                v = min(v, maxValue(s, alpha, beta))
-                if (v <= alpha) return v
-                beta = min(beta, v)
+    v = sys.maxint
+    for (a,s) in succ(state):
+        v = min(v, maxValue(s, alpha, beta))
+        if (v <= alpha) return v
+        beta = min(beta, v)
 
-            return v
-        ```
+    return v
+```
 
-        Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
+Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
 
-        -   \\(\textsc{time} = O(b^{m/2})\\)
-            -   nel caso migliore
-            -   se l'ordine e' sfavorevole e' possibile che non avvengano potature
+-   \\(\textsc{time} = O(b^{m/2})\\)
+    -   nel caso migliore
+    -   se l'ordine e' sfavorevole e' possibile che non avvengano potature
 
-        Esistono tecniche di apprendimento per le _killer move_, il sistema si ricorda le _killer move_ passate e le cerca nelle successive applicazioni.
-        Queste tecniche sono studiate in quanto la complessita' continua a essere troppo alta per applicazioni `RealTime`:
+Esistono tecniche di apprendimento per le _killer move_, il sistema si ricorda le _killer move_ passate e le cerca nelle successive applicazioni.
+Queste tecniche sono studiate in quanto la complessita' continua a essere troppo alta per applicazioni `RealTime`:
 
-        -   **trasposizioni**
-            -   permutazioni dello stesso insieme di mosse
-            -   mosse che portano allo stesso stato risultante
-            -   vanno identificate ed evitate
-        -   **classificazione stati di gioco**
-            -   per motivi di tempo vanno valutati come foglie nodi intermedi
-            -   va valutata una situazione intermedia (_orizzonte_)
-                -   valutazione rispetto alla facilita' di raggiungere una vittoria
-                -   attraverso un classificatore sviluppato in precedenza
-        -   **quiescenza** dei nodi
-            -   se mantiene la propria valutazione bene nei continuo
-            -   non ribalta la valutazione nel giro di poche mosse
+-   **trasposizioni**
+    -   permutazioni dello stesso insieme di mosse
+    -   mosse che portano allo stesso stato risultante
+    -   vanno identificate ed evitate
+-   **classificazione stati di gioco**
+    -   per motivi di tempo vanno valutati come foglie nodi intermedi
+    -   va valutata una situazione intermedia (_orizzonte_)
+        -   valutazione rispetto alla facilita' di raggiungere una vittoria
+        -   attraverso un classificatore sviluppato in precedenza
+-   **quiescenza** dei nodi
+    -   se mantiene la propria valutazione bene nei continuo
+    -   non ribalta la valutazione nel giro di poche mosse
 
 
 ### Soddisfacimento di Vincoli {#soddisfacimento-di-vincoli}
@@ -534,89 +565,85 @@ I problemi sono affrontati con approcci diversi in base alle caratteristiche del
 
 #### Algoritmi {#algoritmi}
 
-<!--list-separator-->
 
--  Generate and Test
+##### Generate and Test {#generate-and-test}
 
-    _Bruteforce_
+_Bruteforce_
 
-    1.  genera un assegnamento completo
-    2.  controlla se é una soluzione
-    3.  se si `return` altrimenti `continue`
+1.  genera un assegnamento completo
+2.  controlla se é una soluzione
+3.  se si `return` altrimenti `continue`
 
-    É estremamente semplice ma non é scalabile.
-
-<!--list-separator-->
-
--  Profonditá con Backtracking
-
-    Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni
-    Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
-    Dati \\(n\\) variabili e \\(d\\) media del numero di  valori possibili per una variabile:
-
-    -   il `branching fator` al primo livello, \\(n \cdot d\\)
-    -   ... al secondo, \\((n-1)\cdot d\\)
-    -   l'albero avrá \\(n! \cdot d^{n}\\) foglie
-
-    Questo é migliorabile con la tecnica del _fuoco_ su una singola variabile a ogni livello dell'albero, questo in quanto i `CSP` godono della proprietá commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
-
-    Uno dei difetti di questo approccio é il `Thrashing`, riconsiderando assegnamenti successivi che si sono giá dimostrati fallimentari durante l'esplorazione.
-
-<!--list-separator-->
-
--  Forward Checking
-
-    Approccio locale di propagazione della conoscenza.
-    Si propagano le scelte delle variabile ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
-
-<!--list-separator-->
-
--  AC-3
-
-    `Arc Consistency` - McWorth
-
-    -   funziona con vincoli binari
-    -   simile al Forward Checking
-    -   `Arc Consistency` non é una proprietá sufficiente a garantire l'esistenza di una soluzione
-
-    <!--listend-->
-
-    ```python
-    def AC-3(csp): // returns CSP ridotto
-        queue = csp.arcs
-        while queue != empty:
-            (xi,xj) = queue.RemoveFirst()
-            if (RemoveInconsistentValues(xi,xj)):
-                for (xk in xi.neighbours):
-                    queue.Add(xk,xi)
+É estremamente semplice ma non é scalabile.
 
 
-    def RemoveInconsistentValues(xi,xj): // returns boolean
-        removed = false
-        for (x in Domain[xi])
-            if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
-                Domain[xi].delete(x)
-                removed = true
-        return removed
+##### Profonditá con Backtracking {#profonditá-con-backtracking}
 
-    ```
+Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni.
+Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
 
-<!--list-separator-->
+Dati \\(n\\) variabili e \\(d\\) media del numero di  valori possibili per una variabile:
 
--  Back-Jumping
+-   il `branching factor` al primo livello, \\(n \cdot d\\)
+-   ... al secondo, \\((n-1)\cdot d\\)
+-   l'albero avrá \\(n! \cdot d^{n}\\) foglie
 
-    Risolve i limiti del tradizionale `Backtracking Cronologico`, che torna passo per passo indietro senza sfruttare i vincoli.
-    Si viene guidati dal _Conflict Set_. Si fa backtracking a una variabile che potrebbe risolvere il conflitto.
+Questo é migliorabile con la tecnica del _fuoco_ su una singola variabile a ogni livello dell'albero, questo in quanto i `CSP` godono della proprietá commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
 
-    -   questi `CS` sono costruiti tramite `Forward Checking` durante gli assegnamenti
+Uno dei difetti di questo approccio é il `Thrashing`, riconsiderando assegnamenti successivi che si sono giá dimostrati fallimentari durante l'esplorazione.
 
-    > Sia \\(A\\) un assegnamento parziale consistente, sia \\(X\\) una variabile non ancora assegnata. Se l'assegnamento \\(A \cup \\{X=v\_{i}\\}\\) risulta inconsistente per qualsiasi valore \\(v\_{i}\\) appartenente al dominio di \\(X\\) si dice che \\(A\\) é un <span class="underline">conflict set</span> di \\(X\\)
 
-    Quando tutti gli assegnamenti possibili successivi a \\(X\_{j}\\) falliscono si agisce con il `Back-Jumping`
+##### Forward Checking {#forward-checking}
 
-    -   si considera l'ultimo assegnamento \\(X\_{i}\\) aggiunto al `CS` di \\(X\_{j}\\)
-    -   viene aggiornato il `CS` di \\(X\_{i}\\)
-        -   \\(CS(X\_{i})=CS(X\_{i})\cup (CS(X\_{j})- \\{X\_{i}\\})\\)
+Approccio locale di propagazione della conoscenza.
+Si propagano le scelte delle variabile ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
+
+
+##### AC-3 {#ac-3}
+
+`Arc Consistency` - McWorth
+
+-   funziona con vincoli binari
+-   simile al Forward Checking
+-   `Arc Consistency` non é una proprietá sufficiente a garantire l'esistenza di una soluzione
+
+<!--listend-->
+
+```python
+def AC-3(csp): # returns redox CSP
+    queue = csp.arcs
+    while queue != empty:
+        (xi,xj) = queue.RemoveFirst()
+        if (RemoveInconsistentValues(xi,xj)):
+            for (xk in xi.neighbours):
+                queue.Add(xk,xi)
+
+
+def RemoveInconsistentValues(xi,xj): # returns boolean
+    removed = false
+    for (x in Domain[xi])
+        if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
+            Domain[xi].delete(x)
+            removed = true
+    return removed
+
+```
+
+
+##### Back-Jumping {#back-jumping}
+
+Risolve i limiti del tradizionale `Backtracking Cronologico`, che torna passo per passo indietro senza sfruttare i vincoli.
+Si viene guidati dal _Conflict Set_. Si fa backtracking a una variabile che potrebbe risolvere il conflitto.
+
+-   questi `CS` sono costruiti tramite `Forward Checking` durante gli assegnamenti
+
+> Sia \\(A\\) un assegnamento parziale consistente, sia \\(X\\) una variabile non ancora assegnata. Se l'assegnamento \\(A \cup \\{X=v\_{i}\\}\\) risulta inconsistente per qualsiasi valore \\(v\_{i}\\) appartenente al dominio di \\(X\\) si dice che \\(A\\) é un <span class="underline">conflict set</span> di \\(X\\)
+
+Quando tutti gli assegnamenti possibili successivi a \\(X\_{j}\\) falliscono si agisce con il `Back-Jumping`
+
+-   si considera l'ultimo assegnamento \\(X\_{i}\\) aggiunto al `CS` di \\(X\_{j}\\)
+-   viene aggiornato il `CS` di \\(X\_{i}\\)
+    -   \\(CS(X\_{i})=CS(X\_{i})\cup (CS(X\_{j})- \\{X\_{i}\\})\\)
 
 
 #### Euristiche {#euristiche}
@@ -633,24 +660,23 @@ Euristiche di _scelta_ e _inferenza_
 -   alternanza tra esplorazione e inferenza
     -   ovvero propagazione di informazione attraverso i vincoli
 
-<!--list-separator-->
 
--  Consistency
+##### Consistency {#consistency}
 
-    1.  `Node Consistency`
-        -   vincoli di aritá 1 soddisfatti
-    2.  `Arc Consistency`
-        -   vincoli di aritá 2 soddisfatti per ogni valore nel dominio
-        -   un arco é `arc-consistent` quando \\(\forall\\) valore del dominio del sorgente \\(\exists\\) valore nel dominio della destinazione che permetta di rispettare il vincolo
-    3.  `Path Consistency`
-        -   3 variabili legate da vincoli binari
-        -   considerate 2 variabili \\(x, y\\) queste sono `path-consistent` con \\(z\\) se \\(\forall\\) assegnamento consistente di \\(x,y \\; \exists\\) un assegnamento \\(z\\) tale che \\(\\{x,z\\}\\) e \\(\\{y,z\\}\\) questi sono entrambi consistenti.
+1.  `Node Consistency`
+    -   vincoli di aritá 1 soddisfatti
+2.  `Arc Consistency`
+    -   vincoli di aritá 2 soddisfatti per ogni valore nel dominio
+    -   un arco é `arc-consistent` quando \\(\forall\\) valore del dominio del sorgente \\(\exists\\) valore nel dominio della destinazione che permetta di rispettare il vincolo
+3.  `Path Consistency`
+    -   3 variabili legate da vincoli binari
+    -   considerate 2 variabili \\(x, y\\) queste sono `path-consistent` con \\(z\\) se \\(\forall\\) assegnamento consistente di \\(x,y \\; \exists\\) un assegnamento \\(z\\) tale che \\(\\{x,z\\}\\) e \\(\\{y,z\\}\\) questi sono entrambi consistenti.
 
-    Questi concetti sono generalizzabili con la `k-consistenza`
+Questi concetti sono generalizzabili con la `k-consistenza`
 
-    -   per ogni sottoinsieme di \\(k-1\\) variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la \\(k\text{-esima}\\) variabile che é consistente con tutti gli altri.
+-   per ogni sottoinsieme di \\(k-1\\) variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la \\(k\text{-esima}\\) variabile che é consistente con tutti gli altri.
 
-    Un `CSP` fortemente consistente puó essere risolto in tempo lineare.
+Un `CSP` fortemente consistente puó essere risolto in tempo lineare.
 
 
 #### Vincoli Speciali {#vincoli-speciali}
@@ -698,7 +724,7 @@ _Per la rappresentazione di Knowledge Base_
     -   permette la valutazione delle formule
 -   **Conseguenza**  \\(\vDash\\)
     -   in generale il lato sinistro é sottoinsieme del destro
-        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}\\): \\(F\_{}\_{}\_{1} \vDash F\_{2}\\)
+        -   per ogni caso di \\(F\_{1}\\) vale anche \\(F\_{2}: F\_{1} \vDash F\_{2}\\)
     -   **non é** l'_implicazione_ logica, sono su piani diversi anche se sono simili
 -   **Equivalenza**  \\(\equiv\\)
     -   \\(F\_{1} \vDash F\_{2} \land F\_{2} \vDash F\_{1}\\)
@@ -712,24 +738,30 @@ _Per la rappresentazione di Knowledge Base_
     -   formula per il quale esiste qualche modello in cui é vera
 -   **Inferenza**  \\(\vdash\\)
     -   propagazione informazione
-    -   \\[\frac{\text{premesse}}{\text{conclusione}}\\]
-    -   **Algoritmi di Inferenza** manipolano inferenze per derivare formule
-        1.  correttezza (_soundness_)
-            -   \\(KB \vdash\_{i} A \implies KB \vDash A\\)
-        2.  completezza
-            -   \\(KB \vDash\_{} A \implies KB \vdash\_{i} A\\)
+
+\\[\frac{\text{premesse}}{\text{conclusione}}\\]
+
+-   **Algoritmi di Inferenza** manipolano inferenze per derivare formule
+    1.  correttezza (_soundness_)
+
+\\[KB \vdash\_{i} A \implies KB \vDash A\\]
+
+1.  completezza
+
+\\[KB \vDash\_{} A \implies KB \vdash\_{i} A\\]
+
 -   **Grounding**
 
 
-#### Semantica {#semantica}
+### Semantica {#semantica}
 
--   \\(KB\_{LP}\vDash P\_{LP}\\)
+\\[KB\_{LP}\vDash P\_{LP}\\]
 
 Vari approcci:
 
-1.  Model Checking
+1.  **Model Checking**
     -   \\(n\\) simboli, \\(2^{n}\\) modelli possibili
-2.  Theorem Proving
+2.  **Theorem Proving**
     -   basato sull'inferenza _sintattica_
         -   quindi sulla manipolazione delle formule
         -   utilizza le `Regole di Inferenza`
@@ -739,151 +771,581 @@ Vari approcci:
         -   \\(R\vDash Q \iff R\implies Q \text{ é una formula valida o tautologia}\\)
             -   \\(Q\\) é conseguenza logica di \\(R\\)
 
-<!--list-separator-->
 
--  Theorem Proving
+#### Theorem Proving {#theorem-proving}
 
-    1.  Algoritmo di Ricerca (o di inferenza)
-    2.  Insieme di regole di inferenza
-        -   `Risoluzione`
-            -   disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
-            -   il `Modus Ponens` ne é un caso particolare
-            -   si applica a `CNF`
-                -   \\(KB\_{\text{LP}}  \vdash KB\_{\text{CNF}}\\)
-                    1.  si eliminano le biimplicazioni
-                    2.  si eliminano le implicazioni
-                    3.  si portano all'interno i `not` applicando `de Morgan`
-                    4.  si eliminano le doppie negazioni
-                    5.  si distribuisce `or` sull'`and`
-                -   congiunzioni di clausole (disgiunzioni di letterali)
+1.  Algoritmo di Ricerca (o di inferenza)
+2.  Insieme di regole di inferenza
+    -   `Risoluzione`
+        -   disgiunzioni in cui si fattorizzano analoghi e si cancellano i contrari
+        -   il `Modus Ponens` ne é un caso particolare
+        -   si applica a `CNF`
+            -   \\(KB\_{\text{LP}}  \vdash KB\_{\text{CNF}}\\)
+                1.  si eliminano le biimplicazioni
+                2.  si eliminano le implicazioni
+                3.  si portano all'interno i `not` applicando `de Morgan`
+                4.  si eliminano le doppie negazioni
+                5.  si distribuisce `or` sull'`and`
+            -   congiunzioni di clausole (disgiunzioni di letterali)
 
-    > **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
+> **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
 
-    -   questo é utilizzato nella dimostrazione per refutazione
+Questo é utilizzato nella dimostrazione per refutazione.
 
-    <!--list-separator-->
 
-    -  Horn Clauses
+##### Horn Clauses {#horn-clauses}
 
-        Un caso particolare delle clausole.
+Un caso particolare delle clausole.
 
-        > Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
+> Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
 
-        ad esempio:
+ad esempio:
 
-        \\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
+\\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
 
-        \\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
+\\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
 
-    <!--list-separator-->
 
-    -  Forward Chaining
+##### Forward Chaining {#forward-chaining}
 
-        Lineare nel numero di clausole
+Lineare nel numero di clausole
 
-        -   ogni clausola é applicata al piú  una volta
-        -   peró sono applicate clausole inutili per il _target_
+-   ogni clausola é applicata al piú  una volta
+-   peró sono applicate clausole inutili per il _target_
 
-        {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
+{{< figure src="/ox-hugo/forward-chaining.jpg" >}}
 
-    <!--list-separator-->
 
-    -  Backward Chaining
+##### Backward Chaining {#backward-chaining}
 
-        Parte dalla formula da dimostare e va a ritroso
+Parte dalla formula da dimostare e va a ritroso
 
-        -   piú efficiente del `Forward Chaining`
-        -   meno che lineare
+-   piú efficiente del `Forward Chaining`
+-   meno che lineare
 
-        {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
+{{< figure src="/ox-hugo/backward-chaining.jpg" >}}
 
-<!--list-separator-->
 
--  First Order Logic
+#### First Order Logic {#first-order-logic}
 
-    -   dichiarativa
-        -   separa conoscenza da inferenza
-        -   si deriva conoscenza da altra conoscenza
+-   dichiarativa
+    -   separa conoscenza da inferenza
+    -   si deriva conoscenza da altra conoscenza
 
-    Elementi:
+Elementi:
 
-    -   costanti
-    -   predicati
-    -   variabili
-    -   funzioni
-        -   **NB** questi non costruiscono oggetti: danno un _riferimento_ a oggetti esistenti
-    -   connettivi
-    -   ugualianza
-    -   quantificatori
-        -   \\(\forall\\) viene espanso in una catena di \\(\land\\)
-        -   \\(\exists\\) viene espanso in una catena di \\(\lor\\)
-        -   le espansioni vengono fatte sostituendo alla variabile **tutte** le costanti del modello
-        -   \\[\exists x \lnot F \equiv \lnot \forall x F\\]
-        -   \\[\exists x F \equiv \lnot \forall x \lnot F\\]
-    -   punteggiatura
+-   costanti
+-   predicati
+-   variabili
+-   funzioni
+    -   **NB** questi non costruiscono oggetti: danno un _riferimento_ a oggetti esistenti
+-   connettivi
+-   ugualianza
+-   quantificatori
+    -   \\(\forall\\) viene espanso in una catena di \\(\land\\)
+    -   \\(\exists\\) viene espanso in una catena di \\(\lor\\)
+    -   le espansioni vengono fatte sostituendo alla variabile **tutte** le costanti del modello
+    -   \\(\exists x \lnot F \equiv \lnot \forall x F\\)
+    -   \\(\exists x F \equiv \lnot \forall x \lnot F\\)
+-   punteggiatura
 
-    Le formule in `FOL` sono poi _interpretate_
+Le formule in `FOL` sono poi _interpretate_
 
-    -   l'interpretazione forma un _mapping_ tra `simboli` e `dominio`
-    -   collega simboli e significati
-        -   funzioni - relazioni
-        -   predicati - relazioni
-        -   costanti - oggetti
+-   l'interpretazione forma un _mapping_ tra `simboli` e `dominio`
+-   collega simboli e significati
+    -   funzioni - relazioni
+    -   predicati - relazioni
+    -   costanti - oggetti
 
-    Un modello é una coppia: \\(M = \langle D,I \rangle\\)
+Un modello é una coppia: \\(M = \langle D,I \rangle\\)
 
-    -   \\(D\\) dominio
-    -   \\(I\\) interpretazione
+-   \\(D\\) dominio
+-   \\(I\\) interpretazione
 
-    > Come nellla logica proposizionale, \\(M\\) é un modello per \\(\alpha\\) se questo é vero in \\(M\\).
+> Come nellla logica proposizionale, \\(M\\) é un modello per \\(\alpha\\) se questo é vero in \\(M\\).
 
-    I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:1]
-    Un termine é `ground` quando non contiene variabili. (i.e. fondato)
+I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:1]
+Un termine é `ground` quando non contiene variabili. (i.e. fondato)
 
-    La base di conoscenza puó essere interrogata con `ask`
+La base di conoscenza puó essere interrogata con `ask`
 
-    -   quando compare una formula `ground` é banale la richiesta
-    -   quando compaiono variabili si intende una sostituzione
-        -   quindi la variabile \\(x\\) é interpretata in senso esistenziale ( \\(\exists\\) )
+-   quando compare una formula `ground` é banale la richiesta
+-   quando compaiono variabili si intende una sostituzione
+    -   quindi la variabile \\(x\\) é interpretata in senso esistenziale ( \\(\exists\\) )
 
-    <!--list-separator-->
 
-    -  Come fare Inferenza su FOL
+##### Clausole di Horn {#clausole-di-horn}
 
-        -   `Proposizionalizzazione`
-            -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
-            -   Regola di Instanziazione Universale - `UI`
-                -   \\[\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\]
-                -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
-                -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
-            -   Regola di Instanziazione Esistenziale - `EI`
-                -   \\[\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\]
-                -   \\(k\\) costante di Skolem, nuova
-                    -   non compare nella `KB`
-                -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\)
-            -   `Herbrand`
-                -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
-                    -   \\(KB \vDash F\\)
-                -   se non é conseguenza logica ... non é detto sia dimostrabile
-                    -   \\(KB \not\vDash F\\) non sempre possibile
-                -   la logica del prim'ordine é **semi-decidibile**
-            -   `Inefficienza`
-                -   crea delle basi di conoscenza grandi con le regole
-        -   `Lifting` delle regole di inferenza
-            -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
-            -   `Unification` Martelli/Montanari
-            -   **Modus Ponens Generalizzato**
-                -   \\[\frac{P\_{1}',\cdots ,P\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
-                -   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle P\_{i}', p\_{i} \rangle\\)
+-   disgiunzioni di letterali di cui al piú uno é positivo
+-   atomiche
+-   implicazioni il cui antecedente é una congiunzione di letterali
 
-<!--list-separator-->
 
--  Database Semantics
+##### Inferenza su FOL {#inferenza-su-fol}
 
-    -   unicitá dei nomi
-    -   closed-world assumption
-    -   domain closure
+-   `Proposizionalizzazione`
+    -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
+    -   Regola di Instanziazione Universale - `UI`
+        -   \\(\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\)
+        -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
+        -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
+    -   Regola di Instanziazione Esistenziale - `EI`
+        -   \\(\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\)
+        -   \\(k\\) costante di Skolem, nuova
+            -   non compare nella `KB`
+        -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\)
+    -   `Herbrand`
+        -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
+            -   \\(KB \vDash F\\)
+        -   se non é conseguenza logica ... non é detto sia dimostrabile
+            -   \\(KB \not\vDash F\\) non sempre possibile
+        -   la logica del prim'ordine é **semi-decidibile**
+    -   `Inefficienza`
+        -   crea delle basi di conoscenza grandi con le regole
+-   `Lifting` delle regole di inferenza
+    -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
+    -   **Modus Ponens Generalizzato**[^fn:2]
 
-    Riduce il numero di modelli a un numero finito.
+\\[\frac{p\_{1}',\cdots ,p\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
+
+-   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle p\_{i}', p\_{i} \rangle\\) per cui \\(p\_{i}' \theta = p\_{i} \theta\\) per ogni \\(i\in [1,n]\\)
+-   `Unification` (Martelli/Montanari)
+    -   algoritmo di ricerca che date due formule trova la sostituzione \\(\theta\\) piú generale che le unifichi
+-   `Forward Chaining`
+    -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:3]
+        -   in caso contrario il caso negativo puó non terminare
+-   `Backward Chaining`
+    -   stesse considerazioni del `FC` ma piú efficiente
+
+<!--listend-->
+
+-   `Lifting` della Risoluzione[^fn:4]
+
+\\[\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})\\]
+
+-   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
+    1.  Eliminazione delle **implicazioni**
+    2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
+    3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
+    4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:5]
+        -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
+        -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
+        -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
+    5.  Eliminazione dei \\(\forall\\)
+
+
+#### Database Semantics {#database-semantics}
+
+-   unicitá dei nomi
+-   _closed-world assumption_
+    -   ció che non é rappresentato é falso
+    -   questo é diverso dalle `Ontologie OWL` che assumono un mondo aperto
+        -   esiste il concetto di ignoto oltre al vero/falso
+-   domain closure
+
+Riduce il numero di modelli a un numero finito.
+
+Le `ontologie` a loro differenza possono avere istanze con ulteriori proprietá rispetto al concetto cui appartengono.
+
+
+### Ontologie {#ontologie}
+
+Le categorie vengono `reificate`, rese oggetti
+
+-   questi oggetti sono utilizzati al posto dei predicati utilizzati in `FOL`
+
+Vengono aggiunti predicati:
+
+-   `Member` applicabile a _istanze_ di oggetti e una _categoria_
+    -   `true` se l'istanza appartiene alla categoria
+-   `IS-A` applicabile a due _categorie_
+    -   vera se la prima é una sottocategoria della seconda
+
+Con questi elementi si possono definire `tassonomie`
+
+-   insieme di regole di sottocategorie / sottoclassi
+
+Le categorie di una tassonomia possono essere caratterizzate tramite la definizione di `proprietá`:
+
+-   `Member(X, Pallone)` \\(\Rightarrow\\) `Sferico(X)`
+-   le proprietá si ereditano dalle superclassi
+-   possono essere contraddette dalle proprietá delle sottoclassi
+
+Le categorie:
+
+-   possono essere `disgiunte` se non hanno istanze in comune nelle proprie sottoclassi
+    -   `Disjoint(S)`
+-   costituiscono una `decomposizione esaustiva` rispetto a una \\(C\\) loro superclasse quando le istanze di \\(C\\) sono esattamente l'unione delle istanze di queste sottoclassi
+    -   `ExhaustiveDec(S,C)`
+-   costituiscono una `partizione` se valgono entrambe le precedenti
+    -   `Partition(S,C)`
+
+Strutturalmente:
+
+-   `Part-of(x,y)`
+-   `On-top(x,y)`
+
+L'`ontologia` é una forma piú generale delle `tassonomie`
+
+-   hanno forma di grafo e non di albero
+-   si struttura in
+    -   `T-box`
+        -   generale, concettualizzazione intensionale
+        -   quantificato universalmente
+    -   `A-box`
+        -   su istanze specifiche, estensionale
+        -   contiene fatti che devono essere _coerenti_ con il contenuto della `T-box`
+
+
+#### Relazioni tra Ontologie {#relazioni-tra-ontologie}
+
+Nello stesso dominio:
+
+1.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">identiche</span>; sono due copie dello stesso file
+2.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">equivalenti</span>; condividono vocabolario e proprietá ma sono espresse in linguaggi diversi[^fn:6]
+3.  \\(O\_{1}\\) estende \\(O\_{2}\\); vocabolari e proprietá di \\(O\_{2}\\) sono preservati in \\(O\_{1}\\) ma non viceversa
+4.  `Weakly-Translatable`
+    -   non si introducono inconsistenze
+5.  `Strongly-Translatable`
+    -   il vocabolario di `Source` é completamente mappabili in concetti di `Dest`
+    -   le proprietá di `Source` valgono in `Dest`
+    -   non c'é perdita di informazione
+    -   non si introducono inconsistenze
+6.  `Approx-Translatable`
+    -   `Source` é `Weakly-Translatable` in `Dest`
+    -   possono essere introdotte delle _inconsistenze_
+
+
+#### Ontologia come agente {#ontologia-come-agente}
+
+L'`ontologia` é la `Knowledge Base`, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti. Sono rappresentazione di concettualizzazioni
+
+Un'ontologia puó essere interrogata in maniere diverse
+
+1.  istanza appartiene a categoria
+2.  istanza gode di proprietá
+3.  differenza fra categorie
+4.  identificazione di istanze
+
+Esempi ontologie: [Provenance]({{< relref "provenance.md" >}}), [Semantic Web]({{< relref "semantic_web.md" >}})
+Utilizzate da: `DBpedia`, `CreativeCommons`, `FOAF`, `Press Association`, `Linked (Open) Data`
+
+
+#### Data Interchange {#data-interchange}
+
+`RDF` - Resource Description Framework
+
+-   Un linguaggio / modello di rappresentazione
+-   Base di linguaggi come `OWL`, `SKOS`, `FOAF`
+-   Rappresentato in `XML`
+
+**Triple** soggetto, predicato, oggetto possono essere rappresentate in forma di grafo.
+
+
+#### Knowledge Engineering {#knowledge-engineering}
+
+1.  Identificazione dei concetti
+    -   elencare tutti i concetti riferiti nel `DB` di partenza
+    -   solitamento _sostantivi_
+    -   definire etichette e descrizioni
+    -   identificare in seguito le sottoclassi
+2.  Controllare se esistono ontologie giá definite online almeno parzialmente
+    -   allineamento delle ontologie necessario se non compatibili
+    -   matching di ontologie
+    -   la corrispondenza non sará mai perfetta
+3.  definire `T-box`
+4.  definire `A-box`
+
+Strumenti:
+
+-   `Protégé`
+-   `CEL`, `FaCT++`
+
+
+### Situation Calculus {#situation-calculus}
+
+Sulla basa della `FOL` contruisce:
+
+-   **Azione**
+    -   cambia lo stato del mondo
+    -   oggetti immateriali, rappresentate dalle _funzioni_
+    -   \\(\text{Move}(O,P\_{1},P\_{2})\\)
+-   **Situazione**
+    -   stato di cose, solitamente il prodotto di azioni
+    -   il tempo non é gestito esplicitamente perché rappresentato dal susseguirsi delle azioni
+    -   possiamo rappresentarle con funzioni \\(\text{Do}(\text{seq-az}, S)\\)
+        -   sequenza ottenuta applicando la sequenza di azioni nella situazione \\(S\\)
+        -   \\(\text{Do}([\\;\\;], S) = S\\)
+        -   \\(\text{Do}([a | r], S) = \text{Do}(r, \text{Result}(a,S))\\)
+    -   le rappresentazioni \\(\text{Do}\\) ci danno delle `proiezioni`, permettendoci di ragionare sugli effetti delle azioni senza modificare la situazione. Ragionando sugli effetti.
+-   **Fluente**
+    -   proprietá/predicato che puó cambiare nel tempo
+    -   \\(P(A,B,S)\\)
+    -   \\(\text{Holds}(P(A,B),S)\\)
+        -   formula + situation
+-   **Predicato Atemporale**
+    -   proprietá/predicato che non é influenzata dalle azioni
+
+
+#### Assiomi della azioni {#assiomi-della-azioni}
+
+1.  `applicabilitá`, proprietá che devono valere nella situazione di partenza
+    -   \\(\forall \text{params},s: \text{Applicable}(\text{Action}(\text{params}),s) \iff \text{Precond}(\text{params},s)\\)
+2.  `effetto`, proprietá che devono valere nella situazione di arrivo
+    -   la soluzione semplice di riportare solamente le modifiche dello stato da parte dell'azione
+    -   `frame problem`
+3.  `frame`
+    -   \\(\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action(\text{params}),s}))\\)
+4.  `Assioma di Stato Successore`
+    -   aggiunto per sostituire gli `assiomi di frame`
+    -   `Azione Applicabile` \\(\implies\\) `(Fluente vero nella` \\(s\\) `risultante` \\(\iff\\) `l'azione lo rendeva vero` \\(\lor\\) `era vero e l'azione non l'ha reso falso)`
+
+
+#### Anomalia di Sussman {#anomalia-di-sussman}
+
+_Perseguimento di goal complessi_
+
+1.  suddividere il _goal_ in sottogoal
+2.  raggiungere i _sottogoal_ sequenzialmente
+
+> Non tutti i _goal_ possono essere risolti suddividendoli prima in subgoal e affrontandoli in maniera sequenziale.
+
+
+## Agente {#agente}
+
+Ciclo di vita:
+
+1.  ha una percezione / ha un input
+2.  delibera / costruisce la risposta
+3.  agisce / restituisce la risposta
+
+L'_agente_ vive una `sequenza percettiva`, ovvero la storia completa delle percezioni
+
+
+### Deliberazione {#deliberazione}
+
+Definibile come una \\(f\\) in forma tabellare
+
+-   sequenza percettiva | azione
+
+Si misura la _prestazione_
+
+-   misura la bontá degli stati attraversati
+-   un'altra \\(f\\) che data una _sequenza percettiva_ e valuta un _valore di bontá_
+
+Queste considerazioni ci servono per definera la razionalitá del comportamento dell'agente.
+
+-   un agente razionale effettua azioni che lo avvicinano al proprio _goal_ <span class="underline">nei limiti dell'informazione a esso disponibile</span>
+
+
+### Ambiente {#ambiente}
+
+-   `Task Environment`
+    -   contesto in cui l'agente é inserito
+    -   fisico o meno
+-   `PEAS`, definiscono il `Task Environment`
+    -   performance
+    -   environment
+    -   actuators
+    -   sensors
+
+Distinzione tra
+
+-   dinamico / statico
+-   monoagente / multiagente
+    -   in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei prorpi obiettivi
+    -   va sviluppato un `protocollo di interazione` che permetta di coordinare piú agenti
+        -   attraverso scambi di messaggi
+        -   `FIPA` - Foundation for Intelligent Physical Agents
+            -   ha definito una semantica per i messaggi tra agenti e ha standardizzato dei protocolli
+
+
+### Architettura {#architettura}
+
+Un'_agente_ é l'unione di _programma_ e _architettura_:
+
+-   `architettura`, specifica degli elementi strutturali e funzionali
+-   `programma`, funzione che mette in relazione percezioni e azioni
+
+Si distingue anche tra:
+
+-   `funzione agente`, input la sequenza percettiva (storia delle percezioni)
+-   `programma agente`, input la percezione corrente
+
+Tipologie:
+
+-   **agenti reattivi semplici**
+    -   reagisce alla percezione immediata
+    -   si basa sulla _percezione corrente_
+    -   funzionano in ambienti <span class="underline">completamente osservabili</span>
+    -   per evitare `loop` si introducono comportamenti `random`
+-   **agenti reattivi basati su modello**
+    -   agisce tramite _modello - sequenza percettiva - storia delle azioni_
+    -   mantiene uno `stato`
+    -   di base sempre un `if - then`
+-   **agenti guidati dagli obiettivi** - _goal-driven_
+    -   l'azione o piano di azione dell'agente é volto ad avvicinarlo all'_obiettivo_
+    -   cambiando gli obiettivi dell'agente posso fargli realizzare diversi comportamenti
+-   **agenti guidati dall'utilitá** - _utility-driven_
+    -   l'agente puó scegliere approcci diversi in base a parametri esterni
+    -   utilitá calcolabile
+-   **agenti capaci di apprendere**
+    -   la parte di apprendimento é caratterizzata da 3 elementi:
+        -   _critico_
+            -   valuta il livello di prestazione decidendo se attivare l'apprendimento
+        -   _modulo dell'apprendimento_
+            -   modifica la conoscenza dell'agente
+        -   _generatore di problemi_
+            -   causa l'esecuzione di azioni esplorative
+
+
+## Apprendimento Automatico {#apprendimento-automatico}
+
+
+### Classificazione {#classificazione}
+
+Dati \\(\rightarrow f \rightarrow\\) Classe
+
+-   questa \\(f\\) é il risultato dell'apprendimento
+
+Tra i dati forniamo _esempi_ ma anche le _categorie_.
+Costruisco un `Learning Set` costruito da coppie
+
+-   istanza \\(x\\) - classe \\(y\\)
+    -   le istanze sono tuple
+-   é supervisionato
+-   il rischio é che questo set di apprendimento sia troppo _specialistico_
+    -   non riconoscerá l'intera classe ma solamente una sua specializzazione
+
+Con cui eseguo l'[Apprendimento Supervisionato]({{< relref "apprendimento_supervisionato.md" >}})
+
+-   implementata tramite un **algoritmo di apprendimento**
+-   il **modello** viene costruito da questo
+-   il **modello** viene poi utilizzato per la _predizione_
+
+Si pongono subito dei problemi:
+
+1.  rappresentazione dei dati/istanze
+2.  analisi dei dati
+3.  utilizzo della conoscenza costruita
+
+Schema:
+
+-   `Training Set` \\(\rightarrow\\) Induzione \\(\rightarrow\\) Modello
+-   `Test Set` \\(\rightarrow\\) Deduzione \\(\rightarrow\\) Classe
+
+I modelli si caratterizzano in:
+
+-   predittivi
+    -   strumento di previsione
+    -   assegna una appartenenza a istanze ignote
+-   descrittivi
+    -   strumento esplicativo
+    -   evidenzia caratteristiche che distinguono le categorie
+
+
+#### Attributi {#attributi}
+
+Gli attributi sono distinguibili in classi diverse
+
+-   `binari`
+-   `nominali`
+    -   assumono delle _etichette_ distinte
+    -   definiti in un insieme
+    -   _spit_
+        -   multivalore
+            -   un nodo per ogni etichetta
+        -   binario
+            -   un nodo per una etichetta e uno per le rimanenti
+-   `ordinali`
+    -   sono nominali in cui vale una relazione di ordinamento tra le etichette
+    -   _spit_
+        -   multivalore
+        -   binario
+            -   possibile ma deve preservare l'ordinamento
+-   `continui`
+    -   si identifica un valore rispetto il quale fare _split_
+        -   in base a questo l'attributo diviene binario
+
+
+#### Matrice di Confusione {#matrice-di-confusione}
+
+É uno strumento di valutazione in ambito della classificazione.
+Consiste nel mettere alla prova il _modello_.
+Consiste in un insieme di _istanze_
+
+-   `Test Set`
+-   hanno la stessa forma del `Learning Set`
+-   il modello restituisce una classificazione di tutte le istanze
+    -   poi esaminate e suddivise in _corrette_ e _sbagliate_
+    -   la percentuale desiderata di classificazioni corrette é relativo all'ambito, il dominio
+
+La `matrice di confusione` é una matrice quadrada
+
+-   numero di righe/colonne come il <span class="underline">numero delle classi</span>
+    -   righe, <span class="underline">classi reali</span>
+    -   colonne, <span class="underline">classi predette</span>
+    -   il \\(v\\) in una cella \\(\langle c\_{i},c\_{j} \rangle\\)
+        -   numero di istanze appartenenti a \\(c\_{i}\\) che il modello ha detto appartenere a \\(c\_{j}\\)
+        -   desideriamo che i \\(v\\) si accumulino nella diagonale, dove troviamo le risposte corrette
+
+Si hanno due considerazioni sui risultati:
+
+-   `accuracy`
+
+\\[\frac{\sum\_{i} v\_{ii}}{\sum\_{i,j} v\_{ij}}\\]
+
+-   `error rate`
+
+\\[\frac{\sum\_{i \neq j} v\_{ij}}{\sum\_{i,j} v\_{ij}}\\]
+
+Chiaramente \\(\text{acc} + \text{er} = 100\\%\\)
+
+Il limite della matrice di confusione é che gli errori hanno tutti lo stesso peso.
+
+-   per sopperire a questo si puó aggiungere una `matrice dei costi`
+    -   ha la stessa forma della `matrice di confusione`
+    -   gli errori saranno poi moltiplicati per questi pesi per valutare il modello
+
+Altro limite é che su `test set` sbilanciati gli _error rate_ saranno falsati.
+
+
+#### Alberi di Decisione {#alberi-di-decisione}
+
+`Decision Trees`
+Banalmente, in un altro contesto, un menú a tendina.
+
+-   si tratta di un albero con _test_ per nodi e _azioni_ per foglie
+    -   test portano in base ai risultati a test successivi o foglie
+    -   alle  foglie si decide la classe di appartenenza dell'istanza
+
+Le istanze hanno la stessa forma
+
+-   n-attributi organizzati in una n-tupla
+
+I _test_ sono ognuno su un singolo attributo e a cascata caratterizzano le istanze.
+
+
+##### Algoritmo di Hunt {#algoritmo-di-hunt}
+
+**L'algoritmo di Hunt** lavora sul `Learning Set`
+
+-   dividendo il sottoinsiemi via via piú puri
+-   \\(D\_{t}\\) sottoinsieme del `LS` associato al nodo \\(t\\)
+-   \\(y = \\{y\_{1},y\_{2},\cdots,y\_{c}\\}\\) insieme delle etichette delle classi
+
+Passi:
+
+1.  <span class="underline">test</span> se tutte le istanze in \\(D\_{t}\\) appartengono alla stessa classe
+    -   `true`: \\(t\\) é una _foglia_ e le viene assegnata l'etichetta \\(y\_{t}\\)
+    -   `false`: si sceglie un attributo descrittivo su cui fare lo _split_
+        1.  si verifica il suo range in \\(D\_{t}\\)
+        2.  si crea un _nodo successore_ per ogni suo possibile valore
+        3.  a ogni successore si assegna il sottoinsieme di \\(D\_{t}\\) per cui l'attributo scelto vale quello cui il successore é associato
 
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
+[^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti
+[^fn:3]: una `KB` senza funzioni
+[^fn:4]: \\(\Theta\\) unificatore di \\(l\_{i}\\) e \\(\lnot m\_{j}\\)
+[^fn:5]: esistenziali _in scope_ di universali
+[^fn:6]: i.e. `RDF` e `OWL`

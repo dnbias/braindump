@@ -57,8 +57,6 @@ build content/posts/20200605013212-circuiti_combinatori.md: org2md roam/20200605
 
 build content/posts/20200605014640-circuiti_sequenziali.md: org2md roam/20200605014640-circuiti_sequenziali.org
 
-build content/posts/20200624020825-metal_gear_solid_3.md: org2md roam/20200624020825-metal_gear_solid_3.org
-
 build content/posts/20200624021510-metal_gear_saga.md: org2md roam/20200624021510-metal_gear_saga.org
 
 build content/posts/20200624175455-big_boss.md: org2md roam/20200624175455-big_boss.org
@@ -781,8 +779,6 @@ build content/posts/stanislaw_jerzy_lec.md: org2md roam/stanislaw_jerzy_lec.org
 
 build content/posts/strawman.md: org2md roam/strawman.org
 
-build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
-
 build content/posts/system_crafters.md: org2md roam/system_crafters.org
 
 build content/posts/the_cat_lady.md: org2md roam/the_cat_lady.org
@@ -862,3 +858,83 @@ build content/posts/learn_quantum_computing_with_python_and_q.md: org2md roam/le
 build content/posts/what_is_this.md: org2md roam/what_is_this.org
 
 build content/posts/quantum_device_simulator.md: org2md roam/quantum_device_simulator.org
+
+build content/posts/quantum_q_algorithms.md: org2md roam/quantum_q_algorithms.org
+
+build content/posts/adding_double_borders_to_bspwm.md: org2md roam/adding_double_borders_to_bspwm.org
+
+build content/posts/abstract_factory.md: org2md roam/abstract_factory.org
+
+build content/posts/adapter.md: org2md roam/adapter.org
+
+build content/posts/bridge.md: org2md roam/bridge.org
+
+build content/posts/builder.md: org2md roam/builder.org
+
+build content/posts/chain_of_responsibility.md: org2md roam/chain_of_responsibility.org
+
+build content/posts/composite.md: org2md roam/composite.org
+
+build content/posts/decorator.md: org2md roam/decorator.org
+
+build content/posts/double_check_locking.md: org2md roam/double_check_locking.org
+
+build content/posts/facade.md: org2md roam/facade.org
+
+build content/posts/factory_method.md: org2md roam/factory_method.org
+
+build content/posts/flyweight.md: org2md roam/flyweight.org
+
+build content/posts/gof.md: org2md roam/gof.org
+
+build content/posts/grasp.md: org2md roam/grasp.org
+
+build content/posts/lazy_initialization.md: org2md roam/lazy_initialization.org
+
+build content/posts/prototype_pattern.md: org2md roam/prototype_pattern.org
+
+build content/posts/proxy.md: org2md roam/proxy.org
+
+build content/posts/singleton.md: org2md roam/singleton.org
+
+build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
+
+build content/posts/command.md: org2md roam/command.org
+
+build content/posts/event_listener.md: org2md roam/event_listener.org
+
+build content/posts/hirarchical_visitor.md: org2md roam/hirarchical_visitor.org
+
+build content/posts/interpreter.md: org2md roam/interpreter.org
+
+build content/posts/iterator.md: org2md roam/iterator.org
+
+build content/posts/mediator.md: org2md roam/mediator.org
+
+build content/posts/memento.md: org2md roam/memento.org
+
+build content/posts/observer.md: org2md roam/observer.org
+
+build content/posts/state.md: org2md roam/state.org
+
+build content/posts/strategy.md: org2md roam/strategy.org
+
+build content/posts/template_method.md: org2md roam/template_method.org
+
+build content/posts/visitor.md: org2md roam/visitor.org
+
+build content/posts/automatic_table_of_content_in_css_js.md: org2md roam/automatic_table_of_content_in_css_js.org
+
+build content/posts/generate_ids_for_headings_in_js.md: org2md roam/generate_ids_for_headings_in_js.org
+
+build content/posts/provenance.md: org2md roam/provenance.org
+
+build content/posts/semantic_web.md: org2md roam/semantic_web.org
+
+build content/posts/sparql.md: org2md roam/sparql.org
+
+build content/posts/apprendimento_supervisionato.md: org2md roam/apprendimento_supervisionato.org
+
+build content/posts/footnotes_on_hover_w_javascript.md: org2md roam/footnotes_on_hover_w_javascript.org
+
+build content/posts/qmk_italian_accents.md: org2md roam/qmk_italian_accents.org

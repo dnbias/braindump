@@ -224,70 +224,65 @@ Si incrementalmente una lista dei requisiti: _feature list_
 -   prioritá
 -   rischio stimato per l'implementazione
 
-<!--list-separator-->
 
--  Casi d'uso
+##### Casi d'uso {#casi-d-uso}
 
-    Catturano (in `UP` e `Agile`) i requisiti funzionali
-    Sono descrizioni testuali che indicano l'uso che l'utente fara' del sistema
+Catturano (in `UP` e `Agile`) i requisiti funzionali
+Sono descrizioni testuali che indicano l'uso che l'utente fara' del sistema
 
-    -   attori; qualcuno o qualcoso dotato di comportamento
-    -   scenario (istanza di caso d'uso); sequenza specifica di azioni e interazioni tra sistema e attori
-    -   caso d'uso; collezione di scenari correlati (di successo/fallimento) che descrivono un attore che usa il sistema per raggiungere un obiettivo specifico
+-   attori; qualcuno o qualcoso dotato di comportamento
+-   scenario (istanza di caso d'uso); sequenza specifica di azioni e interazioni tra sistema e attori
+-   caso d'uso; collezione di scenari correlati (di successo/fallimento) che descrivono un attore che usa il sistema per raggiungere un obiettivo specifico
 
-    `UP` e' _use-case driven_, questi sono il modo in cui si definiscono i requisiti di sistema
+`UP` e' _use-case driven_, questi sono il modo in cui si definiscono i requisiti di sistema
 
-    -   i casi d'uso definiscono analisi e progettazione
-    -   i casi sono utilizzati per pianificare le iterazioni
-    -   i casi definiscono i test
+-   i casi d'uso definiscono analisi e progettazione
+-   i casi sono utilizzati per pianificare le iterazioni
+-   i casi definiscono i test
 
-    Il **modello dei casi d'uso** include un grafico `UML`
+Il **modello dei casi d'uso** include un grafico `UML`
 
-    -   e' un modello delle funzionalita' del sistema
+-   e' un modello delle funzionalita' del sistema
 
-    I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i requisiti come input all' `OOA/D`
+I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i requisiti come input all' `OOA/D`
 
-    -   l'enfasi e' sull'utente, sono il principale metodo di inclusione dell'attore nel processo di sviluppo
-    -   questi non sono algoritmi, sono semplici descrizioni dell'interazione, non la specifica di implementazione
-        -   il _come_ e' obiettivo della progettazione `OOD`
-        -   i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il _cosa_ e nulla riguardo al _come_
+-   l'enfasi e' sull'utente, sono il principale metodo di inclusione dell'attore nel processo di sviluppo
+-   questi non sono algoritmi, sono semplici descrizioni dell'interazione, non la specifica di implementazione
+    -   il _come_ e' obiettivo della progettazione `OOD`
+    -   i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il _cosa_ e nulla riguardo al _come_
 
-    I casi devono essere _guidelines_, espremerle in uno  **stile essenziale**. A livello delle intenzioni e delle responsabilitá, non delle azioni concrete.
+I casi devono essere _guidelines_, espremerle in uno  **stile essenziale**. A livello delle intenzioni e delle responsabilitá, non delle azioni concrete.
 
-    <!--list-separator-->
 
-    -  Attori
+###### Attori {#attori}
 
-        Sono ruoli svolti da persone, organizzazioni, sotware, macchine
+Sono ruoli svolti da persone, organizzazioni, sotware, macchine
 
-        -   primario
-        -   di supporto
-            -   offre un servizio al sistema
-            -   chiarisce interfacce esterne e protocolli
-        -   fuori scena
-            -   ha interesse nel comportamento del caso d'uso
+-   primario
+-   di supporto
+    -   offre un servizio al sistema
+    -   chiarisce interfacce esterne e protocolli
+-   fuori scena
+    -   ha interesse nel comportamento del caso d'uso
 
-    <!--list-separator-->
 
-    -  Formati
+###### Formati {#formati}
 
-        -   breve
-            -   un solo paragrafo informale che descrive solitamente lo scenario principale
-        -   informale
-            -   piu' paragrafi in modo informale che descrivono vari scenari
-        -   dettagliato
-            -   include precondizioni e garanzie di successo
+-   breve
+    -   un solo paragrafo informale che descrive solitamente lo scenario principale
+-   informale
+    -   piu' paragrafi in modo informale che descrivono vari scenari
+-   dettagliato
+    -   include precondizioni e garanzie di successo
 
-<!--list-separator-->
 
--  Requisiti non funzionali
+##### Requisiti non funzionali {#requisiti-non-funzionali}
 
-    Possono essere inclusi nei casi d'uso se relazionati con il requisito funzinale descritto dal caso
-    Altrimenti vengono descritti nelle specifiche supplementari
+Possono essere inclusi nei casi d'uso se relazionati con il requisito funzinale descritto dal caso
+Altrimenti vengono descritti nelle specifiche supplementari
 
-<!--list-separator-->
 
--  Contratti
+##### Contratti {#contratti}
 
 
 #### Modello di Dominio {#modello-di-dominio}
@@ -328,54 +323,50 @@ I modelli per gli oggetti possono essere
     -   collaborazione tra oggetti per realizzare una caso d'uso
     -   i metodo delle classi software
 
-<!--list-separator-->
 
--  Diagrammi dei Package
+##### Diagrammi dei Package {#diagrammi-dei-package}
 
-    Vista _statica_
+Vista _statica_
 
-<!--list-separator-->
 
--  Diagrammi di Interazione
+##### Diagrammi di Interazione {#diagrammi-di-interazione}
 
-    Vista _dinamica_
+Vista _dinamica_
 
-    > Un interazione é una specifica di come alcuni oggetti si scambiano messaggi nel tempo per eseguire un compito nell'ambito di un certo contesto.
+> Un interazione é una specifica di come alcuni oggetti si scambiano messaggi nel tempo per eseguire un compito nell'ambito di un certo contesto.
 
-    <!--quoteend-->
+<!--quoteend-->
 
-    > Un compito é rappresentato da un messaggio che dá inizio all'interazione
+> Un compito é rappresentato da un messaggio che dá inizio all'interazione
 
-    -   questo messaggio é detto _messaggio trovato_
+-   questo messaggio é detto _messaggio trovato_
 
-    Per questo scopo vengono usati i _diagrammi di sequenza_ o i _diagrammi di comunicazione_
-    In particolare questi sono chiamati `Design Sequence Diagram - DSD`.
+Per questo scopo vengono usati i _diagrammi di sequenza_ o i _diagrammi di comunicazione_
+In particolare questi sono chiamati `Design Sequence Diagram - DSD`.
 
-<!--list-separator-->
 
--  Diagrammi delle Classi
+##### Diagrammi delle Classi {#diagrammi-delle-classi}
 
-    `Design Class Diagram - DCD`
-    Vista _statica_
+`Design Class Diagram - DCD`
+Vista _statica_
 
-    > Il diagramma delle classi di progetto é un diagramma delle classi utilizzato da un punto di vista software o di progetto.
+> Il diagramma delle classi di progetto é un diagramma delle classi utilizzato da un punto di vista software o di progetto.
 
-    A differenza del `Modello di Dominio` in questo contesto la visibilitá ha un significato:
+A differenza del `Modello di Dominio` in questo contesto la visibilitá ha un significato:
 
-    -   le associazioni qui hanno un verso
+-   le associazioni qui hanno un verso
 
-<!--list-separator-->
 
--  Progettazione a oggetti
+##### Progettazione a oggetti {#progettazione-a-oggetti}
 
-    -   _Quali sono le responsabilitá dell'oggetto?_
-    -   _Con chi collabora l'oggetto?_
-    -   _Quali design pattern devono essere applicati?_
+-   _Quali sono le responsabilitá dell'oggetto?_
+-   _Con chi collabora l'oggetto?_
+-   _Quali design pattern devono essere applicati?_
 
-    Si parte dal `Modello di Dominio`, ma l'implementazione impone dei vicoli ulteriori dovuti al `Object Oriented`
+Si parte dal `Modello di Dominio`, ma l'implementazione impone dei vicoli ulteriori dovuti al `Object Oriented`
 
-    -   vengono letti e implementati i contratti, con le loro pre e post-condizioni
-    -   non si creano nuove associazioni nel `Modello di Dominio`: siamo a livello del codice e si fanno scelte progettuali di _visibilitá_
+-   vengono letti e implementati i contratti, con le loro pre e post-condizioni
+-   non si creano nuove associazioni nel `Modello di Dominio`: siamo a livello del codice e si fanno scelte progettuali di _visibilitá_
 
 
 #### Ideazione {#ideazione}
@@ -450,7 +441,7 @@ Sono correlate agli obblighi o al comportamento di un oggetto, sono di due tipi:
 
 > Capire le responsabilitá é fondamentale per una buona programmazione a oggetti. - [Martin Fowler]({{< relref "martin_fowler.md" >}})
 
-`GRASP` tratta i pattern di base per l'assegnazione di responsabilitá.
+[GRASP]({{< relref "grasp.md" >}}) tratta i pattern di base per l'assegnazione di responsabilitá.
 
 -   buon [blog post](http://www.kamilgrzybek.com/design/grasp-explained/) a riguardo
 
@@ -554,9 +545,138 @@ Il `Controller` é un pattern di delega:
 ### GoF {#gof}
 
 `Gang of Four`
-`GoF` sono idee di progettazione piú avanzate rispetto a  `GRASP`.
+[GoF]({{< relref "gof.md" >}}) sono idee di progettazione piú avanzate rispetto a  [GRASP]({{< relref "grasp.md" >}}).
 
+-   non sono proprio principi
 -   articoli di [journaldev](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns) a riguardo
+
+Soluzioni progettuali comuni, emengono dal codice di progetti di successo.
+Un fattore emerso é la superioritá della _composizione_ rispetto all'_ereditarietá_:
+
+-   **Ereditarietá**
+    -   la sottoclasse puó accedere ai dettagli della superclasse
+    -   **whitebox**, a scatola aperta
+    -   é definita _staticamente_, non é modificabile a tempo di esecuzione
+    -   una modifica alla superclasse potrebbe avere ripercussioni indesiderate sulla classe che la estende
+        -   non rispetta l'incapsulamento
+-   **Composizione**
+    -   le funzionalitá sono ottenute tramite composizione/assemblamento di oggetti
+    -   riuso **blackbox**, i dettagli interni sono nascosti
+    -   una classe che utilizza un'altra classe puó referenziarla attraverso una _interfaccia_, questo meccanismo é dinamico
+        -   questa composizione tramite interfaccia rispetta l'incapsulamento, solo una modifica all'interfaccia comporterebbe ripercussioni
+
+Questo aiuta a mantenere le classi _incapsulate_ e _coese_.
+L'ereditarietá puó essere realizzato in due modi:
+
+1.  Polimorfismo
+    -   le sottoclassi possono essere scambiate l'una con l'altra
+    -   si utilizza una superclasse comune
+    -   si sfrutta _l'upcasting_
+2.  Specializzazione
+    -   le sottoclassi guadagnano elementi e proprietá rispetto alla classe base
+
+I pattern mostrano che il **polimorfismo** e il _binding dinamico_ é molto sfruttato, mentre la **specializzazione** non é comunemente utilizzata.
+
+
+#### Creazionali {#creazionali}
+
+Riguardanti l'instanziazione delle classi
+
+1.  [Abstract Factory]({{< relref "abstract_factory.md" >}})
+    -   _interfaccia_ factory
+    -   classe factory concreta per ciascuna famiglia di elementi da creare
+    -   opzionalmente definire una classe astratta che implementa l'interfaccia factory e fornisce servizi comuni alle factory concrete che la estendono
+    -   il cliente che la utilizza non ha conoscenza delle classi concrete
+        -   la factory si occupa di creare oggetti correlati tra loro
+    -   una variante crea la factory come [Singleton]({{< relref "singleton.md" >}})
+    -   utilizzata in libreria Java per le `GUI`
+2.  [Builder]({{< relref "builder.md" >}})
+3.  [Factory Method]({{< relref "factory_method.md" >}})
+4.  [Lazy Initialization]({{< relref "lazy_initialization.md" >}})
+5.  [Prototype Pattern]({{< relref "prototype_pattern.md" >}})
+6.  [Singleton]({{< relref "singleton.md" >}})
+    -   é consentita/richiesta <span class="underline">una sola istanza</span> di una classe
+    -   gli altri oggetti hanno bisogno di un punto di accesso globale e singolo al _singleton_
+    -   si definisce un **metodo statico** della classe che restituisce l'oggetto _singleton_
+        -   questo in Java
+        -   restituisce un puntatore all'oggetto se giá esiste, se non esiste ancora prima lo crea
+            -   [Lazy Initialization]({{< relref "lazy_initialization.md" >}})
+        -   questa implementazione é preferibile
+            -   la classe puó essere raffinata in sottoclassi
+            -   la maggior parte dei meccanismi di comunicazione remota object oriented supporta l'accesso remoto solo a metodi d'istanza
+            -   una classe non é sempre _singleton_ in tutti i contesti applicativi, dipende dalla `virtual machine`
+    -   il _singleton_ puó essere anche implementato come **classe statica**
+        -   non un vero e proprio _singleton_, si lavora con la classe statica non l'oggetto
+        -   la classe statica ha metodi statici che offrono ció che é richiesto
+    -   in `UML` é indicato con un \\(1\\) nella sezione del nome, in alto a destra
+    -   puó esserci concorrenza in _multithreading_
+7.  [Double-check Locking]({{< relref "double_check_locking.md" >}})
+
+
+#### Strutturali {#strutturali}
+
+Riguardanti la struttura delle classi/oggeti
+
+1.  [Adapter]({{< relref "adapter.md" >}})
+    -   gestire interfacce incompatibili
+    -   fornire interfaccia stabile a comportamenti simili ma interfacce diverse
+    -   converti l'interfaccia originale in un'altra interfaccia, attraverso un _adapter_ intermedio
+    -   da preferire l'utilizzo di un riferimento `adaptee` da parte del `Adapter`, per incapsulamento
+        -   questo piuttosto che _estendere_ direttamente l'`Adaptee`
+2.  [Bridge]({{< relref "bridge.md" >}})
+3.  [Composite]({{< relref "composite.md" >}})
+    -   trattare un gruppo o una struttura composta nello stesso modo di un oggetto non composto
+    -   si definiscono classi per gli oggetti composti e atomici in modo che implementino la stessa _interfaccia_
+    -   rappresenta gerarchie _tutto-parte_
+    -   permette di ignorare le differenze tra oggetti semplici e composti
+        -   saranno le differenze interne a definire le operazioni, il `client` non vede questo
+    -   costruisce strutture ricorsive dove il cliente gestisce un'unica entitá
+4.  [Decorator]({{< relref "decorator.md" >}}) o _Wrapper_
+    -   permettere di assegnare responsabilitá addizionali a un oggetto dinamicamente
+    -   inglobare l'oggetto all'interno di un altro che aggiunge le nuove funzionalitá
+        -   piú flessibile dell'estensione della classe, completamente dinamico
+        -   evitano l'esplosione delle sotto classi
+        -   simile al [Composite]({{< relref "composite.md" >}}) ma aggiunge funzionalitá
+5.  [Facade]({{< relref "facade.md" >}})
+6.  [Flyweight]({{< relref "flyweight.md" >}})
+7.  [Proxy]({{< relref "proxy.md" >}})
+
+
+#### Comportamentali {#comportamentali}
+
+Riguardanti l'interazione tra classi
+
+1.  [Chain of Responsibility]({{< relref "chain_of_responsibility.md" >}})
+    -   utilizzato nella gestione delle _eccezioni_, delega a ritroso
+2.  [Command]({{< relref "command.md" >}})
+3.  [Event Listener]({{< relref "event_listener.md" >}})
+4.  [Hirarchical Visitor]({{< relref "hirarchical_visitor.md" >}})
+5.  [Interpreter]({{< relref "interpreter.md" >}})
+6.  [Iterator]({{< relref "iterator.md" >}})
+7.  [Mediator]({{< relref "mediator.md" >}})
+8.  [Memento]({{< relref "memento.md" >}})
+9.  [Observer]({{< relref "observer.md" >}})
+    -   oggetti _subscriber_ interessati ai cambiamenti o agli eventi di un oggetto _publisher_
+        -   spesso associato al pattern architetturale `MVC`
+    -   Il _publisher_ vuole un basso accoppiamento con i _subscriber_
+    -   `interface` _subscriber_ o _listener_, gli oggetti subscriber implementano questa interfaccia
+        -   il _publisher_ notifica i cambiamenti
+    -   dipendenza **uno-a-molti**
+10. [State]({{< relref "state.md" >}})
+    -   il comportamento di un oggetto dipende dal suo stato
+        -   i metodi contengono logica condizionale per casi
+    -   classi _stato_ per ciascun stato implementanti una `interface` comune
+        -   delega le operazioni che dipendono dallo stato all'oggetto stato corrente corrispondente
+        -   assicura che l'oggetto contesto referenzi sempre un oggetto stato che riflette il suo stato corrente
+11. [Strategy]({{< relref "strategy.md" >}})
+    -   algoritmi diversi che hanno obiettivi in comune
+    -   stategie come oggetti distinti che implementano una `interface` comune
+12. [Template method]({{< relref "template_method.md" >}})
+13. [Visitor]({{< relref "visitor.md" >}})
+    -   separare l'operazione applicata su un contenitore complesso dalla struttura dati cui é applicata
+    -   oggetto `ConcreteVisitor` in grado di percorrere la collezione
+        -   applica un metodo proprio su ogni oggetto `Element` visitato (parametro)
+    -   gli oggetti della collezione implementano una `interface` `Visitable` che consente al visitatore di essere accettato e invocare l'operazione relativa all'elemento
 
 
 ## Laboratorio {#laboratorio}
@@ -639,7 +759,7 @@ _se desidera continua con 2. altrimenti termina il caso d'uso_
 2.  **opzionalmente** ordina l'elenco
 3.  **opzionalmente** consulta tabellone dei turni
 4.  assegna un compito in un dato turno e **opzionalmente** a un cuoco **oppure** specifica se il compito é giá stato svolto **oppure** modifica un compito giá inserito **oppure** elimina un compito giá inserito
-5.  **opzionalmente** specifica tempo necessario al compito e/o quantiá/porzioni da preparare
+5.  **opzionalmente** specifica tempo necessario al compito e/o quantitá/porzioni da preparare
 
 _ripete dal passo 4. fino a che soddisfatto_
 

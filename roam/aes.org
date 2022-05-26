@@ -4,3 +4,4 @@
 :END:
 #+title: Advanced Encrytion Standard
 #+date: [2022-03-09 Wed 17:28]
+=AES= é un cifrario a blocchi che utilizza dimensioni di chiave che partono da 128bit e arrivano a 256bit, con blocchi di 128 bit.

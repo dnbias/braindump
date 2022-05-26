@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d5c40b47-85cd-4b7e-b819-dc51e640ec5c
+:END:
+#+title: Double-check Locking
+#+date: [2022-05-13 Fri 14:06]
+#+filetags: pattern compsci
+- [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]]

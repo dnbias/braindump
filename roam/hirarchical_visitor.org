@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       8816e76c-4fb3-4a5d-8f45-c6c85fd70ff9
+:END:
+#+title: Hirarchical Visitor
+#+date: [2022-05-13 Fri 14:45]
+#+filetags: pattern compsci
+- [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]]
