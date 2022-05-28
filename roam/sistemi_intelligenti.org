@@ -516,7 +516,9 @@ Un =CSP= fortemente consistente puó essere risolto in tempo lineare.
 *** Problema dell'Australia
 3 colori per colorare i 7 territori dell'Australia
 - {=NA=, =NT=, =SA=, =Q=, =NSW=, =V=, =T=}
-- un territorio deve avere colore diverso da tutti i vicini
+- un territorio deve avere colore diverso da tutti i confinanti
+
+[[../static/ox-hugo/australian-states.jpg]]
 
 * Rappresentazione della Conoscenza
 ** Agenti su Conoscenza
@@ -699,7 +701,9 @@ La base di conoscenza puó essere interrogata con ~ask~
     * =Backward Chaining=
       * stesse considerazioni del =FC= ma piú efficiente
 - =Lifting= della Risoluzione[fn:unificatore]
-\[\frac{l_{1}\lor \cdots \lor l_{k} \qquad m_{1} \lor \cdots \lor m_{n}}{\text{subst}(\Theta, l_{1} \lor \cdots \lor l_{i-1} \lor l_{i+1} \lor \cdots \lor l_{k} \lor m_{1}  \lor \cdots \lor m_{j-1} \lor m_{j+1} \lor \cdots \lor m_{n})\]
+\begin{align*}
+\frac{l_{1}\lor \cdots \lor l_{k} \qquad m_{1} \lor \cdots \lor m_{n}}{\text{subst}(\Theta, l_{1} \lor \cdots \lor l_{i-1} \lor l_{i+1} \lor \cdots \lor l_{k} \lor m_{1}  \lor \cdots \lor m_{j-1} \lor m_{j+1} \lor \cdots \lor m_{n})}
+\end{align*}
   - $KB_{\text{FOL}} \rightarrow_{\text{traduzione}}  KB_{\text{FOL-CNF}}$
     1. Eliminazione delle *implicazioni*
     2. Spostamento delle *negazioni all'interno* ($\lnot \forall \equiv \exists \lnot$)
@@ -774,7 +778,7 @@ Nello stesso dominio:
 4. =Weakly-Translatable=
    - non si introducono inconsistenze
 5. =Strongly-Translatable=
-   - il vocabolario di =Source= é completamente mappabili in concetti di =Dest=
+   - il vocabolario di =Source= é completamente mappabile in concetti di =Dest=
    - le proprietá di =Source= valgono in =Dest=
    - non c'é perdita di informazione
    - non si introducono inconsistenze
@@ -820,7 +824,7 @@ Strumenti:
 - =CEL=, =FaCT++=
 
 ** Situation Calculus
-Sulla basa della =FOL= contruisce:
+Sulla base della =FOL= contruisce:
 - *Azione*
   + cambia lo stato del mondo
   + oggetti immateriali, rappresentate dalle /funzioni/
@@ -847,10 +851,11 @@ Sulla basa della =FOL= contruisce:
     - la soluzione semplice di riportare solamente le modifiche dello stato da parte dell'azione
     - =frame problem=
 3. =frame=
-    - $\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action(\text{params}),s}))$
+    - $\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action}(\text{params}),s}))$
 4. =Assioma di Stato Successore=
     - aggiunto per sostituire gli =assiomi di frame=
-    - =Azione Applicabile= $\implies$ =(Fluente vero nella= $s$ =risultante= $\iff$ =l'azione lo rendeva vero= $\lor$ =era vero e l'azione non l'ha reso falso)=
+    - =Azione Applicabile= $\implies$ =
+      - (Fluente vero nella= $s$ =risultante= $\iff$ =l'azione lo rendeva vero= $\lor$ =era vero e l'azione non l'ha reso falso)=
 *** Anomalia di Sussman
 /Perseguimento di goal complessi/
 1. suddividere il /goal/ in sottogoal
@@ -859,11 +864,15 @@ Sulla basa della =FOL= contruisce:
 #+begin_quote
 Non tutti i /goal/ possono essere risolti suddividendoli prima in subgoal e affrontandoli in maniera sequenziale.
 #+end_quote
+
+ [[../static/ox-hugo/sussman-anomaly.jpg]]
 * Agente
 Ciclo di vita:
 1. ha una percezione / ha un input
 2. delibera / costruisce la risposta
 3. agisce / restituisce la risposta
+
+[[../static/ox-hugo/agent-loop.png]]
 
 L'/agente/ vive una =sequenza percettiva=, ovvero la storia completa delle percezioni
 
@@ -930,6 +939,7 @@ Tipologie:
     * /generatore di problemi/
       - causa l'esecuzione di azioni esplorative
 * Apprendimento Automatico
+[[../static/ox-hugo/machine-learning.png]]
 ** Classificazione
 Dati $\rightarrow f \rightarrow$ Classe
 - questa $f$ é il risultato dell'apprendimento
@@ -1000,6 +1010,8 @@ La =matrice di confusione= é una matrice quadrada
   + il $v$ in una cella $\langle c_{i},c_{j} \rangle$
     * numero di istanze appartenenti a $c_{i}$ che il modello ha detto appartenere a $c_{j}$
     * desideriamo che i $v$ si accumulino nella diagonale, dove troviamo le risposte corrette
+
+[[../static/ox-hugo/confusion-matrix.png]]
 
 Si hanno due considerazioni sui risultati:
 - =accuracy=

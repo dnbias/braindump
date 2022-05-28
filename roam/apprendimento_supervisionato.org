@@ -3,3 +3,4 @@
 :END:
 #+title: Apprendimento Supervisionato
 #+date: [2022-05-20 Fri 19:12]
+[[../static/ox-hugo/supervised-learning.png]]
