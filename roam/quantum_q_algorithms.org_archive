@@ -1,0 +1,55 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/dnbias/Documents/Org/roam/quantum_q_algorithms.org
+
+
+* Oracoli
+:PROPERTIES:
+:ARCHIVE_TIME: 2022-05-29 Sun 22:15
+:ARCHIVE_FILE: ~/Documents/Org/roam/quantum_q_algorithms.org
+:ARCHIVE_CATEGORY: quantum_q_algorithms
+:ARCHIVE_ITAGS: university thesis compsci
+:END:
+Gli oracoli che utiliziamo per testare gli algoritmi definiti in seguito sono:
+#+name: oracles.qs
+#+Begin_src Q#
+operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyZeroOracleN(control : Qubit[], target : Qubit) : Unit {
+  }
+
+  operation ApplyOneOracleN(control : Qubit[], target : Qubit) : Unit {
+    X(target);
+  }
+
+  operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
+    CNOT(control,target);
+  }
+
+  operation ApplyXOROracleN(control : Qubit[], target : Qubit) : Unit {
+    for qubit in control {
+        CNOT(qubit,target);
+    }
+  }
+
+  operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
+    X(control);
+    CNOT(control,target);
+    X(control);
+  }
+#+end_src
+Dove sono definiti versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate.
+In particolare abbiamo definito:
+- $f(x)=0$
+- $f(x)=1$
+- $f(x)=x$
+- $f(x)=0$
+- $f(x, y) = x \oplus y$
+
+[fn:oplus] dove $\oplus$ é l'addizione modulo $2$

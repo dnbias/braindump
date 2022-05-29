@@ -594,3 +594,24 @@ Queste sono due visualizzazioni di una stessa informazione, l'utente inserirá l
 
 $\textsc{nb}$  i passi 1. (per la generazione) e 4. (gestione delle 2 viste, /foglio servizio/ e /tabellone turni/ ) sono responsabilitá del *Sistema*
 *** Estensioni
+** Progettazione
+Progettazione sullo strato di /domain/
+- passaggio all'inglese per dividere il linguaggio prettamente tecnico e quello leggibile dai clienti
+- domain modules
+  + ~MenuManagement~
+  + ~KitchenTaskManagement~
+- /technical services/
+  + persistence on =DB=
+  + login
+Gestione con =grasp controller= degli eventi tra =UI= e =Domain=
+
+Il =Design Class Diagram= o =DCD=
+- e' un documento unico per il progetto
+  + riporta tutte le classi
+- entro questo si puo' suddividere in moduli, ma questi rimangono interdipendenti tra loro
+- questa e' la parte statica
+Il =Detailed Sequence Diagram= o =DSD=
+- la parte dinamica
+- le interazioni tra gli oggetti per eseguire le operazioni necessarie
+- a questo livello si vedono le chiamate e le risposte
+  + e anche le notifiche tra ~observed~ e ~observer~
