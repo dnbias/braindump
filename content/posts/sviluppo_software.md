@@ -767,3 +767,32 @@ _ripete dal passo 4. fino a che soddisfatto_
 
 
 #### Estensioni {#estensioni}
+
+
+### Progettazione {#progettazione}
+
+Progettazione sullo strato di _domain_
+
+-   passaggio all'inglese per dividere il linguaggio prettamente tecnico e quello leggibile dai clienti
+-   domain modules
+    -   `MenuManagement`
+    -   `KitchenTaskManagement`
+-   _technical services_
+    -   persistence on `DB`
+    -   login
+
+Gestione con `grasp controller` degli eventi tra `UI` e `Domain`
+
+Il `Design Class Diagram` o `DCD`
+
+-   e' un documento unico per il progetto
+    -   riporta tutte le classi
+-   entro questo si puo' suddividere in moduli, ma questi rimangono interdipendenti tra loro
+-   questa e' la parte statica
+
+Il `Detailed Sequence Diagram` o `DSD`
+
+-   la parte dinamica
+-   le interazioni tra gli oggetti per eseguire le operazioni necessarie
+-   a questo livello si vedono le chiamate e le risposte
+    -   e anche le notifiche tra `observed` e `observer`
