@@ -5,8 +5,11 @@
 :END:
 #+title: Calcolabilitá e Complessitá
 #+author: Daniel Biasiotto
+#+latex_class: arsclassica
 #+filetags: university
-Prof: Stefano Berardi
+
+- Prof: Stefano Berardi
+- [[./20210921121153-calcolabilita_e_complessita.pdf][PDF Version]]
 * Info Corso
 - Testo:
   + [[id:e5d00ea5-5ff0-4025-a0f6-38c9f5ad26e6][Introduction to the theory of Computation]]
@@ -417,7 +420,7 @@ $A_{\textsc{tm}} <_m\textsc{Regular}_{\textsc{tm}}$
 #+caption: configurazione di $1011 q_{7} 01111$
 [[../media/img/tm-configuration.jpg]]
 *** Recap
-[[~/org/media/img/decidability.jpg]]
+[[../media/img/decidability.jpg]]
 
 - Negativamente Decidibili
   + $E_{\textsc{tm}}$
@@ -633,7 +636,7 @@ Questo perché:
 - $\textsc{pspace}\subseteq\textsc{exptime}$, una machina in $\textsc{pspace}$ puó eseguire passi senza ripetersi al massimo
   + \[f(n)\cdot 2^{O(f(n))} = \bigcup_k \textsc{time}(2^{n^k)\], dopo di che é in loop
 
-[[~/org/media/img/complexity-classes.jpg]]
+[[../media/img/complexity-classes.jpg]]
 Qualsiasi di queste inclusioni potrebbero essere eguaglianze, ma non sono state trovate prove a riguardo.
 
 Inoltre si definiscono le classi sottolineari:

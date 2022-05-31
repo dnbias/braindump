@@ -8,6 +8,7 @@
 - Info Corso
   + Matteo Baldoni
   + Sviluppo Agile
+- [[./sviluppo_software.pdf][PDF Version]]
 * Software
 Include:
 - tutta la documentazione elettronica che serve agli utenti dei sistemi, agli sviluppatore e i responsabili della qualitá
@@ -56,16 +57,16 @@ Nel _modello di sviluppo incrementale_ queste sono intrecciate, aggiunte di funz
 - fin dall'inizio si procede con progettazione e testing del sistema
 
 L'ambiente odierno richiede cambiamenti rapidi:
-- la rapidita' delle consegne e' quindi un requisito critico
+- la rapiditá delle consegne é quindi un requisito critico
 - i requisiti reali diventano chiari solo dopo il feedback degli utenti
-per cio' questo metodo di sviluppo ha preso piede
+per ció questo metodo di sviluppo ha preso piede
 
 Lo sviluppo e' organizzato in sotto-progetti
 - progettazione
 - iterazione
 - test
-Il progetto si adatta iterazione dopo iterazione al feedback, e' /evolutivo/
-- ogni iterazione e' una scelta di un sottoinsieme dei requisiti
+Il progetto si adatta iterazione dopo iterazione al feedback, é /evolutivo/
+- ogni iterazione é una scelta di un sottoinsieme dei requisiti
   + produce un sistema eseguibile e subito testabile
 
 $\textsc{nb}$   L'output di una iterazione /non/ é un esperimento o un prototipo. É una sottoinsieme a livello di produzione del sistema finale.
@@ -80,6 +81,34 @@ $\textsc{nb}$   L'output di una iterazione /non/ é un esperimento o un prototip
 - feedback immediato
 - gestione della complessita', evita la /paralisi da analisi/
 
+*** Test Driven Development
+=TDD=
+Diversi tipi di test:
+- /unitari/
+  + verificano il funzionamento di singole unitá
+  + struttura in 4 parti
+    1. preparazione, instanziazione degli oggetti di testing e il contesto
+    2. esecuzione
+    3. verifica, spesso /assert/
+    4. rilascio, /garbage collection/
+- di /integrazione/
+  + verificano la comunicazione tra parti
+- /end-to-end/
+  + verificano il collegamento complessivo tra gli elementi del sistema
+- di /accettazione/
+  + verificano il funzionamento complessivo del sistema
+*** Refactoring
+Strettamento legato al /testing/ in un ciclo di sviluppo incrementale.
+A seguito di un /refactoring/ vengono rieseguiti tutti i test per assicurarsi di non aver provocato una /regressione/.
+
+Esempi di refactoring:
+- /Rename/
+- /Extract Method/
+- /Extract Class/
+- /Extract Constant/
+- /Move Method/
+- /Introduce Explaining Variable/
+- /Replace Constructor Call with Factory Method/
 ** Modello di Integrazione e Configurazione
 Nel _modello dell'integrazione e configurazione_ si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalitá
 

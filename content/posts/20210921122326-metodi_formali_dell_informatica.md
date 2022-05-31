@@ -5,7 +5,8 @@ tags = ["university"]
 draft = false
 +++
 
-Prof: Ugo De' Liguoro
+-   Prof: Ugo De' Liguoro
+-   [[./][PDF Version]
 
 
 ## Info Corso {#info-corso}
@@ -184,7 +185,7 @@ Se vale questo allora posso spezzare in moduli il codice e verificare questi sot
 
 -   _frame property_
     -   \\((c,s,h\_{0})\text{safe} \land (c,s,h\_{0} \uplus h\_{1}) \rightarrow^{\*} (\text{skip},s',h') \implies \\\\
-            \exists h\_{0}\_{}' \perp h\_{1} :  (c,s,h\_{0})\rightarrow^{\*} (\text{skip},s',h\_{0}')\land h' = h\_{0}' \uplus h\_{1}\\)
+            \exists h\_{0}' \perp h\_{1} :  (c,s,h\_{0})\rightarrow^{\*} (\text{skip},s',h\_{0}')\land h' = h\_{0}' \uplus h\_{1}\\)
 
 
 ###### Heap Simbolici {#heap-simbolici}
@@ -371,9 +372,10 @@ Sistema formale:
 
 ###### Regole {#regole}
 
-Skip \\(\frac{}{(SKIP,s)\implies s}\\)
-Ass \\(\frac{aval \\: a \\: s = n}{(n:= a,s)\implies s[x\rightarrow n]\\)
-Comp \\(\frac{(c\_{1},s)\implies s^{'} \\: \\: (c\_{2},s^{'})\implies t}{(c\_{1};c\_{2},s)\implies t}\\)
+-   Skip \\(\frac{}{(SKIP,s)\implies s}\\)
+-   Ass \\(\frac{aval \\: a \\: s = n}{(n:= a,s)\implies s[x\rightarrow n]\\)
+-   Comp \\(\frac{(c\_{1},s)\implies s' \quad (c\_{2},s')\implies t}{(c\_{1};c\_{2},s)\implies t}\\)
+
 IF b THEN c_1 ELSE c_2
 
 -   \\(\frac{bval \\: b\\: s = tt \\:\\: (c\_{1},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\)

@@ -3,9 +3,11 @@
 :ROAM_ALIASES: SO
 :END:
 #+TITLE: Sistemi Operativi
+#+latex_class: arsclassica
 #+filetags: university
-- Teacher:  Daniele Gunetti (daniele.gunetti@unito.it)
 
+- Teacher:  Daniele Gunetti (daniele.gunetti@unito.it)
+- [[./SO.pdf][PDF Version]]
 * Generalitá
 2 obiettivi di un OS:
 - utente: rendere il sistema semplice
