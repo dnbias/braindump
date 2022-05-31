@@ -4,6 +4,7 @@
 :END:
 #+title: Sicurezza Reti e Calcolatori
 #+date: [2022-03-09 Wed 17:01]
+#+latex_class: arsclassica
 #+filetags: university security
 - Prof: Bergadano Francesco
 - [[./sicurezza_informatica.pdf][PDF Version]]

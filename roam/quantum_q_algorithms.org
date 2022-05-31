@@ -3,10 +3,12 @@
 :END:
 #+title: Quantum e Algoritmi in Q#
 #+date: [2022-05-12 Thu 19:31]
+#+latex_class: arsclassica
 #+filetags: university thesis compsci
+* Metadata :noexport:
 - Tags: [[id:6e504ff7-9a50-4a47-901d-4c524c229bc6][Quantum Computing]], [[id:b9d02edb-6458-4237-88de-41fb865974d2][CalcCompl]], [[id:d7686f15-7f24-476e-9ecf-87ef577d5a4c][Deutsch-Jozsa Algorithm]]
 - Sources: [[id:c2bda57f-a02a-460c-96a2-796dd2fee708][Learn Quantum Computing with Python and Q#]], [[https://medium.com/a-bit-of-qubit/deutsch-jozsa-algorithm-quantum-computing-basics-708df8c4caf7][Medium: Quantum Basics]], [[https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html][Qiskit textbook]]
-
+- [[./quantum_q_algorithms.pdf][PDF Version]]
 * Introduzione
 Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilitá di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
 Per esempio é possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
