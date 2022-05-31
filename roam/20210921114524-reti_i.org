@@ -2,7 +2,10 @@
 :ID:       dbb7c5e0-6782-48ac-bf11-4c163747cf37
 :END:
 #+title: Reti I
+#+latex_class: arsclassica
 #+filetags: university
+
+- [./20210921114524-reti_i.pdf][PDF Version]
 * Info Corso
 - Prof:
   + Marco Botta
