@@ -45,7 +45,7 @@ Quest'ultimo é disponibile solo sulla versione non =FOSS= del software, che é 
 In alternativa o anche parallelamente é possibile sviluppare codice ~Q#~ ed eseguirlo tramite =Jupyter Notebook= tramite ~Python~. Questo con i kernel necessari installati, quindi l'ultima versione di ~dotnet~ disponibile.
 
 Tramite =anaconda= si crea un ambiente con il necessario:
-#+begin_src bash
+#+begin_src shell
 $ conda create -n qsharp-env -c microsoft qsharp notebook
 $ conda activate qsharp-env
 #+end_src
@@ -66,7 +66,7 @@ Il pacchetto automaticamente va a cercare nella directory locale le definizioni.
 * Oracoli
 Gli oracoli che utiliziamo per testare gli algoritmi definiti in seguito sono:
 #+name: oracles.qs
-#+Begin_src Q#
+#+Begin_src c
 operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
   }
 
@@ -152,7 +152,7 @@ I passi dell'algoritmo in particolare sono:
 [[../media/img/deutsch_steps.png]]
 
 *** single-bit Deutsch-Jozsa
-#+begin_src Q#
+#+begin_src c
 operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
     use control = Qubit();
     use target = Qubit();
@@ -170,7 +170,7 @@ operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
 }
 #+end_src
 *** n-bit Deutsch-Jozsa
-#+begin_src Q#
+#+begin_src c
 operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
     use control = Qubit[size];
     use target = Qubit();
@@ -188,8 +188,4 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
     ResetAll(control);
     return result;
 }
-function _And(a : Bool, b : Result) : Bool {
-      return a and ResultAsBool(b);
-}
 #+end_src
-
