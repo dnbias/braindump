@@ -6,8 +6,8 @@ tags = ["university"]
 draft = false
 +++
 
-Professoressa: Cristina Baroglio
-[PDF Version](/ox-hugo/sistemi_intelligenti.pdf)
+-   Professoressa: Cristina Baroglio
+-   [PDF Version](/ox-hugo/sistemi_intelligenti.pdf)
 
 
 ## Terminologia {#terminologia}

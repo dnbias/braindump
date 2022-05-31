@@ -5,8 +5,8 @@
 #+date: [2022-02-28 Mon 14:23]
 #+latex_class: arsclassica
 #+filetags: university
-Professoressa: Cristina Baroglio
-[[./sistemi_intelligenti.pdf][PDF Version]]
+- Professoressa: Cristina Baroglio
+- [[./sistemi_intelligenti.pdf][PDF Version]]
 * Terminologia
 - *AI* coniato da [[id:1bd058f7-555b-425a-a779-8073c6889c84][John McCarthy]]
 - *Dato*, simbolo grezzo
