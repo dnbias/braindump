@@ -7,6 +7,7 @@ draft = false
 +++
 
 Professoressa: Cristina Baroglio
+[PDF Version](/ox-hugo/sistemi_intelligenti.pdf)
 
 
 ## Terminologia {#terminologia}

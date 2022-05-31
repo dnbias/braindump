@@ -938,3 +938,7 @@ build content/posts/quantum_q_algorithms.md: org2md roam/quantum_q_algorithms.or
 build content/posts/sistemi_intelligenti.md: org2md roam/sistemi_intelligenti.org
 
 build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
+
+build content/posts/writing_academic_papers_w_emacs.md: org2md roam/writing_academic_papers_w_emacs.org
+
+build content/posts/academic_writing_workflow_w_emacs.md: org2md roam/academic_writing_workflow_w_emacs.org
