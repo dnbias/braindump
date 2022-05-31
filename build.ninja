@@ -942,3 +942,5 @@ build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
 build content/posts/writing_academic_papers_w_emacs.md: org2md roam/writing_academic_papers_w_emacs.org
 
 build content/posts/academic_writing_workflow_w_emacs.md: org2md roam/academic_writing_workflow_w_emacs.org
+
+build content/posts/where_to_put_tex_sty_files.md: org2md roam/where_to_put_tex_sty_files.org

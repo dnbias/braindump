@@ -50,7 +50,7 @@ In alternativa o anche parallelamente é possibile sviluppare codice `Q#` ed ese
 
 Tramite `anaconda` si crea un ambiente con il necessario:
 
-```bash
+```shell
 $ conda create -n qsharp-env -c microsoft qsharp notebook
 $ conda activate qsharp-env
 ```
@@ -76,7 +76,7 @@ Il pacchetto automaticamente va a cercare nella directory locale le definizioni.
 Gli oracoli che utiliziamo per testare gli algoritmi definiti in seguito sono:
 
 <a id="code-snippet--oracles.qs"></a>
-```Q#
+```c
 operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
   }
 
@@ -170,7 +170,7 @@ I passi dell'algoritmo in particolare sono:
 
 #### single-bit Deutsch-Jozsa {#single-bit-deutsch-jozsa}
 
-```Q#
+```c
 operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
     use control = Qubit();
     use target = Qubit();
@@ -191,7 +191,7 @@ operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
 
 #### n-bit Deutsch-Jozsa {#n-bit-deutsch-jozsa}
 
-```Q#
+```c
 operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
     use control = Qubit[size];
     use target = Qubit();
@@ -208,9 +208,6 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
     let result = MResetX(control[0]) == One;
     ResetAll(control);
     return result;
-}
-function _And(a : Bool, b : Result) : Bool {
-      return a and ResultAsBool(b);
 }
 ```
 
