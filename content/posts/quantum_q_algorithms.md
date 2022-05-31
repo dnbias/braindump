@@ -6,10 +6,6 @@ tags = ["university", "thesis", "compsci"]
 draft = false
 +++
 
--   Tags: [Quantum Computing]({{< relref "quantum_computing.md" >}}), [CalcCompl]({{< relref "20210921121153-calcolabilita_e_complessita.md" >}}), [Deutsch-Jozsa Algorithm]({{< relref "deutsch_jozsa_algorithm.md" >}})
--   Sources: [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}}), [Medium: Quantum Basics](https://medium.com/a-bit-of-qubit/deutsch-jozsa-algorithm-quantum-computing-basics-708df8c4caf7), [Qiskit textbook](https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html)
-
-
 ## Introduzione {#introduzione}
 
 Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilitá di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
