@@ -1040,79 +1040,6 @@ Il limite della matrice di confusione é che gli errori hanno tutti lo stesso pe
 
 Altro limite é che su =test set= sbilanciati gli /error rate/ saranno falsati.
 
-*** Alberi di Decisione
-=Decision Trees=
-Banalmente, in un altro contesto, un menú a tendina.
-- si tratta di un albero con /test/ per nodi e /azioni/ per foglie
-  + test portano in base ai risultati a test successivi o foglie
-  + alle  foglie si decide la classe di appartenenza dell'istanza
-
-Le istanze hanno la stessa forma
-- n-attributi organizzati in una n-tupla
-
-I /test/ sono ognuno su un singolo attributo e a cascata caratterizzano le istanze.
-
-[[../static/ox-hugo/decision-tree.png]]
-**** Algoritmo di Hunt
-*L'algoritmo di Hunt* lavora sul =Learning Set=
-- dividendo il sottoinsiemi via via piú puri
-- $D_{t}$ sottoinsieme del =LS= associato al nodo $t$
-- $y = \{y_{1},y_{2},\cdots,y_{c}\}$ insieme delle etichette delle classi
-Passi:
-1. _test_ se tutte le istanze in $D_{t}$ appartengono alla stessa classe
-   - ~true~: $t$ é una /foglia/ e le viene assegnata l'etichetta $y_{t}$
-   - ~false~: si sceglie un attributo descrittivo su cui fare lo /split/
-     1. si verifica il suo range in $D_{t}$
-     2. si crea un /nodo successore/ per ogni suo possibile valore
-     3. a ogni successore si assegna il sottoinsieme di $D_{t}$ per cui l'attributo scelto vale quello cui il successore é associato
-
-**** Split & Entropia
-La =scelta dello split= viene effettuata considerando l'impatto o =entropia=
-- generalmente, alberi compatti sono preferibili ad alberi con un numero di test maggiori
-  + meno classi sono rappresentate in un nodo figlio meno confuso e' l'insieme e migliore e' lo /split/
-- il *Rasoio di Occam* puo' essere utilizzato come criterio per la scelta
-  + /a parita' di assunzioni la spiegazione piu' semplice e' la preferita/
-Altri metodi di misura della bonta' di un /split/ sono i =Gini= e =Errori di classificazione=.
-
-Misure di selezione:
-- $p(i\mid t)$
-  + $i$ classe
-  + $t$ insieme
-  + probabilita' che l'elemento appartenga alla classe $i$
-
-Si puo' calcolare una _distribuzione di probabilita'_ di appartenenza di un record estratto casualmente.
-\[\text{Entropy}(t) = - \sum_{i=0}^{c-1} p(i \mid t) \log_{2}p(i\mid t)\]
-- e' assunto che $0 \log_{2} 0 = 0$
-- $E=0$ e' il caso migliore, con distribuzioni $(0,1)$ o $(1,0)$
-- $E=1$ e' il caso peggiore con distribuzione $(0.5,0.5)$
-
-Il calcolo della bonta' di uno /split/, o calcolo del *guadagno*
-\[\Delta = I(\text{parent}) - \sum_{j=1}^{k}\frac{N(v_{j})}{N} I(v_{j})\]
-- $I$ e' l'impurita'
-- $N$ numero recond/istanze del nodo genitore
-- $N(v_{j})$ numero record/istanze del nodo figlio $j$ -esimo
-
-Nel caso della misura, utilizzando l'entropia si calcola l'*information gain*
-\[\Delta = E(\text{parent}) - \sum_{j=1}^{k}\frac{N(v_{j})}{N} E(v_{j})\]
-
-**** Overfitting
-Anche *errore di generalizzazione*.
-
-Se il =Learning Set= manca di esempi oppure contiene /noise/, errori di classificazione, il modello generato puo' mancare di generalita'.
-Il modello /ideale/ e' quello che produce il minor errore di generalizzazione possibile.
-
-Il problema dell'overfitting si affronta diminuendo i test, rendendo meno specifico l'albero.
-Per questo si utilizzano tecniche di =pruning=, potatura.
-- =prepruning=
-  + si interrompe la costruzione del =DT= prima che sia completo
-  + si ha una _regola di terminazione_ restrittiva
-    * non si esegue lo split se il gain e' sotto una soglia
-  + si puo' ricadere nel problema opposto del /underfitting/
-- =postpruning=
-  + lavora su albero costruiti completamente
-  + con un insieme di dati supervisionati lo si analizza
-    * i _rami poco percorsi si rimuovono_, si riducono a foglie
-  + si spreca del lavoro fatto
 *** Classificazioni a Regole
 Regole della forma
 - antecedente
@@ -1189,15 +1116,219 @@ Ci sono diversi metodi di valutazione di un modello costruito tramite un algorit
   + uno per volta tutti i $K$ set sono utilizzati per il testing
   + alla fine si fa una media delle valutazioni
 - *Bootstrap*
-  + in casi in cui il =dataset= e' piccolo
+  + in casi in cui il =dataset= é piccolo
   + per il =LS= si scelgono istanze dal =dataset= ma senza rimuoverle da quest'ultimo
-    * una stessa istanza puo' apparire piu' volte nel =LS=
+    * una stessa istanza puó apparire piu' volte nel =LS=
   + per il =TS= si scelgono le istanze con cui non si e' fatto apprendimento
   + questo viene ripetuto e valutato a piacere, facendo la media
 
 Tutte queste tecniche si usano nella valutazione dell'algoritmo usato rispetto al problema.
-_In generale_, per singoli modelli diversi costruiti con algoritmi diversi, _non si puo' contare sul fatto che i test siano stati fatti sugli stessi sotto-insieme di dati_.
+_In generale_, per singoli modelli diversi costruiti con algoritmi diversi, _non si puó contare sul fatto che i test siano stati fatti sugli stessi sotto-insieme di dati_.
 - nella valutazione quindi i risultati non possono che essere probabilistici
 - si ottiene un'/intervallo di confidenza/
-- altro parametro di una valutazione e' il /livello di confidenza/
+- altro parametro di una valutazione é il /livello di confidenza/
 
+*** Split & Entropia
+La =scelta dello split= viene effettuata considerando l'impatto o =entropia=
+- generalmente, alberi compatti sono preferibili ad alberi con un numero di test maggiori
+  + meno classi sono rappresentate in un nodo figlio meno confuso e' l'insieme e migliore e' lo /split/
+- il *Rasoio di Occam* puo' essere utilizzato come criterio per la scelta
+  + /a parita' di assunzioni la spiegazione piu' semplice e' la preferita/
+Altri metodi di misura della bonta' di un /split/ sono i =Gini= e =Errori di classificazione=.
+
+Misure di selezione:
+- $p(i\mid t)$
+  + $i$ classe
+  + $t$ insieme
+  + probabilita' che l'elemento appartenga alla classe $i$
+
+Si puo' calcolare una _distribuzione di probabilita'_ di appartenenza di un record estratto casualmente.
+\[\text{Entropy}(t) = - \sum_{i=0}^{c-1} p(i \mid t) \log_{2}p(i\mid t)\]
+- e' assunto che $0 \log_{2} 0 = 0$
+- $E=0$ e' il caso migliore, con distribuzioni $(0,1)$ o $(1,0)$
+- $E=1$ e' il caso peggiore con distribuzione $(0.5,0.5)$
+
+Il calcolo della bonta' di uno /split/, o calcolo del *guadagno*
+\[\Delta = I(\text{parent}) - \sum_{j=1}^{k}\frac{N(v_{j})}{N} I(v_{j})\]
+- $I$ e' l'impurita'
+- $N$ numero recond/istanze del nodo genitore
+- $N(v_{j})$ numero record/istanze del nodo figlio $j$ -esimo
+
+Nel caso della misura, utilizzando l'entropia si calcola l'*information gain*
+\[\Delta = E(\text{parent}) - \sum_{j=1}^{k}\frac{N(v_{j})}{N} E(v_{j})\]
+
+*** Overfitting
+Anche *errore di generalizzazione*.
+
+Se il =Learning Set= manca di esempi oppure contiene /noise/, errori di classificazione, il modello generato puo' mancare di generalita'.
+Il modello /ideale/ e' quello che produce il minor errore di generalizzazione possibile.
+
+Il problema dell'overfitting si affronta diminuendo i test, rendendo meno specifico l'albero.
+Per questo si utilizzano tecniche di =pruning=, potatura.
+- =prepruning=
+  + si interrompe la costruzione del =DT= prima che sia completo
+  + si ha una _regola di terminazione_ restrittiva
+    * non si esegue lo split se il gain e' sotto una soglia
+  + si puo' ricadere nel problema opposto del /underfitting/
+- =postpruning=
+  + lavora su albero costruiti completamente
+  + con un insieme di dati supervisionati lo si analizza
+    * i _rami poco percorsi si rimuovono_, si riducono a foglie
+  + si spreca del lavoro fatto
+** Alberi di Decisione
+=Decision Trees=
+Banalmente, in un altro contesto, un menú a tendina.
+- si tratta di un albero con /test/ per nodi e /azioni/ per foglie
+  + test portano in base ai risultati a test successivi o foglie
+  + alle  foglie si decide la classe di appartenenza dell'istanza
+
+Le istanze hanno la stessa forma
+- n-attributi organizzati in una n-tupla
+
+I /test/ sono ognuno su un singolo attributo e a cascata caratterizzano le istanze.
+
+[[../static/ox-hugo/decision-tree.png]]
+*** Algoritmo di Hunt
+*L'algoritmo di Hunt* lavora sul =Learning Set=
+- dividendo il sottoinsiemi via via piú puri
+- $D_{t}$ sottoinsieme del =LS= associato al nodo $t$
+- $y = \{y_{1},y_{2},\cdots,y_{c}\}$ insieme delle etichette delle classi
+Passi:
+1. _test_ se tutte le istanze in $D_{t}$ appartengono alla stessa classe
+   - ~true~: $t$ é una /foglia/ e le viene assegnata l'etichetta $y_{t}$
+   - ~false~: si sceglie un attributo descrittivo su cui fare lo /split/
+     1. si verifica il suo range in $D_{t}$
+     2. si crea un /nodo successore/ per ogni suo possibile valore
+     3. a ogni successore si assegna il sottoinsieme di $D_{t}$ per cui l'attributo scelto vale quello cui il successore é associato
+
+** Lazy Learning
+#+begin_quote
+*Definition* $\quad$ /Lazy Learning/ in machine learning is a learning method in which generalization beyond the training data is delayed until a query is made to the system, as opposed to in /Eager Learning/, where the system tries to generalize the training data before receiving queries. Lazy learning is essentially an instance-based learning: it simply stores training data (or only minor processing) and waits until it is given a test tuple.
+#+end_quote
+
+Un /lazy learner/ _non costruisce un modello_ con i dati di apprendimento ed é di semplice implementazione.
+Un esempio di questi é =K-NN=.
+- =k-Nearest Neighbours=
+
+Condividere caratteristiche é un'importante indicatore di una stessa classe di appartenenza.
+- somiglianza $\rightarrow$ stessa classe
+  + a livello matematico significa /vicinanza numerica/
+- le somiglianze sono trovate /avendo memorizzato/ il =LS=
+
+Si rappresentano come punti in uno spazio \($n\)-dimensionale le istanze:
+\[i = \langle v_{1}, v_{2}, \cdots , v_{n} \rangle\]
+
+Questi punti vengono rapportati rispettivamente ai $k$ punti piú vicini in funzione della loro distanza.
+- un punto vicino a tutti punti di una stessa classe viene classificato/predetto come in quella classe
+- in caso di discordanza della classe dei vicini ci sono diverse implementazione
+  + /votazione/, vince la maggioranza ma si perde l'informazione sulla distanza
+  + /votazione pesata/, voti pesati rispetto alla distanza
+- attributi di domini diversi possono avere cifre significative diverse
+  + nella memorizzazione _gli intervalli degli attributi vanno normalizzati_
+  + si effettuano le necessarie approssimazioni per creare una relazione tra /distanza/ e /similitudine/
+
+\[y = \text{argmax}_{v} \sum_{x_{i},y_{i}}^{k} \frac{I(v=y_{i})}{d(x', x_{i})^{2}}\]
+dove, ciclando su $i$:
+- $x'$ dato da classificare
+- $y$ classe risultato
+- $y_{i}$ classe dell'istanza $x_{i}$
+- $x'$ \(n\)-tupla da classificare
+- nominatore: somma dei voti per la classe $y_{i}$
+- denominatore: divisione per peso calcolato sulla distanza
+** Neural Network
+*** Perceptron
+Prima proposta di /modello di neurone artificiale/
+- ispirazione dalla biologia
+- il piú semplice =Neural Network= possibile
+
+Struttura:
+- $n$ input $x_{i}$
+  + ciascuno con un peso $w_{i}$
+  + formano una tupla di ingresso $\langle x_{1},x_{2},\cdots ,x_{n} \rangle$
+- un output $y$
+- memoria - unitá computazionale centrale
+  + $f(\text{net})$ funzione di attivazione con $\theta$ soglia di attivazione.
+\[\text{net} = \sum_{i=1}^{n} w_{i}x_{i}\]
+\[f(\text{net}) = \begin{cases}1 \quad \text{net}\ge \theta \\ 0 \quad \text{altrimenti} \end{cases}\]
+
+#+caption: definizione di un perceptron
+[[../media/img/perceptron.png]]
+
+Questa discontinuitá sulla soglia é stata sostituita successivamente da una sigmoide.
+\[f(\text{net}) = \frac{1}{1 + e ^{-\alpha(\text{net}- \theta)}}\]
+[[../media/img/sigmoid-curve.png]]
+
+Il percettrone codifica un /test lineare/. Delinea un iperpiano/iperspazio che divide lo spazio in due metá
+- nelle vicinanze del confine la sigmoide transiziona da 1 a 0
+L'apprendimento consiste nel trovare il taglio che divida le classi
+- questo si fa _apprendendo i pesi_ $w_{i}$ necessari per la classificazione corretta
+- tramite =Learning Set= supervisionato
+
+\[w_{j}^{k+1} = w_{j}^{k} + \alpha (d - o) x_{j}\]
+- $\alpha \in [0,1]$ /learning rate/
+- $o$ output restituito per la tupla di input
+- $d$ output desiderato
+- se $o \neq d$ il percettore ha fatto un errore $d-o$
+
+I $w_{j}$ sono prodotti incrementalmente tramite questo processo e sono deposizione della conoscenza dell'apprendimento.
+- l'apprendimento si ferma quando i cambiamenti ai pesi rallentano
+
+#+caption: processo di learning di un perceptron
+[[../media/img/perceptron-learning.jpg]]
+
+**** Limiti
+Rappresentazione dello =XOR=
+| x | y | $\oplus$ |
+|---+---+-----|
+| 1 | 1 | -   |
+| 1 | 0 | +   |
+| 0 | 1 | +   |
+| 0 | 0 | -   |
+
+Non é risolvibile da un singolo perceptron, solo con tecniche piú sofisticate utilizzandone un altro.
+[[../media/img/perceptron-xor.png]]
+*** Multilayer Perceptron
+=MLP=
+
+Si moltiplicano i =perceptron= posizionandoli in cascata e dividendoli per funzione
+- /output/
+  + $n$ come le classi
+  + questi neuroni danno output rispetto la class di appartenenza
+- /hidden/
+- /input/
+
+I dati viaggiano in un'unica direzione e é /pienamente connessa/
+- tutti i neuroni di un livello sono collegati a tutti quelli dello strato successivo
+
+#+caption: struttura di un multilayer perceptron
+[[../media/img/multilayer-perceptron.png]]
+
+I livelli di percettori /hidden/ possono identificare regioni dello spazio dei dati piú complesse
+1. traccia confini
+2. identifica forme chiuse
+3. identifica regioni cave all'interno delle precedenti forme chiuse
+
+**** Epoca di Apprendimento
+- passata /forward/ individua con le tuple del =Learning Test= l'/errore/
+- passata /backward/ propaga l'informazione dell'errore a ritroso nella rete
+  + aggiornando i pesi
+
+Si utilizza il metodo di apprendimento noto come *Discesa del Grandiente*.
+\[\Delta w_{ij} = - \lambda \frac{dE(\overline w)}{d w_{ij} }\]
+- $E(\overline w)$ matrice dei pesi
+- si identifica la /direzione/ in cui le configurazioni dei pesi si sviluppano rispetto all'errore
+  + lo si abbassa minimizzando l'errore
+
+L'apprendimento nel =MLP= si puó sviluppare in 2 casi
+1. neurone di /output/ $o$ e neurone /hidden/ $i$ collegato direttamente a $o$
+   - si calcola direttamente l'errore con la differenza
+   - \(\Delta w_{ji} = \alpha \delta^{j} x_{ji}\) --- variante di peso
+   - \(\delta^{j} = y (1-y)(t-y)\) --- viene distribuito sui predecessori
+     + $y (1-y)$ derivata $f$ errore
+     + $t-y$ errore
+2. neurone dello strato /hidden/ $k$ a metá tra neuroni /hidden/ o /input/ $i$ e altri /hidden/ oppure /output/
+   - propaghiamo verso $i$
+   - \(\Delta w_{ki} = \alpha \delta^{k} x_{ki}\) --- variante di peso
+   - \(\delta^{k} = y (1-y) \sum_{j\in I} \delta^{j} w_{kj}\)
+     + l'errore di questo livello dipende dall'errore fatto negli errori piú profondi
+     + *backpropagation* o *retropropagazione dell'errore*
