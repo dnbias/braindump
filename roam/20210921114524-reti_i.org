@@ -5,7 +5,7 @@
 #+latex_class: arsclassica
 #+filetags: university
 
-- [./20210921114524-reti_i.pdf][PDF Version]
+- [[./20210921114524-reti_i.pdf][PDF Version]]
 * Info Corso
 - Prof:
   + Marco Botta
