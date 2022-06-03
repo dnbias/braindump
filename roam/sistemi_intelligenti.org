@@ -108,11 +108,11 @@ Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti a
 una soluzione
 
 ** Problemi
-Un problema puó essere definito formalmente come una tupla di 4 elementi
-- Stato iniziale
-- Funzione successore
-- Test Obiettivo
-- Funzione del costo del cammino
+Un problema puó essere definito formalmente come una _tupla di 4 elementi_
+1. Stato iniziale
+2. Funzione successore
+3. Test Obiettivo
+4. Funzione del costo del cammino
 
 *** Aspirapolvere
 *** Gioco del 15
@@ -130,64 +130,83 @@ Problema di ricerca nello spazio degli stati
 Posizionare 8 regine su una scacchiera $8\times8$ in modo che nessuna sia sotto attacco
 - generalizzabile con $N$ regine su una scacchiera $N\times N$
 
-** Algoritmi
+** Spazio degli Stati
+Le caratteristiche di questi problemi sono:
+- stati discreti
+- effetto deterministico delle azioni
+- dominio statico
+
 *** Ricerca non informata - Blind
 Costruiscono strutture dati proprie utilizzate nella soluzione di un problema
 - alberi o grafi di ricerca
   + in un albero uno stato puó comparire piú volte
 
-
 Ogni nodo rappresenta uno stato, una soluzione é un particolare percorso dalla radice ad una foglia
 - i nodi figli sono creati dalla funzione successore
-  + questi sono creati mantenendo un puntatore al padre
+  + questi sono creati mantenendo un puntatore al padre, in modo da risalire una volta individuata la soluzione
 
-Gli approcci sono valutati secondo
-- completezza
-- ottimalitá
-- complessitá temporale
-- complessitá spaziale
+Gli approcci sono *valutati* secondo
+- *completezza*, garanzia di trovare una soluzione se esiste
+- *ottimalità*,  garanzia di trovare una soluzione ottima[fn:ottima]
+- *complessità temporale*, tempo necessario per trovare una soluzione
+- *complessità spaziale*, spazio necessario per effettuare la ricerca
+
+#+begin_quote
+*NB* $\quad$ Lo studio della [[id:347b2529-bb45-4516-86fe-443b43c8edd6][Complessitá di un algoritmo]] é trattato anche in [[id:d3d5cfa8-7bbb-4330-8ada-87c916c7e9f7][Algoritmi e Strutture Dati]] e [[id:b9d02edb-6458-4237-88de-41fb865974d2][Calcolabilitá e Complessitá]].
+#+end_quote
 
 Gli alberi vengono esplorati tramite =Ricerca in Ampiezza= e =Ricerca in Profonditá=
 
 Nello studio di queste ricerche si considerano:
-- $d$ profondita' minima del goal
-- $b$ branching factor
+- $d$ profondità minima del /goal/
+- $b$ /branching factor/
 
-Un goal a meno passi dalla radice non da' garanzia di ottimalita', in quanto vanno considerati i costi non il numero di passi.
-Il costo e' una funzione monotono crescente in relazione alla profondita'.
+Un goal a meno passi dalla radice non dà garanzia di ottimalità, in quanto vanno considerati i costi non il numero di passi.
+Il costo per l'ottimalità é una funzione monotona crescente in relazione alla profondità.
 
+[fn:ottima] i.e. a costo minimo
 **** Ricerca in Ampiezza
-$O(b^{d+1})$
-- complessitá sia spaziale che temporale
+- completa a patto che $b,d$ siano finiti
+- ottima solo se il costo del cammino é $f$ monotona crescente della profondità
+
+\[\textsc{time} =  \textsc{space} = O(b^{d+1})\]
 - esponenziale, non trattabile anche con $d$ ragionevoli
 **** Ricerca Costo Uniforme
-Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
-La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
+Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero di passi.
+La scoperta di un goal non porta alla terminazione della ricerca.
+Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello già trovato.
 
-La ricerca puo' non terminare in caso di =no-op=, che creano loop o percorsi infiniti sempre allo stesso stato.
+La ricerca può non terminare in caso di =no-op=, che creano loop o percorsi infiniti sempre allo stesso stato.
 Quindi:
 $\text{costi} \ge \epsilon > 0$
 - $\epsilon$ costo minimo
+- condizione necessaria per garantire ottimalità e completezza
 
-\[O(b^{1+\lfloor \frac{C^{*}}{\epsilon} \rfloor})\]
+\[\textsc{time} = \textsc{space} = O(b^{1+\lfloor \frac{C^{*}}{\epsilon} \rfloor})\]
 - $C^{*}$ costo soluzione ottima
 
-**** Ricerca in Profonditá w/ Backtracking
-Si producono successori su successori man mano, percorrendo in profondita' l'albero.
-In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
-- viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
-- piu' efficiente in utilizzo della memoria
-
-**** Ricerca in Profonditá w/o Backtracking
+**** Ricerca in Profondità w/o Backtracking
 Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
-- viene utilizzato uno =stack= (=LIFO=)
+- viene utilizzato uno =stack= (=LIFO=) per gestire la frontiera
+\[\textsc{time} = O(b^{m})\]
+\[\textsc{space} = O(b \cdot m)\]
+
+**** Ricerca in Profondità w/ Backtracking
+Si producono successori su successori man mano, percorrendo in profondità l'albero.
+In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi già percorsi.
+- viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
+- più efficiente in utilizzo della memoria
+
+\[\textsc{time} = O(b^{m})\]
+\[\textsc{space} = O(m)\]
 **** Iterative Deepening
-Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
-- cerca di combinare ricerca in profonditá e in ampiezza
-  + $\textsc{time}= O(b^d)$
-  + $\textsc{space}= O(b\cdot d)$
-  + completa
-  + ottima quando il costo non é funzione decrescente delle profonditá
+Ricerca a profondità limitata in cui questa viene incrementata a ogni iterazione
+- ogni iterazione viene ricostruito l'albero di ricerca
+- cerca di combinare ricerca in profondità e in ampiezza
+  - completa con $b$ finito
+  - ottima quando il costo non é funzione decrescente delle profondità
+\[\textsc{time}= O(b^d)\]
+\[\textsc{space}= O(b\cdot d)\]
 **** Ricerca Bidirezionale
 2 ricerche parallele
 - /forward/ dallo stato iniziale
@@ -196,17 +215,18 @@ Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazion
 Termina quando queste si incontrano a una intersezione.
 Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
 - $\textsc{time}= O( b^{\frac{d}{2}})$
+  + nel caso in cui le due ricerche si incontrino a metà
 *** Ricerca informata
-Si possiedono informazioni che permettono di identificare le strade piú promettenti
+Si possiedono informazioni che permettono di identificare le strade più promettenti
 - in funzione del costo
 
 Questa informazione é chiamata *euristica*
-$h(n)$: Il costo minimo stimato per raggiungere un nodo /preferito/ di $n$
+- $h(n)$: Il costo minimo stimato per raggiungere un nodo /goal/ da $n$
 
-Una strategia é il mantenere la frontiera ordinata secondo una $f(n)$ detta funzione di valutazione
+Una strategia é il mantenere la frontiera ordinata secondo una $f(n)$ detta /funzione di valutazione/
 - questa contiene a sua volta una componente $h(n)$ spesso
-- in generale questa strategia é chiamata *best-first search*
-  + famiglia di strategia (greedy, A*, RBFS)
+- in generale questa strategia é chiamata *best-first search*, il nodo più promettente é espanso per primo
+  + si tratta di una famiglia di strategie (greedy, A*, RBFS)
 
 **** Greedy
 - costruisce un albero di ricerca
@@ -231,11 +251,11 @@ $A^\star$ é *ottimo* quando
 - tutti i costi da un nodo a un successore sono positivi
 - l'euristica $h(n)$ é ammissibile
 
-*Ammissibilitá*
+*Ammissibilità*
 - $\forall n: h(n) \le h^\star(n)$
   + ovvero l'euristica é ottimistica
 
-Nel caso di ricerca in grafi $h(n)$ deve essere anche *monotona consistente* per garantire l'ottimalitá
+Nel caso di ricerca in grafi $h(n)$ deve essere anche *monotona consistente* per garantire l'ottimalitá.
 - vale una disuguaglianza triangolare
 - $h(n) \le c(n,a,n') + h(n')$
 - $\textsc{nb}$ tutte le monotone sono ammissibili ma non vale il viceversa
@@ -244,6 +264,79 @@ Inoltre é *ottimamente efficiente*
 - espande sempre il numero minimo di nodi possibili
 Ma $\textsc{space}=O(b^d)$
 
+Algoritmo implementato in ~Python~:
+#+caption: a-star.py
+#+begin_src python
+F AStarSearch(start, end, barriers)
+   F heuristic(start, goal)
+      V D = 1
+      V D2 = 1
+      V dx = abs(start[0] - goal[0])
+      V dy = abs(start[1] - goal[1])
+      R D * (dx + dy) + (D2 - 2 * D) * min(dx, dy)
+
+   F get_vertex_neighbours(pos)
+      [(Int, Int)] n
+      L(dx, dy) [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
+         V x2 = pos[0] + dx
+         V y2 = pos[1] + dy
+         I x2 < 0 | x2 > 7 | y2 < 0 | y2 > 7
+            L.continue
+         n.append((x2, y2))
+      R n
+
+   F move_cost(a, b)
+      L(barrier) @barriers
+         I b C barrier
+            R 100
+      R 1
+
+   [(Int, Int) = Int] G
+   [(Int, Int) = Int] f
+
+   G[start] = 0
+   f[start] = heuristic(start, end)
+
+   Set[(Int, Int)] closedVertices
+   V openVertices = Set([start])
+   [(Int, Int) = (Int, Int)] cameFrom
+
+   L openVertices.len > 0
+      (Int, Int)? current
+      V currentFscore = 0
+      L(pos) openVertices
+         I current == N | f[pos] < currentFscore
+            currentFscore = f[pos]
+            current = pos
+
+      I current == end
+         V path = [current]
+         L current C cameFrom
+            current = cameFrom[current]
+            path.append(current)
+         path.reverse()
+         R (path, f[end])
+
+      openVertices.remove(current)
+      closedVertices.add(current)
+
+      L(neighbour) get_vertex_neighbours(current)
+         I neighbour C closedVertices
+            L.continue
+         V candidateG = G[current] + move_cost(current, neighbour)
+
+         I neighbour !C openVertices
+            openVertices.add(neighbour)
+         E I candidateG >= G[neighbour]
+            L.continue
+
+         cameFrom[neighbour] = current
+         G[neighbour] = candidateG
+         V H = heuristic(neighbour, end)
+         f[neighbour] = G[neighbour] + H
+
+   X RuntimeError(‘A* failed to find a solution’)
+#+end_src
 **** Recursive Best-First Strategy
 =RBFS=
 - simile alla ricerca ricorsiva in profonditáv
@@ -286,7 +379,7 @@ Si valuta la qualitá dell'euristica (sperimentalmente) con il /branching factor
 - si costruisce con gli $N$ nodi costruiti nella ricerca un /albero uniforme/
 - $b^\star$ piccolo $\rightarrow$ euristica efficiente
 
-** Ricerca Con Avversari
+** Ricerca in Spazi con Avversari
 *Informazione* può essere
 - perfetta
 - imperfetta
