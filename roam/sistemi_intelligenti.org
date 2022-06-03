@@ -410,7 +410,7 @@ Dall'Economia, poi traslata in algoritmi nell'ambito dell'IA.
 - *approccio minimax regret* - minor /regret/
   + /best payoff - real payoff/
 
-L'/osservabilità/ é totale nei giochi a turno e parziale nei gioch ad azione simultanea.
+L'/osservabilità/ é totale nei giochi a turno e parziale nei giochi ad azione simultanea.
 I giocatori =Min= e =Max= tengono conto dell'avversario nel calcolo dell'utilità degli stati
 [[../static/ox-hugo/max-min-game.png]]
 **** Minimax
