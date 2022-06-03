@@ -518,20 +518,22 @@ Si valuta la qualitá dell'euristica (sperimentalmente) con il _branching factor
 
 ### Ricerca in Spazi con Avversari {#ricerca-in-spazi-con-avversari}
 
-**Informazione** può essere
+**Informazione** può essere caratterizzata da:
 
--   perfetta
--   imperfetta
--   deterministici
--   stocastici
+-   _condizioni_ di scelta a informazione
+    -   perfetta
+    -   imperfetta
+-   _effetti_ della scelta
+    -   deterministici
+    -   stocastici
 
-Effetti delle **scelte**.
 La ricerca in questo ambito si basa su delle **strategie** basate su punteggi dati dagli eventi.
 In questo ambito si studiano spesso giochi.
 
-> I giochi non vengono scelti perché sono chiari e semplici, ma perché ci danno la massima complessità con le minime strutture iniziali. \\(\hfill\\)  [Marvin Minsky]({{< relref "marvin_minsky.md" >}}) [#cit]({{< relref "20210604132601-cit.md" >}})
+> I giochi non vengono scelti perché sono chiari e semplici, ma perché ci danno la massima complessità con le minime strutture iniziali. \\(\qquad\qquad\qquad\\)  [Marvin Minsky]({{< relref "marvin_minsky.md" >}}) [#cit]({{< relref "20210604132601-cit.md" >}})
 
-Alcuni giochi sono anche a _somma zero_.
+Alcuni giochi sono anche a _somma zero_ se le interazioni tra gli agenti se portano a una **perdita/guadagno** per uno ciò compensato da un **guadagno/perdita** dell'altro, suo avversario.
+I nodi terminali dei grafi creati nella risoluzione di questi giochi posso indicare stati di `vittoria`, `sconfitta`, `parità`.
 
 
 #### Teoria delle Decisioni {#teoria-delle-decisioni}
@@ -541,6 +543,11 @@ Dall'Economia, poi traslata in algoritmi nell'ambito dell'IA.
 -   **approccio maximax** - ottimistico
 -   **approccio maximin** - conservativo
 -   **approccio minimax regret** - minor _regret_
+    -   _best payoff - real payoff_
+
+L'_osservabilità_ é totale nei giochi a turno e parziale nei gioch ad azione simultanea.
+I giocatori `Min` e `Max` tengono conto dell'avversario nel calcolo dell'utilità degli stati
+![](/ox-hugo/max-min-game.png)
 
 
 ##### Minimax {#minimax}
@@ -594,8 +601,8 @@ def minValue(state):
     return v
 ```
 
--   \\(\textsc{space} = O(bm)\\)
--   \\(\textsc{time} = O(b^{m})\\)
+\\[\textsc{Space} = O(b \cdot m)\\]
+\\[\textsc{Time} = O(b^{m})\\]
 
 
 ###### Potatura alpha-beta {#potatura-alpha-beta}

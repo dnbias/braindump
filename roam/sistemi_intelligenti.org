@@ -387,27 +387,32 @@ Si valuta la qualitá dell'euristica (sperimentalmente) con il /branching factor
 - $b^\star$ piccolo $\rightarrow$ euristica efficiente
 
 ** Ricerca in Spazi con Avversari
-*Informazione* può essere
-- perfetta
-- imperfetta
-- deterministici
-- stocastici
+*Informazione* può essere caratterizzata da:
+- /condizioni/ di scelta a informazione
+  + perfetta
+  + imperfetta
+- /effetti/ della scelta
+  + deterministici
+  + stocastici
 
-Effetti delle *scelte*.
 La ricerca in questo ambito si basa su delle *strategie* basate su punteggi dati dagli eventi.
 In questo ambito si studiano spesso giochi.
 #+begin_quote
-I giochi non vengono scelti perché sono chiari e semplici, ma perché ci danno la massima complessità con le minime strutture iniziali. $\hfill$  [[id:4d1f09d5-d1e9-472f-bb5f-3bf4fa745afe][Marvin Minsky]] [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]]
+I giochi non vengono scelti perché sono chiari e semplici, ma perché ci danno la massima complessità con le minime strutture iniziali. $\qquad\qquad\qquad$  [[id:4d1f09d5-d1e9-472f-bb5f-3bf4fa745afe][Marvin Minsky]] [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]]
 #+end_quote
 
-Alcuni giochi sono anche a /somma zero/.
-
+Alcuni giochi sono anche a /somma zero/ se le interazioni tra gli agenti se portano a una *perdita/guadagno* per uno ciò compensato da un *guadagno/perdita* dell'altro, suo avversario.
+I nodi terminali dei grafi creati nella risoluzione di questi giochi posso indicare stati di =vittoria=, =sconfitta=, =parità=.
 *** Teoria delle Decisioni
 Dall'Economia, poi traslata in algoritmi nell'ambito dell'IA.
 - *approccio maximax* - ottimistico
 - *approccio maximin* - conservativo
 - *approccio minimax regret* - minor /regret/
+  + /best payoff - real payoff/
 
+L'/osservabilità/ é totale nei giochi a turno e parziale nei gioch ad azione simultanea.
+I giocatori =Min= e =Max= tengono conto dell'avversario nel calcolo dell'utilità degli stati
+[[../static/ox-hugo/max-min-game.png]]
 **** Minimax
 ~Minimax~ e' un algoritmo pessimista nel senso che simula che =Min= si muova in modo perfetto.
 - ricerca in profondita', esplora tutto l'albero ma non mantiene tutto in memoria
@@ -453,8 +458,8 @@ def minValue(state):
     return v
 #+end_src
 
-- $\textsc{space} = O(bm)$
-- $\textsc{time} = O(b^{m})$
+\[\textsc{Space} = O(b \cdot m)\]
+\[\textsc{Time} = O(b^{m})\]
 
 ***** Potatura alpha-beta
 Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
