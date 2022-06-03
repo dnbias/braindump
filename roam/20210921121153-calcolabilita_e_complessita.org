@@ -3,7 +3,7 @@
 :ROAM_ALIASES: CalcCompl
 :ROAM_REFS:
 :END:
-#+title: Calcolabilitá e Complessitá
+#+title: Calcolabilità e Complessità
 #+author: Daniel Biasiotto
 #+latex_class: arsclassica
 #+filetags: university
@@ -95,7 +95,7 @@ Questa macchina di turing $E$ simula $M$ su tutte le stringhe $s_j$ che apparten
 In questa simulazione sostanzialmente si simula in parallelo la macchina $M$ su tutte le stringhe possibili in input (per un numero di passi di computazione sempre maggiore), stampando tutte e sole le $s_j$ accettate da $M$.
 Viceversa se una stringa appartiene ad $L$ questa viene accettata in un numero finito di passi da $M$, e quindi dato abbastanza tempo $E$ la stamperá. Quindi $E$ enumera il linguaggio $L$.
 
-** Decidibilitá
+** Decidibilità
 Per un =DFA= possiamo definire una =TM M= che lo simula e verifica l'accettazione o meno dell'Input
 [[file:../media/img/decidable-recognizable.jpg][Decidable - Turing-recognizable]]
 - =NFA= convertibili
@@ -443,7 +443,7 @@ $A_{\textsc{tm}} <_m\textsc{Regular}_{\textsc{tm}}$
   + $\textsc{Context-Free}_{\textsc{tm}}$
   + $\textsc{All}_{\textsc{tm}}$
     * se un programma accetta sempre
-** Complessitá Temporale
+** Complessità Temporale
 Trattata nel corso di Algoritmi: [[id:347b2529-bb45-4516-86fe-443b43c8edd6][Complessitá di un algoritmo]]
 Per lo studio della complessitá consideriamo la _Macchina di Turing_ (1 registro)
 - questo in quanto la complessitá varia anche in base all'architettura
@@ -613,7 +613,7 @@ Si dimostra facilmente che questo é $\textsc{np}$ definendone un verificatore p
 $\textsc{Subset-Sum}$ é $\text{NP-completo}$
 
 La prova procede per riduzione polinomiale da $\text{3SAT}$ a $\textsc{Subset-Sum}$, convertendo elementi e strutture del problema che rappresentano variabili e clausole booleane.
-** Complessitá Spaziale
+** Complessità Spaziale
 =8.1=
 $\textsc{\textbf{definition}}$  Data la =TM= $M$ che termina sempre. Si dice /complessitá spaziale/ di $M$ la funzione
 $f: N\to N$, dove $f(n)$ é il massimo numero di celle di nastro che la $M$ passa su un qualsiasi input di lunghezza $n$

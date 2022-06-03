@@ -1,4 +1,4 @@
-% Created 2022-05-31 Tue 22:48
+% Created 2022-06-03 Fri 21:41
 % Intended LaTeX compiler: pdflatex
 \documentclass[
                         12pt, % Main document font size
@@ -26,6 +26,7 @@
                   \usepackage{qsharp} % qsharp minted highlighting
                   \usepackage{varioref} % More descriptive referencing
                   \usepackage{mdframed}
+                  \usepackage[clean]{svg}
                   \BeforeBeginEnvironment{minted}{\begin{mdframed}}
                   \AfterEndEnvironment{minted}{\end{mdframed}}
 \usepackage[utf8]{inputenc}
@@ -42,10 +43,10 @@
 \usepackage{minted}
 \author{Daniel Biasiotto}
 \date{\today}
-\title{Calcolabilitá e Complessitá}
+\title{Calcolabilità e Complessità}
 \hypersetup{
  pdfauthor={Daniel Biasiotto},
- pdftitle={Calcolabilitá e Complessitá},
+ pdftitle={Calcolabilità e Complessità},
  pdfkeywords={},
  pdfsubject={},
  pdfcreator={Emacs 28.1 (Org mode 9.6)}, 
@@ -60,7 +61,7 @@
 \item \href{./20210921121153-calcolabilita\_e\_complessita.pdf}{PDF Version}
 \end{itemize}
 \section{Info Corso}
-\label{sec:orgd5c305c}
+\label{sec:org066aa93}
 \begin{itemize}
 \item Testo:
 \begin{itemize}
@@ -72,9 +73,9 @@
 \end{itemize}
 \end{itemize}
 \section{Teoria}
-\label{sec:org8e24937}
+\label{sec:org3048276}
 \subsection{Macchina di Turing}
-\label{sec:org7fd5678}
+\label{sec:org1ff592f}
 \uline{The Church-Turing Thesis}
 Utilizzata per definire un problema risolvibile
 \begin{itemize}
@@ -118,7 +119,7 @@ A differenza degli Automi a Stati Finiti puó sovrascrivere, appunta per aiutars
 La Macchina di Turing essendo estremamente semplice é ottima per lo studio della Calcolabilitá
 
 \subsubsection{Definizione Formale}
-\label{sec:org39af058}
+\label{sec:orgf7352c4}
 \texttt{MT 1936}
 7-tupla \((Q,\Sigma,\Gamma,\delta,q_0,q_{accept},q_{reject})\)
 \begin{enumerate}
@@ -140,19 +141,19 @@ La Macchina di Turing essendo estremamente semplice é ottima per lo studio dell
 \end{itemize}
 
 \subsubsection{Grafi}
-\label{sec:orga811918}
+\label{sec:orgbc9ec7c}
 \paragraph{Stringhe Uguali}
-\label{sec:orge7bca39}
+\label{sec:org790c59e}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../media/img/grafoEs1.jpg}
 \end{center}
 \paragraph{Stringa di 0 di lunghezza 2\textsuperscript{n}}
-\label{sec:org7904beb}
+\label{sec:org1389025}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../media/img/graphPowerOfTwoLength.jpg}
 \end{center}
 \subsubsection{Macchine Turing a piú registri}
-\label{sec:org5316a7a}
+\label{sec:orgc5d85d2}
 Con piú \emph{tapes} diventa molto piú semplice controllare stringhe, ci si avvicina nel comportamente ad una macchina di Von Neumann
 Il primo nastro é l'Input, gli altri sono registri
 \(\delta: Q \times \Gamma^{k} \longrightarrow Q \times \Gamma^{k} \times \{L,R,S\}^{k}\)
@@ -170,7 +171,7 @@ Si puó simulare una \texttt{MT} a piú nastri con una \texttt{MT} ad un nastro 
 \includegraphics[width=.9\linewidth]{../media/img/3tapes1tape.jpg}
 \end{center}
 \subsubsection{Enumeratori}
-\label{sec:org5591b4c}
+\label{sec:org0013b3c}
 Sono \texttt{TM} che enumerano stringhe.
 
 \(\textsc{theorem}\)     Si puó definire un enumeratore \(E\) che enumeri un linguaggio \(L\) se e solo se esiste una \texttt{TM} \(M\) che riconosca (decida positivamente) il linguaggio \(L\)
@@ -199,8 +200,8 @@ Questa macchina di turing \(E\) simula \(M\) su tutte le stringhe \(s_j\) che ap
 In questa simulazione sostanzialmente si simula in parallelo la macchina \(M\) su tutte le stringhe possibili in input (per un numero di passi di computazione sempre maggiore), stampando tutte e sole le \(s_j\) accettate da \(M\).
 Viceversa se una stringa appartiene ad \(L\) questa viene accettata in un numero finito di passi da \(M\), e quindi dato abbastanza tempo \(E\) la stamperá. Quindi \(E\) enumera il linguaggio \(L\).
 
-\subsection{Decidibilitá}
-\label{sec:orga8ab610}
+\subsection{Decidibilità}
+\label{sec:org7282494}
 Per un \texttt{DFA} possiamo definire una \texttt{TM M} che lo simula e verifica l'accettazione o meno dell'Input
 \href{../media/img/decidable-recognizable.jpg}{Decidable - Turing-recognizable}
 \begin{itemize}
@@ -209,7 +210,7 @@ Per un \texttt{DFA} possiamo definire una \texttt{TM M} che lo simula e verifica
 \end{itemize}
 
 \subsubsection{Definizioni}
-\label{sec:orgd848f1b}
+\label{sec:org4103f09}
 Sia \(L\) un linguaggio definito sull'alfabeto \(\Sigma\), e quindi sottoinsieme di \(\Sigma^*\)
 Allora \(\forall w \in \Sigma^*\):
 \begin{itemize}
@@ -241,7 +242,7 @@ Per i linguaggi complemento si scambiano decidibilitá positiva e decidibilitá 
 Esistono indebolimenti del decisore, ovvero decisori \emph{parziali}
 
 \subsubsection{Teorema di Post}
-\label{sec:org646b628}
+\label{sec:orgf32cb86}
 \texttt{4.22}
 Linguaggio \(L\) decidibile \(\iff\) é \uline{positivamente} e \uline{negativamente} decidibile
 \begin{itemize}
@@ -294,7 +295,7 @@ Riformulando
 \end{enumerate}
 
 \subsubsection{Mapping Reducible Language}
-\label{sec:org8362eae}
+\label{sec:org551341b}
 Il Linguaggio \(A\) é \emph{mapping reducible} al linguaggio \(B\):
 
 \(A \le_{m}B\)
@@ -330,7 +331,7 @@ Seguono i corollari:
 \end{itemize}
 
 \subsubsection{Macchina di Turing Universale}
-\label{sec:orgce5f614}
+\label{sec:org700b76b}
 \[U = \text{"Su input }\langle M,w \rangle\text{, dove } M \text{ é una TM e } w \text{ é una stringa"} \]
 \begin{enumerate}
 \item Simula \(M\) su \(w\)
@@ -354,7 +355,7 @@ Queste codifiche sono utilizzate nelle 5 tape di \(U\), definite in questo modo:
 La macchina universale procede leggendo lo stato corrente di \(M\) e il simbolo \(a^*\) che si trova sotto la testina di lettura di nella tape 5. Quindi scorre le quintuple nella prima tape, se non trova una corrispondenza rifiuta. Se trova una corrispondenza allora sovrascrive la tape 2 con il nuovo stato indicato dalla funzione di transizione e sovrascrive \(a^*\) nella tape 5 con la nuova \(a'^*\) indicata dalla transizione e aggiungendo un divisore \#. fatto questo simula il movimento a destra o a sinistra della testina di \(M\) spostandosi nella direzione indicata fino ad un \#.
 
 \subsubsection{Problemi Decibidili}
-\label{sec:orgc5d1b9c}
+\label{sec:org53abc93}
 \(E_{\textsc{dfa}} = \{\langle A \rangle \mid A\mbox{ is a \textsc{dfa} and } L(A)=\emptyset \}\)
 \begin{itemize}
 \item decidibile studiando i percorsi nel grafo delle transizioni
@@ -372,16 +373,16 @@ La macchina universale procede leggendo lo stato corrente di \(M\) e il simbolo 
 \(E_{\textsc{CFG}}=\{\langle G \rangle \mid G\mbox{ is a \textsc{CFG} and }L(G) = \emptyset\}\)
 
 \subsubsection{Problemi Indecidibili}
-\label{sec:orgc5f935b}
+\label{sec:orgf64b7f7}
 Per molti problemi si utilizza la tecnica della riduzione
 \begin{itemize}
 \item se un problema che sappiamo non decidibile si puó ridurre al problema che stiamo studiando allora anche questo non sará decibidile
 \end{itemize}
 \paragraph{Eguaglianza Chompsky}
-\label{sec:org3570a29}
+\label{sec:orgb55df7f}
 \(EQ_{\textsc{CFG}}=\{\langle G,H \rangle \mid G\mbox{ and }H\mbox{ are \textsc{CFG}s and }L(G) = L(H)\}\)
 \paragraph{Accettazione}
-\label{sec:org0f79967}
+\label{sec:org8c88fe6}
 \texttt{4.11}
 Problema \uline{positivamente decidibile}
 
@@ -450,14 +451,14 @@ Allora si procede diagonalizzando con \(D\) applicato a \(\langle D\rangle\)
 \uline{Abbiamo raggiunto una contraddizione}                                                             \(\blacksquare\)
 
 \paragraph{Immortalitá}
-\label{sec:org02cc6a9}
+\label{sec:orge9f0235}
 \texttt{4.23}
 \(\overline A_{\textsc{tm}}\) \uline{positivamente decidibile} \(\implies  A_{\textsc{tm}}\) \uline{negativamente decidibile} per \texttt{T.Post}
 \begin{itemize}
 \item Falso per \texttt{4.11}
 \end{itemize}
 \paragraph{Fermata}
-\label{sec:orgaa24ddb}
+\label{sec:org9ebb973}
 \texttt{5.1}
 Il problema della decisione per \(L_{1}\) si riduce al problema della decisione per \(L_{2}\) se sappiamo trasformare un decisore per \(L_{2}\) in un decisore per \(L_{1}\)
 
@@ -480,7 +481,7 @@ Ma questa é una contraddizione  in quanto si dimostra che \(A_{\text{TM}}\) non
 
 
 \paragraph{Decibidilitá dei Linguaggi di Chompsky}
-\label{sec:org8879098}
+\label{sec:org051cd74}
 \emph{Simboli, Produzioni, Terminali}
 Un linguaggio definibile da una grammatica in forma normale di Chompsky é detto \texttt{context-free}
 Si dimostra che il numero di passi per derivare una stringa di lunghezza \(n\) é \(2n-1\)
@@ -495,7 +496,7 @@ Per ridurre la complessitá si utilizza la \textbf{programmazione dinamica}
 \item ci si appunta i risultati intermedi
 \end{itemize}
 \paragraph{Emptyness}
-\label{sec:orga8a5152}
+\label{sec:org494a50f}
 \texttt{5.2}
 Si dimostra per assurdo, se esistesse si potrebbe risolvere l'accettazione
 \begin{itemize}
@@ -525,7 +526,7 @@ In questo modo abbiamo ridotto l'accettazione alla emptyness:
 
 
 \paragraph{Equality}
-\label{sec:org2080172}
+\label{sec:org7961a00}
 \texttt{5.4}
 Intesa tra due \texttt{MT}
 \begin{itemize}
@@ -608,14 +609,14 @@ Ora basta raggiungere queste conclusioni per chiudere la dimostrazione.
 \end{enumerate}
 
 \paragraph{Corrispondenza di Post}
-\label{sec:org3a852ff}
+\label{sec:org551e826}
 \texttt{PCP - 4.22}
 
 \(A_{TM} \le_{m} \text{PCP}\)
 
 Questo problema (domino) contiene la Macchina di Turing
 \begin{itemize}
-\item in quanto corrisponde alla visualizzazione della \hyperref[sec:org8b15e85]{Configurazione di una TM}
+\item in quanto corrisponde alla visualizzazione della \hyperref[sec:org38b686c]{Configurazione di una TM}
 \begin{itemize}
 \item visualizzando la storia del calcolo della macchina
 \end{itemize}
@@ -657,7 +658,7 @@ Per arrivare a questo \emph{accept}:
 \item \([\frac{q_{accept} \: a}{q_{accept}\quad}]\)
 \end{itemize}
 \paragraph{Tassellazione - Wang Tiles}
-\label{sec:org01c92a6}
+\label{sec:orgd5e7c28}
 \href{https://en.wikipedia.org/wiki/Wang\_tile}{Wikipedia}
 Solo negativamente decidibile
 \begin{itemize}
@@ -672,18 +673,18 @@ Si dimostra che \(\textsc{Wang}\) non é positivamente decidibile in quanto
 \end{itemize}
 
 \paragraph{Esistenza di un DFA equivalente}
-\label{sec:org8318c62}
+\label{sec:org572a35f}
 \texttt{5.3}
 \(A_{\textsc{tm}} <_m\textsc{Regular}_{\textsc{tm}}\)
 \subsubsection{Configurazione di una TM}
-\label{sec:org8b15e85}
+\label{sec:org38b686c}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{../media/img/tm-configuration.jpg}
 \caption{configurazione di \(1011 q_{7} 01111\)}
 \end{figure}
 \subsubsection{Recap}
-\label{sec:orgc905b87}
+\label{sec:org6c89a9e}
 \begin{center}
 \includegraphics[width=.9\linewidth]{../media/img/decidability.jpg}
 \end{center}
@@ -709,7 +710,7 @@ Si dimostra che \(\textsc{Wang}\) non é positivamente decidibile in quanto
 \item \(\textsc{Halt}_{\textsc{tm}}\)
 \item \(\textsc{pcp}\)
 \begin{itemize}
-\item \hyperref[sec:org3a852ff]{Corrispondenza di Post}
+\item \hyperref[sec:org551e826]{Corrispondenza di Post}
 \end{itemize}
 \end{itemize}
 \item Né negativamente né positivamente decidibili
@@ -723,8 +724,8 @@ Si dimostra che \(\textsc{Wang}\) non é positivamente decidibile in quanto
 \end{itemize}
 \end{itemize}
 \end{itemize}
-\subsection{Complessitá Temporale}
-\label{sec:org08ab2e4}
+\subsection{Complessità Temporale}
+\label{sec:orgc4f396b}
 Trattata nel corso di Algoritmi: \href{20210414192358-problems_algorithms.org}{Complessitá di un algoritmo}
 Per lo studio della complessitá consideriamo la \uline{Macchina di Turing} (1 registro)
 \begin{itemize}
@@ -757,7 +758,7 @@ Piú grande problema aperto: \(\text{P}=\text{NP}\)
 \end{center}
 
 \subsubsection{P}
-\label{sec:org294b6b5}
+\label{sec:org7327eb2}
 Teorema \texttt{7.8}
 Sia \(t(n)\) una funzione t.c. \(t(n) \ge n \implies\) qualsiasi macchina \emph{multitape} \(M\) con  tempo \(t(n)\) ha un equivalente \(O(t^2(n))\) in una macchina \(M'\) \emph{singletape}
 \begin{itemize}
@@ -770,7 +771,7 @@ La classe di tempo \textbf{Polinomiale} é definito come
 \[\text{P} = \bigcup_k \textsc{time}(n^k)\]
 
 \subsubsection{Non Determinismo}
-\label{sec:org5992974}
+\label{sec:orgb1e7166}
 Teorema \texttt{7.11}
 Sia \(t(n)\) una funzione dove \(t(n)>n\).
 Allora ogni \texttt{TM} \emph{singletape} \uline{non deterministica} con complessitá temporale \(t(n)\) ha una equivalente \texttt{TM} \uline{determinitistica} \(2^{O(t(n))}\), nel caso di una macchina multiregistro
@@ -787,7 +788,7 @@ L'esplorazione dell'albero non deterministico é svolto utilizzando \emph{l'ordi
 \end{itemize}
 \end{itemize}
 \paragraph{Raggiungibilitá}
-\label{sec:orgeaa4b1a}
+\label{sec:orgae93b6f}
 \(\textsc{Path} = \{ \langle G,s,t  \rangle \mid G \text{ é  diretto con un cammino da }s \text{ a } t \}\)
 La soluzione banale non deterministica ha \(2^{O(t(n))}\) \uline{esponenziale}
 
@@ -796,7 +797,7 @@ Con un algoritmo marcando i nodi man mano che vengono scoperti si raggiunge comp
 \item rappresentando il grafo con liste di adiacenza la si puó stimare \(O(n)\) nel numero di archi
 \end{itemize}
 \paragraph{Algoritmo di Euclide}
-\label{sec:org7e9c442}
+\label{sec:orgeb68025}
 \(\textsc{RelPrime}\), il \texttt{MCD} tra due numeri Relativamente Primi é 1
 \(\textsc{mcd}(x,y) = \textsc{mcd}(x \mod(y), y)\)
 quindi procediamo:
@@ -806,7 +807,7 @@ quindi procediamo:
 I passi sono eseguiti \(min(2 \log_{2} x, 2\log_{2} y)\) ovvero proporzionali al numero di cifre nella rappresentazione binaria: \(O(n)\) quindi \uline{polinomiale}
 
 \paragraph{Grammatiche di Chompsky}
-\label{sec:org68dd727}
+\label{sec:org4fe8466}
 Per migliorare la complessitá si cerca di derivare tutte le sottostringhe di lunghezza crescente della stringa di input
 \begin{itemize}
 \item si memorizzano le soluzioni delle sottostringhe
@@ -819,7 +820,7 @@ Per migliorare la complessitá si cerca di derivare tutte le sottostringhe di lu
 Con questo algoritmo si raggiunge \(O(n^3)\)
 
 \subsubsection{NP}
-\label{sec:org244e6b6}
+\label{sec:org03a9610}
 Un linguaggio é \texttt{NP} \(\iff\) é deciso da un algoritmo \uline{non deterministico polinomiale}
 Un \(M: O(n^k)\) \texttt{NTM} equivale a \(M': 2^{O(n^k)}\) \texttt{TM}
 \begin{itemize}
@@ -854,7 +855,7 @@ Il determinismo con certificato \(c\) utilizzando \(V\) é convertito in non det
 Si dimostra quindi che le due definizioni sono equivalenti in quanto é sempre possibile convertire un \(V\) polinomiale in una \(M\) polinomiale non deterministica e viceversa.
 
 \paragraph{NP-completo}
-\label{sec:orgddcb8c4}
+\label{sec:orgcf4d680}
 \(\textsc{\textbf{definition}}\)  Un linguaggio \(B\) é \(\textsc{NP}\text{-completo}\) se soddisfa le seguenti condizioni:
 \begin{enumerate}
 \item \(B \in \textsc{NP}\)
@@ -873,7 +874,7 @@ Ci sono quindi due possibilitá che si escludono l'un l'altra:
 La classe \(\text{NP-completo}\) descrive i problemi piú difficili in \(\text{NP}\)
 
 \paragraph{Teorema di Cook-Levin}
-\label{sec:orgc582683}
+\label{sec:orgd7189fe}
 Problemi in \(\textsc{NP}\) la cui complessitá é legata a quella dell'intera classe sono detti \(\textsc{NP}\text{-completi}\)
 Il problema della soddisfatibilitá (\emph{satisfiability problem}) fa parte di questa classe
 \begin{itemize}
@@ -896,7 +897,7 @@ Questo teorema é implicato da \texttt{7.37}:
 
 
 \paragraph{Hamilton's Path}
-\label{sec:orgb13c0c2}
+\label{sec:orgad6b92e}
 Percorso che percorre tutti il grafo a partire da \(p\) arrivando in \(t\) senza ripetizioni.
 Si percorre il grafo non deterministicamente
 \begin{itemize}
@@ -909,14 +910,14 @@ Non conosciuto algoritmo in \(\text{P}\)
 \(\text{3SAT}  \le_P \textsc{HamPath}\)
 
 \paragraph{Compositeness}
-\label{sec:org2f717b0}
+\label{sec:orgb04af9b}
 \(\textsc{Composites} = \{x \mid x = pq \text{ for integers }p,q > 1\}\)
 Un numero composto é un numero non primo.
 Esiste un algoritmo polinomiale per verificare se un numero é composto o meno ma non per trovare la sua scomposizione (o almeno non lo si é trovato)
 Quindi: \(\textsc{Composites} \in \text{NP} \land \textsc{Composites} \in \text{P}\)
 
 \paragraph{Clique}
-\label{sec:orgd0bc64d}
+\label{sec:orgae17fd5}
 \texttt{7.32}
 Grafo \uline{non orientato}, fornito un \(k\)
 \begin{itemize}
@@ -947,7 +948,7 @@ Si dimostra che \(\phi \in \text{3SAT} \iff G\in k\textsc{-Clique}\)
 Quindi \(\text{3SAT} <_P \textsc{Clique}\)                                         \(\blacksquare\)
 
 \paragraph{Subset-Sum}
-\label{sec:orgb4fe5b2}
+\label{sec:orgdcdc7ad}
 \texttt{7.56}
 \(\textsc{Subset-Sum} = \{\langle S,t  \rangle \mid S = \{s_1,\ldots ,s_n\}\) dove esistono \(\{y_1,\ldots,y_m\}\subseteq S\) tali che \(\sum y_i  = t\}\)
 
@@ -956,13 +957,13 @@ Si dimostra facilmente che questo é \(\textsc{np}\) definendone un verificatore
 \(\textsc{Subset-Sum}\) é \(\text{NP-completo}\)
 
 La prova procede per riduzione polinomiale da \(\text{3SAT}\) a \(\textsc{Subset-Sum}\), convertendo elementi e strutture del problema che rappresentano variabili e clausole booleane.
-\subsection{Complessitá Spaziale}
-\label{sec:org104664c}
+\subsection{Complessità Spaziale}
+\label{sec:org3d45e74}
 \texttt{8.1}
 \(\textsc{\textbf{definition}}\)  Data la \texttt{TM} \(M\) che termina sempre. Si dice \emph{complessitá spaziale} di \(M\) la funzione
 \(f: N\to N\), dove \(f(n)\) é il massimo numero di celle di nastro che la \(M\) passa su un qualsiasi input di lunghezza \(n\)
 \subsubsection{Classi}
-\label{sec:org06e2d51}
+\label{sec:orgdbf54b9}
 \texttt{8.2}
 \(\textsc{\textbf{definition}}\)  Data \(f: N\to R^+\). Le \emph{classi di complessitá spaziale} \(\textsc{space}(f(n))\) e \(\textsc{nspace}(f(n))\), sono definiti come:
 \begin{itemize}
@@ -1004,7 +1005,7 @@ E si dimostra:
 \(\textsc{l} \subseteq\textsc{nl} \subseteq \textsc{p} \subseteq\textsc{np} \subseteq\textsc{pspace} =\textsc{npspace} \subseteq \textsc{exptime}\)
 
 \subsubsection{Teorema di Savitch}
-\label{sec:org29eab82}
+\label{sec:orga12604b}
 \texttt{8.5}
 Per qualsiasi funzione \(f: N \to R^+\), dove \(f(n) \ge n\),
 \begin{itemize}
@@ -1022,7 +1023,7 @@ Il passaggio da non determinismo a determinismo per il tempo é piú impegnativo
 
 Da questo teorema segue che \(\textsc{PSPACE} =  \textsc{NPSPACE}\) in quanto il quadrato di un polinomiale é ancora polinomiale.
 \subsubsection{GG}
-\label{sec:org3bbd9c9}
+\label{sec:orgdf6d73d}
 Gioco Generalizzato della Geografia
 \begin{itemize}
 \item il gioco consiste nel spostarsi in un grafo i cui nodi sono nomi di cittá

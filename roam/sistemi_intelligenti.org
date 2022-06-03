@@ -422,8 +422,10 @@ Nella simulazione dell'albero di gioco si hanno i due attori
 2. =Min=
 
 L'algoritmo fa /venire a galla/ i costi /terminali/ dei rami del gioco, in quanto per guidare la scelta =Max= deve poter scegliere tra i nodi a se successivi.
+- é completo in grafi finiti
+- é ottimale se =Max= e =Min= giocano ottimalmente
 
-La funzione utilita' valuta gli stati /terminali/ del gioco, agisce per casi sul nodo $n$ in maniera ricorsiva
+La funzione utilità valuta gli stati /terminali/ del gioco, agisce per casi sul nodo $n$ in maniera ricorsiva
 $\text{minimax-value}(n)$:
 - se $n$ /terminale/
   + $\text{utility}(n)$
@@ -462,7 +464,8 @@ def minValue(state):
 \[\textsc{Time} = O(b^{m})\]
 
 ***** Potatura alpha-beta
-Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
+- [[https://web.mit.edu/6.034/wwwbob/handout3-fall11.pdf][Handout MIT sull'argomento per approfondire]]
+Per migliorare la complessità temporale dell'algoritmo si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
 La potatura viene fatta in base all'intervallo $\alpha \cdots \beta$ dove:
 - $\alpha$ e' il valore della migliore alternativa per =Max= nel percorso verso =state=
 - $\beta$ e' il valore della migliore alternativa per =Min= nel percorso verso =state=
@@ -502,30 +505,31 @@ Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azio
 
 - $\textsc{time} = O(b^{m/2})$
   + nel caso migliore
-  + se l'ordine e' sfavorevole e' possibile che non avvengano potature
+  + se l'ordine é sfavorevole é possibile che non avvengano potature
+  + comunque molto costoso
 
 Esistono tecniche di apprendimento per le /killer move/, il sistema si ricorda le /killer move/ passate e le cerca nelle successive applicazioni.
-Queste tecniche sono studiate in quanto la complessita' continua a essere troppo alta per applicazioni =RealTime=:
+Queste tecniche sono studiate in quanto la complessità continua a essere troppo alta per applicazioni =RealTime=:
 - *trasposizioni*
   + permutazioni dello stesso insieme di mosse
   + mosse che portano allo stesso stato risultante
   + vanno identificate ed evitate
 - *classificazione stati di gioco*
-  + per motivi di tempo vanno valutati come foglie nodi intermedi
+  + per motivi di tempo vanno valutati come foglie nodi intermedi a un certo /cutoff/
   + va valutata una situazione intermedia (/orizzonte/)
-    * valutazione rispetto alla facilita' di raggiungere una vittoria
+    * valutazione rispetto alla facilità di raggiungere una vittoria
     * attraverso un classificatore sviluppato in precedenza
-- *quiescenza* dei nodi
+- *quiescenza* dei nodi, concerne la _permanenza della negatività o positività della valutazione_
   + se mantiene la propria valutazione bene nei continuo
   + non ribalta la valutazione nel giro di poche mosse
 
-** Soddisfacimento di Vincoli
-=CSP= - Constraint Satisfaction Problems
+** Constraint Satisfaction Problems
+=CSP=
 - serie di =variabili= di dati dominii
-- =vincolo=, una condizione
+- =vincoli=, una condizioni
   + é soddisfatto con una dato =assegnamento= che per essere una soluzione deve essere
-    1. completo, tutte le variabili sono assegnate
-    2. consistente, tutti i vincoli sono rispettati
+    1. *completo*, tutte le variabili sono assegnate
+    2. *consistente*, tutti i vincoli sono rispettati
 
 I problemi sono affrontati con approcci diversi in base alle caratteristiche del dominio (valori booleani/discreti/continui)
 *** Algoritmi
@@ -537,7 +541,7 @@ I problemi sono affrontati con approcci diversi in base alle caratteristiche del
 
 É estremamente semplice ma non é scalabile.
 
-**** Profonditá con Backtracking
+**** Profondità con Backtracking
 Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni.
 Il problema é che in =CSP= il ~branching factor~ é spesso molto alto, producendo alberi molto larghi.
 
@@ -576,7 +580,6 @@ def RemoveInconsistentValues(xi,xj): # returns boolean
             Domain[xi].delete(x)
             removed = true
     return removed
-
 #+end_src
 **** Back-Jumping
 Risolve i limiti del tradizionale =Backtracking Cronologico=, che torna passo per passo indietro senza sfruttare i vincoli.
