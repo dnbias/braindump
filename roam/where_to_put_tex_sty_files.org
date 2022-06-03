@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       d5e31949-afa6-4ec0-98ca-0488d7a2fb38
+:END:
+#+title: Where to put TeX .sty files
+#+date: [2022-05-31 Tue 20:52]
+#+filetags: til
+#+begin_src bash
+$ kpsewhich -var-value=TEXMFHOME
+#+end_src

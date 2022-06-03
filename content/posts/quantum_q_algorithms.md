@@ -6,10 +6,6 @@ tags = ["university", "thesis", "compsci"]
 draft = false
 +++
 
--   Tags: [Quantum Computing]({{< relref "quantum_computing.md" >}}), [CalcCompl]({{< relref "20210921121153-calcolabilita_e_complessita.md" >}}), [Deutsch-Jozsa Algorithm]({{< relref "deutsch_jozsa_algorithm.md" >}})
--   Source: [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}})
-
-
 ## Introduzione {#introduzione}
 
 Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilitá di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
@@ -26,9 +22,9 @@ Ovviamente il calcolo classico non verrá abbandonato, l'approccio classico e qu
 Mentre gli attuali computer diventano sempre piú veloci e le tecniche industriali permettono miniaturizzazioni sempre maggiori gli hardware quantistici rimangono estremamenti complicati da costruire e distribuire.
 Il modo attualmente piú congeniale di utilizzare questi hardware rimane quello della condivisione di risorse attraverso le tecnologie di _cloud computing_.
 
-Ma questo non significa che non sia possibile studiare i problemi che il calcolo quantistico offre a livello teorico e di sviluppo software.
-Attualmente i software sviluppati per hardware quantistici possono essere eseguito su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in _cloud computing_.
-I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilitá di essere testata in maniera indiscriminata su un qualsiasi di questi.
+Ma questo non significa che non sia possibile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
+Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in in remoto.
+I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilitá di essere testato in maniera indiscriminata su un qualsiasi di questi.
 
 
 ## Ambiente {#ambiente}
@@ -45,26 +41,42 @@ Altri _Software Development Kit_ che possono essere utilizzati per eseguire circ
 
 Molti di questi progetti sono open-source e sviluppati sulla base di `Python`.
 
-Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto era ció che era utilizzato dalla nostra fonte principale [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}}).
+Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto era ció che era utilizzato dalla nostra fonte principale _Learn Quantum Computing with Python and Q#_.
 
 L'ambiente di esecuzione `Q#` puó essere configurato sul editor `Visual Studio Code` tramite l'add-on proprietario di Microsoft.
 Quest'ultimo é disponibile solo sulla versione non `FOSS` del software, che é possibile installare tramite le repository opensource linux.
 
-In alternativa o parallelamente é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`. Questo con i kernel necessari installati.
+In alternativa o anche parallelamente é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`. Questo con i kernel necessari installati, quindi l'ultima versione di `dotnet` disponibile.
 
-Tramite l'ambiente `anaconda` vanno installati:
+Tramite `anaconda` si crea un ambiente con il necessario:
 
-```bash
+```shell
 $ conda create -n qsharp-env -c microsoft qsharp notebook
 $ conda activate qsharp-env
 ```
 
+L'esecuzione del software `Q#` puo' essere testato localmente predisponendo un ambiente di simulazione tramite il pacchetto `Python` chiamato `qsharp`.
+
+<a id="code-snippet--host.py"></a>
+```python
+import qsharp
+from QsharpNamespace import Operation_One, Operation_Two
+var1 = 10
+print("Simulation started...")
+Operation_One.simulate(par1=var1)
+Operation_Two.simulate(par2=var1,par3=5)
+```
+
+Ad esempio come nel listato qui sopra utiliziamo uno script `host.py` per creare un ambiente di simulazione per poter eseguire le operazioni `Q#` definite in `Operation_One` e `Operation_Two`.
+Il pacchetto automaticamente va a cercare nella directory locale le definizioni.
+
 
 ## Oracoli {#oracoli}
 
-Gli oracoli
+Gli oracoli che utiliziamo per testare gli algoritmi definiti in seguito sono:
 
-```Q#
+<a id="code-snippet--oracles.qs"></a>
+```c
 operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
   }
 
@@ -94,8 +106,21 @@ operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
     CNOT(control,target);
     X(control);
   }
-
 ```
+
+Dove sono definiti versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate.
+In particolare abbiamo definito oracoli per le seguenti funzioni:
+
+-   \\(f(x)=0\\)
+-   \\(f(x)=1\\)
+-   \\(f(x)=x\\)
+-   \\(f(x)= \lnot x\\) o \\(f(x) = 1-x\\)
+-   \\(f(x, y) = x \oplus y\\)
+    -   dove \\(x\\) e' l'input lungo \\(n\\) qbit e \\(y\\) e' l'output
+
+{{< figure src="/ox-hugo/balanced-oracle.png" caption="<span class=\"figure-number\">Figure 1: </span>esempio di oracolo bilanciato utilizzando porte CNOT" >}}
+
+In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate.
 
 
 ## Algoritmo di Deutsch-Jozsa {#algoritmo-di-deutsch-jozsa}
@@ -140,12 +165,12 @@ I passi dell'algoritmo in particolare sono:
 4.  a questo punto il secondo registro puó essere ignorato, riapplica `Hadamard` al primo registro
 5.  misura il primo registro, questa risulta \\(1\\) per \\(f(x)\\) costante e \\(0\\) altrimenti nel caso bilanciato
 
-{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 1: </span>i passi dell'algoritmo in forma di circuito" >}}
+{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 2: </span>i passi dell'algoritmo in forma di circuito" >}}
 
 
 #### single-bit Deutsch-Jozsa {#single-bit-deutsch-jozsa}
 
-```Q#
+```c
 operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
     use control = Qubit();
     use target = Qubit();
@@ -166,7 +191,7 @@ operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
 
 #### n-bit Deutsch-Jozsa {#n-bit-deutsch-jozsa}
 
-```Q#
+```c
 operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
     use control = Qubit[size];
     use target = Qubit();
@@ -184,9 +209,6 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
     ResetAll(control);
     return result;
 }
-function _And(a : Bool, b : Result) : Bool {
-      return a and ResultAsBool(b);
-}
 ```
 
-[^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\)
+[^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\) o `XOR`

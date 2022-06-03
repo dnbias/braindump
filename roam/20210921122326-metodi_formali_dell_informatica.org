@@ -3,15 +3,16 @@
 :ROAM_ALIASES: MFI
 :END:
 #+title: Metodi Formali dell'Informatica
+#+latex_class: arsclassica
 #+filetags: university
-Prof: Ugo De' Liguoro
+- Prof: Ugo De' Liguoro
+- [[./][PDF Version]
 * Info Corso
 - Orario:
   + Mer 14-16
   + Ven 11-13
 - Testo:
   + [[id:ca905cae-fdf3-421c-a255-ec32435ef818][Programming Language Foundation in Agda]]
-
 * Teoria
 ** Metodi Formali
 Derivano dalla logica-matematica
@@ -143,7 +144,7 @@ Se vale questo allora posso spezzare in moduli il codice e verificare questi sot
 
 - /frame property/
   + $(c,s,h_{0})\text{safe} \land (c,s,h_{0} \uplus h_{1}) \rightarrow^{*} (\text{skip},s',h') \implies \\
-    \exists h_{0}_{}' \perp h_{1} :  (c,s,h_{0})\rightarrow^{*} (\text{skip},s',h_{0}')\land h' = h_{0}' \uplus h_{1}$
+    \exists h_{0}' \perp h_{1} :  (c,s,h_{0})\rightarrow^{*} (\text{skip},s',h_{0}')\land h' = h_{0}' \uplus h_{1}$
 
 ***** Heap Simbolici
 $H ::= \exists \vec{x} : (P_{1} \land \cdots \land P_{n}) \land (S_{1} \star \cdots \star S_{m})$
@@ -277,9 +278,9 @@ Sistema formale:
 $\frac{(c_{1},s_{1}) \implies t_{1}\cdots (c_{n},s_{n})\implies t_{n}}{(c_{n+1},s_{n+1})\implies t_{n+1}}$
 
 ***** Regole
-Skip $\frac{}{(SKIP,s)\implies s}$
-Ass $\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]$
-Comp $\frac{(c_{1},s)\implies s^{'} \: \: (c_{2},s^{'})\implies t}{(c_{1};c_{2},s)\implies t}$
+- Skip $\frac{}{(SKIP,s)\implies s}$
+- Ass $\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]$
+- Comp $\frac{(c_{1},s)\implies s' \quad (c_{2},s')\implies t}{(c_{1};c_{2},s)\implies t}$
 IF b THEN c_1 ELSE c_2
 - $\frac{bval \: b\: s = tt \:\: (c_{1},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
 - $\frac{bval \: b\: s = ff \:\: (c_{2},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$

@@ -5,7 +5,8 @@ tags = ["university"]
 draft = false
 +++
 
-Prof: Stefano Berardi
+-   Prof: Stefano Berardi
+-   [PDF Version](/ox-hugo/20210921121153-calcolabilita_e_complessita.pdf)
 
 
 ## Info Corso {#info-corso}
@@ -511,7 +512,7 @@ Si dimostra che \\(\textsc{Wang}\\) non é positivamente decidibile in quanto
 
 #### Recap {#recap}
 
-{{< figure src="~/org/media/img/decidability.jpg" >}}
+{{< figure src="../media/img/decidability.jpg" >}}
 
 -   Negativamente Decidibili
     -   \\(E\_{\textsc{tm}}\\)
@@ -784,7 +785,7 @@ Questo perché:
 -   \\(\textsc{pspace}\subseteq\textsc{exptime}\\), una machina in \\(\textsc{pspace}\\) puó eseguire passi senza ripetersi al massimo
     -   \\[f(n)\cdot 2^{O(f(n))} = \bigcup\_k \textsc{time}(2^{n^k)\\], dopo di che é in loop
 
-![](~/org/media/img/complexity-classes.jpg)
+![](../media/img/complexity-classes.jpg)
 Qualsiasi di queste inclusioni potrebbero essere eguaglianze, ma non sono state trovate prove a riguardo.
 
 Inoltre si definiscono le classi sottolineari:

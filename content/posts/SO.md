@@ -6,6 +6,7 @@ draft = false
 +++
 
 -   Teacher:  Daniele Gunetti (daniele.gunetti@unito.it)
+-   [PDF Version](/ox-hugo/SO.pdf)
 
 
 ## Generalitá {#generalitá}

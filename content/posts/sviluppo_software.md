@@ -9,6 +9,7 @@ draft = false
 -   Info Corso
     -   Matteo Baldoni
     -   Sviluppo Agile
+-   [PDF Version](/ox-hugo/sviluppo_software.pdf)
 
 
 ## Software {#software}
@@ -75,10 +76,10 @@ Nel <span class="underline">modello di sviluppo incrementale</span> queste sono 
 
 L'ambiente odierno richiede cambiamenti rapidi:
 
--   la rapidita' delle consegne e' quindi un requisito critico
+-   la rapiditá delle consegne é quindi un requisito critico
 -   i requisiti reali diventano chiari solo dopo il feedback degli utenti
 
-per cio' questo metodo di sviluppo ha preso piede
+per ció questo metodo di sviluppo ha preso piede
 
 Lo sviluppo e' organizzato in sotto-progetti
 
@@ -86,9 +87,9 @@ Lo sviluppo e' organizzato in sotto-progetti
 -   iterazione
 -   test
 
-Il progetto si adatta iterazione dopo iterazione al feedback, e' _evolutivo_
+Il progetto si adatta iterazione dopo iterazione al feedback, é _evolutivo_
 
--   ogni iterazione e' una scelta di un sottoinsieme dei requisiti
+-   ogni iterazione é una scelta di un sottoinsieme dei requisiti
     -   produce un sistema eseguibile e subito testabile
 
 \\(\textsc{nb}\\)   L'output di una iterazione _non_ é un esperimento o un prototipo. É una sottoinsieme a livello di produzione del sistema finale.
@@ -107,6 +108,42 @@ Il progetto si adatta iterazione dopo iterazione al feedback, e' _evolutivo_
 -   progresso subito visibile
 -   feedback immediato
 -   gestione della complessita', evita la _paralisi da analisi_
+
+
+#### Test Driven Development {#test-driven-development}
+
+`TDD`
+Diversi tipi di test:
+
+-   _unitari_
+    -   verificano il funzionamento di singole unitá
+    -   struttura in 4 parti
+        1.  preparazione, instanziazione degli oggetti di testing e il contesto
+        2.  esecuzione
+        3.  verifica, spesso _assert_
+        4.  rilascio, _garbage collection_
+-   di _integrazione_
+    -   verificano la comunicazione tra parti
+-   _end-to-end_
+    -   verificano il collegamento complessivo tra gli elementi del sistema
+-   di _accettazione_
+    -   verificano il funzionamento complessivo del sistema
+
+
+#### Refactoring {#refactoring}
+
+Strettamento legato al _testing_ in un ciclo di sviluppo incrementale.
+A seguito di un _refactoring_ vengono rieseguiti tutti i test per assicurarsi di non aver provocato una _regressione_.
+
+Esempi di refactoring:
+
+-   _Rename_
+-   _Extract Method_
+-   _Extract Class_
+-   _Extract Constant_
+-   _Move Method_
+-   _Introduce Explaining Variable_
+-   _Replace Constructor Call with Factory Method_
 
 
 ### Modello di Integrazione e Configurazione {#modello-di-integrazione-e-configurazione}
@@ -767,3 +804,32 @@ _ripete dal passo 4. fino a che soddisfatto_
 
 
 #### Estensioni {#estensioni}
+
+
+### Progettazione {#progettazione}
+
+Progettazione sullo strato di _domain_
+
+-   passaggio all'inglese per dividere il linguaggio prettamente tecnico e quello leggibile dai clienti
+-   domain modules
+    -   `MenuManagement`
+    -   `KitchenTaskManagement`
+-   _technical services_
+    -   persistence on `DB`
+    -   login
+
+Gestione con `grasp controller` degli eventi tra `UI` e `Domain`
+
+Il `Design Class Diagram` o `DCD`
+
+-   e' un documento unico per il progetto
+    -   riporta tutte le classi
+-   entro questo si puo' suddividere in moduli, ma questi rimangono interdipendenti tra loro
+-   questa e' la parte statica
+
+Il `Detailed Sequence Diagram` o `DSD`
+
+-   la parte dinamica
+-   le interazioni tra gli oggetti per eseguire le operazioni necessarie
+-   a questo livello si vedono le chiamate e le risposte
+    -   e anche le notifiche tra `observed` e `observer`

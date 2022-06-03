@@ -6,7 +6,8 @@ tags = ["university"]
 draft = false
 +++
 
-Professoressa: Cristina Baroglio
+-   Professoressa: Cristina Baroglio
+-   [PDF Version](/ox-hugo/sistemi_intelligenti.pdf)
 
 
 ## Terminologia {#terminologia}
@@ -694,7 +695,9 @@ Un `CSP` fortemente consistente puó essere risolto in tempo lineare.
 3 colori per colorare i 7 territori dell'Australia
 
 -   {`NA`, `NT`, `SA`, `Q`, `NSW`, `V`, `T`}
--   un territorio deve avere colore diverso da tutti i vicini
+-   un territorio deve avere colore diverso da tutti i confinanti
+
+{{< figure src="/ox-hugo/australian-states.jpg" >}}
 
 
 ## Rappresentazione della Conoscenza {#rappresentazione-della-conoscenza}
@@ -921,7 +924,9 @@ La base di conoscenza puó essere interrogata con `ask`
 
 -   `Lifting` della Risoluzione[^fn:4]
 
-\\[\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})\\]
+\begin{align\*}
+\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})}
+\end{align\*}
 
 -   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
     1.  Eliminazione delle **implicazioni**
@@ -1007,7 +1012,7 @@ Nello stesso dominio:
 4.  `Weakly-Translatable`
     -   non si introducono inconsistenze
 5.  `Strongly-Translatable`
-    -   il vocabolario di `Source` é completamente mappabili in concetti di `Dest`
+    -   il vocabolario di `Source` é completamente mappabile in concetti di `Dest`
     -   le proprietá di `Source` valgono in `Dest`
     -   non c'é perdita di informazione
     -   non si introducono inconsistenze
@@ -1064,7 +1069,7 @@ Strumenti:
 
 ### Situation Calculus {#situation-calculus}
 
-Sulla basa della `FOL` contruisce:
+Sulla base della `FOL` contruisce:
 
 -   **Azione**
     -   cambia lo stato del mondo
@@ -1095,10 +1100,11 @@ Sulla basa della `FOL` contruisce:
     -   la soluzione semplice di riportare solamente le modifiche dello stato da parte dell'azione
     -   `frame problem`
 3.  `frame`
-    -   \\(\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action(\text{params}),s}))\\)
+    -   \\(\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action}(\text{params}),s}))\\)
 4.  `Assioma di Stato Successore`
     -   aggiunto per sostituire gli `assiomi di frame`
-    -   `Azione Applicabile` \\(\implies\\) `(Fluente vero nella` \\(s\\) `risultante` \\(\iff\\) `l'azione lo rendeva vero` \\(\lor\\) `era vero e l'azione non l'ha reso falso)`
+    -   `Azione Applicabile` \\(\implies\\) =
+        -   (Fluente vero nella= \\(s\\) `risultante` \\(\iff\\) `l'azione lo rendeva vero` \\(\lor\\) `era vero e l'azione non l'ha reso falso)`
 
 
 #### Anomalia di Sussman {#anomalia-di-sussman}
@@ -1110,6 +1116,8 @@ _Perseguimento di goal complessi_
 
 > Non tutti i _goal_ possono essere risolti suddividendoli prima in subgoal e affrontandoli in maniera sequenziale.
 
+{{< figure src="/ox-hugo/sussman-anomaly.jpg" >}}
+
 
 ## Agente {#agente}
 
@@ -1118,6 +1126,8 @@ Ciclo di vita:
 1.  ha una percezione / ha un input
 2.  delibera / costruisce la risposta
 3.  agisce / restituisce la risposta
+
+{{< figure src="/ox-hugo/agent-loop.png" >}}
 
 L'_agente_ vive una `sequenza percettiva`, ovvero la storia completa delle percezioni
 
@@ -1200,6 +1210,18 @@ Tipologie:
 
 
 ## Apprendimento Automatico {#apprendimento-automatico}
+
+{{< figure src="/ox-hugo/machine-learning.png" >}}
+
+Molte tipologie diverse:
+
+-   classificatori a regole
+-   k-nearest neighbour
+-   classificatori bayesiani
+-   reti neurali
+-   support vector machines
+-   ensemble methods
+-   regressione
 
 
 ### Classificazione {#classificazione}
@@ -1289,6 +1311,8 @@ La `matrice di confusione` é una matrice quadrada
         -   numero di istanze appartenenti a \\(c\_{i}\\) che il modello ha detto appartenere a \\(c\_{j}\\)
         -   desideriamo che i \\(v\\) si accumulino nella diagonale, dove troviamo le risposte corrette
 
+{{< figure src="/ox-hugo/confusion-matrix.png" >}}
+
 Si hanno due considerazioni sui risultati:
 
 -   `accuracy`
@@ -1310,7 +1334,170 @@ Il limite della matrice di confusione é che gli errori hanno tutti lo stesso pe
 Altro limite é che su `test set` sbilanciati gli _error rate_ saranno falsati.
 
 
-#### Alberi di Decisione {#alberi-di-decisione}
+#### Classificazioni a Regole {#classificazioni-a-regole}
+
+Regole della forma
+
+-   antecedente
+    -   attributi, operazioni, valori
+-   conseguente
+    -   classe di appartenenza
+
+Qualita' di una regola valutata tramite
+
+-   **copertura**  \\(\frac{|A|}{|D|}\\)
+-   **accuratezza**  \\(\frac{|A \cap y|}{|A|}\\)
+
+dove
+
+-   \\(A\\) istanze che soddisfano l'antecedente
+-   \\(D\\) dataset
+-   \\(y\\) sotto insieme di \\(D\\) di una particolare classe
+
+Si desiderano
+
+-   regole mutualmente esclusive
+    -   attivate da insiemi di esempi disgiunti
+    -   se le regole non lo sono si utilizzano
+        -   **liste di decisione**
+            -   si decide in ordine di priorita'
+        -   **insiemi non ordinati**
+            -   si decide secondo una votazione / conteggio
+-   regole esaustive
+    -   ogni possibile combinazione di valori degli attributi e' catturata
+    -   se manca l'esaustivita' cio' implica che alcuni casi non saranno classificabili
+        -   in questi casi si definisce una classe di `default`
+
+Le regole vengono ordinate secondo gli antecedenti o le classi.
+
+Le regole sono <span class="underline">prodotte</span>
+
+-   indirettamente
+    -   estraendole da un albero di decisione
+-   direttamente
+    -   **Sequential Covering**
+
+
+##### Sequential Covering {#sequential-covering}
+
+-   _focus_ su una classe alla volta, le altre sono considerate contro-esempi
+-   ogni ciclo produce una regola
+    -   e vengono rimosse le istanze riconosciute da questa regola
+    -   **Learn one Rule**
+        -   `general-to-specific`
+            -   a partire dalla regola piu' generale \\(\text{True}=y\\)
+            -   si aggiungono all'antecedente in `and` delle specifiche, con le tecniche di scelta dello _split_
+        -   `specific-to-general`
+            -   scegliendo in modo casuale un esempio della classe definisce
+            -   valori dell'esempio
+            -   numero dei congiunti secondo gli attributi descritti dall'istanza
+            -   per generalizzare si eliminano dei congiunti utilizzando le tecniche di scelta dello _split_
+-   le regole prodotte andranno poi utilizzate <span class="underline">nell'ordine in cui sono prodotte</span>
+
+
+#### Valutazione {#valutazione}
+
+Il modello costruito e' buono o no?
+
+-   se non lo e', qual'era il problema
+    -   parametri
+    -   algoritmo
+    -   classificatore
+    -   `learning set`
+
+Ci sono diversi metodi di valutazione di un modello costruito tramite un algoritmo, e' importante per la valutazione partendo da un `dataset` distinguere un `learning` e un `test set` nella maniera migliore possibile:
+
+-   **Holdout**
+    -   partizione dei dati disponibili in `LS` e `TS`
+    -   se la partizione e' sbilanciata si va verso _over_ o _under_ fitting
+-   **Random subsampling**
+    -   si ripete il processo di **holdout** piu' volte
+    -   ripetendo piu' volte l'apprendimento
+    -   si fa una media delle valutazioni dei modelli generati
+        -   si valuta il classificatore in maniera piu' oggettiva
+        -   si cerca di liberare la valutazione dall'aleatorita' dei partizionamenti
+-   **Cross-validation**
+    -   si fa **random subsampling** ma con dati piu' omogenei
+    -   \\(K\\) fold cross validation
+        -   con \\(K\\) partizioni
+    -   \\(1\\) dei set e' usato come `TS`
+    -   \\(K-1\\) dei set sono accorpati in `LS`
+    -   uno per volta tutti i \\(K\\) set sono utilizzati per il testing
+    -   alla fine si fa una media delle valutazioni
+-   **Bootstrap**
+    -   in casi in cui il `dataset` é piccolo
+    -   per il `LS` si scelgono istanze dal `dataset` ma senza rimuoverle da quest'ultimo
+        -   una stessa istanza puó apparire piu' volte nel `LS`
+    -   per il `TS` si scelgono le istanze con cui non si e' fatto apprendimento
+    -   questo viene ripetuto e valutato a piacere, facendo la media
+
+Tutte queste tecniche si usano nella valutazione dell'algoritmo usato rispetto al problema.
+<span class="underline">In generale</span>, per singoli modelli diversi costruiti con algoritmi diversi, <span class="underline">non si puó contare sul fatto che i test siano stati fatti sugli stessi sotto-insieme di dati</span>.
+
+-   nella valutazione quindi i risultati non possono che essere probabilistici
+-   si ottiene un'_intervallo di confidenza_
+-   altro parametro di una valutazione é il _livello di confidenza_
+
+
+#### Split &amp; Entropia {#split-and-entropia}
+
+La `scelta dello split` viene effettuata considerando l'impatto o `entropia`
+
+-   generalmente, alberi compatti sono preferibili ad alberi con un numero di test maggiori
+    -   meno classi sono rappresentate in un nodo figlio meno confuso e' l'insieme e migliore e' lo _split_
+-   il **Rasoio di Occam** puo' essere utilizzato come criterio per la scelta
+    -   _a parita' di assunzioni la spiegazione piu' semplice e' la preferita_
+
+Altri metodi di misura della bonta' di un _split_ sono i `Gini` e `Errori di classificazione`.
+
+Misure di selezione:
+
+-   \\(p(i\mid t)\\)
+    -   \\(i\\) classe
+    -   \\(t\\) insieme
+    -   probabilita' che l'elemento appartenga alla classe \\(i\\)
+
+Si puo' calcolare una <span class="underline">distribuzione di probabilita'</span> di appartenenza di un record estratto casualmente.
+\\[\text{Entropy}(t) = - \sum\_{i=0}^{c-1} p(i \mid t) \log\_{2}p(i\mid t)\\]
+
+-   e' assunto che \\(0 \log\_{2} 0 = 0\\)
+-   \\(E=0\\) e' il caso migliore, con distribuzioni \\((0,1)\\) o \\((1,0)\\)
+-   \\(E=1\\) e' il caso peggiore con distribuzione \\((0.5,0.5)\\)
+
+Il calcolo della bonta' di uno _split_, o calcolo del **guadagno**
+\\[\Delta = I(\text{parent}) - \sum\_{j=1}^{k}\frac{N(v\_{j})}{N} I(v\_{j})\\]
+
+-   \\(I\\) e' l'impurita'
+-   \\(N\\) numero recond/istanze del nodo genitore
+-   \\(N(v\_{j})\\) numero record/istanze del nodo figlio \\(j\\) -esimo
+
+Nel caso della misura, utilizzando l'entropia si calcola l'**information gain**
+\\[\Delta = E(\text{parent}) - \sum\_{j=1}^{k}\frac{N(v\_{j})}{N} E(v\_{j})\\]
+
+
+#### Overfitting {#overfitting}
+
+Anche **errore di generalizzazione**.
+
+Se il `Learning Set` manca di esempi oppure contiene _noise_, errori di classificazione, il modello generato puo' mancare di generalita'.
+Il modello _ideale_ e' quello che produce il minor errore di generalizzazione possibile.
+
+Il problema dell'overfitting si affronta diminuendo i test, rendendo meno specifico l'albero.
+Per questo si utilizzano tecniche di `pruning`, potatura.
+
+-   `prepruning`
+    -   si interrompe la costruzione del `DT` prima che sia completo
+    -   si ha una <span class="underline">regola di terminazione</span> restrittiva
+        -   non si esegue lo split se il gain e' sotto una soglia
+    -   si puo' ricadere nel problema opposto del _underfitting_
+-   `postpruning`
+    -   lavora su albero costruiti completamente
+    -   con un insieme di dati supervisionati lo si analizza
+        -   i <span class="underline">rami poco percorsi si rimuovono</span>, si riducono a foglie
+    -   si spreca del lavoro fatto
+
+
+### Alberi di Decisione {#alberi-di-decisione}
 
 `Decision Trees`
 Banalmente, in un altro contesto, un menú a tendina.
@@ -1325,8 +1512,10 @@ Le istanze hanno la stessa forma
 
 I _test_ sono ognuno su un singolo attributo e a cascata caratterizzano le istanze.
 
+{{< figure src="/ox-hugo/decision-tree.png" >}}
 
-##### Algoritmo di Hunt {#algoritmo-di-hunt}
+
+#### Algoritmo di Hunt {#algoritmo-di-hunt}
 
 **L'algoritmo di Hunt** lavora sul `Learning Set`
 
@@ -1342,6 +1531,165 @@ Passi:
         1.  si verifica il suo range in \\(D\_{t}\\)
         2.  si crea un _nodo successore_ per ogni suo possibile valore
         3.  a ogni successore si assegna il sottoinsieme di \\(D\_{t}\\) per cui l'attributo scelto vale quello cui il successore é associato
+
+
+### Lazy Learning {#lazy-learning}
+
+> **Definition** \\(\quad\\) _Lazy Learning_ in machine learning is a learning method in which generalization beyond the training data is delayed until a query is made to the system, as opposed to in _Eager Learning_, where the system tries to generalize the training data before receiving queries. Lazy learning is essentially an instance-based learning: it simply stores training data (or only minor processing) and waits until it is given a test tuple.
+
+Un _lazy learner_ <span class="underline">non costruisce un modello</span> con i dati di apprendimento ed é di semplice implementazione.
+Un esempio di questi é `K-NN`.
+
+-   `k-Nearest Neighbours`
+
+Condividere caratteristiche é un'importante indicatore di una stessa classe di appartenenza.
+
+-   somiglianza \\(\rightarrow\\) stessa classe
+    -   a livello matematico significa _vicinanza numerica_
+-   le somiglianze sono trovate _avendo memorizzato_ il `LS`
+
+Si rappresentano come punti in uno spazio \\($n\\)-dimensionale le istanze:
+\\[i = \langle v\_{1}, v\_{2}, \cdots , v\_{n} \rangle\\]
+
+Questi punti vengono rapportati rispettivamente ai \\(k\\) punti piú vicini in funzione della loro distanza.
+
+-   un punto vicino a tutti punti di una stessa classe viene classificato/predetto come in quella classe
+-   in caso di discordanza della classe dei vicini ci sono diverse implementazione
+    -   _votazione_, vince la maggioranza ma si perde l'informazione sulla distanza
+    -   _votazione pesata_, voti pesati rispetto alla distanza
+-   attributi di domini diversi possono avere cifre significative diverse
+    -   nella memorizzazione <span class="underline">gli intervalli degli attributi vanno normalizzati</span>
+    -   si effettuano le necessarie approssimazioni per creare una relazione tra _distanza_ e _similitudine_
+
+\\[y = \text{argmax}\_{v} \sum\_{x\_{i},y\_{i}}^{k} \frac{I(v=y\_{i})}{d(x', x\_{i})^{2}}\\]
+dove, ciclando su \\(i\\):
+
+-   \\(x'\\) dato da classificare
+-   \\(y\\) classe risultato
+-   \\(y\_{i}\\) classe dell'istanza \\(x\_{i}\\)
+-   \\(x'\\) \\(n\\)-tupla da classificare
+-   nominatore: somma dei voti per la classe \\(y\_{i}\\)
+-   denominatore: divisione per peso calcolato sulla distanza
+
+
+### Neural Network {#neural-network}
+
+
+#### Perceptron {#perceptron}
+
+Prima proposta di _modello di neurone artificiale_
+
+-   ispirazione dalla biologia
+-   il piú semplice `Neural Network` possibile
+
+Struttura:
+
+-   \\(n\\) input \\(x\_{i}\\)
+    -   ciascuno con un peso \\(w\_{i}\\)
+    -   formano una tupla di ingresso \\(\langle x\_{1},x\_{2},\cdots ,x\_{n} \rangle\\)
+-   un output \\(y\\)
+-   memoria - unitá computazionale centrale
+    -   \\(f(\text{net})\\) funzione di attivazione con \\(\theta\\) soglia di attivazione.
+
+\\[\text{net} = \sum\_{i=1}^{n} w\_{i}x\_{i}\\]
+\\[f(\text{net}) = \begin{cases}1 \quad \text{net}\ge \theta \\\ 0 \quad \text{altrimenti} \end{cases}\\]
+
+{{< figure src="/ox-hugo/perceptron.png" caption="<span class=\"figure-number\">Figure 1: </span>definizione di un perceptron" >}}
+
+Questa discontinuitá sulla soglia é stata sostituita successivamente da una sigmoide.
+\\[f(\text{net}) = \frac{1}{1 + e ^{-\alpha(\text{net}- \theta)}}\\]
+![](/ox-hugo/sigmoid-curve.png)
+
+Il percettrone codifica un _test lineare_. Delinea un iperpiano/iperspazio che divide lo spazio in due metá
+
+-   nelle vicinanze del confine la sigmoide transiziona da 1 a 0
+
+L'apprendimento consiste nel trovare il taglio che divida le classi
+
+-   questo si fa <span class="underline">apprendendo i pesi</span> \\(w\_{i}\\) necessari per la classificazione corretta
+-   tramite `Learning Set` supervisionato
+
+\\[w\_{j}^{k+1} = w\_{j}^{k} + \alpha (d - o) x\_{j}\\]
+
+-   \\(\alpha \in [0,1]\\) _learning rate_
+-   \\(o\\) output restituito per la tupla di input
+-   \\(d\\) output desiderato
+-   se \\(o \neq d\\) il percettore ha fatto un errore \\(d-o\\)
+
+I \\(w\_{j}\\) sono prodotti incrementalmente tramite questo processo e sono deposizione della conoscenza dell'apprendimento.
+
+-   l'apprendimento si ferma quando i cambiamenti ai pesi rallentano
+
+{{< figure src="/ox-hugo/perceptron-learning.jpg" caption="<span class=\"figure-number\">Figure 2: </span>processo di learning di un perceptron" >}}
+
+
+##### Limiti {#limiti}
+
+Rappresentazione dello `XOR`
+
+| x | y | \\(\oplus\\) |
+|---|---|--------------|
+| 1 | 1 | -            |
+| 1 | 0 | +            |
+| 0 | 1 | +            |
+| 0 | 0 | -            |
+
+Non é risolvibile da un singolo perceptron, solo con tecniche piú sofisticate utilizzandone un altro.
+![](/ox-hugo/perceptron-xor.png)
+
+
+#### Multilayer Perceptron {#multilayer-perceptron}
+
+`MLP`
+
+Si moltiplicano i `perceptron` posizionandoli in cascata e dividendoli per funzione
+
+-   _output_
+    -   \\(n\\) come le classi
+    -   questi neuroni danno output rispetto la class di appartenenza
+-   _hidden_
+-   _input_
+
+I dati viaggiano in un'unica direzione e é _pienamente connessa_
+
+-   tutti i neuroni di un livello sono collegati a tutti quelli dello strato successivo
+
+{{< figure src="/ox-hugo/multilayer-perceptron.png" caption="<span class=\"figure-number\">Figure 3: </span>struttura di un multilayer perceptron" >}}
+
+I livelli di percettori _hidden_ possono identificare regioni dello spazio dei dati piú complesse
+
+1.  traccia confini
+2.  identifica forme chiuse
+3.  identifica regioni cave all'interno delle precedenti forme chiuse
+
+
+##### Epoca di Apprendimento {#epoca-di-apprendimento}
+
+-   passata _forward_ individua con le tuple del `Learning Test` l'_errore_
+-   passata _backward_ propaga l'informazione dell'errore a ritroso nella rete
+    -   aggiornando i pesi
+
+Si utilizza il metodo di apprendimento noto come **Discesa del Grandiente**.
+\\[\Delta w\_{ij} = - \lambda \frac{dE(\overline w)}{d w\_{ij} }\\]
+
+-   \\(E(\overline w)\\) matrice dei pesi
+-   si identifica la _direzione_ in cui le configurazioni dei pesi si sviluppano rispetto all'errore
+    -   lo si abbassa minimizzando l'errore
+
+L'apprendimento nel `MLP` si puó sviluppare in 2 casi
+
+1.  neurone di _output_ \\(o\\) e neurone _hidden_ \\(i\\) collegato direttamente a \\(o\\)
+    -   si calcola direttamente l'errore con la differenza
+    -   \\(\Delta w\_{ji} = \alpha \delta^{j} x\_{ji}\\) --- variante di peso
+    -   \\(\delta^{j} = y (1-y)(t-y)\\) --- viene distribuito sui predecessori
+        -   \\(y (1-y)\\) derivata \\(f\\) errore
+        -   \\(t-y\\) errore
+2.  neurone dello strato _hidden_ \\(k\\) a metá tra neuroni _hidden_ o _input_ \\(i\\) e altri _hidden_ oppure _output_
+    -   propaghiamo verso \\(i\\)
+    -   \\(\Delta w\_{ki} = \alpha \delta^{k} x\_{ki}\\) --- variante di peso
+    -   \\(\delta^{k} = y (1-y) \sum\_{j\in I} \delta^{j} w\_{kj}\\)
+        -   l'errore di questo livello dipende dall'errore fatto negli errori piú profondi
+        -   **backpropagation** o **retropropagazione dell'errore**
 
 [^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
 [^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti

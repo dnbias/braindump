@@ -7,6 +7,7 @@ draft = false
 +++
 
 -   Prof: Bergadano Francesco
+-   [PDF Version](/ox-hugo/sicurezza_informatica.pdf)
 
 
 ## Cifrari Simmetrici {#cifrari-simmetrici}

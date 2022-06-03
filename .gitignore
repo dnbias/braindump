@@ -15,3 +15,6 @@ roam/ltximg/
 public/
 .hugo_build.lock
 other/
+*.tex
+*.pygtex
+*.pygstyle

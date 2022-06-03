@@ -1,0 +1,82 @@
+:PROPERTIES:
+:ID:       be1f147e-35ef-4044-8142-b75a0c5e19fb
+:END:
+#+title: Writing Academic Papers w/ Emacs
+#+date: [2022-05-31 Tue 16:32]
+- Source: [[https://jonathanabennett.github.io/blog/2019/05/29/writing-academic-papers-with-org-mode/][Jonathan Bennett's Blog]]
+
+* Premable in org-mode
+#+begin_example
+#+TITLE: <Insert Title Here>
+#+AUTHOR: <Your Name Here
+#+BIBLIOGRAPHY: library.bib
+#+LaTeX_class: apa6
+#+LaTeX_CLASS_OPTIONS: [a4paper]
+#+LaTeX_HEADER: \affiliation{<Your school, think tank, etc>}
+#+LaTeX_HEADER: \shorttitle{<A short version of the long title for page headers>}
+#+LaTeX_HEADER: \usepackage{breakcites}
+#+LaTeX_HEADER: \usepackage{apacite}
+#+LaTeX_HEADER: \usepackage{paralist}
+#+LaTeX_HEADER: \let\itemize\compactitem
+#+LaTeX_HEADER: \let\description\compactdesc
+#+LaTeX_HEADER: \let\enumerate\compactenum
+
+#+BEGIN_ABSTRACT
+
+*Abstract*
+
+You cannot use an org-mode header here.
+If you do, it trashes the table of contents for the apa6 document class.
+That's why Abstract is bolded manually.
+
+As you can see, I write my documents 1 sentence to a line.
+This is because I keep these documents under version control.
+A single English sentence is similar to a single line of code.
+You wouldn't run lines of code together in a production codebase, so don't run sentences together in a VC'ed text document.
+
+Latex and org-mode both interpret a single empty line as a paragraph break, so the fact that your source document is 1 sentence per line will not be visible to anybody other than you.
+#+END_ABSTRACT
+#+LaTeX: \tableofcontents
+#+end_example
+* Bib settings
+#+begin_src elisp
+(use-package helm-bibtex
+    :custom
+    (helm-bibtex-bibliography '("~/zotero.bib"))
+    (reftex-default-bibliography '("~/zotero.bib"))
+    (bibtex-completion-pdf-field "file")
+    :hook (Tex . (lambda () (define-key Tex-mode-map "\C-ch" 'helm-bibtex))))
+
+(use-package org-ref
+    :custom
+    (org-ref-default-bibliography "~/zotero.bib"))
+#+end_src
+* LaTeX settings & APA6
+#+begin_src elisp
+(defun org-export-latex-no-toc (depth)
+    (when depth
+      (format "%% Org-mode is exporting headings to %s levels.\n"
+              depth)))
+(setq org-export-latex-format-toc-function 'org-export-latex-no-toc)
+
+(add-to-list 'org-latex-classes
+               '("apa6"
+                 "\\documentclass{apa6}"
+                 ("\\section{%s}" . "\\section*{%s}")
+                 ("\\subsection{%s}" . "\\subsection*{%s}")
+                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+(setq org-latex-pdf-process
+    '("latexmk -pdflatex='pdflatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+#+end_src
+
+* Packages
+To run on linux:
+#+begin_example
+$ sudo apt install libpng-dev zlib1g-dev
+$ sudo apt install lib-poppler-glib-dev
+$ sudo apt install libpoppler-private-dev
+$ sudo apt install imagemagick
+#+end_example

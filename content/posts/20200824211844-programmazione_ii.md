@@ -1,11 +1,11 @@
 +++
 title = "Programmazione II"
 author = ["Daniel Biasiotto"]
+tags = ["university"]
 draft = false
 +++
 
 Prof: `Cattuto`
-:Computer_Science:
 
 
 ## Generici Vincolati {#generici-vincolati}
