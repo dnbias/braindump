@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       4d1f09d5-d1e9-472f-bb5f-3bf4fa745afe
+:END:
+#+title: Marvin Minsky
+#+date: [2022-06-03 Fri 20:59]
+#+filetags: author compsci

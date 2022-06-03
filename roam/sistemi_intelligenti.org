@@ -260,13 +260,14 @@ Nel caso di ricerca in grafi $h(n)$ deve essere anche *monotona consistente* per
 - $h(n) \le c(n,a,n') + h(n')$
 - $\textsc{nb}$ tutte le monotone sono ammissibili ma non vale il viceversa
 
-Inoltre é *ottimamente efficiente*
+Inoltre é *ottimamente efficiente* e completo
 - espande sempre il numero minimo di nodi possibili
 Ma $\textsc{space}=O(b^d)$
 
 Algoritmo implementato in ~Python~:
 #+caption: a-star.py
 #+begin_src python
+# Code snippet found on rosettacode.org
 F AStarSearch(start, end, barriers)
    F heuristic(start, goal)
       V D = 1
@@ -339,12 +340,12 @@ F AStarSearch(start, end, barriers)
 #+end_src
 **** Recursive Best-First Strategy
 =RBFS=
-- simile alla ricerca ricorsiva in profonditáv
+- simile alla ricerca ricorsiva in profondità
 - usa un /upper bound/ dinamico
   + ricorda la migliore alternativa fra i percorsi aperti
 - ha poche esigenze di spazio
-  + mantiene solo nodi del percorso corrente e fratelli
-- lo stesso nodo puó essere visitato piú volte se l'algoritmo ritorna a un percorso aperto
+  + mantiene solo nodi del percorso corrente e fratelli, in questo é migliore di =A*=
+- lo _stesso nodo può essere visitato più volte_ se l'algoritmo ritorna a un percorso aperto
 
 Intuitivamente:
 - procede come $A^{\star}$ fino a che la soluzione rispetta l'/upper bound/
@@ -352,11 +353,17 @@ Intuitivamente:
   + il cammino viene dimenticato, si cancella dalla memoria
   + é conservata la traccia nella sua radice del costo ultimo  stimato
 
+L'algoritmo ha 3 argomenti
+- $N$ nodo
+- $f(N)$ valore
+- $b$ upper bound
+  + inizialmente impostato a $+ \infty$
+
 =RBFS= é ottimo se l'euristica é ammissibile
-- $\textsc{Space} = O(b\cdot d)$
-- $\textsc{Time}$ dipende dall'accuratezza dell'euristica
+ \[\textsc{Space} = O(b\cdot d)\]
+$\textsc{Time}$ dipende dall'accuratezza dell'euristica.
 ** Euristiche
-La qualitá di un euristica puó essere calcolata computado il /branching factor effettivo/ $b^\star$
+La qualità di un euristica può essere calcolata computado il /branching factor effettivo/ $b^\star$
 - $N$ numero di nodi generati a partire da un nodo iniziale
 - $d$ profonditá della soluzione trovata
 \[N+1 = 1 + b^\star + (b^\star)^{2} + \cdots + (b^\star)^{d} \]
@@ -383,12 +390,18 @@ Si valuta la qualitá dell'euristica (sperimentalmente) con il /branching factor
 *Informazione* può essere
 - perfetta
 - imperfetta
-Effetti delle *scelte*
 - deterministici
 - stocastici
 
+Effetti delle *scelte*.
 La ricerca in questo ambito si basa su delle *strategie* basate su punteggi dati dagli eventi.
+In questo ambito si studiano spesso giochi.
+#+begin_quote
+I giochi non vengono scelti perché sono chiari e semplici, ma perché ci danno la massima complessità con le minime strutture iniziali. $\hfill$  [[id:4d1f09d5-d1e9-472f-bb5f-3bf4fa745afe][Marvin Minsky]] [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]]
+#+end_quote
+
 Alcuni giochi sono anche a /somma zero/.
+
 *** Teoria delle Decisioni
 Dall'Economia, poi traslata in algoritmi nell'ambito dell'IA.
 - *approccio maximax* - ottimistico

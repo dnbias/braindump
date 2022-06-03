@@ -944,3 +944,5 @@ build content/posts/where_to_put_tex_sty_files.md: org2md roam/where_to_put_tex_
 build content/posts/sicurezza_informatica.md: org2md roam/sicurezza_informatica.org
 
 build content/posts/sistemi_intelligenti.md: org2md roam/sistemi_intelligenti.org
+
+build content/posts/marvin_minsky.md: org2md roam/marvin_minsky.org

@@ -364,7 +364,7 @@ Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente
 -   \\(h(n) \le c(n,a,n') + h(n')\\)
 -   \\(\textsc{nb}\\) tutte le monotone sono ammissibili ma non vale il viceversa
 
-Inoltre é **ottimamente efficiente**
+Inoltre é **ottimamente efficiente** e completo
 
 -   espande sempre il numero minimo di nodi possibili
 
@@ -373,6 +373,7 @@ Ma \\(\textsc{space}=O(b^d)\\)
 Algoritmo implementato in `Python`:
 
 ```python
+# Code snippet found on rosettacode.org
 F AStarSearch(start, end, barriers)
    F heuristic(start, goal)
       V D = 1
@@ -454,12 +455,12 @@ F AStarSearch(start, end, barriers)
 
 `RBFS`
 
--   simile alla ricerca ricorsiva in profonditáv
+-   simile alla ricerca ricorsiva in profondità
 -   usa un _upper bound_ dinamico
     -   ricorda la migliore alternativa fra i percorsi aperti
 -   ha poche esigenze di spazio
-    -   mantiene solo nodi del percorso corrente e fratelli
--   lo stesso nodo puó essere visitato piú volte se l'algoritmo ritorna a un percorso aperto
+    -   mantiene solo nodi del percorso corrente e fratelli, in questo é migliore di `A*`
+-   lo <span class="underline">stesso nodo può essere visitato più volte</span> se l'algoritmo ritorna a un percorso aperto
 
 Intuitivamente:
 
@@ -468,15 +469,21 @@ Intuitivamente:
     -   il cammino viene dimenticato, si cancella dalla memoria
     -   é conservata la traccia nella sua radice del costo ultimo  stimato
 
-`RBFS` é ottimo se l'euristica é ammissibile
+L'algoritmo ha 3 argomenti
 
--   \\(\textsc{Space} = O(b\cdot d)\\)
--   \\(\textsc{Time}\\) dipende dall'accuratezza dell'euristica
+-   \\(N\\) nodo
+-   \\(f(N)\\) valore
+-   \\(b\\) upper bound
+    -   inizialmente impostato a \\(+ \infty\\)
+
+`RBFS` é ottimo se l'euristica é ammissibile
+ \\[\textsc{Space} = O(b\cdot d)\\]
+\\(\textsc{Time}\\) dipende dall'accuratezza dell'euristica.
 
 
 ### Euristiche {#euristiche}
 
-La qualitá di un euristica puó essere calcolata computado il _branching factor effettivo_ \\(b^\star\\)
+La qualità di un euristica può essere calcolata computado il _branching factor effettivo_ \\(b^\star\\)
 
 -   \\(N\\) numero di nodi generati a partire da un nodo iniziale
 -   \\(d\\) profonditá della soluzione trovata
@@ -515,13 +522,15 @@ Si valuta la qualitá dell'euristica (sperimentalmente) con il _branching factor
 
 -   perfetta
 -   imperfetta
-
-Effetti delle **scelte**
-
 -   deterministici
 -   stocastici
 
+Effetti delle **scelte**.
 La ricerca in questo ambito si basa su delle **strategie** basate su punteggi dati dagli eventi.
+In questo ambito si studiano spesso giochi.
+
+> I giochi non vengono scelti perché sono chiari e semplici, ma perché ci danno la massima complessità con le minime strutture iniziali. \\(\hfill\\)  [Marvin Minsky]({{< relref "marvin_minsky.md" >}}) [#cit]({{< relref "20210604132601-cit.md" >}})
+
 Alcuni giochi sono anche a _somma zero_.
 
 
