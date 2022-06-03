@@ -6,10 +6,13 @@ tags = ["university", "thesis", "compsci"]
 draft = false
 +++
 
+\pagebreak
+
+
 ## Introduzione {#introduzione}
 
-Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilitá di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
-Per esempio é possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
+Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilità di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
+É possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
 
 -   crittografia
 -   problemi di ricerca
@@ -20,11 +23,59 @@ Per esempio é possibile che in futuro algoritmi quantistici possano sostituire 
 
 Ovviamente il calcolo classico non verrá abbandonato, l'approccio classico e quello quantistico differiscono nelle loro forze e debolezze.
 Mentre gli attuali computer diventano sempre piú veloci e le tecniche industriali permettono miniaturizzazioni sempre maggiori gli hardware quantistici rimangono estremamenti complicati da costruire e distribuire.
-Il modo attualmente piú congeniale di utilizzare questi hardware rimane quello della condivisione di risorse attraverso le tecnologie di _cloud computing_.
+Il modo attualmente piú congeniale di utilizzare questi hardware per effettuare testing di software rimane quello della condivisione di risorse attraverso le tecnologie di _cloud computing_.
 
-Ma questo non significa che non sia possibile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
-Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in in remoto.
+Ma questo non significa che non sia possibile o non sia utile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
+Un importante punto di forza di questa tecnologia é che ci aspettiamo che i computer quantistici in generale siano molto più lenti di computer classici ma che le risorse di cui dispongono nel contesto di alcune classi di  problemi da risolvere scalino diversamente, in particolare permettendo per i problemi giunti di superare di gran lunga la _performance_ dei migliori algoritmi classici.
+D'altra parte non ci si deve aspettare che questa sia una soluzione perfetta, ci sono problemi che rimarranno difficili da risolvere nonostante le nuove possibilità della computazione quantistica.
+
+Per molto tempo l'approccio a questo campo é rimasto accessibile solo a matematici e fisici con le grandi conoscenze specifiche necessarie a comprendere appieno la meccanica quantistica e le sue sfumature tecniche.
+Questo sta cambiando velocemente negli ultimi anni da quando l'industria ha cominciato a sviluppare strumenti e piattaforme che permettano a nuovi sviluppatori di interagire e imparare in quest'ambito astraendo dalla maggior parte della complessitá della teoria matematica alla base di questo modello.
+
+
+### Definizione di un Computer Quantistico {#definizione-di-un-computer-quantistico}
+
+Per prima cosa definiamo un _computer_ come uno strumento che prendendo dei dati in input esegue delle operazioni su questi dati.
+I _computer_ che conosciamo e utiliziamo attualmente possono e sono definiti nei confini teorici della fisica classica, ovvero attraverso le leggi di Newton e l'elettromagnetismo.
+Data questa definizione é semplice definire un _computer quantistico_ come uno strumento che prendendo dei dati in input esegue delle operazioni si questi dati con processi descrivibili solo utilizzando i concetti della fisica quantistica.
+Detto questo la differenza tra un computer classico e un computer quantistico é la stessa che esiste tra la fisica classica e quella quantistica. La principale differenza é la scala su cui operano in termini di dimensioni e energia.
+I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui é piú semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle `CPU` che comunemente utiliziamo.
+
+
+### Limiti Hardware {#limiti-hardware}
+
+Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in remoto.
+Questo é necessario in quanto i requisiti e limiti tecnici della costruzione di un calcolatore quantistico sono estremamente complessi e richiedono ambienti fisici attualmente incompatibili con un utilizzo desktop.
+Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile ai segnali elettromagnetici esterni, per ovviare a problemi di interferenza é necessario mantenere l'hadware in temperature vicine allo zero termico (\\(0\text{K}\\) o \\(-273.15^{\circ}\text{C}\\)).
+Queste condizioni non sono ovviamente replicabili in un ambiente non strettamente controllato e isolato.
+
+Dati questi limiti é facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto, servizi come `Amazon Quantum` renderanno sempre più facilmente disponibile l'accesso a questi strumenti.
+
 I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilitá di essere testato in maniera indiscriminata su un qualsiasi di questi.
+
+
+### Utilizzi della tecnologia {#utilizzi-della-tecnologia}
+
+I computer quantistici offrono nuove possibilità nella risoluzione di diverse classi di problemi, la ricerca in questo campo ha trovato alcuni esempi di algoritmi che utilizzando le proprietà particolari di questo approccio per sviluppare un vantaggio nei confronti dell'approccio classico.
+
+Ad esempio:
+
+-   L'**algoritmo di Grover** effettua una ricerca in una lista di \\(N\\) elementi in \\(O(\sqrt{N})\\)
+-   L'**algoritmo di Shor** fattorizza velocemente grandi numeri, in particolare permette di fattorizzare con un grado di errore arbitrariamente piccolo un numero polinomiale di passi rispetto alla lunghezza in bit dell'input
+-   L'**algoritmo di Deutsch-Jozsa** verifica se una funzione é costante o bilanciata in \\(O(1)\\)
+-   La stima di una somma di Gauss, un tipo di somma esponenziale, con precisione polinomiale e in tempo polinomiale contro il tempo esponenziale degli algoritmi classici
+-   La valutazioni di formule booleane complesse può essere velocizzata tramite un approccio quantistico
+-   Questi computer permettono di simulare sistemi quantistici permettendone uno studio più approfondito
+-   La generazioni di numeri casuale é un'importante componente della crittologia e utilizzando tecniche quantistiche é possibile generarne che siano davvero casuali e non piú pseudo-casuali come necessario in computer classici
+
+Questi sono risultati importanti e in particolare l'algoritmo di Shor pone dei dubbi sulla sicurezza degli attuali protocolli crittografici che si basano sulla difficolta computazionale della fattorizzazione di grandi numeri interi.
+Se tale algoritmo fosse facilmente eseguibile significherebbe che un attaccante facilmente violare questi protocolli di sicurezza correntemente alla base della comunicazione via Intenet.
+
+Rimane difficile trovare possibili algoritmi quantistici che diano un vantaggio computazionale nel campo dell'apprendimento automatico dove é fondamentale l'accesso casuale a una grande quantità di dati.
+
+In generale é più probabile che un problema che abbia una piccola mole di dati in entrata e in uscita ma una grande quantità di manipolazioni per arrivare all'output sia un buon candidato per l'utilizzo di computer quantistici.
+
+\pagebreak
 
 
 ## Ambiente {#ambiente}
@@ -57,7 +108,6 @@ $ conda activate qsharp-env
 
 L'esecuzione del software `Q#` puo' essere testato localmente predisponendo un ambiente di simulazione tramite il pacchetto `Python` chiamato `qsharp`.
 
-<a id="code-snippet--host.py"></a>
 ```python
 import qsharp
 from QsharpNamespace import Operation_One, Operation_Two
@@ -67,8 +117,39 @@ Operation_One.simulate(par1=var1)
 Operation_Two.simulate(par2=var1,par3=5)
 ```
 
+<div class="src-block-caption">
+  <span class="src-block-number">Code Snippet 1:</span>
+  host.py
+</div>
+
 Ad esempio come nel listato qui sopra utiliziamo uno script `host.py` per creare un ambiente di simulazione per poter eseguire le operazioni `Q#` definite in `Operation_One` e `Operation_Two`.
 Il pacchetto automaticamente va a cercare nella directory locale le definizioni.
+
+```python
+import qsharp
+
+prepare_qubit = qsharp.compile("""
+    open Microsoft.Quantum.Diagnostics;
+
+    operation PrepareQubit(): Unit {
+        using (qubit = Qubit()) {
+            DumpMachine();
+        }
+    }
+""")
+
+if __name__ == "__main__":
+    prepare_qubit.simulate()
+```
+
+<div class="src-block-caption">
+  <span class="src-block-number">Code Snippet 2:</span>
+  qsharp-interop.py
+</div>
+
+Un esempio più complesso può essere quello  definito in `qsharp-inteop.py` dove definiamo direttamente _inline_ il contenuto del codice `Q#`  che il `package qsharp` compila e simula.
+
+\pagebreak
 
 
 ## Oracoli {#oracoli}
@@ -151,7 +232,7 @@ Per quanto riguarda il caso peggiore tutte le nostre interrogazioni daranno lo s
 In quanto il numero di input possibili é \\(2^{n}\\) questo significa che saranno necessarie \\(2^{n-1}+1\\) interrogazioni per essere certi che \\(f(x)\\) sia costante nel caso peggiore.
 
 
-### La Soluzione Quantica {#la-soluzione-quantica}
+### La Soluzione Quantistica {#la-soluzione-quantistica}
 
 Tramite la computazione quantica é possibile risolvere questo problema con un'unica chiamata della funzione \\(f(x)\\).
 Questo a patto che la funzione \\(f\\) sia implementata come un oracolo quantico, che mappi:
@@ -165,7 +246,9 @@ I passi dell'algoritmo in particolare sono:
 4.  a questo punto il secondo registro puó essere ignorato, riapplica `Hadamard` al primo registro
 5.  misura il primo registro, questa risulta \\(1\\) per \\(f(x)\\) costante e \\(0\\) altrimenti nel caso bilanciato
 
-{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 2: </span>i passi dell'algoritmo in forma di circuito" >}}
+{{< figure src="../media/img/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 2: </span>i passi dell'algoritmo in forma di circuito" >}}
+
+\pagebreak
 
 
 #### single-bit Deutsch-Jozsa {#single-bit-deutsch-jozsa}
@@ -211,4 +294,18 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
 }
 ```
 
+\pagebreak
+
+
+## Entanglement e Teletrasporto quantistico {#entanglement-e-teletrasporto-quantistico}
+
+\pagebreak
+
+
+## Conclusioni {#conclusioni}
+
+\pagebreak
+
 [^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\) o `XOR`
+
+    \pagebreak

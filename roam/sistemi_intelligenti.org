@@ -287,7 +287,7 @@ Si valuta la qualitá dell'euristica (sperimentalmente) con il /branching factor
 - $b^\star$ piccolo $\rightarrow$ euristica efficiente
 
 ** Ricerca Con Avversari
-*Informazione* puo' essere
+*Informazione* può essere
 - perfetta
 - imperfetta
 Effetti delle *scelte*

@@ -759,8 +759,6 @@ build content/posts/shawn_wang.md: org2md roam/shawn_wang.org
 
 build content/posts/shut_up_and_calculate.md: org2md roam/shut_up_and_calculate.org
 
-build content/posts/sicurezza_informatica.md: org2md roam/sicurezza_informatica.org
-
 build content/posts/sincretismo.md: org2md roam/sincretismo.org
 
 build content/posts/sjw.md: org2md roam/sjw.org
@@ -935,8 +933,6 @@ build content/posts/apprendimento_supervisionato.md: org2md roam/apprendimento_s
 
 build content/posts/quantum_q_algorithms.md: org2md roam/quantum_q_algorithms.org
 
-build content/posts/sistemi_intelligenti.md: org2md roam/sistemi_intelligenti.org
-
 build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
 
 build content/posts/writing_academic_papers_w_emacs.md: org2md roam/writing_academic_papers_w_emacs.org
@@ -944,3 +940,7 @@ build content/posts/writing_academic_papers_w_emacs.md: org2md roam/writing_acad
 build content/posts/academic_writing_workflow_w_emacs.md: org2md roam/academic_writing_workflow_w_emacs.org
 
 build content/posts/where_to_put_tex_sty_files.md: org2md roam/where_to_put_tex_sty_files.org
+
+build content/posts/sicurezza_informatica.md: org2md roam/sicurezza_informatica.org
+
+build content/posts/sistemi_intelligenti.md: org2md roam/sistemi_intelligenti.org

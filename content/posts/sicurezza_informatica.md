@@ -132,7 +132,7 @@ Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piú
 3.  **Key Exchange**
     -   parts work together  to exchange a common secret key
 
-{{< figure src="/ox-hugo/public-key-applications.jpg" >}}
+{{< figure src="../media/img/public-key-applications.jpg" >}}
 
 
 ## Funzioni di Hash {#funzioni-di-hash}
@@ -158,7 +158,7 @@ Queste funzioni di hash sono utilizzate per:
 -   `intrusion detection`
 -   `virus detection`
 
-{{< figure src="/ox-hugo/secure-hash-code.jpg" >}}
+{{< figure src="../media/img/secure-hash-code.jpg" >}}
 
 La funzione di hash piú utilizzata in tempi recenti é stato il [Secure Hash Algorithm]({{< relref "secure_hash_algorithm.md" >}})
 
@@ -323,7 +323,7 @@ Una `DMZ` é una cosiddetta
     -   permette al mittente di decidere l'instradamento
     -   permette `IP` spoofing con `TCP` su `WAN`
 -   `ACL` - Access Control List
-    -   omonimo con sistema _Windows_, diversi
+    -   omonimo con sistema _Windows_, diversi contesti e usi
     -   lista di regole di accesso
 
 
