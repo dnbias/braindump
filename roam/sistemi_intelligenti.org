@@ -1236,7 +1236,7 @@ dove, ciclando su $i$:
 - nominatore: somma dei voti per la classe $y_{i}$
 - denominatore: divisione per peso calcolato sulla distanza
 
-#+attr_export: :width 300
+#+attr_export: :width 300x
 [[../static/ox-hugo/knn-algorithm.png]]
 ** Neural Network
 *** Perceptron
