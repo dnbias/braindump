@@ -272,7 +272,7 @@ Una =DMZ= é una cosiddetta
   + permette al mittente di decidere l'instradamento
   + permette =IP= spoofing con =TCP= su =WAN=
 - =ACL= - Access Control List
-  + omonimo con sistema /Windows/, diversi
+  + omonimo con sistema /Windows/, diversi contesti e usi
   + lista di regole di accesso
 ** Sofware Firewall
 - livello 5
