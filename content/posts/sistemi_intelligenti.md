@@ -152,12 +152,12 @@ una soluzione
 
 ### Problemi {#problemi}
 
-Un problema puó essere definito formalmente come una tupla di 4 elementi
+Un problema puó essere definito formalmente come una <span class="underline">tupla di 4 elementi</span>
 
--   Stato iniziale
--   Funzione successore
--   Test Obiettivo
--   Funzione del costo del cammino
+1.  Stato iniziale
+2.  Funzione successore
+3.  Test Obiettivo
+4.  Funzione del costo del cammino
 
 
 #### Aspirapolvere {#aspirapolvere}
@@ -187,7 +187,13 @@ Posizionare 8 regine su una scacchiera \\(8\times8\\) in modo che nessuna sia so
 -   generalizzabile con \\(N\\) regine su una scacchiera \\(N\times N\\)
 
 
-### Algoritmi {#algoritmi}
+### Spazio degli Stati {#spazio-degli-stati}
+
+Le caratteristiche di questi problemi sono:
+
+-   stati discreti
+-   effetto deterministico delle azioni
+-   dominio statico
 
 
 #### Ricerca non informata - Blind {#ricerca-non-informata-blind}
@@ -200,75 +206,89 @@ Costruiscono strutture dati proprie utilizzate nella soluzione di un problema
 Ogni nodo rappresenta uno stato, una soluzione é un particolare percorso dalla radice ad una foglia
 
 -   i nodi figli sono creati dalla funzione successore
-    -   questi sono creati mantenendo un puntatore al padre
+    -   questi sono creati mantenendo un puntatore al padre, in modo da risalire una volta individuata la soluzione
 
-Gli approcci sono valutati secondo
+Gli approcci sono **valutati** secondo
 
--   completezza
--   ottimalitá
--   complessitá temporale
--   complessitá spaziale
+-   **completezza**, garanzia di trovare una soluzione se esiste
+-   **ottimalità**,  garanzia di trovare una soluzione ottima[^fn:1]
+-   **complessità temporale**, tempo necessario per trovare una soluzione
+-   **complessità spaziale**, spazio necessario per effettuare la ricerca
+
+> **NB** \\(\quad\\) Lo studio della [Complessitá di un algoritmo]({{< relref "20210414192358-problems_algorithms.md#complessitá-di-un-algoritmo" >}}) é trattato anche in [Algoritmi e Strutture Dati]({{< relref "ASD.md" >}}) e [Calcolabilitá e Complessitá]({{< relref "20210921121153-calcolabilita_e_complessita.md" >}}).
 
 Gli alberi vengono esplorati tramite `Ricerca in Ampiezza` e `Ricerca in Profonditá`
 
 Nello studio di queste ricerche si considerano:
 
--   \\(d\\) profondita' minima del goal
--   \\(b\\) branching factor
+-   \\(d\\) profondità minima del _goal_
+-   \\(b\\) _branching factor_
 
-Un goal a meno passi dalla radice non da' garanzia di ottimalita', in quanto vanno considerati i costi non il numero di passi.
-Il costo e' una funzione monotono crescente in relazione alla profondita'.
+Un goal a meno passi dalla radice non dà garanzia di ottimalità, in quanto vanno considerati i costi non il numero di passi.
+Il costo per l'ottimalità é una funzione monotona crescente in relazione alla profondità.
 
 
 ##### Ricerca in Ampiezza {#ricerca-in-ampiezza}
 
-\\(O(b^{d+1})\\)
+-   completa a patto che \\(b,d\\) siano finiti
+-   ottima solo se il costo del cammino é \\(f\\) monotona crescente della profondità
 
--   complessitá sia spaziale che temporale
+\\[\textsc{time} =  \textsc{space} = O(b^{d+1})\\]
+
 -   esponenziale, non trattabile anche con \\(d\\) ragionevoli
 
 
 ##### Ricerca Costo Uniforme {#ricerca-costo-uniforme}
 
-Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero  di passi.
-La scoperta di un goal non porta alla terminazione della ricerca. Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello gia' trovato.
+Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero di passi.
+La scoperta di un goal non porta alla terminazione della ricerca.
+Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello già trovato.
 
-La ricerca puo' non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
+La ricerca può non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
 Quindi:
 \\(\text{costi} \ge \epsilon > 0\\)
 
 -   \\(\epsilon\\) costo minimo
+-   condizione necessaria per garantire ottimalità e completezza
 
-\\[O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
+\\[\textsc{time} = \textsc{space} = O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
 
 -   \\(C^{\*}\\) costo soluzione ottima
 
 
-##### Ricerca in Profonditá w/ Backtracking {#ricerca-in-profonditá-w-backtracking}
-
-Si producono successori su successori man mano, percorrendo in profondita' l'albero.
-In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi gia' percorsi.
-
--   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
--   piu' efficiente in utilizzo della memoria
-
-
-##### Ricerca in Profonditá w/o Backtracking {#ricerca-in-profonditá-w-o-backtracking}
+##### Ricerca in Profondità w/o Backtracking {#ricerca-in-profondità-w-o-backtracking}
 
 Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
 
--   viene utilizzato uno `stack` (`LIFO`)
+-   viene utilizzato uno `stack` (`LIFO`) per gestire la frontiera
+
+\\[\textsc{time} = O(b^{m})\\]
+\\[\textsc{space} = O(b \cdot m)\\]
+
+
+##### Ricerca in Profondità w/ Backtracking {#ricerca-in-profondità-w-backtracking}
+
+Si producono successori su successori man mano, percorrendo in profondità l'albero.
+In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi già percorsi.
+
+-   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
+-   più efficiente in utilizzo della memoria
+
+\\[\textsc{time} = O(b^{m})\\]
+\\[\textsc{space} = O(m)\\]
 
 
 ##### Iterative Deepening {#iterative-deepening}
 
-Ricerca a profonditá limitata in cui questa viene incrementata a ogni iterazione
+Ricerca a profondità limitata in cui questa viene incrementata a ogni iterazione
 
--   cerca di combinare ricerca in profonditá e in ampiezza
-    -   \\(\textsc{time}= O(b^d)\\)
-    -   \\(\textsc{space}= O(b\cdot d)\\)
-    -   completa
-    -   ottima quando il costo non é funzione decrescente delle profonditá
+-   ogni iterazione viene ricostruito l'albero di ricerca
+-   cerca di combinare ricerca in profondità e in ampiezza
+    -   completa con \\(b\\) finito
+    -   ottima quando il costo non é funzione decrescente delle profondità
+
+\\[\textsc{time}= O(b^d)\\]
+\\[\textsc{space}= O(b\cdot d)\\]
 
 
 ##### Ricerca Bidirezionale {#ricerca-bidirezionale}
@@ -282,22 +302,24 @@ Termina quando queste si incontrano a una intersezione.
 Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
 
 -   \\(\textsc{time}= O( b^{\frac{d}{2}})\\)
+    -   nel caso in cui le due ricerche si incontrino a metà
 
 
 #### Ricerca informata {#ricerca-informata}
 
-Si possiedono informazioni che permettono di identificare le strade piú promettenti
+Si possiedono informazioni che permettono di identificare le strade più promettenti
 
 -   in funzione del costo
 
 Questa informazione é chiamata **euristica**
-\\(h(n)\\): Il costo minimo stimato per raggiungere un nodo _preferito_ di \\(n\\)
 
-Una strategia é il mantenere la frontiera ordinata secondo una \\(f(n)\\) detta funzione di valutazione
+-   \\(h(n)\\): Il costo minimo stimato per raggiungere un nodo _goal_ da \\(n\\)
+
+Una strategia é il mantenere la frontiera ordinata secondo una \\(f(n)\\) detta _funzione di valutazione_
 
 -   questa contiene a sua volta una componente \\(h(n)\\) spesso
--   in generale questa strategia é chiamata **best-first search**
-    -   famiglia di strategia (greedy, A\*, RBFS)
+-   in generale questa strategia é chiamata **best-first search**, il nodo più promettente é espanso per primo
+    -   si tratta di una famiglia di strategie (greedy, A\*, RBFS)
 
 
 ##### Greedy {#greedy}
@@ -331,12 +353,12 @@ I costi minimi reali sono definiti con:
 -   tutti i costi da un nodo a un successore sono positivi
 -   l'euristica \\(h(n)\\) é ammissibile
 
-**Ammissibilitá**
+**Ammissibilità**
 
 -   \\(\forall n: h(n) \le h^\star(n)\\)
     -   ovvero l'euristica é ottimistica
 
-Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalitá
+Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalitá.
 
 -   vale una disuguaglianza triangolare
 -   \\(h(n) \le c(n,a,n') + h(n')\\)
@@ -347,6 +369,85 @@ Inoltre é **ottimamente efficiente**
 -   espande sempre il numero minimo di nodi possibili
 
 Ma \\(\textsc{space}=O(b^d)\\)
+
+Algoritmo implementato in `Python`:
+
+```python
+F AStarSearch(start, end, barriers)
+   F heuristic(start, goal)
+      V D = 1
+      V D2 = 1
+      V dx = abs(start[0] - goal[0])
+      V dy = abs(start[1] - goal[1])
+      R D * (dx + dy) + (D2 - 2 * D) * min(dx, dy)
+
+   F get_vertex_neighbours(pos)
+      [(Int, Int)] n
+      L(dx, dy) [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
+         V x2 = pos[0] + dx
+         V y2 = pos[1] + dy
+         I x2 < 0 | x2 > 7 | y2 < 0 | y2 > 7
+            L.continue
+         n.append((x2, y2))
+      R n
+
+   F move_cost(a, b)
+      L(barrier) @barriers
+         I b C barrier
+            R 100
+      R 1
+
+   [(Int, Int) = Int] G
+   [(Int, Int) = Int] f
+
+   G[start] = 0
+   f[start] = heuristic(start, end)
+
+   Set[(Int, Int)] closedVertices
+   V openVertices = Set([start])
+   [(Int, Int) = (Int, Int)] cameFrom
+
+   L openVertices.len > 0
+      (Int, Int)? current
+      V currentFscore = 0
+      L(pos) openVertices
+         I current == N | f[pos] < currentFscore
+            currentFscore = f[pos]
+            current = pos
+
+      I current == end
+         V path = [current]
+         L current C cameFrom
+            current = cameFrom[current]
+            path.append(current)
+         path.reverse()
+         R (path, f[end])
+
+      openVertices.remove(current)
+      closedVertices.add(current)
+
+      L(neighbour) get_vertex_neighbours(current)
+         I neighbour C closedVertices
+            L.continue
+         V candidateG = G[current] + move_cost(current, neighbour)
+
+         I neighbour !C openVertices
+            openVertices.add(neighbour)
+         E I candidateG >= G[neighbour]
+            L.continue
+
+         cameFrom[neighbour] = current
+         G[neighbour] = candidateG
+         V H = heuristic(neighbour, end)
+         f[neighbour] = G[neighbour] + H
+
+   X RuntimeError(‘A* failed to find a solution’)
+```
+
+<div class="src-block-caption">
+  <span class="src-block-number">Code Snippet 1:</span>
+  a-star.py
+</div>
 
 
 ##### Recursive Best-First Strategy {#recursive-best-first-strategy}
@@ -408,7 +509,7 @@ Si valuta la qualitá dell'euristica (sperimentalmente) con il _branching factor
 -   \\(b^\star\\) piccolo \\(\rightarrow\\) euristica efficiente
 
 
-### Ricerca Con Avversari {#ricerca-con-avversari}
+### Ricerca in Spazi con Avversari {#ricerca-in-spazi-con-avversari}
 
 **Informazione** può essere
 
@@ -867,7 +968,7 @@ Un modello é una coppia: \\(M = \langle D,I \rangle\\)
 
 > Come nellla logica proposizionale, \\(M\\) é un modello per \\(\alpha\\) se questo é vero in \\(M\\).
 
-I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:1]
+I modelli di un insieme di formule del prim'ordine <span class="underline">possono essere infiniti</span>.[^fn:2]
 Un termine é `ground` quando non contiene variabili. (i.e. fondato)
 
 La base di conoscenza puó essere interrogata con `ask`
@@ -907,7 +1008,7 @@ La base di conoscenza puó essere interrogata con `ask`
         -   crea delle basi di conoscenza grandi con le regole
 -   `Lifting` delle regole di inferenza
     -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
-    -   **Modus Ponens Generalizzato**[^fn:2]
+    -   **Modus Ponens Generalizzato**[^fn:3]
 
 \\[\frac{p\_{1}',\cdots ,p\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
 
@@ -915,14 +1016,14 @@ La base di conoscenza puó essere interrogata con `ask`
 -   `Unification` (Martelli/Montanari)
     -   algoritmo di ricerca che date due formule trova la sostituzione \\(\theta\\) piú generale che le unifichi
 -   `Forward Chaining`
-    -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:3]
+    -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:4]
         -   in caso contrario il caso negativo puó non terminare
 -   `Backward Chaining`
     -   stesse considerazioni del `FC` ma piú efficiente
 
 <!--listend-->
 
--   `Lifting` della Risoluzione[^fn:4]
+-   `Lifting` della Risoluzione[^fn:5]
 
 \begin{align\*}
 \frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})}
@@ -932,7 +1033,7 @@ La base di conoscenza puó essere interrogata con `ask`
     1.  Eliminazione delle **implicazioni**
     2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
     3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
-    4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:5]
+    4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:6]
         -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
         -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
         -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
@@ -1007,7 +1108,7 @@ L'`ontologia` é una forma piú generale delle `tassonomie`
 Nello stesso dominio:
 
 1.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">identiche</span>; sono due copie dello stesso file
-2.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">equivalenti</span>; condividono vocabolario e proprietá ma sono espresse in linguaggi diversi[^fn:6]
+2.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">equivalenti</span>; condividono vocabolario e proprietá ma sono espresse in linguaggi diversi[^fn:7]
 3.  \\(O\_{1}\\) estende \\(O\_{2}\\); vocabolari e proprietá di \\(O\_{2}\\) sono preservati in \\(O\_{1}\\) ma non viceversa
 4.  `Weakly-Translatable`
     -   non si introducono inconsistenze
@@ -1693,9 +1794,10 @@ L'apprendimento nel `MLP` si puó sviluppare in 2 casi
         -   l'errore di questo livello dipende dall'errore fatto negli errori piú profondi
         -   **backpropagation** o **retropropagazione dell'errore**
 
-[^fn:1]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
-[^fn:2]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti
-[^fn:3]: una `KB` senza funzioni
-[^fn:4]: \\(\Theta\\) unificatore di \\(l\_{i}\\) e \\(\lnot m\_{j}\\)
-[^fn:5]: esistenziali _in scope_ di universali
-[^fn:6]: i.e. `RDF` e `OWL`
+[^fn:1]: i.e. a costo minimo
+[^fn:2]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule
+[^fn:3]: **NB** nella parte sinistra e destra le \\(p\\) e \\(q\\) contengono variabili e/o costanti
+[^fn:4]: una `KB` senza funzioni
+[^fn:5]: \\(\Theta\\) unificatore di \\(l\_{i}\\) e \\(\lnot m\_{j}\\)
+[^fn:6]: esistenziali _in scope_ di universali
+[^fn:7]: i.e. `RDF` e `OWL`
