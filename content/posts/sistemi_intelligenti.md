@@ -563,7 +563,10 @@ Nella simulazione dell'albero di gioco si hanno i due attori
 
 L'algoritmo fa _venire a galla_ i costi _terminali_ dei rami del gioco, in quanto per guidare la scelta `Max` deve poter scegliere tra i nodi a se successivi.
 
-La funzione utilita' valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
+-   é completo in grafi finiti
+-   é ottimale se `Max` e `Min` giocano ottimalmente
+
+La funzione utilità valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
 \\(\text{minimax-value}(n)\\):
 
 -   se \\(n\\) _terminale_
@@ -607,7 +610,9 @@ def minValue(state):
 
 ###### Potatura alpha-beta {#potatura-alpha-beta}
 
-Si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
+-   [Handout MIT sull'argomento per approfondire](https://web.mit.edu/6.034/wwwbob/handout3-fall11.pdf)
+
+Per migliorare la complessità temporale dell'algoritmo si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
 La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
 
 -   \\(\alpha\\) e' il valore della migliore alternativa per `Max` nel percorso verso `state`
@@ -649,34 +654,35 @@ Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azio
 
 -   \\(\textsc{time} = O(b^{m/2})\\)
     -   nel caso migliore
-    -   se l'ordine e' sfavorevole e' possibile che non avvengano potature
+    -   se l'ordine é sfavorevole é possibile che non avvengano potature
+    -   comunque molto costoso
 
 Esistono tecniche di apprendimento per le _killer move_, il sistema si ricorda le _killer move_ passate e le cerca nelle successive applicazioni.
-Queste tecniche sono studiate in quanto la complessita' continua a essere troppo alta per applicazioni `RealTime`:
+Queste tecniche sono studiate in quanto la complessità continua a essere troppo alta per applicazioni `RealTime`:
 
 -   **trasposizioni**
     -   permutazioni dello stesso insieme di mosse
     -   mosse che portano allo stesso stato risultante
     -   vanno identificate ed evitate
 -   **classificazione stati di gioco**
-    -   per motivi di tempo vanno valutati come foglie nodi intermedi
+    -   per motivi di tempo vanno valutati come foglie nodi intermedi a un certo _cutoff_
     -   va valutata una situazione intermedia (_orizzonte_)
-        -   valutazione rispetto alla facilita' di raggiungere una vittoria
+        -   valutazione rispetto alla facilità di raggiungere una vittoria
         -   attraverso un classificatore sviluppato in precedenza
--   **quiescenza** dei nodi
+-   **quiescenza** dei nodi, concerne la <span class="underline">permanenza della negatività o positività della valutazione</span>
     -   se mantiene la propria valutazione bene nei continuo
     -   non ribalta la valutazione nel giro di poche mosse
 
 
-### Soddisfacimento di Vincoli {#soddisfacimento-di-vincoli}
+### Constraint Satisfaction Problems {#constraint-satisfaction-problems}
 
-`CSP` - Constraint Satisfaction Problems
+`CSP`
 
 -   serie di `variabili` di dati dominii
--   `vincolo`, una condizione
+-   `vincoli`, una condizioni
     -   é soddisfatto con una dato `assegnamento` che per essere una soluzione deve essere
-        1.  completo, tutte le variabili sono assegnate
-        2.  consistente, tutti i vincoli sono rispettati
+        1.  **completo**, tutte le variabili sono assegnate
+        2.  **consistente**, tutti i vincoli sono rispettati
 
 I problemi sono affrontati con approcci diversi in base alle caratteristiche del dominio (valori booleani/discreti/continui)
 
@@ -695,7 +701,7 @@ _Bruteforce_
 É estremamente semplice ma non é scalabile.
 
 
-##### Profonditá con Backtracking {#profonditá-con-backtracking}
+##### Profondità con Backtracking {#profondità-con-backtracking}
 
 Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni.
 Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
@@ -744,7 +750,6 @@ def RemoveInconsistentValues(xi,xj): # returns boolean
             Domain[xi].delete(x)
             removed = true
     return removed
-
 ```
 
 
@@ -933,7 +938,7 @@ Lineare nel numero di clausole
 -   ogni clausola é applicata al piú  una volta
 -   peró sono applicate clausole inutili per il _target_
 
-{{< figure src="../media/img/forward-chaining.jpg" >}}
+{{< figure src="/ox-hugo/forward-chaining.jpg" >}}
 
 
 ##### Backward Chaining {#backward-chaining}
@@ -943,7 +948,7 @@ Parte dalla formula da dimostare e va a ritroso
 -   piú efficiente del `Forward Chaining`
 -   meno che lineare
 
-{{< figure src="../media/img/backward-chaining.jpg" >}}
+{{< figure src="/ox-hugo/backward-chaining.jpg" >}}
 
 
 #### First Order Logic {#first-order-logic}
@@ -1713,11 +1718,11 @@ Struttura:
 \\[\text{net} = \sum\_{i=1}^{n} w\_{i}x\_{i}\\]
 \\[f(\text{net}) = \begin{cases}1 \quad \text{net}\ge \theta \\\ 0 \quad \text{altrimenti} \end{cases}\\]
 
-{{< figure src="../media/img/perceptron.png" caption="<span class=\"figure-number\">Figure 1: </span>definizione di un perceptron" >}}
+{{< figure src="/ox-hugo/perceptron.png" caption="<span class=\"figure-number\">Figure 1: </span>definizione di un perceptron" >}}
 
 Questa discontinuitá sulla soglia é stata sostituita successivamente da una sigmoide.
 \\[f(\text{net}) = \frac{1}{1 + e ^{-\alpha(\text{net}- \theta)}}\\]
-![](../media/img/sigmoid-curve.png)
+![](/ox-hugo/sigmoid-curve.png)
 
 Il percettrone codifica un _test lineare_. Delinea un iperpiano/iperspazio che divide lo spazio in due metá
 
@@ -1739,7 +1744,7 @@ I \\(w\_{j}\\) sono prodotti incrementalmente tramite questo processo e sono dep
 
 -   l'apprendimento si ferma quando i cambiamenti ai pesi rallentano
 
-{{< figure src="../media/img/perceptron-learning.jpg" caption="<span class=\"figure-number\">Figure 2: </span>processo di learning di un perceptron" >}}
+{{< figure src="/ox-hugo/perceptron-learning.jpg" caption="<span class=\"figure-number\">Figure 2: </span>processo di learning di un perceptron" >}}
 
 
 ##### Limiti {#limiti}
@@ -1754,7 +1759,7 @@ Rappresentazione dello `XOR`
 | 0 | 0 | -            |
 
 Non é risolvibile da un singolo perceptron, solo con tecniche piú sofisticate utilizzandone un altro.
-![](../media/img/perceptron-xor.png)
+![](/ox-hugo/perceptron-xor.png)
 
 
 #### Multilayer Perceptron {#multilayer-perceptron}
@@ -1773,7 +1778,7 @@ I dati viaggiano in un'unica direzione e é _pienamente connessa_
 
 -   tutti i neuroni di un livello sono collegati a tutti quelli dello strato successivo
 
-{{< figure src="../media/img/multilayer-perceptron.png" caption="<span class=\"figure-number\">Figure 3: </span>struttura di un multilayer perceptron" >}}
+{{< figure src="/ox-hugo/multilayer-perceptron.png" caption="<span class=\"figure-number\">Figure 3: </span>struttura di un multilayer perceptron" >}}
 
 I livelli di percettori _hidden_ possono identificare regioni dello spazio dei dati piú complesse
 

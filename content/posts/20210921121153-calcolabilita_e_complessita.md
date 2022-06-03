@@ -1,5 +1,5 @@
 +++
-title = "Calcolabilitá e Complessitá"
+title = "Calcolabilità e Complessità"
 author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
@@ -127,7 +127,7 @@ In questa simulazione sostanzialmente si simula in parallelo la macchina \\(M\\)
 Viceversa se una stringa appartiene ad \\(L\\) questa viene accettata in un numero finito di passi da \\(M\\), e quindi dato abbastanza tempo \\(E\\) la stamperá. Quindi \\(E\\) enumera il linguaggio \\(L\\).
 
 
-### Decidibilitá {#decidibilitá}
+### Decidibilità {#decidibilità}
 
 Per un `DFA` possiamo definire una `TM M` che lo simula e verifica l'accettazione o meno dell'Input
 [Decidable - Turing-recognizable](/ox-hugo/decidable-recognizable.jpg)
@@ -537,7 +537,7 @@ Si dimostra che \\(\textsc{Wang}\\) non é positivamente decidibile in quanto
         -   se un programma accetta sempre
 
 
-### Complessitá Temporale {#complessitá-temporale}
+### Complessità Temporale {#complessità-temporale}
 
 Trattata nel corso di Algoritmi: [Complessitá di un algoritmo]({{< relref "20210414192358-problems_algorithms.md#complessitá-di-un-algoritmo" >}})
 Per lo studio della complessitá consideriamo la <span class="underline">Macchina di Turing</span> (1 registro)
@@ -754,7 +754,7 @@ Si dimostra facilmente che questo é \\(\textsc{np}\\) definendone un verificato
 La prova procede per riduzione polinomiale da \\(\text{3SAT}\\) a \\(\textsc{Subset-Sum}\\), convertendo elementi e strutture del problema che rappresentano variabili e clausole booleane.
 
 
-### Complessitá Spaziale {#complessitá-spaziale}
+### Complessità Spaziale {#complessità-spaziale}
 
 `8.1`
 \\(\textsc{\textbf{definition}}\\)  Data la `TM` \\(M\\) che termina sempre. Si dice _complessitá spaziale_ di \\(M\\) la funzione
