@@ -441,7 +441,7 @@ Uno dei difetti di questo approccio é il =Thrashing=, riconsiderando assegnamen
 
 **** Forward Checking
 Approccio locale di propagazione della conoscenza.
-Si propagano le scelte delle variabile ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
+Si propagano le scelte delle variabili ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
 
 **** AC-3
 =Arc Consistency= - McWorth
@@ -1235,6 +1235,9 @@ dove, ciclando su $i$:
 - $x'$ \(n\)-tupla da classificare
 - nominatore: somma dei voti per la classe $y_{i}$
 - denominatore: divisione per peso calcolato sulla distanza
+
+#+attr_export: :width 300
+[[../static/ox-hugo/knn-algorithm.png]]
 ** Neural Network
 *** Perceptron
 Prima proposta di /modello di neurone artificiale/
