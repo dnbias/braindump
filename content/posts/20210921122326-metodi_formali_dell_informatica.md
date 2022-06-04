@@ -20,6 +20,12 @@ draft = false
 
 ## Teoria {#teoria}
 
+I linguaggi sono definibili come sistemi formali, composti di
+
+-   alfabeto di simboli
+-   espressioni ben formate
+-   regole di inferenza
+
 
 ### Metodi Formali {#metodi-formali}
 
@@ -299,7 +305,7 @@ allora \\(aval \\: as = aval \\: as^{'}\\)
 Se \\(s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state\\)
 
 
-###### Lemma di Sostituzione {#lemma-di-sostituzione}
+##### Lemma di Sostituzione {#lemma-di-sostituzione}
 
 \\(aval \\: (a[a^{'}/n])s = aval \\: a \\: s [x\rightarrow aval \\: a^{'}\\: s]\\)
 
@@ -370,7 +376,7 @@ Sistema formale:
 \\(\frac{(c\_{1},s\_{1}) \implies t\_{1}\cdots (c\_{n},s\_{n})\implies t\_{n}}{(c\_{n+1},s\_{n+1})\implies t\_{n+1}}\\)
 
 
-###### Regole {#regole}
+##### Regole {#regole}
 
 -   Skip \\(\frac{}{(SKIP,s)\implies s}\\)
 -   Ass \\(\frac{aval \\: a \\: s = n}{(n:= a,s)\implies s[x\rightarrow n]\\)

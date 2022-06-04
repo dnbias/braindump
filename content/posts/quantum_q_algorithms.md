@@ -9,6 +9,13 @@ draft = false
 \pagebreak
 
 
+## Metadata <span class="tag"><span class="export_md">export-md</span></span> {#metadata}
+
+-   Tags: [Quantum Computing]({{< relref "quantum_computing.md" >}}), [CalcCompl]({{< relref "20210921121153-calcolabilita_e_complessita.md" >}}), [Deutsch-Jozsa Algorithm]({{< relref "deutsch_jozsa_algorithm.md" >}})
+-   Sources: [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}}), [Medium: Quantum Basics](https://medium.com/a-bit-of-qubit/deutsch-jozsa-algorithm-quantum-computing-basics-708df8c4caf7), [Qiskit textbook](https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html)
+-   [PDF Version](/ox-hugo/quantum_q_algorithms.pdf)
+
+
 ## Introduzione {#introduzione}
 
 Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilità di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
@@ -21,37 +28,37 @@ Lo sviluppo di software quantistici si é confermato come un'area di grande inte
 -   computazione biologica
 -   chimica generativa
 
-Ovviamente il calcolo classico non verrá abbandonato, l'approccio classico e quello quantistico differiscono nelle loro forze e debolezze.
-Mentre gli attuali computer diventano sempre piú veloci e le tecniche industriali permettono miniaturizzazioni sempre maggiori gli hardware quantistici rimangono estremamenti complicati da costruire e distribuire.
-Il modo attualmente piú congeniale di utilizzare questi hardware per effettuare testing di software rimane quello della condivisione di risorse attraverso le tecnologie di _cloud computing_.
+Ovviamente il calcolo classico non verrà abbandonato, l'approccio classico e quello quantistico differiscono nelle loro forze e debolezze.
+Mentre gli attuali computer diventano sempre più veloci e le tecniche industriali permettono miniaturizzazioni sempre maggiori gli hardware quantistici rimangono estremamente complicati da costruire e distribuire.
+Il modo attualmente più congeniale di utilizzare questi hardware per effettuare testing di software rimane quello della condivisione di risorse attraverso le tecnologie di _cloud computing_.
 
 Ma questo non significa che non sia possibile o non sia utile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
 Un importante punto di forza di questa tecnologia é che ci aspettiamo che i computer quantistici in generale siano molto più lenti di computer classici ma che le risorse di cui dispongono nel contesto di alcune classi di  problemi da risolvere scalino diversamente, in particolare permettendo per i problemi giunti di superare di gran lunga la _performance_ dei migliori algoritmi classici.
 D'altra parte non ci si deve aspettare che questa sia una soluzione perfetta, ci sono problemi che rimarranno difficili da risolvere nonostante le nuove possibilità della computazione quantistica.
 
 Per molto tempo l'approccio a questo campo é rimasto accessibile solo a matematici e fisici con le grandi conoscenze specifiche necessarie a comprendere appieno la meccanica quantistica e le sue sfumature tecniche.
-Questo sta cambiando velocemente negli ultimi anni da quando l'industria ha cominciato a sviluppare strumenti e piattaforme che permettano a nuovi sviluppatori di interagire e imparare in quest'ambito astraendo dalla maggior parte della complessitá della teoria matematica alla base di questo modello.
+Questo sta cambiando velocemente negli ultimi anni da quando l'industria ha cominciato a sviluppare strumenti e piattaforme che permettano a nuovi sviluppatori di interagire e imparare in quest'ambito astraendo dalla maggior parte della complessità della teoria matematica alla base di questo modello.
 
 
 ### Definizione di un Computer Quantistico {#definizione-di-un-computer-quantistico}
 
 Per prima cosa definiamo un _computer_ come uno strumento che prendendo dei dati in input esegue delle operazioni su questi dati.
-I _computer_ che conosciamo e utiliziamo attualmente possono e sono definiti nei confini teorici della fisica classica, ovvero attraverso le leggi di Newton e l'elettromagnetismo.
+I _computer_ che conosciamo e utilizziamo attualmente possono e sono definiti nei confini teorici della fisica classica, ovvero attraverso le leggi di Newton e l'elettromagnetismo.
 Data questa definizione é semplice definire un _computer quantistico_ come uno strumento che prendendo dei dati in input esegue delle operazioni si questi dati con processi descrivibili solo utilizzando i concetti della fisica quantistica.
 Detto questo la differenza tra un computer classico e un computer quantistico é la stessa che esiste tra la fisica classica e quella quantistica. La principale differenza é la scala su cui operano in termini di dimensioni e energia.
-I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui é piú semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle `CPU` che comunemente utiliziamo.
+I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui é più semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle `CPU` che comunemente utilizziamo.
 
 
 ### Limiti Hardware {#limiti-hardware}
 
 Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in remoto.
 Questo é necessario in quanto i requisiti e limiti tecnici della costruzione di un calcolatore quantistico sono estremamente complessi e richiedono ambienti fisici attualmente incompatibili con un utilizzo desktop.
-Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile ai segnali elettromagnetici esterni, per ovviare a problemi di interferenza é necessario mantenere l'hadware in temperature vicine allo zero termico (\\(0\text{K}\\) o \\(-273.15^{\circ}\text{C}\\)).
+Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile ai segnali elettromagnetici esterni, per ovviare a problemi di interferenza é necessario mantenere l'hardware in temperature vicine allo zero termico (\\(0\text{K}\\) o \\(-273.15^{\circ}\text{C}\\)).
 Queste condizioni non sono ovviamente replicabili in un ambiente non strettamente controllato e isolato.
 
 Dati questi limiti é facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto, servizi come `Amazon Quantum` renderanno sempre più facilmente disponibile l'accesso a questi strumenti.
 
-I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilitá di essere testato in maniera indiscriminata su un qualsiasi di questi.
+I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilità di essere testato in maniera indiscriminata su un qualsiasi di questi.
 
 
 ### Utilizzi della tecnologia {#utilizzi-della-tecnologia}
@@ -66,10 +73,10 @@ Ad esempio:
 -   La stima di una somma di Gauss, un tipo di somma esponenziale, con precisione polinomiale e in tempo polinomiale contro il tempo esponenziale degli algoritmi classici
 -   La valutazioni di formule booleane complesse può essere velocizzata tramite un approccio quantistico
 -   Questi computer permettono di simulare sistemi quantistici permettendone uno studio più approfondito
--   La generazioni di numeri casuale é un'importante componente della crittologia e utilizzando tecniche quantistiche é possibile generarne che siano davvero casuali e non piú pseudo-casuali come necessario in computer classici
+-   La generazioni di numeri casuale é un'importante componente della crittologia e utilizzando tecniche quantistiche é possibile generarne che siano davvero casuali e non più pseudo-casuali come necessario in computer classici
 
-Questi sono risultati importanti e in particolare l'algoritmo di Shor pone dei dubbi sulla sicurezza degli attuali protocolli crittografici che si basano sulla difficolta computazionale della fattorizzazione di grandi numeri interi.
-Se tale algoritmo fosse facilmente eseguibile significherebbe che un attaccante facilmente violare questi protocolli di sicurezza correntemente alla base della comunicazione via Intenet.
+Questi sono risultati importanti e in particolare l'algoritmo di Shor pone dei dubbi sulla sicurezza degli attuali protocolli crittografici che si basano sulla difficoltà computazionale della fattorizzazione di grandi numeri interi.
+Se tale algoritmo fosse facilmente eseguibile significherebbe che un attaccante facilmente violare questi protocolli di sicurezza correntemente alla base della comunicazione via Internet.
 
 Rimane difficile trovare possibili algoritmi quantistici che diano un vantaggio computazionale nel campo dell'apprendimento automatico dove é fondamentale l'accesso casuale a una grande quantità di dati.
 
@@ -80,7 +87,7 @@ In generale é più probabile che un problema che abbia una piccola mole di dati
 
 ## Ambiente {#ambiente}
 
-Per lo sviluppo di software quantistici sono disponibili diversi ambienti e framework, tra i piú conosciuti troviamo **Microsoft Azure** con il proprio Quantum Development Kit (`QDK`) o l'ambiente di sviluppo di `IBM` **Qiskit**.
+Per lo sviluppo di software quantistici sono disponibili diversi ambienti e framework, tra i più conosciuti troviamo **Microsoft Azure** con il proprio Quantum Development Kit (`QDK`) o l'ambiente di sviluppo di `IBM` **Qiskit**.
 Altri _Software Development Kit_ che possono essere utilizzati per eseguire circuiti quantistici su prototipi di device quantistici o simulatori sono:
 
 -   Ocean
@@ -92,9 +99,9 @@ Altri _Software Development Kit_ che possono essere utilizzati per eseguire circ
 
 Molti di questi progetti sono open-source e sviluppati sulla base di `Python`.
 
-Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto era ció che era utilizzato dalla nostra fonte principale _Learn Quantum Computing with Python and Q#_.
+Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto era ciò che era utilizzato dalla nostra fonte principale _Learn Quantum Computing with Python and Q#_.
 
-L'ambiente di esecuzione `Q#` puó essere configurato sul editor `Visual Studio Code` tramite l'add-on proprietario di Microsoft.
+L'ambiente di esecuzione `Q#` può essere configurato sul editor `Visual Studio Code` tramite l'add-on proprietario di Microsoft.
 Quest'ultimo é disponibile solo sulla versione non `FOSS` del software, che é possibile installare tramite le repository opensource linux.
 
 In alternativa o anche parallelamente é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`. Questo con i kernel necessari installati, quindi l'ultima versione di `dotnet` disponibile.
@@ -106,7 +113,7 @@ $ conda create -n qsharp-env -c microsoft qsharp notebook
 $ conda activate qsharp-env
 ```
 
-L'esecuzione del software `Q#` puo' essere testato localmente predisponendo un ambiente di simulazione tramite il pacchetto `Python` chiamato `qsharp`.
+L'esecuzione del software `Q#` può essere testato localmente predisponendo un ambiente di simulazione tramite il pacchetto `Python` chiamato `qsharp`.
 
 ```python
 import qsharp
@@ -122,7 +129,7 @@ Operation_Two.simulate(par2=var1,par3=5)
   host.py
 </div>
 
-Ad esempio come nel listato qui sopra utiliziamo uno script `host.py` per creare un ambiente di simulazione per poter eseguire le operazioni `Q#` definite in `Operation_One` e `Operation_Two`.
+Ad esempio come nel listato qui sopra utilizziamo uno script `host.py` per creare un ambiente di simulazione per poter eseguire le operazioni `Q#` definite in `Operation_One` e `Operation_Two`.
 Il pacchetto automaticamente va a cercare nella directory locale le definizioni.
 
 ```python
@@ -154,7 +161,7 @@ Un esempio più complesso può essere quello  definito in `qsharp-inteop.py` dov
 
 ## Oracoli {#oracoli}
 
-Gli oracoli che utiliziamo per testare gli algoritmi definiti in seguito sono:
+Gli oracoli che utilizziamo per testare gli algoritmi definiti in seguito sono:
 
 <a id="code-snippet--oracles.qs"></a>
 ```c
@@ -211,12 +218,12 @@ L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quan
 L'algoritmo tratta la decisione di una funzione \\(f\\) booleana con \\(n\\) bit in input
 \\[f(\\{x\_{0},x\_{1},\cdots,x\_{n}\\}) \rightarrow 0\text{ o }1\\]
 
-Questa funzione su cui agisce l'algoritmo ha la proprietá di essere una di due forme:
+Questa funzione su cui agisce l'algoritmo ha la proprietà di essere una di due forme:
 
 -   costante
 -   bilanciata
 
-E quindi restituisca per tutti gli input \\(\\{x\_{0},x\_{1},\cdots,x\_{n}\\}\_{}\\) lo stesso risultato se costante oppure restituisca _esattamente_ \\(0\\) per metá degli input e \\(1\\) per metá degli input.
+E quindi restituisca per tutti gli input \\(\\{x\_{0},x\_{1},\cdots,x\_{n}\\}\_{}\\) lo stesso risultato se costante oppure restituisca _esattamente_ \\(0\\) per metà degli input e \\(1\\) per metà degli input.
 
 
 ### La Soluzione Classica {#la-soluzione-classica}
@@ -228,7 +235,7 @@ Per esempio si hanno due chiamate:
 
 Dato che é assunto che \\(f\\) é _garantita_ essere costante oppure bilanciata questi risultati ci dimostrano \\(f\\) come bilanciata.
 
-Per quanto riguarda il caso peggiore tutte le nostre interrogazioni daranno lo stesso output, decidere in modo certo che \\(f\\) sia costante necessita di metá piú uno interrogazioni.
+Per quanto riguarda il caso peggiore tutte le nostre interrogazioni daranno lo stesso output, decidere in modo certo che \\(f\\) sia costante necessita di metà più uno interrogazioni.
 In quanto il numero di input possibili é \\(2^{n}\\) questo significa che saranno necessarie \\(2^{n-1}+1\\) interrogazioni per essere certi che \\(f(x)\\) sia costante nel caso peggiore.
 
 
@@ -243,10 +250,10 @@ I passi dell'algoritmo in particolare sono:
 1.  prepara 2 registri di `qubit`, il primo di \\(n\\) `qubit` inizializzato a \\(| 0 \rangle\\) e il secondo di un singolo `qubit` inizializzato a \\(| 1\rangle\\)
 2.  applica `Hadamard` a entrambi i registri
 3.  applica l'oracolo quantico
-4.  a questo punto il secondo registro puó essere ignorato, riapplica `Hadamard` al primo registro
+4.  a questo punto il secondo registro può essere ignorato, riapplica `Hadamard` al primo registro
 5.  misura il primo registro, questa risulta \\(1\\) per \\(f(x)\\) costante e \\(0\\) altrimenti nel caso bilanciato
 
-{{< figure src="../media/img/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 2: </span>i passi dell'algoritmo in forma di circuito" >}}
+{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 2: </span>i passi dell'algoritmo in forma di circuito" >}}
 
 \pagebreak
 
