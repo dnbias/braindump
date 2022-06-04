@@ -14,6 +14,10 @@
 - Testo:
   + [[id:ca905cae-fdf3-421c-a255-ec32435ef818][Programming Language Foundation in Agda]]
 * Teoria
+I linguaggi sono definibili come sistemi formali, composti di
+- alfabeto di simboli
+- espressioni ben formate
+- regole di inferenza
 ** Metodi Formali
 Derivano dalla logica-matematica
 - Chompsky - Teoria delle Grammatiche
@@ -227,7 +231,7 @@ $a[a^{'}/n]$ intendiama la _sostituzione di x con a' in a_
 
 *Modifica delle variabili*
 Se $s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state$
-***** Lemma di Sostituzione
+**** Lemma di Sostituzione
 $aval \: (a[a^{'}/n])s = aval \: a \: s [x\rightarrow aval \: a^{'}\: s]$
 
 *** Booleani
@@ -277,7 +281,7 @@ $(c,s,t) \rightarrow (c,s) \implies t \in bool$
 Sistema formale:
 $\frac{(c_{1},s_{1}) \implies t_{1}\cdots (c_{n},s_{n})\implies t_{n}}{(c_{n+1},s_{n+1})\implies t_{n+1}}$
 
-***** Regole
+**** Regole
 - Skip $\frac{}{(SKIP,s)\implies s}$
 - Ass $\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]$
 - Comp $\frac{(c_{1},s)\implies s' \quad (c_{2},s')\implies t}{(c_{1};c_{2},s)\implies t}$
