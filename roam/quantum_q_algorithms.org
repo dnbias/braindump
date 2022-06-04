@@ -131,7 +131,7 @@ Un esempio più complesso può essere quello  definito in ~qsharp-inteop.py~ dov
 $\pagebreak$
 * Oracoli
 Gli oracoli che utilizziamo per testare gli algoritmi definiti in seguito sono:
-#+name: oracles.qs
+#+caption: oracles.qs
 #+Begin_src c
 operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
   }
@@ -182,7 +182,7 @@ In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate
 
 $\pagebreak$
 * Algoritmo di Deutsch-Jozsa
-L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantico. Spingendo la ricerca in questa direzione per determinati problemi.
+L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantistico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantistico. Spingendo la ricerca in questa direzione per determinati problemi.
 
 L'algoritmo tratta la decisione di una funzione $f$ booleana con $n$ bit in input
 \[f(\{x_{0},x_{1},\cdots,x_{n}\}) \rightarrow 0\text{ o }1\]
@@ -205,15 +205,15 @@ Per quanto riguarda il caso peggiore tutte le nostre interrogazioni daranno lo s
 In quanto il numero di input possibili é $2^{n}$ questo significa che saranno necessarie $2^{n-1}+1$ interrogazioni per essere certi che $f(x)$ sia costante nel caso peggiore.
 
 ** La Soluzione Quantistica
-Tramite la computazione quantica é possibile risolvere questo problema con un'unica chiamata della funzione $f(x)$.
-Questo a patto che la funzione $f$ sia implementata come un oracolo quantico, che mappi:
+Tramite la computazione quantistica é possibile risolvere questo problema con un'unica chiamata della funzione $f(x)$.
+Questo a patto che la funzione $f$ sia implementata come un oracolo quantistico, che mappi:
 $|x\rangle | y \rangle$ a $| x \rangle |y \oplus f(x) \rangle$ [fn:oplus]
 
 
 I passi dell'algoritmo in particolare sono:
 1. prepara 2 registri di =qubit=, il primo di $n$ =qubit= inizializzato a $| 0 \rangle$ e il secondo di un singolo =qubit= inizializzato a $| 1\rangle$
 2. applica ~Hadamard~ a entrambi i registri
-3. applica l'oracolo quantico
+3. applica l'oracolo quantistico
 4. a questo punto il secondo registro può essere ignorato, riapplica ~Hadamard~ al primo registro
 5. misura il primo registro, questa risulta $1$ per $f(x)$ costante e $0$ altrimenti nel caso bilanciato
 
