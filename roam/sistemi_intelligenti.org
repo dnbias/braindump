@@ -15,10 +15,10 @@
 - *Automazione*,
 - *Autonomia*,
 ** Automazione
-Campo in cui l'informatica piú in generale viene applicata
+Campo in cui l'informatica più in generale viene applicata
 - automazione del calcolo
 - automazione contabile
-- automiazione della ricerca di informazione, motori di ricerca
+- automazione della ricerca di informazione, motori di ricerca
 
 Tratta di programmare un supporto a fare /ogni passo/, applicabile in domini fortemente ripetitivi
 ** Autonomia
@@ -28,7 +28,7 @@ Svolta da un agente artificiale che risolve un compito
 
 Utile nei problemi:
 - non deterministici
-- in cui c'é molteplicitá di soluzioni
+- in cui c'è molteplicità di soluzioni
 - con dati di natura simbolica
 - si ha una conoscenza ampia e completa
 - dove l'informazione é parzialmente strutturata
@@ -38,7 +38,7 @@ Output attesi $\implies$ comprensione? [[id:8c582ee0-1194-47b7-b6c9-9e46adaa60c7
 - test per definire se un computer é intelligente, o se un programma lo é
   + in linguaggio naturale
 - per T lo é quando inganna l'uomo, imitando il comportamento umano
-- un computer che deve passare il test non eseguirá gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacitá di un umano
+- un computer che deve passare il test non eseguirà gli ordini direttamente, in quanto questi vanno filtrati rispetto alle capacita di un umano
 - =The Imitation Game=
 ** Captcha
 =Completely Automated Public Turing-test to tell Computers and Humans Apart=
@@ -56,47 +56,47 @@ L'agente é immerso in un ambiente e svolge in ciclo esecutivo:
 3. Agisce
 
 L'ambiente definisce cosa e' efficace e cosa non lo e'. questo in base agli /attuatori/ degli agenti possono essere posti in questo ambiente.
-L'ambiente, in base a come si evolve nel tempo della percezione e deliberazione, puo' essere:
+L'ambiente, in base a come si evolve nel tempo della percezione e deliberazione, può essere:
 - statico
 - dinamico
 
-Inoltre si puo' distinguere un ambiente:
+Inoltre si può distinguere un ambiente:
 - deterministico
   + possibile prevedere in che stato un azione sposta l'ambiente
 - stocastico
-  + non e' possibile prevedere in tutti i casi lo stato in cui ci si trovera' dopo un azione
+  + non e' possibile prevedere in tutti i casi lo stato in cui ci si troverà dopo un azione
 *** Agente Autonomo
-- ha capacitá di /azione/
+- ha capacita di /azione/
 - riceve compiti ad alto livello
-- esplora alternative, numero esponenziale di possibilitá da esplorare
+- esplora alternative, numero esponenziale di possibilità da esplorare
 - riconosce
-  + se una strada non puó portare a una soluzione
-  + un strada giá esplorata
+  + se una strada non può portare a una soluzione
+  + un strada già esplorata
 
-Un =AA= rimane un programma, non fará ció che non é programmato a fare
+Un =AA= rimane un programma, non farà ciò che non é programmato a fare
 
 Il cuore dell'agente é la funzione *deliberativa*
 - un agente é /razionale/ se opera per conseguire il /successo/
 - questo é possibile con una _misura di prestazione_ utilizzata come guida
 
-La razionalitá ottimizza il risultato atteso
+La razionalità ottimizza il risultato atteso
 - possono intercorrere fattori ignoti o imprevedibili
 
 ** Paradigma Dichiarativo
 - imperativo: /how/, sequenza di passi
-- dichiaritivo: /what/, si sfrutta una =knowledge base=
+- dichiarativo: /what/, si sfrutta una =knowledge base=
   + il cuore é il *Modulo dichiarativo* che utilizza l'informazione dalla percezione e la propria knowledge base
 Quindi:
 - un programma, risolutore, produce un altro programma che risolva una particolare istanza del mondo
 
 * Risoluzione Automatica
-- nella realtá di riferimento si astrae utilizzando degli /stati/
+- nella realtà di riferimento si astrae utilizzando degli /stati/
   + astraendo si lascia solo una descrizione essenziale
   + discreti
   + tra questi ci saranno stati /target/ e stati di partenza
-- la realtá transisce da uno stato all'astro tramite /azioni/
+- la realtà transisce da uno stato all'astro tramite /azioni/
   + le azioni hanno effetto deterministico
-- il dominio della realtá é statico
+- il dominio della realtà é statico
 - *l'algoritmo di ricerca* determina una soluzione
   + permette di raggiungere da uno stato iniziale uno stato target
     * una soluzione é un percorso del grafo degli stati
@@ -108,7 +108,7 @@ Fornendo una situazione iniziale e una situazione da raggiungere, appartenenti a
 una soluzione
 
 ** Problemi
-Un problema puó essere definito formalmente come una _tupla di 4 elementi_
+Un problema può essere definito formalmente come una _tupla di 4 elementi_
 1. Stato iniziale
 2. Funzione successore
 3. Test Obiettivo
@@ -139,7 +139,7 @@ Le caratteristiche di questi problemi sono:
 *** Ricerca non informata - Blind
 Costruiscono strutture dati proprie utilizzate nella soluzione di un problema
 - alberi o grafi di ricerca
-  + in un albero uno stato puó comparire piú volte
+  + in un albero uno stato può comparire più volte
 
 Ogni nodo rappresenta uno stato, una soluzione é un particolare percorso dalla radice ad una foglia
 - i nodi figli sono creati dalla funzione successore
@@ -152,10 +152,10 @@ Gli approcci sono *valutati* secondo
 - *complessità spaziale*, spazio necessario per effettuare la ricerca
 
 #+begin_quote
-*NB* $\quad$ Lo studio della [[id:347b2529-bb45-4516-86fe-443b43c8edd6][Complessitá di un algoritmo]] é trattato anche in [[id:d3d5cfa8-7bbb-4330-8ada-87c916c7e9f7][Algoritmi e Strutture Dati]] e [[id:b9d02edb-6458-4237-88de-41fb865974d2][Calcolabilitá e Complessitá]].
+*NB* $\quad$ Lo studio della [[id:347b2529-bb45-4516-86fe-443b43c8edd6][Complessità di un algoritmo]] é trattato anche in [[id:d3d5cfa8-7bbb-4330-8ada-87c916c7e9f7][Algoritmi e Strutture Dati]] e [[id:b9d02edb-6458-4237-88de-41fb865974d2][Calcolabilità e Complessità]].
 #+end_quote
 
-Gli alberi vengono esplorati tramite =Ricerca in Ampiezza= e =Ricerca in Profonditá=
+Gli alberi vengono esplorati tramite =Ricerca in Ampiezza= e =Ricerca in Profondità=
 
 Nello studio di queste ricerche si considerano:
 - $d$ profondità minima del /goal/
@@ -213,7 +213,7 @@ Ricerca a profondità limitata in cui questa viene incrementata a ogni iterazion
 - /backwards/ dallo stato obiettivo
 
 Termina quando queste si incontrano a una intersezione.
-Il rischio é che si faccia il doppio del lavoro e che non convergano a metá percorso ma agli estremi
+Il rischio é che si faccia il doppio del lavoro e che non convergano a metà percorso ma agli estremi
 - $\textsc{time}= O( b^{\frac{d}{2}})$
   + nel caso in cui le due ricerche si incontrino a metà
 *** Ricerca informata
@@ -233,8 +233,8 @@ Una strategia é il mantenere la frontiera ordinata secondo una $f(n)$ detta /fu
 - mantiene ordinata la frontiera a seconda di $h(n)$
   + $f(n) = h(n)$
 
-Ma l'euristica puó essere imperfetta e creare dei problemi.
-Questa strategia considera solo informazioni /future/, che riguardano ció che non é ancora stato esplorato.
+Ma l'euristica può essere imperfetta e creare dei problemi.
+Questa strategia considera solo informazioni /future/, che riguardano ciò che non é ancora stato esplorato.
 **** A*
 Combina informazioni future e passate:
 - *Greedy* e *Ricerca a costo uniforme*
@@ -255,7 +255,7 @@ $A^\star$ é *ottimo* quando
 - $\forall n: h(n) \le h^\star(n)$
   + ovvero l'euristica é ottimistica
 
-Nel caso di ricerca in grafi $h(n)$ deve essere anche *monotona consistente* per garantire l'ottimalitá.
+Nel caso di ricerca in grafi $h(n)$ deve essere anche *monotona consistente* per garantire l'ottimalità.
 - vale una disuguaglianza triangolare
 - $h(n) \le c(n,a,n') + h(n')$
 - $\textsc{nb}$ tutte le monotone sono ammissibili ma non vale il viceversa
@@ -349,7 +349,7 @@ F AStarSearch(start, end, barriers)
 
 Intuitivamente:
 - procede come $A^{\star}$ fino a che la soluzione rispetta l'/upper bound/
-- sospende la ricerca lungo il cammino quando non piú migliore
+- sospende la ricerca lungo il cammino quando non più migliore
   + il cammino viene dimenticato, si cancella dalla memoria
   + é conservata la traccia nella sua radice del costo ultimo  stimato
 
@@ -363,26 +363,26 @@ L'algoritmo ha 3 argomenti
  \[\textsc{Space} = O(b\cdot d)\]
 $\textsc{Time}$ dipende dall'accuratezza dell'euristica.
 ** Euristiche
-La qualità di un euristica può essere calcolata computado il /branching factor effettivo/ $b^\star$
+La qualità di un euristica può essere calcolata computando il /branching factor effettivo/ $b^\star$
 - $N$ numero di nodi generati a partire da un nodo iniziale
-- $d$ profonditá della soluzione trovata
+- $d$ profondità della soluzione trovata
 \[N+1 = 1 + b^\star + (b^\star)^{2} + \cdots + (b^\star)^{d} \]
 \[N \simeq (b^\star)^{d} \implies b^\star \simeq \sqrt[d]{N}\]
 
 Le euristiche migliori mostreranno $b^\star$ vicini a 1.
-*** Calcolo della Bontá
-Per decidere tra 2 euristiche ammissibili quale sia la piú buona
+*** Calcolo della Bontà
+Per decidere tra 2 euristiche ammissibili quale sia la più buona
 1. confronto sperimentale
 2. confronto matematico
 
 Si considera la *dominanza*
 - $\forall n : h_2(n) \le h_1(n)\le h^\star(n)$
   + $h_{1}$ domina perché restituisce sempre valore maggiore rispetto all'altra
-  + si puó dire sia piú informata in quanto approssima meglio
-- una euristica dominante sará piú vicina alla realtá
-Si puó costruire una nuova $h(n) = \max(h_1(n),\dots,h_k(n))$ dominante su tutte quelle che la compongono
+  + si può dire sia più informata in quanto approssima meglio
+- una euristica dominante Sara più vicina alla realtà
+Si può costruire una nuova $h(n) = \max(h_1(n),\dots,h_k(n))$ dominante su tutte quelle che la compongono
 
-Si valuta la qualitá dell'euristica (sperimentalmente) con il /branching factor/ effettivo $b^\star$
+Si valuta la qualità dell'euristica (sperimentalmente) con il /branching factor/ effettivo $b^\star$
 - si costruisce con gli $N$ nodi costruiti nella ricerca un /albero uniforme/
 - $b^\star$ piccolo $\rightarrow$ euristica efficiente
 
@@ -415,7 +415,7 @@ I giocatori =Min= e =Max= tengono conto dell'avversario nel calcolo dell'utilit�
 [[../static/ox-hugo/max-min-game.png]]
 **** Minimax
 ~Minimax~ e' un algoritmo pessimista nel senso che simula che =Min= si muova in modo perfetto.
-- ricerca in profondita', esplora tutto l'albero ma non mantiene tutto in memoria
+- ricerca in profondità, esplora tutto l'albero ma non mantiene tutto in memoria
 
 Nella simulazione dell'albero di gioco si hanno i due attori
 1. =Max=
@@ -423,7 +423,7 @@ Nella simulazione dell'albero di gioco si hanno i due attori
 
 L'algoritmo fa /venire a galla/ i costi /terminali/ dei rami del gioco, in quanto per guidare la scelta =Max= deve poter scegliere tra i nodi a se successivi.
 - é completo in grafi finiti
-- é ottimale se =Max= e =Min= giocano ottimalmente
+- é ottimale se =Max= e =Min= giocano ottimamente
 
 La funzione utilità valuta gli stati /terminali/ del gioco, agisce per casi sul nodo $n$ in maniera ricorsiva
 $\text{minimax-value}(n)$:
@@ -525,7 +525,7 @@ Queste tecniche sono studiate in quanto la complessità continua a essere troppo
 
 ** Constraint Satisfaction Problems
 =CSP=
-- serie di =variabili= di dati dominii
+- serie di =variabili= di dati domini
 - =vincoli=, una condizioni
   + é soddisfatto con una dato =assegnamento= che per essere una soluzione deve essere
     1. *completo*, tutte le variabili sono assegnate
@@ -542,17 +542,17 @@ I problemi sono affrontati con approcci diversi in base alle caratteristiche del
 É estremamente semplice ma non é scalabile.
 
 **** Profondità con Backtracking
-Si esplora l'albero delle possibili assegnazioni in profonditá. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa piú le condizioni.
+Si esplora l'albero delle possibili assegnazioni in profondità. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa più le condizioni.
 Il problema é che in =CSP= il ~branching factor~ é spesso molto alto, producendo alberi molto larghi.
 
 Dati $n$ variabili e $d$ media del numero di  valori possibili per una variabile:
 - il ~branching factor~ al primo livello, $n \cdot d$
 - ... al secondo, $(n-1)\cdot d$
-- l'albero avrá $n! \cdot d^{n}$ foglie
+- l'albero avrà $n! \cdot d^{n}$ foglie
 
-Questo é migliorabile con la tecnica del /fuoco/ su una singola variabile a ogni livello dell'albero, questo in quanto i =CSP= godono della proprietá commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
+Questo é migliorabile con la tecnica del /fuoco/ su una singola variabile a ogni livello dell'albero, questo in quanto i =CSP= godono della proprietà commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
 
-Uno dei difetti di questo approccio é il =Thrashing=, riconsiderando assegnamenti successivi che si sono giá dimostrati fallimentari durante l'esplorazione.
+Uno dei difetti di questo approccio é il =Thrashing=, riconsiderando assegnamenti successivi che si sono già dimostrati fallimentari durante l'esplorazione.
 
 **** Forward Checking
 Approccio locale di propagazione della conoscenza.
@@ -562,7 +562,7 @@ Si propagano le scelte delle variabili ai vicini diretti, restringendo il domini
 =Arc Consistency= - McWorth
 - funziona con vincoli binari
 - simile al Forward Checking
-- =Arc Consistency= non é una proprietá sufficiente a garantire l'esistenza di una soluzione
+- =Arc Consistency= non é una proprietà sufficiente a garantire l'esistenza di una soluzione
 #+begin_src python
 def AC-3(csp): # returns redox CSP
     queue = csp.arcs
@@ -600,7 +600,7 @@ Quando tutti gli assegnamenti possibili successivi a $X_{j}$ falliscono si agisc
   + =Grado=
 - di valore
   + =Valore Meno Vincolante=
-    * lascia piú libertá alle variabili adiacenti sul grafo dei vincoli
+    * lascia più libertà alle variabili adiacenti sul grafo dei vincoli
 
 Euristiche di /scelta/ e /inferenza/
 - alternanza tra esplorazione e inferenza
@@ -608,9 +608,9 @@ Euristiche di /scelta/ e /inferenza/
 
 **** Consistency
 1. =Node Consistency=
-   - vincoli di aritá 1 soddisfatti
+   - vincoli di arità 1 soddisfatti
 2. =Arc Consistency=
-   - vincoli di aritá 2 soddisfatti per ogni valore nel dominio
+   - vincoli di arità 2 soddisfatti per ogni valore nel dominio
    - un arco é =arc-consistent= quando $\forall$ valore del dominio del sorgente $\exists$ valore nel dominio della destinazione che permetta di rispettare il vincolo
 3. =Path Consistency=
    - 3 variabili legate da vincoli binari
@@ -1129,7 +1129,7 @@ Consiste in un insieme di /istanze/
   + poi esaminate e suddivise in /corrette/ e /sbagliate/
   + la percentuale desiderata di classificazioni corrette é relativo all'ambito, il dominio
 
-La =matrice di confusione= é una matrice quadrada
+La =matrice di confusione= é una matrice quadrata
 - numero di righe/colonne come il _numero delle classi_
   + righe, _classi reali_
   + colonne, _classi predette_

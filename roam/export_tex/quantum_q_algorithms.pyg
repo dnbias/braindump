@@ -1,0 +1,17 @@
+operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
+    use control = Qubit[size];
+    use target = Qubit();
+
+    ApplyToEachA(H, control);
+    X(target);
+    H(target);
+
+    oracle(control, target);
+
+    H(target);
+    X(target);
+
+    let result = MResetX(control[0]) == One;
+    ResetAll(control);
+    return result;
+}
