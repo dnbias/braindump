@@ -163,7 +163,6 @@ Un esempio più complesso può essere quello  definito in `qsharp-inteop.py` dov
 
 Gli oracoli che utilizziamo per testare gli algoritmi definiti in seguito sono:
 
-<a id="code-snippet--oracles.qs"></a>
 ```c
 operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
   }
@@ -196,6 +195,11 @@ operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
   }
 ```
 
+<div class="src-block-caption">
+  <span class="src-block-number">Code Snippet 3:</span>
+  oracles.qs
+</div>
+
 Dove sono definiti versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate.
 In particolare abbiamo definito oracoli per le seguenti funzioni:
 
@@ -213,7 +217,7 @@ In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate
 
 ## Algoritmo di Deutsch-Jozsa {#algoritmo-di-deutsch-jozsa}
 
-L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantico. Spingendo la ricerca in questa direzione per determinati problemi.
+L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantistico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantistico. Spingendo la ricerca in questa direzione per determinati problemi.
 
 L'algoritmo tratta la decisione di una funzione \\(f\\) booleana con \\(n\\) bit in input
 \\[f(\\{x\_{0},x\_{1},\cdots,x\_{n}\\}) \rightarrow 0\text{ o }1\\]
@@ -241,15 +245,15 @@ In quanto il numero di input possibili é \\(2^{n}\\) questo significa che saran
 
 ### La Soluzione Quantistica {#la-soluzione-quantistica}
 
-Tramite la computazione quantica é possibile risolvere questo problema con un'unica chiamata della funzione \\(f(x)\\).
-Questo a patto che la funzione \\(f\\) sia implementata come un oracolo quantico, che mappi:
+Tramite la computazione quantistica é possibile risolvere questo problema con un'unica chiamata della funzione \\(f(x)\\).
+Questo a patto che la funzione \\(f\\) sia implementata come un oracolo quantistico, che mappi:
 \\(|x\rangle | y \rangle\\) a \\(| x \rangle |y \oplus f(x) \rangle\\)&nbsp;[^fn:1]
 
 I passi dell'algoritmo in particolare sono:
 
 1.  prepara 2 registri di `qubit`, il primo di \\(n\\) `qubit` inizializzato a \\(| 0 \rangle\\) e il secondo di un singolo `qubit` inizializzato a \\(| 1\rangle\\)
 2.  applica `Hadamard` a entrambi i registri
-3.  applica l'oracolo quantico
+3.  applica l'oracolo quantistico
 4.  a questo punto il secondo registro può essere ignorato, riapplica `Hadamard` al primo registro
 5.  misura il primo registro, questa risulta \\(1\\) per \\(f(x)\\) costante e \\(0\\) altrimenti nel caso bilanciato
 

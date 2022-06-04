@@ -16,14 +16,14 @@ draft = false
 
 Include:
 
--   tutta la documentazione elettronica che serve agli utenti dei sistemi, agli sviluppatore e i responsabili della qualitá
+-   tutta la documentazione elettronica che serve agli utenti dei sistemi, agli sviluppatore e i responsabili della qualità
 
 É caratterizzato da:
 
--   mantenibilitá
+-   manutenibilità
 -   fidatezza
 -   efficienza
--   accettabilitá
+-   accettabilità
 
 In generale un processo descrive
 
@@ -34,7 +34,7 @@ In generale un processo descrive
 
 Per raggiungere un obiettivo
 
-Le 4 _attivitá fondamentali_ comuni a tutti i processi software:
+Le 4 _attività fondamentali_ comuni a tutti i processi software:
 
 1.  specifiche
 2.  sviluppo
@@ -47,8 +47,8 @@ Le 4 _attivitá fondamentali_ comuni a tutti i processi software:
 Nel <span class="underline">modello a cascata</span> queste sono distinte e separate
 
 -   requisiti in dettaglio
-    -   non c'e' feedback, molto lavoro speculativo
--   piano temporale delle attivitá da svolgere
+    -   non c'è feedback, molto lavoro speculativo
+-   piano temporale delle attività da svolgere
 -   modellazione
 -   progetto software
 -   programmazione software
@@ -56,30 +56,30 @@ Nel <span class="underline">modello a cascata</span> queste sono distinte e sepa
 
 Parte dal presupposto che le specifiche sono prevedibili e stabili e possono essere definite correttamente sin dall'inizio, a fronte di un basso tasso di cambiamenti
 
--   nella realtá questo non avviene quasi mai, questo modello é ottimo in caso di sistemi critici
+-   nella realtà questo non avviene quasi mai, questo modello é ottimo in caso di sistemi critici
 
 
 ### Modello di Sviluppo Incrementale {#modello-di-sviluppo-incrementale}
 
-Nel <span class="underline">modello di sviluppo incrementale</span> queste sono intrecciate, aggiunte di funzionalitá alla versione precedente (versioning)
+Nel <span class="underline">modello di sviluppo incrementale</span> queste sono intrecciate, aggiunte di funzionalità alla versione precedente (versioning)
 
 -   utilizzato in caso di requisiti che cambiano durante lo sviluppo
     -   in molti casi se si procede progettando tutto fin dall'inizio si rischia di buttare molto del lavoro in seguito
--   si implementano immediatamente le funzionalita' piu' critiche
-    -   per rilasciare il prima possibile: il _feedback_ e' l'aspetto piu' critico
+-   si implementano immediatamente le funzionalità più critiche
+    -   per rilasciare il prima possibile: il _feedback_ e' l'aspetto più critico
     -   si procede per incrementi, _patch_
         -   il codice si degrada progressivamente
         -   per arginare la degradazione e' necessario un continuo _refactoring_ del codice
--   per il management e' piu' complesso gestire le tempistiche
-    -   almeno in parte puo' essere essenziale pianificare le iterazioni
+-   per il management e' più complesso gestire le tempistiche
+    -   almeno in parte può essere essenziale pianificare le iterazioni
 -   fin dall'inizio si procede con progettazione e testing del sistema
 
 L'ambiente odierno richiede cambiamenti rapidi:
 
--   la rapiditá delle consegne é quindi un requisito critico
+-   la rapidità delle consegne é quindi un requisito critico
 -   i requisiti reali diventano chiari solo dopo il feedback degli utenti
 
-per ció questo metodo di sviluppo ha preso piede
+per ciò questo metodo di sviluppo ha preso piede
 
 Lo sviluppo e' organizzato in sotto-progetti
 
@@ -107,7 +107,7 @@ Il progetto si adatta iterazione dopo iterazione al feedback, é _evolutivo_
 -   riduzione rischi
 -   progresso subito visibile
 -   feedback immediato
--   gestione della complessita', evita la _paralisi da analisi_
+-   gestione della complessità, evita la _paralisi da analisi_
 
 
 #### Test Driven Development {#test-driven-development}
@@ -116,7 +116,7 @@ Il progetto si adatta iterazione dopo iterazione al feedback, é _evolutivo_
 Diversi tipi di test:
 
 -   _unitari_
-    -   verificano il funzionamento di singole unitá
+    -   verificano il funzionamento di singole unità
     -   struttura in 4 parti
         1.  preparazione, instanziazione degli oggetti di testing e il contesto
         2.  esecuzione
@@ -132,7 +132,7 @@ Diversi tipi di test:
 
 #### Refactoring {#refactoring}
 
-Strettamento legato al _testing_ in un ciclo di sviluppo incrementale.
+Strettamente legato al _testing_ in un ciclo di sviluppo incrementale.
 A seguito di un _refactoring_ vengono rieseguiti tutti i test per assicurarsi di non aver provocato una _regressione_.
 
 Esempi di refactoring:
@@ -148,17 +148,17 @@ Esempi di refactoring:
 
 ### Modello di Integrazione e Configurazione {#modello-di-integrazione-e-configurazione}
 
-Nel <span class="underline">modello dell'integrazione e configurazione</span> si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalitá
+Nel <span class="underline">modello dell'integrazione e configurazione</span> si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalità
 
-Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software sará utilizzato
+Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software Sara utilizzato
 
 
 ## Object Oriented Analysis/Design {#object-oriented-analysis-design}
 
 `OOA/D`
 
-Ai concetti vengono attribuite le _responsabilitá_, a partire da queste si passa alla progettazione e poi al software
-`OOD` é fortemente correlata all'_analisi dei requisiti_:
+Ai concetti vengono attribuite le _responsabilità_, a partire da queste si passa alla progettazione e poi al software
+`OOD` é fortemente correlata alla/analisi dei requisiti/:
 
 -   casi d'uso
 -   storie utente
@@ -178,7 +178,7 @@ Queste analisi dei requisiti sono svolte nel contesto di processi di sviluppo:
 
 `UP`
 
--   cerca di bilanciarsi tra estrema agilita' e pianificazione
+-   cerca di bilanciarsi tra estrema agilità e pianificazione
 -   la versione commerciale si chiama `RUP`, di `Rational`
 -   iterazioni corte e timeboxed
 -   raffinamento graduale
@@ -189,11 +189,11 @@ Orizzontalmente:
 -   **ideazione**
     -   approssimazione
     -   portata
-    -   studio della fattibilita'
+    -   studio della fattibilità
 -   **elaborazione**
     -   visione raffinata
-    -   implementazione iterativo del nucreo
-    -   risoluzione rischi maggiori, parte piu' critica
+    -   implementazione iterativo del nucleo
+    -   risoluzione rischi maggiori, parte più critica
     -   implementata l'architettura del sistema, mitigazione rischi
 -   **costruzione**
 -   **transizione**
@@ -222,7 +222,7 @@ Quasi tutto in `UP` e' opzionale, deciso dal project leader
 
 #### Requisiti {#requisiti}
 
-Capacita' o condizioni a cui il sistema e il progetto devono essere conformi
+Capacita o condizioni a cui il sistema e il progetto devono essere conformi
 
 -   e' l'utente che li stabilisce, non il progettista
 
@@ -232,22 +232,22 @@ Possono essere
     -   requisiti comportamentali
     -   comportamenti del sistema
 -   _non funzionali_
-    -   scalabilita'
+    -   scalabilità
     -   sicurezza
     -   tempi di risposta
     -   fattori umani
-    -   usabilita'
+    -   usabilità
 
 Nei processi a cascata sono molti i requisiti non utilizzati nei casi d'uso
 
--   spreco di tempo, denaro, rischi in piu'
+-   spreco di tempo, denaro, rischi in più
 
 Per evitare questo `UP` spinge al feedback
 
 Modello requisiti `FURPS+`
 
 -   modello dei casi d'uso
--   specifiche supplementali
+-   specifiche supplementari
 -   glossario
 -   visione
 -   regole di business
@@ -255,19 +255,19 @@ Modello requisiti `FURPS+`
 La disciplina dei requisiti é il processo per scoprire cosa deve essere costruito e orientare la sviluppo verso il sistema corretto
 Si incrementalmente una lista dei requisiti: _feature list_
 
--   breave descrizione
+-   breve descrizione
 -   stato
 -   costi stimati di implementazione
--   prioritá
+-   priorità
 -   rischio stimato per l'implementazione
 
 
 ##### Casi d'uso {#casi-d-uso}
 
 Catturano (in `UP` e `Agile`) i requisiti funzionali
-Sono descrizioni testuali che indicano l'uso che l'utente fara' del sistema
+Sono descrizioni testuali che indicano l'uso che l'utente farà del sistema
 
--   attori; qualcuno o qualcoso dotato di comportamento
+-   attori; qualcuno o qualcosa dotato di comportamento
 -   scenario (istanza di caso d'uso); sequenza specifica di azioni e interazioni tra sistema e attori
 -   caso d'uso; collezione di scenari correlati (di successo/fallimento) che descrivono un attore che usa il sistema per raggiungere un obiettivo specifico
 
@@ -279,7 +279,7 @@ Sono descrizioni testuali che indicano l'uso che l'utente fara' del sistema
 
 Il **modello dei casi d'uso** include un grafico `UML`
 
--   e' un modello delle funzionalita' del sistema
+-   e' un modello delle funzionalità del sistema
 
 I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i requisiti come input all' `OOA/D`
 
@@ -288,12 +288,12 @@ I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i re
     -   il _come_ e' obiettivo della progettazione `OOD`
     -   i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il _cosa_ e nulla riguardo al _come_
 
-I casi devono essere _guidelines_, espremerle in uno  **stile essenziale**. A livello delle intenzioni e delle responsabilitá, non delle azioni concrete.
+I casi devono essere _guidelines_, esprimerle in uno  **stile essenziale**. A livello delle intenzioni e delle responsabilità, non delle azioni concrete.
 
 
 ###### Attori {#attori}
 
-Sono ruoli svolti da persone, organizzazioni, sotware, macchine
+Sono ruoli svolti da persone, organizzazioni, software, macchine
 
 -   primario
 -   di supporto
@@ -308,14 +308,14 @@ Sono ruoli svolti da persone, organizzazioni, sotware, macchine
 -   breve
     -   un solo paragrafo informale che descrive solitamente lo scenario principale
 -   informale
-    -   piu' paragrafi in modo informale che descrivono vari scenari
+    -   più paragrafi in modo informale che descrivono vari scenari
 -   dettagliato
     -   include precondizioni e garanzie di successo
 
 
 ##### Requisiti non funzionali {#requisiti-non-funzionali}
 
-Possono essere inclusi nei casi d'uso se relazionati con il requisito funzinale descritto dal caso
+Possono essere inclusi nei casi d'uso se relazionati con il requisito funzionale descritto dal caso
 Altrimenti vengono descritti nelle specifiche supplementari
 
 
@@ -328,12 +328,12 @@ Casi d'uso e specifiche supplementari sono input che vanno a definire il modello
 
 \\(\textsc{definition}\\)   Nel `UP` il _Modello di Dominio_ é una rappresentazione delle classi concettuali della situazione reale. Queste _non sono_ oggetti software.
 
--   si puó pensare come un dizionario visivo, mostra le astrazioni  e le loro relazioni in maniera immediata
--   non tratta le responsabilitá/metodi degli oggetti, questi sono prettamente software
+-   si può pensare come un dizionario visivo, mostra le astrazioni  e le loro relazioni in maniera immediata
+-   non tratta le responsabilità/metodi degli oggetti, questi sono prettamente software
 -   possibile distinguere:
     -   **simboli**
     -   **intenzioni**
-        -   proprietá intrinseche, definizione
+        -   proprietà intrinseche, definizione
     -   **estensioni**
         -   esempi e casi in cui la classe concettuale si applica
 
@@ -343,7 +343,7 @@ Casi d'uso e specifiche supplementari sono input che vanno a definire il modello
 _Architettura Logica e Layer_
 Si tratta di un modello indipendente dalla piattaforme che definisce i `layer`:
 
--   gruppi di classi software, `packages`, sottoinsiemi con responsabilitá condivisa
+-   gruppi di classi software, `packages`, sottoinsiemi con responsabilità condivisa
     -   `User Interface`
     -   `Application Logic`
     -   `Domain Objects`
@@ -374,7 +374,7 @@ Vista _dinamica_
 
 <!--quoteend-->
 
-> Un compito é rappresentato da un messaggio che dá inizio all'interazione
+> Un compito é rappresentato da un messaggio che dà inizio all'interazione
 
 -   questo messaggio é detto _messaggio trovato_
 
@@ -389,32 +389,32 @@ Vista _statica_
 
 > Il diagramma delle classi di progetto é un diagramma delle classi utilizzato da un punto di vista software o di progetto.
 
-A differenza del `Modello di Dominio` in questo contesto la visibilitá ha un significato:
+A differenza del `Modello di Dominio` in questo contesto la visibilità ha un significato:
 
 -   le associazioni qui hanno un verso
 
 
 ##### Progettazione a oggetti {#progettazione-a-oggetti}
 
--   _Quali sono le responsabilitá dell'oggetto?_
+-   _Quali sono le responsabilità dell'oggetto?_
 -   _Con chi collabora l'oggetto?_
 -   _Quali design pattern devono essere applicati?_
 
 Si parte dal `Modello di Dominio`, ma l'implementazione impone dei vicoli ulteriori dovuti al `Object Oriented`
 
 -   vengono letti e implementati i contratti, con le loro pre e post-condizioni
--   non si creano nuove associazioni nel `Modello di Dominio`: siamo a livello del codice e si fanno scelte progettuali di _visibilitá_
+-   non si creano nuove associazioni nel `Modello di Dominio`: siamo a livello del codice e si fanno scelte progettuali di _visibilità_
 
 
 #### Ideazione {#ideazione}
 
-Si tratta dello studio di fattibilitá
+Si tratta dello studio di fattibilità
 
--   si decide se il caso merita un'analisi piú completa
+-   si decide se il caso merita un'analisi più completa
 
 La documentazione possibile é tanta ma tutto é opzionale
 
--   va documentato solo ció che aggiunge valore al progetto
+-   va documentato solo ciò che aggiunge valore al progetto
 
 
 #### Elaborazione {#elaborazione}
@@ -439,8 +439,8 @@ Durante questa fase i requisiti principali dovrebbero essere stabili
 Strumento per pensare e comunicare
 
 -   utilizzato per rappresentare il modello di dominio/concettuale
--   permette un passaggio piú veloce da modello a design/progettazione
-    -   il gap rappresentativo sará piú semplice
+-   permette un passaggio più veloce da modello a design/progettazione
+    -   il gap rappresentativo sarà piú semplice
 
 <span class="underline">É un linguaggio visuale per la specifica, la costruzione e la documentazione degli elaborati di un sistema software</span>
 

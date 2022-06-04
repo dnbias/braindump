@@ -7,3 +7,5 @@ draft = false
 +++
 
 -   [GoF]({{< relref "gof.md" >}})
+
+{{< figure src="/ox-hugo/decorator.jpg" >}}
