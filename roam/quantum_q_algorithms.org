@@ -69,7 +69,7 @@ Rimane difficile trovare possibili algoritmi quantistici che diano un vantaggio 
 
 In generale é più probabile che un problema che abbia una piccola mole di dati in entrata e in uscita ma una grande quantità di manipolazioni per arrivare all'output sia un buon candidato per l'utilizzo di computer quantistici.
 
-\pagebreak
+$\pagebreak$
 * Ambiente
 Per lo sviluppo di software quantistici sono disponibili diversi ambienti e framework, tra i più conosciuti troviamo *Microsoft Azure* con il proprio Quantum Development Kit (=QDK=) o l'ambiente di sviluppo di =IBM= *Qiskit*.
 Altri /Software Development Kit/ che possono essere utilizzati per eseguire circuiti quantistici su prototipi di device quantistici o simulatori sono:
@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
 Un esempio più complesso può essere quello  definito in ~qsharp-inteop.py~ dove definiamo direttamente /inline/ il contenuto del codice =Q#=  che il ~package qsharp~ compila e simula.
 
-\pagebreak
+$\pagebreak$
 * Oracoli
 Gli oracoli che utilizziamo per testare gli algoritmi definiti in seguito sono:
 #+name: oracles.qs
@@ -180,7 +180,7 @@ In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate
 
 [fn:oplus] dove $\oplus$ é l'addizione modulo $2$ o =XOR=
 
-\pagebreak
+$\pagebreak$
 * Algoritmo di Deutsch-Jozsa
 L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantico. Spingendo la ricerca in questa direzione per determinati problemi.
 
@@ -220,7 +220,7 @@ I passi dell'algoritmo in particolare sono:
 #+caption: i passi dell'algoritmo in forma di circuito
 [[../media/img/deutsch_steps.png]]
 
-\pagebreak
+$\pagebreak$
 *** single-bit Deutsch-Jozsa
 #+begin_src c
 operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
@@ -260,12 +260,12 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
 }
 #+end_src
 
-\pagebreak
+$\pagebreak$
 * Entanglement e Teletrasporto quantistico
 
 
-\pagebreak
+$\pagebreak$
 * Conclusioni
 
 
-\pagebreak
+$\pagebreak$

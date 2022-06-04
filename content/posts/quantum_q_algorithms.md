@@ -6,7 +6,7 @@ tags = ["university", "thesis", "compsci"]
 draft = false
 +++
 
-\pagebreak
+\\(\pagebreak\\)
 
 
 ## Metadata <span class="tag"><span class="export_md">export-md</span></span> {#metadata}
@@ -82,7 +82,7 @@ Rimane difficile trovare possibili algoritmi quantistici che diano un vantaggio 
 
 In generale é più probabile che un problema che abbia una piccola mole di dati in entrata e in uscita ma una grande quantità di manipolazioni per arrivare all'output sia un buon candidato per l'utilizzo di computer quantistici.
 
-\pagebreak
+\\(\pagebreak\\)
 
 
 ## Ambiente {#ambiente}
@@ -156,7 +156,7 @@ if __name__ == "__main__":
 
 Un esempio più complesso può essere quello  definito in `qsharp-inteop.py` dove definiamo direttamente _inline_ il contenuto del codice `Q#`  che il `package qsharp` compila e simula.
 
-\pagebreak
+\\(\pagebreak\\)
 
 
 ## Oracoli {#oracoli}
@@ -255,7 +255,7 @@ I passi dell'algoritmo in particolare sono:
 
 {{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 2: </span>i passi dell'algoritmo in forma di circuito" >}}
 
-\pagebreak
+\\(\pagebreak\\)
 
 
 #### single-bit Deutsch-Jozsa {#single-bit-deutsch-jozsa}
@@ -301,18 +301,18 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
 }
 ```
 
-\pagebreak
+\\(\pagebreak\\)
 
 
 ## Entanglement e Teletrasporto quantistico {#entanglement-e-teletrasporto-quantistico}
 
-\pagebreak
+\\(\pagebreak\\)
 
 
 ## Conclusioni {#conclusioni}
 
-\pagebreak
+\\(\pagebreak\\)
 
 [^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\) o `XOR`
 
-    \pagebreak
+    \\(\pagebreak\\)
