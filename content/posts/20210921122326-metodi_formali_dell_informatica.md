@@ -6,14 +6,7 @@ draft = false
 +++
 
 -   Prof: Ugo De' Liguoro
--   [[./][PDF Version]
-
-
-## Info Corso {#info-corso}
-
--   Orario:
-    -   Mer 14-16
-    -   Ven 11-13
+-   [PDF Version](./20210921122326-metodo_formali_dell_informatica.pdf)
 -   Testo:
     -   [Programming Language Foundation in Agda]({{< relref "20210921122441-programming_language_foundation_in_agda.md" >}})
 
@@ -111,7 +104,7 @@ Processo:
 2.  Invariante di Loop
     -   esistono euristiche per trovarlo ma non algoritmi
 3.  Asserzioni Intermedie
-    -   conducono alla dimostarzione di ció che voglio
+    -   conducono alla dimostrazione di ció che voglio
 
 
 ##### Logica di Hoare {#logica-di-hoare}
@@ -203,10 +196,9 @@ Se vale questo allora posso spezzare in moduli il codice e verificare questi sot
 
 Dai _comandi atomici_, definiti conseguentemente alle rispettive regole della logica.
 Si eseguono poi  _sequenze atomiche_
-
--   \\(\\{H\\} A\_{1};\cdots ;A\_{n} \\{H'\\}\\)
--   \\[\frac{\\{H\\}A\_{1}\\{H''\\} \qquad \\{H''\\} A\_{2} \\{H'\\}}{\\{H\\}A\_{1};A\_{2}\\{H'\\}}\\]
--   \\[\frac{H,A\_{1} \implies H'}{H,A\_{1};A\_{2} \implies H',A\_{2}}\\]
+\\[\\{H\\} A\_{1};\cdots ;A\_{n} \\{H'\\}\\]
+\\[\frac{\\{H\\}A\_{1}\\{H''\\} \qquad \\{H''\\} A\_{2} \\{H'\\}}{\\{H\\}A\_{1};A\_{2}\\{H'\\}}\\]
+\\[\frac{H,A\_{1} \implies H'}{H,A\_{1};A\_{2} \implies H',A\_{2}}\\]
 
 
 ### Grammatiche {#grammatiche}
@@ -216,9 +208,9 @@ Si eseguono poi  _sequenze atomiche_
 
 Descrivo <span class="underline">Grammatiche Senza Contesti</span> con le <span class="underline">Regole di Inferenza</span>
 
--   \\(\frac{}{n \in Aexp}\\)
--   \\(\frac{}{x \in Aexp}\\)
--   \\(\frac{a\_1\in Aexp \quad a\_2 \in Aexp}{a\_1 +  a\_2 \in Aexp}\\)
+\\[\frac{}{n \in Aexp}\\]
+\\[\frac{}{x \in Aexp}\\]
+\\[\frac{a\_1\in Aexp \quad a\_2 \in Aexp}{a\_1 +  a\_2 \in Aexp}\\]
 
 
 #### Astratte {#astratte}
@@ -228,7 +220,7 @@ Descrivo <span class="underline">Grammatiche Senza Contesti</span> con le <span 
 
 Utiliziamo la notazione <span class="underline">carrificata</span>
 
-```text
+```agda
 vname ::== String
 aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
 ```
@@ -241,7 +233,7 @@ aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
 
 `Set`, insieme o `Tipo`
 
-```text
+```agda
 data aexp: Set nohere
 N: N -> aexp
 V: String -> aexp
@@ -255,7 +247,7 @@ depth: aexp -> N
 
 Dim. per induzione strutturale:
 
-```text
+```agda
 depth (Plus a b) <= size (Plus a b)
 ```
 
@@ -266,7 +258,7 @@ Per def il valore di \\(V x\\) usiamo gli stati
 
 <!--listend-->
 
-```text
+```agda
 aval: aexp -> state -> val
   aval (N n) s = n
   aval (V x) s = sx
@@ -275,7 +267,7 @@ aval: aexp -> state -> val
 
 \\(FVa\\): l'insieme delle variabili libere in \\(a \in aexp\\)
 
-```text
+```agda
   FV (N n) = nil
   FV (V x) = { n }
   FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
@@ -307,7 +299,7 @@ Se \\(s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state\\)
 
 ##### Lemma di Sostituzione {#lemma-di-sostituzione}
 
-\\(aval \\: (a[a^{'}/n])s = aval \\: a \\: s [x\rightarrow aval \\: a^{'}\\: s]\\)
+\\[aval \\: (a[a^{'}/n])s = aval \\: a \\: s [x\rightarrow aval \\: a^{'}\\: s]\\]
 
 
 #### Booleani {#booleani}
@@ -327,7 +319,7 @@ Espressioni generate dalla grammatica (BNF)
 
 **Sintassi**
 
-```text
+```agda
 com ::= SKIP                      -- noop
      |  vname := aexp             -- assegnazione
      |  com ; com                 -- composizione sequenziale
@@ -373,21 +365,21 @@ Usiamo la relazione \\((c,s) \implies t\\) su \\(com \times state \times state\\
 -   questa funzione é definibile in `Agda`
 
 Sistema formale:
-\\(\frac{(c\_{1},s\_{1}) \implies t\_{1}\cdots (c\_{n},s\_{n})\implies t\_{n}}{(c\_{n+1},s\_{n+1})\implies t\_{n+1}}\\)
+ \\[\frac{(c\_{1},s\_{1}) \implies t\_{1}\cdots (c\_{n},s\_{n})\implies t\_{n}}{(c\_{n+1},s\_{n+1})\implies t\_{n+1}}\\]
 
 
 ##### Regole {#regole}
 
--   Skip \\(\frac{}{(SKIP,s)\implies s}\\)
--   Ass \\(\frac{aval \\: a \\: s = n}{(n:= a,s)\implies s[x\rightarrow n]\\)
--   Comp \\(\frac{(c\_{1},s)\implies s' \quad (c\_{2},s')\implies t}{(c\_{1};c\_{2},s)\implies t}\\)
+-   `Skip` \\[\frac{}{(SKIP,s)\implies s}\\]
+-   `Ass` \\[\frac{aval \\: a \\: s = n}{(n:= a,s)\implies s[x\rightarrow n]\\]
+-   `Comp`  \\[frac{(c\_{1},s)\implies s' \quad (c\_{2},s')\implies t}{(c\_{1};c\_{2},s)\implies t}\\]
 
-IF b THEN c_1 ELSE c_2
+`IF b THEN c_1 ELSE c_2`
 
 -   \\(\frac{bval \\: b\\: s = tt \\:\\: (c\_{1},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\)
 -   \\(\frac{bval \\: b\\: s = ff \\:\\: (c\_{2},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\)
 
-WHILE
+`WHILE`
 
 -   \\(\frac{ bval \\: b\\: s = ff}{(WHILE \\: b\\:DO \\: c, s)\implies s}\\)
 -   \\(\frac{ bval \\: b\\: s = tt \\:\\: (c,s)\implies s^{'} \\:\\: (W,s^{'})\implies t}{(WHILE \\: b\\:DO \\: c, s)\implies t}\\)

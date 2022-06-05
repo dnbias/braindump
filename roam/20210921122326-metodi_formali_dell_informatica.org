@@ -6,11 +6,7 @@
 #+latex_class: arsclassica
 #+filetags: university
 - Prof: Ugo De' Liguoro
-- [[./][PDF Version]
-* Info Corso
-- Orario:
-  + Mer 14-16
-  + Ven 11-13
+- [[./20210921122326-metodo_formali_dell_informatica.pdf][PDF Version]]
 - Testo:
   + [[id:ca905cae-fdf3-421c-a255-ec32435ef818][Programming Language Foundation in Agda]]
 * Teoria
@@ -89,7 +85,7 @@ Processo:
 2. Invariante di Loop
    - esistono euristiche per trovarlo ma non algoritmi
 3. Asserzioni Intermedie
-   - conducono alla dimostarzione di ció che voglio
+   - conducono alla dimostrazione di ció che voglio
 
 **** Logica di Hoare
 =HL=
@@ -157,31 +153,29 @@ $H ::= \exists \vec{x} : (P_{1} \land \cdots \land P_{n}) \land (S_{1} \star \cd
 
 Dai /comandi atomici/, definiti conseguentemente alle rispettive regole della logica.
 Si eseguono poi  /sequenze atomiche/
-- $\{H\} A_{1};\cdots ;A_{n} \{H'\}$
-- \[\frac{\{H\}A_{1}\{H''\} \qquad \{H''\} A_{2} \{H'\}}{\{H\}A_{1};A_{2}\{H'\}}\]
-- \[\frac{H,A_{1} \implies H'}{H,A_{1};A_{2} \implies H',A_{2}}\]
-
-
+\[\{H\} A_{1};\cdots ;A_{n} \{H'\}\]
+\[\frac{\{H\}A_{1}\{H''\} \qquad \{H''\} A_{2} \{H'\}}{\{H\}A_{1};A_{2}\{H'\}}\]
+\[\frac{H,A_{1} \implies H'}{H,A_{1};A_{2} \implies H',A_{2}}\]
 
 ** Grammatiche
 *** Concrete
 Descrivo _Grammatiche Senza Contesti_ con le _Regole di Inferenza_
 
-- $\frac{}{n \in Aexp}$
-- $\frac{}{x \in Aexp}$
-- $\frac{a_1\in Aexp \quad a_2 \in Aexp}{a_1 +  a_2 \in Aexp}$
+\[\frac{}{n \in Aexp}\]
+\[\frac{}{x \in Aexp}\]
+\[\frac{a_1\in Aexp \quad a_2 \in Aexp}{a_1 +  a_2 \in Aexp}\]
 
 *** Astratte
 **** Backus Normal Form
 Utiliziamo la notazione _carrificata_
-#+begin_example
+#+begin_src agda
 vname ::== String
 aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
-#+end_example
+#+end_src
 ** Semantica
 *** Agda
 =Set=, insieme o =Tipo=
-#+begin_example
+#+begin_src agda
 data aexp: Set nohere
 N: N -> aexp
 V: String -> aexp
@@ -191,30 +185,30 @@ depth: aexp -> N
   depth (Nn) = 0
   depth (Vx) = 0
   depth (Plus a b) = 1 + max (depth a) (depth b)
-#+end_example
+#+end_src
 
 Dim. per induzione strutturale:
-#+begin_example
+#+begin_src agda
 depth (Plus a b) <= size (Plus a b)
-#+end_example
+#+end_src
 
 La semantica di $a \in aexp$ é un numero $n \in N$
 Per def il valore di $V x$ usiamo gli stati
 - $s \in state = vname \rightarrow val$
 
-#+begin_example
+#+begin_src agda
 aval: aexp -> state -> val
   aval (N n) s = n
   aval (V x) s = sx
   aval (Plus a_1 a_2) s = (aval a_1 s) + (aval a_2 s)
-#+end_example
+#+end_src
 
 $FVa$: l'insieme delle variabili libere in $a \in aexp$
-#+begin_example
+#+begin_src agda
   FV (N n) = nil
   FV (V x) = { n }
   FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
-#+end_example
+#+end_src
 
 **** Lemma FVa
 Se per ogni $x \in FVa$ gli stati $s, s^{'} \mid sx = s^{'}x$
@@ -232,7 +226,7 @@ $a[a^{'}/n]$ intendiama la _sostituzione di x con a' in a_
 *Modifica delle variabili*
 Se $s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state$
 **** Lemma di Sostituzione
-$aval \: (a[a^{'}/n])s = aval \: a \: s [x\rightarrow aval \: a^{'}\: s]$
+\[aval \: (a[a^{'}/n])s = aval \: a \: s [x\rightarrow aval \: a^{'}\: s]\]
 
 *** Booleani
 #+begin_example
@@ -247,13 +241,13 @@ bval ::= tt | ff
 Espressioni generate dalla grammatica (BNF)
 
 *Sintassi*
-#+begin_example
+#+begin_src agda
 com ::= SKIP                      -- noop
      |  vname := aexp             -- assegnazione
      |  com ; com                 -- composizione sequenziale
      |  IF bexp THEN com ELSE com -- selezione
      |  WHILE bexp DO com         -- iterazione
-#+end_example
+#+end_src
 Con queste caratteristiche il nostro linguaggio =IMP= é Touring completo:
 - _Arbib_, /A programming approach to computability/
 
@@ -279,16 +273,16 @@ $(c,s,t) \rightarrow (c,s) \implies t \in bool$
 - true se in una stato finale, false altrimenti
 - questa funzione é definibile in =Agda=
 Sistema formale:
-$\frac{(c_{1},s_{1}) \implies t_{1}\cdots (c_{n},s_{n})\implies t_{n}}{(c_{n+1},s_{n+1})\implies t_{n+1}}$
+ \[\frac{(c_{1},s_{1}) \implies t_{1}\cdots (c_{n},s_{n})\implies t_{n}}{(c_{n+1},s_{n+1})\implies t_{n+1}}\]
 
 **** Regole
-- Skip $\frac{}{(SKIP,s)\implies s}$
-- Ass $\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]$
-- Comp $\frac{(c_{1},s)\implies s' \quad (c_{2},s')\implies t}{(c_{1};c_{2},s)\implies t}$
-IF b THEN c_1 ELSE c_2
+- =Skip= \[\frac{}{(SKIP,s)\implies s}\]
+- =Ass= \[\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]\]
+- =Comp=  \[frac{(c_{1},s)\implies s' \quad (c_{2},s')\implies t}{(c_{1};c_{2},s)\implies t}\]
+=IF b THEN c_1 ELSE c_2=
 - $\frac{bval \: b\: s = tt \:\: (c_{1},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
 - $\frac{bval \: b\: s = ff \:\: (c_{2},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
-WHILE
+=WHILE=
 - $\frac{ bval \: b\: s = ff}{(WHILE \: b\:DO \: c, s)\implies s}$
 - $\frac{ bval \: b\: s = tt \:\: (c,s)\implies s^{'} \:\: (W,s^{'})\implies t}{(WHILE \: b\:DO \: c, s)\implies t}$
   - $W$ abbrevia $(WHILE \: b \: DO \: c, s)\implies t$

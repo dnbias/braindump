@@ -7,3 +7,6 @@ draft = false
 +++
 
 -   [GoF]({{< relref "gof.md" >}})
+
+![](/ox-hugo/class-adapter.jpg)
+![](/ox-hugo/object-adapter.jpg)

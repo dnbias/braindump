@@ -1,0 +1,5 @@
+com ::= SKIP                      -- noop
+     |  vname := aexp             -- assegnazione
+     |  com ; com                 -- composizione sequenziale
+     |  IF bexp THEN com ELSE com -- selezione
+     |  WHILE bexp DO com         -- iterazione
