@@ -168,14 +168,14 @@ Descrivo _Grammatiche Senza Contesti_ con le _Regole di Inferenza_
 *** Astratte
 **** Backus Normal Form
 Utiliziamo la notazione _carrificata_
-#+begin_src agda
+#+begin_example
 vname ::== String
 aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
-#+end_src
+#+end_example
 ** Semantica
 *** Agda
 =Set=, insieme o =Tipo=
-#+begin_src agda
+#+begin_example
 data aexp: Set nohere
 N: N -> aexp
 V: String -> aexp
@@ -185,30 +185,30 @@ depth: aexp -> N
   depth (Nn) = 0
   depth (Vx) = 0
   depth (Plus a b) = 1 + max (depth a) (depth b)
-#+end_src
+#+end_example
 
 Dim. per induzione strutturale:
-#+begin_src agda
+#+begin_example
 depth (Plus a b) <= size (Plus a b)
-#+end_src
+#+end_example
 
 La semantica di $a \in aexp$ é un numero $n \in N$
 Per def il valore di $V x$ usiamo gli stati
 - $s \in state = vname \rightarrow val$
 
-#+begin_src agda
+#+begin_example
 aval: aexp -> state -> val
   aval (N n) s = n
   aval (V x) s = sx
   aval (Plus a_1 a_2) s = (aval a_1 s) + (aval a_2 s)
-#+end_src
+#+end_example
 
 $FVa$: l'insieme delle variabili libere in $a \in aexp$
-#+begin_src agda
+#+begin_example
   FV (N n) = nil
   FV (V x) = { n }
   FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
-#+end_src
+#+end_example
 
 **** Lemma FVa
 Se per ogni $x \in FVa$ gli stati $s, s^{'} \mid sx = s^{'}x$
@@ -241,13 +241,13 @@ bval ::= tt | ff
 Espressioni generate dalla grammatica (BNF)
 
 *Sintassi*
-#+begin_src agda
+#+begin_example
 com ::= SKIP                      -- noop
      |  vname := aexp             -- assegnazione
      |  com ; com                 -- composizione sequenziale
      |  IF bexp THEN com ELSE com -- selezione
      |  WHILE bexp DO com         -- iterazione
-#+end_src
+#+end_example
 Con queste caratteristiche il nostro linguaggio =IMP= é Touring completo:
 - _Arbib_, /A programming approach to computability/
 
@@ -280,11 +280,11 @@ Sistema formale:
 - =Ass= \[\frac{aval \: a \: s = n}{(n:= a,s)\implies s[x\rightarrow n]\]
 - =Comp=  \[frac{(c_{1},s)\implies s' \quad (c_{2},s')\implies t}{(c_{1};c_{2},s)\implies t}\]
 =IF b THEN c_1 ELSE c_2=
-- $\frac{bval \: b\: s = tt \:\: (c_{1},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
-- $\frac{bval \: b\: s = ff \:\: (c_{2},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}$
+- \[\frac{bval \: b\: s = tt \:\: (c_{1},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}\]
+- \[\frac{bval \: b\: s = ff \:\: (c_{2},s)\implies t }{(IF \: b \: THEN  \: c_{1} \: ELSE \:c_{2},s)}\]
 =WHILE=
-- $\frac{ bval \: b\: s = ff}{(WHILE \: b\:DO \: c, s)\implies s}$
-- $\frac{ bval \: b\: s = tt \:\: (c,s)\implies s^{'} \:\: (W,s^{'})\implies t}{(WHILE \: b\:DO \: c, s)\implies t}$
+- \[\frac{ bval \: b\: s = ff}{(WHILE \: b\:DO \: c, s)\implies s}\]
+- \[\frac{ bval \: b\: s = tt \:\: (c,s)\implies s^{'} \:\: (W,s^{'})\implies t}{(WHILE \: b\:DO \: c, s)\implies t}\]
   - $W$ abbrevia $(WHILE \: b \: DO \: c, s)\implies t$
 
 Con queste si studia la *convergenza*
