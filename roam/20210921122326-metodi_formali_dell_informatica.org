@@ -324,11 +324,11 @@ $(c,s) \rightarrow (c^{'},s^{'})$
 - =SKIP=
   + $(\textsc{skip};c,s) \rightarrow (c,s)$
 - =IF=
-  + $\frac{bval \: b \: s = tt}{(\textsc{if}\: b\: \textsc{then}\:c_{1}\: \textsc{else}\: c_{2},s)\rightarrow (c_{1},s)}$
+  + \[\frac{bval \: b \: s = tt}{(\textsc{if}\: b\: \textsc{then}\:c_{1}\: \textsc{else}\: c_{2},s)\rightarrow (c_{1},s)}\]
   + $ff$ speculare
 - =WHILE=
-  + $(\textsc{while}\: b\: \textsc{do}\: c,s) \rightarrow
-    (\textsc{if}\: b\: \textsc{then}\: (c;\: \textsc{while}\: b\: \textsc{do}\: c)\: \textsc{else}\: \textsc{skip}, s$
+  + $(\textsc{while}\; b\: \textsc{do}\: c,s) \rightarrow
+(\textsc{if}\: b\: \textsc{then}\; (c;\: \textsc{while}\; b\: \textsc{do}\: c)\: \textsc{else}\; \textsc{skip}, s$
 
 \([\![c]\!]_{\textsc{sos}}s = \begin{cases}t & \mbox{se} \vdash (c,s) \rightarrow^{*}(\textsc{skip},t)\\\perp & \mbox{se}\:(c,s)\:\mbox{cicla}\end{cases}\)
 - *Teorema di equivalenza delle Semantiche*
@@ -338,7 +338,7 @@ $\forall c\in \mbox{com}\: \forall s,t\in\mbox{state}\mid[\![c]\!]_{\textsc{nat}
 
 Il quantificatore universale si traduce, nella teoria dei tipi dipendenti, in
 
-$\frac{A : \text{Set} \qquad x : A \vdash B[x] : \text{Set}}{\pi[x : A] B[x] : \text{Set}}$
+\[\frac{A : \text{Set} \qquad x : A \vdash B[x] : \text{Set}}{\pi[x : A] B[x] : \text{Set}}\]
 dove
 
 $\pi [x:A] \: B[x] \equiv B[a_{1}] \times B[a_{2}] \times \cdots$ per $a_{i}\in A$
@@ -353,8 +353,8 @@ $\forall (\lambda \: x \: \rightarrow B\: x): \text{Set}$
 ** Logica Classica e Intuizionistica
 [[https://plfa.github.io/Negation/][Wadler]]
 *** Semantica di Heyting
-$\frac{B[t]}{\exists x \: . \: B[x]}$
-$\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]$
+\[\frac{B[t]}{\exists x \: . \: B[x]}\]
+\[\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]\]
 ** IMP
 [[~/Code/Agda/IMP.agda][Definizione in Agda]]
 *** Estensione Puntatori
@@ -410,7 +410,7 @@ instr
 Si definisce =lookup i P= dove $0 \le i < \text{size} P$
 - in =Agda= le funzioni parziali non sono ammesse e quindi questo va adattato
 
-$\frac{0 \le i < \text{size }P \quad \text{iexec }(\text{lookup }i\; P)(i,s,stk) \equiv (i',s',stk')}{P\vdash (i,s,stk) \rightarrow (i',s',stk')}$
+\[\frac{0 \le i < \text{size }P \quad \text{iexec }(\text{lookup }i\; P)(i,s,stk) \equiv (i',s',stk')}{P\vdash (i,s,stk) \rightarrow (i',s',stk')}\]
 
 Un singolo passo di esecuzione (programma $P$ esegue dalla configurazione $c$ a $c'$)
 $P \vdash c \rightarrow c'$
@@ -425,13 +425,11 @@ bcomp\;(And\;b_1\;b_2)\;f\;n &= \\
 \end{align*}
 
 \begin{align*}
-&bcomp\;(Less\;a_1\;a_2)\;f\;n &=& \\
-& & & acomp\;a_1\;@\;acomp\;a_2\;@\;( \\
- &&& if\;f\;then\;[\textsc{jmpless}\;n]\;\\
-  &&& else\;[\textsc{jmpge}\;n])
+bcomp\;(Less\;a_1\;a_2)\;f\;n =& acomp\;a_1\;@\;acomp\;a_2\;@\;( \\
+& if\;f\;then\;[\textsc{jmpless}\;n]\;\\
+& else\;[\textsc{jmpge}\;n])
 \end{align*}
 
 =Lemma 8.8=
-Si definisce:
-
-$\text{pc'} = \text{size }(\text{bcomp }b \:f \:n) + (\text{ if } f = \text{ bval } b\: s \text{ then } n \text{ else } 0$
+Si definisce il program counter sui salti condizionali:
+- $\text{pc'} = \text{size }(\text{bcomp }b \:f \:n) + (\text{ if } f = \text{ bval } b\: s \text{ then } n \text{ else } 0 )$
