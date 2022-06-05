@@ -397,8 +397,6 @@ build content/posts/20210921121359-introduction_to_the_theory_of_computation.md:
 
 build content/posts/20210921121948-michael_sipser.md: org2md roam/20210921121948-michael_sipser.org
 
-build content/posts/20210921122326-metodi_formali_dell_informatica.md: org2md roam/20210921122326-metodi_formali_dell_informatica.org
-
 build content/posts/20210921122441-programming_language_foundation_in_agda.md: org2md roam/20210921122441-programming_language_foundation_in_agda.org
 
 build content/posts/20210921122848-philip_wadler.md: org2md roam/20210921122848-philip_wadler.org
@@ -853,8 +851,6 @@ build content/posts/adding_double_borders_to_bspwm.md: org2md roam/adding_double
 
 build content/posts/abstract_factory.md: org2md roam/abstract_factory.org
 
-build content/posts/adapter.md: org2md roam/adapter.org
-
 build content/posts/bridge.md: org2md roam/bridge.org
 
 build content/posts/builder.md: org2md roam/builder.org
@@ -946,3 +942,9 @@ build content/posts/sicurezza_informatica.md: org2md roam/sicurezza_informatica.
 build content/posts/sistemi_intelligenti.md: org2md roam/sistemi_intelligenti.org
 
 build content/posts/marvin_minsky.md: org2md roam/marvin_minsky.org
+
+build content/posts/latebra.md: org2md roam/latebra.org
+
+build content/posts/20210921122326-metodi_formali_dell_informatica.md: org2md roam/20210921122326-metodi_formali_dell_informatica.org
+
+build content/posts/adapter.md: org2md roam/adapter.org

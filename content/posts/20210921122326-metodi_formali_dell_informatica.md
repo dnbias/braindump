@@ -438,11 +438,12 @@ Singolo <span class="underline">passo di calcolo</span>
 -   `SKIP`
     -   \\((\textsc{skip};c,s) \rightarrow (c,s)\\)
 -   `IF`
-    -   \\(\frac{bval \\: b \\: s = tt}{(\textsc{if}\\: b\\: \textsc{then}\\:c\_{1}\\: \textsc{else}\\: c\_{2},s)\rightarrow (c\_{1},s)}\\)
+    -   \\[\frac{bval \\: b \\: s = tt}{(\textsc{if}\\: b\\: \textsc{then}\\:c\_{1}\\: \textsc{else}\\: c\_{2},s)\rightarrow (c\_{1},s)}\\]
     -   \\(ff\\) speculare
 -   `WHILE`
-    -   \\((\textsc{while}\\: b\\: \textsc{do}\\: c,s) \rightarrow
-            (\textsc{if}\\: b\\: \textsc{then}\\: (c;\\: \textsc{while}\\: b\\: \textsc{do}\\: c)\\: \textsc{else}\\: \textsc{skip}, s\\)
+    -   $(\textsc{while}\\; b\\: \textsc{do}\\: c,s) &rarr;
+
+(\textsc{if}\\: b\\: \textsc{then}\\; (c;\\: \textsc{while}\\; b\\: \textsc{do}\\: c)\\: \textsc{else}\\; \textsc{skip}, s$
 
 \\([\\![c]\\!]\_{\textsc{sos}}s = \begin{cases}t & \mbox{se} \vdash (c,s) \rightarrow^{\*}(\textsc{skip},t)\\\\perp & \mbox{se}\\:(c,s)\\:\mbox{cicla}\end{cases}\\)
 
@@ -457,7 +458,7 @@ Singolo <span class="underline">passo di calcolo</span>
 
 Il quantificatore universale si traduce, nella teoria dei tipi dipendenti, in
 
-\\(\frac{A : \text{Set} \qquad x : A \vdash B[x] : \text{Set}}{\pi[x : A] B[x] : \text{Set}}\\)
+\\[\frac{A : \text{Set} \qquad x : A \vdash B[x] : \text{Set}}{\pi[x : A] B[x] : \text{Set}}\\]
 dove
 
 \\(\pi [x:A] \\: B[x] \equiv B[a\_{1}] \times B[a\_{2}] \times \cdots\\) per \\(a\_{i}\in A\\)
@@ -480,8 +481,8 @@ Il \\(\pi\\) sta per il concetto di indicizzazione:
 
 #### Semantica di Heyting {#semantica-di-heyting}
 
-\\(\frac{B[t]}{\exists x \\: . \\: B[x]}\\)
-\\(\langle t, M \rangle \\: : \exists x \\: . \\: B[x]\\) dove \\(M\\: :\\: B[t]\\)
+\\[\frac{B[t]}{\exists x \\: . \\: B[x]}\\]
+\\[\langle t, M \rangle \\: : \exists x \\: . \\: B[x]$ dove $M\\: :\\: B[t]\\]
 
 
 ### IMP {#imp}
@@ -560,7 +561,7 @@ Si definisce `lookup i P` dove \\(0 \le i < \text{size} P\\)
 
 -   in `Agda` le funzioni parziali non sono ammesse e quindi questo va adattato
 
-\\(\frac{0 \le i < \text{size }P \quad \text{iexec }(\text{lookup }i\\; P)(i,s,stk) \equiv (i',s',stk')}{P\vdash (i,s,stk) \rightarrow (i',s',stk')}\\)
+\\[\frac{0 \le i < \text{size }P \quad \text{iexec }(\text{lookup }i\\; P)(i,s,stk) \equiv (i',s',stk')}{P\vdash (i,s,stk) \rightarrow (i',s',stk')}\\]
 
 Un singolo passo di esecuzione (programma \\(P\\) esegue dalla configurazione \\(c\\) a \\(c'\\))
 \\(P \vdash c \rightarrow c'\\)
@@ -577,13 +578,12 @@ bcomp\\;(And\\;b\_1\\;b\_2)\\;f\\;n &= \\\\
 \end{align\*}
 
 \begin{align\*}
-&bcomp\\;(Less\\;a\_1\\;a\_2)\\;f\\;n &=& \\\\
-& & & acomp\\;a\_1\\;@\\;acomp\\;a\_2\\;@\\;( \\\\
- &&& if\\;f\\;then\\;[\textsc{jmpless}\\;n]\\;\\\\
-  &&& else\\;[\textsc{jmpge}\\;n])
+bcomp\\;(Less\\;a\_1\\;a\_2)\\;f\\;n =& acomp\\;a\_1\\;@\\;acomp\\;a\_2\\;@\\;( \\\\
+& if\\;f\\;then\\;[\textsc{jmpless}\\;n]\\;\\\\
+& else\\;[\textsc{jmpge}\\;n])
 \end{align\*}
 
 `Lemma 8.8`
-Si definisce:
+Si definisce il program counter sui salti condizionali:
 
-\\(\text{pc'} = \text{size }(\text{bcomp }b \\:f \\:n) + (\text{ if } f = \text{ bval } b\\: s \text{ then } n \text{ else } 0\\)
+-   \\(\text{pc'} = \text{size }(\text{bcomp }b \\:f \\:n) + (\text{ if } f = \text{ bval } b\\: s \text{ then } n \text{ else } 0 )\\)
