@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       be0b103d-b765-409f-a1a2-bcbd38826d5f
+:END:
+#+title: Latebra
+#+date: [2022-06-05 Sun 02:52]
+#+filetags: italiano
+Nascosto, dal latino /latere/ "star nascosto".
+
+Luogo oscuro, in cui ci si può nascondere.
