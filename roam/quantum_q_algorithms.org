@@ -4,7 +4,7 @@
 #+title: Simulazione di Algoritmi Quantistici usando lo strumento Q#
 #+latex_class: arsclassica
 #+filetags: university thesis compsci
-# #+exclude_tags: export_md
+#+exclude_tags: export_md
 
 $\pagebreak$
 * Metadata :export_md:
@@ -175,17 +175,16 @@ In particolare abbiamo definito oracoli per le seguenti funzioni:
 - $f(x, y) = x \oplus y$
   + dove $x$ é l'input lungo $n$ qbit e $y$ é l'output
 
+In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate.
 
-In figura 2 vediamo un'altro esempio di oracolo bilanciato che applica 3 porte =CNOT= all'ultimo qubit:
+In =figura 1= vediamo un'altro esempio di oracolo bilanciato che applica 3 porte =CNOT= all'ultimo qubit:
 - $q_{3} = q_{3} \oplus q_{0}_{} \oplus q_{1} \oplus q_{2}$
 #+attr_latex: :width 200
 #+caption: esempio di oracolo bilanciato utilizzando porte CNOT
 [[../static/ox-hugo/balanced-oracle.png]]
 
-In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate.
 
 [fn:oplus] dove $\oplus$ é l'addizione modulo $2$ o =XOR=
-
 $\pagebreak$
 * Algoritmo di Deutsch-Jozsa
 L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantistico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantistico.
@@ -231,7 +230,7 @@ I passi dell'algoritmo in particolare sono:
 
 Un punto fondamentale dell'algoritmo é l'utilizzo della porta ~Hadamard~, chiamata anche trasformata di ~Hadamard~.
 Questa é una generalizzazione delle trasformate di Fourier definita dalla matrice $H_{m} = 2^{m} \times 2^{m}$.
-É definibile ricorsivamente a partire dall'identità $H_{0} = 1$ e, per $m > 0$:
+Questa é definibile ricorsivamente a partire dall'identità $H_{0} = 1$ e, per $m > 0$:
 \begin{align*}
 H_{m} = \frac{1}{\sqrt{2}}
 \begin{pmatrix}
@@ -260,13 +259,17 @@ H_2 &=  \frac{1}{2}
 Il trasformato di ~Hadamard~ $H_{1}$ é la porta logica quantistica conosciuta come porta ~Hadamard~, l'applicazione di questa porta a ciascun qubit di un registro a n-qubit parallelamente é equivalente alla trasformata $H_{n}$.
 
 Si crede che applicando un circuito di ~Hadamard~ a un qubit nello stato $| 0 \rangle$ si crei uno stato sovrapposto tra gli stati $| 0 \rangle$ e $| 1 \rangle$ denominato $| + \rangle$.
-A livello matematico:
+A livello matematico sono definite:
 \[ | + \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle + | 1 \rangle)\]
 \[ | - \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle - | 1 \rangle)\]
 
+#+caption: Rappresentazione geometrica di un qubit con la sfera di Bloch. Sono rappresentati come poli sull'asse $z$ gli stati equivalenti allo 0 e 1 di un bit classico, sull'asse $x$ invece i poli sono gli stati sopraccitati $| + \rangle$ e $| - \rangle$. Con questa rappresentazione é possibile notare come $H$ non sia altro che una rotazione in questo spazio tridimensionale.
+[[../media/img/bloch-sphere.png]]
+
 Inoltre una funzione $f$ applicata a questa sovrapposizione si ottiene, nel caso $n=1$, uno stato sovrappostro tra $f(0)$ e $f(1)$.
-Questo effetto é utilizzato dall'algoritmo in quanto  riapplicando ~Hadamard~ si controlla in un solo passo se si ottiene la sovrapposizione di due stati uguali o di due stati diversi, o meglio se $f(0) = f(1)$ o meno. La riapplicazione di $H$ restituirà 1 nel primo caso, 0 nel secondo.
+Questo effetto é utilizzato dall'algoritmo in quanto  riapplicando ~Hadamard~ si controlla in un solo passo se si ottiene la sovrapposizione di due stati uguali o di due stati diversi, o meglio se $f(0) = f(1)$ o meno. La riapplicazione di $H$ restituirà $1$ nel primo caso, $0$ nel secondo.
 $\pagebreak$
+
 
 *** single-bit Deutsch-Jozsa
 #+begin_src c
