@@ -7,7 +7,7 @@
 #+latex_class: arsclassica
 #+filetags: university security
 - Prof: Bergadano Francesco
-- [[./sicurezza_informatica.pdf][PDF Version]]
+- [[./export_tex/sicurezza_informatica.pdf][PDF Version]]
 * Cifrari Simmetrici
 Cifrari sono sempre esistiti, tra i cifrari pre-informatici piú famosi ci sono i cifrari simmetrici =character-oriented=:
 - Cifrario di Cesare, cifrari monoalfabetici a 1 lettera

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.3)  5 JUN 2022 18:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.5.3)  8 JUN 2022 19:23
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1640,146 +1640,10 @@ To recover gracefully from this error, it's best to
 delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
-[5]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 332.
-\openout4 = `20210921122326-metodi_formali_dell_informatica.pyg'.
-
- (./_minted-20210921122326-metodi_formali_dell_informatica/default.pygstyle)
-runsystem(pygmentize -l agda -f latex -P commandprefix=PYG -F tokenmerge -P str
-ipnl=False -o _minted-20210921122326-metodi_formali_dell_informatica/C8AF3ED65F
-4B3EC9424F7BAF910EF90B32B64026273807A0CFF10E26FB55B40F.pygtex 20210921122326-me
-todi_formali_dell_informatica.pyg)...executed.
-
-
-! Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.335 \end{minted}
-                  
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 341.
-\openout4 = `20210921122326-metodi_formali_dell_informatica.pyg'.
-
-runsystem(pygmentize -l agda -f latex -P commandprefix=PYG -F tokenmerge -P str
-ipnl=False -o _minted-20210921122326-metodi_formali_dell_informatica/73F0E1F7E5
-9B130993ECCC1171A63B8E32B64026273807A0CFF10E26FB55B40F.pygtex 20210921122326-me
-todi_formali_dell_informatica.pyg)...executed.
-
-
-! Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.351 \end{minted}
-                  
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 354.
-\openout4 = `20210921122326-metodi_formali_dell_informatica.pyg'.
-
-runsystem(pygmentize -l agda -f latex -P commandprefix=PYG -F tokenmerge -P str
-ipnl=False -o _minted-20210921122326-metodi_formali_dell_informatica/FD8C1894B3
-B83EAE7506C6E82D166B9932B64026273807A0CFF10E26FB55B40F.pygtex 20210921122326-me
-todi_formali_dell_informatica.pyg)...executed.
-
-
-! Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.356 \end{minted}
-                  
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 364.
-\openout4 = `20210921122326-metodi_formali_dell_informatica.pyg'.
-
-runsystem(pygmentize -l agda -f latex -P commandprefix=PYG -F tokenmerge -P str
-ipnl=False -o _minted-20210921122326-metodi_formali_dell_informatica/BE2FE5622D
-4F4D6D4E75C4C5E695AFA432B64026273807A0CFF10E26FB55B40F.pygtex 20210921122326-me
-todi_formali_dell_informatica.pyg)...executed.
-
-
-! Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.369 \end{minted}
-                  
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
-
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 372.
-\openout4 = `20210921122326-metodi_formali_dell_informatica.pyg'.
-
-runsystem(pygmentize -l agda -f latex -P commandprefix=PYG -F tokenmerge -P str
-ipnl=False -o _minted-20210921122326-metodi_formali_dell_informatica/5FDC3CB353
-A4FE1C51C0DCFA495B709432B64026273807A0CFF10E26FB55B40F.pygtex 20210921122326-me
-todi_formali_dell_informatica.pyg)...executed.
-
-
-! Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.376 \end{minted}
-                  
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
-
+[5] [6]
 LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 3
 93.
-(/usr/share/texmf-dist/tex/latex/bera/ts1fvm.fd
+ (/usr/share/texmf-dist/tex/latex/bera/ts1fvm.fd
 File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 )
 LaTeX Font Info:    Font shape `TS1/fvm/m/n' will be
@@ -1788,34 +1652,11 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [6]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 416.
-\openout4 = `20210921122326-metodi_formali_dell_informatica.pyg'.
 
-runsystem(pygmentize -l agda -f latex -P commandprefix=PYG -F tokenmerge -P str
-ipnl=False -o _minted-20210921122326-metodi_formali_dell_informatica/044E0A714D
-3614743B160293DCAC5E7032B64026273807A0CFF10E26FB55B40F.pygtex 20210921122326-me
-todi_formali_dell_informatica.pyg)...executed.
-
-
-
-! Package minted Error: Missing Pygments output; \inputminted was
-probably given a file that does not exist--otherwise, you may need 
-the outputdir package option, or may be using an incompatible build tool,
-or may be using frozencache with a missing file.
-
-See the minted package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.422 \end{minted}
-                  
-This could be caused by using -output-directory or -aux-directory 
-without setting minted's outputdir, or by using a build tool that 
-changes paths in ways minted cannot detect, 
-or using frozencache with a missing file.
+Overfull \hbox (4.56696pt too wide) in paragraph at lines 422--422
+[]     \T1/fvm/m/n/12 |  com ; com                 -- composizione sequenziale[
+] 
+ []
 
 [7])
 Runaway argument?
@@ -1837,10 +1678,10 @@ you'd better type `E' or `X' now and fix your file.
 
  
 Here is how much of TeX's memory you used:
- 28082 strings out of 478238
- 541683 string characters out of 5850457
- 1152804 words of memory out of 5000000
- 45728 multiletter control sequences out of 15000+600000
+ 27945 strings out of 478238
+ 537734 string characters out of 5850457
+ 1149804 words of memory out of 5000000
+ 45604 multiletter control sequences out of 15000+600000
  553000 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,23n,106p,10664b,787s stack positions out of 5000i,500n,10000p,200000b,80000s
