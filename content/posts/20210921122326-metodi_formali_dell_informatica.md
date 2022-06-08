@@ -220,7 +220,7 @@ Descrivo <span class="underline">Grammatiche Senza Contesti</span> con le <span 
 
 Utiliziamo la notazione <span class="underline">carrificata</span>
 
-```agda
+```text
 vname ::== String
 aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
 ```
@@ -233,7 +233,7 @@ aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
 
 `Set`, insieme o `Tipo`
 
-```agda
+```text
 data aexp: Set nohere
 N: N -> aexp
 V: String -> aexp
@@ -247,7 +247,7 @@ depth: aexp -> N
 
 Dim. per induzione strutturale:
 
-```agda
+```text
 depth (Plus a b) <= size (Plus a b)
 ```
 
@@ -258,7 +258,7 @@ Per def il valore di \\(V x\\) usiamo gli stati
 
 <!--listend-->
 
-```agda
+```text
 aval: aexp -> state -> val
   aval (N n) s = n
   aval (V x) s = sx
@@ -267,7 +267,7 @@ aval: aexp -> state -> val
 
 \\(FVa\\): l'insieme delle variabili libere in \\(a \in aexp\\)
 
-```agda
+```text
   FV (N n) = nil
   FV (V x) = { n }
   FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
@@ -319,7 +319,7 @@ Espressioni generate dalla grammatica (BNF)
 
 **Sintassi**
 
-```agda
+```text
 com ::= SKIP                      -- noop
      |  vname := aexp             -- assegnazione
      |  com ; com                 -- composizione sequenziale
@@ -376,13 +376,13 @@ Sistema formale:
 
 `IF b THEN c_1 ELSE c_2`
 
--   \\(\frac{bval \\: b\\: s = tt \\:\\: (c\_{1},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\)
--   \\(\frac{bval \\: b\\: s = ff \\:\\: (c\_{2},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\)
+-   \\[\frac{bval \\: b\\: s = tt \\:\\: (c\_{1},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\]
+-   \\[\frac{bval \\: b\\: s = ff \\:\\: (c\_{2},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\]
 
 `WHILE`
 
--   \\(\frac{ bval \\: b\\: s = ff}{(WHILE \\: b\\:DO \\: c, s)\implies s}\\)
--   \\(\frac{ bval \\: b\\: s = tt \\:\\: (c,s)\implies s^{'} \\:\\: (W,s^{'})\implies t}{(WHILE \\: b\\:DO \\: c, s)\implies t}\\)
+-   \\[\frac{ bval \\: b\\: s = ff}{(WHILE \\: b\\:DO \\: c, s)\implies s}\\]
+-   \\[\frac{ bval \\: b\\: s = tt \\:\\: (c,s)\implies s^{'} \\:\\: (W,s^{'})\implies t}{(WHILE \\: b\\:DO \\: c, s)\implies t}\\]
     -   \\(W\\) abbrevia \\((WHILE \\: b \\: DO \\: c, s)\implies t\\)
 
 Con queste si studia la **convergenza**

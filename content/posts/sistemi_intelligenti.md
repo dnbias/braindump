@@ -16,8 +16,8 @@ draft = false
 -   **Dato**, simbolo grezzo
 -   **Informazione**, un dato elaborato
 -   **Conoscenza**, campo di informazioni correlate tra loro
--   **Automazione**,
--   **Autonomia**,
+-   **Automazione**
+-   **Autonomi**
 
 
 ### Automazione {#automazione}
@@ -505,7 +505,7 @@ Si considera la **dominanza**
 
 -   \\(\forall n : h\_2(n) \le h\_1(n)\le h^\star(n)\\)
     -   \\(h\_{1}\\) domina perché restituisce sempre valore maggiore rispetto all'altra
-    -   si può dire sia più informata in quanto approssima meglio
+    -   si può dire sia più informata in quanto approssima meglio \\(h^{\star}\\)
 -   una euristica dominante Sara più vicina alla realtà
 
 Si può costruire una nuova \\(h(n) = \max(h\_1(n),\dots,h\_k(n))\\) dominante su tutte quelle che la compongono
@@ -552,7 +552,7 @@ I giocatori `Min` e `Max` tengono conto dell'avversario nel calcolo dell'utilit�
 
 ##### Minimax {#minimax}
 
-`Minimax` e' un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
+`Minimax` é un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
 
 -   ricerca in profondità, esplora tutto l'albero ma non mantiene tutto in memoria
 
@@ -615,10 +615,10 @@ def minValue(state):
 Per migliorare la complessità temporale dell'algoritmo si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
 La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
 
--   \\(\alpha\\) e' il valore della migliore alternativa per `Max` nel percorso verso `state`
--   \\(\beta\\) e' il valore della migliore alternativa per `Min` nel percorso verso `state`
+-   \\(\alpha\\) é il valore della migliore alternativa per `Max` nel percorso verso `state`
+-   \\(\beta\\) é il valore della migliore alternativa per `Min` nel percorso verso `state`
 
-Se il \\(v\\) considerato e' fuori da questo intervallo allora e' inutile considerarlo.
+Se il \\(v\\) considerato é fuori da questo intervallo allora é inutile considerarlo.
 
 ```python
 def alphabetaSearch(state): # returns action
@@ -650,7 +650,7 @@ def minValue(state, alpha, beta):
     return v
 ```
 
-Questo algoritmo e' dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
+Questo algoritmo é dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
 
 -   \\(\textsc{time} = O(b^{m/2})\\)
     -   nel caso migliore
@@ -679,7 +679,7 @@ Queste tecniche sono studiate in quanto la complessità continua a essere troppo
 `CSP`
 
 -   serie di `variabili` di dati domini
--   `vincoli`, una condizioni
+-   `vincoli`, condizioni
     -   é soddisfatto con una dato `assegnamento` che per essere una soluzione deve essere
         1.  **completo**, tutte le variabili sono assegnate
         2.  **consistente**, tutti i vincoli sono rispettati
@@ -799,7 +799,7 @@ Questi concetti sono generalizzabili con la `k-consistenza`
 
 -   per ogni sottoinsieme di \\(k-1\\) variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la \\(k\text{-esima}\\) variabile che é consistente con tutti gli altri.
 
-Un `CSP` fortemente consistente puó essere risolto in tempo lineare.
+Un `CSP` _fortemente consistente_ (k-consistente per \\(k\\) e tutti i \\(k\_{i}\\) minori di \\(k\\)) puó essere risolto in tempo lineare.
 
 
 #### Vincoli Speciali {#vincoli-speciali}
@@ -856,10 +856,10 @@ _Per la rappresentazione di Knowledge Base_
 -   **Validitá**
     -   o _tautologia_
     -   vera in tutti i modelli
--   **Insoddisfacibilitá**
+-   **Insoddisfacibilità**
     -   o _contraddizione_
     -   una formula ins. é falsa in tutti i modelli
--   **Soddisfacibilitá**
+-   **Soddisfacibilità**
     -   formula per il quale esiste qualche modello in cui é vera
 -   **Inferenza**  \\(\vdash\\)
     -   propagazione informazione
@@ -886,11 +886,12 @@ Vari approcci:
 
 1.  **Model Checking**
     -   \\(n\\) simboli, \\(2^{n}\\) modelli possibili
+    -   inefficiente
 2.  **Theorem Proving**
     -   basato sull'inferenza _sintattica_
         -   quindi sulla manipolazione delle formule
         -   utilizza le `Regole di Inferenza`
-            -   contrapposizione, de Morgan, associativitá...
+            -   contrapposizione, de Morgan, associatività...
     -   `Teorema di Deduzione`
         -   date formule \\(R,Q\\)
         -   \\(R\vDash Q \iff R\implies Q \text{ é una formula valida o tautologia}\\)
@@ -915,7 +916,7 @@ Vari approcci:
 
 > **Teorema**: Se un insieme di clausole é insoddisfacibile la chiusura della risoluzione contiene la clausola vuota
 
-Questo é utilizzato nella dimostrazione per refutazione.
+Questo é utilizzato nella dimostrazione per _refutazione_.
 
 
 ##### Horn Clauses {#horn-clauses}
@@ -933,10 +934,11 @@ ad esempio:
 
 ##### Forward Chaining {#forward-chaining}
 
-Lineare nel numero di clausole
+Va nell'ordine dell'inferenza
 
--   ogni clausola é applicata al piú  una volta
--   peró sono applicate clausole inutili per il _target_
+-   <span class="underline">lineare</span> nel numero di clausole
+-   ogni clausola é applicata al più una volta
+-   però sono applicate clausole inutili per il _target_
 
 {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
 
@@ -946,7 +948,7 @@ Lineare nel numero di clausole
 Parte dalla formula da dimostare e va a ritroso
 
 -   piú efficiente del `Forward Chaining`
--   meno che lineare
+-   <span class="underline">meno che lineare</span>
 
 {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
 
@@ -954,7 +956,7 @@ Parte dalla formula da dimostare e va a ritroso
 #### First Order Logic {#first-order-logic}
 
 -   dichiarativa
-    -   separa conoscenza da inferenza
+    -   separa _conoscenza_ da _inferenza_
     -   si deriva conoscenza da altra conoscenza
 
 Elementi:
@@ -1018,7 +1020,7 @@ La base di conoscenza puó essere interrogata con `ask`
         -   \\(\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\)
         -   \\(k\\) costante di Skolem, nuova
             -   non compare nella `KB`
-        -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\)
+        -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\) lo é
     -   `Herbrand`
         -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
             -   \\(KB \vDash F\\)
@@ -1092,7 +1094,7 @@ Con questi elementi si possono definire `tassonomie`
 
 -   insieme di regole di sottocategorie / sottoclassi
 
-Le categorie di una tassonomia possono essere caratterizzate tramite la definizione di `proprietá`:
+Le categorie di una tassonomia possono essere caratterizzate tramite la definizione di `proprietà`:
 
 -   `Member(X, Pallone)` \\(\Rightarrow\\) `Sferico(X)`
 -   le proprietá si ereditano dalle superclassi
@@ -1129,8 +1131,8 @@ L'`ontologia` é una forma piú generale delle `tassonomie`
 Nello stesso dominio:
 
 1.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">identiche</span>; sono due copie dello stesso file
-2.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">equivalenti</span>; condividono vocabolario e proprietá ma sono espresse in linguaggi diversi[^fn:7]
-3.  \\(O\_{1}\\) estende \\(O\_{2}\\); vocabolari e proprietá di \\(O\_{2}\\) sono preservati in \\(O\_{1}\\) ma non viceversa
+2.  \\(O\_{1}\\) e \\(O\_{2}\\) sono <span class="underline">equivalenti</span>; condividono vocabolario e proprietà ma sono espresse in linguaggi diversi[^fn:7]
+3.  \\(O\_{1}\\) estende \\(O\_{2}\\); vocabolari e proprietà di \\(O\_{2}\\) sono preservati in \\(O\_{1}\\) ma non viceversa
 4.  `Weakly-Translatable`
     -   non si introducono inconsistenze
 5.  `Strongly-Translatable`
@@ -1465,7 +1467,7 @@ Regole della forma
 -   conseguente
     -   classe di appartenenza
 
-Qualita' di una regola valutata tramite
+Qualità di una regola valutata tramite
 
 -   **copertura**  \\(\frac{|A|}{|D|}\\)
 -   **accuratezza**  \\(\frac{|A \cap y|}{|A|}\\)
@@ -1482,12 +1484,12 @@ Si desiderano
     -   attivate da insiemi di esempi disgiunti
     -   se le regole non lo sono si utilizzano
         -   **liste di decisione**
-            -   si decide in ordine di priorita'
+            -   si decide in ordine di priorità
         -   **insiemi non ordinati**
             -   si decide secondo una votazione / conteggio
 -   regole esaustive
-    -   ogni possibile combinazione di valori degli attributi e' catturata
-    -   se manca l'esaustivita' cio' implica che alcuni casi non saranno classificabili
+    -   ogni possibile combinazione di valori degli attributi é catturata
+    -   se manca l'esaustività ciò implica che alcuni casi non saranno classificabili
         -   in questi casi si definisce una classe di `default`
 
 Le regole vengono ordinate secondo gli antecedenti o le classi.
@@ -1507,7 +1509,7 @@ Le regole sono <span class="underline">prodotte</span>
     -   e vengono rimosse le istanze riconosciute da questa regola
     -   **Learn one Rule**
         -   `general-to-specific`
-            -   a partire dalla regola piu' generale \\(\text{True}=y\\)
+            -   a partire dalla regola più generale \\(\text{True}=y\\)
             -   si aggiungono all'antecedente in `and` delle specifiche, con le tecniche di scelta dello _split_
         -   `specific-to-general`
             -   scegliendo in modo casuale un esempio della classe definisce
@@ -1519,37 +1521,37 @@ Le regole sono <span class="underline">prodotte</span>
 
 #### Valutazione {#valutazione}
 
-Il modello costruito e' buono o no?
+Il modello costruito é buono o no?
 
--   se non lo e', qual'era il problema
+-   se non lo é, qual'era il problema
     -   parametri
     -   algoritmo
     -   classificatore
     -   `learning set`
 
-Ci sono diversi metodi di valutazione di un modello costruito tramite un algoritmo, e' importante per la valutazione partendo da un `dataset` distinguere un `learning` e un `test set` nella maniera migliore possibile:
+Ci sono diversi metodi di valutazione di un modello costruito tramite un algoritmo, é importante per la valutazione partendo da un `dataset` distinguere un `learning` e un `test set` nella maniera migliore possibile:
 
 -   **Holdout**
     -   partizione dei dati disponibili in `LS` e `TS`
     -   se la partizione e' sbilanciata si va verso _over_ o _under_ fitting
 -   **Random subsampling**
-    -   si ripete il processo di **holdout** piu' volte
-    -   ripetendo piu' volte l'apprendimento
+    -   si ripete il processo di **holdout** più volte
+    -   ripetendo più volte l'apprendimento
     -   si fa una media delle valutazioni dei modelli generati
-        -   si valuta il classificatore in maniera piu' oggettiva
-        -   si cerca di liberare la valutazione dall'aleatorita' dei partizionamenti
+        -   si valuta il classificatore in maniera più oggettiva
+        -   si cerca di liberare la valutazione dall'aleatoritù dei partizionamenti
 -   **Cross-validation**
-    -   si fa **random subsampling** ma con dati piu' omogenei
+    -   si fa **random subsampling** ma con dati più omogenei
     -   \\(K\\) fold cross validation
         -   con \\(K\\) partizioni
-    -   \\(1\\) dei set e' usato come `TS`
+    -   \\(1\\) dei set ú usato come `TS`
     -   \\(K-1\\) dei set sono accorpati in `LS`
     -   uno per volta tutti i \\(K\\) set sono utilizzati per il testing
     -   alla fine si fa una media delle valutazioni
 -   **Bootstrap**
     -   in casi in cui il `dataset` é piccolo
     -   per il `LS` si scelgono istanze dal `dataset` ma senza rimuoverle da quest'ultimo
-        -   una stessa istanza puó apparire piu' volte nel `LS`
+        -   una stessa istanza può apparire più volte nel `LS`
     -   per il `TS` si scelgono le istanze con cui non si e' fatto apprendimento
     -   questo viene ripetuto e valutato a piacere, facendo la media
 
@@ -1610,8 +1612,8 @@ Per questo si utilizzano tecniche di `pruning`, potatura.
 -   `prepruning`
     -   si interrompe la costruzione del `DT` prima che sia completo
     -   si ha una <span class="underline">regola di terminazione</span> restrittiva
-        -   non si esegue lo split se il gain e' sotto una soglia
-    -   si puo' ricadere nel problema opposto del _underfitting_
+        -   non si esegue lo split se il gain é sotto una soglia
+    -   si può ricadere nel problema opposto del _underfitting_
 -   `postpruning`
     -   lavora su albero costruiti completamente
     -   con un insieme di dati supervisionati lo si analizza
@@ -1641,7 +1643,7 @@ I _test_ sono ognuno su un singolo attributo e a cascata caratterizzano le istan
 
 **L'algoritmo di Hunt** lavora sul `Learning Set`
 
--   dividendo il sottoinsiemi via via piú puri
+-   dividendo in sottoinsiemi via via piú puri
 -   \\(D\_{t}\\) sottoinsieme del `LS` associato al nodo \\(t\\)
 -   \\(y = \\{y\_{1},y\_{2},\cdots,y\_{c}\\}\\) insieme delle etichette delle classi
 
