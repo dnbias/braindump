@@ -43,6 +43,7 @@ Nel _modello a cascata_ queste sono distinte e separate
 Parte dal presupposto che le specifiche sono prevedibili e stabili e possono essere definite correttamente sin dall'inizio, a fronte di un basso tasso di cambiamenti
 - nella realtà questo non avviene quasi mai, questo modello é ottimo in caso di sistemi critici
 
+[[../media/img/waterfall-workflow.jpg]]
 ** Modello di Sviluppo Incrementale
 Nel _modello di sviluppo incrementale_ queste sono intrecciate, aggiunte di funzionalità alla versione precedente (versioning)
 - utilizzato in caso di requisiti che cambiano durante lo sviluppo
@@ -169,6 +170,7 @@ In questo processo é utilizzato solo =UML=
 
 Quasi tutto in =UP= é opzionale, deciso dal project leader
 
+[[../media/img/agile-workflow.jpg]]
 *** Requisiti
 Capacita o condizioni a cui il sistema e il progetto devono essere conformi
 - é l'utente che li stabilisce, non il progettista
@@ -446,6 +448,8 @@ A sua volta delegherà al =Controller= dello strato di Dominio.
 [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]] sono idee di progettazione più avanzate rispetto a  [[id:91997cc9-963d-4ef8-81ee-6026badb9951][GRASP]].
 - non sono proprio principi
 - articoli di [[https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns][journaldev]] a riguardo
+
+[[../media/img/gof-patterns.png]]
 
 _Soluzioni progettuali comuni_, /emergono/ dal codice di progetti di successo.
 Un fattore emerso é la superiorità della /composizione/ rispetto all'/ereditarietà/:
