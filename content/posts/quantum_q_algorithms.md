@@ -1,7 +1,6 @@
 +++
-title = "Quantum e Algoritmi in Q#"
+title = "Simulazione di Algoritmi Quantistici usando lo strumento Q#"
 author = ["Daniel Biasiotto"]
-date = 2022-05-12T19:31:00+02:00
 tags = ["university", "thesis", "compsci"]
 draft = false
 +++
@@ -9,21 +8,14 @@ draft = false
 \\(\pagebreak\\)
 
 
-## Metadata <span class="tag"><span class="export_md">export-md</span></span> {#metadata}
-
--   Tags: [Quantum Computing]({{< relref "quantum_computing.md" >}}), [CalcCompl]({{< relref "20210921121153-calcolabilita_e_complessita.md" >}}), [Deutsch-Jozsa Algorithm]({{< relref "deutsch_jozsa_algorithm.md" >}})
--   Sources: [Learn Quantum Computing with Python and Q#]({{< relref "learn_quantum_computing_with_python_and_q.md" >}}), [Medium: Quantum Basics](https://medium.com/a-bit-of-qubit/deutsch-jozsa-algorithm-quantum-computing-basics-708df8c4caf7), [Qiskit textbook](https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html)
--   [PDF Version](/ox-hugo/quantum_q_algorithms.pdf)
-
-
 ## Introduzione {#introduzione}
 
-Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilità di superare i limiti computazionali attualmente compresi in diverse aree di ricerca.
+Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilità di superare i limiti computazionali attualmente raggiunti in diverse aree di ricerca.
 É possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
 
 -   crittografia
--   problemi di ricerca
--   simulazione di sistemi quantistici
+-   problemi di ricerca, l'algoritmo di Grover in questo campo é quadraticamente più veloce del analogo classico
+-   utilizzo di computer quantistici per la simulazione di sistemi quantistici
 -   machine learning
 -   computazione biologica
 -   chimica generativa
@@ -33,7 +25,8 @@ Mentre gli attuali computer diventano sempre più veloci e le tecniche industria
 Il modo attualmente più congeniale di utilizzare questi hardware per effettuare testing di software rimane quello della condivisione di risorse attraverso le tecnologie di _cloud computing_.
 
 Ma questo non significa che non sia possibile o non sia utile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
-Un importante punto di forza di questa tecnologia é che ci aspettiamo che i computer quantistici in generale siano molto più lenti di computer classici ma che le risorse di cui dispongono nel contesto di alcune classi di  problemi da risolvere scalino diversamente, in particolare permettendo per i problemi giunti di superare di gran lunga la _performance_ dei migliori algoritmi classici.
+Un importante punto di forza di questa tecnologia é che ci aspettiamo che i computer quantistici in generale siano molto più lenti di computer classici in termini di velocità di clock e architettura delle porte logiche ma che le risorse di cui dispongono nel contesto di alcune classi di  problemi da risolvere scalino diversamente, in particolare permettendo per i problemi giusti, più adatti, di superare di gran lunga la _performance_ dei migliori algoritmi classici.
+Questo perché l'approccio algoritmico permesso da questa tecnologia é profondamente diverso da quello classico e porta a miglioramenti importanti in termini di complessità computazionale.
 D'altra parte non ci si deve aspettare che questa sia una soluzione perfetta, ci sono problemi che rimarranno difficili da risolvere nonostante le nuove possibilità della computazione quantistica.
 
 Per molto tempo l'approccio a questo campo é rimasto accessibile solo a matematici e fisici con le grandi conoscenze specifiche necessarie a comprendere appieno la meccanica quantistica e le sue sfumature tecniche.
@@ -67,16 +60,20 @@ I computer quantistici offrono nuove possibilità nella risoluzione di diverse c
 
 Ad esempio:
 
--   L'**algoritmo di Grover** effettua una ricerca in una lista di \\(N\\) elementi in \\(O(\sqrt{N})\\)
--   L'**algoritmo di Shor** fattorizza velocemente grandi numeri, in particolare permette di fattorizzare con un grado di errore arbitrariamente piccolo un numero polinomiale di passi rispetto alla lunghezza in bit dell'input
--   L'**algoritmo di Deutsch-Jozsa** verifica se una funzione é costante o bilanciata in \\(O(1)\\)
+-   L'**algoritmo di Grover** effettua una ricerca in una lista di \\(N\\) elementi in tempo \\(O(\sqrt{N})\\)
+-   L'**algoritmo di Shor** fattorizza velocemente grandi numeri, in particolare permette di fattorizzare con un grado di errore arbitrariamente piccolo e un numero polinomiale di passi rispetto alla lunghezza in bit dell'input
+-   L'**algoritmo di Deutsch-Jozsa** verifica se una funzione é costante o bilanciata in tempo costante \\(O(1)\\)
+-   L'**algoritmo di Simon**, ispirazione per il sopraccitato algoritmo di Shor, risolve in tempo esponenzialmente più veloce rispetto all'approccio classico il problema di determinare se una data funzione \\(f\\) _blackbox_ sia **uno-a-uno** o **due-a-uno**
+
+In aggiunta ai problemi di cui sopra, la cui soluzione é legata a un algoritmo in particolare, sono state trovate applicazioni per i computer quantistici in diversi altri ambiti:
+
 -   La stima di una somma di Gauss, un tipo di somma esponenziale, con precisione polinomiale e in tempo polinomiale contro il tempo esponenziale degli algoritmi classici
 -   La valutazioni di formule booleane complesse può essere velocizzata tramite un approccio quantistico
 -   Questi computer permettono di simulare sistemi quantistici permettendone uno studio più approfondito
--   La generazioni di numeri casuale é un'importante componente della crittologia e utilizzando tecniche quantistiche é possibile generarne che siano davvero casuali e non più pseudo-casuali come necessario in computer classici
+-   La generazioni di numeri casuali é un'importante componente della crittologia e utilizzando tecniche quantistiche é possibile generarne che siano davvero casuali e non più pseudo-casuali come necessario in computer classici
 
 Questi sono risultati importanti e in particolare l'algoritmo di Shor pone dei dubbi sulla sicurezza degli attuali protocolli crittografici che si basano sulla difficoltà computazionale della fattorizzazione di grandi numeri interi.
-Se tale algoritmo fosse facilmente eseguibile significherebbe che un attaccante facilmente violare questi protocolli di sicurezza correntemente alla base della comunicazione via Internet.
+Se tale algoritmo fosse facilmente eseguibile significherebbe che un attaccante potrebbe facilmente violare questi protocolli di sicurezza correntemente alla base della comunicazione via Internet.
 
 Rimane difficile trovare possibili algoritmi quantistici che diano un vantaggio computazionale nel campo dell'apprendimento automatico dove é fondamentale l'accesso casuale a una grande quantità di dati.
 
@@ -99,12 +96,12 @@ Altri _Software Development Kit_ che possono essere utilizzati per eseguire circ
 
 Molti di questi progetti sono open-source e sviluppati sulla base di `Python`.
 
-Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto era ciò che era utilizzato dalla nostra fonte principale _Learn Quantum Computing with Python and Q#_.
+Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto questo strumento era utilizzato dalla nostra fonte principale _Learn Quantum Computing with Python and Q#_.
 
 L'ambiente di esecuzione `Q#` può essere configurato sul editor `Visual Studio Code` tramite l'add-on proprietario di Microsoft.
 Quest'ultimo é disponibile solo sulla versione non `FOSS` del software, che é possibile installare tramite le repository opensource linux.
 
-In alternativa o anche parallelamente é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`. Questo con i kernel necessari installati, quindi l'ultima versione di `dotnet` disponibile.
+In alternativa o anche parallelamente é possibile sviluppare codice `Q#` ed eseguirlo tramite `Jupyter Notebook` tramite `Python`. Questo con i kernel necessari installati, avendo quindi l'ultima versione di `dotnet` disponibile.
 
 Tramite `anaconda` si crea un ambiente con il necessario:
 
@@ -200,26 +197,31 @@ operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
   oracles.qs
 </div>
 
-Dove sono definiti versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate.
+Qui sopra sono definite le versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate.
 In particolare abbiamo definito oracoli per le seguenti funzioni:
 
 -   \\(f(x)=0\\)
 -   \\(f(x)=1\\)
 -   \\(f(x)=x\\)
--   \\(f(x)= \lnot x\\) o \\(f(x) = 1-x\\)
+-   \\(f(x)= \lnot x\\) ovvero \\(f(x) = 1-x\\)
 -   \\(f(x, y) = x \oplus y\\)
-    -   dove \\(x\\) e' l'input lungo \\(n\\) qbit e \\(y\\) e' l'output
-
-{{< figure src="/ox-hugo/balanced-oracle.png" caption="<span class=\"figure-number\">Figure 1: </span>esempio di oracolo bilanciato utilizzando porte CNOT" >}}
+    -   dove \\(x\\) é l'input lungo \\(n\\) qbit e \\(y\\) é l'output
 
 In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate.
+
+In `figura 1` vediamo un'altro esempio di oracolo bilanciato che applica 3 porte `CNOT` all'ultimo qubit:
+
+-   \\(q\_{3} = q\_{3} \oplus q\_{0}\_{} \oplus q\_{1} \oplus q\_{2}\\)
+
+{{< figure src="/ox-hugo/balanced-oracle.png" caption="<span class=\"figure-number\">Figure 1: </span>esempio di oracolo bilanciato utilizzando porte CNOT" >}}
 
 
 ## Algoritmo di Deutsch-Jozsa {#algoritmo-di-deutsch-jozsa}
 
-L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantistico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantistico. Spingendo la ricerca in questa direzione per determinati problemi.
+L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantistico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantistico.
+Questo algoritmo ha spinto la ricerca in questa direzione per determinati problemi.
 
-L'algoritmo tratta la decisione di una funzione \\(f\\) booleana con \\(n\\) bit in input
+L'algoritmo risponde a una domanda su una funzione \\(f\\) booleana con \\(n\\) bit in input
 \\[f(\\{x\_{0},x\_{1},\cdots,x\_{n}\\}) \rightarrow 0\text{ o }1\\]
 
 Questa funzione su cui agisce l'algoritmo ha la proprietà di essere una di due forme:
@@ -227,38 +229,82 @@ Questa funzione su cui agisce l'algoritmo ha la proprietà di essere una di due 
 -   costante
 -   bilanciata
 
-E quindi restituisca per tutti gli input \\(\\{x\_{0},x\_{1},\cdots,x\_{n}\\}\_{}\\) lo stesso risultato se costante oppure restituisca _esattamente_ \\(0\\) per metà degli input e \\(1\\) per metà degli input.
+Definite come:
+
+-   Una funzione é costante se restituisce per tutti gli input \\(\\{x\_{0},x\_{1},\cdots,x\_{n}\\}\_{}\\) lo stesso risultato
+-   Una funzione é bilanciata se restituisce 0 esattamente per metà degli input, e 1 esattamente per metà degli input
 
 
 ### La Soluzione Classica {#la-soluzione-classica}
 
 Nella soluzione classica nel **caso migliore** due _query_ all'oracolo sono sufficienti per riconoscere la funzione \\(f\\) come bilanciata.
-Per esempio si hanno due chiamate:
+Per esempio supponiamo di avere due chiamate con i seguenti risultati:
 \\[f(0,0,\cdots) \rightarrow 0\\]
 \\[f(1,0,\cdots) \rightarrow 1\\]
 
-Dato che é assunto che \\(f\\) é _garantita_ essere costante oppure bilanciata questi risultati ci dimostrano \\(f\\) come bilanciata.
+Dato che é assunto che \\(f\\) sia _garantita_ essere costante oppure bilanciata questi risultati ci dimostrano \\(f\\) come bilanciata.
 
 Per quanto riguarda il caso peggiore tutte le nostre interrogazioni daranno lo stesso output, decidere in modo certo che \\(f\\) sia costante necessita di metà più uno interrogazioni.
-In quanto il numero di input possibili é \\(2^{n}\\) questo significa che saranno necessarie \\(2^{n-1}+1\\) interrogazioni per essere certi che \\(f(x)\\) sia costante nel caso peggiore.
+Dato che il numero di input possibili é \\(2^{n}\\) questo significa che, nel caso peggiore, saranno necessarie \\(2^{n-1}+1\\) interrogazioni per essere certi che \\(f(x)\\) sia costante.
 
 
 ### La Soluzione Quantistica {#la-soluzione-quantistica}
 
 Tramite la computazione quantistica é possibile risolvere questo problema con un'unica chiamata della funzione \\(f(x)\\).
-Questo a patto che la funzione \\(f\\) sia implementata come un oracolo quantistico, che mappi:
+Questo a patto che la funzione \\(f\\) sia implementata come un oracolo quantistico \\(U\_{f}\\), che mappi:
 \\(|x\rangle | y \rangle\\) a \\(| x \rangle |y \oplus f(x) \rangle\\)&nbsp;[^fn:1]
 
 I passi dell'algoritmo in particolare sono:
 
 1.  prepara 2 registri di `qubit`, il primo di \\(n\\) `qubit` inizializzato a \\(| 0 \rangle\\) e il secondo di un singolo `qubit` inizializzato a \\(| 1\rangle\\)
 2.  applica `Hadamard` a entrambi i registri
-3.  applica l'oracolo quantistico
+3.  applica l'oracolo quantistico \\(U\_{f}\\) definito per \\(f\\)
 4.  a questo punto il secondo registro può essere ignorato, riapplica `Hadamard` al primo registro
 5.  misura il primo registro, questa risulta \\(1\\) per \\(f(x)\\) costante e \\(0\\) altrimenti nel caso bilanciato
 
 {{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 2: </span>i passi dell'algoritmo in forma di circuito" >}}
 
+Un punto fondamentale dell'algoritmo é l'utilizzo della porta `Hadamard`, chiamata anche trasformata di `Hadamard`.
+Questa é una generalizzazione delle trasformate di Fourier definita dalla matrice \\(H\_{m} = 2^{m} \times 2^{m}\\).
+Questa é definibile ricorsivamente a partire dall'identità \\(H\_{0} = 1\\) e, per \\(m > 0\\):
+
+\begin{align\*}
+H\_{m} = \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+H\_{m-1} & H\_{m-1} \\\\
+H\_{m-1} & -H\_{m-1}
+\end{pmatrix}
+\end{align\*}
+
+e quindi alcuni esempi di porte di `Hadamard` sono:
+
+\begin{align\*}
+H\_{0} &= +(1) \\\\
+H\_{1} &=  \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1 \\\\
+1 & -1
+\end{pmatrix} \\\\
+H\_2 &=  \frac{1}{2}
+\begin{pmatrix}
+1 & 1 & 1 & 1\\\\
+1  &-1 & 1  & -1\\\\
+1 & 1 & -1 & -1\\\\
+1 & -1 & -1 & 1\\\\
+\end{pmatrix} \\\\
+\end{align\*}
+
+Il trasformato di `Hadamard` \\(H\_{1}\\) é la porta logica quantistica conosciuta come porta `Hadamard`, l'applicazione di questa porta a ciascun qubit di un registro a n-qubit parallelamente é equivalente alla trasformata \\(H\_{n}\\).
+
+Si crede che applicando un circuito di `Hadamard` a un qubit nello stato \\(| 0 \rangle\\) si crei uno stato sovrapposto tra gli stati \\(| 0 \rangle\\) e \\(| 1 \rangle\\) denominato \\(| + \rangle\\).
+A livello matematico sono definite:
+\\[ | + \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle + | 1 \rangle)\\]
+\\[ | - \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle - | 1 \rangle)\\]
+
+{{< figure src="/ox-hugo/bloch-sphere.png" caption="<span class=\"figure-number\">Figure 3: </span>Rappresentazione geometrica di un qubit con la sfera di Bloch. Sono rappresentati come poli sull'asse \\(z\\) gli stati equivalenti allo 0 e 1 di un bit classico, sull'asse \\(x\\) invece i poli sono gli stati sopraccitati \\(| + \rangle\\) e \\(| - \rangle\\). Con questa rappresentazione é possibile notare come \\(H\\) non sia altro che una rotazione in questo spazio tridimensionale." >}}
+
+Inoltre una funzione \\(f\\) applicata a questa sovrapposizione si ottiene, nel caso \\(n=1\\), uno stato sovrappostro tra \\(f(0)\\) e \\(f(1)\\).
+Questo effetto é utilizzato dall'algoritmo in quanto  riapplicando `Hadamard` si controlla in un solo passo se si ottiene la sovrapposizione di due stati uguali o di due stati diversi, o meglio se \\(f(0) = f(1)\\) o meno. La riapplicazione di \\(H\\) restituirà \\(1\\) nel primo caso, \\(0\\) nel secondo.
 \\(\pagebreak\\)
 
 
@@ -318,5 +364,4 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
 \\(\pagebreak\\)
 
 [^fn:1]: dove \\(\oplus\\) é l'addizione modulo \\(2\\) o `XOR`
-
     \\(\pagebreak\\)

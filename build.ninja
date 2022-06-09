@@ -948,3 +948,5 @@ build content/posts/latebra.md: org2md roam/latebra.org
 build content/posts/20210921122326-metodi_formali_dell_informatica.md: org2md roam/20210921122326-metodi_formali_dell_informatica.org
 
 build content/posts/adapter.md: org2md roam/adapter.org
+
+build content/posts/qubit.md: org2md roam/qubit.org

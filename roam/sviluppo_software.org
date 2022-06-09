@@ -5,10 +5,11 @@
 #+title: Sviluppo Software
 #+date: [2022-03-03 Thu 00:08]
 #+filetags: university
+#+latex_class: arsclassica
 - Info Corso
   + Matteo Baldoni
   + Sviluppo Agile
-- [[./sviluppo_software.pdf][PDF Version]]
+- [[./export_tex/sviluppo_software.pdf][PDF Version]]
 * Software
 Include:
 - tutta la documentazione elettronica che serve agli utenti dei sistemi, agli sviluppatore e i responsabili della qualità

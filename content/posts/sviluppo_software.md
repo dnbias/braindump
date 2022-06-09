@@ -58,6 +58,8 @@ Parte dal presupposto che le specifiche sono prevedibili e stabili e possono ess
 
 -   nella realtà questo non avviene quasi mai, questo modello é ottimo in caso di sistemi critici
 
+{{< figure src="/ox-hugo/waterfall-workflow.jpg" >}}
+
 
 ### Modello di Sviluppo Incrementale {#modello-di-sviluppo-incrementale}
 
@@ -66,11 +68,11 @@ Nel <span class="underline">modello di sviluppo incrementale</span> queste sono 
 -   utilizzato in caso di requisiti che cambiano durante lo sviluppo
     -   in molti casi se si procede progettando tutto fin dall'inizio si rischia di buttare molto del lavoro in seguito
 -   si implementano immediatamente le funzionalità più critiche
-    -   per rilasciare il prima possibile: il _feedback_ e' l'aspetto più critico
+    -   per rilasciare il prima possibile: il _feedback_ é l'aspetto più critico
     -   si procede per incrementi, _patch_
         -   il codice si degrada progressivamente
-        -   per arginare la degradazione e' necessario un continuo _refactoring_ del codice
--   per il management e' più complesso gestire le tempistiche
+        -   per arginare la degradazione é necessario un continuo _refactoring_ del codice
+-   per il management é più complesso gestire le tempistiche
     -   almeno in parte può essere essenziale pianificare le iterazioni
 -   fin dall'inizio si procede con progettazione e testing del sistema
 
@@ -81,7 +83,7 @@ L'ambiente odierno richiede cambiamenti rapidi:
 
 per ciò questo metodo di sviluppo ha preso piede
 
-Lo sviluppo e' organizzato in sotto-progetti
+Lo sviluppo é organizzato in sotto-progetti
 
 -   progettazione
 -   iterazione
@@ -217,14 +219,16 @@ In questo processo é utilizzato solo `UML`
 -   utilizzato solo se necessario, se viene tralasciato va indicato il motivo
 -   i diagrammi seguono le iterazioni e gli incrementi
 
-Quasi tutto in `UP` e' opzionale, deciso dal project leader
+Quasi tutto in `UP` é opzionale, deciso dal project leader
+
+{{< figure src="/ox-hugo/agile-workflow.jpg" >}}
 
 
 #### Requisiti {#requisiti}
 
 Capacita o condizioni a cui il sistema e il progetto devono essere conformi
 
--   e' l'utente che li stabilisce, non il progettista
+-   é l'utente che li stabilisce, non il progettista
 
 Possono essere
 
@@ -271,7 +275,7 @@ Sono descrizioni testuali che indicano l'uso che l'utente farà del sistema
 -   scenario (istanza di caso d'uso); sequenza specifica di azioni e interazioni tra sistema e attori
 -   caso d'uso; collezione di scenari correlati (di successo/fallimento) che descrivono un attore che usa il sistema per raggiungere un obiettivo specifico
 
-`UP` e' _use-case driven_, questi sono il modo in cui si definiscono i requisiti di sistema
+`UP` é _use-case driven_, questi sono il modo in cui si definiscono i requisiti di sistema
 
 -   i casi d'uso definiscono analisi e progettazione
 -   i casi sono utilizzati per pianificare le iterazioni
@@ -279,13 +283,13 @@ Sono descrizioni testuali che indicano l'uso che l'utente farà del sistema
 
 Il **modello dei casi d'uso** include un grafico `UML`
 
--   e' un modello delle funzionalità del sistema
+-   é un modello delle funzionalità del sistema
 
 I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i requisiti come input all' `OOA/D`
 
--   l'enfasi e' sull'utente, sono il principale metodo di inclusione dell'attore nel processo di sviluppo
+-   l'enfasi é sull'utente, sono il principale metodo di inclusione dell'attore nel processo di sviluppo
 -   questi non sono algoritmi, sono semplici descrizioni dell'interazione, non la specifica di implementazione
-    -   il _come_ e' obiettivo della progettazione `OOD`
+    -   il _come_ é obiettivo della progettazione `OOD`
     -   i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il _cosa_ e nulla riguardo al _come_
 
 I casi devono essere _guidelines_, esprimerle in uno  **stile essenziale**. A livello delle intenzioni e delle responsabilità, non delle azioni concrete.
@@ -440,12 +444,12 @@ Strumento per pensare e comunicare
 
 -   utilizzato per rappresentare il modello di dominio/concettuale
 -   permette un passaggio più veloce da modello a design/progettazione
-    -   il gap rappresentativo sarà piú semplice
+    -   il gap rappresentativo sarà più semplice
 
 <span class="underline">É un linguaggio visuale per la specifica, la costruzione e la documentazione degli elaborati di un sistema software</span>
 
 -   de facto standard un particolare per software OO
--   puó essere utilizzato come abbozzo, progetto o linguaggio di programmazione
+-   può essere utilizzato come abbozzo, progetto o linguaggio di programmazione
 -   la modellazione agile enfatizza l'uso di `UML` come abbozzo
 
 
@@ -454,35 +458,34 @@ Strumento per pensare e comunicare
 Riassunto di esperienze precedenti, permettono di individuare le pratiche ottime nello sviluppo di progetti complessi.
 Un _Pattern_ é una coppia _problema-soluzione_ ben conosciuta e con un nome associato.
 
-L'approccio complessivo é guidato dalla **responsabilitá**:
+L'approccio complessivo é guidato dalla **responsabilità**[^fn:1]:
 
 -   `RDD` - Responsibility-Driven Development
-    -   **NB** quella della responsabilitá é una metafora per semplificare il ragionamento
 
-In `UML` la responsabilitá é un _contratto_ o un _obbligo_ di un classificatore.
+In `UML` la responsabilità é un _contratto_ o un _obbligo_ di un classificatore.
 Sono correlate agli obblighi o al comportamento di un oggetto, sono di due tipi:
 
 1.  di fare
     -   fare qualcosa esso stesso
-    -   chiedere ad altri di aseguire azioni
-    -   controllare e controllare attivitá di altri
+    -   chiedere ad altri di eseguire azioni
+    -   controllare e controllare attività di altri
 2.  di conoscere
     -   i propri dati
     -   gli oggetti correlati
-    -   cose che puó derivare o calcolare
+    -   cose che può derivare o calcolare
 
 
 ### GRASP {#grasp}
 
 `General Responsibility Assignment Software Patterns`
 
-> Capire le responsabilitá é fondamentale per una buona programmazione a oggetti. - [Martin Fowler]({{< relref "martin_fowler.md" >}})
+> Capire le responsabilità é fondamentale per una buona programmazione a oggetti. \\(\qquad\qquad\qquad\\) ~ [Martin Fowler]({{< relref "martin_fowler.md" >}}) [#cit]({{< relref "20210604132601-cit.md" >}})
 
-[GRASP]({{< relref "grasp.md" >}}) tratta i pattern di base per l'assegnazione di responsabilitá.
+[GRASP]({{< relref "grasp.md" >}}) tratta i pattern di base per l'assegnazione di responsabilità.
 
 -   buon [blog post](http://www.kamilgrzybek.com/design/grasp-explained/) a riguardo
 
-Disegnare i diagrammi di interazione é occasione di considerare le responsabilitá (metodi) e assegnarle.
+Disegnare i diagrammi di interazione é occasione di considerare le responsabilità (metodi) e assegnarle.
 
 La progettazione modulare é uno dei principi (`High Cohesion` - `Low Coupling` )
 
@@ -492,9 +495,9 @@ La progettazione modulare é uno dei principi (`High Cohesion` - `Low Coupling` 
 #### Creator {#creator}
 
 -   _Chi crea un oggetto_ `A`?
-    -   _Chi deve essere responsabile della creazione di una nuova istanza di una classe?_
+-   _Chi deve essere responsabile della creazione di una nuova istanza di una classe?_
 
-Assegna alla classe `B` la responsabilitá vale una delle seguenti condizioni:
+Assegna alla classe `B` la responsabilità vale una delle seguenti condizioni:
 
 -   `B` contiene o aggrega con una composizione oggetti di tipo `A`
 -   `B` registra `A`
@@ -506,9 +509,9 @@ Assegna alla classe `B` la responsabilitá vale una delle seguenti condizioni:
 
 #### Information Expert {#information-expert}
 
--   _Chi ha una particolare responsabilitá?_
+-   _Chi ha una particolare responsabilità?_
 
-Assegna la responsabilitá alla classe che contiene le informazioni necessarie per soddisfarla.
+Assegna la responsabilità alla classe che contiene le informazioni necessarie per soddisfarla.
 
 -   `Expert`
 
@@ -518,10 +521,10 @@ Assegna la responsabilitá alla classe che contiene le informazioni necessarie p
 -   _Come ridurre l'impatto dei cambiamenti?_
 -   _Come sostenere una dipendenza bassa?_
 
-Assegna le responsabilitá in modo tale che l'accoppiamento (non necessario) rimanga basso.
+Assegna le responsabilità in modo tale che l'accoppiamento (non necessario) rimanga basso.
 Questo é un principio da utilizzare per valutare le scelte possibili e gli altri pattern.
 
--   classi per natura **generiche** e che verranno riutilizzate devono avere un accoppiamento particolamente basso.
+-   classi per natura **generiche** e che verranno riutilizzate devono avere un accoppiamento particolarmente basso.
 -   il rapporto tra classi-sottoclassi é un **accoppiamento forte**
 -   accoppiamento alto con elementi _stabili_ o _pervasivi_ causano raramente problemi
     -   il problema sorge con _accoppiamento alto con elementi per certi aspetti instabili_
@@ -532,39 +535,40 @@ Questo é un principio da utilizzare per valutare le scelte possibili e gli altr
 -   _Come mantenere gli oggetti focalizzati, comprensibili e gestibili?_
     -   effetto collaterale, sostenere `Low Coupling`
 
-Assegna le responsabilitá in modo tale che la coesione rimanga alta.
+Assegna le responsabilità in modo tale che la coesione rimanga alta.
 Questo é un principio da utilizzare per valutare le scelte possibili e gli altri pattern alternativi.
 
 Una classe con una bassa coesione fa molte cose non correlate tra loro o svolge troppo lavoro.
-La coesione puó essere misurata in termini di:
+La coesione può essere misurata in termini di:
 
--   coesione di dati
--   coesione funzionale
+-   <span class="underline">coesione di dati</span>
+-   <span class="underline">coesione funzionale</span>
     -   questa corrisponde al principio di `High Cohesion`
-    -   Grady Booch: c'é una coesione funzionale alta quando gli elementi di un componente _lavorano tutti insieme per fornire un comportamente ben circoscritto_
--   coesione temporale
--   coesione per pura coincidenza
+    -   Grady Booch: c'è una coesione funzionale alta quando gli elementi di un componente _lavorano tutti insieme per fornire un comportamento ben circoscritto_
+-   <span class="underline">coesione temporale</span>
+-   <span class="underline">coesione per pura coincidenza</span>  ~~bad~~
 
 
 #### Controller {#controller}
 
 -   _Qual é il primo oggetto oltre lo strato_ `UI` _che riceve e coordina ("controlla") un'operazione di sistema?_
 
-Assegna la responsabilitá a un oggetto che rappresenta uno di questi:
+Assegna la responsabilità a un oggetto che rappresenta uno di questi:
 
--   il sistema complessivo, un oggetto radice o entry point del software, un sottosistema principale
+-   il <span class="underline">sistema complessivo</span>, un oggetto radice o entry point del software, un sottosistema principale
     -   _controller facade_
--   uno scenario di un caso d'uso all'interno del quale si verifica l'operazione di sistema
+-   uno <span class="underline">scenario di un caso d'uso</span> all'interno del quale si verifica l'operazione di sistema
     -   _controller di sessione_ o _controller di caso d'uso_
 
 Il `Controller` é un pattern di delega:
 
 -   oggetti dello strato `UI` catturano gli eventi di sistema generati dagli attori
 -   oggetti dello strato `UI` devono delegare le richieste di lavoro a oggetti di un altro strato
--   il `Controller` é una sorta di _facciata_
-    -   controlla e coordina ma non esegui lui stesso le operazioni, secondo la `High Cohesion`
+-   il `Controller` é una sorta di _facciata_ appunto
+    -   controlla e coordina ma non esegue lui stesso le operazioni, secondo la `High Cohesion`
 
-> Il controller `MVC` é distinto e solitamente dipende strettamente dalla tecnologia utilizzata per la `UI` e fa parte di questo strato, a sua volta delegerá al `Controller` dello strato di Dominio.
+> Il controller `MVC` é distinto e solitamente dipende strettamente dalla tecnologia utilizzata per la `UI` e fa parte di questo strato.
+> A sua volta delegherà al `Controller` dello strato di Dominio.
 
 
 #### Polymorphism {#polymorphism}
@@ -582,42 +586,44 @@ Il `Controller` é un pattern di delega:
 ### GoF {#gof}
 
 `Gang of Four`
-[GoF]({{< relref "gof.md" >}}) sono idee di progettazione piú avanzate rispetto a  [GRASP]({{< relref "grasp.md" >}}).
+[GoF]({{< relref "gof.md" >}}) sono idee di progettazione più avanzate rispetto a  [GRASP]({{< relref "grasp.md" >}}).
 
 -   non sono proprio principi
 -   articoli di [journaldev](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns) a riguardo
 
-Soluzioni progettuali comuni, emengono dal codice di progetti di successo.
-Un fattore emerso é la superioritá della _composizione_ rispetto all'_ereditarietá_:
+{{< figure src="/ox-hugo/gof-patterns.png" >}}
 
--   **Ereditarietá**
-    -   la sottoclasse puó accedere ai dettagli della superclasse
+<span class="underline">Soluzioni progettuali comuni</span>, _emergono_ dal codice di progetti di successo.
+Un fattore emerso é la superiorità della _composizione_ rispetto all'_ereditarietà_:
+
+-   **Ereditarietà**
+    -   la sottoclasse può accedere ai dettagli della superclasse
     -   **whitebox**, a scatola aperta
     -   é definita _staticamente_, non é modificabile a tempo di esecuzione
     -   una modifica alla superclasse potrebbe avere ripercussioni indesiderate sulla classe che la estende
         -   non rispetta l'incapsulamento
 -   **Composizione**
-    -   le funzionalitá sono ottenute tramite composizione/assemblamento di oggetti
+    -   le funzionalità sono ottenute tramite composizione/assemblamento di oggetti
     -   riuso **blackbox**, i dettagli interni sono nascosti
-    -   una classe che utilizza un'altra classe puó referenziarla attraverso una _interfaccia_, questo meccanismo é dinamico
+    -   una classe che utilizza un'altra classe può referenziarla attraverso una _interfaccia_, questo meccanismo é dinamico
         -   questa composizione tramite interfaccia rispetta l'incapsulamento, solo una modifica all'interfaccia comporterebbe ripercussioni
 
 Questo aiuta a mantenere le classi _incapsulate_ e _coese_.
-L'ereditarietá puó essere realizzato in due modi:
+L'ereditarietà può essere realizzato in due modi:
 
-1.  Polimorfismo
+1.  **Polimorfismo**
     -   le sottoclassi possono essere scambiate l'una con l'altra
     -   si utilizza una superclasse comune
     -   si sfrutta _l'upcasting_
-2.  Specializzazione
-    -   le sottoclassi guadagnano elementi e proprietá rispetto alla classe base
+2.  **Specializzazione**
+    -   le sottoclassi guadagnano elementi e proprietà rispetto alla classe base
 
-I pattern mostrano che il **polimorfismo** e il _binding dinamico_ é molto sfruttato, mentre la **specializzazione** non é comunemente utilizzata.
+I pattern mostrano che il **polimorfismo** e il _binding dinamico_ é molto sfruttato, mentre la **specializzazione** non é comunemente utilizzata in buone soluzioni.
 
 
 #### Creazionali {#creazionali}
 
-Riguardanti l'instanziazione delle classi
+Riguardanti l'_instanziazione_ delle classi
 
 1.  [Abstract Factory]({{< relref "abstract_factory.md" >}})
     -   _interfaccia_ factory
@@ -636,29 +642,29 @@ Riguardanti l'instanziazione delle classi
     -   gli altri oggetti hanno bisogno di un punto di accesso globale e singolo al _singleton_
     -   si definisce un **metodo statico** della classe che restituisce l'oggetto _singleton_
         -   questo in Java
-        -   restituisce un puntatore all'oggetto se giá esiste, se non esiste ancora prima lo crea
+        -   restituisce un puntatore all'oggetto se già esiste, se non esiste ancora prima lo crea
             -   [Lazy Initialization]({{< relref "lazy_initialization.md" >}})
         -   questa implementazione é preferibile
-            -   la classe puó essere raffinata in sottoclassi
+            -   la classe può essere raffinata in sottoclassi
             -   la maggior parte dei meccanismi di comunicazione remota object oriented supporta l'accesso remoto solo a metodi d'istanza
             -   una classe non é sempre _singleton_ in tutti i contesti applicativi, dipende dalla `virtual machine`
-    -   il _singleton_ puó essere anche implementato come **classe statica**
+    -   il _singleton_ può essere anche implementato come **classe statica**
         -   non un vero e proprio _singleton_, si lavora con la classe statica non l'oggetto
-        -   la classe statica ha metodi statici che offrono ció che é richiesto
+        -   la classe statica ha metodi statici che offrono ciò che é richiesto
     -   in `UML` é indicato con un \\(1\\) nella sezione del nome, in alto a destra
-    -   puó esserci concorrenza in _multithreading_
+    -   può esserci concorrenza in _multithreading_
 7.  [Double-check Locking]({{< relref "double_check_locking.md" >}})
 
 
 #### Strutturali {#strutturali}
 
-Riguardanti la struttura delle classi/oggeti
+Riguardanti la _struttura_ delle classi/oggetti
 
 1.  [Adapter]({{< relref "adapter.md" >}})
     -   gestire interfacce incompatibili
     -   fornire interfaccia stabile a comportamenti simili ma interfacce diverse
     -   converti l'interfaccia originale in un'altra interfaccia, attraverso un _adapter_ intermedio
-    -   da preferire l'utilizzo di un riferimento `adaptee` da parte del `Adapter`, per incapsulamento
+    -   da preferire l'utilizzo di un riferimento `Adaptee` da parte del `Adapter`, per incapsulamento
         -   questo piuttosto che _estendere_ direttamente l'`Adaptee`
 2.  [Bridge]({{< relref "bridge.md" >}})
 3.  [Composite]({{< relref "composite.md" >}})
@@ -667,13 +673,13 @@ Riguardanti la struttura delle classi/oggeti
     -   rappresenta gerarchie _tutto-parte_
     -   permette di ignorare le differenze tra oggetti semplici e composti
         -   saranno le differenze interne a definire le operazioni, il `client` non vede questo
-    -   costruisce strutture ricorsive dove il cliente gestisce un'unica entitá
+    -   <span class="underline">costruisce strutture ricorsive</span> dove il cliente gestisce un'unica entità
 4.  [Decorator]({{< relref "decorator.md" >}}) o _Wrapper_
-    -   permettere di assegnare responsabilitá addizionali a un oggetto dinamicamente
-    -   inglobare l'oggetto all'interno di un altro che aggiunge le nuove funzionalitá
-        -   piú flessibile dell'estensione della classe, completamente dinamico
-        -   evitano l'esplosione delle sotto classi
-        -   simile al [Composite]({{< relref "composite.md" >}}) ma aggiunge funzionalitá
+    -   permettere di assegnare responsabilità addizionali a un oggetto dinamicamente
+    -   inglobare l'oggetto all'interno di un altro che aggiunge le nuove funzionalità
+        -   più flessibile dell'estensione della classe, completamente dinamico
+        -   evitano l'esplosione delle sottoclassi
+        -   simile al [Composite]({{< relref "composite.md" >}}) ma aggiunge funzionalità
 5.  [Facade]({{< relref "facade.md" >}})
 6.  [Flyweight]({{< relref "flyweight.md" >}})
 7.  [Proxy]({{< relref "proxy.md" >}})
@@ -681,7 +687,7 @@ Riguardanti la struttura delle classi/oggeti
 
 #### Comportamentali {#comportamentali}
 
-Riguardanti l'interazione tra classi
+Riguardanti l'_interazione_ tra classi
 
 1.  [Chain of Responsibility]({{< relref "chain_of_responsibility.md" >}})
     -   utilizzato nella gestione delle _eccezioni_, delega a ritroso
@@ -707,7 +713,7 @@ Riguardanti l'interazione tra classi
         -   assicura che l'oggetto contesto referenzi sempre un oggetto stato che riflette il suo stato corrente
 11. [Strategy]({{< relref "strategy.md" >}})
     -   algoritmi diversi che hanno obiettivi in comune
-    -   stategie come oggetti distinti che implementano una `interface` comune
+    -   strategie come oggetti distinti che implementano una `interface` comune
 12. [Template method]({{< relref "template_method.md" >}})
 13. [Visitor]({{< relref "visitor.md" >}})
     -   separare l'operazione applicata su un contenitore complesso dalla struttura dati cui é applicata
@@ -734,19 +740,19 @@ Progetto `Cat & Ring`
 
 -   Chef Claudio, ansioso
     1.  foglio riepilogativo ricette e preparazioni di tutti i servizi (automatico)
-        -   _opzionalmente_ puó decidere di aggiungere cose al foglio (non al menú)
-    2.  ordina l'elenco per importanza/difficoltá (il metodo é soggettivo)
+        -   _opzionalmente_ puó decidere di aggiungere cose al foglio (non al menù)
+    2.  ordina l'elenco per importanza/difficoltà (il metodo é soggettivo)
         -   questo puó essere fatto anche in un momento successivo o puó essere modificato
     3.  tabellone dei turni: assegna a ogni elemento dell'elenco il _turno_ e un cuoco (disponibile per quel turno)
         -   stima del tempo necessario a ogni cuoco
-        -   quantitá e porzioni
+        -   quantità e porzioni
     4.  revisione degli assegnamenti e dell'ordine di questi
     5.  parallelamente sono creati i fogli riepilogativi dei _servizi_
 -   Chef Tony, rilassato
     1.  fogli riepilogativi ricette e preparazioni di tutti i servizi (automatico)
     2.  ordina l'elenco per giorno del servizio
     3.  fogli riepilogativi dei _servizi_: assegna turno e cuoco (disponibile in quel turno)
-        -   segna se ci sono preparati giá pronti/avanzati da servizi precedenti
+        -   segna se ci sono preparati già pronti/avanzati da servizi precedenti
     4.  tabellone dei turni: per preparazioni critiche nelle tempistiche le assegna a turni successivi
         -   anche senza scegliere subito il cuoco
 
@@ -757,9 +763,9 @@ Progetto `Cat & Ring`
 -   il **tabellone dei turni**
     -   riepiloga ciascun turno i compiti già assegnati indipendentemente dal servizio per cui sono assegnati. E’ usato dallo chef per capire lo “stato” di un turno, e dai cuochi per sapere cos’hanno da fare. E’ dunque pubblico; ogni qual volta uno chef modifica i compiti a partire dal proprio foglio riepilogativo, anche il contenuto del tabellone viene modificato.
 
-Queste sono due visualizzazioni di una stessa informazione, l'utente inserirá l'informazione una volta sola.
+Queste sono due visualizzazioni di una stessa informazione, l'utente inserirà l'informazione una volta sola.
 
--   responsabilitá del sistema queste visualizzazioni
+-   responsabilità del sistema queste visualizzazioni
 
 
 #### Primi UC {#primi-uc}
@@ -767,19 +773,19 @@ Queste sono due visualizzazioni di una stessa informazione, l'utente inserirá l
 -   Claudio
     1.  crea foglio riepilogativo per un servizio di un evento **oppure** apre un foglie riepilogativo esistente (tra i servizi degli eventi di cui é stato incaricato)
     2.  **opzionalmente** aggiunge preparazioni/ricette all'elenco
-    3.  ordina l'elenco per importanza e/o difficoltá
+    3.  ordina l'elenco per importanza e/o difficoltà
     4.  **opzionalmente** consulta tabellone turni
     5.  assegna un compito a un cuoco in un dato turno (sia sul tabellone dei turni che sul foglio riepilogativo) **oppure** modifica un assegnamento **oppure** elimina un assegnamento
     6.  **opzionalmente** specifica per il compito inserito nel tabellone una stima del tempo necessario
-    7.  **opzionalmente** specifica per il compito inserito nel fogilo riepilogativo le quatitá/porzioni da preparare
+    7.  **opzionalmente** specifica per il compito inserito nel fogilo riepilogativo le quantità/porzioni da preparare
 
 _ripete dal passo 4. fino a che soddisfatto_
 
 -   Tony
     1.  crea foglio riepilogativo per un servizio di un evento **oppure** apre un foglie riepilogativo esistente (tra i servizi degli eventi di cui é stato incaricato)
-    2.  **opzionalmente** apre piú fogli riepilogativi ripetendo il passo 1.
-    3.  assegna compito a cuoco per dato turno (sia sul foglio riepilogativo che sul tabellone dei turni) **oppure** specifica che la ricetta/preparazione é giá pronta **oppure** assegna un compito a un turno senza specificare il cuoco
-    4.  indica quantitá/porzioni per il compito inserito
+    2.  **opzionalmente** apre più fogli riepilogativi ripetendo il passo 1.
+    3.  assegna compito a cuoco per dato turno (sia sul foglio riepilogativo che sul tabellone dei turni) **oppure** specifica che la ricetta/preparazione é già pronta **oppure** assegna un compito a un turno senza specificare il cuoco
+    4.  indica quantità/porzioni per il compito inserito
 
 _ripete dal passo 3. fino a che soddisfatto_
 _torna al passo 2. oppure conclude_
@@ -789,18 +795,18 @@ _torna al passo 2. oppure conclude_
 
 1.  Genera foglio riepilogativo **oppure** apre foglio esistente (relativo a eventi cui é incaricato)
 
-_se desidera ripete 1. per aprire piú fogli parallelamente_
+_se desidera ripete 1. per aprire più fogli parallelamente_
 _se desidera continua con 2. altrimenti termina il caso d'uso_
 
 1.  **opzionalmente** aggiunge preparazioni/ricette al foglio
 2.  **opzionalmente** ordina l'elenco
 3.  **opzionalmente** consulta tabellone dei turni
-4.  assegna un compito in un dato turno e **opzionalmente** a un cuoco **oppure** specifica se il compito é giá stato svolto **oppure** modifica un compito giá inserito **oppure** elimina un compito giá inserito
-5.  **opzionalmente** specifica tempo necessario al compito e/o quantitá/porzioni da preparare
+4.  assegna un compito in un dato turno e **opzionalmente** a un cuoco **oppure** specifica se il compito é già stato svolto **oppure** modifica un compito già inserito **oppure** elimina un compito già inserito
+5.  **opzionalmente** specifica tempo necessario al compito e/o quantità/porzioni da preparare
 
 _ripete dal passo 4. fino a che soddisfatto_
 
-\\(\textsc{nb}\\)  i passi 1. (per la generazione) e 4. (gestione delle 2 viste, _foglio servizio_ e _tabellone turni_ ) sono responsabilitá del **Sistema**
+\\(\textsc{nb}\\)  i passi 1. (per la generazione) e 4. (gestione delle 2 viste, _foglio servizio_ e _tabellone turni_ ) sono responsabilità del **Sistema**
 
 
 #### Estensioni {#estensioni}
@@ -808,7 +814,7 @@ _ripete dal passo 4. fino a che soddisfatto_
 
 ### Progettazione {#progettazione}
 
-Progettazione sullo strato di _domain_
+Riguardo lo strato di _domain_
 
 -   passaggio all'inglese per dividere il linguaggio prettamente tecnico e quello leggibile dai clienti
 -   domain modules
@@ -822,10 +828,10 @@ Gestione con `grasp controller` degli eventi tra `UI` e `Domain`
 
 Il `Design Class Diagram` o `DCD`
 
--   e' un documento unico per il progetto
+-   é un documento unico per il progetto
     -   riporta tutte le classi
--   entro questo si puo' suddividere in moduli, ma questi rimangono interdipendenti tra loro
--   questa e' la parte statica
+-   entro questo si puó suddividere in moduli, ma questi rimangono interdipendenti tra loro
+-   questa é la parte statica
 
 Il `Detailed Sequence Diagram` o `DSD`
 
@@ -833,3 +839,5 @@ Il `Detailed Sequence Diagram` o `DSD`
 -   le interazioni tra gli oggetti per eseguire le operazioni necessarie
 -   a questo livello si vedono le chiamate e le risposte
     -   e anche le notifiche tra `observed` e `observer`
+
+[^fn:1]: \\(\textsc{nb}\qquad\\) quella della responsabilità é una metafora per semplificare il ragionamento
