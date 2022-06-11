@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c80b45e4-7958-4bd7-80ca-f21576487ed7
+:END:
+#+title: Screenshot to clipboard
+#+date: [2022-06-09 Thu 17:50]
+#+filetags: til linux
+#+begin_src bash
+$ maim -s -u | xclip -selection clipboard -t image/png -i
+#+end_src

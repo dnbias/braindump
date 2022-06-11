@@ -465,9 +465,9 @@ Un fattore emerso é la superiorità della /composizione/ rispetto all'/ereditar
   + riuso *blackbox*, i dettagli interni sono nascosti
   + una classe che utilizza un'altra classe può referenziarla attraverso una /interfaccia/, questo meccanismo é dinamico
     * questa composizione tramite interfaccia rispetta l'incapsulamento, solo una modifica all'interfaccia comporterebbe ripercussioni
-
 Questo aiuta a mantenere le classi /incapsulate/ e /coese/.
-L'ereditarietà può essere realizzato in due modi:
+
+L'_ereditarietà_ può essere realizzata in due modi:
 1. *Polimorfismo*
    - le sottoclassi possono essere scambiate l'una con l'altra
    - si utilizza una superclasse comune

@@ -12,10 +12,10 @@ $\pagebreak$
 - Sources: [[id:c2bda57f-a02a-460c-96a2-796dd2fee708][Learn Quantum Computing with Python and Q#]], [[https://medium.com/a-bit-of-qubit/deutsch-jozsa-algorithm-quantum-computing-basics-708df8c4caf7][Medium: Quantum Basics]], [[https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html][Qiskit textbook]]
 - [[./quantum_q_algorithms.pdf][PDF Version]]
 * Introduzione
-Lo sviluppo di software quantistici si é confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilità di superare i limiti computazionali attualmente raggiunti in diverse aree di ricerca.
-É possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
+Lo sviluppo di software quantistici si è confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilità di superare i limiti computazionali attualmente raggiunti in diverse aree di ricerca.
+È possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
 - crittografia
-- problemi di ricerca, l'algoritmo di Grover in questo campo é quadraticamente più veloce del analogo classico
+- problemi di ricerca, l'algoritmo di Grover in questo campo è quadraticamente più veloce del analogo classico
 - utilizzo di computer quantistici per la simulazione di sistemi quantistici
 - machine learning
 - computazione biologica
@@ -26,27 +26,27 @@ Mentre gli attuali computer diventano sempre più veloci e le tecniche industria
 Il modo attualmente più congeniale di utilizzare questi hardware per effettuare testing di software rimane quello della condivisione di risorse attraverso le tecnologie di /cloud computing/.
 
 Ma questo non significa che non sia possibile o non sia utile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
-Un importante punto di forza di questa tecnologia é che ci aspettiamo che i computer quantistici in generale siano molto più lenti di computer classici in termini di velocità di clock e architettura delle porte logiche ma che le risorse di cui dispongono nel contesto di alcune classi di  problemi da risolvere scalino diversamente, in particolare permettendo per i problemi giusti, più adatti, di superare di gran lunga la /performance/ dei migliori algoritmi classici.
-Questo perché l'approccio algoritmico permesso da questa tecnologia é profondamente diverso da quello classico e porta a miglioramenti importanti in termini di complessità computazionale.
+Un importante punto di forza di questa tecnologia è che ci aspettiamo che i computer quantistici in generale siano molto più lenti di computer classici in termini di velocità di clock e architettura delle porte logiche ma che le risorse di cui dispongono nel contesto di alcune classi di  problemi da risolvere scalino diversamente, in particolare permettendo per i problemi giusti, più adatti, di superare di gran lunga la /performance/ dei migliori algoritmi classici.
+Questo perché l'approccio algoritmico permesso da questa tecnologia è profondamente diverso da quello classico e porta a miglioramenti importanti in termini di complessità computazionale.
 D'altra parte non ci si deve aspettare che questa sia una soluzione perfetta, ci sono problemi che rimarranno difficili da risolvere nonostante le nuove possibilità della computazione quantistica.
 
-Per molto tempo l'approccio a questo campo é rimasto accessibile solo a matematici e fisici con le grandi conoscenze specifiche necessarie a comprendere appieno la meccanica quantistica e le sue sfumature tecniche.
+Per molto tempo l'approccio a questo campo è rimasto accessibile solo a matematici e fisici con le grandi conoscenze specifiche necessarie a comprendere appieno la meccanica quantistica e le sue sfumature tecniche.
 Questo sta cambiando velocemente negli ultimi anni da quando l'industria ha cominciato a sviluppare strumenti e piattaforme che permettano a nuovi sviluppatori di interagire e imparare in quest'ambito astraendo dalla maggior parte della complessità della teoria matematica alla base di questo modello.
 
 ** Definizione di un Computer Quantistico
 Per prima cosa definiamo un /computer/ come uno strumento che prendendo dei dati in input esegue delle operazioni su questi dati.
 I /computer/ che conosciamo e utilizziamo attualmente possono e sono definiti nei confini teorici della fisica classica, ovvero attraverso le leggi di Newton e l'elettromagnetismo.
-Data questa definizione é semplice definire un /computer quantistico/ come uno strumento che prendendo dei dati in input esegue delle operazioni si questi dati con processi descrivibili solo utilizzando i concetti della fisica quantistica.
-Detto questo la differenza tra un computer classico e un computer quantistico é la stessa che esiste tra la fisica classica e quella quantistica. La principale differenza é la scala su cui operano in termini di dimensioni e energia.
-I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui é più semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle =CPU= che comunemente utilizziamo.
+Data questa definizione è semplice definire un /computer quantistico/ come uno strumento che prendendo dei dati in input esegue delle operazioni si questi dati con processi descrivibili solo utilizzando i concetti della fisica quantistica.
+Detto questo la differenza tra un computer classico e un computer quantistico è la stessa che esiste tra la fisica classica e quella quantistica. La principale differenza è la scala su cui operano in termini di dimensioni e energia.
+I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui è più semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle =CPU= che comunemente utilizziamo.
 
 ** Limiti Hardware
 Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in remoto.
-Questo é necessario in quanto i requisiti e limiti tecnici della costruzione di un calcolatore quantistico sono estremamente complessi e richiedono ambienti fisici attualmente incompatibili con un utilizzo desktop.
-Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile ai segnali elettromagnetici esterni, per ovviare a problemi di interferenza é necessario mantenere l'hardware in temperature vicine allo zero termico ($0\text{K}$ o $-273.15^{\circ}\text{C}$).
+Questo è necessario in quanto i requisiti e limiti tecnici della costruzione di un calcolatore quantistico sono estremamente complessi e richiedono ambienti fisici attualmente incompatibili con un utilizzo desktop.
+Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile ai segnali elettromagnetici esterni, per ovviare a problemi di interferenza è necessario mantenere l'hardware in temperature vicine allo zero termico ($0\text{K}$ o $-273.15^{\circ}\text{C}$).
 Queste condizioni non sono ovviamente replicabili in un ambiente non strettamente controllato e isolato.
 
-Dati questi limiti é facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto, servizi come =Amazon Quantum= renderanno sempre più facilmente disponibile l'accesso a questi strumenti.
+Dati questi limiti è facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto, servizi come =Amazon Quantum= renderanno sempre più facilmente disponibile l'accesso a questi strumenti.
 
 I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilità di essere testato in maniera indiscriminata su un qualsiasi di questi.
 
@@ -56,21 +56,21 @@ I computer quantistici offrono nuove possibilità nella risoluzione di diverse c
 Ad esempio:
 - L'*algoritmo di Grover* effettua una ricerca in una lista di $N$ elementi in tempo $O(\sqrt{N})$
 - L'*algoritmo di Shor* fattorizza velocemente grandi numeri, in particolare permette di fattorizzare con un grado di errore arbitrariamente piccolo e un numero polinomiale di passi rispetto alla lunghezza in bit dell'input
-- L'*algoritmo di Deutsch-Jozsa* verifica se una funzione é costante o bilanciata in tempo costante $O(1)$
+- L'*algoritmo di Deutsch-Jozsa* verifica se una funzione è costante o bilanciata in tempo costante $O(1)$
 - L'*algoritmo di Simon*, ispirazione per il sopraccitato algoritmo di Shor, risolve in tempo esponenzialmente più veloce rispetto all'approccio classico il problema di determinare se una data funzione $f$ /blackbox/ sia *uno-a-uno* o *due-a-uno*
 
-In aggiunta ai problemi di cui sopra, la cui soluzione é legata a un algoritmo in particolare, sono state trovate applicazioni per i computer quantistici in diversi altri ambiti:
+In aggiunta ai problemi di cui sopra, la cui soluzione è legata a un algoritmo in particolare, sono state trovate applicazioni per i computer quantistici in diversi altri ambiti:
 - La stima di una somma di Gauss, un tipo di somma esponenziale, con precisione polinomiale e in tempo polinomiale contro il tempo esponenziale degli algoritmi classici
 - La valutazioni di formule booleane complesse può essere velocizzata tramite un approccio quantistico
 - Questi computer permettono di simulare sistemi quantistici permettendone uno studio più approfondito
-- La generazioni di numeri casuali é un'importante componente della crittologia e utilizzando tecniche quantistiche é possibile generarne che siano davvero casuali e non più pseudo-casuali come necessario in computer classici
+- La generazioni di numeri casuali è un'importante componente della crittologia e utilizzando tecniche quantistiche è possibile generarne che siano davvero casuali e non più pseudo-casuali come necessario in computer classici
 
 Questi sono risultati importanti e in particolare l'algoritmo di Shor pone dei dubbi sulla sicurezza degli attuali protocolli crittografici che si basano sulla difficoltà computazionale della fattorizzazione di grandi numeri interi.
 Se tale algoritmo fosse facilmente eseguibile significherebbe che un attaccante potrebbe facilmente violare questi protocolli di sicurezza correntemente alla base della comunicazione via Internet.
 
-Rimane difficile trovare possibili algoritmi quantistici che diano un vantaggio computazionale nel campo dell'apprendimento automatico dove é fondamentale l'accesso casuale a una grande quantità di dati.
+Rimane difficile trovare possibili algoritmi quantistici che diano un vantaggio computazionale nel campo dell'apprendimento automatico dove è fondamentale l'accesso casuale a una grande quantità di dati.
 
-In generale é più probabile che un problema che abbia una piccola mole di dati in entrata e in uscita ma una grande quantità di manipolazioni per arrivare all'output sia un buon candidato per l'utilizzo di computer quantistici.
+In generale è più probabile che un problema che abbia una piccola mole di dati in entrata e in uscita ma una grande quantità di manipolazioni per arrivare all'output sia un buon candidato per l'utilizzo di computer quantistici.
 
 $\pagebreak$
 * Ambiente
@@ -86,16 +86,45 @@ Molti di questi progetti sono open-source e sviluppati sulla base di ~Python~.
 
 Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto questo strumento era utilizzato dalla nostra fonte principale /Learn Quantum Computing with Python and Q#/.
 
-L'ambiente di esecuzione ~Q#~ può essere configurato sul editor =Visual Studio Code= tramite l'add-on proprietario di Microsoft.
-Quest'ultimo é disponibile solo sulla versione non =FOSS= del software, che é possibile installare tramite le repository opensource linux.
+L'ambiente di esecuzione ~Q#~ può essere configurato sul editor =Visual Studio Code= tramite l'add-on proprietario =Microsoft Quantum Development Kit=.
+Quest'ultimo è disponibile solo sulla versione non =FOSS= del software, che è possibile installare tramite le repository opensource linux.
 
-In alternativa o anche parallelamente é possibile sviluppare codice ~Q#~ ed eseguirlo tramite =Jupyter Notebook= tramite ~Python~. Questo con i kernel necessari installati, avendo quindi l'ultima versione di ~dotnet~ disponibile.
+In alternativa o anche parallelamente è possibile sviluppare codice ~Q#~ ed eseguirlo tramite =Jupyter Notebook= tramite ~Python~.
+Questo con i kernel necessari installati, avendo quindi l'ultima versione di ~dotnet~ disponibile.
+Attualmente la versione =LTS= è la =.NET Core 6.0= ed è quella che useremo.
+Si può trovare direttamente sul sito della microsoft[fn:dotnet] o più semplicemente tramite il /package manager/ del proprio sistema operativo.
 
-Tramite =anaconda= si crea un ambiente con il necessario:
-#+begin_src shell
+Altro step necessario per l'esecuzione dei =Jupyter Notebook= è l'installazione delle ~runtime aspnet~ [fn:runtime].
+
+Una volta installata l'ultima versione di ~dotnet~ è possibile eseguire:
+
+#+begin_example
+$ dotnet tool install -g Microsoft.Quantum.IQSharp
+$ dotnet iqsharp install
+#+end_example
+
+Per alcune istallazioni linux sarà necessario eseguire in alternativa:
+#+begin_example
+$ dotnet iqsharp install --user
+#+end_example
+
+Questo installa i kernel ~IQ#~ che useremo con i =Jupyter Notebook=.
+
+Per l'installazione in locale di tutto ciò che è necessario per lo sviluppo di software in questo ambito e in altre applicazioni scientifiche risulta molto più semplice l'utilizzo di una distribuzione pre-impostata come quella di /Anaconda/[fn:anaconda].
+Uno strumento simile aiuta nella gestione di ~Python~ e altri strumenti software di ambito scientifico.
+Se necessario lo si dovrà aggiungere al ~PATH~ [fn:linux]:
+
+#+begin_example
+$ PATH=/opt/anaconda/bin:$PATH
+#+end_example
+
+Tramite =Anaconda= si crea un ambiente di esecuzione con tutto quello che ci serve per i nostri obiettivi tramite il /package manager/ incluso, ~conda~:
+#+begin_example
 $ conda create -n qsharp-env -c microsoft qsharp notebook
 $ conda activate qsharp-env
-#+end_src
+#+end_example
+In qualsiasi momento si può attivare l'ambiente ~conda~ che abbiamo creato per avere il necessario all'esecuzione dei nostri programmi ~Q#~ / ~Python~.
+Al momento della scrittura =Anaconda= supporta la versione di ~Python~ 3.9, per gli scopi di questa tesi si suppone di avere a disposizione almeno usa versione superiore alla 3 per garantire compatibilità.
 
 L'esecuzione del software ~Q#~ può essere testato localmente predisponendo un ambiente di simulazione tramite il pacchetto ~Python~ chiamato ~qsharp~.
 
@@ -131,9 +160,44 @@ if __name__ == "__main__":
 
 Un esempio più complesso può essere quello  definito in ~qsharp-inteop.py~ dove definiamo direttamente /inline/ il contenuto del codice =Q#=  che il ~package qsharp~ compila e simula.
 
+Con il necessario installato è possibile leggere ed eseguire il codice di esempio pubblicato dagli autori di /Learn Quantum Computing with Python and Q#/ sulla loro repository github[fn:repository].
+
 $\pagebreak$
+[fn:repository] https://github.com/crazy4pi314/learn-qc-with-python-and-qsharp
+[fn:linux] Supponiamo l'uso di un ambiente =unix=
+[fn:dotnet] https://dotnet.microsoft.com/en-us/download
+[fn:runtime] https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+[fn:anaconda] Si trovano informazioni a riguardo di questa distribuzione software all'indirizzo https:www.anaconda.com
 * Oracoli
-Gli oracoli che utilizziamo per testare gli algoritmi definiti in seguito sono:
+Per poter applicare l'algoritmo che andremo a descrivere e implementare in seguito è necessario creare dei cosiddetti *oracoli* delle funzioni che utilizzeremo come input.
+Prima definiamo cos'è un oracolo in questo contesto:
+#+begin_quote
+Un oracolo $U_{f}$ è una matrice unitaria definita applicando $f$ condizionatamente rispetto alle etichette assegnate agli stati dei ~qubit~. L'applicazione di un oracolo per due volte risulta nella matrice identità  \(\mathbb{1}\).
+#+end_quote
+Quindi è necessaria una manipolazione per convertire funzioni /irreversibili/ in oracoli /reversibili/ utilizzabili in ambito quantistico.
+Questa manipolazione va fatta utilizzando le operazioni su ~qubit~ proprie di un simulatore o device quantistico come:
+- $\textsc{x}(t)$
+  + questa operazione è l'equivalente del classico =NOT=: se applicato allo stato $\textsc{x}|0\rangle = |1\rangle$ e viceversa $\textsc{x}|1\rangle = |0\
+- $\textsc{cnot}(c,t)$
+  + questa operazione è definibile come un =NOT= controllato secondo l'input $c$: $\textsc{cnot} |00\rangle = |00\rangle$ mentre invece $\textsc{cnot} |10\rangle = |11\rangle$ e $\textsc{cnot} |11\rangle = |10\rangle$
+- $\textsc{swap}(t_{1},t_{2})$
+  + come si può intuire dal nome scambia i valori dei ~qubit~: $\textsc{swap} |10\rangle = |01\rangle$ e  $\textsc{swap} |01\rangle = |10\rangle$
+
+Dove $t$ è il ~qubit~ target e $c$ è il ~qubit~ di controllo per il =Controlled-NOT=.
+
+Le difficoltà maggiori nella definizione di oracoli per le funzioni che ci interessano le abbiamo con quelle /costanti/, questo in quanto passando da input a output si perde l'informazione dell'input utilizzato. Rendendo tali funzioni irreversibili.
+
+Fortunatamente esiste una tecnica generale per rendere una funzione classica irreversibile $f$ in una funzione classica reversibile $g$.
+\[h(x,y) = (x,y \oplus f(x))\]
+Questa nuova funzione $h$ aggiunge al input originario di $f$ $x$ un nuovo input $y$ che non è altro che il valore di output che andrà a modificare tramite l'operazione $\oplus$[fn:oplus].
+
+Questa stessa tecnica è trasponibile per definire un oracolo $U_{f}$:
+\[U_{f} |x \rangle | y \rangle = | x \rangle | y \oplus f(x) \rangle\]
+
+In questo modo manteniamo traccia dell'input $x$ che altrimenti andrebbe perso dopo l'applicazione di $f$.
+
+Gli oracoli che utilizziamo per testare gli algoritmi definiti nelle prossime sezioni sono riportati nel listato ~oracles.qs~.
+
 #+caption: oracles.qs
 #+Begin_src c
 operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
@@ -168,26 +232,43 @@ operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
 #+end_src
 Qui sopra sono definite le versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate.
 In particolare abbiamo definito oracoli per le seguenti funzioni:
-- $f(x)=0$
-- $f(x)=1$
-- $f(x)=x$
-- $f(x)= \lnot x$ ovvero $f(x) = 1-x$
-- $f(x, y) = x \oplus y$
-  + dove $x$ é l'input lungo $n$ qbit e $y$ é l'output
+- $f_{1}(x)=0$
+- $f_{2}(x)=1$
+- $f_{3}(x)=x$
+- $f_{4}(x)= \lnot x$ ovvero $f_{4}(x) = 1-x$
+- $f_{5}(x) =  \oplus_{i=0}^{n-1} x_{i}$
+  + dove $x$ è l'input lungo $n$ ~qubit~
 
 In questi casi le prime due funzioni sono costanti e le restanti sono bilanciate.
+È facile verificare che gli oracoli definiti in ~Q#~ corrispondono alle funzioni sopra definite, in particolare:
+- ~ApplyZeroOracle~ e la sua versione a $n$ ~qubit~ equivalgono a $f_{1}$
+- ~ApplyOneOracle~ e la sua versione a $n$ ~qubit~ equivalgono a $f_{2}$
+- ~ApplyIdOracle~ equivale all'identità $f_{3}$
+- ~ApplyNotOracle~ equivale a $f_{4}_{}$
+- ~ApplyXOROracleN~ equivale a $f_{5}$
 
-In =figura 1= vediamo un'altro esempio di oracolo bilanciato che applica 3 porte =CNOT= all'ultimo qubit:
+In =figura 1= vediamo un altro esempio di oracolo bilanciato che applica 3 porte =CNOT= all'ultimo qubit:
 - $q_{3} = q_{3} \oplus q_{0}_{} \oplus q_{1} \oplus q_{2}$
 #+attr_latex: :width 200
 #+caption: esempio di oracolo bilanciato utilizzando porte CNOT
 [[../static/ox-hugo/balanced-oracle.png]]
 
+La precedente definizione single ~qubit~ di $U_{f}$ può essere estesa per il caso di $f$ con $n$ ~qubit~
+\[f(x_{0}, x_{1},\cdots,x_{n-1})\]
+in questa maniera:
+\[U_{f}|x_{0} x_{1}\cdots x_{n-1}y\rangle = | x_{0} x_{1}\cdots x_{n-1}\rangle \otimes | f(x_{0}, x_{1},\cdots,x_{n-1}) \oplus y\rangle\]
 
-[fn:oplus] dove $\oplus$ é l'addizione modulo $2$ o =XOR=
+Il nome *oracolo* deriva da una convenzione di nomenclatura nell'ambito della Teoria della Complessità.
+In particolare è stata definita in quanto una classe di complessità $\textsc{a}$ può essere convertita in una nuova classe di problemi $\textsc{a}^{\textsc{b}}$, che permettono ad $A$ di risolvere problemi di tipo $B$ in un singolo passo, proprio come se stesse consultando un oracolo.
+
+Una /macchina oracolo/ si può immaginare come una macchina di Turing connessa a un *oracolo*, in questo contesto si intende con oracolo una entità /blackbox/ in grado di risolvere un qualche problema.
+Questo problema non deve per forza essere computabile in quanto l'oracolo non è una reale macchina o programma ma semplicemente una scatola oscura che produce una soluzione corretta per ogni istanza del problema computazionale in un singolo passo.[fn:wiki]
 $\pagebreak$
+
+[fn:oplus] dove $\oplus$ è l'addizione modulo $2$ o =XOR=
+[fn:wiki] https://en.wikipedia.org/wiki/Oracle_machine
 * Algoritmo di Deutsch-Jozsa
-L'algoritmo di Deutsch-Jozsa ha interesse storico in quanto primo algoritmo quantistico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantistico.
+L'algoritmo di *Deutsch-Jozsa* ha interesse storico in quanto primo algoritmo quantistico in grado di superare in performance il miglior algoritmo classico corrispondente, mostrando che possono esistere vantaggi nel calcolo quantistico.
 Questo algoritmo ha spinto la ricerca in questa direzione per determinati problemi.
 
 L'algoritmo risponde a una domanda su una funzione $f$ booleana con $n$ bit in input
@@ -198,8 +279,14 @@ Questa funzione su cui agisce l'algoritmo ha la proprietà di essere una di due 
 - bilanciata
 
 Definite come:
-- Una funzione é costante se restituisce per tutti gli input $\{x_{0},x_{1},\cdots,x_{n}\}_{}$ lo stesso risultato
-- Una funzione é bilanciata se restituisce 0 esattamente per metà degli input, e 1 esattamente per metà degli input
+- Una funzione è costante se restituisce per tutti gli input $\{x_{0},x_{1},\cdots,x_{n}\}_{}$ lo stesso risultato
+- Una funzione è bilanciata se restituisce 0 esattamente per metà degli input, e 1 esattamente per metà degli input
+
+Il problema di Deutsch-Jozsa è stato ideato per essere facile da risolvere con una soluzione algoritmica quantistica ed essere difficile per qualsiasi algoritmo classico.
+
+Questo per dimostrare che un problema cosiddetto /blackbox/ può essere risolto efficientemente e senza errore da un computer quantistico, risultato non possibile tramite un computer classico.
+
+In particolare questo risultato mostra che la classe computazionale $\textsc{eqp}$ (a volte chiamata $\textsc{qp}$) *Exact Quantum Polynomial Time* è distinta da $\textsc{p}$ ovvero la classe dei problemi risolvibili classicamente in tempo polinomiale.
 
 ** La Soluzione Classica
 Nella soluzione classica nel *caso migliore* due /query/ all'oracolo sono sufficienti per riconoscere la funzione $f$ come bilanciata.
@@ -207,13 +294,21 @@ Per esempio supponiamo di avere due chiamate con i seguenti risultati:
 \[f(0,0,\cdots) \rightarrow 0\]
 \[f(1,0,\cdots) \rightarrow 1\]
 
-Dato che é assunto che $f$ sia /garantita/ essere costante oppure bilanciata questi risultati ci dimostrano $f$ come bilanciata.
+Dato che è assunto che $f$ sia /garantita/ essere costante oppure bilanciata questi risultati ci dimostrano $f$ come bilanciata.
 
 Per quanto riguarda il caso peggiore tutte le nostre interrogazioni daranno lo stesso output, decidere in modo certo che $f$ sia costante necessita di metà più uno interrogazioni.
-Dato che il numero di input possibili é $2^{n}$ questo significa che, nel caso peggiore, saranno necessarie $2^{n-1}+1$ interrogazioni per essere certi che $f(x)$ sia costante.
+Dato che il numero di input possibili è $2^{n}$ questo significa che, nel caso peggiore, saranno necessarie $2^{n-1}+1$ interrogazioni per essere certi che $f(x)$ sia costante.
 
+È possibile una soluzione probabilistica tramite un algoritmo randomizzato, con un numero costante di valutazioni $k$ è possibile produrre un risultato con alta probabilità corretto.
+Dato $k\ge 1$, un algoritmo di questo tipo fallisce con probabilità
+\[\epsilon \le \frac{1}{2^{k}}\]
+In ogni caso l'unico modo per avere un risultato certo rimane avere $k = 2^{n-1} + 1$.
+
+La complessità di questi algoritmi rimane $\textsc{time} = O(2^{n}})$ e quindi difficili da trattare al crescere della lunghezza dell'input.
 ** La Soluzione Quantistica
-Tramite la computazione quantistica é possibile risolvere questo problema con un'unica chiamata della funzione $f(x)$.
+La soluzione di David Deutsch e Richard Jozsa del 1992, poi migliorata nel 1998 è molto più efficace delle alternative classiche.
+
+Tramite la computazione quantistica è possibile risolvere questo problema con un'unica chiamata della funzione $f(x)$.
 Questo a patto che la funzione $f$ sia implementata come un oracolo quantistico $U_{f}$, che mappi:
 $|x\rangle | y \rangle$ a $| x \rangle |y \oplus f(x) \rangle$ [fn:oplus]
 
@@ -223,14 +318,16 @@ I passi dell'algoritmo in particolare sono:
 2. applica ~Hadamard~ a entrambi i registri
 3. applica l'oracolo quantistico $U_{f}$ definito per $f$
 4. a questo punto il secondo registro può essere ignorato, riapplica ~Hadamard~ al primo registro
-5. misura il primo registro, questa risulta $1$ per $f(x)$ costante e $0$ altrimenti nel caso bilanciato
+5. misura il primo registro, questo risulta $1$ per $f(x)$ costante e $0$ altrimenti nel caso bilanciato
 
-#+caption: i passi dell'algoritmo in forma di circuito
+Nei listati successivi riportiamo l'implementazione ~Q#~ della versione a singolo ~qubit~ e la generalizzazione nel caso di \(n\)-~qubit~.
+
+#+caption: i passi dell'algoritmo n-qubit in forma di circuito
 [[../media/img/deutsch_steps.png]]
 
-Un punto fondamentale dell'algoritmo é l'utilizzo della porta ~Hadamard~, chiamata anche trasformata di ~Hadamard~.
-Questa é una generalizzazione delle trasformate di Fourier definita dalla matrice $H_{m} = 2^{m} \times 2^{m}$.
-Questa é definibile ricorsivamente a partire dall'identità $H_{0} = 1$ e, per $m > 0$:
+Un punto fondamentale dell'algoritmo è l'utilizzo della porta ~Hadamard~, chiamata anche trasformata di ~Hadamard~.
+Questa è una generalizzazione delle trasformate di Fourier definita dalla matrice $H_{m} = 2^{m} \times 2^{m}$.
+Questa è definibile ricorsivamente a partire dall'identità $H_{0} = 1$ e, per $m > 0$:
 \begin{align*}
 H_{m} = \frac{1}{\sqrt{2}}
 \begin{pmatrix}
@@ -256,22 +353,51 @@ H_2 &=  \frac{1}{2}
 \end{pmatrix} \\
 \end{align*}
 
-Il trasformato di ~Hadamard~ $H_{1}$ é la porta logica quantistica conosciuta come porta ~Hadamard~, l'applicazione di questa porta a ciascun qubit di un registro a n-qubit parallelamente é equivalente alla trasformata $H_{n}$.
+Il trasformato di ~Hadamard~ $H_{1}$ è la porta logica quantistica conosciuta come porta ~Hadamard~, l'applicazione di questa porta a ciascun qubit di un registro a n-qubit parallelamente è equivalente alla trasformata $H_{n}$.
 
 Si crede che applicando un circuito di ~Hadamard~ a un qubit nello stato $| 0 \rangle$ si crei uno stato sovrapposto tra gli stati $| 0 \rangle$ e $| 1 \rangle$ denominato $| + \rangle$.
 A livello matematico sono definite:
 \[ | + \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle + | 1 \rangle)\]
 \[ | - \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle - | 1 \rangle)\]
 
-#+caption: Rappresentazione geometrica di un qubit con la sfera di Bloch. Sono rappresentati come poli sull'asse $z$ gli stati equivalenti allo 0 e 1 di un bit classico, sull'asse $x$ invece i poli sono gli stati sopraccitati $| + \rangle$ e $| - \rangle$. Con questa rappresentazione é possibile notare come $H$ non sia altro che una rotazione in questo spazio tridimensionale.
+#+caption: Rappresentazione geometrica di un qubit con la sfera di Bloch. Sono rappresentati come poli sull'asse $z$ gli stati equivalenti allo 0 e 1 di un bit classico, sull'asse $x$ invece i poli sono gli stati sopraccitati $| + \rangle$ e $| - \rangle$. Con questa rappresentazione è possibile notare come $H$ non sia altro che una rotazione in questo spazio tridimensionale.
 [[../media/img/bloch-sphere.png]]
 
-Inoltre una funzione $f$ applicata a questa sovrapposizione si ottiene, nel caso $n=1$, uno stato sovrappostro tra $f(0)$ e $f(1)$.
-Questo effetto é utilizzato dall'algoritmo in quanto  riapplicando ~Hadamard~ si controlla in un solo passo se si ottiene la sovrapposizione di due stati uguali o di due stati diversi, o meglio se $f(0) = f(1)$ o meno. La riapplicazione di $H$ restituirà $1$ nel primo caso, $0$ nel secondo.
+Inoltre con una funzione $f$ applicata a questa sovrapposizione si ottiene, nel caso $n=1$, uno stato sovrapposto tra $f(0)$ e $f(1)$.
+Questo effetto è utilizzato dall'algoritmo in quanto  riapplicando ~Hadamard~ si controlla in un solo passo se si ottiene la sovrapposizione di due stati uguali o di due stati diversi, o meglio se $f(0) = f(1)$ o meno. La riapplicazione di $H$ restituirà $1$ nel primo caso, $0$ nel secondo.
 $\pagebreak$
 
+Seguono i calcoli per il caso a $1$ qubit:
+L'obiettivo è controllare la condizione $f(0) = f(1)$, equivalente a controllare $f(0) \oplus f(1)$. In questo caso lo =XOR= è implementato come una Controlled NOT gate =CNOT=.
 
-*** single-bit Deutsch-Jozsa
+Lo stato iniziale aggiungendo un ~qubit~ di controllo è $|0 \rangle |1\rangle$, si applica ~Hadamard~ a entrambi:
+\[\frac{1}{2} (| 0 \rangle + | 1 \rangle) (| 0 \rangle - |1 \rangle\]
+
+Data l'implementazione quantistica in forma di *oracolo* $U_{f}$ della funzione iniziale $f$, che ricordiamo è definita come una mappa tra $|x\rangle | y \rangle$ e $|x \rangle | f(x) \oplus y \rangle$
+La applichiamo allo stato ottenuto:
+
+\begin{align*}
+\frac{1}{2} ( |0\rangle (| f(0)& \oplus 0 \rangle - | f(0) \oplus 1 \rangle ) + |1\rangle (| f(1) \oplus 0 \rangle - | f(1) \oplus 1 \rangle)  ) \\
+=& \frac{1}{2} ((-1)^{f(0)} | 0 \rangle ( |0 \rangle - |1\rangle) + (-1)^{f(1)} | 1 \rangle (|0 \rangle - |1 \rangle)) \\
+=& (-1)^{f(0)} \frac{1}{2} ( | 0 \rangle + (-1)^{f(0) \oplus f(1)} |1\rangle) (|0\rangle - |1\rangle)
+\end{align*}
+
+La fase globale $-1$ e il secondo ~qubit~ finale vengono ignorati, a questo punto della computazione si ha lo stato:
+\[ \frac{1}{\sqrt{2}} (|0\rangle + (-1)^{f(0) \oplus f(1)} |1 \rangle)\]
+
+Applicando nuovamente ~Hadamard~ otteniamo:
+\begin{align*}
+\frac{1}{2} (|0\rangle + |1 \rangle &+ (-1)^{f(0)\oplus f(1)} |0\rangle - (-1)^{f(0)\oplus f(1)} |1\rangle)\\
+=& \frac{1}{2} ((1 + (-1)^{f(0)\oplus f(1)} ) | 0\rangle + (1 - (-1)^{f(0)\oplus f(1)} | 1 \rangle)
+\end{align*}
+
+A questo punto viene misurato il ~qubit~:
+- $f(0) \oplus f(1) = 0$ se e solo se misuriamo $|0\rangle$
+- $f(0) \oplus f(1) = 1$ se e solo se misuriamo $|1\rangle$
+
+Concludiamo che sappiamo con certezza se $f(x)$ è costante o bilanciata in un singolo passo di computazione.
+
+#+caption: single-qubit Deutsch-Jozsa
 #+begin_src c
 operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
     use control = Qubit();
@@ -289,7 +415,36 @@ operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
     return MResetX(control) == One;
 }
 #+end_src
-*** n-bit Deutsch-Jozsa
+$\pagebreak$
+
+Il  caso $n=2$ ~qubit~ non è diverso:
+
+L'algoritmo inizia nello stato di $n + 1$ ~qubit~ $|00\rangle|1\rangle$.
+Applicando ~Hadamard~ si ottiene lo stato
+\[\frac{1}{\sqrt{2^{3}}} \sum_{x=0}^{2^{2}-1} |x\rangle(|0\rangle - | 1 \rangle) \]
+Dove la sommatoria esprime le configurazioni $x$ in ~qubit~ da $0$ a $3$
+\[|00\rangle, |01\rangle,|10\rangle, |11\rangle\]
+
+Per ciascuna di queste $x$, $f(x)$ vale $0$ oppure $1$, dato ciò la formula precedente equivale a
+\[\frac{1}{\sqrt{2^{3}}} \sum_{x=0}^{3}^{} (-1)^{f(x)} |x\rangle (|0\rangle - |1\rangle)\]
+
+A questo punto l'ultimo ~qubit~ \( \frac{|0\rangle - | 1 \rangle}{\sqrt{2}}\) possiamo ignorarlo, ottenendo
+\[\frac{1}{\sqrt{2^{^{2}}}} \sum_{x=0}^{3} (-1)^{f(x)} |x\rangle\]
+
+Riapplichiamo ~Hadamard~ a tutti gli $n=2$ ~qubit~
+\begin{align*}
+&\frac{1}{\sqrt{2^{^{2}}}} \sum_{x=0}^{3} (-1)^{f(x)} \left[\frac{1}{\sqrt{2^{^{2}}}} \sum_{y=0}^{3} (-1)^{x\cdot y} |y\rangle\right] \\
+=&\frac{1}{2^{^{2}}} \sum_{y=0}^{3} \left[ \sum_{x=0}^{3} (-1)^{f(x)}(-1)^{x\cdot y}\right] |y\rangle
+\end{align*}
+Dove $x \cdot y = x_{0}y_{0} \oplus x_{1}y_{1} \oplus x_{2}y_{2} \oplus x_{3}y_{3}$, somma modulo $2$ del prodotto bit a bit.
+
+Data questo risultato la probabilità di misurare $|00\rangle$ è
+\[\left| \frac{1}{2^{^{2}}} \sum_{x=0}^{3} (-1)^{f(x)}  \right|^{2}\]
+Che risulta $1$ se $f(x)$ è costante e $0$ se altrimenti $f(x)$ è bilanciata.
+
+In altre parole, la misura finale sarà $|00\rangle$ se $f(x)$ è costante e un qualche altro stato nel caso in cui $f(x)$ sia bilanciata.
+
+#+caption: n-qubit Deutsch-Jozsa
 #+begin_src c
 operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
     use control = Qubit[size];
@@ -309,10 +464,65 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
     return result;
 }
 #+end_src
-
 $\pagebreak$
-* Entanglement e Teletrasporto quantistico
+$\pagebreak$
+* Entanglement e Teletrasporto Quantistico
+Concludiamo la nostra trattazione mostrando un interessante fenomeno quantistico che riguarda la sovrapposizione di più stati, la *correlazione quantistica* o *entanglement quantistico*.
 
+Il termine /entanglement/, traducibile come groviglio in italiano, fu introdotto dal nobel per la fisica Erwin Schrödinger, i cui contributi alla meccanica quantistica furono fondamentali e indica la forte relazione che due particelle /entangled/ in un sistema quantistico mantengono secondo la *legge di conservazione*.
+
+Questa legge continua a valere senza alcun limite spaziale , permettendo che la misura di una singola particella influenzi istantaneamente il corrispondente valore dell'altra.
+
+Un altro risultato fondamentale della meccanica quantistica sono il *teorema di no-cloning* e quello di *non discriminazione*.
+Il primo vieta la creazione di un duplicato esatto di uno stato quantistico sconosciuto, il secondo afferma che dati due stati quantistici non ortogonali di un sistema non sia possibile distinguerli con certezza.
+
+Data la nostra incapacità di distinguere due particelle e stati quantistici se queste fossero scambiate sarebbe possibile accorgersene, in questo senso non ha senso affermare che due di queste entità abbiano una individualità. È più corretto affermare che le due posizioni nello spazio hanno la proprietà di avere campi quantistici nello stesso stato.
+
+Partendo da uno stato /entangled/ è però possibile /teletrasportare/ lo stato un atomo $A$ in un atomo $B$.
+
+A Seguito del teletrasporto lo stato di $B$ sarà esattamente quello che aveva $A$ precedentemente all'operazione.
+In letteratura questi attori sono spesso soprannominati =Alice= e =Bob=.
+
+Lo stesso risultato si potrebbe avere trasportando fisicamente $A$ al posto di $B$. In questo caso però proprio per le proprietà dell'/entanglement/ non c'è un limite spaziale al teletrasporto quantico.
+
+Gli schemi per effettuare questa operazione sono diversi, noi riportiamo quello più semplice. Il teletrasporto di un ~qubit~.
+
+[[../media/img/teleport.png]]
+
+
+Definiamo:
+- $| \psi \rangle_{A1} = \alpha |0 \rangle_{A1} + \beta|1\rangle_{A1}$ è il generico stato da teletrasportare
+- $A2$ ~qubit~ /entangled/ di =Alice=
+- $B$ ~qubit~ /entangled/ di =Bob=
+
+Lo stato si inizializza in
+\[ \frac{1}{\sqrt{2}} | \psi \rangle_{A1} (|0\rangle_{A2} | 1 \rangle_{B} - |1\rangle_{A2} |0\rangle_{B})\]
+
+Si riscrive lo stato complessivo in
+
+\begin{align*}
+- \frac{1}{2}( |0\rangle_{A1} |1\rangle_{A2} -  |1\rangle_{A1} |0\rangle_{A2})(\alpha |0\rangle_{B} + \beta |1\rangle_{B}) \\
+- \frac{1}{2}( |0\rangle_{A1} |1\rangle_{A2} -  |1\rangle_{A1} |0\rangle_{A2})(\alpha |0\rangle_{B} - \beta |1\rangle_{B}) \\
++ \frac{1}{2}( |0\rangle_{A1} |0\rangle_{A2} -  |1\rangle_{A1} |1\rangle_{A2})(\beta |0\rangle_{B} + \alpha |1\rangle_{B}) \\
+- \frac{1}{2}( |0\rangle_{A1} |0\rangle_{A2} -  |1\rangle_{A1} |1\rangle_{A2})(\beta |0\rangle_{B} - \alpha |1\rangle_{B})
+\end{align*}
+
+[[../media/img/quantum_teleportation.png]]
+
+=Alice= può ridurre attraverso una misura di Bell lo stato di =Bob= a uno dei quattro stati con coefficienti $\alpha$ e $\beta$. =Bob= non può comunque ancora distinguere in quale dei quattro stati il proprio ~qubit~ si trovi, per questo è necessario un ulteriore passo.
+
+La trasmissione dell'informazione avviene quando =Alice= comunica a =Bob= il risultato della misura.
+A questo punto =Bob= può effettuare una trasformazione unitaria opportuna che trasformi il proprio stato in quello stato $|\psi\rangle$ originario.
+
+Questo ultimo passaggio è fondamentale: per poter ricostruire lo stato iniziale il destinatario deve conoscere il risultato di una misurazione del mittente, questa informazione viene trasmessa attraverso un mezzo di trasmissione classico.
+La trasmissione di questa misura limita la velocità del teletrasporto che non è quindi istantaneo, ma limitato dalla velocità della luce in accordo con la relatività speciale.
+
+La misurazione da parte di =Alice= porta alla perdita dello stato iniziale rispettando quindi il *teorema di no-cloning* citato precedentemente.
+
+
+Molti esperimenti sono stati effettuati nell'ambito del teletrasporto quantistico, l'attuale record di distanza per un esperimento di questo tipo è stato registrato in un esperimento all'aperto che ha avuto luogo nelle isole Canarie.
+
+L'esperimento teletrasportò particelle tra due osservatori astronomici dell'/Instituto de Astrofísica de Canarias/ ad una distanza di 143Km.
 
 $\pagebreak$
 * Conclusioni
