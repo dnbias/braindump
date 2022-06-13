@@ -1,17 +1,22 @@
-operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
-    use control = Qubit[size];
-    use target = Qubit();
+// https://github.com/microsoft/quantum/tree/main/samples/getting-started/teleportation
+namespace Microsoft.Quantum.Samples.Teleportation {
+    open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Measurement;
 
-    ApplyToEachA(H, control);
-    X(target);
-    H(target);
+    operation Teleport (msg : Qubit, target : Qubit) : Unit {
+        use register = Qubit();
 
-    oracle(control, target);
+        H(register);
+        CNOT(register, target);
 
-    H(target);
-    X(target);
+        CNOT(msg, register);
+        H(msg);
 
-    let result = MResetX(control[0]) == One;
-    ResetAll(control);
-    return result;
+        // misurando con MResetZ resettiamo nello
+        // stesso passo i qubit misurati rendondoli
+        // utilizzabili nuovamente se necessario
+        if (MResetZ(msg) == One) { Z(target); }
+        if (IsResultOne(MResetZ(register))) { X(target); }
+    }
 }
