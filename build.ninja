@@ -950,3 +950,5 @@ build content/posts/20210921122326-metodi_formali_dell_informatica.md: org2md ro
 build content/posts/adapter.md: org2md roam/adapter.org
 
 build content/posts/qubit.md: org2md roam/qubit.org
+
+build content/posts/screenshot_to_clipboard.md: org2md roam/screenshot_to_clipboard.org

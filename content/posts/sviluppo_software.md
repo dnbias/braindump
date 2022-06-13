@@ -609,7 +609,8 @@ Un fattore emerso é la superiorità della _composizione_ rispetto all'_ereditar
         -   questa composizione tramite interfaccia rispetta l'incapsulamento, solo una modifica all'interfaccia comporterebbe ripercussioni
 
 Questo aiuta a mantenere le classi _incapsulate_ e _coese_.
-L'ereditarietà può essere realizzato in due modi:
+
+L'_ereditarietà_ può essere realizzata in due modi:
 
 1.  **Polimorfismo**
     -   le sottoclassi possono essere scambiate l'una con l'altra

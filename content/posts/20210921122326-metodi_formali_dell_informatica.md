@@ -51,7 +51,7 @@ Derivano dalla logica-matematica
         -   Control Flow
         -   Abstract Interpretation
 
-L'utilitá é l'analisi matematica che dimostrino la robustezza e la correttezza della progettazione hardware e software
+L'utilitá é l'analisi matematica che dimostri la robustezza e la correttezza della progettazione hardware e software
 
 -   Tool:
     -   Infer
@@ -71,7 +71,7 @@ L'utilitá é l'analisi matematica che dimostrino la robustezza e la correttezza
 
 ##### Semantica Operazionale {#semantica-operazionale}
 
-Definisce il significato di un programma come il suo comportamento che, quando termina, tranforma uno stato in un altro
+Definisce il significato di un programma come il suo comportamento che, quando termina, trasforma uno stato in un altro
 
 
 ##### Semantica Logica {#semantica-logica}
@@ -95,7 +95,7 @@ Il testing é fatto sull'esecuzione - dinamico
 
 -   l'importante é la scelta degli esempi di testing
     -   G.J.Myers, _The Art of Software Testing_
--   essendo i test infiniti il superamento di qualsiasi test non verifica il programma
+-   essendo i test **infiniti** il superamento di qualsiasi test non verifica il programma
     -   é un metodo di ricerca degli errori, non di verifica
 
 Processo:
@@ -110,7 +110,7 @@ Processo:
 ##### Logica di Hoare {#logica-di-hoare}
 
 `HL`
-Usiamo logica debole, non dimostriamo la terminazione. Se il programma termina allora é il risultato sará corretto
+Usiamo logica debole, <span class="underline">non dimostriamo la terminazione</span>. Se il programma termina allora é il risultato sará corretto.
 
 -   Rules:
     -   skip
@@ -133,7 +133,7 @@ La logica del primo ordine é corretta e completa ma é <span class="underline">
 -   Teorema di Church
 -   non esiste un algoritmo che verifichi che formula logica sia corretta
 
-`HL` é corretta, ma completa solo in senso debole; include FOL dunque é indecidibile
+`HL` é corretta, ma <span class="underline">completa solo in senso debole</span>; include FOL dunque é indecidibile
 
 Allora si utilizzano Truth Assistant, il teorema di `Rice` ci dimostra che i Verificatori non possono esistere.
 
@@ -284,7 +284,7 @@ allora \\(aval \\: as = aval \\: as^{'}\\)
 
 #### Sostituzione {#sostituzione}
 
-\\(a[a^{'}/n]\\) intendiama la <span class="underline">sostituzione di x con a' in a</span>
+\\(a[a^{'}/x]\\) intendiama la <span class="underline">sostituzione di x con a' in a</span>
 
 ```text
   (N n)[a'/x] = N n
@@ -299,7 +299,7 @@ Se \\(s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state\\)
 
 ##### Lemma di Sostituzione {#lemma-di-sostituzione}
 
-\\[aval \\: (a[a^{'}/n])s = aval \\: a \\: s [x\rightarrow aval \\: a^{'}\\: s]\\]
+\\[aval \\: (a[a^{'}/x])s = aval \\: a \\: s [x\rightarrow aval \\: a^{'}\\: s]\\]
 
 
 #### Booleani {#booleani}
@@ -337,7 +337,7 @@ Con queste caratteristiche il nostro linguaggio `IMP` é Touring completo:
 cval : com -> state -> state
 ```
 
-Se questa funzione esiste deve essee parziale
+Se questa funzione esiste deve essere parziale
 
 -   definita solo in alcuni casi
 
@@ -346,7 +346,7 @@ Se questa funzione esiste deve essee parziale
 ```text
 cval (WHILE b DO c) s = ??
 cval (WHILE b DO c) s = s  -- bval b s = ff
-cval (WHILE b DO c) s =    -- bval b s = t
+cval (WHILE b DO c) s =    -- bval b s = tt
     = cval (c; WHILE b DO c) s
     = cval (WHILE b DO c) (cval c s)
 ```
@@ -361,7 +361,7 @@ Usiamo la relazione \\((c,s) \implies t\\) su \\(com \times state \times state\\
 
 \\((c,s,t) \rightarrow (c,s) \implies t \in bool\\)
 
--   true se in una stato finale, false altrimenti
+-   true se in un stato finale, false altrimenti
 -   questa funzione é definibile in `Agda`
 
 Sistema formale:
