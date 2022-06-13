@@ -247,8 +247,24 @@ Sono ruoli svolti da persone, organizzazioni, software, macchine
 **** Requisiti non funzionali
 Possono essere inclusi nei casi d'uso se relazionati con il requisito funzionale descritto dal caso
 Altrimenti vengono descritti nelle specifiche supplementari
-**** Contratti
+**** SSD
+Diagrammi di Sequenza di Sistema
+- illustra eventi di input e output relativi ai sistemi in discussione
+- diagrammi di sequenza =UML=
+- sviluppo /blackbox/, non si pensa al come ma al cosa
+  + l'intenzione dell'utente
+- input dei contratti
 
+**** Contratti
+- usano *pre* e *post* condizioni per definire nel dettaglio i cambiamenti agli oggetti _concettuali_ nel _modello di dominio_
+
+Precondizioni: /ipotesi significative sullo stato del sistema o degli oggetti del modello di dominio prima dell'esecuzione dell'operazione di sistema/
+Postcondizioni: /descrive i cambiamenti di stato degli oggetti del dominio dopo il completamento dell'operazione/
+- oggetti creati
+- collegamenti formati/rotti
+- attributi modificati
+
+I contratti sono input per il processo di progettazione software.
 *** Modello di Dominio
 Casi d'uso e specifiche supplementari sono input che vanno a definire il modello di dominio
 
@@ -467,13 +483,14 @@ Un fattore emerso é la superiorità della /composizione/ rispetto all'/ereditar
     * questa composizione tramite interfaccia rispetta l'incapsulamento, solo una modifica all'interfaccia comporterebbe ripercussioni
 Questo aiuta a mantenere le classi /incapsulate/ e /coese/.
 
-L'_ereditarietà_ può essere realizzata in due modi:
+Il meccanismo di _ereditarietà_ può essere realizzata in due modi:
 1. *Polimorfismo*
    - le sottoclassi possono essere scambiate l'una con l'altra
    - si utilizza una superclasse comune
    - si sfrutta /l'upcasting/
 2. *Specializzazione*
    - le sottoclassi guadagnano elementi e proprietà rispetto alla classe base
+   - meglio utilizzare la delega che direttamente l'ereditarietà
 
 I pattern mostrano che il *polimorfismo* e il /binding dinamico/ é molto sfruttato, mentre la *specializzazione* non é comunemente utilizzata in buone soluzioni.
 *** Creazionali
