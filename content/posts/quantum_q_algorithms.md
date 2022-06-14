@@ -640,7 +640,7 @@ namespace Microsoft.Quantum.Samples.Teleportation {
         H(msg);
 
         // misurando con MResetZ resettiamo nello
-        // stesso passo i qubit misurati rendondoli
+        // stesso passo i qubit misurati rendendoli
         // utilizzabili nuovamente se necessario
         if (MResetZ(msg) == One) { Z(target); }
         if (IsResultOne(MResetZ(register))) { X(target); }

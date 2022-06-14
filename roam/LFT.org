@@ -3,15 +3,10 @@
 :ROAM_ALIASES: LFT
 :END:
 #+TITLE: Linguaggi Formali e Traduttori
-#+startup: latexpreview
 #+filetags: university
+#+latex_class: arsclassica
 - Teacher:  Sproston Jeremy
-
-Informazioni varie del Corso:
-- Lunedi' lezione sincrona per domande: 11:00
-
-- Prova scritta + orale facoltativo (necessario per la lode)
-  2/3 del voto
+- [[./LFT.pdf][PDF Version]]
 
 - Prova di laboratorio (progetto, interrogazione singola
   anche in caso di progetto di gruppo con gruppi da 3)

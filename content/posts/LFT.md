@@ -6,13 +6,7 @@ draft = false
 +++
 
 -   Teacher:  Sproston Jeremy
-
-Informazioni varie del Corso:
-
--   Lunedi' lezione sincrona per domande: 11:00
-
--   Prova scritta + orale facoltativo (necessario per la lode)
-    2/3 del voto
+-   [PDF Version](/ox-hugo/LFT.pdf)
 
 -   Prova di laboratorio (progetto, interrogazione singola
     anche in caso di progetto di gruppo con gruppi da 3)

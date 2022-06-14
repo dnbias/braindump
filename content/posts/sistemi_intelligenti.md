@@ -240,7 +240,7 @@ Il costo per l'ottimalità é una funzione monotona crescente in relazione alla 
 
 ##### Ricerca Costo Uniforme {#ricerca-costo-uniforme}
 
-Cerca una soluzione ottima, che non in tutti i problemi corrisponde a il minor numero di passi.
+Cerca una soluzione ottima, che non in tutti i problemi corrisponde al minor numero di passi.
 La scoperta di un goal non porta alla terminazione della ricerca.
 Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello già trovato.
 

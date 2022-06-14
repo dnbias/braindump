@@ -323,7 +323,29 @@ Possono essere inclusi nei casi d'uso se relazionati con il requisito funzionale
 Altrimenti vengono descritti nelle specifiche supplementari
 
 
+##### SSD {#ssd}
+
+Diagrammi di Sequenza di Sistema
+
+-   illustra eventi di input e output relativi ai sistemi in discussione
+-   diagrammi di sequenza `UML`
+-   sviluppo _blackbox_, non si pensa al come ma al cosa
+    -   l'intenzione dell'utente
+-   input dei contratti
+
+
 ##### Contratti {#contratti}
+
+-   usano **pre** e **post** condizioni per definire nel dettaglio i cambiamenti agli oggetti <span class="underline">concettuali</span> nel <span class="underline">modello di dominio</span>
+
+Precondizioni: _ipotesi significative sullo stato del sistema o degli oggetti del modello di dominio prima dell'esecuzione dell'operazione di sistema_
+Postcondizioni: _descrive i cambiamenti di stato degli oggetti del dominio dopo il completamento dell'operazione_
+
+-   oggetti creati
+-   collegamenti formati/rotti
+-   attributi modificati
+
+I contratti sono input per il processo di progettazione software.
 
 
 #### Modello di Dominio {#modello-di-dominio}
@@ -610,7 +632,7 @@ Un fattore emerso é la superiorità della _composizione_ rispetto all'_ereditar
 
 Questo aiuta a mantenere le classi _incapsulate_ e _coese_.
 
-L'_ereditarietà_ può essere realizzata in due modi:
+Il meccanismo di <span class="underline">ereditarietà</span> può essere realizzata in due modi:
 
 1.  **Polimorfismo**
     -   le sottoclassi possono essere scambiate l'una con l'altra
@@ -618,6 +640,7 @@ L'_ereditarietà_ può essere realizzata in due modi:
     -   si sfrutta _l'upcasting_
 2.  **Specializzazione**
     -   le sottoclassi guadagnano elementi e proprietà rispetto alla classe base
+    -   meglio utilizzare la delega che direttamente l'ereditarietà
 
 I pattern mostrano che il **polimorfismo** e il _binding dinamico_ é molto sfruttato, mentre la **specializzazione** non é comunemente utilizzata in buone soluzioni.
 
