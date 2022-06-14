@@ -42,8 +42,10 @@ Q (s, h'', \pi') \text{ with }\pi \subseteq \pi'
 \end{cases}\]
 
 Then these are used by 2 routines:
-- ~verify(h,s,\(\pi\),f(e),Q) where \(f(x)\) requires \(A_{1}\); ensures \(A_{2}\);~
-- ~valid(\(f(x)\) requires \(A_{1}\); ensures \(A_{2}\); \(\{\overline{s}\}\))~
+#+begin_src c
+verify(h,s,\(\pi\),f(e),Q) where \(f(x)\) requires \(A_{1}\); ensures \(A_{2}\));
+valid(\(f(x)\) requires \(A_{1}\); ensures \(A_{2}\); \(\{\overline{s}\}\));
+#+end_src
 
 * Branches
 Happens in 2 cases:
