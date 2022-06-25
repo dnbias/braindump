@@ -306,7 +306,7 @@ I comandi $c_{1},c_{2}$ sono _equivalenti_ [$c_{1} \sim c_{2}$]
 =WHILE b DO c ~ IF b THEN (c;WHILE b DO c) ELSE SKIP=
 ***** Determinismo della semantica naturale
 *Teorema*:
-- Per ogni $c \in com$ , per ogni $s,t,t' \in state$
+- Per ogni $c \in com$ , per ogni $st,,t' \in state$
 - $(c,s)\Rightarrow t \land (c,s)\Rightarrow t^{'} \implies t=t^{'}$
 
 ***** Funzione parziale
@@ -352,10 +352,27 @@ Il $\pi$ sta per il concetto di indicizzazione:
 $\forall (\lambda \: x \: \rightarrow B\: x): \text{Set}$
 - il quantificatore é un operatore che viene applicata al lambda
 ** Logica Classica e Intuizionistica
-[[https://plfa.github.io/Negation/][Wadler]]
+- [[https://plfa.github.io/Negation/][Wadler]]
+#+begin_quote
+In Gilbert and Sullivan’s The Gondoliers, Casilda is told that as an infant she was married to the heir of the King of Batavia, but that due to a mix-up no one knows which of two individuals, Marco or Giuseppe, is the heir. Alarmed, she wails “Then do you mean to say that I am married to one of two gondoliers, but it is impossible to say which?” To which the response is “Without any doubt of any kind whatever.”
+
+Logic comes in many varieties, and one distinction is between classical and intuitionistic. Intuitionists, concerned by assumptions made by some logicians about the nature of infinity, insist upon a constructionist notion of truth. In particular, they insist that a proof of A ⊎ B must show which of A or B holds, and hence they would reject the claim that Casilda is married to Marco or Giuseppe until one of the two was identified as her husband. Perhaps Gilbert and Sullivan anticipated intuitionism, for their story’s outcome is that the heir turns out to be a third individual, Luiz, with whom Casilda is, conveniently, already in love.
+
+Intuitionists also reject the law of the excluded middle, which asserts A ⊎ ¬ A for every A, since the law gives no clue as to which of A or ¬ A holds. Heyting formalised a variant of Hilbert’s classical logic that captures the intuitionistic notion of provability. In particular, the law of the excluded middle is provable in Hilbert’s logic, but not in Heyting’s. Further, if the law of the excluded middle is added as an axiom to Heyting’s logic, then it becomes equivalent to Hilbert’s. Kolmogorov showed the two logics were closely related: he gave a double-negation translation, such that a formula is provable in classical logic if and only if its translation is provable in intuitionistic logic.
+
+Propositions as Types was first formulated for intuitionistic logic. It is a perfect fit, because in the intuitionist interpretation the formula A ⊎ B is provable exactly when one exhibits either a proof of A or a proof of B, so the type corresponding to disjunction is a disjoint sum.
+
+(Parts of the above are adopted from “Propositions as Types”, Philip Wadler, Communications of the ACM, December 2015.) ~ [[id:2e17b264-83c1-497a-b384-5d146b7ba638][Philip Wadler]] [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]]
+#+end_quote
+
+- [[id:0c7087cd-5f69-46be-b513-cd0b78b04a27][Propositions as Types]] è un paradigma che pone le proposizioni e tipi come equivalenti.
+  + in [[id:cebff5e1-4da6-4357-84c2-afc39c456c46][Type Theory]]
+  + una proposizione è identificata come il tipo (collezione) delle sue prove
+  + un tipo è identificato come la proposizione che contiene i suoi termini
+
 *** Semantica di Heyting
 \[\frac{B[t]}{\exists x \: . \: B[x]}\]
-\[\langle t, M \rangle \: : \exists x \: . \: B[x]$ dove $M\: :\: B[t]\]
+\[\langle t, M \rangle \: : \exists x \: . \: B[x]\] dove \[M\: :\: B[t]\]
 ** IMP
 [[~/Code/Agda/IMP.agda][Definizione in Agda]]
 *** Estensione Puntatori

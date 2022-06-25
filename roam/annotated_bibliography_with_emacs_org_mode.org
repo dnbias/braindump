@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       c8973a37-5b8a-4fe9-9aee-7669269562e7
+:END:
+#+title: Annotated Bibliography with Emacs org-mode
+#+date: [2022-06-16 Thu 18:41]
+#+filetags: article
+- Tags: [[id:ea38ccde-4a3a-4bce-a858-9889336ecb46][org-mode]], [[id:72ce5e3c-095b-4975-a878-ed7c6bbc90f0][Caches to Caches]]
+- Source: http://www.cachestocaches.com/2020/3/org-mode-annotated-bibliography/

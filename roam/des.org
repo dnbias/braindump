@@ -37,4 +37,4 @@ La sue debolezze sono:
 Che lo rendono vulnerabile ad attacchi /brute force/
 
 Questo é risolvibile con =Double DES= o =Triple DES=.
-- applicare =DES= piú volte allo stesso blocco, raddoppiondo la lunghezza della chiave
+- applicare =DES= piú volte allo stesso blocco, raddoppiando la lunghezza della chiave

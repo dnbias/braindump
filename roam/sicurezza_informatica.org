@@ -52,14 +52,14 @@ Utilizzando chiavi lunghe e testi arbitrariamente lunghi
      + con /known plaintext/
      + conoscendo =<P1,C1> <P2,C2>=
        + servono estrambe per incrociare la ricerca, i match sono diversi per blocco
-       + ci sono molte piu' chiavi che blocchi
-     + /brute force/ sulla prima fase di cifratura, su $2^{56}$ possibilita' su [[id:ad07cbed-5c0b-448c-861e-3f8ee80e6803][DES]]
+       + ci sono molte più chiavi che blocchi
+     + /brute force/ sulla prima fase di cifratura, su $2^{56}$ possibilità su [[id:ad07cbed-5c0b-448c-861e-3f8ee80e6803][DES]]
 2. cifrare a 3 fasi
    - =triple DES= o =3DES=
    - sicuro, chiave di $3\cdot 56=168$
    - normalmente si utilizza =K1 = K3=
      + la forza sta nelle 3 fasi, non nelle 3 chiavi
-   - si puo' utilizzare =3DES-EDE= con 3 chiavi uguali, che equivale a =DES=
+   - si può utilizzare =3DES-EDE= con 3 chiavi uguali, che equivale a =DES=
 
 Per /plaintext/ lunghi si hanno diverse tecniche per creare un messaggio cifrato a partire dai blocchi:
 - *Electonic Codebook*
@@ -139,7 +139,7 @@ Queste funzioni di hash sono utilizzate per:
 
 La funzione di hash piú utilizzata in tempi recenti é stato il [[id:5138a424-b3a8-42cb-b87d-3dd8d647c270][Secure Hash Algorithm]]
 
-Un /birthday attack/ é effettuato generando collissioni:
+Un /birthday attack/ é effettuato generando collisioni:
 - $2^{m}$ messaggi
 - codici di $c$ bit
 - $P(\text{collision}) > 0.5$ per $m > \frac{c}{2}$
@@ -358,7 +358,7 @@ Queste tecniche sono annidabili
   + Data
     * $N\times$32B
     * dati di autenticazione =MAC=
-    * questo =MAC= coper da =header IP= in poi
+    * questo =MAC= copre da =header IP= in poi
       - ignora campi variabili =TTP= e =checksum= impostandoli a 0
 *** Encapsulating Security Payload
 =ESP=

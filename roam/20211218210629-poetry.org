@@ -1,4 +1,0 @@
-:PROPERTIES:
-:ID:       95ca9382-63f8-4183-a1de-148767574dc0
-:END:
-#+title: $poetry

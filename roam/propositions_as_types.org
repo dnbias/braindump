@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       0c7087cd-5f69-46be-b513-cd0b78b04a27
+:END:
+#+title: Propositions as Types
+#+date: [2022-06-20 Mon 13:51]

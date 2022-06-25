@@ -2,7 +2,7 @@
 :ID:       2a250a63-7fbf-484e-a1f2-f4e7a38a2f50
 :END:
 #+title: Ozymandias
-[[id:95ca9382-63f8-4183-a1de-148767574dc0][$poetry]]
+#+filetags: poetry
 [[id:4d2e6322-d8e0-467c-ae3e-294a30e9c169][Percy Bysshe Shelley]], 1818
 
 #+begin_quote
