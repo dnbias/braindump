@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       e5876a79-8ba2-4216-8c20-9d202c15fa03
+:END:
+#+title: Layouts
+#+date: [2022-07-06 Wed 12:49]
+#+filetags: keebs

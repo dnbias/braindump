@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       765b9762-347f-44da-b22c-e88fd2d4757d
+:END:
+#+title: Alfred Korzybski
+#+date: [2022-07-06 Wed 12:23]
+#+filetags: author

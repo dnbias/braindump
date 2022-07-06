@@ -4,11 +4,38 @@
 #+title: The Map is Not the Territory
 #+date: [2021-12-28 Tue 19:25]
 #+filetags: concept mentalModel
-The /map/ we have of reality (any reality or subject or matter) is /not/ reality itself.[fn:1]
+The /map/[fn:map] we have of reality (any reality or subject or matter) is /not/ reality itself.[fn:1]
 The model we have of something is a simplification[fn:2] useful for ease of communication and study, memorization.
 The /territory/ is not as simple and we choose to ignore part of it, give it for granted.
 
 - [[https://conceptually.org/concepts/the-map-is-not-the-territory][related]] on [[id:c3e3a070-2a26-4793-a2e9-ea50f2002aac][Conceptually]]
+- also on [[id:87f4e5f5-8345-458c-b991-0821d50cbe06][Farnam Street]]: https://fs.blog/map-and-territory/
+
+* Notes
+#+begin_quote
+The map appears to us more real than the land - [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]] [[id:2c0408c3-764f-4b58-aa2a-f33daabc4ce7][D.H.Lawrence]]
+#+end_quote
+- a map is a reduction of the territory
+- a perfect fidelity map would not be a reduction and as such not a map anymore
+- concept popularized by [[id:765b9762-347f-44da-b22c-e88fd2d4757d][Alfred Korzybski]]
+  - /A map may have a structure similar or dissimilar to the structure of the territory./
+  - /Two similar structures have similar ‘logical’ characteristics. Thus, if in a correct map, Dresden is given as between Paris and Warsaw, a similar relation is found in the actual territory./
+  - /A map is not the actual territory./
+  - /An ideal map would contain the map of the map, the map of the map of the map, etc., endlessly…We may call this characteristic self-reflexiveness./
+
+Our reliance on abstraction can lead us astray:
+- *any* model is better than *no* model
+- maps need to be *interpreted*, which is hard
+
+#+begin_quote
+All models are wrong, some are useful. - [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]] [[id:85c545bc-f81d-4c8d-bcfa-5f08ea94412b][George Box]]
+#+end_quote
+
+- statistical analysis in economics is very prone to this
+  - [[id:a00f66b6-cd7d-43ff-84a7-e05812d5e0df][Nassim Nicholas Taleb]]: on the day before whatever “worst case” event happened in the past, you would have not been using the coming “worst case” as your worst case, because it wouldn’t have happened yet.
+  - /the tails are fat in finance/
+
 
 [fn:1]what happens when we forget this? /Wishful thinking/
 [fn:2][[https://www.youtube.com/watch?v=Q1lL-hXO27Q][here]] - [[id:763850d7-1fbf-4ee5-8379-6277e81b292f][Richard Feynman]] on this concept
+[fn:map] by map we refer to any abstraction of reality
