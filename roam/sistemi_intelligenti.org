@@ -908,7 +908,9 @@ Nello stesso dominio:
 
 [fn:linguaggi]i.e. =RDF= e =OWL=
 *** Ontologia come agente
-L'=ontologia= é la =Knowledge Base=, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti. Sono rappresentazione di concettualizzazioni
+L'=ontologia= é la =Knowledge Base=, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni.
+Queste possono essere poste da software esterni o utenti.
+Sono rappresentazione di concettualizzazioni
 
 Un'ontologia puó essere interrogata in maniere diverse
 1. istanza appartiene a categoria
@@ -970,7 +972,7 @@ Sulla base della =FOL= contruisce:
     - la soluzione semplice di riportare solamente le modifiche dello stato da parte dell'azione
     - =frame problem=
 3. =frame=
-    - $\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action}(\text{params}),s}))$
+    - $\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action}(\text{params}),s))$
 4. =Assioma di Stato Successore=
     - aggiunto per sostituire gli =assiomi di frame=
     - =Azione Applicabile= $\implies$ =
@@ -1320,7 +1322,8 @@ Passi:
 
 ** Lazy Learning
 #+begin_quote
-*Definition* $\quad$ /Lazy Learning/ in machine learning is a learning method in which generalization beyond the training data is delayed until a query is made to the system, as opposed to in /Eager Learning/, where the system tries to generalize the training data before receiving queries. Lazy learning is essentially an instance-based learning: it simply stores training data (or only minor processing) and waits until it is given a test tuple.
+*Definition* $\quad$ /Lazy Learning/ in machine learning is a learning method in which generalization beyond the training data is delayed until a query is made to the system, as opposed to in /Eager Learning/, where the system tries to generalize the training data before receiving queries.
+Lazy learning is essentially an instance-based learning: it simply stores training data (or only minor processing) and waits until it is given a test tuple.
 #+end_quote
 
 Un /lazy learner/ _non costruisce un modello_ con i dati di apprendimento ed é di semplice implementazione.
@@ -1337,7 +1340,7 @@ Si rappresentano come punti in uno spazio \($n\)-dimensionale le istanze:
 
 Questi punti vengono rapportati rispettivamente ai $k$ punti piú vicini in funzione della loro distanza.
 - un punto vicino a tutti punti di una stessa classe viene classificato/predetto come in quella classe
-- in caso di discordanza della classe dei vicini ci sono diverse implementazione
+- in caso di discordanza della classe dei vicini ci sono diverse implementazioni
   + /votazione/, vince la maggioranza ma si perde l'informazione sulla distanza
   + /votazione pesata/, voti pesati rispetto alla distanza
 - attributi di domini diversi possono avere cifre significative diverse

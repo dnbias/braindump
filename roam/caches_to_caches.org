@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       72ce5e3c-095b-4975-a878-ed7c6bbc90f0
+:END:
+#+title: Caches to Caches
+#+date: [2022-06-16 Thu 18:43]
+#+filetags: blog
+- http://www.cachestocaches.com/
