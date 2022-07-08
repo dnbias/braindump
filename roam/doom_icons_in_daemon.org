@@ -1,0 +1,16 @@
+:PROPERTIES:
+:ID:       48e7fe9f-e7b0-4d58-b62a-bd0680b34590
+:END:
+#+title: Doom Icons in Daemon
+#+date: [2022-06-27 Mon 18:07]
+#+filetags: til emacs
+- http://sodaware.sdf.org/notes/emacs-daemon-doom-modeline-icons/
+
+#+begin_src elisp
+(defun enable-doom-modeline-icons (_frame)
+  (setq doom-modeline-icon t))
+
+(add-hook 'after-make-frame-functions
+          #'enable-doom-modeline-icons)
+
+#+end_src

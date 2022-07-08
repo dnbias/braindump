@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       27dabb61-78bd-4bb1-9cf7-24290fd600e7
+:END:
+#+title: Magnetic Tent Legs
+#+date: [2022-06-30 Thu 21:59]
+#+filetags: keyboard mod
+Very cool: https://www.reddit.com/r/MechanicalKeyboards/comments/ebf228/diy_magnetic_tent_legs/

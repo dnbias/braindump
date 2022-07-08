@@ -1,0 +1,24 @@
+:PROPERTIES:
+:ID:       f3cbb1d9-6a8c-461c-9336-742d3f8e0010
+:END:
+#+title: Shortcuts in Ranger
+#+date: [2022-06-29 Wed 01:52]
+#+filetags: til
+#+begin_example
+# shortcuts to commonly used directories
+# used in dir-aliases-ranger
+# to create bookmarks
+D ~/Documents
+M ~/Movies
+S ~/Pictures/Screenshots
+e ~/.local/share/evry/data/
+b ~/Documents/Books
+d ~/Downloads
+m ~/Music
+n ~/Documents/Notes
+p ~/.local/share/plaintext_playlist
+r ~/Repos
+s ~/Downloads/Sort
+y ~/.config/yadm
+z ~/.config/zsh
+#+end_example

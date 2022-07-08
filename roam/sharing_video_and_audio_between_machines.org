@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       e8adfe91-eeba-4a55-9fb4-11fd5943d4be
+:END:
+#+title: Sharing Video and Audio between Machines
+#+date: [2022-07-08 Fri 23:05]
+#+filetags: til sysadmin
+Wanted to use laptop as second monitor for my main linux machine.
+Possible solutions:
+- [[https://github.com/debauchee/barrier][Barrier]].
+- [[http://fredrik.hubbe.net/x2vnc.html][x2vnc]]
+- [[https://wiki.archlinux.org/title/X2Go][x2go]]
+For audio see this [[https://github.com/debauchee/barrier/issues/281][issue]], using =ffmpeg= to stream audio from client to server.
+Basically:
+#+begin_src bash
+ffmpeg -re -f pulse -ac 2 -i default -f rtp rtp://server:1234
+#+end_src
+=server= is the =barrier= server ip, =pulse= can be substitued by =alsa=.
+Copy the =SDP= output on a file on the server-side, then run the following to listen to the stream:
+#+begin_src bash
+./ffplay -protocol_whitelist 'rtp,file,udp' .\sdp_file
+#+end_src
+
+
+Another alternative is to run
+#+begin_src bash
+ssh -X desktop_hostname
+#+end_src
+from the slave/client, then you can run apps running on the server and displayed on the client.

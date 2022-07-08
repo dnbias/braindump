@@ -114,7 +114,7 @@ Esempi di refactoring:
 ** Modello di Integrazione e Configurazione
 Nel _modello dell'integrazione e configurazione_ si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalità
 
-Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software Sara utilizzato
+Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software sarà utilizzato
 * Object Oriented Analysis/Design
 =OOA/D=
 
@@ -245,8 +245,8 @@ Sono ruoli svolti da persone, organizzazioni, software, macchine
 - dettagliato
   + include precondizioni e garanzie di successo
 **** Requisiti non funzionali
-Possono essere inclusi nei casi d'uso se relazionati con il requisito funzionale descritto dal caso
-Altrimenti vengono descritti nelle specifiche supplementari
+Possono essere inclusi nei casi d'uso se relazionati con il requisito funzionale descritto dal caso.
+Altrimenti vengono descritti nelle specifiche supplementari.
 **** SSD
 Diagrammi di Sequenza di Sistema
 - illustra eventi di input e output relativi ai sistemi in discussione
@@ -352,7 +352,7 @@ Strumento per pensare e comunicare
   + il gap rappresentativo sarà più semplice
 
 _É un linguaggio visuale per la specifica, la costruzione e la documentazione degli elaborati di un sistema software_
-- de facto standard un particolare per software OO
+- de facto standard in particolare per software OO
 - può essere utilizzato come abbozzo, progetto o linguaggio di programmazione
 - la modellazione agile enfatizza l'uso di =UML= come abbozzo
 
