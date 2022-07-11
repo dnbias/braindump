@@ -1,6 +1,6 @@
 
 rule org2md
-  command = emacs --batch -l ~/.emacs.d/init.el -l publish.el --eval "(jethro/publish \"$in\")"
+  command = emacs --batch -l publish.el --eval "(jethro/publish \"$in\")"
   description = org2md $in
 
 build content/posts/20200527012708-architettura_elaboratori.md: org2md roam/20200527012708-architettura_elaboratori.org
@@ -527,8 +527,6 @@ build content/posts/20211218210251-visage.md: org2md roam/20211218210251-visage.
 
 build content/posts/20211218210610-ozymandias.md: org2md roam/20211218210610-ozymandias.org
 
-build content/posts/20211218210629-poetry.md: org2md roam/20211218210629-poetry.org
-
 build content/posts/20211218210816-percy_bysshe_shelley.md: org2md roam/20211218210816-percy_bysshe_shelley.org
 
 build content/posts/20211218211659-grieg.md: org2md roam/20211218211659-grieg.org
@@ -952,3 +950,25 @@ build content/posts/adapter.md: org2md roam/adapter.org
 build content/posts/qubit.md: org2md roam/qubit.org
 
 build content/posts/screenshot_to_clipboard.md: org2md roam/screenshot_to_clipboard.org
+
+build content/posts/annotated_bibliography_with_emacs_org_mode.md: org2md roam/annotated_bibliography_with_emacs_org_mode.org
+
+build content/posts/caches_to_caches.md: org2md roam/caches_to_caches.org
+
+build content/posts/propositions_as_types.md: org2md roam/propositions_as_types.org
+
+build content/posts/type_theory.md: org2md roam/type_theory.org
+
+build content/posts/doom_icons_in_daemon.md: org2md roam/doom_icons_in_daemon.org
+
+build content/posts/shortcuts_in_ranger.md: org2md roam/shortcuts_in_ranger.org
+
+build content/posts/lily58.md: org2md roam/lily58.org
+
+build content/posts/yaemk.md: org2md roam/yaemk.org
+
+build content/posts/switches.md: org2md roam/switches.org
+
+build content/posts/keycaps_profiles.md: org2md roam/keycaps_profiles.org
+
+build content/posts/magnetic_tent_legs.md: org2md roam/magnetic_tent_legs.org

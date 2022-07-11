@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       e76064d7-57d2-4fc9-88ba-b4a71f08fd41
+:END:
+#+title: YAEMK
+#+date: [2022-06-30 Thu 20:33]
+#+filetags: keyboard
+Very cool keeb, split and similar to the [[id:8d52ba7c-61af-4424-849c-f4ddbff244bf][Lily58]] but with a better thumb-cluster.
+What we like to see.
+- https://karlk90.github.io/yaemk-split-kb/
+- [[https://karlk90.github.io/yaemk-split-kb/yaemk_rev_1_2.html][Interactive BOM]]
+- [[https://www.aliexpress.com/item/32953620639.html?algo_pvid=aed09285-b172-4fc1-8bed-f1c87792538c&algo_exp_id=aed09285-b172-4fc1-8bed-f1c87792538c-22&pdp_ext_f=%7B%22sku_id%22%3A%2266361066904%22%7D&pdp_npi=2%40dis%21EUR%21%211.65%21%21%211.7%21%21%400b0a050b16566691784281261ebe42%2166361066904%21sea][Rotary Encoder (15mm)]]

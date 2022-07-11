@@ -1021,7 +1021,7 @@ Queste considerazioni ci servono per definera la razionalitá del comportamento 
 Distinzione tra
 - dinamico / statico
 - monoagente / multiagente
-  + in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei prorpi obiettivi
+  + in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei propri obiettivi
   + va sviluppato un =protocollo di interazione= che permetta di coordinare piú agenti
     * attraverso scambi di messaggi
     * =FIPA= - Foundation for Intelligent Physical Agents
@@ -1160,7 +1160,7 @@ Il limite della matrice di confusione é che gli errori hanno tutti lo stesso pe
 Altro limite é che su =test set= sbilanciati gli /error rate/ saranno falsati.
 
 *** Classificazioni a Regole
-Regole della forma
+Si classifica secondo regole della forma
 - antecedente
   + attributi, operazioni, valori
 - conseguente
@@ -1219,18 +1219,18 @@ Il modello costruito é buono o no?
 Ci sono diversi metodi di valutazione di un modello costruito tramite un algoritmo, é importante per la valutazione partendo da un =dataset= distinguere un =learning= e un =test set= nella maniera migliore possibile:
 - *Holdout*
   + partizione dei dati disponibili in =LS= e =TS=
-  + se la partizione e' sbilanciata si va verso /over/ o /under/ fitting
+  + se la partizione è sbilanciata si va verso /over/ o /under/ fitting
 - *Random subsampling*
   + si ripete il processo di *holdout* più volte
   + ripetendo più volte l'apprendimento
   + si fa una media delle valutazioni dei modelli generati
     * si valuta il classificatore in maniera più oggettiva
-    * si cerca di liberare la valutazione dall'aleatoritù dei partizionamenti
+    * si cerca di liberare la valutazione dall'aleatorità dei partizionamenti
 - *Cross-validation*
   + si fa *random subsampling* ma con dati più omogenei
   + $K$ fold cross validation
     * con $K$ partizioni
-  + $1$ dei set ú usato come =TS=
+  + $1$ dei set è usato come =TS=
   + $K-1$ dei set sono accorpati in =LS=
   + uno per volta tutti i $K$ set sono utilizzati per il testing
   + alla fine si fa una media delle valutazioni
@@ -1238,7 +1238,7 @@ Ci sono diversi metodi di valutazione di un modello costruito tramite un algorit
   + in casi in cui il =dataset= é piccolo
   + per il =LS= si scelgono istanze dal =dataset= ma senza rimuoverle da quest'ultimo
     * una stessa istanza può apparire più volte nel =LS=
-  + per il =TS= si scelgono le istanze con cui non si e' fatto apprendimento
+  + per il =TS= si scelgono le istanze con cui non si è fatto apprendimento
   + questo viene ripetuto e valutato a piacere, facendo la media
 
 Tutte queste tecniche si usano nella valutazione dell'algoritmo usato rispetto al problema.
@@ -1262,7 +1262,7 @@ Misure di selezione:
   + probabilita' che l'elemento appartenga alla classe $i$
 
 Si puo' calcolare una _distribuzione di probabilita'_ di appartenenza di un record estratto casualmente.
-\[\text{Entropy}(t) = - \sum_{i=0}^{c-1} p(i \mid t) \log_{2}p(i\mid t)\]
+\[\text{Entropy}(t) = \sum_{i=0}^{c-1} - p(i \mid t) \log_{2}p(i\mid t)\]
 - e' assunto che $0 \log_{2} 0 = 0$
 - $E=0$ e' il caso migliore, con distribuzioni $(0,1)$ o $(1,0)$
 - $E=1$ e' il caso peggiore con distribuzione $(0.5,0.5)$

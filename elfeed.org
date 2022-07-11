@@ -1,0 +1,22 @@
+#+title: Elfeed
+* root :elfeed:
+** Programming :programming:
+*** [[https://this-week-in-rust.org/rss.xml][This Week in Rust]] :rust:
+** News :news:
+*** Top news :tops:
+**** http://feeds.bbci.co.uk/news/rss.xml
+*** Space :space:
+**** [[ https://www.nasa.gov/rss/dyn/breaking_news.rss ][NASA Breaking News]]
+**** [[ http://www.space.com/syn/space.xml][Space]]
+** Emacs :emacs:
+*** [[http://sachachua.com/blog/category/emacs/feed/][Sacha Chua's Emacs News]]
+** Tech :tech:
+** Essays :essays:
+*** [[https://fs.blog/rss][Farnam Street]]
+*** [[http://www.iltascabile.com/feed/][Il Tascabile]]
+*** [[https://moretothat.com/feed/][More to That]]
+** Entertainment :entertainment:
+*** Videogames :videogames:
+*** [[https://siliconarcadia.substack.com/feed/][Silicon Arcadia]]
+** Misc
+*** [[ http://georgerrmartin.com/notablog/feed/ ][Not a Blog]] :blog::author:
