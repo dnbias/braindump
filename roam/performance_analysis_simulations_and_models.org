@@ -19,7 +19,7 @@ This course focuses on systems that are:
 - experiments on the model
 
 A *model* is a conceptual framework describing a system
-The simulations are going to use *Montecarlo* based techniques
+The simulations are going to use *Montecarlo*-based techniques[fn:montecarlo]
 
 Model Development (typically done iteratively):
 1. Goals and objectives
@@ -37,3 +37,59 @@ Model Development (typically done iteratively):
   - concurrency
   - congestion
   - sychronization
+
+Queues can use different /disciplines/ or algorithms to regulate the job handled by the server
+- =FIFO=
+- =LIFO=
+- =SIRO=, serve in random order
+- using some kind of priority, usually =SJF=
+
+Basic assumptions on queues:
+- =FIFO=
+- /non-preemptive/
+  - once initiated, service will continue until completion
+- /conservative/
+  - /server/ stays idle if there is one or more jobs in the service node
+
+For a job $i$
+- arrival time $a_{i]$
+- delay $d_{i]$
+- service begins at time $b_{i] = a_{i] + d_{i]$
+- service time $s_{i}$
+- wait time $w_{i} = d_{i} + s_{i]$
+- departure time $c_{i] = a_{i} + w_{i}$
+- interarrival time $\tau_{i} = a_{i} - a_{i-1}$
+- idle time $e_{i} = a_{i} - c_{j-1}$
+  - $0$ if job arrives whle the server is busy
+
+In general:
+\[B = \sum_{i=1}^{n} s_{i}\]
+\[E = \sum_{i=1}^{n} e_{i}\]
+
+Observing these informations we can distinguish:
+- *job-averaged statistics*
+  - average interarrival time
+\[\overline \tau = \frac{1}{n}\sum^{n}_{i=1}\tau_{i}=\frac{a_{n}}{n}\]
+  - input rate $\theta = \frac{1}{\overline \tau}$
+  - average service time
+\[\overline s = \frac{1}{n}\sum^{n}_{i=1} s_{i}=\frac{B}{n}\]
+  - service rate $\mu = \frac{1}{\overline s}$
+  - total simulation time $T = c_{n} - c_{0}$
+  - throughput \[X = \frac{n}{T}]
+  - utilization \[U = \frac{B}{T}\]
+
+
+- *time-averaged statistics* are defined by the area under a curve (integration)
+  - defined 3 functions
+    - $n(t)$, number of jobs in the service node at time $t$
+    - $q(t)$, number of jobs in the queue at time $t$
+    - $y(t)$, number of jobs in service at time $t$
+    - $n(t) = q(t) + y(t)$
+  - $$\overline n = \frac{1}{T} \int_{0}^{T} n(t) dt$$
+  - $$\overline q = \frac{1}{T} \int_{0}^{T} q(t) dt$$
+  - $$\overline y = \frac{1}{T} \int_{0}^{T} y(t) dt$$
+    - also the /server utilization/ (probability, in the limit)
+    - $$\overline y = \frac{\sum_{i=1}^{n} s_{j}}{c_{n}} = \frac{B}{c_{n}} = \frac{c_{}_{n}- E}{c_{n}}$$
+  - /traffic intensity/, input rate to service rate ratio
+    - $$\rho = \frac{1/\overline \tau}{1/\overline s} = \frac{c_{n}B}{a_{n} c_{n}} = \bigg (\frac{c_{n}}{a_{n}}\bigg )\overline y$$
+[fn:montecarlo] Computational algorithms using repeated random sampling to obtain results

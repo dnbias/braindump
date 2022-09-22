@@ -1,0 +1,83 @@
+:PROPERTIES:
+:ID:       db3694d3-01ed-4a3c-ba6b-74190b348e6d
+:END:
+#+title: Reti Neurali & Deep Learning
+#+date: [2022-09-22 Thu 19:16]
+- Prof.essa Valentina Gliozzi, Prof.essa Rossella Cancelliere
+
+* Principi
+- le reti neurali sono strutture che simulano il comportamento del cervello umano
+  - in particolare l'unita' base: il *neurone*
+    - funzioni: /raccoglie, elabora, propaga/ segnali
+
+La struttura in particolare e' composta da diverse parti:
+1. neuroni di *input*
+2. neurone di *output*
+   - a questo e' associato un ulteriore input: il *bias*
+     - la tendenza ad attivarsi
+3. la somma *pesata* viene passata a una *funzione di attivazione*, da questa deriva il risultato
+
+Una *rete neurale* (=NN=) e' un modello computazionale composto da neuroni artificiali, le sue proprieta' sono:
+- non linearita', la funzione che elabora la risposta non e' lineare
+- input-output mapping, ha un ingresso e un'uscita
+- fault tolerance, il task sulla quale e' addestrata e' distribuito
+- incremental training, possibile continuare l'addestramento nel momento in cui ci siano nuovi dati
+
+Un =NN= puo' essere
+- *supervisionato*
+  - insieme di addestramento con input e output _desiderato_
+  - usi in *classificazione*, *riconoscimento*, *diagnostica*, *regressione*
+- *non supervisionato*
+  - insieme di addestramento _non etichettati_
+  - usi in *clustering*
+
+** Architetture
+- *single layer feed forward*
+  - grossi limiti, sorpassato
+- *multi layer feed forward*
+  - livelli nascosti, non interagiscono direttamente con il mondo esterno
+- *recurrent*
+  - livelli nascosti
+  - feedback loop
+
+* Perceptron
+Primo esempio di rete neurale (1958), puo' risolvere semplici problemi di classificazione nel caso in cui il problema sia *linearmente separabile*.
+
+#+begin_quote
+Un problema si dice /linearmente separabile/ se i dati rappresentati nello spazio sono divisibili nelle loro classi tramite una linea retta, detta *decision boundary*.
+#+end_quote
+
+La rete del /perceptron/ e' semplice, con $p-1$ neuroni di input e un neurone di /bias/. Il neurone di output effettua la somma pesata, detta *campo locale*:
+\[v_{}_{j} = \sum^{p}_{i=0} w_{ji}x_{i}\]
+
+La *funzione di attivazione*:
+\begin{math}
+\phi(v_{j}) =
+\begin{cases}
+1 \qquad \text{se } v_{j} > 0 \\
+-1 \qquad \text{altrimenti}
+\end{cases}
+\end{math}
+
+L'apprendimento e' effettuato tramite un'algoritmo iterativo dove $\eta$ e' il *learning rate*:
+
+\begin{algorithm}
+\caption{Algoritmo di Apprendimento del Percettrone}
+\begin{algorithmic}[1]
+\Procedure{Learning-Perceptron}
+\State{n \gets 0}
+\State{\text{inizializza } w(n) \text{ casualmente}}
+\While{\text{ci sono esempi classificati erroneamente}}
+\State{(x(n),d(n))\gets \text{esempio mis-classificato}}
+\If{d(n) = 1}
+\State{w(n+1)\gets w(n) + \eta x(n)}
+\EndIf
+\If{d(n)=-1}
+\State{w(n+1)\gets w(n) - \eta x(n)}
+\EndIf
+\State{n \gets n +1}
+\EndWhile
+\end{algorithmic}
+\end{algorithm}
+
+Con il cambiamento dei pesi $w$ si sta spostando la *decision boundary*, tracciata perpendicolarmente al vettore dei pesi.

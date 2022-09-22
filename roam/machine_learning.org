@@ -4,6 +4,7 @@
 :END:
 #+title: Machine Learning
 #+date: [2022-09-21 Wed 20:39]
+- Prof. Roberto Esposito, Prof.ssa Mao
 - Peter Flach, /Machine Learning/, Cambridge University Press
 
 * Ingredients of ML
