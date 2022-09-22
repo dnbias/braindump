@@ -1,0 +1,34 @@
+:PROPERTIES:
+:ID:       d9ec0783-4ae7-4c9f-92b0-fe3c8fb09332
+:roam_aliases: "Tecniche e Architetture Avanzate per lo Sviluppo del Software"
+:END:
+#+title: TAASS
+#+date: [2022-09-19 Mon 10:14]
+* Informazioni Corso
+- Giovanna Petrone
+- Laboratorio
+  - partecipazione obbligatoria
+  - a gruppi
+  - simili a corsi di management nelle aziende
+- Obiettivi
+  - *Extreme Programming*
+  - imparare a gestire un progetto
+    - identificare l'ambito per poter gestire correttamente lo sviluppo
+    - /off the shelf/
+      - per ogni cliente possibile
+    - /custom made/
+  - /project scheduling/
+  - stesura dei requisiti e sviluppo dei /task/
+* Project Management
+- Meeting
+  - Project Meeting
+  - Project Review
+** Traditional Approach
+- *Project Charter*
+  - objectives, /no goals/
+  - assunzioni, restrizioni
+  - misure
+- Planning
+  - l'approccio cerca di anticipare i problemi
+  - stabilire obiettivi concreti
+  -

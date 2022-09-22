@@ -1,0 +1,39 @@
+:PROPERTIES:
+:ID:       664d99ea-5c74-47c4-89f6-4bbee86e5bca
+:END:
+#+title: Performance Analysis - Simulations and Models
+#+date: [2022-09-22 Thu 00:00]
+Taught by Gianfranco Balbo, Gaeta
+- Lawrence M. Leemis, Stephen K. Park, /Discrete Event Simulation: a first course/, Pearson - Prentice Hall
+- Denning, Buzen, /The Operational Analysis of Queueing Network Models/, ACM Computing Surveys, 1978
+* Systems
+This course focuses on systems that are:
+- stochastic
+- dynamic
+- discrete-event
+
+* Introduction
+** Discrete-event simulation
+- purpuse, modeling - simulating - analyzing systems
+- way, computation and mathematical techniques
+- experiments on the model
+
+A *model* is a conceptual framework describing a system
+The simulations are going to use *Montecarlo* based techniques
+
+Model Development (typically done iteratively):
+1. Goals and objectives
+2. Build a /conceptual model/
+3. Convert into a /specification model/
+4. Convert into a /computational model/
+5. Verify
+6. Validate
+
+** Formalisms
+- *Queueing Networks*
+  - concurrency
+  - congestion
+- *Stochastic Petri Nets*
+  - concurrency
+  - congestion
+  - sychronization

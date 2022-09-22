@@ -1,0 +1,76 @@
+:PROPERTIES:
+:ID:       77cc59df-765f-4523-a1d5-b937e581d8fc
+:ROAM_ALIASES: ML
+:END:
+#+title: Machine Learning
+#+date: [2022-09-21 Wed 20:39]
+- Peter Flach, /Machine Learning/, Cambridge University Press
+
+* Ingredients of ML
+- componenti necessari per la materia di studio
+- Tasks
+  - classificazione
+  - regressione
+  - stima probabilistica
+  - clustering
+    - capire la struttura dei dati
+    - puo' anche essere un primo passo verso la classificazione
+- Modelli
+  - lineare
+  - alberi di decisione
+  - *naive bayes*
+  - =KNN=
+- Features
+  - numeriche
+  - categoriche
+  - costruzione
+  - selezione
+
+Per predire la classificazione si cerca una $f(x)$ che date le features in input restituisca in output la classificazione che ci si aspetta dal learning set.
+
+In un modello lineare abbiamo una /retta/ che _divide in un piano_ le entita' che appartengono a una categoria da quelli che non le appartengono
+
+#+begin_quote
+Machine learning is the systematic study of algorithms and systems that improve their knowledge or performance with experience.
+#+end_quote
+
+I task sono risolti dai modelli, i problemi di apprendimento sono risolti da algoritmi che /producono/ modelli.
+
+
+
+* Tasks
+- predittivo, l'obiettivo e' predirre una classificazione
+- descrittivo, cerco informazioni in piu' sulla struttura del dataset
+- classificazione binaria o multi-classe
+- regressione, versione non discreta della classificazione
+- clustering, target nascosto
+
+Il =ML= puo' essere supervisionato o meno, quindi con etichette conosciute nel /learning set/
+
+
+** Binary Classification
+
+** Beyond Binary
+
+* Models
+1. geometrico, si ragiona sullo spazio del problema per risolverlo
+2. probabilistico, si cerca la probabilita' di appartenenza a una classe
+   - *Naive Bayes*, modello piu' semplice possibile: assume che le features siano indipendenti
+3. logico, i modelli sono definiti da espressioni logiche
+
+L'obiettivo dell'apprendimento e' definire dei pesi che rendono corretta la predizione.
+
+Se la probabilita' a priori di Y e' nota:
+TODO
+\[Y_{}_{\text{MAP}} &= \text{arg max } P(Y|X) \\ \text{arg max } P(Y|X)\]
+
+Altrimenti:
+
+** Linear Models
+
+** Ensamble Learning
+
+* Features
+Strumenti con cui descriviamo gli oggetti del dominio
+- anche la granularita' con cui vengono aggregate le feature puo' cambiare la chiarezza del trend e puo' aiutare l'algoritmo di apprendimento.
+- le features possono essere mappate a nuovi spazi, semplificando lo spazio cui e' possibile applicare un modello lineare per classificarlo piu' semplicemente
