@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       4980a886-a285-4b6a-a12d-9053aa25d536
+:END:
+#+title: Thinking Fast and Slow
+#+date: [2022-09-24 Sat 00:37]
+#+filetags: book psychology

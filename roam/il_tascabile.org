@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       8553a458-7717-4929-a1f4-4bea5a764c58
+:END:
+#+title: Il Tascabile
+#+date: [2022-09-23 Fri 22:00]
+- [[www.iltascabile.com]]

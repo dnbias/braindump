@@ -81,3 +81,33 @@ L'apprendimento e' effettuato tramite un'algoritmo iterativo dove $\eta$ e' il *
 \end{algorithm}
 
 Con il cambiamento dei pesi $w$ si sta spostando la *decision boundary*, tracciata perpendicolarmente al vettore dei pesi.
+
+** Teorema di Convergenza
+#+begin_quote
+Se esiste una soluzione, l'algoritmo di apprendimento termina, trovandola.
+#+end_quote
+
+La dimostrazione procede portando tutti i dati in un'unica classe $C$ che unisca $C_{1}$ e $C_{}_{}_{}_{}_{}_{2}$ e mostrando che esistono un lower bound $\alpha$ e un upper bound $\beta$ al numero di passi di iterazione $k$.
+- $$\alpha = \min{(w^{*T} x(i))} \qquad  (\forall i \in 0\dots k)$$
+- $$\beta = (\max{||x(i)||})^2 \qquad (\forall x(i) \in C)$$
+
+\[k \le \frac{ \beta|| w^{*}  ||^2 }{\alpha^{}^2}\]
+
+** XOR
+Un classico problema non linearmente risolvibile e' quello dello XOR. Questo problema rimase aperto per un periodo, portando ad una crisi nella ricerca che apri' la strada a nuove strutture per i =NN=.
+
+* Multilayer Perceptron
+** Adaline
+Questa struttura modifica come vengono aggiornati i pesi, si focalizza sulla riduzione dell'errore.
+
+Formalmente si descrivono le coppie features-valore nell'esempio $k$:
+\[(x^{k} , d^{k})\]
+L'errore viene definito come
+\begin{align*}
+E^{k} (w) &= \frac{1}{2}(d^{k} - y^{k})^{2} \\
+&= \frac{1}{2}(d^{k} - \sum^{m}_{j=0} x^{k}_{j} w_{j})^{2}
+\end{align*}
+
+Quindi definiamo l'errore per l'esempio $k$ come la differenza tra il valore desiderato $d^{k}$ e quello ottenuto $y^{k}$.
+Quindi l'errore totale sulla rete e'
+\[E_{\text{tot}} = \sum^{N}_{k=1} E^{k}\]

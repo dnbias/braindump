@@ -1,0 +1,21 @@
+:PROPERTIES:
+:ID:       1b9bee3a-e21f-4c92-94c9-f1ae7a2dee99
+:END:
+#+title: Scienziati che sbagliano
+#+date: [2022-09-23 Fri 22:00]
+#+filetags: article science method
+- [[id:8553a458-7717-4929-a1f4-4bea5a764c58][Il Tascabile]]
+- https://www.iltascabile.com/scienze/frodi-errori-scienza/
+
+- Falsificasione di dati in ambito scientifico
+  - petizione =FDA= per fermare la sperimentazione di Simufilam - Cassava Sciences - per dati falsi, distorti
+    - partecipazione anche di M.Shrag, critico anche del via libera al Aduhelm (monoclonale)
+  - in ambito Alzheimer unico paper fondativo del 2006 (S.Lesne', Nature) - inchiesta di /Science/
+    - Schrog con accesso ai dati originari dimostra il problema di metodo nel paper
+  - problemi simili per il laboratorio di Carlo Maria Croce - inchiesta di /Nature/
+- il problema endemico e' la foga di pubblicazioni all'inseguimento dei /grant/
+- caso Paolo Macchiarini, responsabile della morte di almeno sette persone sotto il suo bisturi
+  - procede con interventi mai sperimentati, ne' in modelli animale ne' umani - impianti di trachea
+  - sorge la domanda di come sia stato possibile che fosse creduto sulla parola da istituti di tutto rispetto
+- [[https://journals.asm.org/doi/full/10.1128/mbio.00809-16][studio del 2016 su oltre 20000 paper biomedici]]
+  - irregolarita' in 800

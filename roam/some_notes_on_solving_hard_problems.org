@@ -1,0 +1,36 @@
+:PROPERTIES:
+:ID:       46bc1246-bcf3-4cf4-9fa1-3a64fb5e60d4
+:END:
+#+title: Some notes on solving hard problems
+#+date: [2022-09-24 Sat 02:32]
+#+filetags: article problem-solving
+- [[id:395c6914-ed10-4163-8776-e830aa45b033][Lesswrong]]
+- [[https://www.lesswrong.com/posts/AcbtSuGYB4jWGYk6x/some-notes-on-solving-hard-problems]]
+
+* Notes
+- see the problem and solutions from multiple perspectives
+  - the different points of observation can help to surpass moments where the progress halts to a stop
+  - the different perspectives are just mental tools, modes of thinking
+
+#+begin_quote
+[...] try to restate it in just as many different forms as you can. Change the words. Change the viewpoint. Look at it from every possible angle. After you’ve done that, you can try to look at it from several angles at the same time and perhaps you can get an insight into the real basic issues of the problem, so that you can correlate the important factors and come out with the solution. It’s difficult really to do this, but it is important that you do. If you don’t, it is very easy to get into ruts of mental thinking. You start with a problem here and you go around a circle here and if you could only get over to this point, perhaps you would see your way clear; but you can’t break loose from certain mental blocks which are holding you in certain ways of looking at a problem. That is the reason why very frequently someone who is quite green to a problem will sometimes come in and look at it and find the solution like that, while you have been laboring for months over it. You’ve got set into some ruts here of mental thinking and someone else comes in and sees it from a fresh viewpoint. - [[id:2d14655f-0289-415f-8bd7-3c3d819aa658][Claude Shannon]] [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][#cit]]
+#+end_quote
+
+- corner pieces of puzzles are the easiest to place
+  - at first concentrate on the easy stuff, so that you can then work on solid ground towards the hardest aspects of the problem
+  - /lock in the certainties/
+  - working on the least contrained parts first is inefficient
+  - more contraints = smaller search space
+
+- dead-ends are opportunities
+  - these are the moments most likely to require a shift in perspective and an out of the box solution
+
+- the visual cortex is a powerful tool, use it
+  - draw diagrams to represent relationships
+  - use color, shapes, area, angles
+  - reduce labels
+  - diagrams help fit a problem into your brain, saving strain for the most complex activities to solving the problem
+
+- when coming up with new concepts: name them
+  - these are things that come up frequently in your thinking
+  - naming these will help with subsequent applications of the concepts

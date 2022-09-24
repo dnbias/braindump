@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       2d14655f-0289-415f-8bd7-3c3d819aa658
+:END:
+#+title: Claude Shannon
+#+date: [2022-09-24 Sat 02:37]
