@@ -34,3 +34,12 @@
 - when coming up with new concepts: name them
   - these are things that come up frequently in your thinking
   - naming these will help with subsequent applications of the concepts
+
+- tiny steps: map the solution space
+  - do not leap to solutions: aka guess-and-check
+  - ask yourself: fundamentally, what is wrong with the current approach?
+  - maybe you're moving too fast because you are too high level
+    - understanding the problem at a lower level and working at that detail imposes a certain slow pace, whereas higher level reasoning is inherently quicker: use these tools
+
+- when possible leave the problem for a  while
+  - time can help bring a fresh mind and perspective to the table
