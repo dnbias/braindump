@@ -7,6 +7,23 @@
 Wanted to use laptop as second monitor for my main linux machine.
 Possible solutions:
 - [[https://github.com/debauchee/barrier][Barrier]].
+Managed to get it working with some tinkering.
+- needed to create the file =TrustedServers.txt= on the client:
+#+begin_src bash
+scp Local.txt dnbias@sky:TrustedServers.txt
+#+end_src
+For this to work the =sshd= on the client (=dnbias@sky=) must be running ofc.
+
+Then, server:
+#+begin_src bash
+barriers -f --no-tray --name ray --disable-client-cert-checking -c /home/dnbias/.config/barrier/barrier.conf --address 192.XXX.X.XX:24800
+#+end_src
+client:
+#+begin_src bash
+barrierc -f --no-tray --name sky 192.XXX.X.XX:24800
+#+end_src
+
+
 - [[http://fredrik.hubbe.net/x2vnc.html][x2vnc]]
 - [[https://wiki.archlinux.org/title/X2Go][x2go]]
 For audio see this [[https://github.com/debauchee/barrier/issues/281][issue]], using =ffmpeg= to stream audio from client to server.
