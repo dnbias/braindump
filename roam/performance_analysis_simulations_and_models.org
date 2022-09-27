@@ -3,6 +3,7 @@
 :END:
 #+title: Performance Analysis - Simulations and Models
 #+date: [2022-09-22 Thu 00:00]
+#+filetags: university
 Taught by Gianfranco Balbo, Gaeta
 - Lawrence M. Leemis, Stephen K. Park, /Discrete Event Simulation: a first course/, Pearson - Prentice Hall
 - Denning, Buzen, /The Operational Analysis of Queueing Network Models/, ACM Computing Surveys, 1978
@@ -74,8 +75,9 @@ Observing these informations we can distinguish:
   - average service time
 \[\overline s = \frac{1}{n}\sum^{n}_{i=1} s_{i}=\frac{B}{n}\]
   - service rate $\mu = \frac{1}{\overline s}$
+    - maximum throughput, in the case that the server was never idle
   - total simulation time $T = c_{n} - c_{0}$
-  - throughput \[X = \frac{n}{T}]
+  - throughput \[X = \frac{n}{T}\]
   - utilization \[U = \frac{B}{T}\]
 
 
@@ -92,4 +94,11 @@ Observing these informations we can distinguish:
     - $$\overline y = \frac{\sum_{i=1}^{n} s_{j}}{c_{n}} = \frac{B}{c_{n}} = \frac{c_{}_{n}- E}{c_{n}}$$
   - /traffic intensity/, input rate to service rate ratio
     - $$\rho = \frac{1/\overline \tau}{1/\overline s} = \frac{c_{n}B}{a_{n} c_{n}} = \bigg (\frac{c_{n}}{a_{n}}\bigg )\overline y$$
+
+#+begin_quote
+A *Trace File* is a log of all the arrival and service times.
+#+end_quote
+
+
+
 [fn:montecarlo] Computational algorithms using repeated random sampling to obtain results

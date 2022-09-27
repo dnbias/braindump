@@ -48,10 +48,132 @@ I task sono risolti dai modelli, i problemi di apprendimento sono risolti da alg
 
 Il =ML= puo' essere supervisionato o meno, quindi con etichette conosciute nel /learning set/
 
+** Predictive ML
+- input: dataset con le etichette assegnate
+- cerchiamo un algoritmo di apprendimento che possa indurre un modello che riesca a fare predizioni su proprieta' in particolare degli esempi
 
-** Binary Classification
+Dipendentemente dalle etichette a da che proprieta' cerchiamo di approfondire e' possibile distinguere in:
+- ranking
+- scoring
+- probability estimation
+- regression
 
-** Beyond Binary
+
+** Classification
+Un classificatore e' un mapping:
+\[\cap c: X \to C\]
+dove $C = \{ C_{1} , \cdots , C_{k} \}$
+
+$\cap c$ e' una approssimazione della reale (e sconosciuta) funzione $c$.
+- e' possibile che un'istanza $x$ sia contaminata da rumore
+
+
+*** Binary Classification
+- *feature tree*, diverso dal *decision tree* in quanto nelle foglie ci sono esempi e non regole
+- costruendo con gli esempi il feature tree e gli insiemi nelle foglie posso procedere assegnando una classificazione a ciascuna foglia
+  - solitamente si procede ad assegnare come etichetta quella maggiormente rappresentata osservando le etichette degli esempi del /training set/
+
+Apprendere un classificatore significa costruire la funzione $\cap c$ in modo che approssimi al meglio $c$ su tutto il set $X$ e non solo quello $x$ del training set.
+- un esempio e' una coppia di un'istanza $x$ e della sua reale classe $c(x)$
+- fatto questo si puo' valutare l'accuratezza, calcolata sul training set
+  - questa misura puo' essere fuorviante
+  - generalmente l'accuracy decresce al di fuori del training set
+  - per questo il dataset viene diviso in training set e test set per evitare bias
+    - il bias sul test set e' l'opposto, abbiamo un bias in difetto
+    - quando il test set viene riutilizzato per un nuovo addestramento il modello migliorera' e quindi le stime precedenti saranno in difetto
+
+**** Contingency Table
+Tavola in cui vengono riportati
+- true positives
+- false negatives
+- false positives
+- true negatives
+
+Contiene anche informazioni sui positivi e negativi del set.
+
+Con questa tabella possono essere calcolate varie misure di *performance*:
+- =TP=
+- =TN=
+- =FP=
+- =FN=
+- Proporzione di positivi
+- Proporzione di negativi
+- /class ratio/
+- /accuracy/
+- /error rate/
+- /true positive rate/, /sensitivity/, /recall/
+  - $TP/Pos$
+- /true negative rate/, /specificity/
+  - $TN/Neg$
+- /precision/, /confidence/
+  - $TP/(TP+FP)$
+
+Classificatore troppo specifico significa /recall/ bassa, troppo generale significa /precision/ bassa.
+
+**** Coverage Plot
+Sulle assi =TP= e =FP=
+- i classificatori che si posizionano sulla diagonale mediana sono i peggiori
+- in alto a sinistra =ROC= heaven
+- in basso a destra =ROC= hell
+
+L'accuratezza e' la stessa per classificatori che giacciono su una stessa linea con pendenza 1
+Punti sulla una linea parallela alla diagonale principale (pendenza $Pos/Neg$) hanno la stessa /average recall/
+- $\frac{(TP/Pos)+(TN/Neg)}{2}$
+
+**** Roc Plot
+Gli assi vengono normalizzati, percentuale di =TP= e =FP=
+- tpr - true positive rate
+- fpr - false positive rate
+
+Lo spazio di rappresentazione viene schiacciato in un quadrato, percio' le pendenze delle rette cambiano di conseguenza.
+Per l'accuracy la pendenza delle rette diventa $Neg/Pos$
+Per la avr recall la pendenza diventa 1
+
+Gli errori sulle classi possono avere pesi diversi, questo puo' essere manipolando cambiando il ratio tra =FP= e =FN=.
+
+**** Scoring Classifier
+Una mappa:
+\[s : X \to R^{k}\]
+
+Gli score sono misure di confidenza del classificatore, le etichette nel dataset rimangono le classi.
+
+Il *margine* e' una misura di confidenza, considerando $c(x)$ +1 per esempi positivi, -1 per esempi negativi:
+- $z(x) = c(x) \cap s (x)$
+
+E' desiderabile premiare grossi margini positivi e penalizzare grossi margini negativi.
+Questo lo si ottiene con una *loss function*:
+\[L : R \to [0, \infty )\]
+- mappa ogni margine dell'esempio $z(x)$ con a un valore di *loss*
+
+In molti casi l'apprendimento e' posto come un problema di ottimizzazione di _minimizzazione della funzione di loss_.
+Ce ne sono di diverse:
+- 0-1 Loss
+- Hinge Loss
+- Logistic Loss
+- Exponential Loss
+- Squared Loss
+
+Il *ranking* e' indotto naturalmente dalla funzione di scoring
+- il *ranking error rate* viene definito tra tutte e coppie positivo-negativo
+  - si controlla se si sta dando un ranking errato (positivo con ranking minore del negativo) con 1 punto di penalita', mezzo punto in caso di ranking uguale
+  - matematicamente si sta calcolando l'area al di sotto della curva =roc=
+  - un *ranking error* di 1 significa che si e' sbagliato tutto
+
+**** Class Probability Estimation
+Classificatore di scoring che mappa:
+\[p: X \to [0,1]^{k}\]
+
+Assegnamo classe positiva se la probabilita' calcolata e' maggiore di 0.5 e viceversa per i negativi.
+L'*errore quadratico*:
+\[SE(x) = \frac{1}{2} || p(x) - I(x) ||_{2}^{2}\]
+Questo errore si puo' calcolare su tutti gli esempi con la media aritmetica
+
+E' spesso una buona idea eseguire uno /smoothing/ delle frequenze relative, il modo piu' comune per farlo e' la *Laplace correction*
+\[p_{i} = \frac{n_{i} + 1}{|S| + k}\]
+
+*** Beyond Binary
+
+
 
 * Models
 1. geometrico, si ragiona sullo spazio del problema per risolverlo
