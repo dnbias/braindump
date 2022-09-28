@@ -82,12 +82,31 @@ L'apprendimento e' effettuato tramite un'algoritmo iterativo dove $\eta$ e' il *
 
 Con il cambiamento dei pesi $w$ si sta spostando la *decision boundary*, tracciata perpendicolarmente al vettore dei pesi.
 
+L'algoritmo si ferma quando tutti gli elementi del /training set/ sono classificati correttamente. A quel punto la configurazione di pesi e' corretta.
+
 ** Teorema di Convergenza
 #+begin_quote
-Se esiste una soluzione, l'algoritmo di apprendimento termina, trovandola.
+Se esiste una soluzione - quindi le due classi sono linearmente separabili - l'algoritmo di apprendimento termina, trovandola.
 #+end_quote
 
-La dimostrazione procede portando tutti i dati in un'unica classe $C$ che unisca $C_{1}$ e $C_{}_{}_{}_{}_{}_{2}$ e mostrando che esistono un lower bound $\alpha$ e un upper bound $\beta$ al numero di passi di iterazione $k$.
+Geometricamente, se $w \cdot x > 0 \land -90 < \alpha < \180$
+\[w(n) \cdot x(n) = ||w|| \cdot ||x|| \cos (\alpha)\]
+
+Quindi la modifica del vettore pesi porta a cambiare la *decision boundary* (retta perpenticolare al vettore pesi) che accomodi l'input mal classificato corrente. Lo spostamento della *boundary* puo' causare altri input ad essere mal classificati.
+
+Inizialmente i pesi sono posti a 0.
+La dimostrazione procede portando tutti i dati in un'unica classe $C$ che unisca $C_{1}$ e $C_{}_{}_{}_{}_{}_{2}$ (in questo caso si restituisce 1 a $\lnot x$) e mostrando che esistono un lower bound $\alpha$ e un upper bound $\beta$ al numero di passi di iterazione $k$.
+
+Per la sequenza di stimoli vengono modificati i pesi:
+\begin{align*}
+w(1) = w(0) + x(0) \\
+w(2) = w(1) + x(1) \\
+\cdots \\
+w(k+1) = w(k) + x(k)
+\end{align*}
+
+In quanto $k$ ha un lower bound quadratico all'infinito e un upper bound $k$ non puo' crescere all'infinito, pena l'inconsistenza di questi limiti.
+
 - $$\alpha = \min{(w^{*T} x(i))} \qquad  (\forall i \in 0\dots k)$$
 - $$\beta = (\max{||x(i)||})^2 \qquad (\forall x(i) \in C)$$
 
@@ -97,6 +116,9 @@ La dimostrazione procede portando tutti i dati in un'unica classe $C$ che unisca
 Un classico problema non linearmente risolvibile e' quello dello XOR. Questo problema rimase aperto per un periodo, portando ad una crisi nella ricerca che apri' la strada a nuove strutture per i =NN=.
 
 * Multilayer Perceptron
+Nel 1969 l'entusiasmo iniziale viene meno quando si mostrano molti problemi non linearmente separabili a cui i percettroni non potevano dare soluzione.
+Le reti multilivello permettono di discriminare aree convesse nello spazio, superando i limiti dei percettroni singoli.
+
 ** Adaline
 Questa struttura modifica come vengono aggiornati i pesi, si focalizza sulla riduzione dell'errore.
 
