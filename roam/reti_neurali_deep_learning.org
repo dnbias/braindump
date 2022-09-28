@@ -120,7 +120,15 @@ Nel 1969 l'entusiasmo iniziale viene meno quando si mostrano molti problemi non 
 Le reti multilivello permettono di discriminare aree convesse nello spazio, superando i limiti dei percettroni singoli.
 
 ** Adaline
+=Adaptive Linear Neural=
 Questa struttura modifica come vengono aggiornati i pesi, si focalizza sulla riduzione dell'errore.
+- mentre il percettrone avevo l'obiettivo di diminiure gli input misclassificati
+- qui l'obiettivo e' la riduzione dell'errore globale
+
+L'architettura del neurone e' differente, non piu' una funzione di attivazione ma una funzione lineare.
+
+Si studia la derivata di errore in relazione al peso, se la derivata e' negativa allora la funzione errore sta diminuendo, si continua ad aumentare il peso.
+Se la derivata e' positiva l'errore e' in salita e si diminuisce il peso.
 
 Formalmente si descrivono le coppie features-valore nell'esempio $k$:
 \[(x^{k} , d^{k})\]
@@ -133,3 +141,5 @@ E^{k} (w) &= \frac{1}{2}(d^{k} - y^{k})^{2} \\
 Quindi definiamo l'errore per l'esempio $k$ come la differenza tra il valore desiderato $d^{k}$ e quello ottenuto $y^{k}$.
 Quindi l'errore totale sulla rete e'
 \[E_{\text{tot}} = \sum^{N}_{k=1} E^{k}\]
+
+Si cerca di minimizzare questo valore ragionando *patter-by-pattern*, calcolando e minimizzando l'errore sulla singola istanza $k$.
