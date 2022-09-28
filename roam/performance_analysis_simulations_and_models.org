@@ -102,3 +102,115 @@ A *Trace File* is a log of all the arrival and service times.
 
 
 [fn:montecarlo] Computational algorithms using repeated random sampling to obtain results
+
+* Discrete-Event Simulation
+The general structure of the simulator is made of different /handlers/:
+
+#+begin_code c
+void initialize(){
+    clock = 0;
+    halt = false;
+    nsys = 0;
+    Busy = 0;
+    Area_n = 0;
+
+    arrival_t = GetArrival(fp);
+    service_t = GetService(fp);
+
+    event_notice = get_new_node();
+    event_notice->event.type = ARRIVAL;
+    event_notice->event.occur_time = arrival_t;
+    event_notice->event.service_time = service_t;
+    schedule(event_notice); // scheduling the first event
+
+    event_notice = get_new_node();
+    event_notice->event.type = END;
+    event_notice->event.occur_time = End_time;
+    schedule(event_notice);
+}
+#+end_code
+
+In the engine we call the *handlers*, these are best kept as small and fast as possible.
+It is better to create different variants of the events with simple handles than have fewer but more complex handlers.
+#+begin_code c
+void engine(void){
+    int event_type;
+    double oldclock, delta;
+    nodePointer new_event;
+
+    new_event = event_pop();
+
+    oldclock = clock;
+    clock = new_event->event.occur_time;
+    delta = clock - oldclock;
+
+    // nsys > 0, somebody was in the queue
+    if (nsys > 0) {
+        Busy = Busy + delta;
+        Area_n = Area_n + nsys * delta;
+    }
+
+    // transition
+    event_type = new_event->event.type;
+    switch(event_type) {
+        case ARRIVAL : arrival(new_event);
+            break;
+        case DEPARTURE : departure(new_event);
+            break;
+        case END : end(new_event);
+    }
+}
+#+end_code
+
+#+begin_code c
+void arrival(struct node* node_event) {
+    struct node* next_job;
+
+    nsys++;
+    if (nsys == 1) { // Nobody was in queue
+        node_event->event.type = DEPARTURE;
+        node_event->event.occur_time = clock + node_event->event.service_time;
+        schedule(node_event);
+        // the engine popped the event
+
+        //  arrival puts it back as a departure
+    } else {
+        enqueue(node_event);
+    }
+    arrival_t = GetArrival(fp);
+    service_t = GetService(fp);
+
+    next_job = get_new_node();
+    next_job->event.type = ARRIVAL;
+    next_job->event.occur_time = arrival_t;
+    next_job->event.service_time = service_t;
+    schedule(next_job);
+}
+#+end_code
+
+#+begin_code c
+void departure(struct node* node_event) {
+    double waiting_time;
+    struct node* next_job;
+
+    nsys--;
+    if (nsys > 0) {
+        next_job = dequeue();
+        next_job->event.type = DEPARTURE;
+        next_job->event.occur_time = clock + next_job->event.service_time;
+        schedule(next_job);
+    }
+    return_node(node_event);
+}
+#+end_code
+
+#+begin_code c
+void End(struct node* node_event) {
+    halt = true;
+    return_node(node_event);
+}
+#+end_code
+
+** Memory Management
+To have an efficient memory management it is important not to use =GC=, instead it's better to reuse as many chunks of memory as possible. That is because the memory manager operation are very time-intensive.
+This can be done by having an =available-list= of chunks where we can take and place back chunks, interrogating the memory manager as little as possible.
