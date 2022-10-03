@@ -261,5 +261,5 @@ Agli estremi del =VS= si individuano due sottoinsiemi, $G$ - /general boundary/ 
        - add to $G$ all minimal specialisations $h$ of $g$ such that $h$ consistent with $d$ and some member $S$ is more specific than $h$
        - remove from $G$ hypothesis less general than another member in $G$
 
-L'apprendimento termina individuando la singola ipotesi che descrive correttamente il concetto ricercato oppure a causa di inconsistente nel dataset lo rimuovera', convergenda all'insieme vuoto.
+L'apprendimento termina individuando la singola ipotesi che descrive correttamente il concetto ricercato oppure a causa di inconsistente nel dataset lo rimuovera', convergenza all'insieme vuoto.
 L'ordine di presentazione degli esempi non e' importante per la convergenza.
