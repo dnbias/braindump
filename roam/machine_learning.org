@@ -230,8 +230,36 @@ The *Version Space* $VS_{H,D} with respect to hypothesis space $H$ and training 
 
 Un dataset piu' grande permette di individuare un =Version Space= piu' piccolo, eventualmente di individuare l'ipotesi corretta.
 
+Agli estremi del =VS= si individuano due sottoinsiemi, $G$ - /general boundary/ - le ipotesi piu' generali, $S$ - /specific boundary/ - le ipotesi piu' specifiche. Quindi:
+\[VS_{H,D} = \{h \in H | (\exists s \in S)(\exists g \in G)(g \ge h \ge s)\}\]
+- $\ge$ means =is more general or equal than=
+- questa rappresentazione e' molto piu' compatta
+- gli esempi positivi muovono $S$ in basso
+- gli esempi negativi muovono $G$ in alto
+- assieme queste operazioni restringono $VS$
+
 ** List-Then Eliminate
 1. =VersionSpace= $\gets$ lists of every hypothesis in $H$
 2. /for each/ training example
    - remove hypothesis that are inconsistent with training example
 3. output =VersionSpace=
+
+** Candidate Elimination
+1. $G \gets$ maximally general hypothesis in $H$
+2. $S \gets$ maximally specific hypothesis in $H$
+3. /for each/ training example $d = \langle x, c(x) \rangle$
+   - $d$ positive
+     - remove from $G$ hypothesis inconsistent with $d$
+     - /for each/ hipothesis $s \in S$ inconsistent with $d$
+       - remove $s$ from $S$
+       - add to $S$ all minimal generalizations $h$ of $s$ such that $h$ consistent with $d$ and some member $G$ is more general than $h$
+       - remove from $S$ hypothesis more general than another member in $S$, maintain /minimality/
+   - $d$ negative
+     - remove from $S$ hypothesis inconsistent with $d$
+     - /for each/ hypothesis $g \in G$ inconsistent with $d$
+       - remove $g$ from $G$
+       - add to $G$ all minimal specialisations $h$ of $g$ such that $h$ consistent with $d$ and some member $S$ is more specific than $h$
+       - remove from $G$ hypothesis less general than another member in $G$
+
+L'apprendimento termina individuando la singola ipotesi che descrive correttamente il concetto ricercato oppure a causa di inconsistente nel dataset lo rimuovera', convergenda all'insieme vuoto.
+L'ordine di presentazione degli esempi non e' importante per la convergenza.
