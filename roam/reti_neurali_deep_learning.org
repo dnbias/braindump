@@ -142,4 +142,4 @@ Quindi definiamo l'errore per l'esempio $k$ come la differenza tra il valore des
 Quindi l'errore totale sulla rete e'
 \[E_{\text{tot}} = \sum^{N}_{k=1} E^{k}\]
 
-Si cerca di minimizzare questo valore ragionando *patter-by-pattern*, calcolando e minimizzando l'errore sulla singola istanza $k$.
+Si cerca di minimizzare questo valore ragionando *pattern-by-pattern*, calcolando e minimizzando l'errore sulla singola istanza $k$.

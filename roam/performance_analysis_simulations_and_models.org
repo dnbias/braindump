@@ -107,7 +107,7 @@ A *Trace File* is a log of all the arrival and service times.
 The general structure of the simulator is made of different /handlers/:
 
 #+begin_code c
-void initialize(){
+void initialize() {
     clock = 0;
     halt = false;
     nsys = 0;
@@ -133,7 +133,7 @@ void initialize(){
 In the engine we call the *handlers*, these are best kept as small and fast as possible.
 It is better to create different variants of the events with simple handles than have fewer but more complex handlers.
 #+begin_code c
-void engine(void){
+void engine(void) {
     int event_type;
     double oldclock, delta;
     nodePointer new_event;
@@ -214,3 +214,9 @@ void End(struct node* node_event) {
 ** Memory Management
 To have an efficient memory management it is important not to use =GC=, instead it's better to reuse as many chunks of memory as possible. That is because the memory manager operation are very time-intensive.
 This can be done by having an =available-list= of chunks where we can take and place back chunks, interrogating the memory manager as little as possible.
+
+* Tandem Network
+A network made of two queues each with its output connected to the others input.
+The =Event Notice= follows the life of a single job, in this structure the clients/jobs are continuously passing from one queue to another. This means there is no need for an =Available Queue= anymore as the number of notices is not gonna change during the simulation.
+The basic assumption of the *clock* is that it is always cabable of the time granularity needed to distinguish between events that occur "at the same time".
+- so, while events pass from one queue to another in 0 time, the clock is able to distinguish and establish which event (departure from one | arrivale to the other) is happening first

@@ -197,3 +197,41 @@ Altrimenti:
 Strumenti con cui descriviamo gli oggetti del dominio
 - anche la granularita' con cui vengono aggregate le feature puo' cambiare la chiarezza del trend e puo' aiutare l'algoritmo di apprendimento.
 - le features possono essere mappate a nuovi spazi, semplificando lo spazio cui e' possibile applicare un modello lineare per classificarlo piu' semplicemente
+
+
+* Find-S
+1. iniatialize $h$ to most specific hypothesis $\in H$
+2. /for each/ =positive= instance $x$ in training
+   - /for each/ constraint $a_{i} \in h$
+     - if $a_{i}$ satisfied by $x$, =noop=
+     - else, replace $a_{i}$ in $h$ with the next most general costraint that is satisfied by $x$
+3. output hypothesis $h$
+
+Proprieta':
+- Descrive lo spazio delle ipotesi come congiunzioni di attributi
+- restituisce l'ipotesi piu' specifica consistente con gli esempi positivi nel =TS=
+- l'output sara' consistente anche con gli esempi negativi se il concetto target e' contenuto in $H$
+- l'algoritmo non comunica se si e' arrivati al concetto obiettivo, non e' in grado di individuare se quella trovata e' l'unica possibile
+- non guardando gli esempi negativi e' possibile che non si accorga che il dataset sia inconsistente
+- l'ipotesi piu' specifica e' preferibile?
+  - maggiori vincoli vogliono dire piu' informazioni sull'ipotesi
+  - l'ipotesi piu' generale ha maggiore capacita' rappresentativa
+
+* Version Space
+L'output di =Find-S= e' una delle ipotesi valide consistenti con i dati
+- l'insieme di queste ipotesi e' il =Version Space=
+- l'insieme puo' essere molto grande, serve un algoritmo che non ne enumeri gli elementi
+  - rappresentazione compatta
+
+#+begin_quote
+The *Version Space* $VS_{H,D} with respect to hypothesis space $H$ and training set $D$ is the subset of hypothesis from $H$ consistent with al training examples:
+\[VS_{H,D} = \{h \in H | \text{Consistent}(h,D)\}\]
+#+end_quote
+
+Un dataset piu' grande permette di individuare un =Version Space= piu' piccolo, eventualmente di individuare l'ipotesi corretta.
+
+** List-Then Eliminate
+1. =VersionSpace= $\gets$ lists of every hypothesis in $H$
+2. /for each/ training example
+   - remove hypothesis that are inconsistent with training example
+3. output =VersionSpace=
