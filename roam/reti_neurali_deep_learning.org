@@ -2,6 +2,7 @@
 :ID:       db3694d3-01ed-4a3c-ba6b-74190b348e6d
 :END:
 #+title: Reti Neurali & Deep Learning
+#+filetags: university
 #+date: [2022-09-22 Thu 19:16]
 - Prof.essa Valentina Gliozzi, Prof.essa Rossella Cancelliere
 
@@ -143,3 +144,46 @@ Quindi l'errore totale sulla rete e'
 \[E_{\text{tot}} = \sum^{N}_{k=1} E^{k}\]
 
 Si cerca di minimizzare questo valore ragionando *pattern-by-pattern*, calcolando e minimizzando l'errore sulla singola istanza $k$.
+
+* Self-Organizing Maps
+=SOM=
+/Apprendimento non supervisionato/
+Strutture bidimensionali dove i neuroni sono disposti in una griglia.
+- la griglia e' solo una visualizzazione, non ci sono pesi tra i neuroni
+- ogni neurone ha un suo vettore pesi $w_{i}$ della stessa dimensione dell'input
+  - anche detti *prototype vector*, rappresentazioni associate al neurone
+  - qual'e' il _tipo di stimolo_ che il neurone rappresenta
+- l'input e' un vettore $x$ di dimensione $n$
+
+La *best matching unit* (=BMU=) e' il neurone attivato maggiormente dall'input
+- corrisponde meglio allo stimolo
+- attivazione e' il prodotto scalare $x \cdot w_{i}$
+- questo e' anche il neurone con la minima distanza euclidea da $x$
+  - $$i: \forall i ||x - w_{i}|| \le ||x - w_{j}||$$
+  - se tutti i vettori hanno la stessa norma la minima distanza euclidea e il massimo prodotto scalare vanno di pari passo, se non e' cosi' viene considerata la distanza come definizione
+
+Il /learning/ va a modificare i pesi del =BMU= in modo da aumentare la probabilita' che questo sia il neurone vincente per lo stesso input o simili.
+- avviciniamo il vettore pesi di =BMU= allo stimolo
+** Learning
+Una forma di *competitive learning*
+- una volta trovata la =BMU= si correggono i pesi
+- $$w_{i}(n+1) = w_{i}(n) + \eta(n)(x - w_{i}(n))$$
+  - dopo la correzione $w_{i}$ e' piu' simile a $x$
+
+Il *learning rate* solitamente decresce con il procedere dell'apprendimento, il cambiamento in generale e' regolato:
+\[\eta(n) = \]
+
+Inoltre a ogni neurone $i$ e' assegnato un vicinato (/neighberhood/) cui e' propagata la correzione dei pesi.
+- una gaussiana che decresce con l'aumentare della distanza tra neuroni
+- cooperazione tra i neuroni
+\[w_{j} (n+1)=  w_{j} (n+1) + \eta (n) h_{j,i} (n) (x - w_{j} (n))\]
+\[h_{j,i} (n) = \exp \Big (- \frac{d_{j,i}^2}{2\sigma (n)^2}\Big )\]
+\[\sigma (n) = \sigma _{0}\]
+
+Ci sono 2 fasi, a grosso modo
+- auto organization
+- convergence
+
+
+*topographic Error*
+\[\text{TE} = \frac{1}{L} \sum_{l=1}^{L} u(x_{l})\]

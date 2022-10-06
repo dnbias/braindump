@@ -4,6 +4,7 @@
 :END:
 #+title: Machine Learning
 #+date: [2022-09-21 Wed 20:39]
+#+filetags: university
 - Prof. Roberto Esposito, Prof.ssa Rosa Mao
 - Peter Flach, /Machine Learning/, Cambridge University Press
 - Mitchell, /Machine Learning/
@@ -342,6 +343,21 @@ GrowTree(D,F){
 sono primitive del /tree learner/ e la loro implementazione dipende dal /task/ che va affrontato.
 - per clustering posso considerare la varianza del gruppo
 - per classificazione si considera la singola classe piu' rappresentata ad esempio
+
+La misura della bonta' di uno split e' la *purity*
+\[p = \frac{n^{+}}{n^{+} + n^{-} }\]
+L'inpurezza puo' essere usata come indicatore sul quando smettere di fare split sul segmento - decidendolo omogeneo.
+- *minority class*: $$\min \{p, 1-p\}$$ oppure $$1 - \max \{p_{i}\}$$
+- *gini index*: $$2p(1-p)$$ oppure $$\sum_{i} p_{i}(1-p_{i})$$
+- *entropy*
+  - $$-p \cdot \log_{2}(p) - (1-p) \cdot \log_{2} (1-p)$$
+  - $$- \sum_{i} p_{i} \cdot \log_{2} (p_{i})$$
+  - l'entropia e' una misura della confusione
+  - e' misurata in *bits*, quantifica il numero di bit necessarie a rappresentare l'informazione
+L'impurita' di una singola foglia:
+\[Imp(\{D_{1}, \cdots, D_{l}\}) = \sum_{j=1}^{l} \frac{|D_{j}|}{|D|} Imp(D_{j})\]
+
+
 
 
 [fn:dnf] Disjunctive Normal Form

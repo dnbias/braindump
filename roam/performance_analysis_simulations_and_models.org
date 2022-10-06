@@ -222,3 +222,14 @@ The basic assumption of the *clock* is that it is always cabable of the time gra
 - so, while events pass from one queue to another in 0 time, the clock is able to distinguish and establish which event (departure from one | arrivale to the other) is happening first
 * Operational Analysis
 See [[id:4dda14f3-6d01-4265-a25a-e85ce6696fe0][Denning78/Notes]].
+** Bottleneck
+** State Transition Balance
+*State* of the system can be represented by the number of waiting customers.
+- $$C(m,n)$$ is the number of times the system moves from state $m$ to state $n$
+The *Balance Equation* holds for all states, but the first and the last one
+\[\sum_{k} C(k,n) = \sum_{m}C(n,m)\]
+- the first has one more exits than entries
+- the last has one more entries than exits
+
+To simplify the state graph we organize them in a chain
+- *One-Step Behavior*
