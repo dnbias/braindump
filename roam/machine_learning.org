@@ -6,7 +6,7 @@
 #+date: [2022-09-21 Wed 20:39]
 - Prof. Roberto Esposito, Prof.ssa Rosa Mao
 - Peter Flach, /Machine Learning/, Cambridge University Press
-
+- Mitchell, /Machine Learning/
 * Ingredients of ML
 - componenti necessari per la materia di studio
 - Tasks
@@ -321,6 +321,7 @@ Concettualmente in uno split tree si partiziona il =TS= in segmenti di istanze -
 ** Learning
 Ricerca *top-down* sui concept ricercati.
 - l'*omogeneita'* deve essere calibrata per non ricadere nell'overfitting
+- l'algoritmo e' greedy[fn:greedy], ricorsivo (/divide and conquer/)
 #+begin_code c
 GrowTree(D,F){
     if Homogeneous(D) return Label(D);
@@ -328,6 +329,7 @@ GrowTree(D,F){
     // split D according to literals in S
     D_is = SplitIntoSubsets(D,S);
     for each D_i in D_is {
+        // divide and conquer
         if D_i != nil T_i = GrowTree(D_i,F);
         else T_i = Leaf(Label(D_i));
     }
@@ -343,3 +345,4 @@ sono primitive del /tree learner/ e la loro implementazione dipende dal /task/ c
 
 
 [fn:dnf] Disjunctive Normal Form
+[fn:greedy] non riconsidera le sue decisioni una volta prese
