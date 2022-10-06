@@ -291,3 +291,55 @@ Il *bias* quindi non e' un limite, permette di fare l'*inductive leap*. Permette
 ** Inductive Bias
 Il sistema di apprendimento automatico si puo' costruire come sistema induttivo *equivalente* a un sistema puramento deduttivo come un /Theorem Prover/.
 Per cui il concetto rappresentato viene come conseguenza logica dalle ipotesi specifiche del /learner/.
+
+* Decision Trees
+Parte basata su Flach
+I *feature tree* sono costruiti con degli *split nodes*
+- dove vengono eseguiti i test sulle /features/
+  - a cascata
+  - puo' essere utilizzata la *internal disjunction* per identificare i valori attribuiti a un dato /path/
+- seguendo il percorso sull'albero si riproduce uno stesso schema in linguaggio congiuntivo
+- sulle foglie si riportano i dati - numero positivi e numero negativi - che concludono a quel nodo test il path
+Dato l'albero del *path* si puo' costruire un *coverage tree* riportando i risultati ottenuti dai dati.
+Un albero con troppe foglie e' un albero troppo specializzato sul =TS= i.e. /overfitting/.
+
+Per costruire nuovi alberi
+- si possono manipolare i parametri di apprendimento
+- si puo' fare pruning su alberi gia' ottenuti, accorpando diversi split-nodes in un'unica foglia
+
+Il modello ad albero esprime una *disgiunzione* tra le foglie classificate positive
+- =DNF=[fn:dnf] tra le espressioni modellate dalle foglie dell'albero
+  - e quindi ai /path/ corrispondenti
+Per questi motivi i decision trees sono strettamente piu' espressivi rispetto ai concept congiuntivi.
+
+Il *bias* e' una restrizione del linguaggio di ipotesi per scoraggiare l'overfitting/l'apprendimento di un modello troppo complesso
+- puo' essere implementato introducendo una penalita' per ogni ipotesi nella funzione obiettivo
+- nell'ottimizzazione della funzione obiettivo l'apprendimento sara' spinto ad apprendere modelli piu' semplici
+  - *Rasoio di Occam*
+Concettualmente in uno split tree si partiziona il =TS= in segmenti di istanze - raccolti nelle foglie. Ogni foglia raccoglie una *estensione*, dove una *intensione* e' l'ipotesi che nell'albero porta a quel sottoinsieme di istanze.
+
+** Learning
+Ricerca *top-down* sui concept ricercati.
+- l'*omogeneita'* deve essere calibrata per non ricadere nell'overfitting
+#+begin_code c
+GrowTree(D,F){
+    if Homogeneous(D) return Label(D);
+    S = BestSplit(D,F);
+    // split D according to literals in S
+    D_is = SplitIntoSubsets(D,S);
+    for each D_i in D_is {
+        if D_i != nil T_i = GrowTree(D_i,F);
+        else T_i = Leaf(Label(D_i));
+    }
+    return Tree(S,T_is); // root labeled w. S
+}
+#+end_code
+- ~Homogeneous(D)~
+- ~Label(D)~
+- ~BestSplit(D,F)~
+sono primitive del /tree learner/ e la loro implementazione dipende dal /task/ che va affrontato.
+- per clustering posso considerare la varianza del gruppo
+- per classificazione si considera la singola classe piu' rappresentata ad esempio
+
+
+[fn:dnf] Disjunctive Normal Form

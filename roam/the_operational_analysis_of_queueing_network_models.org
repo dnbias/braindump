@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       70af4f43-65f9-474c-9ffb-fa627cd96b47
-:ROAM_ALIASES: Denning78
+:ROAM_REFS: cite:denning78
 :END:
 #+title: The Operational Analysis of Queueing Network Models
 #+date: [2022-10-06 Thu 06:25]
