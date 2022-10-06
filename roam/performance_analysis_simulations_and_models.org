@@ -3,10 +3,10 @@
 :END:
 #+title: Performance Analysis - Simulations and Models
 #+date: [2022-09-22 Thu 00:00]
-#+filetags: university
+#+filetags: university simulation
 Taught by Gianfranco Balbo, Gaeta
 - Lawrence M. Leemis, Stephen K. Park, /Discrete Event Simulation: a first course/, Pearson - Prentice Hall
-- Denning, Buzen, /The Operational Analysis of Queueing Network Models/, ACM Computing Surveys, 1978
+- Denning, Buzen, /[[id:70af4f43-65f9-474c-9ffb-fa627cd96b47][The Operational Analysis of Queueing Network Models]]/, ACM Computing Surveys, 1978
 * Systems
 This course focuses on systems that are:
 - stochastic
@@ -220,3 +220,5 @@ A network made of two queues each with its output connected to the others input.
 The =Event Notice= follows the life of a single job, in this structure the clients/jobs are continuously passing from one queue to another. This means there is no need for an =Available Queue= anymore as the number of notices is not gonna change during the simulation.
 The basic assumption of the *clock* is that it is always cabable of the time granularity needed to distinguish between events that occur "at the same time".
 - so, while events pass from one queue to another in 0 time, the clock is able to distinguish and establish which event (departure from one | arrivale to the other) is happening first
+* Operational Analysis
+See [[id:4dda14f3-6d01-4265-a25a-e85ce6696fe0][Denning78/Notes]].

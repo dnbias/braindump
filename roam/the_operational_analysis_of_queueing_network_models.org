@@ -1,0 +1,29 @@
+:PROPERTIES:
+:ID:       70af4f43-65f9-474c-9ffb-fa627cd96b47
+:ROAM_ALIASES: Denning78
+:END:
+#+title: The Operational Analysis of Queueing Network Models
+#+date: [2022-10-06 Thu 06:25]
+#+filetags: paper compsci simulation
+[[id:afdd2e8f-780d-4d3f-a96a-f96e9750e984][Denning]], [[id:da3b30a7-5c5e-4986-80d2-d3b9e9cab8d4][Buzen]], /The Operational Analysis of Queueing Network Models/, ACM Computing Surveys, 1978
+- Related: [[id:619629fe-8461-4316-b4ad-d9545490d1b5][Markovian Queueing Network Theory]]
+
+* Abstract
+Queueing network models have proved to be cost effective tools for analyzing modern computer systems. This tutorial paper presents the basic results using the operational approach, a framework which allows the analyst to test whether each assumption is met in a given system.
+The early sections describe the nature of queueing network models and their applications for calculating and predicting performance quantities. The basic performance quantities--such as utilizations, mean queue lengths, and mean response tunes--are defined, and operational relationships among them are derived.
+Following this, the concept of job flow balance is introduced and used to study asymptotic throughputs and response tunes. The concepts of state transition balance, one-step behavior, and homogeneity are then used to relate the proportions of time that each system state is occupied to the parameters of job demand and to device characteristics.
+Efficient methods for computing basic performance quantities are also described. Finally the concept of decomposition is used to simplify analyses by replacing subsystems with equivalent devices. All concepts are illustrated liberally with examples.
+
+* Notes
+:PROPERTIES:
+:ID:       4dda14f3-6d01-4265-a25a-e85ce6696fe0
+:END:
+*Operational principles*:
+- quantities *precisely measurable* and *directly testable*
+- system *flow balanced*
+  - number of arrival at a given device must be (almost) the same as the number of departures from that device during the observation period
+- devices *homogeneous*
+  - jobs' routing independent of the queue lengths
+  - mean time between service completions not dependent on the queue lengths of other devices
+
+These lead to the same conclusion of the [[id:619629fe-8461-4316-b4ad-d9545490d1b5][Markovian Queueing Network Theory]]'s assumptions, with the added benefit of being testable.

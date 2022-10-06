@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       5098aa25-6d54-4dab-b49c-c16fafe205e2
+:END:
+#+title: Using consult-ripgrep with org-roam for searching notes
+#+date: [2022-10-06 Thu 07:23]
+#+filetags: til pkm
+- Source: https://org-roam.discourse.group/t/using-consult-ripgrep-with-org-roam-for-searching-notes/1226/1
+- Tags: [[id:8d7717ec-69d7-475e-a98f-bf0bdf25f6bb][roam]]
+
+Cause deft is slow af.

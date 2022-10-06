@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       619629fe-8461-4316-b4ad-d9545490d1b5
+:END:
+#+title: Markovian Queueing Network Theory
+#+date: [2022-10-06 Thu 06:39]
+#+filetags: compsci simulation
+Theory of queueing networks based on these assumptions:
+- system modeled by a /stationary stochastic model/
+- jobs /stochastically independent/
+- jobs steps from device to device follow a [[id:55ef9c8d-93cf-42fb-ae5b-4e31397e9e56][Markov Chain]]
+- system in /stochastic equilibrium/
+- service time requirements for each device comform to a /exponential distribution/
+- system is /ergotic/[fn:ergotic]
+
+[fn:ergotic] long-term time averages converge to the values computed for stochastic equilibrium

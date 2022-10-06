@@ -4,7 +4,7 @@
 :END:
 #+title: Machine Learning
 #+date: [2022-09-21 Wed 20:39]
-- Prof. Roberto Esposito, Prof.ssa Mao
+- Prof. Roberto Esposito, Prof.ssa Rosa Mao
 - Peter Flach, /Machine Learning/, Cambridge University Press
 
 * Ingredients of ML
@@ -174,7 +174,6 @@ E' spesso una buona idea eseguire uno /smoothing/ delle frequenze relative, il m
 *** Beyond Binary
 
 
-
 * Models
 1. geometrico, si ragiona sullo spazio del problema per risolverlo
 2. probabilistico, si cerca la probabilita' di appartenenza a una classe
@@ -197,7 +196,6 @@ Altrimenti:
 Strumenti con cui descriviamo gli oggetti del dominio
 - anche la granularita' con cui vengono aggregate le feature puo' cambiare la chiarezza del trend e puo' aiutare l'algoritmo di apprendimento.
 - le features possono essere mappate a nuovi spazi, semplificando lo spazio cui e' possibile applicare un modello lineare per classificarlo piu' semplicemente
-
 
 * Find-S
 1. iniatialize $h$ to most specific hypothesis $\in H$
@@ -262,4 +260,34 @@ Agli estremi del =VS= si individuano due sottoinsiemi, $G$ - /general boundary/ 
        - remove from $G$ hypothesis less general than another member in $G$
 
 L'apprendimento termina individuando la singola ipotesi che descrive correttamente il concetto ricercato oppure a causa di inconsistente nel dataset lo rimuovera', convergenza all'insieme vuoto.
-L'ordine di presentazione degli esempi non e' importante per la convergenza.
+*L'ordine di presentazione degli esempi non e' importante per la convergenza.*
+
+** Restringere lo spazio delle ipotesi
+- si cerca di chiedere esempi all'oracolo che siano il piu' informativi possibile
+  - generalmente si cerca di massimizzare il *valore atteso*
+  - si cerca di eliminare sempre meta' delle ipotesi possibili
+
+** Biased Learner
+Per la classificazione (/previsione/) di nuovi dati si va per voto
+- se tutte le ipotesi nello spazio sono tutte soddisfatte si assegna all'esempio l'etichetta positiva
+  - viceversa per il negativo
+- se le ipotesi non sono concordi nella classificazione e' da decidere come comportarsi con quell'esempio, in quanto c'e' un dubbio
+
+Ma il nostro spazio delle ipotesi non puo' rappresentare /concept/ anche di poco piu' complessi
+- disgiunzioni ad esempio
+
+Lo spazio delle ipotesi e' *biased*, in quanto costruito con linguaggio congiuntivo.
+
+** Unbiased Learner
+Si espande lo =HS= al *power set* delle features.
+- permette di esprimere un numero molto piu' grande di ipotesi
+- esprime /target concept/ in logica piu' complessa
+
+Il problema e' che le ipotesi specifiche *S* e quelle generali *G* sono troppo specifiche o troppo generali, andando a modellare solo gli esempi nel =TS=
+- per imparare il /target concept/ sarebbe necessario presentare ogni istanza nell'insieme modellato come training example
+
+Il *bias* quindi non e' un limite, permette di fare l'*inductive leap*. Permettendo la generalizzazione dei concetti imparati dal =TS=.
+
+** Inductive Bias
+Il sistema di apprendimento automatico si puo' costruire come sistema induttivo *equivalente* a un sistema puramento deduttivo come un /Theorem Prover/.
+Per cui il concetto rappresentato viene come conseguenza logica dalle ipotesi specifiche del /learner/.
