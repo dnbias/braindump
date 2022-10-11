@@ -174,7 +174,6 @@ E' spesso una buona idea eseguire uno /smoothing/ delle frequenze relative, il m
 
 *** Beyond Binary
 
-
 * Models
 1. geometrico, si ragiona sullo spazio del problema per risolverlo
 2. probabilistico, si cerca la probabilita' di appartenenza a una classe
@@ -293,7 +292,9 @@ Il *bias* quindi non e' un limite, permette di fare l'*inductive leap*. Permette
 Il sistema di apprendimento automatico si puo' costruire come sistema induttivo *equivalente* a un sistema puramento deduttivo come un /Theorem Prover/.
 Per cui il concetto rappresentato viene come conseguenza logica dalle ipotesi specifiche del /learner/.
 
-* Decision Trees
+
+* Tree Models
+** Decision Trees
 Parte basata su Flach
 I *feature tree* sono costruiti con degli *split nodes*
 - dove vengono eseguiti i test sulle /features/
@@ -319,7 +320,7 @@ Il *bias* e' una restrizione del linguaggio di ipotesi per scoraggiare l'overfit
   - *Rasoio di Occam*
 Concettualmente in uno split tree si partiziona il =TS= in segmenti di istanze - raccolti nelle foglie. Ogni foglia raccoglie una *estensione*, dove una *intensione* e' l'ipotesi che nell'albero porta a quel sottoinsieme di istanze.
 
-** Learning
+*** Learning
 Ricerca *top-down* sui concept ricercati.
 - l'*omogeneita'* deve essere calibrata per non ricadere nell'overfitting
 - l'algoritmo e' greedy[fn:greedy], ricorsivo (/divide and conquer/)
@@ -356,9 +357,50 @@ L'inpurezza puo' essere usata come indicatore sul quando smettere di fare split 
   - e' misurata in *bits*, quantifica il numero di bit necessarie a rappresentare l'informazione
 L'impurita' di una singola foglia:
 \[Imp(\{D_{1}, \cdots, D_{l}\}) = \sum_{j=1}^{l} \frac{|D_{j}|}{|D|} Imp(D_{j})\]
+*** BestSplit
+#+begin_quote
+Splits dataset $D$ in subsets $D_{i}$ according to literals in $S$.
+#+end_quote
+
+Si considerano per ogni feature i sottoinsiemi possibili, ne si calcola l'impurezza per ogni sottoinsieme dei valori.
+
+Utiliziamo la =empirical probability=:
+\[Imp(\{D_{1}, \cdots, D_{l}\}) = \sum_{j=1}^{l} \frac{|D_{j}|}{|D|} Imp(D_{j})\]
+- valore atteso a valle dello /split/, una media pesata seconda la probabilita' della configurazione
+- si utilizza come $Imp$ l'entropia $H$ o qualche altro indicatore
+
+L'algoritmo valuta esaustivamente tutte le possibilita' e minimizza l'incertezza attesa.
+
+#+caption:  greedily find the best split for a decision tree
+#+begin_example
+BestSplit-Class(D,F)
+Input: data D; set of features F
+Output: feature f to split on
+I_min \gets 1;
+for each f \in F do
+    split D into subsets D_1,...,D_l according to values v_j of f;
+    if Imp({D_1,...,D_l}) < l_min then
+        I_min \gets Imp();
+        f_best \gets f;
+    end
+end
+return f_best
+#+end_example
+
+** Ranking Trees
+/and probability estimation trees/
+
+Il ranking se non é gia specificato puó essere creato tra le foglie come quello specificato da ciascuna *probabilità empirica*
+- questa é una funzione monotona essendo coefficiente angolare del =ROC= plot del modello
+- la curva del =ROC= é *convessa*, una volta ordinati i segmenti secondo la /empirical probability/
+
+Con $n$ foglie e un problema di etichettatura binario (+ e -) si hanno $2^n$ possibili etichettature delle foglie. Ci sono $n!$ ordinamenti (o /path/).
+
+I costi sono utili per correggere l´apprendimento e vengono associati a =FN= e =FP=.
+- /misclassifying costs/
 
 
-
+** Learning as Variance Reduction
 
 [fn:dnf] Disjunctive Normal Form
 [fn:greedy] non riconsidera le sue decisioni una volta prese
