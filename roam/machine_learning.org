@@ -292,7 +292,6 @@ Il *bias* quindi non e' un limite, permette di fare l'*inductive leap*. Permette
 Il sistema di apprendimento automatico si puo' costruire come sistema induttivo *equivalente* a un sistema puramento deduttivo come un /Theorem Prover/.
 Per cui il concetto rappresentato viene come conseguenza logica dalle ipotesi specifiche del /learner/.
 
-
 * Tree Models
 ** Decision Trees
 Parte basata su Flach
@@ -399,6 +398,51 @@ Con $n$ foglie e un problema di etichettatura binario (+ e -) si hanno $2^n$ pos
 I costi sono utili per correggere l´apprendimento e vengono associati a =FN= e =FP=.
 - /misclassifying costs/
 
+Definiamo il /cost ratio/ atteso:
+\[c = \frac{c_{FN} }{c_{FP}}\]
+ovvero il costo di *misclassificazione di un positivo* in proporzione al costo di *misclassificare un negativo*.
+
+Al crescere di $c$ diventa conveniente predire +
+- ci si sbilancia completamente verso la classe positiva
+Viceversa per la classe negativa al diminuire di $c$.
+
+Si possono equiparare costi e frequenze: le frequenze nelle foglie andranno moltiplicate per i relativi costi.
+\[\frac{n_{i}^{-}} \cdot\frac{}{}\]
+
+Attraverso la /class distribution/ é possibile trasformare un *feature tree* in
+- *ranking tree*, ordinando le foglie secondo le /empirical probabilities/
+- *probability estimator*, che predica la /empirical probability/ in ciascuna foglia applicando *Laplace* o *m-estimate smoothing*
+  - aggiungendo degli /pseudo-conteggi/ per rafforzare la stima
+- *classifier*, scegliendo le condizioni operazionali come conseguenza di /class ratio/ $clr = \frac{Pos}{Neg}$ e /cost ratio/ $c = \frac{c_{FN}}{c_{FP}}$
+  - si trova una soglia per la /empirical probability/ che discrimini positivi e negativi
+    - *operating point / decision threshold*
+  - $$\frac{clr}{c}$$, coefficiente angolare nello spazio =ROC= di una *isometrica di average recall*
+    - l'intersezione tra l'isometrica e la curva nel =ROC= plot individua l'operating point
+    - le foglie prima del =OP= predirranno positivo, le altre negativo
+      - una volta scelte si fa /pruning/ efficientando l'albero
+      - il /pruning/ diminuisce l'area sottostante la curva (minore precisione), quindi sarebbe peggiore ai fini di ranking, rimane migliore per la classificazione
+
+*** Underfitting e Overfitting
+Per valutare il modello si comparano accuratezza sul =Training Set= e sul =Test Set=, dove la prima é una stima ottimistica.
+[[../media/img/overfitting-and-underfitting.png]]
+
+Il =best fit= si individua alla complessità a cui le prestazioni sui due set divergono.
+- si aggiungono /penalty/ ad ogni nodo foglia aggiunto spingendo l'apprendimento verso una minore complessità
+- non si vuole arrivare all'estremo in cui non ci sono arrori sul =Training Set=
+
+Nel /pruning/ si utilizza un'altra partizione del dataset chiamata =Pruning Set= per validare il modello.
+
+Un'alternativa alla tecnica del *reduced error pruning* é la stima direttamente sul =Training Set= dell'errore di generalizzazione.
+- si aggiunge una penalitá $k$
+- errore sul training: errore di risostituzione $$\sum^{N}_{i=1} e_{i}$$
+- errore sul testing: errori di generalizzazione $$\sum^{N}_{i=1} e_{i}' $$
+
+*** Sensibilitá delle misure di impurezza
+$H$ e $\text{Gini}$ sono sensibili alla $clr$, la misura $\sqrt{\text{Gini}}$ é piú resistente/stabile alla $clr$.
+- le prime sono sensibile a fluttuazioni nella distribuzione delle classi
+- la *artificial inflation* puó sostituire una valutazione del modello che sia sensibile ai costi
+  - si sovracampiona di un fattore $c$ la classe positiva/negativa in base a che $clr$ si desidera
+  - l'/oversampling/ aumenta i tempi di training
 
 ** Learning as Variance Reduction
 
