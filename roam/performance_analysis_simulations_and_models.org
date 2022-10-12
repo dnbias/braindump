@@ -100,7 +100,6 @@ A *Trace File* is a log of all the arrival and service times.
 #+end_quote
 
 
-
 [fn:montecarlo] Computational algorithms using repeated random sampling to obtain results
 
 * Discrete-Event Simulation
@@ -233,3 +232,68 @@ The *Balance Equation* holds for all states, but the first and the last one
 
 To simplify the state graph we organize them in a chain
 - *One-Step Behavior*
+** Convolution Method
+
+*** Load Independent Stations
+/service time of each station is independent to the number of clients in queue/
+- *Utilization Law*
+
+
+\[\overline n_{m} (n) = U_{m}(n)[1+\overline n_{m} (n-1)]\]
+
+\[\overline w_{m}(n) = S_{m}[1+\overline n_{m}(n-1)]\]
+
+*** Mean Value Analysis
+see *Arrival Theorem* (Sevcik-Mitrani)
+- in single server stations with *Poisson input process* arriving customers see the system as they were /external observers/ not involved in its operation
+
+Then we group the recurrent expression for the $i\text{-th}$ station
+
+\[\overline n_{i}(n) = S_{i}[1+\overline n_{}_{i} (n-1)]\]
+\[U_{i}(n) = X_{i}(n) S_{i}\]
+\[\overline n_{i} (n) = U_{i}(n)[1+\overline n_{i} (n-1)]\]
+
+In a system where we identified the station $ref$ as the reference for the computation of the $V_{i}$
+
+\[Y_{ref}(n) = S_{ref} + \sum_{i=1,i\neq ref}^{M} V_{i} \overline w_{i} (n)\]
+
+For the $i\text{-th}$ station the list of derivation is:
+\begin{align*}
+\overline w_{i} (n) &= S_{i} [1 + \overline n_{i}(n-1)]\\
+X_{ref}(n) &= \frac{n}{\sum^{M}_{j=1} [V_{j} \oveline w_{j}(n)]}\\
+X_{i}(n) &= V_{i} X_{ref}(n)\\
+U_{i}(n) &= X_{i}(n)S_{i}\\
+\overline n_{i}(n) &= U_{i}(n)[1 + \overline n_{i} (n-1)]
+\end{align*}
+
+Very simple from a computational point of view
+- just loop $M$ times
+- number of multiplications by the order of the number of the stations
+
+With a *Delay station* the algorithm has to be modified
+\begin{align*}
+\overline w_{i}(n) =
+\begin{cases}
+Z_{i}  \quad &\text{Delay Station}\\
+S_{i}[1 + \overline n_{i}(n-1)] \quad &\text{Load Independent Station}
+\end{cases}
+\end{align*}
+
+\begin{align*}
+\overline n_{i}(n) =
+\begin{cases}
+Z_{i} X_{i}(n) \quad &\text{Delay Station}\\
+U_{i}(n)[1 + \overline n_{i}(n-1)] \quad &\text{Load Independent Station}
+\end{cases}
+\end{align*}
+
+\begin{align*}
+U_{i}(n) =
+\begin{cases}
+\frac{\overline n_{}_{i}(n)}{n}\quad &\text{Delay Station}\\
+X_{i}(n)S_{i} \quad &\text{Load Independent Station}
+\end{cases}
+\end{align*}
+
+** BCMP Theorem
+*Baskett, Chandy, Muntz, Palacios*
