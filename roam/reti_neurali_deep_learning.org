@@ -216,4 +216,29 @@ dove $y_{i}$ é l'output del neurone $i$
 $\phi$ si avvicina alla funzione gradino (/step/) al crescere di $a$.
 
 
+*** Backprapagation Algorithm
+Cerca pesi che minimizzano l'errore totale della rete sul =Training Set=.
+Consiste nella applicazione ripetuta di 2 passi:
+1. *forward pass*, la rete viene attivata con un esempio e si calcola l'errore di ogni neurone di output
+2. *backward pass*, l'errore di rete é utilizzato per aggiornare i pesi
+
+Il processo é più complesso che per =Adaline= in quanto i nodi nascosti contribuiscono all'errore.
+Partendo dall'output layer l'errore viene propagato all'indietro attraverso la rete (layer by layer), calcolando ricorsivamente il *gradiente locale* di ogni peso.
+
+Calcoliamo l'errore partendo dal layer di output, al $n$ -esimo training example:
+\begin{align*}
+e_{j} (n) &= d_{j}(n) - y_{j}(n) \\
+E(n) &= \frac{1}{2} \sum e_{j}^{2} (n) \\
+E_{}_{AV} &= \frac{1}{N}\sum^{N}_{n=1} E(n)
+\end{align*}
+
+Aggiornamento dei pesi:
+\begin{align*}
+w_{ji} &= w_{ji} + \Delta w_{ji} \\
+\Delta w_{ji} &= - \eta \frac{\delta E}{\delta w_{ji}} \quad \eta > 0\
+\end{align*}
+- il delta viene corretto nella direzione *opposta* del gradiente di $E$
+  - il gradiente é l'insieme di tutte le derivate di $E$ in funzione dei pesi
+    - tante quante i pesi, ogni variazione di peso ha un impatto sull'errore totale della rete
+
 * Unsupervised Learning
