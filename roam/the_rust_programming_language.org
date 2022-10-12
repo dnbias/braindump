@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       f416e81b-ee80-4945-85ec-57c74ecfa701
+:END:
+#+title: The Rust Programming Language
+#+date: [2022-10-12 Wed 05:47]
+#+filetags: book compsci language rust
+- https://doc.rust-lang.org/stable/book/title-page.html

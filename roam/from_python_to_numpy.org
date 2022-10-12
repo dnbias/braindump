@@ -1,0 +1,55 @@
+:PROPERTIES:
+:ID:       a9f10b1c-906d-4fe9-a267-9a93b51690f4
+:END:
+#+title: From Python to Numpy
+#+date: [2022-10-12 Wed 05:48]
+#+filetags: book compsci python numpy ml
+[[id:770e308c-5f5f-4fda-ad9b-703bcf0a38a2][Nicholas P. Rougier]], /From Python To Numpy/[fn:link], 2017
+
+* Introduction
+#+caption: faster walk using accumulator
+#+begin_source python
+def random_walk_faster(n=1000):
+    from itertools import accumulate
+    # Only available from Python 3.6
+    steps = random.choices([-1,+1], k=n)
+    return [0]+list(accumulate(steps))
+
+walk = random_walk_faster(1000)
+#+end_source
+Without using loops and instead vectorizing the problem we get a 85% increase in performance.
+#+begin_source python
+>>> from tools import timeit
+>>> timeit("random_walk_faster(n=10000)", globals())
+10 loops, best of 3: 2.21 msec per loop
+#+end_source
+Translating in =numpy= we get:
+#+begin_source python
+def random_walk_fastest(n=1000):
+    # No 's' in numpy choice (Python offers choice & choices)
+    steps = np.random.choice([-1,+1], n)
+    return np.cumsum(steps)
+
+walk = random_walk_fastest(1000)
+#+end_source
+#+begin_source python
+>>> from tools import timeit
+>>> timeit("random_walk_fastest(n=10000)", globals())
+1000 loops, best of 3: 14 usec per loop
+#+end_source
+
+** Readability vs Speed
+The tradeoff for the massive speedups using =numpy= is often the readabily of the code: *comment your code!*
+- future-self will thank you
+
+* Anatomy of an array
+
+* Code vectorization
+
+* Problem vectorization
+
+* Custom vectorization
+
+* Beyond Numpy
+
+[fn:link] https://www.labri.fr/perso/nrougier/from-python-to-numpy/
