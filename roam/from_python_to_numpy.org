@@ -17,6 +17,8 @@ def random_walk_faster(n=1000):
 
 walk = random_walk_faster(1000)
 #+end_source
+=accumulate([1,2,3,4,5]) --> 1 3 6 10 15=[fn:accumulate]
+
 Without using loops and instead vectorizing the problem we get a 85% increase in performance.
 #+begin_source python
 >>> from tools import timeit
@@ -53,3 +55,4 @@ The tradeoff for the massive speedups using =numpy= is often the readabily of th
 * Beyond Numpy
 
 [fn:link] https://www.labri.fr/perso/nrougier/from-python-to-numpy/
+[fn:accumulate] https://docs.python.org/3.6/library/itertools.html?highlight=accumulate#itertools.accumulate
