@@ -1,5 +1,6 @@
 :PROPERTIES:
 :ID:       db3694d3-01ed-4a3c-ba6b-74190b348e6d
+:ROAM_ALIASES: RNDL
 :END:
 #+title: Reti Neurali & Deep Learning
 #+filetags: university
@@ -123,7 +124,7 @@ Le reti multilivello permettono di discriminare aree convesse nello spazio, supe
 ** Adaline
 =Adaptive Linear Neural=
 Questa struttura modifica come vengono aggiornati i pesi, si focalizza sulla riduzione dell'errore.
-- mentre il percettrone avevo l'obiettivo di diminiure gli input misclassificati
+- mentre il percettrone aveva l'obiettivo di diminuire gli input misclassificati
 - qui l'obiettivo e' la riduzione dell'errore globale
 
 L'architettura del neurone e' differente, non piu' una funzione di attivazione ma una funzione lineare.
@@ -187,3 +188,32 @@ Ci sono 2 fasi, a grosso modo
 
 *topographic Error*
 \[\text{TE} = \frac{1}{L} \sum_{l=1}^{L} u(x_{l})\]
+
+
+
+
+* Supervised Learning
+Dati di apprendimento sono etichettati.
+** Single Layer feed-forward
+=Perceptron=
+Non ci sono neuroni nascosti.
+** Multi Layer feed-forward
+=Input Layer= \to =Hidden Layer= \to =Output Layer=
+- le unitá nascoste estraggono dinamiche di _livello superiore_
+Può essere completamente (ogni neurone é connesso a ognuno dei precedenti) o parzialmente connesso.
+Tratta dati non linearmente separabili.
+
+L'algoritmo di =back-propagation= minimizza l'errore con la tecnica della discesa del gradiente
+- per questo la funzione associata al percettrone deve essere derivabile
+
+Una tipica funzione di attivazione é la =sigmoide=
+\[\phi(v_{j}) = \frac{1}{1+e^{-av_{j}}}\]
+con $a > 0$
+
+\[v_{j} = \sum w_{ji}y_{i}\]
+dove $y_{i}$ é l'output del neurone $i$
+
+$\phi$ si avvicina alla funzione gradino (/step/) al crescere di $a$.
+
+
+* Unsupervised Learning

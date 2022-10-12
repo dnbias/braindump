@@ -1,6 +1,6 @@
 :PROPERTIES:
 :ID:       77cc59df-765f-4523-a1d5-b937e581d8fc
-:ROAM_ALIASES: ML
+:ROAM_ALIASES: ML AAUT
 :END:
 #+title: Machine Learning
 #+date: [2022-09-21 Wed 20:39]
