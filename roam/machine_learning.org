@@ -445,6 +445,23 @@ $H$ e $\text{Gini}$ sono sensibili alla $clr$, la misura $\sqrt{\text{Gini}}$ é
   - l'/oversampling/ aumenta i tempi di training
 
 ** Learning as Variance Reduction
+* Cross-Validation
+Si divide il =dataset= in tutte le maniere possibili per individuare =LS= e =TS= e migliorare il modello.
+Si cerca di predire la *probabilitá di corretta previsione* $\alpha$.
+- rapporto tra esempi su cui il modello ha una corretta previsione sul totale degli esempi
+  - questa é una /stima/ della =PCP= reale - ignota - sulla popolazione
+  - simile all'/empirical probability/
+
+La distribuzione di probabilitá é una binomiale il cui picco sará il numero atteso piú probabile di successi.
+La *varianza* della curva é legata all'errore atteso
+\[\alpha(1-\alpha)n\]
+
+La =CV= cerca di suddividere il dataset utilizzando tutti gli esempi sia per =LS= sia per =TS=
+- $n\text{-fold}$ Cross Validation
+- si apprendono $n$ modelli quante sono le *partizioni* del =dataset= e vengono testati altrettante volte, ciclando la partizione utilizzata per il /training/
+
+Per ogni modello si stima $\alpha$ e se ne fa la media.
+
 
 [fn:dnf] Disjunctive Normal Form
 [fn:greedy] non riconsidera le sue decisioni una volta prese

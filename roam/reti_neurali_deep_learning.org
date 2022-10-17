@@ -191,7 +191,6 @@ Ci sono 2 fasi, a grosso modo
 
 
 
-
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
