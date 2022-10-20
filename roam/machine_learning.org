@@ -447,7 +447,7 @@ $H$ e $\text{Gini}$ sono sensibili alla $clr$, la misura $\sqrt{\text{Gini}}$ é
 ** Learning as Variance Reduction
 * Cross-Validation
 Si divide il =dataset= in tutte le maniere possibili per individuare =LS= e =TS= e migliorare il modello.
-Si cerca di predire la *probabilitá di corretta previsione* $\alpha$.
+Si cerca di predire la *probabilitá di corretta previsione* (=PCP=) $\alpha$.
 - rapporto tra esempi su cui il modello ha una corretta previsione sul totale degli esempi
   - questa é una /stima/ della =PCP= reale - ignota - sulla popolazione
   - simile all'/empirical probability/
@@ -461,6 +461,16 @@ La =CV= cerca di suddividere il dataset utilizzando tutti gli esempi sia per =LS
 - si apprendono $n$ modelli quante sono le *partizioni* del =dataset= e vengono testati altrettante volte, ciclando la partizione utilizzata per il /training/
 
 Per ogni modello si stima $\alpha$ e se ne fa la media.
+
+\[\text{Var}(Y) = \frac{1}{|Y|}\sum_{y \in Y} (y - \overline y)^{2}\]
+La varianza puó essere utilizzata per valutare l'incertazza della stima della variabile tanget in un task di *regressione*.
+
+L'algoritmo =GrowTree= andrebbe cambiato per task di regressione reimplementando le funzioni
+- =BestSplit= utilizzando $\text{Var}$ al posto di $\text{Imp}$
+- =Label= che restituisca il valore medio del target nella foglia
+- =Homogenous= che restituisca =true= se la varianza del target é minore di un dato /threshold/
+
+
 
 
 [fn:dnf] Disjunctive Normal Form
