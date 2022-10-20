@@ -297,3 +297,54 @@ X_{i}(n)S_{i} \quad &\text{Load Independent Station}
 
 ** BCMP Theorem
 *Baskett, Chandy, Muntz, Palacios*
+* Random Values
+** Generation
+*** Distributions
+**** Pareto Type 1
+\begin{align*}
+F_x (x) =
+\begin{cases}
+1- \big(\frac{\beta}{x}\big)^\alpha \quad x \ge \beta \\
+0 \quad x < \beta
+\end{cases}
+f(x) = \frac{\alpha \beta^\alpha}{x^{\alpha+1}}
+E[x] =
+\begin{cases}
+\infty \quad \alpha \le 1\\
+\frac{\alpha \beta}{\alpha - 1} \quad \alpha > 1 \\
+\end{cases}
+\end{align*}
+
+*** Acceptance-Rejection
+Generates random variates
+- usually continuous
+- for distribution whose =IDF= cannot be easily computed
+
+Generate 2 randoms for $x$ and $y$
+- these individuate a point
+- a point inside the area of the density function is a /hit/
+
+This is a /brute-force/ approach
+- doesn't matter the shape of the function
+- efficiency can be really low
+  - lots of point can be useless
+- efficiency depends on how well the $c g(x)$ approximates $f(x)$
+
+#+begin_src c
+do {
+    u = Random();
+    x = g_inverse(u);
+    v = Random();
+} while (c * g(x) * v > f(x)); // rejection criteria
+return x;
+#+end_src
+
+*** Composition
+- usually continuous random variates
+- distribution can be computed as weighted sum of elementary distributions
+*** Cox Theorem
+Any distribution can be represented in this manner
+- has to have a =Rational Laplace Transform=
+- it is an approximation still
+
+With a /schema/ with $n$ negative exponentials added up at each step with a probability $\alpha$, else the result is returned.
