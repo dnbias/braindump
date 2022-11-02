@@ -2,7 +2,7 @@
 :ID:       07f2115c-edc3-4541-812b-19534cf6e019
 :END:
 #+title: Simulazione di Algoritmi Quantistici usando lo strumento Q#
-#+latex_class: arsclassica
+#+latex_class: my_thesis
 #+filetags: university thesis compsci
 #+exclude_tags: export_md
 
@@ -14,56 +14,57 @@ $\pagebreak$
 * Introduzione
 Lo sviluppo di software quantistici si è confermato come un'area di grande interesse negli ultimi decenni, offrendo grandi possibilità di superare i limiti computazionali attualmente raggiunti in diverse aree di ricerca.
 È possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
-- crittografia
-- problemi di ricerca, l'algoritmo di Grover in questo campo è quadraticamente più veloce del analogo classico
+- crittografia;
+- problemi di ricerca, l'algoritmo di Grover in questo campo è quadraticamente più veloce del analogo classico;
 - utilizzo di computer quantistici per la simulazione di sistemi quantistici
-- machine learning
-- computazione biologica
-- chimica generativa
+- machine learning;
+- computazione biologica;
+- chimica generativa.
 
 Ovviamente il calcolo classico non verrà abbandonato, l'approccio classico e quello quantistico differiscono nelle loro forze e debolezze.
 Mentre gli attuali computer diventano sempre più veloci e le tecniche industriali permettono miniaturizzazioni sempre maggiori gli hardware quantistici rimangono estremamente complicati da costruire e distribuire.
 Il modo attualmente più congeniale di utilizzare questi hardware per effettuare testing di software rimane quello della condivisione di risorse attraverso le tecnologie di /cloud computing/.
 
 Ma questo non significa che non sia possibile o non sia utile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
-Un importante punto di forza di questa tecnologia è che ci aspettiamo che i computer quantistici in generale siano molto più lenti di computer classici in termini di velocità di clock e architettura delle porte logiche ma che le risorse di cui dispongono nel contesto di alcune classi di  problemi da risolvere scalino diversamente, in particolare permettendo per i problemi giusti, più adatti, di superare di gran lunga la /performance/ dei migliori algoritmi classici.
+E' importante sottolineare che ci aspettiamo che i computer quantistici e le risorse di cui dispongono   scalino diversamente nel contesto di alcune classi di  problemi da risolvere, in particolare permettendo per i problemi giusti, più adatti, di superare di gran lunga la /performance/ dei migliori algoritmi classici.
 Questo perché l'approccio algoritmico permesso da questa tecnologia è profondamente diverso da quello classico e porta a miglioramenti importanti in termini di complessità computazionale.
 D'altra parte non ci si deve aspettare che questa sia una soluzione perfetta, ci sono problemi che rimarranno difficili da risolvere nonostante le nuove possibilità della computazione quantistica.
 
-Per molto tempo l'approccio a questo campo è rimasto accessibile solo a matematici e fisici con le grandi conoscenze specifiche necessarie a comprendere appieno la meccanica quantistica e le sue sfumature tecniche.
+Per molto tempo l'approccio a questo campo è rimasto accessibile solo a matematici e fisici con le conoscenze specifiche necessarie a comprendere appieno la meccanica quantistica e le sue sfumature tecniche.
+
 Questo sta cambiando velocemente negli ultimi anni da quando l'industria ha cominciato a sviluppare strumenti e piattaforme che permettano a nuovi sviluppatori di interagire e imparare in quest'ambito astraendo dalla maggior parte della complessità della teoria matematica alla base di questo modello.
 
 ** Definizione di un Computer Quantistico
 Per prima cosa definiamo un /computer/ come uno strumento che prendendo dei dati in input esegue delle operazioni su questi dati.
 I /computer/ che conosciamo e utilizziamo attualmente possono e sono definiti nei confini teorici della fisica classica, ovvero attraverso le leggi di Newton e l'elettromagnetismo.
-Data questa definizione è semplice definire un /computer quantistico/ come uno strumento che prendendo dei dati in input esegue delle operazioni si questi dati con processi descrivibili solo utilizzando i concetti della fisica quantistica.
+Data questa definizione è semplice definire un /computer quantistico/ come uno strumento che prendendo dei dati in input esegue delle operazioni su questi dati con processi descrivibili solo utilizzando i concetti della fisica quantistica.
 Detto questo la differenza tra un computer classico e un computer quantistico è la stessa che esiste tra la fisica classica e quella quantistica. La principale differenza è la scala su cui operano in termini di dimensioni e energia.
 I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui è più semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle =CPU= che comunemente utilizziamo.
 
 ** Limiti Hardware
 Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in remoto.
 Questo è necessario in quanto i requisiti e limiti tecnici della costruzione di un calcolatore quantistico sono estremamente complessi e richiedono ambienti fisici attualmente incompatibili con un utilizzo desktop.
-Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile ai segnali elettromagnetici esterni, per ovviare a problemi di interferenza è necessario mantenere l'hardware in temperature vicine allo zero termico ($0\text{K}$ o $-273.15^{\circ}\text{C}$).
+Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile alle interferenze esterne, per ovviare a problemi di interferenza è necessario mantenere l'hardware in temperature vicine allo zero termico ($0\text{K}$ o $-273.15^{\circ}\text{C}$).
 Queste condizioni non sono ovviamente replicabili in un ambiente non strettamente controllato e isolato.
 
 Dati questi limiti è facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto, servizi come =Amazon Quantum= renderanno sempre più facilmente disponibile l'accesso a questi strumenti.
 
-I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilità di essere testato in maniera indiscriminata su un qualsiasi di questi.
+I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilità di essere testato su un qualsiasi di questi.
 
 ** Utilizzi della tecnologia
 I computer quantistici offrono nuove possibilità nella risoluzione di diverse classi di problemi, la ricerca in questo campo ha trovato alcuni esempi di algoritmi che utilizzando le proprietà particolari di questo approccio per sviluppare un vantaggio nei confronti dell'approccio classico.
 
 Ad esempio:
-- L'*algoritmo di Grover* effettua una ricerca in una lista di $N$ elementi in tempo $O(\sqrt{N})$
-- L'*algoritmo di Shor* fattorizza velocemente grandi numeri, in particolare permette di fattorizzare con un grado di errore arbitrariamente piccolo e un numero polinomiale di passi rispetto alla lunghezza in bit dell'input
-- L'*algoritmo di Deutsch-Jozsa* verifica se una funzione è costante o bilanciata in tempo costante $O(1)$
-- L'*algoritmo di Simon*, ispirazione per il sopraccitato algoritmo di Shor, risolve in tempo esponenzialmente più veloce rispetto all'approccio classico il problema di determinare se una data funzione $f$ /blackbox/ sia *uno-a-uno* o *due-a-uno*
+- L'*algoritmo di Grover* effettua una ricerca in una lista di $N$ elementi in tempo $O(\sqrt{N})$.
+- L'*algoritmo di Shor* fattorizza velocemente grandi numeri, in particolare permette di fattorizzare con un grado di errore arbitrariamente piccolo e un numero polinomiale di passi rispetto alla lunghezza in bit dell'input.
+- L'*algoritmo di Deutsch-Jozsa* verifica se una funzione è costante o bilanciata in tempo costante $O(1)$.
+- L'*algoritmo di Simon*, ispirazione per il sopraccitato algoritmo di Shor, risolve in tempo esponenzialmente più veloce rispetto all'approccio classico il problema di determinare se una data funzione $f$ /blackbox/ sia *uno-a-uno* o *due-a-uno*.
 
 In aggiunta ai problemi di cui sopra, la cui soluzione è legata a un algoritmo in particolare, sono state trovate applicazioni per i computer quantistici in diversi altri ambiti:
-- La stima di una somma di Gauss, un tipo di somma esponenziale, con precisione polinomiale e in tempo polinomiale contro il tempo esponenziale degli algoritmi classici
-- La valutazioni di formule booleane complesse può essere velocizzata tramite un approccio quantistico
-- Questi computer permettono di simulare sistemi quantistici permettendone uno studio più approfondito
-- La generazioni di numeri casuali è un'importante componente della crittologia e utilizzando tecniche quantistiche è possibile generarne che siano davvero casuali e non più pseudo-casuali come necessario in computer classici
+- La stima di una somma di Gauss, un tipo di somma esponenziale, con precisione polinomiale e in tempo polinomiale contro il tempo esponenziale degli algoritmi classici.
+- La valutazioni di formule booleane complesse può essere velocizzata tramite un approccio quantistico.
+- Questi computer permettono di simulare sistemi quantistici permettendone uno studio più approfondito.
+- La generazioni di numeri casuali è un'importante componente della crittologia e utilizzando tecniche quantistiche è possibile generarne che siano davvero casuali e non più pseudo-casuali come necessario in computer classici.
 
 Questi sono risultati importanti e in particolare l'algoritmo di Shor pone dei dubbi sulla sicurezza degli attuali protocolli crittografici che si basano sulla difficoltà computazionale della fattorizzazione di grandi numeri interi.
 Se tale algoritmo fosse facilmente eseguibile significherebbe che un attaccante potrebbe facilmente violare questi protocolli di sicurezza correntemente alla base della comunicazione via Internet.
@@ -174,7 +175,7 @@ Prima definiamo cos'è un oracolo in questo contesto:
 #+begin_quote
 Un oracolo $U_{f}$ è una matrice unitaria definita applicando $f$ condizionatamente rispetto alle etichette assegnate agli stati dei ~qubit~. L'applicazione di un oracolo per due volte risulta nella matrice identità  \(\mathbb{1}\).
 #+end_quote
-Quindi è necessaria una manipolazione per convertire funzioni /irreversibili/ in oracoli /reversibili/ utilizzabili in ambito quantistico.
+Per ottenere questo è necessaria una manipolazione per convertire funzioni /irreversibili/ in oracoli /reversibili/ utilizzabili in ambito quantistico.
 Questa manipolazione va fatta utilizzando le operazioni su ~qubit~ proprie di un simulatore o device quantistico come:
 - $\textsc{x}(t)$
   + questa operazione è l'equivalente del classico =NOT=
@@ -183,17 +184,19 @@ Questa manipolazione va fatta utilizzando le operazioni su ~qubit~ proprie di un
 - $\textsc{cnot}(c,t)$
   + questa operazione è definibile come un =NOT= controllato secondo l'input $c$
   + $\textsc{cnot} |00\rangle = |00\rangle$
+  + $\textsc{cnot} |01\rangle = |01\rangle$
   + $\textsc{cnot} |10\rangle = |11\rangle$
   + $\textsc{cnot} |11\rangle = |10\rangle$
+Dove $t$ è il ~qubit~ target e $c$ è il ~qubit~ di controllo per il =Controlled-NOT=.
+
 - $\textsc{swap}(t_{1},t_{2})$
   + come si può intuire dal nome scambia i valori dei ~qubit~
   + $\textsc{swap} |10\rangle = |01\rangle$ e  $\textsc{swap} |01\rangle = |10\rangle$
 
-Dove $t$ è il ~qubit~ target e $c$ è il ~qubit~ di controllo per il =Controlled-NOT=.
 
 Le difficoltà maggiori nella definizione di oracoli per le funzioni che ci interessano le abbiamo con quelle /costanti/, questo in quanto passando da input a output si perde l'informazione dell'input utilizzato. Rendendo tali funzioni irreversibili.
 
-Fortunatamente esiste una tecnica generale per rendere una funzione classica irreversibile $f$ in una funzione classica reversibile $g$.
+Fortunatamente esiste una tecnica generale per rendere una funzione classica irreversibile $f: Bool \to Bool$ in una funzione classica reversibile $g$.
 \[h(x,y) = (x,y \oplus f(x))\]
 Questa nuova funzione $h$ aggiunge al input originario di $f$ $x$ un nuovo input $y$ che non è altro che il valore di output che andrà a modificare tramite l'operazione $\oplus$[fn:oplus].
 
@@ -202,7 +205,7 @@ Questa stessa tecnica è trasponibile per definire un oracolo $U_{f}$:
 
 In questo modo manteniamo traccia dell'input $x$ che altrimenti andrebbe perso dopo l'applicazione di $f$.
 
-Gli oracoli che utilizziamo per testare gli algoritmi definiti nelle prossime sezioni sono riportati nel listato ~oracles.qs~.
+Gli oracoli che utilizziamo per testare gli algoritmi definiti nelle prossime sezioni sono riportati nel listato ~oracles.qs~ (=Listing 3=).
 
 #+caption: oracles.qs
 #+Begin_src c
@@ -236,7 +239,10 @@ operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
     X(control);
   }
 #+end_src
-Qui sopra sono definite le versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate.
+Qui sopra sono definite le versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate, definiamo cosa siano funzioni di questo tipo nel prossimo capitolo.
+Tutte queste funzioni hanno tipo
+\[f: Bool^n \to Bool\]
+
 In particolare abbiamo definito oracoli per le seguenti funzioni:
 - $f_{1}(x)=0$
 - $f_{2}(x)=1$
@@ -280,6 +286,7 @@ L'algoritmo di *Deutsch-Jozsa* ha interesse storico in quanto primo algoritmo qu
 Questo algoritmo ha spinto la ricerca in questa direzione per determinati problemi.
 
 L'algoritmo risponde a una domanda su una funzione $f$ booleana con $n$ bit in input
+\[f: Bool^n \to Bool\]
 \[f(\{x_{0},x_{1},\cdots,x_{n}\}) \rightarrow 0\text{ o }1\]
 
 Questa funzione su cui agisce l'algoritmo ha la proprietà di essere una di due forme:
@@ -287,8 +294,8 @@ Questa funzione su cui agisce l'algoritmo ha la proprietà di essere una di due 
 - bilanciata
 
 Definite come:
-- Una funzione è costante se restituisce per tutti gli input $\{x_{0},x_{1},\cdots,x_{n}\}_{}$ lo stesso risultato
-- Una funzione è bilanciata se restituisce 0 esattamente per metà degli input, e 1 esattamente per metà degli input
+- Una funzione è *costante* se restituisce per tutti gli input $\{x_{0},x_{1},\cdots,x_{n}\}_{}$ lo stesso risultato
+- Una funzione è *bilanciata* se restituisce 0 esattamente per metà degli input, e 1 esattamente per metà degli input
 
 Il problema di Deutsch-Jozsa è stato ideato per essere facile da risolvere con una soluzione algoritmica quantistica ed essere difficile per qualsiasi algoritmo classico.
 
@@ -337,6 +344,7 @@ Nei listati successivi riportiamo l'implementazione ~Q#~ della versione a singol
 #+caption: i passi dell'algoritmo n-qubit in forma di circuito
 [[../media/img/deutsch_steps.png]]
 
+\pagebreak
 Un punto fondamentale dell'algoritmo è l'utilizzo della porta ~Hadamard~, chiamata anche trasformata di ~Hadamard~.
 Questa è una generalizzazione delle trasformate di Fourier definita dalla matrice $H_{m} = 2^{m} \times 2^{m}$.
 Questa è definibile ricorsivamente a partire dall'identità $H_{0} = 1$ e, per $m > 0$:
@@ -367,7 +375,7 @@ H_2 &=  \frac{1}{2}
 
 Il trasformato di ~Hadamard~ $H_{1}$ è la porta logica quantistica conosciuta come porta ~Hadamard~, l'applicazione di questa porta a ciascun qubit di un registro a n-qubit parallelamente è equivalente alla trasformata $H_{n}$.
 
-Si crede che applicando un circuito di ~Hadamard~ a un qubit nello stato $| 0 \rangle$ si crei uno stato sovrapposto tra gli stati $| 0 \rangle$ e $| 1 \rangle$ denominato $| + \rangle$.
+Applicando un circuito di ~Hadamard~ a un qubit nello stato $| 0 \rangle$ si crei uno stato sovrapposto tra gli stati $| 0 \rangle$ e $| 1 \rangle$ denominato $| + \rangle$.
 A livello matematico sono definite:
 \[ | + \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle + | 1 \rangle)\]
 \[ | - \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle - | 1 \rangle)\]
@@ -379,8 +387,10 @@ Inoltre con una funzione $f$ applicata a questa sovrapposizione si ottiene, nel 
 Questo effetto è utilizzato dall'algoritmo in quanto  riapplicando ~Hadamard~ si controlla in un solo passo se si ottiene la sovrapposizione di due stati uguali o di due stati diversi, o meglio se $f(0) = f(1)$ o meno. La riapplicazione di $H$ restituirà $1$ nel primo caso, $0$ nel secondo.
 $\pagebreak$
 
-Seguono i calcoli per il caso a $1$ qubit:
-L'obiettivo è controllare la condizione $f(0) = f(1)$, equivalente a controllare $f(0) \oplus f(1)$. In questo caso lo =XOR= è implementato come una Controlled NOT gate =CNOT=.
+*Seguono i calcoli per il caso a $1$ qubit*:
+L'obiettivo è controllare la condizione $f(0) = f(1)$, equivalente a controllare $f(0) \oplus f(1)$.
+
+In questo caso lo =XOR= è implementato come una Controlled NOT gate =CNOT=.
 
 Lo stato iniziale aggiungendo un ~qubit~ di controllo è $|0 \rangle |1\rangle$, si applica ~Hadamard~ a entrambi:
 \[\frac{1}{2} (| 0 \rangle + | 1 \rangle) (| 0 \rangle - |1 \rangle\]
@@ -407,7 +417,7 @@ A questo punto viene misurato il ~qubit~:
 - $f(0) \oplus f(1) = 0$ se e solo se misuriamo $|0\rangle$
 - $f(0) \oplus f(1) = 1$ se e solo se misuriamo $|1\rangle$
 
-Concludiamo che sappiamo con certezza se $f(x)$ è costante o bilanciata in un singolo passo di computazione.
+Concludiamo che sappiamo con certezza se $f(x)$ è costante o bilanciata in un singolo uso della *black box* $U_g$.
 
 #+caption: single-qubit Deutsch-Jozsa
 #+begin_src c
@@ -429,7 +439,7 @@ operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
 #+end_src
 $\pagebreak$
 
-Il  caso $n=2$ ~qubit~ non è diverso:
+*Il  caso $n=2$ ~qubit~ non è diverso*:
 
 L'algoritmo inizia nello stato di $n + 1$ ~qubit~ $|00\rangle|1\rangle$.
 Applicando ~Hadamard~ si ottiene lo stato
@@ -455,7 +465,7 @@ Data questo risultato la probabilità di misurare $|00\rangle$ è
 Che risulta $1$ se $f(x)$ è costante e $0$ se altrimenti $f(x)$ è bilanciata.
 
 In altre parole, la misura finale sarà $|00\rangle$ se $f(x)$ è costante e un qualche altro stato nel caso in cui $f(x)$ sia bilanciata.
-
+\pagebreak
 #+caption: n-qubit Deutsch-Jozsa
 #+begin_src c
 operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
@@ -484,20 +494,22 @@ Concludiamo la nostra trattazione mostrando un interessante fenomeno quantistico
 Il termine /entanglement/, traducibile come groviglio in italiano, fu introdotto dal nobel per la fisica Erwin Schrödinger, i cui contributi alla meccanica quantistica furono fondamentali e indica la forte relazione che due particelle /entangled/ in un sistema quantistico mantengono secondo la *legge di conservazione*.
 
 Questa legge continua a valere senza alcun limite spaziale, permettendo che la misura di una singola particella influenzi istantaneamente il corrispondente valore dell'altra.
-
+\par
 Un altro risultato fondamentale della meccanica quantistica sono il *teorema di no-cloning* e quello di *non discriminazione*.
 Il primo vieta la creazione di un duplicato esatto di uno stato quantistico sconosciuto, il secondo afferma che dati due stati quantistici non ortogonali di un sistema non sia possibile distinguerli con certezza.
 
-Data la nostra incapacità di distinguere due particelle e stati quantistici se queste fossero scambiate sarebbe possibile accorgersene, in questo senso non ha senso affermare che due di queste entità abbiano una individualità. È più corretto affermare che le due posizioni nello spazio hanno la proprietà di avere campi quantistici nello stesso stato.
+Non siamo in grado di distinguere due particelle elementari: se queste fossero scambiate sarebbe impossibile accorgersene. Non ha senso affermare che le particelle elementari abbiano una individualità.
 
-Partendo da uno stato /entangled/ è però possibile /teletrasportare/ lo stato un atomo $A$ in un atomo $B$.
+È più corretto affermare che le due posizioni nello spazio hanno la proprietà di avere campi quantistici nello stesso stato.
 
-A Seguito del teletrasporto lo stato di $B$ sarà esattamente quello che aveva $A$ precedentemente all'operazione.
+Partendo da uno stato /entangled/ è però possibile /teletrasportare/ lo stato di una particella $A$ in una particella $B$.
+
+Per effetto del teletrasporto lo stato di $B$ sarà esattamente quello che aveva $A$ precedentemente all'operazione.
 In letteratura questi attori sono spesso soprannominati =Alice= e =Bob=.
 
-Lo stesso risultato si potrebbe avere trasportando fisicamente $A$ al posto di $B$. In questo caso però proprio per le proprietà dell'/entanglement/ non c'è un limite spaziale al teletrasporto quantico.
+Lo stesso risultato si potrebbe avere trasportando fisicamente $A$ al posto di $B$. Per le proprietà dell'/entanglement/ non c'è un limite spaziale al teletrasporto quantico.
 
-Gli schemi per effettuare questa operazione sono diversi, noi riportiamo quello più semplice. Il teletrasporto di un ~qubit~.
+Gli schemi per effettuare questa operazione sono diversi, noi riportiamo quello più semplice: il teletrasporto di un ~qubit~.
 
 $\pagebreak$
 
@@ -532,9 +544,7 @@ La trasmissione di questa misura limita la velocità del teletrasporto che non �
 
 La misurazione da parte di =Alice= porta alla perdita dello stato iniziale rispettando quindi il *teorema di no-cloning* citato precedentemente.
 
-Molti esperimenti sono stati effettuati nell'ambito del teletrasporto quantistico, l'attuale record di distanza per un esperimento di questo tipo è stato registrato in un esperimento all'aperto che ha avuto luogo nelle isole Canarie.
-
-L'esperimento teletrasportò particelle tra due osservatori astronomici dell'/Instituto de Astrofísica de Canarias/ ad una distanza di 143Km.
+Molti esperimenti sono stati effettuati nell'ambito del teletrasporto quantistico, l'attuale record di distanza per un esperimento di questo tipo è stato registrato in un esperimento all'aperto che ha avuto luogo nelle isole Canarie e teletrasportò particelle tra due osservatori astronomici dell'/Instituto de Astrofísica de Canarias/ ad una distanza di 143Km.
 
 #+caption: Il teletrasporto quantistico agisce in accordo alla relatività speciale con l'utilizzo di due canali di comunicazione, uno classico e una quantistico.
 [[../media/img/quantum_teleportation.png]]
