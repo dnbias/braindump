@@ -613,7 +613,7 @@ Dopo 50 anni in cui la velocità di calcolo dei calcolatori classici ha continua
 
 Per questo negli ultimi anni è cresciuta la necessità di sviluppare nuovi modelli computazionali che permettano di andare oltre il modello classico.
 
-È da questa necessità che negli ultimi anni l'interesse per le tecnologie quantistiche è cresciuto rapidamente e certamente continuerà a evolversi in questa direzione intanto che il computer classico risulta sempre meno al passo con i tempi.
+È da questa necessità che negli ultimi anni l'interesse per le tecnologie quantistiche è cresciuto rapidamente e certamente continuerà a evolversi intanto che il computer classico potrebbe essere vicino a raggiungere i propri limiti fisici.
 
 $\pagebreak$
 [fn:quantum-computer] Paul Benioff - /The computer as a physical system/ (https://link.springer.com/article/10.1007/BF01011339)
