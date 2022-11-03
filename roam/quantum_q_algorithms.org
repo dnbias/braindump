@@ -41,16 +41,29 @@ Data questa definizione è semplice definire un /computer quantistico/ come uno 
 Detto questo la differenza tra un computer classico e un computer quantistico è la stessa che esiste tra la fisica classica e quella quantistica. La principale differenza è la scala su cui operano in termini di dimensioni e energia.
 I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui è più semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle =CPU= che comunemente utilizziamo.
 
+In altre parole un computer quantistico differisce da uno classico nella sua capacitá di non sottostare agli stessi limiti di complessitá temporale nella risoluzione di problemi computazionali. Importante quando serve risolvere problemi complessi per cui non sono accettabili semplificazioni e ci si avvicina sempre di piú ai limiti fisici nelle architetture hardware classiche.
+In questi casi infatti invece che creare supercomputer sempre piú potenti puó essere interessante un cambio di approccio, ritrovabile nel quantum computing.
+
 ** Limiti Hardware
 Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in remoto.
 Questo è necessario in quanto i requisiti e limiti tecnici della costruzione di un calcolatore quantistico sono estremamente complessi e richiedono ambienti fisici attualmente incompatibili con un utilizzo desktop.
 Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile alle interferenze esterne, per ovviare a problemi di interferenza è necessario mantenere l'hardware in temperature vicine allo zero termico ($0\text{K}$ o $-273.15^{\circ}\text{C}$).
 Queste condizioni non sono ovviamente replicabili in un ambiente non strettamente controllato e isolato.
 
-Dati questi limiti è facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto, servizi come =Amazon Quantum= renderanno sempre più facilmente disponibile l'accesso a questi strumenti.
+Dati questi limiti è facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto tramite architetture cloud, molte aziende private in questi anni hanno sviluppato soluzioni in questo senso.
+Alcuni esempi sviluppati negli ultimi anni dai maggiori competitor sono =IBM Q=[fn:ibm], Google Quantum AI[fn:google-quantum], =XANADU= Quantum Cloud[fn:xanadu] con la sua interfaccia python *Strawberry Fields*[fn:strawberry] con supporto =Tensor Flow= integrato, Amazon Bracket[fn:bracket] offerto da =AWS=.
+Queste sono solo le offerte piú commercialmente rilevanti, sono tante le alternative che sarebbe possibile considerare.
 
-I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilità di essere testato su un qualsiasi di questi.
+I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilità di essere testato efficacemente.
+Uno di questi simulatori é ad esempio =qsim=[fn:qsim], sviluppato dal team di Google Quantum AI questo simulatore permette di emulare circuiti quantistici in modo efficace fino a 20 qbit interfacciandosi con il framework =Cirq=[fn:cirq].
 
+[fn:ibm] https://quantum-computing.ibm.com/
+[fn:google-quantum] https://quantumai.google/
+[fn:xanadu] https://www.xanadu.ai/cloud
+[fn:strawberry] https://strawberryfields.ai/
+[fn:bracket] https://aws.amazon.com/braket/
+[fn:qsim] https://quantumai.google/qsim
+[fn:cirq] https://quantumai.google/cirq
 ** Utilizzi della tecnologia
 I computer quantistici offrono nuove possibilità nella risoluzione di diverse classi di problemi, la ricerca in questo campo ha trovato alcuni esempi di algoritmi che utilizzando le proprietà particolari di questo approccio per sviluppare un vantaggio nei confronti dell'approccio classico.
 
@@ -85,9 +98,13 @@ Altri /Software Development Kit/ che possono essere utilizzati per eseguire circ
 - PennyLane
 Molti di questi progetti sono open-source e sviluppati sulla base di ~Python~.
 
-Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto questo strumento era utilizzato dalla nostra fonte principale /Learn Quantum Computing with Python and Q#/.
+Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto questo strumento era utilizzato dalla nostra fonte principale /Learn Quantum Computing with Python and Q#/.[fn:learn-quantum]
+Nella documentazione ufficiale di Microsoft Azure è presente una guida[fn:guida] all'installazione dell'ambiente di programmazione ~Q#~ di cui qui riportiamo dei passaggi.
 
-L'ambiente di esecuzione ~Q#~ può essere configurato sul editor =Visual Studio Code= tramite l'add-on proprietario =Microsoft Quantum Development Kit=.
+Il lavoro per questa tesi è stato fatto in un ambiente Linux, il processo di installazione è del tutto equivalente nel caso si utilizzasse Windows utilizzando la =powershell= e =conda= o =pip=.
+
+
+L'ambiente di esecuzione ~Q#~ può essere configurato sul editor =Visual Studio Code= tramite l'add-on proprietario =Microsoft Quantum Development Kit=[fn:azure].
 Quest'ultimo è disponibile solo sulla versione non =FOSS= del software, che è possibile installare tramite le repository opensource linux.
 
 In alternativa o anche parallelamente è possibile sviluppare codice ~Q#~ ed eseguirlo tramite =Jupyter Notebook= tramite ~Python~.
@@ -169,6 +186,84 @@ $\pagebreak$
 [fn:dotnet] https://dotnet.microsoft.com/en-us/download
 [fn:runtime] https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 [fn:anaconda] Si trovano informazioni a riguardo di questa distribuzione software all'indirizzo https:www.anaconda.com
+[fn:guida] documentazione azure: https://learn.microsoft.com/en-us/azure/quantum/install-overview-qdk
+[fn:learn-quantum] il libro si può trovare a https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp
+[fn:azure] https://azure.microsoft.com/en-us/resources/development-kit/quantum-computing/
+* Q#
+Nei prossimi capitoli utilizzeremo ~Q#~ per implementare alcuni algoritmi quantistici. Per questo ci sarà utile introdurre delle basi in questo linguaggio per facilitare la lettura dei listati che saranno presentati successivamente.
+
+~Q#~ è il linguaggio di programmazione di algoritmi quantistici open-source[fn:repo] sviluppato da Microsoft, fa parte del Quantum Development Kit di quest'ultima.
+Come linguaggio eredita caratteristiche classiche di linguaggi imperativi ad oggetti come Python, C# supportando loop, blocchi if/then e strutture dati di base.
+Altre queste introduce in aggiunta costrutti specifici per le applicazioni nell'ambito della programmazione di algoritmi quantistici come ad esempio il /repeat until success/[fn:repeat] e la /phase estimation/[fn:phase].
+Il linguaggio è ad alto livello e agnostico riguardo l'hardware su cui verrà eseguito.
+
+#+caption: Diagramma che mostra i passaggi da idea a implementazione di un programma nel framework QDK, tratto dalla documentazione Microsoft QDK.
+[[../media/img/quantum-development-kit-flow-diagram.svg]]
+
+\pagebreak
+Un semplice programma in ~Q#~ può essere:
+#+begin_src c
+namespace HelloQuantum {
+
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Intrinsic;
+
+
+    @EntryPoint()
+    operation SayHelloQ() : Unit {
+        Message("Hello quantum world!");
+    }
+}
+ #+end_src
+Questo stampa la stringa "Hello quantum world!", =EntryPoint= indica al compilatore dove inizia l'esecuzione del programma.
+Tra i tipi offerti dal linguaggio ci sono quelli classici: =Int=, =Double=, =Bool=, =String=.
+Inoltre esistono dei tipi specifici al quantum computing: =Result= rappresenta il risultato di una misurazione di qubit e può evere solamente uno di due valori - =One= o =Zero=. Il linguaggio permette di specificare nuovi tipi per un proprio programma ma non offre feature di linguaggi come C# o Java come interfacce o classi.
+
+I qubit vengono allocati tramite la keyword =use=. Se ne possono allocare uno o diversi alla volta.
+#+begin_src c
+use q = Qubit();
+ #+end_src
+
+I principali attori di un programma che manipola qubit sono le cosidette =Operations=, queste sono routine chiamabili di un programma che contengono operazioni quantistiche che manipolano lo stato del registro di qubit.
+#+begin_src c
+operation SayHelloQ() : Unit {
+    Message("Hello quantum world!");
+}
+ #+end_src
+
+\pagebreak
+Una parte fondamentale di un qualsiasi algoritmo quantistico è la misurazione dei qubit e la loro manipolazione.
+Per questo vengono utilizzate le misure di Pauli per misurazioni di singoli qubit secondo una data base.
+#+begin_src c
+operation MeasureOneQubit() : Result {
+    // Alloca un qubit, di default nello stato zero
+    use q = Qubit();
+    // Applichiamo Hadamard allo stato
+    // A seguito di questa operazione la misurazione
+    // potrebbe risultare 0 o 1 con uguale probabilità
+    H(q);
+    // Misuriamo in base Z il qubit
+    let result = M(qubit);
+    // Resettiamo il qubit prima di rilasciarlo
+    if result == One { X(qubit); }
+    return result;
+}
+ #+end_src
+Nel listato vediamo un esempio di misurazione in base Z di un qubit.
+Il qubit viene allocato, gli viene applicata la trasformata di Hadamard tramite la procedura =H= e poi viene misurato utilizzando =M=.
+=M= effettua una misura di un singolo qubit in base Z di Pauli. Questa è del tutto equivalente a ~Measure([PauliZ], [qubit])~.
+
+L'operazione di misura è spesso seguita dal reset, quindi spesso è comodo l'utilizzo dell'operazione  ~MResetX~[fn:mresetx], che si assicura che il qubit sia riportato allo stato $|0\rangle$.
+#+begin_src c
+operation MResetX (target : Qubit) : Result
+ #+end_src
+
+
+\pagebreak
+[fn:mresetx] https://learn.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.measurement.mresetx
+[fn:repo] https://github.com/microsoft/qsharp-language
+[fn:repeat] https://learn.microsoft.com/en-us/azure/quantum/user-guide/language/statements/conditionalloops
+[fn:phase] Per approfondire a riguardo si può leggere la documentazione di Microsoft Azure: https://learn.microsoft.com/en-us/azure/quantum/user-guide/libraries/standard/algorithms#quantum-phase-estimation. L'algoritmo di stima della fase quantistica o stima dell'autovalore quantistico è utilizzato per stimare con alta probabilità dato un errore le operazioni di operatori unitari $U$ e $m$ qubit. La /phase estimation/ è spesso una subroutine di altri algoritmi quantistici, per esempio l'algoritmo di Shor, ed è un'altra applicazione della trasformata di Fourier che nominiamo nel capitolo 5 parlando della trasformata di Hadamard.
 * Oracoli
 Per poter applicare l'algoritmo che andremo a descrivere e implementare in seguito è necessario creare dei cosiddetti *oracoli* delle funzioni che utilizzeremo come input.
 Prima definiamo cos'è un oracolo in questo contesto:
@@ -487,7 +582,10 @@ operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool
 }
 #+end_src
 $\pagebreak$
+
 $\pagebreak$
+
+
 * Teletrasporto Quantistico
 Concludiamo la nostra trattazione mostrando un interessante fenomeno quantistico che riguarda la sovrapposizione di più stati, la *correlazione quantistica* o *entanglement quantistico*.
 
