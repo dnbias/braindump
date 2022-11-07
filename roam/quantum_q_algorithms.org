@@ -26,7 +26,7 @@ Lo sviluppo di software quantistici si è confermato come un'area di grande inte
 È possibile che in futuro algoritmi quantistici possano sostituire controparti classiche in diverse applicazioni:
 - crittografia;
 - problemi di ricerca, l'algoritmo di Grover in questo campo è quadraticamente più veloce del analogo classico;
-- utilizzo di computer quantistici per la simulazione di sistemi quantistici
+- utilizzo di computer quantistici per la simulazione di sistemi quantistici;
 - machine learning;
 - computazione biologica;
 - chimica generativa.
@@ -36,7 +36,7 @@ Mentre gli attuali computer diventano sempre più veloci e le tecniche industria
 Il modo attualmente più congeniale di utilizzare questi hardware per effettuare testing di software rimane quello della condivisione di risorse attraverso le tecnologie di /cloud computing/.
 
 Ma questo non significa che non sia possibile o non sia utile studiare i problemi e le soluzioni algoritmiche che il calcolo quantistico offre a livello teorico e di sviluppo software.
-E' importante sottolineare che ci aspettiamo che i computer quantistici e le risorse di cui dispongono   scalino diversamente nel contesto di alcune classi di  problemi da risolvere, in particolare permettendo per i problemi giusti, più adatti, di superare di gran lunga la /performance/ dei migliori algoritmi classici.
+È importante sottolineare che ci aspettiamo che i computer quantistici e le risorse di cui dispongono   scalino diversamente nel contesto di alcune classi di  problemi da risolvere, in particolare permettendo per i problemi giusti, più adatti, di superare di gran lunga la /performance/ dei migliori algoritmi classici.
 Questo perché l'approccio algoritmico permesso da questa tecnologia è profondamente diverso da quello classico e porta a miglioramenti importanti in termini di complessità computazionale.
 D'altra parte non ci si deve aspettare che questa sia una soluzione perfetta, ci sono problemi che rimarranno difficili da risolvere nonostante le nuove possibilità della computazione quantistica.
 
@@ -59,6 +59,10 @@ Attualmente i software sviluppati per hardware quantistici possono essere esegui
 Questo è necessario in quanto i requisiti e limiti tecnici della costruzione di un calcolatore quantistico sono estremamente complessi e richiedono ambienti fisici attualmente incompatibili con un utilizzo desktop.
 Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile alle interferenze esterne, per ovviare a problemi di interferenza è necessario mantenere l'hardware in temperature vicine allo zero termico ($0\text{K}$ o $-273.15^{\circ}\text{C}$).
 Queste condizioni non sono ovviamente replicabili in un ambiente non strettamente controllato e isolato.
+
+#+caption: Architettura globale di un computer quantistico - tratto da articolo IEEE Explore Journal: https://ieeexplore.ieee.org/document/9274431
+[[../media/img/quantum-interface.png]]
+
 
 Dati questi limiti è facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto tramite architetture cloud, molte aziende private in questi anni hanno sviluppato soluzioni in questo senso.
 Alcuni esempi sviluppati negli ultimi anni dai maggiori competitor sono =IBM Q=[fn:ibm], Google Quantum AI[fn:google-quantum], =XANADU= Quantum Cloud[fn:xanadu] con la sua interfaccia python *Strawberry Fields*[fn:strawberry] con supporto =Tensor Flow= integrato, Amazon Bracket[fn:bracket] offerto da =AWS=.
@@ -770,8 +774,9 @@ $\pagebreak$
 4. Nature 530 (7589) - /The chips are down for Moore's Law/ (https://www.nature.com/news/the-chips-are-down-for-moore-s-law-1.19338)
 5. Paul Benioff - /The computer as a physical system/ (https://link.springer.com/article/10.1007/BF01011339)
 6. https://github.com/crazy4pi314/learn-qc-with-python-and-qsharp
-7. https://learn.microsoft.com/en-us/azure/quantum/install-overview-qdk
-8. https://github.com/microsoft/quantum/tree/main/samples/getting-started/teleportation
-9. https://azure.microsoft.com/en-us/resources/development-kit/quantum-computing/
-10. https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html
-11. https://www.nobelprize.org/prizes/physics/2022/press-release/
+7. https://ieeexplore.ieee.org/document/9274431
+8. https://learn.microsoft.com/en-us/azure/quantum/install-overview-qdk
+9. https://github.com/microsoft/quantum/tree/main/samples/getting-started/teleportation
+10. https://azure.microsoft.com/en-us/resources/development-kit/quantum-computing/
+11. https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html
+12. https://www.nobelprize.org/prizes/physics/2022/press-release/
