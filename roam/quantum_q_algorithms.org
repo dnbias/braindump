@@ -115,7 +115,7 @@ Altri /Software Development Kit/ che possono essere utilizzati per eseguire circ
 - PennyLane
 Molti di questi progetti sono open source e sviluppati sulla base di ~Python~.
 
-Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto questo strumento era utilizzato dalla nostra fonte principale /Learn Quantum Computing with Python and Q#/.[fn:learn-quantum]
+Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft per l'ottima documentazione consultabile sulle loro pagine web e in quanto questo strumento era utilizzato dalla nostra fonte principale /Learn Quantum Computing with Python and Q#/.[fn:learn-quantum]
 Nella documentazione ufficiale di Microsoft Azure è presente una guida[fn:guida] all'installazione dell'ambiente di programmazione ~Q#~ di cui qui riportiamo dei passaggi.
 
 Il lavoro per questa tesi è stato fatto in un ambiente Linux, il processo di installazione è del tutto equivalente nel caso si utilizzasse Windows utilizzando la =powershell= e =conda= o =pip=.
