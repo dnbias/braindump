@@ -5,7 +5,17 @@
 #+latex_class: my_thesis
 #+filetags: university thesis compsci
 #+exclude_tags: export_md
-
+DICHIARAZIONE DI ORIGINALITÀ
+#+begin_quote
+Dichiaro di essere responsabile del contenuto dell'elaborato che
+presento al fine del conseguimento del titolo, di non avere plagiato in
+tutto o in parte il lavoro prodotto da altri e di aver citato le fonti
+originali in modo congruente alle normative vigenti in materia di plagio
+e di diritto d'autore. Sono inoltre consapevole che nel caso la mia
+dichiarazione risultasse mendace, potrei incorrere nelle sanzioni
+previste dalla legge e la mia ammissione alla prova finale potrebbe
+essere negata.
+#+end_quote
 $\pagebreak$
 * Metadata :export_md:
 - Tags: [[id:6e504ff7-9a50-4a47-901d-4c524c229bc6][Quantum Computing]], [[id:b9d02edb-6458-4237-88de-41fb865974d2][CalcCompl]], [[id:d7686f15-7f24-476e-9ecf-87ef577d5a4c][Deutsch-Jozsa Algorithm]]
@@ -41,8 +51,8 @@ Data questa definizione è semplice definire un /computer quantistico/ come uno 
 Detto questo la differenza tra un computer classico e un computer quantistico è la stessa che esiste tra la fisica classica e quella quantistica. La principale differenza è la scala su cui operano in termini di dimensioni e energia.
 I calcolatori quantistici sono in ogni caso controllati tramite interfacce e strumenti classici con cui è più semplice interagire e tramite cui i dati sono riconvertiti in dati di tipo classico utilizzabili dalle =CPU= che comunemente utilizziamo.
 
-In altre parole un computer quantistico differisce da uno classico nella sua capacitá di non sottostare agli stessi limiti di complessitá temporale nella risoluzione di problemi computazionali. Importante quando serve risolvere problemi complessi per cui non sono accettabili semplificazioni e ci si avvicina sempre di piú ai limiti fisici nelle architetture hardware classiche.
-In questi casi infatti invece che creare supercomputer sempre piú potenti puó essere interessante un cambio di approccio, ritrovabile nel quantum computing.
+In altre parole un computer quantistico differisce da uno classico nella sua capacità di non sottostare agli stessi limiti di complessità temporale nella risoluzione di problemi computazionali. Importante quando serve risolvere problemi complessi per cui non sono accettabili semplificazioni e ci si avvicina sempre di più ai limiti fisici nelle architetture hardware classiche.
+In questi casi infatti invece che creare supercomputer sempre più potenti può essere interessante un cambio di approccio, ritrovabile nel quantum computing.
 
 ** Limiti Hardware
 Attualmente i software sviluppati per hardware quantistici possono essere eseguiti su simulatori, sempre software, oppure sfruttando reali macchine quantistiche in remoto.
@@ -52,10 +62,10 @@ Queste condizioni non sono ovviamente replicabili in un ambiente non strettament
 
 Dati questi limiti è facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto tramite architetture cloud, molte aziende private in questi anni hanno sviluppato soluzioni in questo senso.
 Alcuni esempi sviluppati negli ultimi anni dai maggiori competitor sono =IBM Q=[fn:ibm], Google Quantum AI[fn:google-quantum], =XANADU= Quantum Cloud[fn:xanadu] con la sua interfaccia python *Strawberry Fields*[fn:strawberry] con supporto =Tensor Flow= integrato, Amazon Bracket[fn:bracket] offerto da =AWS=.
-Queste sono solo le offerte piú commercialmente rilevanti, sono tante le alternative che sarebbe possibile considerare.
+Queste sono solo le offerte più commercialmente rilevanti, sono tante le alternative che sarebbe possibile considerare.
 
 I simulatori e le macchine reali condividono interfacce condivise che permettono lo sviluppo di software che abbia la possibilità di essere testato efficacemente.
-Uno di questi simulatori é ad esempio =qsim=[fn:qsim], sviluppato dal team di Google Quantum AI questo simulatore permette di emulare circuiti quantistici in modo efficace fino a 20 qbit interfacciandosi con il framework =Cirq=[fn:cirq].
+Uno di questi simulatori é ad esempio =qsim=[fn:qsim], sviluppato dal team di Google Quantum AI questo simulatore permette di emulare circuiti quantistici in modo efficace fino a 20 qubit interfacciandosi con il framework =Cirq=[fn:cirq].
 
 [fn:ibm] https://quantum-computing.ibm.com/
 [fn:google-quantum] https://quantumai.google/
@@ -72,6 +82,9 @@ Ad esempio:
 - L'*algoritmo di Shor* fattorizza velocemente grandi numeri, in particolare permette di fattorizzare con un grado di errore arbitrariamente piccolo e un numero polinomiale di passi rispetto alla lunghezza in bit dell'input.
 - L'*algoritmo di Deutsch-Jozsa* verifica se una funzione è costante o bilanciata in tempo costante $O(1)$.
 - L'*algoritmo di Simon*, ispirazione per il sopraccitato algoritmo di Shor, risolve in tempo esponenzialmente più veloce rispetto all'approccio classico il problema di determinare se una data funzione $f$ /blackbox/ sia *uno-a-uno* o *due-a-uno*.
+
+#+caption: Relazioni tra le classi di complessità, BQP indica tempo polinomiale quantistico con errore limitato
+[[../media/img/where-quantum-fits.png]]
 
 In aggiunta ai problemi di cui sopra, la cui soluzione è legata a un algoritmo in particolare, sono state trovate applicazioni per i computer quantistici in diversi altri ambiti:
 - La stima di una somma di Gauss, un tipo di somma esponenziale, con precisione polinomiale e in tempo polinomiale contro il tempo esponenziale degli algoritmi classici.
@@ -96,7 +109,7 @@ Altri /Software Development Kit/ che possono essere utilizzati per eseguire circ
 - t|ket>
 - Strawberry Fields
 - PennyLane
-Molti di questi progetti sono open-source e sviluppati sulla base di ~Python~.
+Molti di questi progetti sono open source e sviluppati sulla base di ~Python~.
 
 Per questo lavoro abbiamo utilizzato gli strumenti offerti da Microsoft  per l'ottima documentazione consultabile sulle loro pagine web e in quanto questo strumento era utilizzato dalla nostra fonte principale /Learn Quantum Computing with Python and Q#/.[fn:learn-quantum]
 Nella documentazione ufficiale di Microsoft Azure è presente una guida[fn:guida] all'installazione dell'ambiente di programmazione ~Q#~ di cui qui riportiamo dei passaggi.
@@ -105,14 +118,14 @@ Il lavoro per questa tesi è stato fatto in un ambiente Linux, il processo di in
 
 
 L'ambiente di esecuzione ~Q#~ può essere configurato sul editor =Visual Studio Code= tramite l'add-on proprietario =Microsoft Quantum Development Kit=[fn:azure].
-Quest'ultimo è disponibile solo sulla versione non =FOSS= del software, che è possibile installare tramite le repository opensource linux.
+Quest'ultimo è disponibile solo sulla versione non =FOSS= del software, che è possibile installare tramite le repository open source linux.
 
 In alternativa o anche parallelamente è possibile sviluppare codice ~Q#~ ed eseguirlo tramite =Jupyter Notebook= tramite ~Python~.
 Questo con i kernel necessari installati, avendo quindi l'ultima versione di ~dotnet~ disponibile.
 Attualmente la versione =LTS= è la =.NET Core 6.0= ed è quella che useremo.
 Si può trovare direttamente sul sito della microsoft[fn:dotnet] o più semplicemente tramite il /package manager/ del proprio sistema operativo.
 
-Altro step necessario per l'esecuzione dei =Jupyter Notebook= è l'installazione delle ~runtime aspnet~ [fn:runtime].
+Altro passo necessario per l'esecuzione dei =Jupyter Notebook= è l'installazione delle ~runtime aspnet~ [fn:runtime].
 
 Una volta installata l'ultima versione di ~dotnet~ è possibile eseguire:
 
@@ -176,7 +189,7 @@ if __name__ == "__main__":
     prepare_qubit.simulate()
 #+end_src
 
-Un esempio più complesso può essere quello  definito in ~qsharp-inteop.py~ dove definiamo direttamente /inline/ il contenuto del codice =Q#=  che il ~package qsharp~ compila e simula.
+Un esempio più complesso può essere quello  definito in ~qsharp-interop.py~ dove definiamo direttamente /inline/ il contenuto del codice =Q#=  che il ~package qsharp~ compila e simula.
 
 Con il necessario installato è possibile leggere ed eseguire il codice di esempio pubblicato dagli autori di /Learn Quantum Computing with Python and Q#/ sulla loro repository github[fn:repository].
 
@@ -187,12 +200,12 @@ $\pagebreak$
 [fn:runtime] https://dotnet.microsoft.com/en-us/download/dotnet/6.0
 [fn:anaconda] Si trovano informazioni a riguardo di questa distribuzione software all'indirizzo https:www.anaconda.com
 [fn:guida] documentazione azure: https://learn.microsoft.com/en-us/azure/quantum/install-overview-qdk
-[fn:learn-quantum] il libro si può trovare a https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp
+[fn:learn-quantum] https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp
 [fn:azure] https://azure.microsoft.com/en-us/resources/development-kit/quantum-computing/
 * Q#
 Nei prossimi capitoli utilizzeremo ~Q#~ per implementare alcuni algoritmi quantistici. Per questo ci sarà utile introdurre delle basi in questo linguaggio per facilitare la lettura dei listati che saranno presentati successivamente.
 
-~Q#~ è il linguaggio di programmazione di algoritmi quantistici open-source[fn:repo] sviluppato da Microsoft, fa parte del Quantum Development Kit di quest'ultima.
+~Q#~ è il linguaggio di programmazione di algoritmi quantistici open source[fn:repo] sviluppato da Microsoft, fa parte del Quantum Development Kit di quest'ultima.
 Come linguaggio eredita caratteristiche classiche di linguaggi imperativi ad oggetti come Python, C# supportando loop, blocchi if/then e strutture dati di base.
 Altre queste introduce in aggiunta costrutti specifici per le applicazioni nell'ambito della programmazione di algoritmi quantistici come ad esempio il /repeat until success/[fn:repeat] e la /phase estimation/[fn:phase].
 Il linguaggio è ad alto livello e agnostico riguardo l'hardware su cui verrà eseguito.
@@ -217,14 +230,14 @@ namespace HelloQuantum {
  #+end_src
 Questo stampa la stringa "Hello quantum world!", =EntryPoint= indica al compilatore dove inizia l'esecuzione del programma.
 Tra i tipi offerti dal linguaggio ci sono quelli classici: =Int=, =Double=, =Bool=, =String=.
-Inoltre esistono dei tipi specifici al quantum computing: =Result= rappresenta il risultato di una misurazione di qubit e può evere solamente uno di due valori - =One= o =Zero=. Il linguaggio permette di specificare nuovi tipi per un proprio programma ma non offre feature di linguaggi come C# o Java come interfacce o classi.
+Inoltre esistono dei tipi specifici al quantum computing: =Result= rappresenta il risultato di una misurazione di qubit e può avere solamente uno di due valori - =One= o =Zero=. Il linguaggio permette di specificare nuovi tipi per un proprio programma ma non offre feature di linguaggi come C# o Java come interfacce o classi.
 
 I qubit vengono allocati tramite la keyword =use=. Se ne possono allocare uno o diversi alla volta.
 #+begin_src c
 use q = Qubit();
  #+end_src
 
-I principali attori di un programma che manipola qubit sono le cosidette =Operations=, queste sono routine chiamabili di un programma che contengono operazioni quantistiche che manipolano lo stato del registro di qubit.
+I principali attori di un programma che manipola qubit sono le cosiddette =Operations=, queste sono routine chiamabili di un programma che contengono operazioni quantistiche che manipolano lo stato del registro di qubit.
 #+begin_src c
 operation SayHelloQ() : Unit {
     Message("Hello quantum world!");
@@ -232,7 +245,7 @@ operation SayHelloQ() : Unit {
  #+end_src
 
 \pagebreak
-Una parte fondamentale di un qualsiasi algoritmo quantistico è la misurazione dei qubit e la loro manipolazione.
+Una parte fondamentale di un qualsiasi algoritmo quantistico è la *misurazione* dei qubit e la loro manipolazione.
 Per questo vengono utilizzate le misure di Pauli per misurazioni di singoli qubit secondo una data base.
 #+begin_src c
 operation MeasureOneQubit() : Result {
@@ -249,7 +262,7 @@ operation MeasureOneQubit() : Result {
     return result;
 }
  #+end_src
-Nel listato vediamo un esempio di misurazione in base Z di un qubit.
+Nel listato vediamo un esempio di misurazione in base Z di un qubit. Questa base di misurazione è spesso chiamata anche /base computazionale/.
 Il qubit viene allocato, gli viene applicata la trasformata di Hadamard tramite la procedura =H= e poi viene misurato utilizzando =M=.
 =M= effettua una misura di un singolo qubit in base Z di Pauli. Questa è del tutto equivalente a ~Measure([PauliZ], [qubit])~.
 
@@ -258,6 +271,7 @@ L'operazione di misura è spesso seguita dal reset, quindi spesso è comodo l'ut
 operation MResetX (target : Qubit) : Result
  #+end_src
 
+La misurazione di qubit ci fornisce dati in forma classica che potranno essere utilizzati nell'ambiente del chiamante dell'operazione normalmente secondo la logica classica.
 
 \pagebreak
 [fn:mresetx] https://learn.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.measurement.mresetx
@@ -295,7 +309,7 @@ Fortunatamente esiste una tecnica generale per rendere una funzione classica irr
 \[h(x,y) = (x,y \oplus f(x))\]
 Questa nuova funzione $h$ aggiunge al input originario di $f$ $x$ un nuovo input $y$ che non è altro che il valore di output che andrà a modificare tramite l'operazione $\oplus$[fn:oplus].
 
-Questa stessa tecnica è trasponibile per definire un oracolo $U_{f}$:
+Questa stessa tecnica è utilizzabile per definire un oracolo $U_{f}$:
 \[U_{f} |x \rangle | y \rangle = | x \rangle | y \oplus f(x) \rangle\]
 
 In questo modo manteniamo traccia dell'input $x$ che altrimenti andrebbe perso dopo l'applicazione di $f$.
@@ -304,37 +318,44 @@ Gli oracoli che utilizziamo per testare gli algoritmi definiti nelle prossime se
 
 #+caption: oracles.qs
 #+Begin_src c
-operation ApplyZeroOracle(control : Qubit, target : Qubit) : Unit {
+operation ApplyZeroOracle(
+    control : Qubit, target : Qubit) : Unit {
   }
 
-  operation ApplyOneOracle(control : Qubit, target : Qubit) : Unit {
+  operation ApplyOneOracle(
+      control : Qubit, target : Qubit) : Unit {
     X(target);
   }
 
-  operation ApplyZeroOracleN(control : Qubit[], target : Qubit) : Unit {
+  operation ApplyZeroOracleN(
+      control : Qubit[], target : Qubit) : Unit {
   }
 
-  operation ApplyOneOracleN(control : Qubit[], target : Qubit) : Unit {
+  operation ApplyOneOracleN(
+      control : Qubit[], target : Qubit) : Unit {
     X(target);
   }
 
-  operation ApplyIdOracle(control : Qubit, target : Qubit) : Unit {
+  operation ApplyIdOracle(
+      control : Qubit, target : Qubit) : Unit {
     CNOT(control,target);
   }
 
-  operation ApplyXOROracleN(control : Qubit[], target : Qubit) : Unit {
+  operation ApplyXOROracleN(
+      control : Qubit[], target : Qubit) : Unit {
     for qubit in control {
         CNOT(qubit,target);
     }
   }
 
-  operation ApplyNotOracle(control : Qubit, target : Qubit) : Unit {
+  operation ApplyNotOracle(
+      control : Qubit, target : Qubit) : Unit {
     X(control);
     CNOT(control,target);
     X(control);
   }
 #+end_src
-Qui sopra sono definite le versioni a singolo qbit e a n-qbit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate, definiamo cosa siano funzioni di questo tipo nel prossimo capitolo.
+Qui sopra sono definite le versioni a singolo qubit e a n-qubit degli oracoli quantistici di alcune funzioni booleane costanti e bilanciate, definiamo cosa siano funzioni di questo tipo nel prossimo capitolo.
 Tutte queste funzioni hanno tipo
 \[f: Bool^n \to Bool\]
 
@@ -442,7 +463,7 @@ Nei listati successivi riportiamo l'implementazione ~Q#~ della versione a singol
 \pagebreak
 Un punto fondamentale dell'algoritmo è l'utilizzo della porta ~Hadamard~, chiamata anche trasformata di ~Hadamard~.
 Questa è una generalizzazione delle trasformate di Fourier definita dalla matrice $H_{m} = 2^{m} \times 2^{m}$.
-Questa è definibile ricorsivamente a partire dall'identità $H_{0} = 1$ e, per $m > 0$:
+Questa è definibile ricorsivamente a partire dall'identità $H_{0} = 1$, per $m > 0$:
 \begin{align*}
 H_{m} = \frac{1}{\sqrt{2}}
 \begin{pmatrix}
@@ -470,7 +491,7 @@ H_2 &=  \frac{1}{2}
 
 Il trasformato di ~Hadamard~ $H_{1}$ è la porta logica quantistica conosciuta come porta ~Hadamard~, l'applicazione di questa porta a ciascun qubit di un registro a n-qubit parallelamente è equivalente alla trasformata $H_{n}$.
 
-Applicando un circuito di ~Hadamard~ a un qubit nello stato $| 0 \rangle$ si crei uno stato sovrapposto tra gli stati $| 0 \rangle$ e $| 1 \rangle$ denominato $| + \rangle$.
+Applicando un circuito di ~Hadamard~ a un qubit nello stato $| 0 \rangle$ si crea uno stato sovrapposto tra gli stati $| 0 \rangle$ e $| 1 \rangle$ denominato $| + \rangle$.
 A livello matematico sono definite:
 \[ | + \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle + | 1 \rangle)\]
 \[ | - \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle - | 1 \rangle)\]
@@ -512,11 +533,13 @@ A questo punto viene misurato il ~qubit~:
 - $f(0) \oplus f(1) = 0$ se e solo se misuriamo $|0\rangle$
 - $f(0) \oplus f(1) = 1$ se e solo se misuriamo $|1\rangle$
 
-Concludiamo che sappiamo con certezza se $f(x)$ è costante o bilanciata in un singolo uso della *black box* $U_g$.
+Concludiamo che sappiamo con certezza se $f(x)$ è costante o bilanciata in un singolo uso della *blackbox* $U_g$.
 
+Nel listato seguente vediamo l'implementazione in ~Q#~ dell'algoritmo in questo caso. Al qubit viene applicato =H= e poi viene utilizzata la funzione oracolo, di queste vi rimandiamo alle definizioni nel capitolo 4. L'algoritmo ritorna ~True~ nel caso la funzione sia bilanciata, ~False~  altrimenti.
 #+caption: single-qubit Deutsch-Jozsa
 #+begin_src c
-operation DeutschJozsaSingleBit(oracle : (( Qubit, Qubit ) => Unit)) : Bool {
+operation DeutschJozsaSingleBit(
+    oracle : (( Qubit, Qubit ) => Unit)) : Bool {
     use control = Qubit();
     use target = Qubit();
 
@@ -560,10 +583,12 @@ Data questo risultato la probabilità di misurare $|00\rangle$ è
 Che risulta $1$ se $f(x)$ è costante e $0$ se altrimenti $f(x)$ è bilanciata.
 
 In altre parole, la misura finale sarà $|00\rangle$ se $f(x)$ è costante e un qualche altro stato nel caso in cui $f(x)$ sia bilanciata.
+Nel listato successivo riportiamo l'algoritmo per questo caso. Valgono le stesse considerazioni che per il caso a un singolo qubit.
 \pagebreak
 #+caption: n-qubit Deutsch-Jozsa
 #+begin_src c
-operation DeutschJozsa(size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
+operation DeutschJozsa(
+    size : Int, oracle : ((Qubit[], Qubit ) => Unit) ) : Bool {
     use control = Qubit[size];
     use target = Qubit();
 
@@ -642,10 +667,23 @@ La trasmissione di questa misura limita la velocità del teletrasporto che non �
 
 La misurazione da parte di =Alice= porta alla perdita dello stato iniziale rispettando quindi il *teorema di no-cloning* citato precedentemente.
 
-Molti esperimenti sono stati effettuati nell'ambito del teletrasporto quantistico, l'attuale record di distanza per un esperimento di questo tipo è stato registrato in un esperimento all'aperto che ha avuto luogo nelle isole Canarie e teletrasportò particelle tra due osservatori astronomici dell'/Instituto de Astrofísica de Canarias/ ad una distanza di 143Km.
+Molti esperimenti sono stati effettuati nell'ambito del teletrasporto quantistico, l'attuale record di distanza per un esperimento di questo tipo è stato registrato in un esperimento all'aperto che ha avuto luogo nelle isole Canarie e teletrasportò particelle tra due osservatori astronomici dell'/Instituto de Astrofísica de Canarias/ ad una distanza di 143Km.[fn:teleport]
 
 #+caption: Il teletrasporto quantistico agisce in accordo alla relatività speciale con l'utilizzo di due canali di comunicazione, uno classico e una quantistico.
 [[../media/img/quantum_teleportation.png]]
+
+Nei listati 6 e 7 sono riportate le implementazioni dell'algoritmo di teletrasporto quantistico rispettivamente in Python e Q#.
+I parametri utilizzati nel caso del primo sono:
+- ~msg~, il qubit che vogliamo muovere
+- ~here~, il qubit temporaneo
+- ~there~, il qubit di destinazione
+Per il secondo sono:
+- ~msg~, il qubit che vogliamo muovere
+- ~target~, il qubit di destinazione
+
+Nel algoritmo in  ~Q#~ il qubit temporaneo è istanziato nella variabile ~register~.
+
+L'unica differenza nei due programmi è l'uso della funzione di libreria ~Q#~ ~MResetZ~ per la misura e il reset dei qubit in un'unica chiamata.
 
 #+caption: Programma di teletrasporto in python
 #+begin_src python
@@ -674,15 +712,15 @@ def teleport(msg: Qubit, here: Qubit, there: Qubit) -> None:
     here.reset()
 #+end_src
 
-#+caption: Programma di teletrasporto in Q#, tratto dai samples nella documentazione Microsoft
+#+caption: Programma di teletrasporto in Q#, tratto dai samples nella documentazione Microsoft: https://github.com/microsoft/quantum/tree/main/samples/getting-started/teleportation
 #+begin_src c
-// https://github.com/microsoft/quantum/tree/main/samples/getting-started/teleportation
 namespace Microsoft.Quantum.Samples.Teleportation {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Measurement;
 
-    operation Teleport (msg : Qubit, target : Qubit) : Unit {
+    operation Teleport (msg : Qubit, target : Qubit) :
+    Unit {
         use register = Qubit();
 
         H(register);
@@ -694,24 +732,46 @@ namespace Microsoft.Quantum.Samples.Teleportation {
         // misurando con MResetZ resettiamo nello
         // stesso passo i qubit misurati rendendoli
         // utilizzabili nuovamente se necessario
-        if (MResetZ(msg) == One) { Z(target); }
+        if (IsResultOne(MResetZ(msg))) { Z(target); }
         if (IsResultOne(MResetZ(register))) { X(target); }
     }
 }
 #+end_src
 
 $\pagebreak$
+[fn:teleport] Nature 489 (7415) - /Quantum teleportation over 143 kilometres using active feed-forward/
 * Conclusioni
 L'area di ricerca sui fenomeni quantistici e le sue possibilità a livello computazionale è in crescita e offre grandi possibilità e spunti in quanto relativamente giovane, nascendo negli anni 80 con il primo modello quantistico della macchina di Turing[fn:quantum-computer] creato dal fisico Paul Benioff.
 L'Unione Europea ha inserito lo sviluppo delle tecnologia di quantum computing tra gli obiettivi strategici del Decennio Digitale Europeo, in cui la Commissione Europea presenta una strategia per lo sviluppo e la digitalizzazione da raggiungere dagli stati membri nel entro il 2030.
 Inoltre sempre su questo tema gli stati membri hanno firmato la Dichiarazione Europea sull'Infrastruttura per la Comunicazione Quantistica - =EuroQCI= - per costruire una rete di comunicazione condivisa tra le macchine quantistiche sul territorio.
 Tutto questo per garantire competitività tecnologica sul piano mondiale, anche a livello di cybersicurezza nel cui ambito sono tanti gli sforzi di ricerca in campo quantistico.
 
+Importante il recente risultato dei fisici A. Aspect, J. Clauser e A. Zeilinger che con i loro esperimenti sulla sovrapposizione dei fotoni sviluppando la teoria di John Bell sull'esistenza di variabili nascoste con la proposta della disugualianza di Bell.[fn:bell]
+I tre hanno dimostrato sperimentalmente la bontà delle regole della fisica quantistica, violando la disugualianza di Bell. Questo indica come la meccanica quantistica non possa essere sostituita da una teoria che utilizza variabili nascoste, riscontro che è valso loro il nobel per la fisica.[fn:nobel]
+
 Dopo 50 anni in cui la velocità di calcolo dei calcolatori classici ha continuato a crescere raddoppiando circa ogni due anni - in accordo con la legge di Moore - i componenti dei computer stanno raggiungendo i limiti fisici del progresso tecnologico e ingegneristico in quella direzione, con componentistiche nelle dimensioni dell'atomo.
+Dalla ricerca nel campo il consenso volge verso il cominciare a pensare a un post-Moore. I limiti fisici, da quelli termici a quelli energetici, è probabile siano raggiunti nei prossimi 30-40 anni, le roadmap dell'industria per i prossimi decenni non si basano più sulla famosa legge ma piuttosto sull'innovazione nei device - sempre più mobili -  e nei loro sensori.[fn:limiti] [fn:nature]
 
 Per questo negli ultimi anni è cresciuta la necessità di sviluppare nuovi modelli computazionali che permettano di andare oltre il modello classico.
 
 È da questa necessità che negli ultimi anni l'interesse per le tecnologie quantistiche è cresciuto rapidamente e certamente continuerà a evolversi intanto che il computer classico potrebbe essere vicino a raggiungere i propri limiti fisici.
 
 $\pagebreak$
+[fn:nature] Nature 530 (7589) - /The chips are down for Moore's Law/ (https://www.nature.com/news/the-chips-are-down-for-moore-s-law-1.19338)
+[fn:limiti] S. Kumar - /Fundamental Limits to Moore's Law/, 2015 (https://arxiv.org/abs/1511.05956)
+[fn:nobel] https://www.nobelprize.org/prizes/physics/2022/press-release/
+[fn:bell] J. S. Bell - /On the Einstein Podolsky Rosen Paradox/, 1964 (https://www.informationphilosopher.com/solutions/scientists/bell/Bell_On_EPR.pdf)
 [fn:quantum-computer] Paul Benioff - /The computer as a physical system/ (https://link.springer.com/article/10.1007/BF01011339)
+
+* Bibliografia
+1. Sarah C. Kaiser, Christopher Granade - /Learn Quantum Computing with Python and Q#/, Manning 2021 (https://www.manning.com/books/learn-quantum-computing-with-python-and-q-sharp)
+2. J. S. Bell - /On the Einstein Podolsky Rosen Paradox/, 1964 (https://www.informationphilosopher.com/solutions/scientists/bell/Bell_On_EPR.pdf)
+3. S. Kumar - /Fundamental Limits to Moore's Law/, 2015 (https://arxiv.org/abs/1511.05956)
+4. Nature 530 (7589) - /The chips are down for Moore's Law/ (https://www.nature.com/news/the-chips-are-down-for-moore-s-law-1.19338)
+5. Paul Benioff - /The computer as a physical system/ (https://link.springer.com/article/10.1007/BF01011339)
+6. https://github.com/crazy4pi314/learn-qc-with-python-and-qsharp
+7. https://learn.microsoft.com/en-us/azure/quantum/install-overview-qdk
+8. https://github.com/microsoft/quantum/tree/main/samples/getting-started/teleportation
+9. https://azure.microsoft.com/en-us/resources/development-kit/quantum-computing/
+10. https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html
+11. https://www.nobelprize.org/prizes/physics/2022/press-release/
