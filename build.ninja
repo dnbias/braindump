@@ -19,8 +19,6 @@ build content/posts/20200528214634-note_taking.md: org2md roam/20200528214634-no
 
 build content/posts/20200528222132-org_capture.md: org2md roam/20200528222132-org_capture.org
 
-build content/posts/20200530045456-decoder.md: org2md roam/20200530045456-decoder.org
-
 build content/posts/20200530050045-alu.md: org2md roam/20200530050045-alu.org
 
 build content/posts/20200530050230-shifter.md: org2md roam/20200530050230-shifter.org
@@ -777,8 +775,6 @@ build content/posts/the_devil_s_dictionary.md: org2md roam/the_devil_s_dictionar
 
 build content/posts/the_egg.md: org2md roam/the_egg.org
 
-build content/posts/the_map_is_not_the_territory.md: org2md roam/the_map_is_not_the_territory.org
-
 build content/posts/the_necessity_of_marginalia_in_the_age_of_the_ebook.md: org2md roam/the_necessity_of_marginalia_in_the_age_of_the_ebook.org
 
 build content/posts/til.md: org2md roam/til.org
@@ -830,8 +826,6 @@ build content/posts/correctness.md: org2md roam/correctness.org
 build content/posts/q.md: org2md roam/q.org
 
 build content/posts/separation_logic.md: org2md roam/separation_logic.org
-
-build content/posts/verifast.md: org2md roam/verifast.org
 
 build content/posts/verifast_imperative_programs_as_proofs.md: org2md roam/verifast_imperative_programs_as_proofs.org
 
@@ -927,8 +921,6 @@ build content/posts/apprendimento_supervisionato.md: org2md roam/apprendimento_s
 
 build content/posts/quantum_q_algorithms.md: org2md roam/quantum_q_algorithms.org
 
-build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
-
 build content/posts/writing_academic_papers_w_emacs.md: org2md roam/writing_academic_papers_w_emacs.org
 
 build content/posts/academic_writing_workflow_w_emacs.md: org2md roam/academic_writing_workflow_w_emacs.org
@@ -936,8 +928,6 @@ build content/posts/academic_writing_workflow_w_emacs.md: org2md roam/academic_w
 build content/posts/where_to_put_tex_sty_files.md: org2md roam/where_to_put_tex_sty_files.org
 
 build content/posts/sicurezza_informatica.md: org2md roam/sicurezza_informatica.org
-
-build content/posts/sistemi_intelligenti.md: org2md roam/sistemi_intelligenti.org
 
 build content/posts/marvin_minsky.md: org2md roam/marvin_minsky.org
 
@@ -959,16 +949,90 @@ build content/posts/propositions_as_types.md: org2md roam/propositions_as_types.
 
 build content/posts/type_theory.md: org2md roam/type_theory.org
 
+build content/posts/20200530045456-decoder.md: org2md roam/20200530045456-decoder.org
+
+build content/posts/alfred_korzybski.md: org2md roam/alfred_korzybski.org
+
+build content/posts/d_h_lawrence.md: org2md roam/d_h_lawrence.org
+
+build content/posts/george_box.md: org2md roam/george_box.org
+
+build content/posts/indecision_paralysis.md: org2md roam/indecision_paralysis.org
+
+build content/posts/playing_the_zettelkasten_rpg.md: org2md roam/playing_the_zettelkasten_rpg.org
+
+build content/posts/the_map_is_not_the_territory.md: org2md roam/the_map_is_not_the_territory.org
+
 build content/posts/doom_icons_in_daemon.md: org2md roam/doom_icons_in_daemon.org
-
-build content/posts/shortcuts_in_ranger.md: org2md roam/shortcuts_in_ranger.org
-
-build content/posts/lily58.md: org2md roam/lily58.org
-
-build content/posts/yaemk.md: org2md roam/yaemk.org
-
-build content/posts/switches.md: org2md roam/switches.org
 
 build content/posts/keycaps_profiles.md: org2md roam/keycaps_profiles.org
 
+build content/posts/lily58.md: org2md roam/lily58.org
+
 build content/posts/magnetic_tent_legs.md: org2md roam/magnetic_tent_legs.org
+
+build content/posts/shortcuts_in_ranger.md: org2md roam/shortcuts_in_ranger.org
+
+build content/posts/sistemi_intelligenti.md: org2md roam/sistemi_intelligenti.org
+
+build content/posts/sviluppo_software.md: org2md roam/sviluppo_software.org
+
+build content/posts/switches.md: org2md roam/switches.org
+
+build content/posts/verifast.md: org2md roam/verifast.org
+
+build content/posts/yaemk.md: org2md roam/yaemk.org
+
+build content/posts/claude_shannon.md: org2md roam/claude_shannon.org
+
+build content/posts/g_c_chesterton.md: org2md roam/g_c_chesterton.org
+
+build content/posts/il_tascabile.md: org2md roam/il_tascabile.org
+
+build content/posts/layouts.md: org2md roam/layouts.org
+
+build content/posts/new_republic.md: org2md roam/new_republic.org
+
+build content/posts/qmk.md: org2md roam/qmk.org
+
+build content/posts/scienziati_che_sbagliano.md: org2md roam/scienziati_che_sbagliano.org
+
+build content/posts/some_notes_on_solving_hard_problems.md: org2md roam/some_notes_on_solving_hard_problems.org
+
+build content/posts/stroop_effect.md: org2md roam/stroop_effect.org
+
+build content/posts/taass.md: org2md roam/taass.org
+
+build content/posts/thinking_fast_and_slow.md: org2md roam/thinking_fast_and_slow.org
+
+build content/posts/what_the_f.md: org2md roam/what_the_f.org
+
+build content/posts/sharing_video_and_audio_between_machines.md: org2md roam/sharing_video_and_audio_between_machines.org
+
+build content/posts/from_python_to_numpy.md: org2md roam/from_python_to_numpy.org
+
+build content/posts/inline_org_roam_links_completion.md: org2md roam/inline_org_roam_links_completion.org
+
+build content/posts/jeffrey_p_buzen.md: org2md roam/jeffrey_p_buzen.org
+
+build content/posts/machine_learning.md: org2md roam/machine_learning.org
+
+build content/posts/markov_chain.md: org2md roam/markov_chain.org
+
+build content/posts/markovian_queueing_network_theory.md: org2md roam/markovian_queueing_network_theory.org
+
+build content/posts/nicholas_p_rougier.md: org2md roam/nicholas_p_rougier.org
+
+build content/posts/performance_analysis_simulations_and_models.md: org2md roam/performance_analysis_simulations_and_models.org
+
+build content/posts/peter_j_denning.md: org2md roam/peter_j_denning.org
+
+build content/posts/reti_neurali_deep_learning.md: org2md roam/reti_neurali_deep_learning.org
+
+build content/posts/sklearn.md: org2md roam/sklearn.org
+
+build content/posts/the_operational_analysis_of_queueing_network_models.md: org2md roam/the_operational_analysis_of_queueing_network_models.org
+
+build content/posts/the_rust_programming_language.md: org2md roam/the_rust_programming_language.org
+
+build content/posts/using_consult_ripgrep_with_org_roam_for_searching_notes.md: org2md roam/using_consult_ripgrep_with_org_roam_for_searching_notes.org

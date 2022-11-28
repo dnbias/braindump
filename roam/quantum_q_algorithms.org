@@ -457,7 +457,7 @@ I passi dell'algoritmo in particolare sono:
 2. applica ~Hadamard~ a entrambi i registri
 3. applica l'oracolo quantistico $U_{f}$ definito per $f$
 4. a questo punto il secondo registro può essere ignorato, riapplica ~Hadamard~ al primo registro
-5. misura il primo registro, questo risulta $1$ per $f(x)$ costante e $0$ altrimenti nel caso bilanciato
+5. misura il primo registro, questo risulta nello stato 0 per $f(x)$ costante e diversamente nel caso bilanciato
 
 Nei listati successivi riportiamo l'implementazione ~Q#~ della versione a singolo ~qubit~ e la generalizzazione nel caso di \(n\)-~qubit~.
 
@@ -780,3 +780,4 @@ $\pagebreak$
 10. https://azure.microsoft.com/en-us/resources/development-kit/quantum-computing/
 11. https://qiskit.org/textbook/ch-algorithms/deutsch-jozsa.html
 12. https://www.nobelprize.org/prizes/physics/2022/press-release/
+13. https://en.wikipedia.org/wiki/Oracle_machine
