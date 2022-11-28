@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}{Introduzione}}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}{Definizione di un Computer Quantistico}}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}{Limiti Hardware}}{5}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}{Utilizzi della tecnologia}}{7}{subsection.1.3}%
+\contentsline {section}{\numberline {2}{Ambiente}}{9}{section.2}%
+\contentsline {section}{\numberline {3}{Q\#}}{12}{section.3}%
+\contentsline {section}{\numberline {4}{Oracoli}}{15}{section.4}%
+\contentsline {section}{\numberline {5}{Algoritmo di Deutsch-Jozsa}}{19}{section.5}%
+\contentsline {subsection}{\numberline {5.1}{La Soluzione Classica}}{20}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}{La Soluzione Quantistica}}{21}{subsection.5.2}%
+\contentsline {section}{\numberline {6}{Teletrasporto Quantistico}}{28}{section.6}%
+\contentsline {section}{\numberline {7}{Conclusioni}}{34}{section.7}%
+\contentsline {section}{\numberline {8}{Bibliografia}}{36}{section.8}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
