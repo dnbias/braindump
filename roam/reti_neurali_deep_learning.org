@@ -241,16 +241,31 @@ w_{ji} &= w_{ji} + \Delta w_{ji} \\
     - tante quante i pesi, ogni variazione di peso ha un impatto sull'errore totale della rete
 
 ** Radial-Basis Function Neural Network
-Una funzione radiale restituisce un output dipendente dalla distanza di input e un vettore interno. Una tipologia di =RBF= sono le *Gaussiane*.
-- le architetture basate su =RBF= sono solitamento con un unico livello nascosto
+Una funzione radiale restituisce un output dipendente dalla distanza di input e un vettore interno. Una tipologia di =RBF= molto diffuse sono le *Gaussiane*.
+- se il problema lo consente le =RBF= possono delimitare piú facilmente aree con meno neuroni
+- le architetture basate su =RBF= sono solitamento con un unico livello nascosto, con $m_1$ funzioni radiali
+  - $m$ input
 - le funzioni di attivazione =RBF= sono utilizzate nel livello /hidden/
   - il livello di uscita é lineare
 \[\phi_{}_{1} \cdots \phi_{k}\]
-\[y = w_{1}\phi_{1} (||x - t_{1}||) + \dots + w_{k}\phi_{k}(||x - t_{k}||)\]
+\[y = w_{1}\phi_{1} (||x - t_{1}||) + \dots + w_{m_{1}}\phi_{m_{1}}(||x - t_{m_{1}}||)\]
 - il centro della funzione radiale é $t$
+  - un generico centro $t_k$ ha $m$ componenti[fn:differenza]
+  - le componenti dei centri fanno le veci dei pesi del neurone /hidden/ del /multilayer perceptron/
 - un altro iperparametro é lo /spread/ $\sigma$
+  - indica quanto la funzione sia aperta o chiusa
+  - /spread/ grande significa proiezioni (circonferenze) grandi
 - tutti i neuroni nascosti diventano sensibili a input vicini al loro centro
   - la sensibilitá dei neuroni puó essere aggiustato tramite lo /spread/ $\sigma$, grande significa meno sensibile
+
+I pesi dell'uscita $y$ individua il /decision boundary/ nel nuovo spazio $\phi$
+- questo in quanto il problema - precedentemento non linearmente separabile - viene trasposto in un nuovo spazio dalle $\phi$ in cui é linearmente separabile
+
+Si cerca una funzione $F: R^m \Rightarrow R$ che le condizioni di interpolazione $F(x_i) = d_i$
+Si cercano i pesi che definiscano $F(x)$
+- per questo si passa attraverso *pseudo-inversione* matriciale
+
+
 *** Interpolation
 $\{x_i \in R^{m} , i = 1 \cdots N\}$ set di punti
 $\{d_i \in R , i = 1 \cdots N\}$ set numeri reali
@@ -259,10 +274,14 @@ Condizione di interpolazione:
 \[F(x_i) = d_{i}\]
 Si deriva dalla definizione di $F(x)$ il risultato del calcolo sulla matrice $N$
 \[\Phi w = d\]
-- $Phi$ matrice delle $phi$
+- $\Phi$ matrice *quadrata* delle $\phi$
+  - come se prendessimo come centri radiali tutte gli esempi $x_{}_i$
+  - nell'uso concreto i centri saranno meno
 - $w$ vettore delle $w_i$
 - $d$ vettore delle $d_i$
 
 $\Phi$ é una matrice quadrato in quanto tutti gli $i$ input vengono utilizzati per ogni riga come centro della =RBF=
 
 * Unsupervised Learning
+
+[fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
