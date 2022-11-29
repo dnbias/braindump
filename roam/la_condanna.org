@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       48ff17b3-e0ad-4814-8069-f0487b2148d7
+:END:
+#+title: La condanna
+#+date: [2022-11-29 Tue 18:54]
+#+filetags: book
+[[id:f4cb7954-499d-4f7b-bde5-51dc5efd48dc][Dostoevskij]], /La condanna/, 1876, Passigli Editori
+
+* Summary
+Antologia di alcuni articoli nel /Diario di uno scrittore/.
