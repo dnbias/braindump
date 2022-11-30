@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       803f5b09-941a-4cf4-84ca-9e8c537ef453
+:END:
+#+title: Modellazione Concettuale per il Web Semantico
+#+date: [2022-11-30 Wed 16:20]
+#+filetags: university compsci master
+- Prof: Rossana Damiano
+- [[id:88805531-eaa4-44f1-b819-8b25a84d96ba][Linked Data: Evolving the Web into a Global Data Space]]
+- https://www.w3.org/2013/data/
