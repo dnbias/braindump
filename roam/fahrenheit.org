@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       36e61256-94f9-47f7-864d-bf93f7e2bbc8
+:END:
+#+title: Fahrenheit
+#+date: [2022-12-01 Thu 03:58]
+#+filetags: videogame
+- [[id:c24c74d6-86d2-4df3-801d-a44c53870bb3][David Cage]]
+
+Interesting game, /great/ start, gets absolutely bonkers in the second half. (+ lowpoly sex)
