@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       6a80e38f-f447-4a10-8162-7a6ca9b98df0
+:END:
+#+title: John Hopfield
+#+date: [2022-12-01 Thu 17:49]
+#+filetags: author
+1933-

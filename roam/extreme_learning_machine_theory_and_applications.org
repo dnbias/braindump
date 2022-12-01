@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       ccdb3de2-8856-46f8-875d-1bbd5a8ab52b
+:END:
+#+title: Extreme learning machine: Theory and applications
+#+date: [2022-12-01 Thu 17:27]
+#+filetags: book
+G.B. Huang, Q.Y. Zhu, C.K. Siew, /Extreme learning machine: Theory and applications/, 2005, Nanyang Technological University
+
+* Summary

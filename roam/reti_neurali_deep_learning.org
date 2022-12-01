@@ -6,6 +6,7 @@
 #+filetags: university
 #+date: [2022-09-22 Thu 19:16]
 - Prof.essa Valentina Gliozzi, Prof.essa Rossella Cancelliere
+- https://transno.com/doc/3y-nWb7O0Jl
 
 * Principi
 - le reti neurali sono strutture che simulano il comportamento del cervello umano
@@ -190,6 +191,28 @@ Ci sono 2 fasi, a grosso modo
 \[\text{TE} = \frac{1}{L} \sum_{l=1}^{L} u(x_{l})\]
 
 
+* Hopfield Networks
+- see: https://transno.com/doc/3y-nWb7O0Jl#o-TxSokX9WzM
+I [[id:ce52162b-a751-4740-bf43-f2b4a74d585b][Hopfield Networks]] sono una forma di rete neurale ricorrente, popolarizzata da [[id:6a80e38f-f447-4a10-8162-7a6ca9b98df0][John Hopfield]] nel 1982.
+- ogni neurone e' collegato a ogni altro tranne se stesso
+- la attivazione dei neuroni e' calcolata in maniera *asincrona*
+  - scelta una unita' la sua attivita' viene calcolata dalle equazioni
+
+\[v_j = \sum_{i=0}^{N} w_{ji}y_{i}(n)\]
+\begin{align*}
+\phi(v_{j})(n)=
+\begin{cases}
+1 \qquad &\text{if } v_j (n) >0\\
+-1 \qquad &\text{if } v_j (n) <0\\
+\phi(v_j)(n-1) \qquad &\text{if } v_j (n) <0
+\end{cases}
+\end{align*}
+
+In queste configurazioni si possono raggiungere degli *stati stabili*, dove:
+\[\forall i, y_{i} (n+1) = y_{i}(n)\]
+In generale la negazione di uno stato stabile rimane stabile.
+
+Si dimostra un *teorema di convergenza* per cui da un qualsiasi stato di partenza e' garantito si raggiunge in un numero di passi finiti a uno stato stabile.
 
 * Supervised Learning
 Dati di apprendimento sono etichettati.
@@ -281,7 +304,26 @@ Si deriva dalla definizione di $F(x)$ il risultato del calcolo sulla matrice $N$
 - $d$ vettore delle $d_i$
 
 $\Phi$ é una matrice quadrato in quanto tutti gli $i$ input vengono utilizzati per ogni riga come centro della =RBF=
+Definita la *pseudo-inversa* $$\Phi^{+}= (\Phi^{T}\Phi)^{-1}\Phi^{T}$$
+I pesi si trovano risolvendo il sistema lineare
+\[w^T = \Phi^+ d^T\]
 
+L'algoritmo schematicamente allora consiste in tre passi:
+1. scegli i centri casualmente
+2. calcola la /spread/ della funzione =RBF= con la tecnica di normalizzazione
+3. trova i pesi utilizzando il metodo di pseudo-inversione
+** Extreme Learning Machine
+[[id:ccdb3de2-8856-46f8-875d-1bbd5a8ab52b][Extreme learning machine: Theory and applications]]
+#+begin_quote
+$\text{Theorem 2.1} \quad$ Given a standard =SLFN= with $N$ hidden nodes and activation function $g: R\to R$ which is infinitely differentiable in any interval, for $N$ arbitrary distinct samples $(x_{i},t_{i})$, where $x_{i}\in R^{n}$ and $t_{i} \in R^{m}$, for any $w_{i}$ and $b_{i}$ randomly chosen from any intervals of $R^{n}$ and $R$, respectively, according to any continuous probability distribution, then with probability one, the hidden layer output matrix $H$ of the =SLFN= is invertible and $|| H\beta - T || = 0$.
+#+end_quote
+
+#+begin_quote
+$\text{Theorem 2.2} \quad$ Given any small positive value $\epsilon > 0$ and activation function $g: R\to R$ which is infinitely differentiable in any interval, there exists $\tilde{N} \le N$ such that for $N$ arbitrary distinct samples $(x_{i},t_{i})$, where $x_{i}\in R^{n}$ and $t_{i} \in R^{m}$, for any $w_{i}$ and $b_{i}$ randomly chosen from any intervals of $R^{n}$ and $R$, respectively, according to any continuous probability distribution, then with probability one, $|| H_{N \times \tilde{N}} \beta_{\tilde{N}\times m} - T_{N\times m} || < 0$.
+#+end_quote
+
+Piu' piccola e' la norma dei pesi migliori sono le performance della generalizzazione, tendenzialmente.
+- per questo l'algoritmo proposto tende a buone prestazioni per =FFNN=
 * Unsupervised Learning
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
