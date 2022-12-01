@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       29477e19-c8b0-46ca-ae93-22724310359c
+:END:
+#+title: Jacques Derrida
+#+date: [2022-12-01 Thu 16:08]
+#+filetags: author philosophy
+1930-2004
+- devoloped the process known as [[id:aa70cab1-02ee-47ac-92c3-51e133a50b19][Deconstruction]]
