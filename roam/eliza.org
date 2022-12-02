@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       0f7b631b-db40-4852-8130-8dcfa5601298
+:END:
+#+title: ELIZA
+#+date: [2022-12-02 Fri 19:18]
+#+filetags: compsci ai bot
+- https://yakbots.com/chatbot-history-the-eliza-chatbot/
+- Related: [[id:7e3533dc-e318-42af-ab05-71702fb3f6aa][ChatBot]]
+#+begin_quote
+Created by Joseph Weizenbaum at the MIT Computerized Reasoning Laboratory in 1964 – 1966, the ELIZA chatbot was not only the first chatbot, she is still one of the most popular chatbots to have ever been created. ELIZA used a number of different programs or “scripts” to help manage her interactions with users.
+#+end_quote

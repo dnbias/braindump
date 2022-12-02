@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       519eebec-b472-4af7-ad29-926e5414e8c4
+:END:
+#+title: Adnan Darwiche
+#+date: [2022-12-02 Fri 18:57]
+#+filetags: author
+-

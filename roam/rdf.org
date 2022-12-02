@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       1bf19812-6b15-4198-93b4-1f6fb37ea80e
+:END:
+#+title: RDF
+#+date: [2022-12-02 Fri 20:00]

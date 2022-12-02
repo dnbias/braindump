@@ -1,5 +1,6 @@
 :PROPERTIES:
 :ID:       803f5b09-941a-4cf4-84ca-9e8c537ef453
+:ROAM_ALIASES: ModSem
 :END:
 #+title: Modellazione Concettuale per il Web Semantico
 #+date: [2022-11-30 Wed 16:20]
@@ -7,3 +8,82 @@
 - Prof: Rossana Damiano
 - [[id:88805531-eaa4-44f1-b819-8b25a84d96ba][Linked Data: Evolving the Web into a Global Data Space]]
 - https://www.w3.org/2013/data/
+* SNePS
+- see [[id:9ee33b72-ce0a-4d90-83db-4984266ade9f][SNePS]]
+- $ crea variabili
+- * riferisce a variabili
+#+begin_example
+(assert forall $p
+    ant (build member *p class Pompeian)
+    cq (build member *p class Roman))
+#+end_example
+- antecedent
+- conseguent
+
+#+caption: Tutti i romani sono fedeli a Cesare oppure lo odiano
+#+begin_example
+(assert forall $r
+    ant (build member *r class Roman)
+    cq (build min 1 max 1
+        arg((build arg1 *r
+                rel loyal\ to
+                arg2 Caesar)
+            (build arg1 *r
+                rel hate
+                arg2 Caesar))))
+#+end_example
+- =OR= esclusivo implementato come =min 1 max 1= nodi valgono
+
+#+caption: Le persone assassinano solo i sovrani a cui non sono fedeli
+#+begin_example
+(assert forall ($ppl $rlr)
+    &ant ((build member *ppl class person)
+        (build member *rlr class ruler)
+        (build arg1 *ppl
+            rel try\ to\ assassinate
+            arg2 *rlr))
+    cq (build min 0 max 0
+        arg (build arg1 *ppl
+            rel loyal\ to
+            arg2 *rlr)))
+#+end_example
+- =NOT= implementato come =min 0 max 0=
+* RDF
+- see [[id:1bf19812-6b15-4198-93b4-1f6fb37ea80e][RDF]]
+  - descrivere risorse
+- RDFS
+  - descrivere relazioni tra risorse
+  - /property-centric/ language
+- [[id:c4bdeb51-c460-4f5d-9a33-2c7e43a2c3dd][OWL]]
+  - a livello superiore rispetto RDF
+  - descrivere relazioni ricche e complesse tra entita'
+  - /class-centric/ language
+- [[id:6456f3d1-2bc3-4e50-abf0-1379bef1278d][Semantic Web]]: W3C's vision of the Web of [[id:9b0d4896-4666-4d52-b28c-dd52a01beeea][Linked Data]]
+- le specifiche [[id:1bf19812-6b15-4198-93b4-1f6fb37ea80e][RDF]] si suddividono in una serie di documenti
+  - [[https://www.w3.org/TR/rdf-primer/][primer]]
+  - concepts/syntax
+  - XML
+  - semantics
+  - schema
+  - test cases
+** Data Model
+- Triple
+  - unita' base
+  - soggetto - predicato - oggetto
+    - soggetto: IRI o blank
+    - predicato: IRI
+    - oggetto: IRI blank o letterale
+- [[id:a17688f4-e188-471e-b680-6b7349f71444][IRI]]
+- Letterali
+- Blank nodes
+  - assume significato grazie alla sua posizione nel grafo
+  - denota risorse senza l'utilizzo di IRI
+    - una variabile, si rappresenta tramite le sue caratteristiche
+  - puo' essere associato a un identificativo (generato)
+- Grafi
+
+La descrizione di una certa entita' si basa sull'utilizzo di *vocabolari condivisi*.
+#+caption: esempio di uso di Friend of a Friend (foaf)
+#+begin_example
+<Bob><http://xmlns.com/foaf/0.1/topic_interest><The Mona Lisa>
+#+end_example

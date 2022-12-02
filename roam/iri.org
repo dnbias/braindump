@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       a17688f4-e188-471e-b680-6b7349f71444
+:END:
+#+title: IRI
+#+date: [2022-12-02 Fri 20:20]
+/International Resource Identifier/
+[[../media/img/IRI-URI-URL-URN.png]]
+=URL= -> =URI= -> =IRI=
+- Internationalized =URI= (/Uniform Resource Identifier/) in Unicode
+- the important thing is that what is represented in =IRIs= are deferentiable
+  - this way following the reference you can find the meaning (usually in [[id:1bf19812-6b15-4198-93b4-1f6fb37ea80e][RDF]])
+- to find the correct (best) =IRIs= to use there are resources like https://viaf.org/
