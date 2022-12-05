@@ -197,3 +197,81 @@ Principali namespace:
 - collaborazione di Google, Microsoft...
 - Thing, Action, CreativeWork...
 - Organization, Airline, Consortium, Corporation...
+
+* Inferenza
+Fatta a partire dalla semantica definita sui vocabolari.
+- definizioni di /domain/ e /range/ trasportano conoscenza sulle istanze
+- transitivitá di sotto-classe, di sub-property ad esempio
+* Ontologie Computazionali
+#+caption: Guarino,  1998
+#+begin_quote
+An engineering artifact, constituted by a specific vocabulary used to describe a certain reality, plus a set of explicit assumptions regarding the intended meaning of the vocabulary itself.
+#+end_quote
+
+- rappresentazione astratta di concetti e loro relazioni
+- *ontologie formali* rappresentate secondo formalismi noti, machine readable
+- *finalitá* di condividere concettualizzazioni comuni tra individui, organizzazioni, macchine
+
+Sono costituite da:
+- classi
+- proprietá
+- assiomi
+- individui
+
+I linguaggi delle ontologie formali descrivono
+- caratteristiche delle classi
+- caratteristiche delle relazioni tra le classi
+
+Le ortologie possono essere definite
+- =top-level=, concetti fondazionali comuni a tutti i domini
+- =mid-level=, usano il livello fondazionale per definire concetti general
+  - organizzazioni, comunicazione, stati fisici, sistemi di misura
+- =domain ontologies=, rappresentano concetti e relazioni proprie di un dominio specifico
+- =large-scale=
+  - CYC, YAGO, YAGO2, dbpedia
+
+#+caption: esempio di una top-level ontology
+[[../media/img/top-level-ontology.png]]
+
+La conoscenza di senso comune (/commonsense knowledge/) é importante per task che prevedano interazione con umani
+- =CYC=: enCYClopedic Knowledge
+  - base di conoscenza di 200k concetti circa
+  - divisa in microteorie o dominii, compartimentando la conoscenza
+
+Per l'accesso ai concetti è importante l'integrazione con il linguaggio naturale.
+** SuMo
+Progetto di =IEEE=: =Suggested Upper Merged Ontology=
+- scritta in =KIF= (Knowledge Interchange Format)
+- attualmente abbandonata
+- allineato con =WordNet= (ontologia lightweight) per permettere la ricerca tramite linguaggio naturale
+  - le ontologie lightweight di questo tipo sono solitamente semplici tassonomie, senza assiomi e con poche relazioni
+
+#+caption: esempio di assioma SUMO
+#+begin_example
+(=>
+    (instance ?EF EngineFan)
+    (hasPurpose ?EF
+        (exists (?C ?E ?A)
+            (and
+                (instance ?A Automobile)
+                (instance ?C Cooling)
+                (instance ?E InternalCombustionEngine)
+                (part ?E ?A)
+                (part ?EF ?A)
+                (instrument ?C ?EF)
+                (patient ?C ?E)))))
+#+end_example
+** Linked Open Data
+- dati pubblici
+- dataset nella rete integrate nella rede =LOD= Cloud
+- [[https://www.wikidata.org][Wikidata]]
+* Relazioni tra classi
+- sottoclasse
+- classi disgiunte
+** Logiche descrittive
+- orientate alla classificazione
+- basate sulla sussunzione
+- completezza e trattabilità computazionale
+- esempi
+  - LOOM, BACK, CLASSIC
+  - JENA, RACER, OWLIM
