@@ -151,8 +151,6 @@ build content/posts/20210606205926-toulmin_argument.md: org2md roam/202106062059
 
 build content/posts/20210606214324-cognitive_constipation.md: org2md roam/20210606214324-cognitive_constipation.org
 
-build content/posts/20210606214641-zettel.md: org2md roam/20210606214641-zettel.org
-
 build content/posts/20210606215735-noah_hutton.md: org2md roam/20210606215735-noah_hutton.org
 
 build content/posts/20210606215832-neural_network.md: org2md roam/20210606215832-neural_network.org
@@ -426,8 +424,6 @@ build content/posts/20210604123502-albert_camus.md: org2md roam/20210604123502-a
 build content/posts/20210604123601-la_nausea.md: org2md roam/20210604123601-la_nausea.org
 
 build content/posts/20210604132417-richard_feynman.md: org2md roam/20210604132417-richard_feynman.org
-
-build content/posts/20210604132601-cit.md: org2md roam/20210604132601-cit.org
 
 build content/posts/20210604133703-why_browse_the_web_on_emacs.md: org2md roam/20210604133703-why_browse_the_web_on_emacs.org
 
@@ -989,8 +985,6 @@ build content/posts/yaemk.md: org2md roam/yaemk.org
 
 build content/posts/taass.md: org2md roam/taass.org
 
-build content/posts/reti_neurali_deep_learning.md: org2md roam/reti_neurali_deep_learning.org
-
 build content/posts/scienziati_che_sbagliano.md: org2md roam/scienziati_che_sbagliano.org
 
 build content/posts/il_tascabile.md: org2md roam/il_tascabile.org
@@ -1038,3 +1032,71 @@ build content/posts/sklearn.md: org2md roam/sklearn.org
 build content/posts/machine_learning.md: org2md roam/machine_learning.org
 
 build content/posts/quantum_q_algorithms.md: org2md roam/quantum_q_algorithms.org
+
+build content/posts/journaling_with_org_mode.md: org2md roam/journaling_with_org_mode.org
+
+build content/posts/fedor_dostoevskij.md: org2md roam/fedor_dostoevskij.org
+
+build content/posts/notdeft.md: org2md roam/notdeft.org
+
+build content/posts/linked_data_evolving_the_web_into_a_global_data_space.md: org2md roam/linked_data_evolving_the_web_into_a_global_data_space.org
+
+build content/posts/david_cage.md: org2md roam/david_cage.org
+
+build content/posts/fahrenheit.md: org2md roam/fahrenheit.org
+
+build content/posts/detroit_become_human.md: org2md roam/detroit_become_human.org
+
+build content/posts/20210604132601-cit.md: org2md roam/20210604132601-cit.org
+
+build content/posts/20210606214641-zettel.md: org2md roam/20210606214641-zettel.org
+
+build content/posts/adnan_darwiche.md: org2md roam/adnan_darwiche.org
+
+build content/posts/chatbot.md: org2md roam/chatbot.org
+
+build content/posts/deconstruction.md: org2md roam/deconstruction.org
+
+build content/posts/eliza.md: org2md roam/eliza.org
+
+build content/posts/extreme_learning_machine_theory_and_applications.md: org2md roam/extreme_learning_machine_theory_and_applications.org
+
+build content/posts/hopfield_networks.md: org2md roam/hopfield_networks.org
+
+build content/posts/human_level_intelligence_or_animal_like_abilities.md: org2md roam/human_level_intelligence_or_animal_like_abilities.org
+
+build content/posts/idea.md: org2md roam/idea.org
+
+build content/posts/iri.md: org2md roam/iri.org
+
+build content/posts/jacques_derrida.md: org2md roam/jacques_derrida.org
+
+build content/posts/jaques_lacan.md: org2md roam/jaques_lacan.org
+
+build content/posts/john_hopfield.md: org2md roam/john_hopfield.org
+
+build content/posts/la_condanna.md: org2md roam/la_condanna.org
+
+build content/posts/linked_data.md: org2md roam/linked_data.org
+
+build content/posts/logocentrism.md: org2md roam/logocentrism.org
+
+build content/posts/michel_foucault.md: org2md roam/michel_foucault.org
+
+build content/posts/modellazione_concettuale_per_il_web_semantico.md: org2md roam/modellazione_concettuale_per_il_web_semantico.org
+
+build content/posts/on_ai_education.md: org2md roam/on_ai_education.org
+
+build content/posts/owl.md: org2md roam/owl.org
+
+build content/posts/phallocentrism.md: org2md roam/phallocentrism.org
+
+build content/posts/rdf.md: org2md roam/rdf.org
+
+build content/posts/reti_neurali_deep_learning.md: org2md roam/reti_neurali_deep_learning.org
+
+build content/posts/sneps.md: org2md roam/sneps.org
+
+build content/posts/unconditional_hospitality.md: org2md roam/unconditional_hospitality.org
+
+build content/posts/wisecrack.md: org2md roam/wisecrack.org

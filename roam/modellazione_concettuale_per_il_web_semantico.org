@@ -81,9 +81,48 @@
     - una variabile, si rappresenta tramite le sue caratteristiche
   - puo' essere associato a un identificativo (generato)
 - Grafi
+  - =IRI= + triple
 
 La descrizione di una certa entita' si basa sull'utilizzo di *vocabolari condivisi*.
 #+caption: esempio di uso di Friend of a Friend (foaf)
 #+begin_example
 <Bob><http://xmlns.com/foaf/0.1/topic_interest><The Mona Lisa>
 #+end_example
+
+I vocabolari sono identificati da prefissi
+- i prefissi indicano =namespace=
+- =dc= per Dublin Core
+- =foaf= per friend of a friend
+* Turtle
+Il linguaggio =RDF= piú utilizzato, leggibile facilmente da umani.
+#+begin_example
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+...
+
+<...#green-goblin>
+    rel:enemyOf <...#spiderman> ;
+    a foaf:Person ;
+    foaf:name "Green Goblin" .
+
+<...#spiderman>
+    rel:enemyOf <...#green-goblin> ;
+    a foaf:Person ; # spiderman is a Person as defined in foaf.
+    foaf:name "Spiderman" .
+#+end_example
+in =Turtle=
+- la relazione =isa= é abbreviata in =a=.
+- gli =ISA= sono tra parentesi angolari se per esteso, altrimenti sono utilizzati con il prefisso definito
+  - il /fragment identifier/ segue il #
+
+La feature principale di =Turtle= é la abbreviazione delle triple:
+#+begin_example
+:spiderman :enemyOf :green-goblin ;
+           :name    "Spiderman" ,
+                    "Uomo Ragno" .
+#+end_example
+ - =@base=  é utilizzato per definire un prefisso vuoto per alleggerire la scrittura
+
+I *blank node* sono definiti all'interno di parentesi quadre.
+
+I letterali sono seguiti dal loro tipo di dato
+- a seguire del delimitatore ^^ l'=IRI= definito per il tipo (o una appreviazione)
