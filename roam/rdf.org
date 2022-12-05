@@ -3,3 +3,4 @@
 :END:
 #+title: RDF
 #+date: [2022-12-02 Fri 20:00]
+- [[https://www.w3.org/RDF/Validator/]]

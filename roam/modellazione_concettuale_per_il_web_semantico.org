@@ -110,7 +110,7 @@ Il linguaggio =RDF= piú utilizzato, leggibile facilmente da umani.
     foaf:name "Spiderman" .
 #+end_example
 in =Turtle=
-- la relazione =isa= é abbreviata in =a=.
+- la relazione =isa= (=rdf:type=) é abbreviata in =a=.
 - gli =ISA= sono tra parentesi angolari se per esteso, altrimenti sono utilizzati con il prefisso definito
   - il /fragment identifier/ segue il #
 
@@ -126,3 +126,73 @@ I *blank node* sono definiti all'interno di parentesi quadre.
 
 I letterali sono seguiti dal loro tipo di dato
 - a seguire del delimitatore ^^ l'=IRI= definito per il tipo (o una appreviazione)
+
+* RDFS
+Linguaggio /property-centric/
+- definire classi, proprietá
+- definire gerarchie
+
+Si definiscono (principalmente)
+- class
+- property
+- type
+- subclass
+- subproperty
+- domain
+- range (codominio)
+
+#+begin_example
+animals:Film rdf:type rdfs:Class .
+
+animals:Animale rdf:type rdfs:Class .
+
+animals:Quadrupede rdf:type rdfs:Class ;
+                   rdfs:subClass animals:Animale .
+#+end_example
+* Vocabolari
+[[https://lov.linkeddata.es]]
+** Dublin Core
+[[https://www.dublincore.org]]
+/Schema di Metadati/
+- cataloghi di schede
+- /data about data/ - *descriptive metadata*
+- 15 elementi generici molto utilizzati, per facilitare la scopribilitá delle risorse
+  - Creator
+  - Contributor
+  - Publisher
+  - Title
+  - Date
+  - Language
+  - Format
+  - Subject
+  - Description
+  - Identifier
+  - Relation
+  - Source
+  - Type
+  - Coverage
+  - Rights
+- descrive risorse /anything that has identity/
+  - tipi di risorsa
+    - collection, dataset, event, image, interactive resource, service, software, sound, text, physical object
+
+Principali namespace:
+- =DCMES=
+  - [[http://dublincore.org/documents/dces/]]
+- =DCTerms=
+  - [[http://purl.org/dc/elements/1.1/]]
+
+[[https://www.europeana.eu][Europeana]] é una risorsa
+** Friend of a Friend
+=foaf=
+- core
+  - Agent, Person, name, title, knows...
+- social web
+  - nick, homepage, interest, account...
+** Schema
+[[https://schema.org]]
+- collaborative
+- schemas for structured data on the Internet
+- collaborazione di Google, Microsoft...
+- Thing, Action, CreativeWork...
+- Organization, Airline, Consortium, Corporation...
