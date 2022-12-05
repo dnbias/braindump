@@ -8,7 +8,8 @@
 - Prof: Rossana Damiano
 - [[id:88805531-eaa4-44f1-b819-8b25a84d96ba][Linked Data: Evolving the Web into a Global Data Space]]
 - https://www.w3.org/2013/data/
-* SNePS
+* Linguaggi
+** SNePS
 - see [[id:9ee33b72-ce0a-4d90-83db-4984266ade9f][SNePS]]
 - $ crea variabili
 - * riferisce a variabili
@@ -48,7 +49,7 @@
             arg2 *rlr)))
 #+end_example
 - =NOT= implementato come =min 0 max 0=
-* RDF
+** RDF
 - see [[id:1bf19812-6b15-4198-93b4-1f6fb37ea80e][RDF]]
   - descrivere risorse
 - RDFS
@@ -93,7 +94,7 @@ I vocabolari sono identificati da prefissi
 - i prefissi indicano =namespace=
 - =dc= per Dublin Core
 - =foaf= per friend of a friend
-* Turtle
+** Turtle
 Il linguaggio =RDF= piú utilizzato, leggibile facilmente da umani.
 #+begin_example
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
@@ -127,7 +128,7 @@ I *blank node* sono definiti all'interno di parentesi quadre.
 I letterali sono seguiti dal loro tipo di dato
 - a seguire del delimitatore ^^ l'=IRI= definito per il tipo (o una appreviazione)
 
-* RDFS
+** RDFS
 Linguaggio /property-centric/
 - definire classi, proprietá
 - definire gerarchie
