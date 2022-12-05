@@ -3,7 +3,7 @@
 :ROAM_ALIASES: RNDL
 :END:
 #+title: Reti Neurali & Deep Learning
-#+filetags: university
+#+filetags: university master ai
 #+date: [2022-09-22 Thu 19:16]
 - Prof.essa Valentina Gliozzi, Prof.essa Rossella Cancelliere
 - https://transno.com/doc/3y-nWb7O0Jl
