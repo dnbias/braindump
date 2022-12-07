@@ -1,0 +1,15 @@
+:PROPERTIES:
+:ID:       8f7bca5b-c092-4c06-9c5b-8ea6e749d235
+:END:
+#+title: The Usefulness of Useless Knowledge
+#+date: [2022-12-07 Wed 02:41]
+#+filetags: article
+- Source: https://www.ias.edu/ideas/2017/dijkgraaf-usefulness
+- Author: IAS
+- Related: Rationality, Knowledge
+
+* Notes
+#+caption: Robert Wilson testimony regarding FermiLab
+#+begin_quote
+This new knowledge has all to do with honor and country, but it has nothing to do directly with defending our country, except to help make it worth defending.
+#+end_quote
