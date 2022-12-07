@@ -3,3 +3,6 @@
 :ROAM_REFS: https://slatestarcodex.com
 :END:
 #+title: Slate Star Codex
+#+filetags: blog
+- https://slatestarcodex.com/
+- now [[id:196ed55d-c372-4b3f-9a7a-f7ed3bd1020e][Astral Codex Ten]]

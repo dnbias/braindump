@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       d3296f65-eac3-48f2-8ee6-087c5176fcd7
+:END:
+#+title: Homo unius libri
+#+date: [2022-12-07 Wed 01:55]
+- https://en.wikipedia.org/wiki/Homo_unius_libri
+
+Fear the man of the single book. (Attributed to Thomas Aquinas)
