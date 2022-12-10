@@ -190,7 +190,6 @@ Ci sono 2 fasi, a grosso modo
 *topographic Error*
 \[\text{TE} = \frac{1}{L} \sum_{l=1}^{L} u(x_{l})\]
 
-
 * Hopfield Networks
 - see: https://transno.com/doc/3y-nWb7O0Jl#o-TxSokX9WzM
 I [[id:ce52162b-a751-4740-bf43-f2b4a74d585b][Hopfield Networks]] sono una forma di rete neurale ricorrente, popolarizzata da [[id:6a80e38f-f447-4a10-8162-7a6ca9b98df0][John Hopfield]] nel 1982.
@@ -313,6 +312,8 @@ L'algoritmo schematicamente allora consiste in tre passi:
 2. calcola la /spread/ della funzione =RBF= con la tecnica di normalizzazione
 3. trova i pesi utilizzando il metodo di pseudo-inversione
 ** Extreme Learning Machine
+=ELM=
+
 [[id:ccdb3de2-8856-46f8-875d-1bbd5a8ab52b][Extreme learning machine: Theory and applications]]
 #+begin_quote
 $\text{Theorem 2.1} \quad$ Given a standard =SLFN= with $N$ hidden nodes and activation function $g: R\to R$ which is infinitely differentiable in any interval, for $N$ arbitrary distinct samples $(x_{i},t_{i})$, where $x_{i}\in R^{n}$ and $t_{i} \in R^{m}$, for any $w_{i}$ and $b_{i}$ randomly chosen from any intervals of $R^{n}$ and $R$, respectively, according to any continuous probability distribution, then with probability one, the hidden layer output matrix $H$ of the =SLFN= is invertible and $|| H\beta - T || = 0$.
@@ -325,5 +326,57 @@ $\text{Theorem 2.2} \quad$ Given any small positive value $\epsilon > 0$ and act
 Piu' piccola e' la norma dei pesi migliori sono le performance della generalizzazione, tendenzialmente.
 - per questo l'algoritmo proposto tende a buone prestazioni per =FFNN=
 * Unsupervised Learning
+In questa categoria si collocano le *Reti Neurali Profonde*:
+- organizzano i propri livelli gerarchicamente
+  - selezione delle feature più importanti a scapito di quelle ignorabili
+  - *unsupervised feature learning*
+- le caratteristiche dei dati che permettano la risoluzione del problema sono trovate in maniera automatica
+  - non serve pre-precessing da parte di esperti sui dati
+  - *representation learning*
+
+La complessità di una rete è determinata da:
+- profondità
+- numero delle connessioni tra i neuroni
+- numero di pesi diversi tra i neuroni
+** Reti Neurali Convoluzionali
+=CNN=
+
+Molto utilizzate per lavorare su immagini.
+- *processamento locale*
+  - i neuroni di un certo livollo sono connessi ad altri neuroni del livello precedente solo localmente
+  - riduzione del numero delle connessioni
+  - specializzazioni dei neuroni su una zona dell'input
+    - parti diverse della rete si occupano di compiti diversi
+
+Il livello convolutivo lavora come un filtro, processando i valori del livello precedente.
+Il processo procede per /stride/ man mano applicando il filtro.
+- lo /stride/ individua di quanto si sposta la finestra passo dopo passo
+- per evitare che la finestra fuoriesca dalla matrice si aggiunge del padding della grandezza giusta
+
+Solitamente si utilizzano rete neurali multi dimensionali:
+- ogni livello di neuroni viene chiamato *feature map*
+  - una particolare mappa apprende una particolare feature dell'input
+- sia input che output hanno multiple feature map
+- diverse feature map insieme compongono un *tensore*
+
+Un livello di neuroni si occupa di un task di compressione dell'informazione chiamato *pooling* (/downsampling/)
+- questo task genera delle feature map di dimensioni minori
+- l'aggregazione dell'informazione puó avvenire utilizzando *max-pooling* o *average-pooling*
+
+
+
+
+* RELU
+=REctified Linear Unit=
+\[f(u) = \max (0, u)\]
+- funzione non derivabile
+  - derivata 0 per valori negativi
+  - derivata 1 per valori positivi
+Questa funzione porta a una /attivazione sparsa/, dove non tutti i neuroni vengono attivati portando alcune componenti del gradiente a 0.
+- questo permette *pruning automatico*
+  - nelle reti si tende ad abbondare con il numero di neuroni o di livelli necessari al problema
+  - in questo modo la rete può annullare delle componenti a piacimento durante il training
+
+
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
