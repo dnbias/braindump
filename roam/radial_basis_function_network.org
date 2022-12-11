@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       b2bc8c65-d796-4070-8cc3-51dd514d7679
+:END:
+#+title: Radial Basis Function Network
+#+date: [2022-12-11 Sun 02:18]
+#+filetags: ai compsci

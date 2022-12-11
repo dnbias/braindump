@@ -263,12 +263,13 @@ w_{ji} &= w_{ji} + \Delta w_{ji} \\
     - tante quante i pesi, ogni variazione di peso ha un impatto sull'errore totale della rete
 
 ** Radial-Basis Function Neural Network
+=RBF= - [[id:b2bc8c65-d796-4070-8cc3-51dd514d7679][Radial Basis Function Network]]
 Una funzione radiale restituisce un output dipendente dalla distanza di input e un vettore interno. Una tipologia di =RBF= molto diffuse sono le *Gaussiane*.
-- se il problema lo consente le =RBF= possono delimitare piú facilmente aree con meno neuroni
-- le architetture basate su =RBF= sono solitamento con un unico livello nascosto, con $m_1$ funzioni radiali
+- se il problema lo consente le =RBF= possono delimitare più facilmente aree con meno neuroni
+- le architetture basate su =RBF= sono solitamente con un unico livello nascosto, con $m_1$ funzioni radiali
   - $m$ input
 - le funzioni di attivazione =RBF= sono utilizzate nel livello /hidden/
-  - il livello di uscita é lineare
+  - il livello di uscita è lineare
 \[\phi_{}_{1} \cdots \phi_{k}\]
 \[y = w_{1}\phi_{1} (||x - t_{1}||) + \dots + w_{m_{1}}\phi_{m_{1}}(||x - t_{m_{1}}||)\]
 - il centro della funzione radiale é $t$
@@ -278,10 +279,10 @@ Una funzione radiale restituisce un output dipendente dalla distanza di input e 
   - indica quanto la funzione sia aperta o chiusa
   - /spread/ grande significa proiezioni (circonferenze) grandi
 - tutti i neuroni nascosti diventano sensibili a input vicini al loro centro
-  - la sensibilitá dei neuroni puó essere aggiustato tramite lo /spread/ $\sigma$, grande significa meno sensibile
+  - la sensibilità dei neuroni può essere aggiustato tramite lo /spread/ $\sigma$, grande significa meno sensibile
 
 I pesi dell'uscita $y$ individua il /decision boundary/ nel nuovo spazio $\phi$
-- questo in quanto il problema - precedentemento non linearmente separabile - viene trasposto in un nuovo spazio dalle $\phi$ in cui é linearmente separabile
+- questo in quanto il problema - precedentemente non linearmente separabile - viene trasposto in un nuovo spazio dalle $\phi$ in cui é linearmente separabile
 
 Si cerca una funzione $F: R^m \Rightarrow R$ che le condizioni di interpolazione $F(x_i) = d_i$
 Si cercano i pesi che definiscano $F(x)$
@@ -339,7 +340,7 @@ La complessità di una rete è determinata da:
 - numero delle connessioni tra i neuroni
 - numero di pesi diversi tra i neuroni
 ** Reti Neurali Convoluzionali
-=CNN=
+=CNN= - [[id:de384f8e-17f3-4940-b4c3-23147f629bec][Convolutional Neural Network]]
 
 Molto utilizzate per lavorare su immagini.
 - *processamento locale*
@@ -362,7 +363,6 @@ Solitamente si utilizzano rete neurali multi dimensionali:
 Un livello di neuroni si occupa di un task di compressione dell'informazione chiamato *pooling* (/downsampling/)
 - questo task genera delle feature map di dimensioni minori
 - l'aggregazione dell'informazione puó avvenire utilizzando *max-pooling* o *average-pooling*
-
 
 
 

@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       de384f8e-17f3-4940-b4c3-23147f629bec
+:END:
+#+title: Convolutional Neural Network
+#+date: [2022-12-11 Sun 02:18]
+#+filetags: ai compsci
