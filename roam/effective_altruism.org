@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       9af720c6-151e-4a0a-b26c-9365b81915c1
+:END:
+#+title: Effective Altruism
+#+date: [2022-12-12 Mon 10:28]

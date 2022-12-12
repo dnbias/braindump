@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       2f07c411-8811-4198-adb2-e01a02ec5ff9
+:END:
+#+title: Lex Fridman
+#+date: [2022-12-12 Mon 10:24]
+#+filetags: podcast
