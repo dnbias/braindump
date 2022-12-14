@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       a05f213b-f01e-44c5-b45b-c79dcd7a082d
+:END:
+#+title: AI for the Next Era
+#+date: [2022-12-12 Mon 15:14]
+#+filetags: article
+- Source: https://greylock.com/greymatter/sam-altman-ai-for-the-next-era/
+- Author: Greymatter
+- Related: [[id:7967d0b4-4077-484b-945d-8e8cfc1a8382][ChatGPT]]

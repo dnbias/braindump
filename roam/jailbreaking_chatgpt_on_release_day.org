@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       95aa1c8a-b151-4bea-a86e-883231b81a35
+:END:
+#+title: Jailbreaking ChatGPT on Release Day
+#+date: [2022-12-12 Mon 15:05]
+#+filetags: article
+- Source: https://thezvi.substack.com/p/jailbreaking-the-chatgpt-on-release
+- Author: Zvi Mowshowitz
+- Related: [[id:7967d0b4-4077-484b-945d-8e8cfc1a8382][ChatGPT]]

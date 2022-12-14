@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       7967d0b4-4077-484b-945d-8e8cfc1a8382
+:END:
+#+title: ChatGPT
+#+date: [2022-12-12 Mon 15:03]
+#+filetags: ai
+- [[id:7e3533dc-e318-42af-ab05-71702fb3f6aa][ChatBot]]
