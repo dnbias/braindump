@@ -1,3 +1,6 @@
 [submodule "themes/cortex"]
 	path = themes/cortex
 	url = https://github.com/dnbias/cortex/
+[submodule "roam/journal"]
+	path = roam/journal
+	url = git@github.com:dnbias/journal.git
