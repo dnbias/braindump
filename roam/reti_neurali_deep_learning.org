@@ -193,9 +193,9 @@ Ci sono 2 fasi, a grosso modo
 * Hopfield Networks
 - see: https://transno.com/doc/3y-nWb7O0Jl#o-TxSokX9WzM
 I [[id:ce52162b-a751-4740-bf43-f2b4a74d585b][Hopfield Networks]] sono una forma di rete neurale ricorrente, popolarizzata da [[id:6a80e38f-f447-4a10-8162-7a6ca9b98df0][John Hopfield]] nel 1982.
-- ogni neurone e' collegato a ogni altro tranne se stesso
+- ogni neurone e' collegato a ogni altro tranne se stesso con pesi simmetrici
 - la attivazione dei neuroni e' calcolata in maniera *asincrona*
-  - scelta una unita' la sua attivita' viene calcolata dalle equazioni
+  - scelta una unita' la sua attività viene calcolata dalle equazioni
 
 \[v_j = \sum_{i=0}^{N} w_{ji}y_{i}(n)\]
 \begin{align*}
@@ -203,7 +203,7 @@ I [[id:ce52162b-a751-4740-bf43-f2b4a74d585b][Hopfield Networks]] sono una forma 
 \begin{cases}
 1 \qquad &\text{if } v_j (n) >0\\
 -1 \qquad &\text{if } v_j (n) <0\\
-\phi(v_j)(n-1) \qquad &\text{if } v_j (n) <0
+\phi(v_j)(n-1) \qquad &\text{if } v_j (n) =0
 \end{cases}
 \end{align*}
 
@@ -212,6 +212,25 @@ In queste configurazioni si possono raggiungere degli *stati stabili*, dove:
 In generale la negazione di uno stato stabile rimane stabile.
 
 Si dimostra un *teorema di convergenza* per cui da un qualsiasi stato di partenza e' garantito si raggiunge in un numero di passi finiti a uno stato stabile.
+
+Le memorie fondamentali sono inserite all'interno della rete e questa imparerà a riconoscere versioni parziali/corrotte di queste sue memorie.
+- la rete fa *pattern completion*
+
+Il problema è:
+- come individuare la configurazione di pesi cui corrispondono stati stabili le configurazioni di attivazioni delle memorie fondamentali
+
+** Storage
+Le memorie fondamentali sono *attrattori* di versioni corrotte in input.
+- il principio di *Hebb* per l'apprendimento ci aiuta nello storage
+#+caption: D.O. Hebb, 1949
+#+begin_quote
+When an axon of cell A is near enough to excite a cell B and repeatedly or persistently takes part in firing it, some growth process or metabolic change takes place in one or both cells such that A's efficiency, as one of the cells firing B, is increased. [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]]
+#+end_quote
+- fire together mean strong connection
+  - i neuroni si rafforzano
+
+Nella rete di Hopfield neuroni concordi avranno pesi tra loro positivi: si rafforzano.
+** Retrieval
 
 * Supervised Learning
 Dati di apprendimento sono etichettati.
