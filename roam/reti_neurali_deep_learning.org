@@ -288,6 +288,27 @@ La definizione di energia:
   - $y$ concorde e $w$ positivo
   - $y$ discorde e $w$ negativo
 - la sommatorie e' negata, quindi coppie di neuroni per cui il prodotto e' positivo portano il livello di energia ad abbassarsi
+
+\begin{align*}
+E = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j} = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j}
+\end{align*}
+** Qualities
+- complete partial patterns
+- generalize, given similar inputs to memory they recover the corresponding information
+- fault tolerant, if synapses get broken the networks still works
+- extraction fo prototypes, a network learning similar information it creates a prototype
+- Hebb like
+** Drawbacks
+- spurious states
+- not all fundamental memories are stable states
+- storage capacity with few errors given $N$ units is $0.14 N$
+
+* Boltzmann Machines
+Le [[id:a6beb0ba-31e4-4a91-8cce-eb48aee3e588][Boltzmann Machines]] utilizzano la rete per costruire interpretazioni degli input sensoriali.
+- input rappresentato dalle unità visibili
+- interpretazione rappresentata dallo stato delle unità nascoste
+- l'errore della interpretazione viene rappresentato dall'energia
+
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
@@ -295,8 +316,8 @@ Dati di apprendimento sono etichettati.
 Non ci sono neuroni nascosti.
 ** Multi Layer feed-forward
 =Input Layer= \to =Hidden Layer= \to =Output Layer=
-- le unitá nascoste estraggono dinamiche di _livello superiore_
-Può essere completamente (ogni neurone é connesso a ognuno dei precedenti) o parzialmente connesso.
+- le unità nascoste estraggono dinamiche di _livello superiore_
+Può essere completamente (ogni neurone è connesso a ognuno dei precedenti) o parzialmente connesso.
 Tratta dati non linearmente separabili.
 
 L'algoritmo di =back-propagation= minimizza l'errore con la tecnica della discesa del gradiente
@@ -310,7 +331,6 @@ con $a > 0$
 dove $y_{i}$ é l'output del neurone $i$
 
 $\phi$ si avvicina alla funzione gradino (/step/) al crescere di $a$.
-
 
 *** Backpropagation Algorithm
 Cerca pesi che minimizzano l'errore totale della rete sul =Training Set=.
