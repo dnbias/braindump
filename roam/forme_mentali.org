@@ -8,12 +8,10 @@ conoscenze specifiche, profonde di un solo argomento[fn:1]
 
 ** T
 conoscenze specifiche E conoscenze settoriali conoscenze trasversali[fn:2]
-- Leader ~ [[file:../../../../../../home/hiimpedro/.emacs.d/mnt/sda1/DanyB/Documents/org/mnt/sda1/DanyB/Documents/org/roam/20200528024130-elon_musk.org][Elon Musk]][fn:3]
 
 ** _
-conoscenze generali senza vera profondita'[fn:4]
+conoscenze generali senza vera profondità[fn:4]
 
 [fn:1]Specialisti
-[fn:2]la base della creativita'
-[fn:3]macche' proprio lui?
+[fn:2]la base della creatività
 [fn:4]shit

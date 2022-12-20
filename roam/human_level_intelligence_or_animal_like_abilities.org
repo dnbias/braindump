@@ -3,7 +3,7 @@
 :END:
 #+title: Human-Level Intelligence or Animal-Like Abilities?
 #+date: [2022-12-02 Fri 18:51]
-#+filetags: article
+#+filetags: article ai compsci
 - Source: https://arxiv.org/abs/1707.04327
 - Author: Adnan Darwiche
 - Related: AI
