@@ -267,6 +267,27 @@ w_{ji} =
 3. Convergence to stable state
 4. Output
 
+** Convergence Theorem
+Dato un qualsiasi stato iniziale la rete converge a uno stato stabile.
+- non e' piu' possibile modificare lo stato della rete attraverso la regola di aggiornamento
+
+Il teorema si basa sul concetto di *energia*.
+- *energy is bad!*
+
+Una rete con alta energia e' molto propensa di modificare di stato, molto instabile.
+Al contrario *una bassa energia indica una rete stabile*.
+
+- date $N$ unita' ci sono $2^{N}$ possibili stati della rete
+- a ogni stato si associa un livello di energia
+- si prova che ogni cambiamento di stato porta a un abbassamento dell'energia
+- c'e' un momento in cui lo stato (stabile) non può più modificarsi in un altro stato
+
+La definizione di energia:
+\[E = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j}\]
+- ogni prodotto interno e' positivo con
+  - $y$ concorde e $w$ positivo
+  - $y$ discorde e $w$ negativo
+- la sommatorie e' negata, quindi coppie di neuroni per cui il prodotto e' positivo portano il livello di energia ad abbassarsi
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
