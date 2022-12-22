@@ -19,7 +19,7 @@
     cq (build member *p class Roman))
 #+end_example
 - antecedent
-- conseguent
+- consequent
 
 #+caption: Tutti i romani sono fedeli a Cesare oppure lo odiano
 #+begin_example
@@ -49,6 +49,75 @@
             arg2 *rlr)))
 #+end_example
 - =NOT= implementato come =min 0 max 0=
+
+Dai comandi di ~assert~ il sistema costruisce i nodi molecolari corrispondenti.
+
+*** Contesti
+- un nodo può essere asserito o meno
+- per rappresentare credenze di più soggetti il sistema può contenere più contesti
+  - contesti fatti di ipotesi, un nodo asserito o derivato da inferenza
+
+#+begin_example
+:context nodeset context-name
+#+end_example
+*** Interrogare la rete
+Il comando utente *find* trova uno o più nodi della rete
+- la rete si comporta come un /database/ di fatti
+
+#+begin_example
+(find class elephant)
+
+(find (member-class) canary (object-ability) fly)
+#+end_example
+
+*** Credenze
+#+begin_example
+(assert agent John
+        act believe
+        object (build object Opus ability fly))
+#+end_example
+
+*** Deduzioni
+#+caption: Trova tutti gli x appartenenti alla classe canary
+#+begin_example
+(deduce member $x class canary)
+#+end_example
+*** Inferenza
+**** Riduzione
+Dedurre dal grafo una porzione in esso contenuta.
+**** Path
+Stabilire che un percorso fatto di certe relazioni è uguale a una relazione usando il comando ~define-path~
+- si definisce un certo percorso (definito in base alle sue caratteristiche) uguale a un singolo arco
+#+begin_example
+(define-path isa (compose isa
+                    (kstar (compose object-isa))))
+#+end_example
+- ~kstar~ sta per zero o più occorrenze
+
+#+caption: X has2 Y if: X isa A and A has B and B isa Y
+#+begin_example
+(define-path
+    has2 (compose   (kstar (compose isa object- ))
+                    has (kstar (compose object- has))
+                    (kstar (compose object- !isa))))
+#+end_example
+**** Regole
+- regole definite arbitrariamente dall'utente
+  - questo è il loro punto debole
+- parte della base di conoscenza
+- aumentano notevolmente la conoscenza della rete
+#+begin_example
+(assert member Marcus class man)
+(assert member Marcus class Pompeian)
+(assert member Caesar class ruler)
+#+end_example
+#+caption: All Pompeians were Romans
+#+begin_example
+(assert forall $p
+    ant (build member *p class Pompeian)
+    cq (build member *p class Roman))
+#+end_example
+
 ** RDF
 - see [[id:1bf19812-6b15-4198-93b4-1f6fb37ea80e][RDF]]
   - descrivere risorse
@@ -203,7 +272,7 @@ Fatta a partire dalla semantica definita sui vocabolari.
 - definizioni di /domain/ e /range/ trasportano conoscenza sulle istanze
 - transitivitá di sotto-classe, di sub-property ad esempio
 * Ontologie Computazionali
-#+caption: Guarino,  1998
+#+caption: Guarino, 1998
 #+begin_quote
 An engineering artifact, constituted by a specific vocabulary used to describe a certain reality, plus a set of explicit assumptions regarding the intended meaning of the vocabulary itself.
 #+end_quote
@@ -222,7 +291,7 @@ I linguaggi delle ontologie formali descrivono
 - caratteristiche delle classi
 - caratteristiche delle relazioni tra le classi
 
-Le ortologie possono essere definite
+Le ontologie possono essere definite
 - =top-level=, concetti fondazionali comuni a tutti i domini
 - =mid-level=, usano il livello fondazionale per definire concetti general
   - organizzazioni, comunicazione, stati fisici, sistemi di misura
@@ -233,10 +302,10 @@ Le ortologie possono essere definite
 #+caption: esempio di una top-level ontology
 [[../media/img/top-level-ontology.png]]
 
-La conoscenza di senso comune (/commonsense knowledge/) é importante per task che prevedano interazione con umani
+La conoscenza di senso comune (/commonsense knowledge/) è importante per task che prevedano interazione con umani
 - =CYC=: enCYClopedic Knowledge
   - base di conoscenza di 200k concetti circa
-  - divisa in microteorie o dominii, compartimentando la conoscenza
+  - divisa in microteorie o domini, compartimentando la conoscenza
 
 Per l'accesso ai concetti è importante l'integrazione con il linguaggio naturale.
 ** SuMo
@@ -265,6 +334,13 @@ Progetto di =IEEE=: =Suggested Upper Merged Ontology=
 - dati pubblici
 - dataset nella rete integrate nella rede =LOD= Cloud
 - [[https://www.wikidata.org][Wikidata]]
+** OWL
+** Protégé
+* Ontology Engineering
+** SKOS
+* Gestire e Interrogare grafi RDF
+** SPARQL
+* Pubblicare i Dati
 * Relazioni tra classi
 - sottoclasse
 - classi disgiunte
