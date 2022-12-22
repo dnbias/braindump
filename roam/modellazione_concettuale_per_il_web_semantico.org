@@ -336,6 +336,8 @@ Progetto di =IEEE=: =Suggested Upper Merged Ontology=
 - [[https://www.wikidata.org][Wikidata]]
 ** OWL
 ** Protégé
+- https://protegeproject.github.io/protege/class-expression-syntax/
+  - descrizione delle =keyword= del linguaggio e del loro significato
 * Ontology Engineering
 ** SKOS
 * Gestire e Interrogare grafi RDF
