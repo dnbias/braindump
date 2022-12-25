@@ -418,7 +418,45 @@ ex:animals rdf:type skos:Concept;
   - antecedente e conseguente
 - le regole possono solo asserire nuove relazioni/proprietà
   - non può creare individui
-- può essere aggiunto a
+- può essere aggiunto a Protégé
+- utilizza un engine sterno (Drools)
+- implementazione migliorata da algoritmo =RETE=
+  - /pattern matching/
+
+#+caption: Esempi di regola
+#+begin_example
+cinema:Personaggio(?x)
+^
+cinema:personaggioDi(?x,?y)
+^
+cinema:Commedia(?y)
+->
+cinema:PersonaggioComico(?x)
+
+cinema:haRuolo(?a,?r)
+^
+cinema:compenso(?r,?c)
+^
+swrlb:greaterThan(?c,300000)
+->
+cinema:AttoreMoltePagato(?a)
+#+end_example
+
+** RIF
+=Rule Interchange Format=
+- standard =W3C=
+- facilita sintesi e integrazione di sistemi di regole
+- le regole vengono usate anche nei [[id:9b0d4896-4666-4d52-b28c-dd52a01beeea][Linked Data]] per effettuare ragionamenti ad hoc
+
+#+caption: regola per la corrispondenza tra IMDB e Dbpedia
+#+begin_example
+Forall ?Actor ?Film ?Role (
+    If And(<http://example.com/imdbrelations#playsRole>(?Actor ?Role)
+           (<http://example.com/imdbrelations#roleInFilm>(?Role ?Film))
+    Then <http://dbpedia.org/ontology/starring>(?Film ?Actor)
+)
+#+end_example
+
 * Gestire e Interrogare grafi RDF
 ** SPARQL
 
