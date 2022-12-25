@@ -340,8 +340,88 @@ Progetto di =IEEE=: =Suggested Upper Merged Ontology=
   - descrizione delle =keyword= del linguaggio e del loro significato
 * Ontology Engineering
 ** SKOS
+=Simple Knowledge Organization Systems=
+Utilizzato per organizzare e utilizzare risorse tassonomiche nei [[id:9b0d4896-4666-4d52-b28c-dd52a01beeea][Linked Data]].
+Queste risorse di tipo tassonomico sono disponibili in formato =RDF=.
+=SKOS= permette di usare vocabolari di provenienze diverse, annulla le relazioni tra concetti proprio delle ontologie.
+ - altra raccomandazione di =W3C= è [[http://www.w3.org/ns/dcat#][DCAT]]
+
+#+begin_quote
+Using SKOS, concepts can be identified using URIs, labeled with lexical strings in one or more natural languages, assigned notations (lexical codes), documented with various types of note, linked to other concepts and organized into informal hierarchies and association networks, aggregated into concept schemes, grouped into labeled and/or ordered collections, and mapped to concepts in other schemes.
+#+end_quote
+- modello per esprimere la struttura base per schemi concettuali
+  - tesauri, schemi di classificazione, tassonomie
+- come applicazione di =RDF= permette di pubblicare concetti sul World Wide Web
+
+#+begin_example
+ex:animals rdf:type skos:Concept;
+    skos:prefLabel "animals"@en;
+    skos:narrower ex:mammals.
+
+ex:mammals rdf:type skos:Concept;
+    skos:prefLabel "mammals"@en;
+    skos:broader ex:animals.
+#+end_example
+- /concepts/ sono relati con altri
+  - /related/
+  - /narrower/ - /broader/
+
+#+begin_example
+ex:pineapples rdf:type skos:Concepts;
+    skos:prefLabel "pineapples";
+    skos:definition "The fruit of plants of the family Bromeliaceae".
+#+end_example
+- associare /concepts/ con la loro documentazione
+  - /definition/
+  - /example/
+  - /historyNote/
+  - /changeNote/
+
+#+begin_example
+ex:animalThesaurus rdf:type skos:ConceptScheme;
+    dct:title "Simple animal thesaurus";
+    dct:creator ex:antoineIsaac.
+
+ex:animals rdf:type skos:Concept;
+    skos:inScheme ex:animalThesaurus.
+#+end_example
+- schemi di concetti come tesauri
+  - /ConceptScheme/
+  - /inScheme/
+
+=SKOS= può fare mapping tra schemi diversi
+- /broadMatch/
+
+*** Tesauri e Tassonomie
+- [[http://www.iconclass.org][Iconclass]]
+- [[http://viaf.org][VIAF]] - =Virtual International Authority File=
+  - authority file
+  - nomi di autori
+  - origine archivistica
+- [[http://www.getty.edu/research/tools/vocabularies/ulan/][ULAN]]
+  - =Union List of Artist' Names=
+- [[https://www.acm.org/publications/class-2012][ACM Computing Classification System]]
+  - tassonomia degli argomenti informatici
+  - metadati articoli scientifici (index terms)
+
+
+** SWRL
+- antecedente - conseguente
+  - antecedente valutato su un dataset
+- regole dichiarative
+  - conseguente è una nuova asserzione
+- regole di produzione
+  - conseguente è un'azione
+
+=SWRL= rende =OWL= non più decidibile.
+- forma =IF-THEN=
+  - antecedente e conseguente
+- le regole possono solo asserire nuove relazioni/proprietà
+  - non può creare individui
+- può essere aggiunto a
 * Gestire e Interrogare grafi RDF
 ** SPARQL
+
 * Pubblicare i Dati
 * Relazioni tra classi
 - sottoclasse
