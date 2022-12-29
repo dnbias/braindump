@@ -44,7 +44,7 @@ Un =NN= puo' essere
   - feedback loop
 
 * Perceptron
-Primo esempio di rete neurale (1958), puo' risolvere semplici problemi di classificazione nel caso in cui il problema sia *linearmente separabile*.
+Primo esempio di rete neurale (1958), può risolvere semplici problemi di classificazione nel caso in cui il problema sia *linearmente separabile*.
 
 #+begin_quote
 Un problema si dice /linearmente separabile/ se i dati rappresentati nello spazio sono divisibili nelle loro classi tramite una linea retta, detta *decision boundary*.
@@ -128,7 +128,7 @@ Questa struttura modifica come vengono aggiornati i pesi, si focalizza sulla rid
 - mentre il percettrone aveva l'obiettivo di diminuire gli input misclassificati
 - qui l'obiettivo e' la riduzione dell'errore globale
 
-L'architettura del neurone e' differente, non piu' una funzione di attivazione ma una funzione lineare.
+L'architettura del neurone e' differente, non più una funzione di attivazione ma una funzione lineare.
 
 Si studia la derivata di errore in relazione al peso, se la derivata e' negativa allora la funzione errore sta diminuendo, si continua ad aumentare il peso.
 Se la derivata e' positiva l'errore e' in salita e si diminuisce il peso.
@@ -458,9 +458,6 @@ Solitamente si utilizzano rete neurali multi dimensionali:
 Un livello di neuroni si occupa di un task di compressione dell'informazione chiamato *pooling* (/downsampling/)
 - questo task genera delle feature map di dimensioni minori
 - l'aggregazione dell'informazione puó avvenire utilizzando *max-pooling* o *average-pooling*
-
-
-
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
