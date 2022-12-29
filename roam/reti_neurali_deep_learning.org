@@ -308,7 +308,42 @@ Le [[id:a6beb0ba-31e4-4a91-8cce-eb48aee3e588][Boltzmann Machines]] utilizzano la
 - input rappresentato dalle unità visibili
 - interpretazione rappresentata dallo stato delle unità nascoste
 - l'errore della interpretazione viene rappresentato dall'energia
+- le =BM= sono modelli generativi, apprendono a riprodurre a livello visibile il =TS=
+  - l'apprendimento vuole massimizzare il prodotto delle probabilità assegnate dalla =BM= ai vettori binari nel =TS=
+  - si procede calcolando le probabilità assegnate con il =TS= e facendo sampling in base a queste probabilità
+  - si arriva a una /fantasy/ che la =BM= tende a generare
 
+** Restricted Boltzmann Machines
+=RBM=
+- ogni neurone hidden è connesso a ogni neurone visible
+- i neuroni hidden non sono connessi ad altri neuroni hidden
+- i neuroni visible non sono connessi ad altri neuroni visible
+
+In fase di training si presentano input in livello visible e si modificano le attivazioni della rete hidden, non più in maniera deterministica ma stocastica.
+- in base a temperatura e /energy gap/
+  - anche se assecondando Hilton la temperatura viene ignorata impostandola sempre a 1
+- sfuggendo a minimi locali di energia
+
+Nel calcolo del /energy gap/ tutti i termini non contenenti $i$ sono eliminati in quanto identici nei casi $s_{i} = 0, s_{i} = 1$.
+\[\Delta E_{i} =  \Sum w_{ij}  s_{i} + b_{i} \quad \forall j\]
+** Contrastive Divergence
+Algoritmo di apprendimento basato su solamente due passaggi tra livello visible e hidden.
+- /A very surprising short-cut/
+
+Correzione della discrepanza tra *dato* e *ricostruzione* della rete in due passi.
+- quindi tra l'elemento del =TS= presentato e la ricostruzione successiva a livello visible fatta dalla rete addestrata
+
+I passaggi sono:
+- data $\to$ hidden $\to$ reconstruction $\to$ hidden
+
+\[\Delta w_{ij} = \epsilon (\lang v_{i} h_{j} \rang^{0} - \lang v_{i} h_{j} \rang^{1}) \]
+Quindi i prodotti di attivazione  presi a $t=0$ e $t=1$.
+- $v$ sta per visible, $h$ sta per hidden
+- momento di /clamping/ del training pattern a livello /visible/
+- momento di /recostruction/ a livello visible
+  - può essere diversa da quella presentata inizialmente: una /fantasy/ della rete che l'algoritmo mira a correggere
+
+L'idea è che ci si accorge che alla rete piace divagare rispetto al =TS= dopo solo due passi, è inutile lasciare che la rete del genere si stabilizzi in quanto non genererà i  pattern desiderati.
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward

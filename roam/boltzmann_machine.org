@@ -3,3 +3,7 @@
 :END:
 #+title: Boltzmann Machine
 #+date: [2022-12-20 Tue 18:48]
+#+filetags: compsci ai
+A kind of [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]], an evolution of the [[roam:Hopfield Network]] using binary stochastic units making biased random decisions.
+
+* Restricted Boltzmann Machine
