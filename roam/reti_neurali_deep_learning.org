@@ -356,6 +356,8 @@ Steps to learning:
 3. ...
 4. very high level representation
 
+Il passaggio da questi step è necessario in quanto non  è possibile passare da pixel a concetti astratti.
+
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
