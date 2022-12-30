@@ -308,6 +308,7 @@ Le [[id:a6beb0ba-31e4-4a91-8cce-eb48aee3e588][Boltzmann Machines]] utilizzano la
 - input rappresentato dalle unità visibili
 - interpretazione rappresentata dallo stato delle unità nascoste
 - l'errore della interpretazione viene rappresentato dall'energia
+<<<<<<< HEAD
 - le =BM= sono modelli generativi, apprendono a riprodurre a livello visibile il =TS=
   - l'apprendimento vuole massimizzare il prodotto delle probabilità assegnate dalla =BM= ai vettori binari nel =TS=
   - si procede calcolando le probabilità assegnate con il =TS= e facendo *sampling* in base a queste probabilità
@@ -360,7 +361,59 @@ Steps to learning:
 
 Il passaggio da questi step è necessario in quanto non  è possibile passare da pixel a concetti astratti. È più semplice passare tra astrazioni intermedie: *features*.
 L'obiettivo dei =DNN= è di attraversare tutti questi livelli di astrazione.
+=======
+- nascono dal problema degli stati spuri delle [[id:ce52162b-a751-4740-bf43-f2b4a74d585b][Hopfield Networks]]
+  - commettono errori e perciò andavano ridotte le capacita di memorizzazione
+>>>>>>> d5bf20e (RNDL)
 
+Hopfield, Feinstein e Palmer suggeriscono
+- introdurre una fase di /unlearning/
+  - questo si libera di minimi spuri profondi
+
+Crick e Mitchison proposero
+- /unlearning/ come funzione del sogno
+  - per questo non ci si ricorda dei sogni
+
+Si cerca una funzione di costo da minimizzare per guidare questo /unlearning/
+
+L'architettura della rete viene modificata
+- la rete viene utilizzata per costruire interpretazioni dell'input sensoriale
+- i neuroni sono divisi in
+  - livello visibile
+    - utilizzato per comunicare l'input
+  - livello nascosto
+    - trovano correlazioni di attivazione a livello visibile
+    - si allenano a riconoscere versioni corrotte di queste correlazioni
+    - ogni unità hidden si specializza a riconoscere una specifica feature dell'input da riconoscere e ricostruire a livello visible
+
+Nel caso delle *Restricted Boltzmann Machines*:
+- tutti i neuroni visible sono connessi a tutti i neuroni hidden
+- non ci sono connessioni tra i neuroni hidden
+- non ci sono connessioni tra i neuroni visible
+
+Le varie unità nascoste concorrono tra di loro per dare una interpretazione di un dato pattern visivo / input
+- altre unità hidden possono eccitare a loro volta interpretazioni coerenti
+- riconoscono o forzano configurazioni di input
+
+Anche in queste reti migliore è l'interpretazione minore è l'energia della rete.
+- la regola di cambiamento di stato impone di minimizzare sempre l'energia
+  - rende impossibile superare minimi locali e trovare i minimi globali desiderati
+
+Questo limite si supera utilizzando una regola stocastica di update al posto di quella deterministica della rete di Hopfield.
+- si utilizzano unità stocastiche /biased/
+
+\[p(s_{i}=1)=\frac{1}{1+e^{-\Delta E_i /T}}\]
+- probabilità che il neurone $i$ abbia attivazione 1
+- $\Delta E_i = E(s_i = 0 ) - E(s_i = 1)$
+  - se l'energia peggiora la $p$ risultante sarà minore di 0.5
+  - se l'energia migliora la $p$ risultante sarà maggiore di 0.5
+- $T$ è la temperatura, ammontare di rumore
+- temperature maggiori portano grossi cambiamenti di stato
+  - temperature basse portano pochi cambiamenti, comportamento  più deterministico e simile alle reti di Hopfield
+  - Hilton suggerisce temperature alte, supponiamo sempre 1
+    - inizialmente veniva utilizzata diminuendo mano a mano la temperatura con il trascorrere dell'apprendimento
+
+\[E=-\sum w_{kj} s_{k}s_{j} - \sum s_{k}b_{k}\quad \forall k,j\]
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
