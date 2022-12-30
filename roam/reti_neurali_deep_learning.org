@@ -310,7 +310,7 @@ Le [[id:a6beb0ba-31e4-4a91-8cce-eb48aee3e588][Boltzmann Machines]] utilizzano la
 - l'errore della interpretazione viene rappresentato dall'energia
 - le =BM= sono modelli generativi, apprendono a riprodurre a livello visibile il =TS=
   - l'apprendimento vuole massimizzare il prodotto delle probabilità assegnate dalla =BM= ai vettori binari nel =TS=
-  - si procede calcolando le probabilità assegnate con il =TS= e facendo sampling in base a queste probabilità
+  - si procede calcolando le probabilità assegnate con il =TS= e facendo *sampling* in base a queste probabilità
   - si arriva a una /fantasy/ che la =BM= tende a generare
 
 ** Restricted Boltzmann Machines
