@@ -356,7 +356,8 @@ Steps to learning:
 3. ...
 4. very high level representation
 
-Il passaggio da questi step è necessario in quanto non  è possibile passare da pixel a concetti astratti.
+Il passaggio da questi step è necessario in quanto non  è possibile passare da pixel a concetti astratti. È più semplice passare tra astrazioni intermedie: *features*.
+L'obiettivo dei =DNN= è di attraversare tutti questi livelli di astrazione.
 
 * Supervised Learning
 Dati di apprendimento sono etichettati.
