@@ -351,6 +351,7 @@ Ogni neurone riconosce una feature specifica.
 
 ** Deep Neural Networks
 =DNN=
+
 Steps to learning:
 1. raw input vector representation
 2. slightly higher level representation
