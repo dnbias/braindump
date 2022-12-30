@@ -195,7 +195,7 @@ Ci sono 2 fasi, a grosso modo
 I [[id:ce52162b-a751-4740-bf43-f2b4a74d585b][Hopfield Networks]] sono una forma di rete neurale ricorrente, popolarizzata da [[id:6a80e38f-f447-4a10-8162-7a6ca9b98df0][John Hopfield]] nel 1982.
 - ogni neurone e' collegato a ogni altro tranne se stesso con pesi simmetrici
 - la attivazione dei neuroni e' calcolata in maniera *asincrona*
-  - scelta una unita' la sua attivita' alpha viene calcolata dalle equazioni
+  - scelta una unità la sua attività alpha viene calcolata dalle equazioni
 
 \[v_j = \sum_{i=0}^{N} w_{ji}y_{i}(n)\]
 \begin{align*}
