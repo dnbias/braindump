@@ -315,6 +315,8 @@ Le [[id:a6beb0ba-31e4-4a91-8cce-eb48aee3e588][Boltzmann Machines]] utilizzano la
 
 ** Restricted Boltzmann Machines
 =RBM=
+Reference: [[id:a46ae609-8c71-4a40-a87f-33d4640917af][A Practical Guide to Training Restricted Boltzmann Machines]]
+
 - ogni neurone hidden è connesso a ogni neurone visible
 - i neuroni hidden non sono connessi ad altri neuroni hidden
 - i neuroni visible non sono connessi ad altri neuroni visible
