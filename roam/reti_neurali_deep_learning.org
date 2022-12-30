@@ -346,6 +346,9 @@ Quindi i prodotti di attivazione  presi a $t=0$ e $t=1$.
   - può essere diversa da quella presentata inizialmente: una /fantasy/ della rete che l'algoritmo mira a correggere
 
 L'idea è che ci si accorge che alla rete piace divagare rispetto al =TS= dopo solo due passi, è inutile lasciare che la rete del genere si stabilizzi in quanto non genererà i  pattern desiderati.
+
+Ogni neurone riconosce una feature specifica.
+
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
