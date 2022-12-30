@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID:       878a5653-cf6a-4b87-981d-fd55c1c69ebf
+:END:
+#+title:How to switch, customize, or write themes
+#+date: [2022-12-30 Fri 01:49]
+#+filetags: article til
+- Source: https://discourse.doomemacs.org/t/how-to-switch-customize-or-write-themes/37
+- Author: gagbo
+- Related: [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]]
+
+* Notes
+Setting themes:
+#+begin_src elisp
+;;; add to $DOOMDIR/config.el
+(setq doom-theme 'theme-name)
+;; or
+(load-theme 'theme-name t)
+#+end_src
+
+Tweaking the current theme:
+#+begin_src elisp
+(custom-set-faces!
+  '(cursor :background "#FF0000"))
+
+(custom-set-faces!
+  `(markdown-code-face :background ,(doom-color 'bg-alt))
+  `(markdown-markup-face :foreground ,(doom-color 'blue)))
+#+end_src
+To see the palette variables of the theme check the theme's source code
+- [[https://github.com/hlissner/emacs-doom-themes/blob/master/themes/doom-one-theme.el#L36-L106][doom-one]]
+
+Looking up faces:
+- =M-x describe-char=
+- =SPC h '=
+- =C-h '=
+
+To see preview of known faces:
+- =M-x describe-faces=
+- =SPC h F=
+- =C-h F=
+
+To write a custom theme base it on a Doom theme to use the =doomemacs/themes= API and place it in =$DOOMDIR/themes/=..

@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       3e730382-1688-4772-a482-46d5e4dff738
+:END:
+#+title: Tecosaur's Doom Emacs Configuration
+#+date: [2022-12-30 Fri 02:10]
+#+filetags: article emacs
+- Source: https://tecosaur.github.io/emacs-config/config.html
+- Author: Tecosaur
+- Related: [[id:bb1ff00c-74a5-46c9-adf8-0697a2c23b4d][Emacs]]
+
+* Notes
+- =engrave-faces= instead of =minted= for [[https://tecosaur.github.io/emacs-config/config.html#pretty-code-blocks][latex code blocks]]
