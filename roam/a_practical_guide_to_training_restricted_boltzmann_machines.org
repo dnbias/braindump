@@ -3,7 +3,7 @@
 :END:
 #+title: A Practical Guide to Training Restricted Boltzmann Machines
 #+date: [2022-12-30 Fri 15:46]
-#+filetags: book
+#+filetags: article
 Hinton, /A Practical Guide to Training Restricted Boltzmann Machines/, ,
 
 * Summary
