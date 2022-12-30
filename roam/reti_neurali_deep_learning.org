@@ -350,6 +350,12 @@ L'idea è che ci si accorge che alla rete piace divagare rispetto al =TS= dopo s
 Ogni neurone riconosce una feature specifica.
 
 ** Deep Neural Networks
+Steps to learning:
+1. raw input vector representation
+2. slightly higher level representation
+3. ...
+4. very high level representation
+
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
