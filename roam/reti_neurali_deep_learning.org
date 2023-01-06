@@ -95,7 +95,7 @@ Se esiste una soluzione - quindi le due classi sono linearmente separabili - l'a
 Geometricamente, se $w \cdot x > 0 \land -90 < \alpha < \180$
 \[w(n) \cdot x(n) = ||w|| \cdot ||x|| \cos (\alpha)\]
 
-Quindi la modifica del vettore pesi porta a cambiare la *decision boundary* (retta perpenticolare al vettore pesi) che accomodi l'input mal classificato corrente. Lo spostamento della *boundary* puo' causare altri input ad essere mal classificati.
+Quindi la modifica del vettore pesi porta a cambiare la *decision boundary* (retta perpendicolare al vettore pesi) che accomodi l'input mal classificato corrente. Lo spostamento della *boundary* puo' causare altri input ad essere mal classificati.
 
 Inizialmente i pesi sono posti a 0.
 La dimostrazione procede portando tutti i dati in un'unica classe $C$ che unisca $C_{1}$ e $C_{}_{}_{}_{}_{}_{2}$ (in questo caso si restituisce 1 a $\lnot x$) e mostrando che esistono un lower bound $\alpha$ e un upper bound $\beta$ al numero di passi di iterazione $k$.
