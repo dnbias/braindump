@@ -100,7 +100,8 @@ Quindi la modifica del vettore pesi porta a cambiare la *decision boundary* (ret
 Inizialmente i pesi sono posti a 0.
 La dimostrazione procede portando tutti i dati in un'unica classe $C$ che unisca $C_{1}$ e $C_{}_{}_{}_{}_{}_{2}$ (in questo caso si restituisce 1 a $\lnot x$) e mostrando che esistono un lower bound $\alpha$ e un upper bound $\beta$ al numero di passi di iterazione $k$.
 
-Per la sequenza di stimoli vengono modificati i pesi:
+Per la sequenza di stimoli vengono modificati i pesi
+
 \begin{align*}
 w(1) = w(0) + x(0) \\
 w(2) = w(1) + x(1) \\
