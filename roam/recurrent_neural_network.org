@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       b33cb9fc-7e8a-451e-9068-b6b7aa97ca3d
+:ROAM_ALIASES: RNN
+:END:
+#+title:Recurrent Neural Network
+#+date: [2023-01-08 Sun 08:41]
+#+filetags: compsci ai
+- [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]

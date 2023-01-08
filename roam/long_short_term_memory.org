@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       14afc227-5915-4e20-8503-95bc4dc988be
+:END:
+#+title: Long Short Term Memory
+#+date: [2023-01-08 Sun 08:30]
+#+filetags: compsci ai
+- [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]
+- see this [[https://colah.github.io/posts/2015-08-Understanding-LSTMs/][blog]]

@@ -524,6 +524,111 @@ $\text{Theorem 2.2} \quad$ Given any small positive value $\epsilon > 0$ and act
 
 Piu' piccola e' la norma dei pesi migliori sono le performance della generalizzazione, tendenzialmente.
 - per questo l'algoritmo proposto tende a buone prestazioni per =FFNN=
+* Recurrent Neural Networks
+=RNN=
+
+Il learning è *supervisionato*.
+Si trattano *sequenze* di dati, se cerca di produrre qualcosa.
+- una _traduzione_ di qualche tipo
+  + speech recognition
+  + machine translation
+  + music generation
+  + sentiment classification
+  + video activity recognition
+- un _informazione mancante_
+  + DNA sequence analysis
+  + name entity recognition
+  + predict whether a verb is singular or plural
+  + learn language model, predict next word
+  + grammaticality of a sentence
+
+- $x(i)^{<t>}$ per considerare l'elemento t-esimo della sequenza $i$
+- $y(i)^{<t>}$ per considerare il t-esimo output della sequenza dell'esempio $i$
+- $Tx(i)$ lunghezza della sequenza $x(i)$
+  + $Ty(i)$ può avere dimensione diversa
+
+*NB*: diversamente dalle reti =FF= la lunghezza dell'input non è fissata.
+
+Le parole del vocabolario hanno una rappresentazione *one-hot*
+- codificate con dei bit
+- un vettore di dimensione $N$ uguale alla lunghezza del =TS= e l'unico bit a 1 quello corrispondente alla posizione della parola considerata nel vocabolario
+
+#+ATTR_ORG: :width 500
+#+caption: RNN rolled e unrolled
+[[attachment:_20230108_083811RNN-unrolled.png]]
+
+I motivi per cui vengono utilizzate queste reti e non quelle standard =FF=:
+- input e output possono avere lunghezze diverse
+- condivide feature imparate in diverse posizioni del testo
+  + in reti =FF= non c'è corrispondenza tra parole /uguali/ in posizioni /diverse/, questi sarebbero stimoli completamente diverse
+- tengono conto del contesto, fondamentale in compiti di traduzione
+  + considera la storia dell'input, ciò che ha incontrato nel /tempo/ precedente
+
+Dato che le lunghezze di input e output possono essere diverse esistono diverse relazioni tra queste:
+- one to one
+  + image classification
+- one to many
+  + image captioning
+  + music generation
+- many to one
+  + sentiment analysis
+- many to many (non allineato)
+  + translation
+- many to many (allineato, dà l'output $n$ subito dopo la presentazione dell'input $n$)
+  + frame by frame video classification
+
+Oltre all'input previsto per il passo $t$ viene considerato anche l'output a livello hidden al passo $t-1$.
+
+
+\begin{align*}
+a^{<0>} &= \overline 0 \\
+a^{<1>} &= g(w_{aa} a^{<0>} + w_{ax} x^{<1>} + b_{a}) \\
+\overline y^{<1>} &= g(w_{ya} a^{<1>} + b_{y})
+\end{align*}
+
+I pesi sono imparati nel corso dell'apprendimento per minimizzare le loss function. I pesi sono gli stessi nei vari passi $t$.
+
+\[L^{<t>}(\overline y^{<t>}, y^{<t>})\]
+\[L(\overline y, y) = \sum_{t=1}^{T} L^{<t>}(\overline y^{<t>},y^{<t>})\]
+
+L'apprendimento avviene anche in questo caso per *backpropagation*, in questo caso un particolare tipo chiamato *Backpropagation Through Time*.
+- =BPTT=
+- il nome viene dal fatto che la propagazione passa all'indietro attraverso i passi temporali della rete
+La =BPTT= ha il problema tecnico della scomparsa o l'esplosione del gradiente
+- /vanishing or exploding gradient/
+
+
+** [[id:14afc227-5915-4e20-8503-95bc4dc988be][Long Short Term Memory]]
+=LSTM=
+[[https://colah.github.io/posts/2015-08-Understanding-LSTMs/][Blog a Riguardo]]
+
+- cattura dipendenze /long distance/, una memoria
+- le unità hanno delle /gate/ che decidono *quando* aggiornare le celle di memoria, cosa mantenere e cosa dimenticare[fn:gate /refresh when new subject/]
+  + forget gate, moltiplicato elemento per elemento per $C$
+    - ogni bit indica se mantenere o dimenticare
+  + input gate
+    - questo è moltiplicato allo stato candidato della cella e poi aggiunto alla memoria
+  + output gate
+    - computato con input, hidden state passato e memoria corrente
+- queste celle di memoria sostituiscono le unità hidden di una normale =RNN=
+
+Lo *stato della cella* $C$ è rappresentata orizzontalmente nei diagrammi, trasporta informazioni attraverso l'intera catena, interagendo con le unità che incontra.
+
+#+ATTR_ORG: :width 500
+[[attachment:_20230108_083406LSTM3-chain.png]]
+
+
+
+I gate restituiscono vettori di bit della dimensione della memoria =LSTM= $C_{t-1}$.
+\begin{align*}
+f_t &= \sigma (W_f \cdot [h_{t-1}, x_{t}] b_f)\\
+i_{t} &= \sigma (W_{i}  \cdot [h_{t-1},x_t ]+ b_{i})\\
+\tilde C_{t} &= \text{tanh}(W_{C} \cdot [h_{t-1}, x_{t}] + b_{C})\\
+o_{t} &= \sigma (W_{o}  \cdot [h_{t-1},x_t ]+ b_{o})\\
+h_{t} &= o_{t}  \times \text{tanh}(C_{t})
+\end{align*}
+** Gated Recurrent Unit
+=GRU=
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
