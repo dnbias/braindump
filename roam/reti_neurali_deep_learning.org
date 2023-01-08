@@ -401,7 +401,7 @@ L'idea è che ci si accorge che alla rete piace divagare rispetto al =TS= dopo s
 
 Ogni neurone riconosce una feature specifica.
 
-** Deep Neural Networks
+** Deep Neural Networks w/ RBMs
 =DNN=
 
 Steps to learning:
@@ -412,6 +412,60 @@ Steps to learning:
 
 Il passaggio da questi step è necessario in quanto non  è possibile passare da pixel a concetti astratti. È più semplice passare tra astrazioni intermedie: *features*.
 L'obiettivo dei =DNN= è di attraversare tutti questi livelli di astrazione.
+
+Il meccanismo del learning è analogo a quello delle =RBM=, solamente applicato a più livelli.
+
+Più la rete è profonda più la rete è efficace a riconoscere l'input ma è più difficile da allenare, in quanto ci sono molti minimi locali.
+In queste reti per risolvere questo problema si utilizza il *pre-training*:
+- non inizializzare i pesi della rete profonda casualmente ma utilizzando le =RBM=
+
+L'implementazione può essere fatta:
+1. auto-associators
+   + non supervisionati
+   + imparano tramite backpropagation a riprodurre in output l'input stesso
+   + si pongono vincoli ai neuroni hidden, in particolare si impone una attivazione sparsa in modo che non impari una funzione identità triviale
+   + l'ultimo livello viene dato in input a un livello supervisionato trattato poi con i criteri supervisionati
+2. Stacked =RBM=​s
+   + hanno un focus generativo
+   + /To recognize shapes, first learn to generate images/[fn:hinton-recognize [[id:42e4fdc6-7b24-4b1d-96b0-0c660fbf7b3a][$cit]] Hinton]
+   + prima si addestra il primo livello che riconosce i pixel
+     - li genera a livello visible
+   + poi si addestra un secondo livello basato sulle attivazioni nel livello hidden precedentemente addestrato
+     - genera questo livello hidden a livello visible
+   + si procede incrementalmente in questo modo
+   + si prova che ogni volta che si aggiunge un layer di features che le performance della rete migliora
+
+Si può fare *fine-tuning* di queste pile di =RBM= utilizzando la backpropagation
+Oppure utilizzando *Deep Autoencoders* si può comprimere l'informazione livello dopo livello
+- questo è ottenuto impilando =RBM=
+- /pretraining/
+  + si passa a =RMB= sempre più piccole a riconoscere i pattern di attivazione imparati a livello precedente
+  + qui si fa il grosso del lavoro nell'apprendimento dei pesi
+- /unrolling/
+  + si fa l'operazione inversa da informazione codificata fino a dimensione originale
+- /fine-tuning/
+  + i pesi sono rifiniti in maniera supervisionata per migliorare l'output finale
+  + non cambia più di molto i pesi
+
+** [[id:5e72960f-d629-49fe-8f37-e52124ccb910][Deep Belief Networks]]
+=DBN=
+
+Impara a generare a livello visible elementi del =TS=.
+
+Si combinano due =RBM= impilandole e rimuovendo i pesi che passavano da livello visible a livello hidden, i pesi in risalita di tutte le =RBM= tranne quella top.
+- solo pesi discendenti a livello più basso
+  + non è più una =RBM=
+
+Si parte a livello top da una configurazione iniziale casuale si continua fino a che non si raggiunge una configurazione stabile o di *equilibrio termico*, una volta raggiunta si propaga la configurazione a livello bottom generando una configurazione.
+
+Fasi:
+1. *wake* propaga l'attivazione dall'basso verso l'alto
+   + si correggono i pesi /a scendere/ ogni volta per aumentare la probabilità che l'input venga riprodotto
+2. *sleep*
+   + fase di fine-tuning
+   + a partire dalle configurazioni delle =RBM= sovrastanti si correggono i pesi /a salire/
+   + il nome è questo in quanto in questo passaggio le =RBM= producono le fantasy che preferiscono
+
 * Supervised Learning
 Dati di apprendimento sono etichettati.
 ** Single Layer feed-forward
@@ -642,12 +696,12 @@ La complessità di una rete è determinata da:
 - profondità
 - numero delle connessioni tra i neuroni
 - numero di pesi diversi tra i neuroni
-** Reti Neurali Convoluzionali
-=CNN= - [[id:de384f8e-17f3-4940-b4c3-23147f629bec][Convolutional Neural Network]]
+** [[id:de384f8e-17f3-4940-b4c3-23147f629bec][Convolutional Neural Network]]
+=CNN=
 
 Molto utilizzate per lavorare su immagini.
 - *processamento locale*
-  - i neuroni di un certo livollo sono connessi ad altri neuroni del livello precedente solo localmente
+  - i neuroni di un certo livello sono connessi ad altri neuroni del livello precedente solo localmente
   - riduzione del numero delle connessioni
   - specializzazioni dei neuroni su una zona dell'input
     - parti diverse della rete si occupano di compiti diversi
@@ -665,7 +719,7 @@ Solitamente si utilizzano rete neurali multi dimensionali:
 
 Un livello di neuroni si occupa di un task di compressione dell'informazione chiamato *pooling* (/downsampling/)
 - questo task genera delle feature map di dimensioni minori
-- l'aggregazione dell'informazione puó avvenire utilizzando *max-pooling* o *average-pooling*
+- l'aggregazione dell'informazione può avvenire utilizzando *max-pooling* o *average-pooling*
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]

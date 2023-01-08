@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       5e72960f-d629-49fe-8f37-e52124ccb910
+:ROAM_ALIASES: DBN
+:END:
+#+title: Deep Belief Networks
+#+date: [2023-01-08 Sun 10:35]
+#+filetags: compsci ai
+- [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]

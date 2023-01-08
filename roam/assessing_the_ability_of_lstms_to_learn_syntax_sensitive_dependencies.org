@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       d5733806-d7b3-4b08-afd1-7a8d94664ffa
+:END:
+#+title: Assessing the Ability of LSTMs to Learn Syntax-Sensitive Dependencies
+#+date: [2023-01-08 Sun 11:03]
+#+filetags: article
+- Source: http://dx.doi.org/10.1162/tacl_a_00115
+- Author: [[id:60689c3b-254e-4880-8227-3d3b06fe7694][Tal Linzen]], Dupoux, Goldberg
+- Related: [[id:14afc227-5915-4e20-8503-95bc4dc988be][Long Short Term Memory]], [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]

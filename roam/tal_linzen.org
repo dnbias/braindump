@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       60689c3b-254e-4880-8227-3d3b06fe7694
+:END:
+#+title:Tal Linzen
+#+date: [2023-01-08 Sun 11:19]
+#+filetags: author

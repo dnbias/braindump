@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       dd29e99e-5cc0-4bf5-a7fb-b611895881ab
+:END:
+#+title: Deep Neural Networks w/ RBMs
+#+date: [2023-01-08 Sun 10:51]
+#+filetags: compsci ai
+- [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]
