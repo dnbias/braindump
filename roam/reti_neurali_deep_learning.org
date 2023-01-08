@@ -387,7 +387,7 @@ Correzione della discrepanza tra *dato* e *ricostruzione* della rete in due pass
 - quindi tra l'elemento del =TS= presentato e la ricostruzione successiva a livello visible fatta dalla rete addestrata
 
 I passaggi sono:
-- data $\to$ hidden $\to$ reconstruction $\to$ hidden
+- data \to hidden \to reconstruction \to hidden
 
 \[\Delta w_{ij} = \epsilon (\lang v_{i} h_{j} \rang^{0} - \lang v_{i} h_{j} \rang^{1}) \]
 Quindi i prodotti di attivazione  presi a $t=0$ e $t=1$.
