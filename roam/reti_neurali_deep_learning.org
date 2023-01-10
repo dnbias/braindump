@@ -152,7 +152,7 @@ Si cerca di minimizzare questo valore ragionando *pattern-by-pattern*, calcoland
 =SOM=
 /Apprendimento non supervisionato/
 Strutture bidimensionali dove i neuroni sono disposti in una griglia.
-- la griglia e' solo una visualizzazione, non ci sono pesi tra i neuroni
+- la griglia è solo una visualizzazione, non ci sono pesi tra i neuroni
 - ogni neurone ha un suo vettore pesi $w_{i}$ della stessa dimensione dell'input
   - anche detti *prototype vector*, rappresentazioni associate al neurone
   - qual'e' il _tipo di stimolo_ che il neurone rappresenta
