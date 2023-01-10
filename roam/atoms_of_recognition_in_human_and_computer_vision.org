@@ -17,4 +17,4 @@ Introducing and using minimal recognizable images show that the human visual sys
     - this identifies crucial features
 - *Mi*​nimal *r*​ecognizable *c*​onfigurations (=MIRCs=)
   + the task is computationally difficult as each one is non-reduntant
-  +
+    - requires effective use of available information
