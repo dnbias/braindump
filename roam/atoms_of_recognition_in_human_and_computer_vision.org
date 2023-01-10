@@ -12,9 +12,8 @@
 Introducing and using minimal recognizable images show that the human visual system uses features and processes that are not used by current models and that are critical for recognition.
 
 * Notes
-
 #+begin_quote
-a =MIRC= is an image patch that can be reliably recognized by human observers and which is
+a =MIRC= is an image patch that can be reliably recognized by human observers and which is minimal in that further reduction in either size or resolution makes the patch unrecognizable.
 #+end_quote
 
 - *minimal recognizable images*
