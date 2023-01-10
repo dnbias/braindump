@@ -10,3 +10,8 @@
 
 * Claim
 Introducing and using minimal recognizable images show that the human visual system uses features and processes that are not used by current models and that are critical for recognition.
+
+* Notes
+- *minimal recognizable images*
+  + a minimal change in the image can have drastic effect on the recognition
+    - this identifies crucial features
