@@ -8,4 +8,5 @@
 - Author: [[id:ce7ceed2-1b6a-4010-9ce3-6030d818c337][Shimon Ullman]], Assif, Fetaya, Harari
 - Related: [[id:de384f8e-17f3-4940-b4c3-23147f629bec][Convolutional Neural Network]], [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]
 
-* Notes
+* Claim
+Introducing and using minimal recognizable images show that the human visual system uses features and processes that are not used by current models and that are critical for recognition.
