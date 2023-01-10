@@ -23,3 +23,8 @@ A =MIRC= is an image patch that can be reliably recognized by human observers an
 - *Mi*​nimal *r*​ecognizable *c*​onfigurations (=MIRCs=)
   + the task is computationally difficult as each one is non-redundant
     - requires effective use of available information
+
+- training on full-object images
+  + AP 0.07 \plusmn 0.10
+- training on =MIRC=
+  + AP 0.74 \plusmn 0.21
