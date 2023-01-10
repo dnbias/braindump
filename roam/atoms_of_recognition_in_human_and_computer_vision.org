@@ -15,4 +15,4 @@ Introducing and using minimal recognizable images show that the human visual sys
 - *minimal recognizable images*
   + a minimal change in the image can have drastic effect on the recognition
     - this identifies crucial features
-- *M*​inimal *r*​ecognizable *c*​onfigurations (=MIRCs=)
+- *Mi*​nimal *r*​ecognizable *c*​onfigurations (=MIRCs=)
