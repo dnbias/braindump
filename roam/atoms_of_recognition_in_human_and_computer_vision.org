@@ -28,3 +28,7 @@ A =MIRC= is an image patch that can be reliably recognized by human observers an
   + AP 0.07 \plusmn 0.10
 - training on =MIRC=
   + AP 0.74 \plusmn 0.21
+
+- results indicate the human visual system uses features and processes that current models do not
+  + the sharp drop in recognition at the =MIRC= level indicate similar visual representations in humans
+    - the transition occurs for the same images
