@@ -20,5 +20,5 @@ A =MIRC= is an image patch that can be reliably recognized by human observers an
   + a minimal change in the image can have drastic effect on the recognition
     - this identifies crucial features
 - *Mi*​nimal *r*​ecognizable *c*​onfigurations (=MIRCs=)
-  + the task is computationally difficult as each one is non-reduntant
+  + the task is computationally difficult as each one is non-redundant
     - requires effective use of available information
