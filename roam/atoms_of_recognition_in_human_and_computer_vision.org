@@ -13,7 +13,7 @@ Introducing and using minimal recognizable images show that the human visual sys
 
 * Notes
 #+begin_quote
-a =MIRC= is an image patch that can be reliably recognized by human observers and which is minimal in that further reduction in either size or resolution makes the patch unrecognizable.
+A =MIRC= is an image patch that can be reliably recognized by human observers and which is minimal in that further reduction in either size or resolution makes the patch unrecognizable.
 #+end_quote
 
 - *minimal recognizable images*
