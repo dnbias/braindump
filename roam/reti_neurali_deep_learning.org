@@ -722,7 +722,7 @@ Il processo di passaggio da /hidden state/ a token finale è composto da:
   + chiamata /log_probs/
 
 Il problema di una architettura del genere è che in frasi molto lunghe il /summary vector/ deve riuscire a codificare tutta l'informazione, andando a perdere molta dell'informazione prodotta all'inizio della catena.
-La soluzione a questo problema è quello di avere diversi vettori di questo tipo che codifichino intervalli di tempo diversi del flusso dati.
+La soluzione a questo problema è quello di avere diversi vettori di questo tipo che codifichino intervalli di tempo diversi del flusso dati. Questa tecnica è chiamata *attention*.
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
