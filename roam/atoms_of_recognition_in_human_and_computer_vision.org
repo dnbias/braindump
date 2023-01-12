@@ -3,7 +3,7 @@
 :END:
 #+title: Atoms of recognition in human and computer vision
 #+date: [2023-01-08 Sun 11:05]
-#+filetags: article
+#+filetags: paper
 - Source: http://dx.doi.org/10.1073/pnas.1513198113
 - Author: [[id:ce7ceed2-1b6a-4010-9ce3-6030d818c337][Shimon Ullman]], Assif, Fetaya, Harari
 - Related: [[id:de384f8e-17f3-4940-b4c3-23147f629bec][Convolutional Neural Network]], [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]], [[id:8f16f91e-386e-4898-b1ae-e74d7b299cf6][Computer Vision]]
