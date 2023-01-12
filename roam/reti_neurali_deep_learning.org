@@ -728,6 +728,8 @@ Il decoder utilizza l'attenzione ad ogni time step utilizzando gli hidden state 
 - ogni vettore è moltiplicato per il proprio softmaxed-score
 - questi vettori sono sommati producendo il /context vector/ per il decoder al time step
 
+Questo /context vector/ viene concatenato con l'output della cella decoder e questo viene trasformato per selezionare la parola del dizionario generata.
+
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
