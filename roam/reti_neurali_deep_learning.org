@@ -724,8 +724,9 @@ Il processo di passaggio da /hidden state/ a token finale è composto da:
 Il problema di una architettura del genere è che in frasi molto lunghe il /summary vector/ deve riuscire a codificare tutta l'informazione, andando a perdere molta dell'informazione prodotta all'inizio della catena.
 La soluzione a questo problema è quello di avere diversi vettori di questo tipo che codifichino intervalli di tempo diversi del flusso dati. Questa tecnica è chiamata *attention*.
 Il decoder utilizza l'attenzione ad ogni time step utilizzando gli hidden state del encoder al time step relativo.
-Si confrontano questi hidden state nella finestra temporale con il decoder hidden state, si attribuiscono score più alti a stati più simili. A questi /attention score/ si applica una /softmax/ ottenendo una distribuzione di probabilità.
-Ogni vettore è moltiplicato per il proprio softmaxed-score
+- si confrontano questi hidden state nella finestra temporale con il decoder hidden state, si attribuiscono score più alti a stati più simili. A questi /attention score/ si applica una /softmax/ ottenendo una distribuzione di probabilità
+- ogni vettore è moltiplicato per il proprio softmaxed-score
+- questi vettori sono sommati producendo il /context vector/ per il decoder al time step
 
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
