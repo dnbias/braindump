@@ -707,6 +707,13 @@ Architettura di =RNN= in cui la prima parte processa l'input e la seconda genera
 - *decoder*
   + prende in input il /summary vector/
   + produce la traduzione
+
+Il processo di passaggio da /hidden state/ a token finale è composto da:
+- lo stato passa per una trasformazione lineare
+  + si ottiene un vettore di dimensione del vocabolario chiamato /logits/
+- si fa una /softmax/ sulla /logits/ ottenendo una distribuzione di probabilità sul vocabolario
+  + chiamata /log_probs/
+
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
