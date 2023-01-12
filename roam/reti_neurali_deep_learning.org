@@ -737,7 +737,7 @@ e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
 \end{align*}
 
 - $a$ sono gli attention score
-- $C$ è il contesto
+- $C$ è il contesto che viene preso in input dalla cella decoder
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
