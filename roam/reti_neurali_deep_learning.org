@@ -686,6 +686,7 @@ h_{t} &= o_{t}  \times \text{tanh}(C_{t})
 \end{align*}
 
 Lo scopo dello stato della cella di fornire un informazione stabile che non si annulli a causa dei /vanishing gradient/.
+L'output è detto /hidden state/.
 ** Gated Recurrent Unit
 =GRU=
 ** Encoder-Decoder
