@@ -596,6 +596,8 @@ Si trattano *sequenze* di dati, si cerca di produrre qualcosa.
   + learn language model, predict next word
   + grammaticality of a sentence
 
+Generalmente si utilizzano queste reti per task di *Natural Language Generation*.
+
 - $x(i)^{<t>}$ per considerare l'elemento t-esimo della sequenza $i$
 - $y(i)^{<t>}$ per considerare il t-esimo output della sequenza dell'esempio $i$
 - $Tx(i)$ lunghezza della sequenza $x(i)$
