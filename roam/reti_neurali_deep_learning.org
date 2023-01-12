@@ -685,6 +685,7 @@ o_{t} &= \sigma (W_{o}  \cdot [h_{t-1},x_t ]+ b_{o})\\
 h_{t} &= o_{t}  \times \text{tanh}(C_{t})
 \end{align*}
 
+Lo scopo dello stato della cella di fornire un informazione stabile che non si annulli a causa dei /vanishing gradient/.
 ** Gated Recurrent Unit
 =GRU=
 ** Encoder-Decoder
