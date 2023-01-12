@@ -711,7 +711,7 @@ Architettura di =RNN= in cui la prima parte processa l'input e la seconda genera
 Il processo di passaggio da /hidden state/ a token finale è composto da:
 - lo stato passa per una trasformazione lineare
   + si ottiene un vettore di dimensione del vocabolario chiamato /logits/
-- si fa una /softmax/ sulla /logits/ ottenendo una distribuzione di probabilità sul vocabolario
+- si fa una /softmax/ sulla /logits/ ottenendo il logaritmo di una distribuzione di probabilità sul vocabolario
   + chiamata /log_probs/
 
 * Unsupervised Learning
