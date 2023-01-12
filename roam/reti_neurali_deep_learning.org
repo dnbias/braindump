@@ -700,7 +700,7 @@ h_t &= (1-z)\cdot h_{t-1} + z_t \cdot \tilde h_t
 \end{align*}
 
 ** Encoder-Decoder
-Architettura di =RNN= in cui la prima parte trasforma l'input e la seconda genera l'output.
+Architettura di =RNN= in cui la prima parte processa l'input e la seconda genera l'output.
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
