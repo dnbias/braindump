@@ -653,6 +653,9 @@ L'apprendimento avviene anche in questo caso per *backpropagation*, in questo ca
 La =BPTT= ha il problema tecnico della scomparsa o l'esplosione del gradiente
 - /vanishing or exploding gradient/
 
+Le /vanilla/ =RNN= cells contengono la una tangente iperbolica:
+\[h_{t} = tanh (W h_{t-}  + UX_{t}+b ) \]
+
 ** [[id:14afc227-5915-4e20-8503-95bc4dc988be][Long Short Term Memory]]
 =LSTM=
 [[https://colah.github.io/posts/2015-08-Understanding-LSTMs/][Blog a Riguardo]]
