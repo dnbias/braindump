@@ -707,7 +707,10 @@ Architettura di =RNN= in cui la prima parte processa l'input e la seconda genera
 - *decoder*
   + prende in input il /summary vector/
   + produce la traduzione
-  + *Autoregressive generation*
+  + *Teacher forcing* - training
+    - il primo input è un token di ~START~
+    - successivamente in input si da l'output atteso
+  + *Autoregressive generation* - generazione
     - il primo input è un token di ~START~
     - poi a catena si danno in input gli output precedenti
     - si procede fino a un token di ~END~
