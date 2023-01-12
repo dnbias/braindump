@@ -676,8 +676,6 @@ Lo *stato della cella* $C$ è rappresentata orizzontalmente nei diagrammi, trasp
 #+ATTR_ORG: :width 500
 [[attachment:_20230108_083406LSTM3-chain.png]]
 
-
-
 I gate restituiscono vettori di bit della dimensione della memoria =LSTM= $C_{t-1}$.
 \begin{align*}
 f_t &= \sigma (W_f \cdot [h_{t-1}, x_{t}] b_f)\\
@@ -686,6 +684,7 @@ i_{t} &= \sigma (W_{i}  \cdot [h_{t-1},x_t ]+ b_{i})\\
 o_{t} &= \sigma (W_{o}  \cdot [h_{t-1},x_t ]+ b_{o})\\
 h_{t} &= o_{t}  \times \text{tanh}(C_{t})
 \end{align*}
+
 ** Gated Recurrent Unit
 =GRU=
 ** Encoder-Decoder
