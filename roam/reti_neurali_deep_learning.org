@@ -721,6 +721,8 @@ Il processo di passaggio da /hidden state/ a token finale è composto da:
 - si fa una /softmax/ sulla /logits/ ottenendo il logaritmo di una distribuzione di probabilità sul vocabolario
   + chiamata /log_probs/
 
+Il problema di una architettura del genere è che in frasi molto lunghe il /summary vector/ deve riuscire a codificare tutta l'informazione, andando a perdere molta dell'informazione prodotta all'inizio della catena.
+La soluzione a questo problema è quello di avere diversi vettori di questo tipo che codifichino intervalli di tempo diversi del flusso dati.
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
