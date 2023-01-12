@@ -704,6 +704,9 @@ Architettura di =RNN= in cui la prima parte processa l'input e la seconda genera
 - *encoder*
   + gli output delle celle viene scartato
   + lo stato (hidden e non) dell'ultima cella viene inserito in un /summary vector/[fn:summary L'ultima cella è quella che ha visto tutto l'input.]
+- *decoder*
+  + prende in input il /summary vector/
+  + produce la traduzione
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
