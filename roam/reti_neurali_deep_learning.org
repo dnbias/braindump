@@ -730,6 +730,12 @@ Il decoder utilizza l'attenzione ad ogni time step utilizzando gli hidden state 
 
 Questo /context vector/ viene concatenato con l'output della cella decoder e questo viene trasformato per selezionare la parola del dizionario generata.
 
+\begin
+C_i &= \sum_{j=1}^{T_x} a_{ij}h_j \\
+a_{ij} &= \frac{\exp (e_{ij})}{\sum_{k=1}^{T_x} \exp (e_{jk})} \\
+e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
+\end
+
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
