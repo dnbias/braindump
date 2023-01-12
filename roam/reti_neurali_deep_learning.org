@@ -691,6 +691,13 @@ L'output è detto /hidden state/.
 =GRU=
 
 Un tentativo di semplificare le =LSTM= del 2014.
+
+\begin{align*}
+z_t = \sigma (W_z \cdot [h_{t-1} ,x_t])
+r_t = \sigma (W_r \cdot [h_{t-1}, x_t])
+\tilde h_t = tanh (W\cdot [r_t \cdot h_{t-1}, x_t])
+h_t = (1-z)\cdot h_{t-1} + z_t \cdot \tilde h_t
+\end{align*}
 ** Encoder-Decoder
 
 * Unsupervised Learning
