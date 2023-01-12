@@ -689,6 +689,8 @@ Lo scopo dello stato della cella di fornire un informazione stabile che non si a
 L'output è detto /hidden state/.
 ** Gated Recurrent Unit
 =GRU=
+
+Un tentativo di semplificare le =LSTM= del 2014.
 ** Encoder-Decoder
 
 * Unsupervised Learning
