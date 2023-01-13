@@ -742,6 +742,7 @@ e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
 - [[id:7660c0d3-1e51-49a4-9d15-37eec9a12b7c][Attention is all you need]]
 - stato dell'arte
 
+L'attention score non è altro che il *dot product*, che calcola quanto due matrici si somigliano.
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
