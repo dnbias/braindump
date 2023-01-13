@@ -767,10 +767,10 @@ Un limite dell'architettura fin'ora è che non è in grado di processare l'ordin
 Questo è risolto tramite *positional encoding*. Viene sommato ad ogni input il proprio vettore di positional encoding.
 - questi $PE$ sono derivate da funzioni di seno e coseno
 
-\begin{
+\begin{align*}
 PE(pos, 2i) = \sin (pos / 10000^{2i/d_{model})})
 PE(pos, 2i+1) = \cos (pos / 10000^{2i/d_{model})})
-\end{
+\end{align*}
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
