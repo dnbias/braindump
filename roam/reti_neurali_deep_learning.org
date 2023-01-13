@@ -750,7 +750,7 @@ L'attention score non è altro che il *dot product* tra vettori query e keys, ch
 \text{Attention}(Q,K,V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 \end{align*}
 
-Questo meccanismo di *attention* viene applicato più volte: *Multi-head attention*.
+Questo meccanismo di *attention* viene applicato più volte: *Multi-head attention*. Il modello nasce con 8 di queste teste.
 Ogni attention head ha le sue tre matrici $W^{Q},W^{K},W^{V}$.
 - inizializzate random, poi imparate durante il training
 - l'idea è che ogni /head/ si specializzerà su una specifica feature del linguaggio
