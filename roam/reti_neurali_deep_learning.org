@@ -741,7 +741,7 @@ e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
 ** Transformer
 - [[id:7660c0d3-1e51-49a4-9d15-37eec9a12b7c][Attention is all you need]]
 - stato dell'arte
-
+Il modello si basa sulla tecnica della *self attention*.
 L'attention score non è altro che il *dot product* tra vettori query e keys, che calcola quanto due matrici si somigliano.
 - spesso le parole pongono l'attenzione su se stesse, in casi particolari però non è così
 
