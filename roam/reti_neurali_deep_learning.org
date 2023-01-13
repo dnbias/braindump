@@ -740,7 +740,7 @@ e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
 - $C$ è il contesto che viene preso in input dalla cella decoder
 ** Transformer
 - [[id:7660c0d3-1e51-49a4-9d15-37eec9a12b7c][Attention is all you need]]
-- [[Step-By-Step Breakdown][https://towardsdatascience.com/transformer-neural-network-step-by-step-breakdown-of-the-beast-b3e096dc857f]]
+- [[https://towardsdatascience.com/transformer-neural-network-step-by-step-breakdown-of-the-beast-b3e096dc857f][Step-By-Step Breakdown]]
 - stato dell'arte
 
 #+ATTR_ORG: :width 500
