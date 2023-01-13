@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       7660c0d3-1e51-49a4-9d15-37eec9a12b7c
+:END:
+#+title: Attention is all you need
+#+date: [2023-01-13 Fri 18:54]
+#+filetags: paper compsci ai
+- [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]
