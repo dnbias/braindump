@@ -742,7 +742,7 @@ e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
 - [[id:7660c0d3-1e51-49a4-9d15-37eec9a12b7c][Attention is all you need]]
 - stato dell'arte
 
-[[~/Pictures/misc/Transformer+Neural+Network.jpg]]
+[[~/Pictures/misc/transformer.png]]
 
 Il modello si basa sulla tecnica della *self attention*.
 - l'attenzione va da input a input, per questo il self
