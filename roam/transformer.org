@@ -3,7 +3,7 @@
 :END:
 #+title: Transformer
 #+date: [2023-01-13 Fri 20:08]
-#+filetags: ai
+#+filetags: compsci ai
 - [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]
 
 #+ATTR_ORG: :width 500
