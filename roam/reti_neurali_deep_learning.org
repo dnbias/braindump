@@ -746,6 +746,9 @@ Il modello si basa sulla tecnica della *self attention*.
 L'attention score non è altro che il *dot product* tra vettori query e keys, che calcola quanto due matrici si somigliano.
 - spesso le parole pongono l'attenzione su se stesse, in casi particolari però non è così
 
+\begin
+\text{Attention}(Q,K,V) = \text{softmax}
+\end
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
