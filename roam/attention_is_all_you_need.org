@@ -6,3 +6,4 @@
 #+date: [2023-01-13 Fri 18:54]
 #+filetags: paper compsci ai
 - [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]
+- the birth of the [[id:2d4d0fa2-00ef-4b9c-8170-b3c87dfb1bdd][Transformer]]
