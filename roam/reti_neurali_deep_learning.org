@@ -752,6 +752,8 @@ L'attention score non è altro che il *dot product* tra vettori query e keys, ch
 
 Questo meccanismo di *attention* viene applicato più volte: *Multi-head attention*.
 Ogni attention head ha le sue tre matrici $W^{Q},W^{K},W^{V}$.
+- inizializzate random, poi imparate durante il training
+- l'idea è che ogni /head/ si specializzerà su una specifica feature del linguaggio
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
