@@ -751,7 +751,7 @@ L'attention score non è altro che il *dot product* tra vettori query e keys, ch
 \end{align*}
 
 Questo meccanismo di *attention* viene applicato più volte: *Multi-head attention*.
-Ogni attention head ha le sue tre matrici $W^{Q},W^{K},W^{V}$
+Ogni attention head ha le sue tre matrici $W^{Q},W^{K},W^{V}$.
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
