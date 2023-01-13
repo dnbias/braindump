@@ -740,6 +740,8 @@ e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
 - $C$ è il contesto che viene preso in input dalla cella decoder
 ** Transformer
 - [[id:7660c0d3-1e51-49a4-9d15-37eec9a12b7c][Attention is all you need]]
+- stato dell'arte
+
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
