@@ -5,3 +5,5 @@
 #+date: [2023-01-13 Fri 20:08]
 #+filetags: ai
 - [[id:578df2f4-8fcb-4c18-90c2-e902f6b6eb16][Neural Network]]
+
+[[~/Pictures/misc/transformer.png]]
