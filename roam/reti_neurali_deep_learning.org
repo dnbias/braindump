@@ -756,7 +756,7 @@ Ogni attention head ha le sue tre matrici $W^{Q},W^{K},W^{V}$.
 - l'idea è che ogni /head/ si specializzerà su una specifica feature del linguaggio
 - una maniera per aumentare la dimensione del transformer, oltre a renderlo più profondo
 
-Gli output $Z_{i}$ delle head vengono concatenate tra loro e moltipicate per i pesi imparati $W^{O}$. Si ottiene una matrice $Z$ finale della dimensione corretta per essere processata dall'ultimo livello di feed-forward.
+Gli output $Z_{i}$ delle head vengono concatenate tra loro e moltipicate per i pesi imparati $W^{O}$. Si ottiene una matrice $Z$ finale della dimensione corretta.
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
