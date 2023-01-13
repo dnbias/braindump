@@ -747,7 +747,7 @@ L'attention score non è altro che il *dot product* tra vettori query e keys, ch
 - spesso le parole pongono l'attenzione su se stesse, in casi particolari però non è così
 
 \begin
-\text{Attention}(Q,K,V) = \text{softmax}
+\text{Attention}(Q,K,V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
 \end
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
