@@ -765,6 +765,7 @@ Gli output $Z_{i}$ delle head vengono concatenate tra loro e processate da un la
 
 Un limite dell'architettura fin'ora è che non è in grado di processare l'ordine delle singole parole in input.
 Questo è risolto tramite *positional encoding*. Viene sommato ad ogni input il proprio vettore di positional encoding.
+- questi $PE$ sono derivate da funzioni di seno e coseno
 
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
