@@ -483,6 +483,7 @@ ORDER BY ...
 - ~INSERT~
 - ~DELETE~
 - ~ASK~
+  + permette di ottenere una risposta booleana rispetto l'esistenza di una o più triple
 *** Esempi
 #+begin_example
 PREFIX cinema: <http://.../cinema#>
