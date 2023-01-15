@@ -545,6 +545,10 @@ SELECT ?f (COUNT(?p) AS ?count)
 
 I /blank node/ sono indicati da =[]=
 
+#+begin_example
+SELECT ?persona (MAX(?compenso) AS ?piùpagato)
+#+end_example
+
 
 * Pubblicare i Dati
 * Relazioni tra classi
