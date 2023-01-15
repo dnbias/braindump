@@ -547,6 +547,10 @@ I /blank node/ sono indicati da =[]=
 
 #+begin_example
 SELECT ?persona (MAX(?compenso) AS ?piùpagato)
+    WHERE {
+        ?persona cinema:haRualo ?ruolo.
+        ?ruolo cinema:compenso ?compenso
+    } GROUP BY ?persona
 #+end_example
 
 
