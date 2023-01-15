@@ -511,6 +511,8 @@ SELECT ?p ?f
     }
 #+end_example
 
+È possibile includere filtri per selezionare un sottoinsieme dell'insieme dei risultati.
+
 
 
 
