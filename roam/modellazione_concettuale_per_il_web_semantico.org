@@ -512,6 +512,16 @@ SELECT ?p ?f
 #+end_example
 
 È possibile includere filtri per selezionare un sottoinsieme dell'insieme dei risultati.
+#+begin_example
+SELECT ?c ?p
+    WHERE {
+        ?c  :haPopolazione ?p;
+            :situatoIn ?n;
+            :nomeCittà ?o.
+        ?n rdf:type :NazioneAsiatica.
+    }
+#+end_example
+
 
 
 
