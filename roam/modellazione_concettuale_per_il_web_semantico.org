@@ -459,6 +459,14 @@ Forall ?Actor ?Film ?Role (
 
 * Gestire e Interrogare grafi RDF
 ** SPARQL
+- linguaggio per /query/
+- supporta
+  + XML
+  + JSON
+  + CSV
+  + TSV
+- query indirizzare a un indirizzo =http= che ospita un *endpoint* =SPARQL=
+- *endpoint* esegue le query sui dataset contenuti in uno store di triple
 
 * Pubblicare i Dati
 * Relazioni tra classi
