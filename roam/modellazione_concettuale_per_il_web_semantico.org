@@ -531,7 +531,7 @@ SELECT ?c
             :dataFondazione ?a.
         ?n rdf:type :NazioneAsiatica.
 
-    FILTER (?a>800)
+        FILTER (?a>800)
     }
 #+end_example
 
