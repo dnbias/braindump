@@ -479,6 +479,10 @@ WHERE { ... }
 ORDER BY ...
 #+end_example
 
+=SPARQL= permette di lavorare con i grafi in modo simile a un database:
+- ~INSERT~
+- ~DELETE~
+- ~ASK~
 *** Esempi
 #+begin_example
 PREFIX cinema: <http://.../cinema#>
