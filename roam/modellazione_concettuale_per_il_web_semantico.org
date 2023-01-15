@@ -535,7 +535,7 @@ SELECT ?c
     }
 #+end_example
 
-
+È possibile ordinare e raggruppare i dati.
 
 
 
