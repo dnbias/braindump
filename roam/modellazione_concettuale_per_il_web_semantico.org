@@ -536,6 +536,10 @@ SELECT ?c
 #+end_example
 
 È possibile ordinare e raggruppare i dati.
+#+begin_example
+SELECT ?f (COUNT(?p) AS ?count)
+#+end_example
+
 
 
 
