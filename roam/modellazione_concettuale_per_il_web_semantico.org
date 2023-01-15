@@ -487,6 +487,13 @@ SELECT ?subject
     WHERE {?subject rdf:type cinema:Persona}
 #+end_example
 
+#+begin_example
+SELECT ?subject
+    WHERE {?subject :haPopolazione :popolazioneDiTorino;
+                    rdf:type :Città}
+#+end_example
+
+
 
 * Pubblicare i Dati
 * Relazioni tra classi
