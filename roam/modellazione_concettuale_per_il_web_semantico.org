@@ -524,6 +524,16 @@ SELECT ?c ?p
     }
 #+end_example
 
+#+begin_example
+SELECT ?c
+    WHERE {
+        ?c  :situatoIn ?n;
+            :dataFondazione ?a.
+        ?n rdf:type :NazioneAsiatica.
+
+    FILTER (?a>800)
+    }
+#+end_example
 
 
 
