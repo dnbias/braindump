@@ -501,6 +501,17 @@ SELECT ?c ?p
     }
 #+end_example
 
+#+begin_example
+SELECT ?p ?f
+    WHERE {
+        ?p rdf:type cinema:Persona;
+            cinema:haRuolo ?r.
+        ?r rdf:type cinema:Registra;
+            cinema:ruoloInFilm ?f.
+    }
+#+end_example
+
+
 
 
 
