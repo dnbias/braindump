@@ -543,7 +543,7 @@ SELECT ?f (COUNT(?p) AS ?count)
     } GROUP BY ?f ORDER BY ?f
 #+end_example
 
-
+I /blank node/ sono indicati da =[]=
 
 
 * Pubblicare i Dati
