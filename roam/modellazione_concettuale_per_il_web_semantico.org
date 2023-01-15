@@ -519,6 +519,8 @@ SELECT ?c ?p
             :situatoIn ?n;
             :nomeCittà ?o.
         ?n rdf:type :NazioneAsiatica.
+        ?p rdf:type :PopolazianeAmpia.
+        FILTER regex(?o, "Tokio").
     }
 #+end_example
 
