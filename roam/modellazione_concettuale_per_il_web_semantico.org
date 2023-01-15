@@ -466,7 +466,19 @@ Forall ?Actor ?Film ?Role (
   + CSV
   + TSV
 - query indirizzare a un indirizzo =http= che ospita un *endpoint* =SPARQL=
-- *endpoint* esegue le query sui dataset contenuti in uno store di triple
+- *endpoint* esegue le query sui dataset contenuti in uno /triple store/
+
+Lo schema è classico:
+#+begin_example
+PREFIX foo: <http://example.com/resources/>
+
+FROM ...
+
+WHERE { ... }
+
+ORDER BY ...
+#+end_example
+
 
 * Pubblicare i Dati
 * Relazioni tra classi
