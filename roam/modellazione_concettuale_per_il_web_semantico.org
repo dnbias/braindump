@@ -493,6 +493,15 @@ SELECT ?subject
                     rdf:type :Città}
 #+end_example
 
+#+begin_example
+SELECT ?c ?p
+    WHERE {
+        ?c :haPopolazione ?p.
+        ?p rdf:type :PopolazioneAmpia.
+    }
+#+end_example
+
+
 
 
 * Pubblicare i Dati
