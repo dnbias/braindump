@@ -485,8 +485,6 @@ PREFIX cinema: <http://.../cinema#>
 
 SELECT ?subject
     WHERE {?subject rdf:type cinema:Persona}
-
-
 #+end_example
 
 
