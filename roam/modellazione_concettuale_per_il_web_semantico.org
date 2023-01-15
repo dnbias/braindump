@@ -538,6 +538,9 @@ SELECT ?c
 È possibile ordinare e raggruppare i dati.
 #+begin_example
 SELECT ?f (COUNT(?p) AS ?count)
+    WHERE {
+        ?f cinema:haPersonaggio ?p.
+    } GROUP BY ?f ORDER BY ?f
 #+end_example
 
 
