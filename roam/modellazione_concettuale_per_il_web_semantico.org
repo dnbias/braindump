@@ -619,8 +619,11 @@ A differenza di =RDF4J= supporta =OWL=.
 - open-source rilasciato da *OpenLink*
 - closs-platform
 
-User e secret default =wda=.
+User e secret default =dba=.
 Le operazioni vengono condotte nella sezione *Conductor*.
+
+
+
 
 * Pubblicare i Dati
 * Relazioni tra classi
