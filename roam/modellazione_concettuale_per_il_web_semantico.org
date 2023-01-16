@@ -617,7 +617,7 @@ A differenza di =RDF4J= supporta =OWL=.
 
 ** Virtuoso
 - open-source rilasciato da *OpenLink*
-- closs-platform
+- cross-platform
 
 User e secret default =dba=.
 Le operazioni vengono condotte nella sezione *Conductor*.
