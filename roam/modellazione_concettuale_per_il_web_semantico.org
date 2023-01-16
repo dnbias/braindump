@@ -357,7 +357,7 @@ Nei *linked data* esistono diversi tipi di link nelle triple =RDF=
 - *identity link*
   + punta =URI= alias in altre sorgenti
 - *vocabulary link*
-  + punta definizioni dei termini
+  + punta definizioni dei termini di vocabolario
 
 
 ** Linked Date Platform
