@@ -362,6 +362,8 @@ Nei *linked data* esistono diversi tipi di link nelle triple =RDF=
   + punta definizioni dei termini di vocabolario
   + ~owl:equivalentClass~
   + ~owl:equivalentProperty~
+  + ~rdfs:subClassOf~
+  + ~skos:BroadMatch~
 
 
 ** Linked Date Platform
