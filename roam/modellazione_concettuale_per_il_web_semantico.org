@@ -357,6 +357,7 @@ Nei *linked data* esistono diversi tipi di link nelle triple =RDF=
 - *identity link*
   + punta =URI= alias in altre sorgenti
   + nel mondo *aperto* dei linked data è comune che stesse entità siano riferite da sorgenti diverse con =URI= diversi
+  + utilizzo della proprietà ~owl:sameAs~
 - *vocabulary link*
   + punta definizioni dei termini di vocabolario
 
