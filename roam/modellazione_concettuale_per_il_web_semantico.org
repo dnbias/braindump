@@ -524,6 +524,7 @@ ORDER BY ...
 - ~DELETE~
 - ~ASK~
   + permette di ottenere una risposta booleana rispetto l'esistenza di una o più triple
+
 *** Esempi
 #+begin_example
 PREFIX cinema: <http://.../cinema#>
@@ -598,6 +599,14 @@ SELECT ?persona (MAX(?compenso) AS ?piùpagato)
     } GROUP BY ?persona
 #+end_example
 
+** GraphDB
+Basato sul framework =RDF4J= che processa i dati =RDF=
+- [[http://rdf4j.org]]
+- ha funzionalità di
+  + parsing
+  + store
+  + inference
+  + query
 
 * Pubblicare i Dati
 * Relazioni tra classi
