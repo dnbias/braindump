@@ -342,7 +342,8 @@ Basato su tecnologie Web standard:
 - =RDF=
 - =URI=
 
-Fondato sulla *deferenzializzazione*.
+Fondato sulla *deferenzializzazione* delle entità definite nelle ontologie.
+- ovvero ottenere descrizioni =RDF= di entità
 
 ** OWL
 ** Protégé
