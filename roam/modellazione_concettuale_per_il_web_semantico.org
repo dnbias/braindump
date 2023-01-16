@@ -626,6 +626,8 @@ Le operazioni vengono condotte nella sezione *Conductor*.
 
 Si possono salvare dei =namespace= associando prefissi.
 
+Il default graph è ~http://localhost:8890/DAG/~
+
 
 
 * Pubblicare i Dati
