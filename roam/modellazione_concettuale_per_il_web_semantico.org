@@ -342,7 +342,7 @@ Basato su tecnologie Web standard:
 - =RDF=
 - =URI=
 
-Fondato sulla *deferenzializzazione*
+Fondato sulla *deferenzializzazione*.
 
 ** OWL
 ** Protégé
