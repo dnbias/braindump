@@ -351,6 +351,12 @@ Per rendere gli =URI= deferenziabili esistono due strategie
 - hash =URI=​s
   + viene restituito il documento, il client deve ritrovare la risorsa specifica che vuole
 
+Nei *linked data* esistono diversi tipi di link nelle triple =RDF=
+- *relationship link*
+- *identity link*
+- *vocabulary link*
+
+
 ** Linked Date Platform
 =LDP=
 
