@@ -347,7 +347,9 @@ Fondato sulla *deferenzializzazione* delle entità definite nelle ontologie
 
 Per rendere gli =URI= deferenziabili esistono due strategie
 - 303 =URI=​s
+  + viene restituita, tramite reindirizzamento, la risorsa specifica ricercata
 - hash =URI=​s
+  + viene restituito il documento, il client deve ritrovare la risorsa specifica che vuole
 
 ** Linked Date Platform
 =LDP=
