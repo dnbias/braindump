@@ -345,6 +345,10 @@ Basato su tecnologie Web standard:
 Fondato sulla *deferenzializzazione* delle entità definite nelle ontologie
 - ovvero ottenere descrizioni =RDF= di entità
 
+Per rendere gli =URI= deferenziabili esistono due strategie
+- 303 =URI=​s
+- hash =URI=​s
+
 ** Linked Date Platform
 =LDP=
 
