@@ -349,7 +349,7 @@ Fondato sulla *deferenzializzazione* delle entità definite nelle ontologie
 =LDP=
 
 #+begin_quote
-Use of HTTP for accessing, updating, creating and deleting resources from server that expose their resources as Linked Data.
+Use of HTTP for accessing, updating, creating and deleting resources from servers that expose their resources as Linked Data.
 #+end_quote
 
 
