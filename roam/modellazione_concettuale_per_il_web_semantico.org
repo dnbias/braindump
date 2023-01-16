@@ -611,6 +611,7 @@ Basato sul framework =RDF4J= che processa i dati =RDF=
 
 Nella creazione delle repository è possibile scegliere il *ruleset* di inferenza
 - i nostri progetti dovrebbero ricadere in =OWL2-RL=
+- evita di materializzare da Protegé
 *** Query Federate
 
 ** JENA
