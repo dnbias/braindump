@@ -342,6 +342,8 @@ Basato su tecnologie Web standard:
 - =RDF=
 - =URI=
 
+Fondato sulla *deferenzializzazione*
+
 ** OWL
 ** Protégé
 - https://protegeproject.github.io/protege/class-expression-syntax/
