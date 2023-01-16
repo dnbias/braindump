@@ -614,6 +614,9 @@ Altro framework utilizzato con il reasoner *Pellet* o *Hermit*.
 A differenza di =RDF4J= supporta =OWL=.
 
 ** Virtuoso
+- open-source rilasciato da *OpenLink*
+- closs-platform
+
 * Pubblicare i Dati
 * Relazioni tra classi
 - sottoclasse
