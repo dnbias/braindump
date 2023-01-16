@@ -610,7 +610,7 @@ Basato sul framework =RDF4J= che processa i dati =RDF=
 - utilizzabile con suo database =RDF= o altre soluzione di storage
 
 ** JENA
-Altro framework utilizzato con il reasoner *Pellet*.
+Altro framework utilizzato con il reasoner *Pellet* o *Hermit*.
 * Pubblicare i Dati
 * Relazioni tra classi
 - sottoclasse
