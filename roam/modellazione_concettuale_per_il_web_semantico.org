@@ -360,6 +360,8 @@ Nei *linked data* esistono diversi tipi di link nelle triple =RDF=
   + utilizzo della proprietà ~owl:sameAs~
 - *vocabulary link*
   + punta definizioni dei termini di vocabolario
+  + ~owl:equivalentClass~
+  + ~owl:equivalentProperty~
 
 
 ** Linked Date Platform
