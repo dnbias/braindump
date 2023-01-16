@@ -610,6 +610,7 @@ Basato sul framework =RDF4J= che processa i dati =RDF=
 - utilizzabile con suo database =RDF= o altre soluzione di storage
 
 *** Query Federate
+
 ** JENA
 Altro framework utilizzato con il reasoner *Pellet* o *Hermit*.
 A differenza di =RDF4J= supporta =OWL=.
@@ -618,6 +619,7 @@ A differenza di =RDF4J= supporta =OWL=.
 - open-source rilasciato da *OpenLink*
 - closs-platform
 
+User e secret default =wda=.
 * Pubblicare i Dati
 * Relazioni tra classi
 - sottoclasse
