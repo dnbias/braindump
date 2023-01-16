@@ -336,6 +336,12 @@ Progetto di =IEEE=: =Suggested Upper Merged Ontology=
 - [[https://www.wikidata.org][Wikidata]]
 
 I linked data sono un metodo per pubblicare dati strutturati in modo che possano essere collegati e diventare più utili, interrogabili da query semantiche.
+
+Basato su tecnologie Web standard:
+- http
+- rdf
+- URI
+
 ** OWL
 ** Protégé
 - https://protegeproject.github.io/protege/class-expression-syntax/
