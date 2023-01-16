@@ -607,6 +607,7 @@ Basato sul framework =RDF4J= che processa i dati =RDF=
   + store
   + inference
   + query
+- utilizzabile con suo database =RDF= o altre soluzione di storage
 
 * Pubblicare i Dati
 * Relazioni tra classi
