@@ -334,6 +334,8 @@ Progetto di =IEEE=: =Suggested Upper Merged Ontology=
 - dati pubblici
 - dataset nella rete integrate nella rede =LOD= Cloud
 - [[https://www.wikidata.org][Wikidata]]
+
+I linked data sono un metodo per pubblicare dati strutturati in modo che possano essere collegati e diventare più utili, interrogabili da query semantiche.
 ** OWL
 ** Protégé
 - https://protegeproject.github.io/protege/class-expression-syntax/
