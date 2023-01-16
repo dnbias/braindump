@@ -630,6 +630,7 @@ Il default graph è ~http://localhost:8890/DAV/~.
 
 I file caricabili sono =.rdf=, =.ttl=, =.nt=.
 
+Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera visualizzare.
 
 
 * Pubblicare i Dati
