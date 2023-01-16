@@ -620,6 +620,8 @@ A differenza di =RDF4J= supporta =OWL=.
 - closs-platform
 
 User e secret default =wda=.
+Le operazioni vengono condotte nella sezione *Conductor*.
+
 * Pubblicare i Dati
 * Relazioni tra classi
 - sottoclasse
