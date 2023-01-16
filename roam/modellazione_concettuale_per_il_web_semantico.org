@@ -347,6 +347,12 @@ Fondato sulla *deferenzializzazione* delle entità definite nelle ontologie
 
 ** Linked Date Platform
 =LDP=
+
+#+begin_quote
+Use of HTTP for accessing, updating, creating and deleting resources from server that expose their resources as Linked Data.
+#+end_quote
+
+
 ** OWL
 ** Protégé
 - https://protegeproject.github.io/protege/class-expression-syntax/
