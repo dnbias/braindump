@@ -346,6 +346,7 @@ Fondato sulla *deferenzializzazione* delle entità definite nelle ontologie
 - ovvero ottenere descrizioni =RDF= di entità
 
 ** Linked Date Platform
+=LDP=
 ** OWL
 ** Protégé
 - https://protegeproject.github.io/protege/class-expression-syntax/
