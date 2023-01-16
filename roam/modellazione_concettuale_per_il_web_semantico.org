@@ -609,6 +609,7 @@ Basato sul framework =RDF4J= che processa i dati =RDF=
   + query
 - utilizzabile con suo database =RDF= o altre soluzione di storage
 
+*** Query Federate
 ** JENA
 Altro framework utilizzato con il reasoner *Pellet* o *Hermit*.
 A differenza di =RDF4J= supporta =OWL=.
