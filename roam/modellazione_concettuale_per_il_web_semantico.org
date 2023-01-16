@@ -609,6 +609,8 @@ Basato sul framework =RDF4J= che processa i dati =RDF=
   + query
 - utilizzabile con suo database =RDF= o altre soluzione di storage
 
+Nella creazione delle repository è possibile scegliere il *ruleset* di inferenza
+- i nostri progetti dovrebbero ricadere in =OWL2-RL=
 *** Query Federate
 
 ** JENA
