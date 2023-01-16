@@ -621,6 +621,7 @@ A differenza di =RDF4J= supporta =OWL=.
 
 User e secret default =dba=.
 Le operazioni vengono condotte nella sezione *Conductor*.
+È possibile caricare tramite *Quad Store Upload*
 
 
 
