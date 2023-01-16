@@ -339,7 +339,7 @@ I linked data sono un metodo per pubblicare dati strutturati in modo che possano
 
 Basato su tecnologie Web standard:
 - http
-- rdf
+- =RDF=
 - =URI=
 
 ** OWL
