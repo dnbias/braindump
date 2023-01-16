@@ -612,6 +612,8 @@ Basato sul framework =RDF4J= che processa i dati =RDF=
 ** JENA
 Altro framework utilizzato con il reasoner *Pellet* o *Hermit*.
 A differenza di =RDF4J= supporta =OWL=.
+
+** Virtuoso
 * Pubblicare i Dati
 * Relazioni tra classi
 - sottoclasse
