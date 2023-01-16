@@ -353,7 +353,9 @@ Per rendere gli =URI= deferenziabili esistono due strategie
 
 Nei *linked data* esistono diversi tipi di link nelle triple =RDF=
 - *relationship link*
+  + punta oggetti collegati in altre sorgenti dati
 - *identity link*
+  + punta =URI= alias in altre sorgenti
 - *vocabulary link*
 
 
