@@ -661,6 +661,17 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
 - /Competency Questions/
   + domande a cui l'ontologia deve rispondere
 ** Modellazione
+- Ontology engineering
+  + pattern
+- sorgenti di conoscenza
+  + domain level
+  + fondazionali
+  + vocabolari
+  + tassonomie
+- allineamento
+  + =OWL=, =RDF=, =SKOS=
+- ragionamento automatico
+- documentazione
 ** Knowledge Graph
 ** Pubblicazione
 ** Applicazione
