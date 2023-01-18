@@ -646,3 +646,5 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
 - esempi
   - LOOM, BACK, CLASSIC
   - JENA, RACER, OWLIM
+
+* Progetto - Ontologia
