@@ -659,6 +659,7 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
   + interoperabilità
   + accesso ai dati
 - /Competency Questions/
+  + domande a cui l'ontologia deve rispondere
 ** Modellazione
 ** Knowledge Graph
 ** Pubblicazione
