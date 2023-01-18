@@ -688,6 +688,8 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
   + virtuoso
   + GraphDB
   + Blazegraph
+  + Jena + Pellet
+  + Vesa + Fuseki
 - materializzazione delle inferenze
 - upload
 ** Applicazione
