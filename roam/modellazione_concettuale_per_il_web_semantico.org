@@ -693,3 +693,6 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
 - materializzazione delle inferenze
 - upload
 ** Applicazione
+- funzionalità e flusso
+- query
+- implementazione
