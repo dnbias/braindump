@@ -678,5 +678,6 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
 - popolamento ontologia
   + manuale
   + mapping tools
+- visualizzazione esempi significativi
 ** Pubblicazione
 ** Applicazione
