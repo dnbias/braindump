@@ -649,6 +649,16 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
 
 * Progetto - Ontologia
 ** Requirements
+- Documentazione sul dominio di conoscenza
+  + siti
+  + manuali
+  + standard
+- Funzionalità
+  + reference
+  + annotazione
+  + interoperabilità
+  + accesso ai dati
+- /Competency Questions/
 ** Modellazione
 ** Knowledge Graph
 ** Pubblicazione
