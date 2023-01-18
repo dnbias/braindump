@@ -679,6 +679,7 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
   + manuale
   + mapping tools
     - =SPARUL=
+      + importazione da Google Knowledge Graph
     - =R2RML=
       + da database
 - visualizzazione esempi significativi
