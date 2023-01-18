@@ -684,4 +684,7 @@ Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera v
       + da database
 - visualizzazione esempi significativi
 ** Pubblicazione
+- LDP locale
+- materializzazione delle inferenze
+- upload
 ** Applicazione
