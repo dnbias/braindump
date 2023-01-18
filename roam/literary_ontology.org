@@ -5,3 +5,5 @@
 #+date: [2023-01-18 Wed 18:50]
 #+filetags: project
 - [[id:803f5b09-941a-4cf4-84ca-9e8c537ef453][ModSem]]
+
+Ontologia che descrive Libri e movimenti letterari.
