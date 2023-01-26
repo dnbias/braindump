@@ -279,11 +279,11 @@ An engineering artifact, constituted by a specific vocabulary used to describe a
 
 - rappresentazione astratta di concetti e loro relazioni
 - *ontologie formali* rappresentate secondo formalismi noti, machine readable
-- *finalitá* di condividere concettualizzazioni comuni tra individui, organizzazioni, macchine
+- *finalità* di condividere concettualizzazioni comuni tra individui, organizzazioni, macchine
 
 Sono costituite da:
 - classi
-- proprietá
+- proprietà
 - assiomi
 - individui
 
