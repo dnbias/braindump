@@ -9,5 +9,6 @@
 Ontologia che descrive il dominio della fotografia.
 
 * Risorse
+- https://en.wikipedia.org/wiki/Photography
 * Modellazione
 -
