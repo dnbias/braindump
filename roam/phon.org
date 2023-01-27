@@ -15,6 +15,8 @@ Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le p
   + progetto di *Flickr* lanciato nel 2008 in collaborazione con la /Library of Congress/, con l'obiettivo di aumentare l'accesso a collezioni fotografiche pubbliche
 - [[https://www.europeana.eu/en/collections/topic/48-photography][Europeana]]
   + progetto europeo in collaborazione con migliaia di archivi, biblioteche e musei per condividere il bene culturale europeo
+- [[http://apolloarchive.com/][Project Apollo Archive]]
+  + progetto del Kennedy Space Center di archiviazione e catalogo delle fotografie scattate durante l'allunaggio
 * Requirements
 * Descrizione
 * Documentazione
