@@ -11,6 +11,7 @@ Questa arte è stata fin dalla sua nascita nel primo ottocento un grande motore 
 Questo senza ignorare la centralità rinnovata che il linguaggio per immagini continua a sviluppare nel mondo dei social network e  della messaggistica istantanea.
 
 Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le più importanti sono:
+- [[https://www.getty.edu/research/tools/photo/][Getty - Photo Archive]]
 - [[https://www.flickr.com/commons][The Commons]]
   + progetto di *Flickr* lanciato nel 2008 in collaborazione con la /Library of Congress/, con l'obiettivo di aumentare l'accesso a collezioni fotografiche pubbliche
 - [[https://www.europeana.eu/en/collections/topic/48-photography][Europeana]]
