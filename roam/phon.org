@@ -12,6 +12,8 @@ Questo senza ignorare la centralità rinnovata che il linguaggio per immagini co
 
 Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le più importanti sono:
 - [[https://www.flickr.com/commons][The Commons]]
+  + progetto di *Flickr* lanciato nel 2008 in collaborazione con la /Library of Congress/, con l'obiettivo di aumentare l'accesso a collezioni fotografiche pubbliche
+-
 * Requirements
 * Descrizione
 * Documentazione
