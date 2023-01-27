@@ -56,7 +56,7 @@ Il dominio si articola quindi in:
 ** Sitografia
 1. https://en.wikipedia.org/wiki/Photography
 2. https://en.wiktionary.org/wiki/photography
-3. https://sigma.ontologyportal.org (Photography, Photograph, Camera, Lens)
+3. https://sigma.ontologyportal.org (Photographing, Photography, Photograph, Camera, Lens)
 4. https://www.treccani.it/vocabolario/fotografia/
 * Documentazione
 * OOPS
