@@ -1,7 +1,7 @@
 :PROPERTIES:
 :ID:       4d6146ac-92b1-4936-b239-7f77c1c34de0
 :END:
-#+title: PhotOntology
+#+title: PhotOntology Project
 #+date: [2023-01-18 Wed 18:50]
 #+filetags: project
 - [[id:803f5b09-941a-4cf4-84ca-9e8c537ef453][ModSem]]
