@@ -7,6 +7,7 @@
 * Motivazioni
 Il dominio scelto per lo svolgimento di questo progetto è stato quello della fotografia.
 Questa arte è stata fin dalla sua nascita nel primo ottocento un grande motore culturale, sociale e politico e avrà sicuramente ancora per molto tempo un ruolo centrale nella cultura umana.
+
 Questo senza ignorare la centralità rinnovata che il linguaggio per immagini continua a sviluppare nel mondo dei social network e  della messaggistica istantanea.
 * Requirements
 * Descrizione
