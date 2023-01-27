@@ -13,5 +13,6 @@ Ontologia che descrive il dominio della fotografia.
   - dal greco /disegnare con la luce/
   - le prime immagini prodotte catturando la luce in una camera oscuro risalgono al 1822 da parte di *Nicéphore Niépce*
   - i suoi studi furono portati avanti da *Daguerre*
+- https://www.treccani.it/vocabolario/fotografia/
 * Modellazione
 -
