@@ -92,7 +92,7 @@ Il dominio si articola quindi in:
 [[~/Pictures/20230127_18h47m14s_grim.png]]
 #+caption: Catalogo su wikipedia di Migrant Mother
 [[~/Pictures/20230127_18h48m33s_grim.png]]
-#+caption: Catalogo sul sito del MoMA di Migrant Mother
+#+caption: Catalogo su wikipedia di Migrant Mother
 [[~/Pictures/20230127_18h49m07s_grim.png]]
 #+caption: Catalogo sul sito del MoMA di Migrant Mother
 [[~/Pictures/20230127_18h53m59s_grim.png]]
