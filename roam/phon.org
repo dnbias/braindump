@@ -36,6 +36,8 @@ Procedimento che, mediante processi chimico-fisici, permette di ottenere, serven
 #+end_quote
 
 Il dominio si articola quindi in:
+- Fotografia
+  + caratterizzabile dal periodo storico in cui è stata scattata
 - Agenti
   + Soggetto
   + Autore
@@ -46,7 +48,6 @@ Il dominio si articola quindi in:
   + Pellicola
   + Digitale
   + Stampa di qualche tipo
-- Fotografia
 - Genere
   + Ritratto
   + Glamour
