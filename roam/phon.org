@@ -16,7 +16,7 @@ Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le p
 - [[https://www.europeana.eu/en/collections/topic/48-photography][Europeana]]
   + progetto europeo in collaborazione con migliaia di archivi, biblioteche e musei per condividere il bene culturale europeo
 - [[http://apolloarchive.com/][Project Apollo Archive]]
-  + progetto composto da scan del Kennedy Space Centere di archiviazione e catalogo delle fotografie scattate durante l'allunaggio
+  + progetto composto da scan fotografiche del Kennedy Space Center di archiviazione e catalogo delle fotografie scattate durante l'allunaggio
 * Requirements
 * Descrizione
 * Documentazione
