@@ -62,6 +62,7 @@ Il dominio si articola quindi in:
 5. https://www.treccani.it/vocabolario/fotografia/
 * Documentazione
 - [[https://photojournal.jpl.nasa.gov/catalog/PIA23645][Pale Blue Dot Revisited]]
+- [[https://en.wikipedia.org/wiki/Migrant_Mother][Migrant Mother]]
 * OOPS
 =OntOlogy Pitfall Scanner=
 * Visualizzazione
