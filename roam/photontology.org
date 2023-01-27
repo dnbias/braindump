@@ -11,5 +11,6 @@ Ontologia che descrive il dominio della fotografia.
 * Risorse
 - https://en.wikipedia.org/wiki/Photography
   - dal greco /disegnare con la luce/
+  - le prime immagini prodotte catturando la luce in una camera oscuro risalgono al 1822 da parte di *Nicéphore Niépce*
 * Modellazione
 -
