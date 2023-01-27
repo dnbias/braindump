@@ -46,6 +46,12 @@ Il dominio si articola quindi in:
   + Pellicola
   + Digitale
   + Stampa di qualche tipo
+- Fotografia
+- Genere
+  + Ritratto
+  + Glamour
+  + Natura
+
 
 * Documentazione
 * OOPS
