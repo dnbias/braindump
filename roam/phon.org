@@ -18,7 +18,9 @@ Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le p
 - [[http://apolloarchive.com/][Project Apollo Archive]]
   + progetto composto da scan fotografiche del Kennedy Space Center di archiviazione e catalogo delle fotografie scattate durante l'allunaggio
 * Requisiti
-I rq
+** Finalità
+** Task
+** Utenti
 * Descrizione
 * Documentazione
 * OOPS
