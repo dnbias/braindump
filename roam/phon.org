@@ -75,7 +75,7 @@ Il dominio si articola quindi in:
     - collezioni, raccolte, portfolio, /reportage/
     - fotografie realizzate con un'unica tecnica
     - gruppi assemblati per tema o soggetto
-  + riportare nell'invertario
+  + riportare nell'inventario
     - formato
     - tecnica
     - esistenza di negativo/positivo dell'originale
