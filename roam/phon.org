@@ -45,7 +45,7 @@ Il dominio si articola quindi in:
 - Medium
   + Pellicola
   + Digitale
-  + Stampa
+  + Stampa di qualche tipo
 
 * Documentazione
 * OOPS
