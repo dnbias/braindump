@@ -20,6 +20,7 @@ Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le p
 - [[http://apolloarchive.com/][Project Apollo Archive]]
   + progetto composto da scan fotografiche del Kennedy Space Center di archiviazione e catalogo delle fotografie scattate durante l'allunaggio
 - [[http://www.iccd.beniculturali.it/it/194/fondi-fotografici][Istituto Centrale per il Catalogo e la Documentazione]]
+  + catalogo fotografica gestito dal Ministero della Cultura
 * Requisiti
 - *Finalità*
   + creare una tassonomia il più semplice e chiara possibile per descrivere il dominio
