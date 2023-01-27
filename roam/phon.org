@@ -30,7 +30,7 @@ Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le p
   + professionisti
   + storici
 * Descrizione del dominio
-Partendo dalla definizione treccani di fotografia:
+Partendo dalla definizione Treccani di fotografia:
 #+begin_quote
 Procedimento che, mediante processi chimico-fisici, permette di ottenere, servendosi di un apposito apparecchio (macchina fotografica), l’immagine di persone, oggetti, strutture, situazioni: una lastra o una pellicola trasparente rivestite di un’emulsione sensibile alla luce (o ad altra radiazione attinica, per es. i raggi X) sono impressionate dalla luce riflessa dal soggetto attraverso l’obiettivo della macchina, e sono sviluppate ed eventualmente riprodotte su altro supporto di materiale fotosensibile per stampa a contatto o per ingrandimento in quante copie si vogliono, di identico o differente formato; si distinguono, sotto l’aspetto tecnico e del risultato, una f. in bianco e nero e una f. a colori, secondo che si riproduca il soggetto rendendo con sfumature più o meno intense di grigio le differenze di colore e di luminosità, oppure che lo si riproduca, grazie a una tecnica più complessa, con i suoi colori naturali.
 #+end_quote
