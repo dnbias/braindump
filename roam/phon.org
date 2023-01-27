@@ -61,6 +61,7 @@ Il dominio si articola quindi in:
 4. http://wordnetweb.princeton.edu (Photography, Photograph, Camera, Lens)
 5. https://www.treccani.it/vocabolario/fotografia/
 * Documentazione
+- [[https://photojournal.jpl.nasa.gov/catalog/PIA23645][Pale Blue Dot Revisited]]
 * OOPS
 =OntOlogy Pitfall Scanner=
 * Visualizzazione
