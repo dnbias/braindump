@@ -52,6 +52,7 @@ Il dominio si articola quindi in:
   + Ritratto
   + Glamour
   + Natura
+  + etc.
 
 
 * Documentazione
