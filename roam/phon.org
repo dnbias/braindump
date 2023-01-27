@@ -57,7 +57,7 @@ Il dominio si articola quindi in:
 1. https://en.wikipedia.org/wiki/Photography
 2. https://en.wiktionary.org/wiki/photography
 3. https://sigma.ontologyportal.org (Photographing, Photography, Photograph, Camera, Lens)
-4. http://wordnetweb.princeton.edu/
+4. http://wordnetweb.princeton.edu (Photography, Photograph, Camera, Lens)
 5. https://www.treccani.it/vocabolario/fotografia/
 * Documentazione
 * OOPS
