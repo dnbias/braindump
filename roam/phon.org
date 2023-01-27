@@ -42,6 +42,10 @@ Il dominio si articola quindi in:
 - Attrezzatura
   + Corpo Macchina
   + Lente
+- Medium
+  + Pellicola
+  + Digitale
+  + Stampa
 
 * Documentazione
 * OOPS
