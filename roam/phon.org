@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       fa31fd31-a6a5-40ea-b22f-7950a4e0322b
+:END:
+#+title: phon
+#+date: [2023-01-27 Fri 17:09]
