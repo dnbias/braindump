@@ -63,7 +63,7 @@ Il dominio si articola quindi in:
 5. https://www.treccani.it/vocabolario/fotografia/
 * Documentazione
 - [[https://www.nps.gov/history/hdp/standards/index.htm][Guidelines]] per la libreria del congresso sulla documentazione storica
-
+- [[https://www.aib.it/aib/commiss//libro/w/x080303a.htm][Formazione fototeche]] da parte dell'associazione italiana biblioteche
 
 - [[https://en.wikipedia.org/wiki/Pale_Blue_Dot][Pale Blue Dot (wikipedia)]]
 - [[https://photojournal.jpl.nasa.gov/catalog/PIA23645][Pale Blue Dot Revisited (JPL)]]
