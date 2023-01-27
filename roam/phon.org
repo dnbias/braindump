@@ -62,7 +62,7 @@ Il dominio si articola quindi in:
 4. http://wordnetweb.princeton.edu (Photography, Photograph, Camera, Lens)
 5. https://www.treccani.it/vocabolario/fotografia/
 * Documentazione
-- [[https://www.nps.gov/history/hdp/standards/index.htm][Guidelines per la libreria del congresso sulla documentazione storica]]
+- [[https://www.nps.gov/history/hdp/standards/index.htm][Guidelines]] per la libreria del congresso sulla documentazione storica
 
 
 - [[https://en.wikipedia.org/wiki/Pale_Blue_Dot][Pale Blue Dot (wikipedia)]]
