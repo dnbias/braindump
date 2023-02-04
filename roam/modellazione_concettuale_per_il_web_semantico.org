@@ -126,7 +126,7 @@ Stabilire che un percorso fatto di certe relazioni è uguale a una relazione usa
   - /property-centric/ language
 - [[id:c4bdeb51-c460-4f5d-9a33-2c7e43a2c3dd][OWL]]
   - a livello superiore rispetto RDF
-  - descrivere relazioni ricche e complesse tra entita'
+  - descrivere relazioni ricche e complesse tra entità
   - /class-centric/ language
 - [[id:6456f3d1-2bc3-4e50-abf0-1379bef1278d][Semantic Web]]: W3C's vision of the Web of [[id:9b0d4896-4666-4d52-b28c-dd52a01beeea][Linked Data]]
 - le specifiche [[id:1bf19812-6b15-4198-93b4-1f6fb37ea80e][RDF]] si suddividono in una serie di documenti
