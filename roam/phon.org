@@ -101,6 +101,7 @@ Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consult
 #+caption: Catalogo di una foto storica sull'archivio del Ministero dei Beni Culturali
 [[~/Pictures/20230127_18h53m59s_grim.png]]
 
+\pagebreak
 L'ontologia è stata allineata con due ontologie ritenute utili a questo scopo:
 - DOLCE, come ontologia di alto livello;
 - FaBiO, per concetti legati a lavori di creatività pubblicabili e citabili.
