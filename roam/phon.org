@@ -102,8 +102,8 @@ Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consult
 [[~/Pictures/20230127_18h53m59s_grim.png]]
 
 L'ontologia è stata allineata con due ontologie ritenute utili a questo scopo:
-- DOLCE
-- FaBiO, per concetti legati a lavori di creatività pubblicabili.
+- DOLCE, come ontologia di alto livello;
+- FaBiO, per concetti legati a lavori di creatività pubblicabili e citabili.
 
 
 In particolare è stata allineata una versione semplificata di Dolce: [[http://ontologydesignpatterns.org/wiki/Ontology:DOLCE+DnS_Ultralite][DOLCE+DnS_Ultralite]].
