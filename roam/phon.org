@@ -87,6 +87,9 @@ Il dominio si articola quindi in:
 - [[https://en.wikipedia.org/wiki/Migrant_Mother][Migrant Mother (wikipedia)]]
 - [[https://www.moma.org/collection/works/50989][Migrant Mother (MoMA)]]
 
+Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consultate per le opere.
+
+
 #+caption: Catalogo sul sito del MoMA di Migrant Mother
 [[~/Pictures/20230127_18h46m54s_grim.png]]
 #+caption: Catalogo sul sito del MoMA di Migrant Mother
