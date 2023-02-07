@@ -104,7 +104,7 @@ Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consult
 * OOPS
 =OntOlogy Pitfall Scanner=
 * Visualizzazione
-Vedere invece =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Protégé.
+Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Protégé.
 
 #+caption: Struttura tassonomica di base
 [[~/Pictures/20230207_04h05m10s_grim.png]]
