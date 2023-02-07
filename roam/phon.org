@@ -104,6 +104,8 @@ Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consult
 L'ontologia è stata allineata con due ontologie ritenute utili a questo scopo:
 - Dolce
 - Fabio
+
+In particolare è stata allineata una versione semplificata di Dolce: [[http://ontologydesignpatterns.org/wiki/Ontology:DOLCE+DnS_Ultralite][DOLCE+DnS_Ultralite]]
 * OOPS
 =OntOlogy Pitfall Scanner=
 * Visualizzazione
