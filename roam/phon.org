@@ -88,6 +88,7 @@ Il dominio si articola quindi in:
 - [[https://www.moma.org/collection/works/50989][Migrant Mother (MoMA)]]
 
 Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consultate per le opere.
+Vedere invece =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Protégé.
 
 
 #+caption: Catalogo sul sito del MoMA di Migrant Mother
