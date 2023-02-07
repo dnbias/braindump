@@ -41,7 +41,7 @@ Procedimento che, mediante processi chimico-fisici, permette di ottenere, serven
 Il dominio si articola quindi in:
 - Fotografia
   + Caratterizzabile dal periodo storico e dal luogo in cui è stata scattata
-  + Dimensioni
+  + Dimensioni (altezza x larghezza)
 - Agenti
   + Soggetto
   + Autore
