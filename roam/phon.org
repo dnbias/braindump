@@ -3,6 +3,7 @@
 :END:
 #+title: PhotOntology
 #+date: [2023-01-27 Fri 17:09]
+#+latex_class: my_thesis
 
 * Motivazioni
 Il dominio scelto per lo svolgimento di questo progetto è stato quello della fotografia.
