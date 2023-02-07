@@ -88,7 +88,6 @@ Il dominio si articola quindi in:
 - [[https://www.moma.org/collection/works/50989][Migrant Mother (MoMA)]]
 
 Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consultate per le opere.
-Vedere invece =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Protégé.
 
 
 #+caption: Catalogo sul sito del MoMA di Migrant Mother
@@ -102,6 +101,10 @@ Vedere invece =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui
 #+caption: Catalogo di una foto storica sull'archivio del Ministero dei Beni Culturali
 [[~/Pictures/20230127_18h53m59s_grim.png]]
 
+* OOPS
+=OntOlogy Pitfall Scanner=
+* Visualizzazione
+Vedere invece =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Protégé.
 
 #+caption: Struttura tassonomica di base
 [[~/Pictures/20230207_04h05m10s_grim.png]]
@@ -113,7 +116,3 @@ Vedere invece =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui
 [[~/Pictures/20230207_04h14m04s_grim.png]]
 #+caption: Pagina Protégé della serie fotografica FamilyPortrait
 [[~/Pictures/20230207_04h17m23s_grim.png]]
-
-* OOPS
-=OntOlogy Pitfall Scanner=
-* Visualizzazione
