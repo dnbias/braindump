@@ -21,3 +21,5 @@ Procedimento che, mediante processi chimico-fisici, permette di ottenere, serven
 
 * Modellazione
 -
+* LODE
+- http://localhost:8080/lode/extract?url=https://raw.githubusercontent.com/dnbias/phon/main/phon.owl#swrlrules
