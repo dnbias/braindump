@@ -72,7 +72,7 @@ Il dominio si articola quindi in:
     - cronologico
     - geografico
     - per materia
-  + da tenere insieme
+  + suggeriscono di tenere insieme
     - collezioni, raccolte, portfolio, /reportage/
     - fotografie realizzate con un'unica tecnica
     - gruppi assemblati per tema o soggetto
