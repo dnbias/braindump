@@ -98,8 +98,10 @@ Il dominio si articola quindi in:
 [[~/Pictures/20230127_18h53m59s_grim.png]]
 
 
+#+caption: Struttura tassonomica di base
 [[~/Pictures/20230207_04h05m10s_grim.png]]
 [[~/Pictures/20230207_04h09m18s_grim.png]]
+#+caption: Pattern tra fotografie e serie fotografiche
 [[~/Pictures/20230207_04h11m41s_grim.png]]
 [[~/Pictures/20230207_04h14m04s_grim.png]]
 [[~/Pictures/20230207_04h17m23s_grim.png]]
