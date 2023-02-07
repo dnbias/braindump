@@ -101,6 +101,9 @@ Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consult
 #+caption: Catalogo di una foto storica sull'archivio del Ministero dei Beni Culturali
 [[~/Pictures/20230127_18h53m59s_grim.png]]
 
+L'ontologia è stata allineata con due ontologie ritenute utili a questo scopo:
+- Dolce
+- Fabio
 * OOPS
 =OntOlogy Pitfall Scanner=
 * Visualizzazione
