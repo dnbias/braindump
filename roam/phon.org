@@ -103,6 +103,7 @@ Il dominio si articola quindi in:
 [[~/Pictures/20230207_04h09m18s_grim.png]]
 #+caption: Pattern tra fotografie e serie fotografiche
 [[~/Pictures/20230207_04h11m41s_grim.png]]
+#+caption: Pagina Protégé
 [[~/Pictures/20230207_04h14m04s_grim.png]]
 [[~/Pictures/20230207_04h17m23s_grim.png]]
 
