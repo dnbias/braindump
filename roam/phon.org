@@ -100,6 +100,7 @@ Il dominio si articola quindi in:
 
 #+caption: Struttura tassonomica di base
 [[~/Pictures/20230207_04h05m10s_grim.png]]
+#+caption: Fotografie
 [[~/Pictures/20230207_04h09m18s_grim.png]]
 #+caption: Pattern tra fotografie e serie fotografiche
 [[~/Pictures/20230207_04h11m41s_grim.png]]
