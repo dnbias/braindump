@@ -110,7 +110,7 @@ L'ontologia è stata allineata con due ontologie ritenute utili a questo scopo:
 In particolare è stata allineata una versione semplificata di Dolce: [[http://ontologydesignpatterns.org/wiki/Ontology:DOLCE+DnS_Ultralite][DOLCE+DnS_Ultralite]].
 La versione di FaBiO allineata può essere trovata a questo [[https://sparontologies.github.io/fabio/current/fabio.html][link]].
 
-Inoltre è stato utilizzato il pattern architetturale =List \rightarrow ListItem= per rappresentare serie fotografiche e i loro singoli componenti.
+Inoltre è stato utilizzato il pattern architetturale =List= \rightarrow =ListItem= per rappresentare serie fotografiche e i loro singoli componenti.
 * OOPS
 =OntOlogy Pitfall Scanner=
 * Visualizzazione
