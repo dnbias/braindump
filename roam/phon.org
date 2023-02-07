@@ -106,6 +106,7 @@ Il dominio si articola quindi in:
 [[~/Pictures/20230207_04h11m41s_grim.png]]
 #+caption: Pagina Protégé di PaleBlueDot
 [[~/Pictures/20230207_04h14m04s_grim.png]]
+#+caption: Pagina Protégé della serie fotografica FamilyPortrait
 [[~/Pictures/20230207_04h17m23s_grim.png]]
 
 * OOPS
