@@ -814,6 +814,8 @@ Un livello di neuroni si occupa di un task di compressione dell'informazione chi
 Le immagini sono rappresentate ma matrici numeriche
 - di 3 canali se a colori
 - questo tipo di oggetti sono conosciuti come *tensori*, che possono avere anche più di 3 dimensioni
+
+* Image classification using MLP
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
