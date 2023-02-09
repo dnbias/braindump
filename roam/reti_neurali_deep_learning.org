@@ -827,7 +827,8 @@ Il problema è che l'input di cui ha bisogno una =MLP= è una serie di feature m
 
 Serve una *feature map*.
 *** Convolution
-
+Per ottenere una *feature map* viene utilizzata la convoluzione.
+Si usano /kernel/ ovvero piccole matrici di pesi (anche chiamati /filter/)
 
 * RELU
 =REctified Linear Unit=
