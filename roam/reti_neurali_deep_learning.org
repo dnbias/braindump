@@ -883,7 +883,7 @@ Blocchi composti da:
   + per evitare il /vanishing gradient/ nelle reti molto profonde viene utilizzata =RELU=
 
 Alla fine vengono estratta la *feature map*.
-Questa (flattened) viene seguita da uno o più strati completamente connessi (=MLP=)
+Questa (flattened) viene seguita da uno o più strati completamente connessi (=MLP=).
 
 
 * RELU
