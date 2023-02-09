@@ -875,6 +875,7 @@ I possibili pooling sono solitamente
 - kernel size (2x2)
 - padding
 - stride (2)
+*** Convulational Blocks
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
