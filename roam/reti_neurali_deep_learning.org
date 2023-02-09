@@ -850,6 +850,10 @@ Definiti da esperti:
 
 Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
 **** Iperparametri
+- numero di filtri
+- kernel size
+- padding
+- stride
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
