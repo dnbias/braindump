@@ -852,6 +852,7 @@ Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
 **** Iperparametri
 - numero di filtri
 - kernel size
+  + quanto l'analisi è locale
 - padding
 - stride
 * RELU
