@@ -829,6 +829,8 @@ Serve una *feature map*.
 *** Convolution
 Per ottenere una *feature map* viene utilizzata la convoluzione.
 Si usano /kernel/ ovvero piccole matrici di pesi (anche chiamati /filter/).
+- questi passano l'input matrix calcolando la *feature map*
+- ogni elemento della feature map è una somma pesata locale che utilizza i pesi del filtro
 
 * RELU
 =REctified Linear Unit=
