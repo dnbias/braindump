@@ -825,7 +825,9 @@ Non l'ideale:
 
 Il problema è che l'input di cui ha bisogno una =MLP= è una serie di feature molto più significative dei pixel di cui è composta l'immagine.
 
+Serve una *feature map*.
 *** Convolution
+
 
 * RELU
 =REctified Linear Unit=
