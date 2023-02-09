@@ -822,6 +822,8 @@ Non l'ideale:
 - ogni pixel è una feature (ridondante)
 - troppi parametri
   + questo porta a overfitting
+
+Il problema è che l'input di cui ha bisogno una =MLP= è una serie di feature molto più significative dei pixel di cui è composta l'immagine.
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
