@@ -859,6 +859,7 @@ Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
 - stride
   + dimensione dal salto fatto dal kernel a ogni passo
   + se uguale alla dimensione del kernel si perde la caratteristica della convoluzione in quanto ogni pixel è considerato una sola volta
+**** Pooling
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
