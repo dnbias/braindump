@@ -841,6 +841,12 @@ Si usano /kernel/ ovvero piccole matrici di pesi (anche chiamati /filter/).
   + se la feature è in zone diverse nella mappa non ha importanza
   + stessi pesi significa che i neuroni di quella zona stanno cercando la stessa feature
 
+**** Filtri
+Definiti da esperti:
+- identity
+- edge detection
+- sharpen
+- gaussian blur
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
