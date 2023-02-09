@@ -881,6 +881,8 @@ Blocchi composti da:
 - pooling layer
 - activation function
   + per evitare il /vanishing gradient/ nelle reti molto profonde viene utilizzata =RELU=
+
+Alla fine vengono estratta la *feature map*.
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
