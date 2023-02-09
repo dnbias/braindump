@@ -801,7 +801,7 @@ Il processo procede per /stride/ man mano applicando il filtro.
 - lo /stride/ individua di quanto si sposta la finestra passo dopo passo
 - per evitare che la finestra fuoriesca dalla matrice si aggiunge del padding della grandezza giusta
 
-Solitamente si utilizzano rete neurali multi dimensionali:
+Solitamente si utilizzano rete neurali multi-dimensionali:
 - ogni livello di neuroni viene chiamato *feature map*
   - una particolare mappa apprende una particolare feature dell'input
 - sia input che output hanno multiple feature map
