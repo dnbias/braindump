@@ -876,7 +876,11 @@ I possibili pooling sono solitamente
 - padding
 - stride (2)
 *** Convolutional Blocks
-
+Blocchi composti da:
+- convolution
+- pooling layer
+- activation function
+  + per evitare il /vanishing gradient/ nelle reti molto profonde viene utilizzata =RELU=
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
