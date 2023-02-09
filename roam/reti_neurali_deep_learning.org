@@ -847,6 +847,8 @@ Definiti da esperti:
 - edge detection
 - sharpen
 - gaussian blur
+
+Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
