@@ -853,6 +853,7 @@ Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
 - numero di filtri
 - kernel size
   + quanto l'analisi è locale
+  + un kernel grande come l'input si torna al *percettrone*
 - padding
 - stride
 * RELU
