@@ -859,7 +859,7 @@ Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
 - stride
   + dimensione dal salto fatto dal kernel a ogni passo
   + se uguale alla dimensione del kernel si perde la caratteristica della convoluzione in quanto ogni pixel è considerato una sola volta
-**** Pooling
+*** Pooling
 Molti valori della *feature map* sono comunque inutii.
 Il pooling:
 - riduce la dimensionalità
@@ -871,6 +871,10 @@ Il pooling:
 I possibili pooling sono solitamente
 - average
 - max
+**** Iperparametri
+- kernel size
+- padding
+- stride
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
