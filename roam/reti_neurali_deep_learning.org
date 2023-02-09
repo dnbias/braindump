@@ -867,6 +867,10 @@ Il pooling:
 - invariante su piccole traslazioni
   + in quanto solitamente si usa /max/ che non dipende dall'ordine
 - non ha pesi
+
+I possibili pooling sono solitamente
+- average
+- max
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
