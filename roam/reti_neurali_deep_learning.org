@@ -818,6 +818,10 @@ Le immagini sono rappresentate ma matrici numeriche
 *** Image classification using MLP
 L'immagine deve essere appiattita.
 Non l'ideale:
+- viene persa informazione posizionale
+- ogni pixel è una feature (ridondante)
+- troppi parametri
+  + questo porta a overfitting
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
