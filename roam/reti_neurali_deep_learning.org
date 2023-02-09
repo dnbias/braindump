@@ -865,6 +865,7 @@ Il pooling:
 - riduce la dimensionalità
 - seleziona i valori più informativi
 - invariante su piccole traslazioni
+  + in quanto solitamenti si una /max/ che non dipende dall'ordine
 - non ha pesi
 * RELU
 =REctified Linear Unit=
