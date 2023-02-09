@@ -872,9 +872,9 @@ I possibili pooling sono solitamente
 - average
 - max
 **** Iperparametri
-- kernel size
+- kernel size (2x2)
 - padding
-- stride
+- stride (2)
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
