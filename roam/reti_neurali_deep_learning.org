@@ -810,6 +810,10 @@ Solitamente si utilizzano rete neurali multi-dimensionali:
 Un livello di neuroni si occupa di un task di compressione dell'informazione chiamato *pooling* (/downsampling/)
 - questo task genera delle feature map di dimensioni minori
 - l'aggregazione dell'informazione può avvenire utilizzando *max-pooling* o *average-pooling*
+
+Le immagini sono rappresentate ma matrici numeriche
+- di 3 canali se a colori
+- questo tipo di oggetti sono conosciuti come tensori
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
