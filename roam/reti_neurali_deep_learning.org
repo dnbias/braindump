@@ -857,6 +857,7 @@ Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
 - padding
   + se le parti periferiche sono importanti per l'analisi si aggiunge un padding, solitamente inizializzati a 0
 - stride
+  + dimensione dal salto fatto dal kernel a ogni passo
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
