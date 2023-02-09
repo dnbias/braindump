@@ -849,6 +849,7 @@ Definiti da esperti:
 - gaussian blur
 
 Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
+**** Iperparametri
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
