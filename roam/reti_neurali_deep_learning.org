@@ -832,6 +832,15 @@ Si usano /kernel/ ovvero piccole matrici di pesi (anche chiamati /filter/).
 - questi passano l'input matrix calcolando la *feature map*
 - ogni elemento della feature map è una somma pesata locale che utilizza i pesi del filtro
 
+**** Proprietà
+- pesi sparsi
+  + i calcoli sono più veloci e localizzati
+- i parametri sono condivisi
+- l'analisi è locale
+- equivarianza rispetto la traslazione
+  + se la feature è in zone diverse nella mappa non ha importanza
+  +
+
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
