@@ -954,7 +954,7 @@ Quindi se la sensitivity è alta ($\overline S = 0$) l'ultimo membro si annulla 
 Viceversa con insensitivity alta questo influenza l'update contribuendo a diminuire il peso.
 
 Sviluppando questa idea si va a valutare direttamente la variazione della *loss*:
-\[S(L,w_{i})= \frac{1}{C} \sum_{k=1}^{C} \Big | \frac{\delta L}{\delta y_{L,k}}\Big| \cdot \Big | \frac{\delta y_{i,k}}{\delta w_{i}}\Big |]
+\[S(L,w_{i})= \frac{1}{C} \sum_{k=1}^{C} \Big | \frac{\delta L}{\delta y_{L,k}}\Big| \cdot \Big | \frac{\delta y_{i,k}}{\delta w_{i}}\Big |\]
 *** Irrelevance
 
 
