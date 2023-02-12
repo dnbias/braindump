@@ -955,6 +955,8 @@ Viceversa con insensitivity alta questo influenza l'update contribuendo a diminu
 
 Sviluppando questa idea si va a valutare direttamente la sensibilità a partire dalla variazione della *loss*:
 \[S(L,w_{i})= \frac{1}{C} \sum_{k=1}^{C} \Big | \frac{\delta L}{\delta y_{L,k}}\Big| \cdot \Big | \frac{\delta y_{i,k}}{\delta w_{i}}\Big |\]
+Approssimabile a:
+\[S(L,w_{i} )= \Big | \frac{\delta L}{\delta w_{i}} \Big |]
 *** Irrelevance
 
 
