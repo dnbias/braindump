@@ -906,5 +906,6 @@ Per /pruning/ si intende una decrescita delle dimensioni di una rete neurale tra
 Si può distinguere in:
 - pruning strutturato
   + modifica anche la struttura stessa della rete eliminando neuroni interi (tutti i suoi archi uscenti sono annullati)
+  + non completamente esplorato in letteratura
 - pruning non strutturato
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
