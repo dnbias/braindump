@@ -962,5 +962,8 @@ Invece di modificare l'update dei pesi modificare la *loss* che si vada a minimi
 
 Si utilizza un esponenziale negativo, in questo modo asintotticamente questo tenderà a 0 con l'aumentare della derivata della *loss* rispetto al peso. Vale a dire che all'aumentare della derivata (parametro importante) diminuisce il parametro di *irrelevance*.
 
+Questo parametro è definito:
+\[I_{n,i,j}= \exp (- \frac{\delta L(\oveline w)}{\delta w_{i,j}^{n}}) \qquad 0 < I_{n,i,j} < 1]
+
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
