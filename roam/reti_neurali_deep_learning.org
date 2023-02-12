@@ -919,5 +919,7 @@ Si osserva che questo processo di pruning avviene anche a livello biologico:
   + questo suggerisce che biologicamente un numero minore ma gestite meglio di sinapsi è preferibile
 
 
+** Tecniche di Regolazione
+
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
