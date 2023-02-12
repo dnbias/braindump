@@ -934,6 +934,9 @@ Per fare questo viene deciso un *threshold* sotto il quale i pesi vengono annull
 I pesi che desideriamo eliminare sono i pesi *ridondanti* nella rete. Per individuare questi parametri ci sono diverse tecniche.
 
 *** Sensitivity
+\[\Delta y \simeq \Delta w_{i} \frac{\delta y_{k}}{\delta w_{i}}]
+
+
 I pesi con derivata piccola devono essere ridotti e possibilmente eliminati.
 *** Irrelevance
 
