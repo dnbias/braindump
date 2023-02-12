@@ -942,7 +942,8 @@ I pesi che desideriamo eliminare sono i pesi *ridondanti* nella rete. Per indivi
 
 Ci interessano i parametri per cui la rete ha poca sensibilità, definiamo la *insensitivity*:
 \[\overline S(y,w_{i})= 1 - S(y,w_{i})\]
-
+Per garantire che questa sia sempre positiva:
+\[\overline S_{b}(y,w_{i})= \max [0, \overline S(y,w_{i})]]
 
 I pesi con derivata piccola devono essere ridotti e possibilmente eliminati.
 *** Irrelevance
