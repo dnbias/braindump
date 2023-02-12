@@ -965,5 +965,7 @@ Si utilizza un esponenziale negativo, in questo modo asintotticamente questo ten
 Questo parametro è definito:
 \[I_{n,i,j}= \exp \Big(- \frac{\delta L(\oveline w)}{\delta w_{i,j}^{n}}\Big) \qquad 0 < I_{n,i,j} < 1\]
 
+Ridefiniamo la *loss*:
+\[L (\overline w ) = L(\overline w) + \lambda \sum_{n,i,j} \big ( I_{n,i,j} \cdot | w_{i,j}^{n}|^{2}  \big)\]
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
