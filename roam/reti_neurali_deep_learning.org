@@ -968,4 +968,7 @@ Questo parametro è definito:
 Ridefiniamo la *loss*:
 \[L (\overline w ) = L(\overline w) + \lambda \sum_{n,i,j} \big ( I_{n,i,j} \cdot | w_{i,j}^{n}|^{2}  \big)\]
 
+
+
+
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
