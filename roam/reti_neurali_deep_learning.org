@@ -936,7 +936,7 @@ I pesi che desideriamo eliminare sono i pesi *ridondanti* nella rete. Per indivi
 *** Sensitivity
 \[\Delta y \simeq \Delta w_{i} \frac{\delta y_{k}}{\delta w_{i}}]
 
-[\ S(y,w_{i})= \sum_{k=1}^{C}\alpha_{k}\big |\frac{\delta y_{k}}{\delta w_{i}}\big|\]
+\[ S(y,w_{i})= \sum_{k=1}^{C}\alpha_{k}\big |\frac{\delta y_{k}}{\delta w_{i}}\big|\]
 - $C$ è la dimensione dell'output
 - $\alpha_{k}$ è un fattore scalare dei pesi
 
