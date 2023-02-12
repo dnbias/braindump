@@ -949,6 +949,8 @@ I pesi con derivata piccola devono essere ridotti e possibilmente eliminati.
 
 Questa viene tenuta di conto nell'update dei pesi:
 \[w_{i}^{t} := w_{i}^{t-1} - \eta \frac{\delta L}{\delta w_{i}^{t-1}} - \lambda w_{i}^{t-1} \overline S_{b}(\sigma, w_{i}^{t-1})\]
+
+Quindi se la sensitivity è alta ($\overline S = 0$) l'ultimo membro si annulla e non influenza l'update.
 *** Irrelevance
 
 
