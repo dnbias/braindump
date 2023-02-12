@@ -905,6 +905,6 @@ Per questo è stato necessario sviluppare delle buone tecniche di pruning per ov
 Per /pruning/ si intende una decrescita delle dimensioni di una rete neurale tramite l'eliminazione di parametri mantenendo performance accettabili.
 Si può distinguere in:
 - pruning strutturato
-  + modifica anche la struttura stessa della rete eliminando neuroni interi
+  + modifica anche la struttura stessa della rete eliminando neuroni interi (tutti i suoi archi uscenti sono annullati)
 - pruning non strutturato
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
