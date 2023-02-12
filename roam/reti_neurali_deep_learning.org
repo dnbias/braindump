@@ -924,7 +924,7 @@ Funzione di *Loss*:
 \[L (\Theta)=L(\Theta) + \lambda F(\Theta)]
 - coefficiente di regolarizzazione \lambda
 - L1 regularization $$P(\Theta)=\sum_{n,i,j}|w^{n}_{i,j}|$$
-  + più efficace ma complessa
+  + più efficace ma può essere complessa da applicare
 - L2 regularization $$P(\Theta)=\sum_{n,i,j}|w^{n}_{i,j}|^{2}$$
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
