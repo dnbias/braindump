@@ -958,6 +958,7 @@ Sviluppando questa idea si va a valutare direttamente la sensibilità a partire 
 Approssimabile a:
 \[S(L,w_{i})= \Big | \frac{\delta L}{\delta w_{i}} \Big |\]
 *** Irrelevance
+Invece di modificare l'update dei pesi modificare la *loss* che si vada a minimizzare secondo un coefficiente di irrilevanza.
 
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
