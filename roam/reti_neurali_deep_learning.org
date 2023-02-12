@@ -940,7 +940,8 @@ I pesi che desideriamo eliminare sono i pesi *ridondanti* nella rete. Per indivi
 - $C$ è la dimensione dell'output
 - $\alpha_{k}$ è un fattore scalare dei pesi
 
-Ci interessano i parametri per cui la rete ha poca sensibilità, definiamo la *insensitivity*
+Ci interessano i parametri per cui la rete ha poca sensibilità, definiamo la *insensitivity*:
+\[\overline S(y,w_{i})= 1 - S(y,w_{i})\]
 
 
 I pesi con derivata piccola devono essere ridotti e possibilmente eliminati.
