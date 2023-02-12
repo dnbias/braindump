@@ -912,4 +912,12 @@ Si può distinguere in:
 
 Entrambi portano alla riduzione dello spazio richiesto dalla rete.
 
+Si osserva che questo processo di pruning avviene anche a livello biologico:
+- le sinapsi degli infanti aumentano fino a 7-8 anni
+- le sinapsi dei bambini di 15 sono diminuite rispetto a quel picco
+- tuttavia le capacità di apprendimento continuano a migliorare
+  + questo suggerisce che biologicamento un numero minore ma gestite meglio di sinapsi è preferibile
+
+
+
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
