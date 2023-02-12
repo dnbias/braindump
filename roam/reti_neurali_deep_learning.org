@@ -960,5 +960,7 @@ Approssimabile a:
 *** Irrelevance
 Invece di modificare l'update dei pesi modificare la *loss* che si vada a minimizzare secondo un coefficiente di irrilevanza.
 
+Si utilizza un esponenziale negativo, in questo modo asintotticamente questo tenderà a 0 con l'aumentare della derivata della *loss* rispetto al peso. Vale a dire che all'aumentare della derivata (parametro importante) diminuisce il parametro di *irrelevance*.
+
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
