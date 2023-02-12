@@ -927,4 +927,7 @@ Funzione di *Loss*:
   + più efficace ma può essere complessa da applicare
 - L2 regularization $$P(\Theta)=\sum_{n,i,j}|w^{n}_{i,j}|^{2}$$
 
+La sola riduzione della norma dei pesi non è sufficiente ad effettuare pruning.
+
+
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
