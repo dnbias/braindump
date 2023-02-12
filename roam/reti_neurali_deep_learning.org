@@ -909,4 +909,7 @@ Si può distinguere in:
   + non completamente esplorato in letteratura
 - pruning non strutturato
   + molto esplorato in letteratura
+
+Entrambi portano alla riduzione dello spazio richiesto dalla rete.
+
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
