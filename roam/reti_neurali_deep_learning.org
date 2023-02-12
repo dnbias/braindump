@@ -908,5 +908,5 @@ Si può distinguere in:
   + modifica anche la struttura stessa della rete eliminando neuroni interi (tutti i suoi archi uscenti sono annullati)
   + non completamente esplorato in letteratura
 - pruning non strutturato
-  + molto esploranto in letteratura
+  + molto esplorato in letteratura
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
