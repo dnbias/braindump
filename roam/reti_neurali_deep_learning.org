@@ -896,6 +896,10 @@ Questa funzione porta a una /attivazione sparsa/, dove non tutti i neuroni vengo
   - nelle reti si tende ad abbondare con il numero di neuroni o di livelli necessari al problema
   - in questo modo la rete può annullare delle componenti a piacimento durante il training
 
+* Pruning
+In ambito industriale soprattutto, ma non solo, negli anni si è visto un aumento importante del numero dei parametri delle reti neurali.
+Per questo è stato necessario sviluppare delle buone tecniche di pruning per ovviare a questo problema.
 
+*NB* architettura con un grande numero di parametri non hanno necessariamente un'accuratezza più alta.
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
