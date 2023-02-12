@@ -920,6 +920,7 @@ Si osserva che questo processo di pruning avviene anche a livello biologico:
 
 
 ** Tecniche di Regolazione
+Funzione di *Loss*:
 \[L (0)=L(0) + \lambda F(0)]
 - coefficiente di regolarizzazione \lambda
 
