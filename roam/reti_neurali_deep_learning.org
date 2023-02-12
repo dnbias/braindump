@@ -902,4 +902,5 @@ Per questo è stato necessario sviluppare delle buone tecniche di pruning per ov
 
 *NB* architetture con un grande numero di parametri non hanno necessariamente un'accuratezza più alta.
 
+Per /pruning/ si intende una decrescita delle dimensioni di una rete neurale tramite l'eliminazione di parametri mantenendo performance accettabili.
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
