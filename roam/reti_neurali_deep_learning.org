@@ -948,7 +948,7 @@ Per garantire che questa sia sempre positiva:
 I pesi con derivata piccola devono essere ridotti e possibilmente eliminati.
 
 Questa viene tenuta di conto nell'update dei pesi:
-\[w_{i}^{t} := w_{i}^{t-1} - \eta \frac{\delta L}{\delta w_{i}^{t-1}} - \lambda w_{i}^{t-1} \oveline S_{b}(\sigma, w_{i}^{t-1})]
+\[w_{i}^{t} := w_{i}^{t-1} - \eta \frac{\delta L}{\delta w_{i}^{t-1}} - \lambda w_{i}^{t-1} \overline S_{b}(\sigma, w_{i}^{t-1})\]
 *** Irrelevance
 
 
