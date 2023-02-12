@@ -923,6 +923,7 @@ Si osserva che questo processo di pruning avviene anche a livello biologico:
 Funzione di *Loss*:
 \[L (\Theta)=L(\Theta) + \lambda F(\Theta)]
 - coefficiente di regolarizzazione \lambda
-
+- L1 regularization
+- L2 regularization
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
