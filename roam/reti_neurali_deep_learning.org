@@ -931,5 +931,7 @@ La sola riduzione della norma dei pesi non è sufficiente ad effettuare pruning.
 
 Per fare questo viene deciso un *threshold* sotto il quale i pesi vengono annullati.
 
+I pesi che desideriamo eliminare sono i pesi *ridondanti* nella rete. Per individuare questi parametri ci sono diverse tecniche.
+
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.
