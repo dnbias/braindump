@@ -256,7 +256,7 @@ w_{ji} =
 1. Initialization
    - si imposta la rete nello stato presentato $x$
 2. Iteration until convergence
-   - update degli elementi asincronicamente scegliendo unita' random
+   - update degli elementi asincronicamente scegliendo unità random
 \[v_j = \sum_{i=0}^{N} w_{ji}y_{i}(n)\]
 \begin{align*}
 \phi(v_{j})(n)=
