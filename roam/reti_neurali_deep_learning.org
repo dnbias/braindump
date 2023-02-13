@@ -290,7 +290,7 @@ La definizione di energia:
 - ogni prodotto interno e' positivo con
   - $y$ concorde e $w$ positivo
   - $y$ discorde e $w$ negativo
-- la sommatorie e' negata, quindi coppie di neuroni per cui il prodotto e' positivo portano il livello di energia ad abbassarsi
+- la sommatoria è negata, quindi coppie di neuroni per cui il prodotto e' positivo portano il livello di energia ad abbassarsi
 
 \begin{align*}
 E = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j} = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j}
