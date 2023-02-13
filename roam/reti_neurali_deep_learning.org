@@ -251,6 +251,7 @@ w_{ji} =
 \end{cases}
 \end{align*}
 - questa regola funziona bene se abbiamo poche memorie fondamentali e non in conflitto
+
 ** Retrieval
 1. Initialization
    - si imposta la rete nello stato presentato $x$
