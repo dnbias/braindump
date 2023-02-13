@@ -277,7 +277,7 @@ Dato un qualsiasi stato iniziale la rete converge a uno stato stabile.
 Il teorema si basa sul concetto di *energia*.
 - *energy is bad!*
 
-Una rete con alta energia è molto propensa di modificare di stato, molto instabile.
+Una rete con alta energia è molto propensa a modifiche di stato, molto instabile.
 Al contrario *una bassa energia indica una rete stabile*.
 
 - date $N$ unita' ci sono $2^{N}$ possibili stati della rete
