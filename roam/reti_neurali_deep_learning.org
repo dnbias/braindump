@@ -272,7 +272,7 @@ w_{ji} =
 
 ** Convergence Theorem
 Dato un qualsiasi stato iniziale la rete converge a uno stato stabile.
-- non e' piu' possibile modificare lo stato della rete attraverso la regola di aggiornamento
+- non é più possibile modificare lo stato della rete attraverso la regola di aggiornamento
 
 Il teorema si basa sul concetto di *energia*.
 - *energy is bad!*
