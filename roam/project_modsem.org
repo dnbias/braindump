@@ -1,0 +1,25 @@
+:PROPERTIES:
+:ID:       4d6146ac-92b1-4936-b239-7f77c1c34de0
+:END:
+#+title: PhotOntology Project
+#+date: [2023-01-18 Wed 18:50]
+#+filetags: project
+- [[id:803f5b09-941a-4cf4-84ca-9e8c537ef453][ModSem]]
+
+Ontologia che descrive il dominio della fotografia.
+
+* Risorse
+- https://en.wikipedia.org/wiki/Photography
+  - dal greco /disegnare con la luce/
+  - le prime immagini prodotte catturando la luce in una camera oscuro risalgono al 1822 da parte di *Nicéphore Niépce*
+  - i suoi studi furono portati avanti da *Daguerre*
+- https://www.treccani.it/vocabolario/fotografia/
+
+#+begin_quote
+Procedimento che, mediante processi chimico-fisici, permette di ottenere, servendosi di un apposito apparecchio (macchina fotografica), l’immagine di persone, oggetti, strutture, situazioni: una lastra o una pellicola trasparente rivestite di un’emulsione sensibile alla luce (o ad altra radiazione attinica, per es. i raggi X) sono impressionate dalla luce riflessa dal soggetto attraverso l’obiettivo della macchina, e sono sviluppate ed eventualmente riprodotte su altro supporto di materiale fotosensibile per stampa a contatto o per ingrandimento in quante copie si vogliono, di identico o differente formato; si distinguono, sotto l’aspetto tecnico e del risultato, una f. in bianco e nero e una f. a colori, secondo che si riproduca il soggetto rendendo con sfumature più o meno intense di grigio le differenze di colore e di luminosità, oppure che lo si riproduca, grazie a una tecnica più complessa, con i suoi colori naturali.
+#+end_quote
+
+* Modellazione
+-
+* LODE
+- http://localhost:8080/lode/extract?url=https://raw.githubusercontent.com/dnbias/phon/main/phon.owl

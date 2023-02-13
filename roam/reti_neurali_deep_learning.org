@@ -596,6 +596,8 @@ Si trattano *sequenze* di dati, si cerca di produrre qualcosa.
   + learn language model, predict next word
   + grammaticality of a sentence
 
+Generalmente si utilizzano queste reti per task di *Natural Language Generation*.
+
 - $x(i)^{<t>}$ per considerare l'elemento t-esimo della sequenza $i$
 - $y(i)^{<t>}$ per considerare il t-esimo output della sequenza dell'esempio $i$
 - $Tx(i)$ lunghezza della sequenza $x(i)$
@@ -651,6 +653,9 @@ L'apprendimento avviene anche in questo caso per *backpropagation*, in questo ca
 La =BPTT= ha il problema tecnico della scomparsa o l'esplosione del gradiente
 - /vanishing or exploding gradient/
 
+Le /vanilla/ =RNN= cells contengono la una tangente iperbolica:
+\[h_{t} = tanh (W h_{t-}  + UX_{t}+b ) \]
+Questa funzione trasporta informazione nella sua parte centrale (derivate diverse da 0).
 
 ** [[id:14afc227-5915-4e20-8503-95bc4dc988be][Long Short Term Memory]]
 =LSTM=
@@ -671,8 +676,6 @@ Lo *stato della cella* $C$ è rappresentata orizzontalmente nei diagrammi, trasp
 #+ATTR_ORG: :width 500
 [[attachment:_20230108_083406LSTM3-chain.png]]
 
-
-
 I gate restituiscono vettori di bit della dimensione della memoria =LSTM= $C_{t-1}$.
 \begin{align*}
 f_t &= \sigma (W_f \cdot [h_{t-1}, x_{t}] b_f)\\
@@ -681,8 +684,95 @@ i_{t} &= \sigma (W_{i}  \cdot [h_{t-1},x_t ]+ b_{i})\\
 o_{t} &= \sigma (W_{o}  \cdot [h_{t-1},x_t ]+ b_{o})\\
 h_{t} &= o_{t}  \times \text{tanh}(C_{t})
 \end{align*}
+
+Lo scopo dello stato della cella di fornire un informazione stabile che non si annulli a causa dei /vanishing gradient/.
+L'output è detto /hidden state/.
 ** Gated Recurrent Unit
 =GRU=
+
+Un tentativo di semplificare le =LSTM= del 2014.
+
+\begin{align*}
+z_t &= \sigma (W_z \cdot [h_{t-1} ,x_t])\\
+r_t &= \sigma (W_r \cdot [h_{t-1}, x_t])\\
+\tilde h_t &= tanh (W\cdot [r_t \cdot h_{t-1}, x_t])\\
+h_t &= (1-z)\cdot h_{t-1} + z_t \cdot \tilde h_t
+\end{align*}
+
+** Encoder-Decoder
+Architettura di =RNN= in cui la prima parte processa l'input e la seconda genera l'output.
+- *encoder*
+  + gli output delle celle viene scartato
+  + lo stato (hidden e non) dell'ultima cella viene inserito in un /summary vector/[fn:summary L'ultima cella è quella che ha visto tutto l'input.]
+- *decoder*
+  + prende in input il /summary vector/
+  + produce la traduzione
+  + *Teacher forcing* - training
+    - il primo input è un token di ~START~
+    - successivamente in input si da l'output atteso
+  + *Autoregressive generation* - generazione
+    - il primo input è un token di ~START~
+    - poi a catena si danno in input gli output precedenti
+    - si procede fino a un token di ~END~
+
+Il processo di passaggio da /hidden state/ a token finale è composto da:
+- lo stato passa per una trasformazione lineare
+  + si ottiene un vettore di dimensione del vocabolario chiamato /logits/
+- si fa una /softmax/ sulla /logits/ ottenendo il logaritmo di una distribuzione di probabilità sul vocabolario
+  + chiamata /log_probs/
+
+Il problema di una architettura del genere è che in frasi molto lunghe il /summary vector/ deve riuscire a codificare tutta l'informazione, andando a perdere molta dell'informazione prodotta all'inizio della catena.
+La soluzione a questo problema è quello di avere diversi vettori di questo tipo che codifichino intervalli di tempo diversi del flusso dati. Questa tecnica è chiamata *attention*.
+Il decoder utilizza l'attenzione ad ogni time step utilizzando gli hidden state del encoder al time step relativo.
+- si confrontano questi hidden state nella finestra temporale con il decoder hidden state, si attribuiscono score più alti a stati più simili. A questi /attention score/ si applica una /softmax/ ottenendo una distribuzione di probabilità
+- ogni vettore è moltiplicato per il proprio softmaxed-score
+- questi vettori sono sommati producendo il /context vector/ per il decoder al time step
+
+Questo /context vector/ viene concatenato con l'output della cella decoder e questo viene trasformato per selezionare la parola del dizionario generata.
+
+\begin{align*}
+C_i &= \sum_{j=1}^{T_x} a_{ij}h_j \\
+a_{ij} &= \frac{\exp (e_{ij})}{\sum_{k=1}^{T_x} \exp (e_{jk})} \\
+e_{ij} &= \lang W_a s_{i-1}, U_a h_j\rang
+\end{align*}
+
+- $a$ sono gli attention score
+- $C$ è il contesto che viene preso in input dalla cella decoder
+** Transformer
+- Contributed by [cite:@vaswani2017]
+- [[https://towardsdatascience.com/transformer-neural-network-step-by-step-breakdown-of-the-beast-b3e096dc857f][Step-By-Step Breakdown]]
+- stato dell'arte
+
+#+ATTR_ORG: :width 500
+[[~/Pictures/misc/transformer.png]]
+
+Il modello si basa sulla tecnica della *self attention*.
+- l'attenzione va da input a input, per questo il self
+L'attention score non è altro che il *dot product* tra vettori query e keys, che calcola quanto due matrici si somigliano.
+- spesso le parole pongono l'attenzione su se stesse, in casi particolari però non è così
+
+\begin{align*}
+\text{Attention}(Q,K,V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
+\end{align*}
+
+Questo meccanismo di *attention* viene applicato più volte: *Multi-head attention*. Il modello nasce con 8 di queste teste.
+Ogni attention head ha le sue tre matrici $W^{Q},W^{K},W^{V}$.
+- inizializzate random, poi imparate durante il training
+- l'idea è che ogni /head/ si specializzerà su una specifica feature del linguaggio
+- una maniera per aumentare la dimensione del transformer, oltre a renderlo più profondo
+
+Gli output $Z_{i}$ delle head vengono concatenate tra loro e processate da un layer feed-forward con pesi imparati $W^{O}$. Si ottiene una matrice $Z$ finale della dimensione corretta, uguale alla dimensione dell'input $X$.
+
+Un limite dell'architettura fin'ora è che non è in grado di processare l'ordine delle singole parole in input.
+Questo è risolto tramite *positional encoding*. Viene sommato ad ogni input il proprio vettore di positional encoding.
+- questi $PE$ sono derivate da funzioni di seno e coseno
+
+\begin{align*}
+PE(pos, 2i) &= \sin (pos / 10000^{2i/d_{model})})\\
+PE(pos, 2i+1) &= \cos (pos / 10000^{2i/d_{model})})
+\end{align*}
+
+Questi embedding possono anche essere semplicemente imparati dal modello e non essere /hard-coded/.
 * Unsupervised Learning
 In questa categoria si collocano le *Reti Neurali Profonde*:
 - organizzano i propri livelli gerarchicamente
@@ -711,7 +801,7 @@ Il processo procede per /stride/ man mano applicando il filtro.
 - lo /stride/ individua di quanto si sposta la finestra passo dopo passo
 - per evitare che la finestra fuoriesca dalla matrice si aggiunge del padding della grandezza giusta
 
-Solitamente si utilizzano rete neurali multi dimensionali:
+Solitamente si utilizzano rete neurali multi-dimensionali:
 - ogni livello di neuroni viene chiamato *feature map*
   - una particolare mappa apprende una particolare feature dell'input
 - sia input che output hanno multiple feature map
@@ -720,6 +810,81 @@ Solitamente si utilizzano rete neurali multi dimensionali:
 Un livello di neuroni si occupa di un task di compressione dell'informazione chiamato *pooling* (/downsampling/)
 - questo task genera delle feature map di dimensioni minori
 - l'aggregazione dell'informazione può avvenire utilizzando *max-pooling* o *average-pooling*
+
+Le immagini sono rappresentate ma matrici numeriche
+- di 3 canali se a colori
+- questo tipo di oggetti sono conosciuti come *tensori*, che possono avere anche più di 3 dimensioni
+
+*** Image classification using MLP
+L'immagine deve essere appiattita.
+Non l'ideale:
+- viene persa informazione posizionale
+- ogni pixel è una feature (ridondante)
+- troppi parametri
+  + questo porta a overfitting
+
+Il problema è che l'input di cui ha bisogno una =MLP= è una serie di feature molto più significative dei pixel di cui è composta l'immagine.
+
+Serve una *feature map*.
+*** Convolution
+Per ottenere una *feature map* viene utilizzata la convoluzione.
+Si usano /kernel/ ovvero piccole matrici di pesi (anche chiamati /filter/).
+- questi passano l'input matrix calcolando la *feature map*
+- ogni elemento della feature map è una somma pesata locale che utilizza i pesi del filtro
+
+**** Proprietà
+- pesi sparsi
+  + i calcoli sono più veloci e localizzati
+- i parametri sono condivisi
+- l'analisi è locale
+- equivarianza rispetto la traslazione
+  + se la feature è in zone diverse nella mappa non ha importanza
+  + stessi pesi significa che i neuroni di quella zona stanno cercando la stessa feature
+
+**** Filtri
+Definiti da esperti:
+- identity
+- edge detection
+- sharpen
+- gaussian blur
+
+Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
+**** Iperparametri
+- numero di filtri
+- kernel size
+  + quanto l'analisi è locale
+  + un kernel grande come l'input si torna al *percettrone*
+- padding
+  + se le parti periferiche sono importanti per l'analisi si aggiunge un padding, solitamente inizializzati a 0
+- stride
+  + dimensione dal salto fatto dal kernel a ogni passo
+  + se uguale alla dimensione del kernel si perde la caratteristica della convoluzione in quanto ogni pixel è considerato una sola volta
+*** Pooling
+Molti valori della *feature map* sono comunque inutii.
+Il pooling:
+- riduce la dimensionalità
+- seleziona i valori più informativi
+- invariante su piccole traslazioni
+  + in quanto solitamente si usa /max/ che non dipende dall'ordine
+- non ha pesi
+
+I possibili pooling sono solitamente
+- average
+- max
+**** Iperparametri
+- kernel size (2x2)
+- padding
+- stride (2)
+*** Convolutional Blocks
+Blocchi composti da:
+- convolution
+- pooling layer
+- activation function
+  + per evitare il /vanishing gradient/ nelle reti molto profonde viene utilizzata =RELU=
+
+Alla fine vengono estratta la *feature map*.
+Questa (flattened) viene seguita da uno o più strati completamente connessi (=MLP=).[fn:flatten La feature map finale non contiene più informazioni spaziali e per questo si può appiattire senza problemi.]
+
 * RELU
 =REctified Linear Unit=
 \[f(u) = \max (0, u)\]
@@ -731,6 +896,79 @@ Questa funzione porta a una /attivazione sparsa/, dove non tutti i neuroni vengo
   - nelle reti si tende ad abbondare con il numero di neuroni o di livelli necessari al problema
   - in questo modo la rete può annullare delle componenti a piacimento durante il training
 
+* Pruning
+In ambito industriale soprattutto, ma non solo, negli anni si è visto un aumento importante del numero dei parametri delle reti neurali.
+Per questo è stato necessario sviluppare delle buone tecniche di pruning per ovviare a questo problema.
+
+*NB* architetture con un grande numero di parametri non hanno necessariamente un'accuratezza più alta.
+
+Per /pruning/ si intende una decrescita delle dimensioni di una rete neurale tramite l'eliminazione di parametri mantenendo performance accettabili.
+Si può distinguere in:
+- pruning strutturato
+  + modifica anche la struttura stessa della rete eliminando neuroni interi (tutti i suoi archi uscenti sono annullati)
+  + non completamente esplorato in letteratura
+- pruning non strutturato
+  + molto esplorato in letteratura
+
+Entrambi portano alla riduzione dello spazio richiesto dalla rete.
+
+Si osserva che questo processo di pruning avviene anche a livello biologico:
+- le sinapsi degli infanti aumentano fino a 7-8 anni
+- le sinapsi dei bambini di 15 sono diminuite rispetto a quel picco
+- tuttavia le capacità di apprendimento continuano a migliorare
+  + questo suggerisce che biologicamente un numero minore ma gestite meglio di sinapsi è preferibile
+
+
+** Tecniche di Regolazione
+Funzione di *Loss*:
+\[L (\Theta)=L(\Theta) + \lambda F(\Theta)\]
+- coefficiente di regolarizzazione \lambda
+- L1 regularization $$P(\Theta)=\sum_{n,i,j}|w^{n}_{i,j}|$$
+  + più efficace ma può essere complessa da applicare
+- L2 regularization $$P(\Theta)=\sum_{n,i,j}|w^{n}_{i,j}|^{2}$$
+
+La sola riduzione della norma dei pesi non è sufficiente ad effettuare pruning. Questo perché i pesi potrebbero non raggiungere lo 0.
+
+Per fare questo viene deciso un *threshold* sotto il quale i pesi vengono annullati.
+
+I pesi che desideriamo eliminare sono i pesi *ridondanti* nella rete. Per individuare questi parametri ci sono diverse tecniche.
+
+*** Sensitivity
+\[\Delta y \simeq \Delta w_{i} \frac{\delta y_{k}}{\delta w_{i}}]
+
+\[ S(y,w_{i})= \sum_{k=1}^{C}\alpha_{k}\big |\frac{\delta y_{k}}{\delta w_{i}}\big|\]
+- $C$ è la dimensione dell'output
+- $\alpha_{k}$ è un fattore scalare dei pesi
+
+Ci interessano i parametri per cui la rete ha poca sensibilità, definiamo la *insensitivity*:
+\[\overline S(y,w_{i})= 1 - S(y,w_{i})\]
+Per garantire che questa sia sempre positiva:
+\[\overline S_{b}(y,w_{i})= \max [0, \overline S(y,w_{i})]\]
+
+I pesi con derivata piccola devono essere ridotti e possibilmente eliminati.
+
+Questa viene tenuta di conto nell'update dei pesi:
+\[w_{i}^{t} := w_{i}^{t-1} - \eta \frac{\delta L}{\delta w_{i}^{t-1}} - \lambda w_{i}^{t-1} \overline S_{b}(\sigma, w_{i}^{t-1})\]
+
+Quindi se la sensitivity è alta ($\overline S = 0$) l'ultimo membro si annulla e non influenza l'update.
+Viceversa con insensitivity alta questo influenza l'update contribuendo a diminuire il peso.
+
+Sviluppando questa idea si va a valutare direttamente la sensibilità a partire dalla variazione della *loss*:
+\[S(L,w_{i})= \frac{1}{C} \sum_{k=1}^{C} \Big | \frac{\delta L}{\delta y_{L,k}}\Big| \cdot \Big | \frac{\delta y_{i,k}}{\delta w_{i}}\Big |\]
+Approssimabile a:
+\[S(L,w_{i})= \Big | \frac{\delta L}{\delta w_{i}} \Big |\]
+*** Irrelevance
+Invece di modificare l'update dei pesi modificare la *loss* che si vada a minimizzare secondo un coefficiente di irrilevanza.
+
+Si utilizza un esponenziale negativo, in questo modo asintotticamente questo tenderà a 0 con l'aumentare della derivata della *loss* rispetto al peso. Vale a dire che all'aumentare della derivata (parametro importante) diminuisce il parametro di *irrelevance*.
+
+Questo parametro è definito:
+\[I_{n,i,j}= \exp \Big(- \frac{\delta L(\oveline w)}{\delta w_{i,j}^{n}}\Big) \qquad 0 < I_{n,i,j} < 1\]
+
+Ridefiniamo la *loss*:
+\[L (\overline w ) = L(\overline w) + \lambda \sum_{n,i,j} \big ( I_{n,i,j} \cdot | w_{i,j}^{n}|^{2}  \big)\]
+
+Questo permette un metodo più generale che consente anche l'uso di altri ottimizzatori.
 
 
 [fn:differenza] deve essere compatibile con l'input $x_k$ per poter effettuare la distanza.

@@ -1,0 +1,128 @@
+:PROPERTIES:
+:ID:       fa31fd31-a6a5-40ea-b22f-7950a4e0322b
+:END:
+#+title: PhotOntology
+#+date: [2023-01-27 Fri 17:09]
+#+latex_class: my_thesis
+
+* Motivazioni
+Il dominio scelto per lo svolgimento di questo progetto è stato quello della fotografia.
+Questa arte è stata fin dalla sua nascita nel primo ottocento un grande motore culturale, sociale e politico e avrà sicuramente ancora per molto tempo un ruolo centrale nella cultura umana.
+
+Questo senza ignorare la centralità rinnovata che il linguaggio per immagini continua a sviluppare nel mondo dei social network e  della messaggistica istantanea.
+
+Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le più importanti sono:
+- [[https://www.getty.edu/research/tools/photo/][Getty - Photo Archive]]
+  + archivio di opere d'arte in corso di digitalizzazione contenente oltre due milioni di fotografie
+- [[https://www.flickr.com/commons][The Commons]]
+  + progetto di *Flickr* lanciato nel 2008 in collaborazione con la /Library of Congress/, con l'obiettivo di aumentare l'accesso a collezioni fotografiche pubbliche
+- [[https://www.europeana.eu/en/collections/topic/48-photography][Europeana]]
+  + progetto europeo in collaborazione con migliaia di archivi, biblioteche e musei per condividere il bene culturale europeo
+- [[http://apolloarchive.com/][Project Apollo Archive]]
+  + progetto composto da scan fotografiche del Kennedy Space Center di archiviazione e catalogo delle fotografie scattate durante l'allunaggio
+- [[http://www.iccd.beniculturali.it/it/194/fondi-fotografici][Istituto Centrale per il Catalogo e la Documentazione]]
+  + catalogo fotografica gestito dal Ministero della Cultura
+* Requisiti
+- *Finalità*
+  + creare una tassonomia il più semplice e chiara possibile per descrivere il dominio
+  + facilitare la ricerca e la scoperta di opere tramite collegamenti tra risorse
+- *Task*
+  + consultazione delle specifiche tecniche delle fotografie
+  + verifica di informazioni sulle fotografie
+  + esplorazione del grafo tramite collegamenti inferiti ad altre fotografie (stesso autore, stesso genere, stessa macchina fotografica)
+- *Target Utenti*
+  + professionisti
+  + storici
+* Descrizione del dominio
+Partendo dalla definizione Treccani di fotografia:
+#+begin_quote
+Procedimento che, mediante processi chimico-fisici, permette di ottenere, servendosi di un apposito apparecchio (macchina fotografica), l’immagine di persone, oggetti, strutture, situazioni: una lastra o una pellicola trasparente rivestite di un’emulsione sensibile alla luce (o ad altra radiazione attinica, per es. i raggi X) sono impressionate dalla luce riflessa dal soggetto attraverso l’obiettivo della macchina, e sono sviluppate ed eventualmente riprodotte su altro supporto di materiale fotosensibile per stampa a contatto o per ingrandimento in quante copie si vogliono, di identico o differente formato; si distinguono, sotto l’aspetto tecnico e del risultato, una f. in bianco e nero e una f. a colori, secondo che si riproduca il soggetto rendendo con sfumature più o meno intense di grigio le differenze di colore e di luminosità, oppure che lo si riproduca, grazie a una tecnica più complessa, con i suoi colori naturali.
+#+end_quote
+
+Il dominio si articola quindi in:
+- Fotografia
+  + Caratterizzabile dal periodo storico e dal luogo in cui è stata scattata
+  + Dimensioni (altezza x larghezza)
+- Agenti
+  + Soggetto
+  + Autore
+- Attrezzatura
+  + Corpo Macchina
+  + Lente
+- Medium
+  + Pellicola
+  + Digitale
+  + Stampa di qualche tipo
+- Genere
+  + Ritratto
+  + Glamour
+  + Natura
+  + etc.
+** Sitografia
+1. https://en.wikipedia.org/wiki/Photography
+2. https://en.wiktionary.org/wiki/photography
+3. https://sigma.ontologyportal.org (Photographing, Photography, Photograph, Camera, Lens)
+4. http://wordnetweb.princeton.edu (Photography, Photograph, Camera, Lens)
+5. https://www.treccani.it/vocabolario/fotografia/
+* Documentazione
+- [[https://www.nps.gov/history/hdp/standards/index.htm][Guidelines]] per la libreria del congresso sulla documentazione storica
+- [[https://www.aib.it/aib/commiss//libro/w/x080303a.htm][Formazione fototeche]] da parte dell'associazione italiana biblioteche riporta delle linee guida:
+  + segnalano i criteri più comuni per l'ordinamento
+    - alfabetico per autore
+    - cronologico
+    - geografico
+    - per materia
+  + suggeriscono di tenere insieme
+    - collezioni, raccolte, portfolio, /reportage/
+    - fotografie realizzate con un'unica tecnica
+    - gruppi assemblati per tema o soggetto
+  + riportare nell'inventario
+    - formato
+    - tecnica
+    - esistenza di negativo/positivo dell'originale
+    - diritti d'autore
+    - data di esecuzione
+- [[https://en.wikipedia.org/wiki/Pale_Blue_Dot][Pale Blue Dot (wikipedia)]]
+- [[https://photojournal.jpl.nasa.gov/catalog/PIA23645][Pale Blue Dot Revisited (JPL)]]
+- [[https://en.wikipedia.org/wiki/Migrant_Mother][Migrant Mother (wikipedia)]]
+- [[https://www.moma.org/collection/works/50989][Migrant Mother (MoMA)]]
+
+Vedere =Figure 1, 2, 3, 4, 5= per screenshot delle pagine che sono state consultate per le opere.
+
+
+#+caption: Catalogo sul sito del MoMA di Migrant Mother
+[[~/Pictures/20230127_18h46m54s_grim.png]]
+#+caption: Catalogo sul sito del MoMA di Migrant Mother
+[[~/Pictures/20230127_18h47m14s_grim.png]]
+#+caption: Catalogo sul sito della NASA di Pale Blue Dot Revisited
+[[~/Pictures/20230127_18h48m33s_grim.png]]
+#+caption: Catalogo su wikipedia di Migrant Mother
+[[~/Pictures/20230127_18h49m07s_grim.png]]
+#+caption: Catalogo di una foto storica sull'archivio del Ministero dei Beni Culturali
+[[~/Pictures/20230127_18h53m59s_grim.png]]
+
+\pagebreak
+L'ontologia è stata allineata con due ontologie ritenute utili a questo scopo:
+- DOLCE, come ontologia di alto livello;
+- FaBiO, per concetti legati a lavori di creatività pubblicabili e citabili.
+
+
+In particolare è stata allineata una versione semplificata di Dolce: [[http://ontologydesignpatterns.org/wiki/Ontology:DOLCE+DnS_Ultralite][DOLCE+DnS_Ultralite]].
+La versione di FaBiO allineata può essere trovata a questo [[https://sparontologies.github.io/fabio/current/fabio.html][link]].
+
+Inoltre è stato utilizzato il pattern architetturale =List= \rightarrow =ListItem= per rappresentare serie fotografiche e i loro singoli componenti (=Figure 8=).
+* OOPS
+=OntOlogy Pitfall Scanner=
+* Visualizzazione
+Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Protégé.
+
+#+caption: Struttura tassonomica di base
+[[~/Pictures/20230207_04h05m10s_grim.png]]
+#+caption: Fotografie
+[[~/Pictures/20230207_04h09m18s_grim.png]]
+#+caption: Pattern tra fotografie e serie fotografiche
+[[~/Pictures/20230207_04h11m41s_grim.png]]
+#+caption: Pagina Protégé di PaleBlueDot
+[[~/Pictures/20230207_04h14m04s_grim.png]]
+#+caption: Pagina Protégé della serie fotografica FamilyPortrait
+[[~/Pictures/20230207_04h17m23s_grim.png]]

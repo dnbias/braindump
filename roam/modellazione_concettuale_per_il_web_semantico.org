@@ -126,7 +126,7 @@ Stabilire che un percorso fatto di certe relazioni è uguale a una relazione usa
   - /property-centric/ language
 - [[id:c4bdeb51-c460-4f5d-9a33-2c7e43a2c3dd][OWL]]
   - a livello superiore rispetto RDF
-  - descrivere relazioni ricche e complesse tra entita'
+  - descrivere relazioni ricche e complesse tra entità
   - /class-centric/ language
 - [[id:6456f3d1-2bc3-4e50-abf0-1379bef1278d][Semantic Web]]: W3C's vision of the Web of [[id:9b0d4896-4666-4d52-b28c-dd52a01beeea][Linked Data]]
 - le specifiche [[id:1bf19812-6b15-4198-93b4-1f6fb37ea80e][RDF]] si suddividono in una serie di documenti
@@ -153,7 +153,7 @@ Stabilire che un percorso fatto di certe relazioni è uguale a una relazione usa
 - Grafi
   - =IRI= + triple
 
-La descrizione di una certa entita' si basa sull'utilizzo di *vocabolari condivisi*.
+La descrizione di una certa entità si basa sull'utilizzo di *vocabolari condivisi*.
 #+caption: esempio di uso di Friend of a Friend (foaf)
 #+begin_example
 <Bob><http://xmlns.com/foaf/0.1/topic_interest><The Mona Lisa>
@@ -334,6 +334,46 @@ Progetto di =IEEE=: =Suggested Upper Merged Ontology=
 - dati pubblici
 - dataset nella rete integrate nella rede =LOD= Cloud
 - [[https://www.wikidata.org][Wikidata]]
+
+I linked data sono un metodo per pubblicare dati strutturati in modo che possano essere collegati e diventare più utili, interrogabili da query semantiche.
+
+Basato su tecnologie Web standard:
+- http
+- =RDF=
+- =URI=
+
+Fondato sulla *deferenzializzazione* delle entità definite nelle ontologie
+- ovvero ottenere descrizioni =RDF= di entità
+
+Per rendere gli =URI= deferenziabili esistono due strategie
+- 303 =URI=​s
+  + viene restituita, tramite reindirizzamento, la risorsa specifica ricercata
+- hash =URI=​s
+  + viene restituito il documento, il client deve ritrovare la risorsa specifica che vuole
+
+Nei *linked data* esistono diversi tipi di link nelle triple =RDF=
+- *relationship link*
+  + punta oggetti collegati in altre sorgenti dati
+- *identity link*
+  + punta =URI= alias in altre sorgenti
+  + nel mondo *aperto* dei linked data è comune che stesse entità siano riferite da sorgenti diverse con =URI= diversi
+  + utilizzo della proprietà ~owl:sameAs~
+- *vocabulary link*
+  + punta definizioni dei termini di vocabolario
+  + ~owl:equivalentClass~
+  + ~owl:equivalentProperty~
+  + ~rdfs:subClassOf~
+  + ~skos:broadMatch~
+
+
+** Linked Date Platform
+=LDP=
+
+#+begin_quote
+Use of HTTP for accessing, updating, creating and deleting resources from servers that expose their resources as Linked Data.
+#+end_quote
+
+
 ** OWL
 ** Protégé
 - https://protegeproject.github.io/protege/class-expression-syntax/
@@ -459,6 +499,141 @@ Forall ?Actor ?Film ?Role (
 
 * Gestire e Interrogare grafi RDF
 ** SPARQL
+- linguaggio per /query/
+- supporta
+  + XML
+  + JSON
+  + CSV
+  + TSV
+- query indirizzare a un indirizzo =http= che ospita un *endpoint* =SPARQL=
+- *endpoint* esegue le query sui dataset contenuti in uno /triple store/
+
+Lo schema è classico:
+#+begin_example
+PREFIX foo: <http://example.com/resources/>
+
+FROM ...
+
+WHERE { ... }
+
+ORDER BY ...
+#+end_example
+
+=SPARQL= permette di lavorare con i grafi in modo simile a un database:
+- ~INSERT~
+- ~DELETE~
+- ~ASK~
+  + permette di ottenere una risposta booleana rispetto l'esistenza di una o più triple
+
+*** Esempi
+#+begin_example
+PREFIX cinema: <http://.../cinema#>
+
+SELECT ?subject
+    WHERE {?subject rdf:type cinema:Persona}
+#+end_example
+
+#+begin_example
+SELECT ?subject
+    WHERE {?subject :haPopolazione :popolazioneDiTorino;
+                    rdf:type :Città}
+#+end_example
+
+#+begin_example
+SELECT ?c ?p
+    WHERE {
+        ?c :haPopolazione ?p.
+        ?p rdf:type :PopolazioneAmpia.
+    }
+#+end_example
+
+#+begin_example
+SELECT ?p ?f
+    WHERE {
+        ?p rdf:type cinema:Persona;
+            cinema:haRuolo ?r.
+        ?r rdf:type cinema:Registra;
+            cinema:ruoloInFilm ?f.
+    }
+#+end_example
+
+È possibile includere filtri per selezionare un sottoinsieme dell'insieme dei risultati.
+#+begin_example
+SELECT ?c ?p
+    WHERE {
+        ?c  :haPopolazione ?p;
+            :situatoIn ?n;
+            :nomeCittà ?o.
+        ?n rdf:type :NazioneAsiatica.
+        ?p rdf:type :PopolazianeAmpia.
+        FILTER regex(?o, "Tokio").
+    }
+#+end_example
+
+#+begin_example
+SELECT ?c
+    WHERE {
+        ?c  :situatoIn ?n;
+            :dataFondazione ?a.
+        ?n rdf:type :NazioneAsiatica.
+
+        FILTER (?a>800)
+    }
+#+end_example
+
+È possibile ordinare e raggruppare i dati.
+#+begin_example
+SELECT ?f (COUNT(?p) AS ?count)
+    WHERE {
+        ?f cinema:haPersonaggio ?p.
+    } GROUP BY ?f ORDER BY ?f
+#+end_example
+
+I /blank node/ sono indicati da =[]=
+
+#+begin_example
+SELECT ?persona (MAX(?compenso) AS ?piùpagato)
+    WHERE {
+        ?persona cinema:haRuolo ?ruolo.
+        ?ruolo cinema:compenso ?compenso
+    } GROUP BY ?persona
+#+end_example
+
+** GraphDB
+Basato sul framework =RDF4J= che processa i dati =RDF=
+- [[http://rdf4j.org]]
+- ha funzionalità di
+  + parsing
+  + store
+  + inference
+  + query
+- utilizzabile con suo database =RDF= o altre soluzione di storage
+
+Nella creazione delle repository è possibile scegliere il *ruleset* di inferenza
+- i nostri progetti dovrebbero ricadere in =OWL2-RL=
+- evita di materializzare da Protegé ed eseguire inferenza direttamente al momento del caricamento delle triple
+*** Query Federate
+
+** JENA
+Altro framework utilizzato con il reasoner *Pellet* o *Hermit*.
+A differenza di =RDF4J= supporta =OWL=.
+
+** Virtuoso
+- open-source rilasciato da *OpenLink*
+- cross-platform
+
+User e secret default =dba=.
+Le operazioni vengono condotte nella sezione *Conductor*.
+È possibile caricare tramite *Quad Store Upload*
+- quad in quanto vengono viene aggiunto alle triple il grafo di appartenenza
+
+Si possono salvare dei =namespace= associando prefissi.
+
+Il default graph è ~http://localhost:8890/DAV/~.
+
+I file caricabili sono =.rdf=, =.ttl=, =.nt=.
+
+Tramite il browser faceted è possibile deferenziare gli =URI= che si desidera visualizzare.
 
 * Pubblicare i Dati
 * Relazioni tra classi
@@ -471,3 +646,54 @@ Forall ?Actor ?Film ?Role (
 - esempi
   - LOOM, BACK, CLASSIC
   - JENA, RACER, OWLIM
+
+* Progetto - Ontologia
+
+** Requirements
+- Documentazione sul dominio di conoscenza
+  + siti
+  + manuali
+  + standard
+- Funzionalità
+  + reference
+  + annotazione
+  + interoperabilità
+  + accesso ai dati
+- /Competency Questions/
+  + domande a cui l'ontologia deve rispondere
+** Modellazione
+- Ontology engineering
+  + pattern
+- sorgenti di conoscenza
+  + domain level
+  + fondazionali
+  + vocabolari
+  + tassonomie
+- allineamento
+  + =OWL=, =RDF=, =SKOS=
+- ragionamento automatico
+- documentazione
+** Knowledge Graph
+- =IRI= design
+- fragment identifier comprensibili
+- popolamento ontologia
+  + manuale
+  + mapping tools
+    - =SPARUL=
+      + importazione da Google Knowledge Graph
+    - =R2RML=
+      + da database
+- visualizzazione esempi significativi
+** Pubblicazione
+- LDP locale
+  + virtuoso
+  + GraphDB
+  + Blazegraph
+  + Jena + Pellet
+  + Vesa + Fuseki
+- materializzazione delle inferenze
+- upload
+** Applicazione
+- funzionalità e flusso
+- query
+- implementazione
