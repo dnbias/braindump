@@ -764,7 +764,7 @@ Ogni attention head ha le sue tre matrici $W^{Q},W^{K},W^{V}$.
 Gli output $Z_{i}$ delle head vengono concatenate tra loro e processate da un layer feed-forward con pesi imparati $W^{O}$. Si ottiene una matrice $Z$ finale della dimensione corretta, uguale alla dimensione dell'input $X$.
 
 Un limite dell'architettura fin'ora è che non è in grado di processare l'ordine delle singole parole in input.
-Questo è risolto tramite *positional encoding*. Viene sommato ad ogni input il proprio vettore di positional encoding.
+Questo è risolto tramite *positional encoding*. Viene sommato a ogni input il proprio vettore di positional encoding.
 - questi $PE$ sono derivate da funzioni di seno e coseno
 
 \begin{align*}
