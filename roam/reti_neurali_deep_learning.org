@@ -287,7 +287,7 @@ Al contrario *una bassa energia indica una rete stabile*.
 
 La definizione di energia:
 \[E = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j}\]
-- ogni prodotto interno e' positivo con
+- ogni prodotto interno è positivo con
   - $y$ concorde e $w$ positivo
   - $y$ discorde e $w$ negativo
 - la sommatoria è negata, quindi coppie di neuroni per cui il prodotto e' positivo portano il livello di energia ad abbassarsi
