@@ -299,7 +299,7 @@ E = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j} = - \frac{1}{2} \sum_{i}\sum
 - complete partial patterns
 - generalize, given similar inputs to memory they recover the corresponding information
 - fault tolerant, if synapses get broken the networks still works
-- extraction fo prototypes, a network learning similar information it creates a prototype
+- extraction of prototypes, a network learning similar information will creates a prototype
 - Hebb like
 ** Drawbacks
 - spurious states
