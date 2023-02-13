@@ -582,7 +582,7 @@ Piu' piccola e' la norma dei pesi migliori sono le performance della generalizza
 =RNN=
 
 Il learning è *supervisionato*.
-Si trattano *sequenze* di dati, se cerca di produrre qualcosa.
+Si trattano *sequenze* di dati, si cerca di produrre qualcosa.
 - una _traduzione_ di qualche tipo
   + speech recognition
   + machine translation
