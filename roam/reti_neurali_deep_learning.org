@@ -704,7 +704,7 @@ h_t &= (1-z)\cdot h_{t-1} + z_t \cdot \tilde h_t
 ** Encoder-Decoder
 Architettura di =RNN= in cui la prima parte processa l'input e la seconda genera l'output.
 - *encoder*
-  + gli output delle celle viene scartato
+  + l'output delle celle viene scartato
   + lo stato (hidden e non) dell'ultima cella viene inserito in un /summary vector/[fn:summary L'ultima cella è quella che ha visto tutto l'input.]
 - *decoder*
   + prende in input il /summary vector/
