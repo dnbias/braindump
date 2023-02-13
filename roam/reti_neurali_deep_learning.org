@@ -280,7 +280,7 @@ Il teorema si basa sul concetto di *energia*.
 Una rete con alta energia è molto propensa a modifiche di stato, molto instabile.
 Al contrario *una bassa energia indica una rete stabile*.
 
-- date $N$ unita' ci sono $2^{N}$ possibili stati della rete
+- date $N$ unità ci sono $2^{N}$ possibili stati della rete
 - a ogni stato si associa un livello di energia
 - si prova che ogni cambiamento di stato porta a un abbassamento dell'energia
 - c'e' un momento in cui lo stato (stabile) non può più modificarsi in un altro stato
