@@ -557,7 +557,7 @@ Si deriva dalla definizione di $F(x)$ il risultato del calcolo sulla matrice $N$
 - $w$ vettore delle $w_i$
 - $d$ vettore delle $d_i$
 
-$\Phi$ é una matrice quadrata in quanto tutti gli $i$ input vengono utilizzati per ogni riga come centro della =RBF=
+$\Phi$ è una matrice quadrata in quanto tutti gli $i$ input vengono utilizzati per ogni riga come centro della =RBF=
 Definita la *pseudo-inversa* $$\Phi^{+}= (\Phi^{T}\Phi)^{-1}\Phi^{T}$$
 I pesi si trovano risolvendo il sistema lineare
 \[w^T = \Phi^+ d^T\]
