@@ -238,7 +238,7 @@ In questa fase si decidono le *memorie fondamentali*
 - le configurazioni di attivazione dei neuroni
 Date queste vengono calcolati *one-shot* i pesi.
 
-Data una singola memoria fondamentale e' semplice:
+Data una singola memoria fondamentale è semplice:
 \[w_{ij} = f_{}_1(i) \times f_1(j)\]
 - attivazioni discorde indeboliscono la connessione
 
