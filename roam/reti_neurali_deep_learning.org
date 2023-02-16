@@ -529,14 +529,14 @@ Una funzione radiale restituisce un output dipendente dalla distanza di input e 
 - il centro della funzione radiale é $t$
   - un generico centro $t_k$ ha $m$ componenti[fn:differenza]
   - le componenti dei centri fanno le veci dei pesi del neurone /hidden/ del /multilayer perceptron/
-- un altro iperparametro é lo /spread/ $\sigma$
+- un altro iperparametro è lo /spread/ $\sigma$
   - indica quanto la funzione sia aperta o chiusa
   - /spread/ grande significa proiezioni (circonferenze) grandi
 - tutti i neuroni nascosti diventano sensibili a input vicini al loro centro
   - la sensibilità dei neuroni può essere aggiustato tramite lo /spread/ $\sigma$, grande significa meno sensibile
 
 I pesi dell'uscita $y$ individua il /decision boundary/ nel nuovo spazio $\phi$
-- questo in quanto il problema - precedentemente non linearmente separabile - viene trasposto in un nuovo spazio dalle $\phi$ in cui é linearmente separabile
+- questo in quanto il problema - precedentemente non linearmente separabile - viene trasposto in un nuovo spazio dalle $\phi$ in cui è linearmente separabile
 
 Si cerca una funzione $F: R^m \Rightarrow R$ che le condizioni di interpolazione $F(x_i) = d_i$
 Si cercano i pesi che definiscano $F(x)$
