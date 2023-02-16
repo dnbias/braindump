@@ -497,7 +497,7 @@ Consiste nella applicazione ripetuta di 2 passi:
 1. *forward pass*, la rete viene attivata con un esempio e si calcola l'errore di ogni neurone di output
 2. *backward pass*, l'errore di rete è utilizzato per aggiornare i pesi
 
-Il processo é più complesso che per =Adaline= in quanto i nodi nascosti contribuiscono all'errore.
+Il processo è più complesso che per =Adaline= in quanto i nodi nascosti contribuiscono all'errore.
 Partendo dall'output layer l'errore viene propagato all'indietro attraverso la rete (layer by layer), calcolando ricorsivamente il *gradiente locale* di ogni peso.
 
 Calcoliamo l'errore partendo dal layer di output, al $n$ -esimo training example:
