@@ -521,6 +521,7 @@ In questo caso il neurone è a conoscenza del suo errore e può andare a modific
 
 \[-\frac{\delta E}{\delta v_{j}} = - \frac{\delta E}{\delta e_{j}}\frac{\delta e_{j}}{\delta y_{j}}\frac{\delta y_{j}}{\delta v_{j}} = - e_{j}(-1)\phi' (v_{j})\]
 
+\[\Delta w_{ji} = \eta e_{j}(-1) \phi' (v_{j})y_{i}]
 **** Caso del neurone hidden
 
 ** Radial-Basis Function Neural Network
