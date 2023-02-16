@@ -242,7 +242,7 @@ Data una singola memoria fondamentale è semplice:
 \[w_{ij} = f_{}_1(i) \times f_1(j)\]
 - attivazioni discorde indeboliscono la connessione
 
-Date $M$ memorie fondamentali, $f_1 \cdots f_{M}$ di dimensioni $N$.
+Date $M$ memorie fondamentali, $f_1 \cdots f_{M}$ di dimensioni $M$.
 \begin{align*}
 w_{ji} =
 \begin{cases}
