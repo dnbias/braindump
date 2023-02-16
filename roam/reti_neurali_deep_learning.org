@@ -516,6 +516,10 @@ w_{ji} &= w_{ji} + \Delta w_{ji} \\
   - il gradiente è l'insieme di tutte le derivate di $E$ in funzione dei pesi
     - queste sono tante quante i pesi, ogni variazione di peso ha un impatto sull'errore totale della rete
 
+**** Caso del neurone di output
+
+**** Caso del neurone hidden
+
 ** Radial-Basis Function Neural Network
 =RBF= - [[id:b2bc8c65-d796-4070-8cc3-51dd514d7679][Radial Basis Function Network]]
 Una funzione radiale restituisce un output dipendente dalla distanza di input e un vettore interno. Una tipologia di =RBF= molto diffuse sono le *Gaussiane*.
