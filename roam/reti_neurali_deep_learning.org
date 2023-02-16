@@ -284,7 +284,7 @@ Al contrario *una bassa energia indica una rete stabile*.
 - date $N$ unità ci sono $2^{N}$ possibili stati della rete
 - a ogni stato si associa un livello di energia
 - si prova che ogni cambiamento di stato porta a un abbassamento dell'energia
-- c'e' un momento in cui lo stato (stabile) non può più modificarsi in un altro stato
+- c'è un momento in cui lo stato (stabile) non può più modificarsi in un altro stato
 
 La definizione di energia:
 \[E = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j}\]
@@ -306,6 +306,7 @@ E = - \frac{1}{2} \sum_{i}\sum_{j}w_{ij} y_{i}y_{j} = - \frac{1}{2} \sum_{i}\sum
 - spurious states
 - not all fundamental memories are stable states
 - storage capacity with few errors given $N$ units is $0.14 N$
+
 
 * Boltzmann Machines
 Le [[id:a6beb0ba-31e4-4a91-8cce-eb48aee3e588][Boltzmann Machines]] utilizzano la rete per costruire interpretazioni degli input sensoriali.
