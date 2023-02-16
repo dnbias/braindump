@@ -500,7 +500,7 @@ Consiste nella applicazione ripetuta di 2 passi:
 Il processo è più complesso che per =Adaline= in quanto i nodi nascosti contribuiscono all'errore.
 Partendo dall'output layer l'errore viene propagato all'indietro attraverso la rete (layer by layer), calcolando ricorsivamente il *gradiente locale* di ogni peso.
 
-Calcoliamo l'errore partendo dal layer di output, al $n$ -esimo training example:
+Calcoliamo l'errore partendo dal layer di output, al $n$​-esimo training example:
 \begin{align*}
 e_{j} (n) &= d_{j}(n) - y_{j}(n) \\
 E(n) &= \frac{1}{2} \sum e_{j}^{2} (n) \\
