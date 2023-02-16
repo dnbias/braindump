@@ -513,7 +513,7 @@ w_{ji} &= w_{ji} + \Delta w_{ji} \\
 \Delta w_{ji} &= - \eta \frac{\delta E}{\delta w_{ji}} \quad \eta > 0\
 \end{align*}
 - il delta viene corretto nella direzione *opposta* del gradiente di $E$
-  - il gradiente é l'insieme di tutte le derivate di $E$ in funzione dei pesi
+  - il gradiente è l'insieme di tutte le derivate di $E$ in funzione dei pesi
     - tante quante i pesi, ogni variazione di peso ha un impatto sull'errore totale della rete
 
 ** Radial-Basis Function Neural Network
