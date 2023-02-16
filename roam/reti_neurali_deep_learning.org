@@ -517,6 +517,7 @@ w_{ji} &= w_{ji} + \Delta w_{ji} \\
     - queste sono tante quante i pesi, ogni variazione di peso ha un impatto sull'errore totale della rete
 
 **** Caso del neurone di output
+In questo caso il neurone è a conoscenza del suo errore e può andare a modificare gli input dei neuroni del livello successivo.
 
 **** Caso del neurone hidden
 
