@@ -545,7 +545,7 @@ Una funzione radiale restituisce un output dipendente dalla distanza di input e 
 - tutti i neuroni nascosti diventano sensibili a input vicini al loro centro
   - la sensibilità dei neuroni può essere aggiustato tramite lo /spread/ $\sigma$, grande significa meno sensibile
 
-I pesi dell'uscita $y$ individua il /decision boundary/ nel nuovo spazio $\phi$
+I pesi dell'uscita $y$ individuano il /decision boundary/ nel nuovo spazio $\phi$
 - questo in quanto il problema - precedentemente non linearmente separabile - viene trasposto in un nuovo spazio dalle $\phi$ in cui è linearmente separabile
 
 Si cerca una funzione $F: R^m \Rightarrow R$ che le condizioni di interpolazione $F(x_i) = d_i$
