@@ -477,9 +477,9 @@ Dati di apprendimento sono etichettati.
 Non ci sono neuroni nascosti.
 ** Multi Layer feed-forward
 =Input Layer= \to =Hidden Layer= \to =Output Layer=
-- le unità nascoste estraggono dinamiche di _livello superiore_
 
 Può essere completamente (ogni neurone è connesso a ognuno dei precedenti) o parzialmente connesso.
+- le unità nascoste estraggono dinamiche di _livello superiore_
 Tratta dati non linearmente separabili.
 
 L'algoritmo di =back-propagation= minimizza l'errore con la tecnica della discesa del gradiente
