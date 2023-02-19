@@ -180,7 +180,7 @@ Inoltre a ogni neurone $i$ è assegnato un vicinato (/neighberhood/) cui è prop
 - una gaussiana che decresce con l'aumentare della distanza tra neuroni
 - cooperazione tra i neuroni
 
-\[w_{j} (n+1)=  w_{j} (n+1) + \eta (n) h_{j,i} (n) (x - w_{j} (n))\]
+\[w_{j} (n+1)=  w_{j} (n) + \eta (n) h_{j,i} (n) (x - w_{j} (n))\]
 \[h_{j,i} (n) = \exp \Big (- \frac{d_{j,i}^2}{2\sigma (n)^2}\Big )\]
 \[\sigma (n) = \sigma _{0}\]
 
