@@ -489,7 +489,7 @@ Una tipica funzione di attivazione è la =sigmoide=
 con $a > 0$
 
 \[v_{j} = \sum w_{ji}y_{i}\]
-dove $y_{i}$ é l'output del neurone $i$
+dove $y_{i}$ è l'output del neurone $i$
 
 $\phi$ si avvicina alla funzione gradino (/step/) al crescere di $a$.
 
