@@ -189,7 +189,7 @@ Ci sono 2 fasi, a grosso modo
 - convergence
 
 
-*topographic Error*
+*Topographic Error*
 \[\text{TE} = \frac{1}{L} \sum_{l=1}^{L} u(x_{l})\]
 
 * Hopfield Networks
