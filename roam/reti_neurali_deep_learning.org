@@ -484,7 +484,7 @@ Tratta dati non linearmente separabili.
 L'algoritmo di =back-propagation= minimizza l'errore con la tecnica della discesa del gradiente
 - per questo la funzione associata al percettrone deve essere derivabile
 
-Una tipica funzione di attivazione é la =sigmoide=
+Una tipica funzione di attivazione è la =sigmoide=
 \[\phi(v_{j}) = \frac{1}{1+e^{-av_{j}}}\]
 con $a > 0$
 
