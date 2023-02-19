@@ -176,7 +176,7 @@ Una forma di *competitive learning*
 Il *learning rate* solitamente decresce con il procedere dell'apprendimento, il cambiamento in generale è regolato:
 \[\eta(n) = \]
 
-Inoltre a ogni neurone $i$ è assegnato un vicinato (/neighberhood/) cui e' propagata la correzione dei pesi.
+Inoltre a ogni neurone $i$ è assegnato un vicinato (/neighberhood/) cui è propagata la correzione dei pesi.
 - una gaussiana che decresce con l'aumentare della distanza tra neuroni
 - cooperazione tra i neuroni
 \[w_{j} (n+1)=  w_{j} (n+1) + \eta (n) h_{j,i} (n) (x - w_{j} (n))\]
