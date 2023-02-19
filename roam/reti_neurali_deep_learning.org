@@ -538,7 +538,7 @@ Una funzione radiale restituisce un output dipendente dalla distanza di input e 
   - il livello di uscita è lineare
 \[\phi_{}_{1} \cdots \phi_{k}\]
 \[y = w_{1}\phi_{1} (||x - t_{1}||) + \dots + w_{m_{1}}\phi_{m_{1}}(||x - t_{m_{1}}||)\]
-- il centro della funzione radiale é $t$
+- il centro della funzione radiale è $t$
   - un generico centro $t_k$ ha $m$ componenti[fn:differenza]
   - le componenti dei centri fanno le veci dei pesi del neurone /hidden/ del /multilayer perceptron/
 - un altro iperparametro è lo /spread/ $\sigma$
