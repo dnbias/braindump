@@ -455,7 +455,7 @@ Oppure utilizzando *Deep Autoencoders* si può comprimere l'informazione livello
 ** [[id:5e72960f-d629-49fe-8f37-e52124ccb910][Deep Belief Networks]]
 =DBN=
 
-Impara a generare a livello visible elementi del =TS=.
+Impara a generare a livello /visible/ elementi del =TS=.
 
 Si combinano due =RBM= impilandole e rimuovendo i pesi che passavano da livello visible a livello hidden, i pesi in risalita di tutte le =RBM= tranne quella top.
 - solo pesi discendenti a livello più basso
