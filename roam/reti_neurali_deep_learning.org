@@ -162,7 +162,7 @@ La *best matching unit* (=BMU=) e' il neurone attivato maggiormente dall'input
 - corrisponde meglio allo stimolo
 - attivazione e' il prodotto scalare $x \cdot w_{i}$
 - questo e' anche il neurone con la minima distanza euclidea da $x$
-  - $$i: \forall i ||x - w_{i}|| \le ||x - w_{j}||$$
+  - $$i: \forall j ||x - w_{i}|| \le ||x - w_{j}||$$
   - se tutti i vettori hanno la stessa norma la minima distanza euclidea e il massimo prodotto scalare vanno di pari passo, se non e' cosi' viene considerata la distanza come definizione
 
 Il /learning/ va a modificare i pesi del =BMU= in modo da aumentare la probabilità che questo sia il neurone vincente per lo stesso input o simili.
