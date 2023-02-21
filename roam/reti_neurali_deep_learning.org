@@ -692,7 +692,7 @@ Lo *stato della cella* $C$ è rappresentata orizzontalmente nei diagrammi, trasp
 
 I gate restituiscono vettori di bit della dimensione della memoria =LSTM= $C_{t-1}$.
 \begin{align*}
-f_t &= \sigma (W_f \cdot [h_{t-1}, x_{t}] b_f)\\
+f_t &= \sigma (W_f \cdot [h_{t-1}, x_{t}] + b_f)\\
 i_{t} &= \sigma (W_{i}  \cdot [h_{t-1},x_t ]+ b_{i})\\
 \tilde C_{t} &= \text{tanh}(W_{C} \cdot [h_{t-1}, x_{t}] + b_{C})\\
 o_{t} &= \sigma (W_{o}  \cdot [h_{t-1},x_t ]+ b_{o})\\
