@@ -676,7 +676,7 @@ Questa funzione trasporta informazione nella sua parte centrale (derivate divers
 [[https://colah.github.io/posts/2015-08-Understanding-LSTMs/][Blog a Riguardo]]
 
 - cattura dipendenze /long distance/, una memoria
-- le unità hanno delle /gate/ che decidono *quando* aggiornare le celle di memoria, cosa mantenere e cosa dimenticare[fn:gate /refresh when new subject/]
+- le unità hanno dei /gate/ che decidono *quando* aggiornare le celle di memoria, cosa mantenere e cosa dimenticare[fn:gate /refresh when new subject/]
   + forget gate, moltiplicato elemento per elemento per $C$
     - ogni bit indica se mantenere o dimenticare
   + input gate
