@@ -537,6 +537,16 @@ Con $j$ neurone hidden:
 \begin{align*}
 w_{ji} &= w_{ij} + \Delta w_{ji} \\
 \Delta w_{ji} &= \eta \delta_{j} y_{i}
+\end{align*}
+
+con
+\begin{align*
+\delta_j =
+\begin{cases
+\phi'(v_j)(d_j - y_j) \qquad j \text{ neurone di output}
+\phi'(v_j) \sum_{k} \delta_{k} w_{kj})\)\qquad j \text{ neurone hidden}
+\end{cases
+\end{align*
 ** Radial-Basis Function Neural Network
 =RBF= - [[id:b2bc8c65-d796-4070-8cc3-51dd514d7679][Radial Basis Function Network]]
 Una funzione radiale restituisce un output dipendente dalla distanza di input e un vettore interno. Una tipologia di =RBF= molto diffuse sono le *Gaussiane*.
