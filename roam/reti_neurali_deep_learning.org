@@ -528,9 +528,9 @@ In questo caso il neurone è a conoscenza del suo errore e può andare a modific
 \[\Delta w_{ji} = \eta e_{j} \phi' (v_{j})y_{i}\]
 
 **** Caso del neurone hidden
-
+Con $j$ neurone hidden:
 \[\Delta w_{ji} = \eta \delta_j y_{i}\]
-
+\[\delta_{j} = \phi' (v_{j}) \sum_{k} \delta_{k}w_{kj}\]
 
 ** Radial-Basis Function Neural Network
 =RBF= - [[id:b2bc8c65-d796-4070-8cc3-51dd514d7679][Radial Basis Function Network]]
