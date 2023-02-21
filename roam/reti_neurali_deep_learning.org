@@ -529,7 +529,7 @@ In questo caso il neurone è a conoscenza del suo errore e può andare a modific
 
 **** Caso del neurone hidden
 
-\[\Delta w_{ji} = \eta e_{j} \phi' (v_{j})y_{i}\]
+\[\Delta w_{ji} = \eta \delta_j y_{i}\]
 
 
 ** Radial-Basis Function Neural Network
