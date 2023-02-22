@@ -213,7 +213,7 @@ In queste configurazioni si possono raggiungere degli *stati stabili*, dove:
 \[\forall i, y_{i} (n+1) = y_{i}(n)\]
 In generale la negazione di uno stato stabile rimane stabile.
 
-Si dimostra un *teorema di convergenza* per cui da un qualsiasi stato di partenza e' garantito si raggiunge in un numero di passi finiti a uno stato stabile.
+Si dimostra un *teorema di convergenza* per cui da un qualsiasi stato di partenza è garantito si raggiunge in un numero di passi finiti a uno stato stabile.
 
 Le memorie fondamentali sono inserite all'interno della rete e questa imparerà a riconoscere versioni parziali/corrotte di queste sue memorie.
 - la rete fa *pattern completion*
