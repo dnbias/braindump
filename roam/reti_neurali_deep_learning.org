@@ -878,7 +878,7 @@ Si usano /kernel/ ovvero piccole matrici di pesi (anche chiamati /filter/).
   + stessi pesi significa che i neuroni di quella zona stanno cercando la stessa feature
 
 
-**** Filtri
+*** Filtri
 Definiti da esperti:
 - identity
 - edge detection
@@ -897,7 +897,7 @@ Ora i =CNN= imparano in base al task definito i filtri migliori per risolverlo.
   + dimensione dal salto fatto dal kernel a ogni passo
   + se uguale alla dimensione del kernel si perde la caratteristica della convoluzione in quanto ogni pixel è considerato una sola volta
 *** Pooling
-Molti valori della *feature map* sono comunque inutii.
+Molti valori della *feature map* sono comunque inutili.
 Il pooling:
 - riduce la dimensionalità
 - seleziona i valori più informativi
