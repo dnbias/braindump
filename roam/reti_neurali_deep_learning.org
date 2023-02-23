@@ -690,7 +690,7 @@ La =BPTT= ha il problema tecnico della scomparsa o l'esplosione del gradiente
 - /vanishing or exploding gradient/
 
 Le /vanilla/ =RNN= cells contengono una tangente iperbolica:
-\[h_{t} = tanh (W h_{t-}  + UX_{t}+b ) \]
+\[h_{t} = tanh (W h_{t}  + UX_{t}+b ) \]
 Questa funzione trasporta informazione nella sua parte centrale (derivate diverse da 0).
 
 ** [[id:14afc227-5915-4e20-8503-95bc4dc988be][Long Short Term Memory]]
