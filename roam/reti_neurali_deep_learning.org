@@ -689,7 +689,7 @@ L'apprendimento avviene anche in questo caso per *backpropagation*, in questo ca
 La =BPTT= ha il problema tecnico della scomparsa o l'esplosione del gradiente
 - /vanishing or exploding gradient/
 
-Le /vanilla/ =RNN= cells contengono la una tangente iperbolica:
+Le /vanilla/ =RNN= cells contengono una tangente iperbolica:
 \[h_{t} = tanh (W h_{t-}  + UX_{t}+b ) \]
 Questa funzione trasporta informazione nella sua parte centrale (derivate diverse da 0).
 
