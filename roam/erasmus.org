@@ -155,7 +155,7 @@ Motivazione del Periodo di Studio Erasmus all'Universitá di Lussemburgo
 - [[https://wwwen.uni.lu/international/mobility/incoming_exchange_students][Exchange info]]
 - [[https://wwwen.uni.lu/international/mobility/incoming_exchange_students/how_do_i_apply][How to Apply]]
 - [[https://wwwen.uni.lu/studies/fstm/master_in_information_and_computer_sciences/programme][Master in Information and CS]]
-- [[https://www.power-plugs-sockets.com/luxembourg/][Plug type F]]
+[[id:39ee669b-9493-49ea-a13f-276d16d401c6][Software Vulnerabilities: Exploitation and Mitigation]]- [[https://www.power-plugs-sockets.com/luxembourg/][Plug type F]]
 - Stay
   + [[https://www.freerentads.com/rentals-properties-for-rent-luxembourg-QQSZ126067618-Hxt66O][FreeRentads]]
   + [[https://wwwen.uni.lu/students/accommodation/housing_request][Housing Request]]
@@ -174,3 +174,4 @@ Almeno 20 =ECTS=
 - [[id:54623d0e-8f4b-44c7-9de5-902f6fad6d7a][Intelligent Agents I]]
 - [[id:ad8e431b-7af6-4eb9-99a7-41af9cd0c4ce][Microkernel Based Systems]]
 - [[id:66f28b61-8380-4480-9cb4-43cf319d6e9a][Quality of Service in Computer Networks]]
+-
