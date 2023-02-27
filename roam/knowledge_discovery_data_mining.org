@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       fad85788-53f8-4de6-9e3c-775c3907e07c
+:END:
+#+title: Knowledge Discovery & Data Mining
+#+date: [2023-02-27 Mon 10:53]
+#+FILETAGS: erasmus university compsci
