@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       54623d0e-8f4b-44c7-9de5-902f6fad6d7a
+:END:
+#+title: Intelligent Agents I
+#+date: [2023-02-27 Mon 10:55]
+#+FILETAGS: erasmus university compsci
