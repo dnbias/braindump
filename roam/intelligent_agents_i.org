@@ -48,6 +48,8 @@ So the =CL= need to be extended to allow for reasoning in real world context.
     - $\square \quad \diamond$
 - formula
   + $p \in PS | A \land B | ...$
+*** Modal
+/Qualifies the truth of a statement/
 ** Epistemic Logics
 ** Temporal Logics
 ** Multi-agent Logics
