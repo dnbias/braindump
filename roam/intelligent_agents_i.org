@@ -10,4 +10,5 @@
   + could be anything
   + has *perception* of this environment (sensors)
   + can take *action* based on this perception (actuators)
+- *reasoning* take the agent from perception to action
 * Modal Language
