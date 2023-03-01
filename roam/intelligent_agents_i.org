@@ -21,4 +21,7 @@ Can't classical logics be used?
 - the problem is the information we have is not purely mathematical
 - how do you model *Knowing*
   + $\text{Knowing}(X,Y)$
+  + problem of extensionality
+    - knowledge is not extentional
+      + knowing something that is true *does not mean* knowing everything that is true
 * Modal Language
