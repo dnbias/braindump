@@ -37,6 +37,7 @@ Can't classical logics be used?
 So the =CL= need to be extended to allow for reasoning in real world context.
 
 * Logics
+** Modal Logics
 ** Epistemic Logics
 ** Temporal Logics
 ** Multi-agent Logics
