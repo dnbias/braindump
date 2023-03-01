@@ -5,4 +5,7 @@
 #+date: [2023-02-27 Mon 10:55]
 #+FILETAGS: erasmus university compsci
 
+* Agent
+- interacts with an /environment/
+  + could be anything
 * Modal Language
