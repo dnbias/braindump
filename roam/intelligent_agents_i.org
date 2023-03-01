@@ -55,7 +55,7 @@ The /box/ and /diamond/ can be interpreted as:
   + $\square A$ - necessarily $A$
   + $\diamond A$ - possibly $A$
 - doxastic logic
-  + $\square A$ - believed to be true $A$
+  + $\square A$ - $A$ is believed to be true
 - epistemic logic
   + $\square A$ - $A$ is known
 *** Modal
