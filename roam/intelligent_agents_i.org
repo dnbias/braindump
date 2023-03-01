@@ -38,6 +38,14 @@ So the =CL= need to be extended to allow for reasoning in real world context.
 
 * Logics
 ** Modal Logics
+=ML=
+*** Syntax
+- alphabet
+  + connectives
+  + propositional symbols
+  + parenthesis
+  + 2 new connectives
+    - $\square \quad \diamond$
 ** Epistemic Logics
 ** Temporal Logics
 ** Multi-agent Logics
