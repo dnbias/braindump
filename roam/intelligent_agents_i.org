@@ -40,3 +40,4 @@ So the =CL= need to be extended to allow for reasoning in real world context.
 ** Epistemic Logics
 ** Temporal Logics
 ** Multi-agent Logics
+Express the individual knowledge.
