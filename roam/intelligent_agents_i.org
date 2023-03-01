@@ -12,4 +12,8 @@
   + can take *action* based on this perception (actuators)
 - *reasoning* takes the agent from perception to action
   + this is the aspect studied in this course
+
+* Classical Logic
+- propositional logic
+- first order logic
 * Modal Language
