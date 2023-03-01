@@ -25,4 +25,7 @@ Can't classical logics be used?
     - knowledge is not extentional
       + knowing something that is true *does not mean* knowing everything that is true
       + in =CL= true formulas are equivalent
+  + facts can be inconsistent
+    - $A$ is the case *and* $\lnot A$ is perceived $\implies$ anything
+      + false implies anything
 * Modal Language
