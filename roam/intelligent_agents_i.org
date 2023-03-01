@@ -28,4 +28,5 @@ Can't classical logics be used?
   + facts can be inconsistent
     - $A$ is the case *and* $\lnot A$ is perceived $\implies$ anything
       + false implies anything
+      + *principle of explosion*
 * Modal Language
