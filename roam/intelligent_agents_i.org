@@ -46,6 +46,8 @@ So the =CL= need to be extended to allow for reasoning in real world context.
   + parenthesis
   + 2 new connectives
     - $\square \quad \diamond$
+- formula
+  + $p \in PS | A \land B | ...$
 ** Epistemic Logics
 ** Temporal Logics
 ** Multi-agent Logics
