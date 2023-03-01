@@ -52,8 +52,12 @@ So the =CL= need to be extended to allow for reasoning in real world context.
 The /box/ and /diamond/ can be interpreted as:
 - depends of the context
 - alethic logic
-  + $\square A$ necessarily $A$
-  + $\diamond A$ possibly $A$
+  + $\square A$ - necessarily $A$
+  + $\diamond A$ - possibly $A$
+- doxastic logic
+  + $\square A$ - believed to be true $A$
+- epistemic logic
+  + $\square A$ - $A$ is known
 *** Modal
 /Qualifies the truth of a statement/
 - can qualify if the truth is temporally qualified or necessarily qualified etc.
