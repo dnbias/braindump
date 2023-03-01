@@ -35,4 +35,8 @@ Can't classical logics be used?
 - *material implication* is not intuitive and does not make sense in real world applications
 
 So the =CL= need to be extended to allow for reasoning in real world context.
-* Modal Language
+
+* Logics
+** Epistemic Logics
+** Temporal Logics
+** Multi-agent Logics
