@@ -50,6 +50,7 @@ So the =CL= need to be extended to allow for reasoning in real world context.
   + $p \in PS | A \land B | ...$
 *** Modal
 /Qualifies the truth of a statement/
+- can qualify if the truth is temporally qualified or necessarily qualified etc.
 ** Epistemic Logics
 ** Temporal Logics
 ** Multi-agent Logics
