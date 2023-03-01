@@ -31,4 +31,5 @@ Can't classical logics be used?
       + *principle of explosion*
   + monotone logic is not what we want
     - in implications we can add anything to the left side and the right will still hold
+    - does not model exceptions
 * Modal Language
