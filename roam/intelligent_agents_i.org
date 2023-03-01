@@ -8,4 +8,6 @@
 * Agent
 - interacts with an /environment/
   + could be anything
+  + has *perception* of this environment
+  + can take *action* based on this perception
 * Modal Language
