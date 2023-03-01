@@ -16,4 +16,9 @@
 * Classical Logic
 - propositional logic
 - first order logic
+
+Can't classical logics be used?
+- the problem is the information we have is not purely mathematical
+- how do you model *Knowing*
+  + $\text{Knowing}(X,Y)$
 * Modal Language
