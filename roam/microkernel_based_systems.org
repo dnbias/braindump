@@ -20,3 +20,5 @@ You build the kernel outside of a standard linux environment
 - no dynamic liking
 - no RTTI
 - no stdlib
+
+* Thread Switch
