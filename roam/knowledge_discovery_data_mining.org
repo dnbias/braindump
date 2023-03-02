@@ -14,3 +14,5 @@
   + *assumption*: the data we have is incomplete
 
 To accomplish this you can use visualizations, ask a domain expert.
+
+*NB* there is no straightforward way to do all this, it takes intelligent thought.
