@@ -14,6 +14,8 @@
   + different strategies
     - *dimensionality reduction*
     - *numerosity reduction*
+      + sampling
+        - random selection
 - cleaning of data
 - integration of data
   + *assumption*: the data we have is incomplete
