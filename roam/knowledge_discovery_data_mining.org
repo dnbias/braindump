@@ -16,7 +16,7 @@
     - *numerosity reduction*
       + sampling
         - random selection, performance might suffer because of skew in the data
-        - stratified sampling
+        - stratified sampling (cluster)
 - cleaning of data
 - integration of data
   + *assumption*: the data we have is incomplete
