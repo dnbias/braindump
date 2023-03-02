@@ -7,7 +7,7 @@
 
 * Preprocessing
 - data reduction
-  cleaning of data
+- cleaning of data
 - integration of data
   + *assumption*: the data we have is incomplete
 * Representative Subset
