@@ -22,3 +22,6 @@ You build the kernel outside of a standard linux environment
 - no stdlib
 
 * Thread Switch
+- userlevel \rarr kernellevel
+- save the registers in =TCB=
+  + to switch back restore those registers
