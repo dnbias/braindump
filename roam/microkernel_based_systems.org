@@ -27,3 +27,4 @@ You build the kernel outside of a standard linux environment
   + to switch back restore those registers
 * IPC
 To send messages betweet threads you don't save and restore those register.
+The receiving end will declare beforend to the kernel to be willing to this and ready to have its registers overwritten.
