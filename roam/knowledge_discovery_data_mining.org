@@ -4,3 +4,6 @@
 #+title: Knowledge Discovery & Data Mining
 #+date: [2023-02-27 Mon 10:53]
 #+FILETAGS: erasmus university compsci
+
+* Representative Subset
+In *big data* situation it is wise to choose a subset of the data to query.
