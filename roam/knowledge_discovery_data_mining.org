@@ -5,7 +5,8 @@
 #+date: [2023-02-27 Mon 10:53]
 #+FILETAGS: erasmus university compsci
 
-* Preprocessing
+* Cycle of Analytics
+** Preprocessing
 - data transformation
 - data reduction
   + in *big data* situation it is wise to choose a subset of the data to query.
@@ -20,6 +21,7 @@ To accomplish this you can use visualizations, ask a domain expert.
 
 The first goal is to arrive to a *clean and complete dataset*, one that fulfills the requirements.
 
-* Interpretation
+** Interpretation
 Statistics is not everything, the data experts/domain experts need to interpret the information the =ML= application produces.
+
 From the novelties you extract from the data you take *action* based on them.
