@@ -4,3 +4,9 @@
 #+title: Microkernel Based Systems
 #+date: [2023-02-27 Mon 10:56]
 #+FILETAGS: erasmus university compsci
+
+* Interfacing with Hardware
+- undefined behavior is alright in output
+  + tell the users not to depend on the last bits of the output
+- not alright in input
+  + you can define different behaviors based on the last bit
