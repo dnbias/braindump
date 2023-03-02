@@ -12,7 +12,10 @@
 - cleaning of data
 - integration of data
   + *assumption*: the data we have is incomplete
+- data privacy concerns have to be considered
 
 To accomplish this you can use visualizations, ask a domain expert.
 
 *NB* there is no straightforward way to do all this, it takes intelligent thought.
+
+The first goal is to arrive to a clean an complete dataset, one that fulfills the requirements.
