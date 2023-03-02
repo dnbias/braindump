@@ -5,5 +5,10 @@
 #+date: [2023-02-27 Mon 10:53]
 #+FILETAGS: erasmus university compsci
 
+* Preprocessing
+- data reduction
+  cleaning of data
+- integration of data
+  + *assumption*: the data we have is incomplete
 * Representative Subset
 In *big data* situation it is wise to choose a subset of the data to query.
