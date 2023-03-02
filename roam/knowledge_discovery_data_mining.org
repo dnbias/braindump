@@ -6,8 +6,11 @@
 #+FILETAGS: erasmus university compsci
 
 * Preprocessing
+- data transformation
 - data reduction
   + in *big data* situation it is wise to choose a subset of the data to query.
 - cleaning of data
 - integration of data
   + *assumption*: the data we have is incomplete
+
+To accomplish this you can use visualizations, ask a domain expert.
