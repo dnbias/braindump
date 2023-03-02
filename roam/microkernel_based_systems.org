@@ -25,3 +25,5 @@ You build the kernel outside of a standard linux environment
 - userlevel \rarr kernellevel
 - save the registers in =TCB=
   + to switch back restore those registers
+* IPC
+To send messages betweet threads you don't save and restore those register.
