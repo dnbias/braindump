@@ -18,4 +18,4 @@ To accomplish this you can use visualizations, ask a domain expert.
 
 *NB* there is no straightforward way to do all this, it takes intelligent thought.
 
-The first goal is to arrive to a clean and complete dataset, one that fulfills the requirements.
+The first goal is to arrive to a *clean and complete dataset*, one that fulfills the requirements.
