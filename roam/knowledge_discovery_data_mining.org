@@ -22,3 +22,4 @@ The first goal is to arrive to a *clean and complete dataset*, one that fulfills
 
 * Interpretation
 Statistics is not everything, the data experts/domain experts need to interpret the information the =ML= application produces.
+From the novelties you extract from the data you take *action* based on them.
