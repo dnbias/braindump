@@ -7,8 +7,7 @@
 
 * Preprocessing
 - data reduction
+  + in *big data* situation it is wise to choose a subset of the data to query.
 - cleaning of data
 - integration of data
   + *assumption*: the data we have is incomplete
-* Representative Subset
-In *big data* situation it is wise to choose a subset of the data to query.
