@@ -13,3 +13,4 @@
 
 For kernel can
 - program a part of memory for its use
+- it's basically just another application
