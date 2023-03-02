@@ -10,3 +10,6 @@
   + tell the users not to depend on the last bits of the output
 - not alright in input
   + you can define different behaviors based on the last bit
+
+For kernel can
+- program a part of memory for its use
