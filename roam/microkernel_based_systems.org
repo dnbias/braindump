@@ -28,3 +28,5 @@ You build the kernel outside of a standard linux environment
 * IPC
 To send messages between threads you don't save and restore those register.
 The receiving end will declare beforehand to the kernel to be willing to this and ready to have its registers overwritten.
+
+- to avoid priority inversions if high priority =T= call and wait on low priority =T= the latter get a priority boost to not let the high one hanging
