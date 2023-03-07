@@ -10,4 +10,6 @@
 
 * Summary
 * Notes
+- *kernel*: the mandatory part of the operating system common to all other software
 - *monolithic vs micro*
+-
