@@ -56,7 +56,7 @@ The expectations met reality when some problems arose
   - both approaches seem to overcome the performance problem
 - another problem was the *external-pager* concept handwiring a policy inside the kernel
   + this becomes a problem where new policies are needed
-  + this was removed in *L4* where basic mechanisms permic implementation of various protection schemes and physical memory management on top of the =MK=
+  + this was removed in *L4* where basic mechanisms permit implementation of various protection schemes and physical memory management on top of the =MK=
   + *support of recursive construction of address spaces outside the kernel*
     - 3 operations are provided by the =MK=
       + /grant/, /map/, /demap/
