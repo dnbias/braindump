@@ -5,5 +5,5 @@
 #+date: [2023-03-07 Tue 21:31]
 #+filetags: paper
 - Source:
-- Author: Jochen Liedtke
+- Author: [[id:ab720e80-1db4-44d6-addf-282ca98459dc][Jochen Liedtke]]
 - Related: [[id:5c91241d-3da3-47e6-b27a-9afe7e0b4ff0][Sistemi Operativi]]
