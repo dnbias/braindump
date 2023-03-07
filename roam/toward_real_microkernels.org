@@ -59,4 +59,4 @@ The expectations met reality when some problems arose
   + *support of recursive construction of address spaces outside the kernel*
     - 3 operations are provided by the =MK=
       + /grant/, /map/, /demap/
-      + the first two require consensus between owner and callee
+      + the first two require consensus between address space owner and callee
