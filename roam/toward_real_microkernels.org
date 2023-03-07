@@ -16,3 +16,4 @@
   1. the complete =OS= is packed in a single kernel
   2. minimize the kernel and implement servers outside of it
      - the basics are: address space, =IPC=, basic scheduling
+     - treat the servers exactly as other programs, they run in user-mode
