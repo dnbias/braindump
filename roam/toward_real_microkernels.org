@@ -43,3 +43,6 @@ The expectations met reality when some problems arose
   + practical criteria:
     1. applications must not be degraded by the =MK=
     2. =MK= must efficiently support new types of applications that cannot be implemented with good performance on conventional monolithic kernels
+- the second generation optimized the =MK= to the point there were no new significant optimization possibilities and still the performance cost was too much, this suggested the problem was in the core design of the =MK=
+  + evolving =MK=​s step by step from monolithics lead nowhere
+- new radical approach: design a =MK= from scratch
