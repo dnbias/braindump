@@ -20,3 +20,8 @@
 
 - this idea was born in the late 1980s
 - clear theoretical advantages of the microkernel paradigm
+  + different =APIs=, file systems, operating system strategies could coexist in the same system
+  + system is flexible and extensible, can be easily adapted to new hardware and application, only some servers need to be modified for this
+  + system is contained and easier to manage, less error prone
+  + system is modular
+  + interdependencies between different parts could be restricted and reduced (=TCB is smaller)
