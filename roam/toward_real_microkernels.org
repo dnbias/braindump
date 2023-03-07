@@ -27,3 +27,13 @@
   + interdependencies between different parts could be restricted and reduced (=TCB= is smaller)[fn:TCB the Trusted Competing Base]
 
 The expectations met reality when some problems arose
+- the first generation of =MK= came with two principal breakthroughs
+  1. user-level pagers
+     - kernel manages physical and virtual memory
+     - forwards page faults to user-level servers
+     - the pagers implement mapping from virtual memory to backing store and usually return the appropriate page image to the kernel
+     - the kernel establishes the virtual-to-physical memory mapping
+  2. handling hardware interrupts as =IPC=
+     - the kernel captures the interrupts without handling it, generating a message for the user-level process associated with the interrupt
+     - the user-level process waits for these messages and handles them
+     - this allows for hot-swapping drivers with no linking to new kernel and rebooting of the system
