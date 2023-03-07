@@ -17,3 +17,6 @@
   2. minimize the kernel and implement servers outside of it
      - the basics are: address space, =IPC=, basic scheduling
      - treat the servers exactly as other programs, they run in user-mode
+
+- this idea was born in the late 1980s
+- clean theorical advantages of the microkernel paradigm
