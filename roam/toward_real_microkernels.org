@@ -49,7 +49,7 @@ The expectations met reality when some problems arose
 - new radical approach: design a =MK= from scratch
   - *Exokernel*
     + 1994, small and hardware-dependent
-    + philosophy is that =MK= should provide no abstractions bun only a minimal set of primitives
+    + philosophy is that =MK= should provide no abstractions but only a minimal set of primitives
   - *L4*
     + 1995
     + efficiency and flexibility require a minimal set of general =MK= abstractions and that =MK= are processor dependent
