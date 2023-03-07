@@ -48,7 +48,7 @@ The expectations met reality when some problems arose
   + evolving =MK=​s step by step from monolithics lead nowhere
 - new radical approach: design a =MK= from scratch
   - *Exokernel*
-    + 1994, small hardware-dependent
+    + 1994, small and hardware-dependent
     + philosophy is that =MK= should provide no abstractions bun only a minimal set of primitives
   - *L4*
     + 1995
