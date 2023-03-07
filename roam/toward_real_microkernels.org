@@ -9,6 +9,7 @@
 - Related: [[id:5c91241d-3da3-47e6-b27a-9afe7e0b4ff0][Sistemi Operativi]]
 
 * Summary
+
 * Notes
 - *kernel*: the mandatory part of the operating system common to all other software
   + uses safety-critical features of the processor that user-mode software cannot use
@@ -40,7 +41,7 @@ The expectations met reality when some problems arose
 - all these systems rely heavily on the =IPC=
   + this became a bottleneck very fast
   + each invocation of the operating system or application service requires an =RPC=, usually two =IPCs=
-  + practical criteria:
+  + *practical criteria*:
     1. applications must not be degraded by the =MK=
     2. =MK= must efficiently support new types of applications that cannot be implemented with good performance on conventional monolithic kernels
 - the second generation optimized the =MK= to the point there were no new significant optimization possibilities and still the performance cost was too much, this suggested the problem was in the core design of the =MK=
