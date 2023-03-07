@@ -53,3 +53,5 @@ The expectations met reality when some problems arose
     + 1995
     + efficiency and flexibility require a minimal set of general =MK= abstractions and that =MK= are processor dependent
   - both approaches seem to overcome the performance problem
+- another problem was the *external-pager* concept handwiring a policy inside the kernel
+  + this becomes a problem where new policies are needed
