@@ -40,7 +40,7 @@ The expectations met reality when some problems arose
      - this allows for hot-swapping drivers with no linking to new kernel and rebooting of the system
 - all these systems rely heavily on the =IPC=
   + this became a bottleneck very fast
-  + each invocation of the operating system or application service requires an =RPC=, usually two =IPCs=
+  + each invocation of the operating system or application service requires an =RPC=, usually two =IPC=​s
   + *practical criteria*:
     1. applications must not be degraded by the =MK=
     2. =MK= must efficiently support new types of applications that cannot be implemented with good performance on conventional monolithic kernels
