@@ -25,3 +25,5 @@
   + system is contained and easier to manage, less error prone
   + system is modular
   + interdependencies between different parts could be restricted and reduced (=TCB= is smaller)[fn:TCB the Trusted Competing Base]
+
+The expectations met reality when some problems arose
