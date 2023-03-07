@@ -41,5 +41,5 @@ The expectations met reality when some problems arose
   + this became a bottleneck very fast
   + each invocation of the operating system or application service requires an =RPC=, usually two =IPCs=
   + practical criteria:
-    1. applications must not be degraded by the microkernel
+    1. applications must not be degraded by the =MK=
     2. =MK= must efficiently support new types of applications that cannot be implemented with good performance on conventional monolithic kernels
