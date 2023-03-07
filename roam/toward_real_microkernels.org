@@ -37,3 +37,6 @@ The expectations met reality when some problems arose
      - the kernel captures the interrupts without handling it, generating a message for the user-level process associated with the interrupt
      - the user-level process waits for these messages and handles them
      - this allows for hot-swapping drivers with no linking to new kernel and rebooting of the system
+- all these systems rely heavily on the =IPC=
+  + this became a bottleneck very fast
+  + each invocation of the operating system or application service requires an =RPC=, usually two =IPCs=
