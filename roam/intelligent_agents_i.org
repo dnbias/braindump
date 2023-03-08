@@ -67,6 +67,7 @@ A *Hilbert style* proof system is more difficult to use as it requires creativit
 You start from any tautology and with it's rules it generates all true statements, this is elegant but it is not good for proof search. It is a so called *synthetic* proof system.
 On the other hand a *Gentzen system* you start from the formula you want to prove and it is an *analytic* and *sequential*. It has a decision procedure, it is applicable by machines.
 
+It is very small with only 2 axioms and 3 rules for the $K$-proof.
 *** Tableaux calculus for K
 *Semantic Tableaux* is a indirect proof system, *analytic*.
 
