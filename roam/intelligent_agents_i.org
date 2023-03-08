@@ -77,7 +77,7 @@ Rules:
 - Generalization/Necessitation
 
 *NB* in Hilbert systems you cannot use assumptions as input to generalization.
-*** Tableaux calculus for K
+*** Semantic Tableaux
 *Semantic Tableaux* is a indirect proof system, *analytic*.
 
 ** Epistemic Logics
