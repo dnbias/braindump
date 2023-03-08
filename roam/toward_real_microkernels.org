@@ -8,7 +8,7 @@
 - Author: [[id:ab720e80-1db4-44d6-addf-282ca98459dc][Jochen Liedtke]]
 - Related: [[id:5c91241d-3da3-47e6-b27a-9afe7e0b4ff0][Sistemi Operativi]]
 * Summary
-In the late 80s the paradigm shift of the =MK= was met with enthusiasm based on the obvious advantages of a more modular and slim approach to the kernel. But then the reality of first generation =MK= presented big performance problems that were not solvable simply by iterating and optimizing on the areas that seemed to cause the issue (mainly =IPC=). The real breakthrough was with *Exokernel* and *L4*, designing a =MK= from scratch without iterating on monolithic kernel implementations. The performance problems were solved and the external-pager was substituted by memory managers implemented using simple primitives provided by the =MK=, with no policy hand-wiring inside the kernel.
+In the late 80s the paradigm shift of the =MK= was met with enthusiasm based on the obvious advantages of a more modular and slim approach to the kernel. But then the reality of first generation =MK= presented big performance problems that were not solvable simply by iterating and optimizing on the areas that seemed to cause the issue (mainly =IPC=). The real breakthrough was with *Exokernel* and *L4*, designing a =MK= from scratch without starting from monolithic kernel implementations. The performance problems were solved and the external-pager was substituted by memory managers implemented using simple primitives provided by the =MK=, with no policy hand-wiring inside the kernel.
 * Notes
 - *kernel*: the mandatory part of the operating system common to all other software
   + uses safety-critical features of the processor that user-mode software cannot use
