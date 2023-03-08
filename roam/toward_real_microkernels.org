@@ -10,7 +10,7 @@
 * Summary
 In the late 80s the paradigm shift of the =MK= was met with enthusiasm based on the obvious advantages of a more modular and slim approach to the kernel. But then the reality of first generation =MK= presented big performance problems that were not solvable simply by iterating and optimizing on the areas that seemed to cause the issue (mainly =IPC=). The real breakthrough was with *Exokernel* and *L4*, designing a =MK= from scratch without starting from monolithic kernel implementations. The performance problems were solved and the external-pager was substituted by memory managers implemented using simple primitives provided by the =MK=, with no policy hand-wiring inside the kernel.
 
-This paper outlines well what is the purpose behind the research on =MK= and why it looked like a good alternative to the monolithic design, giving a good historical background to the developments in the field and explaining well the most important aspects that were critical to the improvement of the =MK=.
+This paper outlines well what is the purpose behind the research on =MK= and why it looked like a good alternative to the monolithic design, giving a good historical background to the developments in the field and explaining well the most important aspects that were critical to the improvement of the =MK=. It also gave great insight in the difficulty of diagnosing the performance problem of a system, that at first looked caused by =IPC= but in reality was a more complex problem.
 * Notes
 - *kernel*: the mandatory part of the operating system common to all other software
   + uses safety-critical features of the processor that user-mode software cannot use
