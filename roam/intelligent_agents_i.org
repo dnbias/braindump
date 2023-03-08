@@ -72,7 +72,7 @@ Axioms:
 - K
 - Dual
 Rules:
-- Modus ponens
+- Modus Ponens
 - Uniform substitution
 - Generalization
 
