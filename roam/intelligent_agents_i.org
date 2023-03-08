@@ -91,7 +91,7 @@ Rules:
 
 **** Inference rules
 Prefix is indicated by $\sigma$.
-The whole idea is to simplify formulas by removing connectives
+The whole idea is to simplify formulas by removing connectives.
 
 ** Epistemic Logics
 ** Temporal Logics
