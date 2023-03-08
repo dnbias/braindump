@@ -37,6 +37,15 @@ Can't classical logics be used?
 So the =CL= need to be extended to allow for reasoning in real world context.
 
 * Logics
+** Proof Systems
+
+*** Hilbert style
+A *Hilbert style* proof system is more difficult to use as it requires creativity.
+You start from any tautology and with it's rules it generates all true statements, this is elegant but it is not good for proof search. It is a so called *synthetic* proof system.
+On the other hand a *Gentzen system* you start from the formula you want to prove and it is an *analytic* and *sequential*.
+
+*** Tableaux calculus for K
+
 ** Modal Logics
 =ML=
 *** Syntax
