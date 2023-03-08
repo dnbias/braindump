@@ -80,6 +80,7 @@ Rules:
 *** Semantic Tableaux
 *Semantic Tableaux* is a indirect proof system, *analytic* (so it's similar to sequent calculus).
 - formulas are prefixed by numbers
+  + i.e. =1.1.2,1=
 - root is =1.=
 
 ** Epistemic Logics
