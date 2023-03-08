@@ -26,7 +26,7 @@ This paper outlines well what is the purpose behind the research on =MK= and why
   + system is flexible and extensible, can be easily adapted to new hardware and application, only some servers need to be modified for this
   + system is contained and easier to manage, less error prone
   + system is modular
-  + interdependencies between different parts could be restricted and reduced (=TCB= is smaller)[fn:TCB the Trusted Competing Base]
+  + interdependencies between different parts could be restricted and reduced (=TCB= is smaller)[fn:TCB the Trusted Computing Base]
 
 The expectations met reality when some problems arose
 - the first generation of =MK= came with two principal breakthroughs
