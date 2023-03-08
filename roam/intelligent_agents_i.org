@@ -92,6 +92,7 @@ Rules:
 **** Inference rules
 Prefix is indicated by $\sigma$.
 The whole idea is to simplify formulas by removing connectives.
+The | is the representation of the tree. It creates two branches where one side is true or the other is.
 
 ** Epistemic Logics
 ** Temporal Logics
