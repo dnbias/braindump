@@ -93,7 +93,7 @@ Rules:
 Prefix is indicated by $\sigma$.
 The whole idea is to simplify formulas by removing connectives.
 The | is the representation of the tree. It creates two branches where one side is true or the other is.
-The reasoning is by cases and proceeds by proving contraddictions (closing the branch) in all these cases.
+The reasoning is by cases and proceeds by proving contradictions (closing the branch) in all these cases.
 
 ** Epistemic Logics
 ** Temporal Logics
