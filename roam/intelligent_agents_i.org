@@ -37,16 +37,6 @@ Can't classical logics be used?
 So the =CL= need to be extended to allow for reasoning in real world context.
 
 * Logics
-** Proof Systems
-
-*** Hilbert style
-A *Hilbert style* proof system is more difficult to use as it requires creativity.
-You start from any tautology and with it's rules it generates all true statements, this is elegant but it is not good for proof search. It is a so called *synthetic* proof system.
-On the other hand a *Gentzen system* you start from the formula you want to prove and it is an *analytic* and *sequential*. It has a decision procedure, it is applicable by machines.
-
-*** Tableaux calculus for K
-*Semantic Tableaux* is a indirect proof system, *analytic*.
-
 ** Modal Logics
 =ML=
 *** Syntax
@@ -71,6 +61,15 @@ The /box/ and /diamond/ can be interpreted as:
 *** Modal
 /Qualifies the truth of a statement/
 - can qualify if the truth is temporally qualified or necessarily qualified etc.
+** Proof Systems
+*** Hilbert style
+A *Hilbert style* proof system is more difficult to use as it requires creativity.
+You start from any tautology and with it's rules it generates all true statements, this is elegant but it is not good for proof search. It is a so called *synthetic* proof system.
+On the other hand a *Gentzen system* you start from the formula you want to prove and it is an *analytic* and *sequential*. It has a decision procedure, it is applicable by machines.
+
+*** Tableaux calculus for K
+*Semantic Tableaux* is a indirect proof system, *analytic*.
+
 ** Epistemic Logics
 ** Temporal Logics
 ** Multi-agent Logics
