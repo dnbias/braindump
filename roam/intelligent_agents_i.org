@@ -79,7 +79,8 @@ Rules:
 *NB* in Hilbert systems you cannot use assumptions as input to generalization.
 *** Semantic Tableaux
 *Semantic Tableaux* is a indirect proof system, *analytic* (so it's similar to sequent calculus).
-- formulas are prefixed
+- formulas are prefixed by numbers
+- root is =1.=
 
 ** Epistemic Logics
 ** Temporal Logics
