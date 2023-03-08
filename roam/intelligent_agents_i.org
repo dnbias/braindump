@@ -68,9 +68,10 @@ You start from any tautology and with it's rules it generates all true statement
 On the other hand a *Gentzen system* you start from the formula you want to prove and it is an *analytic* and *sequential*. It has a decision procedure, it is applicable by machines.
 
 It is very small with only 2 axioms and 3 rules for the $K$-proof.
+Axioms:
 - K
 - Dual
-Rules
+Rules:
 - Modus ponens
 - Uniform substitution
 - Generalization
