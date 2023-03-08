@@ -82,6 +82,11 @@ Rules:
 - formulas are prefixed by numbers
   + i.e. =1.1.2,1=
 - root is =1.=
+- application of tableaux rules build the tree
+- branch gets closed =iff= a formula and its negation both occur in it
+- $A$ is proven when each branch is closed
+  + if all rules have been applied but there is still an open branch $A$ cannot be proven
+- it is *sound and complete*
 
 ** Epistemic Logics
 ** Temporal Logics
