@@ -57,6 +57,10 @@ Option 2 is /local communication partners/
     - round robin
     - LIFO
     - queue
+** Costs
+- most costly are ~sysenter~ and ~sysexit~
+- can we avoid them?
+- =LIPC=
 * Page table
 Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
