@@ -64,6 +64,10 @@ Option 2 is /local communication partners/
   + tells the kernel to switch context
   + when preemption is needed lazily switch kernel context
 * Memory management
+- Loader
+  + Construct the address space for applications.
+- Copy on write
+  + create Data memory as read only and replace with private writable copy on the first write
 * Page table
 Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
