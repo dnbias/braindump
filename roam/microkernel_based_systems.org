@@ -36,3 +36,5 @@ The receiving end will declare beforehand to the kernel to be willing to this an
 - at the end of the syscall you have to continue the execution to the user code
   + get out of the kernel and go to the address space of the user code
   + on the binary (hypervisor.o) you can see that user stack is located on address 0x1000
+  + the user code is at address 0x2000
+  + the mapping is done to the pagetable
