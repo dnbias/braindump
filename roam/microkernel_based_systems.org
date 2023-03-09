@@ -62,7 +62,7 @@ Option 2 is /local communication partners/
 - can we avoid them?
 - =LIPC=
   + tells the kernel to switch context
-  + when prehemption is needed lazily switch kernel context
+  + when preemption is needed lazily switch kernel context
 * Page table
 Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
