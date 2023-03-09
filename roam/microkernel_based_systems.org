@@ -73,7 +73,8 @@ Option 2 is /local communication partners/
   + provides resources
 - HDD driver
 
-** Memory Protection Unit
+** Segments
+Protezione dei segmenti fatta dalla =MPU=.
 Mapping of *data* and *code* with permissions.
 * Page table
 Traverse the data structure using the 2 indexes and the offset
