@@ -31,6 +31,12 @@ The receiving end will declare beforehand to the kernel to be willing to this an
 
 - to avoid priority inversions if high priority =T= call and wait on low priority =T= the latter get a priority boost to not let the high one hanging
 
+** In Multiprocessor System
+- ways of interaction
+  + shared memory
+  + inter-processor interrupts
+  + direct memory access
+    - usually not available
 * Page table
 Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
