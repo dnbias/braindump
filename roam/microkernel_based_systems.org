@@ -38,7 +38,14 @@ The receiving end will declare beforehand to the kernel to be willing to this an
   + direct memory access
     - usually not available
 
-A caller thread could give its resources to the callee, which doesn't even need the data structure itself.
+Different interfaces are possible.
+- *migrating threads*
+  + a caller thread could give its resources to the callee, which doesn't even need the data structure itself.
+- *asynchronous help*
+  + caller thread waits or gets back to the callee when he needs the product of the call
+Option 2 is /local communication partners/
+- pool of workers, with a middle thread deciding to whom to dispatch
+- 3-way communication
 
 * Page table
 Traverse the data structure using the 2 indexes and the offset
