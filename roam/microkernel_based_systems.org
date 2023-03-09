@@ -31,6 +31,8 @@ The receiving end will declare beforehand to the kernel to be willing to this an
 
 - to avoid priority inversions if high priority =T= call and wait on low priority =T= the latter get a priority boost to not let the high one hanging
 
+* Page table
+Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
 - the kernel crashes if the root is invoked
 - at the end of the syscall you have to continue the execution to the user code
@@ -39,3 +41,5 @@ The receiving end will declare beforehand to the kernel to be willing to this an
   + the user code is at address 0x2000 ~SEL_USER_CODE~
   + the mapping is done to the pagetable
   + basically prepare the stack with the values needed and invoke ~iret~
+- in ~usercode~:
+  1. fault immediately {there is a opcode for undefined behavior}
