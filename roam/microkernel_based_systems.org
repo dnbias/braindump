@@ -37,6 +37,9 @@ The receiving end will declare beforehand to the kernel to be willing to this an
   + inter-processor interrupts
   + direct memory access
     - usually not available
+
+A caller thread could give its resources to the callee, which doesn't even need the data structure itself.
+
 * Page table
 Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
