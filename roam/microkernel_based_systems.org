@@ -69,7 +69,7 @@ Option 2 is /local communication partners/
 - Copy on write
   + create Data memory as read only and replace with private writable copy on the first write
 - filesystem
-- anan
+- anon
 - HDD driver
 * Page table
 Traverse the data structure using the 2 indexes and the offset
