@@ -76,7 +76,8 @@ Option 2 is /local communication partners/
 ** Segments
 Protezione dei segmenti fatta dalla =MPU=.
 Mapping of *data* and *code* with permissions.
-* Page table
+** Page table
+Multi-level, basically a tree datastructure with 512 entry per-root for example.
 Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
 - the kernel crashes if the root is invoked
