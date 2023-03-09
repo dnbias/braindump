@@ -46,6 +46,8 @@ Different interfaces are possible.
 Option 2 is /local communication partners/
 - pool of workers, with a middle thread deciding to whom to dispatch
 - 3-way communication
+  + ~inspect~
+  + ~forward~
 
 * Page table
 Traverse the data structure using the 2 indexes and the offset
