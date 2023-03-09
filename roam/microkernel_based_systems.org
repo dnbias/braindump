@@ -38,3 +38,4 @@ The receiving end will declare beforehand to the kernel to be willing to this an
   + on the binary (hypervisor.o) you can see that user stack is located on address 0x1000
   + the user code is at address 0x2000
   + the mapping is done to the pagetable
+  + basically prepare the stack with the values needed and invoke ~iret~
