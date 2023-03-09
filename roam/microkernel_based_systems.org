@@ -44,4 +44,4 @@ Traverse the data structure using the 2 indexes and the offset
 - in ~usercode~:
   1. fault immediately {there is a opcode for undefined behavior}
 
-The syshandler receives the codes of the syscalls and has to switch over the different possibilities.
+The syshandler receives the codes of the syscalls and has to switch over the different possibilities and invoke the correct one.
