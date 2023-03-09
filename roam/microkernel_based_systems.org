@@ -45,3 +45,4 @@ Traverse the data structure using the 2 indexes and the offset
   1. fault immediately {there is a opcode for undefined behavior}
 
 The syshandler receives the codes of the syscalls and has to switch over the different possibilities and invoke the correct one.
+*NB* the kernel mode is always entered with a clean stack
