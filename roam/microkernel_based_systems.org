@@ -53,10 +53,10 @@ Option 2 is /local communication partners/
   + receivers wait at the portal
   + queue sender if no receiver is waiting
   + queue receivers if no message is pending
-  + policy?
+  + policy? the queue adds some problems
     - round robin
     - LIFO
-    -
+    - queue
 * Page table
 Traverse the data structure using the 2 indexes and the offset
 * Writing a syscall
