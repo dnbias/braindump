@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       5571d2a4-bee6-4008-aded-cbd94c8c782d
+:END:
+#+title: On Microkernel Construction
+#+date: [2023-03-12 Sun 20:40]
+#+filetags: article
+- Source: https://doi.org/10.1145/224056.224075
+- Author: Jochen Liedtke
+- Related: [[id:ad8e431b-7af6-4eb9-99a7-41af9cd0c4ce][Microkernel Based Systems]]
