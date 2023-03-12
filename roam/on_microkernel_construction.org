@@ -7,3 +7,6 @@
 - Source: https://doi.org/10.1145/224056.224075
 - Author: [[id:ab720e80-1db4-44d6-addf-282ca98459dc][Jochen Liedtke]]
 - Related: [[id:ad8e431b-7af6-4eb9-99a7-41af9cd0c4ce][Microkernel Based Systems]]
+
+* Claim
+The shortcomings of the $\mu$-kernel are to be attributed mostly to overloading the kernel and/or improper implementations.
