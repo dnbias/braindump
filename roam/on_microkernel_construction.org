@@ -12,3 +12,4 @@
 The shortcomings of the $\mu$-kernel are to be attributed mostly to overloading the kernel and/or improper implementations.
 
 * Notes
+$\mu$-kernels are costructed on the basic idea that one must implement whatever possible outside of the kernel.
