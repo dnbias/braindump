@@ -12,4 +12,4 @@
 The shortcomings of the $\mu$-kernel are to be attributed mostly to overloading the kernel and/or improper implementations.
 
 * Notes
-$\mu$-kernels are costructed on the basic idea that one must implement whatever possible outside of the kernel.
+$\mu$-kernels are costructed on the basic idea that one must implement whatever possible outside of the kernel[fn:kernel The kernel is commonly used to denote the part of the =OS= that is mandatory and common to all software.].
