@@ -14,3 +14,7 @@ For *irreducible aperiodic* =MC=
 
 Global balance
 \[\sum_{i \in S / \{j\}}} p_{i}p_{j}\]
+
+** Non-stationary case
+- assuming transition probabilities where we zoom on the time axis to where the transition is smooth
+  + can be approximated to a linear function
