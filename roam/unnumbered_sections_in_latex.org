@@ -4,3 +4,5 @@
 #+title: Unnumbered sections in latex
 #+date: [2023-03-13 Mon 04:17]
 #+filetags: til latex
+
+\setcounter{secnumdepth}{0}
