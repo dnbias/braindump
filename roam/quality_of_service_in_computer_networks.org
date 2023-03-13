@@ -53,3 +53,6 @@ There are limitations to network security:
 - asynchronous setting
 
 Solution can be a *Trusted Third Party* (=TTP=)
+- it is a bottleneck
+- should be fair
+- should be timely
