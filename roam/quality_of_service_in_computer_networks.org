@@ -57,3 +57,8 @@ Solution can be a *Trusted Third Party* (=TTP=)
 - should be fair
 - should be timely
 - receives signatures and distributes the contracts
+
+=TTP= can
+- issue a replacement contract
+- issue an abort token
+- acts only when requested
