@@ -28,3 +28,4 @@ Probability density $q$ are elegant solution to have simpler equations, independ
 
 ** Stationary case
 \[p_{X}= \lim_{t\to \inf}p_{X}(t)\]
+\[\lim_{t\to\infty}]
