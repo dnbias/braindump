@@ -24,4 +24,4 @@ Probability density $q$ are elegant solution to have simpler equations, independ
 *Conditional* and *absolute* transition probability:
 \[p_{ik}^{\star}(s)=p_{i}(t)\cdot p_{ik}(s)\]
 
-*Kolmoroff Equation*
+*Kolmogoroff Equation*
