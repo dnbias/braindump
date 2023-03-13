@@ -38,3 +38,5 @@ Statistical equilibrium for the states:
 p_S = \sum_{k\in S} p_k \\
 q_k = \sum_{i\neq k} q_{ki}
 \end{align*}
+
+You can generalize a set of state to abstract into a single bigger markov state that includes them.
