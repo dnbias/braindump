@@ -51,3 +51,5 @@ The contract signing needs to be fair (/fair exchange/). For a pair of agents, b
 There are limitations to network security:
 - impossibility of consensus
 - asynchronous setting
+
+Solution can be a *Trusted Third Party* (=TTP=)
