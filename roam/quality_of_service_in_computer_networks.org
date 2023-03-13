@@ -7,3 +7,5 @@
 
 * Components & Modules
 - time-space multiplexer
+
+* Homogeneous Markov Processes
