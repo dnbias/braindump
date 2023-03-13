@@ -27,3 +27,4 @@ Probability density $q$ are elegant solution to have simpler equations, independ
 *Kolmogoroff Equation*
 
 ** Stationary case
+\[p_{X}= \lim_{t\to \inf}p_{X}(t)\]
