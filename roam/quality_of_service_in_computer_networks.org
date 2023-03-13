@@ -32,3 +32,9 @@ Probability density $q$ are elegant solution to have simpler equations, independ
 
 Statistical equilibrium for the states:
 \[q_{k}p_{k}=\sum_{i\neq k} q_{ik}\cdot p_{i}\]
+
+*Generalised* state equations:
+\bgin{align*}
+p_S = \sum_{k\in S} p_k \\
+q_k = \sum_{i\neq k} q_{ki}
+\e
