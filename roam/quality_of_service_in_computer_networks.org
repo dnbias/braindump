@@ -37,4 +37,4 @@ Statistical equilibrium for the states:
 \bgin{align*}
 p_S = \sum_{k\in S} p_k \\
 q_k = \sum_{i\neq k} q_{ki}
-\e
+\end{align*}
