@@ -16,6 +16,7 @@ Global balance
 \[\sum_{i \in S / \{j\}}} p_{i}p_{j}\]
 
 ** Non-stationary case
+Probability density are elegant solution to have simpler equations, independent of time-scale.
 - assuming transition probabilities where we zoom on the time axis to where the transition is smooth
   + can be approximated to a linear function
   + $$p_{ij}(s)=q_{ij}\cdot s + o(s) \quad j\neq i$
