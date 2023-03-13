@@ -49,3 +49,5 @@ In formulas $t$ and $\Delta t$ are interchangeable.
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair. For a pair of agents, both must succeed or both must fail.
 There are limitations to network security:
+- impossibility of consensus
+- asynchronous setting
