@@ -40,3 +40,4 @@ q_k = \sum_{i\neq k} q_{ki}
 \end{align*}
 
 You can generalize a set of state to abstract into a single bigger markov state that includes them.
+* Communication Traffic as Random Process
