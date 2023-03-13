@@ -13,4 +13,4 @@ For *irreducible aperiodic* =MC=
 \[p_{j} = \sum_{i\in S} p_{i}P_{ij}  \quad \forall j\in S\]
 
 Global balance
-\[\sum_{i \in S\\ \{j\}}} p_{i}p_{j}\]
+\[\sum_{i \in S / \{j\}}} p_{i}p_{j}\]
