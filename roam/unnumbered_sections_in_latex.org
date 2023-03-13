@@ -5,6 +5,5 @@
 #+date: [2023-03-13 Mon 04:17]
 #+filetags: til latex
 #+begin_example
-
 \setcounter{secnumdepth}{0}
 #+end_example
