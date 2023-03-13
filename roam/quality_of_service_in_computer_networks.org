@@ -9,3 +9,4 @@
 - time-space multiplexer
 
 * Homogeneous Markov Processes
+- *irreducible aperiodic* =MC=
