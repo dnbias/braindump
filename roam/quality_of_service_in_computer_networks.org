@@ -56,3 +56,4 @@ Solution can be a *Trusted Third Party* (=TTP=)
 - it is a bottleneck
 - should be fair
 - should be timely
+- receives signatures and distributes the contracts
