@@ -17,6 +17,7 @@ The paper defines the basic $\mu$​-kernel concepts, primitives that are to be 
 These concepts are:
 - independence
 - integrity
+- mapping virtual to physical pages (/address spaces/)
 * Notes
 $\mu$​-kernels are costructed on the basic idea that one must implement whatever possible outside of the kernel[fn:kernel The kernel is commonly used to denote the part of the =OS= that is mandatory and common to all software.].
 Advantages:
