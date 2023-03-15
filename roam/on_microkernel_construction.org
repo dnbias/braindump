@@ -15,10 +15,10 @@ The shortcomings of the $\mu$​-kernel are to be attributed mostly to overloadi
 The author finds that the shortcoming in performance measured in microkernels dismiss the entire category without understanding the reason of the issue, whether it was caused by the approach of the $\mu$​-kernel, by the concepts implemented or by the implementation itself.
 The paper defines the basic $\mu$​-kernel concepts, primitives that are to be implemented. These are concepts that if moved outside of the kernel would compromise the functionality of the system.
 These concepts are:
-- independence
-- integrity
-- mapping virtual to physical pages (/address spaces/), the author proposes three operations for constructing and maintaining address spaces: *grant*, *map*, *flush*.
-- threads and =IPC=, needed for the *grant* and *map* operations and also for abstracting hardware interrupts
+- independence;
+- integrity;
+- mapping virtual to physical pages (/address spaces/), the author proposes three operations for constructing and maintaining address spaces: *grant*, *map*, *flush*;
+- threads and =IPC=, needed for the *grant* and *map* operations and also for abstracting hardware interrupts;
 - =uid=, required for reliable local communications.
 * Notes
 $\mu$​-kernels are costructed on the basic idea that one must implement whatever possible outside of the kernel[fn:kernel The kernel is commonly used to denote the part of the =OS= that is mandatory and common to all software.].
