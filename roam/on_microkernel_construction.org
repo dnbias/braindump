@@ -20,6 +20,8 @@ These concepts are:
 - mapping virtual to physical pages (/address spaces/), the author proposes three operations for constructing and maintaining address spaces: *grant*, *map*, *flush*;
 - threads and =IPC=, needed for the *grant* and *map* operations and also for abstracting hardware interrupts;
 - =uid=, required for reliable local communications.
+
+With these basic concepts it is possible to implement applications typically included in kernels on top of the $\mu$​-kernel.
 * Notes
 $\mu$​-kernels are costructed on the basic idea that one must implement whatever possible outside of the kernel[fn:kernel The kernel is commonly used to denote the part of the =OS= that is mandatory and common to all software.].
 Advantages:
