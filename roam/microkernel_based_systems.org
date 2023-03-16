@@ -91,6 +91,8 @@ For pages getting revoked a =FM= could *pin* a page that is important will not c
 The concept of mapping was known before as *capability*
 - pointer + access rights
 
+Mapping is basically copying capability into a destination with reduced access rights.
+
 
 
 * Writing a syscall
