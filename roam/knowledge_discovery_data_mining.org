@@ -61,5 +61,6 @@ a. $k$​-anonymity
      + different nodes indicate a combination of levels of generalization in each attribute
      + starting by the lowest node, the most specific, going up the data is generalized
      + /height/ is defined to the number of steps in the graph needed to traverse from the bottom to the top
+     + start at level $\floor{\sqrt{\text{height}}}$
 b. $l$​-diversity
 c. $t$​-closeness
