@@ -84,6 +84,9 @@ Traverse the data structure using the 2 indexes and the offset
   + for access to kernel memory
   + also this would not abstract hardware architecture
 
+A good interface that resolves the problem of having different =FM= that can overlap and conflict is one that just gives directly the =PT= entry to the receiver of the memory.
+This is a =map= operation, the contract for this is that the =MM= can revoke the mapping at any time. When the system is running out of memory and needs it to give to other processes.
+
 
 
 * Writing a syscall
