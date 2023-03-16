@@ -108,7 +108,7 @@ You can also use a lock in the root to indacate that the operation is still ongo
 
 ** Demand Paging
 The old linux interface just forked and then cleared the old address space.
-You can also create a clean address space and a thread inside it, then this will page fault transitioning to the kernel asking for the page of its code.
+You can also create a clean address space and a thread inside it, then this will page fault transitioning to the kernel via =IPC= to the pager asking for the page of its code.
 
 * Writing a syscall
 - the kernel crashes if the root is invoked
