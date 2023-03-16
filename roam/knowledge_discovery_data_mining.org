@@ -62,7 +62,7 @@ a. $k$​-anonymity
      + starting by the lowest node, the most specific, going up the data is generalized
      + /height/ is defined to the number of steps in the graph needed to traverse from the bottom to the top
      + start at level $$\lfloor\sqrt{\text{height}}\rfloor$$
-   - homogeneity in the sensitive attribute is not desirable as it offers some possible privacy exploits
 b. $l$​-diversity
+   - homogeneity in the sensitive attribute is not desirable as it offers some possible privacy exploits
    - $l$ number of minimum _different sensitive data values_ in an /equivalence class/
 c. $t$​-closeness
