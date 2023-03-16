@@ -79,6 +79,7 @@ Mapping of *data* and *code* with permissions.
 ** Page table
 Multi-level, basically a tree datastructure with 512 entry per-root for example.
 Traverse the data structure using the 2 indexes and the offset
+** Interface
 * Writing a syscall
 - the kernel crashes if the root is invoked
 - at the end of the syscall you have to continue the execution to the user code
