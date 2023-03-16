@@ -47,7 +47,7 @@ We have to define security classes or accessibility control systems.
 
 Even sanitized data can still be /critical/ not for its contents per-se but for the possibility of being combined with other sources.
 
-To solve this we can *generalize* the data.
+To solve this we can *generalize* the data. To do this we need the data to have some kind of hierarchy.
 
 The approach is to use
 a. $k$​-anonymity
