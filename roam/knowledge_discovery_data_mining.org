@@ -53,6 +53,6 @@ The approach is to use
 a. $k$​-anonymity
    - generalisation and suppression of data values
    - find equivalence classes that contain $\geq k$ records
-   - uncritical data is not considered when contructing these classes
+   - uncritical data is not considered when constructing these classes
 b. $l$​-diversity
 c. $t$​-closeness
