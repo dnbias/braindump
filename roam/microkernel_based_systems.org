@@ -100,6 +100,7 @@ This is more general in the sense that allows having *capabilities* toward all k
 Revocation has to resolve even indirect mappings, if a lower level removes access rights *all* higher levels need to have them removed.
 This constructs a key of dependencies that need to be traversed to access all the page tables entries to change the access rights.
 It is possible for an attacker to create a infinite tree, there is no good way to bound such a =revoke= operation.
+You could bound the tree depth, this creates problems for developing applications around that.
 
 
 
