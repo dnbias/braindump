@@ -60,5 +60,6 @@ a. $k$​-anonymity
    - Samarati's approach[fn:s-approach Defined in: [[id:5a58e6f3-0dee-4b47-aa56-9b576f7a9e8e][k-Anonymous Data Mining: A Survey]]]
      + different nodes indicate a combination of levels of generalization in each attribute
      + starting by the lowest node, the most specific, going up the data is generalized
+     + /height/ is defined to the number of steps in the graph needed to traverse from the bottom to the top
 b. $l$​-diversity
 c. $t$​-closeness
