@@ -96,6 +96,8 @@ Mapping is basically copying capability into a destination with reduced access r
 - =grant= (=L4= map)
 - =revoke= (=L4= unmap)
 
+This is more general in the sense that allows having *capabilities* toward all kind of objects, like threads.
+
 
 
 
