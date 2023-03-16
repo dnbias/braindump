@@ -39,4 +39,4 @@ From the novelties you extract from the data you take *action* based on them.
 Privacy concerns are important to consider when studying datasets, personal information should not be exposed or even used.
 
 We have to define security classes or accessibility control systems.
-- a matrix $M(i,j)$ which specifies $\{Access, Update, Select\}$
+- a matrix $M(i,j)$ which specifies $\{Access, Update, Select\}$ for examples
