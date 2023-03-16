@@ -48,3 +48,8 @@ We have to define security classes or accessibility control systems.
 Even sanitized data can still be /critical/ not for its contents per-se but for the possibility of being combined with other sources.
 
 To solve this we can *generalize* the data.
+
+The approach is to use
+a. $k$​-anonymity
+b. $l$​-diversity
+c. $t$​-closeness
