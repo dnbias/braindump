@@ -41,4 +41,4 @@ Privacy concerns are important to consider when studying datasets, personal info
 We have to define security classes or accessibility control systems.
 - a matrix $M(i,j)$ which specifies $\{Access, Update, Select\}$ for examples
   + where $i$ is an object (database views) and $j$ is a subject
-- classes can be =Strictly Confidential= > =Confidential= > =Uncritical=
+- classes can be =Strictly Confidential= > =Confidential= > =Uncritical= and users are assigned one of these
