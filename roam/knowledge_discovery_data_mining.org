@@ -37,3 +37,5 @@ From the novelties you extract from the data you take *action* based on them.
 
 ** Anonymity
 Privacy concerns are important to consider when studying datasets, personal information should not be exposed or even used.
+
+We have to define security classes or accessibility control systems.
