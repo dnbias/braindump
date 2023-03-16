@@ -56,6 +56,6 @@ a. $k$​-anonymity
    - kinds of attributes
      + /uncritical data/ is not considered when constructing these classes
      + /non-sensitive data/ or /quasi-identifier/ are to be combined and generalized
-     + /critical/
+     + /sensitive data/ has to be published
 b. $l$​-diversity
 c. $t$​-closeness
