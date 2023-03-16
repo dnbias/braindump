@@ -68,4 +68,4 @@ b. $l$​-diversity[fn:diversity Defined in: [[id:a524447d-1d51-4c23-a5a4-ae2b61
 c. $t$​-closeness
    - $t$ measures the how similar the individual class distribution is against the total distribution, again the minimum value
    - higher is better again
-   - *Earth-Mover distance*
+   - *Earth-Mover distance* is one of the measures used
