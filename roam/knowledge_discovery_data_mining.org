@@ -51,6 +51,6 @@ To solve this we can *generalize* the data.
 
 The approach is to use
 a. $k$​-anonymity
-   - generalisation of data values and suppression
+   - generalisation and suppression of data values
 b. $l$​-diversity
 c. $t$​-closeness
