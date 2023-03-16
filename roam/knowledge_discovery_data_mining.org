@@ -52,6 +52,6 @@ To solve this we can *generalize* the data.
 The approach is to use
 a. $k$​-anonymity
    - generalisation and suppression of data values
-   - find equivalence classes that contain $\geq k$
+   - find equivalence classes that contain $\geq k$ records
 b. $l$​-diversity
 c. $t$​-closeness
