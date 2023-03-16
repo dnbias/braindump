@@ -66,4 +66,4 @@ b. $l$​-diversity[fn:diversity Defined in: [[id:a524447d-1d51-4c23-a5a4-ae2b61
    - homogeneity in the sensitive attribute is not desirable as it offers some possible privacy exploits
    - $l$ number of minimum _different sensitive data values_ in an /equivalence class/
 c. $t$​-closeness
-   - $t$ measures the how similar the individual distrubution is against the total distribution
+   - $t$ measures the how similar the individual distribution is against the total distribution
