@@ -54,5 +54,6 @@ a. $k$​-anonymity
    - generalisation and suppression of data values
    - find equivalence classes that contain $\geq k$ records
    - uncritical data is not considered when constructing these classes
+   - kinds of attributes
 b. $l$​-diversity
 c. $t$​-closeness
