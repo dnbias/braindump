@@ -57,5 +57,6 @@ a. $k$​-anonymity
      + /uncritical data/ is not considered when constructing these classes
      + /non-sensitive data/ or /quasi-identifier/ are to be combined and generalized
      + /sensitive data/ has to be published
+   - Samarati's approach[fn:s-approach Defined in [[id:5a58e6f3-0dee-4b47-aa56-9b576f7a9e8e][k-Anonymous Data Mining: A Survey]]]:
 b. $l$​-diversity
 c. $t$​-closeness
