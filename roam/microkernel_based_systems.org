@@ -107,9 +107,6 @@ On a forward pass through the tree you can remove the privileges so that childre
 
 ** Demand Paging
 
-
-
-
 * Writing a syscall
 - the kernel crashes if the root is invoked
 - at the end of the syscall you have to continue the execution to the user code
