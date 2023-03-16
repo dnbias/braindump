@@ -88,6 +88,9 @@ A good interface that resolves the problem of having different =FM= that can ove
 This is a =map= operation, the contract for this is that the =MM= can revoke the mapping at any time. When the system is running out of memory and needs it to give to other processes.
 For pages getting revoked a =FM= could *pin* a page that is important will not change in the moment (maybe during a =DMA=)[fn:pinning Unlimited ?? Pinning smtsmt].
 
+The concept of mapping was known before as *capability*
+- pointer + access rights
+
 
 
 * Writing a syscall
