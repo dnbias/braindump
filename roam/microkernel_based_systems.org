@@ -107,6 +107,7 @@ On a forward pass through the tree you can remove the privileges so that childre
 You can also use a lock in the root to indacate that the operation is still ongoing.
 
 ** Demand Paging
+The old linux interface just forked and then cleared the old address space.
 
 * Writing a syscall
 - the kernel crashes if the root is invoked
