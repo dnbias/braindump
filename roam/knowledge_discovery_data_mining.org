@@ -64,5 +64,5 @@ a. $k$​-anonymity
      + start at level $$\lfloor\sqrt{\text{height}}\rfloor$$
    - homogeneity in the sensitive attribute is not desirable as it offers some possible privacy exploits
 b. $l$​-diversity
-   - $l$ number of minimum different sensitive data values in an /equivalence class/
+   - $l$ number of minimum _different sensitive data values_ in an /equivalence class/
 c. $t$​-closeness
