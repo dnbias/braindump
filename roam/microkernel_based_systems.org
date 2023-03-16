@@ -103,7 +103,7 @@ It is possible for an attacker to create a infinite tree, there is no good way t
 You could bound the tree depth, this creates problems for developing applications around that.
 The main problem remains that to start and end with a consistent system you need the operation to be preemptive.
 
-On a forward pass through the tree you can remove the priviledges so that children do not start growing the tree while the system is collapsing it from the other children.
+On a forward pass through the tree you can remove the privileges so that children do not start growing the tree while the system is collapsing it from the other children.
 
 
 
