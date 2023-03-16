@@ -92,6 +92,8 @@ The concept of mapping was known before as *capability*
 - pointer + access rights
 
 Mapping is basically copying capability into a destination with reduced access rights.
+- =diminish=
+- =grant=
 
 
 
