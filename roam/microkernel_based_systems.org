@@ -82,7 +82,7 @@ Traverse the data structure using the 2 indexes and the offset
 ** Interface
 - cannot have =MM= directly map virtual-physical memory
   + for access to kernel memory
-  + also this would not abstract hardware architerture
+  + also this would not abstract hardware architecture
 
 
 
