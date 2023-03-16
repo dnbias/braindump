@@ -5,7 +5,8 @@
 #+date: [2023-02-27 Mon 10:56]
 #+FILETAGS: erasmus university compsci
 
-* Interfacing with Hardware
+* Kernel Level
+** Interfacing with Hardware
 - undefined behavior is alright in output
   + tell the users not to depend on the last bits of the output
 - not alright in input
@@ -15,17 +16,17 @@ For kernel can
 - program a part of memory for its use
 - it's basically just another application
 
-* Linking and loading
+** Linking and loading
 You build the kernel outside of a standard linux environment
 - no dynamic liking
 - no RTTI
 - no stdlib
 
-* Thread Switch
+** Thread Switch
 - userlevel \rarr kernellevel
 - save the registers in =TCB=
   + to switch back restore those registers
-* IPC
+** IPC
 To send messages between threads you don't save and restore those register.
 The receiving end will declare beforehand to the kernel to be willing to this and ready to have its registers overwritten.
 
@@ -63,7 +64,7 @@ Option 2 is /local communication partners/
 - =LIPC=
   + tells the kernel to switch context
   + when preemption is needed lazily switch kernel context
-* Memory management
+** Memory management
 - Loader
   + Construct the address space for applications.
 - Copy on write
@@ -113,7 +114,7 @@ You can also create a clean address space and a thread inside it, then this will
 ** Region Manager
 In user level, so an application would =IPC= this =RM= to ask for pages and then this one would manipulate it and forward to the pager what it needs. Then the pager responds directly to the application.
 
-* Writing a syscall
+** Writing a syscall
 - the kernel crashes if the root is invoked
 - at the end of the syscall you have to continue the execution to the user code
   + get out of the kernel and go to the address space of the user code
