@@ -110,6 +110,9 @@ You can also use a lock in the root to indacate that the operation is still ongo
 The old linux interface just forked and then cleared the old address space.
 You can also create a clean address space and a thread inside it, then this will page fault transitioning to the kernel via =IPC= to the pager asking for the page of its code. Then the exeption will be handled and then the thread resumes its execution.
 
+** Region Manager
+In user level, so an application would =IPC= this =RM= to ask for pages and then this one would specify to the pager what it needs.
+
 * Writing a syscall
 - the kernel crashes if the root is invoked
 - at the end of the syscall you have to continue the execution to the user code
