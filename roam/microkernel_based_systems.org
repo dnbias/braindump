@@ -127,3 +127,5 @@ In user level, so an application would =IPC= this =RM= to ask for pages and then
 
 The syshandler receives the codes of the syscalls and has to switch over the different possibilities and invoke the correct one.
 *NB* the kernel mode is always entered with a clean stack
+
+* User Level
