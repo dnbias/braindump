@@ -45,6 +45,7 @@ In formulas $t$ and $\Delta t$ are interchangeable.
 ** State process
 ** Call process
 \[q_{A}= \lambda\]
+** End process
 
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
