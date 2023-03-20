@@ -54,10 +54,10 @@ F_{A}^{C}(t) = P(T_{A} > t) = e^{-\lambda t} \\
 \end{align*}
 ** End process
 \begin{align*}
-F_H(t) = P(T_H \leq t) = - e^{\frac{t}{h}}\\
-\text{end rate: } \epsilon = \frac{1}{h}\\
-p_{E1}=1-e^{-\frac{\Delta t}{h}}+o(\Delta t)\\
-\text{probability density: } q_{E,x}=\lim_{\Delta t \to 0}\frac{P_{E,x}(\Delta t)}{\Delta t} \text{ so } q_{E,x}=\frac{x}{h}
+F_H(t) &= P(T_H \leq t) = - e^{\frac{t}{h}}\\
+\text{end rate: } \epsilon &= \frac{1}{h}\\
+p_{E1}&=1-e^{-\frac{\Delta t}{h}}+o(\Delta t)\\
+\text{probability density: } q_{E,x}&=\lim_{\Delta t \to 0}\frac{P_{E,x}(\Delta t)}{\Delta t} \text{ so } q_{E,x}=\frac{x}{h}
 \end{align*}
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
