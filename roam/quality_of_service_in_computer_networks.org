@@ -64,7 +64,7 @@ p_{E1}&=1-e^{-\frac{\Delta t}{h}}+o(\Delta t)\\
 \sum P_i = 1 \\
 
 \end
-To not have $n$ members to the equations we use a generalised state $S_x$ and consider only the interactions with the interactions with the neighbours
+To not have $n$ members to the equations we use a generalised state $S_x$ and consider only the interactions with the interactions with the neighbours crossing its limits.
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
