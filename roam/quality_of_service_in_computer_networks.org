@@ -106,4 +106,5 @@ Solution can be a *Trusted Third Party* (=TTP=)
 
 * Anonymity
 - Chaum's MIX, anonymous email[fn:cmix "Untraceable electronic mail, reurn addresses, and digital pseudonyms", Communications of the ACM, 1981]
+  + bad for spam
 - Dining cryptographers
