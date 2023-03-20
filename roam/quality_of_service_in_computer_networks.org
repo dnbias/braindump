@@ -114,3 +114,4 @@ Solution can be a *Trusted Third Party* (=TTP=)
 - Dining cryptographers[fn:cdining "The dining cryptographers problem: unconditional sender and recipient untraceability", Journal of Cryptology, 1988]
   + information-theoretic anonymity
   + needs incredible amount of randomness, unpractical
+  + we need $n$ bits to in the end broadcast a single bit
