@@ -106,4 +106,4 @@ Solution can be a *Trusted Third Party* (=TTP=)
 
 * Anonymity
 - Chaum's MIX
-- Dining cryptograaphrs
+- Dining cryptographrs
