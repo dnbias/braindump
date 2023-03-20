@@ -54,7 +54,7 @@ F_{A}^{C}(t) = P(T_{A} > t) = e^{-\lambda t} \\
 \end{align*}
 ** End process
 \begin
-F_H(t) = P(T_H \leq t) = - e^{\frac{t}{h}}
+F_H(t) = P(T_H \leq t) = - e^{\frac{t}{h}}\\
 \text{end rate: } \epsilon = \frac{1}{h}
 \end
 * Quality of Service in Computer Networks
