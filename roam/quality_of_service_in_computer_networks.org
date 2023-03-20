@@ -65,6 +65,7 @@ p_{E1}&=1-e^{-\frac{\Delta t}{h}}+o(\Delta t)\\
 
 \end
 To not have $n$ members to the equations we use a generalised state $S_x$ and consider only the interactions with the interactions with the neighbours crossing its limits.
+Local balance:
 \[\lambda_x P_x = \mu_{x+1}P_{x+1}\]
 \[P_x = P_0 \prod_{i=1}^{x}\frac{\lambda_{i-1}}{\mu_i}\]
 where the product is defined as $$L_x$$, $$L_0=1$$
