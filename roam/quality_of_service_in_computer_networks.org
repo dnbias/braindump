@@ -46,7 +46,8 @@ In formulas $t$ and $\Delta t$ are interchangeable.
 ** Call process
 \begin{align*}
 q_{A}= \lambda\\
-F_{A}(t)=P(T_{A} \leq t)
+F_{A}(t)=P(T_{A} \leq t)\\
+E(T_{A}) = \frac{1}{\lambda}
 \end{align*}
 ** End process
 
