@@ -105,5 +105,5 @@ Solution can be a *Trusted Third Party* (=TTP=)
 - acts only when requested
 
 * Anonymity
-- Chaum's MIX
+- Chaum's MIX, anonymous email[fn:cmix "Untraceable electronic mail, reurn addresses, and digital pseudonyms", Communications of the ACM, 1981]
 - Dining cryptographers
