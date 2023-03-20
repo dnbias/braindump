@@ -74,6 +74,11 @@ where the product is defined as $$L_x$$, $$L_0=1$$
 * Process for unlimited number of traffic sources
 Definition of /announcement/:
 \[\lambda \cdot h =: A\]
+*Erlang-equation*:
+\[P_x=\frac{}{}]
+
+Definition of /loss probability/:[fn:loss this is the probability that the network is full.]
+\[B := P_n = ]
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
