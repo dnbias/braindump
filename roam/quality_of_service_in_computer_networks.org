@@ -103,3 +103,5 @@ Solution can be a *Trusted Third Party* (=TTP=)
 - issue a replacement contract
 - issue an abort token
 - acts only when requested
+
+* Anonymity
