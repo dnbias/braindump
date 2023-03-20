@@ -80,6 +80,7 @@ Definition of /announcement/:
 Definition of /loss probability/:[fn:loss This is the probability that the network is full.]
 \[B := P_n = \frac{\frac{A^{n}}{n!}}{\sum_{i=0}^{n}\frac{A^{i}}{i!}}\]
 /Expectation value/ is calculated over all probabilities.
+\[E\{n}\}]
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
