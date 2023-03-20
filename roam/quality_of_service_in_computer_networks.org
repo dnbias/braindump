@@ -45,7 +45,7 @@ In formulas $t$ and $\Delta t$ are interchangeable.
 ** State process
 ** Call process
 \begin{align*}
-q_{A}= \lambda
+q_{A}= \lambda\\
 F_{A}(t)=P(T_{A} \leq t)
 \end{align*}
 ** End process
