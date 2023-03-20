@@ -72,6 +72,8 @@ where the product is defined as $$L_x$$, $$L_0=1$$
 \[\sum_x P_x = P_0 \cdot \sum_x L_x = 1 \iff P_0 = \frac{1}{\sum_{x}L_x}\]
 \[P_x = \frac{L_{x}}{\sum_i L_i}\]
 * Process for unlimited number of traffic sources
+Definition of /announcement/:
+\[\lambda \cdot h =: A\]
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
