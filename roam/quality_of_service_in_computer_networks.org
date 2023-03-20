@@ -54,6 +54,7 @@ F_{A}^{C}(t) = P(T_{A} > t) = e^{-\lambda t} \\
 \end{align*}
 ** End process
 \begin
+F_H(t) = P(T_H \leq t) = - e^{\frac{t}{h}}
 \end
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
