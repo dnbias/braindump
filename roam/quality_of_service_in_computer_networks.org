@@ -107,4 +107,5 @@ Solution can be a *Trusted Third Party* (=TTP=)
 * Anonymity
 - Chaum's MIX, anonymous email[fn:cmix "Untraceable electronic mail, reurn addresses, and digital pseudonyms", Communications of the ACM, 1981]
   + bad for spam of course
+  + the =MIX= stands between senders and receivers and masks direct comunications, to an attacker the =MIX= will look like flows of incoming and outgoing messages, so not correlatable
 - Dining cryptographers
