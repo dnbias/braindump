@@ -47,7 +47,9 @@ In formulas $t$ and $\Delta t$ are interchangeable.
 \begin{align*}
 q_{A}= \lambda\\
 F_{A}(t)=P(T_{A} \leq t)\\
-E(T_{A}) = \frac{1}{\lambda}
+E(T_{A}) = \frac{1}{\lambda}\\
+c = \lambda \\
+F_{A}(t) = P(T_{A} \le t) = 1 - e^{-\lambda t}
 \end{align*}
 ** End process
 
