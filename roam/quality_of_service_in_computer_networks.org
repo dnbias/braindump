@@ -45,6 +45,7 @@ In formulas $t$ and $\Delta t$ are interchangeable.
 ** State process
 ** Call process
 \[q_{A}= \lambda\]
+\[F_{A}(t)=P(T_{A} \leq t)\]
 ** End process
 
 * Quality of Service in Computer Networks
