@@ -44,10 +44,10 @@ You can generalize a set of state to abstract into a single bigger markov state 
 In formulas $t$ and $\Delta t$ are interchangeable.
 ** State process
 ** Call process
-\begin{al}
+\begin{align*}
 q_{A}= \lambda
 F_{A}(t)=P(T_{A} \leq t)
-\end{al}
+\end{align*}
 ** End process
 
 * Quality of Service in Computer Networks
