@@ -42,6 +42,7 @@ q_k = \sum_{i\neq k} q_{ki}
 You can generalize a set of state to abstract into a single bigger markov state that includes them.
 * Communication Traffic as Random Process
 In formulas $t$ and $\Delta t$ are interchangeable.
+** State process
 ** Call process
 \[q_{A}= \lambda\]
 
