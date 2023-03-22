@@ -127,8 +127,8 @@ The set of worlds represent the infinite set of time instants.
 For the semantics we define $\lambda$ as the possible worlds model
 - can think about the trace a system
 - used to simplify notation of the accessibility relation $R$ (which is a total order)
-- access a point in the sequence as $\lambda(i) = w_i$
-- have a new trance starting from $i$ with $\lambda^i = w_i w_{i+1} w_{i+2}\cdots$
+- access a point (world) in the sequence as $\lambda(i) = w_i$
+- have a new /trace/ starting from $i$ with $\lambda^i = w_i w_{i+1} w_{i+2}\cdots$
 **** Computation Tree logic
 
 ** Proof Systems
