@@ -96,6 +96,8 @@ Operators:
 - Next: $X\phi$, sometimes a $\circ \phi$
   + accessible worlds
 - Globally: $G \phi$
+  + all worlds
+  + transitive
 **** Linear temporal logics
 **** Computation Tree logic
 
