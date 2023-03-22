@@ -97,7 +97,7 @@ Operators:
   + accessible worlds
   + not transitive
 - Globally: $G \phi$
-  + all worlds
+  + all worlds in the future
   + transitive
 - Future: $F\phi$
   + holds eventually
