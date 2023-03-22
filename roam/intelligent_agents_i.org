@@ -82,6 +82,8 @@ Properties about
   + might hold in the future
   + held in the past
   + will hold eventually
+
+Used for reasoning abount temporal aspects in natural language
 **** Linear temporal logics
 **** Computation Tree logic
 
