@@ -103,6 +103,8 @@ Operators:
   + holds eventually
 - Until: $\phi U \psi$
   + $\phi$ holds until $\psi$ holds
+  + $\psi$ holds in the future
+  + $\phi$ holds until the moment in the future where $\psi$ holds
 **** Linear temporal logics
 **** Computation Tree logic
 
