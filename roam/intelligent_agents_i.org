@@ -113,6 +113,7 @@ Operators:
   + something good eventually happens (infinitely often)
   + uses $G$ and $F$
 **** Linear temporal logics
+=LTL=
 **** Computation Tree logic
 
 ** Proof Systems
