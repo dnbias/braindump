@@ -132,7 +132,7 @@ For the semantics we define $\lambda$ as the possible worlds model
 - have a new /trace/ starting from $i$ with $\lambda^i = w_i w_{i+1} w_{i+2}\cdots$
 **** Computation Tree logic
 We want to talk about partial orders.
-It is an extention of =LTL=
+It is an extention of =LTL=, temporal operators and path quantifiers.
 
 ** Proof Systems
 *** Hilbert style
