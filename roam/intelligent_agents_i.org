@@ -75,6 +75,7 @@ The /box/ and /diamond/ can be interpreted as:
 - until
   + something holds until something else holds
   + binary operation
+- quantification with $A$, $E$
 
 **** Linear temporal logics
 **** Computation Tree logic
