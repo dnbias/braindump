@@ -123,6 +123,7 @@ We can define
 - $F$ is the tautology of $F \phi = \text{T} U \phi$
 - $G$ is defined as the dual of future $G \phi = \lnot F \lnot \phi$
 
+The set of worlds represent the infinite set of time instants.
 For the semantics we define $\lambda$ as the possible worlds model
 - can think about the trace a system
 - used to simplify notation of the accessibility relation $R$ (which is a total order)
