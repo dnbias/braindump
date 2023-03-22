@@ -77,7 +77,6 @@ The /box/ and /diamond/ can be interpreted as:
 
 *** Linear temporal logics
 *** Computation Tree logic
-***
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
