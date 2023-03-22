@@ -101,7 +101,7 @@ Operators:
   + transitive
 - Future: $F\phi$
   + holds eventually
-- Until: $\phi U \psi$
+- Until: $\phi U \psi$, can be strong on weak (inclusive or not)
   + $\phi$ holds until $\psi$ holds
   + $\psi$ holds in the future
   + $\phi$ holds until the moment in the future where $\psi$ holds
