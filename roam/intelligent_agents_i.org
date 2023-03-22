@@ -102,7 +102,7 @@ Operators:
 - Future: $F\phi$
   + holds eventually
 - Until: $\phi U \psi$
-  +
+  + \phi holds until \psi holds
 **** Linear temporal logics
 **** Computation Tree logic
 
