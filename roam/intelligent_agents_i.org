@@ -74,6 +74,7 @@ The /box/ and /diamond/ can be interpreted as:
   + partial order
 - until
 
+
 *** Linear temporal logics
 *** Computation Tree logic
 ***
