@@ -108,10 +108,9 @@ Operators:
     - $\lnot \psi \land \phi \to \lnot \psi \land \phi \to \psi \land \lnot \phi$
 
 - safeness properties
-  + something bad never happens, uses global operator
+  + something bad never happens, uses $G$
 - liveness properties
   + something good eventually happens (infinitely often)
-
   + uses $G$ and $F$
 **** Linear temporal logics
 **** Computation Tree logic
