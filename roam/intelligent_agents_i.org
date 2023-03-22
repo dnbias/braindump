@@ -96,6 +96,7 @@ The | is the representation of the tree. It creates two branches where one side 
 The reasoning is by cases and proceeds by proving contradictions (closing the branch) in all these cases.
 
 ** Epistemic Logics
+- equivalence relations
 ** Temporal Logics
 *** Linear temporal logics
 *** Computation Tree logic
