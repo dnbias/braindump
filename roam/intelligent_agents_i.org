@@ -64,6 +64,7 @@ The /box/ and /diamond/ can be interpreted as:
 *** Epistemic Logics
 - equivalence relations
 - common knowledge
+  + adds induction in the language
 - everyone knows
 - updates
 *** Temporal Logics
