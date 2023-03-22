@@ -77,6 +77,11 @@ The /box/ and /diamond/ can be interpreted as:
   + binary operation
 - quantification with $A$, $E$
 
+Properties about
+- assertions that
+  + might hold in the future
+  + held in the past
+  + will hold eventually
 **** Linear temporal logics
 **** Computation Tree logic
 
