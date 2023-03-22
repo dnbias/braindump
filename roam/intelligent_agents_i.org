@@ -99,6 +99,8 @@ Operators:
 - Globally: $G \phi$
   + all worlds
   + transitive
+- Future: $F\phi$
+  + holds eventually
 **** Linear temporal logics
 **** Computation Tree logic
 
