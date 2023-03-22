@@ -114,6 +114,11 @@ Operators:
   + uses $G$ and $F$
 **** Linear temporal logics
 =LTL=
+- prop symbols
+- negation
+- conjunction
+- $X$
+- $U$
 **** Computation Tree logic
 
 ** Proof Systems
