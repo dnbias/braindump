@@ -105,6 +105,7 @@ Operators:
   + $\phi$ holds until $\psi$ holds
   + $\psi$ holds in the future
   + $\phi$ holds until the moment in the future where $\psi$ holds
+    - $\lnot \psi \land \phi \to \lnot \psi \land \phi \to \psi \land \lnot \phi$
 **** Linear temporal logics
 **** Computation Tree logic
 
