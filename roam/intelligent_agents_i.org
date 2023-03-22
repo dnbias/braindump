@@ -83,7 +83,7 @@ Properties about
   + held in the past
   + will hold eventually
 
-Used for reasoning about temporal aspects in natural language
+Used for reasoning about temporal aspects in natural language, evolution in multi-agents systems, formal methods reasoning and verification
 **** Linear temporal logics
 **** Computation Tree logic
 
