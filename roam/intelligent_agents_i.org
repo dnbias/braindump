@@ -97,5 +97,8 @@ The reasoning is by cases and proceeds by proving contradictions (closing the br
 
 ** Epistemic Logics
 ** Temporal Logics
+*** Linear temporal logics
+*** Computation Tree logic
+***
 ** Multi-agent Logics
 Express the individual knowledge.
