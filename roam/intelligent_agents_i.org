@@ -98,7 +98,7 @@ The reasoning is by cases and proceeds by proving contradictions (closing the br
 ** Epistemic Logics
 - equivalence relations
 ** Temporal Logics
-- orgder relations
+- order relations
 *** Linear temporal logics
 *** Computation Tree logic
 ***
