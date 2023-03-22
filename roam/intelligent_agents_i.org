@@ -61,6 +61,17 @@ The /box/ and /diamond/ can be interpreted as:
 *** Modal
 /Qualifies the truth of a statement/
 - can qualify if the truth is temporally qualified or necessarily qualified etc.
+** Epistemic Logics
+- equivalence relations
+** Temporal Logics
+- order relations
+  + total order
+  + partial order
+
+
+*** Linear temporal logics
+*** Computation Tree logic
+***
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
@@ -95,14 +106,5 @@ The whole idea is to simplify formulas by removing connectives.
 The | is the representation of the tree. It creates two branches where one side is true or the other is.
 The reasoning is by cases and proceeds by proving contradictions (closing the branch) in all these cases.
 
-** Epistemic Logics
-- equivalence relations
-** Temporal Logics
-- order relations
-  + total order
-  + partial order
-*** Linear temporal logics
-*** Computation Tree logic
-***
 ** Multi-agent Logics
 Express the individual knowledge.
