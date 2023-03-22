@@ -61,9 +61,9 @@ The /box/ and /diamond/ can be interpreted as:
 *** Modal
 /Qualifies the truth of a statement/
 - can qualify if the truth is temporally qualified or necessarily qualified etc.
-** Epistemic Logics
+*** Epistemic Logics
 - equivalence relations
-** Temporal Logics
+*** Temporal Logics
 - order relations
   + total order
   + partial order
