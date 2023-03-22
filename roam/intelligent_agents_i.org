@@ -101,7 +101,8 @@ Operators:
   + transitive
 - Future: $F\phi$
   + holds eventually
--
+- Until: $\phi U \psi$
+  +
 **** Linear temporal logics
 **** Computation Tree logic
 
