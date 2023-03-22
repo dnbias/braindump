@@ -72,7 +72,7 @@ The /box/ and /diamond/ can be interpreted as:
 - order relations
   + total order
   + partial order
-- *until*
+- until
 
 *** Linear temporal logics
 *** Computation Tree logic
