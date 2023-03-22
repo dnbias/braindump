@@ -134,6 +134,8 @@ For the semantics we define $\lambda$ as the possible worlds model
 =CTL=
 We want to talk about partial orders.
 It is an extention of =LTL=, temporal operators and path quantifiers.
+- path formulas
+- state formulas
 
 ** Proof Systems
 *** Hilbert style
