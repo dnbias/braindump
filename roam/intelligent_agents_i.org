@@ -121,6 +121,7 @@ Operators:
 - $U$
 We can define
 - $F$ is the tautology of $T U \phi$
+- $G$ is defined as the dual of future $G \phi = \lnot F \lnot \phi$
 **** Computation Tree logic
 
 ** Proof Systems
