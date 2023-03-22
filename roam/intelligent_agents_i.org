@@ -67,6 +67,7 @@ The /box/ and /diamond/ can be interpreted as:
   + adds induction in the language
 - everyone knows
 - updates
+  + reduction
 *** Temporal Logics
 - order relations
   + total order
