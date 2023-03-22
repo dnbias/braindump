@@ -118,6 +118,7 @@ Operators:
 - negation
 - conjunction
 - $X$
+  + its the same as $\box$ and $\diamond$ but being linear now they are the same
 - $U$
 We can define
 - $F$ is the tautology of $F \phi = \text{T} U \phi$
