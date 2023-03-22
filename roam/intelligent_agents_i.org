@@ -110,6 +110,9 @@ Operators:
 - safeness properties
   + something bad never happens, uses global operator
 - liveness properties
+  + something good eventually happens (infinitely often)
+
+  + uses $G$ and $F$
 **** Linear temporal logics
 **** Computation Tree logic
 
