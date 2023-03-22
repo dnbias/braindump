@@ -95,6 +95,7 @@ From a computation point of view the easiest way to think about time is one that
 Operators:
 - Next: $X\phi$, sometimes a $\circ \phi$
   + accessible worlds
+  + not transitive
 - Globally: $G \phi$
   + all worlds
   + transitive
