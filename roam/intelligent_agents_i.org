@@ -108,7 +108,7 @@ Operators:
     - $\lnot \psi \land \phi \to \lnot \psi \land \phi \to \psi \land \lnot \phi$
 
 - safeness properties
-
+  + something bad never happens, uses global operator
 - liveness properties
 **** Linear temporal logics
 **** Computation Tree logic
