@@ -119,6 +119,8 @@ Operators:
 - conjunction
 - $X$
 - $U$
+We can define
+- $F$ is the tautology of $T U \phi$
 **** Computation Tree logic
 
 ** Proof Systems
