@@ -73,7 +73,7 @@ The /box/ and /diamond/ can be interpreted as:
   + total order
   + partial order
 - until
-
+  + something holds until something else holds
 
 **** Linear temporal logics
 **** Computation Tree logic
