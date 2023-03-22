@@ -91,6 +91,11 @@ From a computation point of view the easiest way to think about time is one that
   + can be a decision tree
   + can be a probabilistic tree
 - discrete
+
+Operators:
+- Next: $X\phi$, sometimes a $\circ \phi$
+  + accessible worlds
+- Globally: $G \phi$
 **** Linear temporal logics
 **** Computation Tree logic
 
