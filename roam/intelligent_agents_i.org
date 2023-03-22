@@ -99,6 +99,8 @@ The reasoning is by cases and proceeds by proving contradictions (closing the br
 - equivalence relations
 ** Temporal Logics
 - order relations
+  + total order
+  + partial order
 *** Linear temporal logics
 *** Computation Tree logic
 ***
