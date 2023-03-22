@@ -63,6 +63,9 @@ The /box/ and /diamond/ can be interpreted as:
 - can qualify if the truth is temporally qualified or necessarily qualified etc.
 *** Epistemic Logics
 - equivalence relations
+- common knowledge
+- everyone knows
+- updates
 *** Temporal Logics
 - order relations
   + total order
