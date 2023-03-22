@@ -87,6 +87,9 @@ Used for reasoning about temporal aspects in natural language, evolution in mult
 
 From a computation point of view the easiest way to think about time is one that is
 - backward-linear, branches in the future
+  + partial order
+  + can be a decision tree
+  + can be a probabilistic tree
 - discrete
 **** Linear temporal logics
 **** Computation Tree logic
