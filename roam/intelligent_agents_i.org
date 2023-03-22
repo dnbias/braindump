@@ -84,6 +84,10 @@ Properties about
   + will hold eventually
 
 Used for reasoning about temporal aspects in natural language, evolution in multi-agents systems, formal methods reasoning and verification
+
+From a computation point of view the easiest way to think about time is one that is
+- backward-linear
+- discrete
 **** Linear temporal logics
 **** Computation Tree logic
 
