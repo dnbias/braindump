@@ -140,3 +140,4 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 - *details*, description of what is right, wrong, questionable
 As a reviewer:
 - the weakness is in the paper not the authors
+- give clear instructions on how to improve
