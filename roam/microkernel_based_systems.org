@@ -136,5 +136,5 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 ** Structure of a Review
 - *summary*, showing the author you understood the paper
 - *points in favor and against*, summary of the review
-- *specific questions*
+- *specific questions*, classify the paper, ask for confidence
 - *details*
