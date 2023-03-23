@@ -135,6 +135,6 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
   + ideally you don't show reviews to authors and tell them what to fix to get the paper accepted
 ** Structure of a Review
 - *summary*, showing the author you understood the paper
-- *points in favor and against*
+- *points in favor and against*, summary of the review
 - *specific questions*
 - *details*
