@@ -151,3 +151,7 @@ As an author:
 Structure:
 - score
 - confidence in correctness
+- summary
+- points in favor
+- points against
+- details
