@@ -147,3 +147,7 @@ As an author:
   + font size
   + spell checking
   + caution with symbols and abbreviations
+
+Structure:
+- score
+- confidence in correctness
