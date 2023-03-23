@@ -130,3 +130,4 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 
 * User Level
 * Paper Reviews
+- idea \to implementation and experiments \to paper \to review gets written \to accept / reject / revise
