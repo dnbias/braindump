@@ -137,4 +137,4 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 - *summary*, showing the author you understood the paper
 - *points in favor and against*, summary of the review
 - *specific questions*, classify the paper, ask for confidence
-- *details*
+- *details*, description of what is right, wrong, questionable
