@@ -144,3 +144,6 @@ As a reviewer:
 
 As an author:
 - respect the reviewer
+  + font size
+  + spell checking
+  + caution with symbols and abbreviations
