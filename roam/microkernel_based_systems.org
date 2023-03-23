@@ -141,3 +141,6 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 As a reviewer:
 - the weakness is in the paper not the authors
 - give clear instructions on how to improve
+
+As an author:
+- respect the reviewer
