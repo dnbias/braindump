@@ -148,6 +148,8 @@ It is an extention of =LTL=, temporal operators and path quantifiers.
 Quantifiers:
 - $\square$ quantifies over accessible words
 - $\forall$ quantifies over individuals
+
+*Constant domain augmented frame* $(W,R,D)$
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
