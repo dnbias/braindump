@@ -144,6 +144,10 @@ It is an extention of =LTL=, temporal operators and path quantifiers.
   - set of individuals
   - same or different in the various worlds
 - $M = (D,I)$ model
+
+Quantifiers:
+- $\square$ quantifies over accessible words
+- $\forall$ quantifies over individuals
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
