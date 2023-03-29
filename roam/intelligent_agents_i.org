@@ -149,7 +149,7 @@ Quantifiers:
 - $\square$ quantifies over accessible words
 - $\forall$ quantifies over individuals
 
-*Constant domain augmented frame* $(W,R,D)$
+*Constant domain augmented frame* $(W,R,D)$, constant because the domain doesn't change world to world.
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
