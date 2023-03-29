@@ -150,7 +150,7 @@ Quantifiers:
 - $\forall$ quantifies over individuals
 
 *Constant domain augmented frame* $(W,R,D)$, constant because the domain doesn't change world to world.
-The interpretation of constants and functions do not depend on o world, while propositions do.
+The interpretation of constants and functions do not depend on a world, while propositions do.
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
