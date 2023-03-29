@@ -151,6 +151,8 @@ Quantifiers:
 
 *Constant domain augmented frame* $(W,R,D)$, constant because the domain doesn't change world to world.
 The interpretation of constants and functions do not depend on a world, while propositions do.
+
+*Varying domains* $(W,R,D,I)$
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
@@ -184,6 +186,7 @@ Prefix is indicated by $\sigma$.
 The whole idea is to simplify formulas by removing connectives.
 The | is the representation of the tree. It creates two branches where one side is true or the other is.
 The reasoning is by cases and proceeds by proving contradictions (closing the branch) in all these cases.
+
 
 ** Multi-agent Logics
 Express the individual knowledge.
