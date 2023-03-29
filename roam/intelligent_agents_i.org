@@ -157,7 +157,7 @@ The interpretation of constants and functions do not depend on a world, while pr
 Both versions can simulate each other.
 
 *Correspondance*
-- $\forall x \square P(x) \eq \square \forall x P(x) \iff M \text{ is constant domains }$
+- $\forall x \square P(x) \equiv \square \forall x P(x) \iff M \text{ is constant domains }$
 ** Proof Systems
 *** Hilbert style
 A *Hilbert style* proof system is more difficult to use as it requires creativity.
