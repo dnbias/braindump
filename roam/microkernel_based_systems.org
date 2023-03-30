@@ -158,7 +158,7 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 - partitioned, assign to CPU and schedule locally
 - global, scheduling decides both when and where
 
-The mixed criticality is controvertial.
+The mixed criticality is controversial.
 - the failure probability events have to be independent, so they are multiplied and they quickly become ignorable
 - if they aren't they are a problem
 - *fault tree analysis*
