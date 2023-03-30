@@ -153,6 +153,8 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
   + sporadic, instance reoccur no earlier than period $T$
 - *job*, concrete instance of a task
   + these are usually implemented through a thread
+- time-triggered
+- event triggered
 
 * User Level
 
