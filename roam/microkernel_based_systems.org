@@ -162,7 +162,8 @@ The mixed criticality is controvertial.
 - the failure probability events have to be independent, so they are multiplied and they quickly become ignorable
 - if they aren't they are a problem
 - *fault tree analysis*
-
+*** in Microkernel Based Systems
+Different ideas.
 *** Critical Sections and Resources
 - priority inheritance protocol
   + give your own time to help the currently scheduled with the resources
