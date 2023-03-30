@@ -135,7 +135,7 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 *Best effort*:
 - focus on common case behavior
 - as many tasks as possible
-- good responsiveness
+- good responsiveness, no hard done if late
 
 *Real-time*:
 - guarantees on timeliness
