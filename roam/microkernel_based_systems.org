@@ -169,6 +169,8 @@ Different ideas:
   + pro
     - decisions at user level
   + cons
+    - very high scheduling overhead because of all the =IPC=
+    - need to conceive a user-level protocol to tell root when to switch to different user schedulers
 *** Critical Sections and Resources
 - priority inheritance protocol
   + give your own time to help the currently scheduled with the resources
