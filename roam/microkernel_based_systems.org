@@ -166,6 +166,7 @@ The mixed criticality is controvertial.
 *** Critical Sections and Resources
 - priority inheritance protocol
   + give your own time to help the currently scheduled with the resources
+- ceiling priority protocol
 
 * User Level
 
