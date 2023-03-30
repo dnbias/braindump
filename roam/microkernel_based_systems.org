@@ -163,7 +163,8 @@ The mixed criticality is controvertial.
 - if they aren't they are a problem
 - *fault tree analysis*
 *** in Microkernel Based Systems
-Different ideas.
+Different ideas:
+- Brian Ford - CPU Inheritance Scheduling
 *** Critical Sections and Resources
 - priority inheritance protocol
   + give your own time to help the currently scheduled with the resources
