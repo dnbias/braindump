@@ -155,6 +155,8 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
   + these are usually implemented through a thread
 - time triggered
 - event triggered, fixed / dynamic priority
+- partitioned, assign to CPU and schedule locally
+- global, scheduling decides both when and where
 
 * User Level
 
