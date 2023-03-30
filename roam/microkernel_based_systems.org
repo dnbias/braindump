@@ -128,7 +128,10 @@ In user level, so an application would =IPC= this =RM= to ask for pages and then
 The syshandler receives the codes of the syscalls and has to switch over the different possibilities and invoke the correct one.
 *NB* the kernel mode is always entered with a clean stack
 
+** Scheduling
+- real-time vs best effort
 * User Level
+
 * Paper Reviews
 - idea \to implementation and experiments \to paper \to review gets written \to accept / reject / revise
 - purpose is to score and decide the most relevant papers to slot in conferences
