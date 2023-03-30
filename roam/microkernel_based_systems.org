@@ -142,6 +142,7 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
   + hard, any deadline miss is consider catastrophic
     - easier to build
   + soft
+    - only probabilistic guarantees
   + firm
 - focus on worst case behavior
 - being late has negative effects
