@@ -165,6 +165,7 @@ The mixed criticality is controvertial.
 *** in Microkernel Based Systems
 Different ideas:
 - Brian Ford - CPU Inheritance Scheduling
+  + event \to mk \to root scheduler \to particular scheduler
   + pro
     - decisions at user level
   + cons
