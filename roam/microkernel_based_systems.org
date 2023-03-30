@@ -131,6 +131,12 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 ** Scheduling
 - real-time vs best effort
 - time as a resource
+
+*Best effort*:
+- focus on common case behavior
+- as many tasks as possible
+- good responsiveness
+
 * User Level
 
 * Paper Reviews
