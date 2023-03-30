@@ -165,6 +165,9 @@ The mixed criticality is controvertial.
 *** in Microkernel Based Systems
 Different ideas:
 - Brian Ford - CPU Inheritance Scheduling
+  + pro
+    - decisions at user level
+  + cons
 *** Critical Sections and Resources
 - priority inheritance protocol
   + give your own time to help the currently scheduled with the resources
