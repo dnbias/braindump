@@ -140,6 +140,7 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 *Real-time*:
 - guarantees on timeliness
   + hard, any deadline miss is consider catastrophic
+    - easier to build
   + soft
   + firm
 - focus on worst case behavior
