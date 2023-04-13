@@ -84,5 +84,6 @@ c. $t$​-closeness
     - a test set used to select models is called a *validation set*
 *** Support Vector Machines
 *** Decision Trees
+To decide the condition on the split we use criterions like *entropy* from Information Theory.
 ** Clustering
 - unsupervised
