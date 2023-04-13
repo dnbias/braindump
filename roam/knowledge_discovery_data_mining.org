@@ -78,6 +78,8 @@ c. $t$​-closeness
 2 steps
 - model construction w/ training data
 - model usage for future predictions
+  + *accuracy is estimated*
+    - /accuracy/ based on *test set*
 *** Support Vector Machines
 *** Decision Trees
 ** Clustering
