@@ -77,6 +77,8 @@ Option 2 is /local communication partners/
 *** Cache Coloring
 Index (middle part of the address) as a color indicating what row of cache to write (cache set).
 This way other processes cannot interfere with other colors.
+
+This can be done at page level to by coloring in regard to the page offset.
 *** Memory for the kernel itself
 - prevent denial of service through memory exhaustion
   + quotas
