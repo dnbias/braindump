@@ -34,8 +34,6 @@ Statistics is not everything, the data experts/domain experts need to interpret 
 From the novelties you extract from the data you take *action* based on them.
 
 ** Visualization
-
-
 ** Anonymity
 See [[id:5e62675a-500a-41dc-a7ce-4fe6b3467c5a][k-Anonymity: A Model for Protecting Privacy]]
 
