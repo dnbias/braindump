@@ -76,7 +76,7 @@ c. $t$​-closeness
 - supervised, training data accompanied by labels
 
 2 steps
-- model construction
+- model construction w/ training data
 - model usage for future predictions
 *** Support Vector Machines
 *** Decision Trees
