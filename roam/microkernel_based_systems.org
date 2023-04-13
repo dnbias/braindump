@@ -76,6 +76,7 @@ Option 2 is /local communication partners/
 
 *** Cache Coloring
 Index (middle part of the address) as a color indicating what row of cache to write (cache set).
+This way other processes cannot interfere with other colors.
 *** Memory for the kernel itself
 - prevent denial of service through memory exhaustion
   + quotas
