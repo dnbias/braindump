@@ -76,3 +76,4 @@ c. $t$​-closeness
 - supervised
 *** Support Vector Machines
 *** Decision Trees
+** Clustering
