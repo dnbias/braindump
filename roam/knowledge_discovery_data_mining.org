@@ -73,6 +73,12 @@ c. $t$​-closeness
 - life cycle of a =ML= systems
 - each cycle brings a different level of bias into the system
   + historical, in the collected data there can be missing information that is representative of the world today and wasn't in the past
+  + representation
+  + measurement
+  + aggregation
+  + learning
+  + evaluation
+  + deployment
 ** Association Discovery
 ** Sequential Pattern Mining
 ** Classification
