@@ -6,4 +6,4 @@
 #+date: [2023-04-13 Thu 09:37]
 #+filetags: concept
 
-Explained in action in [[id:4ed14fbf-ae6e-4536-b4d7-5897fcbdd016][Sistemi Intelligenti]]
+Explained in action in [[id:4ed14fbf-ae6e-4536-b4d7-5897fcbdd016][Sistemi Intelligenti]].
