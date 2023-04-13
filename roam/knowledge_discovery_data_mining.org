@@ -74,3 +74,4 @@ c. $t$​-closeness
 * Machine Learning
 ** Association Discovery
 ** Sequential Pattern Mining
+** Classification
