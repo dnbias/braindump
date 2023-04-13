@@ -75,7 +75,7 @@ Option 2 is /local communication partners/
 - HDD driver
 
 *** Cache Coloring
-Index (middle part of the address) as a color indicating what row of cache to write (cache set)
+Index (middle part of the address) as a color indicating what row of cache to write (cache set).
 *** Memory for the kernel itself
 - prevent denial of service through memory exhaustion
   + quotas
