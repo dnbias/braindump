@@ -72,3 +72,5 @@ c. $t$​-closeness
    - *Earth-Mover distance* is one of the measures used
 
 * Machine Learning
+** Association Discovery
+** Sequential Pattern Mining
