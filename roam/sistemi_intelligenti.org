@@ -1270,7 +1270,7 @@ Si puo' calcolare una _distribuzione di probabilita'_ di appartenenza di un reco
 Il calcolo della bonta' di uno /split/, o calcolo del *guadagno*
 \[\Delta = I(\text{parent}) - \sum_{j=1}^{k}\frac{N(v_{j})}{N} I(v_{j})\]
 - $I$ e' l'impurita'
-- $N$ numero recond/istanze del nodo genitore
+- $N$ numero record/istanze del nodo genitore
 - $N(v_{j})$ numero record/istanze del nodo figlio $j$ -esimo
 
 Nel caso della misura, utilizzando l'entropia si calcola l'*information gain*
