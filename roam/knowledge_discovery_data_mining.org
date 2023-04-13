@@ -70,6 +70,8 @@ c. $t$​-closeness
    - *Earth-Mover distance* is one of the measures used
 
 * Machine Learning
+- life cycle
+- each cycle brings a different level of bias into the system
 ** Association Discovery
 ** Sequential Pattern Mining
 ** Classification
