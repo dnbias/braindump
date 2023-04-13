@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       d8c354d6-630d-4a6b-8816-2adca16f319e
+:END:
+#+title: Entropy
+
+#+date: [2023-04-13 Thu 09:37]
+#+filetags: concept
