@@ -73,6 +73,7 @@ Option 2 is /local communication partners/
 - anon
   + provides resources
 - HDD driver
+*** Memory for the kernel itself
 
 ** Segments
 Protezione dei segmenti fatta dalla =MPU=.
