@@ -35,6 +35,7 @@ From the novelties you extract from the data you take *action* based on them.
 
 ** Visualization
 
+
 ** Anonymity
 See [[id:5e62675a-500a-41dc-a7ce-4fe6b3467c5a][k-Anonymity: A Model for Protecting Privacy]]
 
@@ -69,3 +70,5 @@ c. $t$​-closeness
    - $t$ measures the how similar the individual class distribution is against the total distribution, again the minimum value
    - higher is better again
    - *Earth-Mover distance* is one of the measures used
+
+* Machine Learning
