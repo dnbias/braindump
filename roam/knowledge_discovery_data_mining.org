@@ -84,6 +84,7 @@ c. $t$​-closeness
     - a test set used to select models is called a *validation set*
 *** Support Vector Machines
 *** Decision Trees
+Induction based approach, usually goes until stop condition is reached, can be a minimum purity, number of levels
 To decide the condition on the split we use criterions like *entropy* from Information Theory.[fn:entropy see [[id:d8c354d6-630d-4a6b-8816-2adca16f319e][Entropy]]]
 ** Clustering
 - unsupervised
