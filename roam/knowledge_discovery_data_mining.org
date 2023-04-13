@@ -73,7 +73,7 @@ c. $t$​-closeness
 ** Association Discovery
 ** Sequential Pattern Mining
 ** Classification
-- supervised
+- supervised, training data accompanied by labels
 *** Support Vector Machines
 *** Decision Trees
 ** Clustering
