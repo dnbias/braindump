@@ -80,6 +80,7 @@ c. $t$​-closeness
 - model usage for future predictions
   + *accuracy is estimated*
     - /accuracy/ based on *test set*
+    - a test set used to select models is called a *validation set*
 *** Support Vector Machines
 *** Decision Trees
 ** Clustering
