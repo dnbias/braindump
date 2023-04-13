@@ -74,6 +74,10 @@ c. $t$​-closeness
 ** Sequential Pattern Mining
 ** Classification
 - supervised, training data accompanied by labels
+
+2 steps
+- model construction
+- model usage for future predictions
 *** Support Vector Machines
 *** Decision Trees
 ** Clustering
