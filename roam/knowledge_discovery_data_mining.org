@@ -72,6 +72,7 @@ c. $t$​-closeness
 * Machine Learning
 - life cycle of a =ML= systems
 - each cycle brings a different level of bias into the system
+  + historical, in the collected data there can be missing information that is representative of the world today and wasn't in the past
 ** Association Discovery
 ** Sequential Pattern Mining
 ** Classification
