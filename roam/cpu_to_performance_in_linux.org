@@ -3,6 +3,7 @@
 :END:
 #+title: CPU to performance in Linux
 #+date: [2023-04-18 Tue 20:48]
+#+filetags: til
 - Source: https://www.rodolfocarvalho.net/blog/how-to-disable-cpu-powersave-on-linux/
 
 #+begin_example
