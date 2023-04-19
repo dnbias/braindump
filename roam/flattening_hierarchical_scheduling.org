@@ -25,3 +25,4 @@
   + that is the host just provides a budget to guests without any other information
   + this is done by having the host scheduler allocating budgets as /scheduling contexts/
   + as the schedulability of the system is validated this is attached to the =vCPU= of the =VM=
+- interrupts are implemented as assignments of =SC= to events by the host
