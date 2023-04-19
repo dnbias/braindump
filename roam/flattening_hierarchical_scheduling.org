@@ -15,3 +15,7 @@
   + some argue bandwidth servers with small and frequently replenished budgets is sufficient
 - the paper argues the root of the dispute lies in limitations in current virtualization technology
   + a small enhancement of the scheduler in the guest task sets for the host scheduler to integrate these workloads onto a single system by interleaving
+
+- different types of virtualization
+  + faithful and paravirtualization
+    - first needs hardware properties in the host
