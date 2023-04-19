@@ -7,3 +7,8 @@
 - Source:
 - Author: Lackorzynski, Warg, Volp, Hartig
 - Related: [[id:5c91241d-3da3-47e6-b27a-9afe7e0b4ff0][Sistemi Operativi]], [[id:ad8e431b-7af6-4eb9-99a7-41af9cd0c4ce][Microkernel Based Systems]]
+
+* Notes
+- the objective is to integrate multiple real-time systems as guests on a single host using =VM=​s
+- in literature there are different takes on the matter
+  + /mismatch between embedded-systems requirements and the virtual-machne model is evident in scheduling [...] the integrated nature of embedded systems requires that scheduling priorities of different subsystems must be interleaved. This is at odds with the concept of virtual machines./[fn:heiser The Role of Virtualization in Embedded Systems]
