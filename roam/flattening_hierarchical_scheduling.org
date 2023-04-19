@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       b10940e8-f505-4d04-b119-d113707e0076
+:END:
+#+title: Flattening Hierarchical Scheduling
+#+date: [2023-04-19 Wed 05:07]
+#+filetags: article
+- Source:
+- Author: Lackorzynski, Warg, Volp, Hartig
+- Related: [[id:5c91241d-3da3-47e6-b27a-9afe7e0b4ff0][Sistemi Operativi]], [[id:ad8e431b-7af6-4eb9-99a7-41af9cd0c4ce][Microkernel Based Systems]]
