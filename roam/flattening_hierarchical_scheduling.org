@@ -21,7 +21,7 @@
     - first needs hardware properties in the host
     - second modifies the guest OS
 
-- the approach of the paper is to attenuate the strict separation for schedulers of differents =VM=​s
+- the approach of the paper is to attenuate the strict separation for schedulers of different =VM=​s
   + that is the host just provides a budget to guests without any other information
   + this is done by having the host scheduler allocating budgets as /scheduling contexts/
   + as the schedulability of the system is validated this is attached to the =vCPU= of the =VM=
