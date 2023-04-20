@@ -79,3 +79,4 @@ liveness
 shellcode
 schedulability
 syscall
+paravirtualization
