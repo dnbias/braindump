@@ -217,7 +217,7 @@ $assert(P_{i}, \phi)$
 $question(P_{j} , P_{i}, \phi)$
 - no effect on =DOS=
 
-$justify(P_{i} , \Phi \vdash\phi)$
+$justify(P_{i} , \Phi \vdash^+ \phi)$
 - adds to =DOS= of speaker $i$
 
 $challenge(P_{j} , P_{i}, \phi)$
