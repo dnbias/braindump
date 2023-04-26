@@ -222,4 +222,4 @@ $justify(P_{i} , \Phi \vdash^+ \phi)$
 
 $challenge(P_{j} , P_{i}, \phi)$
 
-$retract(P_{j} , P_{i}, \phi)$
+$retract( P_{i}, \phi)$
