@@ -234,3 +234,5 @@ Different levels of logic in dialogues with these sentences
 - static at a moment in time
   + commitment expressed with obbligations and =DOS=
   + $B, D$
+- dynamic
+  + considering the whole set of sentences
