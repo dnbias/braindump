@@ -247,8 +247,8 @@ Different levels of logic in dialogues with these sentences
 *Agent Decision Mechanisms*
 - D1(\phi)
 - D2
-- D3
-- D4
+- D3(\phi)
+- D4(\phi)
 - D5
 ** ASPIC+
 Structured argumentation, from reasons to arguments
