@@ -226,3 +226,5 @@ $challenge(P_{j} , P_{i}, \phi)$
 
 $retract( P_{i}, \phi)$
 - either an supporting argument (+) or an attacking one (-) to \phi is removed from =DOS= of agent $i$
+
+*** Semantics
