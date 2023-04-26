@@ -200,7 +200,7 @@ Express the individual knowledge.
 ** Graphs
 ** ASPIC+
 
-** Fabio
+** Fatio
 - *axiomatic semantic*
 - *Dialectic Obligation Store*
   + triples of the form participant, formula, argument
