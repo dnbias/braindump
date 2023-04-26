@@ -203,3 +203,4 @@ Express the individual knowledge.
 ** Fabio
 - *axiomatic semantic*
 - *Dialectic Obligation Store*
+  + triples of the form participant, formula, argument
