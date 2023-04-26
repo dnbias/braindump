@@ -239,7 +239,7 @@ Different levels of logic in dialogues with these sentences
 - dynamic
   + considering the whole set of sentences
   + higher level of reasoning
-
+**** Operational semantics
 ** ASPIC+
 Structured argumentation, from reasons to arguments
 ** Dung
