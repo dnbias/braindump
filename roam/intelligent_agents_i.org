@@ -242,7 +242,7 @@ Different levels of logic in dialogues with these sentences
 **** Operational semantics
 - indicates how the states of a system change as a result of execution of the commands in a programming language
   + commands here are in an argumentation dialogue according to the rules of the protocol (Fatio)
-- define the *locution*
+- define the *locutions*
 ** ASPIC+
 Structured argumentation, from reasons to arguments
 ** Dung
