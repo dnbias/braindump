@@ -233,3 +233,4 @@ Two levels of logic in dialogues with these sentences
 - logic reasoning using $\vdash^+ \vdash^-$
 - static at a moment in time
   + commitment expressed with obbligations and =DOS=
+  + $B, D$
