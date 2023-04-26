@@ -245,6 +245,11 @@ Different levels of logic in dialogues with these sentences
 - define the *locutions*
 
 *Agent Decision Mechanisms*
+- D1
+- D2
+- D3
+- D4
+- D5
 ** ASPIC+
 Structured argumentation, from reasons to arguments
 ** Dung
