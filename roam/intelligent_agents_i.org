@@ -214,4 +214,4 @@ $assert(P_{i}, \phi)$
 - Post-condition
   + $((P_{i}, \phi, +) \in DOS(P_{i})) \land (\forall k \neq i) (\forall j \neq i)(B_{k}D_{i} B_{j} B_{i}\phi)$
 
-$question(P_{i}, \phi)$
+$question(P_{j} , P_{i}, \phi)$
