@@ -200,6 +200,8 @@ Express the individual knowledge.
 ** Graphs
 
 ** Fatio
+How reasons are used in dialogue
+
 - *axiomatic semantic*
 - *Dialectic Obligation Store*
   + triples of the form participant, formula, argument
