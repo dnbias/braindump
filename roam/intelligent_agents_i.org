@@ -210,6 +210,8 @@ Express the individual knowledge.
   + $B,\phi$, *believes*
   + $D,\phi$, *desires*
 
+*** Semantics
+
 $assert(P_{i}, \phi)$
 - Pre-condition
   + $((P_{i}, \phi, +) \notin DOS(P_{i})) \land (\forall j \neq i) (D_{i}B_{j}B_{i}\phi)$
@@ -226,5 +228,3 @@ $challenge(P_{j} , P_{i}, \phi)$
 
 $retract( P_{i}, \phi)$
 - either an supporting argument (+) or an attacking one (-) to \phi is removed from =DOS= of agent $i$
-
-*** Semantics
