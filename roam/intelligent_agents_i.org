@@ -207,3 +207,5 @@ Express the individual knowledge.
 - modal operators
   + $B,\phi$, *believes*
   + $D,\phi$, *desires*
+
+$assert(P_{i}, \phi)$
