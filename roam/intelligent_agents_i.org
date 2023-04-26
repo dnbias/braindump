@@ -204,3 +204,6 @@ Express the individual knowledge.
 - *axiomatic semantic*
 - *Dialectic Obligation Store*
   + triples of the form participant, formula, argument
+- modal operators
+  + $B,\phi$
+  + $D,\phi$
