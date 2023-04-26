@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       0ce624b5-307e-47e8-85ca-cacdfbe3c024
+:END:
+#+title: non-Monotonic Logic
+#+date: [2023-04-26 Wed 12:10]
