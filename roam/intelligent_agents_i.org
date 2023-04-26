@@ -219,3 +219,5 @@ $question(P_{j} , P_{i}, \phi)$
 
 $justify(P_{j} , P_{i}, \phi)$
 - adds to =DOS= of speaker $i$
+
+$challenge(P_{j} , P_{i}, \phi)$
