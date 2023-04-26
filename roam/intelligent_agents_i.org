@@ -205,5 +205,5 @@ Express the individual knowledge.
 - *Dialectic Obligation Store*
   + triples of the form participant, formula, argument
 - modal operators
-  + $B,\phi$
-  + $D,\phi$
+  + $B,\phi$, *belivies
+  + $D,\phi$, *desires*
