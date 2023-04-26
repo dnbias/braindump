@@ -230,3 +230,4 @@ $retract( P_{i}, \phi)$
 - either an supporting argument (+) or an attacking one (-) to \phi is removed from =DOS= of agent $i$
 
 Two levels of logic in dialogues with these sentences
+- logic reasoning using $\vdash^+ \vdash^-$
