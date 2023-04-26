@@ -249,7 +249,7 @@ Different levels of logic in dialogues with these sentences
 - D2: React or Not
 - D3(\phi): Defend or Not
 - D4(\phi): Fold or Not
-- D5: Listen or Do
+- D5: Listen or Do, can continue listening or acting with any other mechanism
   + this is a meta-level decision mechanism
 ** ASPIC+
 Structured argumentation, from reasons to arguments
