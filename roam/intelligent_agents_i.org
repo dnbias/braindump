@@ -248,7 +248,7 @@ Different levels of logic in dialogues with these sentences
 - D1(\phi): Claim or Not
 - D2: React or Not
 - D3(\phi): Defend or Not
-- D4(\phi)
+- D4(\phi): Fold or Not
 - D5
 ** ASPIC+
 Structured argumentation, from reasons to arguments
