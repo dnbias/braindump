@@ -240,6 +240,6 @@ Different levels of logic in dialogues with these sentences
   + higher level of reasoning
 
 ** ASPIC+
-From reasons to argumennts
+Structured argumentation, from reasons to argumennts
 ** Dung
 Relating arguments, graph theory
