@@ -198,6 +198,7 @@ Express the individual knowledge.
 
 * Knowledge Representation and Reasoning
 Commonsense reasoning and non-monotonic logic (used to be refered to as informal logic)
+
 ** Fatio
 How reasons are used in dialogue
 
