@@ -197,7 +197,7 @@ The reasoning is by cases and proceeds by proving contradictions (closing the br
 Express the individual knowledge.
 
 * Knowledge Representation and Reasoning
-Commonsense reasoning and non-monotonic logic (used to be refered to as informal logic)
+Commonsense reasoning and [[id:0ce624b5-307e-47e8-85ca-cacdfbe3c024][non-monotonic logic]] (used to be refered to as informal logic)
 - going beyond formal logic
 
 ** Fatio
