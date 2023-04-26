@@ -231,4 +231,4 @@ $retract( P_{i}, \phi)$
 
 Two levels of logic in dialogues with these sentences
 - logic reasoning using $\vdash^+ \vdash^-$
--
+- static at a moment in time
