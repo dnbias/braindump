@@ -221,3 +221,5 @@ $justify(P_{i} , \Phi \vdash^+ \phi)$
 - adds to =DOS= of speaker $i$
 
 $challenge(P_{j} , P_{i}, \phi)$
+
+$retract(P_{j} , P_{i}, \phi)$
