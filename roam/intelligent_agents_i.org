@@ -197,3 +197,5 @@ The reasoning is by cases and proceeds by proving contradictions (closing the br
 Express the individual knowledge.
 
 * Argumentation
+** ASPIC+
+** Fabio
