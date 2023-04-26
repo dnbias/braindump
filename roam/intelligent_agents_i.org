@@ -245,7 +245,7 @@ Different levels of logic in dialogues with these sentences
 - define the *locutions*
 
 *Agent Decision Mechanisms*
-- D1(\phi)
+- D1(\phi): Claim or Not
 - D2
 - D3(\phi)
 - D4(\phi)
