@@ -216,3 +216,5 @@ $assert(P_{i}, \phi)$
 - adds to =DOS=
 $question(P_{j} , P_{i}, \phi)$
 - no effect on =DOS=
+
+$justify(P_{j} , P_{i}, \phi)$
