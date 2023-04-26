@@ -196,7 +196,7 @@ The reasoning is by cases and proceeds by proving contradictions (closing the br
 ** Multi-agent Logics
 Express the individual knowledge.
 
-* Knowledge representation and reasoningrgumentation
+* Knowledge representation and reasoning
 ** Graphs
 
 ** Fatio
