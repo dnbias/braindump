@@ -232,3 +232,7 @@ Simple C: =Imp=
 Parallel systems verification with /rely & guarantee/ as preconditions and postconditions.
 Considering interleaving between programs.
 - the different programs rely on others not to interfere and guarantee not to interfere
+
+** Memory Model
+- separation logic
+- underspecified semantics
