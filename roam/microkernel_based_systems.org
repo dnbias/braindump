@@ -228,3 +228,5 @@ Simple C: =Imp=
 - Denotational semantics
 - Operational semantics
   + small and big step
+
+Parallel systems verification with /rely & guarantee/ as preconditions and postconditions.
