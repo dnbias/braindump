@@ -236,3 +236,4 @@ Considering interleaving between programs.
 ** Memory Model
 - separation logic
 - underspecified semantics
+  + need at least 1 bit for encoding bytes
