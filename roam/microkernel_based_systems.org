@@ -218,5 +218,5 @@ Structure:
 Source: The Semantics of a Programming Language
 - syntax
 - semantics
-  + easy for bools, harder for integers
+  + easy for booleans, harder for integers
   + we can represent a subset
