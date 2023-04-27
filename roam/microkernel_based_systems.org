@@ -223,3 +223,5 @@ Source: The Semantics of a Programming Language
     - cant use modulo math in the definition of semantics because you lose the capability to recognize integer overflow
 - program logic
   + sequential, assignment, consequence, etc.
+
+Simple C: =Imp=
