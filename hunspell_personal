@@ -81,3 +81,4 @@ schedulability
 syscall
 paravirtualization
 Fatio
+booleans
