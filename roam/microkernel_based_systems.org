@@ -225,3 +225,6 @@ Source: The Semantics of a Programming Language
   + sequential, assignment, consequence, etc.
 
 Simple C: =Imp=
+- Denotational semantics
+- Operational semantics
+  + small and big step
