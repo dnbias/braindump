@@ -237,3 +237,6 @@ Considering interleaving between programs.
 - separation logic
 - underspecified semantics
   + need at least 1 bit extra for encoding bytes, encode a dirty bit
+- plain memory
+  + memory where all is going well
+  + verify a property at least in a part of memory
