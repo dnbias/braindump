@@ -216,3 +216,5 @@ Structure:
 
 * Program Verification
 Source: The Semantics of a Programming Language
+- syntax
+- semantics
