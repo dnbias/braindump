@@ -220,4 +220,4 @@ Source: The Semantics of a Programming Language
 - semantics
   + easy for booleans, harder for integers
   + we can represent a subset
-    - cant use modulo math in the definition of semantics because you lose the capability to recognize buffer overflow
+    - cant use modulo math in the definition of semantics because you lose the capability to recognize integer overflow
