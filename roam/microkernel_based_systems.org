@@ -240,3 +240,4 @@ Considering interleaving between programs.
 - plain memory
   + memory where all is going well
   + verify a property at least in a part of memory
+  + set of memory is /blessed/
