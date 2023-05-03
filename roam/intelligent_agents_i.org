@@ -305,6 +305,7 @@ Maximal in/out/undec
 
 Correspondence between Dung-style semantics and restrictions on compl. labeling
 - complete semantics
+  + no further restrictions
 - stable semantics
 - preferred semantics
 - grounded semantics
