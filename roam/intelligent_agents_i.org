@@ -274,3 +274,7 @@ Two possibilities:
   + strategic
 
 ** Toulmin argument scheme
+- data
+- warrant
+- backing
+- rebuttal
