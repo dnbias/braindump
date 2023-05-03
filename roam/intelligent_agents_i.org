@@ -251,8 +251,6 @@ Different levels of logic in dialogues with these sentences
 - D4(\phi): Fold or Not
 - D5: Listen or Do, can continue listening or acting with any other mechanism
   + this is a meta-level decision mechanism
-** ASPIC+
-Structured argumentation, from reasons to arguments
 ** Historical view
 - Formal Logic - *Aristotle*
 - Informal Logic - 60' *Toulmin*, use of argument
@@ -291,3 +289,7 @@ Different types of attacks
 Relating arguments, graph theory
 - nodes are arguments
 - edges are attacks
+
+** ASPIC+
+Structured argumentation, from reasons to arguments
+Abstruct
