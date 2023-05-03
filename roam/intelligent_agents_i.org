@@ -265,4 +265,7 @@ Relating arguments, graph theory
 
 Two possibilities:
 - argumentation as inference
+  + static
+  + abstract
+  + structeed
 - argumentation as dialogue
