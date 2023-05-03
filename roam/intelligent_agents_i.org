@@ -267,5 +267,5 @@ Two possibilities:
 - argumentation as inference
   + static
   + abstract
-  + structeed
+  + structured
 - argumentation as dialogue
