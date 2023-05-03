@@ -278,3 +278,8 @@ Two possibilities:
 - warrant
 - backing
 - rebuttal
+
+** Non-monotonic reasoning
+- *Pollock* in 1987
+- no more simple deductive reasoning where the validity of the premise /guarantees/ the validity of the conclusion
+-
