@@ -257,5 +257,5 @@ Structured argumentation, from reasons to arguments
 Relating arguments, graph theory
 
 ** Historical view
-- Formal Logic - Aristotel
+- Formal Logic - Aristotle
 - Informal Logic - 60' *Toulmin*, use of argument
