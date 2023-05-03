@@ -256,6 +256,7 @@ Structured argumentation, from reasons to arguments
 ** Dung
 Relating arguments, graph theory
 
+
 ** Historical view
 - Formal Logic - *Aristotle*
 - Informal Logic - 60' *Toulmin*, use of argument
@@ -271,3 +272,5 @@ Two possibilities:
 - argumentation as dialogue
   + dynamic
   + strategic
+
+** Tormin argument scheme
