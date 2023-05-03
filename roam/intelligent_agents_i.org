@@ -255,3 +255,7 @@ Different levels of logic in dialogues with these sentences
 Structured argumentation, from reasons to arguments
 ** Dung
 Relating arguments, graph theory
+
+** Historical view
+- Aristotel Formal Logic
+- Informal Logic - 60' *Toulmin*, use of argument
