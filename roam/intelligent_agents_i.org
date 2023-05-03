@@ -299,3 +299,6 @@ labellings:
 - argument in \iff all attackers are out
 - argument out \iff an attacker is in
 - argument undec \iff not all attackers are out and no attackers is in
+
+Maximal in/out/undec
+- a set that has no possible superset that is a solution of the graph
