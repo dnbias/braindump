@@ -269,3 +269,5 @@ Two possibilities:
   + abstract
   + structured
 - argumentation as dialogue
+  + dynamic
+  + strategic
