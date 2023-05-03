@@ -309,5 +309,6 @@ Correspondence between Dung-style semantics and restrictions on compl. labeling
 - stable semantics
   + empty undec
 - preferred semantics
+  + maximal in
 - grounded semantics
 - semi-stable semantics
