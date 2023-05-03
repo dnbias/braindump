@@ -295,7 +295,7 @@ Structured argumentation, from reasons to arguments
 Abstract:
 - from zoomed in arguments and attacks to simple nodes attacking each other
 
-labellings:
+labelings:
 - argument in \iff all attackers are out
 - argument out \iff an attacker is in
 - argument undec \iff not all attackers are out and no attackers is in
