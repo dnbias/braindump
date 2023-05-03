@@ -260,3 +260,4 @@ Relating arguments, graph theory
 - Formal Logic - *Aristotle*
 - Informal Logic - 60' *Toulmin*, use of argument
 - Non-monotonic logic & logic programming - 90'
+- AI & Law
