@@ -311,7 +311,7 @@ Correspondence between Dung-style semantics and restrictions on compl. labeling
 - preferred semantics - somewhat credulous semantic
   + maximal in
   + maximal out
-- grounded semantics
+- grounded semantics - somewhat skeptical semantic
   + maximal undec
   + minimal in
   + minimal out
