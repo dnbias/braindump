@@ -288,3 +288,4 @@ Different types of attacks
 - undermining
   + attacking the premise
 - rebutting
+  + attacking the conclusion
