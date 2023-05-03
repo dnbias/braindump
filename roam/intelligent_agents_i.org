@@ -285,6 +285,7 @@ Two possibilities:
 
 Different types of attacks
 - undercutting (inference rules)
+  + interrupting the inference rules
 - undermining
   + attacking the premise
 - rebutting
