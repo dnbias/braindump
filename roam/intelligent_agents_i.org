@@ -264,5 +264,5 @@ Relating arguments, graph theory
 - Formal argumentation
 
 Two possibilities:
-- inference
-- dialogue
+- argumentation as inference
+- argumentation as dialogue
