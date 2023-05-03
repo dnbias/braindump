@@ -262,3 +262,7 @@ Relating arguments, graph theory
 - Non-monotonic logic & logic programming - 90'
 - AI & Law
 - Formal argumentation
+
+Two possibilities:
+- inference
+- dialogue
