@@ -304,3 +304,7 @@ Maximal in/out/undec
 - a set that has no possible superset that is a solution of the graph
 
 Correspondence between Dung-style semantics and restrictions on compl. labeling
+- complete semantics
+- stable semantics
+- preferred semantics
+- grounded semantics
