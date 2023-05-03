@@ -308,3 +308,4 @@ Correspondence between Dung-style semantics and restrictions on compl. labeling
 - stable semantics
 - preferred semantics
 - grounded semantics
+- semi-stable semantics
