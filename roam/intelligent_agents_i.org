@@ -273,4 +273,4 @@ Two possibilities:
   + dynamic
   + strategic
 
-** Tormin argument scheme
+** Tolmin argument scheme
