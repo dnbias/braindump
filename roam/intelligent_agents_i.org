@@ -312,4 +312,5 @@ Correspondence between Dung-style semantics and restrictions on compl. labeling
   + maximal in
   + maximal out
 - grounded semantics
+  + maximal undec
 - semi-stable semantics
