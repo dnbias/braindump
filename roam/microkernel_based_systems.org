@@ -144,6 +144,7 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
     - stack
     - instruction pointer
     - stack pointer
+  + have a switch function making current the other =EC=
 ** Scheduling
 - real-time vs best effort
 - time as a resource
