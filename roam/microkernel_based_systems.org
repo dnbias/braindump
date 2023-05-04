@@ -143,7 +143,7 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
   + have a =EC= object with
     - stack
     - instruction pointer
-      + could have the return address left on the stack before switching to jump in and continue
+      + could have that as a return address left on the stack before switching to jump in and continue
     - stack pointer
   + have a switch function making current the other =EC=
 ** Scheduling
