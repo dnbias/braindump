@@ -58,6 +58,13 @@ Option 2 is /local communication partners/
     - round robin
     - LIFO
     - queue
+
+=MESI=
+- modified
+- exclusive
+- shared
+- invalid
+
 ** Costs
 - most costly are ~sysenter~ and ~sysexit~
 - can we avoid them?
