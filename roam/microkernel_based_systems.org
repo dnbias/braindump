@@ -65,6 +65,7 @@ Option 2 is /local communication partners/
 - shared
 - invalid
 
+Evict data into =L2=
 ** Costs
 - most costly are ~sysenter~ and ~sysexit~
 - can we avoid them?
