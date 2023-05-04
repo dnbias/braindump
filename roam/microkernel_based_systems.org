@@ -59,7 +59,7 @@ Option 2 is /local communication partners/
     - LIFO
     - queue
 
-=MESI=
+=MESI= cache lines
 - modified
 - exclusive
 - shared
