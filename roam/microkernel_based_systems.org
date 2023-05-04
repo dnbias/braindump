@@ -140,6 +140,10 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 ** Yield
 - continuation
 - thread + stack
+  + have a =EC= object with
+    - stack
+    - instruction pointer
+    - stack pointer
 ** Scheduling
 - real-time vs best effort
 - time as a resource
