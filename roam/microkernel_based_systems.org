@@ -138,7 +138,8 @@ The syshandler receives the codes of the syscalls and has to switch over the dif
 *NB* the kernel mode is always entered with a clean stack
 
 ** Yield
-
+- continuation
+- thread + stack
 ** Scheduling
 - real-time vs best effort
 - time as a resource
