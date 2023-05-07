@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       12cd574e-b9d6-4728-8612-aa0a284a1ed3
+:END:
+#+title: Bike Sharing Dataset
+#+date: [2023-05-07 Sun 22:47]
+#+filetags: project
+- Link: https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset#
+- Related:
