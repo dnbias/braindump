@@ -7,4 +7,8 @@
 - Link: https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset#
 - Related: [[id:fad85788-53f8-4de6-9e3c-775c3907e07c][Knowledge Discovery & Data Mining]]
 
+* Files
+- Readme.txt
+- hour.csv : bike sharing counts aggregated on hourly basis. Records: 17379 hours
+- day.csv - bike sharing counts aggregated on daily basis. Records: 731 days
 * Attributes
