@@ -12,6 +12,7 @@
 - hour.csv : bike sharing counts aggregated on hourly basis. Records: 17379 hours
 - day.csv - bike sharing counts aggregated on daily basis. Records: 731 days
 * Attributes
+In =day.csv= there is no =hr= field
 - instant: record index
 - dteday : date
 - season : season (1:springer, 2:summer, 3:fall, 4:winter)
