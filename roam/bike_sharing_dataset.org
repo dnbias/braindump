@@ -31,3 +31,5 @@ In =day.csv= there is no =hr= field
 - atemp: Normalized feeling temperature in Celsius. The values are divided to 50 (max)
 - hum: Normalized humidity. The values are divided to 100 (max)
 - windspeed: Normalized wind speed. The values are divided to 67 (max)
+* Tasks
+- author suggest /regression/ predicting of bike rentals hourly or daily based on the environmental settings.
