@@ -16,4 +16,4 @@ Basically: consider the target variable
 #+caption: source Medium
 [[https://miro.medium.com/v2/resize:fit:640/format:webp/1*XKzDnXWCX0kgSSSxEyAtfg.png]]
 
-Cool [[https://gist.github.com/taylorfogarty/71105b9d355824b7e07e270a23b77a2a#file-regression-vs-classification-ipynb][example]].
+Cool [[https://gist.github.com/taylorfogarty/71105b9d355824b7e07e270a23b77a2a#file-regression-vs-classification-ipynb][gist of an example]].
