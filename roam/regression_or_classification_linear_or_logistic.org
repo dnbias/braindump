@@ -7,3 +7,7 @@
 - Source: https://towardsdatascience.com/regression-or-classification-linear-or-logistic-f093e8757b9c
 - Author: Taylor Fogarty
 - Related: [[id:77cc59df-765f-4523-a1d5-b937e581d8fc][Apprendimento Automatico]], [[id:fad85788-53f8-4de6-9e3c-775c3907e07c][Knowledge Discovery & Data Mining]]
+
+Basically: consider the target variable
+- continuous or discrete
+- quantity or label
