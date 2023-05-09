@@ -15,3 +15,5 @@ Basically: consider the target variable
 
 #+caption: source Medium
 [[https://miro.medium.com/v2/resize:fit:640/format:webp/1*XKzDnXWCX0kgSSSxEyAtfg.png]]
+
+Cool [[example][example]]
