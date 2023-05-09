@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       5ae90890-8e93-4dec-921b-911dc001a905
+:END:
+#+title: Regression or Classification? Linear or Logistic?
+#+date: [2023-05-09 Tue 19:35]
+#+filetags: article
+- Source: https://towardsdatascience.com/regression-or-classification-linear-or-logistic-f093e8757b9c
+- Author: Taylor Fogarty
+- Related: [[id:77cc59df-765f-4523-a1d5-b937e581d8fc][Apprendimento Automatico]]
