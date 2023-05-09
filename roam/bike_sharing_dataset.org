@@ -44,4 +44,4 @@ A. What data to work on
 B. How the data is managed in your system
 C. Prepare the data:
    - describe and discuss each attribute by visualization
-   - repair the data if needed
+   - repair the data if needed, add attributes etc.
