@@ -11,3 +11,4 @@
 Basically: consider the target variable
 - continuous or discrete
 - quantity or label
+- probability or category
