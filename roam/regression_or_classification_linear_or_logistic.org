@@ -12,3 +12,5 @@ Basically: consider the target variable
 - continuous or discrete
 - quantity or label
 - probability or category
+
+[[https://miro.medium.com/v2/resize:fit:640/format:webp/1*XKzDnXWCX0kgSSSxEyAtfg.png]]
