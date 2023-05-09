@@ -45,3 +45,6 @@ B. How the data is managed in your system
 C. Prepare the data:
    - describe and discuss each attribute by visualization
    - repair the data if needed, add attributes etc.
+D. Analyze with an application of choice
+E. Interpret the results
+F. Propose a resulting activity
