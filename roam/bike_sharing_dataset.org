@@ -40,3 +40,8 @@ In =day.csv= there is no =hr= field
 - maybe consider % of registered to total and casual to total and how it varies
 
 * Project Tasks
+A. What data to work on
+B. How the data is managed in your system
+C. Prepare the data:
+   - describe and discuss each attribute by visualization
+   -
