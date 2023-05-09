@@ -36,4 +36,4 @@ In =day.csv= there is no =hr= field
 - cnt: count of total rental bikes including both casual and registered
 * Tasks
 - author suggest /regression/ predicting of bike rentals hourly or daily based on the environmental settings.
-  + maybe consider % of
+  + maybe consider % of registered to total and casual to total
