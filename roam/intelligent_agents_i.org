@@ -325,3 +325,6 @@ Discussion games are like a calculus related to these semantics. They give us a 
 Relating to grounded argumentations. That is a complete labelling where =undec(Lab)= is maximal.
 It can be proved that this is exactly one labelling.
 -goal: check $A \in In(Lab)$ for grounded labelling $Lab$ of the =AF=[fn:af Argumentation Framework]
+
+Players:
+- proponent $P$
