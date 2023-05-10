@@ -337,3 +337,5 @@ Players:
   + can be the case that $A$
 - $O: Concede(A) \to$ agree $Lab(A) = in$ in every complete labelling
 - $O: Retract(A) \to Lab(A) = out$ in every complete labelling
+
+The game is about a particular argument $A$ called the /main argument/
