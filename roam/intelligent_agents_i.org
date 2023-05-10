@@ -378,5 +378,5 @@ Quando uno dei due deve muovere ma non ha mosse disponibili perde.
 
 These games are *sound* and *complete*
 - if $P$ wins the main argument is really labelled in by the preferred labelling
-- if argument $A$ is in the ground labelling then there is a strategy such a game with main argument $A$ can be won
+- if argument $A$ is in the preferred labelling then there is a strategy such a game with main argument $A$ can be won
   + no need to win the argument in all cases
