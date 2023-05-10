@@ -334,3 +334,4 @@ Players:
 - $P: HTB(A) \to Lab(A) = In$
   + has to be the case that $A$
 - $O: CB(A)$
+  + can be the case that $A$
