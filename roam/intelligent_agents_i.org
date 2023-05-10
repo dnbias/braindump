@@ -340,7 +340,7 @@ Players:
 
 The game is about a particular argument $A$ called the /main argument/
 
-As a general rule there cannot be =HBT-CB= repeats, $\forall A$:
+As a general rule there cannot be =HBT-CB= repeats, $\forall A:$
 - $HTB(A)$ only once
 - $CB(A)$ only once
 - no both $HTB(A)$ and $CB(A)$
