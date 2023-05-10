@@ -349,6 +349,6 @@ If at some point there are no moves left for $P$ they lose the game and $O$ wins
 - the discussion is /terminated/ when no legal move is possible
 - a /terminated/ discussion starting with $HTB(A)$ is won by $P$ iff the $O$ has moved $Concede(A)$
 
-These games are sound and complete
+These games are *sound* and *complete*
 - if $P$ wins the main argument is really labelled in by the grounded labelling
 - if argument $A$ is in the ground labelling then there is a strategy such a game with main argument $A$ can be won
