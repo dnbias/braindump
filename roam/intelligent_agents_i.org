@@ -344,3 +344,5 @@ As a general rule there cannot be =HBT-CB= repeats, $\forall A:$
 - $HTB(A)$ only once
 - $CB(A)$ only once
 - no both $HTB(A)$ and $CB(A)$
+
+If at some point there are no moves left for $P$ they lost the game and $O$ wins.
