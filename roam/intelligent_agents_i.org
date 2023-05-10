@@ -317,3 +317,5 @@ Correspondence between Dung-style semantics and restrictions on compl. labeling
   + minimal out
 - semi-stable semantics
   + minimal undec
+
+** Discussion Games
