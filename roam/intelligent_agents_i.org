@@ -323,4 +323,4 @@ Relate discussions with argumentation semantics
 Discussion games are like a calculus related to these semantics. They give us a procedure to check wether an argument is labeled =in= by some labelling.
 *** Grounded Discussion Game
 Relating to grounded argumentations.
--goal: check $A \in In(Lab)$ for grounded labelling $Lab$ of the =AF=
+-goal: check $A \in In(Lab)$ for grounded labelling $Lab$ of the =AF=[fn:af Argumentation Framework]
