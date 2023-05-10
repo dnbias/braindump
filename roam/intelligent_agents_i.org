@@ -364,4 +364,4 @@ $T \implies ... \implies ... \implies A$
 Socratic is:
 $A \implies ... \implies ... \implies \perp$
 
-The result we use for these games is that for $A$ to be in a pref. lab. it is enough for it to be in a complete lab. or in an admissable lab.
+The result we use for these games is that for $A$ to be in a pref. lab. it is enough for it to be in a complete lab. or in an admissible lab.
