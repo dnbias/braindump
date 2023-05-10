@@ -347,3 +347,4 @@ As a general rule there cannot be =HBT-CB= repeats, $\forall A:$
 
 If at some point there are no moves left for $P$ they lose the game and $O$ wins.
 - the discussion is /terminated/ when no legal move is possible
+- a /terminated/ discussion starting with $HTB(A)$ is won by $P$ iff the $O$ has moved $Concede(A)$
