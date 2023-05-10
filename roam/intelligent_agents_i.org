@@ -374,7 +374,7 @@ Two players $P$ (man) and $O$ (Socrates).
 $P$ is allowed to repeat moves while $O$ is not.
 $O$ moves regard attackers to arguments put forward by $P$
 If a contradiction is reached $O$ wins
-If a player has to move but has no moves left they lost.
+If a player has to move but has no moves left they lost the dialogue.
 
 These games are *sound* and *complete*
 - if $P$ wins the main argument is really labelled in by the preferred labelling
