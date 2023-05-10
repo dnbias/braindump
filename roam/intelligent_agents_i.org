@@ -323,6 +323,8 @@ Relate discussions with argumentation semantics
 Discussion games are like a calculus related to these semantics. They give us a procedure to check wether an argument is labeled =in= by some labelling.
 
 These games show the difference in the grounded and the preferred labellings, the first is skeptical the second is more credulous.
+
+While logic is interested in what is truth argumentation is interested in justification of an argument.
 *** Grounded Discussion Games
 Relating to grounded argumentations. That is a complete labelling where =undec(Lab)= is maximal.
 It can be proved that this is exactly one labelling.
