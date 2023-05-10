@@ -331,7 +331,7 @@ Players:
 - opponent $O$
 
 4 moves
-- $P: HTB(A) \to Lab(A) = In$
+- $P: HTB(A) \to Lab(A) = in$
   + has to be the case that $A$
 - $O: CB(A) \to$ maybe $Lab(A) \neq out$ in every complete
   + can be the case that $A$
