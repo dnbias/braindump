@@ -374,3 +374,4 @@ Two players $P$ (man) and $O$ (Socrates).
 $P$ is allowed to repeat moves while $O$ is not.
 $O$ moves regard attackers to arguments put forward by $P$
 If a contradiction is reached $O$ wins
+Quando uno dei due deve muovere ma non ha mosse disponibili perde.
