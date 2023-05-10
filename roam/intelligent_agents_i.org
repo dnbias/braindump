@@ -333,6 +333,6 @@ Players:
 4 moves
 - $P: HTB(A) \to Lab(A) = in$
   + has to be the case that $A$
-- $O: CB(A) \to$ maybe $Lab(A) \neq out$ in every complete
+- $O: CB(A) \to$ maybe $Lab(A) \neq out$ in every complete labelling
   + can be the case that $A$
-- $O: Concede(A) \to$ agree $Lab(A) = in$ in every complete
+- $O: Concede(A) \to$ agree $Lab(A) = in$ in every complete labelling
