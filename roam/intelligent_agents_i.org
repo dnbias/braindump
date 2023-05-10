@@ -332,3 +332,5 @@ Players:
 
 4 moves
 - $P: HTB(A) \to Lab(A) = In$
+  + has to be the case that $A$
+- $O: CB(A)$
