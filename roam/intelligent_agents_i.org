@@ -357,3 +357,8 @@ These games are *sound* and *complete*
 - based on socratic discussions
   + enquiry based on critical questions on entailed /consequences/, this is different from a classical discussion where the dialogue looks at the reasons that imply the main argument with the opponent always asking /why/
   + leading to a contradiction on success
+
+So one is:
+$T \implies ... \implies ... \implies A$
+Socratic is:
+$A \implies ... \implies ... \implies \bottom$
