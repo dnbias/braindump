@@ -355,5 +355,5 @@ These games are *sound* and *complete*
   + no need to win the argument in all cases
 ** Preferred Discussion Games
 - based on socratic discussions
-  + enquiry based on critical questions on entailed /consequences/
+  + enquiry based on critical questions on entailed /consequences/, this is different from a classical discussion where the dialogue looks at the reasons that imply the main argument
   + leading to a contradiction on success
