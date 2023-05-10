@@ -351,4 +351,4 @@ If at some point there are no moves left for $P$ they lose the game and $O$ wins
 
 These games are sound and complete
 - if $P$ wins the main argument is really labelled in by the grounded labelling
-- if the main argument is in the ground labelling then there is a strategy such a game with main argument $A$ can be won
+- if argument $A$ is in the ground labelling then there is a strategy such a game with main argument $A$ can be won
