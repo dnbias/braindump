@@ -328,3 +328,4 @@ It can be proved that this is exactly one labelling.
 
 Players:
 - proponent $P$
+- opponent $O$
