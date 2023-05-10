@@ -322,5 +322,6 @@ Correspondence between Dung-style semantics and restrictions on compl. labeling
 Relate discussions with argumentation semantics
 Discussion games are like a calculus related to these semantics. They give us a procedure to check wether an argument is labeled =in= by some labelling.
 *** Grounded Discussion Game
-Relating to grounded argumentations. That is a complete labelling where =undec(Lab)= is maximal
+Relating to grounded argumentations. That is a complete labelling where =undec(Lab)= is maximal.
+It can be proved that this is exactly one labelling.
 -goal: check $A \in In(Lab)$ for grounded labelling $Lab$ of the =AF=[fn:af Argumentation Framework]
