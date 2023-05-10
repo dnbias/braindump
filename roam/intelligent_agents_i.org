@@ -361,4 +361,4 @@ These games are *sound* and *complete*
 So one is:
 $T \implies ... \implies ... \implies A$
 Socratic is:
-$A \implies ... \implies ... \implies \bottom$
+$A \implies ... \implies ... \implies \perp$
