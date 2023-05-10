@@ -370,3 +370,5 @@ Two players $P$ (man) and $O$ (Socrates).
 2 moves:
 - $P : in(A)$
 - $O: out(A)$
+
+$P$ is allowed to repeat moves while $O$ is not.
