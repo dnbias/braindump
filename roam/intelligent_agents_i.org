@@ -339,3 +339,7 @@ Players:
 - $O: Retract(A) \to Lab(A) = out$ in every complete labelling
 
 The game is about a particular argument $A$ called the /main argument/
+
+As a general rule there cannot be =HBT-CB= repeats:
+- $HTB(A)$ only once
+- $CB(A)$ only once
