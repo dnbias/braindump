@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       01e38c2b-0188-4209-b309-873ab79bbd28
+:END:
+#+title: Data Analysis
+#+date: [2023-05-12 Fri 18:09]
