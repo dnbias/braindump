@@ -108,7 +108,8 @@ In general this assumption gives a good first approximation of the network, it i
 These networks are called product networks[fn:product: This name is due to the fact that the queues remain statistically independent of each other, and can therefore be concatenated using the logical AND (product).] or [[id:1a0715f4-db9c-4df4-9524-f59d12b58be8][Tandem Queues]].
 In these networks packets can go through the network (and spend each queue delay time as well) multiple times.
 So in addition to the delay for the independent queues one needs to compute an average of passes for a packet stream through the network.
-\[T_{in,,1} = 3T_1 + 2T_2\]
+\[T_{in,1} = 3T_1 + 2T_2\]
+\[T_{in,,} = \frac{3}{2}T_1 + 2T_2\]
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in constant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
