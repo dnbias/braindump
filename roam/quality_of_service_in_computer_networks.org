@@ -109,7 +109,7 @@ These networks are called product networks[fn:product: This name is due to the f
 In these networks packets can go through the network (and spend each queue delay time as well) multiple times.
 So in addition to the delay for the independent queues one needs to compute an average of passes for a packet stream through the network.
 \begin{align*}
-T_{in,1} &= 3T_1 + 2T_2
+T_{in,1} &= 3T_1 + 2T_2\\
 T_{in,,} &= \frac{3}{2}T_1 + 2T_2
 \end{align*}
 * Quality of Service in Computer Networks
