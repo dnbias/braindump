@@ -102,7 +102,7 @@ A network of queues can be computed by computing independently the single queues
 3. no dependency between arrival time of a packet in the next queue and its service times
 4. the nodes of the network are sufficiently close to each other
 
-In general this assumption gives a good first approximation of the network, it is well known that the =OWTT= is overestimated using this indipendence assumption.
+In general this assumption gives a good first approximation of the network, it is well known that the =OWTT= is overestimated using this independence assumption.
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
