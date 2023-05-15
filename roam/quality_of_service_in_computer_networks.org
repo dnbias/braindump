@@ -98,7 +98,7 @@ Meaning the longest jobs need to be placed in the lowest priority class of the n
 A network of queues can be computed by computing independently the single queues based on some assumptions.
 *Kleinrock's Independence Assumption*, 4 conditions
 1. packet streams at the inputs of the network are Poisson distributed
-2. packet lenght exponentially distributed
+2. packet length exponentially distributed
 3. no dependency between arrival time of a packet in the next queue and its service times
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
