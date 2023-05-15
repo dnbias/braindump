@@ -93,7 +93,7 @@ Can have preemptive or non-preemptive priorities.
 
 By applying the non-preemptive model in the case of 2 priority classes the result is that to save time compared to a basic =M/G/1=:
 \[x_2 > x_1\]
-Meaning the longest jobs need to be placed in the lowest priority class of the networ[fn:1]k.
+Meaning the longest jobs need to be placed in the lowest priority class of the network[fn:1].
 * Queueing Networks
 A network of queues can be computed by computing independently the single queues based on some assumptions.
 *Kleinrock's Independence Assumption*, 4 conditions
@@ -144,4 +144,4 @@ Solution can be a *Trusted Third Party* (=TTP=)
 
 * Footnotes
 
-[fn:1] This is a test
+[fn:1]Another test.
