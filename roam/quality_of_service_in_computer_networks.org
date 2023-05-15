@@ -78,7 +78,7 @@ Definition of /announcement/:
 *Erlang-equation*:
 \[P_x=\frac{}{}]
 
-Definition of /loss probability/:[fn:loss This is the probability that the network is full.]
+Definition of /loss probability/:[fn:loss: This is the probability that the network is full.]
 \[B := P_n = \frac{\frac{A^{n}}{n!}}{\sum_{i=0}^{n}\frac{A^{i}}{i!}}\]
 /Expectation value/ is calculated over all probabilities.
 \[E\{n}\}\]
