@@ -95,6 +95,7 @@ By applying the non-preemptive model in the case of 2 priority classes the resul
 \[x_2 > x_1\]
 Meaning the longest jobs need to be placed in the lowest priority class of the network.
 * Queueing Networks
+A network of queues can be computed by computing independently the single queues based on some assumptions.
 *Kleinrock's Independence Assumption*, 4 conditions
 1. packet streams ot the inputs of the network are Poisson distributed
 * Quality of Service in Computer Networks
