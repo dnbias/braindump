@@ -91,7 +91,7 @@ Priorities for tasks and each one has a service rate in the =CPU=.
 The network is basically a =M/G/1=.
 Can have preemptive or non-preemptive priorities.
 
-By applying the network in the case of 2 priority classes the result is that to save time compared to a basic =M/G/1=:
+By applying the non-preemptive model in the case of 2 priority classes the result is that to save time compared to a basic =M/G/1=:
 \[x_2 > x_1\]
 Meaning the longest jobs need to be placed in the lowest priority class of the network.
 * Quality of Service in Computer Networks
