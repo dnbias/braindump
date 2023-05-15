@@ -111,6 +111,7 @@ So in addition to the delay for the independent queues one needs to compute an a
 \begin{align*}
 T_{in,1} &= 3T_1 + 2T_2
 T_{in,,} &= \frac{3}{2}T_1 + 2T_2
+\end{align*}
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in constant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
