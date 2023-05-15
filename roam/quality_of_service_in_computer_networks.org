@@ -104,7 +104,7 @@ A network of queues can be computed by computing independently the single queues
 
 In general this assumption gives a good first approximation of the network, it is well known that the =OWTT= is overestimated using this independence assumption.
 
-*Jackson network* helps find exact solutions under certain conditions.
+*Jackson network* helps find exact solutions under certain conditions. This is the case assuming the first 3 conditions of the Kleinrock's assumption.
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in constant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
