@@ -88,6 +88,7 @@ Definition of /loss probability/:[fn:loss This is the probability that the netwo
 \[R= Y - A = A\cdot B\]
 * Queues with Priorities
 Priorities for tasks and each one has a service rate in the =CPU=.
+Can be preemptive or non-preemptive priorities.
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
