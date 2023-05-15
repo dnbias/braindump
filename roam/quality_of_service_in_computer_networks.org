@@ -90,6 +90,9 @@ Definition of /loss probability/:[fn:loss This is the probability that the netwo
 Priorities for tasks and each one has a service rate in the =CPU=.
 The network is basically a =M/G/1=.
 Can have preemptive or non-preemptive priorities.
+
+By applying the network in the case of 2 priority classes the result is that to save time compared to a basic =M/G/1=:
+\[x_2 > x_1\]
 * Quality of Service in Computer Networks
 Show that =QoS= and /anonimity/ and /privacy/ are in costant tension.
 The contract signing needs to be fair (/fair exchange/). For a pair of agents, both must succeed or both must fail.
