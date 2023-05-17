@@ -391,3 +391,5 @@ Structured argumentation gives interpretation to the actual arguments in the fra
 - we expand the /nodes/ of the abstract argumentation where the actual arguments reside
 - give actual structure to the inside of the nodes (arguments) with evidence/support/claims
 - the attacks here are called /defeats/
+
+The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
