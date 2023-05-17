@@ -435,7 +435,7 @@ $-A$ stands for $\lnot A$ if $A$ itself is not a negation, in the other case it 
 - $A$ *undercuts* $B$ on $B'$ =iff= $Conc(A)=- n(r)$ for some $B' \in Sub(B)$ with a defeasible top rule $r$
 
 $A$ *attacks* $B$ =iff= any of these attacks are present.
-
+*** Structured Argumentation Framework
 
 
 
