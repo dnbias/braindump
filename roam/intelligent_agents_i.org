@@ -444,6 +444,7 @@ $A$ *attacks* $B$ =iff= any of these attacks are present.
 
 $A$ *defeats* $B$ =iff= for some $B'$
 - $A$ undermines $B$ or rebuts $B$ on $B'$ /and/ $A \not< B'$
-
+/or/
+- $A$ undercuts $B$ on $B'$
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
