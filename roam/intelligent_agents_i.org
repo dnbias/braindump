@@ -393,3 +393,5 @@ Structured argumentation gives interpretation to the actual arguments in the fra
 - the attacks here are called /defeats/
 
 The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
+- fallible premises, plausible reasoning
+- fallible imferences, defeasible reasoning
