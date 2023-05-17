@@ -430,7 +430,7 @@ An argument $A$ is:
 *** Defeats
 $-A$ stands for $\lnot A$ if $A$ itself is not a negation, in the other case it removes the double negation.
 
-- $A$ undermines $B$ on $\phi$ =iff= $Conc(A)=-\phi$ for some $\phi\in Prem(B) \backslash K_n$
+- $A$ *undermines* $B$ on $\phi$ =iff= $Conc(A)=-\phi$ for some $\phi\in Prem(B) \backslash K_n$
 - $A$ rebuts $B$ on $B '$ =iff= $Conc(A)=-Conc(B)$ for some $B' \in Sub(B)$ with a defeasible top rule
 - $A$ undercuts $B$ on $B'$ =iff= $Conc(A)=- n(r)$ for some $B' \in Sub(B)$ with a defeasible top rule $r$
 
