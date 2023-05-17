@@ -427,6 +427,12 @@ An argument $A$ is:
 - /firm/ =iff= $Prem(A) \subseteq K_n$
 - /plausible/ =iff= not firm
 
+*** Structured Argumentation Framework
+*Def*: a $SAF$ defined by $AT$ is a tuple $SAF=(Args, C, \le)$
+- $Args = \{Arg | Arg \text{ is an argument based on } AT\}$
+- $C \subseteq Args \times Args$ is the attack relation on the arguments
+- $\le \: \subseteq Args \times Args$ is a preference ordering on the arguments
+
 *** Defeats
 $-A$ stands for $\lnot A$ if $A$ itself is not a negation, in the other case it removes the double negation.
 
@@ -435,12 +441,9 @@ $-A$ stands for $\lnot A$ if $A$ itself is not a negation, in the other case it 
 - $A$ *undercuts* $B$ on $B'$ =iff= $Conc(A)=- n(r)$ for some $B' \in Sub(B)$ with a defeasible top rule $r$
 
 $A$ *attacks* $B$ =iff= any of these attacks are present.
-*** Structured Argumentation Framework
-*Def*: a $SAF$ defined by $AT$ is a tuple $SAF=(Args, C, \le)$
-- $Args = \{Arg | Arg \text{ is an argument based on } AT\}$
-- $C \subseteq Args \times Args$ is the attack relation on the arguments
-- $\le \: \subseteq Args \times Args$ is a preference ordering on the arguments
 
+$A$ *defeats* $B$ =iff= for some $B'$
+- $A$ undermines $B$ or rebuts $B$ on $B'$ /and/ $A \not< B'$
 
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
