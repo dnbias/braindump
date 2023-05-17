@@ -438,7 +438,7 @@ $A$ *attacks* $B$ =iff= any of these attacks are present.
 *** Structured Argumentation Framework
 *Def*: a $SAF$ defined by $AT$ is a tuple $SAF=(Args, C, \le)$
 - $Args = \{Arg | Arg \text{ is an argument based on } AT\}$
-- $C \subseteq Args \times Args$ is the attack relation
+- $C \subseteq Args \times Args$ is the attack relation on the arguments
 - $\le \subseteq Args \times Args$ is a preference ordering on the arguments
 
 
