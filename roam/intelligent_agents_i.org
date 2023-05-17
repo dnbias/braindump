@@ -407,6 +407,7 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 - $R$ set of inference rules with $R = R_s \cup R_d$
   + $R_s$ set of strict rules
   + $R_d$ set of defeasible rules
+- $n: R_d \to L$
 
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
