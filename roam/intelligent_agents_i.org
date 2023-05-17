@@ -404,7 +404,7 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 *** Argumentation System
 *Def*: An $AS$ is a tuple $AS = (L,R,n)$
 - $L$ logical language with $\neg$
-- $R$ set of inference rules with $R = R_s \cup R_d$
+- $R$ set of inference rules with $R = R_s \dot\cup R_d$
   + $R_s$ set of strict rules $\phi_1,\dots,\phi_n \to \phi$
   + $R_d$ set of defeasible rules $\phi_1,\dots,\phi_n \implies \phi$
 - $n: R_d \to L$ naming function
