@@ -436,6 +436,7 @@ $-A$ stands for $\lnot A$ if $A$ itself is not a negation, in the other case it 
 
 $A$ *attacks* $B$ =iff= any of these attacks are present.
 *** Structured Argumentation Framework
+*Def*: a $SAF$ defined by $AT$ is a tuple $SAF=(Args, C, \le)$
 
 
 
