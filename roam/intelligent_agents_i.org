@@ -428,6 +428,7 @@ An argument $A$ is:
 - /plausible/ =iff= not firm
 
 *** Defeats
+$-A$ stands for $\lnot A$ if $A$ itself is not a negation
 
 
 
