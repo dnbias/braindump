@@ -318,7 +318,6 @@ Correspondence between Dung-style semantics and restrictions on compl. labeling
 - semi-stable semantics
   + minimal undec
 
-[fn:aspic See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]]
 ** Discussion Games
 Relate discussions with argumentation semantics
 Discussion games are like a calculus related to these semantics. They give us a procedure to check wether an argument is labeled =in= by some labelling.
@@ -396,3 +395,7 @@ Structured argumentation gives interpretation to the actual arguments in the fra
 The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 - fallible premises, plausible reasoning
 - fallible inferences, defeasible reasoning
+
+* Footnotes
+
+[fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
