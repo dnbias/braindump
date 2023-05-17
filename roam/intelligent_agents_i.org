@@ -398,7 +398,7 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 - arguments are *directed acyclic graphs* (=DAGs=)
   + nodes are formulas (we assume propositional logic but can vary, needs to have a negation)
   + edges are meta-level inferences (not coming from the logic)
-
+- *defeat*
 
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
