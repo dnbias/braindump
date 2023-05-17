@@ -421,6 +421,8 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 - arguments are concatenated building larger arguments with a strict rule
 - arguments are concatenated building larger arguments with a defeasible rule
 
+An argument $A$ is:
+- strict iff $DefRules(A)=\emptyset$
 
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
