@@ -408,6 +408,8 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
   + $R_s$ set of strict rules $\phi_1,\dots,\phi_n \to \phi$
   + $R_d$ set of defeasible rules $\phi_1,\dots,\phi_n \implies \phi$
 - $n: R_d \to L$ naming function
+*** Knowledge bases
+*Def*: A $K$ based on $AS = (L,R,n)$ is a set $K \subseteq L$
 
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
