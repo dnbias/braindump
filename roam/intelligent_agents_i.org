@@ -423,7 +423,7 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 
 An argument $A$ is:
 - strict iff $DefRules(A)=\emptyset$
-- strict iff $DefRules(A)\neq \emptyset$
+- defeasible iff not strict
 - firm iff $Prem(A) \subseteq K_n$
 - plausible iff not firm
 
