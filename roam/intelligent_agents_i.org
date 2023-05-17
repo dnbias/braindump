@@ -411,8 +411,8 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 *** Knowledge Bases
 *Def*: A $K$ based on $AS = (L,R,n)$ is a set $K \subseteq L$
 - $K = K_n \dot\cup K_p$
-  + $K_n$ necessary premises, cannot be attacked as they are facts
-  + $K_p$ ordinary premises, can be attacked
+  + $K_n$ necessary premise, cannot be attacked as they are facts
+  + $K_p$ ordinary premise, can be attacked
 *** Argumentation Theory
 *Def*: An $AT$ is a pair $AT=(AS,K)$
 
