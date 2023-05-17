@@ -390,3 +390,4 @@ Abstract argumentation focused on the relationship between arguments, in an abst
 Structured argumentation gives interpretation to the actual arguments in the framework.
 - we expand the /nodes/ of the abstract argumentation where the actual arguments reside
 - give actual structure to the inside of the nodes (arguments) with evidence/support/claims
+- the attacks here are called /defeats/
