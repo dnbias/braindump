@@ -418,7 +418,8 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 
 *** Arguments
 - atomics, entries from the knowledge base $K$ can be arguments
-- arguments can be concatenated building larger arguments
+- arguments can be concatenated building larger arguments with a strict rule
+- arguments can be concatenated building larger arguments with a defeasible rule
 
 
 
