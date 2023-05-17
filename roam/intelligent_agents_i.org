@@ -388,3 +388,5 @@ These games are *sound* and *complete*
 ** Structured Argumentation
 Abstract argumentation focused on the relationship between arguments, in an abstract way.
 Structured argumentation gives interpretation to the actual arguments in the framework.
+- we expand the /nodes/ af the abstract argumentation where the actual arguments reside
+- give actual structure to the inside of the nodes
