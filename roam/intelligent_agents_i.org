@@ -410,6 +410,7 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 - $n: R_d \to L$ naming function
 *** Knowledge bases
 *Def*: A $K$ based on $AS = (L,R,n)$ is a set $K \subseteq L$
-
+- $K = K_n \dot\cup K_p$
+  + $K_n$ necessary premises, cannot be attacked as they are facts
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
