@@ -403,7 +403,8 @@ The framework is called [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]]
 
 *** Argumentation System
 *Def*: An $AS$ is a tuple $AS = (L,R,n)$
-
+- $L$ logical language with $\neg$
+- $R$ set of inference rules with $R = R_s \Cup R_d$
 
 
 [fn:aspic] See [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]].
