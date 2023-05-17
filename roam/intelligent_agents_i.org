@@ -427,6 +427,7 @@ An argument $A$ is:
 - /firm/ =iff= $Prem(A) \subseteq K_n$
 - /plausible/ =iff= not firm
 
+*** Defeats
 
 
 
