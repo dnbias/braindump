@@ -48,3 +48,5 @@ C. Prepare the data:
 D. Analyze with an application of choice
 E. Interpret the results
 F. Propose a resulting activity
+
+* Executive Summary
