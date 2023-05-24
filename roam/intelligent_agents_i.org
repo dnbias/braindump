@@ -464,4 +464,4 @@ From these extensions set one can go back to formulas by taking the intersection
 
 To create a consistent framework classical logic derivations like one for *conjunction*.
 This allows for a knowledge base to have $K = p,q,\lnot(p\land q)$ and still be consistent.
-From a derivation rule for conjunction the frame work could derive $p \land q$ from the simpler arguments $p$ and $q$.
+From a derivation rule for conjunction the frame work could derive $p \land q$ from the simpler arguments $p$ and $q$. This would operate for any couple in the knowledge base.
