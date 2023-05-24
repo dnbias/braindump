@@ -469,6 +469,7 @@ From a derivation rule for conjunction the frame work could derive $p \land q$ f
 This mechanism allows for extensions and conflict keeping consistency.
 
 *** Preference
+To add preferences in the framework you can insert preferences over /rules/ and preferences over /formulas/ and then find a way to *lift* the preferences over /arguments/.
 - preference for arguments in general has undefined origin
 - $A <_a B$ if $B$ is strict and firm and $A$ is defeasible or plausible
 *** Rationality Postulates
