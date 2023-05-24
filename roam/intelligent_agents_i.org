@@ -478,6 +478,9 @@ To add preferences in the framework you can insert preferences over /rules/ and 
 
 *Weakest link ordering* can be used to find a vulnerable link in an argument. The strength of the argument is the one of the weakest defeasible rule.
 - for sets of rules $S_1 <_s S_2$ if $\exists s1 \in S_1  \forall s2 \in S_2: s1 < s2$
+- for arguments
+  + $A <_a B$ =iff=
+    - both $A$ and $B$ are srict
 *Last-link ordering* compares the *last* defeasible rules of each argument.
 
 
