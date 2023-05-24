@@ -476,7 +476,7 @@ To add preferences in the framework you can insert preferences over /rules/ and 
   + these orders have to be manually added to the model
   + i.e. new rules often have superior order to older rules in the argumentation framework
 
-*Weakest link ordering* can be used to find a vulnerable link in an argument. The strenght of the argument is the one of the weakest.
+*Weakest link ordering* can be used to find a vulnerable link in an argument. The strenght of the argument is the one of the weakest defeasible rule.
 *Last-link ordering* compares the *last* defeasible rules of each argument.
 *** Rationality Postulates
 
