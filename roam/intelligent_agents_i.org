@@ -457,3 +457,5 @@ Developments in logic go from monotonic to non-monotonic:
 - conflicts
 - common reason
 This change also brings to leave the traditional semantics based on models.
+
+The [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]] generate from the formulas and rules an argumentation framework.
