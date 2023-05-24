@@ -470,4 +470,3 @@ This mechanism allows for extensions and conflict keeping consistency.
 
 *** Rationality Postulates
 
-*** Alternative Attack Relations
