@@ -470,5 +470,6 @@ This mechanism allows for extensions and conflict keeping consistency.
 
 *** Preference
 - preference for arguments in general has undefined origin
+- $A <_a B$ if $B$ is strict and firm and $A$ is defeasible or plausible.
 *** Rationality Postulates
 
