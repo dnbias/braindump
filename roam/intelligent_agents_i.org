@@ -475,5 +475,7 @@ To add preferences in the framework you can insert preferences over /rules/ and 
 - could be defined in terms of partial preorders $\le$ on $R_d$ and $\le'$ on $K_p$
   + these orders have to be manually added to the model
   + i.e. new rules often have superior order to older rules in the argumentation framework
+
+*Weakest link ordering* can be used to find a vulnerable link in an argument.
 *** Rationality Postulates
 
