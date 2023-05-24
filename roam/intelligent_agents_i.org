@@ -488,5 +488,5 @@ To add preferences in the framework you can insert preferences over /rules/ and 
 For any $S \subseteq L$
 - $S$ is /directly consistent/ iff $S$ does not contain two formulas $\phi$ and $\lnot \phi$
 - the /strict closure/ $Cl(S)$ is $S$ + everything derivable from $S$ with strict rules $R_s$
-- $S$ is /indirectly consistent/ iff $Cl(S)$ is directly consistent, depends on the choise of strict rules (from logic)
+- $S$ is /indirectly consistent/ iff $Cl(S)$ is directly consistent, depends on the choice of strict rules (from logic)
 *** Rationality Postulates
