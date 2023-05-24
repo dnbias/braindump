@@ -490,5 +490,5 @@ For any $S \subseteq L$
 - the /strict closure/ $Cl(S)$ is $S$ + everything derivable from $S$ with strict rules $R_s$
 - $S$ is /indirectly consistent/ iff $Cl(S)$ is directly consistent, depends on the choice of strict rules (from logic)
 *** Rationality Postulates
-- *subargument closure*
+- *subargument closure*, to accept a proof you have to prove all their lemma
 - *direct consistency*
