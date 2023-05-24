@@ -452,3 +452,8 @@ $A$ *defeats* $B$ =iff= for some $B'$
 
 
 *** Frameworks
+Developments in logic go from monotonic to non-monotonic:
+- exceptions
+- conflicts
+- common reason
+This change also brings to leave the traditional semantics based on models.
