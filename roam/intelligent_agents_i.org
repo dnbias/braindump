@@ -496,3 +496,4 @@ For any $S \subseteq L$
 - *indirect consistency*
 
 To make sure the set is consistent one can add the *contraposition* rule from =PL= to add knowledge to the rules.
+So the additions to [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]] are *transposition* and *contraposition*.
