@@ -491,4 +491,4 @@ For any $S \subseteq L$
 - $S$ is /indirectly consistent/ iff $Cl(S)$ is directly consistent, depends on the choice of strict rules (from logic)
 *** Rationality Postulates
 - *subargument closure*
-- *direct consistency
+- *direct consistency*
