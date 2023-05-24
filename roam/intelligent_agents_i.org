@@ -463,4 +463,4 @@ This allows to have preferences and abstract semantics. The abstract semantics a
 From these extensions set one can go back to formulas by taking the intersection for a more classic logic approach. Still non-monotonic of course.
 
 To create a consistent framework classical logic derivations like one for *conjunction*.
-This allows for a knowledge base to have $K = p,q,\lnot(p\land q)$
+This allows for a knowledge base to have $K = p,q,\lnot(p\land q)$ and still be consistent.
