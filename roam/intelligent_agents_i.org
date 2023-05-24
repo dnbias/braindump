@@ -467,3 +467,5 @@ This allows for a knowledge base to have $K = p,q,\lnot(p\land q)$ and still be 
 From a derivation rule for conjunction the frame work could derive $p \land q$ from the simpler arguments $p$ and $q$. This would operate for any couple in the knowledge base.
 
 This mechanism allows for extensions and conflict keeping consistency.
+
+*** Rationality Postulates
