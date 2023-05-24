@@ -481,7 +481,7 @@ To add preferences in the framework you can insert preferences over /rules/ and 
 - for arguments
   + $A <_a B$ =iff=
     - $LDR(A) <_s LDR(B)$ or
-    - if both $A$ and $B$ $Prem(A) <_s Prem(B)$
+    - if both $A$ and $B$ are not strict $Prem(A) <_s Prem(B)$
 *Last-link ordering* compares the *last* defeasible rules of each argument.
 
 
