@@ -49,5 +49,3 @@ D. Analyze with an application of choice
 E. Interpret the results
 F. Propose a resulting activity
 
-* Executive Summary
-The dataset for the analysis was the biking dataset ([[https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset#][link]]).
