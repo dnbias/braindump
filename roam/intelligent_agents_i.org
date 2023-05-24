@@ -473,6 +473,6 @@ To add preferences in the framework you can insert preferences over /rules/ and 
 - preference for arguments in general has undefined origin
 - $A <_a B$ if $B$ is strict and firm and $A$ is defeasible or plausible
 - could be defined in terms of partial preorders $\le$ on $R_d$ and $\le'$ on $K_p$
-  + these orders have to be added to the model
+  + these orders have to be manualy added to the model
 *** Rationality Postulates
 
