@@ -460,4 +460,4 @@ This change also brings to leave the traditional semantics based on models.
 
 The [[id:92d4cd01-bf21-4c6c-8951-1f59512ea5a4][ASPIC+]] generate from the formulas and rules an argumentation framework.
 This allows to have preferences and abstract semantics. The abstract semantics allow argument extensions.
-From these extensions set one can go back to formulas by taking the intersection for a more classic logic approach. Still non-monotonic.
+From these extensions set one can go back to formulas by taking the intersection for a more classic logic approach. Still non-monotonic of course.
