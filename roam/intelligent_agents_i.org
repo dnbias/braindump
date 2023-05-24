@@ -484,6 +484,7 @@ To add preferences in the framework you can insert preferences over /rules/ and 
     - if both $A$ and $B$ are not strict (???) $Prem(A) <_s Prem(B)$
 *Last-link ordering* compares the *last* defeasible rules of each argument.
 
-
+*** Consistency
+For any $S \subseteq L$
+- $S$ is /directly consistent iff $S$ does not contain two formulas $\phi$ and $\lnot \phi$
 *** Rationality Postulates
-
