@@ -469,5 +469,6 @@ From a derivation rule for conjunction the frame work could derive $p \land q$ f
 This mechanism allows for extensions and conflict keeping consistency.
 
 *** Preference
+- preference for argumennts in general has undefined origin
 *** Rationality Postulates
 
