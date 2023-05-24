@@ -474,6 +474,6 @@ To add preferences in the framework you can insert preferences over /rules/ and 
 - $A <_a B$ if $B$ is strict and firm and $A$ is defeasible or plausible
 - could be defined in terms of partial preorders $\le$ on $R_d$ and $\le'$ on $K_p$
   + these orders have to be manually added to the model
-  + i.e. new rule often have superior order to older rules in the argumentation framework
+  + i.e. new rules often have superior order to older rules in the argumentation framework
 *** Rationality Postulates
 
