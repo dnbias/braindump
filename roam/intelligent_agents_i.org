@@ -495,4 +495,4 @@ For any $S \subseteq L$
 - *strict closure*, the closure of the conclusions is equivalent to the conclusions
 - *indirect consistency*
 
-To make sure the set is consistent one can add the *contraposition* rule from =PL=
+To make sure the set is consistent one can add the *contraposition* rule from =PL= to add knowledge to the rules.
