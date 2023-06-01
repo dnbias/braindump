@@ -297,4 +297,4 @@ Pipelining is not that easy because of dependencies between istructions
 
 To resolve these hazard you can introduce stalling in the pipeline if instruction requires a resource in use
 - control flow hazard are left to programmer and compiler to resolve
-- self modifing code with pipeline flushing
+- self modifying code with pipeline flushing
