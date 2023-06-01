@@ -309,3 +309,6 @@ The burden for resolving dependencies in instruction can be on the user:
 
 Different instruction need different amount of cycles to complete
 - extend the pipeline to allow different instruction to complete at different points in time and optimize the latency
+
+Another way to resolve data hazards the processor can choose different registers from that specified by the programmer
+- the only ensurance is that the state is what is specified by the time it is checked
