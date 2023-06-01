@@ -294,3 +294,5 @@ Pipelining is not that easy because of dependencies between istructions
 - read after write hazard
 - write after write
 - write after read
+
+To resolve these hazard you can introduce stalling in the pipeline if instruction requires a resource in use
