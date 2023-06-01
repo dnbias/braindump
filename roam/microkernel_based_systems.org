@@ -322,3 +322,4 @@ We try to fetch as many instructions as possible but still have to deal with bra
 - predict for special constructs
   + predict backward jumps as not likely
   + predict forward jumps as likely
+  + doing this predictions are correct most of the time
