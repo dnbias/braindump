@@ -298,3 +298,5 @@ Pipelining is not that easy because of dependencies between istructions
 To resolve these hazard you can introduce stalling in the pipeline if instruction requires a resource in use
 - control flow hazard are left to programmer and compiler to resolve
 - self modifying code with pipeline flushing
+
+These =RAW= are so common that =ALU= has a bypass to itself to have the result back in the input in a single cycle
