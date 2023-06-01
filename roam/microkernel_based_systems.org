@@ -265,3 +265,6 @@ Considering interleaving between programs.
 
 * Processor Architecture
 =not part of exam=
+
+- basic knowledge of processor design
+- why accelerators are fast
