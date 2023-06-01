@@ -328,3 +328,6 @@ At this point you can get faster by parallelism
 - more =CPU=
 - symmetric multiprocessing, one =CPU= and thread selecting with pipelining
   + in this case the probability of dependencies is much lower
+
+Or faster with accelerators
+- so critical functionality gets dedicated hardware
