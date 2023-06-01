@@ -261,3 +261,5 @@ Considering interleaving between programs.
   + memory where all is going well
   + verify a property at least in a part of memory
   + set of memory is /blessed/
+
+* Questions
