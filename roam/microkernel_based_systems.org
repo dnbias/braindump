@@ -288,4 +288,4 @@ To have memory you need to connect the combinational logic device with memory de
 - =DLatch= stores between two inverters for exactly 1 cycle
 - by combining the =DLatch= with the clock signal and the input and a second =DLatch= to always have a stable signal, this creates a register
 - it is costly in regards to the number of transistors, it is also the fastest
-- putting memory in between the logical devices allows to clock the system faster
+- putting memory in between the logical devices allows to clock the system faster, this technique is called *pipelining*
