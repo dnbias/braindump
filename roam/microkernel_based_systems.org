@@ -271,4 +271,6 @@ Considering interleaving between programs.
 - transistor are created by doping (via aluminium and phosphor) the silicon
   + create a electrical imbalance in the atoms
   + before doping you mask the regions
+
+Field effect transistor:
 - =n= region electrons go to the =p= regions after you apply an electrical charge
