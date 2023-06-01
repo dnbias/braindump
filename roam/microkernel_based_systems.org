@@ -276,3 +276,5 @@ Field effect transistor:
 - =n= region electrons go to the =p= regions after you apply an electrical charge
 - applying source and drain works creating an isolating layer and a gate on top
 - field effect from the changed gate make the =p= expand and get closer to the =n= regions getting to the point where the current can frow through
+- the transistor works like a digital switch
+- there is a margin of intermediate states which will cause problems
