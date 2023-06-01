@@ -285,3 +285,4 @@ You use this by designing =CMOS=, having your functionality and then disabling a
 - the circuit is concluded with an inverter circuit
 
 To have memory you need to connect the combinational logic device with memory devices capturing new states and storing current state
+- =DLatch= stores between two inverters for exactly 1 cycle
