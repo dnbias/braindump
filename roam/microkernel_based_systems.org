@@ -331,3 +331,4 @@ At this point you can get faster by parallelism
 
 Or faster with accelerators
 - so critical functionality gets dedicated hardware
+- matrix multiplication
