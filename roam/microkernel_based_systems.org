@@ -274,3 +274,4 @@ Considering interleaving between programs.
 
 Field effect transistor:
 - =n= region electrons go to the =p= regions after you apply an electrical charge
+- applying source and drain works creating an isolating layer and a gate on top
