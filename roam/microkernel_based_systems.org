@@ -302,3 +302,6 @@ To resolve these hazard you can introduce stalling in the pipeline if instructio
 These =RAW= are so common that =ALU= has a bypass to itself to have the result back in the input in a single cycle, same thing for read from memory to have the result next cycle
 
 For cache coherence there are protocols like =MESI=
+The burden for resolving dependencies in instruction can be on the user:
+- very long instruction word anchitecture (=VLIW=)
+- Itanium
