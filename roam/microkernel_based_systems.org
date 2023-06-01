@@ -270,4 +270,4 @@ Considering interleaving between programs.
 - why accelerators are fast
 - transistor are created by doping (via aluminium and phosphor) the silicon
   + create a electrical imbalance in the atoms
-- n region electron go to the p regions after you apply an electrical charge
+- n region electrons go to the p regions after you apply an electrical charge
