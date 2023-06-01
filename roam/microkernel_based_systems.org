@@ -262,3 +262,5 @@ Considering interleaving between programs.
   + verify a property at least in a part of memory
   + set of memory is /blessed/
 
+
+* Processor Architecture
