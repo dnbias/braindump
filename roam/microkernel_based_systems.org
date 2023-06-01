@@ -327,3 +327,4 @@ We try to fetch as many instructions as possible but still have to deal with bra
 At this point you can get faster by parallelism
 - more =CPU=
 - symmetric multiprocessing, one =CPU= and thread selecting with pipelining
+  + in this case the probability of dependencies is much lower
