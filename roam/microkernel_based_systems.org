@@ -307,5 +307,5 @@ The burden for resolving dependencies in instruction can be on the user:
 - Itanium
 - bundle instruction to be fetched together by the =CPU=
 
-Diferent instruction need different amonut of cycles to complete
+Different instruction need different amount of cycles to complete
 - extend the pipeline to allow different instruction to complete at different points in time and optimize the latency
