@@ -320,3 +320,5 @@ We try to fetch as many instructions as possible but still have to deal with bra
 - predict whether the branch is taken or not, statically and dynamically
 - predict the location of the branch
 - predict for special constructs
+  + predict backward jumps as not likely
+  + predict forward jumps as likely
