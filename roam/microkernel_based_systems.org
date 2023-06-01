@@ -314,4 +314,3 @@ Another way to resolve data hazards the processor can choose different registers
 - the only ensurance is that the state is what is specified by the time it is checked
 - *register renaming*, the names are only needed by the programmer/compiler
 - having a rearder buffer keeping track of the instruction coming in and recording their results the =CPU= can use them with *speculative execution* to cheat when exceptions happens and it needs to report to the =OS= the actual registers used
-  +
