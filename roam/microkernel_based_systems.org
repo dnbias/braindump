@@ -323,3 +323,7 @@ We try to fetch as many instructions as possible but still have to deal with bra
   + predict backward jumps as not likely
   + predict forward jumps as likely
   + doing this predictions are correct most of the time
+
+At this point you can get faster by parallelism
+- more =CPU=
+- symmetric multiprocessing, one =CPU= and thread selecting with pipeliking
