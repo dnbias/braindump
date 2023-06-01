@@ -268,3 +268,4 @@ Considering interleaving between programs.
 
 - basic knowledge of processor design
 - why accelerators are fast
+- transistor are created by doping (via aluminium and phosphor) the silicon
