@@ -269,3 +269,5 @@ Considering interleaving between programs.
 - basic knowledge of processor design
 - why accelerators are fast
 - transistor are created by doping (via aluminium and phosphor) the silicon
+  + create a electrical imbalance in the atoms
+- n region electron go to the p regions after you apply an electrical charge
