@@ -282,3 +282,4 @@ Field effect transistor:
 
 You use this by designing =CMOS=, having your functionality and then disabling any current after towards the =GRD=
 - there will be electrons leaking to the =GND= and energy dissipation through heat
+- the circuit is concluded with an inverter circuit
