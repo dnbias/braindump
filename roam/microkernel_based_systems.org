@@ -279,3 +279,5 @@ Field effect transistor:
 - the transistor works like a digital switch
 - there is a margin of intermediate states which will cause problems
 - there is a propagation delay from input change to output charge
+
+You use this by designing =CMOS=, having your functionality and then disabling any current after
