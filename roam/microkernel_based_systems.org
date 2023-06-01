@@ -318,5 +318,5 @@ Another way to resolve data hazards the processor can choose different registers
 
 We try to fetch as many instructions as possible but still have to deal with branch prediction
 - predict whether the branch is taken or not, statically and dinamically
-- pedict the location of the branch
+- predict the location of the branch
 - predict for special constructs
