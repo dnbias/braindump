@@ -305,3 +305,4 @@ For cache coherence there are protocols like =MESI=
 The burden for resolving dependencies in instruction can be on the user:
 - very long instruction word anchitecture (=VLIW=)
 - Itanium
+- bunble instruction to be fetched together by the =CPU=
