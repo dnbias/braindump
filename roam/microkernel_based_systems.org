@@ -300,3 +300,5 @@ To resolve these hazard you can introduce stalling in the pipeline if instructio
 - self modifying code with pipeline flushing
 
 These =RAW= are so common that =ALU= has a bypass to itself to have the result back in the input in a single cycle, same thing for read from memory to have the result next cycle
+
+For cache coherence there are protocols like =MESI=
