@@ -290,7 +290,7 @@ To have memory you need to connect the combinational logic device with memory de
 - it is costly in regards to the number of transistors, it is also the fastest
 - putting memory in between the logical devices allows to clock the system faster, this technique is called *pipelining*
 
-Pipelining is not that easy because of dependencies between istructions
+Pipelining is not that easy because of dependencies between instructions
 - read after write hazard
 - write after write
 - write after read
