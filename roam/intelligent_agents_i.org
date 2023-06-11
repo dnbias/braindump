@@ -230,7 +230,7 @@ $justify(P_{i} , \Phi \vdash^+ \phi)$
 $challenge(P_{j} , P_{i}, \phi)$
 
 $retract( P_{i}, \phi)$
-- either an supporting argument (+) or an attacking one (-) to \phi is removed from =DOS= of agent $i$
+- either a supporting argument (+) or an attacking one (-) to \phi is removed from =DOS= of agent $i$
 
 Different levels of logic in dialogues with these sentences
 - logic reasoning using $\vdash^+ \vdash^-$
