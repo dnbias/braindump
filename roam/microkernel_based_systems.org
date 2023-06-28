@@ -50,7 +50,7 @@ Option 2 is /local communication partners/
   + ~inspect~
   + ~forward~
 - *portals*, more efficient way to remove the middleman
-  + hides away information to the caller, it doens't need to know which CPU it runs on
+  + hides away information to the caller, it doesn't need to know which CPU it runs on
   + receivers wait at the portal
   + queue sender if no receiver is waiting
   + queue receivers if no message is pending
