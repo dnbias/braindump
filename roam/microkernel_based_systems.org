@@ -129,7 +129,7 @@ You can also use a lock in the root to indicate that the operation is still ongo
 
 ** Demand Paging
 The old linux interface just forked and then cleared the old address space.
-You can also create a clean address space and a thread inside it, then this will page fault transitioning to the kernel via =IPC= to the pager asking for the page of its code. Then the exeption will be handled and then the thread resumes its execution.
+You can also create a clean address space and a thread inside it, then this will page fault transitioning to the kernel via =IPC= to the pager asking for the page of its code. Then the exception will be handled and then the thread resumes its execution.
 
 ** Region Manager
 In user level, so an application would =IPC= this =RM= to ask for pages and then this one would manipulate it and forward to the pager what it needs. Then the pager responds directly to the application.
