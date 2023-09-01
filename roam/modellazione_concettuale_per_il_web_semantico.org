@@ -195,7 +195,7 @@ La feature principale di =Turtle= è la abbreviazione delle triple:
 I *blank node* sono definiti all'interno di parentesi quadre.
 
 I letterali sono seguiti dal loro tipo di dato
-- a seguire del delimitatore ^^ l'=IRI= definito per il tipo (o una abbreviazione)
+- a seguire del delimitatore ~^^~ l'=IRI= definito per il tipo (o una abbreviazione)
 
 ** RDFS
 Linguaggio /property-centric/
