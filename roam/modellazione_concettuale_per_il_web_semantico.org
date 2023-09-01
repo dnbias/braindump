@@ -270,7 +270,7 @@ Principali namespace:
 * Inferenza
 Fatta a partire dalla semantica definita sui vocabolari.
 - definizioni di /domain/ e /range/ trasportano conoscenza sulle istanze
-- transitivitá di sotto-classe, di sub-property ad esempio
+- transitività di sotto-classe, di sub-property ad esempio
 * Ontologie Computazionali
 #+caption: Guarino, 1998
 #+begin_quote
