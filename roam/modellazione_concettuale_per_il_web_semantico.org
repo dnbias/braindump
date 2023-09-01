@@ -207,7 +207,7 @@ Si definiscono (principalmente)
 - property
 - type
 - subclass
-- sub-property
+- subproperty
 - domain
 - range (codominio)
 
