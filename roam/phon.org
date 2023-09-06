@@ -143,7 +143,7 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 SELECT (COUNT(*) AS ?count)
 WHERE
 {
-  ?a <http://xmlns.com/foaf/0.1/topic_interest> ?s}
+  ?a <http://xmlns.com/foaf/0.1/topic_interest> ?s
 } GROUP BY ?s
 
 
@@ -161,8 +161,7 @@ WHERE {
 SELECT (COUNT(*) AS ?count)
 WHERE {
   ?photo <phon#shotBy> ?author .
-  FILTER (?author = <phon#Dorothy>)
-}
+} GROUP BY ?author
 
 
 SELECT ?photo
