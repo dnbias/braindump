@@ -171,6 +171,13 @@ WHERE {
 }
 
 
+SELECT ?photo
+WHERE {
+  ?photo <phon#shotIn> ?author .
+  FILTER (?author = <phon#Dorothy>)
+}
+
+
 SELECT ?person ?vehicle
 WHERE {
   {
