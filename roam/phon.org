@@ -159,10 +159,10 @@ WHERE {
 }
 
 
-SELECT ?person
+SELECT ?photo
 WHERE {
-  ?person <http://example.com/hasCar> ?car .
-  FILTER (?car = <http://example.com/Car1>)
+  ?photo <http://example.com/shotBy> ?author .
+  FILTER (?author = <http://example.com/Auth1>)
 }
 
 
