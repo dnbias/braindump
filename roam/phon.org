@@ -130,6 +130,12 @@ Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Pro
 * Interazione utente
 Una applicazione basata su questa ontologia deve poter soddisfare le richieste degli utenti reperendo le informazioni della base di conoscenza.
 
+Interazioni fondamentali a questo scopo sono:
+- elencare le fotografie scattate da un fotografo
+- contare il numero di fotografie scattate da un fotografo
+- elencare i fotografi che hanno scattato fotografie analogiche
+- elencare le fotografie scattate prima o dopo una certa data
+
 
 * SPARQL queries
 #+begin_example
