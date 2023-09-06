@@ -126,3 +126,5 @@ Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Pro
 [[~/Pictures/20230207_04h14m04s_grim.png]]
 #+caption: Pagina Protégé della serie fotografica FamilyPortrait
 [[~/Pictures/20230207_04h17m23s_grim.png]]
+
+* SPARQL queries
