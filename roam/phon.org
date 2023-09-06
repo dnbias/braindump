@@ -147,4 +147,10 @@ SELECT (MIN(?price) AS ?minPrice)
 WHERE {
   ?car <http://example.com/hasPrice> ?price .
 }
+
+
+WHERE {
+  ?person <http://example.com/hasCar> ?car .
+  FILTER (?car = <http://example.com/Car1>)
+}
 #+end_example
