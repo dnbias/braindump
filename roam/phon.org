@@ -137,6 +137,7 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 - elencare le fotografie scattate prima o dopo una certa data
 - elencare le fotografie scattate in un certo luogo
 
+  mockup...
 * SPARQL queries
 #+begin_example
 SELECT (COUNT(*) AS ?count)
