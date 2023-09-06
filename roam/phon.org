@@ -174,7 +174,7 @@ WHERE {
 SELECT ?photo
 WHERE {
   ?photo <phon#shotIn> ?location .
-  FILTER (?location = <phon#SolarSystem>)
+  FILTER (?location = <phon#Rome>)
 }
 
 
