@@ -158,7 +158,7 @@ WHERE {
   ?car <http://example.com/hasPrice> ?price .
 }
 
-SELECT (COUNT(*) AS ?count)?photo
+SELECT (COUNT(*) AS ?count)
 WHERE {
   ?photo <phon#shotBy> ?author .
   FILTER (?author = <phon#Dorothy>)
