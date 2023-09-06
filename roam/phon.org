@@ -162,7 +162,7 @@ WHERE {
 SELECT ?photo
 WHERE {
   ?photo <phon#shotBy> ?author .
-  FILTER (?author = <http://example.com/Auth1>)
+  FILTER (?author = <phon#Doroty>)
 }
 
 
