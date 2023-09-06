@@ -149,8 +149,20 @@ WHERE {
 }
 
 
+SELECT ?person
 WHERE {
   ?person <http://example.com/hasCar> ?car .
   FILTER (?car = <http://example.com/Car1>)
+}
+
+
+SELECT ?person ?vehicle
+WHERE {
+  {
+    ?person <http://example.com/hasCar> ?vehicle .
+  }
+  UNION {
+    ?person <http://example.com/hasBike> ?vehicle .
+  }
 }
 #+end_example
