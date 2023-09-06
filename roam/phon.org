@@ -128,6 +128,9 @@ Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Pro
 [[~/Pictures/20230207_04h17m23s_grim.png]]
 
 * Interazione utente
+Una applicazione basata su questa ontologia deve poter soddisfare le richieste degli utenti reperendo le informazioni della base di conoscenza.
+
+
 * SPARQL queries
 #+begin_example
 SELECT (COUNT(*) AS ?count)
