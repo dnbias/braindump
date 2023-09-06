@@ -129,3 +129,22 @@ Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Pro
 
 * Interazione utente
 * SPARQL queries
+#+begin_example
+SELECT (COUNT(*) AS ?count)
+WHERE
+{
+  ?a <http://xmlns.com/foaf/0.1/topic_interest> ?s}
+} GROUP BY ?s
+
+
+SELECT (MAX(?price) AS ?maxPrice)
+WHERE {
+  ?car <http://example.com/hasPrice> ?price .
+}
+
+
+SELECT (MIN(?price) AS ?minPrice)
+WHERE {
+  ?car <http://example.com/hasPrice> ?price .
+}
+#+end_example
