@@ -158,7 +158,7 @@ WHERE {
 #+end_example
 
 
-Elenco delle foto scattate in California
+Elenco delle foto scattate in California:
 #+begin_example
 SELECT ?photo
 WHERE {
@@ -168,7 +168,7 @@ WHERE {
 #+end_example
 
 
-#+caption: Elenco delle foto analogiche
+Elenco delle foto analogiche:
 #+begin_example
 SELECT ?photo
 WHERE {
