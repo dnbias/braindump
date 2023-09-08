@@ -158,10 +158,13 @@ WHERE {
   ?car <http://example.com/hasPrice> ?price .
 }
 
+#+caption: Elenco dei fotografi per numero di foto scattate
+#+begin_example
 SELECT (COUNT(*) AS ?count)
 WHERE {
   ?photo <phon#shotBy> ?author .
 } GROUP BY ?author
+#+end_example
 
 
 SELECT ?photo
