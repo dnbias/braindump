@@ -196,6 +196,17 @@ WHERE {
 }
 #+end_example
 
+
+
+#+caption: Elenco delle foto scattate tra il 1930 e il 1940
+#+begin_example
+SELECT ?photo
+WHERE {
+  ?photo <phon#medium> ?m .
+  FILTER (?m = <phon#Film>)
+}
+#+end_example
+
 SELECT ?person ?vehicle
 WHERE {
   {
