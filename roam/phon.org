@@ -187,6 +187,15 @@ WHERE {
 #+end_example
 
 
+#+caption: Elenco delle foto analogiche
+#+begin_example
+SELECT ?photo
+WHERE {
+  ?photo <phon#shotIn> ?location .
+  FILTER (?location = <phon#California>)
+}
+#+end_example
+
 SELECT ?person ?vehicle
 WHERE {
   {
