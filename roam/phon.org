@@ -177,11 +177,14 @@ WHERE {
 #+end_example
 
 
+#+caption: Elenco delle foto scattate da Dorothea Lange
+#+begin_example
 SELECT ?photo
 WHERE {
   ?photo <phon#shotIn> ?location .
-  FILTER (?location = <phon#Rome>)
+  FILTER (?location = <phon#California>)
 }
+#+end_example
 
 
 SELECT ?person ?vehicle
