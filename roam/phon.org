@@ -137,8 +137,9 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 - elencare le fotografie scattate in un certo luogo
 - elencare le fotografie scattate prima o dopo una certa data
 
-  [[~/Documents/UNI/Master/ModSem/PhotOntology/phon/flowchart_interaction.drawio.png]]
-  \pagebreak
+
+\vspace{10mm} [[~/Documents/UNI/Master/ModSem/PhotOntology/phon/flowchart_interaction.drawio.png]]
+\pagebreak
 * SPARQL queries
 Elenco dei fotografi per numero di foto scattate:
 #+begin_example
