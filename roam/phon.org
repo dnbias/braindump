@@ -148,7 +148,7 @@ WHERE {
 #+end_example
 
 
-#+caption: Elenco delle foto scattate da Dorothea Lange
+#+caption: Elenco delle foto scattate da Dorothea Lange:
 #+begin_example
 SELECT ?photo
 WHERE {
