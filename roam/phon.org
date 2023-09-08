@@ -146,6 +146,7 @@ WHERE {
   ?photo <phon#shotBy> ?author .
 } GROUP BY ?author
 #+end_example
+​
 
 Elenco delle foto scattate da Dorothea Lange:
 #+begin_example
