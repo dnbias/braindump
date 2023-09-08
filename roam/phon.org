@@ -146,6 +146,7 @@ WHERE {
   ?photo <phon#shotBy> ?author .
 } GROUP BY ?author
 #+end_example
+
 \vspace{5mm}
 Elenco delle foto scattate da Dorothea Lange:
 #+begin_example
@@ -156,7 +157,7 @@ WHERE {
 }
 #+end_example
 
-
+\vspace{5mm}
 Elenco delle foto scattate in California:
 #+begin_example
 SELECT ?photo
@@ -166,7 +167,7 @@ WHERE {
 }
 #+end_example
 
-
+\vspace{5mm}
 Elenco delle foto analogiche:
 #+begin_example
 SELECT ?photo
@@ -176,8 +177,7 @@ WHERE {
 }
 #+end_example
 
-
-
+\vspace{5mm}
 Elenco delle foto scattate tra il 1990 e il 1999:
 #+begin_example
 SELECT ?photo ?y
