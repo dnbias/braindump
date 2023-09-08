@@ -139,7 +139,7 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 
   [[~/Documents/UNI/Master/ModSem/PhotOntology/phon/flowchart_interaction.drawio.png]]
 * SPARQL queries
-Elenco dei fotografi per numero di foto scattate
+Elenco dei fotografi per numero di foto scattate:
 #+begin_example
 SELECT (COUNT(*) AS ?count)
 WHERE {
