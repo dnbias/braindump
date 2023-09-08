@@ -188,14 +188,3 @@ WHERE {
           "1999"^^xsd:positiveInteger <= ?y )
 }
 #+end_example
-
-SELECT ?person ?vehicle
-WHERE {
-  {
-    ?person <http://example.com/hasCar> ?vehicle .
-  }
-  UNION {
-    ?person <http://example.com/hasBike> ?vehicle .
-  }
-}
-#+end_example
