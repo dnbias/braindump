@@ -134,8 +134,8 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 - contare il numero di fotografie scattate da ciascun fotografo
 - elencare le fotografie scattate da un fotografo
 - elencare i fotografi che hanno scattato fotografie analogiche
-- elencare le fotografie scattate prima o dopo una certa data
 - elencare le fotografie scattate in un certo luogo
+- elencare le fotografie scattate prima o dopo una certa data
 
   mockup...
 * SPARQL queries
