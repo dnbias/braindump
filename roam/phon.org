@@ -191,8 +191,8 @@ WHERE {
 #+begin_example
 SELECT ?photo
 WHERE {
-  ?photo <phon#shotIn> ?location .
-  FILTER (?location = <phon#California>)
+  ?photo <phon#medium> ?m .
+  FILTER (?m = <phon#Film>)
 }
 #+end_example
 
