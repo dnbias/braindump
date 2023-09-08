@@ -167,11 +167,14 @@ WHERE {
 #+end_example
 
 
+#+caption: Elenco delle foto scattate da Dorothy
+#+begin_example
 SELECT ?photo
 WHERE {
   ?photo <phon#shotBy> ?author .
   FILTER (?author = <phon#Dorothy>)
 }
+#+end_example
 
 
 SELECT ?photo
