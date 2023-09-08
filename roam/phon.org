@@ -177,7 +177,7 @@ WHERE {
 #+end_example
 
 
-#+caption: Elenco delle foto scattate da Dorothea Lange
+#+caption: Elenco delle foto scattate in California
 #+begin_example
 SELECT ?photo
 WHERE {
