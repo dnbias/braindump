@@ -203,7 +203,8 @@ WHERE {
 SELECT ?photo
 WHERE {
   ?photo <phon#year> ?y .
-  FILTER (?y < "1990"^^xsd:positiveInteger)
+  FILTER (?y <= "1990"^^xsd:positiveInteger &&
+          "1999"^^xsd:positiveInteger <= ?y )
 }
 #+end_example
 
