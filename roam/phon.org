@@ -179,7 +179,7 @@ WHERE {
 
 
 
-Elenco delle foto scattate tra il 1990 e il 1999
+Elenco delle foto scattate tra il 1990 e il 1999:
 #+begin_example
 SELECT ?photo ?y
 WHERE {
