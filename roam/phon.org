@@ -200,7 +200,7 @@ WHERE {
 
 #+caption: Elenco delle foto scattate tra il 1990 e il 1999
 #+begin_example
-SELECT ?photo
+SELECT ?photo ?y
 WHERE {
   ?photo <phon#year> ?y .
   FILTER (?y <= "1990"^^xsd:positiveInteger &&
