@@ -139,25 +139,6 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 
   mockup...
 * SPARQL queries
-#+begin_example
-SELECT (COUNT(*) AS ?count)
-WHERE
-{
-  ?a <http://xmlns.com/foaf/0.1/topic_interest> ?s
-} GROUP BY ?s
-
-
-SELECT (MAX(?price) AS ?maxPrice)
-WHERE {
-  ?car <http://example.com/hasPrice> ?price .
-}
-
-
-SELECT (MIN(?price) AS ?minPrice)
-WHERE {
-  ?car <http://example.com/hasPrice> ?price .
-}
-
 #+caption: Elenco dei fotografi per numero di foto scattate
 #+begin_example
 SELECT (COUNT(*) AS ?count)
