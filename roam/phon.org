@@ -204,4 +204,9 @@ WHERE {
 }
 #+end_example
 Risultato:
-| Venus Mother |
+| Venus         |
+| Jupiter       |
+| Uranus        |
+| Saturn        |
+| Pale Blue Dot |
+|               |
