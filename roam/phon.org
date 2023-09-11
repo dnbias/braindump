@@ -209,4 +209,3 @@ Risultato:
 | Uranus        |
 | Saturn        |
 | Pale Blue Dot |
-|               |
