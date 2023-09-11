@@ -141,13 +141,16 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 
 \vspace{10mm} [[~/Documents/UNI/Master/ModSem/PhotOntology/phon/flowchart_interaction.drawio.png]]
 \pagebreak
+
 * SPARQL queries
 Elenco dei fotografi per numero di foto scattate:
 #+begin_example
 SELECT (COUNT(*) AS ?count)
 WHERE {
   ?photo <phon#shotBy> ?author .
-} GROUP BY ?author
+}
+GROUP BY ?author
+ORDER BY ?count
 #+end_example
 
 \vspace{5mm}
