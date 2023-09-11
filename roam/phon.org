@@ -203,3 +203,5 @@ WHERE {
           "1999"^^xsd:positiveInteger <= ?y )
 }
 #+end_example
+Risultato:
+| Venus Mother |
