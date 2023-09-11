@@ -152,6 +152,9 @@ WHERE {
 GROUP BY ?author
 ORDER BY ?count
 #+end_example
+Risultato:
+| Dorethea Lange |
+| NASA           |
 
 \vspace{5mm}
 Elenco delle foto scattate da Dorothea Lange:
