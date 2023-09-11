@@ -171,7 +171,9 @@ WHERE {
 }
 #+end_example
 Risultato:
+|----------------|
 | Migrant Mother |
+|----------------|
 
 
 \vspace{5mm}
@@ -184,7 +186,9 @@ WHERE {
 }
 #+end_example
 Risultato:
+|----------------|
 | Migrant Mother |
+|----------------|
 
 \vspace{5mm}
 Elenco delle foto analogiche:
