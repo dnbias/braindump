@@ -178,6 +178,8 @@ WHERE {
   FILTER (?location = <phon#California>)
 }
 #+end_example
+Risultato:
+| Migrant Mother |
 
 \vspace{5mm}
 Elenco delle foto analogiche:
