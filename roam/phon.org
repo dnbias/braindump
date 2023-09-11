@@ -166,7 +166,7 @@ WHERE {
 }
 #+end_example
 Risultato:
-|Migrant Mother |
+| Migrant Mother |
 
 
 \vspace{5mm}
