@@ -160,7 +160,6 @@ Risultato:
 | NASA           | 6 |
 | Dorethea Lange | 1 |
 |----------------+---|
-|                |   |
 
 \vspace{5mm}
 Elenco delle foto scattate da Dorothea Lange:
