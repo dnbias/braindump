@@ -144,6 +144,7 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 
 [[~/Documents/UNI/Master/ModSem/PhotOntology/phon/mockup.png]]
 
+\pagebreak
 * SPARQL queries
 Elenco dei fotografi per numero di foto scattate:
 #+begin_example
