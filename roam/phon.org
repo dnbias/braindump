@@ -165,6 +165,9 @@ WHERE {
   FILTER (?author = <phon#DorotheaLange>)
 }
 #+end_example
+Risultato:
+|Migrant Mother |
+
 
 \vspace{5mm}
 Elenco delle foto scattate in California:
