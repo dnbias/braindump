@@ -142,6 +142,8 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 \vspace{10mm} [[~/Documents/UNI/Master/ModSem/PhotOntology/phon/flowchart_interaction.drawio.png]]
 \pagebreak
 
+[[~/Documents/UNI/Master/ModSem/PhotOntology/phon/mockup.png]]
+
 * SPARQL queries
 Elenco dei fotografi per numero di foto scattate:
 #+begin_example
