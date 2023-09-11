@@ -153,8 +153,8 @@ GROUP BY ?author
 ORDER BY ?count
 #+end_example
 Risultato:
-| Dorethea Lange |
-| NASA           |
+| Dorethea Lange | 1 |
+| NASA           | 5 |
 
 \vspace{5mm}
 Elenco delle foto scattate da Dorothea Lange:
