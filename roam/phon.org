@@ -208,4 +208,5 @@ Risultato:
 | Jupiter       |
 | Uranus        |
 | Saturn        |
+| Neptune       |
 | Pale Blue Dot |
