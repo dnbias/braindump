@@ -2,7 +2,7 @@
 :ID:       d9ec0783-4ae7-4c9f-92b0-fe3c8fb09332
 :roam_aliases: "Tecniche e Architetture Avanzate per lo Sviluppo del Software"
 :END:
-#+title: TAASS
+#+title: TAAS
 #+date: [2022-09-19 Mon 10:14]
 #+filetags: university master
 * Informazioni Corso
