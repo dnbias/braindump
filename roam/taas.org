@@ -11,6 +11,7 @@
   - partecipazione obbligatoria
   - a gruppi
   - simili a corsi di management nelle aziende
+  - indicazioni sul backend, frontend a libero sviluppo
 - Obiettivi
   - *Extreme Programming* / *SCRUM*
   - imparare a gestire un progetto
