@@ -12,7 +12,7 @@
   - a gruppi
   - simili a corsi di management nelle aziende
 - Obiettivi
-  - *Extreme Programming*
+  - *Extreme Programming* / *SCRUM*
   - imparare a gestire un progetto
     - identificare l'ambito per poter gestire correttamente lo sviluppo
     - /off the shelf/
