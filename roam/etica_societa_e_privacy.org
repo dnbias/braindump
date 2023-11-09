@@ -6,4 +6,4 @@
 #+filetags: university compsci
 * Principi
 - Direttiva europea 95
-- =GDPR= 2016
+- =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
