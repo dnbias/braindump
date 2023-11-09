@@ -7,3 +7,4 @@
 * Principi
 - Direttiva europea 95
 - =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
+  + introduce il concetto di /pseudonimizzazione/
