@@ -68,8 +68,6 @@ Offre funzionalità /on top of/ i componenti di gestione dati e database
 - ...
 
 
-
-
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
 - niente /reload/ continui o page flicker
