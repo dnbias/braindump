@@ -44,6 +44,8 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
 - niente /reload/ continui o page flicker
 - interazione più veloce e seamless, migliore =UX=
 - il render è gestito da =JavaScript=
+
+È una evoluzione a partire dal sito web classico, carica una singola pagina =HTML=.
 * Docker
 * Spring
 * Angular
