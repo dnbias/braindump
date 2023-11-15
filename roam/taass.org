@@ -43,6 +43,7 @@ Ogni progetto è identificato dal =GAV=
 
 Per progetti di grandi dimensioni si può definire un /parent project/ da cui ereditare la configurazione dall'alto.
 
+=Maven= è opinionato riguardo la struttura del progetto.
 * JEE
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
