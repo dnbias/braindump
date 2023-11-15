@@ -41,7 +41,7 @@
 * JEE
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
-- niente /reload/ continui
+- niente /reload/ continui o page flicker
 - interazione più veloce e seamless
 - il render è gestito da =JavaScript=
 * Docker
