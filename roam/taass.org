@@ -47,7 +47,7 @@ Per progetti di grandi dimensioni si può definire un /parent project/ da cui er
 - /target/, /src/, /...test/, etc
 - =mvn install=
 - =mvn clean=
-- =mvn test=
+- =mvn clean compile=
 * JEE
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
