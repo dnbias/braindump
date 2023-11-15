@@ -32,4 +32,8 @@
 - Planning
   - l'approccio cerca di anticipare i problemi
   - stabilire obiettivi concreti
-  -
+
+* Maven
+- repeatable builds
+- dipendenze transitive
+-
