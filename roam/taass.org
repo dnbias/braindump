@@ -49,6 +49,8 @@ Per progetti di grandi dimensioni si può definire un /parent project/ da cui er
 - =mvn clean=
 - =mvn clean compile=
 * JEE
+Java Enterprise
+- quando ci sono necessità di scalabilità
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
 - niente /reload/ continui o page flicker
