@@ -37,3 +37,7 @@
 - repeatable builds
 - dipendenze transitive
 - gestisce l'ambiente di sviluppo e di esecuzione
+
+* JEE
+* Docker
+* Spring
