@@ -38,6 +38,8 @@
 - dipendenze transitive
 - gestisce l'ambiente di sviluppo e di esecuzione
 
+Ogni progetto è identificato dal =GAV=
+- groupID, artifactID, version
 * JEE
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
