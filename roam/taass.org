@@ -39,6 +39,7 @@
 - gestisce l'ambiente di sviluppo e di esecuzione
 
 * JEE
+* Single Page Application
 * Docker
 * Spring
 * Angular
