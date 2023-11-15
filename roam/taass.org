@@ -42,7 +42,7 @@
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
 - niente /reload/ continui
-- interazione più veloce e seemless
+- interazione più veloce e seamless
 * Docker
 * Spring
 * Angular
