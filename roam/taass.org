@@ -52,6 +52,7 @@ Per progetti di grandi dimensioni si può definire un /parent project/ da cui er
 Java Enterprise
 - quando ci sono necessità di scalabilità
 - adatta allo sviluppo di applicazioni web-based a livello di impresa
+- il competitor Microsoft è =.net=
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
 - niente /reload/ continui o page flicker
