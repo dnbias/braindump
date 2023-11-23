@@ -42,3 +42,4 @@
 * Tecnologia
 - la tecnologia inizia con i Neanderthal e continua fino ora
 - la società inizia con la Mesopotamia 3000 anni prima di Cristo
+  + [[id:f8b8ce61-390e-4e52-aa28-eba54150ab05][Yuval Noah Harari]] riconduce il passaggio alla rivoluzione cognitiva
