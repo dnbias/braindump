@@ -8,3 +8,6 @@
 - Direttiva europea 95
 - =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
   + introduce il concetto di /pseudonimizzazione/
+* Metafora
+- mapping matematico (o meglio *omomorfismo*) tra concetti complessi della vita e un dominio più semplice da rappresentare
+- il nostro cervello utilizza questo meccanismo perché non conosciamo le conseguenze delle nostre azioni, il problema é troppo complesso
