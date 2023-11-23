@@ -21,3 +21,4 @@
 * Conoscenza Esplicita e Tacita
 - teorizzata dal filosofo e economista [[id:1d46fe96-ab72-40c0-8fd4-2ec52e9231f5][Michael Polanyi]][fn::[[id:9beb54c7-e82b-49f3-bc56-214ea3ccb122][Tacit Knowledge]]]
 - la conoscenza di cui siamo coscienti non è tutta, il /gap/ è tacito in quanto non esprimibile dal linguaggio e non accessibile alla coscienza
+  + la c. tacita tratta la pratica, che non è trasmissibile o comunicabile
