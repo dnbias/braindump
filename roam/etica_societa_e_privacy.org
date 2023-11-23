@@ -11,7 +11,7 @@
 * Metafora
 - partendo da [[id:3de0c2e6-55c4-49e8-8932-f04cf95c32a9][Metaphors we live by]]
 - mapping matematico (o meglio *omomorfismo*) tra concetti complessi della vita e un dominio più semplice da rappresentare
-- il nostro cervello utilizza questo meccanismo perché non conosciamo le conseguenze delle nostre azioni, il problema é troppo complesso
+- il nostro cervello utilizza questo meccanismo perché non conosciamo le conseguenze delle nostre azioni, il problema è troppo complesso
   + quindi semplifica
 
 - causalità e tempo sono esempi di domini che non conosciamo bene quanto crediamo e per i quali utilizziamo linguaggio metaforico per farne riferimento
