@@ -28,4 +28,5 @@
   + la nostra dimensione emotiva[fn::[[id:f796e791-2f0b-4552-899a-715d069d87b0][Emotional Intelligence]]]
     - questa intelligenza non la conosciamo, a volte solamente a posteriori o tramite empatia capiamo i nostri stati emotivi
 * Realtà Sociale
+- da [[id:66248d16-1f30-4843-bd65-628b4397d9e1][The Construction of Social Reality]]
 - non è data ma creata da noi
