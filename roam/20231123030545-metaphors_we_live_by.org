@@ -2,4 +2,4 @@
 :ID:       3de0c2e6-55c4-49e8-8932-f04cf95c32a9
 :END:
 #+title: Metaphors we live by
-- Author: [[George Lakoff]]
+- Author: [[id:3d6cd7f2-3471-4ca5-b0b8-0fc0af68c6c6][George Lakoff]]
