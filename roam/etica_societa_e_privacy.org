@@ -44,3 +44,4 @@
 - la società inizia con la Mesopotamia 3000 anni prima di Cristo
   + [[id:f8b8ce61-390e-4e52-aa28-eba54150ab05][Yuval Noah Harari]] riconduce il passaggio alla *rivoluzione cognitiva*[fn::[[id:7f5747ca-c9a8-43f4-ab00-aafe8fcd13be][Sapiens: A brief History of Humankind]]]
     - l'uomo ha cominciato a descrivere entità, scenari e miti che non esistono
+    - quindi non la tecnologia ma l'organizzazione della società attraverso e attorno entità fittizie
