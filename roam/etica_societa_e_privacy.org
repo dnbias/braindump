@@ -14,4 +14,4 @@
 - il nostro cervello utilizza questo meccanismo perché non conosciamo le conseguenze delle nostre azioni, il problema é troppo complesso
   + quindi semplifica
 
-- causalità e tempo sono esempi di domini che non conosciamo bene quanto crediamo e per i quali utilizziamo linguaggio metaforico per
+- causalità e tempo sono esempi di domini che non conosciamo bene quanto crediamo e per i quali utilizziamo linguaggio metaforico per farne riferimento
