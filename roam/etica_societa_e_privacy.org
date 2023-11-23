@@ -11,3 +11,4 @@
 * Metafora
 - mapping matematico (o meglio *omomorfismo*) tra concetti complessi della vita e un dominio più semplice da rappresentare
 - il nostro cervello utilizza questo meccanismo perché non conosciamo le conseguenze delle nostre azioni, il problema é troppo complesso
+  + quindi semplifica
