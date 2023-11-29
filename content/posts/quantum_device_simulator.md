@@ -1,6 +1,5 @@
 +++
 title = "Quantum Device Simulator"
-author = ["Daniel Biasiotto"]
 date = 2022-05-05T23:11:00+02:00
 tags = ["compsci"]
 draft = false

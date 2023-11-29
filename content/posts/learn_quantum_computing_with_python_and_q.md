@@ -1,6 +1,5 @@
 +++
 title = "Learn Quantum Computing with Python and Q#"
-author = ["Daniel Biasiotto"]
 date = 2022-03-29T18:05:00+02:00
 tags = ["book"]
 draft = false

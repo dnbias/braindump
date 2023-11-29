@@ -1,6 +1,5 @@
 +++
 title = "What is This?"
-author = ["Daniel Biasiotto"]
 date = 2022-05-05T11:02:00+02:00
 draft = false
 +++

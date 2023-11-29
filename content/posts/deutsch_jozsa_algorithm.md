@@ -1,6 +1,5 @@
 +++
 title = "Deutsch-Jozsa Algorithm"
-author = ["Daniel Biasiotto"]
 date = 2022-04-02T09:28:00+02:00
 tags = ["algorithms", "compsci"]
 draft = false
