@@ -1,6 +1,5 @@
 +++
 title = "The Shadow of the Torturer"
-author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++
