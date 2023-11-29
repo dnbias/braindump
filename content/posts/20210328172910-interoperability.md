@@ -1,6 +1,5 @@
 +++
 title = "Interoperability"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

@@ -1,6 +1,5 @@
 +++
 title = "Progressive Enhancement"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
