@@ -1,6 +1,5 @@
 +++
 title = "Ricerca Operativa"
-author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -164,11 +163,12 @@ w = x1v1 + x2v2 + ... + xkvk
 
 Un insieme generatore di un sottospazio v e' detto base se e solo se e' anche un insieme libero
 
-
-###### tutte le infinite basi di V hanno la stessa cardinalita' {#tutte-le-infinite-basi-di-v-hanno-la-stessa-cardinalita}
-
 <!--list-separator-->
 
--  detta dimensione di V
+-  tutte le infinite basi di V hanno la stessa cardinalita'
 
-    dimostrabile per il metodo degli scarti successivi
+    <!--list-separator-->
+
+    -  detta dimensione di V
+
+        dimostrabile per il metodo degli scarti successivi

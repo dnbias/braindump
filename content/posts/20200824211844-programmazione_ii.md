@@ -1,6 +1,5 @@
 +++
 title = "Programmazione II"
-author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -38,16 +37,19 @@ Prof: `Cattuto`
 -   Sono cosi' comuni che il compilatore pretende che il programmatore gestisca l'eccezione
     -   o avverta con la parola chiave `throws`
 
+<!--list-separator-->
 
-##### IOException {#ioexception}
+-  IOException
 
+    <!--list-separator-->
 
-###### FileNotFoundException {#filenotfoundexception}
+    -  FileNotFoundException
 
+    <!--list-separator-->
 
-###### EOFException {#eofexception}
+    -  EOFException
 
--   End Of File
+        -   End Of File
 
 
 #### Unchecked {#unchecked}
@@ -56,28 +58,32 @@ Prof: `Cattuto`
     -   origine interna
     -   possiomo prevedere un rimedio oppure no
 
-
-##### RuntimeException {#runtimeexception}
-
-
-###### NullPointerException {#nullpointerexception}
-
-
-###### ArithmeticException {#arithmeticexception}
-
--   / 0
-
-
-###### IllegalArgumentException {#illegalargumentexception}
-
 <!--list-separator-->
 
--  NumberFormatException
+-  RuntimeException
 
-    <a id="code-snippet--Esempio"></a>
-    ```java
-    Integer.parseInt("ciro");
-    ```
+    <!--list-separator-->
+
+    -  NullPointerException
+
+    <!--list-separator-->
+
+    -  ArithmeticException
+
+        -   / 0
+
+    <!--list-separator-->
+
+    -  IllegalArgumentException
+
+        <!--list-separator-->
+
+        -  NumberFormatException
+
+            <a id="code-snippet--Esempio"></a>
+            ```java
+            Integer.parseInt("ciro");
+            ```
 
 
 ### Uso {#uso}

@@ -1,6 +1,5 @@
 +++
 title = "QMK Italian accents"
-author = ["Daniel Biasiotto"]
 date = 2022-05-27T00:40:00+02:00
 tags = ["til"]
 draft = false
