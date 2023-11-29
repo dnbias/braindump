@@ -1,6 +1,5 @@
 +++
 title = "IA-32"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
