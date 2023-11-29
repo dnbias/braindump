@@ -69,7 +69,7 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 - una metafora
 - /commons/
   + [[id:9e5e919e-b895-402d-90ad-0a74c2eadccc][The Tragedy of the Commons]]
-    - la proprietà privata è preferibile a quella comune
+    - /claim/: che la proprietà privata è preferibile a quella comune
       + tutti guardano al proprio /self-interest/ utilizzando il campo comune,
         alla fine non ci sono più risorse per nessuno
   + [[id:d5c23aed-447a-481f-9b25-ce6b118af9c8][Governing the Commons]]
