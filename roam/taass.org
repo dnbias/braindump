@@ -82,3 +82,8 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
 * Docker
 * Spring
 * Angular
+* Service Oriented  Architecture
+- [[id:9a407eb2-8f01-4f30-9ad6-a01e0539615f][SOA]]
+- necessità di integrare servizi eterogenei tra loro di terze parti
+- prima di questa architettura si utilizzavano software
+  + sitoed, closed, monolithic, brittle
