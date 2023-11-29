@@ -87,3 +87,5 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
 - necessità di integrare servizi eterogenei tra loro di terze parti
 - prima di questa architettura si utilizzavano software
   + sitoed, closed, monolithic, brittle
+- dopo
+  + strutturare il software attorno applicazioni composite e composed business process
