@@ -123,3 +123,7 @@ Il modello di uso è
 - publish
 - find
 - bind
+
+Per l'utilizzo di =SOAP=
+- RPC-style, sincrono
+- Document-style, asincrono
