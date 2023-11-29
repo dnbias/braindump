@@ -1,6 +1,5 @@
 +++
 title = "Linguaggi Formali e Traduttori"
-author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -149,39 +148,43 @@ Con cui si definisce un `albero sintattico annotato`
 
 -   i cui nodi possono essere annotati con 0 o piú attributi
 
+<!--list-separator-->
 
-##### Attributi {#attributi}
+-  Attributi
 
--   Sintetizzati
-    Il suo valore dipende da quello di attributi dei figli ed eventualmente
-    da altri attributi di se stesso
--   Ereditati
-    Il suo valore dipende da quello dal padre e dai fratelli del nodo
+    -   Sintetizzati
+        Il suo valore dipende da quello di attributi dei figli ed eventualmente
+        da altri attributi di se stesso
+    -   Ereditati
+        Il suo valore dipende da quello dal padre e dai fratelli del nodo
 
+<!--list-separator-->
 
-##### Grafo delle dipendenze {#grafo-delle-dipendenze}
+-  Grafo delle dipendenze
 
-Alcuni attributi dipendono da altri, questo impone un'ordine tra questi
+    Alcuni attributi dipendono da altri, questo impone un'ordine tra questi
 
--   se il grado contiene dei cicli non é possibile trovare un'ordine di
-    valutazione degli attributi
+    -   se il grado contiene dei cicli non é possibile trovare un'ordine di
+        valutazione degli attributi
 
+<!--list-separator-->
 
-##### S-attribuite {#s-attribuite}
+-  S-attribuite
 
-Contiene solo attributi sintetizzati
+    Contiene solo attributi sintetizzati
 
--   ogni S-attribuita é a sua volta L-attribuita
+    -   ogni S-attribuita é a sua volta L-attribuita
 
+<!--list-separator-->
 
-##### L-attribuite {#l-attribuite}
+-  L-attribuite
 
-Per ogni produzione \\(A\to X\_1 X\_2 ... X\_n\\)
-e ogni attributo ereditato \\(X\_i.e\\) la regola semantica che definisce il valore di \\(X\_i.e\\)
-dipende solo da
+    Per ogni produzione \\(A\to X\_1 X\_2 ... X\_n\\)
+    e ogni attributo ereditato \\(X\_i.e\\) la regola semantica che definisce il valore di \\(X\_i.e\\)
+    dipende solo da
 
--   attributi ereditati da \\(A\\)
--   attributi sintetizzati ed ereditati dai simboli \\(X\_1, X\_2, ... , X\_{i-1}\\) alla sinistra di \\(X\\)
+    -   attributi ereditati da \\(A\\)
+    -   attributi sintetizzati ed ereditati dai simboli \\(X\_1, X\_2, ... , X\_{i-1}\\) alla sinistra di \\(X\\)
 
 
 #### SDT {#sdt}
@@ -198,17 +201,18 @@ Schema di traduzione, variante SDD che rende esplicito l'ordine di valutazione d
             -   essendo eseguite da sinistra verso destra non richiedono la costruzione
                 dell'albero sintattico annotato
 
+<!--list-separator-->
 
-##### da SDD L-attribute a SDT {#da-sdd-l-attribute-a-sdt}
+-  da SDD L-attribute a SDT
 
-data \\(A\to X\_1 X\_2 ... X\_n\\)
+    data \\(A\to X\_1 X\_2 ... X\_n\\)
 
-1.  subito prima di \\(X\_i\\)
-    -   azione semantica che calcola il valore degli attributi ereditati
-        -   che possono solo dipendere da attributi ereditati di \\(A\\) e attributi dei nodi
-            fratelli alla sua sinistra
-2.  in fondo alla produzione
-    1.  azione semantica che calcola il valore degli attributi sintetizzati di \\(A\\)
+    1.  subito prima di \\(X\_i\\)
+        -   azione semantica che calcola il valore degli attributi ereditati
+            -   che possono solo dipendere da attributi ereditati di \\(A\\) e attributi dei nodi
+                fratelli alla sua sinistra
+    2.  in fondo alla produzione
+        a. azione semantica che calcola il valore degli attributi sintetizzati di \\(A\\)
 
 
 #### Traduzione on the fly {#traduzione-on-the-fly}
@@ -298,10 +302,11 @@ calcolare l'insieme di stati raggiungibili solo con transizioni-epsilon
 
     -   il potere riconoscitivo degli epsilon-NFA e' <span class="underline">almeno</span> pari a quello dei DFA/NFA
 
+<!--list-separator-->
 
-##### Teorema {#teorema}
+-  Teorema
 
-Dato un eNFA E esiste un DFA D tale che L(D) = L(E)
+    Dato un eNFA E esiste un DFA D tale che L(D) = L(E)
 
 
 ### Passaggio da `DFA` a `NFA` e viceversa {#passaggio-da-dfa-a-nfa-e-viceversa}
@@ -337,26 +342,29 @@ Definito per induzione
 
 #### Proprietá {#proprietá}
 
+<!--list-separator-->
 
-##### Unione {#unione}
+-  Unione
 
--   Commutativa
--   Associativa
--   Idempotenza
--   Identitá
+    -   Commutativa
+    -   Associativa
+    -   Idempotenza
+    -   Identitá
 
+<!--list-separator-->
 
-##### Concatenazione {#concatenazione}
+-  Concatenazione
 
--   Associativa
--   Identitá
--   Assorbimento
--   distributivitá
+    -   Associativa
+    -   Identitá
+    -   Assorbimento
+    -   distributivitá
 
+<!--list-separator-->
 
-##### Chiusura di Kleene {#chiusura-di-kleene}
+-  Chiusura di Kleene
 
--   Idempotenza
+    -   Idempotenza
 
 
 ### Indistinguibilitá tra stati {#indistinguibilitá-tra-stati}
@@ -412,13 +420,14 @@ Fissato un automa a pila \\(P\\)
 -   ció che rimane da riconoscere nella stringa di input
 -   contenuto della pila dalla cima al fondo (sx a dx)
 
+<!--list-separator-->
 
-##### Mosse {#mosse}
+-  Mosse
 
-relazioni da \\(D.I.\\) a \\(D.I.\\)
-\\(I\vdash\_{P}J\\)
-chiusura riflessiva e transitiva
-\\(I\vdash^{\*}\_{P}J\\)
+    relazioni da \\(D.I.\\) a \\(D.I.\\)
+    \\(I\vdash\_{P}J\\)
+    chiusura riflessiva e transitiva
+    \\(I\vdash^{\*}\_{P}J\\)
 
 
 #### Linguaggio Accettato {#linguaggio-accettato}
@@ -544,48 +553,51 @@ Esiste almeno un Automa A che lo riconosce
 
 `def` Un Linguaggio riconoscibile da un `DFA`
 
+<!--list-separator-->
 
-##### I linguaggi regolari sono chiusi rispetto all'operazione di unione {#i-linguaggi-regolari-sono-chiusi-rispetto-all-operazione-di-unione}
+-  I linguaggi regolari sono chiusi rispetto all'operazione di unione
 
-'Collego' i due automi deterministici attraverso uno stato q0 che con epsilon-transizioni passa da uno o dall'altro
+    'Collego' i due automi deterministici attraverso uno stato q0 che con epsilon-transizioni passa da uno o dall'altro
 
+<!--list-separator-->
 
-##### I linguaggi regolari sono chiusi rispetto all'operazione di concatenazione {#i-linguaggi-regolari-sono-chiusi-rispetto-all-operazione-di-concatenazione}
+-  I linguaggi regolari sono chiusi rispetto all'operazione di concatenazione
 
-'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
+    'Collego' lo stato finale (che non sara' piu' finale) del e-NFA corrispondente al primo automa con quello iniziale di quello e-NFA del successivo, con una epsilon-transizione
 
+<!--list-separator-->
 
-##### Chiusura `dim` {#chiusura-dim}
+-  Chiusura `dim`
 
-p- \\(L\cup L^{'}\\)
+    p- \\(L\cup L^{'}\\)
 
--   Dati \\(E\_{1}\\) e \\(E\_{2}\\)
-    -   Si dimostra che \\(E\_{1}+E{\_2}\\) genera \\(L\cupL^{'}\\)
-    -   Essendo quella ancora un'espressione regolare anche il linguaggio generato sará regolare
--   \\(LL^{'}\\)
--   Simile all'unione
--   \\(not{L}\\)
--   \\(not{L}= \Sigma^{\*}-L\\)
--   si crea un automa \\(B = (Q,\Sigma,\delta,q\_{0},Q-F)\\)
-    -   abbiamo complementato l'insieme degli stati finali
--   i\\(L\cap L^{'}\\)
--   Si utilizzano le leggi di De Morgan
-    -   ci si riconduce al caso dell'unione e della complementazione
--   O si construisce un automa \\(B\\) che riconosce una simulazione dei due automi iniziali \\(A\_1\\) e \\(A\_2\\)
--   \\(L -L^{'}\\)
--   \\(L\_1 - L\_2 = L\_1 \cap notL\_2\\)
--   \\(L^{R}\\)
-    -   L rovesciato
--   Si ricava un \\(E^R\\) per induzione
+    -   Dati \\(E\_{1}\\) e \\(E\_{2}\\)
+        -   Si dimostra che \\(E\_{1}+E{\_2}\\) genera \\(L\cupL^{'}\\)
+        -   Essendo quella ancora un'espressione regolare anche il linguaggio generato sará regolare
+    -   \\(LL^{'}\\)
+    -   Simile all'unione
+    -   \\(not{L}\\)
+    -   \\(not{L}= \Sigma^{\*}-L\\)
+    -   si crea un automa \\(B = (Q,\Sigma,\delta,q\_{0},Q-F)\\)
+        -   abbiamo complementato l'insieme degli stati finali
+    -   i\\(L\cap L^{'}\\)
+    -   Si utilizzano le leggi di De Morgan
+        -   ci si riconduce al caso dell'unione e della complementazione
+    -   O si construisce un automa \\(B\\) che riconosce una simulazione dei due automi iniziali \\(A\_1\\) e \\(A\_2\\)
+    -   \\(L -L^{'}\\)
+    -   \\(L\_1 - L\_2 = L\_1 \cap notL\_2\\)
+    -   \\(L^{R}\\)
+        -   L rovesciato
+    -   Si ricava un \\(E^R\\) per induzione
 
-    \\(\emptyset^R=\emptyset\\)
-    \\(\epsilon^R=\epsilon\\)
-    \\(a^R=a\\)
-    \\((E\_1+E\_2)^R={E\_1}^R+{E\_2}^R\\)
-    \\((E\_1 E\_2)^R = {E\_2}^R {E\_1}^R\\)
-    \\((E^\*)^R = (E^R)^\*\\)
-    Facile poi dimostrare che \\(L(E^R) = L(E)^R\\)
-    Tutti questi sono ancora regolari
+        \\(\emptyset^R=\emptyset\\)
+        \\(\epsilon^R=\epsilon\\)
+        \\(a^R=a\\)
+        \\((E\_1+E\_2)^R={E\_1}^R+{E\_2}^R\\)
+        \\((E\_1 E\_2)^R = {E\_2}^R {E\_1}^R\\)
+        \\((E^\*)^R = (E^R)^\*\\)
+        Facile poi dimostrare che \\(L(E^R) = L(E)^R\\)
+        Tutti questi sono ancora regolari
 
 
 ### Linguaggi non Regolari {#linguaggi-non-regolari}
@@ -602,26 +614,27 @@ Per ogni linguaggio regolare \\(L\\) esiste \\(n\\) appartenente a \\(N\\) tale 
     -   Esempio
         -   \\(L=\\{a^kb^k \mid k >= 0\\}\\) non é regolare
 
+<!--list-separator-->
 
-##### dim {#dim}
+-  dim
 
--   \\(L\\) regolare
--   \\(A = (Q,\Sigma,\delta,q\_0,F)\\) tc \\(L=L(A)\\)
--   \\(n=|Q|\\)
--   \\(|w|>=n\\) tc \\(w=a\_1a\_2...a\_m\\) con \\(m>=n\\)
--   Dopo \\(m\\) passaggi lo stato \\(q\_m\\) deve essere `finale` per definizione
--   Il numero di stati attraversati sará \\(m+1\\)
--   \\(m>=n\\) implica \\(m+1>n\\) quindi gli stati attraversati non possono essere tutti distinti
--   \\(q\_i =q\_j\\) ( \\(i<j\\) ) é il primo `stato che si ripete` nel cammino dell'automa
+    -   \\(L\\) regolare
+    -   \\(A = (Q,\Sigma,\delta,q\_0,F)\\) tc \\(L=L(A)\\)
+    -   \\(n=|Q|\\)
+    -   \\(|w|>=n\\) tc \\(w=a\_1a\_2...a\_m\\) con \\(m>=n\\)
+    -   Dopo \\(m\\) passaggi lo stato \\(q\_m\\) deve essere `finale` per definizione
+    -   Il numero di stati attraversati sará \\(m+1\\)
+    -   \\(m>=n\\) implica \\(m+1>n\\) quindi gli stati attraversati non possono essere tutti distinti
+    -   \\(q\_i =q\_j\\) ( \\(i<j\\) ) é il primo `stato che si ripete` nel cammino dell'automa
 
-Allora concludiamo identificando \\(x,y,z\\)
+    Allora concludiamo identificando \\(x,y,z\\)
 
--   \\(x=a\_1a\_2...a\_i\\)
--   \\(y=a\_{i+1}a\_{i+2}...a\_j\\)
--   \\(z=a\_{j+1}a\_{j+2}...a\_m\\)
--   \\(y!=\epsilon\\) in quanto \\(i<j\\)
--   \\(|xy|<=n\\) in quanto \\(q\_i=q\_j\\) é il primo stato che si ripete e sono al massimo \\(n+1\\)
--   \\(xy^kz\\) appartiene a \\(L\\) per ogni \\(k>=0\\)
+    -   \\(x=a\_1a\_2...a\_i\\)
+    -   \\(y=a\_{i+1}a\_{i+2}...a\_j\\)
+    -   \\(z=a\_{j+1}a\_{j+2}...a\_m\\)
+    -   \\(y!=\epsilon\\) in quanto \\(i<j\\)
+    -   \\(|xy|<=n\\) in quanto \\(q\_i=q\_j\\) é il primo stato che si ripete e sono al massimo \\(n+1\\)
+    -   \\(xy^kz\\) appartiene a \\(L\\) per ogni \\(k>=0\\)
 
 
 ### Linguaggi Liberi dal Contesto {#linguaggi-liberi-dal-contesto}
@@ -684,39 +697,42 @@ Data una grammatica \\(G = (V,T,P,S)\\) gli alberi sintattici di \\(G\\):
 
 Il `prodotto` é la stringa ottenuta concatenando(sx verso dx) le etichette di tutte le foglie
 
+<!--list-separator-->
 
-##### Teorema {#teorema}
+-  Teorema
 
-\\(A\to\_{G}^{\*} \alpha\\) se e solo se esiste un albero sintattico di \\(G\\) con radice \\(A\\) e prodotto \\(\alpha\\)
+    \\(A\to\_{G}^{\*} \alpha\\) se e solo se esiste un albero sintattico di \\(G\\) con radice \\(A\\) e prodotto \\(\alpha\\)
 
+<!--list-separator-->
 
-##### Risoluzione delle ambiguitá (grammatiche in forma infissa) {#risoluzione-delle-ambiguitá--grammatiche-in-forma-infissa}
+-  Risoluzione delle ambiguitá (grammatiche in forma infissa)
 
--   `Precedenza` degli operatori
--   `Associativitá` degli operatori
-    -   per operatori associativi questo non é un problema
-    -   lo é per altri operatori
+    -   `Precedenza` degli operatori
+    -   `Associativitá` degli operatori
+        -   per operatori associativi questo non é un problema
+        -   lo é per altri operatori
 
-`Soluzione ad hoc`
-Utilizziamo associativitá a sinistra, sbilanciamo le espressioni e le stratifichiamo
+    `Soluzione ad hoc`
+    Utilizziamo associativitá a sinistra, sbilanciamo le espressioni e le stratifichiamo
 
--   Espressione = somma di termini
--   Termine = prodotto di fattori
--   Fattore = costante o espressione tra parentesi
+    -   Espressione = somma di termini
+    -   Termine = prodotto di fattori
+    -   Fattore = costante o espressione tra parentesi
 
-Nuova grammatica:
-    \\((\\{E,T,F\\},\\{0,1,...,9,+,\*,(,)\\},P,E)\\)
-    Produzioni:
+    Nuova grammatica:
+        \\((\\{E,T,F\\},\\{0,1,...,9,+,\*,(,)\\},P,E)\\)
+        Produzioni:
 
--   \\(E\to T \mid E+T\\)
--   \\(T\to F \mid T \times F\\)
--   \\(F\to0\mid1\mid...\mid9\mid(E)\\)
+    -   \\(E\to T \mid E+T\\)
+    -   \\(T\to F \mid T \times F\\)
+    -   \\(F\to0\mid1\mid...\mid9\mid(E)\\)
 
+<!--list-separator-->
 
-##### Linguaggi inerentemente ambigui {#linguaggi-inerentemente-ambigui}
+-  Linguaggi inerentemente ambigui
 
-\\[L = \\{a^n b^n c^m d^m \mid n \ge 1, m \ge 1\\} \cup \\{a^n b^m c^m d^n \mid n\ge 1, m \ge 1\\}\\]
-Qualunque Grammatica che genera \\(L\\) ha sempre almeno due derivazioni canoniche distinte che generano una stringa della forma \\[ a^n b^n c^n d^n \\]
+    \\[L = \\{a^n b^n c^m d^m \mid n \ge 1, m \ge 1\\} \cup \\{a^n b^m c^m d^n \mid n\ge 1, m \ge 1\\}\\]
+    Qualunque Grammatica che genera \\(L\\) ha sempre almeno due derivazioni canoniche distinte che generano una stringa della forma \\[ a^n b^n c^n d^n \\]
 
 
 #### Pumping Lemma {#pumping-lemma}
@@ -724,49 +740,53 @@ Qualunque Grammatica che genera \\(L\\) ha sempre almeno due derivazioni canonic
 
 #### Chiusura {#chiusura}
 
+<!--list-separator-->
 
-##### Unione &amp; Concatenazione {#unione-and-concatenazione}
+-  Unione &amp; Concatenazione
 
-<span class="underline">SI</span>
-dati \\(L\_1 = L(G\_1)\\) e \\(L\_2 = L(G\_2)\\)
-dove \\(V\_1 \cap V\_2 = \emptyset\\)
-costruiamo la grammatica
-\\((V\_1 \cup V\_2, T\_1\cup T\_2, P\_1 \cup P\_2 \cup \\{S\to S\_1 \mid S\_2\\},S)\\)
-che genera \\(L\_1 \cup L\_2\\)
-e la grammatica
-\\((V\_1 \cup V\_2, T\_1\cap T\_2, P\_1 \cap P\_2 \cap \\{S\to S\_1 S\_2\\},S)\\)
-che genera \\(L\_1 L\_2\\)
+    <span class="underline">SI</span>
+    dati \\(L\_1 = L(G\_1)\\) e \\(L\_2 = L(G\_2)\\)
+    dove \\(V\_1 \cap V\_2 = \emptyset\\)
+    costruiamo la grammatica
+    \\((V\_1 \cup V\_2, T\_1\cup T\_2, P\_1 \cup P\_2 \cup \\{S\to S\_1 \mid S\_2\\},S)\\)
+    che genera \\(L\_1 \cup L\_2\\)
+    e la grammatica
+    \\((V\_1 \cup V\_2, T\_1\cap T\_2, P\_1 \cap P\_2 \cap \\{S\to S\_1 S\_2\\},S)\\)
+    che genera \\(L\_1 L\_2\\)
 
+<!--list-separator-->
 
-##### Intersezione {#intersezione}
+-  Intersezione
 
-<span class="underline">NO tra 2 Linguaggi Liberi</span>
-\\(L\_1 = \\{a^n b^n c^m \mid \ge 0\\}\\)
-\\(L\_1 = \\{a^m b^n c^n \mid \ge 0\\}\\)
-Sono liberi ma
-\\(L\_1 \cap L\_2 = \\{a^n b^n c^n \mid n \ge 0\\}\\)
-Non é libero, dimostrabile con il pumping lemma
-<span class="underline">SI tra linguaggio Libero e linguaggio Regolare</span>
-NB: L'intersezione non é piú un linguaggio regolare
-es.
-\\(L = \\{a^n b^n \mid n \ge 0\\}\\) e \\(R = L(a^\* b^\*)\\)
-\\(L\cap R = L\\) il quale non é regolare
+    <span class="underline">NO tra 2 Linguaggi Liberi</span>
+    \\(L\_1 = \\{a^n b^n c^m \mid \ge 0\\}\\)
+    \\(L\_1 = \\{a^m b^n c^n \mid \ge 0\\}\\)
+    Sono liberi ma
+    \\(L\_1 \cap L\_2 = \\{a^n b^n c^n \mid n \ge 0\\}\\)
+    Non é libero, dimostrabile con il pumping lemma
+    <span class="underline">SI tra linguaggio Libero e linguaggio Regolare</span>
+    NB: L'intersezione non é piú un linguaggio regolare
+    es.
+    \\(L = \\{a^n b^n \mid n \ge 0\\}\\) e \\(R = L(a^\* b^\*)\\)
+    \\(L\cap R = L\\) il quale non é regolare
 
+<!--list-separator-->
 
-##### Complemento &amp; Differenza {#complemento-and-differenza}
+-  Complemento &amp; Differenza
 
-<span class="underline">NO</span>
-Se fossero chiusi per complemento allora
-\\(L\_1 \cap L\_2 = \overline{\overline{L\_1 \cap L\_2}} = \overline{\overline{L\_1} \cup \overline{L\_2}}\\)
-Contrario a ció dimostrato
-Il complemento é esprimibile per differenze e quindi nemmeno la differenza é chiusa
+    <span class="underline">NO</span>
+    Se fossero chiusi per complemento allora
+    \\(L\_1 \cap L\_2 = \overline{\overline{L\_1 \cap L\_2}} = \overline{\overline{L\_1} \cup \overline{L\_2}}\\)
+    Contrario a ció dimostrato
+    Il complemento é esprimibile per differenze e quindi nemmeno la differenza é chiusa
 
+<!--list-separator-->
 
-##### Inversione {#inversione}
+-  Inversione
 
-<span class="underline">SI</span>
-\\(G^R = (V,T,P^RS)\\) dove \\(P^R= \\{A \to \alpha^R\mid A \to \alpha \in P\\}\\)
-Si dimostra che \\(L(G^R) = L(G)^R\\)
+    <span class="underline">SI</span>
+    \\(G^R = (V,T,P^RS)\\) dove \\(P^R= \\{A \to \alpha^R\mid A \to \alpha \in P\\}\\)
+    Si dimostra che \\(L(G^R) = L(G)^R\\)
 
 
 ## JVM {#jvm}
