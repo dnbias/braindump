@@ -70,3 +70,4 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 - /commons/
   + [[id:9e5e919e-b895-402d-90ad-0a74c2eadccc][The Tragedy of the Commons]]
   + [[id:d5c23aed-447a-481f-9b25-ce6b118af9c8][Governing the Commons]]
+- questo deriva dal concetto che le produzioni  dell'ingegno siano di proprietà di tutti
