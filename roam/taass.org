@@ -108,4 +108,8 @@ Questi =web-service= sono
 - encapsulated
 - loosely coupled
 - contracted software objects via standard protocols
--
+- disponibili tramite web
+- utilizzano messaggi =XML= standardizzati
+- indipendenti da =OS= o linguaggio
+- self describing via =XML=
+- easily discoverable
