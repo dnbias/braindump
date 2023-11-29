@@ -1,5 +1,6 @@
 +++
 title = "Cosa é e come funziona il computer quantistico?"
+author = ["Daniel Biasiotto"]
 tags = ["article"]
 draft = false
 +++

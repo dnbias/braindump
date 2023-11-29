@@ -1,5 +1,6 @@
 +++
 title = "The Fading Dream of the Computer Brain"
+author = ["Daniel Biasiotto"]
 tags = ["article"]
 draft = false
 +++

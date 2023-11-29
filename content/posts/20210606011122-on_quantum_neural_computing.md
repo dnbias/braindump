@@ -1,5 +1,6 @@
 +++
 title = "On quantum neural computing"
+author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

@@ -1,5 +1,6 @@
 +++
 title = "Ricerca Operativa"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++

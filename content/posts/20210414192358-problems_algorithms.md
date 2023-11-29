@@ -1,5 +1,6 @@
 +++
 title = "Problems & Algorithms"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 
@@ -305,8 +306,8 @@ return A
     1.  for     - `n`
     2.  `<-`      - `n-1`
     3.  while   - \\(\sum\_{i}^{n}{t\_i-1}\\)
-        a. 1 nel caso migliore
-        b. i nel caso peggiore
+        1.  1 nel caso migliore
+        2.  i nel caso peggiore
     4.  scambio - \\(\sum\_{i}^{n}{t\_i-1}\\)
 
     **Worst**:

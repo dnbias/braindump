@@ -1,5 +1,6 @@
 +++
 title = "The Claw of the Conciliator"
+author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

@@ -1,5 +1,6 @@
 +++
 title = "Come si fa una Tesi di Laurea"
+author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

@@ -1,5 +1,6 @@
 +++
 title = "Meditations On Moloch"
+author = ["Daniel Biasiotto"]
 tags = ["essay"]
 draft = false
 +++

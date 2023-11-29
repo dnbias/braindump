@@ -1,5 +1,6 @@
 +++
 title = "Apocrypha Discordia"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 

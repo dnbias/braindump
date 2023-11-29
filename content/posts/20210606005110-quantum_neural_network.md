@@ -1,5 +1,6 @@
 +++
 title = "Quantum Neural Network"
+author = ["Daniel Biasiotto"]
 tags = ["paper"]
 draft = false
 +++

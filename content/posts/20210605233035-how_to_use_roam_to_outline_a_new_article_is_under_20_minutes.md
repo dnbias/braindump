@@ -1,5 +1,6 @@
 +++
 title = "How to Use Roam to Outline a New Article is Under 20 Minutes"
+author = ["Daniel Biasiotto"]
 tags = ["video"]
 draft = false
 +++

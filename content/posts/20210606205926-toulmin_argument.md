@@ -1,5 +1,6 @@
 +++
 title = "Toulmin Argument"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 

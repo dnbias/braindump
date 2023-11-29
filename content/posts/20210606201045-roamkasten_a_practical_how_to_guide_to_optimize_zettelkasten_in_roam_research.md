@@ -1,5 +1,6 @@
 +++
 title = "Roamkasten - a practical how to guide to optimize Zettelkasten in Roam Research"
+author = ["Daniel Biasiotto"]
 tags = ["article"]
 draft = false
 +++

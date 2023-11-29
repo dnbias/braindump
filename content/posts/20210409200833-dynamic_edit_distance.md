@@ -1,5 +1,6 @@
 +++
 title = "Dynamic Edit Distance"
+author = ["Daniel Biasiotto"]
 tags = ["university", "project"]
 draft = false
 +++

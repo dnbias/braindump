@@ -1,5 +1,6 @@
 +++
 title = "Why Browse the web on Emacs"
+author = ["Daniel Biasiotto"]
 tags = ["article"]
 draft = false
 +++

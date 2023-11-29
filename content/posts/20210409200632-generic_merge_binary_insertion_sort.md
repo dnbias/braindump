@@ -1,5 +1,6 @@
 +++
 title = "Generic Merge-Binary Insertion Sort"
+author = ["Daniel Biasiotto"]
 tags = ["university", "project"]
 draft = false
 +++

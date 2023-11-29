@@ -1,5 +1,6 @@
 +++
 title = "Conor White-Sullivan"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 
