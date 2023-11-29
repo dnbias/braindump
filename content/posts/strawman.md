@@ -1,6 +1,5 @@
 +++
 title = "Strawman"
-author = ["Daniel Biasiotto"]
 date = 2022-01-02T23:46:00+01:00
 tags = ["bias", "concept"]
 draft = false
