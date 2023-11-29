@@ -1,6 +1,5 @@
 +++
 title = "Learn In Public"
-author = ["Daniel Biasiotto"]
 date = 2021-12-22T23:59:00+01:00
 tags = ["concept", "mentalModel"]
 draft = false

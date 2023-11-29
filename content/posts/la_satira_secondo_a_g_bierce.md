@@ -1,6 +1,5 @@
 +++
 title = "La Satira secondo A. G. Bierce"
-author = ["Daniel Biasiotto"]
 date = 2021-12-27T16:10:00+01:00
 tags = ["article"]
 draft = false
