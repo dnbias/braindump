@@ -4,7 +4,7 @@
 :END:
 #+title: TAAS
 #+date: [2022-09-19 Mon 10:14]
-#+filetags: university master
+#+filetags: university master compsci
 * Informazioni Corso
 - Giovanna Petrone
 - Laboratorio
