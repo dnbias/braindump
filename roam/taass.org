@@ -103,3 +103,9 @@ Uno shift fondamentale dell'uso del web
 - web application-centric
   + scambi inter-application
   + necessità di esporre tramite uno standard dei servizi sul web
+
+Questi =web-service= sono
+- encapsulated
+- loosely coupled
+- contracted software objects via standard protocols
+-
