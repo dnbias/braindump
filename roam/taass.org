@@ -118,6 +118,7 @@ Gli  standard =XML= sono:
 - [[id:732177e4-9a00-43f9-8201-f8d7503c7e49][SOAP]], simple object access protocol
 - [[id:6b8ae378-aab8-4bc2-abd7-b41bfaee6abe][WSDL]], web services description language
 - [[id:f6b50988-4a42-4af6-bcca-aa101b318c00][UDDI]], universal description, discovery and integration
+  + Microsoft
 
 Il modello di uso è
 - publish
