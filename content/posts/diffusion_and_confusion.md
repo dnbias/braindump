@@ -1,6 +1,5 @@
 +++
 title = "Diffusione e Confusione"
-author = ["Daniel Biasiotto"]
 date = 2022-03-10T14:53:00+01:00
 draft = false
 +++
