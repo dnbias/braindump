@@ -1,6 +1,5 @@
 +++
 title = "Programming Language Foundation in Agda"
-author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++
