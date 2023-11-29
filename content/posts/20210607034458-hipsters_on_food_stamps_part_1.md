@@ -1,6 +1,5 @@
 +++
 title = "Hipsters on Food Stamps, Part 1"
-author = ["Daniel Biasiotto"]
 tags = ["article"]
 draft = false
 +++
