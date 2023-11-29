@@ -1,6 +1,5 @@
 +++
 title = "How to Take Smart Notes"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

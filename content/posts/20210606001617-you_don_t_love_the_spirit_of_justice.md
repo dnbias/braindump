@@ -1,6 +1,5 @@
 +++
 title = "You don't love the Spirit Of Justice"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
