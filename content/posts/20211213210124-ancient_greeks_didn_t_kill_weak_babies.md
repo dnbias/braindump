@@ -1,6 +1,5 @@
 +++
 title = "Ancient Greeks didn't kill 'weak' babies"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
