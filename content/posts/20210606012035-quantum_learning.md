@@ -1,6 +1,5 @@
 +++
 title = "Quantum Learning"
-author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++
