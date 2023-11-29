@@ -1,8 +1,8 @@
 ;; https://github.com/jethrokuan/braindump/blob/master/publish.el
 (require 'find-lisp)
-;; (require 'ox-hugo)
-;; (projectile-mode -1)
-;; (dtrt-indent-mode -1)
+(require 'ox-hugo)
+(projectile-mode -1)
+(dtrt-indent-mode -1)
 (recentf-mode -1)
 
 
