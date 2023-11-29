@@ -95,4 +95,4 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
   + test e redeploy sono necessari solamente per il modulo aggiornato successivamente
   + i servizi vengono poi orchestrati per il funzionamento delle applicazioni sovrastanti
 
-*Web service  wrapper* sono stati utilizzati per creare   interfacce  tra una  lingua franca (=XML=) e applicazioni in un qualsiasi linguaggio.
+*Web service wrapper* sono stati utilizzati per creare interfacce tra una lingua franca (=XML=) e applicazioni in un qualsiasi linguaggio.
