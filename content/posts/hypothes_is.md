@@ -1,6 +1,5 @@
 +++
 title = "Hypothes.is"
-author = ["Daniel Biasiotto"]
 date = 2021-12-23T00:29:00+01:00
 tags = ["tool"]
 draft = false
