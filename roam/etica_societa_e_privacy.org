@@ -67,7 +67,7 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 
 ** Proprietà Intellettuale
 - una metafora
-- /commons/
+- /commons/ - beni comuni
   + [[id:9e5e919e-b895-402d-90ad-0a74c2eadccc][The Tragedy of the Commons]]
     - /claim/: che la proprietà privata è preferibile a quella comune
       + tutti guardano al proprio /self-interest/ utilizzando il campo comune,
