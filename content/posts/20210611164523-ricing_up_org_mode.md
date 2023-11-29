@@ -1,6 +1,5 @@
 +++
 title = "Ricing up Org Mode"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
