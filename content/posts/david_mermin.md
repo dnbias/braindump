@@ -1,6 +1,5 @@
 +++
 title = "David Mermin"
-author = ["Daniel Biasiotto"]
 date = 2022-01-03T15:49:00+01:00
 tags = ["author"]
 draft = false
