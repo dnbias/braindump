@@ -96,3 +96,9 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
   + i servizi vengono poi orchestrati per il funzionamento delle applicazioni sovrastanti
 
 *Web service wrapper* sono stati utilizzati per creare interfacce tra una lingua franca (=XML=) e applicazioni in un qualsiasi linguaggio.
+
+Uno shift fondamentale dell'uso del web
+- web human-centric
+  + maggioranza delle transazioni web iniziate da un umano
+- web application-centric
+  + scambi inter-application
