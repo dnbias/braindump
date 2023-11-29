@@ -84,4 +84,6 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 - una sorta di assoluzione dall'etica tramite sovrastrutture e costrutti sociali
 ** Linguaggio
 - descrive il vero? no
+- può formulare domande, ordini, richieste
+  + tramite formule linguistiche definiamo e cambiamo le regole che regolano il mondo in cui agiamo
 - [[id:43529421-7bee-47e3-9890-1356d1c6eb59][How to Do Things with Words]]
