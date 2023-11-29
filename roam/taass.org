@@ -126,4 +126,5 @@ Il modello di uso è
 
 Per l'utilizzo di =SOAP=
 - RPC-style, sincrono
+  + /remote procedure call/
 - Document-style, asincrono
