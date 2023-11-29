@@ -43,6 +43,7 @@
 - competizione tra giusto e accettabile
   + in  una competizione il vantaggio strategico si trova in ciò che è accettabile
 - teorie scientifiche e modi di fare possiedono una inerzia che supera anche il  momento in cui vengono smentite
+  + sono creazioni umane e per questo convenzionali e contengono i bias del nostro ragionamento
 ** Tecnologia
 - la tecnologia inizia con i Neanderthal e continua fino ora
 - la società inizia con la Mesopotamia 3000 anni prima di Cristo
