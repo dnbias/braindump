@@ -3,4 +3,4 @@
 :END:
 #+title: New Republic
 #+date: [2022-09-24 Sat 00:16]
-- [[www.newrepublic.com]]
+- [[http:www.newrepublic.com]]
