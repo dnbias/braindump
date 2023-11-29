@@ -63,3 +63,4 @@ Le prime sono state le normative
 I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 - potremmo rifarci al codice romano
 - come regolare la responsabilità da parte di un robot
+  + ora una macchina semi-autonoma deve essere /supervisionata/ dal utente, se non c'è la colpa è dell'umano
