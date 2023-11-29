@@ -95,3 +95,4 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
       + non abbiamo un modello per cui tanto vale lasciare tutto al mercato
     - il comunismo ha fallito per mancanza di informazione
       + la tecnologia in un certo senso potrebbe risolvere il problema, una =AI= può predire e governare un sistema anche senza un modello
+        - una sorta di comunismo in mano a multinazionali private
