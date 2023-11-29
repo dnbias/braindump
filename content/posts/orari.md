@@ -1,6 +1,5 @@
 +++
 title = "Orari"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
