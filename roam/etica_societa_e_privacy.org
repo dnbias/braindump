@@ -59,3 +59,7 @@ Le prime sono state le normative
 - codice romano, primo codice moderno
   + lo schiavo era gestito con una complessa legislazione
     - gli schiavi svolgevano lavori e stipulavano contratti a loro volta a nome del padrone
+
+I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
+- potremmo rifarci al codice romano
+- come regolare la responsabilità da parte di un robot
