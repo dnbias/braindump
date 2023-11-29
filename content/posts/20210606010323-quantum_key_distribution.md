@@ -1,6 +1,5 @@
 +++
 title = "Quantum Key Distribution"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
