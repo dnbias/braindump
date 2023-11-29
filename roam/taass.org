@@ -102,3 +102,4 @@ Uno shift fondamentale dell'uso del web
   + maggioranza delle transazioni web iniziate da un umano
 - web application-centric
   + scambi inter-application
+  + necessità di esporre tramite uno standard dei servizi sul web
