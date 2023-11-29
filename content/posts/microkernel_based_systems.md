@@ -1,0 +1,423 @@
++++
+title = "Microkernel Based Systems"
+author = ["Daniel Biasiotto"]
+date = 2023-02-27T10:56:00+01:00
+tags = ["erasmus", "university", "compsci"]
+draft = false
++++
+
+## Kernel Level {#kernel-level}
+
+
+### Interfacing with Hardware {#interfacing-with-hardware}
+
+-   undefined behavior is alright in output
+    -   tell the users not to depend on the last bits of the output
+-   not alright in input
+    -   you can define different behaviors based on the last bit
+
+For kernel can
+
+-   program a part of memory for its use
+-   it's basically just another application
+
+
+### Linking and loading {#linking-and-loading}
+
+You build the kernel outside of a standard linux environment
+
+-   no dynamic liking
+-   no RTTI
+-   no stdlib
+
+
+### Thread Switch {#thread-switch}
+
+-   userlevel &rarr; kernellevel
+-   save the registers in `TCB`
+    -   to switch back restore those registers
+
+
+### IPC {#ipc}
+
+To send messages between threads you don't save and restore those register.
+The receiving end will declare beforehand to the kernel to be willing to this and ready to have its registers overwritten.
+
+-   to avoid priority inversions if high priority `T` call and wait on low priority `T` the latter get a priority boost to not let the high one hanging
+
+
+### In Multiprocessor System {#in-multiprocessor-system}
+
+-   ways of interaction
+    -   shared memory
+    -   inter-processor interrupts
+    -   direct memory access
+        -   usually not available
+
+Different interfaces are possible.
+
+-   **migrating threads**
+    -   a caller thread could give its resources to the callee, which doesn't even need the data structure itself.
+-   **asynchronous help**
+    -   caller thread waits or gets back to the callee when he needs the product of the call
+
+Option 2 is _local communication partners_
+
+-   pool of workers, with a middle thread deciding to whom to dispatch
+-   3-way communication
+    -   `inspect`
+    -   `forward`
+-   **portals**, more efficient way to remove the middleman
+    -   hides away information to the caller, it doesn't need to know which CPU it runs on
+    -   receivers wait at the portal
+    -   queue sender if no receiver is waiting
+    -   queue receivers if no message is pending
+    -   policy? the queue adds some problems
+        -   round robin
+        -   LIFO
+        -   queue
+
+`MESI` cache lines
+
+-   modified
+-   exclusive
+-   shared
+-   invalid
+
+Evict data into `L2`
+
+
+### Costs {#costs}
+
+-   most costly are `sysenter` and `sysexit`
+-   can we avoid them?
+-   `LIPC`
+    -   tells the kernel to switch context
+    -   when preemption is needed lazily switch kernel context
+
+
+### Memory management {#memory-management}
+
+-   Loader
+    -   Construct the address space for applications.
+-   Copy on write
+    -   create Data memory as read only and replace with private writable copy on the first write
+-   filesystem
+-   anon
+    -   provides resources
+-   HDD driver
+
+
+#### Cache Coloring {#cache-coloring}
+
+Index (middle part of the address) as a color indicating what row of cache to write (cache set).
+This way other processes cannot interfere with other colors.
+
+This can be done at page level too by coloring in regard to the page offset.
+
+
+#### Memory for the kernel itself {#memory-for-the-kernel-itself}
+
+-   prevent denial of service through memory exhaustion
+    -   quotas
+
+
+### Segments {#segments}
+
+Protezione dei segmenti fatta dalla `MPU`.
+Mapping of **data** and **code** with permissions.
+
+
+### Page table {#page-table}
+
+Multi-level, basically a tree data-structure with 512 entry per-root for example.
+Traverse the data structure using the 2 indexes and the offset
+
+
+### Interface {#interface}
+
+-   cannot have `MM` directly map virtual-physical memory
+    -   for access to kernel memory
+    -   also this would not abstract hardware architecture
+
+A good interface that resolves the problem of having different `FM` that can overlap and conflict is one that just gives directly the `PT` entry to the receiver of the memory.
+This is a `map` operation, the contract for this is that the `MM` can revoke the mapping at any time. When the system is running out of memory and needs it to give to other processes.
+For pages getting revoked a `FM` could **pin** a page that is important will not change in the moment (maybe during a `DMA`)[^fn:1].
+
+The concept of mapping was known before as **capability**
+
+-   pointer + access rights
+
+Mapping is basically copying capability into a destination with reduced access rights.
+
+-   `diminish`
+-   `grant` (`L4` map)
+-   `revoke` (`L4` unmap)
+
+This is more general in the sense that allows having **capabilities** toward all kind of objects, like threads.
+Revocation has to resolve even indirect mappings, if a lower level removes access rights **all** higher levels need to have them removed.
+This constructs a key of dependencies that need to be traversed to access all the page tables entries to change the access rights.
+It is possible for an attacker to create a infinite tree, there is no good way to bound such a `revoke` operation.
+You could bound the tree depth, this creates problems for developing applications around that.
+The main problem remains that to start and end with a consistent system you need the operation to be preemptive.
+
+On a forward pass through the tree you can remove the privileges so that children do not start growing the tree while the system is collapsing it from the other children.
+You can also use a lock in the root to indicate that the operation is still ongoing.
+
+
+### Demand Paging {#demand-paging}
+
+The old linux interface just forked and then cleared the old address space.
+You can also create a clean address space and a thread inside it, then this will page fault transitioning to the kernel via `IPC` to the pager asking for the page of its code. Then the exception will be handled and then the thread resumes its execution.
+
+
+### Region Manager {#region-manager}
+
+In user level, so an application would `IPC` this `RM` to ask for pages and then this one would manipulate it and forward to the pager what it needs. Then the pager responds directly to the application.
+
+
+### Writing a syscall {#writing-a-syscall}
+
+-   the kernel crashes if the root is invoked
+-   at the end of the syscall you have to continue the execution to the user code
+    -   get out of the kernel and go to the address space of the user code
+    -   on the binary (hypervisor.o) you can see that user stack is located on address 0x1000
+    -   the user code is at address 0x2000 `SEL_USER_CODE`
+    -   the mapping is done to the pagetable
+    -   basically prepare the stack with the values needed and invoke `iret`
+-   in `usercode`:
+    1.  fault immediately {there is a opcode for undefined behavior}
+
+The syshandler receives the codes of the syscalls and has to switch over the different possibilities and invoke the correct one.
+**NB** the kernel mode is always entered with a clean stack
+
+
+### Yield {#yield}
+
+-   continuation
+-   thread + stack
+    -   have a `EC` object with
+        -   stack
+        -   instruction pointer
+            -   could have that as a return address left on the stack before switching to jump in and continue
+        -   stack pointer
+    -   have a switch function making current the other `EC`
+
+
+### Scheduling {#scheduling}
+
+-   real-time vs best effort
+-   time as a resource
+
+**Best effort**:
+
+-   focus on common case behavior
+-   as many tasks as possible
+-   good responsiveness, no hard done if late
+
+**Real-time**:
+
+-   guarantees on timeliness
+    -   hard, any deadline miss is consider catastrophic
+        -   easier to build
+    -   soft
+        -   only probabilistic guarantees
+    -   firm
+        -   out of a number of deadlines a number of them are allowed to miss
+-   focus on worst case behavior
+-   being late has negative effects
+    -   the bound is defined by the environment
+-   **task**, work to be scheduled
+    -   periodic, instances reoccur every period \\(T\\)
+    -   sporadic, instance reoccur no earlier than period \\(T\\)
+-   **job**, concrete instance of a task
+    -   these are usually implemented through a thread
+-   time triggered
+-   event triggered, fixed / dynamic priority
+-   partitioned, assign to CPU and schedule locally
+-   global, scheduling decides both when and where
+
+The mixed criticality is controversial.
+
+-   the failure probability events have to be independent, so they are multiplied and they quickly become ignorable
+-   if they aren't they are a problem
+-   **fault tree analysis**
+
+
+#### in Microkernel Based Systems {#in-microkernel-based-systems}
+
+Different ideas:
+
+-   Brian Ford - CPU Inheritance Scheduling
+    -   event &rarr; mk &rarr; root scheduler &rarr; particular scheduler
+    -   pro
+        -   decisions at user level
+    -   cons
+        -   very high scheduling overhead because of all the `IPC`
+        -   need to conceive a user-level protocol to tell root when to switch to different user schedulers
+
+
+#### Critical Sections and Resources {#critical-sections-and-resources}
+
+-   priority inheritance protocol
+    -   give your own time to help the currently scheduled with the resources
+-   ceiling priority protocol
+
+
+## User Level {#user-level}
+
+
+## Paper Reviews {#paper-reviews}
+
+-   idea &rarr; implementation and experiments &rarr; paper &rarr; review gets written &rarr; accept / reject / revise
+-   purpose is to score and decide the most relevant papers to slot in conferences
+    -   ideally you don't show reviews to authors and tell them what to fix to get the paper accepted
+
+
+### Structure of a Review {#structure-of-a-review}
+
+-   **summary**, showing the author you understood the paper
+-   **points in favor and against**, summary of the review
+-   **specific questions**, classify the paper, ask for confidence
+-   **details**, description of what is right, wrong, questionable
+
+As a reviewer:
+
+-   the weakness is in the paper not the authors
+-   give clear instructions on how to improve
+
+As an author:
+
+-   respect the reviewer
+    -   font size
+    -   spell checking
+    -   caution with symbols and abbreviations
+
+Structure:
+
+-   score
+-   confidence in correctness
+-   summary
+-   points in favor
+-   points against
+-   details
+
+
+## Program Verification {#program-verification}
+
+Source: The Semantics of a Programming Language
+
+-   syntax
+-   semantics
+    -   easy for booleans, harder for integers
+    -   we can represent a subset
+        -   cant use modulo math in the definition of semantics because you lose the capability to recognize integer overflow
+-   program logic
+    -   sequential, assignment, consequence, etc.
+
+Simple C: `Imp`
+
+-   Denotational semantics
+-   Operational semantics
+    -   small and big step
+
+Parallel systems verification with _rely &amp; guarantee_ as preconditions and postconditions.
+Considering interleaving between programs.
+
+-   the different programs rely on others not to interfere and guarantee not to interfere
+
+
+### Memory Model {#memory-model}
+
+-   separation logic
+-   underspecified semantics
+    -   need at least 1 bit extra for encoding bytes, encode a dirty bit
+-   plain memory
+    -   memory where all is going well
+    -   verify a property at least in a part of memory
+    -   set of memory is _blessed_
+
+
+## Processor Architecture {#processor-architecture}
+
+`not part of exam`
+
+-   basic knowledge of processor design
+-   why accelerators are fast
+-   transistor are created by doping (via aluminium and phosphor) the silicon
+    -   create a electrical imbalance in the atoms
+    -   before doping you mask the regions
+
+Field effect transistor:
+
+-   `n` region electrons go to the `p` regions after you apply an electrical charge
+-   applying source and drain works creating an isolating layer and a gate on top
+-   field effect from the changed gate make the `p` expand and get closer to the `n` regions getting to the point where the current can frow through
+-   the transistor works like a digital switch
+-   there is a margin of intermediate states which will cause problems
+-   there is a propagation delay from input change to output charge
+
+You use this by designing `CMOS`, having your functionality and then disabling any current after towards the `GRD`
+
+-   there will be electrons leaking to the `GND` and energy dissipation through heat
+-   the circuit is concluded with an inverter circuit
+
+To have memory you need to connect the combinational logic device with memory devices capturing new states and storing current state
+
+-   `DLatch` stores between two inverters for exactly 1 cycle
+-   by combining the `DLatch` with the clock signal and the input and a second `DLatch` to always have a stable signal, this creates a register
+-   it is costly in regards to the number of transistors, it is also the fastest
+-   putting memory in between the logical devices allows to clock the system faster, this technique is called **pipelining**
+
+Pipelining is not that easy because of dependencies between instructions
+
+-   read after write hazard
+-   write after write
+-   write after read
+
+To resolve these hazard you can introduce stalling in the pipeline if instruction requires a resource in use
+
+-   control flow hazard are left to programmer and compiler to resolve
+-   self modifying code with pipeline flushing
+
+These `RAW` are so common that `ALU` has a bypass to itself to have the result back in the input in a single cycle, same thing for read from memory to have the result next cycle
+
+For cache coherence there are protocols like `MESI`
+The burden for resolving dependencies in instruction can be on the user:
+
+-   very long instruction word anchitecture (`VLIW`)
+-   Itanium
+-   bundle instruction to be fetched together by the `CPU`
+
+Different instruction need different amount of cycles to complete
+
+-   extend the pipeline to allow different instruction to complete at different points in time and optimize the latency
+
+Another way to resolve data hazards the processor can choose different registers from that specified by the programmer
+
+-   the only ensurance is that the state is what is specified by the time it is checked
+-   **register renaming**, the names are only needed by the programmer/compiler
+-   having a rearder buffer keeping track of the instruction coming in and recording their results the `CPU` can use them with **speculative execution** to cheat when exceptions happens and it needs to report to the `OS` the actual registers used
+    -   **Spectre** and **Meltdown** used speculation, first with information leakage as a side effect and second as lazy privilege checks in tandem with speculation
+
+We try to fetch as many instructions as possible but still have to deal with branch prediction
+
+-   predict whether the branch is taken or not, statically and dynamically
+-   predict the location of the branch
+-   predict for special constructs
+    -   predict backward jumps as not likely
+    -   predict forward jumps as likely
+    -   doing this predictions are correct most of the time
+
+At this point you can get faster by parallelism
+
+-   more `CPU`
+-   symmetric multiprocessing, one `CPU` and thread selecting with pipelining
+    -   in this case the probability of dependencies is much lower
+
+Or faster with accelerators
+
+-   so critical functionality gets dedicated hardware
+-   matrix multiplication
+
+[^fn:1]: Unlimited ?? Pinning smtsmt
