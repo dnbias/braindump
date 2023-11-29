@@ -141,4 +141,4 @@ La differenza con [[id:99a43f32-dfa7-485a-bb13-b31d9776fa5d][REST]] è che con q
 - il tipo di contenuto che viene restituito sta al programmatore
   + spesso =JSON=, =XML=
 - i siti web sono =RESTful=
-- non ha l'espressività di [[WSDL]]
+- non ha l'espressività di [[id:6b8ae378-aab8-4bc2-abd7-b41bfaee6abe][WSDL]]
