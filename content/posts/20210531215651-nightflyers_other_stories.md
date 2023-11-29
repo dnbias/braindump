@@ -1,6 +1,5 @@
 +++
 title = "Nightflyers & Other Stories"
-author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

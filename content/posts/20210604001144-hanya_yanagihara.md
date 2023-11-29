@@ -1,6 +1,5 @@
 +++
 title = "Hanya Yanagihara"
-author = ["Daniel Biasiotto"]
 tags = ["author"]
 draft = false
 +++
