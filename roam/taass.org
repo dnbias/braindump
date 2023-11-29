@@ -135,3 +135,4 @@ Per l'utilizzo di =SOAP=
 - Document-style, asincrono
 
 La differenza con [[id:99a43f32-dfa7-485a-bb13-b31d9776fa5d][REST]] è che con questa architettura ho la possibilità di fare programmazione distribuita, le richieste possono essere vere richieste programmatiche mentre l'alternativa si occupa più prettamente di scambio di dati.
+* Representational State Transfer
