@@ -1,6 +1,5 @@
 +++
 title = "Problems & Algorithms"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
@@ -55,58 +54,62 @@ for(i=0;i<length(A);i++)
 end for
 ```
 
+<!--list-separator-->
 
-##### Left Peak Finding {#left-peak-finding}
+-  Left Peak Finding
 
-Nel caso migliore `p=0` é un picco
-Nel caso peggiore `p=n-1` confronti
+    Nel caso migliore `p=0` é un picco
+    Nel caso peggiore `p=n-1` confronti
 
+<!--list-separator-->
 
-##### Max Peak Finding {#max-peak-finding}
+-  Max Peak Finding
 
-```text
-MAX-PEAK(A)
-r = 0
-i = 1
-while(i<n-1)
-    if A[i] > A[r]
-        r <- i
-    i <- i+1
-end while
-return r
-```
+    ```text
+    MAX-PEAK(A)
+    r = 0
+    i = 1
+    while(i<n-1)
+        if A[i] > A[r]
+            r <- i
+        i <- i+1
+    end while
+    return r
+    ```
 
-Fa sempre lo stesso numero di confronti, sempre `n-1`
+    Fa sempre lo stesso numero di confronti, sempre `n-1`
 
+<!--list-separator-->
 
-##### Analisi {#analisi}
+-  Analisi
 
-Teorema picco
-Si trovano segmenti sempre piú corti su cui vale il teorema a partire da un `q` centrale.
+    Teorema picco
+    Si trovano segmenti sempre piú corti su cui vale il teorema a partire da un `q` centrale.
 
+<!--list-separator-->
 
-##### Divide et Impera {#divide-et-impera}
+-  Divide et Impera
 
-```text
-PEAK-DI(A,i,j)
-p<-(i+j)/2
-if A[p-1]<=A[p]>=A[p+1] then
-    return p
-else
-    if A[p-1]>A[p] then
-        return PEAK-DI(A,i,p-1)
+    ```text
+    PEAK-DI(A,i,j)
+    p<-(i+j)/2
+    if A[p-1]<=A[p]>=A[p+1] then
+        return p
     else
-        return PEAK-DI(A,p+1,j)
+        if A[p-1]>A[p] then
+            return PEAK-DI(A,i,p-1)
+        else
+            return PEAK-DI(A,p+1,j)
+        endif
     endif
-endif
 
-PEAK-FIND-DI(A,n)
-return PEAK-DI(A,0,n-1)
-```
+    PEAK-FIND-DI(A,n)
+    return PEAK-DI(A,0,n-1)
+    ```
 
-\\(T(n)=\begin{cases} 1 & n=1 \\\ T(\frac{n}{2})+1 & n>1 \end{cases}\\)
-\\(T(n)=T(\frac{n}{2^k})+k\\) per \\(1\le k \le \log\_{2}n\\)
-\\(T(n)=1+\log\_{2}n\\)
+    \\(T(n)=\begin{cases} 1 & n=1 \\\ T(\frac{n}{2})+1 & n>1 \end{cases}\\)
+    \\(T(n)=T(\frac{n}{2^k})+k\\) per \\(1\le k \le \log\_{2}n\\)
+    \\(T(n)=1+\log\_{2}n\\)
 
 
 ### Insolubilitá e Intrattabilitá {#insolubilitá-e-intrattabilitá}
@@ -160,19 +163,21 @@ end if
 return q,r
 ```
 
+<!--list-separator-->
 
-##### Schema dell'induzione semplice {#schema-dell-induzione-semplice}
+-  Schema dell'induzione semplice
 
-1.  Caso base P(1)
-2.  Passo induttivo P(m+1), P(m) é l'ipotesi induttiva
-3.  1. e 2. implicano che \\(\forall n \ge 1, P(n)\\)
+    1.  Caso base P(1)
+    2.  Passo induttivo P(m+1), P(m) é l'ipotesi induttiva
+    3.  1. e 2. implicano che \\(\forall n \ge 1, P(n)\\)
 
+<!--list-separator-->
 
-##### Schema dell'induzione completa {#schema-dell-induzione-completa}
+-  Schema dell'induzione completa
 
-1.  Caso base
-2.  Passo induttivo
-3.  Conclusione
+    1.  Caso base
+    2.  Passo induttivo
+    3.  Conclusione
 
 
 #### Iterazione {#iterazione}
@@ -272,41 +277,44 @@ end for
 return A
 ```
 
+<!--list-separator-->
 
-##### Terminazione {#terminazione}
+-  Terminazione
 
-assicurata dalla limitatezza dei cicli **for** e **while**
+    assicurata dalla limitatezza dei cicli **for** e **while**
 
+<!--list-separator-->
 
-##### Correttezza {#correttezza}
+-  Correttezza
 
-2 cicli `->` 2 invarianti
+    2 cicli `->` 2 invarianti
 
-1.  `A[1...i-1]` é ordinato
-    -   corretto se il ciclo interno é corretto
-2.  `A[1...j-1]` e `A[j...i]` sono ordinati  `&&` `A[1...j-1] \le A[j+1...i]`
+    1.  `A[1...i-1]` é ordinato
+        -   corretto se il ciclo interno é corretto
+    2.  `A[1...j-1]` e `A[j...i]` sono ordinati  `&&` `A[1...j-1] \le A[j+1...i]`
 
-All'uscita dell'algoritmo abbiamo `i` uguale a `n+1` che implica che tutto il vettore `A[1...n]` é ordinato
+    All'uscita dell'algoritmo abbiamo `i` uguale a `n+1` che implica che tutto il vettore `A[1...n]` é ordinato
 
+<!--list-separator-->
 
-##### Complessitá {#complessitá}
+-  Complessitá
 
-dipende da `n` e dalla distribuzione all'interno del vettore
-assegnamo un costo ad ogni riga dell'algoritmo e lo moltiplichiamo alle volte per cui é eseguito
+    dipende da `n` e dalla distribuzione all'interno del vettore
+    assegnamo un costo ad ogni riga dell'algoritmo e lo moltiplichiamo alle volte per cui é eseguito
 
-1.  for     - `n`
-2.  `<-`      - `n-1`
-3.  while   - \\(\sum\_{i}^{n}{t\_i-1}\\)
-    1.  1 nel caso migliore
-    2.  i nel caso peggiore
-4.  scambio - \\(\sum\_{i}^{n}{t\_i-1}\\)
+    1.  for     - `n`
+    2.  `<-`      - `n-1`
+    3.  while   - \\(\sum\_{i}^{n}{t\_i-1}\\)
+        a. 1 nel caso migliore
+        b. i nel caso peggiore
+    4.  scambio - \\(\sum\_{i}^{n}{t\_i-1}\\)
 
-**Worst**:
-\\(an^2 + bn + c\\)
-Nel caso peggiore Insert-Sort ha <span class="underline">complessitá temporale quadratica</span>
-**Best**:
-\\(dn + e\\)
-Nel caso migliore Insert-Sort ha <span class="underline">complessitá temporale lineare</span>
+    **Worst**:
+    \\(an^2 + bn + c\\)
+    Nel caso peggiore Insert-Sort ha <span class="underline">complessitá temporale quadratica</span>
+    **Best**:
+    \\(dn + e\\)
+    Nel caso migliore Insert-Sort ha <span class="underline">complessitá temporale lineare</span>
 
 
 #### Selection Sort {#selection-sort}
@@ -333,24 +341,27 @@ end for
 return A
 ```
 
+<!--list-separator-->
 
-##### Terminazione {#terminazione}
+-  Terminazione
 
-Implicata dalla terminazione dei cicli
+    Implicata dalla terminazione dei cicli
 
+<!--list-separator-->
 
-##### Correttezza {#correttezza}
+-  Correttezza
 
-2 Invarianti
+    2 Invarianti
 
-1.  `A[1...i-1]` ordinato e `A[i...n]` &lt;= `A[1...i-1]`
-2.  `A[k]` &le; `A[i...j-1]`
+    1.  `A[1...i-1]` ordinato e `A[i...n]` &lt;= `A[1...i-1]`
+    2.  `A[k]` &le; `A[i...j-1]`
 
+<!--list-separator-->
 
-##### Complessitá {#complessitá}
+-  Complessitá
 
-Sia nel caso migliore che nel caso peggiore,
-Complessitá temporale quadratica
+    Sia nel caso migliore che nel caso peggiore,
+    Complessitá temporale quadratica
 
 
 #### Alberi di Decisione {#alberi-di-decisione}
@@ -608,20 +619,21 @@ Per dimostrarne la correttezza va utilizzata l'induzione completa, non semplice.
 
 Uno volta dimostrata la correttezza di `partizione` la dimostrazione é banale
 
+<!--list-separator-->
 
-##### Complessitá {#complessitá}
+-  Complessitá
 
-Il partizionamento esamina una volta ogni elemento: é lineare
-\\(T\_p(n)=an\\)
-Identifichiamo le situazioni estreme della ricorsione di quicksort
+    Il partizionamento esamina una volta ogni elemento: é lineare
+    \\(T\_p(n)=an\\)
+    Identifichiamo le situazioni estreme della ricorsione di quicksort
 
-1.  due partizioni con lo stesso numero degli elementi
-2.  una contiene tutti gli elementi e una é vuota
+    1.  due partizioni con lo stesso numero degli elementi
+    2.  una contiene tutti gli elementi e una é vuota
 
-3.  da luogo ad una relazione di  ricorrenza
-    -   \\(T(n) = c\\) con \\(n=1\\)
+    3.  da luogo ad una relazione di  ricorrenza
+        -   \\(T(n) = c\\) con \\(n=1\\)
 
-    -   \\(T(n)= T(n-1)+T\_p(n)+b\\) altriment
+        -   \\(T(n)= T(n-1)+T\_p(n)+b\\) altriment
 
 
 #### Relazioni Lineari a Partizione costante {#relazioni-lineari-a-partizione-costante}
@@ -681,12 +693,13 @@ int merge_sort(int a[], int i, int n){
 }
 ```
 
+<!--list-separator-->
 
-##### Complessitá {#complessitá}
+-  Complessitá
 
-\\(T(n)=2T(n/2)+n\\)
-\\(T(n)=\log\_2 n \cdot n \text{ . } cn \in \Theta(n \log n)\\)
-L'algoritmo é ottimo.
+    \\(T(n)=2T(n/2)+n\\)
+    \\(T(n)=\log\_2 n \cdot n \text{ . } cn \in \Theta(n \log n)\\)
+    L'algoritmo é ottimo.
 
 
 #### Quick Sort: caso medio {#quick-sort-caso-medio}
@@ -821,8 +834,9 @@ Il Tempo di calcolo di questa procedura ricorsiva é esponenziale:
 Si costruiscono due tabelle basate sullo schema ricorsivo
 \\(c[0..m, 0..n]\\) e \\(b[1..m, 1..n]\\)
 
+<!--list-separator-->
 
-##### Algoritmo Bottom-up {#algoritmo-bottom-up}
+-  Algoritmo Bottom-up
 
-permette di ottimizzare riempiendo una tabella \\(m \cdot n\\)
-\\(T(k) \in \Theta(m \cdot n)\\)
+    permette di ottimizzare riempiendo una tabella \\(m \cdot n\\)
+    \\(T(k) \in \Theta(m \cdot n)\\)
