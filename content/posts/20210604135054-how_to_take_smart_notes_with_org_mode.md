@@ -1,6 +1,5 @@
 +++
 title = "How to take smart notes with org-mode"
-author = ["Daniel Biasiotto"]
 tags = ["article"]
 draft = false
 +++
