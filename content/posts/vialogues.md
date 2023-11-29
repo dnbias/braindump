@@ -1,6 +1,5 @@
 +++
 title = "Vialogues"
-author = ["Daniel Biasiotto"]
 date = 2021-12-24T23:55:00+01:00
 tags = ["tool"]
 draft = false

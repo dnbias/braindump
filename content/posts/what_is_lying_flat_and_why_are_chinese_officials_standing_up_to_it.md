@@ -1,6 +1,5 @@
 +++
 title = "What is ‘lying flat’, and why are Chinese officials standing up to it?"
-author = ["Daniel Biasiotto"]
 date = 2022-01-03T02:04:00+01:00
 tags = ["article"]
 draft = false
