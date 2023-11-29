@@ -1,6 +1,5 @@
 +++
 title = "A brain in a supercomputer"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

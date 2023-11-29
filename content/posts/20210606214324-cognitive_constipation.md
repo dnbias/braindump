@@ -1,6 +1,5 @@
 +++
 title = "cognitive constipation"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
