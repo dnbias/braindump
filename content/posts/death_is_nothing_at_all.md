@@ -1,6 +1,5 @@
 +++
 title = "Death is Nothing at All"
-author = ["Daniel Biasiotto"]
 date = 2022-01-04T00:52:00+01:00
 tags = ["poem", "literature"]
 draft = false
