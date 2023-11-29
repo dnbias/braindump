@@ -82,3 +82,6 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 ** Requerimiento
 - i conquistadores prima di conquistare con il massacro le terre indigene dichiaravano un /requerimiento/ con cui intimavano a cedere il terreno agli indigeni, in spagnolo ovviamente
 - una sorta di assoluzione dall'etica tramite sovrastrutture e costrutti sociali
+** Linguaggio
+- descrive il vero? no
+- [[id:43529421-7bee-47e3-9890-1356d1c6eb59][How to Do Things with Words]]
