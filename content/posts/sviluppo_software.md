@@ -1,6 +1,5 @@
 +++
 title = "Sviluppo Software"
-author = ["Daniel Biasiotto"]
 date = 2022-03-03T00:08:00+01:00
 tags = ["university"]
 draft = false
@@ -152,7 +151,7 @@ Esempi di refactoring:
 
 Nel <span class="underline">modello dell'integrazione e configurazione</span> si basa su un gran numero di componenti o sistemi riutilizzabili, piccoli sistemi che vengono configurati in nuove funzionalità
 
-Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software Sara utilizzato
+Il processo appropriato dipende dai requisiti e le politiche normative, dall'ambiente in cui il software sarà utilizzato
 
 
 ## Object Oriented Analysis/Design {#object-oriented-analysis-design}
@@ -265,87 +264,93 @@ Si incrementalmente una lista dei requisiti: _feature list_
 -   priorità
 -   rischio stimato per l'implementazione
 
+<!--list-separator-->
 
-##### Casi d'uso {#casi-d-uso}
+-  Casi d'uso
 
-Catturano (in `UP` e `Agile`) i requisiti funzionali
-Sono descrizioni testuali che indicano l'uso che l'utente farà del sistema
+    Catturano (in `UP` e `Agile`) i requisiti funzionali
+    Sono descrizioni testuali che indicano l'uso che l'utente farà del sistema
 
--   attori; qualcuno o qualcosa dotato di comportamento
--   scenario (istanza di caso d'uso); sequenza specifica di azioni e interazioni tra sistema e attori
--   caso d'uso; collezione di scenari correlati (di successo/fallimento) che descrivono un attore che usa il sistema per raggiungere un obiettivo specifico
+    -   attori; qualcuno o qualcosa dotato di comportamento
+    -   scenario (istanza di caso d'uso); sequenza specifica di azioni e interazioni tra sistema e attori
+    -   caso d'uso; collezione di scenari correlati (di successo/fallimento) che descrivono un attore che usa il sistema per raggiungere un obiettivo specifico
 
-`UP` é _use-case driven_, questi sono il modo in cui si definiscono i requisiti di sistema
+    `UP` é _use-case driven_, questi sono il modo in cui si definiscono i requisiti di sistema
 
--   i casi d'uso definiscono analisi e progettazione
--   i casi sono utilizzati per pianificare le iterazioni
--   i casi definiscono i test
+    -   i casi d'uso definiscono analisi e progettazione
+    -   i casi sono utilizzati per pianificare le iterazioni
+    -   i casi definiscono i test
 
-Il **modello dei casi d'uso** include un grafico `UML`
+    Il **modello dei casi d'uso** include un grafico `UML`
 
--   é un modello delle funzionalità del sistema
+    -   é un modello delle funzionalità del sistema
 
-I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i requisiti come input all' `OOA/D`
+    I casi d'uso non sono orientati agli oggetti, ma sono utili a rappresentare i requisiti come input all' `OOA/D`
 
--   l'enfasi é sull'utente, sono il principale metodo di inclusione dell'attore nel processo di sviluppo
--   questi non sono algoritmi, sono semplici descrizioni dell'interazione, non la specifica di implementazione
-    -   il _come_ é obiettivo della progettazione `OOD`
-    -   i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il _cosa_ e nulla riguardo al _come_
+    -   l'enfasi é sull'utente, sono il principale metodo di inclusione dell'attore nel processo di sviluppo
+    -   questi non sono algoritmi, sono semplici descrizioni dell'interazione, non la specifica di implementazione
+        -   il _come_ é obiettivo della progettazione `OOD`
+        -   i casi descrivono gli eventi o le interazioni tra attori e sistema, si tratta il _cosa_ e nulla riguardo al _come_
 
-I casi devono essere _guidelines_, esprimerle in uno  **stile essenziale**. A livello delle intenzioni e delle responsabilità, non delle azioni concrete.
+    I casi devono essere _guidelines_, esprimerle in uno  **stile essenziale**. A livello delle intenzioni e delle responsabilità, non delle azioni concrete.
 
+    <!--list-separator-->
 
-###### Attori {#attori}
+    -  Attori
 
-Sono ruoli svolti da persone, organizzazioni, software, macchine
+        Sono ruoli svolti da persone, organizzazioni, software, macchine
 
--   primario
--   di supporto
-    -   offre un servizio al sistema
-    -   chiarisce interfacce esterne e protocolli
--   fuori scena
-    -   ha interesse nel comportamento del caso d'uso
+        -   primario
+        -   di supporto
+            -   offre un servizio al sistema
+            -   chiarisce interfacce esterne e protocolli
+        -   fuori scena
+            -   ha interesse nel comportamento del caso d'uso
 
+    <!--list-separator-->
 
-###### Formati {#formati}
+    -  Formati
 
--   breve
-    -   un solo paragrafo informale che descrive solitamente lo scenario principale
--   informale
-    -   più paragrafi in modo informale che descrivono vari scenari
--   dettagliato
-    -   include precondizioni e garanzie di successo
+        -   breve
+            -   un solo paragrafo informale che descrive solitamente lo scenario principale
+        -   informale
+            -   più paragrafi in modo informale che descrivono vari scenari
+        -   dettagliato
+            -   include precondizioni e garanzie di successo
 
+<!--list-separator-->
 
-##### Requisiti non funzionali {#requisiti-non-funzionali}
+-  Requisiti non funzionali
 
-Possono essere inclusi nei casi d'uso se relazionati con il requisito funzionale descritto dal caso
-Altrimenti vengono descritti nelle specifiche supplementari
+    Possono essere inclusi nei casi d'uso se relazionati con il requisito funzionale descritto dal caso.
+    Altrimenti vengono descritti nelle specifiche supplementari.
 
+<!--list-separator-->
 
-##### SSD {#ssd}
+-  SSD
 
-Diagrammi di Sequenza di Sistema
+    Diagrammi di Sequenza di Sistema
 
--   illustra eventi di input e output relativi ai sistemi in discussione
--   diagrammi di sequenza `UML`
--   sviluppo _blackbox_, non si pensa al come ma al cosa
-    -   l'intenzione dell'utente
--   input dei contratti
+    -   illustra eventi di input e output relativi ai sistemi in discussione
+    -   diagrammi di sequenza `UML`
+    -   sviluppo _blackbox_, non si pensa al come ma al cosa
+        -   l'intenzione dell'utente
+    -   input dei contratti
 
+<!--list-separator-->
 
-##### Contratti {#contratti}
+-  Contratti
 
--   usano **pre** e **post** condizioni per definire nel dettaglio i cambiamenti agli oggetti <span class="underline">concettuali</span> nel <span class="underline">modello di dominio</span>
+    -   usano **pre** e **post** condizioni per definire nel dettaglio i cambiamenti agli oggetti <span class="underline">concettuali</span> nel <span class="underline">modello di dominio</span>
 
-Precondizioni: _ipotesi significative sullo stato del sistema o degli oggetti del modello di dominio prima dell'esecuzione dell'operazione di sistema_
-Postcondizioni: _descrive i cambiamenti di stato degli oggetti del dominio dopo il completamento dell'operazione_
+    Precondizioni: _ipotesi significative sullo stato del sistema o degli oggetti del modello di dominio prima dell'esecuzione dell'operazione di sistema_
+    Postcondizioni: _descrive i cambiamenti di stato degli oggetti del dominio dopo il completamento dell'operazione_
 
--   oggetti creati
--   collegamenti formati/rotti
--   attributi modificati
+    -   oggetti creati
+    -   collegamenti formati/rotti
+    -   attributi modificati
 
-I contratti sono input per il processo di progettazione software.
+    I contratti sono input per il processo di progettazione software.
 
 
 #### Modello di Dominio {#modello-di-dominio}
@@ -386,50 +391,54 @@ I modelli per gli oggetti possono essere
     -   collaborazione tra oggetti per realizzare una caso d'uso
     -   i metodo delle classi software
 
+<!--list-separator-->
 
-##### Diagrammi dei Package {#diagrammi-dei-package}
+-  Diagrammi dei Package
 
-Vista _statica_
+    Vista _statica_
 
+<!--list-separator-->
 
-##### Diagrammi di Interazione {#diagrammi-di-interazione}
+-  Diagrammi di Interazione
 
-Vista _dinamica_
+    Vista _dinamica_
 
-> Un interazione é una specifica di come alcuni oggetti si scambiano messaggi nel tempo per eseguire un compito nell'ambito di un certo contesto.
+    > Un interazione é una specifica di come alcuni oggetti si scambiano messaggi nel tempo per eseguire un compito nell'ambito di un certo contesto.
 
-<!--quoteend-->
+    <!--quoteend-->
 
-> Un compito é rappresentato da un messaggio che dà inizio all'interazione
+    > Un compito é rappresentato da un messaggio che dà inizio all'interazione
 
--   questo messaggio é detto _messaggio trovato_
+    -   questo messaggio é detto _messaggio trovato_
 
-Per questo scopo vengono usati i _diagrammi di sequenza_ o i _diagrammi di comunicazione_
-In particolare questi sono chiamati `Design Sequence Diagram - DSD`.
+    Per questo scopo vengono usati i _diagrammi di sequenza_ o i _diagrammi di comunicazione_
+    In particolare questi sono chiamati `Design Sequence Diagram - DSD`.
 
+<!--list-separator-->
 
-##### Diagrammi delle Classi {#diagrammi-delle-classi}
+-  Diagrammi delle Classi
 
-`Design Class Diagram - DCD`
-Vista _statica_
+    `Design Class Diagram - DCD`
+    Vista _statica_
 
-> Il diagramma delle classi di progetto é un diagramma delle classi utilizzato da un punto di vista software o di progetto.
+    > Il diagramma delle classi di progetto é un diagramma delle classi utilizzato da un punto di vista software o di progetto.
 
-A differenza del `Modello di Dominio` in questo contesto la visibilità ha un significato:
+    A differenza del `Modello di Dominio` in questo contesto la visibilità ha un significato:
 
--   le associazioni qui hanno un verso
+    -   le associazioni qui hanno un verso
 
+<!--list-separator-->
 
-##### Progettazione a oggetti {#progettazione-a-oggetti}
+-  Progettazione a oggetti
 
--   _Quali sono le responsabilità dell'oggetto?_
--   _Con chi collabora l'oggetto?_
--   _Quali design pattern devono essere applicati?_
+    -   _Quali sono le responsabilità dell'oggetto?_
+    -   _Con chi collabora l'oggetto?_
+    -   _Quali design pattern devono essere applicati?_
 
-Si parte dal `Modello di Dominio`, ma l'implementazione impone dei vicoli ulteriori dovuti al `Object Oriented`
+    Si parte dal `Modello di Dominio`, ma l'implementazione impone dei vicoli ulteriori dovuti al `Object Oriented`
 
--   vengono letti e implementati i contratti, con le loro pre e post-condizioni
--   non si creano nuove associazioni nel `Modello di Dominio`: siamo a livello del codice e si fanno scelte progettuali di _visibilità_
+    -   vengono letti e implementati i contratti, con le loro pre e post-condizioni
+    -   non si creano nuove associazioni nel `Modello di Dominio`: siamo a livello del codice e si fanno scelte progettuali di _visibilità_
 
 
 #### Ideazione {#ideazione}
@@ -470,7 +479,7 @@ Strumento per pensare e comunicare
 
 <span class="underline">É un linguaggio visuale per la specifica, la costruzione e la documentazione degli elaborati di un sistema software</span>
 
--   de facto standard un particolare per software OO
+-   de facto standard in particolare per software OO
 -   può essere utilizzato come abbozzo, progetto o linguaggio di programmazione
 -   la modellazione agile enfatizza l'uso di `UML` come abbozzo
 
