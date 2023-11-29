@@ -10,6 +10,7 @@
 - Direttiva europea 95
 - =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
   + introduce il concetto di /pseudonimizzazione/
+- Privacy by Design and by Default
 * Etica
 ** Metafora
 - partendo da [[id:3de0c2e6-55c4-49e8-8932-f04cf95c32a9][Metaphors We Live By]]
