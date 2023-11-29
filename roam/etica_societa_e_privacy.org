@@ -5,11 +5,13 @@
 #+title: Etica, Società e Privacy
 #+date: [2023-11-09 Thu 09:41]
 #+filetags: university compsci master
-* Principi
+* Privacy
+** Principi
 - Direttiva europea 95
 - =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
   + introduce il concetto di /pseudonimizzazione/
-* Metafora
+* Etica
+** Metafora
 - partendo da [[id:3de0c2e6-55c4-49e8-8932-f04cf95c32a9][Metaphors We Live By]]
 - mapping matematico (o meglio *omomorfismo*) tra concetti complessi della vita e un dominio più semplice da rappresentare
 - il nostro cervello utilizza questo meccanismo perché non conosciamo le conseguenze delle nostre azioni, il problema è troppo complesso
@@ -19,7 +21,7 @@
   + si riconducono a qualcosa di più conosciuto
   + anche la tecnologia la concettualizziamo in questo modo
 
-* Conoscenza Esplicita e Tacita
+** Conoscenza Esplicita e Tacita
 - teorizzata dal filosofo e economista [[id:1d46fe96-ab72-40c0-8fd4-2ec52e9231f5][Michael Polanyi]][fn::[[id:9beb54c7-e82b-49f3-bc56-214ea3ccb122][Tacit Knowledge]]]
 - la conoscenza di cui siamo coscienti non è tutta, il /gap/ è tacito in quanto non esprimibile dal linguaggio e non accessibile alla coscienza
   + la c. tacita tratta la pratica, che non è trasmissibile o comunicabile
@@ -28,19 +30,19 @@
   + la percezione, utilizziamo linguaggio metaforico per descriverla
   + la nostra dimensione emotiva[fn::[[id:f796e791-2f0b-4552-899a-715d069d87b0][Emotional Intelligence]]]
     - questa intelligenza non la conosciamo, a volte solamente a posteriori o tramite empatia capiamo i nostri stati emotivi
-* Realtà Sociale
+** Realtà Sociale
 - da [[id:66248d16-1f30-4843-bd65-628b4397d9e1][The Construction of Social Reality]]
 - non è data ma creata da noi
   + tutto è deciso da regole *costitutive* ideate dalla collettività
 - la *realtà costruita* costituisce la gran parte della nostra realtà vissuta
   + la tecnologia sta sempre più cambiando le regole e la realtà in cui viviamo
     - non cambia fatti naturali ma piuttosto nostre costruzioni sociali
-* Conventional Wisdom
+** Conventional Wisdom
 - da [[id:12366eca-8730-4a9f-8f3d-991368f66acd][The Affluent Society]]
 - competizione tra giusto e accettabile
   + in  una competizione il vantaggio strategico si trova in ciò che è accettabile
 - teorie scientifiche e modi di fare possiedono una inerzia che supera anche il  momento in cui vengono smentite
-* Tecnologia
+** Tecnologia
 - la tecnologia inizia con i Neanderthal e continua fino ora
 - la società inizia con la Mesopotamia 3000 anni prima di Cristo
   + [[id:f8b8ce61-390e-4e52-aa28-eba54150ab05][Yuval Noah Harari]] riconduce il passaggio alla *rivoluzione cognitiva*[fn::[[id:7f5747ca-c9a8-43f4-ab00-aafe8fcd13be][Sapiens: A brief History of Humankind]]]
