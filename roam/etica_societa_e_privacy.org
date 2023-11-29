@@ -41,7 +41,8 @@
 ** Conventional Wisdom
 - da [[id:12366eca-8730-4a9f-8f3d-991368f66acd][The Affluent Society]]
 - competizione tra giusto e accettabile
-  + in  una competizione il vantaggio strategico si trova in ciò che è accettabile
+  + in  una competizione il vantaggio strategico si trova in ciò che è accettabile, comodo
+    - il test pubblico influenza più del test della verità
 - teorie scientifiche e modi di fare possiedono una *inerzia* che supera anche il  momento in cui vengono smentite
   + sono creazioni umane e per questo convenzionali e contengono i bias del nostro ragionamento
 ** Tecnologia
