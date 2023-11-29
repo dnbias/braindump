@@ -86,10 +86,11 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
 - [[id:9a407eb2-8f01-4f30-9ad6-a01e0539615f][SOA]]
 - necessità di integrare servizi eterogenei tra loro di terze parti
 - prima di questa architettura si utilizzavano software
-  + sitoed, closed, monolithic, brittle
+  + sito-ed, closed, monolithic, brittle
   + una volta aggiornata una delle sezioni andavano testate e redeployed tutte quante
 
 - dopo
   + strutturare il software attorno applicazioni composite e composed business process
   + vengono estratti i servizi riutilizzabili, /reusable business services/
   + test e redeploy sono necessari solamente per il modulo aggiornato successivamente
+  + i servizi vengono poi orchestrati per il funzionamento delle applicazioni sovrastanti
