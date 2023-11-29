@@ -89,3 +89,4 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
   + sitoed, closed, monolithic, brittle
 - dopo
   + strutturare il software attorno applicazioni composite e composed business process
+  + vengono estratti i servizi riutilizzabili, /reusable business services/
