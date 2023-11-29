@@ -1,6 +1,5 @@
 +++
 title = "Feistel Cipher"
-author = ["Daniel Biasiotto"]
 date = 2022-03-09T17:35:00+01:00
 draft = false
 +++
