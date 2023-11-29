@@ -11,7 +11,7 @@ with open("build.ninja", "w") as ninja_file:
         """
 rule org2md
   # command = export-notes $in
-  command = emacs --batch -l ~/.config/emacs/lisp/doom-start.el publish.el --eval \"(jethro/publish \\"$in\\")"
+  command = emacs --batch -l publish.el --eval \"(jethro/publish \\"$in\\")"
   description = org2md $in
 """
     )
