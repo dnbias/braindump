@@ -68,3 +68,4 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 ** Proprietà Intellettuale
 - una metafora
 - /commons/
+  + [[id:9e5e919e-b895-402d-90ad-0a74c2eadccc][The Tragedy of the Commons]]
