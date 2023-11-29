@@ -1,6 +1,5 @@
 +++
 title = "Economia e Diritto"
-author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
