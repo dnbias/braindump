@@ -121,6 +121,8 @@ Gli  standard =XML= sono:
   + Microsoft
   + interrogati da applicazioni in rete
   + sostanzialmente delle pagine gialle per =SOAP=
+  + provvedono contact/business information
+  + binding information e API
 
 Il modello di uso è
 - publish
