@@ -1,6 +1,6 @@
 
 rule org2md
-  command = emacs --batch -l publish.el --eval "(jethro/publish \"$in\")"
+  command = export-notes $in
   description = org2md $in
 
 build content/posts/20200527012708-architettura_elaboratori.md: org2md roam/20200527012708-architettura_elaboratori.org
