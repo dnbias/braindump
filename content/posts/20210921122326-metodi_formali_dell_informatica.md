@@ -1,6 +1,5 @@
 +++
 title = "Metodi Formali dell'Informatica"
-author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -68,137 +67,146 @@ L'utilitá é l'analisi matematica che dimostri la robustezza e la correttezza d
     -   evidenza del fatto che il sistema soddisfa la specifica
     -   controesempio che non funziona
 
+<!--list-separator-->
 
-##### Semantica Operazionale {#semantica-operazionale}
+-  Semantica Operazionale
 
-Definisce il significato di un programma come il suo comportamento che, quando termina, trasforma uno stato in un altro
+    Definisce il significato di un programma come il suo comportamento che, quando termina, trasforma uno stato in un altro
 
+<!--list-separator-->
 
-##### Semantica Logica {#semantica-logica}
+-  Semantica Logica
 
-Pre e Post condizioni che un programma soddisfa
+    Pre e Post condizioni che un programma soddisfa
 
--   Floyd
-    -   metodo delle asserzioni - 1967
-        -   controllo del flusso di grafi che descrivono le aspettative sullo stato della memoria
--   Hoare
-    -   formalizza le idee di Floyd
-    -   Logica di Hoare
-        -   \\(\\{\varphi\\} P \\{\psi\\}\\)
-            -   in P out
+    -   Floyd
+        -   metodo delle asserzioni - 1967
+            -   controllo del flusso di grafi che descrivono le aspettative sullo stato della memoria
+    -   Hoare
+        -   formalizza le idee di Floyd
+        -   Logica di Hoare
+            -   \\(\\{\varphi\\} P \\{\psi\\}\\)
+                -   in P out
 
+<!--list-separator-->
 
-##### Verifica Statica {#verifica-statica}
+-  Verifica Statica
 
-Il programma non viene eseguito - statico
-Il testing é fatto sull'esecuzione - dinamico
+    Il programma non viene eseguito - statico
+    Il testing é fatto sull'esecuzione - dinamico
 
--   l'importante é la scelta degli esempi di testing
-    -   G.J.Myers, _The Art of Software Testing_
--   essendo i test **infiniti** il superamento di qualsiasi test non verifica il programma
-    -   é un metodo di ricerca degli errori, non di verifica
+    -   l'importante é la scelta degli esempi di testing
+        -   G.J.Myers, _The Art of Software Testing_
+    -   essendo i test **infiniti** il superamento di qualsiasi test non verifica il programma
+        -   é un metodo di ricerca degli errori, non di verifica
 
-Processo:
+    Processo:
 
-1.  Contratto
-2.  Invariante di Loop
-    -   esistono euristiche per trovarlo ma non algoritmi
-3.  Asserzioni Intermedie
-    -   conducono alla dimostrazione di ció che voglio
+    1.  Contratto
+    2.  Invariante di Loop
+        -   esistono euristiche per trovarlo ma non algoritmi
+    3.  Asserzioni Intermedie
+        -   conducono alla dimostrazione di ció che voglio
 
+<!--list-separator-->
 
-##### Logica di Hoare {#logica-di-hoare}
+-  Logica di Hoare
 
-`HL`
-Usiamo logica debole, <span class="underline">non dimostriamo la terminazione</span>. Se il programma termina allora é il risultato sará corretto.
+    `HL`
+    Usiamo logica debole, <span class="underline">non dimostriamo la terminazione</span>. Se il programma termina allora é il risultato sará corretto.
 
--   Rules:
-    -   skip
-    -   assignments
-    -   sequencing
-    -   conditionals
-    -   while loops
-    -   consequence
+    -   Rules:
+        -   skip
+        -   assignments
+        -   sequencing
+        -   conditionals
+        -   while loops
+        -   consequence
 
+    <!--list-separator-->
 
-###### Correttezza di HL {#correttezza-di-hl}
+    -  Correttezza di HL
 
-Teorema: Se la tripla é derivabile in HL, allora é valida
+        Teorema: Se la tripla é derivabile in HL, allora é valida
 
+    <!--list-separator-->
 
-###### Limiti teorici {#limiti-teorici}
+    -  Limiti teorici
 
-La logica del primo ordine é corretta e completa ma é <span class="underline">indecidibile</span>
+        La logica del primo ordine é corretta e completa ma é <span class="underline">indecidibile</span>
 
--   Teorema di Church
--   non esiste un algoritmo che verifichi che formula logica sia corretta
+        -   Teorema di Church
+        -   non esiste un algoritmo che verifichi che formula logica sia corretta
 
-`HL` é corretta, ma <span class="underline">completa solo in senso debole</span>; include FOL dunque é indecidibile
+        `HL` é corretta, ma <span class="underline">completa solo in senso debole</span>; include FOL dunque é indecidibile
 
-Allora si utilizzano Truth Assistant, il teorema di `Rice` ci dimostra che i Verificatori non possono esistere.
+        Allora si utilizzano Truth Assistant, il teorema di `Rice` ci dimostra che i Verificatori non possono esistere.
 
--   `Isabelle`
--   `Coq`
--   `Agda`
-    -   un linguaggio di programmazione funzionale
--   [VeriFast]({{< relref "verifast.md" >}})
-    -   ProofAssistant dedicato a <span class="underline">Separation Logic</span> in C e Java
+        -   `Isabelle`
+        -   `Coq`
+        -   `Agda`
+            -   un linguaggio di programmazione funzionale
+        -   [VeriFast]({{< relref "verifast.md" >}})
+            -   ProofAssistant dedicato a <span class="underline">Separation Logic</span> in C e Java
 
+<!--list-separator-->
 
-##### Separation Logic {#separation-logic}
+-  Separation Logic
 
-Per trattare linguaggi imperativi con puntatori, gestione dinamica della memoria
+    Per trattare linguaggi imperativi con puntatori, gestione dinamica della memoria
 
--   si utilizza per _modularizzare_
--   si guarda una funzione per volta
-    -   poi si uniscono i risultati per dimostrare la correttezza totale
+    -   si utilizza per _modularizzare_
+    -   si guarda una funzione per volta
+        -   poi si uniscono i risultati per dimostrare la correttezza totale
 
-Si estendono le asserzioni con:
+    Si estendono le asserzioni con:
 
--   \\(s,h \vDash \text{emp}\\)
-    -   _empty heap_
--   \\(s,h \vDash a \rightarrow a'\\)
-    -   _singleton heap_
--   \\(s,h \vDash P \star Q\\)
-    -   _separating conjunction_
-    -   \\(h\_{1} \uplus h\_{2}\\)
+    -   \\(s,h \vDash \text{emp}\\)
+        -   _empty heap_
+    -   \\(s,h \vDash a \rightarrow a'\\)
+        -   _singleton heap_
+    -   \\(s,h \vDash P \star Q\\)
+        -   _separating conjunction_
+        -   \\(h\_{1} \uplus h\_{2}\\)
 
-Le triple \\((c,s,h)\\) sono dette _safe_ se \\((c,s,h)  \not{\rightarrow\_{\*}} \text{error}\\)
+    Le triple \\((c,s,h)\\) sono dette _safe_ se \\((c,s,h)  \not{\rightarrow\_{\*}} \text{error}\\)
 
+    <!--list-separator-->
 
-###### Frame Rule {#frame-rule}
+    -  Frame Rule
 
-\\[\frac{\\{P\\}\\; c\\; \\{Q\\}}{\\{P \star R\\}\\; c\\; \\{Q\star R\\}}\\]
+        \\[\frac{\\{P\\}\\; c\\; \\{Q\\}}{\\{P \star R\\}\\; c\\; \\{Q\star R\\}}\\]
 
--   pre-condizione \\(P\\)
--   post-condizione \\(Q\\)
--   contesto \\(R\\)
+        -   pre-condizione \\(P\\)
+        -   post-condizione \\(Q\\)
+        -   contesto \\(R\\)
 
-Se vale questo allora posso spezzare in moduli il codice e verificare questi sottoinsiemi
-**Lemmi**:
+        Se vale questo allora posso spezzare in moduli il codice e verificare questi sottoinsiemi
+        **Lemmi**:
 
--   _monotonicitá_
-    -   \\((c,s,h) \text{safe} \implies \forall h' \perp h : (c,s,h\uplus h') \text{safe}\\)
-    -   \\((c,s,h\_{0}) \rightarrow^{\*} (\text{skip},s',h\_{0}') \implies  \\\ \forall h\_{1} \perp h\_{0}:(c,s,h\_{0} \uplus h\_{1}) \rightarrow^{\*} (\text{skip}, s', h\_{0}' \uplus h\_{1}')\\)
-    -   \\((c,s,h\_{0})\\) riduce all'infinito \\(\implies \forall h\_{1} \perp h\_{0} : (c,s,h\_{0} \uplus h\_{1})\\) riduce all'infinito
+        -   _monotonicitá_
+            -   \\((c,s,h) \text{safe} \implies \forall h' \perp h : (c,s,h\uplus h') \text{safe}\\)
+            -   \\((c,s,h\_{0}) \rightarrow^{\*} (\text{skip},s',h\_{0}') \implies  \\\ \forall h\_{1} \perp h\_{0}:(c,s,h\_{0} \uplus h\_{1}) \rightarrow^{\*} (\text{skip}, s', h\_{0}' \uplus h\_{1}')\\)
+            -   \\((c,s,h\_{0})\\) riduce all'infinito \\(\implies \forall h\_{1} \perp h\_{0} : (c,s,h\_{0} \uplus h\_{1})\\) riduce all'infinito
 
--   _frame property_
-    -   \\((c,s,h\_{0})\text{safe} \land (c,s,h\_{0} \uplus h\_{1}) \rightarrow^{\*} (\text{skip},s',h') \implies \\\\
-            \exists h\_{0}' \perp h\_{1} :  (c,s,h\_{0})\rightarrow^{\*} (\text{skip},s',h\_{0}')\land h' = h\_{0}' \uplus h\_{1}\\)
+        -   _frame property_
+            -   \\((c,s,h\_{0})\text{safe} \land (c,s,h\_{0} \uplus h\_{1}) \rightarrow^{\*} (\text{skip},s',h') \implies \\\\
+                    \exists h\_{0}' \perp h\_{1} :  (c,s,h\_{0})\rightarrow^{\*} (\text{skip},s',h\_{0}')\land h' = h\_{0}' \uplus h\_{1}\\)
 
+    <!--list-separator-->
 
-###### Heap Simbolici {#heap-simbolici}
+    -  Heap Simbolici
 
-\\(H ::= \exists \vec{x} : (P\_{1} \land \cdots \land P\_{n}) \land (S\_{1} \star \cdots \star S\_{m})\\)
+        \\(H ::= \exists \vec{x} : (P\_{1} \land \cdots \land P\_{n}) \land (S\_{1} \star \cdots \star S\_{m})\\)
 
--   \\(\vec{x} = \Cup\_{i} fv(P\_{i}) \cup \Cup\_{j} fv(S\_{j})\\)
--   _puro_ e _spaziale_
+        -   \\(\vec{x} = \Cup\_{i} fv(P\_{i}) \cup \Cup\_{j} fv(S\_{j})\\)
+        -   _puro_ e _spaziale_
 
-Dai _comandi atomici_, definiti conseguentemente alle rispettive regole della logica.
-Si eseguono poi  _sequenze atomiche_
-\\[\\{H\\} A\_{1};\cdots ;A\_{n} \\{H'\\}\\]
-\\[\frac{\\{H\\}A\_{1}\\{H''\\} \qquad \\{H''\\} A\_{2} \\{H'\\}}{\\{H\\}A\_{1};A\_{2}\\{H'\\}}\\]
-\\[\frac{H,A\_{1} \implies H'}{H,A\_{1};A\_{2} \implies H',A\_{2}}\\]
+        Dai _comandi atomici_, definiti conseguentemente alle rispettive regole della logica.
+        Si eseguono poi  _sequenze atomiche_
+        \\[\\{H\\} A\_{1};\cdots ;A\_{n} \\{H'\\}\\]
+        \\[\frac{\\{H\\}A\_{1}\\{H''\\} \qquad \\{H''\\} A\_{2} \\{H'\\}}{\\{H\\}A\_{1};A\_{2}\\{H'\\}}\\]
+        \\[\frac{H,A\_{1} \implies H'}{H,A\_{1};A\_{2} \implies H',A\_{2}}\\]
 
 
 ### Grammatiche {#grammatiche}
@@ -215,15 +223,16 @@ Descrivo <span class="underline">Grammatiche Senza Contesti</span> con le <span 
 
 #### Astratte {#astratte}
 
+<!--list-separator-->
 
-##### Backus Normal Form {#backus-normal-form}
+-  Backus Normal Form
 
-Utiliziamo la notazione <span class="underline">carrificata</span>
+    Utiliziamo la notazione <span class="underline">carrificata</span>
 
-```text
-vname ::== String
-aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
-```
+    ```text
+    vname ::== String
+    aexp ::== N n | V x | Plus aexp aexp | Times aexp aexp
+    ```
 
 
 ### Semantica {#semantica}
@@ -268,18 +277,19 @@ aval: aexp -> state -> val
 \\(FVa\\): l'insieme delle variabili libere in \\(a \in aexp\\)
 
 ```text
-  FV (N n) = nil
-  FV (V x) = { n }
-  FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
+FV (N n) = nil
+FV (V x) = { n }
+FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
 ```
 
+<!--list-separator-->
 
-##### Lemma FVa {#lemma-fva}
+-  Lemma FVa
 
-Se per ogni \\(x \in FVa\\) gli stati \\(s, s^{'} \mid sx = s^{'}x\\)
-allora \\(aval \\: as = aval \\: as^{'}\\)
+    Se per ogni \\(x \in FVa\\) gli stati \\(s, s^{'} \mid sx = s^{'}x\\)
+    allora \\(aval \\: as = aval \\: as^{'}\\)
 
--   dim su ind. strutturale su \\(a\\)
+    -   dim su ind. strutturale su \\(a\\)
 
 
 #### Sostituzione {#sostituzione}
@@ -287,19 +297,20 @@ allora \\(aval \\: as = aval \\: as^{'}\\)
 \\(a[a^{'}/x]\\) intendiama la <span class="underline">sostituzione di x con a' in a</span>
 
 ```text
-  (N n)[a'/x] = N n
-  (V x)[a'/x] = a'
-  (V y)[a'/x] = V y
-  (Plus a_1 a_2)[a'/x] = Plus a_1[a'/x] a_2[a'/x]
+(N n)[a'/x] = N n
+(V x)[a'/x] = a'
+(V y)[a'/x] = V y
+(Plus a_1 a_2)[a'/x] = Plus a_1[a'/x] a_2[a'/x]
 ```
 
 **Modifica delle variabili**
 Se \\(s\in state, x\in vname, n \in val \mid s[x \rightarrow n] \in state\\)
 
+<!--list-separator-->
 
-##### Lemma di Sostituzione {#lemma-di-sostituzione}
+-  Lemma di Sostituzione
 
-\\[aval \\: (a[a^{'}/x])s = aval \\: a \\: s [x\rightarrow aval \\: a^{'}\\: s]\\]
+    \\[aval \\: (a[a^{'}/x])s = aval \\: a \\: s [x\rightarrow aval \\: a^{'}\\: s]\\]
 
 
 #### Booleani {#booleani}
@@ -367,61 +378,66 @@ Usiamo la relazione \\((c,s) \implies t\\) su \\(com \times state \times state\\
 Sistema formale:
  \\[\frac{(c\_{1},s\_{1}) \implies t\_{1}\cdots (c\_{n},s\_{n})\implies t\_{n}}{(c\_{n+1},s\_{n+1})\implies t\_{n+1}}\\]
 
+<!--list-separator-->
 
-##### Regole {#regole}
+-  Regole
 
--   `Skip` \\[\frac{}{(SKIP,s)\implies s}\\]
--   `Ass` \\[\frac{aval \\: a \\: s = n}{(n:= a,s)\implies s[x\rightarrow n]\\]
--   `Comp`  \\[frac{(c\_{1},s)\implies s' \quad (c\_{2},s')\implies t}{(c\_{1};c\_{2},s)\implies t}\\]
+    -   `Skip` \\[\frac{}{(SKIP,s)\implies s}\\]
+    -   `Ass` \\[\frac{aval \\: a \\: s = n}{(n:= a,s)\implies s[x\rightarrow n]\\]
+    -   `Comp`  \\[frac{(c\_{1},s)\implies s' \quad (c\_{2},s')\implies t}{(c\_{1};c\_{2},s)\implies t}\\]
 
-`IF b THEN c_1 ELSE c_2`
+    `IF b THEN c_1 ELSE c_2`
 
--   \\[\frac{bval \\: b\\: s = tt \\:\\: (c\_{1},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\]
--   \\[\frac{bval \\: b\\: s = ff \\:\\: (c\_{2},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\]
+    -   \\[\frac{bval \\: b\\: s = tt \\:\\: (c\_{1},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\]
+    -   \\[\frac{bval \\: b\\: s = ff \\:\\: (c\_{2},s)\implies t }{(IF \\: b \\: THEN  \\: c\_{1} \\: ELSE \\:c\_{2},s)}\\]
 
-`WHILE`
+    `WHILE`
 
--   \\[\frac{ bval \\: b\\: s = ff}{(WHILE \\: b\\:DO \\: c, s)\implies s}\\]
--   \\[\frac{ bval \\: b\\: s = tt \\:\\: (c,s)\implies s^{'} \\:\\: (W,s^{'})\implies t}{(WHILE \\: b\\:DO \\: c, s)\implies t}\\]
-    -   \\(W\\) abbrevia \\((WHILE \\: b \\: DO \\: c, s)\implies t\\)
+    -   \\[\frac{ bval \\: b\\: s = ff}{(WHILE \\: b\\:DO \\: c, s)\implies s}\\]
+    -   \\[\frac{ bval \\: b\\: s = tt \\:\\: (c,s)\implies s^{'} \\:\\: (W,s^{'})\implies t}{(WHILE \\: b\\:DO \\: c, s)\implies t}\\]
+        -   \\(W\\) abbrevia \\((WHILE \\: b \\: DO \\: c, s)\implies t\\)
 
-Con queste si studia la **convergenza**
+    Con queste si studia la **convergenza**
 
+    <!--list-separator-->
 
-###### Proposizione SKIP {#proposizione-skip}
+    -  Proposizione SKIP
 
-\\(\forall s,t \nvdash (WHILE \\: true \\: DO \\: SKIP,s) \Rightarrow t\\)
-<span class="underline">Dim</span>
+        \\(\forall s,t \nvdash (WHILE \\: true \\: DO \\: SKIP,s) \Rightarrow t\\)
+        <span class="underline">Dim</span>
 
--   per assurdo sia \\(D\\) una dimostrazione (_derivazione chiusa_) t.c. la sua conclusione sia  \\((WHILE \\: true \\: DO \\: SKIP,s) \Rightarrow t\\)
--   poiché `bval true s = tt` per ogni `s`, `D` deve terminare con:
-    -   \\(\frac{(SKIP,s)\Rightarrow s^{'} \\:\\: (W,s^{'})\Rightarrow t}{(W,s)\Rightarrow t}\\)
-    -   ma `s'=s` per SKIP, dunque la des. `D'` ha la stessa forma di `D`, essendo propriamente inclusa in `D`, cioé é infinita
--   dunque `D` non é una dimostrazione
+        -   per assurdo sia \\(D\\) una dimostrazione (_derivazione chiusa_) t.c. la sua conclusione sia  \\((WHILE \\: true \\: DO \\: SKIP,s) \Rightarrow t\\)
+        -   poiché `bval true s = tt` per ogni `s`, `D` deve terminare con:
+            -   \\(\frac{(SKIP,s)\Rightarrow s^{'} \\:\\: (W,s^{'})\Rightarrow t}{(W,s)\Rightarrow t}\\)
+            -   ma `s'=s` per SKIP, dunque la des. `D'` ha la stessa forma di `D`, essendo propriamente inclusa in `D`, cioé é infinita
+        -   dunque `D` non é una dimostrazione
 
+    <!--list-separator-->
 
-###### Equivalenza di Programmi {#equivalenza-di-programmi}
+    -  Equivalenza di Programmi
 
-I comandi \\(c\_{1},c\_{2}\\) sono <span class="underline">equivalenti</span> [\\(c\_{1} \sim c\_{2}\\)]
+        I comandi \\(c\_{1},c\_{2}\\) sono <span class="underline">equivalenti</span> [\\(c\_{1} \sim c\_{2}\\)]
 
--   \\(\forall s,t \in state . (c\_{1},s)\Rightarrow t \iff (c\_{2},s)\Rightarrow t\\)
+        -   \\(\forall s,t \in state . (c\_{1},s)\Rightarrow t \iff (c\_{2},s)\Rightarrow t\\)
 
-**Lemma**
-`WHILE b DO c ~ IF b THEN (c;WHILE b DO c) ELSE SKIP`
+        **Lemma**
+        `WHILE b DO c ~ IF b THEN (c;WHILE b DO c) ELSE SKIP`
 
+    <!--list-separator-->
 
-###### Determinismo della semantica naturale {#determinismo-della-semantica-naturale}
+    -  Determinismo della semantica naturale
 
-**Teorema**:
+        **Teorema**:
 
--   Per ogni \\(c \in com\\) , per ogni \\(s,t,t' \in state\\)
--   \\((c,s)\Rightarrow t \land (c,s)\Rightarrow t^{'} \implies t=t^{'}\\)
+        -   Per ogni \\(c \in com\\) , per ogni \\(st,,t' \in state\\)
+        -   \\((c,s)\Rightarrow t \land (c,s)\Rightarrow t^{'} \implies t=t^{'}\\)
 
+    <!--list-separator-->
 
-###### Funzione parziale {#funzione-parziale}
+    -  Funzione parziale
 
-\\([\\![ \cdot ]\\!]: com \rightarrow state \rightharpoonup state\\)
-\\([\\![c]\\!]s = \begin{cases}t & \mbox{se} \vdash (c,s) \Rightarrow t\\\\perp & \mbox{altrimenti}\end{cases}\\)
+        \\([\\![ \cdot ]\\!]: com \rightarrow state \rightharpoonup state\\)
+        \\([\\![c]\\!]s = \begin{cases}t & \mbox{se} \vdash (c,s) \Rightarrow t\\\\perp & \mbox{altrimenti}\end{cases}\\)
 
 
 #### Semantica SOS - Small Step {#semantica-sos-small-step}
@@ -476,13 +492,28 @@ Il \\(\pi\\) sta per il concetto di indicizzazione:
 
 ### Logica Classica e Intuizionistica {#logica-classica-e-intuizionistica}
 
-[Wadler](https://plfa.github.io/Negation/)
+-   [Wadler](https://plfa.github.io/Negation/)
+
+> In Gilbert and Sullivan’s The Gondoliers, Casilda is told that as an infant she was married to the heir of the King of Batavia, but that due to a mix-up no one knows which of two individuals, Marco or Giuseppe, is the heir. Alarmed, she wails “Then do you mean to say that I am married to one of two gondoliers, but it is impossible to say which?” To which the response is “Without any doubt of any kind whatever.”
+>
+> Logic comes in many varieties, and one distinction is between classical and intuitionistic. Intuitionists, concerned by assumptions made by some logicians about the nature of infinity, insist upon a constructionist notion of truth. In particular, they insist that a proof of A ⊎ B must show which of A or B holds, and hence they would reject the claim that Casilda is married to Marco or Giuseppe until one of the two was identified as her husband. Perhaps Gilbert and Sullivan anticipated intuitionism, for their story’s outcome is that the heir turns out to be a third individual, Luiz, with whom Casilda is, conveniently, already in love.
+>
+> Intuitionists also reject the law of the excluded middle, which asserts A ⊎ ¬ A for every A, since the law gives no clue as to which of A or ¬ A holds. Heyting formalised a variant of Hilbert’s classical logic that captures the intuitionistic notion of provability. In particular, the law of the excluded middle is provable in Hilbert’s logic, but not in Heyting’s. Further, if the law of the excluded middle is added as an axiom to Heyting’s logic, then it becomes equivalent to Hilbert’s. Kolmogorov showed the two logics were closely related: he gave a double-negation translation, such that a formula is provable in classical logic if and only if its translation is provable in intuitionistic logic.
+>
+> Propositions as Types was first formulated for intuitionistic logic. It is a perfect fit, because in the intuitionist interpretation the formula A ⊎ B is provable exactly when one exhibits either a proof of A or a proof of B, so the type corresponding to disjunction is a disjoint sum.
+>
+> (Parts of the above are adopted from “Propositions as Types”, Philip Wadler, Communications of the ACM, December 2015.) ~ [Philip Wadler]({{< relref "20210921122848-philip_wadler.md" >}}) [#cit]({{< relref "20210604132601-cit.md" >}})
+
+-   [Propositions as Types]({{< relref "propositions_as_types.md" >}}) è un paradigma che pone le proposizioni e tipi come equivalenti.
+    -   in [Type Theory]({{< relref "type_theory.md" >}})
+    -   una proposizione è identificata come il tipo (collezione) delle sue prove
+    -   un tipo è identificato come la proposizione che contiene i suoi termini
 
 
 #### Semantica di Heyting {#semantica-di-heyting}
 
 \\[\frac{B[t]}{\exists x \\: . \\: B[x]}\\]
-\\[\langle t, M \rangle \\: : \exists x \\: . \\: B[x]$ dove $M\\: :\\: B[t]\\]
+\\[\langle t, M \rangle \\: : \exists x \\: . \\: B[x]\\] dove \\[M\\: :\\: B[t]\\]
 
 
 ### IMP {#imp}
@@ -500,24 +531,26 @@ Il \\(\pi\\) sta per il concetto di indicizzazione:
 
 la notazione `[a]` richiama il concetto di heap come array, dove `a` ne é l'indice
 
+<!--list-separator-->
 
-##### Semantica {#semantica}
+-  Semantica
 
-`store = var_name -> Val`
-`heap = loc -> Val`
+    `store = var_name -> Val`
+    `heap = loc -> Val`
 
-Per \\(h \in \text{heap}, n\ge 0\\)
+    Per \\(h \in \text{heap}, n\ge 0\\)
 
--   \\(h = \\{l\_{1} \rightarrow v\_{1} \cdots  l\_{n} \rightarrow v\_{n}\\}\\)
--   \\(\text{dom}(h | {l\_{1}\cdots l\_{n}})\\)
-    -   le locazioni allocate
+    -   \\(h = \\{l\_{1} \rightarrow v\_{1} \cdots  l\_{n} \rightarrow v\_{n}\\}\\)
+    -   \\(\text{dom}(h | {l\_{1}\cdots l\_{n}})\\)
+        -   le locazioni allocate
 
-Viene aggiunta alla semantica `SOS` lo heap `h`
+    Viene aggiunta alla semantica `SOS` lo heap `h`
 
+    <!--list-separator-->
 
-###### Indipendenza dello Heap {#indipendenza-dello-heap}
+    -  Indipendenza dello Heap
 
-\\(h\_{1} \perp h\_{2} \iff \text{dom}(h\_{1}) \cap \text{dom}(h\_{2}) = \emptyset\\)
+        \\(h\_{1} \perp h\_{2} \iff \text{dom}(h\_{1}) \cap \text{dom}(h\_{2}) = \emptyset\\)
 
 
 #### Semantica Operazionale {#semantica-operazionale}
@@ -566,24 +599,25 @@ Si definisce `lookup i P` dove \\(0 \le i < \text{size} P\\)
 Un singolo passo di esecuzione (programma \\(P\\) esegue dalla configurazione \\(c\\) a \\(c'\\))
 \\(P \vdash c \rightarrow c'\\)
 
+<!--list-separator-->
 
-##### bcomp {#bcomp}
+-  bcomp
 
-\\(bcomp :: bexp \Rightarrow bool \Rightarrow int \Rightarrow prog\\)
+    \\(bcomp :: bexp \Rightarrow bool \Rightarrow int \Rightarrow prog\\)
 
-\begin{align\*}
-bcomp\\;(Bc\\;v)\\;f\\;n &= (if\\;v=f\\;then\\;[\textsc{jmp}\\;n]\\;else\\;[\\:]) \\\\
-bcomp\\;(Not\\;b)\\;f\\;n &= bcomp\\;b\\;(\lnot f)\\;n \\\\
-bcomp\\;(And\\;b\_1\\;b\_2)\\;f\\;n &= \\\\
-\end{align\*}
+    \begin{align\*}
+    bcomp\\;(Bc\\;v)\\;f\\;n &= (if\\;v=f\\;then\\;[\textsc{jmp}\\;n]\\;else\\;[\\:]) \\\\
+    bcomp\\;(Not\\;b)\\;f\\;n &= bcomp\\;b\\;(\lnot f)\\;n \\\\
+    bcomp\\;(And\\;b\_1\\;b\_2)\\;f\\;n &= \\\\
+    \end{align\*}
 
-\begin{align\*}
-bcomp\\;(Less\\;a\_1\\;a\_2)\\;f\\;n =& acomp\\;a\_1\\;@\\;acomp\\;a\_2\\;@\\;( \\\\
-& if\\;f\\;then\\;[\textsc{jmpless}\\;n]\\;\\\\
-& else\\;[\textsc{jmpge}\\;n])
-\end{align\*}
+    \begin{align\*}
+    bcomp\\;(Less\\;a\_1\\;a\_2)\\;f\\;n =& acomp\\;a\_1\\;@\\;acomp\\;a\_2\\;@\\;( \\\\
+    & if\\;f\\;then\\;[\textsc{jmpless}\\;n]\\;\\\\
+    & else\\;[\textsc{jmpge}\\;n])
+    \end{align\*}
 
-`Lemma 8.8`
-Si definisce il program counter sui salti condizionali:
+    `Lemma 8.8`
+    Si definisce il program counter sui salti condizionali:
 
--   \\(\text{pc'} = \text{size }(\text{bcomp }b \\:f \\:n) + (\text{ if } f = \text{ bval } b\\: s \text{ then } n \text{ else } 0 )\\)
+    -   \\(\text{pc'} = \text{size }(\text{bcomp }b \\:f \\:n) + (\text{ if } f = \text{ bval } b\\: s \text{ then } n \text{ else } 0 )\\)

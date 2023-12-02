@@ -1,6 +1,5 @@
 +++
 title = "The Devil's Dictionary"
-author = ["Daniel Biasiotto"]
 date = 2021-12-27T17:31:00+01:00
 tags = ["book"]
 draft = false

@@ -1,6 +1,5 @@
 +++
 title = "Hypertext Writing"
-author = ["Daniel Biasiotto"]
 date = 2021-12-23T01:13:00+01:00
 tags = ["article"]
 draft = false

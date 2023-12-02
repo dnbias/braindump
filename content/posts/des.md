@@ -1,6 +1,5 @@
 +++
 title = "Data Encryption Standard"
-author = ["Daniel Biasiotto"]
 date = 2022-03-09T17:27:00+01:00
 draft = false
 +++
@@ -46,4 +45,4 @@ Che lo rendono vulnerabile ad attacchi _brute force_
 
 Questo é risolvibile con `Double DES` o `Triple DES`.
 
--   applicare `DES` piú volte allo stesso blocco, raddoppiondo la lunghezza della chiave
+-   applicare `DES` piú volte allo stesso blocco, raddoppiando la lunghezza della chiave

@@ -1,6 +1,5 @@
 +++
 title = "China launches 3 astronauts to new space station"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

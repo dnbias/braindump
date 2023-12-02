@@ -1,6 +1,5 @@
 +++
 title = "Middle Income Trap"
-author = ["Daniel Biasiotto"]
 date = 2021-12-29T19:39:00+01:00
 tags = ["concept"]
 draft = false

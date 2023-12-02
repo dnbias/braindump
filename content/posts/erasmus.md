@@ -176,3 +176,24 @@ La/il candidata/o dovrà specificare nel campo “Dichiarazioni aggiuntive” de
     -   [Housing Request](https://wwwen.uni.lu/students/accommodation/housing_request)
         -   no earlier than 10 weeks before the reservation date (start 1st or 16th of the month)
 -   [Belval Map](https://wwwen.uni.lu/content/download/78869/980182/file/Belval%20Campus_detailed_map.pdf)
+
+
+### Corsi {#corsi}
+
+Almeno 20 `ECTS`
+
+-   [Sicurezza delle Reti e dei Sistemi](http://magistrale.educ.di.unito.it/index.php/offerta-formativa/insegnamenti/elenco-completo/elenco-completo/scheda-insegnamento?cod=INF0294&codA=&year=2022&orienta=F)
+    -   [Software Vulnerabilities: Exploitation and Mitigation](https://wwwen.uni.lu/layout/set/print/studies/fstm/master_in_information_and_computer_sciences/programme?f=MAACAINFCOMPSCI_2&c=0008C7391)
+-   [Tecnologie del Linguaggio Naturale](http://magistrale.educ.di.unito.it/index.php/offerta-formativa/insegnamenti/elenco-completo/elenco-completo/scheda-insegnamento?cod=INF0094&codA=&year=2022&orienta=YXH)
+-   [Big Data Analytics](https://wwwen.uni.lu/layout/set/print/studies/fstm/master_in_information_and_computer_sciences/programme?f=MAACAINFCOMPSCI_2&c=0008C7276)
+-   [Principles of Software Development](https://wwwen.uni.lu/layout/set/print/studies/fstm/master_in_information_and_computer_sciences/programme?f=MAACAINFCOMPSCI_2&c=0009C0852)
+-   [Intelligent Agents I](https://wwwen.uni.lu/layout/set/print/studies/fstm/master_in_information_and_computer_sciences/programme?f=MAACAINFCOMPSCI_2&c=0008C7307)
+
+
+### LA {#la}
+
+-   [Knowledge Discovery &amp; Data Mining]({{< relref "knowledge_discovery_data_mining.md" >}})
+-   [Intelligent Agents I]({{< relref "intelligent_agents_i.md" >}})
+-   [Microkernel Based Systems]({{< relref "microkernel_based_systems.md" >}})
+-   [Quality of Service in Computer Networks]({{< relref "quality_of_service_in_computer_networks.md" >}})
+-   [Software Vulnerabilities: Exploitation and Mitigation]({{< relref "software_vulnerabilities_exploitation_and_mitigation.md" >}})

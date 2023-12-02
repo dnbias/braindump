@@ -1,6 +1,5 @@
 +++
 title = "Secure Hash Algorithm"
-author = ["Daniel Biasiotto"]
 date = 2022-04-15T01:40:00+02:00
 tags = ["security"]
 draft = false

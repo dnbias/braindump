@@ -172,12 +172,13 @@ Problema di ricerca nello spazio degli stati
 -   test obiettivo, verifica che la stato sia quello desiderato (tabella ordinata)
 -   costo del cammino, ogni passo costa 1 e il costo del cammino é il numero di passi che lo costituiscono
 
+<!--list-separator-->
 
-##### Euristiche {#euristiche}
+-  Euristiche
 
--   \\(h\_1\\) numero delle tessere fuori posto (rispetto alla configurazione goal)
--   \\(h\_2\\) distanza di Manhattan
-    -   in particolare \\[\sum\_{\forall c}d\_{\text{man}}( c)\\]
+    -   \\(h\_1\\) numero delle tessere fuori posto (rispetto alla configurazione goal)
+    -   \\(h\_2\\) distanza di Manhattan
+        -   in particolare \\[\sum\_{\forall c}d\_{\text{man}}( c)\\]
 
 
 #### 8 Regine {#8-regine}
@@ -227,82 +228,88 @@ Nello studio di queste ricerche si considerano:
 Un goal a meno passi dalla radice non dà garanzia di ottimalità, in quanto vanno considerati i costi non il numero di passi.
 Il costo per l'ottimalità é una funzione monotona crescente in relazione alla profondità.
 
+<!--list-separator-->
 
-##### Ricerca in Ampiezza {#ricerca-in-ampiezza}
+-  Ricerca in Ampiezza
 
--   completa a patto che \\(b,d\\) siano finiti
--   ottima solo se il costo del cammino é \\(f\\) monotona crescente della profondità
+    -   completa a patto che \\(b,d\\) siano finiti
+    -   ottima solo se il costo del cammino é \\(f\\) monotona crescente della profondità
 
-\\[\textsc{time} =  \textsc{space} = O(b^{d+1})\\]
+    \\[\textsc{time} =  \textsc{space} = O(b^{d+1})\\]
 
--   esponenziale, non trattabile anche con \\(d\\) ragionevoli
+    -   esponenziale, non trattabile anche con \\(d\\) ragionevoli
 
+<!--list-separator-->
 
-##### Ricerca Costo Uniforme {#ricerca-costo-uniforme}
+-  Ricerca Costo Uniforme
 
-Cerca una soluzione ottima, che non in tutti i problemi corrisponde al minor numero di passi.
-La scoperta di un goal non porta alla terminazione della ricerca.
-Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello già trovato.
+    Cerca una soluzione ottima, che non in tutti i problemi corrisponde al minor numero di passi.
+    La scoperta di un goal non porta alla terminazione della ricerca.
+    Questa termina solo quando non possono esserci nodi non ancora scoperti con un costo minore di quello già trovato.
 
-La ricerca può non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
-Quindi:
-\\(\text{costi} \ge \epsilon > 0\\)
+    La ricerca può non terminare in caso di `no-op`, che creano loop o percorsi infiniti sempre allo stesso stato.
+    Quindi:
+    \\(\text{costi} \ge \epsilon > 0\\)
 
--   \\(\epsilon\\) costo minimo
--   condizione necessaria per garantire ottimalità e completezza
+    -   \\(\epsilon\\) costo minimo
+    -   condizione necessaria per garantire ottimalità e completezza
 
-\\[\textsc{time} = \textsc{space} = O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
+    \\[\textsc{time} = \textsc{space} = O(b^{1+\lfloor \frac{C^{\*}}{\epsilon} \rfloor})\\]
 
--   \\(C^{\*}\\) costo soluzione ottima
+    -   \\(C^{\*}\\) costo soluzione ottima
 
+<!--list-separator-->
 
-##### Ricerca in Profondità w/o Backtracking {#ricerca-in-profondità-w-o-backtracking}
+-  Ricerca in Profondità w/o Backtracking
 
-Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
+    Si esplora espandendo tutti i figli ogni volta che viene visitato un nodo non goal
 
--   viene utilizzato uno `stack` (`LIFO`) per gestire la frontiera
+    -   viene utilizzato uno `stack` (`LIFO`) per gestire la frontiera
 
-\\[\textsc{time} = O(b^{m})\\]
-\\[\textsc{space} = O(b \cdot m)\\]
+    \\[\textsc{time} = O(b^{m})\\]
+    \\[\textsc{space} = O(b \cdot m)\\]
 
+<!--list-separator-->
 
-##### Ricerca in Profondità w/ Backtracking {#ricerca-in-profondità-w-backtracking}
+-  Ricerca in Profondità w/ Backtracking
 
-Si producono successori su successori man mano, percorrendo in profondità l'albero.
-In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi già percorsi.
+    Si producono successori su successori man mano, percorrendo in profondità l'albero.
+    In fondo, in assenza di goal, viene fatto backtracking cercando altri successori degli nodi già percorsi.
 
--   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
--   più efficiente in utilizzo della memoria
+    -   viene esplorato un ramo alla volta, in memoria rimane solo il ramo che sta venendo esplorato
+    -   più efficiente in utilizzo della memoria
 
-\\[\textsc{time} = O(b^{m})\\]
-\\[\textsc{space} = O(m)\\]
+    \\[\textsc{time} = O(b^{m})\\]
+    \\[\textsc{space} = O(m)\\]
 
+<!--list-separator-->
 
-##### Iterative Deepening {#iterative-deepening}
+-  Iterative Deepening
 
-Ricerca a profondità limitata in cui questa viene incrementata a ogni iterazione
+    Ricerca a profondità limitata in cui questa viene incrementata a ogni iterazione
 
--   ogni iterazione viene ricostruito l'albero di ricerca
--   cerca di combinare ricerca in profondità e in ampiezza
-    -   completa con \\(b\\) finito
-    -   ottima quando il costo non é funzione decrescente delle profondità
+    -   ogni iterazione viene ricostruito l'albero di ricerca
+    -   cerca di combinare ricerca in profondità e in ampiezza
+        -   completa con \\(b\\) finito
+        -   ottima quando il costo non é funzione decrescente delle profondità
 
-\\[\textsc{time}= O(b^d)\\]
-\\[\textsc{space}= O(b\cdot d)\\]
+    \\[\textsc{time}= O(b^d)\\]
+    \\[\textsc{space}= O(b\cdot d)\\]
 
+<!--list-separator-->
 
-##### Ricerca Bidirezionale {#ricerca-bidirezionale}
+-  Ricerca Bidirezionale
 
-2 ricerche parallele
+    2 ricerche parallele
 
--   _forward_ dallo stato iniziale
--   _backwards_ dallo stato obiettivo
+    -   _forward_ dallo stato iniziale
+    -   _backwards_ dallo stato obiettivo
 
-Termina quando queste si incontrano a una intersezione.
-Il rischio é che si faccia il doppio del lavoro e che non convergano a metà percorso ma agli estremi
+    Termina quando queste si incontrano a una intersezione.
+    Il rischio é che si faccia il doppio del lavoro e che non convergano a metà percorso ma agli estremi
 
--   \\(\textsc{time}= O( b^{\frac{d}{2}})\\)
-    -   nel caso in cui le due ricerche si incontrino a metà
+    -   \\(\textsc{time}= O( b^{\frac{d}{2}})\\)
+        -   nel caso in cui le due ricerche si incontrino a metà
 
 
 #### Ricerca informata {#ricerca-informata}
@@ -321,164 +328,166 @@ Una strategia é il mantenere la frontiera ordinata secondo una \\(f(n)\\) detta
 -   in generale questa strategia é chiamata **best-first search**, il nodo più promettente é espanso per primo
     -   si tratta di una famiglia di strategie (greedy, A\*, RBFS)
 
+<!--list-separator-->
 
-##### Greedy {#greedy}
+-  Greedy
 
--   costruisce un albero di ricerca
--   mantiene ordinata la frontiera a seconda di \\(h(n)\\)
-    -   \\(f(n) = h(n)\\)
+    -   costruisce un albero di ricerca
+    -   mantiene ordinata la frontiera a seconda di \\(h(n)\\)
+        -   \\(f(n) = h(n)\\)
 
-Ma l'euristica può essere imperfetta e creare dei problemi.
-Questa strategia considera solo informazioni _future_, che riguardano ciò che non é ancora stato esplorato.
+    Ma l'euristica può essere imperfetta e creare dei problemi.
+    Questa strategia considera solo informazioni _future_, che riguardano ciò che non é ancora stato esplorato.
 
+<!--list-separator-->
 
-##### A\* {#a}
+-  A\*
 
-Combina informazioni future e passate:
+    Combina informazioni future e passate:
 
--   **Greedy** e **Ricerca a costo uniforme**
+    -   **Greedy** e **Ricerca a costo uniforme**
 
-Utilizza una funzione di valutazione:
-\\(f(n) = g(n) + h(n)\\)
+    Utilizza una funzione di valutazione:
+    \\(f(n) = g(n) + h(n)\\)
 
--   \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
+    -   \\(g(n)\\) é il costo minimo dei percorsi esplorati che portano dalla radice a \\(n\\)
 
-I costi minimi reali sono definiti con:
-\\(f^{\star}(n) = g^\star(n) + h^\star(n)\\)
+    I costi minimi reali sono definiti con:
+    \\(f^{\star}(n) = g^\star(n) + h^\star(n)\\)
 
--   definizione utilizzata nelle dimostrazioni
+    -   definizione utilizzata nelle dimostrazioni
 
-\\(A^\star\\) é **ottimo** quando
+    \\(A^\star\\) é **ottimo** quando
 
--   tutti i costi da un nodo a un successore sono positivi
--   l'euristica \\(h(n)\\) é ammissibile
+    -   tutti i costi da un nodo a un successore sono positivi
+    -   l'euristica \\(h(n)\\) é ammissibile
 
-**Ammissibilità**
+    **Ammissibilità**
 
--   \\(\forall n: h(n) \le h^\star(n)\\)
-    -   ovvero l'euristica é ottimistica
+    -   \\(\forall n: h(n) \le h^\star(n)\\)
+        -   ovvero l'euristica é ottimistica
 
-Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalità.
+    Nel caso di ricerca in grafi \\(h(n)\\) deve essere anche **monotona consistente** per garantire l'ottimalità.
 
--   vale una disuguaglianza triangolare
--   \\(h(n) \le c(n,a,n') + h(n')\\)
--   \\(\textsc{nb}\\) tutte le monotone sono ammissibili ma non vale il viceversa
+    -   vale una disuguaglianza triangolare
+    -   \\(h(n) \le c(n,a,n') + h(n')\\)
+    -   \\(\textsc{nb}\\) tutte le monotone sono ammissibili ma non vale il viceversa
 
-Inoltre é **ottimamente efficiente** e completo
+    Inoltre é **ottimamente efficiente** e completo
 
--   espande sempre il numero minimo di nodi possibili
+    -   espande sempre il numero minimo di nodi possibili
 
-Ma \\(\textsc{space}=O(b^d)\\)
+    Ma \\(\textsc{space}=O(b^d)\\)
 
-Algoritmo implementato in `Python`:
+    Algoritmo implementato in `Python`:
 
-```python
-# Code snippet found on rosettacode.org
-F AStarSearch(start, end, barriers)
-   F heuristic(start, goal)
-      V D = 1
-      V D2 = 1
-      V dx = abs(start[0] - goal[0])
-      V dy = abs(start[1] - goal[1])
-      R D * (dx + dy) + (D2 - 2 * D) * min(dx, dy)
+    ```python
+    # Code snippet found on rosettacode.org
+    F AStarSearch(start, end, barriers)
+       F heuristic(start, goal)
+          V D = 1
+          V D2 = 1
+          V dx = abs(start[0] - goal[0])
+          V dy = abs(start[1] - goal[1])
+          R D * (dx + dy) + (D2 - 2 * D) * min(dx, dy)
 
-   F get_vertex_neighbours(pos)
-      [(Int, Int)] n
-      L(dx, dy) [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
-         V x2 = pos[0] + dx
-         V y2 = pos[1] + dy
-         I x2 < 0 | x2 > 7 | y2 < 0 | y2 > 7
-            L.continue
-         n.append((x2, y2))
-      R n
+       F get_vertex_neighbours(pos)
+          [(Int, Int)] n
+          L(dx, dy) [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, 1), (1, -1), (-1, -1)]
+             V x2 = pos[0] + dx
+             V y2 = pos[1] + dy
+             I x2 < 0 | x2 > 7 | y2 < 0 | y2 > 7
+                L.continue
+             n.append((x2, y2))
+          R n
 
-   F move_cost(a, b)
-      L(barrier) @barriers
-         I b C barrier
-            R 100
-      R 1
+       F move_cost(a, b)
+          L(barrier) @barriers
+             I b C barrier
+                R 100
+          R 1
 
-   [(Int, Int) = Int] G
-   [(Int, Int) = Int] f
+       [(Int, Int) = Int] G
+       [(Int, Int) = Int] f
 
-   G[start] = 0
-   f[start] = heuristic(start, end)
+       G[start] = 0
+       f[start] = heuristic(start, end)
 
-   Set[(Int, Int)] closedVertices
-   V openVertices = Set([start])
-   [(Int, Int) = (Int, Int)] cameFrom
+       Set[(Int, Int)] closedVertices
+       V openVertices = Set([start])
+       [(Int, Int) = (Int, Int)] cameFrom
 
-   L openVertices.len > 0
-      (Int, Int)? current
-      V currentFscore = 0
-      L(pos) openVertices
-         I current == N | f[pos] < currentFscore
-            currentFscore = f[pos]
-            current = pos
+       L openVertices.len > 0
+          (Int, Int)? current
+          V currentFscore = 0
+          L(pos) openVertices
+             I current == N | f[pos] < currentFscore
+                currentFscore = f[pos]
+                current = pos
 
-      I current == end
-         V path = [current]
-         L current C cameFrom
-            current = cameFrom[current]
-            path.append(current)
-         path.reverse()
-         R (path, f[end])
+          I current == end
+             V path = [current]
+             L current C cameFrom
+                current = cameFrom[current]
+                path.append(current)
+             path.reverse()
+             R (path, f[end])
 
-      openVertices.remove(current)
-      closedVertices.add(current)
+          openVertices.remove(current)
+          closedVertices.add(current)
 
-      L(neighbour) get_vertex_neighbours(current)
-         I neighbour C closedVertices
-            L.continue
-         V candidateG = G[current] + move_cost(current, neighbour)
+          L(neighbour) get_vertex_neighbours(current)
+             I neighbour C closedVertices
+                L.continue
+             V candidateG = G[current] + move_cost(current, neighbour)
 
-         I neighbour !C openVertices
-            openVertices.add(neighbour)
-         E I candidateG >= G[neighbour]
-            L.continue
+             I neighbour !C openVertices
+                openVertices.add(neighbour)
+             E I candidateG >= G[neighbour]
+                L.continue
 
-         cameFrom[neighbour] = current
-         G[neighbour] = candidateG
-         V H = heuristic(neighbour, end)
-         f[neighbour] = G[neighbour] + H
+             cameFrom[neighbour] = current
+             G[neighbour] = candidateG
+             V H = heuristic(neighbour, end)
+             f[neighbour] = G[neighbour] + H
 
-   X RuntimeError(‘A* failed to find a solution’)
-```
+       X RuntimeError(‘A* failed to find a solution’)
+    ```
+    <div class="src-block-caption">
+      <span class="src-block-number">Code Snippet 1:</span>
+      a-star.py
+    </div>
 
-<div class="src-block-caption">
-  <span class="src-block-number">Code Snippet 1:</span>
-  a-star.py
-</div>
+<!--list-separator-->
 
+-  Recursive Best-First Strategy
 
-##### Recursive Best-First Strategy {#recursive-best-first-strategy}
+    `RBFS`
 
-`RBFS`
+    -   simile alla ricerca ricorsiva in profondità
+    -   usa un _upper bound_ dinamico
+        -   ricorda la migliore alternativa fra i percorsi aperti
+    -   ha poche esigenze di spazio
+        -   mantiene solo nodi del percorso corrente e fratelli, in questo é migliore di `A*`
+    -   lo <span class="underline">stesso nodo può essere visitato più volte</span> se l'algoritmo ritorna a un percorso aperto
 
--   simile alla ricerca ricorsiva in profondità
--   usa un _upper bound_ dinamico
-    -   ricorda la migliore alternativa fra i percorsi aperti
--   ha poche esigenze di spazio
-    -   mantiene solo nodi del percorso corrente e fratelli, in questo é migliore di `A*`
--   lo <span class="underline">stesso nodo può essere visitato più volte</span> se l'algoritmo ritorna a un percorso aperto
+    Intuitivamente:
 
-Intuitivamente:
+    -   procede come \\(A^{\star}\\) fino a che la soluzione rispetta l'_upper bound_
+    -   sospende la ricerca lungo il cammino quando non più migliore
+        -   il cammino viene dimenticato, si cancella dalla memoria
+        -   é conservata la traccia nella sua radice del costo ultimo  stimato
 
--   procede come \\(A^{\star}\\) fino a che la soluzione rispetta l'_upper bound_
--   sospende la ricerca lungo il cammino quando non più migliore
-    -   il cammino viene dimenticato, si cancella dalla memoria
-    -   é conservata la traccia nella sua radice del costo ultimo  stimato
+    L'algoritmo ha 3 argomenti
 
-L'algoritmo ha 3 argomenti
+    -   \\(N\\) nodo
+    -   \\(f(N)\\) valore
+    -   \\(b\\) upper bound
+        -   inizialmente impostato a \\(+ \infty\\)
 
--   \\(N\\) nodo
--   \\(f(N)\\) valore
--   \\(b\\) upper bound
-    -   inizialmente impostato a \\(+ \infty\\)
-
-`RBFS` é ottimo se l'euristica é ammissibile
- \\[\textsc{Space} = O(b\cdot d)\\]
-\\(\textsc{Time}\\) dipende dall'accuratezza dell'euristica.
+    `RBFS` é ottimo se l'euristica é ammissibile
+     \\[\textsc{Space} = O(b\cdot d)\\]
+    \\(\textsc{Time}\\) dipende dall'accuratezza dell'euristica.
 
 
 ### Euristiche {#euristiche}
@@ -549,129 +558,131 @@ L'_osservabilità_ é totale nei giochi a turno e parziale nei giochi ad azione 
 I giocatori `Min` e `Max` tengono conto dell'avversario nel calcolo dell'utilità degli stati
 ![](/ox-hugo/max-min-game.png)
 
+<!--list-separator-->
 
-##### Minimax {#minimax}
+-  Minimax
 
-`Minimax` é un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
+    `Minimax` é un algoritmo pessimista nel senso che simula che `Min` si muova in modo perfetto.
 
--   ricerca in profondità, esplora tutto l'albero ma non mantiene tutto in memoria
+    -   ricerca in profondità, esplora tutto l'albero ma non mantiene tutto in memoria
 
-Nella simulazione dell'albero di gioco si hanno i due attori
+    Nella simulazione dell'albero di gioco si hanno i due attori
 
-1.  `Max`
-2.  `Min`
+    1.  `Max`
+    2.  `Min`
 
-L'algoritmo fa _venire a galla_ i costi _terminali_ dei rami del gioco, in quanto per guidare la scelta `Max` deve poter scegliere tra i nodi a se successivi.
+    L'algoritmo fa _venire a galla_ i costi _terminali_ dei rami del gioco, in quanto per guidare la scelta `Max` deve poter scegliere tra i nodi a se successivi.
 
--   é completo in grafi finiti
--   é ottimale se `Max` e `Min` giocano ottimamente
+    -   é completo in grafi finiti
+    -   é ottimale se `Max` e `Min` giocano ottimamente
 
-La funzione utilità valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
-\\(\text{minimax-value}(n)\\):
+    La funzione utilità valuta gli stati _terminali_ del gioco, agisce per casi sul nodo \\(n\\) in maniera ricorsiva
+    \\(\text{minimax-value}(n)\\):
 
--   se \\(n\\) _terminale_
-    -   \\(\text{utility}(n)\\)
--   se \\(n\\) `Max`
-    -   \\(\text{max}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
--   se \\(n\\) `Min`
-    -   \\(\text{min}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
+    -   se \\(n\\) _terminale_
+        -   \\(\text{utility}(n)\\)
+    -   se \\(n\\) `Max`
+        -   \\(\text{max}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
+    -   se \\(n\\) `Min`
+        -   \\(\text{min}\_{s \in succ(n)}(\text{minimax-value}(n))\\)
 
-<!--listend-->
+    <!--listend-->
 
-```python
-def minimaxDecision(state): # returns action
-    v = maxValue(state)
-    return action in succ(state) with value == v
+    ```python
+    def minimaxDecision(state): # returns action
+        v = maxValue(state)
+        return action in succ(state) with value == v
 
-def maxValue(state): # returns utility-value (state)
-    if (state.isTerminal()):
-        return utility(state)
+    def maxValue(state): # returns utility-value (state)
+        if (state.isTerminal()):
+            return utility(state)
 
-    v = sys.minint
-    for (a,s) in succ(state): # (action,successor)
-        v = max(v, minValue(s))
+        v = sys.minint
+        for (a,s) in succ(state): # (action,successor)
+            v = max(v, minValue(s))
 
-    return v
+        return v
 
-def minValue(state):
-    if (state.isTerminal()):
-        return utility(state)
+    def minValue(state):
+        if (state.isTerminal()):
+            return utility(state)
 
-    v = sys.maxint
-    for (a,s) in succ(state):
-        v = min(v, maxValue(s))
+        v = sys.maxint
+        for (a,s) in succ(state):
+            v = min(v, maxValue(s))
 
-    return v
-```
+        return v
+    ```
 
-\\[\textsc{Space} = O(b \cdot m)\\]
-\\[\textsc{Time} = O(b^{m})\\]
+    \\[\textsc{Space} = O(b \cdot m)\\]
+    \\[\textsc{Time} = O(b^{m})\\]
 
+    <!--list-separator-->
 
-###### Potatura alpha-beta {#potatura-alpha-beta}
+    -  Potatura alpha-beta
 
--   [Handout MIT sull'argomento per approfondire](https://web.mit.edu/6.034/wwwbob/handout3-fall11.pdf)
+        -   [Handout MIT sull'argomento per approfondire](https://web.mit.edu/6.034/wwwbob/handout3-fall11.pdf)
 
-Per migliorare la complessità temporale dell'algoritmo si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
-La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
+        Per migliorare la complessità temporale dell'algoritmo si agisce potando le alternative che non potranno cambiare la stima corrente a quel livello.
+        La potatura viene fatta in base all'intervallo \\(\alpha \cdots \beta\\) dove:
 
--   \\(\alpha\\) é il valore della migliore alternativa per `Max` nel percorso verso `state`
--   \\(\beta\\) é il valore della migliore alternativa per `Min` nel percorso verso `state`
+        -   \\(\alpha\\) é il valore della migliore alternativa per `Max` nel percorso verso `state`
+        -   \\(\beta\\) é il valore della migliore alternativa per `Min` nel percorso verso `state`
 
-Se il \\(v\\) considerato é fuori da questo intervallo allora é inutile considerarlo.
+        Se il \\(v\\) considerato é fuori da questo intervallo allora é inutile considerarlo.
 
-```python
-def alphabetaSearch(state): # returns action
-    v = maxValue(state, sys.minint, sys.maxint)
-    return action in succ(state) with value == v
+        ```python
+        def alphabetaSearch(state): # returns action
+            v = maxValue(state, sys.minint, sys.maxint)
+            return action in succ(state) with value == v
 
-def maxValue(state, alpha, beta): # returns utility-value (state)
-    if (state.isTerminal()):
-        return utility(state)
+        def maxValue(state, alpha, beta): # returns utility-value (state)
+            if (state.isTerminal()):
+                return utility(state)
 
-    v = sys.minint
-    for (a,s) in succ(state): # (action,successor)
-        v = max(v, minValue(s, alpha, beta))
-        if (v >= beta) return v
-        alpha = max(alpha, v)
+            v = sys.minint
+            for (a,s) in succ(state): # (action,successor)
+                v = max(v, minValue(s, alpha, beta))
+                if (v >= beta) return v
+                alpha = max(alpha, v)
 
-    return v
+            return v
 
-def minValue(state, alpha, beta):
-    if (state.isTerminal()):
-        return utility(state)
+        def minValue(state, alpha, beta):
+            if (state.isTerminal()):
+                return utility(state)
 
-    v = sys.maxint
-    for (a,s) in succ(state):
-        v = min(v, maxValue(s, alpha, beta))
-        if (v <= alpha) return v
-        beta = min(beta, v)
+            v = sys.maxint
+            for (a,s) in succ(state):
+                v = min(v, maxValue(s, alpha, beta))
+                if (v <= alpha) return v
+                beta = min(beta, v)
 
-    return v
-```
+            return v
+        ```
 
-Questo algoritmo é dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
+        Questo algoritmo é dipendente dall'ordine di esplorazione dei nodi, alcune azioni _killer move_ permettono di tagliare l'albero subito e non sprecare passi.
 
--   \\(\textsc{time} = O(b^{m/2})\\)
-    -   nel caso migliore
-    -   se l'ordine é sfavorevole é possibile che non avvengano potature
-    -   comunque molto costoso
+        -   \\(\textsc{time} = O(b^{m/2})\\)
+            -   nel caso migliore
+            -   se l'ordine é sfavorevole é possibile che non avvengano potature
+            -   comunque molto costoso
 
-Esistono tecniche di apprendimento per le _killer move_, il sistema si ricorda le _killer move_ passate e le cerca nelle successive applicazioni.
-Queste tecniche sono studiate in quanto la complessità continua a essere troppo alta per applicazioni `RealTime`:
+        Esistono tecniche di apprendimento per le _killer move_, il sistema si ricorda le _killer move_ passate e le cerca nelle successive applicazioni.
+        Queste tecniche sono studiate in quanto la complessità continua a essere troppo alta per applicazioni `RealTime`:
 
--   **trasposizioni**
-    -   permutazioni dello stesso insieme di mosse
-    -   mosse che portano allo stesso stato risultante
-    -   vanno identificate ed evitate
--   **classificazione stati di gioco**
-    -   per motivi di tempo vanno valutati come foglie nodi intermedi a un certo _cutoff_
-    -   va valutata una situazione intermedia (_orizzonte_)
-        -   valutazione rispetto alla facilità di raggiungere una vittoria
-        -   attraverso un classificatore sviluppato in precedenza
--   **quiescenza** dei nodi, concerne la <span class="underline">permanenza della negatività o positività della valutazione</span>
-    -   se mantiene la propria valutazione bene nei continuo
-    -   non ribalta la valutazione nel giro di poche mosse
+        -   **trasposizioni**
+            -   permutazioni dello stesso insieme di mosse
+            -   mosse che portano allo stesso stato risultante
+            -   vanno identificate ed evitate
+        -   **classificazione stati di gioco**
+            -   per motivi di tempo vanno valutati come foglie nodi intermedi a un certo _cutoff_
+            -   va valutata una situazione intermedia (_orizzonte_)
+                -   valutazione rispetto alla facilità di raggiungere una vittoria
+                -   attraverso un classificatore sviluppato in precedenza
+        -   **quiescenza** dei nodi, concerne la <span class="underline">permanenza della negatività o positività della valutazione</span>
+            -   se mantiene la propria valutazione bene nei continuo
+            -   non ribalta la valutazione nel giro di poche mosse
 
 
 ### Constraint Satisfaction Problems {#constraint-satisfaction-problems}
@@ -689,84 +700,89 @@ I problemi sono affrontati con approcci diversi in base alle caratteristiche del
 
 #### Algoritmi {#algoritmi}
 
+<!--list-separator-->
 
-##### Generate and Test {#generate-and-test}
+-  Generate and Test
 
-_Bruteforce_
+    _Bruteforce_
 
-1.  genera un assegnamento completo
-2.  controlla se é una soluzione
-3.  se si `return` altrimenti `continue`
+    1.  genera un assegnamento completo
+    2.  controlla se é una soluzione
+    3.  se si `return` altrimenti `continue`
 
-É estremamente semplice ma non é scalabile.
+    É estremamente semplice ma non é scalabile.
 
+<!--list-separator-->
 
-##### Profondità con Backtracking {#profondità-con-backtracking}
+-  Profondità con Backtracking
 
-Si esplora l'albero delle possibili assegnazioni in profondità. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa più le condizioni.
-Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
+    Si esplora l'albero delle possibili assegnazioni in profondità. Si fa backtracking quando si incontra una assegnazione parziale che non soddisfa più le condizioni.
+    Il problema é che in `CSP` il `branching factor` é spesso molto alto, producendo alberi molto larghi.
 
-Dati \\(n\\) variabili e \\(d\\) media del numero di  valori possibili per una variabile:
+    Dati \\(n\\) variabili e \\(d\\) media del numero di  valori possibili per una variabile:
 
--   il `branching factor` al primo livello, \\(n \cdot d\\)
--   ... al secondo, \\((n-1)\cdot d\\)
--   l'albero avrà \\(n! \cdot d^{n}\\) foglie
+    -   il `branching factor` al primo livello, \\(n \cdot d\\)
+    -   ... al secondo, \\((n-1)\cdot d\\)
+    -   l'albero avrà \\(n! \cdot d^{n}\\) foglie
 
-Questo é migliorabile con la tecnica del _fuoco_ su una singola variabile a ogni livello dell'albero, questo in quanto i `CSP` godono della proprietà commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
+    Questo é migliorabile con la tecnica del _fuoco_ su una singola variabile a ogni livello dell'albero, questo in quanto i `CSP` godono della proprietà commutativa rispetta all'ordine delle  variabili. Questo permette di rimuove il fattoriale nel numero di foglie.
 
-Uno dei difetti di questo approccio é il `Thrashing`, riconsiderando assegnamenti successivi che si sono già dimostrati fallimentari durante l'esplorazione.
+    Uno dei difetti di questo approccio é il `Thrashing`, riconsiderando assegnamenti successivi che si sono già dimostrati fallimentari durante l'esplorazione.
 
+<!--list-separator-->
 
-##### Forward Checking {#forward-checking}
+-  Forward Checking
 
-Approccio locale di propagazione della conoscenza.
-Si propagano le scelte delle variabili ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
+    Approccio locale di propagazione della conoscenza.
+    Si propagano le scelte delle variabili ai vicini diretti, restringendo il dominio di questi vicini. In caso di individuare una inconsistenza se esiste.
 
+<!--list-separator-->
 
-##### AC-3 {#ac-3}
+-  AC-3
 
-`Arc Consistency` - McWorth
+    `Arc Consistency` - McWorth
 
--   funziona con vincoli binari
--   simile al Forward Checking
--   `Arc Consistency` non é una proprietà sufficiente a garantire l'esistenza di una soluzione
+    -   funziona con vincoli binari
+    -   simile al Forward Checking
+    -   `Arc Consistency` non é una proprietà sufficiente a garantire l'esistenza di una soluzione
 
-<!--listend-->
+    <!--listend-->
 
-```python
-def AC-3(csp): # returns redox CSP
-    queue = csp.arcs
-    while queue != empty:
-        (xi,xj) = queue.RemoveFirst()
-        if (RemoveInconsistentValues(xi,xj)):
-            for (xk in xi.neighbours):
-                queue.Add(xk,xi)
-
-
-def RemoveInconsistentValues(xi,xj): # returns boolean
-    removed = false
-    for (x in Domain[xi])
-        if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
-            Domain[xi].delete(x)
-            removed = true
-    return removed
-```
+    ```python
+    def AC-3(csp): # returns redox CSP
+        queue = csp.arcs
+        while queue != empty:
+            (xi,xj) = queue.RemoveFirst()
+            if (RemoveInconsistentValues(xi,xj)):
+                for (xk in xi.neighbours):
+                    queue.Add(xk,xi)
 
 
-##### Back-Jumping {#back-jumping}
+    def RemoveInconsistentValues(xi,xj): # returns boolean
+        removed = false
+        for (x in Domain[xi])
+            if (no value y in Domain[xj] consents to satisfy the constraint xi,xj):
+                Domain[xi].delete(x)
+                removed = true
+        return removed
+    ```
 
-Risolve i limiti del tradizionale `Backtracking Cronologico`, che torna passo per passo indietro senza sfruttare i vincoli.
-Si viene guidati dal _Conflict Set_. Si fa backtracking a una variabile che potrebbe risolvere il conflitto.
+<!--list-separator-->
 
--   questi `CS` sono costruiti tramite `Forward Checking` durante gli assegnamenti
+-  Back-Jumping
 
-> Sia \\(A\\) un assegnamento parziale consistente, sia \\(X\\) una variabile non ancora assegnata. Se l'assegnamento \\(A \cup \\{X=v\_{i}\\}\\) risulta inconsistente per qualsiasi valore \\(v\_{i}\\) appartenente al dominio di \\(X\\) si dice che \\(A\\) é un <span class="underline">conflict set</span> di \\(X\\)
+    Risolve i limiti del tradizionale `Backtracking Cronologico`, che torna passo per passo indietro senza sfruttare i vincoli.
+    Si viene guidati dal _Conflict Set_. Si fa backtracking a una variabile che potrebbe risolvere il conflitto.
 
-Quando tutti gli assegnamenti possibili successivi a \\(X\_{j}\\) falliscono si agisce con il `Back-Jumping`
+    -   questi `CS` sono costruiti tramite `Forward Checking` durante gli assegnamenti
 
--   si considera l'ultimo assegnamento \\(X\_{i}\\) aggiunto al `CS` di \\(X\_{j}\\)
--   viene aggiornato il `CS` di \\(X\_{i}\\)
-    -   \\(CS(X\_{i})=CS(X\_{i})\cup (CS(X\_{j})- \\{X\_{i}\\})\\)
+    > Sia \\(A\\) un assegnamento parziale consistente, sia \\(X\\) una variabile non ancora assegnata. Se l'assegnamento \\(A \cup \\{X=v\_{i}\\}\\) risulta inconsistente per qualsiasi valore \\(v\_{i}\\) appartenente al dominio di \\(X\\) si dice che \\(A\\) é un <span class="underline">conflict set</span> di \\(X\\)
+
+    Quando tutti gli assegnamenti possibili successivi a \\(X\_{j}\\) falliscono si agisce con il `Back-Jumping`
+
+    -   si considera l'ultimo assegnamento \\(X\_{i}\\) aggiunto al `CS` di \\(X\_{j}\\)
+    -   viene aggiornato il `CS` di \\(X\_{i}\\)
+        -   \\(CS(X\_{i})=CS(X\_{i})\cup (CS(X\_{j})- \\{X\_{i}\\})\\)
 
 
 #### Euristiche {#euristiche}
@@ -783,23 +799,24 @@ Euristiche di _scelta_ e _inferenza_
 -   alternanza tra esplorazione e inferenza
     -   ovvero propagazione di informazione attraverso i vincoli
 
+<!--list-separator-->
 
-##### Consistency {#consistency}
+-  Consistency
 
-1.  `Node Consistency`
-    -   vincoli di arità 1 soddisfatti
-2.  `Arc Consistency`
-    -   vincoli di arità 2 soddisfatti per ogni valore nel dominio
-    -   un arco é `arc-consistent` quando \\(\forall\\) valore del dominio del sorgente \\(\exists\\) valore nel dominio della destinazione che permetta di rispettare il vincolo
-3.  `Path Consistency`
-    -   3 variabili legate da vincoli binari
-    -   considerate 2 variabili \\(x, y\\) queste sono `path-consistent` con \\(z\\) se \\(\forall\\) assegnamento consistente di \\(x,y \\; \exists\\) un assegnamento \\(z\\) tale che \\(\\{x,z\\}\\) e \\(\\{y,z\\}\\) questi sono entrambi consistenti.
+    1.  `Node Consistency`
+        -   vincoli di arità 1 soddisfatti
+    2.  `Arc Consistency`
+        -   vincoli di arità 2 soddisfatti per ogni valore nel dominio
+        -   un arco é `arc-consistent` quando \\(\forall\\) valore del dominio del sorgente \\(\exists\\) valore nel dominio della destinazione che permetta di rispettare il vincolo
+    3.  `Path Consistency`
+        -   3 variabili legate da vincoli binari
+        -   considerate 2 variabili \\(x, y\\) queste sono `path-consistent` con \\(z\\) se \\(\forall\\) assegnamento consistente di \\(x,y \\; \exists\\) un assegnamento \\(z\\) tale che \\(\\{x,z\\}\\) e \\(\\{y,z\\}\\) questi sono entrambi consistenti.
 
-Questi concetti sono generalizzabili con la `k-consistenza`
+    Questi concetti sono generalizzabili con la `k-consistenza`
 
--   per ogni sottoinsieme di \\(k-1\\) variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la \\(k\text{-esima}\\) variabile che é consistente con tutti gli altri.
+    -   per ogni sottoinsieme di \\(k-1\\) variabili e per ogni loro assegnamento consistente é possibile identificare un assegnamento per la \\(k\text{-esima}\\) variabile che é consistente con tutti gli altri.
 
-Un `CSP` _fortemente consistente_ (k-consistente per \\(k\\) e tutti i \\(k\_{i}\\) minori di \\(k\\)) puó essere risolto in tempo lineare.
+    Un `CSP` _fortemente consistente_ (k-consistente per \\(k\\) e tutti i \\(k\_{i}\\) minori di \\(k\\)) puó essere risolto in tempo lineare.
 
 
 #### Vincoli Speciali {#vincoli-speciali}
@@ -918,39 +935,42 @@ Vari approcci:
 
 Questo é utilizzato nella dimostrazione per _refutazione_.
 
+<!--list-separator-->
 
-##### Horn Clauses {#horn-clauses}
+-  Horn Clauses
 
-Un caso particolare delle clausole.
+    Un caso particolare delle clausole.
 
-> Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
+    > Una clausola di horn é una disgiunzione di letterali in cui al piú uno é positivo.
 
-ad esempio:
+    ad esempio:
 
-\\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
+    \\[\frac{\lnot A \lor \lnot B \lor C}{A \land B \Rightarrow C}\\]
 
-\\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
+    \\[\frac{\lnot A \lor \lnot B}{A \land B}\\]
 
+<!--list-separator-->
 
-##### Forward Chaining {#forward-chaining}
+-  Forward Chaining
 
-Va nell'ordine dell'inferenza
+    Va nell'ordine dell'inferenza
 
--   <span class="underline">lineare</span> nel numero di clausole
--   ogni clausola é applicata al più una volta
--   però sono applicate clausole inutili per il _target_
+    -   <span class="underline">lineare</span> nel numero di clausole
+    -   ogni clausola é applicata al più una volta
+    -   però sono applicate clausole inutili per il _target_
 
-{{< figure src="/ox-hugo/forward-chaining.jpg" >}}
+    {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
 
+<!--list-separator-->
 
-##### Backward Chaining {#backward-chaining}
+-  Backward Chaining
 
-Parte dalla formula da dimostare e va a ritroso
+    Parte dalla formula da dimostare e va a ritroso
 
--   piú efficiente del `Forward Chaining`
--   <span class="underline">meno che lineare</span>
+    -   piú efficiente del `Forward Chaining`
+    -   <span class="underline">meno che lineare</span>
 
-{{< figure src="/ox-hugo/backward-chaining.jpg" >}}
+    {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
 
 
 #### First Order Logic {#first-order-logic}
@@ -1000,67 +1020,69 @@ La base di conoscenza puó essere interrogata con `ask`
 -   quando compaiono variabili si intende una sostituzione
     -   quindi la variabile \\(x\\) é interpretata in senso esistenziale ( \\(\exists\\) )
 
+<!--list-separator-->
 
-##### Clausole di Horn {#clausole-di-horn}
+-  Clausole di Horn
 
--   disgiunzioni di letterali di cui al piú uno é positivo
--   atomiche
--   implicazioni il cui antecedente é una congiunzione di letterali
+    -   disgiunzioni di letterali di cui al piú uno é positivo
+    -   atomiche
+    -   implicazioni il cui antecedente é una congiunzione di letterali
 
+<!--list-separator-->
 
-##### Inferenza su FOL {#inferenza-su-fol}
+-  Inferenza su FOL
 
--   `Proposizionalizzazione`
-    -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
-    -   Regola di Instanziazione Universale - `UI`
-        -   \\(\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\)
-        -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
-        -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
-    -   Regola di Instanziazione Esistenziale - `EI`
-        -   \\(\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\)
-        -   \\(k\\) costante di Skolem, nuova
-            -   non compare nella `KB`
-        -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\) lo é
-    -   `Herbrand`
-        -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
-            -   \\(KB \vDash F\\)
-        -   se non é conseguenza logica ... non é detto sia dimostrabile
-            -   \\(KB \not\vDash F\\) non sempre possibile
-        -   la logica del prim'ordine é **semi-decidibile**
-    -   `Inefficienza`
-        -   crea delle basi di conoscenza grandi con le regole
--   `Lifting` delle regole di inferenza
-    -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
-    -   **Modus Ponens Generalizzato**[^fn:3]
+    -   `Proposizionalizzazione`
+        -   \\(KB\_{\text{FOL}} \rightarrow KB\_{\text{LP}}\\)
+        -   Regola di Instanziazione Universale - `UI`
+            -   \\(\frac{\forall x, \alpha}{\text{subst}\\{\\{x/g\\},\alpha\\}}\\)
+            -   alla fine, in uno o piú passi, si deve arrivare a `ground`, \\(g\\) é esso stesso `ground`
+            -   la \\(KB\_{\text{LP}}\\) risultante é logicamente equivalente a quella precedente
+        -   Regola di Instanziazione Esistenziale - `EI`
+            -   \\(\frac{\exists x,\alpha}{\text{subst}\\{\\{x/k\\},\alpha\\}}\\)
+            -   \\(k\\) costante di Skolem, nuova
+                -   non compare nella `KB`
+            -   la \\(KB\_{\text{LP}}\\) risultante _non_ é logicamente equivalente a quella precedente _ma_ é soddisfacibile se \\(KB\_{\text{FOL}}\\) lo é
+        -   `Herbrand`
+            -   se una formula é conseguenza logica della \\(KB\_{\text{FOL}}\\), partendo dalla \\(KB\_{\text{LP}}\\) ottenuta esiste una dimostrazione della sua veritá
+                -   \\(KB \vDash F\\)
+            -   se non é conseguenza logica ... non é detto sia dimostrabile
+                -   \\(KB \not\vDash F\\) non sempre possibile
+            -   la logica del prim'ordine é **semi-decidibile**
+        -   `Inefficienza`
+            -   crea delle basi di conoscenza grandi con le regole
+    -   `Lifting` delle regole di inferenza
+        -   Regole di Inferenza \\(\text{LP}\\) trasformate in Regole di Inferenza \\(\text{FOL}\\)
+        -   **Modus Ponens Generalizzato**[^fn:3]
 
-\\[\frac{p\_{1}',\cdots ,p\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
+    \\[\frac{p\_{1}',\cdots ,p\_{n}' \qquad p\_{1} \land \cdots \land p\_{n} \implies q}{\text{subst}(q,\Theta)}\\]
 
--   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle p\_{i}', p\_{i} \rangle\\) per cui \\(p\_{i}' \theta = p\_{i} \theta\\) per ogni \\(i\in [1,n]\\)
--   `Unification` (Martelli/Montanari)
-    -   algoritmo di ricerca che date due formule trova la sostituzione \\(\theta\\) piú generale che le unifichi
--   `Forward Chaining`
-    -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:4]
-        -   in caso contrario il caso negativo puó non terminare
--   `Backward Chaining`
-    -   stesse considerazioni del `FC` ma piú efficiente
+    -   \\(\Theta\\) é un unificatore di ciascuna coppia \\(\langle p\_{i}', p\_{i} \rangle\\) per cui \\(p\_{i}' \theta = p\_{i} \theta\\) per ogni \\(i\in [1,n]\\)
+    -   `Unification` (Martelli/Montanari)
+        -   algoritmo di ricerca che date due formule trova la sostituzione \\(\theta\\) piú generale che le unifichi
+    -   `Forward Chaining`
+        -   **Corretto** e **Completo** se la `KB` é una `DATALOG`[^fn:4]
+            -   in caso contrario il caso negativo puó non terminare
+    -   `Backward Chaining`
+        -   stesse considerazioni del `FC` ma piú efficiente
 
-<!--listend-->
+    <!--listend-->
 
--   `Lifting` della Risoluzione[^fn:5]
+    -   `Lifting` della Risoluzione[^fn:5]
 
-\begin{align\*}
-\frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})}
-\end{align\*}
+    \begin{align\*}
+    \frac{l\_{1}\lor \cdots \lor l\_{k} \qquad m\_{1} \lor \cdots \lor m\_{n}}{\text{subst}(\Theta, l\_{1} \lor \cdots \lor l\_{i-1} \lor l\_{i+1} \lor \cdots \lor l\_{k} \lor m\_{1}  \lor \cdots \lor m\_{j-1} \lor m\_{j+1} \lor \cdots \lor m\_{n})}
+    \end{align\*}
 
--   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
-    1.  Eliminazione delle **implicazioni**
-    2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
-    3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
-    4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:6]
-        -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
-        -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
-        -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
-    5.  Eliminazione dei \\(\forall\\)
+    -   \\(KB\_{\text{FOL}} \rightarrow\_{\text{traduzione}}  KB\_{\text{FOL-CNF}}\\)
+        1.  Eliminazione delle **implicazioni**
+        2.  Spostamento delle **negazioni all'interno** (\\(\lnot \forall \equiv \exists \lnot\\))
+        3.  **Standardizzazione** delle variabili (rinomina variabili ambigue)
+        4.  **Skolemizzazione** (eliminazione degli \\(\exists\\))[^fn:6]
+            -   <span class="underline">funzioni di Skolem</span> in contesti \\(\forall x\_{1},x\_{2},\cdots [\exists y P(y,x\_{1},x\_{2},\cdots)] \cdots [\exists z Q(z,x\_{1},x\_{2}\cdots)]\\)
+            -   \\(\forall x P (F(x), x\_{})\\) dove \\(F\\) é una funzione di Skolem. con parametri tutti i parametri quantificati universalmente
+            -   <span class="underline">Caso Particolare</span>, in assenza di parametri la \\(F\\) non ha parametri: é una costante
+        5.  Eliminazione dei \\(\forall\\)
 
 
 #### Database Semantics {#database-semantics}
@@ -1147,7 +1169,9 @@ Nello stesso dominio:
 
 #### Ontologia come agente {#ontologia-come-agente}
 
-L'`ontologia` é la `Knowledge Base`, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni. Queste possono essere poste da software esterni o utenti. Sono rappresentazione di concettualizzazioni
+L'`ontologia` é la `Knowledge Base`, che tramite un motore inferenziale unisce l'ontologia e i fatti conosciuti per rispondere a delle interrogazioni.
+Queste possono essere poste da software esterni o utenti.
+Sono rappresentazione di concettualizzazioni
 
 Un'ontologia puó essere interrogata in maniere diverse
 
@@ -1224,7 +1248,7 @@ Sulla base della `FOL` contruisce:
     -   la soluzione semplice di riportare solamente le modifiche dello stato da parte dell'azione
     -   `frame problem`
 3.  `frame`
-    -   \\(\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action}(\text{params}),s}))\\)
+    -   \\(\forall \text{params},s,\text{vars}: \text{Fluent}(\text{vars},s) \land \text{params} \neq \text{vars} \implies \text{Fluent}(\text{vars}, \text{Result}(\text{Action}(\text{params}),s))\\)
 4.  `Assioma di Stato Successore`
     -   aggiunto per sostituire gli `assiomi di frame`
     -   `Azione Applicabile` \\(\implies\\) =
@@ -1287,7 +1311,7 @@ Distinzione tra
 
 -   dinamico / statico
 -   monoagente / multiagente
-    -   in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei prorpi obiettivi
+    -   in un sistema costituito da un insieme di agenti questi possono collaborare o competere nell'uso delle risorse e nel perseguimento dei propri obiettivi
     -   va sviluppato un `protocollo di interazione` che permetta di coordinare piú agenti
         -   attraverso scambi di messaggi
         -   `FIPA` - Foundation for Intelligent Physical Agents
@@ -1460,7 +1484,7 @@ Altro limite é che su `test set` sbilanciati gli _error rate_ saranno falsati.
 
 #### Classificazioni a Regole {#classificazioni-a-regole}
 
-Regole della forma
+Si classifica secondo regole della forma
 
 -   antecedente
     -   attributi, operazioni, valori
@@ -1501,22 +1525,23 @@ Le regole sono <span class="underline">prodotte</span>
 -   direttamente
     -   **Sequential Covering**
 
+<!--list-separator-->
 
-##### Sequential Covering {#sequential-covering}
+-  Sequential Covering
 
--   _focus_ su una classe alla volta, le altre sono considerate contro-esempi
--   ogni ciclo produce una regola
-    -   e vengono rimosse le istanze riconosciute da questa regola
-    -   **Learn one Rule**
-        -   `general-to-specific`
-            -   a partire dalla regola più generale \\(\text{True}=y\\)
-            -   si aggiungono all'antecedente in `and` delle specifiche, con le tecniche di scelta dello _split_
-        -   `specific-to-general`
-            -   scegliendo in modo casuale un esempio della classe definisce
-            -   valori dell'esempio
-            -   numero dei congiunti secondo gli attributi descritti dall'istanza
-            -   per generalizzare si eliminano dei congiunti utilizzando le tecniche di scelta dello _split_
--   le regole prodotte andranno poi utilizzate <span class="underline">nell'ordine in cui sono prodotte</span>
+    -   _focus_ su una classe alla volta, le altre sono considerate contro-esempi
+    -   ogni ciclo produce una regola
+        -   e vengono rimosse le istanze riconosciute da questa regola
+        -   **Learn one Rule**
+            -   `general-to-specific`
+                -   a partire dalla regola più generale \\(\text{True}=y\\)
+                -   si aggiungono all'antecedente in `and` delle specifiche, con le tecniche di scelta dello _split_
+            -   `specific-to-general`
+                -   scegliendo in modo casuale un esempio della classe definisce
+                -   valori dell'esempio
+                -   numero dei congiunti secondo gli attributi descritti dall'istanza
+                -   per generalizzare si eliminano dei congiunti utilizzando le tecniche di scelta dello _split_
+    -   le regole prodotte andranno poi utilizzate <span class="underline">nell'ordine in cui sono prodotte</span>
 
 
 #### Valutazione {#valutazione}
@@ -1533,18 +1558,18 @@ Ci sono diversi metodi di valutazione di un modello costruito tramite un algorit
 
 -   **Holdout**
     -   partizione dei dati disponibili in `LS` e `TS`
-    -   se la partizione e' sbilanciata si va verso _over_ o _under_ fitting
+    -   se la partizione è sbilanciata si va verso _over_ o _under_ fitting
 -   **Random subsampling**
     -   si ripete il processo di **holdout** più volte
     -   ripetendo più volte l'apprendimento
     -   si fa una media delle valutazioni dei modelli generati
         -   si valuta il classificatore in maniera più oggettiva
-        -   si cerca di liberare la valutazione dall'aleatoritù dei partizionamenti
+        -   si cerca di liberare la valutazione dall'aleatorità dei partizionamenti
 -   **Cross-validation**
     -   si fa **random subsampling** ma con dati più omogenei
     -   \\(K\\) fold cross validation
         -   con \\(K\\) partizioni
-    -   \\(1\\) dei set ú usato come `TS`
+    -   \\(1\\) dei set è usato come `TS`
     -   \\(K-1\\) dei set sono accorpati in `LS`
     -   uno per volta tutti i \\(K\\) set sono utilizzati per il testing
     -   alla fine si fa una media delle valutazioni
@@ -1552,7 +1577,7 @@ Ci sono diversi metodi di valutazione di un modello costruito tramite un algorit
     -   in casi in cui il `dataset` é piccolo
     -   per il `LS` si scelgono istanze dal `dataset` ma senza rimuoverle da quest'ultimo
         -   una stessa istanza può apparire più volte nel `LS`
-    -   per il `TS` si scelgono le istanze con cui non si e' fatto apprendimento
+    -   per il `TS` si scelgono le istanze con cui non si è fatto apprendimento
     -   questo viene ripetuto e valutato a piacere, facendo la media
 
 Tutte queste tecniche si usano nella valutazione dell'algoritmo usato rispetto al problema.
@@ -1582,7 +1607,7 @@ Misure di selezione:
     -   probabilita' che l'elemento appartenga alla classe \\(i\\)
 
 Si puo' calcolare una <span class="underline">distribuzione di probabilita'</span> di appartenenza di un record estratto casualmente.
-\\[\text{Entropy}(t) = - \sum\_{i=0}^{c-1} p(i \mid t) \log\_{2}p(i\mid t)\\]
+\\[\text{Entropy}(t) = \sum\_{i=0}^{c-1} - p(i \mid t) \log\_{2}p(i\mid t)\\]
 
 -   e' assunto che \\(0 \log\_{2} 0 = 0\\)
 -   \\(E=0\\) e' il caso migliore, con distribuzioni \\((0,1)\\) o \\((1,0)\\)
@@ -1592,7 +1617,7 @@ Il calcolo della bonta' di uno _split_, o calcolo del **guadagno**
 \\[\Delta = I(\text{parent}) - \sum\_{j=1}^{k}\frac{N(v\_{j})}{N} I(v\_{j})\\]
 
 -   \\(I\\) e' l'impurita'
--   \\(N\\) numero recond/istanze del nodo genitore
+-   \\(N\\) numero record/istanze del nodo genitore
 -   \\(N(v\_{j})\\) numero record/istanze del nodo figlio \\(j\\) -esimo
 
 Nel caso della misura, utilizzando l'entropia si calcola l'**information gain**
@@ -1659,7 +1684,8 @@ Passi:
 
 ### Lazy Learning {#lazy-learning}
 
-> **Definition** \\(\quad\\) _Lazy Learning_ in machine learning is a learning method in which generalization beyond the training data is delayed until a query is made to the system, as opposed to in _Eager Learning_, where the system tries to generalize the training data before receiving queries. Lazy learning is essentially an instance-based learning: it simply stores training data (or only minor processing) and waits until it is given a test tuple.
+> **Definition** \\(\quad\\) _Lazy Learning_ in machine learning is a learning method in which generalization beyond the training data is delayed until a query is made to the system, as opposed to in _Eager Learning_, where the system tries to generalize the training data before receiving queries.
+> Lazy learning is essentially an instance-based learning: it simply stores training data (or only minor processing) and waits until it is given a test tuple.
 
 Un _lazy learner_ <span class="underline">non costruisce un modello</span> con i dati di apprendimento ed é di semplice implementazione.
 Un esempio di questi é `K-NN`.
@@ -1678,7 +1704,7 @@ Si rappresentano come punti in uno spazio \\($n\\)-dimensionale le istanze:
 Questi punti vengono rapportati rispettivamente ai \\(k\\) punti piú vicini in funzione della loro distanza.
 
 -   un punto vicino a tutti punti di una stessa classe viene classificato/predetto come in quella classe
--   in caso di discordanza della classe dei vicini ci sono diverse implementazione
+-   in caso di discordanza della classe dei vicini ci sono diverse implementazioni
     -   _votazione_, vince la maggioranza ma si perde l'informazione sulla distanza
     -   _votazione pesata_, voti pesati rispetto alla distanza
 -   attributi di domini diversi possono avere cifre significative diverse
@@ -1748,20 +1774,21 @@ I \\(w\_{j}\\) sono prodotti incrementalmente tramite questo processo e sono dep
 
 {{< figure src="/ox-hugo/perceptron-learning.jpg" caption="<span class=\"figure-number\">Figure 2: </span>processo di learning di un perceptron" >}}
 
+<!--list-separator-->
 
-##### Limiti {#limiti}
+-  Limiti
 
-Rappresentazione dello `XOR`
+    Rappresentazione dello `XOR`
 
-| x | y | \\(\oplus\\) |
-|---|---|--------------|
-| 1 | 1 | -            |
-| 1 | 0 | +            |
-| 0 | 1 | +            |
-| 0 | 0 | -            |
+    | x | y | \\(\oplus\\) |
+    |---|---|--------------|
+    | 1 | 1 | -            |
+    | 1 | 0 | +            |
+    | 0 | 1 | +            |
+    | 0 | 0 | -            |
 
-Non é risolvibile da un singolo perceptron, solo con tecniche piú sofisticate utilizzandone un altro.
-![](/ox-hugo/perceptron-xor.png)
+    Non é risolvibile da un singolo perceptron, solo con tecniche piú sofisticate utilizzandone un altro.
+    ![](/ox-hugo/perceptron-xor.png)
 
 
 #### Multilayer Perceptron {#multilayer-perceptron}
@@ -1788,34 +1815,35 @@ I livelli di percettori _hidden_ possono identificare regioni dello spazio dei d
 2.  identifica forme chiuse
 3.  identifica regioni cave all'interno delle precedenti forme chiuse
 
+<!--list-separator-->
 
-##### Epoca di Apprendimento {#epoca-di-apprendimento}
+-  Epoca di Apprendimento
 
--   passata _forward_ individua con le tuple del `Learning Test` l'_errore_
--   passata _backward_ propaga l'informazione dell'errore a ritroso nella rete
-    -   aggiornando i pesi
+    -   passata _forward_ individua con le tuple del `Learning Test` l'_errore_
+    -   passata _backward_ propaga l'informazione dell'errore a ritroso nella rete
+        -   aggiornando i pesi
 
-Si utilizza il metodo di apprendimento noto come **Discesa del Grandiente**.
-\\[\Delta w\_{ij} = - \lambda \frac{dE(\overline w)}{d w\_{ij} }\\]
+    Si utilizza il metodo di apprendimento noto come **Discesa del Grandiente**.
+    \\[\Delta w\_{ij} = - \lambda \frac{dE(\overline w)}{d w\_{ij} }\\]
 
--   \\(E(\overline w)\\) matrice dei pesi
--   si identifica la _direzione_ in cui le configurazioni dei pesi si sviluppano rispetto all'errore
-    -   lo si abbassa minimizzando l'errore
+    -   \\(E(\overline w)\\) matrice dei pesi
+    -   si identifica la _direzione_ in cui le configurazioni dei pesi si sviluppano rispetto all'errore
+        -   lo si abbassa minimizzando l'errore
 
-L'apprendimento nel `MLP` si puó sviluppare in 2 casi
+    L'apprendimento nel `MLP` si puó sviluppare in 2 casi
 
-1.  neurone di _output_ \\(o\\) e neurone _hidden_ \\(i\\) collegato direttamente a \\(o\\)
-    -   si calcola direttamente l'errore con la differenza
-    -   \\(\Delta w\_{ji} = \alpha \delta^{j} x\_{ji}\\) --- variante di peso
-    -   \\(\delta^{j} = y (1-y)(t-y)\\) --- viene distribuito sui predecessori
-        -   \\(y (1-y)\\) derivata \\(f\\) errore
-        -   \\(t-y\\) errore
-2.  neurone dello strato _hidden_ \\(k\\) a metá tra neuroni _hidden_ o _input_ \\(i\\) e altri _hidden_ oppure _output_
-    -   propaghiamo verso \\(i\\)
-    -   \\(\Delta w\_{ki} = \alpha \delta^{k} x\_{ki}\\) --- variante di peso
-    -   \\(\delta^{k} = y (1-y) \sum\_{j\in I} \delta^{j} w\_{kj}\\)
-        -   l'errore di questo livello dipende dall'errore fatto negli errori piú profondi
-        -   **backpropagation** o **retropropagazione dell'errore**
+    1.  neurone di _output_ \\(o\\) e neurone _hidden_ \\(i\\) collegato direttamente a \\(o\\)
+        -   si calcola direttamente l'errore con la differenza
+        -   \\(\Delta w\_{ji} = \alpha \delta^{j} x\_{ji}\\) --- variante di peso
+        -   \\(\delta^{j} = y (1-y)(t-y)\\) --- viene distribuito sui predecessori
+            -   \\(y (1-y)\\) derivata \\(f\\) errore
+            -   \\(t-y\\) errore
+    2.  neurone dello strato _hidden_ \\(k\\) a metá tra neuroni _hidden_ o _input_ \\(i\\) e altri _hidden_ oppure _output_
+        -   propaghiamo verso \\(i\\)
+        -   \\(\Delta w\_{ki} = \alpha \delta^{k} x\_{ki}\\) --- variante di peso
+        -   \\(\delta^{k} = y (1-y) \sum\_{j\in I} \delta^{j} w\_{kj}\\)
+            -   l'errore di questo livello dipende dall'errore fatto negli errori piú profondi
+            -   **backpropagation** o **retropropagazione dell'errore**
 
 [^fn:1]: i.e. a costo minimo
 [^fn:2]: Se il dominio \\(D\\) é un insieme illimitato e se qualche formula \\(P\\) dell'insieme considerato contiene dei quantificatori, per determinarne il valore di veritá sarebbe necessario calcolare il valore di veritá delle infinite formule

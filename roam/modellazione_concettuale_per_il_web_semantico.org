@@ -180,22 +180,22 @@ Il linguaggio =RDF= piú utilizzato, leggibile facilmente da umani.
     foaf:name "Spiderman" .
 #+end_example
 in =Turtle=
-- la relazione =isa= (=rdf:type=) é abbreviata in =a=.
+- la relazione =isa= (=rdf:type=) è abbreviata in =a=.
 - gli =ISA= sono tra parentesi angolari se per esteso, altrimenti sono utilizzati con il prefisso definito
   - il /fragment identifier/ segue il #
 
-La feature principale di =Turtle= é la abbreviazione delle triple:
+La feature principale di =Turtle= è la abbreviazione delle triple:
 #+begin_example
 :spiderman :enemyOf :green-goblin ;
            :name    "Spiderman" ,
                     "Uomo Ragno" .
 #+end_example
- - =@base=  é utilizzato per definire un prefisso vuoto per alleggerire la scrittura
+ - =@base=  è utilizzato per definire un prefisso vuoto per alleggerire la scrittura
 
 I *blank node* sono definiti all'interno di parentesi quadre.
 
 I letterali sono seguiti dal loro tipo di dato
-- a seguire del delimitatore ^^ l'=IRI= definito per il tipo (o una appreviazione)
+- a seguire del delimitatore ~^^~ l'=IRI= definito per il tipo (o una abbreviazione)
 
 ** RDFS
 Linguaggio /property-centric/
@@ -270,7 +270,7 @@ Principali namespace:
 * Inferenza
 Fatta a partire dalla semantica definita sui vocabolari.
 - definizioni di /domain/ e /range/ trasportano conoscenza sulle istanze
-- transitivitá di sotto-classe, di sub-property ad esempio
+- transitività di sotto-classe, di sub-property ad esempio
 * Ontologie Computazionali
 #+caption: Guarino, 1998
 #+begin_quote

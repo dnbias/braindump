@@ -3,8 +3,8 @@
 :END:
 #+title: Intelligent Agents I
 #+date: [2023-02-27 Mon 10:55]
-#+FILETAGS: erasmus university compsci
-Course taught by *Leon* in University of Luxembourg.
+#+FILETAGS: erasmus university compsci master
+Course taught by *Leon van der Torre* in the University of Luxembourg.
 
 * Agent
 - interacts with an /environment/

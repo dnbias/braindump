@@ -1,6 +1,5 @@
 +++
 title = "Andrei Tarkovsky"
-author = ["Daniel Biasiotto"]
 date = 2022-01-03T15:57:00+01:00
 tags = ["author"]
 draft = false

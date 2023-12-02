@@ -1,6 +1,5 @@
 +++
 title = "La Firma in Bianco"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

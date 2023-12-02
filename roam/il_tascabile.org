@@ -3,4 +3,4 @@
 :END:
 #+title: Il Tascabile
 #+date: [2022-09-23 Fri 22:00]
-- [[www.iltascabile.com]]
+- [[http:www.iltascabile.com]]

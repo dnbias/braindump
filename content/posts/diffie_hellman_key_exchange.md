@@ -1,6 +1,5 @@
 +++
 title = "Diffie-Hellman Key Exchange"
-author = ["Daniel Biasiotto"]
 date = 2022-03-23T14:42:00+01:00
 tags = ["security"]
 draft = false

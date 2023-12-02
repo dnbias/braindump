@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       f796e791-2f0b-4552-899a-715d069d87b0
+:END:
+#+title: Emotional Intelligence
+#+filetags: book
+- Author: [[id:1a5b9af3-8b2d-48b8-9ca8-15b3ef68ac80][Daniel Goleman]]

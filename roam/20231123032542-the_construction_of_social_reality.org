@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       66248d16-1f30-4843-bd65-628b4397d9e1
+:END:
+#+title: The Construction of Social Reality
+#+filetags: book
+- Author: [[id:8c582ee0-1194-47b7-b6c9-9e46adaa60c7][John R. Searle]]

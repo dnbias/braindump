@@ -1,0 +1,4 @@
+:PROPERTIES:
+:ID:       f6b50988-4a42-4af6-bcca-aa101b318c00
+:END:
+#+title: UDDI

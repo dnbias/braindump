@@ -1,0 +1,98 @@
+:PROPERTIES:
+:ID:       29545128-07cf-4918-8988-9ed11bb1e684
+:ROAM_ALIASES: ESP
+:END:
+#+title: Etica, Società e Privacy
+#+date: [2023-11-09 Thu 09:41]
+#+filetags: university compsci master
+* Privacy
+** Principi
+- Direttiva europea 95
+- =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
+  + introduce il concetto di /pseudonimizzazione/
+- Privacy by Design and by Default
+* Etica
+** Metafora
+- partendo da [[id:3de0c2e6-55c4-49e8-8932-f04cf95c32a9][Metaphors We Live By]] di [[id:3d6cd7f2-3471-4ca5-b0b8-0fc0af68c6c6][George Lakoff]]
+- mapping matematico (o meglio *omomorfismo*) tra concetti complessi della vita e un dominio più semplice da rappresentare
+- il nostro cervello utilizza questo meccanismo perché non conosciamo le conseguenze delle nostre azioni, il problema è troppo complesso
+  + quindi semplifica
+
+- causalità e tempo sono esempi di domini che non conosciamo bene quanto crediamo e per i quali utilizziamo linguaggio metaforico per farne riferimento
+  + si riconducono a qualcosa di più conosciuto
+  + anche la tecnologia la concettualizziamo in questo modo
+
+** Conoscenza Esplicita e Tacita
+- teorizzata dal filosofo e economista [[id:1d46fe96-ab72-40c0-8fd4-2ec52e9231f5][Michael Polanyi]][fn::[[id:9beb54c7-e82b-49f3-bc56-214ea3ccb122][Tacit Knowledge]]]
+- la conoscenza di cui siamo coscienti non è tutta, il /gap/ è tacito in quanto non esprimibile dal linguaggio e non accessibile alla coscienza
+  + la c. tacita tratta la pratica, che non è trasmissibile o comunicabile
+  + altro esempio sono le regole del linguaggio
+  + altro esempio è la logica, il ragionare è una c. tacita di cui non siamo coscienti di come funzioni
+  + la percezione, utilizziamo linguaggio metaforico per descriverla
+  + la nostra dimensione emotiva[fn::[[id:f796e791-2f0b-4552-899a-715d069d87b0][Emotional Intelligence]]]
+    - questa intelligenza non la conosciamo, a volte solamente a posteriori o tramite empatia capiamo i nostri stati emotivi
+** Realtà Sociale
+- da [[id:66248d16-1f30-4843-bd65-628b4397d9e1][The Construction of Social Reality]]
+- non è data ma creata da noi
+  + tutto è deciso da regole *costitutive* ideate dalla collettività
+- la *realtà costruita* costituisce la gran parte della nostra realtà vissuta
+  + la tecnologia sta sempre più cambiando le regole e la realtà in cui viviamo
+    - non cambia fatti naturali ma piuttosto nostre costruzioni sociali
+** Conventional Wisdom
+- da [[id:12366eca-8730-4a9f-8f3d-991368f66acd][The Affluent Society]]
+- competizione tra giusto e accettabile
+  + in  una competizione il vantaggio strategico si trova in ciò che è accettabile, comodo
+    - il test del applauso pubblico influenza più del test della verità
+- teorie scientifiche e modi di fare possiedono una *inerzia* che supera anche il  momento in cui vengono smentite
+  + sono creazioni umane e per questo convenzionali e contengono i bias del nostro ragionamento
+** Tecnologia
+- la tecnologia inizia con i Neanderthal e continua fino ora
+- la società inizia con la Mesopotamia 3000 anni prima di Cristo
+  + [[id:f8b8ce61-390e-4e52-aa28-eba54150ab05][Yuval Noah Harari]] riconduce il passaggio alla *rivoluzione cognitiva*[fn::[[id:7f5747ca-c9a8-43f4-ab00-aafe8fcd13be][Sapiens: A brief History of Humankind]]]
+    - l'uomo ha cominciato a descrivere entità, scenari e miti che non esistono
+    - quindi non la tecnologia ma l'organizzazione della società attraverso e attorno entità fittizie
+      + dei, nazioni, organizzazioni, SPA
+
+** Costruzioni Sociali
+Le prime sono state le normative
+- codice di Amurabi
+- codice romano, primo codice moderno
+  + lo schiavo era gestito con una complessa legislazione
+    - gli schiavi svolgevano lavori e stipulavano contratti a loro volta a nome del padrone
+
+I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
+- potremmo rifarci al codice romano
+- come regolare la responsabilità da parte di un robot
+  + ora una macchina semi-autonoma deve essere /supervisionata/ dall'utente, se non c'è la colpa è dell'umano
+
+** Proprietà
+- una metafora
+- /commons/ - beni comuni
+  + [[id:9e5e919e-b895-402d-90ad-0a74c2eadccc][The Tragedy of the Commons]]
+    - /claim/: che la proprietà privata è preferibile a quella comune
+      + tutti guardano al proprio /self-interest/ utilizzando il campo comune,
+        alla fine non ci sono più risorse per nessuno
+      + la base del Liberismo
+  + [[id:d5c23aed-447a-481f-9b25-ce6b118af9c8][Governing the Commons]]
+    - riscopre l'importanza dei /Commons/, erano regolati per mantenere l'equilibrio
+      + le costruzioni sociali /implicite/ nei commons erano state completamente ignorate da Hardin
+    - Ostrom premio nobel per questo contributo
+- questo deriva dal concetto che le produzioni dell'ingegno siano di proprietà di tutti
+- il concetto nasce da terreni che erano di proprietà della comunità in Inghilterra
+** Requerimiento
+- i conquistadores prima di conquistare con il massacro le terre indigene dichiaravano un /requerimiento/ con cui intimavano a cedere il terreno agli indigeni, in spagnolo ovviamente
+- una sorta di assoluzione dall'etica tramite sovrastrutture e costrutti sociali
+** Linguaggio
+- descrive il vero? no
+- può formulare domande, ordini, richieste
+  + tramite formule linguistiche definiamo e cambiamo le regole che regolano il mondo in cui agiamo
+- [[id:43529421-7bee-47e3-9890-1356d1c6eb59][How to Do Things with Words]]
+** Liberismo
+- Adam Smith
+  + mano invisibile
+    - se ognuno segue il proprio fine egoistico il sistema ne gioisce per tutti
+    - ammissione di razionalità limitata
+      + non abbiamo un modello per cui tanto vale lasciare tutto al mercato
+    - il comunismo ha fallito per mancanza di informazione
+      + la tecnologia in un certo senso potrebbe risolvere il problema, una =AI= può predire e governare un sistema anche senza un modello
+        - una sorta di comunismo in mano a multinazionali private

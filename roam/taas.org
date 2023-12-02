@@ -4,7 +4,7 @@
 :END:
 #+title: TAAS
 #+date: [2022-09-19 Mon 10:14]
-#+filetags: university master
+#+filetags: university master compsci
 * Informazioni Corso
 - Giovanna Petrone
 - Laboratorio
@@ -33,4 +33,119 @@
 - Planning
   - l'approccio cerca di anticipare i problemi
   - stabilire obiettivi concreti
-  -
+
+* Maven
+- repeatable builds
+- dipendenze transitive
+- gestisce l'ambiente di sviluppo e di esecuzione
+
+Ogni progetto è identificato dal =GAV=
+- groupID:artifactID:version
+
+Per progetti di grandi dimensioni si può definire un /parent project/ da cui ereditare la configurazione dall'alto.
+
+=Maven= è opinionato riguardo la struttura del progetto.
+- /target/, /src/, /...test/, etc
+- =mvn install=
+- =mvn clean=
+- =mvn clean compile=
+* JEE
+Java Enterprise
+- quando ci sono necessità di scalabilità
+- adatta allo sviluppo di applicazioni web-based a livello di impresa
+- il competitor Microsoft è =.net=
+Offre funzionalità /on top of/ i componenti di gestione dati e database
+- servlet
+- injection
+- web pages
+- expression language
+- SOAP services
+- REST services
+- JSON
+- validation
+- persistence
+- concurrency
+- security
+- ...
+
+** Enterprise Java Beans
+=EJB=
+Componenti sul lato server
+
+
+* Single Page Application
+Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
+- niente /reload/ continui o page flicker
+- interazione più veloce e seamless, migliore =UX=
+- il render è gestito da =JavaScript=
+
+È una evoluzione a partire dal sito web classico, carica una singola pagina =HTML=. Sfruttano =AJAX= e =HTML5= per creare una web app fluida e responsiva.
+* Docker
+* Spring
+* Angular
+* Service Oriented  Architecture
+- [[id:9a407eb2-8f01-4f30-9ad6-a01e0539615f][SOA]]
+- necessità di integrare servizi eterogenei tra loro di terze parti
+- prima di questa architettura si utilizzavano software
+  + sito-ed, closed, monolithic, brittle
+  + una volta aggiornata una delle sezioni andavano testate e redeployed tutte quante
+
+- dopo
+  + strutturare il software attorno applicazioni composite e composed business process
+  + vengono estratti i servizi riutilizzabili, /reusable business services/
+  + test e redeploy sono necessari solamente per il modulo aggiornato successivamente
+  + i servizi vengono poi orchestrati per il funzionamento delle applicazioni sovrastanti
+
+*Web service wrapper* sono stati utilizzati per creare interfacce tra una lingua franca (=XML=) e applicazioni in un qualsiasi linguaggio.
+
+Uno shift fondamentale dell'uso del web
+- web human-centric
+  + maggioranza delle transazioni web iniziate da un umano
+- web application-centric
+  + scambi inter-application
+  + necessità di esporre tramite uno standard dei servizi sul web
+
+Questi =web-service= sono
+- encapsulated
+- loosely coupled
+- contracted software objects via standard protocols
+- disponibili tramite web
+- utilizzano messaggi =XML= standardizzati
+- indipendenti da =OS= o linguaggio
+- self describing via =XML=
+- easily discoverable
+
+Gli  standard =XML= sono:
+- [[id:732177e4-9a00-43f9-8201-f8d7503c7e49][SOAP]], simple object access protocol
+- [[id:6b8ae378-aab8-4bc2-abd7-b41bfaee6abe][WSDL]], web services description language
+- [[id:f6b50988-4a42-4af6-bcca-aa101b318c00][UDDI]], universal description, discovery and integration
+  + Microsoft
+  + interrogati da applicazioni in rete
+  + sostanzialmente delle pagine gialle per =SOAP=
+  + provvedono contact/business information
+  + binding information e =API=
+
+Il modello di uso è
+- publish
+- find
+- bind
+
+Per l'utilizzo di =SOAP=
+- RPC-style, sincrono
+  + /remote procedure call/
+- Document-style, asincrono
+
+La differenza con [[id:99a43f32-dfa7-485a-bb13-b31d9776fa5d][REST]] è che con questa architettura ho la possibilità di fare programmazione distribuita, le richieste possono essere vere richieste programmatiche mentre l'alternativa si occupa più prettamente di scambio di dati.
+* Representational State Transfer
+- [[id:99a43f32-dfa7-485a-bb13-b31d9776fa5d][REST]]
+- 2000, tesi di dottorato di Roy Fielding
+- il tipo di contenuto che viene restituito sta al programmatore
+  + spesso =JSON=, =XML=
+- i siti web sono =RESTful=
+- non ha l'espressività di [[id:6b8ae378-aab8-4bc2-abd7-b41bfaee6abe][WSDL]]
+
+Utilizzo dei metodi =http=
+- =GET=
+- =POST=
+- =PUT=
+- =DELETE=

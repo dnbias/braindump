@@ -1,6 +1,5 @@
 +++
 title = "Five Suggestions For Rationality Research and Development"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

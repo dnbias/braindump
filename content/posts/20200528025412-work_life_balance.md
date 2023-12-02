@@ -55,12 +55,13 @@ FOMO?
 
 #### La metrica del tuo valore non deve venire dall'esteno {#la-metrica-del-tuo-valore-non-deve-venire-dall-esteno}
 
+<!--list-separator-->
 
-##### Acceleration Addiction {#acceleration-addiction}
+-  Acceleration Addiction
 
-nel tempo gli stessi obbiettivi perdono valore
-non e' mai abbastanza
-il valore deve essere trovato altrove
+    nel tempo gli stessi obbiettivi perdono valore
+    non e' mai abbastanza
+    il valore deve essere trovato altrove
 
 
 ### Lista di cose di valore {#lista-di-cose-di-valore}

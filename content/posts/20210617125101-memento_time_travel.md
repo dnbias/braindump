@@ -1,6 +1,5 @@
 +++
 title = "Memento Time Travel"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

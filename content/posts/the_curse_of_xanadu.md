@@ -1,6 +1,5 @@
 +++
 title = "The Curse of Xanadu"
-author = ["Daniel Biasiotto"]
 date = 2021-12-24T15:13:00+01:00
 tags = ["article"]
 draft = false

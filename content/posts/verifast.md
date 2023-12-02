@@ -52,10 +52,8 @@ Q (s, h'', \pi') \text{ with }\pi \subseteq \pi'
 
 Then these are used by 2 routines:
 
-```c
-verify(h,s,\(\pi\),f(e),Q) where \(f(x)\) requires \(A_{1}\); ensures \(A_{2}\));
-valid(\(f(x)\) requires \(A_{1}\); ensures \(A_{2}\); \(\{\overline{s}\}\));
-```
+verify(h,s,\\(\pi\\),f(e),Q) where \\(f(x)\\) requires \\(A\_{1}\\); ensures \\(A\_{2}\\));
+valid(\\(f(x)\\) requires \\(A\_{1}\\); ensures \\(A\_{2}\\); \\(\\{\overline{s}\\}\\));
 
 
 ## Branches {#branches}
@@ -443,7 +441,7 @@ lemma void lseg_add_lemma(struct node *first)
     {
         open lseg(first, last, count);
         if (first == last) {
-            close lseg(nexn, next, 0);
+            close lseg(next, next, 0);
         } else {
             lseg_add_lemma(first->next);
         }
@@ -473,7 +471,7 @@ int stack_get_count(struct stack *stack)
         //@  lseg_add_lemma(head);
     }
     //@ open lseg(0,0,_);
-    //@ lseg_to_nodes_lemma(head
+    //@ lseg_to_nodes_lemma(head)
     //@ close stack(stack, count);
     return i;
 }

@@ -1,6 +1,5 @@
 +++
 title = "Work with the garage door up"
-author = ["Daniel Biasiotto"]
 date = 2021-12-29T02:01:00+01:00
 tags = ["article"]
 draft = false

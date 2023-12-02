@@ -1,6 +1,5 @@
 +++
 title = "Zettelkasten principles"
-author = ["Daniel Biasiotto"]
 date = 2021-12-22T23:42:00+01:00
 draft = false
 +++

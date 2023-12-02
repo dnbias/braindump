@@ -1,6 +1,5 @@
 +++
 title = "Haskell: the Craft of Functional Programming"
-author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

@@ -1,6 +1,5 @@
 +++
 title = "Of Typewriters, Scribe, LaTeX, Org mode, Hugo and Paper"
-author = ["Daniel Biasiotto"]
 tags = ["blog"]
 draft = false
 +++

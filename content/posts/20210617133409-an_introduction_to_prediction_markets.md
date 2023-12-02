@@ -1,6 +1,5 @@
 +++
 title = "An Introduction to Prediction Markets"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 

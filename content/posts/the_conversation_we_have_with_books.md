@@ -1,6 +1,5 @@
 +++
 title = "The Conversation We Have with Books"
-author = ["Daniel Biasiotto"]
 date = 2021-12-28T20:00:00+01:00
 tags = ["article"]
 draft = false

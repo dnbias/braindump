@@ -1,6 +1,5 @@
 +++
 title = "Sapiens: A brief History of Humankind"
-author = ["Daniel Biasiotto"]
 date = 2022-01-09T13:30:00+01:00
 tags = ["book"]
 draft = false

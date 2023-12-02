@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       d7f1e45b-c7c6-496b-8e7e-aa1464d2badb
+:END:
+#+title: John K. Galbraith
+#+filetags: author

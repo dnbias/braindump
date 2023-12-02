@@ -1,6 +1,5 @@
 +++
 title = "Capturing Notes Efficiently with Org Roam"
-author = ["Daniel Biasiotto"]
 date = 2021-12-19T20:04:00+01:00
 tags = ["article"]
 draft = false

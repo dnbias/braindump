@@ -1,6 +1,5 @@
 +++
 title = "Digital Envelope"
-author = ["Daniel Biasiotto"]
 date = 2022-03-23T14:36:00+01:00
 tags = ["security"]
 draft = false

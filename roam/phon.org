@@ -21,7 +21,7 @@ Ci sono diversi progetti di archiviazione e catalogo di fotografie in rete, le p
 - [[http://apolloarchive.com/][Project Apollo Archive]]
   + progetto composto da scan fotografiche del Kennedy Space Center di archiviazione e catalogo delle fotografie scattate durante l'allunaggio
 - [[http://www.iccd.beniculturali.it/it/194/fondi-fotografici][Istituto Centrale per il Catalogo e la Documentazione]]
-  + catalogo fotografica gestito dal Ministero della Cultura
+  + catalogo fotografico gestito dal Ministero della Cultura
 * Requisiti
 - *Finalità*
   + creare una tassonomia il più semplice e chiara possibile per descrivere il dominio
@@ -111,8 +111,9 @@ In particolare è stata allineata una versione semplificata di Dolce: [[http://o
 La versione di FaBiO allineata può essere trovata a questo [[https://sparontologies.github.io/fabio/current/fabio.html][link]].
 
 Inoltre è stato utilizzato il pattern architetturale =List= \rightarrow =ListItem= per rappresentare serie fotografiche e i loro singoli componenti (=Figure 8=).
-* OOPS
-=OntOlogy Pitfall Scanner=
+* LODE
+[[~/Documents/UNI/Master/ModSem/PhotOntology/phon/lode-1.JPG]]
+[[~/Documents/UNI/Master/ModSem/PhotOntology/phon/lode-2.JPG]]
 * Visualizzazione
 Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Protégé.
 
@@ -126,3 +127,99 @@ Vedere =Figure 6, 7, 8, 9, 10= per screenshot dei grafi e degli individui in Pro
 [[~/Pictures/20230207_04h14m04s_grim.png]]
 #+caption: Pagina Protégé della serie fotografica FamilyPortrait
 [[~/Pictures/20230207_04h17m23s_grim.png]]
+
+* Interazione utente
+Una applicazione basata su questa ontologia deve poter soddisfare le richieste degli utenti reperendo le informazioni della base di conoscenza.
+
+Ad esempio, interazioni fondamentali a questo scopo sono:
+- contare il numero di fotografie scattate da ciascun fotografo
+- elencare le fotografie scattate da un fotografo
+- elencare i fotografi che hanno scattato fotografie analogiche
+- elencare le fotografie scattate in un certo luogo
+- elencare le fotografie scattate prima o dopo una certa data
+
+
+\vspace{10mm} [[~/Documents/UNI/Master/ModSem/PhotOntology/phon/flowchart_interaction.drawio.png]]
+\pagebreak
+
+[[~/Documents/UNI/Master/ModSem/PhotOntology/phon/mockup.png]]
+
+\pagebreak
+* SPARQL queries
+Elenco dei fotografi per numero di foto scattate:
+#+begin_example
+SELECT (COUNT(*) AS ?count)
+WHERE {
+  ?photo <phon#shotBy> ?author .
+}
+GROUP BY ?author
+ORDER BY ?count
+#+end_example
+Risultato:
+|----------------+---|
+| NASA           | 6 |
+| Dorethea Lange | 1 |
+|----------------+---|
+
+\vspace{5mm}
+Elenco delle foto scattate da Dorothea Lange:
+#+begin_example
+SELECT ?photo
+WHERE {
+  ?photo <phon#shotBy> ?author .
+  FILTER (?author = <phon#DorotheaLange>)
+}
+#+end_example
+Risultato:
+|----------------|
+| Migrant Mother |
+|----------------|
+
+
+\vspace{5mm}
+Elenco delle foto scattate in California:
+#+begin_example
+SELECT ?photo
+WHERE {
+  ?photo <phon#shotIn> ?location .
+  FILTER (?location = <phon#California>)
+}
+#+end_example
+Risultato:
+|----------------|
+| Migrant Mother |
+|----------------|
+
+\vspace{5mm}
+Elenco delle foto analogiche:
+#+begin_example
+SELECT ?photo
+WHERE {
+  ?photo <phon#medium> ?m .
+  FILTER (?m = <phon#Film>)
+}
+#+end_example
+Risultato:
+|----------------|
+| Migrant Mother |
+|----------------|
+
+\vspace{5mm}
+Elenco delle foto scattate tra il 1990 e il 1999:
+#+begin_example
+SELECT ?photo ?y
+WHERE {
+  ?photo <phon#year> ?y .
+  FILTER (?y <= "1990"^^xsd:positiveInteger &&
+          "1999"^^xsd:positiveInteger <= ?y )
+}
+#+end_example
+Risultato:
+|---------------|
+| Venus         |
+| Jupiter       |
+| Uranus        |
+| Saturn        |
+| Neptune       |
+| Pale Blue Dot |
+|---------------|

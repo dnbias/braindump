@@ -26,39 +26,45 @@ possibile che ne sia scelta piu' di uno, almeno 2
 
 #### della Blue Origin `Jef Bezof` {#della-blue-origin-jef-bezof}
 
+<!--list-separator-->
 
-##### anche Blue Moon - lander robotico {#anche-blue-moon-lander-robotico}
+-  anche Blue Moon - lander robotico
 
-sviluppato semi di nascosto
+    sviluppato semi di nascosto
 
+    <!--list-separator-->
 
-###### motore `BE7` {#motore-be7}
+    -  motore `BE7`
 
-testato con successo (fiamma verde :o)
+        testato con successo (fiamma verde :o)
 
 
 #### molto tradizionali {#molto-tradizionali}
 
+<!--list-separator-->
 
-##### modulo di discesa {#modulo-di-discesa}
+-  modulo di discesa
 
-blue origin
+    blue origin
 
+<!--list-separator-->
 
-##### modulo di trasferta {#modulo-di-trasferta}
+-  modulo di trasferta
 
-Northrop Grumman `inspirata alla Synius - costruita in Italia`
+    Northrop Grumman `inspirata alla Synius - costruita in Italia`
 
+<!--list-separator-->
 
-##### modulo di ascesa {#modulo-di-ascesa}
+-  modulo di ascesa
 
-locked martin `sviluppatori della Orion`
+    locked martin `sviluppatori della Orion`
 
+<!--list-separator-->
 
-##### piu' volume per una migliore permanenza degli astronauti {#piu-volume-per-una-migliore-permanenza-degli-astronauti}
+-  piu' volume per una migliore permanenza degli astronauti
 
-1 settimana e' l'obiettivo - rispetto ai 3 giorni delle missioni Apollo
-un tempo simile permetterebbe esperimenti, video in 8K
+    1 settimana e' l'obiettivo - rispetto ai 3 giorni delle missioni Apollo
+    un tempo simile permetterebbe esperimenti, video in 8K
 
 
 ### SpaceX - $135M {#spacex-135m}
@@ -66,91 +72,108 @@ un tempo simile permetterebbe esperimenti, video in 8K
 
 #### Starship `obiettivo: Marte e ritorno` {#starship-obiettivo-marte-e-ritorno}
 
+<!--list-separator-->
 
-##### baricentro molto alto {#baricentro-molto-alto}
+-  baricentro molto alto
 
-necessario un ottimo sistema di controllo di atterraggio/piedini regolabili
+    necessario un ottimo sistema di controllo di atterraggio/piedini regolabili
 
+    <!--list-separator-->
 
-###### enorme {#enorme}
+    -  enorme
 
-50m, piu' grande del Saturn-5
-
-
-##### navicella {#navicella}
-
-
-###### gia' 1 semplificata pronta per il `Gateway` {#gia-1-semplificata-pronta-per-il-gateway}
-
-
-##### non ha sistema di rientro (Moonship) {#non-ha-sistema-di-rientro--moonship}
-
-
-###### non ha scudo termico {#non-ha-scudo-termico}
-
-questo ha tolto gran parte del peso
-
-
-###### il rientro sara' gestito dalla Orion {#il-rientro-sara-gestito-dalla-orion}
-
-
-##### sara' riutilizzabile {#sara-riutilizzabile}
-
-
-###### perfino piu' economico del Falcon-5 {#perfino-piu-economico-del-falcon-5}
+        50m, piu' grande del Saturn-5
 
 <!--list-separator-->
 
--  questo rende possibile il refilling in orbita
+-  navicella
 
+    <!--list-separator-->
 
-##### MK1 {#mk1}
-
-esplosa al tentativo di pressurizzazione
-(con azoto liquido?)
-
-
-##### SN1 - SN2 - SN3 {#sn1-sn2-sn3}
-
-continua l'innovazione, esplosi
-
-
-##### SN4 {#sn4}
-
-non e' esplosa alla pressurizzazione
-
-
-###### motori: Raptor {#motori-raptor}
+    -  gia' 1 semplificata pronta per il `Gateway`
 
 <!--list-separator-->
 
--  31 al lancio
+-  non ha sistema di rientro (Moonship)
+
+    <!--list-separator-->
+
+    -  non ha scudo termico
+
+        questo ha tolto gran parte del peso
+
+    <!--list-separator-->
+
+    -  il rientro sara' gestito dalla Orion
 
 <!--list-separator-->
 
--  metano liquido e ossigeno liquido
+-  sara' riutilizzabile
 
-    metano producibile anche su Marte (C + H)
+    <!--list-separator-->
 
+    -  perfino piu' economico del Falcon-5
 
-###### acciaio e non piu' materiali compositi {#acciaio-e-non-piu-materiali-compositi}
+        <!--list-separator-->
 
-costi minori e maggiore resistenza
+        -  questo rende possibile il refilling in orbita
 
+<!--list-separator-->
 
-##### Starhopper {#starhopper}
+-  MK1
 
-primo tentativo di lancio
+    esplosa al tentativo di pressurizzazione
+    (con azoto liquido?)
 
+<!--list-separator-->
 
-##### SuperHeavy {#superheavy}
+-  SN1 - SN2 - SN3
 
-booster
+    continua l'innovazione, esplosi
 
+<!--list-separator-->
 
-##### Starship {#starship}
+-  SN4
 
-da attaccare in cima al SuperHeavy
+    non e' esplosa alla pressurizzazione
+
+    <!--list-separator-->
+
+    -  motori: Raptor
+
+        <!--list-separator-->
+
+        -  31 al lancio
+
+        <!--list-separator-->
+
+        -  metano liquido e ossigeno liquido
+
+            metano producibile anche su Marte (C + H)
+
+    <!--list-separator-->
+
+    -  acciaio e non piu' materiali compositi
+
+        costi minori e maggiore resistenza
+
+<!--list-separator-->
+
+-  Starhopper
+
+    primo tentativo di lancio
+
+<!--list-separator-->
+
+-  SuperHeavy
+
+    booster
+
+<!--list-separator-->
+
+-  Starship
+
+    da attaccare in cima al SuperHeavy
 
 
 #### progetto piu' ambizioso {#progetto-piu-ambizioso}

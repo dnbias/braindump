@@ -1,0 +1,78 @@
++++
+title = "Toward Real Microkernels"
+author = ["Daniel Biasiotto"]
+date = 2023-03-07T21:31:00+01:00
+tags = ["paper"]
+draft = false
++++
+
+-   Source:
+-   Author: [Jochen Liedtke]({{< relref "jochen_liedtke.md" >}})
+-   Related: [Sistemi Operativi]({{< relref "SO.md" >}}), [Microkernel Based Systems]({{< relref "microkernel_based_systems.md" >}})
+
+
+## Summary {#summary}
+
+In the late 80s the paradigm shift of the `MK` was met with enthusiasm based on the obvious advantages of a more modular and slim approach to the kernel. But then the reality of first generation `MK` presented big performance problems that were not solvable simply by iterating and optimizing on the areas that seemed to cause the issue (mainly `IPC`). The real breakthrough was with **Exokernel** and **L4**, designing a `MK` from scratch without starting from monolithic kernel implementations. The performance problems were solved and the external-pager was substituted by memory managers implemented using simple primitives provided by the `MK`, with no policy hand-wiring inside the kernel.
+
+This paper outlines well what is the purpose behind the research on `MK` and why it looked like a good alternative to the monolithic design, giving a good historical background to the developments in the field and explaining well the most important aspects that were critical to the improvement of the `MK`. It also gave great insight in the difficulty of diagnosing the performance problem of a system, that at first looked caused by `IPC` but in reality was a more complex issue.
+
+
+## Notes {#notes}
+
+-   **kernel**: the mandatory part of the operating system common to all other software
+    -   uses safety-critical features of the processor that user-mode software cannot use
+-   **monolithic vs micro**
+    1.  the complete `OS` is packed in a single kernel
+    2.  minimize the kernel and implement servers outside of it
+        -   the basics are: address space, `IPC`, basic scheduling
+        -   treat the servers exactly as other programs, they run in user-mode
+
+-   this idea was born in the late 1980s
+-   clear theoretical advantages of the microkernel paradigm
+    -   different `APIs`, file systems, operating system strategies could coexist in the same system
+    -   system is flexible and extensible, can be easily adapted to new hardware and application, only some servers need to be modified for this
+    -   system is contained and easier to manage, less error prone
+    -   system is modular
+    -   interdependencies between different parts could be restricted and reduced (`TCB` is smaller)[<TCB> the Trusted Computing Base]
+
+The expectations met reality when some problems arose
+
+-   the first generation of `MK` came with two principal breakthroughs
+    1.  user-level pagers
+        -   kernel manages physical and virtual memory
+        -   forwards page faults to user-level servers
+        -   the pagers implement mapping from virtual memory to backing store and usually return the appropriate page image to the kernel
+        -   the kernel establishes the virtual-to-physical memory mapping
+    2.  handling hardware interrupts as `IPC`
+        -   the kernel captures the interrupts without handling it, generating a message for the user-level process associated with the interrupt
+        -   the user-level process waits for these messages and handles them
+        -   this allows for hot-swapping drivers with no linking to new kernel and rebooting of the system
+-   all these systems rely heavily on the `IPC`
+    -   this became a bottleneck very fast
+    -   each invocation of the operating system or application service requires an `RPC`, usually two `IPC`s
+    -   **practical criteria**:
+        1.  applications must not be degraded by the `MK`
+        2.  `MK` must efficiently support new types of applications that cannot be implemented with good performance on conventional monolithic kernels
+-   the second generation optimized the `MK` to the point there were no new significant optimization possibilities and still the performance cost was too much, this suggested the problem was in the core design of the `MK`
+    -   evolving `MK`s step by step from monolithics lead nowhere
+-   new radical approach: design a `MK` from scratch
+    -   **Exokernel**
+        -   1994, small and hardware-dependent
+        -   philosophy is that `MK` should provide no abstractions but only a minimal set of primitives
+    -   **L4**
+        -   1995
+        -   efficiency and flexibility require a minimal set of general `MK` abstractions and that `MK` are processor dependent
+    -   both approaches seem to overcome the performance problem
+-   another problem was the **external-pager** concept hand-wiring a policy inside the kernel
+    -   this becomes a problem where new policies are needed
+    -   this was removed in **L4** where basic mechanisms permit implementation of various protection schemes and physical memory management on top of the `MK`
+    -   **support of recursive construction of address spaces outside the kernel**
+        -   3 operations are provided by the `MK`
+            -   _grant_, _map_, _demap_
+            -   the first two require consensus between address space owner and callee
+        -   this way **memory servers** can be implemented on top, with different policies
+            -   timesharing
+            -   real-time
+            -   multimedia
+            -   file caching

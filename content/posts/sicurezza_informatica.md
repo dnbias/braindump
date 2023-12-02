@@ -1,6 +1,5 @@
 +++
 title = "Sicurezza Reti e Calcolatori"
-author = ["Daniel Biasiotto"]
 date = 2022-03-09T17:01:00+01:00
 tags = ["university", "security"]
 draft = false
@@ -62,14 +61,14 @@ Utilizzando chiavi lunghe e testi arbitrariamente lunghi
         -   con _known plaintext_
         -   conoscendo `<P1,C1> <P2,C2>`
             -   servono estrambe per incrociare la ricerca, i match sono diversi per blocco
-            -   ci sono molte piu' chiavi che blocchi
-        -   _brute force_ sulla prima fase di cifratura, su \\(2^{56}\\) possibilita' su [DES]({{< relref "des.md" >}})
+            -   ci sono molte più chiavi che blocchi
+        -   _brute force_ sulla prima fase di cifratura, su \\(2^{56}\\) possibilità su [DES]({{< relref "des.md" >}})
 2.  cifrare a 3 fasi
     -   `triple DES` o `3DES`
     -   sicuro, chiave di \\(3\cdot 56=168\\)
     -   normalmente si utilizza `K1 = K3`
         -   la forza sta nelle 3 fasi, non nelle 3 chiavi
-    -   si puo' utilizzare `3DES-EDE` con 3 chiavi uguali, che equivale a `DES`
+    -   si può utilizzare `3DES-EDE` con 3 chiavi uguali, che equivale a `DES`
 
 Per _plaintext_ lunghi si hanno diverse tecniche per creare un messaggio cifrato a partire dai blocchi:
 
@@ -162,7 +161,7 @@ Queste funzioni di hash sono utilizzate per:
 
 La funzione di hash piú utilizzata in tempi recenti é stato il [Secure Hash Algorithm]({{< relref "secure_hash_algorithm.md" >}})
 
-Un _birthday attack_ é effettuato generando collissioni:
+Un _birthday attack_ é effettuato generando collisioni:
 
 -   \\(2^{m}\\) messaggi
 -   codici di \\(c\\) bit
@@ -431,7 +430,7 @@ Queste tecniche sono annidabili
     -   Data
         -   $N&times;$32B
         -   dati di autenticazione `MAC`
-        -   questo `MAC` coper da `header IP` in poi
+        -   questo `MAC` copre da `header IP` in poi
             -   ignora campi variabili `TTP` e `checksum` impostandoli a 0
 
 

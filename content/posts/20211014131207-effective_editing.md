@@ -1,6 +1,5 @@
 +++
 title = "Effective Editing"
-author = ["Daniel Biasiotto"]
 draft = false
 +++
 
