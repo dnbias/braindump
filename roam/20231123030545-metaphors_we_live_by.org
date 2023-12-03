@@ -3,3 +3,4 @@
 :END:
 #+title: Metaphors We Live By
 - Author: [[id:3d6cd7f2-3471-4ca5-b0b8-0fc0af68c6c6][George Lakoff]]
+- [[html:https://www.youtube.com/watch?v=7_cexWKE7sE]]

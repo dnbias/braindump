@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       70aaebc8-25df-4ba5-950c-228304a5a008
+:END:
+#+title: GDPR
+#+date: [2023-12-03 Sun 05:26]

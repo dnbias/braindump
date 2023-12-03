@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3f46d2a9-8110-41e7-947b-a013bae00fee
+:END:
+#+title:L'Homme Machine
+#+date: [2023-12-02 Sat 18:22]
+#+filetags: book materialism
+- Author: [[roam:Julien Offray de La Mettrie]]

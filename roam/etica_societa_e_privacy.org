@@ -11,6 +11,59 @@
 - =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
   + introduce il concetto di /pseudonimizzazione/
 - Privacy by Design and by Default
+
+** Big Data Era
+- il concetto è legato con l'idea di possesso, autonomia e integrità delle nostre vite
+- le nostre informazioni pubbliche sono utilizzate da terzi per prendere decisioni anche importanti per la nostra vita
+
+
+#+begin_quote
+The right to be left alone
+#+end_quote
+- dati di credito
+- dati telefonici
+- dati medici, dati sulle assicurazioni
+- dati mail
+- social media
+- dispositivi =IoT=
+- videocamere di sicurezza
+- dati =DNA=
+
+/Law of Unintended Consequences/
+- =SSN= è era stato pensato per sicurezza sociale
+  + ora è utilizzato per identificare gli studenti
+- gli smartphone erano nati con scopi di comunicazione
+  + ora sono utilizzati come metodi di pagamento
+- =DNA= utilizzato per motivi evolutivi
+  + potrebbe essere un'identificativo
+
+/Big Data/
+- i dati sono molti, cosi tanti che non si sa come gestirli ma neanche come proteggerli
+- molti dati sporchi e difficilmente analizzabili
+- i dati vengono collezionati in maniera indiscriminata, spesso più di quelli necessari
+- dati non ben caratterizzati
+- queste quantità di dati permettono l'identificazione di *pattern* che altrimenti non sarebbe possibile riconoscere
+  + caso =FDA=, Bing e colesterolo
+
+/Dataification/
+- le organizzazioni sono dipendenti dai dati
+- business si basano interamente sui dati
+- molti business accumulano dati con l'idea di utilizzarli in futuro, contrariamente ai principi del =GDPR=
+
+Questi sviluppo sono possibili solamente, almeno per quanto ne sappiamo attualmente, solo con una perdita del controllo dei singoli verso i propri dati
+** Anonymization and Deanonymization
+Nel 2006 *Netflix* aveva diffuso un dataset dei suoi utenti e i rating sul sito. I dati erano da utilizzare in una sfida per migliorare l'algoritmo di raccomandazione.
+- l'incrocio dei dati con =IMDd= facilmente deanonimizzava il dataset
+- non basta la rimozione dell'identificativo per anonimizzare i dati
+Nello stesso anno =AOL= rilascia un dataset che viene deanonimizzato dal New York Time
+** Data Breach
+- studio sul costo dei /data breach/
+  + 383 compagnie
+  + 12 paesi
+  + $4 milioni in media
+  + aumento del costo negli anni di più del 29%
+  + i dati di più valore sono quelli medici seguita da educazione e finanziari
+
 * Etica
 ** Metafora
 - partendo da [[id:3de0c2e6-55c4-49e8-8932-f04cf95c32a9][Metaphors We Live By]] di [[id:3d6cd7f2-3471-4ca5-b0b8-0fc0af68c6c6][George Lakoff]]
@@ -96,3 +149,31 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
     - il comunismo ha fallito per mancanza di informazione
       + la tecnologia in un certo senso potrebbe risolvere il problema, una =AI= può predire e governare un sistema anche senza un modello
         - una sorta di comunismo in mano a multinazionali private
+  + un artigiano non può parallelizzare il lavoro a differenza di una catena di montaggio
+** Cartesio
+- porta una materia complessa nel campo della matematica
+- permette di trattarla con linguaggio formale
+- il corpo era tabù religioso
+  + Cartesio rompe questo tabù logicamente
+  + se lo spazio è studiabile matematicamente, e il corpo è uno spazio, posso studiare il corpo
+  + non posso studiare un corpo morto in movimento ma posso studiarlo tramite simulazione meccanica
+    - questo si applica oggi alla scienza cognitiva, la si può studia con la simulazione tramite intelligenza artificiale[fn::Questo è il metodo della [[id:b40c2753-bed8-45a9-9276-b5314659778e][Cognitive Science]] che cerca di essere una alternativa più scientificamente basata della psicologia.]
+** La Mettrie
+- [[id:3f46d2a9-8110-41e7-947b-a013bae00fee][L'Homme Machine]]
+- afferma che il corpo è assimilabile ad una macchina, scomponibile
+  + quindi anche l'anima
+- l'=IA= è proprio un proseguo di questo discorso, la /meccanizzazione/ del pensiero
+** Taylorismo
+- human micromanagement, controllo e espropriazione delle competenze e conoscenze del proletariato
+- =IA= può allo stesso modo controllare
+** Durkheim
+- [[id:78aeec49-78a6-451b-8af9-a90575ab0fb2][De la Division du Travail Social]]
+- a seguito della rivoluzione industriale i lavoratori si sono specializzati
+  + quindi /interdipendenze/ sociali
+  + questo è positivo in quanto la rete sociale ha una dipendenza reciproca tra i lavoratori
+  + questo ha una forza morale
+- questo porta anche grossa disuguaglianza
+  + più difficile la rivendicazione all'interno della sociatà
+  + la politica deve mantenere il diritto al miglioramento della propria situazione
+- queste /interdipendenze/ stanno scomparendo a causa dell'automazione
+  + questo aumento la disugualianza di conseguenza
