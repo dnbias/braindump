@@ -1,5 +1,6 @@
 +++
 title = "Fisica"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++

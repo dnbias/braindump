@@ -5,4 +5,4 @@ tags = ["book"]
 draft = false
 +++
 
--   Author: J.L. Austin
+-   Author: [J.L.Austin]({{< relref "j_l_austin.md" >}})

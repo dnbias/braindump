@@ -1,0 +1,57 @@
+:PROPERTIES:
+:ID:       3aca283b-c8e0-45d6-9699-967ffdd869a5
+:END:
+#+title: Fisica per Applicazioni di Realtà Virtuale
+#+date: [2023-12-05 Tue 05:51]
+#+filetags: master university
+- Professore: Matteo Brogi
+* Introduzione
+Fisica:
+- studio dei fenomeni naturali
+- attraverso la misura delle grandezze fisiche
+  + con evidenza sperimentale, determina se il /modello/ è inadeguato o meno
+
+In antichità fisica e filosofia confluivano in un unica disciplina, con la prima rivoluzione scientifica del XVI-XVII secolo le due discipline vengono distinte.
+Si definisce il metodo scientifico con la fisica classica.
+- descrive bene la realtà  alle scale abituali
+
+La necessità di descrivere fenomeni macro e microscopici porta alla seconda rivoluzione scientifica del XIX-XX secolo.
+- contrasta con l'intuizione ma permette il progresso tecnologico
+- li metodo rimane lo stesso ma:
+  + la misura può essere distruttiva
+  + certi sistemi vanno descritti stocasticamente
+
+** Cifre Significative e Decimali
+- significative, numero di cifre che compongono il numero
+  + gli zeri all'inizio non si contano
+- decimali, numero di cifre dovo la virgola
+- le cifre tranne l'ultima sono /certe/, l'ultima è /incerta/
+
+Da qua si fonda la *teoria degli errori*.
+
+* Cinematica
+- velocità media
+- velocità istantanea, derivata prima dello spostamento
+- accelerazione media
+- accelerazione istantanea, derivata prima della velocità, derivata seconda dello spostamento
+** Moto Rettilineo Uniforme
+- velocità costante
+$$x = vt$$
+** Moto Rettilineo Uniformemente Accelerato
+- accelerazione costante
+
+** Cinematica Bidimensionale
+- non basta la descrizione scalare
+- moto in $$R^2$$
+- spostamento come differenza vettoriale
+- versori cartesiani in ogni punto della traiettoria
+  + /hat{u}_T, tangente
+  + /[/hat{u}_N/], perpendicolare
+
+* Dinamica
+* Lavoro e Energia
+* Dinamica dei Sistemi
+* Onde Meccaniche
+* Acustica
+* Ottica
+* Meccanica dei Fluidi

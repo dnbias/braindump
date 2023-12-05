@@ -2,7 +2,6 @@
 :ID:       ef6ce070-f976-414b-ad37-0935c9741bed
 :END:
 #+title: Parser Top-Down
-#+startup: latexpreview
 
 * Parser Top-Down
 Lavorano su grammatiche libere dal contesto che non fanno uso del =backtracking=

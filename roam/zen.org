@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       e9375378-06b8-4918-8ac8-6a51e40d34e7
+:END:
+#+title: Zen
+#+date: [2023-12-05 Tue 05:37]

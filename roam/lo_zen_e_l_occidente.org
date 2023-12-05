@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       12d8d60a-ef07-42eb-8bcd-4784da892246
+:END:
+#+title: Lo Zen e L'Occidente
+#+date: [2023-12-05 Tue 05:33]
+#+filetags: article
+- Source: [[https://terebess.hu/zen/mesterek/zen-eco.pdf]]
+- Author: [[id:0e248755-8030-4c5a-a87e-0e6f374fc788][Umberto Eco]]
+- Related: [[id:e9375378-06b8-4918-8ac8-6a51e40d34e7][Zen]], [[id:6ee7be6b-0867-4e0d-95e9-4f23bb3b3400][Beat Generation]], [[id:e81950b9-bace-4f5e-af5a-2fd576d92a5e][Wittgenstein]]
+
+Articolo parte di [[id:20abc119-f7d5-4453-9332-970c2df105f7][Apocalittici e Integrati]], commentato da [[id:d3501ef7-422b-46f5-afd4-1203d721b13c][Wesa]]:
+- https://www.youtube.com/watch?v=NHiIOLKe0WI

@@ -1279,3 +1279,19 @@ build content/posts/20231129072554-elinor_ostrom.md: org2md roam/20231129072554-
 build content/posts/20231129074610-how_to_do_things_with_words.md: org2md roam/20231129074610-how_to_do_things_with_words.org
 
 build content/posts/20231129074648-j_l_austin.md: org2md roam/20231129074648-j_l_austin.org
+
+build content/posts/lo_zen_e_l_occidente.md: org2md roam/lo_zen_e_l_occidente.org
+
+build content/posts/zen.md: org2md roam/zen.org
+
+build content/posts/beat_generation.md: org2md roam/beat_generation.org
+
+build content/posts/wittgenstein.md: org2md roam/wittgenstein.org
+
+build content/posts/apocalittici_e_integrati.md: org2md roam/apocalittici_e_integrati.org
+
+build content/posts/fisica_per_applicazioni_di_realta_virtuale.md: org2md roam/fisica_per_applicazioni_di_realta_virtuale.org
+
+build content/posts/adam_smith.md: org2md roam/adam_smith.org
+
+build content/posts/j_l_austin.md: org2md roam/j_l_austin.org

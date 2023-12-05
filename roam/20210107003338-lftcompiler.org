@@ -2,7 +2,6 @@
 :ID:       d119de03-4b7a-49f8-85e4-15994b3edd11
 :END:
 #+title: LFTCompiler
-#+startup: latexpreview
 #+filetags: university project
 
 Progetto per il Corso di [[id:324d8ba8-c790-46d9-aef8-56b977b783ba][Linguaggi Formali e Traduttori]]

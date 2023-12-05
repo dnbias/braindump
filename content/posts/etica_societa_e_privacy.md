@@ -123,7 +123,7 @@ I _robot_ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 
 ### Liberismo {#liberismo}
 
--   Adam Smith
+-   [Adam Smith]({{< relref "adam_smith.md" >}})
     -   mano invisibile
         -   se ognuno segue il proprio fine egoistico il sistema ne gioisce per tutti
         -   ammissione di razionalità limitata
