@@ -81,6 +81,7 @@ Le interazioni sono gestite dal client che richiama il server solo per le richie
 
 È una evoluzione a partire dal sito web classico, carica una singola pagina =HTML=. Sfruttano =AJAX= e =HTML5= per creare una web app fluida e responsiva.
 * Docker
+Moduli divisi in /container/ diversi, si comunicano attraverso il network.
 * Spring
 * Angular
 * Service Oriented  Architecture
@@ -149,3 +150,43 @@ Utilizzo dei metodi =http=
 - =POST=
 - =PUT=
 - =DELETE=
+
+* Microservice Architecture
+Evoluzione della [[id:9a407eb2-8f01-4f30-9ad6-a01e0539615f][SOA]].
+Il microservizio è una componente che offre un servizio ben definito e indipendente. La parola in particolare sottolinea che queste componenti espongono servizi ovvero =API=.
+- /autonomous, independently deployable/
+  + questi collaborano all'interno dell'applicazione
+  + facilita anche il debugging grazie all'isolamento e permette di incapsulare librerie di terzi all'interno di microservizi ad-hoc
+  + si vuole semplificale il più possibile l'uso da parte dell'utente, non forzare scelte implementative a valle
+- ridurre ulteriormente le dimensioni dei servizi e renderli completamente indipendenti gli uni dagli altri
+  + una architettura monolitica può funzionare per un progetto piccolo di dimensioni di /codebase/ sia per team
+- =db= diversi per ogni microservizio
+  + questo porta anche degli svantaggi
+- il /load balancer/ diventa parte dell'architettura stessa, da subito posto l'accento sulla scalabilità
+- [[id:9a407eb2-8f01-4f30-9ad6-a01e0539615f][SOA]] tradizionalmente risultava in servizi monolitici, per mancanza di comprensione della dimensione ideale di un servizio
+- la indipendenza e la dimensione ridotta dei servizi permette più facilmente la gestione da parte di un team e facilità la collaborazione tramite le =API=
+- /deployment/ individuale, rischio più basso minor downtime e update frequenti
+  + quindi va automatizzato il processo di /deployment/
+- scalabilità dei singoli microservizi individualmente
+
+Per rinforzare l'indipendenza tra servizi:
+- messaggi asincroni, =MOM=
+- RabbitMQ
+- l'architettura più pura prevede che i microservizio comunichino tra loro tramite messaggi asincroni su bus
+
+Scelte:
+- =API= Gateway
+- Message Bus, event driven tramite messaggi asincroni
+
+Registrazione servizi =Eureka= per discoverability.
+- pubblicazione dei singoli servizi
+
+Il problema di avere =db= divisi è la duplicazione dei dati e quindi la /consistenza/.
+I microservizi possono essere in 3 stadi/ambienti
+- =development= \rarr =staging= \rarr =production=
+
+
+
+* Distributed Monoliths
+- singolo =db= condiviso
+- servizi divisi ma che vanno rilasciati insieme e hanno forti interdipendenze

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       c95f2c6e-35ae-4fbd-91a8-0e9f0f52ab5b
+:END:
+#+title: Book Review: Seeing Like a State
+#+date: [2023-12-05 Tue 22:06]
+#+filetags: article tbr
+- Source: https://slatestarcodex.com/2017/03/16/book-review-seeing-like-a-state/
+- Author: [[id:369682fc-23a5-42fc-8ad2-b1f085ac12d6][Scott Alexander]]
+- Related:
+* Notes

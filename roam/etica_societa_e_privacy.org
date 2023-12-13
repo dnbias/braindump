@@ -64,6 +64,13 @@ Nello stesso anno =AOL= rilascia un dataset che viene deanonimizzato dal New Yor
   + aumento del costo negli anni di più del 29%
   + i dati di più valore sono quelli medici seguita da educazione e finanziari
 
+** Sistemi Informativi
+- sistema formale, sociotecnico, organizzazionale
+- /collect, protect, store and distribute information used by the organization/
+- questi sistemi comprendono si computer ma anche persone
+- un *sistema informatico* è composta anche da macchine e persone che cooperano
+  + può mettere in atto tutti i compiti citati
+  + automatizza il processamento delle informazioni e i processi aziendali
 * Etica
 ** Metafora
 - partendo da [[id:3de0c2e6-55c4-49e8-8932-f04cf95c32a9][Metaphors We Live By]] di [[id:3d6cd7f2-3471-4ca5-b0b8-0fc0af68c6c6][George Lakoff]]
@@ -173,7 +180,9 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
   + questo è positivo in quanto la rete sociale ha una dipendenza reciproca tra i lavoratori
   + questo ha una forza morale
 - questo porta anche grossa disuguaglianza
-  + più difficile la rivendicazione all'interno della sociatà
+  + più difficile la rivendicazione all'interno della società
   + la politica deve mantenere il diritto al miglioramento della propria situazione
 - queste /interdipendenze/ stanno scomparendo a causa dell'automazione
-  + questo aumento la disugualianza di conseguenza
+  + questo aumento la disuguaglianza di conseguenza
+* Letture per il Corso
+- [[id:46f61717-4114-4b16-b7c7-5779c6f3bfb5][Weapons of Math Destruction]]
