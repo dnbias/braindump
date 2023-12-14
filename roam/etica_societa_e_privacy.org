@@ -71,6 +71,83 @@ Nello stesso anno =AOL= rilascia un dataset che viene deanonimizzato dal New Yor
 - un *sistema informatico* è composta anche da macchine e persone che cooperano
   + può mettere in atto tutti i compiti citati
   + automatizza il processamento delle informazioni e i processi aziendali
+
+Lo scambio tratta dati di tutti i tipi
+- anche privati e personali
+- di impiegati/clienti/fornitori
+
+*** Azioni di base
+Le misure di privacy in un'azienda vengono messe in atto:
+- con l'educazione di manager e impiegati
+- rafforzando la cybersecurity
+- protezione di rete
+- restrizione dell'accesso ad aree sensibili
+- l'uso di =VPN= nel lavoro remoto
+- aggiornamento software
+*** Compliance w/ GDPR
+- prendere in considerazione tutti gli intermediari che vengono ad avere accesso ai dati
+- /trasparenza/, l'utente deve sapere chi ha accesso ai dati e dove vengono mantenuti
+- tutti gli attori rispondono tutti al =GDPR=?
+- dopo che l'utente ha ottenuto il risultato ricercato, i dati vengono cancellati?
+
+4 proprietà che vanno implementate in un sistema informativo per rispettare il =GDPR=:
+1. attribute-based authorization
+2. anonymizing / pseudonymizing data
+3. traceability, registro di chi ha creato, modificato o cancellato, quando e perché
+4. data deletion
+
+**** Attribute-based Authorization
+- *access control*
+  + restrizione dell'accesso in un sistema multi utente
+  + un sistema complesso necessiterà di una implementazione complessa
+- role based access control
+  + =RBAC=
+  + formalizzato da =NIST= nel 1992
+  + indicativamente fino a 500 utenti
+  + utilizzare ruoli e non =ID= per gestire il controllo alle risorse
+  + limiti:
+    - configurazione statica, predefinita
+    - non riescono a provvedere un meccanismo flessibile per cui anche utenti/clienti possano esprimere dei requisiti di accesso
+    - non modella il motivo per cui è dato l'accesso ai dati
+    - non modella il /contesto/ all'accesso delle risorse
+      + giusto utente/momento/luogo di accesso ai dati
+- attribute based access control
+  + =ABAC=
+  + aggiunge contesto all'autorizzazione
+  + ruolo dell'utente
+  + chi e cosa riguarda l'utente
+  + a cosa l'utente deve accedere
+  + quando l'utente deve accedere
+  + come l'utente deve accedere
+  + estende i ruoli con contesto e politiche di accesso ai dati
+  + può permettere l'accesso in alcuni casi a utenti esterni, cosa impossibile con =RBAC=
+
+=ABAC= utilizza linguaggio naturale per definire le politiche:
+#+begin_quote
+/Doctors/ can _view_ /medical records/ of /any patient/ in /their department/ and _update_ /any patient record/ that is /directly assigned to them/, during /working hours/ and from /an approved device/.
+#+end_quote
+Le *policy* si strutturano in
+- soggetto
+- azione: ~read/write~ o altre più specifiche
+- risorsa: metadati, tag, parte di un fascicolo
+- ambiente: identifica il contesto, ora, posizione,  protocollo, client, cifratura
+
+Tre aspetti che vengono presi in considerazione:
+1. *user*
+2. *environment*
+3. *information asset*
+
+L'*authorization engine* prende questi e in base alle *policy* rilascia il permesso o meno all'accesso.
+Questo engine è composto di
+- =PEP=, accesso per le richieste
+- =PDP=, decision, valuta le policy che si applicano e ritorna la decisione a =PEP=
+- =PAP=, administration, memorizza le policy
+- =PIP=, information, memorizza gli attributi
+
+Il linguaggio che implementa =ABAC= è ~XACML~ come linguaggio di interscambio
+
+
+
 * Etica
 ** Metafora
 - partendo da [[id:3de0c2e6-55c4-49e8-8932-f04cf95c32a9][Metaphors We Live By]] di [[id:3d6cd7f2-3471-4ca5-b0b8-0fc0af68c6c6][George Lakoff]]
