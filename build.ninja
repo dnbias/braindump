@@ -74,8 +74,6 @@ build content/posts/20200929150510-unix.md: org2md roam/20200929150510-unix.org
 
 build content/posts/20200929151438-compilazione_e_linking.md: org2md roam/20200929151438-compilazione_e_linking.org
 
-build content/posts/20200929235308-introduction_to_automata_theory_languages_and_computation.md: org2md roam/20200929235308-introduction_to_automata_theory_languages_and_computation.org
-
 build content/posts/20201001175136-compilers_principles_techniques_and_tools.md: org2md roam/20201001175136-compilers_principles_techniques_and_tools.org
 
 build content/posts/20201002180949-la_variante_di_luneburg.md: org2md roam/20201002180949-la_variante_di_luneburg.org
@@ -94,11 +92,7 @@ build content/posts/20201109165841-microarchitecture.md: org2md roam/20201109165
 
 build content/posts/20201110132607-parsing.md: org2md roam/20201110132607-parsing.org
 
-build content/posts/20201110134001-parser_top_down.md: org2md roam/20201110134001-parser_top_down.org
-
 build content/posts/20201205215343-taxicab.md: org2md roam/20201205215343-taxicab.org
-
-build content/posts/20210107003338-lftcompiler.md: org2md roam/20210107003338-lftcompiler.org
 
 build content/posts/20210327105540-web_development.md: org2md roam/20210327105540-web_development.org
 
@@ -135,8 +129,6 @@ build content/posts/20210422185244-bd_vaccini.md: org2md roam/20210422185244-bd_
 build content/posts/20210516213623-union_find_set.md: org2md roam/20210516213623-union_find_set.org
 
 build content/posts/20210527182557-come_si_fa_una_tesi_di_laurea.md: org2md roam/20210527182557-come_si_fa_una_tesi_di_laurea.org
-
-build content/posts/20210527192619-umberto_eco.md: org2md roam/20210527192619-umberto_eco.org
 
 build content/posts/20210529212456-gene_wolfe.md: org2md roam/20210529212456-gene_wolfe.org
 
@@ -556,8 +548,6 @@ build content/posts/BD.md: org2md roam/BD.org
 
 build content/posts/EGID.md: org2md roam/EGID.org
 
-build content/posts/FIS.md: org2md roam/FIS.org
-
 build content/posts/LFT.md: org2md roam/LFT.org
 
 build content/posts/LFTCompiler.md: org2md roam/LFTCompiler.org
@@ -735,8 +725,6 @@ build content/posts/quotebacks.md: org2md roam/quotebacks.org
 build content/posts/robin_sloan.md: org2md roam/robin_sloan.org
 
 build content/posts/rust.md: org2md roam/rust.org
-
-build content/posts/sapiens_a_brief_history_of_humankind.md: org2md roam/sapiens_a_brief_history_of_humankind.org
 
 build content/posts/satira.md: org2md roam/satira.org
 
@@ -1076,8 +1064,6 @@ build content/posts/rdf.md: org2md roam/rdf.org
 
 build content/posts/rdfs.md: org2md roam/rdfs.org
 
-build content/posts/taass.md: org2md roam/taass.org
-
 build content/posts/astral_codex_ten.md: org2md roam/astral_codex_ten.org
 
 build content/posts/homo_unius_libri.md: org2md roam/homo_unius_libri.org
@@ -1238,10 +1224,6 @@ build content/posts/unnumbered_sections_in_latex.md: org2md roam/unnumbered_sect
 
 build content/posts/verifast.md: org2md roam/verifast.org
 
-build content/posts/etica_societa_e_privacy.md: org2md roam/etica_societa_e_privacy.org
-
-build content/posts/20231123030545-metaphors_we_live_by.md: org2md roam/20231123030545-metaphors_we_live_by.org
-
 build content/posts/20231123030705-george_lakoff.md: org2md roam/20231123030705-george_lakoff.org
 
 build content/posts/20231123031310-michael_polanyi.md: org2md roam/20231123031310-michael_polanyi.org
@@ -1276,22 +1258,116 @@ build content/posts/20231129072523-governing_the_commons.md: org2md roam/2023112
 
 build content/posts/20231129072554-elinor_ostrom.md: org2md roam/20231129072554-elinor_ostrom.org
 
-build content/posts/20231129074610-how_to_do_things_with_words.md: org2md roam/20231129074610-how_to_do_things_with_words.org
-
 build content/posts/20231129074648-j_l_austin.md: org2md roam/20231129074648-j_l_austin.org
 
-build content/posts/lo_zen_e_l_occidente.md: org2md roam/lo_zen_e_l_occidente.org
+build content/posts/20231123030545-metaphors_we_live_by.md: org2md roam/20231123030545-metaphors_we_live_by.org
 
-build content/posts/zen.md: org2md roam/zen.org
+build content/posts/cambridge_analytica.md: org2md roam/cambridge_analytica.org
 
-build content/posts/beat_generation.md: org2md roam/beat_generation.org
+build content/posts/cognitive_science.md: org2md roam/cognitive_science.org
 
-build content/posts/wittgenstein.md: org2md roam/wittgenstein.org
+build content/posts/de_la_division_du_travail_social.md: org2md roam/de_la_division_du_travail_social.org
 
-build content/posts/apocalittici_e_integrati.md: org2md roam/apocalittici_e_integrati.org
+build content/posts/gdpr.md: org2md roam/gdpr.org
 
-build content/posts/fisica_per_applicazioni_di_realta_virtuale.md: org2md roam/fisica_per_applicazioni_di_realta_virtuale.org
+build content/posts/l_homme_machine.md: org2md roam/l_homme_machine.org
+
+build content/posts/shoshana_zuboff.md: org2md roam/shoshana_zuboff.org
+
+build content/posts/taas.md: org2md roam/taas.org
+
+build content/posts/the_age_of_surveillance_capitalism.md: org2md roam/the_age_of_surveillance_capitalism.org
+
+build content/posts/20200929235308-introduction_to_automata_theory_languages_and_computation.md: org2md roam/20200929235308-introduction_to_automata_theory_languages_and_computation.org
+
+build content/posts/20201110134001-parser_top_down.md: org2md roam/20201110134001-parser_top_down.org
+
+build content/posts/20210107003338-lftcompiler.md: org2md roam/20210107003338-lftcompiler.org
+
+build content/posts/20210527192619-umberto_eco.md: org2md roam/20210527192619-umberto_eco.org
+
+build content/posts/20231129074610-how_to_do_things_with_words.md: org2md roam/20231129074610-how_to_do_things_with_words.org
+
+build content/posts/FIS.md: org2md roam/FIS.org
 
 build content/posts/adam_smith.md: org2md roam/adam_smith.org
 
+build content/posts/apocalittici_e_integrati.md: org2md roam/apocalittici_e_integrati.org
+
+build content/posts/beat_generation.md: org2md roam/beat_generation.org
+
+build content/posts/fisica_per_applicazioni_di_realta_virtuale.md: org2md roam/fisica_per_applicazioni_di_realta_virtuale.org
+
 build content/posts/j_l_austin.md: org2md roam/j_l_austin.org
+
+build content/posts/lo_zen_e_l_occidente.md: org2md roam/lo_zen_e_l_occidente.org
+
+build content/posts/sapiens_a_brief_history_of_humankind.md: org2md roam/sapiens_a_brief_history_of_humankind.org
+
+build content/posts/wittgenstein.md: org2md roam/wittgenstein.org
+
+build content/posts/zen.md: org2md roam/zen.org
+
+build content/posts/book_review_seeing_like_a_state.md: org2md roam/book_review_seeing_like_a_state.org
+
+build content/posts/weapons_of_math_destruction.md: org2md roam/weapons_of_math_destruction.org
+
+build content/posts/git_squash_n_commits.md: org2md roam/git_squash_n_commits.org
+
+build content/posts/git_new_initial_commit_to_current_status.md: org2md roam/git_new_initial_commit_to_current_status.org
+
+build content/posts/etica_societa_e_privacy.md: org2md roam/etica_societa_e_privacy.org
+
+build content/posts/the_attention_merchants.md: org2md roam/the_attention_merchants.org
+
+build content/posts/william_james.md: org2md roam/william_james.org
+
+build content/posts/the_master_switch.md: org2md roam/the_master_switch.org
+
+build content/posts/tim_wu.md: org2md roam/tim_wu.org
+
+build content/posts/the_curse_of_bigness.md: org2md roam/the_curse_of_bigness.org
+
+build content/posts/herbert_spencer.md: org2md roam/herbert_spencer.org
+
+build content/posts/net_neutrality.md: org2md roam/net_neutrality.org
+
+build content/posts/public_opinion.md: org2md roam/public_opinion.org
+
+build content/posts/triumph_of_the_will.md: org2md roam/triumph_of_the_will.org
+
+build content/posts/amusing_ourselves_to_death.md: org2md roam/amusing_ourselves_to_death.org
+
+build content/posts/neil_postman.md: org2md roam/neil_postman.org
+
+build content/posts/karl_polanyi.md: org2md roam/karl_polanyi.org
+
+build content/posts/karl_marx.md: org2md roam/karl_marx.org
+
+build content/posts/hannah_arendt.md: org2md roam/hannah_arendt.org
+
+build content/posts/the_origins_of_totalitarianism.md: org2md roam/the_origins_of_totalitarianism.org
+
+build content/posts/ethics.md: org2md roam/ethics.org
+
+build content/posts/etica_e_filosofia_nell_intelligenza_artificiale_definire_i_limiti_dello_sviluppo.md: org2md roam/etica_e_filosofia_nell_intelligenza_artificiale_definire_i_limiti_dello_sviluppo.org
+
+build content/posts/cathy_o_neil.md: org2md roam/cathy_o_neil.org
+
+build content/posts/guido_boella.md: org2md roam/guido_boella.org
+
+build content/posts/on_the_dangers_of_stochastic_parrots.md: org2md roam/on_the_dangers_of_stochastic_parrots.org
+
+build content/posts/llm.md: org2md roam/llm.org
+
+build content/posts/stochastic_parrot.md: org2md roam/stochastic_parrot.org
+
+build content/posts/j_weizenbaum.md: org2md roam/j_weizenbaum.org
+
+build content/posts/klara_and_the_sun.md: org2md roam/klara_and_the_sun.org
+
+build content/posts/never_let_me_go.md: org2md roam/never_let_me_go.org
+
+build content/posts/il_professore_onnisciente_ai_sregolata.md: org2md roam/il_professore_onnisciente_ai_sregolata.org
+
+build content/posts/the_problem_with_counterfeit_people.md: org2md roam/the_problem_with_counterfeit_people.org

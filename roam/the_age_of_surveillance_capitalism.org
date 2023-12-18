@@ -7,7 +7,7 @@
 [[id:0cbf2822-d74b-4a05-bb07-2fb8fce95338][Shoshana Zuboff]], /The Age of Surveillance Capitalism/, 2019, Profile Books
 
 * Resources
-- [[html:https://www.youtube.com/watch?v=8HzW5rzPUy8][Zuboff's seminary on the book ]]
+- [[https://www.youtube.com/watch?v=8HzW5rzPUy8][Zuboff's seminary on the book ]]
   + Harriet Martineau, social observer: aristocracy in 1800s had a single word to describe non-aristocrats, /lower class/
     - similarly to current /users/, homologous set of people
     - from this framework sparked the class struggles
