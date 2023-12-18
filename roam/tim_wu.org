@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       5a68c870-82d2-426e-b6f6-1d4150aa6d7b
+:END:
+#+title: Tim Wu
+#+date: [2023-12-16 Sat 21:07]
+#+filetags: author
+- creator of the [[id:7a90e31b-7bfe-4979-89b6-c96ff95d0da9][Net Neutrality]] concept

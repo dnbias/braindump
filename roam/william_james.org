@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4d109520-2573-4ab8-be16-8df07ddf32eb
+:END:
+#+title: William James
+#+date: [2023-12-16 Sat 20:51]
+#+filetags: author
+-

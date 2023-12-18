@@ -1,0 +1,91 @@
+:PROPERTIES:
+:ID:       3b856c1c-2f91-4887-8d58-ccb8779dc065
+:END:
+#+title: Etica e Filosofia nell'Intelligenza Artificiale: definire i limiti dello sviluppo
+#+date: [2023-12-18 Mon 08:07]
+#+filetags: video
+- Source: https://www.youtube.com/live/8AGskFyzhY0?si=8XxkoSMBcKYGvJrR
+- Channel: HKN PoliTo
+- Related: [[id:b3a0aa55-d105-4e8f-8497-4421b31739eb][AI]], [[id:aafe5e97-812c-4ffe-9b0c-5f8f99e607ee][Ethics]]
+
+* Datapizza[fn::ha letto [[id:46f61717-4114-4b16-b7c7-5779c6f3bfb5][Weapons of Math Destruction]].]
+- cos'è l'intelligenza?
+  + capacità di creare modelli astratti di fenomeni complessi
+  + capacità di adattamento
+  + generalizzare esperienze singole in comportamenti generali
+- [[id:7660c0d3-1e51-49a4-9d15-37eec9a12b7c][Attention is all you need]]
+  + la memorizzazione di grandi quantità di dati porta overfitting
+  + modulo di attenzione per gestire efficientemente la capacità predittiva del modello
+- *The Pile*
+  + dataset di [[id:b25b2374-ebd3-4dee-a658-80af982ba3cb][OpenAI]]
+  + costruito con crawler
+  + codice, letteratura scientifica, legale, prosa, conversazioni
+- embedding
+  + mapping del vocabolario naturale in uno spazio vettoriale del modello
+  + ogni punto indica un concetto e operazioni vettoriale su questi punti portano spostamenti nello spazio vettoriale e a concetti diversi
+  + spazio semantico \rightarrow spazio vettoriale
+- allucinazioni
+  + un *AI* non è una buona fonte, non sa cosa è giusto o sbagliato
+- ChatAI come interfaccia per i servizi nel futuro
+- consulenti che utilizzano la AI come supporto sono più produttivi e accurati
+- compiti:
+  + solo per me
+  + delegati
+  + centaur
+    - collaborazione /back and forward/
+- trade-off
+  + efficienza ma meno unicità
+  + come gestiamo una transizione verso una agency maggiore delle AI
+  + impatto su lavori o su parte di un workflow di un umano
+  + bias nel modello[fn::i bias dei creatori  vanno a finire nelle loro creazioni]
+    - le industrie *vogliono* modelli biased che riflettono accuratamente le attuali ingiustizie e differenze sociali[fn:: e le rinforzano, è una downward spiral che descrive benissimo [[id:dd05eb87-8dd5-4bf5-a94d-1715a3d42d2c][Cathy O'Neil]] una [[id:46f61717-4114-4b16-b7c7-5779c6f3bfb5][WMD]]]
+    - mantenere i bias sociali significa mantenere il proprio potere predittivo
+    - il bias sta nei dati o in chi a creato il dataset?
+  + controllo tramite AI sempre più forte
+  + accesso alle risorse, come fare con l'OpenSource?
+
+* [[id:8a1fd631-28b1-4f22-b1c7-c34b94ec4b43][Guido Boella]]
+- SIpEIA
+- [[https://ai-aware.eu]]
+- ai generated Tank Man
+  + primo nei risultati Google Image
+- il bias sociale è riflesso nell'output dei modelli
+- [[id:8e38ae85-a1cf-4a5f-b8bd-c98ba9cf74c4][On the Dangers of Stochastic Parrots]]
+  + causa del licenziamento delle due Head of Ethics in Google
+  + *Unfathomable Training Data*
+    - /incapable of being fully explored or understood/
+    - buona parte dei problemi dei modelli sta nella difficoltà nel gestire i dataset
+    - la grandezza non garantisce diversità, il web è orientato
+    - sistemi statici, conservatori /by design/: guardano al passato
+      + i temi che stanno nascendo sono per definizione sotto-rappresentati
+    - /encoding bias/, non fanno altro che codificare i pregiudizi reali
+  + la tecnologia è sempre politica
+    - i problemi insiti nei modelli non sono risolvibili, almeno non del tutto, tecnicamente
+  + /manipulation of users/
+    - gli umani sono condizionati a attribuire intenzioni comunicative a messaggi in linguaggio naturale
+      + si attribuiscono emozioni, intelligenza, capacità a [[id:19671a27-ab35-41ca-8f33-1996cc545350][LLM]] che non ne hanno
+    - il significato viene costruito nell'interazione simmetrica e continua tra umani, il modello è invece asimmetrico
+    - quello che ci è presentata è una *illusione*, il significato è attribuito dall'umano a un semplice processo statistico
+    - [[id:fcacfd2c-9b24-49d2-8494-81a338397140][Stochastic Parrot]]
+    - [[id:3b4a0f85-b63a-4660-a236-f2796e74d460][J.Weizenbaum]] aveva descritto la stessa illusione con [[id:0f7b631b-db40-4852-8130-8dcfa5601298][ELIZA]]
+- Allucinazione
+- Plagio
+  + [[id:b25b2374-ebd3-4dee-a658-80af982ba3cb][OpenAI]] ha pubblicato un sistema di analisi e riconoscimento AI/umano: pessime performance e fatto sparire dopo qualche mese
+- Libri generati da [[id:b3a0aa55-d105-4e8f-8497-4421b31739eb][AI]] e spacciati come reali sono sempre di più
+- Fake News sempre più credibili
+  + Deep fake /My Blond GF/
+  + *QAnon* nato da post su 4chan
+    - [[id:19671a27-ab35-41ca-8f33-1996cc545350][LLM]] in grado di fare propaganda sui social media hanno potenzialità ben maggiori
+- Copyright
+  + il fatto che i dati siano pubblici non equivale che possano essere utilizzati per farci business
+    - compreso contenuto pirata
+  + [[id:4f90918c-61eb-4e23-ac8f-b6cbfa0bb45f][GRRM]] e altri autori fanno causa per [[id:b25b2374-ebd3-4dee-a658-80af982ba3cb][OpenAI]]
+  + la potenzialità di modelli in mano a chiunque in grado di riprodurre testi e stili di autori che detengono il proprio diritto di autore è molto maggiore di quello di singoli individui con capacità artistiche che volessero tentare lo stesso
+  + [[id:b25b2374-ebd3-4dee-a658-80af982ba3cb][OpenAI]] e Google stanno cercando di sovvertire la giurisprudenza sul tema
+    - cercano di proporre soluzioni *opt-out* quando la legge è chiaramente *opt-in* alla cessione dei propri dati e le proprie produzioni
+      + quando poi non c'è modo di verificare se il contenuto che io volevo negare è stato inserito all'interno dei modelli
+- Daniel Dennett: [[id:1118d7fe-cebd-4dbe-9079-c6e6ba16460d][The Problem With Counterfeit People]]
+
+** Letture
+- [[id:8437e91c-b35e-4dba-83c5-ce5188261495][Klara and the Sun]]
+- [[id:cd1967c7-2713-4fc2-80c3-caaf47fff972][Never Let Me Go]

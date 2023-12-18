@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       a989c11a-974a-42f2-b939-f00c6367ec3f
+:END:
+#+title: Herbert Spencer
+#+date: [2023-12-16 Sat 21:20]
+#+filetags: author
+-

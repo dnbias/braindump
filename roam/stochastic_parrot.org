@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       fcacfd2c-9b24-49d2-8494-81a338397140
+:END:
+#+title: Stochastic Parrot
+#+date: [2023-12-18 Mon 09:05]
+#+filetags: concept ai compsci
+- Related: [[id:19671a27-ab35-41ca-8f33-1996cc545350][LLM]]

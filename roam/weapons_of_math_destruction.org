@@ -4,6 +4,6 @@
 #+title: Weapons of Math Destruction
 #+date: [2023-12-13 Wed 22:14]
 #+filetags: book
-Cathy O'Neil, /Weapons of Math Destruction/, 2016, Crown
+[[id:dd05eb87-8dd5-4bf5-a94d-1715a3d42d2c][Cathy O'Neil]], /Weapons of Math Destruction/, 2016, Crown
 
 * Summary

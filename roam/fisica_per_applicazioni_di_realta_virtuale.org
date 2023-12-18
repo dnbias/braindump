@@ -24,22 +24,29 @@ La necessità di descrivere fenomeni macro e microscopici porta alla seconda riv
 ** Cifre Significative e Decimali
 - significative, numero di cifre che compongono il numero
   + gli zeri all'inizio non si contano
-- decimali, numero di cifre dovo la virgola
+- decimali, numero di cifre dopo la virgola
 - le cifre tranne l'ultima sono /certe/, l'ultima è /incerta/
 
 Da qua si fonda la *teoria degli errori*.
 
 * Cinematica
+Studio di punti materiali, senza dimensione, senza studio della causa del moto.
+
 - velocità media
 - velocità istantanea, derivata prima dello spostamento
 - accelerazione media
 - accelerazione istantanea, derivata prima della velocità, derivata seconda dello spostamento
 ** Moto Rettilineo Uniforme
 - velocità costante
-$$x = vt$$
+$$x = x_0 + vt$$
 ** Moto Rettilineo Uniformemente Accelerato
 - accelerazione costante
 
+$$x = x_0 + vt$$
+$$v = v_0 + at$$
+$$v=\frac{v_0+v}{2}$$
+$$x=x_0 + v_0t+\frac{1}{2}at^2$$
+$$v^2 =v_0^2+2a\Delta x$$
 ** Cinematica Bidimensionale
 - non basta la descrizione scalare
 - moto in $$R^2$$
@@ -48,7 +55,55 @@ $$x = vt$$
   + /hat{u}_T, tangente
   + /[/hat{u}_N/], perpendicolare
 
+Sia accelerazione che velocità sono scomponibile in queste componenti in ogni istante.
+L'accelerazione tangenziale varia il modulo della velocità e quella normale varia la sua direzione.
+** Moto parabolico
+Moto composto di un moto uniforme e uno uniformemente accelerato.
+$$y = (\tan \theta_0) x - (\frac{g}{2v_{0}^2 \cos^2 \theta_0}) x^2$$
+** Moto Circolare Uniforme
+In realtà accelerata, la velocità cambia di direzione per tutto il moto.
+$$a_R = a = \frac{dv}{dt}\frac{v}{r}\frac{dl}{dt}=\frac{v^{2}}{r}$$
+** Moto Relativo
+$$\vec{v_{A}} = \vec{v_{R}} + \vec{v_{T}}$$
+Finché i moti relativi sono uniformi ogni sistema di riferimento vale l'altro.
+Si definiscono rispetto i due sistemi:
+- velocità assoluta
+- ... relativa
+- ... assoluta
+
 * Dinamica
+Studio del moto considerando le cause.
+I punti rimangono materiali.
+** Forza
+Causa delle modifiche delle caratteristiche cinematiche di un corpo.
+- forza di contatto
+  + risolta dalla meccanica quantistica come approssimazione a scala macroscopica di dinamiche di campo microscopiche
+- forza di campo
+** Primo Principio
+*Legge di Inerzia*
+#+begin_quote
+In assenza di forze esterne, un oggetto in quiete rimane in quiete e un corpo in moto mantiene la sua velocità immutata.
+#+end_quote
+
+- i sistemi inerziali sono quelli in cui vale questo principio.
+  + e' necessaria una causa evidente, una forza, per causare la modifica dello stato di moto di un corpo
+- i sistemi non inerziali sono sistemi in cui e' necessario introdurre forze apparenti
+** Secondo Principio
+*Legge di Newton*
+#+begin_quote
+L'accelerazione di un corpo e' direttamente proporzionale alla forza risultante che agisce su di esso, ed inversamente proporzionale alla sua massa.
+#+end_quote
+$$\sum \vec{F} = m \vec{a}$$
+
+La *massa* (in questo contesto inerziale o /passiva/) e' una grandezza scalare, una costante di proporzionalità che lega forza ed accelerazione.
+Traduce l'azione dinamica di una forza nel suo effetto cinematico.
+** Terzo Principio
+*Principio di azione e reazione*
+#+begin_quote
+Nell'interazione tra due corpi la forza esercitata dal corpo a sul corpo b e' uguale ed opposta a quella esercitata dal corpo b sul corpo a.
+#+end_quote
+$$\vec{F}_{ab} = - \vec{F_{ba}}$$
+
 * Lavoro e Energia
 * Dinamica dei Sistemi
 * Onde Meccaniche

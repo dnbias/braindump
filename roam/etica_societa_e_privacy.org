@@ -16,10 +16,10 @@
 - il concetto è legato con l'idea di possesso, autonomia e integrità delle nostre vite
 - le nostre informazioni pubbliche sono utilizzate da terzi per prendere decisioni anche importanti per la nostra vita
 
-
 #+begin_quote
 The right to be left alone
 #+end_quote
+
 - dati di credito
 - dati telefonici
 - dati medici, dati sulle assicurazioni
@@ -234,6 +234,7 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
       + la tecnologia in un certo senso potrebbe risolvere il problema, una =AI= può predire e governare un sistema anche senza un modello
         - una sorta di comunismo in mano a multinazionali private
   + un artigiano non può parallelizzare il lavoro a differenza di una catena di montaggio
+  + meno conosciuto per le sue posizioni attente alle condizioni lavorative degli operai
 ** Cartesio
 - porta una materia complessa nel campo della matematica
 - permette di trattarla con linguaggio formale
@@ -250,8 +251,9 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
 ** Taylorismo
 - human micromanagement, controllo e espropriazione delle competenze e conoscenze del proletariato
 - =IA= può allo stesso modo controllare
-** Durkheim
+** Emile Durkheim
 - [[id:78aeec49-78a6-451b-8af9-a90575ab0fb2][De la Division du Travail Social]]
+
 - a seguito della rivoluzione industriale i lavoratori si sono specializzati
   + quindi /interdipendenze/ sociali
   + questo è positivo in quanto la rete sociale ha una dipendenza reciproca tra i lavoratori
@@ -261,5 +263,177 @@ I /robot/ sono assimilabili a moderni schiavi, come andrebbero gestiti?
   + la politica deve mantenere il diritto al miglioramento della propria situazione
 - queste /interdipendenze/ stanno scomparendo a causa dell'automazione
   + questo aumento la disuguaglianza di conseguenza
-* Letture per il Corso
+
+** Primo Emendamento
+15 Dicembre 1791
+- impedisce al governo di legiferare per regolare
+  + religione
+  + diritto di assemblea
+  + libertà di espressione
+  + diritto di petizione al governo
+
+La libertà di parola in quell'epoca poteva effettivamente solo impedirtela il governo.
+Ora le corporation possono regolare l'agire del pubblico.
+** Panopticon
+Geremia Bentham 1791
+- se non sai mai quando sei controllato la tua percezione diventa quella di controllo costante
+- una torre centrale che può controllare in qualsiasi momento ogni luogo dell'edificio
+- nel mondo digitale le corporation aggregano dati di controllo costantemente e possono cederli se richiesto  a terzi
+  + in diritto si devono avere motivi fondati per inquisire su qualcuno, non basta un sospetto infondato
+  + il diritto sta venendo distorto a causa della tecnologia sempre più presente che non è ancora stata limitata a quel livello
+
+Il cambio di prospettiva è:
+- ti comporti bene perché sai che *potresti* essere controllato
+- ti comporti bene perché *sei* controllato
+
+** Attenzione
+[[id:4d109520-2573-4ab8-be16-8df07ddf32eb][William James]], uno dei padri del Pragmatismo Americano
+- l'esperienza della nostra vita non è altro che ciò cui prestiamo *attenzione*
+- [[id:e7a649fc-1a73-414d-8f18-fad2844bc6a6][The Attention Merchants]]
+  + trasforma l'attenzione, una dimensione profondamente personale, in un *bene di mercato*
+- *pubblicità*, 1833 con il *New York Sun*
+  + Benjamin Day, inventa l'inviato in tribunale
+    - per gli scandali, la qualità si abbassa per vendere a un pubblico più grande
+      + stesso principio delle *Fake News* e dei *Click Bait*
+        - la piattaforme spingono questi contenuti in quanto più tempo passato su di essa significa maggiori introiti
+        - non solo, ora non tutti vedono lo stesso contenuto: lo decide l'algoritmo per ognuno
+    - ha innescato un modello che si evolve con la tecnologia
+- 1860 primi poster pubblicitari a Parigi, Jules Cheret
+  + i parigini protestarono questa che vedevano come una svendita degli spazi della loro comunità
+  + mercificazione  dello spazio
+- 1890, prima dell'ordine dei medici
+  + i prodotti falsi esistevano da prima ma ora il metodo pubblicitario potenziava  le possibilità di truffa
+  + inizia la pubblicità a domicilio
+- 1906 =FDA=
+  + Food and Drugs Act
+  + deve essere
+
+** Monopoli
+- [[id:807632b3-5424-4d5c-8cea-fa3665b377b1][The Master Switch]]
+- Western Union
+  + compagnia telegrafica
+  + monopolio
+  + le comunicazioni erano lente e in chiaro
+    - =WU= passa le comunicazioni ad Associated Press
+    - scoprono che in alcuni stati se tutti fossero andati a votare c'era la possibilità di ribaltare le elezioni
+      + informazione, comunicazione e politica sono legata fin dall'inizio
+
+[[id:5a68c870-82d2-426e-b6f6-1d4150aa6d7b][Tim Wu]] fa un'analisi storica e evidenzia come in ambito tecnologico e di comunicazione fin dal giorno 0 le compagnie tendono a formare monopoli.
+
+- telefono inventato in parallelo da più aziende
+  + molte litigation fino al monopolio di *Bell* nel 1888
+- monopolio di Bell nell'est
+- gli indipendenti non possono competere e soccombono al monopolio
+- Antitrust
+  + [[id:c7a83238-a8db-40d2-aa56-cd22aa650864][The Curse of Bigness]]
+- Rockfeller, Standard Oil, monopoli in petrolio, armi
+  + il monopolio viene sostenuto filosoficamente
+  + [[id:a989c11a-974a-42f2-b939-f00c6367ec3f][Herbert Spencer]]: con retorica naturalistica viene sostenuto secondo Darwinismo Sociale, il più adatto sopravvive
+    - si cerca di dare giustificazioni naturali a fenomeni sociali costruiti dagli umani
+    - questo squalifica anche la politica dal regolare questi ambiti
+    - stesse teorie utilizzate per giustificare la Shoah
+
+#+begin_quote
+Any violation of these "natural laws" would only benefit "the survival of the unfittest" and reverse the evolution of the race. [...] The state had neither right or reason to interfere with the workings of the economy.
+#+end_quote
+
+Lo *Sherman Act* nel 1890 è la reazione da parte della società e della politica nella guerra contro i monopoli.
+
+I monopoli ora sono cambiati, mentre prima i prezzi venivano mantenuti alti
+- argomento utilizzato per combattere i monopoli nella fine dell'ottocento
+Ora i monopoli sul web portano tutto a essere /apparentemente/ gratuito.
+
+- *Theodore Vail*, giustificava i monopoli
+  + sosteneva che la competizione incontrollata fosse a detrimento dell'utente finale
+  + con la sicurezza provveduta dal monopolio sosteneva che le virtù dell'uomo sarebbero emerse
+  + immaginava un futuro economico libero dalla competizione Darwiniana in cui corporazioni organizzate *scientificamente* da uomini buoni e a stretto contatto con lo stato avrebbero servito il bene comune
+- AT&T, standard acquisiti da J.P.Morgan
+
+- [[id:9d801b7a-5c80-4828-bfe9-1f1c3f8a85c8][Karl Polanyi]]
+  + conclude che le operazioni di un mercato che si auto-regola sono profondamente distruttive se lanciate incontrollate da leggi e regolazioni
+  + descrive una *rete di misure e regolamenti* integrate da *forti istituzioni di controllo*
+  + esamina come si arriva al capitalismo
+    - serie di /commodity fictions/
+      + l'idea che la vita umana potesse essere subordinata alle dinamiche di mercato e trasformata in /lavoro/ da vendere
+      + l'idea che la natura potesse essere traslata sul mercato come possedimenti terrieri e /real estate/
+        - [[id:c19e8a20-03c5-4939-ab8d-38f7c5fdfc78][Karl Marx]] definiva proprio questo il *big bang* da cui origina l'accumulo moderno di capitale
+      + l'idea che gli scambi diventassero /denaro/
+
+- [[id:33d26a15-621c-4a2e-90c9-36df2a53252c][Hannah Arendt]], [[id:4d542f7a-aef6-4735-9506-29d8b306e979][The Origins of Totalitarianism]]
+  + vede che l'accumulo primitivo di Marx non è una esplosione singola ma un evento ciclico
+  + il capitalismo si sostiene grazie a un ciclico accumulo nel mondo naturale
+    - il c. va a /conquistare/ ciclicamente nuove aree naturali e sociali e le trasporta nel mercato assoggettandole alle sue leggi
+    - dove non ci sono regole il c. va a prendere il controllo imponendo le sue
+      + questo fenomeno è chiaro nel colonialismo
+
+*** Ford
+#+begin_quote
+Mass production begins in the perception of a public need.
+#+end_quote
+- 5 dollar day
+  + l'operaio producendo l'automobile a un certo punto otterrà il denaro per comprare il bene di consumo prodotto
+    - un circolo virtuoso per il capitalista per così dire
+
+Una *prima modernità* in cui il ruolo di un individuo non è più dove è nato e sempre vissuto ma piuttosto: in che città ti trovi, dove lavori, che cosa possiedi.
+*** Cinema
+Monopolio di *Edison* sulla costa est.
+*Paramount* lotta contro questo colosso a partire da Hollywood.
+La antitrust abbatte *Edison*.
+Dopo il monopolio rinasce da parte di *Paramount*.
+
+** Propaganda e Parola
+- 1914 nasce in Inghilterra la propaganda per la chiamata alle armi
+- 1917, comitato dell'informazione pubblica
+  + 150000 impiegati
+  + concetto di /volontà di guerra/, la volontà individuale doveva essere sottoposta a quella dello stato per vincere la guerra
+
+/L'industria dell'informazione messa al servizio dello stato./
+
+- [[id:74964a92-8660-4d2a-85ba-90bc0c0539ac][Public Opinion]]
+  + /consent is manufactured/
+  + manipolazione dai media controllati dallo stato, anche se limitati dalla democrazia
+- [[id:50ea8bbf-fea7-409b-9558-a92bbf175261][Triumph of the Will]]
+  + la volontà di guerra dello stato, non la volontà individuale
+
+** Marketplace of Ideas
+Concetto nato da *Justice Oliver Wendell Holmes*.
+- metafora economica
+- le idee migliori emergono dallo scambio continuo in un mercato libero delle idee
+
+** Pubblicità
+*** Radio
+- solo nel 1921 nasce il concetto di radio a fini commerciali
+- i cavi erano in mano ai monopolisti AT&T e RCA
+- in Europa nasce come servizio pubblico con la *BBC*
+  + servizio per il bene comune deve essere sostenuto pubblicamente
+- entra la pubblicità nelle case delle famiglie
+  + *Herbert Hoover* denuncia /l'intrusione/ della pubblicità nelle case
+  + il servizio importante della radio viene annegato dalla pubblicità
+
+- *RCA* monopolista radio cerca subito di prendere il controllo del mercato della neonata televisione nel 1928
+  + negli USA la tv non ha successo
+  + in Germania si
+  + la differenza? i monopolisti che hanno bloccato lo sviluppo della televisione per bloccare la concorrenza
+    - al contrario della retorica che Silicon Valley e monopolisti usano
+  + nel 1939 *RCA* introduce alla massa la tv ma come copia della radio, senza alcuna innovazione
+    - innovazioni che vengono mantenuti nei centri di ricerca dei monopolisti
+    - solo dopo decenni sono stati pubblicati
+*** Psicologia
+Come scienza ai fini della pubblicità
+- *Edward Bernays*, nipote di Freud
+  + psicologia applicata alla propaganda
+  + campagna pubblicitaria per convincere le donne a fumare
+    - sigarette come /torce della libertà/
+    - manipolazione, paga /influencer/ per fumare pubblicamente
+
+** Censura
+- *Production Code* nel cinema americano
+  + boicottaggio cattolico
+  + *Joseph Breen* e *Will H. Hays*
+  + censura imposta da privati che riesce a colpire perfino un monopolio come quello del cinema
+    - i monopoli sono manipolabili tramite il loro portafoglio
+
+** Letture per il Corso
 - [[id:46f61717-4114-4b16-b7c7-5779c6f3bfb5][Weapons of Math Destruction]]
+- [[id:807632b3-5424-4d5c-8cea-fa3665b377b1][The Master Switch]]
+  + tendenza di creare corporazioni monopolistiche nell'ambito dell'informazione e tecnologia

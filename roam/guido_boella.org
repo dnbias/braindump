@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       8a1fd631-28b1-4f22-b1c7-c34b94ec4b43
+:END:
+#+title: Guido Boella
+#+date: [2023-12-18 Mon 08:45]
+#+filetags: author

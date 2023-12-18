@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       19671a27-ab35-41ca-8f33-1996cc545350
+:END:
+#+title: LLM
+#+date: [2023-12-18 Mon 08:55]

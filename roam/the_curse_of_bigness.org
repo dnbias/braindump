@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       c7a83238-a8db-40d2-aa56-cd22aa650864
+:END:
+#+title: The Curse of Bigness
+#+date: [2023-12-16 Sat 21:14]
+#+filetags: book
+Tim Wu, /The Curse of Bigness/, ,
+
+* Summary

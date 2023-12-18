@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       807632b3-5424-4d5c-8cea-fa3665b377b1
+:END:
+#+title: The Master Switch
+#+date: [2023-12-16 Sat 21:02]
+#+filetags: book
+Tim Wu, /The Master Switch/, ,
+
+* Summary

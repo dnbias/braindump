@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       8e38ae85-a1cf-4a5f-b8bd-c98ba9cf74c4
+:END:
+#+title: On the Dangers of Stochastic Parrots
+#+date: [2023-12-18 Mon 08:53]
+#+filetags: paper ai compsci tbr
+- Source: 2021
+- Author: Emily M. Bender, Timnit Gebru, Angelina McMillan-Major, Shmargaret Shmitchell
+- Related: [[id:19671a27-ab35-41ca-8f33-1996cc545350][LLM]]

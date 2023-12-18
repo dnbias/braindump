@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       3b4a0f85-b63a-4660-a236-f2796e74d460
+:END:
+#+title: J.Weizenbaum
+#+date: [2023-12-18 Mon 09:06]
+#+filetags: author
+-

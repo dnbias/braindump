@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       3c924677-a889-498a-9ae3-dccd94ffb09d
+:END:
+#+title: Il professore onnisciente + AI sregolata
+#+date: [2023-12-18 Mon 09:43]
+#+filetags: video
+- Source: https://youtu.be/i8ZYaDs9KYI?si=o3Uj5H3FS7xLPpjm
+- Channel: Fondazione Circolo dei lettori
+- Related: [[id:aafe5e97-812c-4ffe-9b0c-5f8f99e607ee][Ethics]], [[id:19671a27-ab35-41ca-8f33-1996cc545350][LLM]]
