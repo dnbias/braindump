@@ -1371,3 +1371,7 @@ build content/posts/never_let_me_go.md: org2md roam/never_let_me_go.org
 build content/posts/il_professore_onnisciente_ai_sregolata.md: org2md roam/il_professore_onnisciente_ai_sregolata.org
 
 build content/posts/the_problem_with_counterfeit_people.md: org2md roam/the_problem_with_counterfeit_people.org
+
+build content/posts/gemini.md: org2md roam/gemini.org
+
+build content/posts/parliamo_di_large_language_models_con_enkk.md: org2md roam/parliamo_di_large_language_models_con_enkk.org

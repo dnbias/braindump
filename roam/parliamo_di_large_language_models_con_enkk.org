@@ -1,0 +1,28 @@
+:PROPERTIES:
+:ID:       b6a81b5c-9cf8-43cd-8021-d53e571896af
+:END:
+#+title: Parliamo di Large Language Models con Enkk
+#+date: [2023-12-21 Thu 06:16]
+#+filetags: video compsci ai llm
+- Source: https://www.youtube.com/watch?v=zNLEdfZlcQI
+- Channel: Datapizza
+- Related: [[id:b3a0aa55-d105-4e8f-8497-4421b31739eb][AI]], [[id:19671a27-ab35-41ca-8f33-1996cc545350][LLM]], [[id:0d63320a-ef3e-4760-ba68-dece5a2c64ba][Gemini]]
+
+* Notes
+- data leakage from the test-sets into LLM training
+  + this skews the benchmarks
+- Gemini
+  + benchmarks w/ =MMLU=
+    - multiple choice tests are entirely different from human interaction and the way these models are used
+    - /uncertainty-routed chain-of-thought/
+    - ~CoT@32~
+      + the question is asked N times and the majority wins
+  + chain-of-thought
+    - ask the model to generate more text, steps
+    - the steps are sharper and the output gets more accurate
+    - could be N-shot or Zero-shot
+- leader-board benchmark
+  + users vote for winner in an anonymous match between models for a prompt
+  + elo system
+- what are these systems for:
+  + *supervised data transformation*
