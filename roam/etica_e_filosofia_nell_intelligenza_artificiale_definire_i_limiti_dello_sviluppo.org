@@ -3,7 +3,7 @@
 :END:
 #+title: Etica e Filosofia nell'Intelligenza Artificiale: definire i limiti dello sviluppo
 #+date: [2023-12-18 Mon 08:07]
-#+filetags: video
+#+filetags: video talk compsci ai
 - Source: https://www.youtube.com/live/8AGskFyzhY0?si=8XxkoSMBcKYGvJrR
 - Channel: HKN PoliTo
 - Related: [[id:b3a0aa55-d105-4e8f-8497-4421b31739eb][AI]], [[id:aafe5e97-812c-4ffe-9b0c-5f8f99e607ee][Ethics]]

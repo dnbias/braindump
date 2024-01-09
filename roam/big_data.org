@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       0072ffc6-6427-45b3-a950-6377a043496d
+:END:
+#+title: Big Data
+#+date: [2024-01-09 Tue 13:47]

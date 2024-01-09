@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       acd347f9-fcbf-4b1f-90aa-d06c3c9bba3a
+:END:
+#+title: Atlas of AI
+#+date: [2024-01-08 Mon 15:19]
+#+filetags: book
+, /Atlas of AI/, ,
+
+* Summary
