@@ -2,7 +2,7 @@
 title = "Etica e Filosofia nell'Intelligenza Artificiale: definire i limiti dello sviluppo"
 author = ["Daniel Biasiotto"]
 date = 2023-12-18T08:07:00+01:00
-tags = ["video"]
+tags = ["video", "talk", "compsci", "ai"]
 draft = false
 +++
 

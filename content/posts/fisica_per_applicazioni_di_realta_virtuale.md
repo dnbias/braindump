@@ -75,7 +75,7 @@ Studio di punti materiali, senza dimensione, senza studio della causa del moto.
 -   spostamento come differenza vettoriale
 -   versori cartesiani in ogni punto della traiettoria
     -   /hat{u}_T, tangente
-    -   /[/hat{u}_N/], perpendicolare
+    -   /hat{u}_N/], perpendicolare
 
 Sia accelerazione che velocità sono scomponibile in queste componenti in ogni istante.
 L'accelerazione tangenziale varia il modulo della velocità e quella normale varia la sua direzione.

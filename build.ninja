@@ -1375,3 +1375,15 @@ build content/posts/the_problem_with_counterfeit_people.md: org2md roam/the_prob
 build content/posts/gemini.md: org2md roam/gemini.org
 
 build content/posts/parliamo_di_large_language_models_con_enkk.md: org2md roam/parliamo_di_large_language_models_con_enkk.org
+
+build content/posts/marshall_mcluhan.md: org2md roam/marshall_mcluhan.org
+
+build content/posts/discipline_and_punish_the_birth_of_the_prison.md: org2md roam/discipline_and_punish_the_birth_of_the_prison.org
+
+build content/posts/atlas_of_ai.md: org2md roam/atlas_of_ai.org
+
+build content/posts/law_of_unintended_consequences.md: org2md roam/law_of_unintended_consequences.org
+
+build content/posts/big_data.md: org2md roam/big_data.org
+
+build content/posts/dataification.md: org2md roam/dataification.org
