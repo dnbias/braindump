@@ -1387,3 +1387,7 @@ build content/posts/law_of_unintended_consequences.md: org2md roam/law_of_uninte
 build content/posts/big_data.md: org2md roam/big_data.org
 
 build content/posts/dataification.md: org2md roam/dataification.org
+
+build content/posts/ur_fascismo.md: org2md roam/ur_fascismo.org
+
+build content/posts/il_fascismo_eterno.md: org2md roam/il_fascismo_eterno.org

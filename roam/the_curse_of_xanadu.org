@@ -16,8 +16,8 @@ It was the most radical computer dream of the hacker era. Ted Nelson's Xanadu pr
 - [[id:235e89b2-ed6b-44cd-aa9f-f27accb00555][Ted Nelson]] "king of unsuccessful software development"
 - the goal of the project was to put all information within reach of all
   + eliminate scientific ignorance
-  + create a formu for discussion and debate
+  + create a formula for discussion and debate
 - Ted suffers from [[id:b17ad652-f198-41bc-87dd-6386809356ee][ADHD]][fn:1]
 
 
-[fn:1] All the recording, audio or otherwise, Nelson does is for combat the fleetability of his thoughts
+[fn:1] All the recording, audio or otherwise, Nelson does is to combat the fleetability of his thoughts.

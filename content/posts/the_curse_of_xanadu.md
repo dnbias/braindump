@@ -1,5 +1,6 @@
 +++
 title = "The Curse of Xanadu"
+author = ["Daniel Biasiotto"]
 date = 2021-12-24T15:13:00+01:00
 tags = ["article"]
 draft = false
@@ -17,7 +18,7 @@ draft = false
 -   [Ted Nelson]({{< relref "20211218213319-ted_nelson.md" >}}) "king of unsuccessful software development"
 -   the goal of the project was to put all information within reach of all
     -   eliminate scientific ignorance
-    -   create a formu for discussion and debate
+    -   create a formula for discussion and debate
 -   Ted suffers from [ADHD]({{< relref "attention_deficit_disorder.md" >}})[^fn:1]
 
-[^fn:1]: All the recording, audio or otherwise, Nelson does is for combat the fleetability of his thoughts
+[^fn:1]: All the recording, audio or otherwise, Nelson does is to combat the fleetability of his thoughts.

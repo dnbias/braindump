@@ -585,14 +585,522 @@ Il corpo rimane nella nuova posizione.
 
 ### Elasticità {#elasticità}
 
+Una forza applicata ad un corpo crea una deformazione.
+
+-   elasticità e sforzo
+-   deformazione risultato di uno sforzo
+-   la deformazione dipende dalla natura del materiale, dalla dimensione della sezione e dalla direzione della forza
+-   quando si parla di deformazione si tratta _sempre_ di coppie di forze
+    -   per esempio una massa appesa e la reazione vincolare
+-   vale la legge di Hooke nella **regione elastica**, fino ad un massimo allungamento chiamato limite di proporzionalità
+    -   \\(F =- K\Delta L\\)
+-   regione plastica (oltre il limite elastico) quella in cui c'è ulteriore deformazione ma non più  reversibile, la deformazione non è più proporzionale alla forza applicata
+-   il punto di rottura è anche il massimo allungamento
+
+\\[\Delta L = \frac{1}{E} \frac{F}{A}L\_0\\]
+
+-   la costante di proporzionalità \\(\frac{1}{E}\\) è detta **modulo di elasticità** o **di Young**
+
+Lo sforzo può essere di _tensione_ o di _compressione_.
+
+-   la forza è sempre applicata perpendicolarmente alla sezione
+-   le forze applicate parallelamente (lungo le facce) producono uno _sforzo di taglio_
+    -   si definisce un **modulo di taglio** \\(G\\) con una formula analoga alla precedente
+    -   \\(\Delta L\\) in questo caso è perpendicolare a \\(L\\)
+-   nel caso di forze applicate su tutto il volume e dirette verso il centro si ha un **modulo di compressione** \\(B\\)
+    -   pressione e sforzo sono logicamente equivalenti, aumento di pressione \\(\Delta P\\) porta una compressione \\(\Delta V\\)
+
+\\[\frac{\Delta V}{V\_0} = - \frac{1}{B} \Delta P\\]
+\\[B = - \frac{\Delta P}{\Delta V / V\_0}\\]
+
+Sforzi di frattura, gli sforzi di tensione o taglio sono più pericolosi.
+
 
 ## Onde Meccaniche {#onde-meccaniche}
 
+> Propagazione in un mezzo di una perturbazione dell'equilibrio che genera una successione di infiniti moti armonici.
+
+-   non si ha trasporto di materia
+    -   solo di energia
+-   la circonferenza aumenta sempre a partire dalla perturbazione e quindi l'energia diminuisce con la propagazione
+
+**Impulso d'onda**, una singola perturbazione che si propaga nel mezzo.
+
+
+### Onda Periodica {#onda-periodica}
+
+**Onda periodica**, la causa della perturbazione è una causa periodica, persistente
+
+-   nella maggior parte dei casi è anch'essa un moto armonico
+-   l'oscillazione si propaga con una velocità che dipende dal mezzo
+-   la frequenza dell'onda non cambia durante la propagazione
+
+Queste onde sono per definizione infinite, quindi possiede energia infinita. È una semplicazione utile a descrivere fenomeni locali. È un'onda _teorica_.
+
+Grandezze di un'onda periodica:
+
+-   ampiezza \\(A\\), massima distanza di un punto dalla situazione di equilibrio
+-   lunghezza d'onda \\(\lambda\\), distanza tra due punti con la stessa fase (stesse variabili cinematiche per il moto armonico)
+-   frequenza \\(f\\), numero di cicli al secondo, periodo \\(T\\)
+-   velocità dell'onda \\(v\\), non ha nulla a che fare con la velocità del moto armonico \\(\frac{\delta y}{\delta t}\\)
+
+\\[v = \frac{\lambda}{T} = \lambda f\\]
+Per un'onda trasversale in una corda con densità \\(\mu\\):
+\\[v = \sqrt{\frac{F\_T}{\mu}} = \sqrt{\frac{F\_T}{M/L}}\\]
+In generale
+\\[v = \sqrt{\frac{\text{fattore di elasticità}}{\text{fattore d'inerzia}}}\\]
+
+**NB**: il valore medio di ogni punto è lo stesso del punto in equilibrio, _non c'è trasporto di materia_.
+
+
+### Onda Trasversale e Longitudinale {#onda-trasversale-e-longitudinale}
+
+Quando le due velocità (onda e moto armonico) sono perpendicolari si ha un'onda trasversale, quando parallele si ha un'onda longitudinale.
+
+Un'onda longitudinale implica un cambiamento periodico di densità del mezzo, quindi si può concepire come _un'onda di densità_.
+Onda longitudinale in barra rigida:
+\\[ v = \sqrt{\frac{E}{\rho}}\\]
+Onda longitudinale in liquido o gas:
+\\[ v = \sqrt{\frac{B}{\rho}}\\]
+
+**NB**: un'onda _trasversale_ non si può propagare in un fluido, in quando un moto trasversale di una molecola non ha effetto sui suoi vicini.
+
+
+#### Terremoti {#terremoti}
+
+-   onde **S**, shear
+    -   trasversali
+-   onde **P**, pression
+    -   longitudinali
+
+
+### Energia e Intensità {#energia-e-intensità}
+
+L'energia trasportata dalle onde è proporzionale al quadrato dell'ampiezza: conseguenza del fatto che per ogni moto armonico si ha:
+\\[E = \frac{1}{2}KA^2\\]
+L'intensità \\(I\\) è definita come l'energia per unità di tempo (potenza) che attraversa l'unità di superficie perpendicolare alla direzione del flusso dell'energia.
+In caso di onda propagata in tutte le direzioni in un mezzo isotropo questa è un'onda sferica:
+\\[I = \frac{P}{4\pi r^2}\\]
+
+L'ampiezza ha proporzionalità inverso rispetto la distanza:
+\\[A \propto \frac{1}{r}\\]
+
+
+### Riflessione {#riflessione}
+
+-   nel momento in cui c'è un cambio mezzo
+    -   una parte di onda viene trasmessa e parte viene riflessa
+    -   se la secondo mezzo è **trasparente** permette la trasmissione
+        -   comunque una parte sarà riflessa
+-   la riflessione in mezzo più lento avviene in opposizione di fase
+    -   densità maggiore
+-   la riflessione in mezzo più veloce il ribaltamento non c'è opposizione di fase
+    -   densità minore
+
+
+#### Topologia delle Onde {#topologia-delle-onde}
+
+-   l'onda è sferica
+    -   l'onda piana è una semplificazione data da un'onda sferica a distanza infinita
+        -   i raggi sono tra loro praticamente paralleli
+-   **fronte d'onda**
+    -   insieme dei punti dotati di fase uguale
+-   **raggio**
+    -   linea perpendicolare al fronte d'onda, parallela alla direzione di propogazione dell'onda
+
+
+#### Riflessione onde piane {#riflessione-onde-piane}
+
+-   onda bi o tri-dimensionale _piana_
+-   l'angolo di riflessione è uguale a quello di incidenza
+
+> L'angolo che il fronte d'onda piano incidente forma con la superficie riflettente è uguale a quello formato dal fronte d'onda riflesso.
+
+<!--quoteend-->
+
+> Sia l'angolo di incidenza che l'angolo di riflessione sono misurati rispetto alla normale alla superficie riflettente.
+
+<!--quoteend-->
+
+> Una misura alternativa di questi due angoli è fornita dagli angoli che il fronte d'onda forma con la tangente alla superficie riflettente.
+
+\\[\theta\_i = \theta\_r\\]
+
+
+### Principio di Sovrapposizione {#principio-di-sovrapposizione}
+
+> Se sono presenti due o più cause che perturbano il mezzo la perturbazione totale è data dalla somma algebrica delle perturbazioni che sarebbero introdotte dalle singole cause.
+
+\\[ y\_{tot} = y\_1 + y\_2\\]
+
+
+### Interferenza {#interferenza}
+
+-   conseguenza del principio di sovrapposizione
+    -   caso particolare
+-   le onde devono essere **coerenti**
+    -   quindi \\(f\\) costante e \\(f\\) uguali tra loro
+-   interferenza **costruttiva** tra onde in fase
+    -   \\(\Delta \theta = 0^o / nT\\)
+-   interferenza **distruttiva** tra onde in opposizione di fase
+    -   \\(\Delta \theta = 180^o / (2n+1)T/2\\)
+
+
+#### Onde Stazionarie {#onde-stazionarie}
+
+-   caso particolare di interferenza
+-   non sono onde
+-   sono il prodotto di interferenza, una **regressiva** e una **progressiva**, che coesistono in un mezzo **limitato**
+    -   progressiva va verso il limite
+    -   regressiva è stata riflessa dal limite
+    -   l'interferenza è costruttiva solo per determinate frequenze
+-   la limitatezza del mezzo
+    -   causa la riflessione all'estremo o agli estremi in cui il mezzo è limitato
+    -   fa si che l'onda non solo non trasporti massa ma non trasporti neanche energia
+        -   il moto armonico mantiene la sua ampiezza d'onda
+
+Son vincolate dalle condizioni al contorno. Lo spostamento agli estremi deve essere nullo.
+
+-   agli estremi devono esserci nodi dell'onda
+-   le frequenze ospitabili sono le **armoniche**
+    -   **fondamentale** è l'onda stazionaria di minima frequenza \\(f\_1\\) e massima \\(\lambda\_1\\)
+    -   **superiori** hanno frequenze multiple e \\(\lambda\\) sottomultiple
+
+\\[\lambda\_n = \frac{2L}{n} = \fracx{\lambda\_1}{n}\\]
+\\[f\_n = \frac{nv}{2L} = nf\_1\\]
+
+
+### Principio di Huygens {#principio-di-huygens}
+
+Principio da cui derivare tutte le altre proprietà della teoria delle onde.
+
+> Ciascun punto del fronte d'onda può esser considerato come songente di onde secondarie emi-sferiche, che si dipartono dal punto nella stessa direzione del fronte d'onda e con la stessa velocità. Il nuovo fronte d'onda è costituito dall'inviluppo di tutte le onde secondarie, cioè dalla superficie tangente ad esse.
+
+Dal punto di vista fisico si ha una interferenza di onde coerenti in fase.
+Il nuovo fronte d'onda si crea dalla interferenza costruttiva di queste onde secondarie.
+
+Questo principio spiega il fenomero di **diffrazione** attorno alle estremità di un'ostacolo, attraverso una fenditura più langa del valore della lunghezza d'onda, e attraverso una fenditura dello stesso ondine di grandezza di \\(\lambda\\).
+
+-   se \\(\lambda\\) è maggiore della fenditura allora l'onda non può passare, non ci sta neanche un punto di Huygens
+
 
 ## Acustica {#acustica}
+
+La parte delle onde meccaniche che si occupa della propagazione del suono.
+Il suono è:
+
+-   onda longitudinale
+-   di compressione
+-   di rarefazione
+-   nella materia
+
+\\[v = \sqrt{\frac{B}{\rho}}\\]
+Definiamo pressione \\(P\\) misurata in Pascal \\(\text{Pa}\\)
+\\[P = \frac{F\_N}{A}\\]
+
+Possibile descrivere l'onda sia in relazione allo spostamento sia alla pressione.
+L'onda di spostamento è sfasata di un quarto di lunghezza d'orda rispetto all'onda di pressione.
+
+-   massimo/minimo di pressione \\(\to\\) spostamento nullo
+-   variazione di pressione nulla \\(\to\\) massimo spostamento
+
+
+### Caratteristiche del suono {#caratteristiche-del-suono}
+
+-   tono: suono acuto o grave, la grandezza fisica corrispondente è la **frequenza**
+-   intervallu di udibilità: \\(20 \text{Hz} \div 20 \text{KHz}\\), in contrazione con l'età
+-   ultrasuoni: frequenza maggiore di \\(20 \text{KHz}\\)
+-   infrasuoni: frequenza minore di \\(20 \text{Hz}\\)
+-   sensazione sonora: percezione umana legata all'intensità del suono
+-   velocità del suono nell'aria: \\(342\text{ m/s}\\)
+-   livello di intensità misurato in bel o decibel
+
+\\[\beta (dB) = 10 \log \frac{I}{I\_0}\\]
+
+
+### Orecchio Umano {#orecchio-umano}
+
+-   orecchio esterno
+    -   condotto fino a timpano, membrana che vibra in corrispondenza alle onde acustiche di pressione
+-   orecchio medio
+    -   tre ossicini, martello, incudine, staffa
+    -   trasferiscono vibrazioni dall órecchio interno attraverso la finestra ovale
+    -   il rapporto tra la superfice del timpano, molto maggiore di quella della finestra ovale e il sistema di leve porta un'amplificazione dell'ampiezza di pressione di un fattore circa 40
+-   orecchio interno
+    -   canali semicircolari bilanciano il suono
+    -   coclea piani di liquido trasforma in impulso elettrico l'impulso acustico
+    -   sistema nervoso trasferisce l'impulso elettrico al cervello
+-   il danno uditivo avviena nella finestra rotonda, che non riesce più a smorzare bene l'impulso che arriva attraverso il liquido della coclea e porta a riflessione acustica e quindi interferenze
+
+**Sensibilità acustica** misurata in _phon_, suoni di frequenza diversa portano a sensazioni acustiche diverse a parità di intensità.
+
+
+### Strumenti Musicali {#strumenti-musicali}
+
+Passando da un mezzo all'altro il suono cambia velocità e ampiezza d'onda ma non frequenza.
+Salire di un ottava significa raddoppiare frequenza e viceversa.
+
+In strumenti a corda:
+
+-   lunghezza della corda fissata
+-   la forza con cui si colpisce la corda rappresenta la forza che definisce la velocità di propagazione
+    -   aumentando la tensione lineare aumenta la velocità
+    -   tirare o allentare significa aumentare e diminuire la frequenza
+-   il tasto diminuisce \\(L\\)
+    -   quindi cambia la frequenza aumenta man mano
+-   un accordo è l'unione di note con la stessa **armonica fondamentale** creando l'armonia (_interferenza costruttiva_)
+-   la lunghezza d'onda fondamentale è \\(\lambda = 2L\\)
+
+Strumenti a tubo aperto
+
+-   continua a valere \\(L = \frac{1}{2}\lambda\\)
+-   allungare il tubo significa abbassare la frequenza
+
+Strumenti a tubo chiuso
+
+-   \\(L = \frac{1}{4}\lambda\\)
+-   può ospitare solo armoniche dispari
+-   ha ricchezza cromatica minore
+
+Il suono è diverso per voci, strumenti diversi in quanto cambiano i contributi delle armoniche superiori. è definito dallo spettro del suono.
+L'armonica fondamentale, o quella dominante in ampiezza, fornisce il tono della nota. Lo spettro delle armoniche superiori, in ampiezza e frequenza, fornisce il timbro.
+
+
+### Interferenza {#interferenza}
+
+L'interferenza in caso di monofrequenza e in fase è
+
+-   costruttiva quando la differenza di percorso corrisponde a un multiplo intero della lunghezza dell'onda
+-   completamente distruttiva se la differenza è un multiplo intero della semilunghezza d'onda
+
+
+### Battimenti {#battimenti}
+
+Si verifica in caso di frequenze leggermente dissimili:
+
+-   provoca composizione di fenomeni periodici di frequenza media rispetto alle costituenti
+-   una variazione di ampiezza con frequenza definita detta frequenza di battimento
+-   non è interferenza perchè le frequenze sono diverse
+
+\\[f\_b = | f\_1 - f\_2|\\]
+
+Questo fenomeno è alla base dell'accordatore.
+
+
+### Moto delle sorgenti {#moto-delle-sorgenti}
+
+-   sorgente ferma
+    -   emissione sferica
+    -   fronti d'onda equidistanti in tutte le direzioni
+-   velocità subsonica
+    -   fronti d'onda si accumulano
+    -   diminuendo la lunghezza d'onda di fronte alla sorgente
+    -   **effetto Doppler**
+
+Sorgente in moto e osservatore fermo:
+\\[ \lambda\_1 = \frac{v-v\_s}{f\_0} \to f\_1 = \frac{v}{v-v\_s}f\_0\\]
+Sorgente ferma e osservatore in moto:
+\\[ f\_2 = \frac{v+v\_0}{v}f\_0\\]
+**NB** \\(f\_1 \neq f\_2\\)
+
+-   velocità uguale a quella del suono
+    -   i fronti d'onda si accumulano esattamente di fronte alla sorgente
+    -   il superamento della velocità del suono deve superare la barriera costituita dal fronte d'onda anteriore, si _infrange il muro del suono_
+    -   bang ultrasonico è un'onda d'urto che è costituita dall'interferenza costruttiva di tutti i fronti d'onda che si accumulano
+    -   un oggetto a forma composta produce più onde d'urto
+
+\\[n\_{\text{mach}}  = \frac{v\_\text{sorgente}}{v\_\text{suono}}\\]
+
+\\[\sin \theta  = \frac{v\_\text{suono}}{v\_\text{sorgente}}\\]
+
+
+### Sonar {#sonar}
+
+_Sound, Navigation and Ranging_
+
+-   applicazione della tecnica eco pulsata
+-   l'intervallo di tempo tra trasmissione e ricezione nota la velocità del suono nel mezzo permette di determinare la posizione di un'oggetto
+-   maggiore frequenza più il suono viene attenuato
+    -   l'energia si dissipa per atrito nell'acqua
+-   la lunghezza d'onda deve essere più piccola dell'oggetto da individuare
+    -   altrimenti non rimbalza
+-   le frequenze utilizzate sono ultrasoniche per questi motivi
+-   la temperatura dell'acqua ha un grosso impatto sulla velocità di propagazione
+    -   ci sono diversi termoclimi a profondità diverse
+
+
+### Ecografia {#ecografia}
+
+-   applicazione della tecnica eco pulsata
+-   studia le pareti di separazione tra i tessuti
+-   le frequenze utilizzate sono \\(1 - 10\text{ MHz}\\)
+-   ogni volta che cambia il mezzo c'è una parte riflessa
+-   passaggio maggiore di densità significa una maggiore riflessione
+-   ampiezza e tempo del rimbalso informano sul tessuto di rimbalso e la posizione
+-   **eco-doppler** utilizzato per valutare il flusso sanguigno nelle vene o il battito cardiaco fetale
+    -   se il tessuto che causa il rimbalso ha usa velocità crea un effetto doppler
 
 
 ## Ottica {#ottica}
 
 
+### Ottica Geometrica {#ottica-geometrica}
+
+Semplifica la descrizione della luce:
+
+-   luce percorre solo linee rette
+    -   raggi rettilinei
+-   un oggetto in principio diffonde i raggi in tutte le direzioni
+    -   tranne casi particolari come specchi
+-   la visione può avvenire attraverso i raggi diretti provenienti direttamente dalla sorgente
+    -   o raggi diffusi
+    -   parte può essere assorbita
+
+
+#### Riflessione {#riflessione}
+
+<!--list-separator-->
+
+-  Riflessione Speculare
+
+    > Il raggio incidente su una superficie perfettamente piana viene riflesso formando un'angolo uguale a quello formato dal raggio incidente con la normale alla superficie.
+
+    \\[\theta\_i = \theta\_r\\]
+
+<!--list-separator-->
+
+-  Riflessione Diffusiva
+
+    > Il raggio incidente su una superficie scabra la normale cambia punto a punto e quindi i raggi vengono riflessi in ogni direzione.
+
+    -   quindi un ossevatore può vedere la luce tutto attorno all'oggetto
+
+<!--list-separator-->
+
+-  Formazione di Immagini
+
+    -   **punto oggetto**
+        -   sorgente di un flusso divergente
+        -   può essere una sorgente o un flusso che emerge da un punto
+    -   **strumenti ottici**
+        -   manipolano flussi di raggi
+    -   **punto immagine**
+        -   punto da cui emerge un flusso di raggi divergente
+        -   _immagine virtuale_ se il flusso di raggi sembra incontrarsi in quel punto
+        -   _immagine reale_ se il flusso di raggi si incontra effettivamente in quel punto
+
+    **NB**: concetto dell'invertibilità dei cammini reali, i percorsi che i raggi fanno all'andata sono gli stessi che i raggi fanno al ritorno.
+
+<!--list-separator-->
+
+-  Equazione dello specchio
+
+    **Legge di Gauss** o Equazione dei punto coniugati[^fn:1]:
+    \\[\frac{1}{f} = \frac{1}{d\_i} + \frac{1}{d\_o}\\]
+
+    -   vale in un **sistema stigmatico**
+        -   ottica di Gauss e ottica parassiale
+            -   deve esistere un fuoco
+            -   consideriamo \\(\text{AB}\\) un segmento perchè molto vicini
+
+    **Ingrandimento trasversale** \\(m\\):
+    \\[m = \frac{h\_i}{h\_o} = - \frac{d\_i}{d\_o}\\]
+
+    -   \\(|m|>1\\) ingrandimento
+    -   \\(|m|<1\\) rimpicciolimento
+    -   \\(m<0\\) capovolgimento
+
+<!--list-separator-->
+
+-  Specchi piani
+
+    -   riflettono senza modificare l'immagine virtuale
+
+<!--list-separator-->
+
+-  Specchi sferici
+
+    Considerando raggi paralleli (sorgente all'infinito) questi vengono riflessi, secondo la legge di riflessione punto per punto, ma non convergono tutti nello stesso punto. Il fenomeno è noto come **aberrazione sferica**. Per questo specchi sferici forniscono immagini meno nitide rispetto agli specchi piani.
+
+    -   con uno specchio piccolo rispetto al raggio di curvatura l'aberrazione è trascurabile
+    -   _approssimazione a piccoli angoli_
+        -   due condizioni: **ottica di Gauss** e **ottica parassiale**
+    -   **Caustica di confusione**
+        -   se è abbastanza piccola la si può ignorare, come nei casi suddetti
+
+    Un sistema la cui caustica di confusione è ignorabile si definisce **stigmatico**, ovvero crea immagini puntiformi con una buona approssimazione.
+
+    -   **convesso**, la riflessione avviene sulla superficie esterna della sfera e il centro di curvatura è dalla parte opposta rispetto l'osservatore
+        -   introducono **divergenza**
+        -   immagini rimpicciolite
+        -   campo visivo allargato
+        -   esempi: specchietti retrovistori, specchi stradali
+        -   punto focale interno allo specchio
+            -   negativo
+        -   raggio di curvatura negativo
+        -   le immagini sono _solo virtuali_
+            -   i flussi divergenti divengono più divergenti
+            -   le immagini sono sempre diritte, virtuali, rimpicciolite
+
+    <!--listend-->
+
+    -   **concavi**, la riflessione avviene sulla superficie interna della sfera e il centro di curvatura è dalla stessa parte dell'osservatore
+        -   introducono **convergenza**
+        -   immagini ingrandite
+        -   campo visivo ridotto
+        -   esempio: specchio per truccarsi
+        -   asse principale: normale alla superficie nel suo centro \\(A\\), passante per il centro di curvatura \\(C\\)
+        -   **fuoco** o **punto focale**: \\(F\\) in cui convergono i raggi paralleli all'asse principale
+            -   definito anche come punto immagine dell'infinito
+        -   distanza o **lunghezza focale**: distanza tra punto focale e centro dello specchio \\(\text{FA}\\)
+            -   \\(f = \frac{r}{2}\\)
+        -   per oggetti più lontani del fuoco tutti i punti vengono riflessi e si forma un immagine **reale** e invertita
+        -   per oggetti più vicini del fuoco lo specchio non vince la divergenza dei raggi e quindi questi rimangono divergenti e si crea un immagine virtuale
+            -   i raggi si incontrano _virtualmente_ dietro allo specchio
+            -   un osservatore vede un immagine _virtuale_ ma indistinguibile da un oggetto
+
+
+#### Rifrazione {#rifrazione}
+
+La velocità della luce dipende dal mezzo in cui si propaga.
+\\[ c = 2.99792458 \text{ m/s} = 3 \cdot 10^8 \text{ m/s}\\]
+\\[v \simeq c\\]
+
+Indice di rifrazione:
+\\[n = \frac{c}{v}\\]
+
+-   \\(c\\) dipende dalla lunghezza d'onda \\(\lambda\\)
+
+<!--list-separator-->
+
+-  Legge di Smell
+
+    > La parte del raggio di luce che viene trasmessa nel passaggio attraverso due mezzi con indice di rifrazione diverso viene deviato, la parte restante viene riflessa.
+
+    \\[n\_1 \sin \theta\_1 = n\_2 \sin \theta\_2\\]
+
+    -   quando si entra in un mezzo più lento ci si avvicina alla normale
+    -   per l'invertibilità del cammino ottico entrando in un mezzo più veloci ci si allontana dalla normale
+
+    Si ha riflessione totale passando a mezzi ad indice di rifrazione minore per angoli maggiori dell'angolo limite \\(\theta\_c\\).
+
+    -   questo perchè il raggio rifratto si allontana dalla normale, oltre un angolo di rifrazione di \\(90^{\circ}\\) (sulla superficie del mezzo) tutta la luce viene riflessa
+
+    \\[\sin \theta\_c = \frac{n\_2}{n\_1} \sin 90^{\circ} = \frac{n\_2}{n\_1}\\]
+
+    -   applicazioni:
+        -   binocolo
+        -   fibra ottica (**guida di luce**)
+        -   endoscopio
+
+<!--list-separator-->
+
+-  Lenti
+
+
+### Ottica Ondulatoria {#ottica-ondulatoria}
+
+
 ## Meccanica dei Fluidi {#meccanica-dei-fluidi}
+
+[^fn:1]: in quanto ad ogni singolo punto oggetto corrisponde un singolo punto immagine

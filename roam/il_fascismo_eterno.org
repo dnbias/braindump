@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       7d7f3c31-be3b-4950-83a8-94573f5f867a
+:END:
+#+title: Il fascismo eterno
+#+date: [2024-01-09 Tue 16:09]
+#+filetags: book essay
+[[id:0e248755-8030-4c5a-a87e-0e6f374fc788][Umberto Eco]], /Il fascismo eterno/, 1995, La nave di Teseo
+- originariamente un talk ad un pubblico americano
+
+* Summary
+Il fascismo fu un unione improbabile di idee politiche diverse e contraddittorie.
+Il nazismo sfoggiava una architettura nazista, una arte nazista, una scienza nazista, il fascismo invece viveva e proliferava nelle sue contraddizioni.
+Eco stila una lista di 14 modi per riconoscere quello che lui definisce fascismo eterno o [[id:8dc696f7-9a56-487f-9b04-09daee7b71e6][Ur-Fascismo]], cioè le caratteristiche che delineano i fascismi che sono allo stesso tempo uguali e diversissimi tra loro.

@@ -6,7 +6,16 @@ tags = ["university", "compsci", "master"]
 draft = false
 +++
 
+-   Professori:
+    -   Guido Boella
+    -   Mirko Polato
+    -   Ruggero Pensa
+    -   Elena Battaglia
+
+
 ## Privacy {#privacy}
+
+-   Related: [Knowledge Discovery &amp; Data Mining]({{< relref "knowledge_discovery_data_mining.md" >}})
 
 
 ### Principi {#principi}
@@ -524,6 +533,16 @@ Gli attributi nei microdati:
 
 L'obiettivo della preservazione della privacy è di **de-associare** gli individui dalle loro **informazioni sensibili**.
 
+**Membership Disclosure**:
+
+-   c'è una alta probabilità che un quasi-identifier sia unico per una popolazione
+-   ma generalizzare e sopprimere quasi-identifier nel dataset non cambia la loro distribuzione nella popolazione
+-   questo implica che la \\(k\\)-anonymity **non può nascondere** se un individuo è presente o meno nel dataset
+
+Quindi il problema ora cambia: il rischio è la disclosure della presenza o meno di un individuo nel dataset anonimizzato.
+
+-   esempi: dataset di contro-terrorismo, ricerca medica su una specifica malattia
+
 
 #### k-anonymity {#k-anonymity}
 
@@ -658,8 +677,491 @@ Il problema di trovare la minima tabella \\(k\\)-anonima con generalizzazione e 
 
 #### l-diversity {#l-diversity}
 
+_Privacy Beyond k-Anonymity_
 
-## Etica {#etica}
+-   diversificare i gruppi di tuple k-anonime sulla base degli attributi sensibili
+-   **homogeneity attack**
+    -   vanno evitati gruppi così omogenei anche se k-anonimi
+-   **background knowledge attack**
+    -   si possono inferire facilmente attributi sensibili con conoscenza sull'individuo che permetta di escludere delle possibilità
+-   **positive/negative disclosure**
+    -   positiva se l'avversario può correttamente identificare valori sensibili con alta probabilità, negative se può eliminare dei possibili valori con alta probabilità
+
+-   q\*-block
+-   **lack of diversity**
+-   assicurare la diversità all'interno di un q\*-block
+    -   almeno \\(l \ge 2\\) valori sensibili in modo che gli \\(l\\) valori più frequenti abbiano all'incirca la stessa frequenza
+    -   quindi il q\*-block è ben rappresentato da \\(l\\) valori sensibili
+-   ad un attaccante servono \\(l-1\\) possibili pezzi di background knowledge per eliminare dei possibili valori sensibili e inferire una _positive disclosure_
+-   una tabella è \\(l\\)-diversa se ogni q\*-block è \\(l\\)-diverso
+
+Si definisce la **entropy** \\(l\\)-diversity:
+
+\\[- \sum p(q\*,s) \log (p(q\*,s)) \ge \log(l)\\]
+
+-   quindi l'entropia della probabilità \\(p(q\*,s)\\), che è la frazione di tuple nel q\*-block con attributo sensibile uguale a \\(s\\)
+-   si dimostra il **teorema di monotonicità della \\(l\\)-diversity** rispetto alla sua entropia
+    -   se una tabella la soddisfa allora qualsiasi sua generalizzazione la soddisfa a sua volta
+    -   da questo _consegue_ che ogni algoritmo di \\(k\\)-anonymity può essere esteso per mantenere la proprietà di \\(l\\)-diversity
+
+Questo approccio lascia spazio a alcuni attacchi:
+
+-   **skewness attack**
+    -   accade quando la distribuzione in un q-blocco è diversa da quella della popolazione originale
+-   **similarity attack**
+    -   accade quando un q-blocco ha valori sensibili diversi ma semanticamente simili per l'attributo sensibile
+
+
+#### t-closeness {#t-closeness}
+
+Una classe di equivalenza (q\*-block) ha come proprietà la \\(t\\)-closeness se la distanza tra la distribuzione di un attributo sensibile in questa classe e la sua distribuzione nella tabella non supera il threshold \\(t\\).
+
+-   una tabella è \\(t\\)-close se tutte le classi di equivalenza hanno \\(t\\)-closeness
+-   la _closeness_ tra due distribuzioni \\(P\\) e \\(Q\\) limita la quantità di informazioni utili rilasciata perché limita l'informazione sulla correlazione tra quasi-identifier e attributi sensibili
+    -   se questa correlazione è troppo chiara allora si ha una _attribute disclosure_, quindi va limitata
+    -   il parametro \\(t\\) permette il **trade-off** tra utilità e privacy
+        -   basso: privacy - alto: utilità
+
+Misure di distanza:
+
+-   **Variational distance**
+
+\\[D[P,Q] = \sum\_{i=1}^{m} \frac{1}{2} | p\_i - q\_i |\\]
+
+-   **Kullback-Leibler distance**
+
+\\[D[P,Q] = \sum\_{i=1}^{m} p\_{i} \log\frac{p\_{i}}{q\_{i}}\\]
+
+Queste non tengono in considerazioni le differenze semantiche, per questo la \\(t\\)-closeness utilizza la **Earth Mover Distance** `EMD`.
+\\[D[P,Q] = \sum\_{i=1}^{m} \bigg| \sum\_{j=1}^i r\_j\bigg|\\]
+Per attributi categorici _flat_ (senza gerarchia):
+\\[D[P,Q] = \sum\_{i=1}^{m} \frac{1}{2}|p\_{i}-q\_{i}|\\]
+
+Per attributi categorici gerarchici:
+\\[D[P,Q] = \sum\_{N} cost(N)\\]
+
+-   \\(cost(N)\\) è il costo di muoversi tra i figli del nodo \\(N\\)
+
+Il problema di questo approccio è che un avversario può comunque inferire con background knowledge di attributi sensibili dei quasi-identificativi che possono essere comunque un problema di privacy.
+
+-   ogni attributo è potenzialmente un quasi-identifier
+
+
+#### delta-presence {#delta-presence}
+
+-   tabella privata \\(\textsc{PT}\\) e una sua generalizzazione \\(\textsc{GT}\\)
+-   \\(\delta = (\delta\_{min}, \delta\_{max})\\)
+    -   range di probabilità accettabili per \\(P(t\in \textsc{PT} | \textsc{GT})\\)
+-   per questa proprietà vale la monotonicità
+    -   quindi può essere sfruttata e integrata in algoritmi di  \\(k\\)-anonimity
+-   selezione di una buona \\(\delta\\)
+    -   dato un belief a priori \\(b\_r\\) e belief a posteriori \\(b\_o\\)
+    -   costo atteso \\(c\\) basato su un misuso del dataset
+    -   costo totale \\(d\\)
+    -   su possono calcolare \\(\delta\\) massimo e minimo
+
+
+### Differential Privacy {#differential-privacy}
+
+-   database statistici
+-   modelli machine learning e data analysis
+-   cambio di paradigma di privacy
+    -   come rilasciare dati senza utilizzare pulizia dei dati, termini di servizio di utilizzo dati, restrizioni di view
+    -   **Fundamental Law of Information Recovery**: dare risposte troppe accurate a troppe query distrugge inevitabilmente la privacy
+-   estrarre informazioni sulla popolazione senza apprendere nulla su individui
+    -   la partecipazione o no di un dato individuo a uno studio statistico è irrilevante sugli outcome dello studio e l'impatto che questo può avere poi sull'individuo
+
+La **Differential Privacy** è una definizione, non un algoritmo, introdotta da Cynthia Dwork nel 2006:
+
+-   assicura che le stesse conclusioni saranno raggiunte indipendentemente dalla partecipazione o meno di un individuo al dataset
+-   specificatamente, assicura che ogni sequenza di output (risposte a query) sono _praticamente_ egualmente probabili data la presenza o assenza di uno qualsiasi degli individui
+
+2 modelli:
+
+-   non-interactive, offline
+    -   curatore produce un database sintetico o igienizzato che rispetta la `DP`
+-   interactive, online
+    -   il database è tenuto chiaro e viene modificata la risposte alle query
+-   simplesso di probabilità \\(\Delta(B)\\)
+-   **algoritmo randomizzato**: \\(\mathcal{M}\\) con dominio \\(A\\) e range discreto \\(B\\) associato con un mapping \\(\mathcal{M}: A\to \Delta(B)\\). Su input \\(a \in A\\), l'algoritmo \\(\mathcal{M}\\) da output \\(\mathcal{M}(a) = b\\) con probabilità \\((\mathcal{M}(a))\_b \forall b \in B\\).
+-   database \\(D\\) collezione di record di un universo \\(\mathcal{D}\\)
+-   distanza tra database \\(l\_{1}\\) numero di record di cui differiscono, norma della differenza
+    -   \\(|| D\_1 - D\_2 ||\_1\\)
+
+La `DP` promette di proteggere gli individui da rischio addizionale dato dalla loro partecipazione al dataset.
+Anche  se gli individui potrebbero avere danni una volta che i risultati \\(\mathcal{M}(D)\\) di un meccanismo `DP` \\(\mathcal{M}\\) sono rilasciati, la `DP` assicura che la probabilità che questo danno avvenisse non è stata significatamente aumentata dalla loro partecipazione.
+
+-   il _rischio_ sarebbe stato lo stesso indipendentemente dalla partecipazione
+
+La `DP` non può assicurare che informazione segrete rimangano tali, se i risultati statistici mostrano forti correlazioni tra attributi privati e attributi pubblicamente osservabili questa non infrange la `DP` ma può essere un rischio per la privacy dell'individuo.
+
+Spesso è necessario **combinare** diversi meccanismi di `DP`, si dimostra che la combinazione rimane `DP` ma i parametri \\(\epsilon\\) e \\(\delta\\) devono necessariamente degradare.
+
+-   teoremi di composizione sequenziale e parallela
+
+
+#### \\(\epsilon\\)-differential privacy {#epsilon-differential-privacy}
+
+\\(\mathcal{M}\\) con dominio \\(\mathcal{D}\\) è \\(\epsilon\\)-differentially private se \\(\forall S \subseteq \text{Range}(\mathcal{M})\\) e \\(\forall D\_1, D\_2 \subseteq \mathcal{D}: || D\_1 - D\_2 ||\_1 \le 1\\) :
+\\[\frac{\text{Pr} [\mathcal{M}(D\_1) \in S]}{\text{Pr} [\mathcal{M}(D\_2) \in S]} \le e^{\epsilon} \simeq 1 \pm \epsilon\\]
+
+-   se le due probabilità sono il più possibile vicine tra loro, o meglio il rapporto è il più possibile vicino a 1, e più diventa difficile distinguere se la risposta è stata data dal primo o dal secondo dataset
+    -   quindi l'algoritmo randomizzato da una risposta privata
+    -   quindi per \\(\epsilon\\) piccole
+    -   \\(\epsilon\\) è chiamato **privacy budget**
+        -   indica il livello di budget che va rispettato dal meccanismo
+
+la group differential privacy è definita ugualmente ma considerando gruppi di tuple e quindi distanze superiori a 1:
+\\[\frac{\text{Pr} [\mathcal{M}(D\_1) \in S]}{\text{Pr} [\mathcal{M}(D\_2) \in S]} \le e^{k\epsilon}\\]
+
+
+#### \\((\epsilon, \delta)\\)-differential privacy {#epsilon-delta--differential-privacy}
+
+\\(\mathcal{M}\\) con dominio \\(\mathcal{D}\\) è \\((\epsilon,\delta)\\)-differentially private se \\(\forall S \subseteq \text{Range}(\mathcal{M})\\) e \\(\forall D\_1, D\_2 \subseteq \mathcal{D}: || D\_1 - D\_2 ||\_1 \le 1\\) :
+\\[\text{Pr}[\mathcal{M}(D\_1) \in S] \le e^\epsilon \text{ Pr}[\mathcal{M}(D\_2) \in S] + \delta\\]
+
+-   la differenza con la &epsilon; privacy è che assicura che per ogni lancio di \\(\mathcal{M}(D)\\) l'output che osservo è quasi ugualmente probabile osservarlo da ogni database nel vicinato simultaneamente
+-   per ogni coppia di database vicini è molto improbabile che il valore osservato sia più o meno probabilmente generato dal primo o dal secondo database
+-   \\(\delta\\) aggiunge un termine di tolleranza
+-   è una versione rilassata della `DP`
+
+
+#### Randomization Mechanism {#randomization-mechanism}
+
+Partecipanti al survey:
+
+1.  lancia moneta
+2.  croce, di verità
+3.  testa, lascia altra moneta e rispondi _Si_ per testa e _No_ per croce
+
+Questa versione è \\(ln(3)\\)-differenzialmente privato.
+
+Data una funzione \\(f: \mathcal{D} \to \mathbb{R}^k\\)
+
+Si considera la **sensibilità della funzione** (global sensitivity) per avere un upper-bound sulla perturbazione applicabile al output per preservare la privacy:
+\\[ \Delta f = \max\_{D\_1,D\_2 \in \mathcal{D}} || f(D\_1) - f(D\_2) ||\_1\\]
+dove \\(||D\_1 - D\_2 ||\_1 = 1\\)
+
+-   cattura l'impatto per cui il dato di un individuo può cambiare \\(f\\) nel caso peggiore
+
+
+#### Laplace Mechanism {#laplace-mechanism}
+
+Una definizione di rumore per questa applicazione è la funzione di **Laplace**.
+\\[X \sim Lap(\mu, b)\\] se
+\\[p(x) = \frac{e^{-\frac{|x-\mu|}{b}}}{2b}\\]
+
+-   varianza: \\(\sigma^2 = 2b^{2}\\)
+
+Definizione di meccanismo di Laplace:
+\\[\mathcal{M}\_{\mathcal{L}} (D, f(\cdot) , \epsilon) = f (D) + Y\_1 , \dots, Y\_k\\]
+
+-   le \\(Y\_i\\) sono random variables tratte da Laplace \\(\text{Lap}(\Delta f/\epsilon)\\)
+
+Si dimostra teorema per cui questo meccanismo preserva la \\(\epsilon\\)-differential privacy
+
+-   sensibilità bassa significa distorsione piccola
+-   piccolo privacy budget significa maggiore distorsione
+    -   i.e. voglio più privacy e quindi devo perturbare di più
+
+<!--list-separator-->
+
+-  Esempi
+
+    **Counting Queries**
+
+    -   base di molti task
+    -   sensibilità è 1, chiaramente il cambiamento di un record modifica di 1 l'output
+    -   noise: \\(\text{Lap}(1/\epsilon)\\)
+    -   distorsione attesa di \\(1/\epsilon\\), indipendente dalla dimensione del database
+
+    **Multiple Counting Queries**
+
+    -   ogni individuo può cambiare conteggio nel caso pessimo con \\(m\\) nel gruppo
+    -   distorsione attesa \\(m/\epsilon\\)
+
+    **Histogram Queries**
+
+    -   caso particolare di query strutturalmente disgiunte, non serve scalare la noise con numero di query
+    -   l'universo \\(\mathcal{D}\\) è partizionato in celle, la query chiede un conteggio in ogni cella
+    -   le celle sono disgiunte e quindi modifiche non interferiscono tra celle diverse
+    -   si ricade nel caso di **Counting Query** e la sensibilità è 1
+
+    **Mean Query**
+
+    -   media su quantità uniformemente distribuita in intervallo \\([\alpha, \beta]\\)
+    -   con \\(n\\) istanze la sensibilità è \\((\beta - \alpha) / n\\)
+    -   noise: $\text{Lap}((&beta; - &alpha;)/n&epsilon;)
+
+
+#### Exponential Mechanism {#exponential-mechanism}
+
+-   caso in cui \\(f: \mathcal{D} \to \mathcal{R}\\) viene valutata da una utility function \\(u: \mathcal{D} \times \mathcal{R} \to \mathbb{R}\\)
+    -   utility score alto più desiderabile
+-   un meccanismo additivo (come quello di Laplace) può distruggere i risultati perché un piccolo noise può risultare in un grande cambiamento nella utility function
+-   il limite del meccanismo di Laplace è che inoltre può essere applicato solo a query numeriche in \\(\mathbb{R}^k\\) e non un generico \\(\mathcal{R}\\).
+    -   questo in caso non esista una funzione di utilità che trasporti i risultati ai reali
+
+La soluzione è calcolare la sensibility sulla utility function
+\\[\Delta u := \max\_{r \in \mathcal{R}} \max\_{D\_1, D\_2 \in \mathcal{D}} |u(D\_1,r) - u(D\_2,r)|\\]
+con \\(|| D\_1 - D\_2||\_1 = 1\\)
+
+E utilizzarla con un meccanismo differente ovvero il meccanismo esponenziale, applicabile anche a funzioni non solamente nei reali.
+
+\\[\mathcal{M}\_E(D,u,\epsilon) = R\\]
+con \\(R\\) random variable con valori in \\(\mathbb{R}\\) tali che:
+\\[ P(R = r) = e^{\frac{\epsilon u(D,r)}{2\Delta u}}\\]
+
+-   produce un output \\(r\in \mathcal{R}\\) con probabilità proporzionale a \\(u(D,r)\\), il risultato più probabile è quello per cui l'utilità è massimizzata
+-   si prova che il meccanismo è molto accurato
+    -   molto improbabile che \\(r\\) abbia utility score inferiore alla massima utilità
+
+Si dimostra teorema per cui questo meccanismo preserva la \\(\epsilon\\)-differential privacy.
+
+
+#### Empirical Risk Minimization {#empirical-risk-minimization}
+
+`ERM` utilizza due componenti, una un regolarizzatore che misura la complessità del modello e un rischio dato da una loss function.
+Il classificatore lineare è basato sulla funzione:
+\\[f(D) = \text{argmin}\_w \frac{1}{2} \lambda ||w||^2 + \frac{1}{n} \sum\_{i=1}^n L(c\_j w^T d\_i)\\]
+Teorema, con \\(||d\_i|| \le 1\\) e L che è 1-Lipschiz (limitata), allora, per ogni \\(D\_1,D\_2\\) con \\(||D\_1 - D\_2||\_1 \le 1\\):
+\\[|| f(D\_1) - f(D\_2) ||\_2 \le \frac{2}{\lambda n}\\]
+
+
+#### Differentially Private ERM {#differentially-private-erm}
+
+Si aggiunge a `ERM` una perturbazione dell'output, sono possibili:
+
+-   output perturbation
+-   objective perturbation
+
+In base alla funzione di loss utilizzata si possono creare versioni privatizzate di diversi task di machine learning:
+
+-   L = Logistic Loss \\(\to\\) Private Logistic Regression
+-   L = Huber Loss \\(\to\\) Private Support Vector Machine
+
+
+### Privacy in Distributed Systems {#privacy-in-distributed-systems}
+
+-   vari nodi raccolgono dati
+    -   poi aggregati per _data analysis_
+-   **Data Warehouse Approach**
+    -   approccio storico
+    -   la _warehouse_ centrale raccoglie i dati dai nodi distribuiti
+    -   la data analysis e machine learning si interfacciava a questa warehouse
+    -   non garantisce privacy, singolo punto di vulnerabilità e inoltre grande necessità di potenza di analisi centralizzata
+    -   la _data fusion_ può avere un overhead importante
+    -   l'approccio non è più efficace con la mole di dati odierna
+-   **Local Data Analysis Approach**
+    -   viene eseguita data analysis sui dati locali in nodi distribuiti
+    -   questi vengono condivisi con un _Data Analysis Combiner_
+    -   meglio per la privacy, vengono condivisi risultati intermedi dell'analisi e non i dati stessi
+-   necessità di accedere a dati distribuiti ma in maniera privata
+    -   governi e agenzie pubbliche
+        -   necessità di aggregare dati per la comunità
+        -   problema di privacy rispetto ai singoli individui
+    -   collaboratori industriali e gruppi di commercio
+        -   alcune pratiche sono segreti aziendali
+        -   condividere i dati senza svelare tutto
+            -   in questo caso si tratta di un problema di confidenzialità e non di privacy
+    -   multinazionali
+        -   raccolta di dati in diverse nazioni e necessità di analisi generale
+        -   nel rispetto di leggi nazionali che proteggono dal esportazione transnazionale dei dati personali
+
+Soluzioni possibili:
+
+-   _data obfuscation_
+    -   nessuno vede i dati reali
+-   _summarization_
+    -   solo i fatti necessari sono esposti
+-   _data separation_
+    -   i dati rimangono nei nodi fidati
+
+
+#### Data Separation {#data-separation}
+
+-   approccio
+    -   dati mantenuti in possesso dei creatori/possessori
+    -   rilascio limitato a terze parti fidate
+    -   operazioni/analisi eseguite dalle terze parti
+-   problemi
+    -   volontà di eseguire l'analisi delle terze parti
+    -   data disclosure dai risultati dell'analisi
+
+Approcci diversi:
+
+-   functional encryption
+    -   generalizzazione di public-key encryption
+    -   il possesso di una chiave segrete permette di capire una funzione di ciò che è criptato
+-   fully homomorphic encryption
+    -   forma di criptazione che permette di ottenere la versione criptata dei risultati tramite la computazione degli input criptati
+-   federated learning
+
+<!--list-separator-->
+
+-  Secure Multiparty Computation
+
+    -   `SMC`
+    -   multiparty, inteso effettivamente come 2-party
+        -   vanno tenute in considerazione le complicazioni
+    -   **Yao's Milionaire's problem**
+        -   computazione sicura tramite un circuito
+        -   **securely compute gate**
+        -   condivisione di dati rumorosi tra i party
+        -   risolto poi tramite **oblivious transfer**
+            -   **A** manda chiave pubblica \\(p\\) a **B**
+            -   questo selezione 4 random values
+                -   uno lo sceglie per criptarlo tramite \\(p\\)
+            -   **A** non sa quale sia quello scelto, quindi decripta tramite chiave privata tutti i valori e rimanda a **B** il risultato dell'operazione tra i suoi dati e tutti e 4 i valori ricevuti
+            -   **B** sa quale dei 4 è quello che aveva scelto e quindi lo cripta nuovamente con \\(p\\) e restituisce il risultato finale
+
+    **Esempio di utilizzo**
+
+    -   costruzione degli alberi decisionali
+    -   partizionamento orizzontale 2-party
+    -   schema `db` condiviso
+    -   tuple private
+    -   algoritmo `ID3`
+        -   scelta di split con **entropy** minima o **information gain** massima
+    -   protocollo detto _semi-onesto_, si mantengono le computazioni intermedie
+    -   calcolo del conteggio della classe di maggioranza nei nodi foglia
+        -   protocollo di **Yao**
+            -   input numero di tuple di ciascuna classe nei due dataset \\(D\_1,D\_2\\)
+            -   output indice \\(i\\) dove la somma numero di tuple dei due dataset della classe \\(i\\) è massima
+    -   transazioni con lo stesso valore di classe, va restituito nodo foglia di classe \\(c\\)
+        -   rappresentiamo le foglie con più di una classe con un simbolo diverso da \\(c\_i\\) fisso
+        -   forzare i party a dare come input il simbolo fissato o \\(c\_i\\)
+        -   controllare l'eguaglianza per decidere se la foglia ha classe \\(c\_i\\), qui si utilizza la `SMC`
+    -   calcolo dell'entropia
+        -   si utilizza **Yao** per una non ottima approssimazione di \\(\ln(x)\\)
+            -   tramite serie di **Taylor** con \\(n\\) membri
+        -   quindi che la soluzione sicura è una approssimazione
+
+<!--list-separator-->
+
+-  Federated Learning
+
+    > Permette di addestrare algoritmi tra multiple nodi o server decentralizzati in possesso di data sample locali, senza scambiarli.
+
+    -   collaborative learning with no data sharing
+    -   `FL` è una modalità di machine learning dove multiple entità (client) collaborano alla soluzione del task
+    -   un server centrale coordina, detta **aggregator**
+    -   _raw data_ non lascia i client e rimangono locali
+    -   `FL` orizzontale, ogni client ha un sottoinsieme degli esempi
+    -   `FL` verticale, ogni client ha potenzialmente tutti gli esempi ma solo una parte delle feature
+
+    **Assunzioni**:
+
+    -   parametri del modello non contengono più informazioni che i dati di addestramento
+    -   la dimensione del modello è generalmente più piccola della dimensione dei dati di addestramento
+
+    **Goal**:
+
+    -   _confidentiality_, i client non condividono i loro dati
+    -   _usefulness_, i client giovano dalla federazione
+
+    **Desired**:
+
+    -   che il _federated model_ sia simile a quello centralizzato
+
+    Protocollo generale:
+
+    1.  aggregatore inizializza modello globale e lo condivide con i client
+    2.  i client aggiornano il modello utilizzando i loro dati privati
+    3.  l'aggregatore aggrega i modelli aggiornati
+    4.  il processo si ripete fino a convergenza (l'apprendimento avviene a _round_)
+
+    **Problemi**:
+
+    -   _non-IID_, dati generati da utenti non omogenei
+    -   _unbalanced_, alcuni utenti generano quantità di dati maggiori
+    -   _massively distributed_, utenti device mobile offrono molti più dati della media
+    -   _limited communication_, mobile network instabile
+
+    <!--list-separator-->
+
+    -  FedSGD
+
+        -   ogni round uno step di discesa del gradiente
+        -   `FL` con una **C-fraction** dei client, secondo diversi criteri
+            -   solitamente molto piccolo rispetto la totalità
+        -   ogni client \\(k\\) computa gradiente \\(g\_k\\) sui propri dati locali
+            -   single batch
+
+        Alternative:
+
+        1.  ogni client invia \\(g\_k\\)
+            -   aggregatore aggrega i gradienti e genera nuovo modello
+            -   \\(w\_{t+1} \leftarrow w\_t - \eta \nabla f(w\_t) = w\_t - \eta \sum\_{k=1}^{K} \frac{n\_{k}}{n}g\_k\\)
+        2.  ogni client computa \\(w\_{t+1}^k \leftarrow w\_t - \eta g\_k\\)
+            -   aggregatore aggrega
+            -   \\(w\_{t+1} \leftarrow \sum\_{k=1}^K \frac{n\_{k}}{n} w\_{t+1}^k\\)
+
+        Altamente inefficiente, in quanto ogni round viene inviato e ricevuto un modello.
+
+    <!--list-separator-->
+
+    -  FedAvg
+
+        -   in un round
+        -   broadcast del modello globale corrente ai client
+        -   ogni client \\(k\\) computa gradiente sui dati locali
+        -   agisce come alternativa n.2 di `FedSGD`
+        -   ogni client computa \\(E\\) epoche alla volta
+            -   per \\(E=1\\) e batch size \\(=n\_k\\) `FedSGD` = `FedAvg`
+        -   funziona discretamente bene
+        -   **ma** non garantisce la convergenza lineare anche con funzioni di loss fortemente convesse e smooth
+            -   questo in quanto i dati locali possono avere distribuzioni molto diverse e portare a divergenza dall'ottimo
+
+    <!--list-separator-->
+
+    -  Gossip Federated Learning
+
+        -   una soluzione decentralizzata, solo client
+        -   ogni nodo inizializza il modello
+        -   a cadenza regolare si inviano modelli tra peer
+        -   i modelli vengono integrati e condivisi tra peer a loro volta
+
+    <!--list-separator-->
+
+    -  Considerazioni sulla Privacy
+
+        -   l'assunzione che il `FL` non dia leak di dati privati non è vera
+        -   il modello provoca leak di informazioni sui training data
+        -   si è dimostrato un teorema per cui l'input al network può essere ricostruito a partire dei soli gradienti della rete
+
+        Quindi possono esistere attaccanti in contesto di `FL`:
+
+        -   **semi-honest**, avversari sono passivi oppure onesti ma curiosi
+            -   può imparare lo stato privato dei partecipanti senza deviare dal protocollo
+        -   **malicious**, avversari che cercano di imparare gli stati privati dei partecipanti, deviando dal protocollo modificando, riproducendo, rimuovendo messaggi
+
+        Attacchi:
+
+        -   **membership inference**, inferire se dei dati appartengono al training dataset
+        -   **model inversion**, imparare i dati utilizzati per il training
+
+        C'è bisogno di metodi di protezione.
+
+        -   **homomorphic encryption**
+            -   client criptano i modelli
+            -   aggregatore aggregano i modelli criptati e inviano i modelli criptati ai client
+            -   necessità una grande potenza computazionale, in ambito smartphone non è ragionevole
+        -   **differential privacy**
+            -   local `DP`, il _noise_ viene aggiunto al modello da parte dei client prima di inviarlo al server
+                -   protegge anche in caso di server maliziosi
+                -   tutti gli aggiornamenti del modello sono noisy e modificano l'andamento del training e deteriorano la performance finale
+            -   global `DP`, _noise_ aggiunto server-side
+                -   il training è meno affetto dal cambiamento anche se non ideale
+                -   il server può vedere gli update del modello in chiaro, e può quindi eseguire degli attacchi di inferenza
+        -   **secure aggregation**
+            -   classe di algoritmi di `SMC`
+            -   non si rivelano le parti dell'aggregato tramite l'uso di maschere che si elidono a vicenda a seguito dell'aggregazione
+            -   ogni coppia di utenti si accordano sulla perturbazione degli input
+            -   garantisce privacy perfetta ma si assume la partecipazione da parte di tutti gli utenti e che la comunicazione sia perfetta
+
+
+## Etica &amp; Società {#etica-and-società}
 
 
 ### Metafora {#metafora}
@@ -1350,7 +1852,7 @@ Esempio di nuova dimensione di estrazione:
     -   si è cercato di estrarre in un nuovo spazio, quello professionale
 
 
-### Cosa non si vede {#cosa-non-si-vede}
+### Cosa non si vede dell'impatto AI {#cosa-non-si-vede-dell-impatto-ai}
 
 -   [Atlas of AI]({{< relref "atlas_of_ai.md" >}})
 -   _The Cleaners_
