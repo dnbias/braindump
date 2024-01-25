@@ -814,5 +814,403 @@ $$\sin \theta_c = \frac{n_2}{n_1} \sin 90^{\circ} = \frac{n_2}{n_1}$$
   + fibra ottica (*guida di luce*)
   + endoscopio
 **** Lenti
+- 2 diottri
+  + con caratteristiche diverse
+- attenzione che ai due lati ci siano 2 mezzi uguali con lo stesso indice di rifrazione
+  + esempi che non lo hanno sono maschera da sub, lente a contatto
+- lenti convergenti
+  + più spesse in centro
+- lenti divergenti
+  + più sottili in centro
+- doppio-convesse e doppio-concave
+- piano-convesse e piano-concave
+- menisco-convesse e menisco-concave
+
+- consideriamo un *caso particolare*
+  + lenti sottili
+    - spessore trascurabile rispetto alla sezione trasversa
+  + ottica Gauss e parassiale
+    - angoli piccoli e lavoriamo vicino all'asse
+  + stesso mezzo davanti e dietro
+  + sotto queste ipotesi il sistema è *stigmatico*
+    - la caustica è un punto e quindi trascurabile seconda la definizione del mezzo che definiamo
+
+Avviene una doppia rifrazione sui raggi incidenti
+- prima rispetto alla normale del piano di curvatura di incisione
+- seconda rispetto alla normale del piano di curvatura di uscita
+
+Una lente convergente
+- un flusso di raggi paralleli, distanza infinita
+- convergenza in un singolo punto, il fuoco
+- si crea un'immagine reale in quanto indistinguibile da un punto oggetto
+  + da dove divergono i raggi
+
+Una lente divergente
+- un flusso di raggi paralleli, distanza infinita
+- divergenza dei raggi
+- intersezione sul fuoco posto di fronte alla lente, immagine virtuale
+  + non può essere osservata su uno schermo ma solo con uno strumento ottico
+
+
+In entrambi i casi stesse distanze focali da entrambi i lati, si può ribaltare la lente
+- conseguenza di essere immersi nello stesso mezzo
+- il *piano focale* è l'insieme dei punti immagine dei raggi provenienti dall'infinito
+
+Si definiscono i due fuochi come fuoco oggetto uno e fuoco immagine l'altro.
+
+La *potenza della lente* $P$ è il reciproco della distanza focale ed è misurata in /diottrie/ ($\text{D}$).
+$$P = \frac{1}{f}$$
+
+Vale sempre la stessa formula degli specchi:
+$$\frac{1}{f} = \frac{1}{d_i} + \frac{1}{d_o}$$
+- equazione dei punti coniugati
+$$m = \frac{h_i}{h_o} = - \frac{d_i}{d_o}$$
+
+
+In quanto ogni immagine non è distinguibile da un oggetto si possono creare sistemi di lenti sottili regolati dalle stesse leggi.
+
+***** Equazione del costruttore di lenti
+3 condizioni:
+- ottica Gauss parassiale
+- stesso mezzo dai due lati
+- lenti sottili
+
+$$P = \frac{1}{f} = (n-1) \bigg(\frac{1}{R_1}+\frac{1}{R_2}\bigg)$$
+
 ** Ottica Ondulatoria
+- luce interpretata come onda elettromagnetica
+  + quindi perturbazione del campo elettrico e magnetico nello spazio
+  + non necessita un mezzo per propagarsi
+*** Principio di Huygens
+- cambio di mezzo significa cambio di velocità
+- il fronte d'onda si piega verso la normale
+
+Passando dal mezzo 1 (vuoto o aria) a mezzo 2 con $n$ qualsiasi si ricava:
+$$\lambda_n = \frac{\lambda}{n}$$
+La frequenza rimane invariata
+$$f_n = \frac{v_n}{\lambda_n} = \frac{c}{n}\frac{n}{\lambda}= \frac{c}{\lambda}= f$$
+- questo si dimostra con le condizioni al contorno
+*** Miraggio
+- il cambio di temperatura dell'aria modifica la velocità di propagazione del fronte d'onda
+- strati d'aria ad indice di rifrazione differente
+- strati vicini all'asfalto sono a temperature maggiore, densità minore
+- il raggio sembra provenire dal basso in quanto il raggio curva verso l'alto
+
+Il fenomeno della *fata morgana* è simile ma a condizioni ribaltate
+- temperatura dell'aria molto più elevata della corrente sullo stetto
+
+*** Diffrazione di Young
+- dimostra che la luce sia un'onda
+- schermo dietro ad una lastra con due fenditure
+  + 2 fenditure /puntiformi/
+    - due raggi *coerenti e in fase*
+  + distanza dello schermo molto maggiore della distanza tra le fenditure
+- una sola sorgente (sole)
+  + fonte /monocromatica/
+  + fonte molto distante
+- si osservano una serie di righe luminose dette *frange di interferenza*
+  + se la luce non fosse un'onda si osserverebbero solo due bande
+- Young interpretò il fenomeno come effetto di *interferenza ondulatoria*
+- 3 casi di cammino
+  + la differenza di cammino dei due raggi causa il tipo di interferenza
+    - differenza di cammino multiplo pari della lunghezza d'onda: costruttiva
+    - differenza di cammino multiplo dispari della lunghezza d'onda: distruttiva
+- tutte le bande hanno la stessa intensità
+  + diminuisce leggermente per la maggior distanza dello schermo dalle sorgenti
+
+La differenza di cammino è (in quanto si forma un triangolo rettangolo approssimando per l'ipotesi della distanza dello schermo)
+$$d \sin \theta = m \lambda$$
+Per cui si ha interferenza *costruttiva*
+$$d \sin \theta = \bigg(m+\frac{1}{2}\bigg) \lambda$$
+Dove $m\in (0,1,2,\dots)$
+
+Per la luce bianca la banda centrale sarà bianca, e man mano le frequenze si dividono allontanandosi dal centro
+- questo perchè $\theta$ dipende da $\lambda$
+- questo ha permesso di misurare la lunghezza d'onda dei colori
+*** Diffusione
+- raggi solari assorbiti da molecole di $N_2$ e $O_2$ costituenti dell'atmosfera
+- oscillano e emettono luce in ogni direzione non solo in quella del raggio incidente
+- la diffusione dipende da $\lambda$ come $\frac{1}{\lambda^4}$
+  - luce rossa e arancione diffusi molto meno della luce blu e violetta
+  - di giorno quindi il cielo è azzurro in quanto vediamo la luce diffusa nell'atmosfera
+  - al tramonto la luce ha attraversato uno strato di atmosfera molto più spesso e la luce azzurra è ormai completamente diffusa, rimane la componente residua a lunghezza d'onda maggiore, rosso e arancione
+- questa dipendenza è valida solo per ostacoli molto minori della lunghezza d'onda
+  + le nuvole invece contengono gocce d'acqua o cristalli di ghiaccio
+    - la diffusione è quindi uniforme per tutte le frequenze e le nuvole appaiono bianche
+*** Diffrazione da sorgente puntiforme su disco
+- disco solido posto di fronte a una fonte luminosa
+- spot luminoso da interferenza costruttiva al centro del disco
+  + data dai raggi provenienti dai bordi del disco
+*** Diffrazione da sorgente puntiforme su fenditura estesa
+- intensità massima al centro
+- intensità dell'interferenza costruttiva via via affievolisce con l'aumentare dell'angolo
+Il primo minimo:
+$$\sin \theta = \frac{\lambda}{D}$$
+Minimi laterali:
+$$D \sin \theta = m \lambda$$
+Dove $m \in (1,2,\dots)$
+*** Reticolo di Diffrazione
+- una serie di molte fenditure equidistanti e parallele si dicono reticolo di diffrazione
+- si hanno dei massimi principali e massimi secondari
+- interferenza costruttiva di tutti i raggi o solo di parte
+$$\sin \theta = \frac{m\lambda}{D}$$
+Dove $m \in (0,1,2,\dots)$
+
+*** Riflessione di luce sull'interfaccia tra mezzi
+- luce incidente su una superficie di separazione (indice di rifrazione differenti) viene in parte trasmessa (rifrazione) e in parte riflessa
+- la riflessione
+  + è in fase se l'interfaccia ha indice di rifrazione minore
+  + in opposizione di fase se l'interfaccia ha indice di rifrazione maggiore
+*** Interferenza su lamine sottili
+- interferenza della luce riflessa sulle due superfici di una lamina sottile produce frange di interferenza
+**** Anelli di Newton
+#+begin_quote
+Se si illumina con luce monocramatica una superficie di vetro incurvata a contatto con una lastra di vetro piana si forma una figura di interferenza costituita da anelli concentrici alternativamente chiari e scuri, gli anelli di Newton.
+#+end_quote
+
+**** Rivestimento anti-riflettente
+- si progetta per eliminare certe lunghezze d'onda attraverso la creazione di interferenze distruttive
+- andata e ritorno eguagliano un multiplo dispari di $\lambda/2$
+
+*** Macchina Fotografica
+- tempo di scatto (otturatore)
+- apertura
+  + in step $f$ del rapporto di apertura
+  + $\frac{f}{D}$
+  + ogni step corrisponde a una riduzione del diametro di un fattore $\sqrt{2}$
+    - dimezzamento dell'energia luminosa sulla pellicola
+- messa a fuoco
+  + un oggetto lontano fuori fuoco forma cerchi sulla pellicola detti *cerchi di confusione*
+- profondità di campo
+  + intervallo di distanze per cui pur generando cerchi di confusione gli oggetti generano immagini sufficentemente nette
+  + minore apertura minore è l'angolo che i raggi formano con l'asse pricipale e quindi il diametro dei cerchi di confusione
+- mirino
+  + specchio a 45 gradi ritratto quando l'otturatore è aperto
+- tipi di obiettivi
+  + normale (50mm circa)
+  + teleobiettivi
+    - ingrandimento pari a $m = -d_i/d_o$
+  + grandangoli
+    - minore di 50mm
+    - immagini rimpicciolite ma campo visivo maggiore
+*** Occhio Umano
+- iride
+  + colorata
+  + regola la quantità di luce che entra nell'occhio
+- pupilla
+  + nera perchè il foro d'ingresso
+- retina
+  + terminazioni nervose e ricettore
+    - /bastoncelli/ e /coni/, corrispondenti a pixel
+  + converte raggi luminosi in segnali nervosi che invia tramite /nervo ottico/
+  + la scansione delle terminazioni nervose avviene continuamento con una frequenza di 30 letture al secondo
+  + si ripiega nel nervo ottico: questo è l'unico punto cieco dell'sistema
+- fovea
+  + punto posto nell'asse ottico e con la massima risoluzione
+- cornea
+  + rivestimento protettivo esterno
+  + lente principale
+  + indice di rifrazione $1.376$, stesso delle lacrime per evitare aberrazioni ottiche
+- cristalllino
+  + funzione di regolazione fine per oggetti più o meno distanti
+  + subisce contrazioni pilotate dai muscoli ciliari per variare la focale
+  + focalizzazione all'infinito i muscoli sono rilasciati, cristallino sottile
+  + focalizzazione di oggetti finiti i muscoli si contraggono, cristallino si inspessisce
+    - processo chiamato *accomodamento*
+  + /punto prossimo/, minima distanza di messa a fuoco
+  + /punto remoto/, massima distanza da messa a fuoco
+
+Difetti visivi:
+- miopia
+  + punto remono non è l'infinito ma una certa distanza finita
+  + occhio troppo lungo o cornea con curvatura troppo accentuata
+  + si corregge frapponendo una lente divergente
+- ipermetropia
+  + punto prossimo superiore al normale
+  + bulbo corto o cornea con curvatura non sufficiente
+  + si corregge con una lente convergente
+- astigmatismo
+  + imperfetta curvatura del cristallino
+  + causata da cilindricità della cornea
+  + i raggi non si incontrano
+  + non produce punti ma linee
+  + si corregge con una lente cilindrica a sua volta
+
+Nella realtà le aberrazioni sferiche sono più forti del dovuto in quanto non siam in ottica /parassiale/.
+- le aberrazione hanno significato solo in relazione alla risoluzione dello strumento che le rileva
+- coma e astigmatismo extra-assiale
+  + i raggi passanti per parti diverse della lente provocano un allargamento non circolare, punti prendono forma di comete
+- curvatura di campo
+  + punti immagini di oggetti fuori asse e equidistanti non appartengono a un piano
+  + problema più sensibile per apparecchi a pellicola
+    - la curvatura dell'occhio richie a compensare l'effetto
+- distorsione
+  + ingrandimenti diversi a diverse distanze dall'asse focale
+  + linea retta curvata
+  + effetto a barilotto o cuscino
+  + distorsione che compare per lenti a grande angolo visuale
+  + il cervello è in grado di correggerla
+- aberrazioni cromatiche
+  + cerchi di confusione diversi per lunghezze d'onda diverse
+  + gli oggetti prendono frange colorate
+  + si risolve accoppiando lenti con indici di rifrazioni diversi
+- nell'occhio
+  + aberrazione sferica estremamente ridotta
+    - la cornea è meno incurvata all'estremità che al centro
+    - cristallino meno denso all'estremità che al centro
+  + astigmatismo extra-assiale
+    - non è un problema perchè gli oggetti vengono rilevati chiaramente solo nella fovea che appartiene all'asse del sistema ottico oculare
+  + aberrazione cromatica
+    - parzialmente compensanta perchè il cristallino assorbe sensibilmente le lunghezze d'onda più corte
+    - la retina è meno sensibile al blu e violetto
+- negli specchi
+  + aberrazione sferica presente in tutti gli specchi sferici
+  + aberrazione cromatica assente perchè la luce viene solo riflessa e non rifratta
+    - quindi ogni conseguenza della dispersione è assente
+*** Lente di ingrandimento
+- oggetto posto tra fuoco e lente
+  + genera immagine virtuale oltre il punto prossimo
+- oggetto pusto sul fuoco
+  + genere immagine virtuale all'infinito
+  + non affatica l'occhio
+*** Telescopio astronomico rifrattore
+Anche detto *kepleriano*.
+- obiettivo, lente di ingresso
+  + prima immagine reale sul piano focale per oggetti all'infinito o prossimi
+  + immagine capovolta e rimpicciolita
+- oculare, lente di ingrandimento
+  + seconda immagine virtuale
+  + immagine capovolta e ingrandita
+  + per osservare con occhio rilassato l'oculare è regolato per produrre l'immagine all'infinito
+$$M = \frac{\theta'}{\theta} = -\frac{f_o}{f_e}$$
+*** Telescopio astronomico riflettore
+- utilizza specchi al posto di lenti
+- maggiore luminosità
+  + non c'è limite in quanto facile da molare e facilmente sorreggibile
+- aberrazione sferica correggibile con specchi parabolici
+- aberrazioni cromatiche assenti in quanto la luce non attraversa lo specchio
+*** Telescopio terrestre
+Detto cannocchiale.
+- /Schyrle-Faunhofer/
+  + aggiunge una terza lente che raddrizza l'immagine
+  + molto lunghi
+- galileiano
+  + oculare composto da una  lente divergente
+  + molto compatto
+*** Microscopio composto
+- il sistema è composto da due lenti convergenti come il telescopio
+- gli oggetti sono posti molto vicini al punto focale dell'obiettivo
+- non c'è tolleranza sulla posizione dell'oggetto
+  + un piccolo cambio di distanza varia di molto l'immagine ingrandita dall'oculare
+$$M \simeq - \frac{Nl}{f_e f_o}$$
+*** Limiti di risoluzione
+- anche in assenza di aberrazione la risoluzione degli strumenti ottici è limitata dalla *diffrazione*
+- limite intrinseca dato dalla natura ondulatoria della luce
+- un qualsiasi tubo è una fenditura
+- criterio di *Rayleigh*
+  + due immagini sono distringuibili (risolvibili) quando il centro di diffrazione di una corrisponde con il primo minimo della figura di diffrazione dell'altra
+
+$$\theta = \frac{1.22 \lambda}{D}$$
+- distanza angolare per cui c'è risolvibilità
+
+Potere risolutivo:
+$$PR = s = f\theta = \frac{1.22 \lambda f }{D}$$
+
 * Meccanica dei Fluidi
+** Idrostatica
+- stati della materia
+  + solido, liquido, gas, plasma
+  + le differenze tra gli stati
+    - libero cammino medio
+      + in un solido si forma un reticolo cristallino
+    - compressibilità esercitando una pressione $\Delta P$
+      + su un solido il volume non cambia
+      + in un fluido cambia
+        - piccolo delta in un liquido, grande in un gas
+
+Grandezze:
+- densità: $\rho = \frac{m}{V} \bigg[ \frac{kg}{m^3}\bigg]$
+- peso specifico: $\sigma = \frac{mg}{V} = \rho g \bigg[\frac{kg}{m^2 s^2}\bigg],\bigg[ \frac{N}{m^3} \bigg]$
+- pressione: $P = \frac{F_N}{S} \bigg[ \frac{N}{m^2} \bigg] , [Pa]$
+
+*** Leggi di Stevino
+- equilibrio idrostatico
+  + lungo l'asse y la risultate delle forze è nulla
+
+$$P = P_0 + \rho g h$$
+- la pressione dipende esclusivamente dalla profondità ed è uguale in tutte le direzioni
+*** Barometro di Torricelli
+- termometro a mercurio
+- cilindro di vetro riempito di $Hg$ capovolto in un recipiente pieno dello stesso fluido
+  + senza aria nella parte allo sommità del cilindro
+- trasforma una misura di altezza in una misura di pressione
+$$P_{atm} = \rho_{Hg} g h$$
+*** Legge di Pascal
+- ogni variazione della pressione esterna $P_0$ da luogo ad un'uguale variazione di $P$ distribuita in modo uniforme su tutto il liquido
+*** Vasi Comunicanti
+- un liquido omogeneo si dispone all'equilibrio in vasi comunicanti in modo da avere lo stesso livello rispetto al suolo
+  + le superfici libere sono equipotenziali
+*** Pressa Idraulica
+- liquido denso trasmette per la legge di Pascal la medesima pressione ai due pistoni moltiplicando la forza esercitata del rapporto delle aree
+$$\frac{F_1}{F_2} = \frac{A_1}{A_2}$$
+*** Legge di Archimede
+- declina in un alto modo l'equilibrio idrostatico
+- un corpo immerso in un fluido riceve una spinta di galleggiamento pari al peso del volume di liquido spostato
+$$ B = \rho V g$$
+- $p_f = p_o \to \sum F = 0$
+- $p_f > p_o \to \sum F > 0$, forza verso l'alto
+- $p_f < p_o \to \sum F < 0$, forza verso il basso
+
+$$\frac{\rho_o}{\rho_f} = \frac{V_f}{V_o}$$
+
+** Idrodinamica
+- fluido ideale
+  + incomprimibile , $\rho$ costante
+  + non viscoso, senza atrito
+- moto stazionario
+  + per ciascuna sezione del condotto il moto fluido avviene a velocità costante (modulo direzione verso) in ogni punto della sezione del condotto
+  + sezioni alla stessa quota sono caratterizate dalla stessa velocità
+  + sezioni a quote differente sono caratterizzate da velocità differenti
+- flusso laminare
+  + gli stati di fluido scivolano l'uno sull'altro
+  + ciascuna particella segue un percorso regolare e non ne interseca altri
+    - velocità costante in ogni punto della sezione
+- flusso turbolento
+  + flusso irregolare con percorsi circolari
+*** Principio di continiutà e portata
+La massa $m$ che attraverso in un intervallo $\Delta t$ una sezione $A_i$ del condotto è la stessa che attraversa nello stesso intervallo una qualunque altra sezione del condotto:
+$$\rho_i A_i \Delta x_i = \text{cost}$$
+
+Portata volumica e in massa:
+$$Q_V = \frac{\Delta V }{\Delta t}$$
+$$Q_M = \frac{\Delta m }{\Delta t}$$
+
+Legge di conservazione della portata in un fluido ideale, essendo $\rho$ costante:
+$$Q_V = Sv = \text{cost}$$
+
+*** Teorema di Bernoulli
+- conservazione dell'energia
+- applicazione del teorema delle forze vive applicao su un fluido ideale in moto stazionario in un condotto
+  + il lavoro totale da cui si dimostra deve essere *totale*
+  + quindi in presenza di attrito c'è dispersione di energia e quindi smette di valere
+$$P + \frac{1}{2} \rho g v^2 + \rho g y = \text{cost}$$
+*** Portanza
+- la sagoma delle ali devia il flusso d'aria maggiormente nella parte superiore
+- la velocità del flusso è maggiore sopra
+- per il teorema di bernoulli, con differenza di quota trascurabile
+  + pressione sopra minore della pressione sotto
+- forza risultante verso l'alto
+  + dipendenza $v^2$
+*** Liquidi reali
+- viscosità, le superfici interne del fluido non scorrono più liberamente ma si ha attrito interno
+
+Per fluidi newtoniani:
+$$F = \eta \frac{\Delta v }{\Delta x}\Delta S}$$
+- coefficiente di attrito viscoso $\eta$ misurata in Poise $[Pa s]$
+- $\Delta v $ differenza di velocità tra i due strati
+- $\Delta x$ distanza tra gli strati
+- $\Delta S$ superficie degli strati
+
+In un fluido reale esiste perdita di carico dovuta alla dissipazione di energia per attrito interno.
+A causa dell'attrito viscoso tra strati adiacenti di fluido il regime laminare non è più caratterizzato da una velocità costante su tutta la sezione del flusso, ma il fluido a contatto con le pareti è fermo, mentre il fluido al centro del flusso si muove con massima velocità.
+Il regime laminare è ancora caratterizzato da strati che strisciano l'uno sull'altro con velocità parallele.
