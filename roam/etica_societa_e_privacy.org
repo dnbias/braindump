@@ -14,6 +14,8 @@
 * Privacy
 - Related: [[id:fad85788-53f8-4de6-9e3c-775c3907e07c][Knowledge Discovery & Data Mining]]
 ** Principi
+- /The Right to be alone/
+  + Warren, Brandeis 1890: /The right to privacy/
 - Direttiva europea 95
 - =GDPR= 2016, entrava in vigore nel 2018 in tutti i paesi UE
   + introduce il concetto di /pseudonimizzazione/
@@ -58,12 +60,12 @@ The right to be left alone
 - molti business accumulano dati con l'idea di utilizzarli in futuro, contrariamente ai principi del =GDPR=
 
 Questi sviluppo sono possibili solamente, almeno per quanto ne sappiamo attualmente, solo con una perdita del controllo dei singoli verso i propri dati
-** Anonymization and Deanonymization
+*** Anonymization and Deanonymization
 Nel 2006 *Netflix* aveva diffuso un dataset dei suoi utenti e i rating sul sito. I dati erano da utilizzare in una sfida per migliorare l'algoritmo di raccomandazione.
 - l'incrocio dei dati con =IMDd= facilmente deanonimizzava il dataset
 - non basta la rimozione dell'identificativo per anonimizzare i dati
 Nello stesso anno =AOL= rilascia un dataset che viene deanonimizzato dal New York Time
-** Data Breach
+*** Data Breach
 - studio sul costo dei /data breach/
   + 383 compagnie
   + 12 paesi
@@ -429,11 +431,12 @@ Analisi *ex-post*:
 
 Non possibile calcolare probabilità di identificazione *ex-ante*. Per questo è necessario un modello di privacy.
 *** Privacy Model
-**** k-anonymity
-**** l-diversity
-**** t-closeness
-**** \delta-presence
-**** differential privacy
+Modello /ex-ante/.
+- k-anonymity
+- l-diversity
+- t-closeness
+- \delta-presence
+- differential privacy
 ** Anonymization Frameworks
 - la raccolta di dati ha raggiunto livelli prima impensabili
   + utilizzo di web molto maggiore
@@ -696,6 +699,7 @@ Partecipanti al survey:
 3. testa, lascia altra moneta e rispondi /Si/ per testa e /No/ per croce
 Questa versione è $ln(3)$​-differenzialmente privato.
 
+*** Global Sensitivity
 Data una funzione $f: \mathcal{D} \to \mathbb{R}^k$
 
 Si considera la *sensibilità della funzione* (global sensitivity) per avere un upper-bound sulla perturbazione applicabile al output per preservare la privacy:

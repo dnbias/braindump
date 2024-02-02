@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       06d630d1-89aa-4bee-91bd-461f4a044823
+:END:
+#+title: Are WMD a threat to democracy?
+#+filetags: :ml:question:
+#+date: [2024-02-02 Fri 09:58]
+* Evidence
+- [[id:c2a1bf14-52e6-490a-9192-ce5df5fc43c9][WMD are easily scalable]]
+- [[id:466eb8ba-b394-4fb8-80ed-67efce682a3c][WMD create and reinforce disparity]]
+- [[id:7a468b41-3c73-4009-a1af-4510795ceb71][WMD are conservative by design]]
+* Conclusion
+- [[id:6909f99b-73d5-468c-96c6-18638d139fe0][WMD are a thread to democracy]]

@@ -1,5 +1,3 @@
-#+filetags: project
+#+filetags: :project:
 - Link: %^{Link}
-- Related: %^{Notes}
-
-%?
+- Related: %?

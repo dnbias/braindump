@@ -8,3 +8,4 @@
 - see: [[https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/luhmann-niklas][Encyclopedia]]
 - influeces: [[id:c263e03e-fb76-4ad3-83ca-dc49f5c40349][Edmund Husserl]], [[id:35e4db95-7fb3-4c6c-9387-037e933224ff][Talcot Parsons]]
 - Inventor of the [[id:f01972ec-1e3a-40e2-9482-c05a9922b738][PKM]] [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]]
+- wrote a ton of books thanks to his note taking style

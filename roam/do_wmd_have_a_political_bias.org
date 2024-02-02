@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       0761c542-5013-4bd5-84dd-2798e1c56aa5
+:END:
+#+title: Do WMD have a political bias?
+#+filetags: :question:ml:
+#+date: [2024-02-02 Fri 09:58]
+* Evidence
+- [[id:2a6e9438-c9cb-49be-88e9-78b73f25d563][Training data models what has been]]
+- [[id:4926c5d2-9455-4c50-be3d-956ab9468651][Historical data cannot model a change of paradigm yet to happen]]
+- [[id:d3d36e10-a48a-49cc-9c58-daa2f217b3c9][The bias of the builder ends up in what is built]]
+- [[id:b6ab92bf-b06e-4f3d-9462-86ad466ae895][Biased predictions reinforce the bias in the data]]
+* Conclusion
+- [[id:7a468b41-3c73-4009-a1af-4510795ceb71][WMD are conservative by design]]

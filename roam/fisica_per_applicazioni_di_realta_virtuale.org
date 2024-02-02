@@ -91,16 +91,16 @@ In assenza di forze esterne, un oggetto in quiete rimane in quiete e un corpo in
 ** Secondo Principio
 *Legge di Newton*
 #+begin_quote
-L'accelerazione di un corpo e' direttamente proporzionale alla forza risultante che agisce su di esso, ed inversamente proporzionale alla sua massa.
+L'accelerazione di un corpo è direttamente proporzionale alla forza risultante che agisce su di esso, ed inversamente proporzionale alla sua massa.
 #+end_quote
 $$\sum \vec{F} = m \vec{a}$$
 
-La *massa* (in questo contesto inerziale o /passiva/) e' una grandezza scalare, una costante di proporzionalità che lega forza ed accelerazione.
+La *massa* (in questo contesto inerziale o /passiva/) è una grandezza scalare, una costante di proporzionalità che lega forza ed accelerazione.
 Traduce l'azione dinamica di una forza nel suo effetto cinematico.
 ** Terzo Principio
 *Principio di azione e reazione*
 #+begin_quote
-Nell'interazione tra due corpi la forza esercitata dal corpo a sul corpo b e' uguale ed opposta a quella esercitata dal corpo b sul corpo a.
+Nell'interazione tra due corpi la forza esercitata dal corpo a sul corpo b è uguale ed opposta a quella esercitata dal corpo b sul corpo a.
 #+end_quote
 $$\vec{F}_{ab} = - \vec{F_{ba}}$$
 
@@ -151,16 +151,17 @@ $$\vec{F}=-G\frac{M_{1}M_2}{R^2}\vec{u}_{r}$$
 
 
 *** Leggi di Keplero
-1. tutti i pianeti si muovono  su ordite ellittiche piane, il Sole occupa uno dei fuochi dell'orbita
-2. velocità aereolare è costante
-   a. quindi l'oggetto vicino al fuoco ha velocità maggiore mentre quando si allontana rallenta
-3. il quadrato del periodo orbitale del pianete è proporzionale al cubo del semiasse maggiore dell'orbita ellittica
-   a. $$T^2 \propto R^3$$
+- tutti i pianeti si muovono  su orbite ellittiche piane, il Sole occupa uno dei fuochi dell'orbita
+- velocità aereolare è costante
+  + quindi l'oggetto vicino al fuoco ha velocità maggiore mentre quando si allontana rallenta
+- il quadrato del periodo orbitale del pianete è proporzionale al cubo del semiasse maggiore dell'orbita ellittica
+  +  $$T^2 \propto R^3$$
 ** Principio di Equivalenza
-Sistema Inerziale: i principi di riferimento inerziali l'un l'altro non sono differenziabili l'un l'altro osservando gli effetti delle forze nei sistemi.
+*Sistema Inerziale*: i principi di riferimento inerziali l'un l'altro non sono differenziabili l'un l'altro osservando gli effetti delle forze nei sistemi.
 
 *I fenomeni dinamici e i fenomeni gravitazionali non possono essere differenziati dall'interno di un sistema non inerziale.*
 - non è possibile discriminare la causa di non inerzialità di un sistema
+- fondamento della relatività
 
 * Lavoro e Energia
 A partire dal Lavoro si definisce l'Energia
@@ -242,7 +243,7 @@ Il Pendolo di Foucault dimostra la rotazione terrestre in quanto non ci sono for
 
 
 ** Quantità di moto
-$$\vec{p} = m \vec{v} [kg m s^{-1}]$$
+$$\vec{p} = m \vec{v}\enspace [kg \ m \ s^{-1}]$$
 Compare nella vera formulazione della legge di Newton, in caso di massa non costante:
 $$\sum \vec{F} = \frac{d\vec{p}}{dt}$$
 
@@ -253,18 +254,18 @@ Strumento per lavorare senza conoscere esattamente le forze:
 - una forza che agisce in un tempo breve rispetto al tempo caratteristico del sistema
 - ad esempio negli eventi cosmologici i tempi caratteristici sono molto grandi
 
-$$\vec{I}=\int^{t_f}_{t_i} \vec{F}dt [N s]$$
+$$\vec{I}=\int^{t_f}_{t_i} \vec{F}\ dt \enspace [N \ s]$$
 Teorema dell'impulso:
 $$ \vec{I} = \Delta \vec{p} $$
 Forza media (dal teorema della media in analisi)
-$$\vec{I} = < \vec{F}> \Delta t$$
+$$\vec{I} = \langle \vec{F} \rangle \Delta t$$
 - modo di misurare la forza media semplicemente misurando la quantità di moto iniziale e finale
 * Dinamica dei Sistemi
 Si cominciano a considerare i corpi aventi una dimensione e quindi anche una rotazione.
 ** Moto Traslazione
 *** Centro di Massa
 Abbiamo un sistema di corpi puntiformi e definiamo il =CM= come media delle posizioni di questi punti pesata dalle loro masse.
-$$\vec{x}_{CM} = \frac{\sum_{i} m_i \vec{x_{i}}{M}}$$
+$$\vec{x}_{CM} = \frac{\sum_{i} m_i \vec{x_{i}}}{M}$$
 
 È il punto che permette di fattorizzare il moto rotatorio e traslazionale del sistema a una rotazione del =CM= e una traslazione del =CM=.
 Come se il moto agisse su un singolo punto con la stessa massa e stesse forze esterne.
@@ -347,6 +348,7 @@ $$\sum \vec{\tau} = I \vec{\alpha}$$
 
 Momento d'inerzia:
 $$I = \sum_i m_i d_i^2$$
+
 $$I = \int_M d_i^2 dm = \int_V d_i^2 \rho dV$$
 
 Momenti d'inerzia di solidi particolari:

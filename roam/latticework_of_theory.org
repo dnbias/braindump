@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       23b54524-a199-4402-86e5-4882c0b19696
+:END:
+#+title: Latticework of theory
+#+filetags: :concept:
+#+date: [2024-01-31 Wed 05:36]
+- Related: [[id:4dda14f3-6d01-4265-a25a-e85ce6696fe0][Notes]], [[id:06da4dce-227a-4d6c-af7c-0f853e1aea3c][Atomic Notes]], [[id:a4119815-2035-4119-b381-44352fc2fb9a][Zettel]]
+
+#+begin_quote
+The first rule is that you can't really know anything if you just remember isolated facts and try and bard 'em back.
+
+If the facts don't hang together on a latticework of theory, you don't have them in a usable form. -- [[id:16b4ebf1-6ee5-43c5-8bf9-93f5642b781b][Charlie Munger]]
+#+end_quote

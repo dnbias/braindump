@@ -1,0 +1,9 @@
+:PROPERTIES:
+:ID:       b6ab92bf-b06e-4f3d-9462-86ad466ae895
+:END:
+#+title: Biased predictions reinforce the bias in the data
+#+filetags: :evidence:
+#+date: [2024-02-02 Fri 10:12]
+Biased training data produce results that confirms the bias.
+These end up being new data points.
+Following models trained in the same fashion will be even more biased.

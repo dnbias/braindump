@@ -2,7 +2,10 @@
 :ID:       1479941e-151a-4bd1-8b31-ee11804d220c
 :END:
 #+TITLE: Note Taking
-:NoteTaking:
-* Tecniche
-** Gerarchy-based
-** [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]]
+Some interesting ideas about taking notes:
+- [[id:a4119815-2035-4119-b381-44352fc2fb9a][Zettel]]
+- [[id:42ee0edd-831e-46b6-82b1-199427452149][Zettelkasten]]
+- [[id:6a03539f-008a-4f3d-8480-784fb7192702][Zettelkasten principles]]
+- [[id:06da4dce-227a-4d6c-af7c-0f853e1aea3c][Atomic Notes]]
+- [[id:78b5b90d-b5e0-429b-a161-23c6c6612863][Q/E/C note taking]]
+- [[id:283a0ee4-6416-40ea-b5eb-78d5f3a44b4a][How to take smart notes with org-mode]]

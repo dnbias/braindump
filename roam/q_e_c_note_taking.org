@@ -1,0 +1,13 @@
+:PROPERTIES:
+:ID:       78b5b90d-b5e0-429b-a161-23c6c6612863
+:ROAM_ALIASES: Q/E/C
+:END:
+#+title: Q/E/C note taking
+#+filetags: :concept:
+#+date: [2024-01-31 Wed 05:33]
+
+- Question
+- Evidence
+- Conclusion
+
+Each of these should end up in a separate note, this way it can all link together into a lattice[fn::[[id:23b54524-a199-4402-86e5-4882c0b19696][Latticework of theory]]].

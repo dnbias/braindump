@@ -20,6 +20,8 @@ draft = false
 
 ### Principi {#principi}
 
+-   _The Right to be alone_
+    -   Warren, Brandeis 1890: _The right to privacy_
 -   Direttiva europea 95
 -   `GDPR` 2016, entrava in vigore nel 2018 in tutti i paesi UE
     -   introduce il concetto di _pseudonimizzazione_
@@ -69,7 +71,7 @@ _[Dataification]({{< relref "dataification.md" >}})_
 Questi sviluppo sono possibili solamente, almeno per quanto ne sappiamo attualmente, solo con una perdita del controllo dei singoli verso i propri dati
 
 
-### Anonymization and Deanonymization {#anonymization-and-deanonymization}
+#### Anonymization and Deanonymization {#anonymization-and-deanonymization}
 
 Nel 2006 **Netflix** aveva diffuso un dataset dei suoi utenti e i rating sul sito. I dati erano da utilizzare in una sfida per migliorare l'algoritmo di raccomandazione.
 
@@ -79,7 +81,7 @@ Nel 2006 **Netflix** aveva diffuso un dataset dei suoi utenti e i rating sul sit
 Nello stesso anno `AOL` rilascia un dataset che viene deanonimizzato dal New York Time
 
 
-### Data Breach {#data-breach}
+#### Data Breach {#data-breach}
 
 -   studio sul costo dei _data breach_
     -   383 compagnie
@@ -486,25 +488,13 @@ Non possibile calcolare probabilità di identificazione **ex-ante**. Per questo 
 
 #### Privacy Model {#privacy-model}
 
-<!--list-separator-->
+Modello _ex-ante_.
 
--  k-anonymity
-
-<!--list-separator-->
-
--  l-diversity
-
-<!--list-separator-->
-
--  t-closeness
-
-<!--list-separator-->
-
--  &delta;-presence
-
-<!--list-separator-->
-
--  differential privacy
+-   k-anonymity
+-   l-diversity
+-   t-closeness
+-   &delta;-presence
+-   differential privacy
 
 
 ### Anonymization Frameworks {#anonymization-frameworks}
@@ -835,6 +825,9 @@ Partecipanti al survey:
 3.  testa, lascia altra moneta e rispondi _Si_ per testa e _No_ per croce
 
 Questa versione è \\(ln(3)\\)-differenzialmente privato.
+
+
+#### Global Sensitivity {#global-sensitivity}
 
 Data una funzione \\(f: \mathcal{D} \to \mathbb{R}^k\\)
 

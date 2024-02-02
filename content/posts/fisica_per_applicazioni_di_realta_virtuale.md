@@ -134,11 +134,11 @@ Causa delle modifiche delle caratteristiche cinematiche di un corpo.
 
 **Legge di Newton**
 
-> L'accelerazione di un corpo e' direttamente proporzionale alla forza risultante che agisce su di esso, ed inversamente proporzionale alla sua massa.
+> L'accelerazione di un corpo è direttamente proporzionale alla forza risultante che agisce su di esso, ed inversamente proporzionale alla sua massa.
 
 \\[\sum \vec{F} = m \vec{a}\\]
 
-La **massa** (in questo contesto inerziale o _passiva_) e' una grandezza scalare, una costante di proporzionalità che lega forza ed accelerazione.
+La **massa** (in questo contesto inerziale o _passiva_) è una grandezza scalare, una costante di proporzionalità che lega forza ed accelerazione.
 Traduce l'azione dinamica di una forza nel suo effetto cinematico.
 
 
@@ -146,7 +146,7 @@ Traduce l'azione dinamica di una forza nel suo effetto cinematico.
 
 **Principio di azione e reazione**
 
-> Nell'interazione tra due corpi la forza esercitata dal corpo a sul corpo b e' uguale ed opposta a quella esercitata dal corpo b sul corpo a.
+> Nell'interazione tra due corpi la forza esercitata dal corpo a sul corpo b è uguale ed opposta a quella esercitata dal corpo b sul corpo a.
 
 \\[\vec{F}\_{ab} = - \vec{F\_{ba}}\\]
 
@@ -220,20 +220,21 @@ Chiara indicazione di interazioni a distanza.
 
 #### Leggi di Keplero {#leggi-di-keplero}
 
-1.  tutti i pianeti si muovono  su ordite ellittiche piane, il Sole occupa uno dei fuochi dell'orbita
-2.  velocità aereolare è costante
-    1.  quindi l'oggetto vicino al fuoco ha velocità maggiore mentre quando si allontana rallenta
-3.  il quadrato del periodo orbitale del pianete è proporzionale al cubo del semiasse maggiore dell'orbita ellittica
-    1.  \\[T^2 \propto R^3\\]
+-   tutti i pianeti si muovono  su orbite ellittiche piane, il Sole occupa uno dei fuochi dell'orbita
+-   velocità aereolare è costante
+    -   quindi l'oggetto vicino al fuoco ha velocità maggiore mentre quando si allontana rallenta
+-   il quadrato del periodo orbitale del pianete è proporzionale al cubo del semiasse maggiore dell'orbita ellittica
+    -   \\[T^2 \propto R^3\\]
 
 
 ### Principio di Equivalenza {#principio-di-equivalenza}
 
-Sistema Inerziale: i principi di riferimento inerziali l'un l'altro non sono differenziabili l'un l'altro osservando gli effetti delle forze nei sistemi.
+**Sistema Inerziale**: i principi di riferimento inerziali l'un l'altro non sono differenziabili l'un l'altro osservando gli effetti delle forze nei sistemi.
 
 **I fenomeni dinamici e i fenomeni gravitazionali non possono essere differenziati dall'interno di un sistema non inerziale.**
 
 -   non è possibile discriminare la causa di non inerzialità di un sistema
+-   fondamento della relatività
 
 
 ## Lavoro e Energia {#lavoro-e-energia}
@@ -354,7 +355,7 @@ Il Pendolo di Foucault dimostra la rotazione terrestre in quanto non ci sono for
 
 ### Quantità di moto {#quantità-di-moto}
 
-\\[\vec{p} = m \vec{v} [kg m s^{-1}]\\]
+\\[\vec{p} = m \vec{v}\enspace [kg \ m \ s^{-1}]\\]
 Compare nella vera formulazione della legge di Newton, in caso di massa non costante:
 \\[\sum \vec{F} = \frac{d\vec{p}}{dt}\\]
 
@@ -369,11 +370,11 @@ Strumento per lavorare senza conoscere esattamente le forze:
 -   una forza che agisce in un tempo breve rispetto al tempo caratteristico del sistema
 -   ad esempio negli eventi cosmologici i tempi caratteristici sono molto grandi
 
-\\[\vec{I}=\int^{t\_f}\_{t\_i} \vec{F}dt [N s]\\]
+\\[\vec{I}=\int^{t\_f}\_{t\_i} \vec{F}\ dt \enspace [N \ s]\\]
 Teorema dell'impulso:
 \\[ \vec{I} = \Delta \vec{p} \\]
 Forza media (dal teorema della media in analisi)
-\\[\vec{I} = < \vec{F}> \Delta t\\]
+\\[\vec{I} = \langle \vec{F} \rangle \Delta t\\]
 
 -   modo di misurare la forza media semplicemente misurando la quantità di moto iniziale e finale
 
@@ -389,7 +390,7 @@ Si cominciano a considerare i corpi aventi una dimensione e quindi anche una rot
 #### Centro di Massa {#centro-di-massa}
 
 Abbiamo un sistema di corpi puntiformi e definiamo il `CM` come media delle posizioni di questi punti pesata dalle loro masse.
-\\[\vec{x}\_{CM} = \frac{\sum\_{i} m\_i \vec{x\_{i}}{M}}\\]
+\\[\vec{x}\_{CM} = \frac{\sum\_{i} m\_i \vec{x\_{i}}}{M}\\]
 
 È il punto che permette di fattorizzare il moto rotatorio e traslazionale del sistema a una rotazione del `CM` e una traslazione del `CM`.
 Come se il moto agisse su un singolo punto con la stessa massa e stesse forze esterne.
@@ -497,6 +498,7 @@ Perché si possano applicare queste equazioni va specificato l'asse di rotazione
 
 Momento d'inerzia:
 \\[I = \sum\_i m\_i d\_i^2\\]
+
 \\[I = \int\_M d\_i^2 dm = \int\_V d\_i^2 \rho dV\\]
 
 Momenti d'inerzia di solidi particolari:

@@ -1,0 +1,7 @@
+:PROPERTIES:
+:ID:       4926c5d2-9455-4c50-be3d-956ab9468651
+:END:
+#+title: Historical data cannot model a change of paradigm yet to happen
+#+date: [2024-02-02 Fri 10:36]
+#+filetags: :evidence:
+Follows from [[id:2a6e9438-c9cb-49be-88e9-78b73f25d563][Training data models what has been]].

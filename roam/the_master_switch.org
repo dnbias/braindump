@@ -4,6 +4,33 @@
 #+title: The Master Switch
 #+date: [2023-12-16 Sat 21:02]
 #+filetags: book
-Tim Wu, /The Master Switch/, ,
+[[id:5a68c870-82d2-426e-b6f6-1d4150aa6d7b][Tim Wu]], /The Master Switch/, 2010, Knopf
+- Stuff about this:
+  + [[https://www.theguardian.com/books/2011/apr/02/master-switch-tim-wu-review][the Guardian Review]]
 
-* Summary
+* Notes
+- [[id:e230e415-df73-4871-bbfb-44d699b9ce12][Kronos effect]]
+  + companies /eating/ their prole to stop the innovation from hurting their business
+- power struggle and humanity crave for imperial control
+  + Wu argues that the constitution did a good job in the last centuries in controlling this tendency in politics
+  + this in the US got translated to free market capitalism with great power being detained by single entities or capitalists with monopolies
+- the main argument of the book is that the information market different from others is being more susceptible to monopoly control in what Wu calls [[id:45b8650c-d7d1-4b0a-9c89-d7217f340d5f][The Cycle]]
+- [[id:45b8650c-d7d1-4b0a-9c89-d7217f340d5f][The Cycle]]
+  + all modern communications technology lived through it
+    - telephone, radio, cinema, TV
+  + the first years of the technology come with optimistic hopes for its effect on the human condition, great optimism and idealism over the *open* medium
+  + the openness doesn' t last
+    - big players argue that a single corporation can offer a much better product with a monopoly
+      + this comes with great control over what can get communicated over the medium
+  + /from somebody's hobby to somebody's industry/
+  + /from freely accessible lane to one strictly controlled by a single corporation or cartel/
+  + /from open to closed system/
+  + does this apply to the web? nobody knows yet
+    - modern-day risks can be found in the attempts at /vertical integration/ that for example Apple has been planning
+- great personalities Wu uses to construct his claim
+  + Theodore Vail with =AT&T= in long distance communications
+  + David Sarnoff with =RCA= and =NBC= in radio
+  + Adolph Zukor with Paramount and its control over distribution outlets
+- [[id:ca257e7d-d900-4eed-b4d8-498445c315d6][Common Carrier]]
+  + there are businesses so important to the correct functioning of our government and everyday life that must be free of bias and discrimination in their activity
+  + concept that Wu adapts to the information and communication industry with what he defines as [[id:7a90e31b-7bfe-4979-89b6-c96ff95d0da9][Net Neutrality]]

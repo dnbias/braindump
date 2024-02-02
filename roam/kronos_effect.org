@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       e230e415-df73-4871-bbfb-44d699b9ce12
+:END:
+#+title: Kronos effect
+#+date: [2024-01-31 Wed 04:17]
+#+filetags: concept
+Term coined by [[id:5a68c870-82d2-426e-b6f6-1d4150aa6d7b][Tim Wu]] in [[id:807632b3-5424-4d5c-8cea-fa3665b377b1][The Master Switch]].
+Companies that establish early dominance in with disruptive innovation will do everything in their power to maintain the first-mover advantage, often by /eating/ their children and stopping new innovation to disrupt their business.

@@ -1,4 +1,4 @@
-#+filetags: author
+#+filetags: :author:
 %^{YearBirth}-%^{YearDeath}
 
 %?

@@ -1,0 +1,10 @@
+:PROPERTIES:
+:ID:       ca257e7d-d900-4eed-b4d8-498445c315d6
+:END:
+#+title: Common Carrier
+#+filetags: :concept:
+#+date: [2024-01-31 Wed 04:39]
+
+#+begin_quote
+A common carrier holds itself out to provide service to the general public without discrimination (to meet the needs of the regulator's quasi-judicial role of impartiality toward the public's interest) for the "public convenience and necessity." A common carrier must further demonstrate to the regulator that it is "fit, willing, and able" to provide those services for which it is granted authority.
+#+end_quote

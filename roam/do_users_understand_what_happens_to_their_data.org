@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       d289e315-db0d-4166-9bd1-8df2c0ab31a5
+:END:
+#+title: Do users understand what happens to their data?
+#+date: [2024-02-02 Fri 11:06]
+#+filetags: :question:
+* Evidence
+- [[id:b3c77525-a769-4d6e-af26-60141a415001][Data treatment often outsourced to third-world countries]]
+- [[id:3419fea7-4a57-4349-a182-9394de3313d7][A robot collecting the data does not mean the treatment will be automatic]]
+- [[id:67046dcb-70c0-4fb6-aa85-e145814e6825][Users are more likely to let a robot collect their data than a human]]
+* Conclusion
+- [[id:bf6bac49-f8aa-4505-9b37-fd2fe440a2d3][Users are often deluded their raw sensitive data will not be seen by other people]]

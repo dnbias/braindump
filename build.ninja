@@ -1391,3 +1391,61 @@ build content/posts/dataification.md: org2md roam/dataification.org
 build content/posts/ur_fascismo.md: org2md roam/ur_fascismo.org
 
 build content/posts/il_fascismo_eterno.md: org2md roam/il_fascismo_eterno.org
+
+build content/posts/kronos_effect.md: org2md roam/kronos_effect.org
+
+build content/posts/the_cycle.md: org2md roam/the_cycle.org
+
+build content/posts/common_carrier.md: org2md roam/common_carrier.org
+
+build content/posts/a_roomba_recorded_a_woman_on_the_toilet.md: org2md roam/a_roomba_recorded_a_woman_on_the_toilet.org
+
+build content/posts/atomic_notes.md: org2md roam/atomic_notes.org
+
+build content/posts/q_e_c_note_taking.md: org2md roam/q_e_c_note_taking.org
+
+build content/posts/latticework_of_theory.md: org2md roam/latticework_of_theory.org
+
+build content/posts/charlie_munger.md: org2md roam/charlie_munger.org
+
+build content/posts/do_wmd_create_and_reinforce_disparity.md: org2md roam/do_wmd_create_and_reinforce_disparity.org
+
+build content/posts/are_wmd_a_threat_to_democracy.md: org2md roam/are_wmd_a_threat_to_democracy.org
+
+build content/posts/do_wmd_have_a_political_bias.md: org2md roam/do_wmd_have_a_political_bias.org
+
+build content/posts/garbage_in_garbage_out.md: org2md roam/garbage_in_garbage_out.org
+
+build content/posts/the_data_we_have_available_is_often_biased.md: org2md roam/the_data_we_have_available_is_often_biased.org
+
+build content/posts/the_bias_of_the_builder_end_up_in_what_is_builded.md: org2md roam/the_bias_of_the_builder_end_up_in_what_is_builded.org
+
+build content/posts/biased_predictions_reinforce_the_bias_in_the_data.md: org2md roam/biased_predictions_reinforce_the_bias_in_the_data.org
+
+build content/posts/wmd_create_and_reinforce_disparity.md: org2md roam/wmd_create_and_reinforce_disparity.org
+
+build content/posts/wmd_are_conservative_by_design.md: org2md roam/wmd_are_conservative_by_design.org
+
+build content/posts/training_data_models_what_has_been.md: org2md roam/training_data_models_what_has_been.org
+
+build content/posts/historical_data_cannot_model_a_change_of_paradigm_yet_to_happen.md: org2md roam/historical_data_cannot_model_a_change_of_paradigm_yet_to_happen.org
+
+build content/posts/wmd_are_easily_scalable.md: org2md roam/wmd_are_easily_scalable.org
+
+build content/posts/wmd_are_a_thread_to_democracy.md: org2md roam/wmd_are_a_thread_to_democracy.org
+
+build content/posts/do_users_understand_what_happens_to_their_data.md: org2md roam/do_users_understand_what_happens_to_their_data.org
+
+build content/posts/what_is_the_best_way_to_treat_sensitive_data.md: org2md roam/what_is_the_best_way_to_treat_sensitive_data.org
+
+build content/posts/data_treatment_often_outsourced_to_third_world_countries.md: org2md roam/data_treatment_often_outsourced_to_third_world_countries.org
+
+build content/posts/a_robot_collecting_the_data_does_not_mean_the_treatment_will_be_automatic.md: org2md roam/a_robot_collecting_the_data_does_not_mean_the_treatment_will_be_automatic.org
+
+build content/posts/users_are_more_likely_to_let_a_robot_collect_their_data_than_a_human.md: org2md roam/users_are_more_likely_to_let_a_robot_collect_their_data_than_a_human.org
+
+build content/posts/users_are_often_deluded_their_raw_sensitive_data_will_not_be_seen_by_other_people.md: org2md roam/users_are_often_deluded_their_raw_sensitive_data_will_not_be_seen_by_other_people.org
+
+build content/posts/data_that_is_shared_to_third_parties_is_not_easibly_controllable.md: org2md roam/data_that_is_shared_to_third_parties_is_not_easibly_controllable.org
+
+build content/posts/personal_sensitive_data_should_by_treated_internally_if_possible.md: org2md roam/personal_sensitive_data_should_by_treated_internally_if_possible.org

@@ -1,0 +1,11 @@
+:PROPERTIES:
+:ID:       c5f6283d-4ec9-48a7-8079-e233a749144e
+:END:
+#+title: What is the best way to treat sensitive data?
+#+date: [2024-02-02 Fri 11:10]
+#+filetags: :question:
+* Evidence
+- [[id:b3c77525-a769-4d6e-af26-60141a415001][Data treatment often outsourced to third-world countries]]
+- [[id:682b4dd9-a637-4fb3-bc6f-8bc3eb88ad49][Data that is shared to third-parties is not easibly controllable]]
+* Conclusion
+- [[id:b4f22212-e2ad-4ea4-89c2-b9cb0c3a4a8a][Personal/sensitive data should by treated internally if possible]]

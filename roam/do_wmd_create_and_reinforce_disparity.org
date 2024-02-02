@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       76886329-32b2-4803-bc1d-ad68661051ce
+:END:
+#+title: Do WMD create and reinforce disparity?
+#+filetags: :ml:question:
+#+date: [2024-02-02 Fri 09:57]
+* Evidence
+- [[id:f3e2ce5e-78cf-4306-b449-07b92bb62488][Garbage In, Garbage Out]]
+  + bad data in, bad data out
+- [[id:cefe3bc0-c0d5-4df2-9c61-ea1ea9606b32][The data we have available is often biased]]
+- [[id:d3d36e10-a48a-49cc-9c58-daa2f217b3c9][The bias of the builder ends up in what is built]]
+- [[id:b6ab92bf-b06e-4f3d-9462-86ad466ae895][Biased predictions reinforce the bias in the data]]
+* Conclusion
+- [[id:466eb8ba-b394-4fb8-80ed-67efce682a3c][WMD create and reinforce disparity]]

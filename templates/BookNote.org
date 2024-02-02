@@ -1,5 +1,7 @@
-#+filetags: book
+#+filetags: :book:
 %^{Author}, /${title}/, %^{Year}, %^{Publisher}
 
-* Summary
+* Notes
 %?
+
+* Q/E/C

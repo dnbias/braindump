@@ -3,7 +3,23 @@
 :END:
 #+title: Weapons of Math Destruction
 #+date: [2023-12-13 Wed 22:14]
-#+filetags: book
+#+filetags: :ml:book:concept:
 [[id:dd05eb87-8dd5-4bf5-a94d-1715a3d42d2c][Cathy O'Neil]], /Weapons of Math Destruction/, 2016, Crown
 
-* Summary
+#+begin_quote
+Most troubling, they reinforce discrimination: If a poor student can't get a loan because a lending model deems him too risky (by virtue of his zip code), he's then cut off from the kind of education that could pull him out of poverty, and a vicious spiral ensues. Models are propping up the lucky and punishing the downtrodden, creating a "toxic cocktail for democracy."
+#+end_quote
+
+* Notes
+- =WMD= are problematic mathematical tools that are:
+  + opaque
+  + unregulated
+  + difficult to contest
+- they are highly scalable and in this way amplify the biases the human already have applying them to a larger population
+- they create /pernicious feedback loops/ in that these models *create* the world that confirms their bias
+  + these models make predictions based off data (usually proxies for what is being predicted, and poor ones often) and these predictions end up being new data points that confirm and reinforce the bias
+
+* Q/E/C
+- [[id:76886329-32b2-4803-bc1d-ad68661051ce][Do WMD create and reinforce disparity?]]
+- [[id:0761c542-5013-4bd5-84dd-2798e1c56aa5][Do WMD have a political bias?]]
+- [[id:06d630d1-89aa-4bee-91bd-461f4a044823][Are WMD a threat to democracy?]]

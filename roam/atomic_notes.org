@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       06da4dce-227a-4d6c-af7c-0f853e1aea3c
+:END:
+#+title: Atomic Notes
+#+filetags: :concept:
+#+date: [2024-01-31 Wed 05:32]
+- Related: [[https://www.youtube.com/watch?v=5O46Rqh5zHE][Vicky Zhao's video]]
+
+- [[id:78b5b90d-b5e0-429b-a161-23c6c6612863][Q/E/C note taking]]
+- giant documents are *baaaad*
+- make notes atomic
+  + this way you are not stuck thinking /vertically/ and chronologically
+  + create a lattice of ideas
+    - [[id:23b54524-a199-4402-86e5-4882c0b19696][Latticework of theory]]

@@ -1,6 +1,4 @@
-#+filetags: video
+#+filetags: :video:
 - Source: %^{Link}
 - Channel: %^{Author}
-- Related: %^{Note}
-
-%?
+- Related: %?

@@ -1,6 +1,4 @@
-#+filetags: article
+#+filetags: :article:
 - Source: %^{Link}
 - Author: %^{Author}
-- Related: %^{Note}
-
-%?
+- Related: %?
