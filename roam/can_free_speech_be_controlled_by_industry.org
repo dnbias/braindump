@@ -1,0 +1,14 @@
+:PROPERTIES:
+:ID:       9cb68b90-a4ff-424a-8131-c42fc7f223e4
+:END:
+#+title: Can free speech be controlled by industry?
+#+date: [2024-02-04 Sun 17:16]
+#+filetags: :question:
+* Evidence
+- [[id:0f24b654-ae3b-4519-9df6-e25714b84743][Information industries shape our cultural and political landscape]]
+  + [[id:73fdb93d-c1d8-4f75-9bce-72ee6f240d8f][The Medium is the Message]]
+- [[id:23715497-307a-4096-ad07-d2f496dcd0e2][Capitalists can be manipulated by threatening their bottom line]]
+- [[id:212e4f3e-ba3c-4765-abbf-2f2f0b1e6bc0][The 1934 Production Code was self-censorship aimed at protecting introits]]
+- [[id:33a26927-11fb-46e6-97d3-e1fd56ad8e2d][Information industry monopolies have far reaching effects in culture and politic]]
+* Conclusion
+- [[id:467c3330-34d0-43d6-b4b0-5808d2d37ef9][Free speech is the US is controlled by industry more so than the government]]

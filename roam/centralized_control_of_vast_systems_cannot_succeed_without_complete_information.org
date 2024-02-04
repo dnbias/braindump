@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       eea514fa-6e64-4482-b63f-c6fad7d82cdb
+:END:
+#+title: Centralized control of vast systems cannot succeed without complete information
+#+date: [2024-02-04 Sun 17:31]
+#+filetags: :evidence:
+- complete information is not feasible to attain in complex enough systems
+  + must work with proxies and bad data, [[id:f3e2ce5e-78cf-4306-b449-07b92bb62488][Garbage In, Garbage Out]]

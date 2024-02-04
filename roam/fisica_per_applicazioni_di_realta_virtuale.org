@@ -52,8 +52,8 @@ $$v^2 =v_0^2+2a\Delta x$$
 - moto in $$R^2$$
 - spostamento come differenza vettoriale
 - versori cartesiani in ogni punto della traiettoria
-  + /hat{u}_T, tangente
-  + /hat{u}_N/], perpendicolare
+  + $\hat{u}_T$, tangente
+  + $\hat{u}_N$, perpendicolare
 
 Sia accelerazione che velocità sono scomponibile in queste componenti in ogni istante.
 L'accelerazione tangenziale varia il modulo della velocità e quella normale varia la sua direzione.
@@ -86,7 +86,7 @@ In assenza di forze esterne, un oggetto in quiete rimane in quiete e un corpo in
 #+end_quote
 
 - i sistemi inerziali sono quelli in cui vale questo principio.
-  + e' necessaria una causa evidente, una forza, per causare la modifica dello stato di moto di un corpo
+  + è necessaria una causa evidente, una forza, per causare la modifica dello stato di moto di un corpo
 - i sistemi non inerziali sono sistemi in cui e' necessario introdurre forze apparenti
 ** Secondo Principio
 *Legge di Newton*
@@ -222,6 +222,12 @@ La forza è la derivata dell'energia potenziale, quindi un punto di equilibrio i
 ** Oscillatore Armonico
 *** Moto armonico semplice
 oscilla senza dipendere dalla ampiezza
+$$T = 2\pi \sqrt{\frac{m}{k}}$$
+$$f = 1/T$$
+$$v_0 = \omega A$$
+$$a =- \omega^2 A$$
+$$\omega = \sqrt{\frac{k}{m}} = 2\pi f$$
+
 *** Moto armonico forzato
 Non dipende dalla forza costante applicata per produrre l'allungamento iniziale.
 L'unico effetto del moto armonico forzato è quello di spostare il punto di equilibrio iniziale.

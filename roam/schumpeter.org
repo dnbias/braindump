@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       903628ae-cbc7-4c8d-ab84-8f8d13f3d70b
+:END:
+#+title: Joseph Schumpeter
+#+date: [2024-02-04 Sun 17:06]
+#+filetags: :author:
+1883-1950
+- popularized [[id:b92dee70-36a6-4603-ba30-b8dc7f8b5c2a][Creative Destruction]]

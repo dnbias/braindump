@@ -14,6 +14,10 @@ draft = false
 
 ## Notes {#notes}
 
+-   Wu draws inspiration for the thesis of the book from the concepts of [Creative Destruction]({{< relref "creative_destruction.md" >}}) and the studies of [Schumpeter]({{< relref "schumpeter.md" >}})
+    -   this concept describes the way that industrial innovation in a capitalist systems tends to completely replace the previous status quo, in cycles of industrial growth
+    -   Wu argues that this dynamic gets arrested by monopolists that have the economic and political power to stop the competition from even having the possibility of innovating in this way
+        -   often controlling research and patents in their own labs and deciding when it is time to release innovation
 -   [Kronos effect]({{< relref "kronos_effect.md" >}})
     -   companies _eating_ their prole to stop the innovation from hurting their business
 -   power struggle and humanity crave for imperial control
@@ -39,3 +43,9 @@ draft = false
 -   [Common Carrier]({{< relref "common_carrier.md" >}})
     -   there are businesses so important to the correct functioning of our government and everyday life that must be free of bias and discrimination in their activity
     -   concept that Wu adapts to the information and communication industry with what he defines as [Net Neutrality]({{< relref "net_neutrality.md" >}})
+
+
+## Q/E/C {#q-e-c}
+
+-   Can a monopoly be beneficial in improving a service?
+-   [Can free speech be controlled by industry?]({{< relref "can_free_speech_be_controlled_by_industry.md" >}})

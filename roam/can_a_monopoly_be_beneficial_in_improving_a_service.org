@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       bf3802f6-bc39-4aeb-818d-8deedd976c1f
+:END:
+#+title: Can a monopoly be beneficial in improving a service?
+#+date: [2024-02-04 Sun 17:25]
+#+filetags: :question:
+* Evidence
+- [[id:eea514fa-6e64-4482-b63f-c6fad7d82cdb][Centralized control of vast systems cannot succeed without complete information]]
+- [[id:d25c6d0e-2ce6-4cfa-a6f3-cf135c38d06f][Monopolies are a single point of failure]]
+- [[id:7df0fe31-a5f1-4a32-9a11-75499a12e2f6][Monopolies slow innovation to maintain market control]]
+* Conclusion
+- [[id:29e33288-5ad0-484a-aeb7-562c2d20ff24][A closed, controlled and optimized information system owned by a monopoly is not desirable]]

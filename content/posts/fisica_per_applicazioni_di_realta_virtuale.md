@@ -74,8 +74,8 @@ Studio di punti materiali, senza dimensione, senza studio della causa del moto.
 -   moto in \\[R^2\\]
 -   spostamento come differenza vettoriale
 -   versori cartesiani in ogni punto della traiettoria
-    -   /hat{u}_T, tangente
-    -   /hat{u}_N/], perpendicolare
+    -   \\(\hat{u}\_T\\), tangente
+    -   \\(\hat{u}\_N\\), perpendicolare
 
 Sia accelerazione che velocità sono scomponibile in queste componenti in ogni istante.
 L'accelerazione tangenziale varia il modulo della velocità e quella normale varia la sua direzione.
@@ -126,7 +126,7 @@ Causa delle modifiche delle caratteristiche cinematiche di un corpo.
 > In assenza di forze esterne, un oggetto in quiete rimane in quiete e un corpo in moto mantiene la sua velocità immutata.
 
 -   i sistemi inerziali sono quelli in cui vale questo principio.
-    -   e' necessaria una causa evidente, una forza, per causare la modifica dello stato di moto di un corpo
+    -   è necessaria una causa evidente, una forza, per causare la modifica dello stato di moto di un corpo
 -   i sistemi non inerziali sono sistemi in cui e' necessario introdurre forze apparenti
 
 
@@ -327,6 +327,11 @@ La forza è la derivata dell'energia potenziale, quindi un punto di equilibrio i
 #### Moto armonico semplice {#moto-armonico-semplice}
 
 oscilla senza dipendere dalla ampiezza
+\\[T = 2\pi \sqrt{\frac{m}{k}}\\]
+\\[f = 1/T\\]
+\\[v\_0 = \omega A\\]
+\\[a =- \omega^2 A\\]
+\\[\omega = \sqrt{\frac{k}{m}} = 2\pi f\\]
 
 
 #### Moto armonico forzato {#moto-armonico-forzato}

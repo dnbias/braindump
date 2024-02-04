@@ -9,6 +9,10 @@
   + [[https://www.theguardian.com/books/2011/apr/02/master-switch-tim-wu-review][the Guardian Review]]
 
 * Notes
+- Wu draws inspiration for the thesis of the book from the concepts of [[id:b92dee70-36a6-4603-ba30-b8dc7f8b5c2a][Creative Destruction]] and the studies of [[id:903628ae-cbc7-4c8d-ab84-8f8d13f3d70b][Schumpeter]]
+  + this concept describes the way that industrial innovation in a capitalist systems tends to completely replace the previous status quo, in cycles of industrial growth
+  + Wu argues that this dynamic gets arrested by monopolists that have the economic and political power to stop the competition from even having the possibility of innovating in this way
+    - often controlling research and patents in their own labs and deciding when it is time to release innovation
 - [[id:e230e415-df73-4871-bbfb-44d699b9ce12][Kronos effect]]
   + companies /eating/ their prole to stop the innovation from hurting their business
 - power struggle and humanity crave for imperial control
@@ -34,3 +38,7 @@
 - [[id:ca257e7d-d900-4eed-b4d8-498445c315d6][Common Carrier]]
   + there are businesses so important to the correct functioning of our government and everyday life that must be free of bias and discrimination in their activity
   + concept that Wu adapts to the information and communication industry with what he defines as [[id:7a90e31b-7bfe-4979-89b6-c96ff95d0da9][Net Neutrality]]
+
+* Q/E/C
+- Can a monopoly be beneficial in improving a service?
+- [[id:9cb68b90-a4ff-424a-8131-c42fc7f223e4][Can free speech be controlled by industry?]]

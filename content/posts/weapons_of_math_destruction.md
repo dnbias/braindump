@@ -19,7 +19,15 @@ draft = false
     -   difficult to contest
 -   they are highly scalable and in this way amplify the biases the human already have applying them to a larger population
 -   they create _pernicious feedback loops_ in that these models **create** the world that confirms their bias
-    -   these models make predictions based off data (usually proxies for what is being predicted, and poor ones often) and these predictions end up being new data points that confirm and reinforce the bias
+    -   these models make predictions based off data (usually **proxies** for what is being predicted, and poor ones often) and these predictions end up being new data points that confirm and reinforce the bias
+-   they end up damaging minorities and people from poor backgrounds, difficult upbringing
+-   they advantage people who are already advantaged in job selection, credit, judgement of any kind
+-   humans have a hard enough time explaining and understanding concepts like ethics, justice, empathy that it is obvious that models wouldn't reason through them as it is
+-   Cathy suggests three ways in which these instruments can be improved
+    -   use a lot of data
+    -   get feedback from the results to improve the data and the model
+    -   it should be clear how the model works, the types and amount of data, criteria, weights, why it makes a prediction
+        -   especially important when using proxies
 
 
 ## Q/E/C {#q-e-c}
