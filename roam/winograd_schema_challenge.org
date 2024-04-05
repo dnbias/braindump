@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       1129342e-dde2-4915-a5f1-5814cdfaa1eb
+:END:
+#+title: Winograd Schema Challenge
+#+date: [2024-02-27 Tue 12:10]

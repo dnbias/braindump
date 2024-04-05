@@ -1,0 +1,12 @@
+:PROPERTIES:
+:ID:       01bfebf1-8991-4ecd-8054-9d2fea9d9863
+:END:
+#+title: Speech and Language Processing
+#+date: [2024-02-27 Tue 12:00]
+#+filetags: :book:
+Jurafsky, /Speech and Language Processing/, ,
+
+* Notes
+
+
+* Q/E/C

@@ -1,0 +1,30 @@
+:PROPERTIES:
+:ID:       09abee1d-9173-4504-a9c2-14d1c3d3e9a0
+:ROAM_ALIASES: "Immagini, Visione e Realtà Virtuale"
+:END:
+#+title: ELIVA
+#+filetags: :master:university:compsci:ai:
+#+date: [2024-02-28 Wed 13:50]
+- Professori:
+  + N.Balossino, D.Cavagnino, M.Grangetto
+- Digital Image Processing, 3rd ed. Gonzales & Woods
+* Introduzione
+- *Eidomatica* (studio delle immagini)
+  + coinvolge molti ambiti
+  + molte aree di studio e discipline
+    - fisica, matematica
+- la luce è composta da diverse lunghezze d'onda
+  + l'applicazione in particolare determina la gamma di frequenze che è di interesse rilevare tramite sensori
+  + infrarosso, visibile, ultravioletto
+* Image Processing
+- image enhancement
+  + giudicata da un umano
+- image restoration
+  + ripristino dato un danno o modifica conosciuta
+- image analysis
+  + analisi di feature di interesse dell'input
+  + può usare enhancement e restoration come passo preparatorio
+- image compression
+  + riduzione dello spazio occupato
+  + una codifica intermedia, poi ribaltata per recuperare una copia il più possibile simile all'originale
+  + anche applicato ai video

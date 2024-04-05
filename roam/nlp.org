@@ -1,0 +1,6 @@
+:PROPERTIES:
+:ID:       2f40aa67-3b3b-4cce-99bf-65b21ab34165
+:END:
+#+title: NLP
+#+date: [2024-02-27 Tue 12:04]
+Natural Language Processing

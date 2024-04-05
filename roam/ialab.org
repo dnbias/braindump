@@ -1,0 +1,410 @@
+:PROPERTIES:
+:ID:       d85df405-73f0-4567-b8b4-d3e22f2aa7a7
+:ROAM_ALIASES: "Intelligenza Artificiale e Laboratorio"
+:END:
+#+title: IALAB
+#+filetags: :ai:master:university:
+#+date: [2024-02-29 Thu 18:46]
+- Professori:
+  + Roberto Micalizio
+* Prolog
+- esecuzione mediante /backward chaining/ in profondità (riguardo l'esplorazione dell'albero)
+- si parte dal /goal/ da derivare
+  + il goal è congiunzione di formule atomiche
+    - $G_1,G_2,\dots,G_n$
+  + dimostrazione mediante *risoluzione* che il goal segue dal programma
+- regola $A:- B_1,B_2,\dots,B_m$ applicabile a $G_i$ se
+  + le variabili vengono rinominate
+  + $A$ e $G_i$ unificano, l'interprete prolog fa /pattern matching/ sulla testa della regola
+- Most General Unifier (=MGU=)
+  + fa il minimo numero di instanziazioni per unificare
+  + $\sigma = \{X/Y\}$ ad esempio
+
+*Formulazione non deterministica* dell'interprete:
+#+begin_src pascal
+interprete(G):
+if G vuoto
+   then successo
+   else sia G = G1,G2,...,GN
+      sia R insieme delle clausole applicabili a G_1
+      if R vuoto
+         then fallimento
+         else scegliere clausola A :- B1,B2,...,BM in R
+            sia sigma il MGU di G1 di A
+            inteprete(B1sigma,B2sigma,...,BMsigma,G2sigma,...,GNsigma)
+#+end_src
+Prolog la rende deterministica scegliendo le clausole in ordine di scrittura del programma, in caso di fallimento continua con il backtracking a cercare una soluzione.
+
+Prolog implementa un metodo di prova *corretto e completo*
+- la risoluzione =SLD=
+  + parte sempre dal goal e una (la prima) clausola che unifica
+  + ogni passo fa risoluzione tra la risolvente (risultato del passo prima) e una delle clausole iniziali
+  + corretta e completa se si limita alle clausole di horn, disgiunzioni con al più un letterale positivo
+  + quindi procede in profondità e da sinistra verso destra
+
+La struttura dati fondamentale in ~pl~ è la lista:
+- testa
+- coda
+#+begin_example
+?- [Head|Tail]=[mario,23,[2,3],antonio,luigi,[]].
+Head = mario,
+Tail = [23,[2,3],antonio,luigi,[]].
+#+end_example
+
+Operazioni importanti:
+- caricamento di un file ~['file.pl']~
+- per stampare la totalità di una lista si usa ~write()~.
+- ~length(List, N)~
+- commenti con carattere ~%~
+- assegnamento con la keyword ~is~
+- ~append(List,List,Res)~
+- ~member(E,List)~
+#+begin_example
+?- length([1,2,3],N).
+N = 3.
+
+?- length([1,2,3],3).
+true.
+#+end_example
+
+** Run-time dell'interprete
+Concettualmente 2 stack:
+- stack di /esecuzione/
+- stack di /backtracking/
+  + contiene /choise-points/
+  + il predicato di cut ~!~ rimuove il contenuto di questo stack per l'esecuzione corrente, rendendo definitive le scelte fatte fino a quel momento, rimuove rami dell'albero =SLD=
+    - ~a :- p,!,b.~
+      + quando viene raggiunto rimuove i punti di scelta per ~a, p~
+    - si perde la /completezza/ del =SLD=
+
+
+** Liste
+#+begin_src prolog
+% somma(L,R)
+somma([],0).
+somma([Head|Tail],Res):-
+    somma(Tail,RTail),
+    Res is Head+RTail.
+
+% conta(L,X,N)
+conta([],_,0).
+conta([X|Tail],X,Res):-
+    conta(Tail,X,RTail),
+    Res is 1+RTail.
+conta([H|Tail],X,Res):-
+    H \== X,
+    conta(Tail,X,Res).
+
+% soluzione molto inefficiente
+% deve scorrere ogni passo ricorsivo la lista per
+% fare la append
+invert([],[]).
+invert([H|T],Inv):-
+    invert(T,TInv),
+    append(TInv,[H],Inv).
+
+% invopt(L,[],R)
+invopt([],Temp,Temp).
+invopt([H|T],Temp,R):-
+    invopt(T,[H|Temp],R).
+
+inv(L,R):-invopt(L,[],R).
+#+end_src
+
+Esercizi sugli insiemi:
+#+begin_src prolog
+union([],B,B).
+union([X|T],B,R):-
+    member(X,B),
+    union(T,B,R).
+union([X|T],B,[X|R]):-
+    \+member(X,B),
+    union(T,B,R).
+#+end_src
+La negazione in prolog *non è la negazione classica*, proprio perché gestisce solo clausole di horn (al più un letterale non negato).
+- ~\+A~
+- negazione per fallimento
+- /negation by failure/
+  + definizione puramente operazionale, /predicato extra-logico/
+  + =prolog= prova a dimostrare l'asserzione, se ci riesce restituisce ~false~, ~true~ se fallisce
+  + ci sono 3 possibili esiti, anche il loop
+    - l'albero =SLD= non termina
+
+Altro goal extra-logico è il *cut*, sintatticamente il ~!~.
+- rende definitive le alternative fino a quel momento
+- permette la mutua esclusione
+- impedisce il backtracking verso altre clausole
+- permette l'implementazione del ~if-else~
+- controlla l'esecuzione dell'interprete
+- predicato sempre vero
+- si perde la /completezza/
+#+begin_src prolog
+countPos([],0).
+countPos([H|T],R):-
+    X > 0,!,
+    contaPos(T,N),
+    R is N+1.
+countPos([_|T],R):-
+    countPos(T,R).
+
+choose(X,L):-
+    member(X,L),!.
+#+end_src
+
+* Ricerca nello Spazio degli Stati
+- stato iniziale
+- obiettivi (=goal=)
+- insieme della azioni
+  + passaggio da uno stato all'altro
+  + costi delle azioni
+
+A partire da questi si definiscono cammini e i loro costi associati.
+In questi problemi il grafo non è disponibile fin dall'inizio, anche se fosse disponibile le dimensioni di questo grafo sono esponenziali e non esplorabili completamente in tempo ragionevole.
+
+Dobbiamo definire delle euristiche per scegliere ad ogni passo l'azione da eseguire
+- tentare di focalizzare la ricerca
+- solo una parte dello spazio degli stati va esplorato, cercando i più promettenti
+
+In ~prolog~:
+- ~applicabile(AZ,S)~
+- ~trasforma(AZ,S1,S2)~
+- ~iniziale(S)~
+- ~finale(S)~
+
+- ricerca in ampiezza garantisce l'ottimalità
+  + esponenziale in spazialità, mantiene tutti gli stati in memoria
+- ricerca in profondità
+  + efficiente
+  + non garantisce l'ottimalità
+- /iterative deepening/
+  + ricerca in profondità iterativamente a profondità sempre maggiori
+  + garantisce l'ottimalità
+
+Esistono *strategie informate*:
+- utilizzando informazioni addizionali si può informare la scelta con euristiche
+  + ~h(n)~ costo *stimato* del cammino ottimo dal nodo ~n~ al ~goal~
+    - l'euristica ~h~ non è un oracolo, può sbagliare
+  + ~g(n)~ costo del cammino trovato dal noto iniziale al nodo ~n~
+
+** Labirinto
+- cammino in una griglia rettangolare
+- azioni, movimento nelle direzioni cardinali
+- ~labyrint.pl~
+  + fotografia della realtà, fatti
+- ~actions.pl~
+- possibile euristica per una strategia informata è la *distanza di manhattan*
+  + =ID-A*=, profondità iterative-deepening
+  + =A*=, ampiezza
+
+* Answer Set Programming
+- /War of Semantics/, 80s-90s
+  + prove per dare una semantica alla negazione per fallimento
+- nasce linguaggio simile a ~prolog~ ma con funzionamento completamente diverso
+  + per problemi di soddisfacimento di vincoli, planning
+    - *problemi combinatori*
+  + non /goal/ directed
+  + soluzioni sono i *modelli* (answer set), non le prove
+  + inferenza non basata su backward chaining ma sulla costruzione di *modelli stabili*
+  + ~CLINGO~, ~Cmodels~
+- in ~ASP~ c'è anche la negazione classica (forte)
+  + ~not~ negazione per fallimento
+  + ~-~ negazione classica
+    - zucchero sintattico, definibile un letterale opposto dell'altro tramite integrity constraint
+- *integrity constraint*
+  + regole senza testa
+  + /non/ devono valere
+- si applica a programmi logici proposizionali
+  + solo proposizioni, nessuna variabile
+  + le variabili sono utilizzate solo come strumento per la scrittura
+- il programma non descrive una computazione
+  + non può andare in loop
+  + l'ordine dei letterali non ha importanza
+** Semantica
+- il solver costruisce uno (o più) /Answer  Set/
+  + modello minimale
+  + è unico se non c'è negazione per fallimento
+- *ridotto*
+  + un altro programma ~ASP~
+  + $P^S$
+    - ridotto del programma $P$ rispetto l'insieme di atomi $S$
+    - rimuovi ogni regola il cui corpo contiene ~not L~, per ~L in S~
+    - rimuovi tutti i ~not L~ dai corpi delle restanti regole
+  + il ridotto non contiene atomi con negazioni per fallimento per costruzione
+    - ha un unico answer set
+    - se tale answer set coincide con ~S~ allora questo è un answer set accettabile
+  + l'insieme dei possibili answer set (qui non conta la minimalità) dei ridotti è la soluzione del problema, l'insieme dei modelli
+
+** Esempi ASP
+#+begin_src asp
+gatto(tom).
+gatto(silvestro).
+miagola(X):-gatto(X).
+#+end_src
+
+#+begin_src asp
+bird(tweety).
+penguin(tux).
+ostrich(pippo).
+bird(X):-penguin(X).
+bird(X):-ostrich(X).
+-fly(X):-penguin(X).
+-fly(X):-ostrich(X).
+fly(X):-bird(X),not -fly(X).
+#+end_src
+
+#+begin_src asp
+pacifist(X):-quacker(X),not -pacifist(X).
+-pacifist(X):-republican(X),not pacifist(X).
+republican(nixon).
+quacker(nixon).
+#+end_src
+
+#+begin_src asp
+member(anna).
+member(nicolo).
+member(lautaro).
+member(chiara).
+job(1..7).
+1 {assign(X,J):job(J)} 3:-member(X).
+1 {assign(X,J):job(J)} 3:-member(X).
+1 {assign(X,J):member(X)} :-job(J).
+:-assign(X,2),assign(X,7),member(X).
+
+#show assign/2.
+#+end_src
+
+Esempio di insoddisfacibilità:
+- questa base di conoscenza è soddisfacibile con l'insieme vuoto se non ci sono pinguini
+#+begin_src asp
+fly(X):-bird(X).
+bird(X):-penguin(X).
+-fly(X):-penguin(X).
+penguin(tux).
+#+end_src
+
+* Planning
+#+begin_quote
+Planning in the art and practice of thinking before acting. -- Patrik Haslum
+#+end_quote
+#+begin_quote
+Selecting a goal-leading course of action based on a high-level description of the world. -- Jorg Hoffmann
+#+end_quote
+
+Un planning è definito da:
+- =STS=
+- un piano
+- un goal
+  + può essere una proprietà locale o globale del mondo
+
+Un piano può essere eseguito semplicemente da un /controller/ oppure in ottica di /continual planning/ il /planner/ viene ricontattato in caso di modifiche nell'ambiente.
+
+** State Transition System
+=STS=
+- Stati $S$
+- Azioni $A$
+- Eventi $E$
+- relazioni $\gamma$ di transizione di stato
+  + insieme delle parti $2^S$
+  + una azione può essere non deterministica e portare in stati diversi
+** Classical Planning
+*Assunzioni*:
+- dominio finito
+  + numero finito di stati
+  + in caso contrario non c'è più garanzia di terminazione del planning
+- completa osservabilità
+  + funzione $\eta: S \to O$ è l'identità
+- dominio deterministico
+- dominio statico
+  + l'ambiente non interferisce con l'agire dell'agente
+  + $E=\emptyset$
+- goal semplici
+- piani sequenziali
+  + azioni linearmente ordinate
+  + una sola azione per volta è possibile
+- tempo implicito
+  + azioni ed eventi hanno durata istantanea
+- singolo agente
+  + un solo /planner/ e un solo /controller/
+
+Ognuna di queste assunzioni può essere rilassata in applicazioni reali.
+Il problema di pianificazione è computazionalmente costoso ricorrendo a due problemi decisionali:
+- *PlanSAT*
+- *Bounded PlanSAT*, rimane decidibile limitando lo spazio di ricerca
+Questi sono =PSPACE=, in molti casi pratici *Bounded PlanSAT* è =NP-complete= mentre *PlanSAT* è =P=.
+
+Le proprietà ricercate in un algoritmo di pianificazione sono:
+- correttezza
+- completezza
+- ottimalità
+** Algoritmi di Pianificazione nello Spazio degli Stati
+*** STRIPS
+=STanford Research Institute Problem Solver=
+- Fikes, Nilsson 1971
+- introduce rappresentazione esplicita degli operatori di pianificazione
+- gestisce il /frame problem/
+- idee fondamentali
+  + linear planning
+  + means-end analysis
+
+*Linear Planning*:
+- risolvere un goal alla volta (devono essere indipendenti per raggiungere un piano ottimo)
+  + *Sussmann's Anomaly*
+- stack dei goal
+*Means-End Analysis*:
+- considera solo aspetti rilevanti al problema (ragiona backward tramite regressione)
+
+Il linguaggio utilizzato è un sottoinsieme della =FOL=, simboli di predicati finiti, simboli di costanti
+- uno stato è una congiunzione di *atomi ground* (privi di simboli di funzione)
+
+Relazioni:
+- fluenti
+  + possono apparire come effetti di azioni
+- persistenti
+
+Plan Operators (template):
+- tripla: nome, precondizione, effetto
+  + /name/
+  + /precond/ detona i letterali (positivi e negativi)
+  + /effects/ rappresenta gli effetti delle azioni (solo su letterali /bounded/ nelle precondizioni)
+    - /effects+/ add-list
+    - /effects-/ delete-list
+
+#+begin_example
+Pick_BLock(?b, ?c)
+Pre: Block(?b), HandEmpty, Clear(?b), On(?b, ?c), Block(?c)
+Eff: Holding(?b), Clear(?c), not HandEmpty, not On(?b, ?c)
+#+end_example
+
+*Algoritmo*:
+#+begin_example
+STRIPS (initState, goals)
+        state = initState; plan = []; stack = []
+        Push goals on stack
+        Repeat until stack is empty
+                If top of stack is a goal g satisfied in state:
+                        pop stack
+                Else If top of stack is a conjunctive goal g:
+                        Select an ordering for the subgoals of g
+                        push them on stack
+                Else If top of stack is a simple goal sg:
+                        Choose an operator o whose effect+ matches goal sg
+                        Replace goal sg with o
+                        Push the preconditions of o on stack
+                Else If top of stack is an operator o:
+                        state = apply(o, state)
+                        plan = [plan; o]
+#+end_example
+- primo ~Else If~ è il passo di /linearizzazione/ del goal complesso
+- sostituire ~g~ con l'operatore e le sue precondizioni è il passo di regressione
+  + means-end
+
+Due concetti utilizzati da questo algoritmo:
+- progressione, considerando gli effetti e aggiungendoli allo stato progredendo
+- regressione, considerando le precondizioni e aggiungendole allo stato regredendo
+
+Il *linear planning*:
+- subottimo
+- interdipendenza dei sotto-goal
+- ordinamento sfavorevole dei goal
+
+** CLIPS

@@ -1,0 +1,632 @@
+:PROPERTIES:
+:ID:       c35c6f86-c674-4e55-a354-4bcd6be12e41
+:ROAM_ALIASES: TLN
+:END:
+#+title: Tecnologie del Linguaggio Naturale
+#+filetags: :master:ai:compsci:university:lingustics:
+#+date: [2024-02-27 Tue 11:58]
+- [[id:01bfebf1-8991-4ecd-8054-9d2fea9d9863][Speech and Language Processing]]
+- [[id:2f40aa67-3b3b-4cce-99bf-65b21ab34165][NLP]]
+* Linguistica
+- linguistica generale $\to$ linguistica computazionale generale
+
+Nel linguaggio umano si definiscono livelli diversi
+- morfologia
+- sintassi
+- semantica formale
+- pragmatica
+Differenza fondamentale tra linguaggio naturale e artificiale è /l'ambiguità/.
+- il linguaggio naturale è intrinsecamente ambiguo per avere una lingua compatta, efficiente
+
+E in sistemi automatici si distinguono due task fondamentali
+- generazione
+- parsing
+
+D.Manning definisce 4 ere di =NLP=
+1. code breaking
+2. formalization, rule-based
+3. machine learning
+4. deep learning
+
+Per Graffi il linguaggio umano è definito da 4 caratteristiche:
+1. discretezza
+   - fonemi, morfemi, parole
+2. ricorsività
+   - /A vede B che vede A che vede B.../
+3. dipendenza della struttura
+   - la sequenza è meno importante della struttura
+4. località
+   - contesto linguistico cambia il significato
+
+Il pensiero e linguaggio si modificano a vicenda e sono profondamente legati.
+
+Vari livelli linguistici vengono analizzati step by step indipendentemente dal nostro cervello:
+- forme d'onda
+- parole
+- struttura sintattica
+- rappresentazione semantica
+
+Prima /analisi/ poi /interpretazione/ e infine viene derivato un /significato/.
+- attingendo da /conoscenza dichiarata/, una /base di conoscenza/, e un sistema di /regole/
+
+Lo studio della *linguistica* è necessario per comprendere sistemi statistici come il =DL= in quanto è fondamentale la scelta delle feature linguistiche, vadano questi decisi a priori o ricavati automaticamente.
+*Jurafsky* fa l'esempio del /sentence splitting/, le *feature linguistiche* possono essere modellate da un albero di decisione o da un sistema a regole. Il processo finale è simile quindi a livello concettuale gli approcci sono equivalenti.
+
+* Livelli Linguistici
+Morfologico, sintattico, semantico, pragmatico e del discorso.
+Vengono definite le strutture più appropriate a ciascun livello.
+A livello computazionale si sviluppa una struttura a cascata, l'output di un livello diventa input del livello successivo.
+** Livello Morfologico
+Struttura vettoriale.
+- analisi lessicale
+  + sequenza di lettere $\to$ sequenza di parole
+    - parole singole o gruppi di parole con significato unitario
+    - *vettore*
+- codifica dei *part-of-speech* (=POS=)
+  + tagging
+  + categorie delle parti del discorso
+    - utilizzo di test linguistici per definirle
+
+- rapporti:
+  + *paradigmatico*, termini sostituibili tra loro mantenendo la correttezza della frase
+  + *sintagmatico*, elementi che si susseguono in una frase
+
+Quindi:
+- nomi
+  + semantica: persone, oggetti, luoghi
+  + sintagmatica: con articoli, al plurale, prendono possessivi
+- verbi
+  + semantica: eventi, azioni, processi
+  + forme morfologiche: tempo, modo, numero
+  + categoria: ausiliari, modali, copula
+- aggettivi
+  + modificatori
+- avverbi
+  + modificatori
+
+Le parti si dicono /aperte/ se si aggiungono parole in tempi brevi (nomi, verbi, aggettivi, avverbi), /chiuse/ se si modificano solo molto lentamente (articoli, pronomi, preposizioni).
+
+*** PoS tagging
+- text-to-speech (per risolvere ambiguità di pronuncia)
+  + in questo caso il =PoS= può essere utilizzato direttamente per la risoluzione del task
+- l'output è una coppia =parola/tag=
+- regexp sugli output per le frasi
+- input o miglioramento di un parser completo
+- un'analisi =PoS= necessaria quando si studia il cambiamento linguistico con nuove parole o cambi di uso
+- 85%  dei tipi non è ambiguo
+  + il restante 15% però sono molto ricorrenti
+    - ~back~: ADJ, NOUN, VERB, PART, ADV
+  + 60% dei token sono ambigui
+- il task attualmente ha performance attorno 97%
+  + =HMM=, =CRF=, =BERT=
+  + ma la baseline è già 92% con il metodo più lazy
+    - tag ogni parola con il tag più frequente
+    - tag parole sconosciute come nomi
+- *Universal Dependencies* tagset
+  + Nivre et al. 2016
+  + per tutte le lingue e non solo l'inglese a differenza dal *Penn TreeBank*
+
+Gli algoritmi, supervisionati:
+- Hidden Markov Models
+- Conditional Random Fields, Maximum Entropy Markov Models
+- Neural sequence models
+- Large Language Models, finetuned
+Le ipotesi di dipendenza e indipendenza ci sono date dalla teoria linguistica.
+- *modelling*
+- *learning*, algorithm for setting the parameters of the model
+- *decoding*, algorithm for applying the model in order to compute results
+**** Rule-Based Tagging
+- =ENGTWOL= tagging
+  + English Two Level analysis
+- assegna tutti i tag alle parole
+  + analisi morfologica per determinare i possibili tag
+- rimuovi i tag secondo *regole*
+  + controllando le parole precedenti e successive per eliminare delle possibilità
+**** Sequence Labelling
+- data una base di conoscenza di parole/tag
+- data una sequenza (/observation/, /sequence of observations/)
+- qual'è la miglior sequenza di tag che corrisponde a questa sequenza di osservazioni
+- visione *probabilistica*
+  + qual'è la sequenza di tag più probabile data la /sequence of observations/
+  + il numero di possibilità è enorme $n^m$ con $n$ parole e $m$ tag
+**** HMMs
+Il *modelling* è molto rigido, solo parole (distinzione rigida da maiuscolo a minuscolo) e sequenza di tag. Non si può inserire conoscenza linguistica all'interno del modello tramite feature linguistiche.
+$$\widehat{t} _1^n = \text{argmax}_{t_{1}^n} P(t_1^n | w_1^n)$$
+- approccio generativo
+- regola Bayesiana
+$$P(x|y) = \frac{P(y|x)P(x)}{P(y)}$$
+$$\widehat{t}_{1}^n = \text{argmax}_{t_1^n}P(w_1^n|t_1^n)P(t_1^n)$$
+- prima $P$ detta /likelihood/, seconda detta /prior/
+
+La fase di *learning* è molto semplice nei =HMM=
+- si calcolano le probabilità di /tag transitions/ tramite conteggio sul corpus annotato
+$$P(t_i | t_{i-1}) = \frac{C(t_{i-1},t_i)}{C(t_{i-1})}$$
+- detta /probabilità di transizione/
+- conteggio della successione dei due tag normalizzato per il conteggio del tag precedente
+  + questo significa che non si possono /ipotizzare/ parole sconosciute
+  + un conteggio nullo di una parola significa probabilità nulla
+- si calcola la /probabilità di likelihood/ o di /emissione/ in modo simile
+
+$$P(w_i | t_{i}) = \frac{C(t_{i},w_i)}{C(t_{i})}$$
+
+L'algoritmo di *decoding* di *Viterbi* sfrutta la /memoization/ (dynamic programming) per diminuire la complessità temporale a discapito di quella spaziale.
+- per disambiguare un nodo (parola) l'unica informazione utile è quella del prefisso: questa è fattorizzabile in quanto in comune
+- i prefissi vengono calcolati una singola volta e poi mantenuti in /memo/
+- idea della programmazione dinamica è di memorizzare solo la massima cammino di probabilità per ciascuna cella, non ogni cammino
+  + la sequenza più probabile passa per le singole transizioni più probabili
+Viterbi, calcolo di probabilità dei prefissi:
+$$v(j) = \text{max}_{i=1}^N v_{t-1} (i) a_{ij} b_j(o_t)$$
+- v, viterbi
+- a, probabilità di transizione
+- b, probabilità di emissione
+L'algoritmo agisce ricorsivamente su una finestra di 2 colonne sulla matrice markoviana.
+- i /backpointer/ sono salvati uno per ogni nodo in ogni colonna
+- solo l'ultimo step determina poi a ritroso risalendo i backpointer il path tra gli stati, a ritroso nel tempo
+Questo algoritmo è lineare per il numero di parole e quadratico rispetto il numero dei tag, non più esponenziale.
+
+Si arriva tranquillamente a 93-94% accuracy già solo con questo.
+- si può complicare utilizzando non i bigrammi ma i trigrammi
+  + aumenta anche la /sparseness/, molti valori nulli nella distribuzione di probabilità
+  + moltiplicazione di /Lagrange/ utilizza i bigrammi e monogrammi se non sono disponibili trigrammi
+
+
+
+
+**** MEMM
+*Maximum Entropy Markov Models*
+Nel *modelling*:
+- non si applica la regola bayesiana
+- modello discriminativo non generativo come =HMM=
+  + prende un approccio diretto
+  + calcola $P(y|x)$ discriminando tra i possibili valori della classe $y$ invece che prima calcolare una verosimiglianza
+    - si descrive solo ciò che /discrimina/ tra le classi, non tutte le feature
+Le ipotesi sono 2:
+- uno stato è condizionalmente indipendente da tutte le osservazioni e label precedenti
+- le osservazioni sono indipendenti tra loro
+- le /feature/ possono essere inserite nel modello
+  + dati prefissi, postfissi è più probabile che una parola sia un verbo o un'altra categoria
+  + ipotesi che solo le feature che decidiamo hanno impatto nella predizione
+La difficoltà sta nel *learning* per il calcolo dei pesi delle /feature/ che sono inserite manualmente.
+
+$$P(y|x) = \sum_{i=1}^N w_i f_i$$
+
+Modello più interessante linguisticamente in quanto possono essere inserite feature linguistiche. Complicato il learning.
+
+Per il *decoding* può essere applicato viterbi similmente a =HMM=.
+Caso specifico di *Conditional Random Fields* =CRF=, in =NLP= si parla di /linear-chain/ =CRF= dove coppie di variabili sono tag per token adiacenti.
+- in =CRF= sono definite $k$ *feature globali* che vengono calcolate sull'intera sequenza e sulle feature locali
+  + queste feature globali riescono a catturare dipendenze più complesse e a distanza maggiore dei soli suffissi e l'osservabile
+- poi ci sono feature locali
+- come decoding anche in questo caso viene utilizzato viterbi
+**** Tagging Unknown Words
+- parole vengono aggiunge alla lingua di continuo
+- nomi propri
+- metodi detti di /smoothing/
+- possibile approcci
+  + assumili nomi
+  + assumi distribuzione normale su =PoS=
+  + usa informazioni morfologiche
+  + assumile distribuite similarmente a parole che occorrono solo 1 volta nel training (per i parametri) / developing (per gli iperparametri) set
+*** NER
+Named Entity Recognition
+- nomi propri utilizzabili per identificare il dominio del discorso
+- storicamente sono state identificate 4 =NER=
+  + ~PER~, person
+  + ~LOC~, location
+  + ~ORG~, organization
+  + ~GPE~, geo-political entity
+- spesso sono /sequenze parole/, parole composte riferite a una entità
+  + più difficile al =PoS= tagging
+  + 2 sotto-task
+    - prima capire i limiti (/span/) che indicano l'entità, /segmentation/
+    - categorizza l'entità, /type ambiguity/
+- ci si riconduce al caso di un tag per token con il =BIO= tagging con $2n +1$ tag con $n$ entità:
+  + begin-tag
+  + inside-tag
+  + out, generico
+- in questo modo si possono utilizzare le stesse tecniche del =PoS= tagging
+- =HMM= non è più competitivo in questo ambito
+** Livello Sintattico
+Struttura ad albero.
+- trovare le relazioni sintattiche
+- tra gruppi di parole (costituenti) o coppie (dipendenze)
+- /Aspects of the theory of syntax/, 1957 - [[id:214ee082-3257-4bb5-914b-96b919d6d6c0][Chomsky]]
+- ricorsività, center-embedding o laterale
+
+Chomsky definisce due concetti:
+- /competence/, conoscenza pura della sintassi
+  + la teoria della linguistica si occupa di questa
+  + /unaffected by grammatically irrelevant conditions/
+  + *grammatica formale*
+- /performance/, come viene utilizzata la conoscenza della sintassi, limite pratico del parlante, conoscenza individuale
+  + *algoritmo di parsing*
+*** Struttura a Costituenti
+- da linguistica generativista
+- [[id:214ee082-3257-4bb5-914b-96b919d6d6c0][Chomsky]]
+  + Teoria X-barra
+- syntactic parsing
+  + deriva la struttura sintattica dalla sequenza di parole
+- =S= - =NP= - =VP= - =N= - =V= - =N=
+- la costituenza è la relazione sintagmatica
+**** Grammatiche Generative
+$G = (\Sigma, V, S, P)$
+- context free
+- albero di derivazione utilizzato per catturare la sintassi
+
+
+**** Gerarchie di Chomsky
+- *Type 0*
+  + nessun vincolo
+- *Context-sensitive*
+- *Context-free*
+  + complessità di parsing $n^3$
+  + riesco a catturale una grande parte della complessità del linguaggio
+- *Linear*
+  + terminali solo a dx o solo a sx
+
+Schieber dimostra che un dialetto svizzero-tedesco non è =CF=.
+Per Joshi le dipendenze sintattiche nelle lingue naturali sono o nested o cross-serial, a partire da queste lui ipotizza una congettura che queste lingue siano *mildly context-sensitive*.
+- poco context-sensitive, leggermente più complesse delle =CF=
+- 4 proprietà: includono =CFG=, nested/cross-serial dependencies, parsing polinomiale, crescita lineare
+**** Parser Anatomy
+- grammar
+  + conoscenza dichiarativa della sintassi
+  + context-free, =TAG=, =CCG=, dependency (non generativa)
+- algorithm
+  + search strategy (top-down, bottom-up, left-to-right)
+  + memory organization (back-tracking, dynamic programming)
+- oracle
+  + deve guidare le scelte algoritmiche
+  + probabilistico, rule-based
+
+Le strategie (algoritmiche) si differenziano da cosa guida la ricerca:
+- goal-directed parsing, top-down
+  + solo ricerche che portano a risposte corrette (radice ~S~)
+  + comporta la creazione di alberi non compatibili con le parole
+  + /razionalisti/
+- data-directed parsing, bottom-up
+  + solo ricerche compatibili con le parole in input
+  + comporta la creazione di alberi non corretti
+  + /empiricisti/
+
+Il problema principale da risolvere algoritmicamente è quello della ambiguità strutturale:
+- una frase può avere alberi di parsing corretti multipli
+- 2 tipi di ambiguità: /attachment/ ambiguity (PP) e /coordination/ ambiguity
+  + esplosione combinatoria dei possibili alberi
+  + i ~PP~ possono legarsi al verbo o al complemento oggetto
+**** CKY
+- $O(n^3)$
+- calcola tutti i possibili /parse/
+- *Earley* simile a questo
+- /memoization/
+- =CFG= in forma normale di Chomsky
+  + non si perde generalizzata
+  + regole binarie o a terminali
+- si divide in due l'intervallo di parole cui si riferisce il sotto-albero ad ogni regola applicata
+  + in quanto sono tutte regole in forma normale
+  + le strutture vengono memorizzate secondo gli indici di riferimento in una matrice
+- nelle celle va anche memorizzato il backtrace, altrimenti non è un parsing ma recognition
+  + senza backtrace non si può ricostruire l'albero, solo un recogniser
+
+Si può avere anche una versione che utilizza un oracolo probabilistico (=PCFG=) per fare /pruning/:
+- associa un valore di probabilità alle soluzioni
+- ranking agli alberi risultanti
+- si possono assegnare delle probabilità a ogni regola
+  + regole con la stessa testa vincolate a sommare a 1
+- probabilità di un albero produttoria di tutte le probabilità delle regole utilizzate
+- le probabilità vengono derivate da un corpus
+
+Si estraggono le regole automaticamente da un corpus di alberi sintattici, semplice quando questi alberi sono scritti in forma ~lisp-like~ (S-espressioni).
+Una volta estratte le regole si contano le frequenze associate e quindi le loro probabilità.
+
+L'algoritmo poi fa un =beam-search= seguendo le strade più promettenti, le strade che hanno associata una probabilità troppo bassa vanno scartate preventivamente.
+Solo le soluzioni parziali più promettenti sono sviluppate.
+
+Si può sostituire anche una grammatica esplicita con una rete neurale che decida la classe dei costituenti.
+
+È possibile portare l'informazione lessicale verso l'alto:
+- *Lexicalized* =PCFG=
+- il problema era che le probabilità nella parte alta non è influenzata in nessun modo da ciò che segue nell'albero
+  + sono indipendenti
+- le parole sotto nell'albero devono influenzare la probabilità del nodo superiore
+  + una maniera di dare un po' di contesto alle /context free/
+  + le probabilità diventano sempre più piccole, lo /smoothing/ diventa ancora più fondamentale
+
+*** Struttura a Dipendenze
+- [[id:12699752-9948-419d-bc67-8ae4a38aab78][Lucien Tesnière]]
+- dependency parsing
+- struttura definita dalle relazioni
+  + /sub/, /obj/
+- nelle relazioni ci sono un /governor/ (testa) e un /subordinate/ (dipendente)
+  + ogni connessione in principio unisce un termine superiore a uno inferiore
+- ci sono delle approssimazioni in questo approccio
+  + ci sono relazioni simmetriche
+  + ci sono delle specie di funzioni che trasformano termini in basi ad altri usati come argomenti
+- il problema a livello informatiche è che non ci sono meccanismi generativi
+  + non c'è più la grammatica
+- ci sono dei template, schemi di analisi sintattica o espressioni regolari
+  + le regole della grammatica sono in un certo senso nascoste nelle dipendenze statistiche
+
+Vantaggi:
+- generalizzabili a più linguaggi
+- i costituenti generano alberi diversi per ordini diversi di parole, dipendenze generano lo stesso albero per uno stesso significato
+- senza fare interpretazioni semantica già si hanno delle informazioni in più
+- parser veloci
+#+begin_quote
+[...] [the fact that] head-dependent relations are a good proxy for the semantic relationship between predicates and their arguments is an important reason why dependency grammars are currently more common than constituency grammars in =NLP=. -- Jurafsky
+#+end_quote
+
+**** Dependency Parsing
+- *dynamic programming* similmente a =CKY=
+- *graph algorithms*
+  + comunque dinamico
+  + Minimum-Spanning Tree per la frase
+  + =MSTParser=
+    - valuta le dipendenze indipendentemente usando un =ML= classifier
+  + gli archi definiscono le relazioni di dipendenza e sono definite dalla probabilità nel corpus
+  + in questa prima fase si ricava il più probabile albero non tipato
+- *constituency parsing + conversion*
+- *deterministic parsing*
+  + a transizioni
+***** MALT
+- deterministic parsing
+- la grammatica è nascosta nel corpus attraverso l'oracolo
+- bottom-up, depth-first, senza back-tracking
+  + non serve back-tracking in quanto si arriva sempre a una soluzione legale
+Componenti:
+- input buffer
+- stack
+- parser, con oracolo
+- insieme di azioni possibili
+- relazioni di dipendenza attuali
+Gli alberi che vengono prodotti sono solo *proiettivi*, ovvero non ci sono incroci tra le relazioni
+- questa è una grossa approssimazione
+- si trascura il *mildly context-sensitive* in un certo senso
+
+** Valutazione
+- /parseval/
+  + parser evaluation
+- va valutata la precisione di una soluzione
+- /precision/
+  + quale percentuale di subtree del system tree sono anche nel golden tree
+- /recall/
+  + quale percentuale di subtree del golden tree sono anche nel system tree
+
+** Livello Semantico
+Struttura a grafo.
+Si può immaginare un approccio secondo *vocabolario* ma questo presenta dei problemi:
+- ricorsività delle definizioni
+
+- semantica lessicale, delle parole
+  + approcci: /Classico/, /Distribuzionale/
+- semantica formale, della frase
+
+Approccio lessicale classico (simbolico):
+- *lessema*
+  + coppia forma-significato
+  + elemento del lessico
+- relazioni di gruppo
+  + *sinonimia*
+    - =SYN-set=, approccio ~wordnet~
+    - tra questi set occorrono relazioni di significato (i.e. opposizione)
+  + *iponimia*, *iperonimia*
+    - sottoclasse e sovraclasse (/automobile/-/veicolo/)
+  + *omonimia*, *polisemia*
+    - stessa forma, significato diverso
+  + *insiemi*
+Approccio distribuzionale
+#+begin_quote
+You shall know a word by the company it keeps! - Firth 1957
+#+end_quote
+- meaning is related to the distribution of the words around
+- word $\to$ numerical vector $\to$ embedding
+  + matrici di co-occorrenza
+  + prima vettori lunghi e sparsi ora più brevi e densi
+  + /neural embedding/
+  + la distanza tra le parole informa sulla semantica
+- /contextualized word embedding/
+  + si codifica anche il contesto
+  + condiziona ogni parola con il suo contesto
+  + nasce con =BERT= e il deep learning
+- *vettori*
+
+- Semantica Composizionale
+  + per poter eseguire inferenza logica
+  + traduzione dal linguaggio naturale in una qualche forma di rappresentazione della conoscenza
+  + /reasoning/
+    - deduzione, induzione, abduzione
+  + significato mancante nel background viene costruito in ogni caso con tutte le conoscenze e la semantica delle parole nel contesto, similitudine morfologica
+  + /Colorless green ideas sleep furiously/
+  + /Il Lonfo/
+  + *logica* $\to$ *alberi/grafi* (ricorsione)
+** Livello Pragmatico
+Struttura a grafo ma più complessa della semantica, vengono utilizzate delle semplificazioni.
+L'interpretazione dipende da chi enuncia la frase, quando, dove, va contestualizzato nel mondo.
+- *anafora*
+  + sintagmi che si riferiscono a oggetti precedentemente menzionati
+  + si risolve tramite le conoscenze del mondo
+- *intention* e *entities* definiscono *frame*
+- agent: intent
+- un frame deve essere "compilato" per definire il contesto
+  + /dialog flow/
+  + è una semplificazione
+    - entità di numero finito
+    - si perde la ricorsività del linguaggio
+      + un frame non può contenere un altro frame diversamente dei frame della teoria della conoscenza di Minsky
+- *ontologie*
+* Dialogue Systems & ChatBOTs
+Definizione di Jurafsky:
+- dialogue systems: task
+- chatbots: non c'è task
+
+Key features of human dialogues:
+- turns
+  + complesso in un dialogo vocale
+  + più semplice in un sistema testuale dove la fine di un turno è più chiara
+- speech acts
+  + dialogue acts
+  + azioni intraprese dai parlanti in un dialogo
+  + constatives - directives - commissives - acknowledgements
+- grounding
+  + continua conferma di comprensione di ciò che è stato detto
+  + /establishing common ground/
+- dialogue structure
+  + coppie di adiacenza
+  + sotto strutture, sotto dialoghi
+- initiative
+  + mista nel dialogo umano
+  + in un sistema è più semplice codificarla da un lato a l'altro
+- implicature
+
+** ChatBOTs
+Chatbots:
+- cons:
+  + no understanding
+  + potrebbe essere problematico provare a dare un falso senso di comprensione
+
+La valutazione di un chatbot va fatta da un essere umano.
+*** [[id:0f7b631b-db40-4852-8130-8dcfa5601298][ELIZA]]
+- keyword estratte dalle frasi tramite espressioni regolari
+- risposte preconfezionate tramite template inserendo le keyword
+- stack di memoria di keyword
+- tecniche di recupero con frasi fatte
+- /ELIZA effect/, pareidolia
+*** ALICE
+- Artificial Intelligence Markup Language
+- struttura simile a =HTML=
+- permette di definire delle regole per rispondere all'utente
+- generalizza ELIZA
+  + stesso funzionamento algoritmico
+*** Corpus based
+- response by retrieval
+  + il corpus potrebbe essere anche una ricerca web
+- response by generation
+  + tecniche neurali per mischiare il turno attuale e il corpus codificato nella =NN=
+** Dialogue Systems
+- frame
+  + semplici strutture tipate con /slot/ da riempire
+  + rappresentano il dialogo
+  + informazioni fondamentali per il sistema
+  + aggiornato man mano
+- a valle del dialogo il frame completo può essere utilizzato da altri sistemi automatici
+
+Approccio moderno che non passa per l'analisi classica della linguistica computazionale:
+- semantica semplice
+  + =GUS= slot/filler (1977)
+  + =FRAME= semantics
+- task-based dialogue agents
+- 3-step algorithm
+  + domain detection $\to$ set of frames
+  + intent detection $\to$ a frame
+  + slot filling $\to$ filled frame
+- frame:
+  + slot di un tipo
+    - ognuna associata con una domanda diretta all'utente
+  + ontologia di dominio
+  + il grosso limite semantico di questi frame è la *non ricorsività*
+
+Approcci:
+- *rule-based* slot filling
+  + regexp, grammatiche
+  + high precision, low recall
+    - /brittle/
+- *statistics-based* slot filling
+  + =NL=
+  + /dialogflow/
+    - domain
+    - intent, high-level speech acts
+    - entities, ontology elements
+  + bisogno di un grosso corpus annotato
+- la *dinamica* del dialogo può essere catturata con la storia degli speech act
+  + permette una gestione del dialogo secondo la dinamica
+  + si può definire una policy a riguardo
+
+Ci sono delle misure oggettive per valutare il sistema di dialogo:
+- /Trindi Ticklist/
+- misura la performance sul task
+* Test
+- [[id:d207db3c-75d0-46bc-8b1e-44ba59da4982][Imitation Game]] di Turing
+  + troppo dipendente dal giudice
+    - dalla sua intelligenza, umore, emotività
+- [[id:1129342e-dde2-4915-a5f1-5814cdfaa1eb][Winograd Schema Challenge]] (=WSC=)
+* Lexical Semantics
+** Ontologie
+- utili per avvicinare l'analisi semantica del linguaggio
+- =DOLCE= è un ontologia fondazionale
+
+Top level delle ontologie divisa in
+- /perdurand/, eventi
+  + non hanno indicizzazione temporale
+  + non cambiano all'interno del tempo
+  + solo alcuni elementi sono presenti nel tempo
+- /endurant/, oggetti
+  + relazioni di parte time-indexed
+  + può cambiare nel tempo
+  + parti compresenti nel tempo
+  + partecipano nei /perdurant/
+
+Per decidere se esistono relazioni di sottoclasse per gli eventi:
+- /identity criteria/
+  + condizioni che utilizziamo per determinare l'eguaglianza
+
+Ci sono molte sfumature della relazione /part-of/
+- componente
+- ingrediente
+- porzione
+- area
+- ...
+
+*Teoria delle qualità*:
+- introduce in un mondo logico un orizzonte numerico
+- descrizioni necessarie come complemento all'ontologia
+- distinzione
+  + qualità (/quality/) e il suo valore (/quale/)
+    - il /quale/ viene indicato all'interno dello spazio della qualità
+** Reti Semantiche
+- formalismi che permettessero di aggregare conoscenze elementari in strutture più complesse, per rappresentare il dominio
+- accesso allo strutture in cui le conoscenze sono direttamente disponibili
+- le =RS= nate nei primi esperimenti di analisi di linguaggio
+- grafi relazionali (mondo dei blocchi)
+  + l'espressività può essere estesa reificando il predicato
+    - traduzione di tutte le relazioni con arità superiore a 2 in relazione binarie
+    - la granularità dell'informazione aumenta
+- molte delle nostre conoscenze sono organizzate gerarchicamente
+  + classi e sottoclassi
+  + le gerarchie si possono estendere alle azioni
+- due strategie
+  + relazione di copertura
+    - rappresento solo i legami essenziali
+    - efficiente sullo spazio
+    - inefficiente sul tempo
+  + chiusura transitiva
+    - rappresentare esplicitamente tutti i possibili legami
+    - efficiente sul tempo
+    - inefficiente sullo spazio
+    - manutenzione complessa
+- si trova un compromesso con archi /shortcut/
+- validità per /default/
+  + eccezioni memorizzate in corrispondenza dei nodi cui si riferiscono
+  + l'algoritmo di eredità lavora bottom-up seguendo la gerarchia =isA=
+- appartenenza e inclusione sono entrambe rappresentate con =isA=
+- manca una semantica formale delle rete semantica
+  + il significato della rete dipende dall'uso che se ne fa
+** Sistemi a Frame
+- Minsky, 1975
+- rappresentazione a carattere generale (/frame/)
+  + poi raffinata e modificata per rendere conto dei dettagli della situazione
+- permette a un sistema di formulare /previsioni/ e avere /aspettative/
+- consente l'interpretazione di situazioni ambigue
+- i frame organizzano le conoscenze relative a un certo dominio per
+  + facilitare il reperimento di informazioni
+  + facilitare processi inferenziali
+- analogamente alle reti semantiche, i frame rappresentano le conoscenze in modo dichiarativo privo di semantica formale
+- Rosch, 1975
+  + tre livelli gerarchici
+    - base
+      + da queste si derivano gli altri concetti
+    - superordinato
+    - subordinato
+- l'appartenenza categoriale viene individuata nei termini di verosimiglianza con un /prototipo/
+** Teorie sulla natura del significato lessicale
+** Teorie Duali
+- Daniel Kahneman

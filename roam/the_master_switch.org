@@ -40,5 +40,5 @@
   + concept that Wu adapts to the information and communication industry with what he defines as [[id:7a90e31b-7bfe-4979-89b6-c96ff95d0da9][Net Neutrality]]
 
 * Q/E/C
-- Can a monopoly be beneficial in improving a service?
+- [[id:bf3802f6-bc39-4aeb-818d-8deedd976c1f][Can a monopoly be beneficial in improving a service?]]
 - [[id:9cb68b90-a4ff-424a-8131-c42fc7f223e4][Can free speech be controlled by industry?]]
