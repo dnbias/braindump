@@ -407,4 +407,168 @@ Il *linear planning*:
 - interdipendenza dei sotto-goal
 - ordinamento sfavorevole dei goal
 
+** CSP
+- formulare un problema di pianificazione come un problema di soddisfacimento dei vincoli
+  + consente di ritardare delle decisioni fino al momento strettamente necessario
+- il modello viene espresso in variabili di stato e non più =FOL=
+  + insieme degli oggetti rilevanti che si vogliono modellare
+- due proprietà per gli oggetti
+  + /rigid/, invarianti
+    - atomi ground nella rappresentazione classica
+    - costanti booleane con variabili
+  + /varying/
+    - relazioni fluenti nella rappresentazione classica
+    - variabili cui viene assegnato un valore
+      + hanno un dominio
+- le due rappresentazioni sono equivalenti (riconducibili una con l'altra) ma:
+  + state-variable
+    - sintetica e uniforme
+      + ogni stato definito sulle stesse variabili
+    - si presta ad estensioni verso il non-classical planning
+      + osservabilità parziale
+      + euristiche
+- principio:
+  + *Least Commitment*
+  + fare scelte solo quando indispensabili alla risoluzione di una parte di problema
+  + non porre più vincoli del necessario
+  + ordinamenti e binding sono ritardabili
+*** Least-Commitment Planning - PSP
+- ricerca spazio dei piani (=PSP=)
+- ogni nodo della ricerca è un piano parzialmente ordinato con /flaws/
+- ogni passo si rimuove un /flaw/ con raffinamenti incrementali
+- l'algoritmo termina con successo con un piano
+  + completamente istanziato
+  + parzialmente ordinato
+
+- piano:
+  + tupla $\langle A,O,B,L \rangle$
+    - azioni
+    - vincoli di ordinamento (r. d'ordine parziale)
+    - bindings (vincoli)
+    - causal links (precondizioni/effetti delle azioni)
+- procedimento per /open goals/
+  + goal senza un link causale a supporto della precondizione
+  + si trova un'azione a supporto (nel piano o la si aggiunge)
+    - la precondizione può appartenere ai suoi effetti
+    - può precedere il goal
+  + *instanziazione least-commitment*
+  + /add/ vincolo di precedenza $a \prec b$
+  + /add/ causal link $a \to^p b$
+- /threats/ (o /clobber/)
+  + una azione $c$ minaccia il link $l$
+    - può modificale il valore di verità di $p$ e può posizionarsi tra $a$ e $b$, oppure
+    - può produrre $p$, $l$ impone che sia prodotto da $a$
+  + risoluzione:
+    - /promotion/, $c \prec a$
+    - /demotion/, $b\prec c$
+    - /separation/, vincolo di /non-codesignation/
+      + in modo che l'effetto di $c$ non unifichi con $p$
+
+=PSP=:
+- corretto e completo
+- le azioni non strettamente sequenziali possono essere parallelizzate
+** Graphplan
+- struttura dati utile a
+  + definire euristiche domain-dependant
+    - non dà garanzia sulla raggiungibilità ma dà una buona stima di distanza
+  + generare un piano
+  + astrae lo spazio di ricerca
+  + algoritmo polinomiale per costruirlo
+- grafo orientato, aciclico, ordinato a livelli
+  + livello iniziale S0 letterali che valgono nello stato iniziali
+    - un nodo per fluente
+  + livello di azioni che sono applicabili agli stati del livello precedente
+    - un nodo per azione
+  + $S_i, A_i$ si alternano fino a una condizione di terminazione
+
+Considerazioni:
+- rappresentazione logica
+- =GP= traccia un sottoinsieme delle possibili interazioni negative
+  + un letterale che appare in un $S_i$ potrebbe essere producibile solo successivamente
+    - comunque una buona stima
+  + polinomiale
+  + $S_i$ è un /belief state/
+- un letterale può essere sia precondizione o atomo persistente
+  + la persistenza viene implementata ma un'azione ~no-op~
+- ogni livello possono esserci link di mutua esclusione tra letterali/azioni
+- =GP= cresce monotonicamente, prima o poi livella e stati consecutivi sono identici
+
+Complessità:
+- $O(n(a+l)^2)$
+Proprietà di ~graphplan~:
+- corretto e completo
+- è un *Partial-Order Planner* (=POP=), come =PSP=
+  + azioni allo stesso livello possono essere parallelizzate
+  + qualunque linearizzazione delle azioni che rispetta i vincoli di ordinamento è una possibile soluzione classica
+*** Mutua Esclusione
+Tra azioni:
+- effetti inconsistenti
+  + un azione nega affetti dell'altra
+- interferenza
+  + uno degli effetti di un'azione è negazione di una precondizione dell'altra
+- competizione delle precondizioni
+  + una delle precondizioni di un'azione è mutualmente esclusiva con le precondizioni dell'altra
+
+Teorema:
+#+begin_quote
+Se esiste un piano valido allora questo è un sottografo del grafo di pianificazione.
+#+end_quote
+
+Tra letterali:
+- complementarity
+  + uno negazione dell'altro
+- inconsistent support
+  + se ogni possibile coppia di azioni al livello precedente che producono i letterali è mutualmente esclusiva
+*** Euristiche
+- singolo letterale
+  + profondità a cui compare per la prima volta
+  + lunghezza del piano serializzato estratto dal =GP=
+- congiunzione di letterali
+  + max-level
+    - primo livello in cui compaiono tutti
+  + somma dei livelli
+    - assume l'indipendenza dei letterali del goal, non ammissibile
+  + livello di insieme
+    - livello in cui compaiono senza che alcuna sua coppia sia in mutex
+    - ammissibile, ignora le dipendenze tra tre o più letterali
+*** Algoritmo
+1. espandi fino al livello in cui gli atomi del goal compaiono tutti e non in mutua esclusione tra loro
+2. invoca ~Extract-Solution~ cercando un piano all'interno del grafo
+   + se trova una soluzione termina, altrimenti continua
+3. espandi il grafo ancora e torna a =1.=
+
+[[../media/GraphPlan.png]]
+[[../media/Extract-Solution.png]]
+[[../media/GP-Search.png]]
+- ~Extract-Solution~ e ~GP-Search~ sono mutualmente ricorsive
+  +
+*** Terminazione
+- letterali crescono monotonicamente
+- azioni crescono m.
+- rel. di mutex decrescono m.
+- /no-goods/ decrescono m.
+  + date le due proprietà precedenti
+
+Dimostrazione:
+1. dato che azioni e letterali crescono m. e sono insiemi finiti, deve esistere un livello in cui l'insieme dei letterali è uguali a quello del livello precedente
+2. poiché mutex e no-good decrescono m. e non possono essere meno di zero, deve esistere un livello con lo stesso numero di mutex e no-good del precedente
+3. una volta che il grafo raggiunge la situazione di livellamento di livelli e no-good, se uno dei letterali del goal è mancante o mutex con un altro, allora si può concludere che non esiste soluzione
+*** Euristiche
+- utilizzate per focalizzare la ricerca
+  + stima la bontà di una scelta
+  + /progression/ e /regression/
+- definite a partire da un problema rilassato e risolto
+
+Esempi:
+- Spazio degli stati: Ricerca in avanti
+  + non ammissibile, complessa
+- Spazio degli stati: Ricerca all'indietro
+  + non ammissibile, ma pre-compilabile e quindi semplifica runtime
+- Spazio dei piani: Ricerca AND/OR
+  + Fewer Alternatives First (=FAF=)
+    - preferisce il flaw con minor numero di resolver
+    - più facile scoprire se flaw non risolvibile
+** Hierarchical Task Networks
+- Turing-completo
+- NP-completo
 ** CLIPS

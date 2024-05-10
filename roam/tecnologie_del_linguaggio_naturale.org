@@ -627,6 +627,269 @@ Ci sono molte sfumature della relazione /part-of/
     - superordinato
     - subordinato
 - l'appartenenza categoriale viene individuata nei termini di verosimiglianza con un /prototipo/
-** Teorie sulla natura del significato lessicale
 ** Teorie Duali
 - Daniel Kahneman
+- approccio duale al ragionamento
+  + *Dual Process Theories*, psicologia del ragionamento e razionalità
+  + due processi cognitivi
+    - sistema 1 e sistema 2
+      + implicito/esplicito
+      + automatico/controllabile
+      + evoluto prima/dopo
+      + linguaggio indipendente/legato al linguaggio
+      + parallelo, veloce/sequenziale, lento
+      + pragmatico, contestualizzato/logico, astratto
+- abilità concettuali categorizzabili in questi termini:
+  + S1: categorizzazione non monotona
+    - rappresentazione continua (sub-symbolic)
+  + S2: categorizzazione monotona
+    - rappresentazione proposizionale
+** Semantica Lessicale
+- disciplina che si occupa di stabilire cosa significhino le parole
+  + problemi: polisemia, semantica frasale
+  + analizza il contributo delle parola al significato della frase e come il contesto alteri il significato
+- *contesto*
+  + elementi adiacenti alla parola
+  + c. sintattico
+    - punto di vista proprietà sintattiche (nominale, verbale, aggettivale)
+  + c. semantico
+    - punto di vista proprietà semantiche
+  + c. linguistico (sintattico/semantico)
+  + c. situazionale (pragmatico/extralinguistico)
+- *ambiguità, polisemia*
+  + a. contrastiva (omonimia)
+  + a. complementare (polisemia)
+  + principio di economicità linguistica
+    - l'ambiguità contiene la dimensione del lessico
+    - verbi più polisemici perché completati dagli argomenti
+
+** Teorie sulla natura del significato lessicale
+- *teoria referenziale del significato*
+  + parole strumento attraverso il quale si fa riferimento all'esistente
+  + significato è la capacità di stabilire una relazione (riferimento) con elementi della realtà esistenti al di fuori della lingua
+  + riferimento:
+    - denotazione (classe di appartenenza)
+    - designazione (elemento della classe)
+  + 2 interpretazioni della s. referenziale
+    - ampia
+    - restrittiva
+      + 2 atti: riferimento e predicazione
+- *teoria mentalista o concettuale*
+  + arricchisce la t. precedente
+  + ipotesi: riferimento tra parole e realtà non è diretto ma mediato dall'immagine mentale che costruiamo
+    - immagini sono i /concetti/
+    - rappresentazioni mentali delle classi di oggetti
+    - i riferimenti sono alla concettualizzazione della realtà
+  + /mediazione concettuale/
+    - si parla di entità astratte/immaginarie
+    - eventi ipotetici
+  + concetti cognitivi/lessicalizzati
+    - primi instabili
+    - secondi stabili e socialmente condivisi
+- *teoria strutturale*
+  + significato consiste nel valore che la parola assume in relazione alle altre parole presenti nella lingua nello stesso campo semantico e che designano oggetti analoghi
+  + valore semantico è il contenuto informativo, acquisito per esclusione
+- *teoria dei prototipi*
+  + sviluppi della teoria mentalista
+  + prototipo elemento esemplare della categoria
+    - dispositivo fondamentale alla base della categorizzazione dell'esperienza
+  + alcuni elementi sono membri tipici e più rilevanti per rappresentare la classe
+    - al centro
+  + la categoria non ha confini netti
+    - tratti possono essere assenti o negati in entità che comunque appartengono alla categoria
+- *teoria distribuzionale*
+  + ipotesi distribuzionale di Harris (1956)
+    - significato determinato in larga misura dall'insieme di altre parole con cui co-occorrono
+    - parole simili quanto più lo sono i loro contesti di occorrenza
+  + ipotesi attuale per i /corpus/ di grandi dimensioni
+  + metafora geometrica di significato (vicinanza geometrica/semantica)
+    - rappresentazioni vettoriali
+** Calcolo Sintagmatico del Significato
+- qual'è il significato delle parole?
+- come si forma il significato delle frasi a partire dalle parole?
+- problemi:
+  + contestualità del significato
+  + polisemia delle parole
+- principio di composizionalità del significato
+  + come il significato degli enunciati si forma a partire dal significato degli elementi lessicali che li compongono
+  + il principio di c. si sospende per:
+    - espressioni idiomatiche
+    - metafore
+    - polisemia
+- 2 approcci
+  + enumerazione dei sensi
+    - antieconomico e incompleto
+  + concezione dinamica del significato
+    - parole come entità permeabili
+    - significato di ciascuna parola interagisce con quello delle parole adiacenti
+- pricipi di interazione semantica
+  + co-composizione
+    - significato del verbo (base) interagisce con i suoi argomenti modificandolo
+    - significato base (non variabile) + componenti semantiche portate dai complementi
+    - significato specificato dal complemento
+  + forzatura (/coercion/)
+    - verbo combinato con un nome specifico lo spinge a significare ciò che la semantica del verbo richiede
+    - verbi aspettuali richiedono che l'oggetto sia un evento
+  + legamento selettivo
+    - gruppi sostativo-aggettivo
+    - l'aggettivo può selezionare una porzione del significato del nome
+    - l'aggettivo seleziona nei nomi l'evento che soddisfa lo scopo tipico di questi nomi
+
+** WordNet
+- online lexical reference system
+- synonym sets
+  + rappresentano un concetto sottostante
+  + legati tra loro da relazioni diverse
+- ordimento alfabetico pone parole legate a grande distanza nella lista
+- 4 categorie
+  + nomi
+    - gerarchie
+  + verbi
+    - varietà di relazioni
+  + aggettivi
+    - iperspazi N-dimensionali
+  + avverbi
+    - iperspazi N-dimensionali
+- lexicalized concept & utterance
+  + concetto e segno
+- lexical matrix
+  + righe significati
+  + colonne significanti
+  + entry implica che una forma può essere usata per designare un significato
+    - entries nella stessa colonna indicano polisemia
+    - entries nella stessa riga indicano sinonimia
+- /synset/
+  + significato rappresentabile dalla lista delle forme che possono esprimerlo
+- /gloss/
+  + differenzia il senso di una specifica forma rispetto alle altre nel /synset/
+  + può essere pensato come un /synset/ di un solo membro
+- /semantic relations/
+  + relazioni tra significati e quindi tra /synset/
+  + rel. simmetriche
+  + sinonimia
+    - sostituzione non cambia il valore di verità di una frase
+      + questa definizione è molto forte e pochi sono i veri sinonimi
+      + definizione rilassata considerando il contesto di sinonimia
+  + antinonimia
+    - difficile da definire
+    - relazione lessicale tra forme, non una relazione semantica tra significati
+  + iponimia
+    - relazione semantica tra significati
+    - rel. transitiva, asimmetrica
+    - genera una struttura semantica gerarchica
+      + c'è ereditarietà delle feature di un concetto generico e aggiunge almeno una feature che distingue l'iponimo dagli altri
+  + meronimo
+    - relazione /part-whole/, =HASA=
+    - rel. transitiva, asimmetrica
+*** Nomi
+- sistema di ereditarietà lessicale
+- definizioni danno un termine superordinato + feature distintive
+  + feature distintive:
+    - attributi (modifica)
+    - parti (meronimia)
+    - funzioni (predicazione)
+- ogni dizionario contiene probabilmente dei circoli viziosi
+  + istanze in cui una parola A viene usata nella definizione della parola B che è usata per definire A
+- design fondamentale della memoria lessicale è che non sia un ciclo ma un albero
+  + un grafo aciclico
+- evidenze psicolinguistiche portano ad assumere una organizzazione secondo concetti superordinati gerarchicamente
+  + ip. tempi di reazione diversi per informazioni contenute /a monte/ nei concetti superordinati
+  + ip. i tempi di reazione indicano distanza pragmatica e non semantica
+*** Componenti Semantiche
+- gerarchia multipla
+  + nomi partizionati in set di primitive semantiche
+    - ognuno agisce come fonte di una gerarchia separata
+  + ogni gerarchia corrisponde a un campo semantico distinto con il proprio vocabolario
+  + un unico /beginner/ considerabile come componente semantica primitiva di tutte le parole nel suo campo semantico strutturato gerarchicamente
+- concetti generici
+  + livello in cui il più delle feature distintive si trovano
+  + basic-level categories / generic concepts
+- feature distintive
+  + dettagli dati dalle feature che distinguono i concetti tra loro
+  + 3 tipi: attributi, parti, funzioni
+*** Verbi
+- rete semantica
+- provvedono un framework relazionale e semantico per la frase
+  + struttura predicato-argomento (/subcategorization frame/)
+  + possibile struttura sintattica della frase
+- /subcategorization frames/
+  + legame tra nomi-argomenti e ruoli tematici/casi
+  + questa informazione sintattica e semantica è generalmente considerata parte dell'informazione lessicale del verbo
+- molti meno verbi che nomi
+  + maggiore polisemia
+  + significati più flessibili
+  + i verbi più frequenti sono anche i più polisemici e dipendono molto dai nomi con cui co-occorrono
+- troponimia
+  + dal greco /tropos/: maniera
+  + una specie di iponimia verbale
+  + verbo A è verbo B in una particolare maniera (intensità, causa)
+  + la gerarchia non può essere facilmente definita con un albero
+** FrameNet
+- frame = tipologia di situazione, contesto
+- il significato alle parole viene assegnato assecondando il /frame/ in cui si opera
+- polisemia:
+  + un verbo con nominalizzazioni differenti che hanno significati distinti si può considerare polisemico
+- un /frame/ ha un vocabolario specifico che denomina i suoi constituenti
+  + vocabolario descrittivo degli elementi costituenti di ogni frame
+    - frame elements (=FEs=)
+- =FN= offre descrizioni di frame collegati e legami semantici tra parole per guidare giudizi di coerenza nell'analisi e nella disambiguazione
+** Text Processing
+*** Tokenization
+- splitting by word/sentence
+- distinzione:
+  + /content words/, informazioni sull'argomento del testo
+  + /context words/, informazioni sullo stile del testo
+*** Stemming
+- ~NLTK: snowball, porter~
+- ridurre le parole alla loro radice
+- avvicina al significato base della parola
+- due possibili errori:
+  + understemming, falso negativo
+  + overstemming, falso positivo
+*** POS Tagging
+- etichettatura delle parole secondo =POS=
+*** Lemmatization
+- riduce le parole al loro /lemma/ o forma canonica
+  + forma di dizionario o citazione
+- un lemma rappresenta un gruppo di parole detto /lessema/
+- la performance dei /lemmatizers/ può essere migliorata con l'aggiunta dell'informazione data dal =POS= tagging
+*** NER
+- named entity recognition
+- posti, persone, organizzazioni
+** N-gram Language Models
+- modelli che assegnano probabilità a sequenze di parole
+  + bigrammi, trigrammi, n-grammi
+  + può assegnare probabilità a intere frasi
+- si computa la probabilità di sequenze decomponendole tramite /chain rule/
+- non è possibile stimare le probabilità semplicemente contando le occorrenze data una storia in un corpus esteso
+  + il linguaggio è creativo e anche sequenze semplici hanno frequenze nulle
+- la storia si può approssimare ad una finestra di parole precedenti
+  + /Markov assumption/, probabilità di una parole dipendente solo dalla precedente
+
+Forma generale per n-grammi:
+$$P(w_{1:n}) \simeq \prod_{k=1}^n P(w_k | w_{k-1})$$
+Le probabilità degli n-grammi sono poi normalizzate per le frequenze dei termini.
+Per evitare /underflow/ nel moltiplicare tante probabilità molto piccole si utilizzano le probabilità logaritmiche agendo poi di somme.
+*** Valutazione
+- estrinsica
+  + tramite utilizzo, misura del miglioramento dell'applicativo
+- intrinsica
+  + misura della qualità in maniera indipendente
+  + training e test set
+- /perplexity/
+  + frase fuori dal training set, probabilità alte buone
+  + =PPL= bassa indica che la frase è modellata bene
+- assunzioni di vocabolario
+  + chiuso, le parole utilizzate sono tutte conosciute
+  + aperto, si possono incontrare parole sconosciute
+    - out of vocabulary =OOV= words, =OOV= rate
+    - =UNK= words
+      + convertire parole sconosciute in =UNK= e poi trattarle come se conosciute
+      + creare vocabolario chiuse implicitamente sostituendo tutte le parole in training con frequenza sotto threshold con =UNK=
+*** Smoothing
+- vogliamo impedire che il modello assegni probabilità zero a eventi sconosciuti
+- /Laplace smoothing/
+  + +1 prima di normalizzare le probabilità
+- /interpolation/
+  + mix delle probabilità degli stimatori pesata
+  + combinando trigrammi, bigrammi, unigrammi
