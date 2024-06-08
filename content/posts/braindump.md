@@ -1,5 +1,6 @@
 +++
 title = "Braindump"
+author = ["Daniel Biasiotto"]
 date = 2021-12-28T16:22:00+01:00
 tags = ["article"]
 draft = false

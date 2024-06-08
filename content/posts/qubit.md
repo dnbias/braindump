@@ -1,5 +1,6 @@
 +++
 title = "QuBit"
+author = ["Daniel Biasiotto"]
 date = 2022-06-08T19:47:00+02:00
 tags = ["compsci"]
 draft = false

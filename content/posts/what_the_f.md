@@ -1,5 +1,6 @@
 +++
 title = "What the F"
+author = ["Daniel Biasiotto"]
 date = 2022-09-24T00:15:00+02:00
 tags = ["article", "language"]
 draft = false

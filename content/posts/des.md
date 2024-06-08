@@ -1,5 +1,6 @@
 +++
 title = "Data Encryption Standard"
+author = ["Daniel Biasiotto"]
 date = 2022-03-09T17:27:00+01:00
 draft = false
 +++
@@ -34,7 +35,7 @@ Struttura simile al [Feistel Cipher]({{< relref "feistel_cipher.md" >}}), ne dif
 -   \\(K\\) é la chiave
 -   \\(C\\) é il ciphertext
 
-{{< figure src="/ox-hugo/DES.png" >}}
+{{< figure src="../media/img/DES.png" >}}
 
 La sue debolezze sono:
 

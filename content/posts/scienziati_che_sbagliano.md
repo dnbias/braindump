@@ -1,5 +1,6 @@
 +++
 title = "Scienziati che sbagliano"
+author = ["Daniel Biasiotto"]
 date = 2022-09-23T22:00:00+02:00
 tags = ["article", "science", "method"]
 draft = false

@@ -1,5 +1,6 @@
 +++
 title = "Sicurezza Reti e Calcolatori"
+author = ["Daniel Biasiotto"]
 date = 2022-03-09T17:01:00+01:00
 tags = ["university", "security"]
 draft = false
@@ -131,7 +132,7 @@ Questi cifrari non sostituiscono quelli tradizionali, simmetrici, in quanto piú
 3.  **Key Exchange**
     -   parts work together  to exchange a common secret key
 
-{{< figure src="/ox-hugo/public-key-applications.jpg" >}}
+{{< figure src="../media/img/public-key-applications.jpg" >}}
 
 
 ## Funzioni di Hash {#funzioni-di-hash}
@@ -157,7 +158,7 @@ Queste funzioni di hash sono utilizzate per:
 -   `intrusion detection`
 -   `virus detection`
 
-{{< figure src="/ox-hugo/secure-hash-code.jpg" >}}
+{{< figure src="../media/img/secure-hash-code.jpg" >}}
 
 La funzione di hash piú utilizzata in tempi recenti é stato il [Secure Hash Algorithm]({{< relref "secure_hash_algorithm.md" >}})
 

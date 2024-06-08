@@ -1,5 +1,6 @@
 +++
 title = "DuckDuckGo’s Quest to Prove Online Privacy Is Possible"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 

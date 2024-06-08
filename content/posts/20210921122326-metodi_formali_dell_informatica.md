@@ -1,5 +1,6 @@
 +++
 title = "Metodi Formali dell'Informatica"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -277,9 +278,9 @@ aval: aexp -> state -> val
 \\(FVa\\): l'insieme delle variabili libere in \\(a \in aexp\\)
 
 ```text
-FV (N n) = nil
-FV (V x) = { n }
-FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
+  FV (N n) = nil
+  FV (V x) = { n }
+  FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
 ```
 
 <!--list-separator-->
@@ -297,10 +298,10 @@ FV (Plus a_1 a_2) = (FVa_1) U (FVa_2)
 \\(a[a^{'}/x]\\) intendiama la <span class="underline">sostituzione di x con a' in a</span>
 
 ```text
-(N n)[a'/x] = N n
-(V x)[a'/x] = a'
-(V y)[a'/x] = V y
-(Plus a_1 a_2)[a'/x] = Plus a_1[a'/x] a_2[a'/x]
+  (N n)[a'/x] = N n
+  (V x)[a'/x] = a'
+  (V y)[a'/x] = V y
+  (Plus a_1 a_2)[a'/x] = Plus a_1[a'/x] a_2[a'/x]
 ```
 
 **Modifica delle variabili**

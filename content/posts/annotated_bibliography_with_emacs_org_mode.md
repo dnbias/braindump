@@ -1,5 +1,6 @@
 +++
 title = "Annotated Bibliography with Emacs org-mode"
+author = ["Daniel Biasiotto"]
 date = 2022-06-16T18:41:00+02:00
 tags = ["article"]
 draft = false

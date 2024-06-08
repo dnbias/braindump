@@ -1477,3 +1477,35 @@ build content/posts/monopolies_are_a_single_point_of_failure.md: org2md roam/mon
 build content/posts/monopolies_slow_innovation_to_maintain_market_control.md: org2md roam/monopolies_slow_innovation_to_maintain_market_control.org
 
 build content/posts/a_closed_controlled_and_optimized_information_system_owned_by_a_monopoly_is_not_desirable.md: org2md roam/a_closed_controlled_and_optimized_information_system_owned_by_a_monopoly_is_not_desirable.org
+
+build content/posts/tecnologie_del_linguaggio_naturale.md: org2md roam/tecnologie_del_linguaggio_naturale.org
+
+build content/posts/speech_and_language_processing.md: org2md roam/speech_and_language_processing.org
+
+build content/posts/nlp.md: org2md roam/nlp.org
+
+build content/posts/imitation_game.md: org2md roam/imitation_game.org
+
+build content/posts/winograd_schema_challenge.md: org2md roam/winograd_schema_challenge.org
+
+build content/posts/chompsky.md: org2md roam/chompsky.org
+
+build content/posts/eliva.md: org2md roam/eliva.org
+
+build content/posts/ialab.md: org2md roam/ialab.org
+
+build content/posts/lucien_tesniere.md: org2md roam/lucien_tesniere.org
+
+build content/posts/ottimizzazione_combinatoria.md: org2md roam/ottimizzazione_combinatoria.org
+
+build content/posts/parsing_english_in_500_lines_of_python.md: org2md roam/parsing_english_in_500_lines_of_python.org
+
+build content/posts/italian_projective_dependency_parser.md: org2md roam/italian_projective_dependency_parser.org
+
+build content/posts/pragmaticism.md: org2md roam/pragmaticism.org
+
+build content/posts/pragmatism.md: org2md roam/pragmatism.org
+
+build content/posts/c_s_peirce.md: org2md roam/c_s_peirce.org
+
+build content/posts/data_mining.md: org2md roam/data_mining.org

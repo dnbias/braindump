@@ -1,11 +1,12 @@
 +++
 title = "Secure Hash Algorithm"
+author = ["Daniel Biasiotto"]
 date = 2022-04-15T01:40:00+02:00
 tags = ["security"]
 draft = false
 +++
 
-{{< figure src="/ox-hugo/SHAs.jpg" >}}
+{{< figure src="../media/img/SHAs.jpg" >}}
 
 `SHA` is based on the hash function `MD4`.
 `SHA-256` and `SHA-384` and `SHA-512` are collectively known as `SHA-2`.
@@ -19,4 +20,4 @@ draft = false
 4.  Process message in 1024-bit blocks
 5.  Output
 
-{{< figure src="/ox-hugo/SHA-512-single-round.jpg" >}}
+{{< figure src="../media/img/SHA-512-single-round.jpg" >}}

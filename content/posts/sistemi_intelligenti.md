@@ -959,7 +959,7 @@ Questo é utilizzato nella dimostrazione per _refutazione_.
     -   ogni clausola é applicata al più una volta
     -   però sono applicate clausole inutili per il _target_
 
-    {{< figure src="/ox-hugo/forward-chaining.jpg" >}}
+    {{< figure src="../media/img/forward-chaining.jpg" >}}
 
 <!--list-separator-->
 
@@ -970,7 +970,7 @@ Questo é utilizzato nella dimostrazione per _refutazione_.
     -   piú efficiente del `Forward Chaining`
     -   <span class="underline">meno che lineare</span>
 
-    {{< figure src="/ox-hugo/backward-chaining.jpg" >}}
+    {{< figure src="../media/img/backward-chaining.jpg" >}}
 
 
 #### First Order Logic {#first-order-logic}
@@ -1746,11 +1746,11 @@ Struttura:
 \\[\text{net} = \sum\_{i=1}^{n} w\_{i}x\_{i}\\]
 \\[f(\text{net}) = \begin{cases}1 \quad \text{net}\ge \theta \\\ 0 \quad \text{altrimenti} \end{cases}\\]
 
-{{< figure src="/ox-hugo/perceptron.png" caption="<span class=\"figure-number\">Figure 1: </span>definizione di un perceptron" >}}
+{{< figure src="../media/img/perceptron.png" caption="<span class=\"figure-number\">Figure 1: </span>definizione di un perceptron" >}}
 
 Questa discontinuitá sulla soglia é stata sostituita successivamente da una sigmoide.
 \\[f(\text{net}) = \frac{1}{1 + e ^{-\alpha(\text{net}- \theta)}}\\]
-![](/ox-hugo/sigmoid-curve.png)
+![](../media/img/sigmoid-curve.png)
 
 Il percettrone codifica un _test lineare_. Delinea un iperpiano/iperspazio che divide lo spazio in due metá
 
@@ -1772,7 +1772,7 @@ I \\(w\_{j}\\) sono prodotti incrementalmente tramite questo processo e sono dep
 
 -   l'apprendimento si ferma quando i cambiamenti ai pesi rallentano
 
-{{< figure src="/ox-hugo/perceptron-learning.jpg" caption="<span class=\"figure-number\">Figure 2: </span>processo di learning di un perceptron" >}}
+{{< figure src="../media/img/perceptron-learning.jpg" caption="<span class=\"figure-number\">Figure 2: </span>processo di learning di un perceptron" >}}
 
 <!--list-separator-->
 
@@ -1788,7 +1788,7 @@ I \\(w\_{j}\\) sono prodotti incrementalmente tramite questo processo e sono dep
     | 0 | 0 | -            |
 
     Non é risolvibile da un singolo perceptron, solo con tecniche piú sofisticate utilizzandone un altro.
-    ![](/ox-hugo/perceptron-xor.png)
+    ![](../media/img/perceptron-xor.png)
 
 
 #### Multilayer Perceptron {#multilayer-perceptron}
@@ -1807,7 +1807,7 @@ I dati viaggiano in un'unica direzione e é _pienamente connessa_
 
 -   tutti i neuroni di un livello sono collegati a tutti quelli dello strato successivo
 
-{{< figure src="/ox-hugo/multilayer-perceptron.png" caption="<span class=\"figure-number\">Figure 3: </span>struttura di un multilayer perceptron" >}}
+{{< figure src="../media/img/multilayer-perceptron.png" caption="<span class=\"figure-number\">Figure 3: </span>struttura di un multilayer perceptron" >}}
 
 I livelli di percettori _hidden_ possono identificare regioni dello spazio dei dati piú complesse
 

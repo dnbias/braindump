@@ -1,5 +1,6 @@
 +++
 title = "The Necessity of Marginalia in the Age of the Ebook"
+author = ["Daniel Biasiotto"]
 date = 2021-12-29T02:12:00+01:00
 tags = ["article"]
 draft = false

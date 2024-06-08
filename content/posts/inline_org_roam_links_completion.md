@@ -1,5 +1,6 @@
 +++
 title = "Inline org-roam links completion"
+author = ["Daniel Biasiotto"]
 date = 2022-10-06T07:32:00+02:00
 tags = ["til"]
 draft = false

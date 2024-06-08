@@ -76,13 +76,13 @@ La Macchina di Turing essendo estremamente semplice é ottima per lo studio dell
 
 -  Stringhe Uguali
 
-    {{< figure src="/ox-hugo/grafoEs1.jpg" >}}
+    {{< figure src="../media/img/grafoEs1.jpg" >}}
 
 <!--list-separator-->
 
 -  Stringa di 0 di lunghezza 2^n
 
-    {{< figure src="/ox-hugo/graphPowerOfTwoLength.jpg" >}}
+    {{< figure src="../media/img/graphPowerOfTwoLength.jpg" >}}
 
 
 #### Macchine Turing a piú registri {#macchine-turing-a-piú-registri}
@@ -99,7 +99,7 @@ Si puó simulare una `MT` a piú nastri con una `MT` ad un nastro solo
 -   perché? per semplificare la definizione di calcolo
 -   se un algoritmo a piú nastri é lineare su un nastro sará **quadratico**
 
-{{< figure src="/ox-hugo/3tapes1tape.jpg" >}}
+{{< figure src="../media/img/3tapes1tape.jpg" >}}
 
 
 #### Enumeratori {#enumeratori}
@@ -132,7 +132,7 @@ Viceversa se una stringa appartiene ad \\(L\\) questa viene accettata in un nume
 ### Decidibilità {#decidibilità}
 
 Per un `DFA` possiamo definire una `TM M` che lo simula e verifica l'accettazione o meno dell'Input
-[Decidable - Turing-recognizable](/ox-hugo/decidable-recognizable.jpg)
+[Decidable - Turing-recognizable](../media/img/decidable-recognizable.jpg)
 
 -   `NFA` convertibili
 -   `RegEx` convertibili
@@ -206,7 +206,7 @@ se esiste una _funzione computazionale_ \\(f\\) tale che:
 
 \\(w \in L(A) \iff f(w) \in L(B)\\)
 
-{{< figure src="/ox-hugo/mapping-reducibility.jpg" >}}
+{{< figure src="../media/img/mapping-reducibility.jpg" >}}
 
 Seguono i corollari:
 
@@ -519,7 +519,7 @@ Per molti problemi si utilizza la tecnica della riduzione
 
 #### Configurazione di una TM {#configurazione-di-una-tm}
 
-{{< figure src="/ox-hugo/tm-configuration.jpg" caption="<span class=\"figure-number\">Figure 1: </span>configurazione di \\(1011 q\_{7} 01111\\)" >}}
+{{< figure src="../media/img/tm-configuration.jpg" caption="<span class=\"figure-number\">Figure 1: </span>configurazione di \\(1011 q\_{7} 01111\\)" >}}
 
 
 #### Recap {#recap}
@@ -575,7 +575,7 @@ Generalmente:
 Non si é riuscita a provare l'esistenza di un singolo linguaggio \\(\text{NP}\\) che non sia in \\(\text{P}\\)
 
 Piú grande problema aperto: \\(\text{P}=\text{NP}\\)
-![](/ox-hugo/P-NP.jpg)
+![](../media/img/P-NP.jpg)
 
 
 #### P {#p}

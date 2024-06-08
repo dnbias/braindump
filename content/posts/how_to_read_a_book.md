@@ -1,5 +1,6 @@
 +++
 title = "How to Read a Book"
+author = ["Daniel Biasiotto"]
 date = 2021-12-29T02:18:00+01:00
 tags = ["book"]
 draft = false

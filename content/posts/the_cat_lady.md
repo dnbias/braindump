@@ -1,5 +1,6 @@
 +++
 title = "The Cat Lady"
+author = ["Daniel Biasiotto"]
 date = 2021-12-27T23:44:00+01:00
 tags = ["videogame", "horror"]
 draft = false

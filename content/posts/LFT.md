@@ -1,5 +1,6 @@
 +++
 title = "Linguaggi Formali e Traduttori"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -212,7 +213,7 @@ Schema di traduzione, variante SDD che rende esplicito l'ordine di valutazione d
             -   che possono solo dipendere da attributi ereditati di \\(A\\) e attributi dei nodi
                 fratelli alla sua sinistra
     2.  in fondo alla produzione
-        a. azione semantica che calcola il valore degli attributi sintetizzati di \\(A\\)
+        1.  azione semantica che calcola il valore degli attributi sintetizzati di \\(A\\)
 
 
 #### Traduzione on the fly {#traduzione-on-the-fly}

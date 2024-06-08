@@ -1,5 +1,6 @@
 +++
 title = "Doom Icons in Daemon"
+author = ["Daniel Biasiotto"]
 date = 2022-06-27T18:07:00+02:00
 tags = ["til", "emacs"]
 draft = false

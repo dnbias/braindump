@@ -1,5 +1,6 @@
 +++
 title = "Kentucky Route Zero"
+author = ["Daniel Biasiotto"]
 tags = ["videogame"]
 draft = false
 +++

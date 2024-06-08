@@ -1,5 +1,6 @@
 +++
 title = "Introduction to the theory of Computation"
+author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

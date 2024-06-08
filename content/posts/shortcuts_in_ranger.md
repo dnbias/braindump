@@ -1,5 +1,6 @@
 +++
 title = "Shortcuts in Ranger"
+author = ["Daniel Biasiotto"]
 date = 2022-06-29T01:52:00+02:00
 tags = ["til"]
 draft = false

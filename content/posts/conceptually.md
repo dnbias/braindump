@@ -1,5 +1,6 @@
 +++
 title = "Conceptually"
+author = ["Daniel Biasiotto"]
 date = 2021-12-29T02:39:00+01:00
 tags = ["blog"]
 draft = false

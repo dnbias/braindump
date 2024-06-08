@@ -1,5 +1,6 @@
 +++
 title = "Net and Knives"
+author = ["Daniel Biasiotto"]
 date = 2021-12-28T19:45:00+01:00
 tags = ["concept"]
 draft = false

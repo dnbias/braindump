@@ -1,5 +1,6 @@
 +++
 title = "Keycaps Profiles"
+author = ["Daniel Biasiotto"]
 date = 2022-06-30T20:46:00+02:00
 tags = ["keyboard", "keycaps"]
 draft = false
@@ -9,7 +10,7 @@ Such complicated
 
 -   see [guide](https://teksbit.com/keycap-profiles-guide/)
 
-{{< figure src="/ox-hugo/Different-Keycap-profiles.jpg" >}}
+{{< figure src="~/Pictures/misc/Different-Keycap-profiles.jpg" >}}
 
 
 ## Links {#links}

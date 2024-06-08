@@ -1,5 +1,6 @@
 +++
 title = "Vestigia"
+author = ["Daniel Biasiotto"]
 date = 2021-12-28T19:58:00+01:00
 tags = ["italiano"]
 draft = false

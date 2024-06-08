@@ -1,5 +1,6 @@
 +++
 title = "How to Annotate Literally Everything"
+author = ["Daniel Biasiotto"]
 date = 2021-12-24T23:27:00+01:00
 tags = ["article"]
 draft = false

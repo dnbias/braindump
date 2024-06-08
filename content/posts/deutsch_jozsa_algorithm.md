@@ -1,5 +1,6 @@
 +++
 title = "Deutsch-Jozsa Algorithm"
+author = ["Daniel Biasiotto"]
 date = 2022-04-02T09:28:00+02:00
 tags = ["algorithms", "compsci"]
 draft = false
@@ -27,7 +28,7 @@ The algorithm can be extended to \\(n\\) qubits with functions of form
 and n-qubits oracles
 \\[U\_{f}|x\_{0} x\_{1}\cdots x\_{n}y\rangle = | x\_{0} x\_{1}\cdots x\_{n}\rangle \otimes | f(x\_{0}, x\_{1},\cdots,x\_{n}) \oplus y\rangle\\]
 
-{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 1: </span>Circuit for Deutsch-Jozsa" >}}
+{{< figure src="../media/img/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 1: </span>Circuit for Deutsch-Jozsa" >}}
 
 
 ## Code {#code}

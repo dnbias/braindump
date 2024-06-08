@@ -1,5 +1,6 @@
 +++
 title = "Generate IDs for headings in JS"
+author = ["Daniel Biasiotto"]
 date = 2022-05-13T18:58:00+02:00
 tags = ["til"]
 draft = false

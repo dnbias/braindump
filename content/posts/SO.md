@@ -1,5 +1,6 @@
 +++
 title = "Sistemi Operativi"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -1204,7 +1205,7 @@ La sincronizzazione é un problema solamente se si effettuano scritture su memor
 
 Va sviluppato un protocollo usato dai processi che vanno ad usare variabili condivise
 Il codice sará strutturato in questo modo:
-		`entry section`
+                `entry section`
 
 -   richiesta di entrare nella sezione critica
     `sezione critica`
@@ -2284,8 +2285,8 @@ parametro `lostfree` associato alla lista dei frame liberi
         -   variante dell'algoritmo della seconda chance
             1.  scandisce le pagine in RAM azzerandone bit di riferimento
             2.  riscandisce e le pagine con il bit di riferimento a 0 vengono considerate riutilizzabili
-                a. dirty bit a 1 vengono prima salvate prima di essere riutilizzate
-                b. se un processo fa riferimento ad una pagina riutilizzabile in attesa di essere salvata questa viene riassegnata a quel processo
+                1.  dirty bit a 1 vengono prima salvate prima di essere riutilizzate
+                2.  se un processo fa riferimento ad una pagina riutilizzabile in attesa di essere salvata questa viene riassegnata a quel processo
         -   il tempo tra due pageout puó variare in base a parametri dell'OS
             -   ma sempre nell'ordine di qualche secondo
         -   se il pageout non riesce a mantenere la quantitá di frame ad un livello accettabile é possibile si stia verificando il `thrashing`

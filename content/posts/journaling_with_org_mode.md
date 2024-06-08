@@ -1,5 +1,6 @@
 +++
 title = "Journaling with org-mode"
+author = ["Daniel Biasiotto"]
 date = 2022-11-29T16:37:00+01:00
 draft = false
 +++

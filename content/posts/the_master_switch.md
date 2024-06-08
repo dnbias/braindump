@@ -47,5 +47,5 @@ draft = false
 
 ## Q/E/C {#q-e-c}
 
--   Can a monopoly be beneficial in improving a service?
+-   [Can a monopoly be beneficial in improving a service?]({{< relref "can_a_monopoly_be_beneficial_in_improving_a_service.md" >}})
 -   [Can free speech be controlled by industry?]({{< relref "can_free_speech_be_controlled_by_industry.md" >}})

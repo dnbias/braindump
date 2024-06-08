@@ -1,5 +1,6 @@
 +++
 title = "David Hume"
+author = ["Daniel Biasiotto"]
 date = 2022-01-02T23:50:00+01:00
 tags = ["author"]
 draft = false

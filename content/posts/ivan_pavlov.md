@@ -1,5 +1,6 @@
 +++
 title = "Ivan Pavlov"
+author = ["Daniel Biasiotto"]
 date = 2022-01-03T16:03:00+01:00
 tags = ["author"]
 draft = false

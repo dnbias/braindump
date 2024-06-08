@@ -8,4 +8,4 @@ draft = false
 
 -   [Neural Network]({{< relref "20210606215832-neural_network.md" >}})
 
-{{< figure src="/ox-hugo/transformer.png" >}}
+{{< figure src="~/Pictures/misc/transformer.png" >}}
