@@ -1,0 +1,8 @@
+:PROPERTIES:
+:ID:       2a9268e6-9a2d-4db5-a886-f3b5a5d8752a
+:END:
+#+title: C.S Peirce
+#+date: [2024-06-08 Sat 07:49]
+#+filetags: :philosophy:philosopher:author:
+1839-1914
+- Related: [[id:549abf33-8fd6-4646-b7f0-f02def8e4e6e][Semiotics]], [[id:549abf33-8fd6-4646-b7f0-f02def8e4e6e][Semiotica]], [[id:cb4807c4-dbf3-4892-ac36-a9926c77cb15][Pragmatism]], [[id:381c3265-847a-4ad2-87cf-195ab85bf3c0][Pragmaticism]]

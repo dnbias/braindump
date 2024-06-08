@@ -893,3 +893,220 @@ Per evitare /underflow/ nel moltiplicare tante probabilità molto piccole si uti
 - /interpolation/
   + mix delle probabilità degli stimatori pesata
   + combinando trigrammi, bigrammi, unigrammi
+
+
+* Approcci alla Semantica
+- semplificando:
+  + s. lessicale
+  + s. formale
+  + s. statistica
+  + s. linguistico-distribuzionale
+    - linguistico+statistico
+
+Si illustrano il *Text Mining* (statistico) e poi approccio distribuzionale.
+
+** Significato
+Tre principali teorie sulla costruzione del significato (/word meaning/)
+- primitive
+  + Kats, Wilks,  Lakoff
+- relazioni
+  + Quinlan, Fodor
+  + di per se una parola non ha significato, lo acquisisce nel contesto
+- composizioni
+  + Pustejovski
+  + le singole parole acquisiscono significato con  le loro relazioni ma creano anche significato composti quando messe insieme
+
+*** Triangolo Semiotico
+- [[id:2a9268e6-9a2d-4db5-a886-f3b5a5d8752a][C.S Peirce]]
+1. *concetto* (significato, interpretazione)
+2. *referente* (fenomeno, istanza)
+3. *rappresentazione* (segno, termine, simbolo)
+
+*** Granularità
+La visione sulla struttura semantica può avere una certa profondità:
+- parola
+- chunk
+- frase
+- discorso
+- documento
+- collezione di documenti
+
+*** Word Sense Disambiguation
+=WSD=
+
+Identificazione del senso di una parola polisemica in una frase.
+- bisogno di un /Sense Inventory/ come WordNet
+*** Word Sense Induction
+=WSI=
+
+Identificazione automatica dei sensi di una parola dato il suo uso in un corpus.
+- cattura i contesti che attribuiscono specifici significati
+- non ci si basa su risorse esterne
+- metodo /pseudoword/, accorpando i termini di cui definire e comparare i cluster
+
+** Costruzione del Significato
+*** Pustejovsky
+Teoria del /generative lexicon/, elegante ed espressiva ma complessa da implementare.
+- *Argument Structure*
+- *Event Structure*
+- *Qualia Structure*
+  + 4 ruoli
+    - costitutivo: parte composizionale del concetto, materiale
+    - formale: definizione che definisce il concetto dagli altri del dominio
+    - telico: rappresenta l'obiettivo e la funzione del concetto
+    - agentive: entità che rappresentano l'origine del concetto
+- *Inheritance Structure*
+
+*** Hanks
+Teoria delle *valenze*
+- /valenza/ è la cardinalità degli argomenti che compongono la struttura radicata nel verbo
+  + argomenti chiamati /slot/
+- *Collocazione*
+  + combinazione di tutti i possibili /filler/ degli slot
+  + combinazione fatta tramite grandi quantità di dati
+- *Semantic Type*
+  + macro-categorie che raggruppano i vari /filler/
+  + per ogni slot
+*** Affordance Linguistiche
+- /affordance/ termine coniato dallo psicologo americano James Gibson
+  + teoria per cui l'uso di un oggetto è suggerito dall'oggetto stesso
+- la teoria è proiettata sul linguaggio
+  + ogni parola ha un suo uso che essa stessa suggerisce
+  + in particolare è il contesto che ci da un'idea precisa di cosa significhi una parola sconosciuta
+#+begin_quote
+Yesterday I saw a ~grest~ with a telescope, it was very fast.
+#+end_quote
+
+**** Potenza generativa dei pattern
+#+begin_quote
+Lorem * dolor sit *, consectetur adipiscing *.
+#+end_quote
+- /linguistic instances/ occorrenze un pattern in un corpus
+- detti anche *pattern non lessicalizzati*
+- le proprietà associabili ai filler sono raggrupparli attraverso concettualizzazioni
+  + in cluster
+  + legare co-occorrenze degli elementi per ciascun filler
+- per un pattern il primo filler avrà date proprietà, il secondo altre, etc.
+  + per una frase di senso compiuto in quel contesto
+- potere espressivo e generativo maggiore del modello Hanks
+  + altro vantaggio è l'andamento logaritmico del numero di proprietà aggiunte in funzione dei termini aggiunti
+    - inizialmente molte proprietà nuove, poi molte ripetute
+- le relazioni possono ricavarsi:
+  + *paradigmatiche*, da FrameNet o WordNet
+  + *sintagmatiche*, da corpora
+  + o ancora da annotazioni manuali, questionari, ML
+
+** Text Mining
+- applicazioni di [[id:ec34a130-917a-4934-838e-5bf6c109584a][Data Mining]] al testo
+- approccio statistico di tipo bottom-up, partendo dall'analisi qualitativa e quantitativa di fenomeni specifici per effettuare inferenze
+  + contrapposta all'analisi classica invece top-down, a partire dalle regole della linguistica
+- codifica di parole come /token/
+  + sequenza di caratteri senza alcuna valenza lessicale
+- si utilizza la rappresentazione vettoriale di questi token[fn:: Rappresentazione inventata da Salton nel '74]
+  + indicizzati in un dizionario che riporta le frequenze, codificando l'importanza di ogni parola nel testo
+  + con più corpus otteniamo una matrice sparsa, il dizionario considera tutta la collezione documentale
+  + estremamente efficiente in quanto basata sul prodotto di vettori
+  + misura di similarità /cosine similarity/
+    - $$\cos (\theta) = \frac{A\cdot B}{||A|| ||B||}$$
+    - prodotto degli elementi di vettori diviso per le norme dei vettori
+    - coseno misura l'angolo tra due punti[fn:: Ogni documento è visto come un punto prendendo in considerazione il vettore corrispondente] dello spazio multi-dimensionale
+*** Metodi Statistici
+- frequenza
+  + *TF-IDF*, /Term Frequency/ normalizzata sulla lunghezza e /Inverse Document Frequency/
+    - $$\frac{n_{i,j}}{|d_j|} \times \log \frac{|D|}{|\{d : i\in d\}|}$$
+- co-occorrenza
+  + assume che parole di simile significato occorrano negli stessi contesti
+  + rappresentata in matrice diagonale $|D| \times |D|$
+  + mentre una cosine similarity potrebbe dare 0 per sinonimi la co-occorrenza probabilmente no
+*** Applicazioni
+- Tag Clouds
+- Tag Flake
+- Document Clustering
+- Document Classification
+- Document Segmentation[fn:: Una sorta di topic modeling ma sequenziale e intradocumentale]
+- Document Summarization[fn:: valutati utilizzando ROUGE (Recall-Oriented Understudy for Gisting Evaluation)]
+  + estrattivi, estraggono le frasi più importanti[fn:: Uno degli algoritmi storici è TextRank]
+  + astrattivi, generalmente molto più complessi richiedono di nuovo contenuto testuale
+- Information Retrieval
+** Semantica Distribuzionale
+#+begin_quote
+Le parole che si verificano negli stessi contesti tendono ad avere significati simili. -- Harris '57
+#+end_quote
+#+begin_quote
+Una parola è caratterizzata dalla compagnia che mantiene. -- Firth
+#+end_quote
+#+begin_quote
+L'uso congiunto delle parole serve principalmente a specificare più strettamente l'oggetto del discorso. -- Furnas '83
+#+end_quote
+#+begin_quote
+C'è una struttura semantica latente sottostante nei dati che è parzialmente oscurata dalla casualità della scelta delle parole rispetto al loro recupero. -- Deerwester '90
+#+end_quote
+#+begin_quote
+L'argomento del documento influenzerà in modo probabilistico la scelta delle parole dell'autore durante la scrittura del documento. -- Blei 2003
+#+end_quote
+#+begin_quote
+Coppie di parole che si verificano in modelli simili tendono ad vere relazioni semantiche simili. -- Turney 2003
+#+end_quote
+
+Ci si riferisce alla semantica distribuzionale in modi diversi in comunità differenti:
+- /Distributional Hypothesis/ in linguistica
+- /Distributional Semantics/ in ambito di [[id:2f40aa67-3b3b-4cce-99bf-65b21ab34165][NLP]]
+- /Latent Semantic Analysis/ o /Vector Space Models/ in ambito di information retrieval
+- /Conceptual Spaces/ o /Graded Categorization/ in ambito di scienze cognitive
+- /Hyperspace Analogue to Language/ in psicometria
+- matrici di adiacenza in ambito di teoria dei grafi
+
+*** Perché Matrici
+- il linguaggio è un concetto approssimato come la rappresentazione vettoriale
+- le matrici sono a metà tra
+  + rappresentazione simbolica
+  + rappresentazione associazionistica
+- le matrici sono legate sia a
+  + /conceptual spaces/
+  + /prototype theory/
+    - prototipo come centroide delle categorie linguistiche nella mente
+*** Configurazioni matriciali
+Peter Turney in un suo articolo del 2010 categorizza:
+- /Term-Document/ matrix
+  + semplice
+  + per similarità/clustering/classificazione di documenti
+- /Term-Context/ matrix
+  + generalizzazione della precedente
+  + per similarità tra parole, dipendenza sintattica, =WSD=, Information Extraction
+- /Pair-Pattern/ matrix
+  + proposta da Turney
+  + coppie per ragioni computazionali
+  + per /relational similarity/, /pattern similarity/
+  + relational clustering/classification
+*** Similarità
+- /Semantic Similarity/
+  + più usata e mal interpretata
+  + concetti che hanno quasi lo stesso significato (sinonimia)
+- /Semantic Relatedness/
+  + spesso confusa con la precedente
+  + concetti con proprietà in comune, affinità semantica
+  + meronimi, antonimi, anche sinonimi
+  + spesso troppo generica per essere utilizzata in ambito operativo
+- /Attributional Similarity/
+  + stessa definizione precedente, in letteratura si preferisce s.r.
+- /Taxonomical Similarity/
+  + facilmente misurabile
+  + concetti che condividono iperonimi
+- /Relational Similarity/
+  + su coppie di concetti
+- /Semantic Association/
+  + termine dell'ambito delle scienze cognitive
+  + concetti che co-occorrono frequentemente
+
+Molte definizioni diverse portano a confusione nel campo e ad una certa fragilità del concetto di similarità.
+
+*** Word Order & Composizionalità
+- rappresentazioni matriciali non codificano l'ordine delle parole nel testo
+- si raggiunge un massimo di 80% di accuratezza senza considerare l'ordine
+  + accettabile per molte applicazioni
+- possibile:
+  + l'uso di pair-pattern per ovviare al problema
+  + vettori di ordinamento ausiliari
+- altro problema è quello della *composizionalità*
+  + il linguaggio e la semantica lo sono, i vettori no
+  + possibile soluzione è quella di combinare vettori per una rappresentazione composta [fn:: il vettore di ~vino~ e quello di ~rosso~ li combino per creare un vettore di ~vino rosso~ ]

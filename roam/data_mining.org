@@ -1,0 +1,5 @@
+:PROPERTIES:
+:ID:       ec34a130-917a-4934-838e-5bf6c109584a
+:END:
+#+title: Data Mining
+#+date: [2024-06-08 Sat 08:25]

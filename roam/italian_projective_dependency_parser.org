@@ -1,0 +1,31 @@
+:PROPERTIES:
+:ID:       cfd74497-ade8-4704-b9fa-a29414a38458
+:END:
+#+title: Italian Projective Dependency Parser
+#+filetags: :python:ai:project:university:
+#+date: [2024-06-06 Thu 19:59]
+- Related: [[id:1279b590-79e1-4c28-b046-29fd8f556f39][Parsing English in 500 Lines of Python]], [[id:2f40aa67-3b3b-4cce-99bf-65b21ab34165][NLP]], [[id:c35c6f86-c674-4e55-a354-4bcd6be12e41][TLN]]
+- Repo: https://github.com/dnbias/dependency-parser-it
+- ISDT: https://github.com/UniversalDependencies/UD_Italian-ISDT
+  + used commit =5bb0bf3=
+
+Run with:
+#+begin_src bash
+python parser.py model_dir wsj_train.dep wsj_train.pos wsj_test.dep
+#+end_src
+
+Obtain ~wsj_train.dep~[fn::https://explosion.ai/blog/parsing-english-in-python]:
+#+begin_src bash
+for f in $1/*.mrg; do
+    echo $f
+    grep -v CODE $f > "$f.2"
+    out="$f.dep"
+    java -mx800m -cp "$scriptdir/*:" edu.stanford.nlp.trees.EnglishGrammaticalStructure \
+-treeFile "$f.2" -basic -makeCopulaHead -conllx > $out
+done
+#+end_src
+
+Convert to ~conll-x~ format[fn::https://github.com/UniversalDependencies/tools]:
+#+begin_src bash
+perl conllu_to_conllx.pl < file.conllu > file.conll
+#+end_src
