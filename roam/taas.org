@@ -72,6 +72,25 @@ Offre funzionalità /on top of/ i componenti di gestione dati e database
 =EJB=
 Componenti sul lato server
 
+Implementa l'architettura 3-tier presentation/business/data
+- questa architettura è basata sul design-pattern =Model View Controller=, ma in questi casi di architetture di grandi dimensioni è più corretto parlare di tier
+
+- differenti dai Java Beans classici
+- tipologie:
+  + Session Beans
+    - stateless/stateful
+    - modellano la business logic nell'interazione tra utente e servizio
+    - vivono per il tempo della connessione
+  + Singleton Beans
+    - implementano per quanto riguarda i middleware il pattern omonimo di [[id:d7a405a8-b5c7-4d50-b5a7-375a7743622d][GoF]]
+    - permettono di gestire informazioni condivise in tutta l'applicazione e non legate alla sessione
+  + Message Beans
+    - vita breve, gestiscono messaggi
+  + Entity Beans
+    - modellano informazioni persistenti
+    - fanno da tramite tra il programmatore e l'api di JPA/Jakarta in cui si gestisce l'interazione vera e propria con il database
+
+
 
 * Single Page Application
 Le interazioni sono gestite dal client che richiama il server solo per le richieste dati necessarie alle interazioni utente.
@@ -118,9 +137,15 @@ Questi =web-service= sono
 
 Gli  standard =XML= sono:
 - [[id:732177e4-9a00-43f9-8201-f8d7503c7e49][SOAP]], simple object access protocol
+  + più espressivo di REST, permette invocazioni di procedure
+  + utilizzato per l'utilizzo tramite protocollo di servizi
+    - i protocolli possono essere locali o http
+  + richieste e risposte in =XML=
 - [[id:6b8ae378-aab8-4bc2-abd7-b41bfaee6abe][WSDL]], web services description language
+  + descrive l'interfaccia di un servizio
+  + human readable
 - [[id:f6b50988-4a42-4af6-bcca-aa101b318c00][UDDI]], universal description, discovery and integration
-  + Microsoft
+  + Microsoft/IBM
   + interrogati da applicazioni in rete
   + sostanzialmente delle pagine gialle per =SOAP=
   + provvedono contact/business information
@@ -143,7 +168,9 @@ La differenza con [[id:99a43f32-dfa7-485a-bb13-b31d9776fa5d][REST]] è che con q
 - il tipo di contenuto che viene restituito sta al programmatore
   + spesso =JSON=, =XML=
 - i siti web sono =RESTful=
-- non ha l'espressività di [[id:6b8ae378-aab8-4bc2-abd7-b41bfaee6abe][WSDL]]
+  + prettamente tramite protocollo http
+- non ha l'espressività di [[id:6b8ae378-aab8-4bc2-abd7-b41bfaee6abe][WSDL]]/[[id:732177e4-9a00-43f9-8201-f8d7503c7e49][SOAP]]
+  + ne sono un alternativa leggera, stateless
 
 Utilizzo dei metodi =http=
 - =GET=
@@ -157,11 +184,11 @@ Il microservizio è una componente che offre un servizio ben definito e indipend
 - /autonomous, independently deployable/
   + questi collaborano all'interno dell'applicazione
   + facilita anche il debugging grazie all'isolamento e permette di incapsulare librerie di terzi all'interno di microservizi ad-hoc
-  + si vuole semplificale il più possibile l'uso da parte dell'utente, non forzare scelte implementative a valle
+  + si vuole semplificare il più possibile l'uso da parte dell'utente, non forzare scelte implementative a valle
 - ridurre ulteriormente le dimensioni dei servizi e renderli completamente indipendenti gli uni dagli altri
   + una architettura monolitica può funzionare per un progetto piccolo di dimensioni di /codebase/ sia per team
 - =db= diversi per ogni microservizio
-  + questo porta anche degli svantaggi
+  + questo porta anche degli svantaggi e difficoltà per quanto riguarda la consistenza
 - il /load balancer/ diventa parte dell'architettura stessa, da subito posto l'accento sulla scalabilità
 - [[id:9a407eb2-8f01-4f30-9ad6-a01e0539615f][SOA]] tradizionalmente risultava in servizi monolitici, per mancanza di comprensione della dimensione ideale di un servizio
 - la indipendenza e la dimensione ridotta dei servizi permette più facilmente la gestione da parte di un team e facilità la collaborazione tramite le =API=
@@ -190,3 +217,9 @@ I microservizi possono essere in 3 stadi/ambienti
 * Distributed Monoliths
 - singolo =db= condiviso
 - servizi divisi ma che vanno rilasciati insieme e hanno forti interdipendenze
+* Pattern
+- Saga Flow
+  + per garantire =ACID= e consistency in operazioni che coinvolgono multipli servizi
+  + per quando non è possibile/conveniente utilizzare =2PC=
+  + ogni servizio esegue una transazione con il database che deve essere atomica e passa a catena il compito di continuare l'operazione al prossimo partecipante
+  + qualsiasi partecipante può annullare tutte le transazioni in caso di fallimento con un messaggio asincrono che risalga la catena
