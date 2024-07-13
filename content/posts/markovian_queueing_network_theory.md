@@ -1,5 +1,6 @@
 +++
 title = "Markovian Queueing Network Theory"
+author = ["Daniel Biasiotto"]
 date = 2022-10-06T06:39:00+02:00
 tags = ["compsci", "simulation"]
 draft = false

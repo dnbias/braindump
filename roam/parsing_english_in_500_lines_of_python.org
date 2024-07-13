@@ -1,0 +1,23 @@
+:PROPERTIES:
+:ID:       1279b590-79e1-4c28-b046-29fd8f556f39
+:END:
+#+title: Parsing English in 500 Lines of Python
+#+date: [2024-06-06 Thu 19:34]
+#+filetags: :article:
+- Source: https://explosion.ai/blog/parsing-english-in-python
+- Author: Matthew Honnibal
+- Related: [[id:c35c6f86-c674-4e55-a354-4bcd6be12e41][TLN]], [[id:b7330c27-133a-4c8a-9e5b-17f8c1d71f0b][Python]], [[id:b3a0aa55-d105-4e8f-8497-4421b31739eb][Artificial Intelligence]], [[id:2f40aa67-3b3b-4cce-99bf-65b21ab34165][NLP]]
+
+* Notes
+#+begin_quote
+They ate the pizza with anchovies
+#+end_quote
+- correct parsing links /with/ to /pizza/
+- incorrect parsing links /with/ to /eat/
+
+#+ATTR_ORG: :width 700
+[[https://explosion.ai/blog/anchovies_parse.svg]]
+
+- implementation: https://gist.github.com/syllog1sm/10343947
+- idea: should be slightly easier to reason from the parse
+  + ~parse-to-meaning~ mapping simpler than ~string-to-meaning~ mapping

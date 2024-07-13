@@ -1,5 +1,6 @@
 +++
 title = "Basi di Dati"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -817,51 +818,39 @@ OUT:
         Passi:
 
         1.  Analisi delle `ridondanze`
-            a. ridondonza: informazione significativa ma derivabile da altre
-
-            -   si decide se eliminare o mantenere le ridondanze
-                -   **passo piú difficile**
-                -   derivabile da attributi della stessa entitá o associazione
-                -   derivabile da attributi di altre entitá o associazioni
-
-            b. <span class="underline">vantaggi</span>
-
-            -   in caso di op. di interrogazione/lettura dei dati
-                -   semplificate
-                -   piú efficienti
-
-            c. <span class="underline">svantaggi</span>
-
-            -   op. di inserimento e modifica dei dati
-                -   meno efficienti
-
-            d. maggiore occupazione di spazio
-            e. Analisi **costi/benefici**
-            f. per ogni ridondanza
-
-            -   per ogni operazione significativa su cui la presenza o assenza della ridondanza puó avere effetto
-                -   schema delle operazioni nei due scenari
-                -   tavola degli accessi nei due scenari
+            1.  ridondonza: informazione significativa ma derivabile da altre
+                -   si decide se eliminare o mantenere le ridondanze
+                    -   **passo piú difficile**
+                    -   derivabile da attributi della stessa entitá o associazione
+                    -   derivabile da attributi di altre entitá o associazioni
+            2.  <span class="underline">vantaggi</span>
+                -   in caso di op. di interrogazione/lettura dei dati
+                    -   semplificate
+                    -   piú efficienti
+            3.  <span class="underline">svantaggi</span>
+                -   op. di inserimento e modifica dei dati
+                    -   meno efficienti
+            4.  maggiore occupazione di spazio
+            5.  Analisi **costi/benefici**
+            6.  per ogni ridondanza
+                -   per ogni operazione significativa su cui la presenza o assenza della ridondanza puó avere effetto
+                    -   schema delle operazioni nei due scenari
+                    -   tavola degli accessi nei due scenari
 
         2.  Eliminazione delle `generalizzazioni`
-            a. accorpamento dei figli della generalizzazione nel genitore
-
-            -   se la generalizzazione é totale/esclusiva vanno aggiunte regole aziendali
-                -   esclusiva: vincolo che gli attributi non possono essere contemporaneamente valorizzati
-                -   totale: vincolo che gli attributi non possono essere contemporaneamente valorizzati
-            -   conveniente quando le operazioni non fanno troppa distinzione tra le istanze della varie entitá (le transazioni accederebbero infatti a un'unica tabella relazionale)
-            -   spreca spazio producendo una base di dati con valori nulli
-
-            b. accorpamento del genitore della generalizzazione nei figli
-
-            -   possibile quando la generalizzazione é a partecipazione totale
-                -   conveniente quando le operazioni effettuano pochi accessi alle istanze di entrambe le entitá
-                -   ottimizza maggiormente lo spazio rispetto alle altre alternative perché usa meno attributi e associazioni
-
-            c. sostituzione della generalizzazione con associazioni
-
-            -   se esclusiva occorre aggiungere il vincolo che ogni occorrenza del genitore non puó partecipare contemporaneamente alle due relazioni
-            -   se totale occorre aggiungere il vincolo che ogni occorrenza del genitore deve partecipare ad una delle relazioni
+            1.  accorpamento dei figli della generalizzazione nel genitore
+                -   se la generalizzazione é totale/esclusiva vanno aggiunte regole aziendali
+                    -   esclusiva: vincolo che gli attributi non possono essere contemporaneamente valorizzati
+                    -   totale: vincolo che gli attributi non possono essere contemporaneamente valorizzati
+                -   conveniente quando le operazioni non fanno troppa distinzione tra le istanze della varie entitá (le transazioni accederebbero infatti a un'unica tabella relazionale)
+                -   spreca spazio producendo una base di dati con valori nulli
+            2.  accorpamento del genitore della generalizzazione nei figli
+                -   possibile quando la generalizzazione é a partecipazione totale
+                    -   conveniente quando le operazioni effettuano pochi accessi alle istanze di entrambe le entitá
+                    -   ottimizza maggiormente lo spazio rispetto alle altre alternative perché usa meno attributi e associazioni
+            3.  sostituzione della generalizzazione con associazioni
+                -   se esclusiva occorre aggiungere il vincolo che ogni occorrenza del genitore non puó partecipare contemporaneamente alle due relazioni
+                -   se totale occorre aggiungere il vincolo che ogni occorrenza del genitore deve partecipare ad una delle relazioni
 
         3.  `Partizionamento` / `Accorpamento` di entitá e associazioni
             -   dipende dalle transazioni che accedono alle istanze, se necessitano spesso di informazioni relative ad altre entitá

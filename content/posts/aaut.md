@@ -619,7 +619,7 @@ Attraverso la _class distribution_ é possibile trasformare un **feature tree** 
 #### Underfitting e Overfitting {#underfitting-e-overfitting}
 
 Per valutare il modello si comparano accuratezza sul `Training Set` e sul `Test Set`, dove la prima é una stima ottimistica.
-![](/ox-hugo/overfitting-and-underfitting.png)
+![](../media/img/overfitting-and-underfitting.png)
 
 Il `best fit` si individua alla complessità a cui le prestazioni sui due set divergono.
 

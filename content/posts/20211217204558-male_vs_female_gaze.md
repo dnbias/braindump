@@ -1,5 +1,6 @@
 +++
 title = "Male vs Female Gaze"
+author = ["Daniel Biasiotto"]
 tags = ["video"]
 draft = false
 +++

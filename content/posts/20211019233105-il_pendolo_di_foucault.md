@@ -1,5 +1,6 @@
 +++
 title = "Il Pendolo di Foucault"
+author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

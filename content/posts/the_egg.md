@@ -1,5 +1,6 @@
 +++
 title = "The Egg"
+author = ["Daniel Biasiotto"]
 date = 2021-12-30T15:45:00+01:00
 tags = ["concept", "short-story"]
 draft = false

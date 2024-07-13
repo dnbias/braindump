@@ -1,5 +1,6 @@
 +++
 title = "Sviluppo Software"
+author = ["Daniel Biasiotto"]
 date = 2022-03-03T00:08:00+01:00
 tags = ["university"]
 draft = false
@@ -57,7 +58,7 @@ Parte dal presupposto che le specifiche sono prevedibili e stabili e possono ess
 
 -   nella realtà questo non avviene quasi mai, questo modello é ottimo in caso di sistemi critici
 
-{{< figure src="/ox-hugo/waterfall-workflow.jpg" >}}
+{{< figure src="../media/img/waterfall-workflow.jpg" >}}
 
 
 ### Modello di Sviluppo Incrementale {#modello-di-sviluppo-incrementale}
@@ -220,7 +221,7 @@ In questo processo é utilizzato solo `UML`
 
 Quasi tutto in `UP` é opzionale, deciso dal project leader
 
-{{< figure src="/ox-hugo/agile-workflow.jpg" >}}
+{{< figure src="../media/img/agile-workflow.jpg" >}}
 
 
 #### Requisiti {#requisiti}
@@ -622,7 +623,7 @@ Il `Controller` é un pattern di delega:
 -   non sono proprio principi
 -   articoli di [journaldev](https://www.journaldev.com/31902/gangs-of-four-gof-design-patterns) a riguardo
 
-{{< figure src="/ox-hugo/gof-patterns.png" >}}
+{{< figure src="../media/img/gof-patterns.png" >}}
 
 <span class="underline">Soluzioni progettuali comuni</span>, _emergono_ dal codice di progetti di successo.
 Un fattore emerso é la superiorità della _composizione_ rispetto all'_ereditarietà_:

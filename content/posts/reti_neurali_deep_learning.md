@@ -924,7 +924,7 @@ e\_{ij} &= \lang W\_a s\_{i-1}, U\_a h\_j\rang
 -   [Step-By-Step Breakdown](https://towardsdatascience.com/transformer-neural-network-step-by-step-breakdown-of-the-beast-b3e096dc857f)
 -   stato dell'arte
 
-{{< figure src="/ox-hugo/transformer.png" >}}
+{{< figure src="~/Pictures/misc/transformer.png" >}}
 
 Il modello si basa sulla tecnica della **self attention**.
 

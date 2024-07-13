@@ -1,13 +1,14 @@
 +++
 title = "Feistel Cipher"
+author = ["Daniel Biasiotto"]
 date = 2022-03-09T17:35:00+01:00
 draft = false
 +++
 
-{{< figure src="/ox-hugo/feistel-cipher.png" >}}
+{{< figure src="../media/img/feistel-cipher.png" >}}
 
 For the singular step, with a broader view:
-![](/ox-hugo/feistel16.jpg)
+![](../media/img/feistel16.jpg)
 
 The most important parts of this approach:
 

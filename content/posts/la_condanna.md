@@ -1,5 +1,6 @@
 +++
 title = "La condanna"
+author = ["Daniel Biasiotto"]
 date = 2022-11-29T18:54:00+01:00
 tags = ["book"]
 draft = false

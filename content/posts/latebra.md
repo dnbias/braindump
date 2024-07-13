@@ -1,5 +1,6 @@
 +++
 title = "Latebra"
+author = ["Daniel Biasiotto"]
 date = 2022-06-05T02:52:00+02:00
 tags = ["italiano"]
 draft = false

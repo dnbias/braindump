@@ -1,5 +1,6 @@
 +++
 title = "Prezzolato"
+author = ["Daniel Biasiotto"]
 date = 2022-01-06T16:32:00+01:00
 tags = ["italiano"]
 draft = false

@@ -1,5 +1,6 @@
 +++
 title = "Magnetic Tent Legs"
+author = ["Daniel Biasiotto"]
 date = 2022-06-30T21:59:00+02:00
 tags = ["keyboard", "mod"]
 draft = false

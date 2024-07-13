@@ -416,7 +416,7 @@ Le ontologie possono essere definite
 -   `large-scale`
     -   CYC, YAGO, YAGO2, dbpedia
 
-{{< figure src="/ox-hugo/top-level-ontology.png" caption="<span class=\"figure-number\">Figure 1: </span>esempio di una top-level ontology" >}}
+{{< figure src="../media/img/top-level-ontology.png" caption="<span class=\"figure-number\">Figure 1: </span>esempio di una top-level ontology" >}}
 
 La conoscenza di senso comune (_commonsense knowledge_) è importante per task che prevedano interazione con umani
 

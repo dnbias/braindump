@@ -1,5 +1,6 @@
 +++
 title = "Numbering Headings w/ CSS"
+author = ["Daniel Biasiotto"]
 date = 2022-05-02T03:33:00+02:00
 draft = false
 +++

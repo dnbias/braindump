@@ -1,5 +1,6 @@
 +++
 title = "Automatic Table of Content in CSS/JS"
+author = ["Daniel Biasiotto"]
 date = 2022-05-13T18:48:00+02:00
 tags = ["til"]
 draft = false

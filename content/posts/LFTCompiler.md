@@ -1,5 +1,6 @@
 +++
 title = "Lft Compiler"
+author = ["Daniel Biasiotto"]
 tags = ["project"]
 draft = false
 +++

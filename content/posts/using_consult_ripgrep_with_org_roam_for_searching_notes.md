@@ -1,5 +1,6 @@
 +++
 title = "Using consult-ripgrep with org-roam for searching notes"
+author = ["Daniel Biasiotto"]
 date = 2022-10-06T07:23:00+02:00
 tags = ["til", "pkm"]
 draft = false

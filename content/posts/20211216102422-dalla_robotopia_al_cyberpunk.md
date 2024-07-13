@@ -1,5 +1,6 @@
 +++
 title = "Dalla Robotopia al Cyberpunk"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 

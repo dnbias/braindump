@@ -1,5 +1,6 @@
 +++
 title = "Radical acceptance"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 

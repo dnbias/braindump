@@ -1,5 +1,6 @@
 +++
 title = "Simulazione di Algoritmi Quantistici usando lo strumento Q#"
+author = ["Daniel Biasiotto"]
 tags = ["university", "thesis", "compsci"]
 draft = false
 +++
@@ -63,7 +64,7 @@ Questo è necessario in quanto i requisiti e limiti tecnici della costruzione di
 Questi limiti sono in particolare l'estrema sensibilità dei registri all'interno di un computer simile alle interferenze esterne, per ovviare a problemi di interferenza è necessario mantenere l'hardware in temperature vicine allo zero termico (\\(0\text{K}\\) o \\(-273.15^{\circ}\text{C}\\)).
 Queste condizioni non sono ovviamente replicabili in un ambiente non strettamente controllato e isolato.
 
-{{< figure src="/ox-hugo/quantum-interface.png" caption="<span class=\"figure-number\">Figure 1: </span>Architettura globale di un computer quantistico - tratto da articolo IEEE Explore Journal: <https://ieeexplore.ieee.org/document/9274431>" >}}
+{{< figure src="../media/img/quantum-interface.png" caption="<span class=\"figure-number\">Figure 1: </span>Architettura globale di un computer quantistico - tratto da articolo IEEE Explore Journal: <https://ieeexplore.ieee.org/document/9274431>" >}}
 
 Dati questi limiti è facile dire che per molto tempo ancora questo tipo di hardware sarà limitato a un utilizzo da remoto tramite architetture cloud, molte aziende private in questi anni hanno sviluppato soluzioni in questo senso.
 Alcuni esempi sviluppati negli ultimi anni dai maggiori competitor sono `IBM Q`[^fn:1], Google Quantum AI[^fn:2], `XANADU` Quantum Cloud[^fn:3] con la sua interfaccia python **Strawberry Fields**[^fn:4] con supporto `Tensor Flow` integrato, Amazon Bracket[^fn:5] offerto da `AWS`.
@@ -84,7 +85,7 @@ Ad esempio:
 -   L'**algoritmo di Deutsch-Jozsa** verifica se una funzione è costante o bilanciata in tempo costante \\(O(1)\\).
 -   L'**algoritmo di Simon**, ispirazione per il sopraccitato algoritmo di Shor, risolve in tempo esponenzialmente più veloce rispetto all'approccio classico il problema di determinare se una data funzione \\(f\\) _blackbox_ sia **uno-a-uno** o **due-a-uno**.
 
-{{< figure src="/ox-hugo/where-quantum-fits.png" caption="<span class=\"figure-number\">Figure 2: </span>Relazioni tra le classi di complessità, BQP indica tempo polinomiale quantistico con errore limitato" >}}
+{{< figure src="../media/img/where-quantum-fits.png" caption="<span class=\"figure-number\">Figure 2: </span>Relazioni tra le classi di complessità, BQP indica tempo polinomiale quantistico con errore limitato" >}}
 
 In aggiunta ai problemi di cui sopra, la cui soluzione è legata a un algoritmo in particolare, sono state trovate applicazioni per i computer quantistici in diversi altri ambiti:
 
@@ -220,7 +221,7 @@ Come linguaggio eredita caratteristiche classiche di linguaggi imperativi ad ogg
 Altre queste introduce in aggiunta costrutti specifici per le applicazioni nell'ambito della programmazione di algoritmi quantistici come ad esempio il _repeat until success_[^fn:17] e la _phase estimation_[^fn:18].
 Il linguaggio è ad alto livello e agnostico riguardo l'hardware su cui verrà eseguito.
 
-{{< figure src="/ox-hugo/quantum-development-kit-flow-diagram.svg" caption="<span class=\"figure-number\">Figure 3: </span>Diagramma che mostra i passaggi da idea a implementazione di un programma nel framework QDK, tratto dalla documentazione Microsoft QDK." >}}
+{{< figure src="../media/img/quantum-development-kit-flow-diagram.svg" caption="<span class=\"figure-number\">Figure 3: </span>Diagramma che mostra i passaggi da idea a implementazione di un programma nel framework QDK, tratto dalla documentazione Microsoft QDK." >}}
 
 \pagebreak
 Un semplice programma in `Q#` può essere:
@@ -487,7 +488,7 @@ I passi dell'algoritmo in particolare sono:
 
 Nei listati successivi riportiamo l'implementazione `Q#` della versione a singolo `qubit` e la generalizzazione nel caso di \\(n\\)-`qubit`.
 
-{{< figure src="/ox-hugo/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 5: </span>i passi dell'algoritmo n-qubit in forma di circuito" >}}
+{{< figure src="../media/img/deutsch_steps.png" caption="<span class=\"figure-number\">Figure 5: </span>i passi dell'algoritmo n-qubit in forma di circuito" >}}
 
 \pagebreak
 Un punto fondamentale dell'algoritmo è l'utilizzo della porta `Hadamard`, chiamata anche trasformata di `Hadamard`.
@@ -527,7 +528,7 @@ A livello matematico sono definite:
 \\[ | + \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle + | 1 \rangle)\\]
 \\[ | - \rangle = \frac{1}{\sqrt{2}} (| 0 \rangle - | 1 \rangle)\\]
 
-{{< figure src="/ox-hugo/bloch-sphere.png" caption="<span class=\"figure-number\">Figure 6: </span>Rappresentazione geometrica di un qubit con la sfera di Bloch. Sono rappresentati come poli sull'asse \\(z\\) gli stati equivalenti allo 0 e 1 di un bit classico, sull'asse \\(x\\) invece i poli sono gli stati sopraccitati \\(| + \rangle\\) e \\(| - \rangle\\). Con questa rappresentazione è possibile notare come \\(H\\) non sia altro che una rotazione in questo spazio tridimensionale." >}}
+{{< figure src="../media/img/bloch-sphere.png" caption="<span class=\"figure-number\">Figure 6: </span>Rappresentazione geometrica di un qubit con la sfera di Bloch. Sono rappresentati come poli sull'asse \\(z\\) gli stati equivalenti allo 0 e 1 di un bit classico, sull'asse \\(x\\) invece i poli sono gli stati sopraccitati \\(| + \rangle\\) e \\(| - \rangle\\). Con questa rappresentazione è possibile notare come \\(H\\) non sia altro che una rotazione in questo spazio tridimensionale." >}}
 
 Inoltre con una funzione \\(f\\) applicata a questa sovrapposizione si ottiene, nel caso \\(n=1\\), uno stato sovrapposto tra \\(f(0)\\) e \\(f(1)\\).
 Questo effetto è utilizzato dall'algoritmo in quanto  riapplicando `Hadamard` si controlla in un solo passo se si ottiene la sovrapposizione di due stati uguali o di due stati diversi, o meglio se \\(f(0) = f(1)\\) o meno. La riapplicazione di \\(H\\) restituirà \\(1\\) nel primo caso, \\(0\\) nel secondo.
@@ -681,7 +682,7 @@ Gli schemi per effettuare questa operazione sono diversi, noi riportiamo quello 
 
 \\(\pagebreak\\)
 
-{{< figure src="/ox-hugo/teleport.png" caption="<span class=\"figure-number\">Figure 7: </span>Trasposizione in circuito delle operazioni necessarie al teletrasporto quantistico." >}}
+{{< figure src="../media/img/teleport.png" caption="<span class=\"figure-number\">Figure 7: </span>Trasposizione in circuito delle operazioni necessarie al teletrasporto quantistico." >}}
 
 Definiamo:
 
@@ -713,7 +714,7 @@ La misurazione da parte di `Alice` porta alla perdita dello stato iniziale rispe
 
 Molti esperimenti sono stati effettuati nell'ambito del teletrasporto quantistico, l'attuale record di distanza per un esperimento di questo tipo è stato registrato in un esperimento all'aperto che ha avuto luogo nelle isole Canarie e teletrasportò particelle tra due osservatori astronomici dell'_Instituto de Astrofísica de Canarias_ ad una distanza di 143Km.[^fn:22]
 
-{{< figure src="/ox-hugo/quantum_teleportation.png" caption="<span class=\"figure-number\">Figure 8: </span>Il teletrasporto quantistico agisce in accordo alla relatività speciale con l'utilizzo di due canali di comunicazione, uno classico e una quantistico." >}}
+{{< figure src="../media/img/quantum_teleportation.png" caption="<span class=\"figure-number\">Figure 8: </span>Il teletrasporto quantistico agisce in accordo alla relatività speciale con l'utilizzo di due canali di comunicazione, uno classico e una quantistico." >}}
 
 Nei listati 6 e 7 sono riportate le implementazioni dell'algoritmo di teletrasporto quantistico rispettivamente in Python e Q#.
 I parametri utilizzati nel caso del primo sono:

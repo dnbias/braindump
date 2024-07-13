@@ -1,5 +1,6 @@
 +++
 title = "L'ansia del recupero"
+author = ["Daniel Biasiotto"]
 date = 2021-12-27T23:02:00+01:00
 tags = ["video"]
 draft = false

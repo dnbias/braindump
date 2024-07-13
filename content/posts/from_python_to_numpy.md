@@ -1,5 +1,6 @@
 +++
 title = "From Python to Numpy"
+author = ["Daniel Biasiotto"]
 date = 2022-10-12T05:48:00+02:00
 tags = ["book", "compsci", "python", "numpy", "ml"]
 draft = false

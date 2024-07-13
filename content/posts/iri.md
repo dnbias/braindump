@@ -6,7 +6,7 @@ draft = false
 +++
 
 _International Resource Identifier_
-![](/ox-hugo/IRI-URI-URL-URN.png)
+![](../media/img/IRI-URI-URL-URN.png)
 `URL` -&gt; `URI` -&gt; `IRI`
 
 -   Internationalized `URI` (_Uniform Resource Identifier_) in Unicode

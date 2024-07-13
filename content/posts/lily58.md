@@ -1,5 +1,6 @@
 +++
 title = "Lily58"
+author = ["Daniel Biasiotto"]
 date = 2022-06-29T18:00:00+02:00
 tags = ["keyboard", "split"]
 draft = false

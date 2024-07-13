@@ -1,5 +1,6 @@
 +++
 title = "Time Management"
+author = ["Daniel Biasiotto"]
 draft = false
 +++
 

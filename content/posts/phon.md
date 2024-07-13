@@ -103,15 +103,15 @@ Il dominio si articola quindi in:
 
 Vedere `Figure 1, 2, 3, 4, 5` per screenshot delle pagine che sono state consultate per le opere.
 
-{{< figure src="/ox-hugo/20230127_18h46m54s_grim.png" caption="<span class=\"figure-number\">Figure 1: </span>Catalogo sul sito del MoMA di Migrant Mother" >}}
+{{< figure src="~/Pictures/20230127_18h46m54s_grim.png" caption="<span class=\"figure-number\">Figure 1: </span>Catalogo sul sito del MoMA di Migrant Mother" >}}
 
-{{< figure src="/ox-hugo/20230127_18h47m14s_grim.png" caption="<span class=\"figure-number\">Figure 2: </span>Catalogo sul sito del MoMA di Migrant Mother" >}}
+{{< figure src="~/Pictures/20230127_18h47m14s_grim.png" caption="<span class=\"figure-number\">Figure 2: </span>Catalogo sul sito del MoMA di Migrant Mother" >}}
 
-{{< figure src="/ox-hugo/20230127_18h48m33s_grim.png" caption="<span class=\"figure-number\">Figure 3: </span>Catalogo sul sito della NASA di Pale Blue Dot Revisited" >}}
+{{< figure src="~/Pictures/20230127_18h48m33s_grim.png" caption="<span class=\"figure-number\">Figure 3: </span>Catalogo sul sito della NASA di Pale Blue Dot Revisited" >}}
 
-{{< figure src="/ox-hugo/20230127_18h49m07s_grim.png" caption="<span class=\"figure-number\">Figure 4: </span>Catalogo su wikipedia di Migrant Mother" >}}
+{{< figure src="~/Pictures/20230127_18h49m07s_grim.png" caption="<span class=\"figure-number\">Figure 4: </span>Catalogo su wikipedia di Migrant Mother" >}}
 
-{{< figure src="/ox-hugo/20230127_18h53m59s_grim.png" caption="<span class=\"figure-number\">Figure 5: </span>Catalogo di una foto storica sull'archivio del Ministero dei Beni Culturali" >}}
+{{< figure src="~/Pictures/20230127_18h53m59s_grim.png" caption="<span class=\"figure-number\">Figure 5: </span>Catalogo di una foto storica sull'archivio del Ministero dei Beni Culturali" >}}
 
 \pagebreak
 L'ontologia è stata allineata con due ontologie ritenute utili a questo scopo:
@@ -135,15 +135,15 @@ Inoltre è stato utilizzato il pattern architetturale `List` &rarr; `ListItem` p
 
 Vedere `Figure 6, 7, 8, 9, 10` per screenshot dei grafi e degli individui in Protégé.
 
-{{< figure src="/ox-hugo/20230207_04h05m10s_grim.png" caption="<span class=\"figure-number\">Figure 6: </span>Struttura tassonomica di base" >}}
+{{< figure src="~/Pictures/20230207_04h05m10s_grim.png" caption="<span class=\"figure-number\">Figure 6: </span>Struttura tassonomica di base" >}}
 
-{{< figure src="/ox-hugo/20230207_04h09m18s_grim.png" caption="<span class=\"figure-number\">Figure 7: </span>Fotografie" >}}
+{{< figure src="~/Pictures/20230207_04h09m18s_grim.png" caption="<span class=\"figure-number\">Figure 7: </span>Fotografie" >}}
 
-{{< figure src="/ox-hugo/20230207_04h11m41s_grim.png" caption="<span class=\"figure-number\">Figure 8: </span>Pattern tra fotografie e serie fotografiche" >}}
+{{< figure src="~/Pictures/20230207_04h11m41s_grim.png" caption="<span class=\"figure-number\">Figure 8: </span>Pattern tra fotografie e serie fotografiche" >}}
 
-{{< figure src="/ox-hugo/20230207_04h14m04s_grim.png" caption="<span class=\"figure-number\">Figure 9: </span>Pagina Protégé di PaleBlueDot" >}}
+{{< figure src="~/Pictures/20230207_04h14m04s_grim.png" caption="<span class=\"figure-number\">Figure 9: </span>Pagina Protégé di PaleBlueDot" >}}
 
-{{< figure src="/ox-hugo/20230207_04h17m23s_grim.png" caption="<span class=\"figure-number\">Figure 10: </span>Pagina Protégé della serie fotografica FamilyPortrait" >}}
+{{< figure src="~/Pictures/20230207_04h17m23s_grim.png" caption="<span class=\"figure-number\">Figure 10: </span>Pagina Protégé della serie fotografica FamilyPortrait" >}}
 
 
 ## Interazione utente {#interazione-utente}
@@ -158,10 +158,10 @@ Ad esempio, interazioni fondamentali a questo scopo sono:
 -   elencare le fotografie scattate in un certo luogo
 -   elencare le fotografie scattate prima o dopo una certa data
 
-\vspace{10mm} ![](/ox-hugo/flowchart_interaction.drawio.png)
+\vspace{10mm} ![](~/Documents/UNI/Master/ModSem/PhotOntology/phon/flowchart_interaction.drawio.png)
 \pagebreak
 
-{{< figure src="/ox-hugo/mockup.png" >}}
+{{< figure src="~/Documents/UNI/Master/ModSem/PhotOntology/phon/mockup.png" >}}
 
 \pagebreak
 

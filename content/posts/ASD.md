@@ -1,5 +1,6 @@
 +++
 title = "Algoritmi e Strutture Dati"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++

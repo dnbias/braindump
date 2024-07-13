@@ -1,5 +1,6 @@
 +++
 title = "Writing Academic Papers w/ Emacs"
+author = ["Daniel Biasiotto"]
 date = 2022-05-31T16:32:00+02:00
 draft = false
 +++

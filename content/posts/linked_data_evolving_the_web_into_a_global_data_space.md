@@ -1,11 +1,12 @@
 +++
 title = "Linked Data: Evolving the Web into a Global Data Space"
+author = ["Daniel Biasiotto"]
 date = 2022-11-30T16:24:00+01:00
 tags = ["book"]
 draft = false
 +++
 
-T. Heath, C. Bizer, _Linked Data: Evolving the Web into a Global Data Space_, 2011, Morgan &amp; Claypool
+1.  Heath, C. Bizer, _Linked Data: Evolving the Web into a Global Data Space_, 2011, Morgan &amp; Claypool
 
 
 ## Summary {#summary}

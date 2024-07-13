@@ -1,5 +1,6 @@
 +++
 title = "What is This?"
+author = ["Daniel Biasiotto"]
 date = 2022-05-05T11:02:00+02:00
 draft = false
 +++
@@ -8,7 +9,7 @@ This is a [Zettelkasten]({{< relref "20200528213816-zettelkasten.md" >}}) and wh
 The work that inspired me to publish this is [Work with the garage door up]({{< relref "work_with_the_garage_door_up.md" >}}) and the [Learn In Public]({{< relref "learn_in_public.md" >}}) movement.
 I think that having my working notes public for all to see creates a good kind of peer pressure, the kind that gets things done, possibly.
 
-{{< figure src="/ox-hugo/garage-door-not-working.png" caption="<span class=\"figure-number\">Figure 1: </span>Sometimes the door doesn't get up - smh" >}}
+{{< figure src="../media/img/garage-door-not-working.png" caption="<span class=\"figure-number\">Figure 1: </span>Sometimes the door doesn't get up - smh" >}}
 
 All the content is `WIP` and in a mix of languages, mainly italian and english. Sometimes I switch in between sentences. Scusate.
 

@@ -1,5 +1,6 @@
 +++
 title = "Some notes on solving hard problems"
+author = ["Daniel Biasiotto"]
 date = 2022-09-24T02:32:00+02:00
 tags = ["article", "problem-solving"]
 draft = false

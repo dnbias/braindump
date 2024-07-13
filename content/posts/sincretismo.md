@@ -1,5 +1,6 @@
 +++
 title = "Sincretismo"
+author = ["Daniel Biasiotto"]
 date = 2022-01-18T17:19:00+01:00
 tags = ["italiano"]
 draft = false

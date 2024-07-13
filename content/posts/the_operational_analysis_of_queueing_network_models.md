@@ -1,5 +1,6 @@
 +++
 title = "The Operational Analysis of Queueing Network Models"
+author = ["Daniel Biasiotto"]
 date = 2022-10-06T06:25:00+02:00
 tags = ["paper", "compsci", "simulation"]
 draft = false

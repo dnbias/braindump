@@ -1,5 +1,6 @@
 +++
 title = "Visitor"
+author = ["Daniel Biasiotto"]
 date = 2022-05-13T14:47:00+02:00
 tags = ["pattern", "compsci"]
 draft = false
@@ -7,4 +8,4 @@ draft = false
 
 -   [GoF]({{< relref "gof.md" >}})
 
-{{< figure src="/ox-hugo/visitor.jpg" >}}
+{{< figure src="../media/img/visitor.jpg" >}}

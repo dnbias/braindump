@@ -1,5 +1,6 @@
 +++
 title = "Programming in Haskell"
+author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

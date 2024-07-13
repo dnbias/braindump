@@ -1,5 +1,6 @@
 +++
 title = "Programmazione III"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++
@@ -50,8 +51,8 @@ Secondo <span class="underline">Alan Kay (Smalltalk)</span>
 -   Oggetti
     -   Oggetti + Collaborazione
         _si scorporano funzionalitá diverse in oggetti diversi:_ **delega**
-        a) dati + algoritmi
-        b) interfacce
+        1.  dati + algoritmi
+        2.  interfacce
 
 
 #### Gerarchia {#gerarchia}

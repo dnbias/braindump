@@ -1,5 +1,6 @@
 +++
 title = "Linguaggi e Paradigmi di Programmazione"
+author = ["Daniel Biasiotto"]
 tags = ["university"]
 draft = false
 +++

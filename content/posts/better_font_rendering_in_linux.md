@@ -1,5 +1,6 @@
 +++
 title = "Better Font Rendering in Linux"
+author = ["Daniel Biasiotto"]
 date = 2021-12-22T14:59:00+01:00
 tags = ["article"]
 draft = false

@@ -1,5 +1,6 @@
 +++
 title = "Extreme learning machine: Theory and applications"
+author = ["Daniel Biasiotto"]
 date = 2022-12-01T17:27:00+01:00
 tags = ["book"]
 draft = false

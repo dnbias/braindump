@@ -1,5 +1,6 @@
 +++
 title = "Introduction to the Theory of Programming Languages"
+author = ["Daniel Biasiotto"]
 tags = ["book"]
 draft = false
 +++

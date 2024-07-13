@@ -1,5 +1,6 @@
 +++
 title = "YAEMK"
+author = ["Daniel Biasiotto"]
 date = 2022-06-30T20:33:00+02:00
 tags = ["keyboard"]
 draft = false

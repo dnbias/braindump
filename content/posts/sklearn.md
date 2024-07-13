@@ -1,5 +1,6 @@
 +++
 title = "sklearn"
+author = ["Daniel Biasiotto"]
 date = 2022-10-20T09:35:00+02:00
 tags = ["ml", "python"]
 draft = false

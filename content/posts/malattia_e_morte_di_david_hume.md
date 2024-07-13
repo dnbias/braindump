@@ -1,5 +1,6 @@
 +++
 title = "Malattia e morte di David Hume"
+author = ["Daniel Biasiotto"]
 date = 2022-01-02T23:24:00+01:00
 tags = ["book"]
 draft = false

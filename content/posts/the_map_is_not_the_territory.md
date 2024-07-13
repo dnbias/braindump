@@ -1,5 +1,6 @@
 +++
 title = "The Map is Not the Territory"
+author = ["Daniel Biasiotto"]
 date = 2021-12-28T19:25:00+01:00
 tags = ["concept", "mentalModel"]
 draft = false

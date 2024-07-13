@@ -1,5 +1,6 @@
 +++
 title = "Jacques Derrida"
+author = ["Daniel Biasiotto"]
 date = 2022-12-01T16:08:00+01:00
 tags = ["author", "philosophy"]
 draft = false
